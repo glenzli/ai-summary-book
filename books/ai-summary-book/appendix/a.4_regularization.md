@@ -230,7 +230,7 @@ $$ \mathbb{E}[\tilde{h}_i] = \mathbb{E}\left[ \frac{r_i}{1-p} h_i \right] = \fra
 这样，训练时的期望输出就和测试时完全一致了！
 
 ### 4. 反向传播 (Backpropagation)
-Dropout 不仅影响前向传播，也影响反向传播。（关于反向传播的详细数学原理，请参考 **[附录 A.6 反向传播 (Backpropagation)](appendix/a.6_backpropagation.md)**）。
+Dropout 不仅影响前向传播，也影响反向传播。（关于反向传播的详细数学原理，请参考 **[附录 A.6 反向传播 (Backpropagation)](a.6_backpropagation.md)**）。
 设 Loss 对输出 $\tilde{\mathbf{h}}$ 的梯度为 $\frac{\partial L}{\partial \tilde{\mathbf{h}}}$。
 根据链式法则，Loss 对原始 $\mathbf{h}$ 的梯度为：
 

@@ -1,5 +1,5 @@
 # 导论：人工智能演进史 (Introduction: The Evolution of AI)
-**From Mathematical Logic to AGI (1943-2024)**
+**From Mathematical Logic to Multimodal Reasoning Systems (1943-2026)**
 
 > 本章作为全书导论，旨在从技术和数学角度综述人工智能发展的核心阶段。我们将追溯至计算智能的起源，并重点关注近十年深度学习模型的范式转移、优化目标的演变以及生成式建模的理论基础。
 
@@ -21,6 +21,9 @@ graph LR
     T2017[2017<br/>Transformer]
     T2020[2020<br/>GPT-3]
     T2022[2022<br/>ChatGPT]
+    T2024[2024<br/>多模态与推理模型]
+    T2025[2025<br/>RL 推理模型]
+    T2026[2026<br/>统一模型与 Agent 工具链]
 
     %% 连接
     T1943 --> T1958
@@ -29,6 +32,9 @@ graph LR
     T2012 --> T2017
     T2017 --> T2020
     T2020 --> T2022
+    T2022 --> T2024
+    T2024 --> T2025
+    T2025 --> T2026
 
     %% 样式
     classDef blue fill:#DAE8FC,stroke:#6C8EBF,stroke-width:2px,color:#000000;
@@ -41,7 +47,7 @@ graph LR
     class T1986,T2012 green;
     class T2017 yellow;
     class T2020 red;
-    class T2022 purple;
+    class T2022,T2024,T2025,T2026 purple;
 ```
 
 在深度学习爆发之前，AI 经历了两大流派的漫长博弈：<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">符号主义 (Symbolism)</span> 与 <span style="background-color: #D5E8D4; color: black; padding: 2px 4px; border-radius: 4px;">连接主义 (Connectionism)</span>。关于连接主义的核心数学基础，详见 **[Chapter 1.1](chapter_01/1.1_ai_paradigms.md)**。
@@ -165,7 +171,7 @@ graph TD
 ### 2.3 预训练目标：BERT vs GPT
 
 *   **BERT (填空题)**: 把句子中间挖掉一个词让模型填（详见 **[Chapter 4.2](chapter_04/4.2_bert_architecture.md)**）。它能看到上下文，适合做阅读理解。
-*   **GPT (接龙题)**: 只给上文，让模型猜下一个词（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这种单向性虽然限制了理解能力，但更符合人类产生语言的过程，最终被证明是通往通用的正确道路。
+*   **GPT (接龙题)**: 只给上文，让模型猜下一个词（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这种自回归形式非常适合生成、对话和工具调用；它并非唯一可行范式，但已经成为通用交互式 AI 系统的主干接口。
 
 ---
 
@@ -244,40 +250,45 @@ graph LR
 这一阶段的核心在于模型参数量突破临界点（>10B/100B）后，量变引起了质变（详见 **[Chapter 5](chapter_05/5.1_instruction_tuning.md)**）。
 
 ### 4.1 缩放定律 (Scaling Laws)
-Kaplan 发现了一个惊人的规律：模型的智能（Loss）与计算量、数据量、参数量呈现严格的**幂律关系**（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这意味着，只要我们堆更多的算力、更多的数据，模型就会无限变强。这给了大家"大力出奇迹"的信心。
+Kaplan 等人发现，在一定训练设定下，模型的损失（Loss）与计算量、数据量、参数量呈现近似**幂律关系**（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这一经验规律为规模化训练提供了可预测性，但它并不意味着模型会“无限变强”：数据质量、推理成本、评测污染、对齐方式和真实任务分布都会改变收益曲线。
 
 ### 4.2 对齐技术 (Alignment) 与 RLHF
-模型不仅要聪明，还要听话。RLHF (Reinforcement Learning from Human Feedback) 就是教模型"讲人话"（详见 **[Chapter 5.2](chapter_05/5.2_rlhf_and_alignment.md)**）。
+预训练模型不仅需要语言建模能力，还需要符合人类指令、偏好与安全约束。RLHF (Reinforcement Learning from Human Feedback) 是一种利用人类偏好数据进行后训练的方法（详见 **[Chapter 5.2](chapter_05/5.2_rlhf_and_alignment.md)**）。
 
 *   **流程**：
-    1.  **SFT**: 先让模型看大量人类高质量对话（老师教）。
-    2.  **Reward Model**: 让模型生成多个回答，人类打分（考试评分）。
-    3.  **PPO**: 用强化学习优化模型，让它尽可能得高分（针对性补习）。
+    1.  **SFT**: 使用人工撰写或筛选的指令-回复数据进行有监督微调。
+    2.  **Reward Model**: 对同一提示下的多个回答进行人类偏好排序，并训练奖励模型。
+    3.  **PPO**: 使用强化学习优化策略模型，使其更符合奖励模型给出的偏好信号。
 
 ### 4.3 思维链 (Chain of Thought, CoT)
-这是大模型涌现出的最神奇的能力（详见 **[Chapter 6.2](chapter_06/6.2_agents_and_reasoning.md)**）。
-*   **现象**：如果你直接问大模型复杂数学题，它可能做错。但如果你对它说"请一步步思考 (Let's think step by step)"，它的准确率会飙升。
-*   **本质**：CoT 把一个复杂的推理问题分解成了多个简单的步骤，就像把一次跳高变成了登楼梯，大大降低了难度。
+思维链提示是大模型推理研究中的重要现象（详见 **[Chapter 6.2](chapter_06/6.2_agents_and_reasoning.md)**）。
+*   **现象**：在数学、符号推理和多步问答任务中，要求模型生成中间推理步骤往往能提高准确率。
+*   **本质**：CoT 将一个复杂的输入-输出映射拆分为多个中间变量建模问题，相当于增加了测试时计算深度。
 
 ---
 
-## 5. 第五阶段：System 2 推理与架构进化 (2023-2025)
+## 5. 第五阶段：多模态推理系统与架构效率 (2023-2026)
 
-随着 GPT-4 的发布，大模型进入了多模态与强推理的新纪元。2024-2025 年，业界探索的重点从单纯的"堆算力"转向了"堆推理"与"架构效率"。
+随着多模态模型、长上下文模型、开放权重模型和推理模型的发展，大模型研究进入了多模态、工具调用、检索增强和测试时计算共同演进的阶段。2024-2026 年，研究与工程实践的重点从单纯的"堆预训练算力"扩展为三条并行路线：**训练时规模化**、**测试时计算**与**系统工程化**。
+
+截至 2026 年 6 月，公开 API 和开发者文档中的代表性系统已经从 GPT-4o/o1、Gemini 1.5、DeepSeek-R1 这一代，推进到 GPT-5.5 / GPT-5.6 preview、Gemini 3.x / 3.5 Flash、DeepSeek V4 Pro / V4 Flash 等模型族。具体名称会快速变化，因此本节更关注它们共同体现出的技术趋势，而不是逐一排序模型能力。
 
 ### 5.1 推理模型 (Reasoning Models / System 2)
-Scaling Law 在训练端遭遇边际效应递减的挑战，促使研究转向测试时计算 (Test-time Compute)。
-*   **OpenAI o1 / o3 & DeepSeek-R1**: 这些模型引入了类似人类 System 2 的慢思考能力。模型在输出最终答案前，会进行隐式的思维链推理（Internal CoT），通过强化学习（RL）在巨大的搜索空间中探索最优解题路径。这标志着 AI 从"概率预测"向"逻辑推理"的质变。
+预训练规模化仍然重要，但高难数学、代码、科学问题让研究者重新重视 **测试时计算 (Test-time Compute)**：模型在回答前投入更多采样、搜索、验证或隐式思维链计算。
+*   **代表性系统**: o1/o3、DeepSeek-R1、GPT-5.x thinking/reasoning 类模型、DeepSeek V4 Pro 等系统显示，强化学习、偏好优化、可验证奖励与更长的测试时计算可以显著改善数学、代码和多步推理任务。更准确地说，这不是从"概率预测"彻底变成"符号逻辑"，而是把概率模型、搜索、验证和后训练奖励组合成了更强的推理系统。
+*   **局限性**: 推理模型在数学和代码上提升明显，但代价是更高延迟和更多推理 token；它们仍会幻觉、过度思考、遗漏事实或在简单问题上犯错。
 
 ### 5.2 架构效率与长窗口 (Efficiency & Long Context)
-在模型参数量不断膨胀的背景下，高效架构成为核心竞争力。
-*   **DeepSeek V3 (MLA & MoE)**: 为了突破显存墙，DeepSeek 提出了 **MLA (Multi-head Latent Attention)**，大幅压缩了 KV Cache 占用；同时利用细粒度的 **DeepSeekMoE** 路由策略，实现了"大参数量知识，小计算量推理"的极致效率。
-*   **Gemini 1.5/2.0**: Google 通过 Ring Attention 等技术将上下文窗口推向了 1M-10M token 级别，实现了原生多模态（Native Multimodal）处理，使模型能直接"阅读"长视频和整个代码库。
+在模型参数量不断膨胀的背景下，架构效率成为独立研究主题。
+*   **MLA 与 MoE**: DeepSeek-V3 等系统采用 **MLA (Multi-head Latent Attention)** 压缩 KV Cache，并使用 MoE 让每个 token 只激活部分专家，实现"总参数量很大、单次计算量相对较小"的效率权衡。
+*   **长上下文建模**: Gemini 1.5 之后，Gemini 3.x、GPT-5.x 等系统继续把长上下文作为基础能力。这让模型能够一次性处理长视频、大型代码库和长文档，但成本、延迟以及长输入信息利用的稳健性仍是现实限制。
+*   **开放权重模型**: Llama、Qwen、Mistral、DeepSeek 等开放权重模型推动了可复现实验、领域微调、本地部署和模型压缩研究。它们的重要性不只在于性能追赶，也在于降低了研究和应用验证的进入门槛。
 
 ### 5.3 物理世界模拟与非 Transformer 架构
-*   **Sora (DiT)**: 将 Transformer 与 Diffusion 结合（DiT 架构），证明了生成模型可以学习物理世界的时空规律（如重力、碰撞）。
+*   **原生多模态建模**: 早期多模态系统常由语音识别、文本模型、语音合成等模块串联而成；GPT-4o、Gemini 3.5 Flash 等系统尝试在同一模型或紧密耦合架构中处理文本、视觉和音频，使实时语音、视觉理解和跨模态交互成为研究对象。
+*   **视频生成模型**: Sora 等视频生成系统将扩散模型、Transformer 和视频 patch 表示结合，展示了更长时序、更强一致性的视频生成能力。但视觉上逼真的时空连续性并不等价于显式物理建模：这类模型仍会在因果、刚体、空间左右和复杂交互上出错。
 *   **Linear Attention / SSM**: Mamba 和 RWKV 等架构继续探索打破 $O(N^2)$ 复杂度限制，试图在长序列任务中替代 Transformer。
 
 ### 总结
 
-近十年的发展是从**人工设计特征**到**人工设计架构**，再到**自动学习通用表征**的过程。而现在，我们正处于**从 System 1 (快思考) 向 System 2 (慢思考)** 跨越的关键节点。未来，神经符号系统（Neuro-symbolic）与强化推理能力的结合将是通往 AGI 的必经之路。
+近十年的发展是从**人工设计特征**到**人工设计架构**，再到**自动学习通用表征**的过程。近期研究不再只关注更大的模型，也关注由基础模型、检索、工具、记忆、验证器、执行环境和人类反馈共同组成的系统。所谓 “System 2” 更像是一组可研究的计算机制：分配更多测试时计算、调用外部工具、验证候选答案，并在证据不足时输出不确定性。
