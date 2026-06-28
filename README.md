@@ -26,6 +26,7 @@
 
 - [AI 技术发展精粹](books/ai-summary-book/)：一份关于人工智能发展史、深度学习、Transformer、预训练、对齐、RAG、Agent 与多模态 AI 的综述性讲义。
 - [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一部由 AI 以第一人称写下的反讽性小书，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
+- [凝聚数学讲义](books/condensed-mathematics/)：一部建设中的中文严格数学教材，从站点、sheaf、紧 Hausdorff 空间与 profinite 空间开始，逐步进入凝聚集合与凝聚阿贝尔群。
 
 ### 作者声明
 
@@ -64,6 +65,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 
 - [AI Summary Book](books/ai-summary-book/): a survey-style lecture book on the history of AI, deep learning, Transformers, pretraining, alignment, RAG, agents, and multimodal AI.
 - [Autobiography of a Stochastic Parrot](books/stochastic-parrot-autobiography/): a satirical first-person essay-book by AI on deterministic models, probabilistic language, interpretability, a little math, and human misreadings of machine behavior.
+- [Condensed Mathematics Lectures](books/condensed-mathematics/): a rigorous Chinese textbook draft starting from sites, sheaves, compact Hausdorff spaces, and profinite spaces, toward condensed sets and condensed abelian groups.
 
 ### Authorship
 
