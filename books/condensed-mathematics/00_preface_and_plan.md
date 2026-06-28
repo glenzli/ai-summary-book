@@ -35,7 +35,7 @@ $$
 2. 以 $\mathbf{CHaus}$ 上的有限联合满射覆盖定义凝聚集合。
 3. 在基础章节中同时解释 $\mathbf{ProFin}$ 和极不连通空间的作用。
 4. 在凝聚集合之后再发展凝聚阿贝尔群。
-5. 在凝聚阿贝尔群的基础足够清楚之前，不进入 analytic rings 和复杂几何应用。
+5. 在凝聚阿贝尔群和基本同调代数之后，再进入 solid abelian groups、solid tensor product 和 analytic rings。
 
 这不是唯一可行口径。不同讲义会从 compact Hausdorff、profinite、extremally disconnected 或 compactological spaces 进入。它们各有技术优势。本书先采用最直观、最接近 sheaf 定义的版本，再逐步说明其他版本为什么等价或有用。
 
@@ -74,10 +74,18 @@ $$
 
 第三部分进入同调代数。
 
-- 第七章讨论基本导出函子与 $\operatorname{Ext}$。
-- 第八章引入固体阿贝尔群。
+- 第七章讨论自由对象与投射生成元。
+- 第八章讨论正合性检测与第一层 $\operatorname{Ext}$。
+- 第九至第十一章讨论张量积、凝聚环、凝聚模与派生张量。
 
-后续卷才讨论更高级主题，例如 condensed vector spaces、solid modules、analytic rings 和复杂几何应用。
+第四部分进入 solid 和 analytic 结构。
+
+- 第十二章定义固体阿贝尔群和 solidification。
+- 第十三章讨论固体张量积、固体环和固体模。
+- 第十四章给出解析环和解析模的定义框架。
+- 第十五章说明全局化和相干对偶的入口。
+
+第二卷可继续讨论 liquid vector spaces、完整解析几何、复几何和相干对偶的细节。
 
 ## 0.5 本章小结
 

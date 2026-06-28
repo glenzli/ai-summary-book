@@ -10,6 +10,7 @@
 - $\mathbf{Top}$：拓扑空间范畴。
 - $\mathbf{CHaus}$：紧 Hausdorff 空间范畴，态射为连续映射。
 - $\mathbf{ProFin}$：profinite 集合范畴，即紧、Hausdorff、全不连通空间范畴。
+- $\mathbf{ED}$：极不连通紧 Hausdorff 空间范畴。
 - 对范畴 $\mathcal C$，记
   $$
   \widehat{\mathcal C}=\operatorname{Fun}(\mathcal C^{\operatorname{op}},\mathbf{Set})
@@ -40,12 +41,25 @@
 
 - $\mathbf{CondSet}$：凝聚集合范畴。
 - $\mathbf{CondAb}$：凝聚阿贝尔群范畴。
+- $\mathbf{Solid}$：固体阿贝尔群范畴。
 - 对拓扑空间 $T$，其关联凝聚集合暂记为
   $$
   \underline T(S)=\operatorname{Cont}(S,T),
   \qquad S\in \mathbf{CHaus}.
   $$
 - 对集合 $A$，若赋予离散拓扑，则 $\underline A$ 表示对应离散拓扑空间的凝聚集合。
+
+## Solid 与解析符号
+
+- 对 profinite 集合 $S$，
+  $$
+  \mathbb Z^\square[S]=\varprojlim_i\mathbb Z[\underline{S_i}],
+  \qquad S=\varprojlim_iS_i,\ S_i\text{ finite}.
+  $$
+- $\mathbb Z^\square$ 表示 $\underline{\mathbb Z}$ 的固化。
+- $M^\square$ 表示凝聚阿贝尔群 $M$ 的固化。
+- $\otimes^\square$ 表示固体张量积。
+- $\otimes^{L,\square}$ 表示派生固体张量积。
 
 ## 证明用语
 

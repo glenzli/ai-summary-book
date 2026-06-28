@@ -25,6 +25,12 @@
 6.  已补内部附录  
     当前已新增附录 A-C，分别处理 universe、小性约定、站点比较定理、阿贝尔群值 sheaf 的范畴性质和局部满射判据。第五章、第七章、第八章对这些结果的依赖现在已有书内参照。
 
+7.  已补 solid 与 analytic 章节  
+    当前已新增第十二至十五章，覆盖 solid abelian groups、solid tensor product、analytic rings、全局化与相干对偶纲要。长证明均以“证明说明”标出，不把外部定理伪装为书内已证结果。
+
+8.  已补拓扑和模论附录  
+    当前已新增附录 D-F：Stone 对偶与 Gleason cover、sheaf 模和内部 Hom、Nöbeling 定理与 solid 计算。第十二章中 $\mathbb Z^\square[S]\cong\prod_I\underline{\mathbb Z}$ 的证明已修正为对所有 profinite 测试对象 $T$ 检查，而不是只比较全局截面。
+
 ## 当前依赖的外部结果
 
 以下结果当前作为引用使用，尚未在本书内证明：
@@ -42,16 +48,29 @@
     基子站点诱导的 sheaf 范畴等价。附录 B 已给出本书所需版本的证明框架；若要达到正式出版级别，还需补充更完整的共同细化和自然性细节。
 
 5.  Sheaf of modules 的一般代数  
-    包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 C 已处理阿贝尔群值 sheaf 的基本范畴性质，但模范畴、闭幺半结构和派生范畴仍需后续补齐。
+    包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 E 已给出本书所需版本；出版级细节仍需引用 ringed topos 或 Grothendieck 范畴的标准 K-flat 理论。
+
+6.  Nöbeling 定理  
+    任意 profinite $S$ 上 $C(S,\mathbb Z)$ 自由。附录 F 给出 metrizable 情形证明和一般情形说明，但一般定理仍作为外部引用。
+
+7.  Solid 范畴结构定理  
+    solid abelian groups 构成阿贝尔全子范畴、存在 solidification、乘积型对象给出紧投射生成元等。正文第十二章引用 Scholze 讲义。
+
+8.  Solid 张量积定理  
+    $\otimes^\square$ 的对称幺半性、派生版本以及乘积公式仍引用 Scholze 讲义。
+
+9.  Analytic ring 结构定理  
+    解析模范畴的阿贝尔/导出性质、解析化左伴随和对称幺半结构仍引用 Scholze 讲义。
+
+10. 全局化与相干对偶  
+    rational localization、$f_!$、$f^!$ 和投影公式只给纲要；尚未建立完整六函子形式。
 
 ## 后续应补证明的章节
 
-- 附录 D：Stone 对偶、profinite 空间与 Gleason cover 的证明路线。
-- 附录 E：sheaf of modules、闭幺半结构与内部 Hom。
-- 第 12 章：solid abelian groups 的正式定义与 solidification。
-- 第 13 章：Nöbeling 定理与 solid 阿贝尔群中的自由性现象。
-- 第 14 章：基本 Ext 计算。
+- 第二卷可继续补：liquid vector spaces、完整 analytic rings 技术条件、相干对偶中的 $f_!$ 细节、复几何应用。
+- 若要把第一卷提升到出版级，需要把附录 B、D、E、F 中标为“证明框架”的部分补成完整逐步证明。
+- 基本 Ext 计算当前只在第八章作为第一层示例出现；更系统的 Ext 表应另设一章。
 
 ## 当前数学口径
 
-当前版本可以作为第一卷基础草稿使用，但不能声称已经完整证明所有引用定理。正文中凡使用未证明定理，均应保留“证明说明”或“引用结果”标记。
+当前版本可以作为第一卷完整草稿使用，但不能声称已经完整证明所有引用定理。正文中凡使用未证明定理，均应保留“证明说明”或“引用结果”标记。
