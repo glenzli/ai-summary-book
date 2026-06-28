@@ -26,3 +26,11 @@
 - 对 Scholze 讲义中的长定理，标明“输入定理”。
 - 对第二卷自行证明的命题，必须写出所用第一卷定理。
 - 任何涉及 liquid 或复几何的陈述，若只是路线图，必须明确写为路线图。
+
+## 章节依赖映射
+
+- 第 1-2 章主要依赖 Scholze 讲义中的 solid abelian groups 与 solid tensor product。
+- 第 3-4 章主要依赖 Scholze 讲义中的 analytic rings 和 Bousfield localization 观点。
+- 第 5 章主要依赖 Scholze 的 liquid vector spaces 构造。
+- 第 6-7 章主要依赖 Scholze 讲义中的离散 Huber pair、解析环全局化和相干对偶。
+- 第 8 章主要依赖 Clausen-Scholze 复几何讲义，当前只给范畴语言和目标定理路线图。
