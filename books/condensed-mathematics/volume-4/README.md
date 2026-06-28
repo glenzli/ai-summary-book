@@ -17,10 +17,16 @@
 7. [第六章：liquid 函数分析例子](06_liquid_functional_analysis_examples.md)
 8. [第七章：pro-etale topology 与凝聚数学](07_pro_etale_and_condensed.md)
 9. [第八章：计算目录与后续问题](08_catalogue_and_open_problems.md)
+10. [附录 A：形式化蓝图](A_formalization_blueprints.md)
+11. [附录 B：练习解答与计算样板](B_worked_solutions_and_computations.md)
+12. [附录 C：solid、analytic、liquid 的类型检查](C_solid_analytic_liquid_type_checks.md)
+13. [附录 D：pro-etale 与凝聚数学的比较细节](D_pro_etale_comparison_details.md)
 
 ## 当前范围
 
 本卷是前三卷的计算和形式化补充。它不引入新的主线理论，而是把站点、sheaf、Ext/Tor、solid tensor、analytic rings、liquid spaces 和 pro-etale 背景整理成可查阅、可练习、可形式化的材料。
+
+本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查和 pro-etale 边界说明。
 
 ## 资料
 

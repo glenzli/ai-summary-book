@@ -21,3 +21,7 @@
 - 第 5-6 章依赖第二卷 analytic/liquid 内容。
 - 第 7 章依赖 Bhatt-Scholze 的 pro-etale topology。
 - 第 8 章整理计算目录和后续问题。
+- 附录 A 依赖形式化基础论文、第一卷站点比较和一般同调代数。
+- 附录 B 依赖第二、三章的证明与第四至七章的例子。
+- 附录 C 依赖第二卷 solid/analytic/liquid 资料。
+- 附录 D 依赖 Bhatt-Scholze pro-etale 论文和第一卷站点语言。
