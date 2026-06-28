@@ -34,3 +34,4 @@
 - 第 5 章主要依赖 Scholze 的 liquid vector spaces 构造。
 - 第 6-7 章主要依赖 Scholze 讲义中的离散 Huber pair、解析环全局化和相干对偶。
 - 第 8 章主要依赖 Clausen-Scholze 复几何讲义，当前只给范畴语言和目标定理路线图。
+- 附录 A-B 主要用于把输入定理的证明路线和公式类型检查显式化，不引入新的外部来源。

@@ -1,6 +1,6 @@
 # 第二卷符号约定
 
-本卷沿用第一卷 [NOTATION.md](../condensed-mathematics/NOTATION.md)。
+本卷沿用第一卷 [NOTATION.md](../volume-1/NOTATION.md)。
 
 ## 固定符号
 
@@ -25,6 +25,6 @@
 ## 约定
 
 - “输入定理”表示本卷使用但不在当前位置完整证明的正式定理。
-- “第一卷”总是指 [凝聚数学讲义](../condensed-mathematics/)。
+- “第一卷”总是指 [凝聚数学讲义：第一卷](../volume-1/)。
 - 若某个公式需要集合论大小条件，默认沿用第一卷附录 A 的 universe 约定。
 - 对 liquid 相关陈述，若没有特别说明，均只作为本卷入口，不替代 Scholze 讲义中的完整技术构造。
