@@ -40,7 +40,29 @@ $$
 
 **定理 E.3.** $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴。特别地，它有所有小极限和小余极限、filtered colimits 正合，并有生成元。
 
-**证明框架.** 先在预层 $R$-模范畴中逐对象构造 kernel、cokernel、极限和余极限。sheaf 化函子是左正合左伴随，且与有限极限相容。kernel 可逐对象计算；cokernel 是预层 cokernel 的 sheaf 化。Grothendieck 性由 sheaf 范畴的 Grothendieck 性和模对象的代数性推出。
+**证明.** 先在预层 $R$-模范畴中逐对象构造 kernel、cokernel、极限和余极限。预层模范畴是函子范畴，因此是 Grothendieck 阿贝尔范畴。
+
+令 $a$ 表示 sheafification。对 sheaf 模态射 $f:M\to N$，kernel 已经是 sheaf，且逐对象计算：
+
+$$
+(\ker f)(U)=\ker(M(U)\to N(U)).
+$$
+
+cokernel 则是预层 cokernel 的 sheafification：
+
+$$
+\operatorname{coker}_{\operatorname{Sh}}(f)=a(\operatorname{coker}_{\operatorname{PSh}}(f)).
+$$
+
+sheafification 是左伴随，所以保持余极限；同时在阿贝尔群值 sheaf 情形中它是正合函子。于是 cokernel、image、coimage 的通常比较同构从预层模范畴传到 sheaf 模范畴，得到阿贝尔性。
+
+filtered colimits 在预层中逐对象计算且正合；sheafification 保持 colimit 并正合，因此 sheaf 模范畴中 filtered colimits 正合。生成元可取站点对象 $U$ 对应的自由模
+
+$$
+R[h_U]
+$$
+
+的集合族：若 $M\ne0$，则存在 $U$ 和 $s\in M(U)$ 非零，$s$ 对应一个非零态射 $R[h_U]\to M$。故 $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴。证毕。
 
 **命题 E.4.** 一个 $R$-模态射
 
@@ -50,7 +72,7 @@ $$
 
 是单射、满射或同构，当且仅当在站点的覆盖意义下局部满足相应性质。若站点有足够多的投射测试对象，例如极不连通对象，则可在这些对象上检测。
 
-**证明说明.** 这是 sheaf 范畴中“局部性”的直接应用：单射由 kernel 为零检测，满射由 cokernel 为零检测，而 sheaf 为零可在覆盖基上检测。
+**证明.** 单射由 kernel 为零检测，满射由 cokernel 为零检测。同构等价于 kernel 与 cokernel 同时为零。若 sheaf $K$ 为零，则任意对象上截面为零；反过来，若每个截面在某个覆盖上局部为零，则由 sheaf 的 separated 性可知该截面为零。因此零对象、kernel 和 cokernel 都可局部检测。若站点有覆盖基，只需在覆盖基对象上检测。证毕。
 
 ## E.3 张量积
 
@@ -125,6 +147,28 @@ $$
 
 因此 $R\text{-}\mathbf{Mod}(\mathcal E)$ 是闭对称幺半范畴。
 
+**证明.** 由定义，
+
+$$
+\mathcal Hom_R(M,N)(U)
+=
+\operatorname{Hom}_{R|_U}(M|_U,N|_U).
+$$
+
+给定 $\alpha:P\otimes_R M\to N$，对每个 $U$ 和 $s\in P(U)$，得到 $R|_U$-线性映射
+
+$$
+M|_U\to N|_U,\qquad m\mapsto \alpha(s\otimes m).
+$$
+
+这定义了 $P\to\mathcal Hom_R(M,N)$。反向地，给定 $\beta:P\to\mathcal Hom_R(M,N)$，用 evaluation
+
+$$
+\mathcal Hom_R(M,N)\otimes_R M\to N
+$$
+
+复合 $\beta\otimes\operatorname{id}_M$ 得到 $P\otimes_RM\to N$。两种构造互逆，且与限制映射相容。证毕。
+
 ## E.5 平坦对象与左导出张量
 
 **定义 E.9.** $R$-模 $F$ 称为平坦，如果
@@ -137,13 +181,13 @@ $$
 
 **命题 E.10.** 若 $F$ 是形如 $R[\underline S]$ 的自由 $R$-模，且 $\underline S$ 是投射测试对象生成的自由凝聚集合，则 $F$ 是平坦的。
 
-**证明说明.** 自由模上的张量积满足
+**证明.** 自由模上的张量积满足
 
 $$
 R[\underline S]\otimes_R M\simeq M[\underline S],
 $$
 
-即按 $\underline S$ 取自由扩张。若 $\underline S$ 来自投射测试对象，则取值函子正合，故该函子保持有限极限和 cokernel。一般情形需要用自由对象的滤过 colimit 展开。
+即按 $\underline S$ 取自由扩张。若 $\underline S$ 来自投射测试对象，则 $M[\underline S]$ 可由在该测试对象上取截面描述；取值函子正合，故该函子保持 kernel 和 cokernel。于是 $R[\underline S]\otimes_R-$ 正合，$R[\underline S]$ 平坦。证毕。
 
 **定理 E.11.** 导出范畴
 
@@ -165,7 +209,7 @@ $$
 
 当 $M,N$ 置于次数 $0$ 且没有高 Tor 贡献时。
 
-**证明框架.** $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴；在 sheaf of modules 的标准理论中，每个复形有 K-flat 替换。取 K-flat 替换后逐项张量，得到良定义的双函子。
+**证明说明.** $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴；在 sheaf of modules 的标准理论中，每个复形有 K-flat 替换。取 K-flat 替换后逐项张量，得到良定义的双函子。若选择两个 K-flat 替换，它们之间由同伦范畴中的 quasi-isomorphism 比较，而与 K-flat 复形张量保持 quasi-isomorphism，因此结果与选择无关。
 
 ## E.6 Tor 群
 

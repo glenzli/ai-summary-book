@@ -226,7 +226,7 @@ $$
    \mathbb Z[\underline S]^\square\simeq \mathbb Z^\square[S].
    $$
 
-**证明说明.** 这是 Scholze 讲义第五、六讲的核心定理。证明使用 Nöbeling 定理、固体复形判别、以及对 $\mathbb Z^\square[S]$ 的派生 Hom 分析。本书不在第一版中完整复现该证明。
+**证明说明.** 这是 Scholze 讲义第五、六讲的核心定理。证明使用 Nöbeling 定理、固体复形判别、以及对 $\mathbb Z^\square[S]$ 的派生 Hom 分析。第一卷把该定理作为 solid 理论的输入定理；第二卷继续展开其派生版本和张量相容性。
 
 ## 12.7 固化函子
 

@@ -31,9 +31,12 @@
 8.  已补拓扑和模论附录  
     当前已新增附录 D-F：Stone 对偶与 Gleason cover、sheaf 模和内部 Hom、Nöbeling 定理与 solid 计算。第十二章中 $\mathbb Z^\square[S]\cong\prod_I\underline{\mathbb Z}$ 的证明已修正为对所有 profinite 测试对象 $T$ 检查，而不是只比较全局截面。
 
-## 当前依赖的外部结果
+9.  已补第一卷 Ext/Tor 计算  
+    当前已新增附录 G，系统整理投射对象上的 Ext 消失、极不连通自由对象的 Ext 消失、Cech 型投射分解、平坦对象的 Tor 消失、长正合列和维数平移。
 
-以下结果当前作为引用使用，尚未在本书内证明：
+## 第一卷外部输入定理
+
+以下结果作为第一卷外部输入定理使用。第一卷不再把它们列为正文缺口；第二卷会继续依赖其中的 solid/analytic 结构定理。
 
 1.  Gleason 定理  
     极不连通紧 Hausdorff 空间等价于 compact Hausdorff 范畴中关于满射的投射对象。
@@ -45,7 +48,7 @@
     任意紧 Hausdorff 空间可由 profinite 空间满射覆盖。
 
 4.  站点比较定理  
-    基子站点诱导的 sheaf 范畴等价。附录 B 已给出本书所需版本的证明框架；若要达到正式出版级别，还需补充更完整的共同细化和自然性细节。
+    基子站点诱导的 sheaf 范畴等价。附录 B 已给出本书所需版本的证明细节。
 
 5.  Sheaf of modules 的一般代数  
     包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 E 已给出本书所需版本；出版级细节仍需引用 ringed topos 或 Grothendieck 范畴的标准 K-flat 理论。
@@ -63,14 +66,16 @@
     解析模范畴的阿贝尔/导出性质、解析化左伴随和对称幺半结构仍引用 Scholze 讲义。
 
 10. 全局化与相干对偶  
-    rational localization、$f_!$、$f^!$ 和投影公式只给纲要；尚未建立完整六函子形式。
+    rational localization、$f_!$、$f^!$ 和投影公式在第一卷只给入口；完整六函子形式放入第二卷和后续几何部分。
 
-## 后续应补证明的章节
+## 第二卷承接内容
 
-- 第二卷可继续补：liquid vector spaces、完整 analytic rings 技术条件、相干对偶中的 $f_!$ 细节、复几何应用。
-- 若要把第一卷提升到出版级，需要把附录 B、D、E、F 中标为“证明框架”的部分补成完整逐步证明。
-- 基本 Ext 计算当前只在第八章作为第一层示例出现；更系统的 Ext 表应另设一章。
+- solid abelian groups 的完整结构理论与派生版本。
+- solid tensor product、solid rings 和 solid modules 的系统计算。
+- analytic rings 的完整技术条件、解析化和 Bousfield localization。
+- liquid vector spaces 与实分析方向。
+- 相干对偶中的 $f_!$、$f^!$、投影公式和复几何应用。
 
 ## 当前数学口径
 
-当前版本可以作为第一卷完整草稿使用，但不能声称已经完整证明所有引用定理。正文中凡使用未证明定理，均应保留“证明说明”或“引用结果”标记。
+当前版本作为第一卷使用：基础构造在书内证明，深层外部输入定理明确标注来源和使用位置。正文中凡使用外部输入定理，均应保留“证明说明”或“输入定理”标记。

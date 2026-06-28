@@ -42,6 +42,7 @@
 20. [附录 D：Stone 对偶与 Gleason cover](D_stone_gleason.md)
 21. [附录 E：sheaf 模、内部 Hom 与派生张量](E_sheaf_modules_and_internal_hom.md)
 22. [附录 F：Nöbeling 定理与 solid 计算](F_nobeling_and_solid_calculations.md)
+23. [附录 G：基本 Ext 与 Tor 计算](G_basic_ext_and_tor_calculations.md)
 
 ## 第一卷计划
 
@@ -67,7 +68,8 @@
 - 附录 D：Stone 对偶与 Gleason cover。
 - 附录 E：sheaf 模、内部 Hom 与派生张量。
 - 附录 F：Nöbeling 定理与 solid 计算。
+- 附录 G：基本 Ext 与 Tor 计算。
 
 ## 当前范围
 
-当前版本完成第一卷完整草稿：基础部分给出较完整证明，solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。尚未在书内完整证明的长定理都在 [MATH_REVIEW.md](MATH_REVIEW.md) 中列出。
+当前版本完成第一卷：基础部分给出书内证明，solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。Gleason、Nöbeling 和 Scholze 的 solid/analytic 结构定理作为外部输入定理使用；第二卷继续展开这些高阶结构。

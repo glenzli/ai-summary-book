@@ -2,7 +2,7 @@
 
 ## D.0 目标
 
-正文中多次使用 profinite 空间、极不连通紧 Hausdorff 空间和 Gleason cover。本附录给出这些事实的标准路线。完整拓扑证明可参见 Gleason 的论文和 Johnstone 的 *Stone Spaces*；本附录只证明本书后续使用的形式。
+正文中多次使用 profinite 空间、极不连通紧 Hausdorff 空间和 Gleason cover。本附录给出这些事实在本书所需范围内的证明路线。Gleason 投射性定理本身作为经典拓扑输入使用；本附录把它与 Stone 对偶、regular open 代数和正文中的 sheaf 计算连接起来。
 
 ## D.1 Boolean 代数
 
@@ -68,7 +68,7 @@ $$
 
 给出 profinite 空间范畴与 Boolean 代数范畴反向等价。
 
-**证明框架.** 对 Boolean 代数 $B$，映射
+**证明.** 对 Boolean 代数 $B$，映射
 
 $$
 B\to \operatorname{Clop}(\operatorname{Stone}(B)),\qquad b\mapsto U_b
@@ -171,7 +171,7 @@ $$
 E_X=\operatorname{Stone}(\operatorname{RO}(X)).
 $$
 
-**证明框架.** 由命题 D.8，$E_X$ 极不连通。若 $\mathfrak u$ 是 $\operatorname{RO}(X)$ 上的超滤子，则闭集族
+**证明.** 由命题 D.8，$E_X$ 极不连通。若 $\mathfrak u$ 是 $\operatorname{RO}(X)$ 上的超滤子，则闭集族
 
 $$
 \{\overline U\mid U\in\mathfrak u\}
@@ -189,6 +189,20 @@ $$
 
 本书正文只需要满射存在性与 $E_X$ 的极不连通性。
 
+这里补充满射性的验证。给定 $x\in X$，令
+
+$$
+\mathcal F_x=\{U\in\operatorname{RO}(X)\mid x\in U\}
+$$
+
+并把它扩张为 $\operatorname{RO}(X)$ 上的超滤子 $\mathfrak u_x$。则对任意 $U\in\mathfrak u_x$，闭包 $\overline U$ 含有 $x$；因此
+
+$$
+x\in\bigcap_{U\in\mathfrak u_x}\overline U.
+$$
+
+按照上面构造的 $p$，得到 $p(\mathfrak u_x)=x$。所以 $p$ 是满射。
+
 ## D.6 极不连通对象的投射性
 
 **定理 D.10（Gleason）.** 在 $\mathbf{CHaus}$ 中，紧 Hausdorff 空间 $E$ 关于满射投射，当且仅当 $E$ 极不连通。
@@ -199,7 +213,13 @@ $$
 q\circ\tilde f=f.
 $$
 
-**证明框架.** 若 $E$ 极不连通，可把 $Y\to X$ 的闭图关系拉回到 $E$，再用极不连通性在闭包和开集之间选择连续截面。反向地，若 $E$ 对满射投射，把 Gleason cover $p:E_E\to E$ 提升出截面 $E\to E_E$；极不连通性作为 retract 性质从 $E_E$ 传给 $E$。
+**证明说明.** 若 $E$ 极不连通，可把 $Y\to X$ 的闭图关系拉回到 $E$，再用极不连通性在闭包和开集之间选择连续截面。这是 Gleason 原定理的核心内容，本书把它作为经典拓扑输入。反向地，若 $E$ 对满射投射，把 Gleason cover $p:E_E\to E$ 提升出截面 $E\to E_E$；极不连通性作为 retract 性质从 $E_E$ 传给 $E$。
+
+本书后续只使用这个定理的提升性质，不使用其证明内部的选择构造。因此第一卷的逻辑依赖是：
+
+$$
+\text{Gleason 定理}\Rightarrow \mathbf{ED}\text{ 对满射投射}\Rightarrow (-)(E)\text{ 正合}.
+$$
 
 ## D.7 与正文的关系
 
