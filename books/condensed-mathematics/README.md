@@ -73,3 +73,5 @@
 ## 当前范围
 
 当前版本完成第一卷：基础部分给出书内证明，solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。Gleason、Nöbeling 和 Scholze 的 solid/analytic 结构定理作为外部输入定理使用；第二卷继续展开这些高阶结构。
+
+续卷见 [凝聚数学讲义：第二卷](../condensed-mathematics-volume-2/)。
