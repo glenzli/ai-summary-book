@@ -1,0 +1,279 @@
+# 第十五章：Simplicial operad 与 topological operad
+
+本章研究取值于空间型模型范畴的 operad。核心对象有两类：
+
+1. simplicial operads，即 $\mathbf{sSet}$-值 operad；
+2. topological operads，即 $\mathbf{Top}$-值 operad。
+
+二者通过几何实现与奇异复形比较。这个比较是把经典拓扑 operad，例如 little cubes operad，转化为 combinatorial homotopy theory 对象的基本工具。
+
+## 15.1 空间型底范畴
+
+**约定 15.1.** 本章中
+$$
+\mathbf{sSet}=\operatorname{Fun}(\Delta^{\operatorname{op}},\mathbf{Set}_{\mathcal U})
+$$
+表示 simplicial sets 范畴，采用 Kan-Quillen 模型结构：weak equivalences 为弱同伦等价，cofibrations 为 monomorphisms，fibrant objects 为 Kan complexes。
+
+**约定 15.2.** $\mathbf{Top}$ 表示 compactly generated weak Hausdorff spaces 范畴，采用标准 Quillen 模型结构：weak equivalences 为弱同伦等价，fibrations 为 Serre fibrations。
+
+**外部输入定理 15.3（Quillen equivalence）.** 几何实现与奇异复形给出 Quillen equivalence
+$$
+|-|:\mathbf{sSet}\rightleftarrows\mathbf{Top}:\operatorname{Sing}.
+$$
+
+更具体地，若 $K$ 是 simplicial set，$X$ 是 topological space，则有自然同构
+$$
+\mathbf{Top}(|K|,X)\cong\mathbf{sSet}(K,\operatorname{Sing}X).
+$$
+
+**命题 15.4.** $\mathbf{sSet}$ 是 cartesian closed 对称幺半模型范畴，幺半积为笛卡儿积。
+
+**证明.** $\mathbf{sSet}$ 中有限积逐 simplicial degree 计算。对 simplicial sets $K,L$，内部 Hom 由
+$$
+\underline{\operatorname{Hom}}(K,L)_n=\mathbf{sSet}(K\times\Delta^n,L)
+$$
+定义，给出 cartesian closed 结构。Kan-Quillen 模型结构中 cofibrations 是 monomorphisms。若 $i:A\to B$ 和 $j:C\to D$ 为 monomorphisms，则 pushout-product
+$$
+(B\times C)\coprod_{A\times C}(A\times D)\to B\times D
+$$
+逐 degree 是集合的包含映射，因此是 monomorphism。若 $i$ 或 $j$ 为 trivial cofibration，则 pushout-product 是 anodyne extension；这是 Kan-Quillen 模型结构的 pushout-product axiom。单位对象 $\Delta^0$ cofibrant，unit axiom 成立。$\square$
+
+**命题 15.5.** $\mathbf{Top}$ 在 compactly generated weak Hausdorff 口径下是 cartesian closed 对称幺半模型范畴。
+
+**证明.** Compactly generated weak Hausdorff spaces 的乘积和 mapping space 给出 cartesian closed 结构。标准 Quillen 模型结构满足 pushout-product axiom 与 unit axiom；这些属于空间模型范畴的基础定理。$\square$
+
+命题 15.5 的模型结构部分依赖经典拓扑模型范畴理论；此处只记录可用结论。
+
+## 15.2 Simplicial operads
+
+**定义 15.6.** Simplicial symmetric sequence 是函子
+$$
+X:\mathbf B_{\mathcal U}\to\mathbf{sSet}.
+$$
+等价地，它是带右 $\Sigma_n$ 作用的 simplicial sets $X(n)$ 的族。
+
+**定义 15.7.** Simplicial operad 是 $\operatorname{SymSeq}(\mathbf{sSet})$ 中关于代入乘积 $\circ$ 的幺半对象。
+
+展开地说，它包含：
+
+1. 每个有限集 $S$ 上的 simplicial set $\mathcal O(S)$；
+2. 对每个有限集分块 $\pi$ 的复合映射
+   $$
+   \mathcal O(\operatorname{Bl}(\pi))\times\prod_{B\in\operatorname{Bl}(\pi)}\mathcal O(B)\to \mathcal O(S);
+   $$
+3. 单位点 $\Delta^0\to\mathcal O(\{*\})$；
+4. 与分块细化、双射重标号相容的结合律、单位律和等变性。
+
+这里的乘积是 simplicial sets 的笛卡儿积。
+
+**定义 15.8.** Simplicial operad morphism $f:\mathcal O\to\mathcal P$ 是 operad morphism in $\mathbf{sSet}$。称 $f$ 为 entrywise weak equivalence，若每个 $n$ 上
+$$
+f(n):\mathcal O(n)\to\mathcal P(n)
+$$
+是 Kan-Quillen weak equivalence。
+
+**外部输入定理 15.9.** $\operatorname{Op}(\mathbf{sSet})$ 存在 transferred 模型结构，其中 weak equivalences 和 fibrations 逐 arity 检测。
+
+**说明 15.10.** 因为 $\mathbf{sSet}$ 中所有对象 cofibrant，许多 cofibrancy 假设比链复形情形更温和。但 operad 代数的 rectification 仍需检查 fixed point、coinvariant 或等变条件；它不是单由“所有对象 cofibrant”推出。
+
+## 15.3 Topological operads
+
+**定义 15.11.** Topological symmetric sequence 是函子
+$$
+X:\mathbf B_{\mathcal U}\to\mathbf{Top}.
+$$
+
+**定义 15.12.** Topological operad 是 $\operatorname{SymSeq}(\mathbf{Top})$ 中关于 cartesian product 诱导的代入乘积的幺半对象。
+
+换言之，对每个有限分块 $\pi$ 有连续映射
+$$
+\mathcal O(\operatorname{Bl}(\pi))\times\prod_{B\in\operatorname{Bl}(\pi)}\mathcal O(B)\to\mathcal O(S),
+$$
+且这些映射满足 operad 公理。
+
+**定义 15.13.** Topological operad $\mathcal O$ 称为 well-pointed，若单位包含
+$$
+*\to\mathcal O(1)
+$$
+是 $\mathbf{Top}$ 中的 cofibration。称 $\mathcal O$ 为 $\Sigma$-free，若每个 $\Sigma_n$ 在 $\mathcal O(n)$ 上自由作用。
+
+**说明 15.14.** Well-pointed 条件常用于 $W$-construction 和代数同伦理论。$\Sigma$-free 条件常用于避免对称群稳定子带来的等变同伦问题。
+
+**外部输入定理 15.15.** $\operatorname{Op}(\mathbf{Top})$ 在适当 compactly generated 口径下存在 transferred 模型结构，weak equivalences 和 fibrations 逐 arity 检测。
+
+**命题 15.16.** 若 $\mathcal O$ 是 topological operad，则
+$$
+\operatorname{Sing}\mathcal O
+$$
+逐 arity 定义为 $(\operatorname{Sing}\mathcal O)(S)=\operatorname{Sing}(\mathcal O(S))$，并自然成为 simplicial operad。
+
+**证明.** 奇异复形函子 $\operatorname{Sing}:\mathbf{Top}\to\mathbf{sSet}$ 保有限积：
+$$
+\operatorname{Sing}(X\times Y)_n=\mathbf{Top}(|\Delta^n|,X\times Y)
+\cong \mathbf{Top}(|\Delta^n|,X)\times\mathbf{Top}(|\Delta^n|,Y).
+$$
+因此 topological operad 的复合映射
+$$
+\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B)\to\mathcal O(S)
+$$
+经 $\operatorname{Sing}$ 后给出
+$$
+\operatorname{Sing}\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\operatorname{Sing}\mathcal O(B)\to\operatorname{Sing}\mathcal O(S).
+$$
+单位、结合律和等变性由 $\operatorname{Sing}$ 的函子性和保积性质保持。故 $\operatorname{Sing}\mathcal O$ 是 simplicial operad。$\square$
+
+**命题 15.17.** 若 $\mathcal P$ 是 simplicial operad，则逐 arity 几何实现
+$$
+|\mathcal P|(S)=|\mathcal P(S)|
+$$
+自然成为 topological operad。
+
+**证明.** 几何实现与 $\operatorname{Sing}$ 伴随，并且在 compactly generated spaces 中与有限积相容。对每个分块 $\pi$，simplicial operad 的复合
+$$
+\mathcal P(\operatorname{Bl}(\pi))\times\prod_B\mathcal P(B)\to\mathcal P(S)
+$$
+几何实现后给出连续映射
+$$
+|\mathcal P(\operatorname{Bl}(\pi))\times\prod_B\mathcal P(B)|\to|\mathcal P(S)|.
+$$
+利用有限积相容性，把左端识别为
+$$
+|\mathcal P(\operatorname{Bl}(\pi))|\times\prod_B|\mathcal P(B)|.
+$$
+由几何实现的函子性，单位、结合律和等变性保持。$\square$
+
+**外部输入定理 15.18.** 逐 arity 几何实现与奇异复形提升为 Quillen equivalence
+$$
+|-|:\operatorname{Op}(\mathbf{sSet})\rightleftarrows \operatorname{Op}(\mathbf{Top}):\operatorname{Sing}
+$$
+在相应 transferred 模型结构之间成立。
+
+## 15.4 Little cubes operad
+
+**定义 15.19.** 对整数 $d\ge1$，little $d$-cubes operad $\mathcal C_d$ 定义如下。当 $n=0$ 时，$\mathcal C_d(0)$ 是一点空间，对应空 cube 族。当 $n\ge1$ 时，$\mathcal C_d(n)$ 是所有 $n$ 个两两内部不交的仿射嵌入
+$$
+c_i:[0,1]^d\hookrightarrow[0,1]^d,\qquad 1\le i\le n,
+$$
+组成的空间，其中每个 $c_i$ 形如
+$$
+c_i(t_1,\ldots,t_d)=(a_{i1}t_1+b_{i1},\ldots,a_{id}t_d+b_{id}),
+$$
+且 $0<a_{ij}\le1$，$0\le b_{ij}\le1-a_{ij}$。
+
+对称群 $\Sigma_n$ 通过重排 cubes 作用。单位为恒等嵌入 $[0,1]^d\to[0,1]^d$。
+
+**定义 15.20.** 若
+$$
+c=(c_1,\ldots,c_n)\in\mathcal C_d(n),\qquad
+d_i=(d_{i1},\ldots,d_{ik_i})\in\mathcal C_d(k_i),
+$$
+则 operad 复合定义为
+$$
+c\circ(d_1,\ldots,d_n)
+=\big(c_i\circ d_{ij}\big)_{1\le i\le n,\,1\le j\le k_i}
+\in\mathcal C_d(k_1+\cdots+k_n),
+$$
+其中输出按 blocks 顺序排列。
+
+**命题 15.21.** $\mathcal C_d$ 是 topological operad。
+
+**证明.** 首先，仿射嵌入的参数 $(a_{ij},b_{ij})$ 给出 $\mathcal C_d(n)$ 作为欧氏空间中由不等式切出的子空间，因此 composition maps 的连续性可逐坐标检查。若 $c_i(t)=A_it+b_i$ 且 $d_{ij}(t)=A_{ij}t+b_{ij}$，则
+$$
+(c_i\circ d_{ij})(t)=A_iA_{ij}t+(A_ib_{ij}+b_i),
+$$
+其参数是原参数的多项式表达，因此连续。
+
+结合律来自函数复合的结合律：
+$$
+(c_i\circ d_{ij})\circ e_{ijr}=c_i\circ(d_{ij}\circ e_{ijr}).
+$$
+单位律来自恒等嵌入作为函数复合单位。对称群等变性来自重排 indexed cubes 与上述复合公式相容。故 $\mathcal C_d$ 是 topological operad。$\square$
+
+**外部输入定理 15.22（May recognition principle）.** 合适连通性和基点条件下，$\mathcal C_d$-spaces 刻画 $d$-fold loop spaces up to group completion。
+
+该定理已在第十章作为外部输入出现；此处强调其 operad 是 topological operad，而非 simplicial 或 dg-operad。若要进入 $\mathbf{sSet}$ 或 $\mathbf{Ch}_k$，需分别取 $\operatorname{Sing}$ 或 chains。
+
+## 15.5 从拓扑到链：chains on spaces
+
+设 $k$ 是交换环。奇异链函子
+$$
+C_\*(-;k):\mathbf{Top}\to\mathbf{Ch}_k
+$$
+不是严格保笛卡儿积的强对称幺半函子；它通过 Eilenberg-Zilber 映射给出 lax symmetric monoidal 结构。
+
+**外部输入定理 15.23（Eilenberg-Zilber）.** 存在自然 chain maps
+$$
+C_\*(X;k)\otimes C_\*(Y;k)\to C_\*(X\times Y;k)
+$$
+和
+$$
+C_\*(X\times Y;k)\to C_\*(X;k)\otimes C_\*(Y;k),
+$$
+它们在同伦意义下互为逆，并与对称性和结合性满足相干关系。
+
+**命题 15.24.** 若 $\mathcal O$ 是 topological operad，则 $C_\*(\mathcal O;k)$ 自然给出 dg-operad，前提是选择了相干的 Eilenberg-Zilber lax monoidal 结构。
+
+**证明.** 对每个分块 $\pi$，topological operad 复合给出
+$$
+\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B)\to\mathcal O(S).
+$$
+先用 Eilenberg-Zilber lax monoidal map 得到
+$$
+C_\*(\mathcal O(\operatorname{Bl}(\pi));k)\otimes\bigotimes_B C_\*(\mathcal O(B);k)
+\to
+C_\*\left(\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B);k\right),
+$$
+再对复合映射取 chains，得到 dg-operad 的复合。单位由点的奇异 $0$-simplex 给出。结合律和等变性依赖 Eilenberg-Zilber 结构的相干性；这正是定理 15.23 中相干关系的用途。$\square$
+
+**说明 15.25.** 这一步解释了为什么 $C_\*(\mathcal C_d;k)$ 是 $E_d$ dg-operad 的标准来源。但若讨论形式性，例如
+$$
+C_\*(\mathcal C_d;k)\simeq H_\*(\mathcal C_d;k),
+$$
+还需要额外的域、特征和模型结构假设；这些不由本章自动推出。
+
+## 15.6 Simplicial categories as unary colored operads
+
+**定义 15.26.** Simplicial category 是 enriched category over $\mathbf{sSet}$。它由对象集 $C$、mapping simplicial sets
+$$
+\mathcal A(x,y)
+$$
+和复合映射
+$$
+\mathcal A(y,z)\times\mathcal A(x,y)\to\mathcal A(x,z)
+$$
+组成。
+
+**命题 15.27.** 对象集为 $C$ 的 simplicial categories 等价于只有 unary operations 的 $C$-colored simplicial operads。
+
+**证明.** 给定 simplicial category $\mathcal A$，定义 colored operad $\mathcal O_\mathcal A$：
+$$
+\mathcal O_\mathcal A(c_1,\ldots,c_n;c)=
+\begin{cases}
+\mathcal A(c_1,c),& n=1,\\
+\varnothing,& n\ne1.
+\end{cases}
+$$
+Unary operad 复合正是 enriched category 的复合，单位正是 identity morphisms。反向地，给定只有 unary operations 的 colored simplicial operad，令
+$$
+\mathcal A(x,y)=\mathcal O(x;y).
+$$
+Operad 的单位和 unary composition 给出 enriched category 的单位和复合。两个构造在对象、mapping simplicial sets 和结构映射上互逆。$\square$
+
+**说明 15.28.** 因此 simplicial categories 是 colored simplicial operads 的一维特例。后续 dendroidal sets 把 simplicial sets 视为“线性树”上的 presheaves，并把 operads 视为“所有树”上的 presheaves；这就是从 category nerve 到 dendroidal nerve 的动机。
+
+## 15.7 本章小结
+
+Simplicial operads 和 topological operads 是 operad 同伦理论的空间型模型。$\operatorname{Sing}$ 和 $|-|$ 允许在两者之间移动，并在 transferred 模型结构下给出 Quillen equivalence。Little cubes operad 是拓扑 operad 的核心例子；取 singular complex 得到 simplicial operad，取 chains 得到 dg-operad。Simplicial categories 作为 unary colored simplicial operads，提供了通往 dendroidal sets 和 infinity-operads 的一维入口。
+
+## 练习
+
+**练习 15.1.** 证明 $\operatorname{Sing}$ 保有限积。
+
+**练习 15.2.** 给出 $\mathcal C_1(2)$ 的显式参数空间，并描述 $\Sigma_2$ 作用。
+
+**练习 15.3.** 验证 little cubes operad 的单位律。
+
+**练习 15.4.** 设 $\mathcal O$ 是 discrete simplicial operad，即每个 $\mathcal O(n)$ 为常值 simplicial set。证明 $\mathcal O$ 等价于集合值 operad。
+
+**练习 15.5.** 把一个普通小范畴写成只有 unary operations 的 colored operad，并说明其 simplicial nerve 与后续 dendroidal nerve 的关系。
