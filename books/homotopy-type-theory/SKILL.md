@@ -1,6 +1,6 @@
 ---
 name: homotopy-type-theory-textbook
-description: Use when writing, revising, or checking the Chinese rigorous textbook on Homotopy Type Theory and Univalent Foundations in this repository. Requires primary-source grounding, explicit type-theoretic rules, theorem-proof structure, source traceability, formalization-status tags, universe bookkeeping, and strict separation between book-proved results, external metatheorems, and machine-verified library results.
+description: Use when writing, revising, or checking the Chinese rigorous textbook on Homotopy Type Theory and Univalent Foundations in this repository. Requires primary-source grounding, explicit type-theoretic rules, theorem-proof structure, source traceability, universe bookkeeping, and strict separation between book-proved results, external metatheorems, and research boundaries.
 ---
 
 # HoTT 教材写作技能
@@ -20,20 +20,19 @@ description: Use when writing, revising, or checking the Chinese rigorous textbo
 
 ## 资料源规则
 
-- 优先使用一手或正式数学资料：HoTT Book、Rijke 教材、Voevodsky/UniMath 资料、Coq-HoTT、UniMath、Cubical Agda、Agda 官方文档、arXiv 论文和正式出版论文。
-- 涉及近期版本、仓库状态、库能力或预印本状态时必须联网核查，并在 `SOURCES.md` 中写明核查日期。
+- 优先使用一手或正式数学资料：HoTT Book、Rijke 教材、Voevodsky 资料、arXiv 论文、正式出版论文和经典教材。
+- 涉及近期预印本、模型论结果或对象语言状态时必须核查来源，并在 `SOURCES.md` 中写明核查日期。
 - 不以 Wikipedia、博客或二手科普作为核心定义来源；可用于发现线索，但不得作为主依据。
-- 正文若使用机器形式化结果，必须写明形式化系统和库，例如 Coq-HoTT、UniMath、Cubical Agda 或 1Lab。
 - 正文若使用模型论一致性、计算解释或 cubical metatheory，必须标注为外部输入定理，除非本书已给出完整元理论证明。
+- 正文若使用 directed/simplicial type theory、cohesive/modal HoTT 或其他对象语言扩展，必须明确其新增判断和规则，不得把扩展语言中的 directed hom 或模态规则混入基础 HoTT 的 identity type 证明。
 
 ## 证明与验证标签
 
 每个非平凡命题、定理或构造至少带有以下一种状态：
 
 - **书内证明。** 本书已从前文定义和引理推出。
-- **证明说明。** 本书给出严格证明路线，但省略长篇标准细节；必须说明省略内容属于哪一类标准理论。
+- **证明说明。** 本书给出严格证明路线，但压缩了长篇标准细节；必须说明未逐行展开内容属于哪一类标准理论。
 - **外部输入。** 本书不证明，只引用一手来源；必须说明后续依赖风险。
-- **机器形式化。** 至少一个公开形式化库中存在相应结果或同等结构；必须说明库名和口径差异。
 - **研究边界。** 近期研究、预印本或仍在发展的方向；不得作为基础定理无条件使用。
 
 ## 写作格式
@@ -63,5 +62,15 @@ description: Use when writing, revising, or checking the Chinese rigorous textbo
 - 基础卷采用强度适中的 intensional Martin-Lof type theory：依赖函数、依赖对、恒等类型、自然数、空类型、单位类型、和类型与宇宙。
 - 默认不把函数外延性、单值性、高阶归纳类型、截断和商类型作为原始规则；它们在专章引入，并标注公理化、cubical 计算解释或模型论来源。
 - 默认采用层级宇宙 $\mathcal U_0,\mathcal U_1,\ldots$；不默认 resizing。
-- 第一阶段目标是给出 HoTT 的内部语言、路径代数、等价、单值性和基础同伦层级。
-- 第二阶段才进入高阶归纳类型、合成同伦论、范畴论、集合论替代基础、形式化库和近期研究专题。
+- 本书按文本出版口径收口，不以书稿外材料作为封稿条件。
+
+## 收口模式规则
+
+本书已进入收口模式。后续修改默认不再新增横向方向，而应服务于以下目标：
+
+- 关闭 `K_remaining_obligations.md` 中已有证明义务。
+- 把“证明说明”降为“书内证明”，或明确“外部输入”“研究边界”。
+- 按 `DEPENDENCY_LAYERS.md` 检查低层证明是否误用高层规则。
+- 按 `CLOSURE_SCOPE.md` 的封稿门槛检查链接、符号、来源、证明状态和公理使用。
+- 新增任何章节、附录或研究方向前，必须说明它关闭了哪条已登记义务；否则不得新增。
+- 高级接口保留为接口即可，不要求为出版候选继续横向扩张。

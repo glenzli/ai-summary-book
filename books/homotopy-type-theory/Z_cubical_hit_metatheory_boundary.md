@@ -8,9 +8,9 @@
 
 **定义 Z.2（元语言）.** 元语言是讨论对象语言语法、模型、规范化、canonicity 和一致性的数学语言。元语言中的定理通常不是对象语言中的项。
 
-**定义 Z.3（实现语言）.** 实现语言指 Coq-HoTT、UniMath 或 Cubical Agda 等 proof assistant 的具体内核、库定义和编译规则。实现语言中的证明脚本需服从对应系统的 universe、termination、positivity 和 cubical primitives。
+**定义 Z.3（对象语言扩展）.** 对象语言扩展指在基础 HoTT 之外加入 cubical、directed、simplicial、cohesive 或 two-level 规则的系统。扩展规则必须说明其形成、构造、消去、计算和模型假设。
 
-**原则 Z.4（不可混用原则）.** 若一个结论是元语言定理，例如 canonicity，则不能在对象语言中直接把它当作构造子或消去规则使用。若一个结论是 Cubical Agda 中的实现事实，也不能不经翻译地当作 Coq-HoTT 或 UniMath 中的定理。
+**原则 Z.4（不可混用原则）.** 若一个结论是元语言定理，例如 canonicity，则不能在对象语言中直接把它当作构造子或消去规则使用。若一个结论依赖某个对象语言扩展，也不能不经翻译地当作公理化 HoTT 中的定理。
 
 ## Z.2 公理化 HoTT 口径
 
@@ -24,9 +24,9 @@ $$
 
 1.  point constructor 的 judgmental computation；
 2.  path constructor 的 propositional computation；
-3.  在 cubical 实现中可加强为更计算性的规则。
+3.  在 cubical 口径中可加强为更计算性的规则。
 
-**使用边界 Z.7。** 第十一章和附录 N、V 的圆 encode-decode 证明只需要附录 L 给出的规则；若采用 path constructor 的 propositional computation，则机器化时需显式插入对应计算路径，例如附录 N.8 所说的基点计算路径。
+**使用边界 Z.7。** 第十一章和附录 N、V 的圆 encode-decode 证明只需要附录 L 给出的规则；若采用 path constructor 的 propositional computation，则需在文本证明中显式给出对应计算路径，例如附录 N.8 所说的基点计算路径。
 
 ## Z.3 Cubical 口径
 
@@ -40,9 +40,9 @@ $$
 
 **输入 Z.10（Glue 与计算单值性）.** Glue 类型提供单值性的计算性解释：等价可以被编码为 universe 中的路径，并且沿该路径的 transport 计算为等价的底层函数，至少满足 cubical 系统给定的 judgmental/propositional 计算规则。
 
-**定理 Z.11（cubical 单值性，元理论 / 实现输入）.** 在支持 Glue 的 cubical type theory 中，单值性可由类型形成与计算规则构造，而不必作为外部公理加入。
+**定理 Z.11（cubical 单值性，元理论输入）.** 在支持 Glue 的 cubical type theory 中，单值性可由类型形成与计算规则构造，而不必作为外部公理加入。
 
-**证明状态。** 这是 cubical type theory 的元理论和实现层结果。对象语言中可使用对应实现提供的 `ua`、`Glue` 和 transport 计算；公理化 HoTT 中只能把它登记为单值性的模型或解释。
+**证明状态。** 这是 cubical type theory 的元理论结果。cubical 对象语言中可使用相应的 `ua`、`Glue` 和 transport 计算规则；公理化 HoTT 中只能把它登记为单值性的模型或解释。
 
 ## Z.4 Canonicity 与 normalization
 
@@ -59,7 +59,7 @@ $$
 
 **定理 Z.14（canonicity 是元定理）.** Canonicity、normalization 和 type checking decidability 是关于类型论语法与归约系统的元语言定理，不是本书对象语言中的一般构造原则。
 
-**使用边界。** 第十六章引用 canonicity 时，只说明某类 cubical 系统具有良好计算行为；它不允许在前文证明中把任意闭自然数项直接替换为 numeral，除非工作在实现系统中并实际归约。
+**使用边界。** 第十六章引用 canonicity 时，只说明某类 cubical 系统具有良好计算行为；它不允许在前文证明中把任意闭自然数项直接替换为 numeral，除非当前章节明确采用对应归约关系。
 
 ## Z.5 HIT 语义与计算规则
 
@@ -81,8 +81,8 @@ $$
 
 1.  形成、构造、消去和计算规则；
 2.  其计算规则是 judgmental 还是 propositional；
-3.  是否存在 Coq-HoTT、UniMath 或 Cubical Agda 对照入口；
-4.  是否影响 canonicity 或需要额外元理论假设。
+3.  是否影响 canonicity 或需要额外元理论假设；
+4.  是否回流到前文基础证明。
 
 ## Z.6 模型比较
 
@@ -98,8 +98,8 @@ $$
 
 1.  第 0-8 章的基础类型论不依赖 cubical canonicity。
 2.  第 9-11 章使用 HIT，但只使用附录 L 的规则。
-3.  第 12 章的 EM 上同调使用附录 Y 的高级输入和 Cubical Agda 形式化入口。
-4.  第 13-14 章的单值范畴论使用对象语言中的单值性；Rezk 完备化泛性质的证明架构见附录 AA，剩余为机器级 transport 相容细节。
-5.  第 15-16 章可以讨论 Coq-HoTT、UniMath、Cubical Agda 和模型论差异，但不得把一个系统的实现规则无翻译地搬到另一个系统。
+3.  第 12 章的 EM 上同调使用附录 Y 的高级输入。
+4.  第 13-14 章的单值范畴论使用对象语言中的单值性；Rezk 完备化泛性质的证明架构见附录 AA，剩余为文本层 transport 相容细节。
+5.  第 15-16 章可以讨论模型论和对象语言扩展差异，但不得把一个系统的规则无翻译地搬到另一个系统。
 
-**当前状态 Z.21。** 本附录关闭的是“边界不清”缺口，而不是证明全部 cubical 元理论。完整 cubical canonicity、normalization、HIT 语义和模型比较仍应引用原论文、proof assistant 文档和形式化库。
+**当前状态 Z.21。** 本附录关闭的是“边界不清”缺口，而不是证明全部 cubical 元理论。完整 cubical canonicity、normalization、HIT 语义和模型比较仍应引用原论文和模型论文献。

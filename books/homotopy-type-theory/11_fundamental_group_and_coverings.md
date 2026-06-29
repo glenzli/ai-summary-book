@@ -2,7 +2,7 @@
 
 ## 本章目标
 
-本章说明如何在 HoTT 中定义基本群、覆盖和圆的基本群。完整证明 $\pi_1(\mathbb S^1)\cong\mathbb Z$ 是 HoTT 的经典案例；本章给出严格路线，并标注外部输入与形式化状态。
+本章说明如何在 HoTT 中定义基本群、覆盖和圆的基本群。完整证明 $\pi_1(\mathbb S^1)\cong\mathbb Z$ 是 HoTT 的经典案例；本章给出严格路线，并标注外部输入与证明状态。
 
 ## 依赖前置知识
 
@@ -111,9 +111,9 @@ $$
 $$
 因此映射 $z\mapsto[\mathsf{loop}^z]$ 保持群运算，并与 encode 诱导的反向映射互逆。$\square$
 
-## 11.4 形式化边界
+## 11.4 证明边界
 
-**警告 11.12.** $\pi_1(\mathbb S^1)\cong\mathbb Z$ 的完整形式化不是一句“圆有一条环路”即可推出。关键是构造覆盖 $\mathsf{code}$，证明 transport 沿 $\mathsf{loop}$ 是后继，并建立 encode/decode 的逆性。
+**警告 11.12.** $\pi_1(\mathbb S^1)\cong\mathbb Z$ 的完整证明不是一句“圆有一条环路”即可推出。关键是构造覆盖 $\mathsf{code}$，证明 transport 沿 $\mathsf{loop}$ 是后继，并建立 encode/decode 的逆性。
 
 ## 本章小结
 

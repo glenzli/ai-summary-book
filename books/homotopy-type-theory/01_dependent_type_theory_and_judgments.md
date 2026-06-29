@@ -95,7 +95,7 @@ $$
 \Gamma\vdash \mathcal U_i:\mathcal U_{i+1}.
 $$
 
-**约定 1.12.** 若 $\Gamma\vdash A:\mathcal U_i$，也说 $A$ 是一个 $i$-小类型。本书默认追踪宇宙层级；若公式中省略层级，是因为层级可由上下文恢复，而不是因为不存在大小问题。
+**约定 1.12.** 若 $\Gamma\vdash A:\mathcal U_i$，也说 $A$ 是一个 $i$-小类型。本书默认追踪宇宙层级；若公式中不显示层级，是因为层级可由上下文恢复，而不是因为不存在大小问题。
 
 **警告 1.13.** 本章不假设 $\mathcal U_i:\mathcal U_i$，否则会引入 Girard 悖论风险。也不默认 universe resizing。
 

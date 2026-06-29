@@ -1,6 +1,6 @@
 # 附录 AA：Rezk 完备化泛性质证明架构
 
-本附录把 R.11 的外部输入进一步拆成标准定理架构。完整逐行形式化仍很长，但本附录给出足够精确的数学骨架：weak equivalence 的限制函子、自然变换的唯一下降、对象扩张的 contractible choice，以及 Rezk 完备化泛性质的归约。
+本附录把 R.11 的外部输入进一步拆成标准定理架构。完整逐行证明仍很长，但本附录给出足够精确的数学骨架：weak equivalence 的限制函子、自然变换的唯一下降、对象扩张的 contractible choice，以及 Rezk 完备化泛性质的归约。
 
 设 $\mathcal C,\mathcal D,\mathcal E$ 为预范畴，其中 $\mathcal D,\mathcal E$ 为单值范畴。
 
@@ -200,4 +200,4 @@ $$
 3.  单值目标中对象路径 transport 对 Hom 的具体作用；
 4.  函子律和自然性证明分量的 Hom 集合性消去。
 
-这些正是 UniMath/Cubical Agda 中 Rezk completion 形式化需要大量脚本处理的部分。本书后续若要求机器验证，应优先把 AA.8-AA.10 翻译到选定库，而不是重新发明 Rezk 完备化。
+这些正是 Rezk completion 逐项证明中需要大量相干处理的部分。本书后续若扩写，应优先展开 AA.8-AA.10 的 transport 与代表元相容计算，而不是重新发明 Rezk 完备化。

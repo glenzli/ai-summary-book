@@ -2,11 +2,11 @@
 
 ## 本章目标
 
-本章在 HoTT 中定义预范畴（precategory）和单值范畴（univalent category），并说明对象相等与同构之间的关系。单值范畴论是 UniMath 的核心主题之一。
+本章在 HoTT 中定义预范畴（precategory）和单值范畴（univalent category），并说明对象相等与同构之间的关系。Displayed categories、displayed univalence 和 univalent bicategories 的高阶扩展见附录 BE。
 
 ## 依赖前置知识
 
-本章依赖集合层、等价、单值性和结构等同性原则。默认 Hom 类型是集合，以避免高阶范畴复杂性。预范畴、同构、$\mathsf{idtoiso}$ 和集合范畴单值性的证明核见附录 P。
+本章依赖集合层、等价、单值性和结构等同性原则。默认 Hom 类型是集合，以避免高阶范畴复杂性。预范畴、同构、$\mathsf{idtoiso}$ 和集合范畴单值性的证明核见附录 P；结构附加和高阶范畴论接口的 displayed category 口径见附录 BE。
 
 ## 13.1 预范畴
 
@@ -55,13 +55,15 @@ $$
 \prod_{d:\mathcal D}\left\|\sum_{c:\mathcal C}F(c)\cong d\right\|.
 $$
 
-**命题 13.9（单值范畴中的等价改进，证明架构）.** 在单值范畴之间，范畴等价可提升为合适意义下的范畴同构。
+**命题 13.9（单值范畴中的等价改进，条件形式）.** 假设附录 AA.11 的 weak-equivalence 限制函子定理已经在选定目标库中完成定义翻译。则在单值范畴之间，范畴等价可提升为合适意义下的范畴同构。
 
-**验证状态。** 函子范畴单值性见附录 X；Rezk completion 泛性质的证明架构见附录 AA。具体地，weak equivalence $F:\mathcal C\to\mathcal D$ 对任意单值目标 $\mathcal E$ 诱导限制函子等价，取 $\mathcal E=\mathcal C,\mathcal D$ 可构造拟逆函子和双向自然同构。剩余细节是附录 AA.8-AA.10 中记录的 transport 与代表元相容机器化义务。
+**验证状态。** 函子范畴单值性见附录 X；Rezk completion 泛性质的书内归约见附录 AA。具体地，weak equivalence $F:\mathcal C\to\mathcal D$ 对任意单值目标 $\mathcal E$ 诱导限制函子等价，取 $\mathcal E=\mathcal C,\mathcal D$ 可构造拟逆函子和双向自然同构。AA.8-AA.10 保留 transport 与代表元相容性的逐项证明义务，见 K.1.4 的文本收口说明。
 
 ## 本章小结
 
 预范畴只要求 Hom 是集合；单值范畴进一步要求对象路径等价于对象同构。这样，范畴论中的“同构对象可替换”成为类型论中的 transport 原则。
+
+Displayed categories 和 univalent bicategories 把这一原则扩展到“结构附加”和“2-维态射”场景；本章只给出一范畴核心。
 
 ## 练习
 

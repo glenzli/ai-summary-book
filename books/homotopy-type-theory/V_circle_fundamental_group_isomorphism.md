@@ -232,4 +232,4 @@ $$
 
 ## V.5 边界
 
-本附录依赖附录 W 对 M.14 的整数加法群律证明核。换言之，附录 W 证明整数对象自身形成交换群；本附录证明附录 N 的 encode-decode 等价与群运算相容，并由此得到圆的基本群同构。剩余边界仅是附录 N.8 所述的 propositional HIT computation 机器化插入问题。
+本附录依赖附录 W 对 M.14 的整数加法群律证明核。换言之，附录 W 证明整数对象自身形成交换群；本附录证明附录 N 的 encode-decode 等价与群运算相容，并由此得到圆的基本群同构。剩余边界仅是附录 N.8 所述的 propositional HIT computation 下的显式 transport 插入问题。

@@ -2,7 +2,7 @@
 
 ## 本章目标
 
-本章给出 HoTT 中单值范畴论的核心工具：Yoneda 引理、极限、伴随和 Rezk 完备化。长证明在附录 Q、U、X、AA、AF 中展开为证明核或证明架构，并标注形式化来源。
+本章给出 HoTT 中单值范畴论的核心工具：Yoneda 引理、极限、伴随和 Rezk 完备化。长证明在附录 Q、U、X、AA、AF 中展开为证明核、书内归约或外部输入边界。Rezk type 和 complete Segal object 属于高阶范畴接口，见附录 BB。
 
 ## 依赖前置知识
 
@@ -96,7 +96,7 @@ $$
 $$
 附录 R.7-R.10 给出 $\widehat{\mathcal C}$ 单值、$\eta_{\mathcal C}$ fully faithful 且 essentially surjective 的证明路线。
 
-**定理 14.11（Rezk 完备化泛性质，证明架构）.** 若 $\mathcal D$ 是单值范畴，则预合成
+**定理 14.11（Rezk 完备化泛性质，书内归约）.** 若 $\mathcal D$ 是单值范畴，则预合成
 $$
 (-)\circ\eta_{\mathcal C}:
 \mathsf{Fun}(\widehat{\mathcal C},\mathcal D)
@@ -105,11 +105,13 @@ $$
 $$
 是等价。
 
-**验证状态：证明架构 / 外部机器化义务。** 见附录 R.11 和附录 AA。函子范畴、自然同构和预层范畴单值性已在附录 X 展开；Rezk 泛性质已在附录 AA 降为 weak equivalence 限制函子的等价证明架构，剩余为 AA.8-AA.10 的逐行 transport 和代表元相容计算。
+**验证状态：书内归约 / 外部输入边界。** 见附录 R.11、附录 AA 和 K.1.4。函子范畴、自然同构和预层范畴单值性已在附录 X 展开；Rezk 泛性质已在附录 AA 降为 weak equivalence 限制函子的等价。AA.8-AA.10 的 transport 和代表元相容计算仍是文本层逐项审查义务，但不再作为外部构建任务登记。
 
 ## 本章小结
 
 HoTT 中的范畴论要求把“唯一到唯一同构”改写成“唯一到路径”，这正是单值范畴的作用。Yoneda、极限、伴随和 Rezk 完备化构成单值范畴论的基础工具箱。
+
+本章的 Rezk 完备化是 Hom 为集合的一范畴层构造；附录 BB 的 Rezk object 是合成 $\infty$-范畴对象。二者名称相近，但层级不同，引用时必须区分。
 
 ## 练习
 

@@ -25,7 +25,7 @@ $$
 \mathsf{funext}:\left(\prod_{x:A}f(x)=g(x)\right)\to(f=g).
 $$
 
-**验证状态。** 在 HoTT Book 的公理化口径中，函数外延性可由单值性推出，也可单独作为公理。在 Cubical Agda 中，函数外延性由路径类型的区间结构给出计算性实现。
+**验证状态。** 在 HoTT Book 的公理化口径中，函数外延性可由单值性推出，也可单独作为公理。在 cubical type theory 口径中，函数外延性由路径类型的区间结构给出计算性解释。
 
 **命题 6.3（命题值函数类型是命题）.** 若每个 $B(x)$ 是命题，则 $\prod_{x:A}B(x)$ 是命题。
 
@@ -76,7 +76,7 @@ $$
 
 **定理 6.11.** 单值性推出函数外延性。
 
-**验证状态：精确外部输入 / 机器形式化。** 见附录 T。UniMath 的 `UniMath/Foundations/UnivalenceAxiom.v` 在 commit `9ed7661d3ad33c74e35824efccf861b4fdc17323` 中给出从 `univalenceStatement` 到 `isweqtoforallpathsStatement` 的形式化链条；Coq-HoTT 的 `theories/Types/Universe.v` 在 commit `a030184c0bfc9d61f3bcd33c67660b800e106427` 中给出 `Univalence_implies_Funext` 实例入口。
+**验证状态：精确外部输入。** 见附录 T。附录 T 记录标准数学路线：由单值性得到等价预合成保持函数空间，再经 path space 投影、可收缩族函数空间和 contractible cone 推出 $\mathsf{happly}$ 是等价。
 
 本书当前正文采用“函数外延性与单值性均可作为第六章后原则”的清晰口径；若要最小化公理，则可用附录 T 的外部定理把函数外延性从公理表中删去。
 

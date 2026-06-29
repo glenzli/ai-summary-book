@@ -45,26 +45,27 @@ g:B\to A,\qquad
 $$
 则 $f$ 是等价。
 
-**证明.** 固定 $y:B$。我们证明 $\mathsf{fib}_f(y)$ 可收缩。取中心
-$$
-(g(y),\epsilon_y).
-$$
-给定任意 $(x,p):\mathsf{fib}_f(y)$，需构造
-$$
-(g(y),\epsilon_y)=(x,p).
-$$
-由 $\Sigma$ 路径刻画，只需给出路径
-$$
-r:g(y)=x
-$$
-以及 transport 后第二分量等于 $p$ 的路径。令
-$$
-r\coloneqq \mathsf{ap}_g(p^{-1})\cdot\eta_x:
-g(y)=x.
-$$
-第二分量相容性对 $p:f(x)=y$ 作路径归纳。反身情形中 $y\equiv f(x)$，中心第一分量为 $g(f(x))$，路径 $r$ 化为 $\eta_x$。目标变为说明沿 $\eta_x:g(f(x))=x$ transport $\epsilon_{f(x)}:f(g(f(x)))=f(x)$ 得到 $\mathsf{refl}_{f(x)}$。这是准逆三角相干的一个命题形式；若原始准逆数据没有给出该相干，可通过把 $\epsilon$ 替换为相干化后的 $\epsilon'$ 得到半伴随等价数据。
+**证明.** 普通准逆数据本身不含三角相干；直接收缩 fiber 时，第二分量的 transport 计算需要这一相干。因此本证明分两步完成。
 
-因此严格地说，普通准逆推出 fiber 可收缩需要先进行相干化。相干化的构造见定理 G.4。$\square$
+第一步，定理 G.4 从给定准逆构造半伴随等价数据
+$$
+g,\eta,\epsilon',\tau
+$$
+其中 $\epsilon'$ 与原 $\epsilon$ 同型，且
+$$
+\tau_x:\mathsf{ap}_f(\eta_x)=\epsilon'_{f(x)}
+$$
+给出所需三角相干。该构造只使用路径代数、同伦自然性和 $\mathsf{ap}$ 的计算规则，不使用本定理。
+
+第二步，定理 G.6 证明任意半伴随等价使每个
+$$
+\mathsf{fib}_f(y)
+$$
+可收缩。其中心为 $(g(y),\epsilon'_y)$；对 $(x,p):\mathsf{fib}_f(y)$ 的收缩路径第一分量为
+$$
+\mathsf{ap}_g(p^{-1})\cdot\eta_x:g(y)=x,
+$$
+第二分量正由 $\tau_x$ 和 transport 计算给出。把 G.4 的相干化数据代入 G.6，得到 $f$ 的每个 fiber 可收缩，故 $f$ 是等价。$\square$
 
 **定理 G.4（准逆相干化为半伴随等价）.** 若 $f$ 有准逆，则存在 $g,\eta,\epsilon$ 以及三角相干
 $$

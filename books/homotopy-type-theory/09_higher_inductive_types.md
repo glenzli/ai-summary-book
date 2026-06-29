@@ -2,7 +2,7 @@
 
 ## 本章目标
 
-本章给出高阶归纳类型（higher inductive types, HIT）的通用写法。HIT 不只允许点构造子，还允许路径构造子和更高路径构造子。我们不在本章证明一般 HIT 的元理论存在性，而是把它作为可验证规则格式来使用。本书当前实际使用的 HIT 输入规则集中列于附录 L。
+本章给出高阶归纳类型（higher inductive types, HIT）的通用写法。HIT 不只允许点构造子，还允许路径构造子和更高路径构造子。我们不在本章证明一般 HIT 的元理论存在性，而是把它作为可验证规则格式来使用。本书当前实际使用的 HIT 输入规则集中列于附录 L；更一般的 HIIT、QIT、QIIT 和计算 HIT 语义见附录 BC。
 
 ## 依赖前置知识
 
@@ -77,13 +77,23 @@ $$
 
 ## 9.5 HIT 的元理论状态
 
-**定理 9.11（HIT 的模型与实现，外部输入）.** 多类 HIT 在 cubical type theory 和 Cubical Agda 中有计算性实现；在传统 HoTT 中通常作为规则或公理族加入。一般 HIT 的语法、语义和规范性是元理论问题。
+**定理 9.11（HIT 的模型与计算语义，外部输入）.** 多类 HIT 在 cubical type theory 中有计算性解释；在传统 HoTT 中通常作为规则或公理族加入。一般 HIT 的语法、语义和规范性是元理论问题。
 
-**来源边界。** HoTT Book 给出 HIT 的教材口径；Cubical Agda 文档和 cubical type theory 论文给出实现与模型方向；更一般的语法语义框架需参考类型论元理论文献。
+**来源边界。** HoTT Book 给出 HIT 的教材口径；cubical type theory 论文给出模型与计算语义方向；更一般的 HIIT/QIIT 签名、初始代数语义和 computational HIT 语义见附录 BC。
+
+**规则 9.12（QIIT 使用纪律）.** 若某章使用 quotient inductive-inductive type，必须同时列出：
+
+1.  生成的类型和依赖族；
+2.  点构造子；
+3.  路径或商构造子；
+4.  截断构造子；
+5.  递归和依赖消去原则；
+6.  哪些计算规则为 judgmental，哪些只是 propositional；
+7.  universe 层级和严格正性条件。
 
 ## 本章小结
 
-HIT 是 HoTT 表达拓扑空间、商、截断和同伦余极限的关键工具。完整 HIT 定义必须包括形成、构造、消去和计算规则。本书后续使用 HIT 时会标注其元理论状态。
+HIT 是 HoTT 表达拓扑空间、商、截断和同伦余极限的关键工具。完整 HIT 定义必须包括形成、构造、消去和计算规则。更一般的 HIIT/QIIT 还必须登记签名、初始性和计算语义。本书后续使用 HIT 时会标注其元理论状态。
 
 ## 练习
 
@@ -93,4 +103,4 @@ HIT 是 HoTT 表达拓扑空间、商、截断和同伦余极限的关键工具�
 
 **练习 9.3.** 说明为什么圆的依赖消去原则需要 transport 条件。
 
-**练习 9.4.** 比较 HoTT Book 与 Cubical Agda 中 HIT 计算规则的可能差异。
+**练习 9.4.** 比较 HoTT Book 口径与 cubical type theory 口径中 HIT 计算规则的可能差异。

@@ -16,7 +16,7 @@
 $$
 (\mathbb S^1\to A)\simeq\sum_{a:A}(a=a)
 $$
-还需要函数外延性和圆的依赖消去原则。完整证明在 Coq-HoTT 和 Cubical Agda 风格中都可形式化。
+还需要函数外延性和圆的依赖消去原则。完整证明需要逐项处理圆的依赖消去、transport 计算和整数后继相容性。
 
 **例 10.2.** 取 $A\equiv\mathbb S^1$，点 $\mathsf{base}$ 与环路 $\mathsf{loop}$ 给出恒等映射的候选数据。
 
@@ -78,6 +78,12 @@ $$
 $$
 A\vee B\coloneqq\mathsf{pushout}(\mathbf 1\xrightarrow{a_0}A,\mathbf 1\xrightarrow{b_0}B).
 $$
+
+**例 10.10.1（Smash product）.** 对 pointed 类型 $X,Y$，smash product $X\wedge Y$ 定义为 wedge 嵌入
+$$
+X\vee Y\to X\times Y
+$$
+的 cofiber。它是稳定同伦论和 cup product 几何来源的基础构造；递归泛性质、球面 smash 和对称幺半结构见附录 AM。
 
 ## 10.5 证明纪律
 

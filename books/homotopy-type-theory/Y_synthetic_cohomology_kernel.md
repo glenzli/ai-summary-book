@@ -1,6 +1,6 @@
-# 附录 Y：合成上同调证明核与形式化入口
+# 附录 Y：合成上同调证明核与高级输入
 
-本附录把第十二章的合成上同调入口改写为可引用的严格骨架。目标不是在本书中重建完整稳定同伦论，而是给出 HoTT 中 Eilenberg-Mac Lane 型、上同调群、函子性、悬挂同构、球面计算和 cup product 的精确定理形态，并标明哪些部分依赖 Cubical Agda 形式化或外部高阶归纳构造。
+本附录把第十二章的合成上同调入口改写为可引用的严格骨架。目标不是在本书中重建完整稳定同伦论，而是给出 HoTT 中 Eilenberg-Mac Lane 型、上同调群、函子性、悬挂同构、球面计算和 cup product 的精确定理形态，并标明哪些部分依赖外部高阶归纳构造或经典同伦论输入。
 
 固定阿贝尔群 $A$。若讨论 cup product，则固定交换环 $R$。
 
@@ -20,7 +20,7 @@ $$
 3.  $K(A,n)$ 是 $n$-型；
 4.  $K(A,n)$ 带有由 $A$ 的阿贝尔群结构诱导的交换 $H$-space 结构，使得映射类型的集合截断继承阿贝尔群结构。
 
-**使用边界。** 该输入可由高阶归纳类型或谱构造给出。本书不把 EM 型塔作为基础规则；它是第十二章的高级构造输入。Cubical Agda 的对照入口见附录 S.4.4 中 `Cubical/Cohomology/EilenbergMacLane/Base.agda`。
+**使用边界。** 该输入可由高阶归纳类型、谱或 Eilenberg-Mac Lane 对象构造给出。本书不把 EM 型塔作为基础规则；它是第十二章的高级构造输入。
 
 **命题 Y.2（EM 型的同伦群特征）.** 在输入 Y.1 下，
 $$
@@ -53,9 +53,8 @@ $$
 $$
 \widetilde H^n(X;A)
 \coloneqq
-\|X\to_\ast K(A,n)\|_0,
+\|X\to_\ast K(A,n)\|_0.
 $$
-其中 $X\to_\ast K(A,n)$ 是保持基点的映射类型。
 
 **命题 Y.5（上同调的阿贝尔群结构）.** 对 $n\ge1$，$H^n(X;A)$ 和 $\widetilde H^n(X;A)$ 继承阿贝尔群结构。
 
@@ -156,7 +155,7 @@ $$
 \widetilde H^0(\mathbb S^m;A)\cong0.
 $$
 
-该输入在 Cubical Agda 的 Eilenberg-Steenrod 与球面计算模块中有形式化对照；见附录 S.4.4。
+该输入属于 EM 上同调的维数性质，可由经典同伦论或合成上同调构造提供。
 
 **定理 Y.12（约化球面上同调）.** 对 $n\ge0$，
 $$
@@ -238,22 +237,20 @@ a\smile b=(-1)^{pq}b\smile a
 $$
 其中 $a\in H^p(X;R)$，$b\in H^q(X;R)$。
 
-**证明（形式化输入 / 证明核）。** 运算由 Y.15 定义。结合律、单位律、双线性和 graded commutativity 分别由输入 Y.14 的相干律逐点推出，再用函数外延性和集合截断归纳下降到上同调群。Cubical Agda 中 `CupProduct.agda` 和 `RingStructure.agda` 给出该路线的机器化入口；本书不在正文重写其全部高阶相干。$\square$
+**证明（外部输入 / 证明核）。** 运算由 Y.15 定义。结合律、单位律、双线性和 graded commutativity 分别由输入 Y.14 的相干律逐点推出，再用函数外延性和集合截断归纳下降到上同调群。本书不在正文重写其全部高阶相干。$\square$
 
 ## Y.7 Eilenberg-Steenrod 性质
 
 **输入 Y.17（合成 Eilenberg-Steenrod 性质）.** EM 上同调满足同伦不变性、长正合列、切除、悬挂同构和维数公理的合适 HoTT 形式。
 
-**使用边界。** 这些性质依赖更系统的 cofibration、pushout、exactness 和群代数开发。Cubical Agda 对照入口见 `Cubical/Cohomology/EilenbergMacLane/EilenbergSteenrod.agda`。本书可引用 Y.17 作为高级外部输入，但任何具体计算若不在 Y.10-Y.16 覆盖范围内，应记录所用形式化模块或论文定理。
+**使用边界。** 这些性质依赖更系统的 cofibration、pushout、exactness 和群代数开发。本书可引用 Y.17 作为高级外部输入；任何具体计算若不在 Y.10-Y.16 覆盖范围内，应记录所用论文定理或经典来源。
 
-## Y.8 与形式化库的对照
+## Y.8 来源与边界
 
-本附录对应附录 S.4.4 的以下 Cubical Agda 入口：
+本附录供第十二章引用为教材层定义与证明核。其外部输入分为三类：
 
-1.  `Cubical/Cohomology/EilenbergMacLane/Base.agda`：`coHom`, `coHomGr`, `coHomRed`, `coHomRedGr`；
-2.  `Cubical/Cohomology/EilenbergMacLane/CupProduct.agda`：`_⌣_`, `assoc⌣Dep`, `comm⌣Dep`；
-3.  `Cubical/Cohomology/EilenbergMacLane/EilenbergSteenrod.agda`：`satisfies-ES`, `Suspension`, `Exactness`, `Dimension`；
-4.  `Cubical/Cohomology/EilenbergMacLane/Groups/Sn.agda`：球面上同调计算入口；
-5.  `Cubical/Cohomology/EilenbergMacLane/RingStructure.agda`：上同调环结构入口。
+1.  EM 型塔与其 loop 等价；
+2.  上同调乘法的高阶相干；
+3.  Eilenberg-Steenrod 性质和球面维数计算。
 
-因此，第十二章可以引用本附录作为教材层定义与证明核，引用附录 S 作为版本化机器入口。
+这三类输入不回流为前十一章的基础规则。若后续扩写为完整稳定同伦论章节，应先补谱、cofiber sequence、长正合列和具体球面计算，再把 Y.17 拆成书内证明。

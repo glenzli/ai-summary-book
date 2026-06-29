@@ -93,7 +93,7 @@ $$
 1.  对象为函子 $F:\mathcal C\to\mathcal D$；
 2.  Hom 为自然变换：
     $$
-    [\mathcal C,\mathcal D](F,G)\coloneqq(F\Rightarrow G);
+    \mathsf{Hom}_{\left[\mathcal C,\mathcal D\right]}(F,G)\coloneqq(F\Rightarrow G);
     $$
 3.  Hom 集合性由 X.5 给出；
 4.  恒等自然变换 $\mathsf{id}_F$ 的分量为
@@ -246,4 +246,4 @@ $$
 $$
 [\widehat{\mathcal C},\mathcal E]\to[\mathcal C,\mathcal E]
 $$
-的合适等价。附录 AA 已给出该泛性质的 weak-equivalence 限制函子证明架构；剩余机器化义务是本质像对象中的命题截断代表元、fully faithful 嵌入的扩张唯一性以及单值目标中对象路径 transport 的逐行相容计算。
+的合适等价。附录 AA 已给出该泛性质的 weak-equivalence 限制函子证明架构；剩余证明义务是本质像对象中的命题截断代表元、fully faithful 嵌入的扩张唯一性以及单值目标中对象路径 transport 的逐行相容计算。
