@@ -12,7 +12,7 @@
 
 ## 依赖前置知识
 
-需要第六章的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$，第八章的 Koszul 对偶，以及第九章的 dg-operad、cooperad、bar-cobar 和 twisting morphism。
+需要命题 6.15、命题 6.16 和命题 6.18 中的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$，定义 8.15--定义 8.16 的 Koszul 对偶，以及定义 9.6、定义 9.14、定理 9.20 的 dg-operad、cooperad、bar-cobar 和 twisting morphism。
 
 ## 10.1 同伦 $\mathcal P$-代数的 operadic 定义
 
@@ -123,6 +123,8 @@ $$
 
 **例 10.13.** 若 $\ell_n=0$ 对所有 $n\ge3$ 成立，则 $L_\infty$-代数退化为 dg Lie algebra。
 
+**说明 10.13.1.** 定义 L.4 和定义 L.7 给出本书使用的 suspended coalgebra 口径：$A_\infty$ 结构等价于 $T^c(sA)$ 上 square-zero coderivation，$L_\infty$ 结构等价于 $S^c(sV)$ 上 square-zero coderivation。第十章中的手写恒等式均应看作该 coderivation 方程的未悬挂展开。
+
 ## 10.4 $C_\infty$-代数
 
 **定义 10.14.** $C_\infty$-operad 定义为
@@ -164,7 +166,7 @@ $$
 
 **命题 10.20.** $\mathcal C_1$ 的连通分支 operad 与对称结合 operad $\operatorname{Ass}$ 同构；因此链级 $E_1$-代数是同伦结合代数的拓扑来源。
 
-**证明.** $\mathcal C_1(r)$ 是 $r$ 个互不相交小区间在 $[0,1]$ 中的配置空间。每个连通分支由这些区间从左到右的顺序决定，并且每个分支可收缩。因而 $\pi_0\mathcal C_1(r)\cong\Sigma_r$，每个分支对应 $[r]$ 上的一个全序，这正是第一章定义的 $\operatorname{Ass}(r)$。代入与区间嵌入复合相容，所以得到 operad 同构 $\pi_0\mathcal C_1\cong\operatorname{Ass}$。$\square$
+**证明.** $\mathcal C_1(r)$ 是 $r$ 个互不相交小区间在 $[0,1]$ 中的配置空间。每个连通分支由这些区间从左到右的顺序决定，并且每个分支可收缩。因而 $\pi_0\mathcal C_1(r)\cong\Sigma_r$，每个分支对应 $[r]$ 上的一个全序，这正是定义 1.18 中的 $\operatorname{Ass}(r)$。代入与区间嵌入复合相容，所以得到 operad 同构 $\pi_0\mathcal C_1\cong\operatorname{Ass}$。$\square$
 
 **定义 10.21.** 一个 $E_\infty$-operad 是与交换 operad $\operatorname{Com}$ 弱等价且各 arity 带自由 $\Sigma_r$-作用的 cofibrant 型拓扑或链 operad。直观上，$E_\infty$-代数是“同伦意义下交换”的代数。
 
@@ -181,6 +183,8 @@ $$
 **外部输入定理 10.24.** May 的 recognition principle 说明，适当连通性和群完备条件下，带有 $\mathcal C_n$-代数结构的空间识别为 $n$ 重 loop space。精确陈述依赖 based spaces、group completion 和模型范畴语境，本书在拓扑 operad 章节再给出完整版本。
 
 **外部输入定理 10.25.** Chains on little disks/cubes 给出 dg-operad，其代数在链复形中建模 $E_n$-algebras。若底域特征为 $0$，$E_n$-operad 的形式性在若干情形成立；特别 $E_2$ 的形式性与 Drinfeld associators 和 Grothendieck-Teichmüller 理论有关。该方向必须在后续章节引用 Tamarkin、Kontsevich、Fresse 等来源，不在本章证明。
+
+**说明 10.26.** 定义 L.12、外部输入定理 L.14、警告 L.18 和外部输入定理 L.19 汇总 $E_n$-operad 的模型层级、$H_\*(\mathcal C_n)\cong\operatorname{Pois}_n$ 的边界、$E_\infty$ 与 $\operatorname{Com}$ 的 rectification 风险，以及 Dunn/Lurie additivity 的外部输入状态。本章默认遵守这些区分。
 
 ## 本章小结
 

@@ -15,7 +15,7 @@
 
 ## 依赖前置知识
 
-需要第六章的线性 operad、第八章的二次/Koszul 语言，以及链复形、张量积、微分和同调的基本知识。
+需要定义 6.6 的线性 operad、定义 8.4 和定义 8.16 的二次/Koszul 语言，以及链复形、张量积、微分和同调的基本知识。
 
 ## 9.1 链复形与符号约定
 
@@ -57,7 +57,7 @@ $$
 $$
 M:\mathbf B_{\mathcal U}\to\mathbf{Ch}_k.
 $$
-dg 对称序列的代入乘积仍记为 $\circ$，由第六章公式在 $\mathbf{Ch}_k$ 中解释：
+dg 对称序列的代入乘积仍记为 $\circ$，由命题 6.7 的 arity 公式在 $\mathbf{Ch}_k$ 中解释：
 $$
 (M\circ N)(S)
 =
@@ -212,7 +212,7 @@ $$
 
 **证明.** 在 $\mathcal C\circ\mathcal P$ 上，总微分由内部微分加上用 $\alpha$ 把 cooperad 一次分解中的一个因子送入 operad 并复合的项组成。平方后分成三类：内部微分平方为零；内部微分与 twisting 项的反交换给出 $\partial(\alpha)$ 项；两个 twisting 项的复合给出 $\alpha\star\alpha$ 项。Maurer-Cartan 方程正说明后两类相加为零。符号由约定 9.1 的 Koszul rule 给出。$\square$
 
-**说明 9.15.1.** 附录 I 把本节的 convolution Lie algebra、Maurer-Cartan 方程、twisted composite product 和 Koszul complex 统一成一个严格约定。后续若使用 $\mathcal C\circ_\alpha\mathcal P$、$\mathcal P\circ_\alpha\mathcal C$ 或 $\mathcal P^¡\circ_\kappa\mathcal P$，默认采用附录 I 的定义。
+**说明 9.15.1.** 定义 I.11--定义 I.18 把本节的 convolution Lie algebra、Maurer-Cartan 方程、twisted composite product 和 Koszul complex 统一成一个严格约定。后续若使用 $\mathcal C\circ_\alpha\mathcal P$、$\mathcal P\circ_\alpha\mathcal C$ 或 $\mathcal P^¡\circ_\kappa\mathcal P$，默认采用这些定义。
 
 ## 9.6 Cobar 构造
 
@@ -324,15 +324,15 @@ $$
 $$
 \kappa:\mathcal P^¡\to\mathcal P
 $$
-是次数 $-1$ 的映射，在由 $sE$ 或相应悬挂生成的权重 $1$ 部分上等于自然投影到 $E\subseteq\mathcal P$，在其他权重上为零。精确定义依赖第八章的符号扭曲和本章的悬挂约定。
+是次数 $-1$ 的映射，在由 $sE$ 或相应悬挂生成的权重 $1$ 部分上等于自然投影到 $E\subseteq\mathcal P$，在其他权重上为零。精确定义依赖定义 8.11 的符号扭曲和定义 9.2 的悬挂约定。
 
 **外部输入定理 9.23.** 二次 operad $\mathcal P$ Koszul 当且仅当由 $\kappa$ 诱导的 morphism
 $$
 \Omega\mathcal P^¡\to\mathcal P
 $$
-是 quasi-isomorphism。该定理是 operadic Koszul duality 的核心形式之一，完整证明依赖 bar-cobar 理论和 weight spectral sequence，应引用 Ginzburg-Kapranov、Loday-Vallette 或 Fresse。
+是 quasi-isomorphism。该定理是 operadic Koszul duality 的核心形式之一，完整证明依赖 bar-cobar 理论和 weight spectral sequence。Ginzburg--Kapranov classical core 已定位为 GK-3 与 GK-7；Fresse modern twisting weak equivalence criterion 已定位为 FRE-1--FRE-3。把本书 $\Omega\mathcal P^¡$ 记号逐字匹配到 Loday--Vallette/Fresse 书本 convention 仍需最终 locator。
 
-**说明 9.24.** 附录 I 采用权重滤过解释该判别定理的输入：cobar differential 的二次部分增加顶点数，bar differential 的二次部分降低顶点数。最终版引用 Koszul 判别时，必须同时说明 reduced 假设、有限型假设、conilpotence 和所用 suspension convention。
+**说明 9.24.** 定义 I.20 和命题 I.21 采用权重滤过解释该判别定理的输入：cobar differential 的二次部分增加顶点数，bar differential 的二次部分降低顶点数。最终版引用 Koszul 判别时，必须同时说明 reduced 假设、有限型假设、conilpotence 和所用 suspension convention。
 
 ## 本章小结
 

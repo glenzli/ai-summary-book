@@ -85,10 +85,13 @@
 - Colored substitution product 写作 $\circ_C$。
 - $I_C$：$C$-colored symmetric sequence 的单位。
 - $\operatorname{End}_A$：$C$-indexed 集合族 $A=(A_c)_{c\in C}$ 的 colored endomorphism operad。
+- $\mathbb F_C(E)$：由 $C$-colored symmetric sequence $E$ 生成的自由 $C$-colored operad。
+- $\operatorname{LMod}$、$\operatorname{Bimod}$：编码左模和双模的 colored operads。
 - $R$：线性 operad 章节中的固定交换环。
 - $\mathbf{Mod}_R$：交换环 $R$ 上的模范畴。
 - $S_M$：$R$-模值对称序列 $M$ 的 Schur functor。
 - $(V^{\otimes n})_{\Sigma_n}$：$\Sigma_n$ 作用下的 coinvariants。
+- 在 $M(n)\otimes_{R[\Sigma_n]}V^{\otimes n}$ 中，$M(n)$ 的函子性左作用按 $m\cdot\sigma=\sigma^{-1}m$ 转换成右作用，$V^{\otimes n}$ 使用张量因子置换左作用。
 - $\operatorname{Pois}_R$：Poisson operad。
 
 ## PROP、properad 与 Koszul 对偶
@@ -110,6 +113,7 @@
 ## Bar-cobar 与 twisting
 
 - $\mathbf{Ch}_k$：域 $k$ 上链复形范畴，使用同调次数。
+- $\mathbf{Ch}^{\ge0}_R$：交换环 $R$ 上非负同调次数链复形范畴。
 - $sC$、$s^{-1}C$：悬挂和去悬挂。
 - $\overline{\mathcal P}$：augmented operad 的增广理想。
 - $\overline{\mathcal C}$：coaugmented cooperad 的 coaugmentation coideal。
@@ -124,6 +128,7 @@
 - $\mathcal C\circ_\alpha\mathcal P$、$\mathcal P\circ_\alpha\mathcal C$：由 twisting morphism $\alpha$ 定义的 twisted composite products。
 - $K_r(\mathcal P)=\mathcal P^¡\circ_\kappa\mathcal P$：右 Koszul complex。
 - $K_l(\mathcal P)=\mathcal P\circ_\kappa\mathcal P^¡$：左 Koszul complex。
+- $\operatorname{Ass}_{ns}$：非对称、非含单位 associative operad，生成元关系为 $\mu\circ_1\mu-\mu\circ_2\mu$。
 
 ## 同伦代数 operad
 
@@ -131,6 +136,10 @@
 - $A_\infty=\Omega\operatorname{Ass}^¡$。
 - $L_\infty=\Omega\operatorname{Com}^¡$。
 - $C_\infty=\Omega\operatorname{Lie}^¡$。
+- $T^c(sA)$：reduced tensor coalgebra，用于 suspended $A_\infty$ 结构。
+- $S^c(sV)$：reduced cofree cocommutative coalgebra，用于 suspended $L_\infty$ 结构。
+- $b_n:(sA)^{\otimes n}\to sA$：$A_\infty$ coderivation 的 Taylor 分量。
+- $q_n:\operatorname{Sym}^n(sV)\to sV$：$L_\infty$ coderivation 的 Taylor 分量。
 - $m_n:A^{\otimes n}\to A$：$A_\infty$-代数结构映射，使用同调约定时 $|m_n|=n-2$。
 - $\ell_n:V^{\otimes n}\to V$：$L_\infty$-代数高阶括号，使用同调约定时 $|\ell_n|=n-2$。
 - $\mathcal C_n$：little $n$-cubes operad。
@@ -210,6 +219,7 @@
 - $\operatorname{Sc}[T]$：树 $T$ 的 Segal core。
 - $\partial\Omega[T]$：representable $\Omega[T]$ 的边界。
 - $\Lambda^e[T]$：inner edge $e$ 对应的 dendroidal inner horn。
+- $\operatorname{Aut}_\Omega(T)$：树 $T$ 在 $\Omega$ 中的自同构群。
 - $i:\Delta\to\Omega$：把 ordinal 送到线性树的嵌入函子。
 - Inner Kan dendroidal set：每个 $\Lambda^e[T]\to X$ 均可延拓到 $\Omega[T]\to X$ 的 dendroidal set。
 - Normal monomorphism：新增 nondegenerate dendrexes 上树自同构群自由作用的 monomorphism。
@@ -242,16 +252,38 @@
 - $X\otimes^{\mathbf L}Y$：derived tensor product。
 - $\operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty$：$\mathcal O$-代数模型范畴的 localization。
 - $\mathcal O^{\operatorname{loc}}$：严格 operad $\mathcal O$ 经 localization/category-of-operators 得到的 infinity-operad；不得与 Koszul resolution $\mathcal O_\infty$ 混用。
+- $N_d(\mathcal P)$：strict colored operad $\mathcal P$ 的 dendroidal nerve。
+- $N(\mathcal P^\otimes)$：category of operators nerve，属于 Lurie-style 模型。
+
+## 前沿接口符号
+
+- $C_{\mathcal P}(T)$：strict $k$-线性 colored operad $\mathcal P$ 在树 $T$ 上的树装饰链复形。
+- Segal-linear dendroidal object：$\Omega^{op}\to\mathbf{Ch}_k$ 的函子，带树到顶点 corolla 的 Segal 型比较映射；这是附录 Y 的接口定义。
+- $j\mathcal P$：strict operad $\mathcal P$ 进入某个 linear infinity-operad 模型的候选嵌入；具体模型未固定时只作占位符。
+- Strict specialization test：附录 Y 中检验 infinity-operadic Koszul extension 是否恢复 classical Koszul theorem 的必要条件。
+- Pre-operadic category datum：小范畴、cardinality functor、fiber objects 和 local terminals 的数据包；完整 operadic category 还需满足外部公理包。
+- $|-|:\mathcal O\to\mathbf{Fin}$：operadic category 数据包中的 cardinality functor。
+- $f^{-1}(i)$：operadic category 数据包中 morphism $f:T\to S$ 在 $i\in |S|$ 处的 fiber object。
+- $(X,W)$：relative dendroidal object；$X$ 是 dendroidal set，$W$ 是线性限制中的 weak unary equivalences。
+- $N_{\mathrm{op}}(\mathcal O)$：operadic category 的 operadic nerve 候选；除非引用外部定理，不与 dendroidal nerve 或 category-of-operators nerve 等同。
+- $\mathbf{fc}$-multicategory：Fukaya categories 前沿中使用的高阶多范畴接口；本书只在附录 Z 中作为研究边界符号。
 
 ## Factorization 与 Fukaya
 
 - $\mathbf{Disk}_n$：有限个 $\mathbb R^n$ 不交并及 embeddings 构成的 disk category。
+- $\mathbf{Disk}^{fr}_n$：framed $n$-disks 及保 framing embeddings 构成的 disk category。
+- $\mathbf{Disk}^{\xi}_n$：带 tangential structure $\xi:B\to BO(n)$ 的 disk category。
 - $\mathbf{Disk}_{n/M}$：嵌入 $n$-manifold $M$ 的 disk category over $M$。
+- $\mathbf{Disk}^{fr}_{n/M}$、$\mathbf{Disk}^{\xi}_{n/M}$：带 framing 或 $\xi$-structure 的 over disk category。
 - $\operatorname{Fact}^{lc}_M(\mathcal C)$：$M$ 上取值于 $\mathcal C$ 的 locally constant factorization algebras。
 - $\int_M A$：$E_n$-algebra $A$ 在 $n$-manifold $M$ 上的 factorization homology。
+- $\otimes^{\mathbf L}_B$：相对于 algebra object $B$ 的 derived relative tensor product。
+- $HH_\*(A)$：associative 或 $E_1$-algebra $A$ 的 Hochschild homology object。
+- $B(M,B,N)$：two-sided bar construction，用于计算 $M\otimes_B^{\mathbf L}N$。
 - $E_n$：little disks/cubes 型 $n$-fold monoidal infinity-operad。
 - $\mathcal F(X)$：symplectic manifold $X$ 的 Fukaya category，具体模型需额外说明。
 - $m_r$：$A_\infty$-category 的 $r$ 元 composition operation。
+- $\mathbb H^n$：标准半空间 $\{x_n\ge0\}\subset\mathbb R^n$。
 
 ## 后续章节保留符号
 

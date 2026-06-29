@@ -232,6 +232,8 @@ $$
 $$
 重标号、单位和复合由 $\mathcal M$ 的结构给出。两种构造在定义层面互逆。$\square$
 
+**说明 5.16.1.** 附录 K 给出 colored 轮廓群胚的骨架（命题 K.2）、colored substitution 的 coend 口径（定义 K.4--命题 K.6）、自由 colored operad 的树公式（定义 K.7--命题 K.9），以及代数同态、模和双模的生成元关系模型（定义 K.10--命题 K.15）。使用 colored operad 编码多对象代数系统时，默认采用附录 K 的这些约定。
+
 ## 5.6 基本例子
 
 **例 5.17.** 任一小范畴 $\mathcal C$ 给出 colored operad $\mathcal P_{\mathcal C}$。颜色集合为 $\operatorname{Ob}(\mathcal C)$，并定义
@@ -265,7 +267,9 @@ $$
 
 ## 本章小结
 
-Colored operad 是单色 operad 的带类型版本。颜色约束在代入时要求：内层运算的输出颜色必须等于外层输入槽的颜色。它与 symmetric multicategory 是同一数据。这个语言可以同时编码范畴、函子、带作用集合、代数同态和多对象代数系统；在线性或 enriched 版本中，它还能编码模、双模和双线性结构。因此 colored operad 是后续 PROP、properad、enriched 和 infinity-operad 的必要中间层。
+Colored operad 是单色 operad 的带类型版本。颜色约束在代入时要求：内层运算的输出颜色必须等于外层输入槽的颜色。它与 symmetric multicategory 是同一数据。这个语言可以同时编码范畴、函子、带作用集合、代数同态和多对象代数系统；在线性或 enriched 版本中，它还能编码模、双模和双线性结构。因此 colored operad 是第七章 PROP/properad、附录 K enriched colored operad 和第十八章 infinity-operad 的必要中间层。
+
+Enriched colored operad 的模型结构不由本章定义自动给出；需要附录 G 的模型范畴假设，并需使用警告 K.19 与外部输入定理 K.20 中的 admissibility 边界。
 
 ## 练习
 

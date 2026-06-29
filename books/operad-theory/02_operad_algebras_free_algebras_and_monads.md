@@ -65,7 +65,7 @@ $$
 $$
 同态的底层函数保持不变。
 
-**命题 2.5.** 上述规则定义函子，并且对 operad morphism
+**命题 2.5.** 定义 2.4 的规则定义函子，并且对 operad morphism
 $$
 \mathcal O\xrightarrow{\varphi}\mathcal P\xrightarrow{\psi}\mathcal Q
 $$
@@ -130,11 +130,11 @@ $$
 A^T\to A^S,\qquad b\mapsto b\circ\sigma.
 $$
 
-**证明.** 由附录 A，群胚 $\mathbf B_{\mathcal U}$ 等价于骨架
+**证明.** 由命题 A.7，群胚 $\mathbf B_{\mathcal U}$ 等价于骨架
 $$
 \coprod_{n\ge0}B\Sigma_n.
 $$
-Coend 在等价群胚上不变。因此上式等价于对每个 $n$ 取
+Coend 在等价群胚上不变。因此命题 2.8.1 中的 coend 等价于对每个 $n$ 取
 $$
 \mathcal O(n)\times A^{[n]}
 $$
@@ -150,7 +150,7 @@ $$
 \coprod_{n\ge0}\mathcal O(n)\times A^{[n]}
 \right)\big/\sim
 $$
-只是选择 $[n]$ 后的坐标表达。后续涉及 colored operad、线性 Schur functor 或模型范畴中自由代数时，应优先把相应公式理解为 coend 或 indexed coproduct，而不是非自然的序列商。
+只是选择 $[n]$ 后的坐标表达。涉及 colored operad、线性 Schur functor 或模型范畴中自由代数时，应优先把相应公式理解为 coend 或 indexed coproduct，而不是非自然的序列商。
 
 ## 2.4 自由代数结构
 
@@ -232,9 +232,9 @@ $$
 $$
 (\mathcal O(\Theta)(u),a')\sim(u,a),
 $$
-所以两种代表元给出同一元素。多个输入同时重标号时逐个应用上述论证。
+所以两种代表元给出同一元素。多个输入同时重标号时逐个应用同一代表元无关性论证。
 
-在骨架写法中，上述论证变为如下特殊情形：若第 $i$ 个输入由 $\tau\in\Sigma_{n_i}$ 重标号，则在商集中有
+在骨架写法中，引理 2.10 的论证变为如下特殊情形：若第 $i$ 个输入由 $\tau\in\Sigma_{n_i}$ 重标号，则在商集中有
 $$
 [o_i;a^i_1,\ldots,a^i_{n_i}]
 =

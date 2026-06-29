@@ -163,9 +163,9 @@ $$
 $$
 N_d:\operatorname{Operad}_{\mathrm{col}}\to\mathbf{dSet}
 $$
-是 fully faithful。其本质像可由严格 Segal 条件刻画。
+是 fully faithful。其本质像可由严格 Segal 条件刻画。Fully faithfulness 的 Moerdijk--Weiss 定位为 MW-2。
 
-**说明 16.20.** 命题 16.18 证明了 nerve 满足严格 Segal 性。Fully faithfulness 还需证明 dendroidal natural transformations 由 $\eta$ 与 corollas 上的数据唯一确定，并且自然性恰好等价于 operad 的单位、复合和等变性保持。完整证明属于 Moerdijk-Weiss dendroidal nerve 的标准定理。
+**说明 16.20.** 命题 16.18 证明了 nerve 满足严格 Segal 性。Fully faithfulness 还需证明 dendroidal natural transformations 由 $\eta$ 与 corollas 上的数据唯一确定，并且自然性恰好等价于 operad 的单位、复合和等变性保持。完整证明属于 Moerdijk--Weiss Example 4.2，即 MW-2。
 
 ## 16.5 Faces、degeneracies 与 horns
 
@@ -224,7 +224,7 @@ $$
 
 在态射上，$\Delta$ 中的 coface maps 对应删除或收缩线性树中的相应外/内部分，codegeneracy maps 对应删除 unary vertex。
 
-**外部输入定理 16.27.** 上述函子 $i:\Delta\to\Omega$ 是 fully faithful。
+**外部输入定理 16.27.** 上述函子 $i:\Delta\to\Omega$ 是 fully faithful。Moerdijk--Weiss 定位为 MW-1。
 
 由此得到 restriction functor
 $$

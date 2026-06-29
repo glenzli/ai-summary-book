@@ -164,7 +164,7 @@ $$
 $$
 满足：$s$ 把 $\mathcal O^\otimes$ 中 inert morphisms 的 chosen coCartesian lifts 送到 $\mathcal C^\otimes$ 中的 inert coCartesian lifts。
 
-**命题 19.17.** 定义 19.16 与第十八章的 operad map 定义等价。
+**命题 19.17.** 定义 19.16 与定义 18.15 的 operad map 定义等价。
 
 **证明.** 一个 section $s$ 等价于给出 over $N(\mathbf{Fin}_*)$ 的 map
 $$
@@ -199,6 +199,8 @@ $$
 \mathcal M_\infty^\otimes\to N(\mathbf{Fin}_*).
 $$
 其 tensor product 由 $\mathcal M$ 的 derived tensor product 给出。
+
+**定位说明 19.21.1.** 定理 19.21 的模型范畴版本可与 White WHT-4 的 monoidal Bousfield localization criteria 对照；若还要求 localization 保持 operad 或 colored-operad algebra structures，则使用 White WHT-1--WHT-3 和 White--Yau WY-1--WY-3。该定位只给出模型范畴 preservation 版本，不替代 Lurie/Hinich 型 symmetric monoidal infinity-categorical localization。
 
 **命题 19.22.** 在定理 19.21 的假设下，若 $X,Y\in\mathcal M$，则
 $$
@@ -235,9 +237,11 @@ $$
 \operatorname{Alg}_{\mathcal O^{\operatorname{loc}}}(\mathcal M_\infty).
 $$
 
+**定位说明 19.25.1.** White WHT-1--WHT-3 和 White--Yau WY-1--WY-3 支撑的是 Bousfield localization preserves operad/colored-operad algebra structures 的模型范畴断言。它们不足以单独推出定理 19.25 的 infinity-categorical equivalence；该 equivalence 应按 P0 引用定位批次 9 中 PSAR-5--PSAR-6、HA-ALG-1--HA-ALG-3 或 P0 引用定位批次 10 中 DKR-7 的模型依赖输入使用。
+
 **说明 19.26.** 该定理是许多“严格代数模型呈现 infinity-categorical algebra objects”的基础。它依赖假设；在一般底环上的 commutative dg algebras、非 cofibrant operads 或不良 monoidal model categories 中不能直接套用。
 
-**命题 19.27.** 若 $\varphi:\mathcal O\to\mathcal P$ 是满足第十四章 rectification criterion 的 operad weak equivalence，则 localization 后有 equivalence
+**命题 19.27.** 若 $\varphi:\mathcal O\to\mathcal P$ 是满足外部输入定理 14.26 的 operad weak equivalence，则 localization 后有 equivalence
 $$
 \operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty
 \simeq
@@ -263,7 +267,7 @@ $$
 \end{CD}
 $$
 
-这里 $\mathcal P^{\operatorname{loc}}$ 表示由 $\mathcal P$ 经 localization 或 category-of-operators construction 得到的 infinity-operad，不是第十章中的 Koszul resolution $\mathcal P_\infty=\Omega\mathcal P^¡$。
+这里 $\mathcal P^{\operatorname{loc}}$ 表示由 $\mathcal P$ 经 localization 或 category-of-operators construction 得到的 infinity-operad，不是定义 10.1 和定义 L.1 中的 Koszul resolution $\mathcal P_\infty=\Omega\mathcal P^¡$。
 
 此图式不是一个无条件定理；每条箭头都需要独立假设：
 
@@ -273,6 +277,8 @@ $$
 4. 若 $\mathcal P^{\operatorname{loc}}$ 取 Lurie-style 模型，还需要 dendroidal/Lurie 或 strict/category-of-operators 比较。
 
 **警告 19.28.** “先取代数再 localization”与“先 localization 再取代数”不自动交换。它们交换正是定理 19.25 类型结果的内容。
+
+**说明 19.29.** 规则 M.18 把本章使用的 localization、dendroidal-Lurie 比较、category of operators nerve 和 algebra localization comparison 组织成允许路径。最终版若引用跨模型结论，应在正文旁标明使用规则 M.18 中哪一条路径，并检查警告 M.19 的禁止捷径。
 
 ## 19.8 本章小结
 

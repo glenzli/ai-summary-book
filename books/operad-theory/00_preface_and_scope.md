@@ -63,7 +63,7 @@ $$
 
 基础 operad 理论主要依赖 May、Boardman-Vogt、Markl-Shnider-Stasheff、Loday-Vallette 和 Fresse。dendroidal set 与 infinity-operad 部分主要依赖 Moerdijk-Weiss、Cisinski-Moerdijk、Lurie 以及模型比较文献。
 
-截至 2026-06-29，operad theory 的近期研究仍在活跃发展，尤其在以下方向：
+截至 2026-06-30，operad theory 的近期研究仍在活跃发展，尤其在以下方向：
 
 - infinity-operad 的同调和 Koszul 对偶；
 - operadic categories 与 higher nerve；
@@ -84,4 +84,3 @@ $$
 **练习 0.2.** 查阅任意两本 operad 教材，记录它们对 $\Sigma_n$ 作用采用左作用还是右作用，并说明 arity 公式因此如何变化。
 
 **练习 0.3.** 给出一个数学陈述，其中“同构”和“弱等价”不能互换使用。要求说明所在范畴或模型范畴。
-

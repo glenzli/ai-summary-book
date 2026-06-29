@@ -14,7 +14,7 @@
 
 ## 依赖前置知识
 
-需要第九章的 bar-cobar 构造、第十章的 $A_\infty/L_\infty$-代数，以及链复形的 homotopy 和 quasi-isomorphism。
+需要定理 9.20 的 bar-cobar 构造、定义 10.5 和定义 10.10 的 $A_\infty/L_\infty$-代数，以及链复形的 homotopy 和 quasi-isomorphism。
 
 ## 13.1 Contraction
 
@@ -100,6 +100,8 @@ $$
 
 **证明思想.** 把 $\mathcal P_\infty$-代数结构视为 cofree coalgebra 或 bar construction 上的 coderivation。Contraction 给出底层链复形的同伦等价。对 coderivation 的非线性部分应用 homological perturbation lemma，得到 $H$ 上的新 coderivation。Coderivation 平方为零等价于 $\mathcal P_\infty$-relations，因此 $H$ 得到转移结构。$\square$
 
+**定位说明.** Operadic existence version 可引用 Markl 的 MHT-1--MHT-8；其中 transfer over chain homotopy equivalence 是 MHT-6。Basic perturbation lemma 的显式级数与符号表述按附录 W 的 HPT/convention package 管理；正文固定使用悬挂约定。
+
 ## 13.4 $A_\infty$ 转移公式
 
 **设定 13.7.** 设 $(A,d,\mu)$ 是 dg associative algebra，并有 contraction
@@ -126,7 +128,7 @@ p\mu(h\mu(i x,i y),i z)
 \pm
 p\mu(i x,h\mu(i y,i z)).
 $$
-符号由第九章的悬挂约定决定。
+符号由约定 9.1 和定义 9.2 的悬挂约定决定。
 
 一般地，
 $$
@@ -159,7 +161,9 @@ H\rightsquigarrow A.
 $$
 该定理通常称为 Kadeishvili transfer theorem 或 $A_\infty$ homotopy transfer theorem。
 
-**说明 13.10.1.** 附录 J 给出本书使用的平面二叉树递归、normalized contraction side conditions、低阶恒等式检查和 $A_\infty$ quasi-isomorphism 分量。正文中的 $\pm$ 默认由附录 E 的 suspended convention 和附录 J 的树递归共同决定。
+**定位说明.** 作为 strongly homotopy associative structures 的存在性结论，可由 Markl MHT-6 支撑。公式 13.8 的具体平面树符号由定义 E.18--定义 E.23、附录 J 和附录 W 的悬挂约定统一管理；未悬挂文献公式只作为 convention translation。
+
+**说明 13.10.1.** 定义 J.4--定义 J.9 给出本书使用的平面二叉树递归、定义 J.1--命题 J.2 给出 normalized contraction side conditions，命题 J.12--命题 J.13 给出低阶恒等式检查。正文中的 $\pm$ 默认由定义 E.18--定义 E.23 的 suspended convention 和定义 J.5--定义 J.6 的树递归共同决定。
 
 ## 13.5 $L_\infty$ 转移公式
 
@@ -195,7 +199,9 @@ $$
 H\rightsquigarrow\mathfrak g.
 $$
 
-**说明 13.13.1.** 附录 J 把 $L_\infty$ 转移写成有根二叉树、shuffle 和 Koszul 反对称化的组合。完整 signs 仍属于外部输入定理 13.13 的一部分；正文只使用与附录 E 相容的 convention。
+**定位说明.** 作为 strongly homotopy Lie structures 的存在性结论，可由 Markl MHT-6 支撑。公式 13.12 的 shuffle signs 和反对称化约定由定义 E.18--定义 E.23、附录 J 和附录 W 的悬挂约定统一管理；未悬挂文献公式只作为 convention translation。
+
+**说明 13.13.1.** 定义 J.14--定义 J.15 把 $L_\infty$ 转移写成有根二叉树、shuffle 和 Koszul 反对称化的组合。完整 signs 属于外部输入定理 13.13 与附录 W convention package 的一部分；正文只使用与定义 E.18--定义 E.23 相容的 convention。
 
 ## 13.6 Minimal model
 
@@ -256,7 +262,7 @@ $$
 
 同伦转移定理说明：若链复形 $A$ 上有 $\mathcal P_\infty$-代数结构，并且 $A$ 与 $H$ 同伦等价，则 $H$ 上也有自然的 $\mathcal P_\infty$-代数结构。对 dg associative algebra，转移公式由平面二叉树控制；对 dg Lie algebra，转移公式由反对称化的有根树控制。Minimal model 把微分信息转化为高阶运算，是 formality、Massey products 和同伦分类的基本工具。
 
-附录 J 是本章的计算附录。需要实际计算 $m_3$、$m_4$、$\ell_3$ 或 $\infty$-morphism 分量时，应先固定 normalized contraction，再按附录 J 的树递归展开。
+定义 J.4--外部输入定理 J.19 是本章的计算入口。需要实际计算 $m_3$、$m_4$、$\ell_3$ 或 $\infty$-morphism 分量时，应先固定定义 J.1 的 normalized contraction，再按定义 J.5、定义 J.9 和定义 J.15 的树递归展开。
 
 ## 练习
 

@@ -170,9 +170,9 @@ $$
 $$
 X(k)\times\prod_iY(n_i),
 $$
-而不同选择正由上述对称群作用取 coinvariants 识别。对所有 $k$ 和 $n_1+\cdots+n_k=n$ 求 coproduct，得到公式。$\square$
+而不同选择正由命题 B.10 中的对称群作用取 coinvariants 识别。对所有 $k$ 和 $n_1+\cdots+n_k=n$ 求 coproduct，得到公式。$\square$
 
-**警告 B.11.** 公式 B.10 的左右作用取决于附录 A 的转换约定。若采用不同文献的右作用约定，$\Sigma_k$ 与 $\Sigma_{n_i}$ 的作用方向可能需要整体取逆。
+**警告 B.11.** 公式 B.10 的左右作用取决于命题 A.9 和约定 A.10 的转换约定。若采用不同文献的右作用约定，$\Sigma_k$ 与 $\Sigma_{n_i}$ 的作用方向可能需要整体取逆。
 
 ## B.5 树代入
 

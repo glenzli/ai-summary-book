@@ -12,7 +12,7 @@
 
 ## 依赖前置知识
 
-需要第四章的自由 operad 和生成元关系、第六章的线性 operad 和经典例子。需要有限维向量空间对偶和群表示的基本知识。
+需要定理 4.10 的自由 operad 泛性质、定义 4.13 的生成元关系口径、定义 6.6 的线性 operad 和第六章的经典例子。需要有限维向量空间对偶和群表示的基本知识。
 
 ## 8.1 Reduced 约定与权重
 
@@ -94,7 +94,7 @@ $$
 [[x,y],z]+[[y,z],x]+[[z,x],y]=0.
 $$
 
-**警告 8.10.** 第六章中含单位的 $\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Pois}$ 包含 arity $0$ 运算。它们不是本章 reduced 二次理论的对象。若要处理单位，通常使用 augmented operad、非齐次二次关系或 curved 版本。
+**警告 8.10.** 命题 6.15、命题 6.16 和命题 6.21 中含单位的 $\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Pois}$ 包含 arity $0$ 运算。它们不是本章 reduced 二次理论的对象。若要处理单位，通常使用 augmented operad、非齐次二次关系或 curved 版本。
 
 ## 8.4 二次对偶
 
@@ -151,7 +151,7 @@ $$
 $$
 \kappa:\mathcal P^¡\to\mathcal P.
 $$
-完整定义需要 dg cooperad、悬挂符号和 infinitesimal decomposition，将在 bar-cobar 章节给出。
+完整定义需要定义 9.6 的 dg cooperad、定义 9.2 的悬挂符号和定义 9.11 的 infinitesimal decomposition。
 
 **定义 8.16.** 二次 operad $\mathcal P$ 称为 Koszul，若由 $\kappa:\mathcal P^¡\to\mathcal P$ 定义的 Koszul complex
 $$
@@ -161,13 +161,13 @@ $$
 
 **警告 8.17.** Koszul 性不是“存在二次对偶”本身。每个有限型二次 operad 都有 $\mathcal P^!$，但不一定 Koszul。Koszul 性是关于一个链复形无同调的同调断言。
 
-**外部输入定理 8.18.** $\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Lie}$ 是 Koszul operad。更一般的判别方法包括 distributive law、PBW 型基和 Gröbner basis 方法。完整证明不在本章给出，应引用 Ginzburg-Kapranov、Loday-Vallette 或 Fresse。
+**外部输入定理 8.18.** $\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Lie}$ 是 Koszul operad。更一般的判别方法包括 distributive law、PBW 型基和 Gröbner basis 方法。Classical quadratic 来源已定位为 Ginzburg--Kapranov Corollary 4.2.7，即 GK-5；其他模型或符号版本仍可引用 Loday--Vallette 或 Fresse。
 
 **外部输入定理 8.19.** 若 $\mathcal P$ 是有限型 Koszul operad，则其二次对偶 $\mathcal P^!$ 也是 Koszul，并且指数生成函数满足 Ginzburg-Kapranov 关系
 $$
 g_{\mathcal P}\big(-g_{\mathcal P^!}(-t)\big)=t
 $$
-或等价符号约定下的同一反函数关系。使用该公式前必须明确生成函数和悬挂符号约定。
+或等价符号约定下的同一反函数关系。Classical 来源已定位为 Ginzburg--Kapranov Proposition 4.1.4，即 GK-2；使用该公式前必须明确生成函数和悬挂符号约定。
 
 ## 8.6 为什么 Koszul 对偶重要
 
@@ -195,4 +195,3 @@ Koszul operad 的意义在于：若 $\mathcal P$ Koszul，则其同伦版本通�
 **练习 8.4.** 假设 $E(2)$ 一维且带平凡 $\Sigma_2$ 作用，计算 $E^\vee(2)$ 的 $\Sigma_2$ 作用。
 
 **练习 8.5.** 解释为什么“$\mathcal P$ 有二次对偶”不推出“$\mathcal P$ Koszul”。
-

@@ -1,6 +1,6 @@
 # 数学审查记录
 
-核查日期：2026-06-29。
+核查日期：2026-06-30。
 
 ## 总体风险
 
@@ -28,6 +28,12 @@
 - 已把近期 arXiv 条目的使用状态固定为研究边界。
 - 已记录每个条目对应的本书逻辑位置和进入正文前必须补齐的信息。
 - 该文件不证明任何前沿定理；若未来引用其中结果，仍需精确版本、定理编号和模型约定。
+
+### `FRONTIER_SOURCE_AUDIT_2026_06_30.md`
+
+- 已按 2026-06-30 的官方 arXiv 页面重新核查近期条目的版本状态。
+- 已把 infinity-operadic Koszul duality、operadic categories、relative dendroidal Rezk nerve 和 Fukaya categories 高阶 operadic structure 分别列为需要专章处理的前沿方向。
+- 已明确这些条目目前只能作为研究边界或已登记的边界 locator，不得进入基础章节的证明链。
 
 ### `01_symmetric_sequences_and_operads.md`
 
@@ -60,7 +66,7 @@
 
 - 已用有限集输入颜色函数定义 colored symmetric sequence、colored substitution product 和 colored operad。
 - 已证明 colored endomorphism operad 和 symmetric multicategory 等价口径。
-- 后续若进入 enriched colored operad，需要把集合值 Hom 换成指定对称幺半范畴中的对象。
+- 已接入附录 K；enriched colored operad 需要把集合值 Hom 换成指定对称幺半范畴中的对象，并另行检查 admissibility。
 
 ### `06_linear_operads_schur_functors_and_classical_examples.md`
 
@@ -84,14 +90,14 @@
 
 - 已固定同调分次和 Koszul sign rule，并定义 dg-operad、dg-cooperad、cofree conilpotent cooperad、twisting morphism、bar/cobar 构造。
 - 已证明 bar-cobar 泛性质；Koszul twisting morphism 的 quasi-isomorphism 判别标为外部输入定理。
-- 已接入附录 I 的 convolution Lie algebra、twisted composite product、Koszul complex 和权重滤过约定；进入具体 $A_\infty/L_\infty$ 章节时仍需与附录 E/J 的 signs 对齐。
+- 已接入附录 I 的 convolution Lie algebra、twisted composite product、Koszul complex 和权重滤过约定；进入具体 $A_\infty/L_\infty$ 章节时仍需与定义 E.18--定义 E.23 和定义 J.1--外部输入定理 J.19 的 signs 对齐。
 
 ### `10_a_infinity_l_infinity_and_e_n_operads.md`
 
 - 已以 bar-cobar 定义为主定义给出 $A_\infty$、$L_\infty$ 和 $C_\infty$，手写恒等式只作为展开说明。
 - 已区分 $E_n$-operad 与 Lurie-style infinity-operad。
 - $H_\*(\mathcal C_n)\cong\operatorname{Pois}_n$、May recognition principle 和形式性均标为外部输入定理。
-- 具体 signs 仍需逐项校验；附录 E 已固定 Koszul signs、suspension 和 Hochschild 约定的基础版本。
+- 已接入附录 L 的 suspended coderivation 口径和 $E_n$ 模型层级边界；具体 unsuspended signs 仍需逐项校验。
 
 ### `11_gerstenhaber_bv_and_deligne_conjecture.md`
 
@@ -109,7 +115,7 @@
 ### `13_homotopy_transfer_and_minimal_models.md`
 
 - 已定义 contraction、homological perturbation lemma、同伦转移定理、$A_\infty/L_\infty$ 树公式、minimal model 和 formality。
-- Homological perturbation lemma、完整转移定理、minimal model 存在唯一性均标为外部输入定理。
+- Homological perturbation lemma、完整转移定理、minimal model 存在唯一性均标为外部输入定理；其中 Markl strongly homotopy transfer existence 已定位到 MHT-1--MHT-8。
 - 已接入附录 J 的 normalized contraction、$A_\infty$ 平面二叉树递归、$L_\infty$ shuffle 反对称化和低阶恒等式检查。
 - $m_3$ 和 Massey products 的关系只作说明；完整选择依赖仍需后续例子章节展开。
 
@@ -131,7 +137,7 @@
 
 - 已定义 rooted tree、inner/outer edges、单位树、corolla、线性树、自由 colored operad $\Omega(T)$、树范畴 $\Omega$、dendroidal set、representable、dendroidal nerve、Segal core、faces、degeneracies、boundaries 和 inner horns。
 - 已证明 dendroidal nerve 在 $\eta$ 和 corollas 上读取颜色与运算，并证明 strict Segal 性。
-- Dendroidal nerve fully faithfulness、$\Delta\hookrightarrow\Omega$ fully faithfulness 和树范畴 generalized Reedy 分解均标为外部输入或说明性背景。
+- Dendroidal nerve fully faithfulness 和 $\Delta\hookrightarrow\Omega$ fully faithfulness 已由 MW-1--MW-2 定位；树范畴 generalized Reedy 分解仍标为外部输入或说明性背景。
 - 后续第十七章需要把 inner horn fillers 与 homotopy operads/model structure 精确连接。
 
 ### `17_dendroidal_inner_kan_and_homotopy_operads.md`
@@ -146,21 +152,35 @@
 - 已定义 $\mathbf{Fin}_*$、active/inert morphisms、inert projections、coCartesian edges、Lurie-style infinity-operad、symmetric monoidal infinity-category、algebras over infinity-operads 和 category of operators。
 - 已说明 dendroidal nerve 与 category of operators nerve 处于不同模型；比较定理作为外部输入。
 - Active-inert 分解方向在本章中显式警告；后续若使用 Lurie 原文定理，需要逐条核对 convention。
-- CoCartesian fibration 技术、mapping space 条件和 dendroidal-Lurie model comparison 均标为外部输入。
+- CoCartesian fibration 技术、mapping space 条件和 dendroidal-Lurie model comparison 均标为外部输入；附录 M 已给出跨模型使用路径。
 
 ### `19_model_comparison_straightening_and_operadic_localization.md`
 
 - 已定义 relative category、relative functor、Dwyer-Kan localization、DK-equivalence、underlying infinity-category、straightening/unstraightening、operadic straightening、monoidal localization 和 operadic localization。
 - 已证明 relative functor 诱导 localization 后的函子、derived tensor product 的 cofibrant replacement 计算、rectification 后 localization 等价。
-- Dwyer-Kan localization 存在性、simplicial model category 的 coherent nerve 比较、Quillen equivalence 到 infinity-equivalence、straightening/unstraightening、monoidal localization 和 algebra localization comparison 均标为外部输入。
+- Dwyer-Kan localization 存在性、simplicial model category 的 coherent nerve 比较、Quillen equivalence 到 infinity-equivalence 和 operadic straightening 均标为外部输入；ordinary straightening 已由 HTT-1 定位，monoidal Bousfield localization preserves operad/colored-operad algebras 的模型范畴版本已由 WHT-1--WHT-4 与 WY-1--WY-3 定位，完整 infinity-categorical algebra localization comparison 仍为外部输入。
 - 已明确“先取代数再 localization”与“先 localization 再取代数”不自动交换。
+- 已接入附录 M 的 strict/dendroidal/Lurie/model-category 依赖图。
 
 ### `20_factorization_algebras_fukaya_categories_and_geometry.md`
 
 - 已定义 $\mathbf{Disk}_n$、$\mathbf{Disk}_{n/M}$、prefactorization algebra、factorization algebra、locally constant factorization algebra、factorization homology、$A_\infty$-category 和 Fukaya category 的结构性描述。
 - Locally constant factorization algebras 与 $E_n$-algebras 的等价、factorization homology excision、Dunn additivity、Fukaya category 构造、operadic Fukaya structures 和 gluing 定理均标为外部输入。
 - 已明确 Fukaya category 的完整构造依赖 brane data、transversality、compactness、orientation 和 obstruction theory，不能只由 operad 公理推出。
+- 已接入附录 N 的 factorization homology 计算边界和附录 O 的失败模式清单。
 - 后续研究边界章节若引用 2026 Fukaya 高阶 operad 结果，需要补充具体模型和版本。
+
+### `DEPENDENCY_GRAPH.md`
+
+- 已建立全书定义、证明和外部输入依赖图。
+- 已把基础层、线性与同伦代数层、模型范畴/infinity-operad 层、几何层分开，避免高级比较定理倒用。
+- 该文件不新增数学定理；它只约束阅读顺序和审校路径。
+
+### `THEOREM_LEDGER.md`
+
+- 已按基础 operad、线性/Koszul/同伦代数、模型范畴/infinity-operad、几何/前沿和元文档分层，区分内部证明、外部输入和边界说明。
+- 已明确当前草稿已经是 operad theory 数学收口版，但不是 camera-ready 出版版本。
+- 该文件与附录 D 分工：附录 D 索引外部输入来源，本文件记录每章结论的可使用状态。
 
 ### `A_set_theory_universes_finite_sets_and_symmetric_groups.md`
 
@@ -198,6 +218,90 @@
 - 已给出 $L_\infty$ 转移的有根树加 shuffle 反对称化框架。
 - 完整 $A_\infty/L_\infty$ 高阶 signs、转移定理和 minimal model 唯一性仍标为外部输入。
 
+### `K_colored_operads_modules_and_enrichment.md`
+
+- 已给出 $C$-轮廓群胚骨架、colored substitution coend 口径、自由 colored operad 的 colored tree 公式。
+- 已证明自由 colored operad 的泛性质，并展开代数同态、左模、双模的 colored operad 编码。
+- 已定义 enriched colored operad；模型结构 admissibility 仍标为外部输入。
+
+### `L_infinity_algebras_and_en_operad_conventions.md`
+
+- 已固定 $\mathcal P_\infty=\Omega\mathcal P^¡$ 与任意 cofibrant replacement 的区别。
+- 已用 $T^c(sA)$ 和 $S^c(sV)$ 上的 square-zero coderivations 给出 $A_\infty/L_\infty$ 的安全定义。
+- 已记录 $E_n$、$E_\infty$、Poisson 同调、additivity 和 rectification 的边界。
+
+### `M_dendroidal_lurie_and_model_comparison_map.md`
+
+- 已区分 strict operads、dendroidal sets、Lurie-style infinity-operads 和模型范畴中代数对象四类模型。
+- 已给出 strict operad 的 dendroidal nerve 与 category of operators nerve 的不同目标范畴。
+- 已列出跨模型允许路径和禁止捷径；White/White--Yau 的模型范畴 localization preservation 已定位，dendroidal-Lurie comparison、category of operators nerve 和 infinity-categorical algebra localization comparison 仍作为外部输入。
+
+### `N_factorization_homology_examples_and_geometry.md`
+
+- 已固定 framed/tangential disk category、factorization homology colimit、不交并公式、disk 归一化和 excision 使用条件。
+- 已把圆周计算写成 $HH_\*(A)$ 或 $A\otimes^{\mathbf L}_{A\otimes A^{op}}A$ 的外部输入，并记录 derivedness、边界版本和 cyclic bar 模型边界。
+- 已分离交换系数退化、球面 excision 表达式、locally constant factorization algebra 重建和 Fukaya 型 gluing 模式。
+
+### `O_failure_modes_counterexamples_and_boundary_cases.md`
+
+- 已收集 arity $0$、左右群作用、coinvariants/invariants、$E_\infty$ rectification、$\mathcal P_\infty$ 记号、chains、$E_n$ 形式性、dendroidal/Lurie 比较、localization、factorization homology、Fukaya category 和预印本使用中的错误命题。
+- 每条均给出失败原因和正确边界，作为正文跨模型断言的检查清单。
+- 该附录不新增证明链；它把已有风险集中为可审校约束。
+
+### `P_low_arity_checks_and_worked_computations.md`
+
+- 已给出代入乘积 arity $0,1,2$、endomorphism operad 结合律、$\operatorname{Ass}$ 字典序复合、$\operatorname{Com}$ arity $0$ 单位、Lie 生成元关系、suspended $A_\infty$ 低阶关系、Hochschild bracket 低阶计算、dendroidal inner horn 最小例子和 cyclic bar levels。
+- 该附录用于检查符号、单位、左右作用、唯一填充/存在填充和 derived relative tensor product 的低阶表现。
+- 涉及 factorization homology 与 dendroidal inner Kan 的模型比较仍按附录 D 标为外部输入。
+
+### `Q_koszul_complexes_and_bar_cobar_examples.md`
+
+- 已补充二元二次 operad 的权重-arity 关系、非对称 Ass 的关系、二次对偶低阶形状、Koszul twisting morphism 的权重行为、bar/cobar differential 低权重公式和 bar-cobar counit 的低权重检查。
+- 完整 Ass Koszul 性、Koszul complex exactness、bar-cobar resolution 和谱序列收敛仍标为外部输入；其中 Ginzburg--Kapranov classical core 和 Fresse modern cobar/cofibrant replacement 已完成 theorem locator，书本 convention translation 仍需最终核对。
+- 该附录修复了第八、九章只有抽象定义、缺少可手算局部模型的问题。
+
+### `R_model_category_case_studies.md`
+
+- 已把附录 G 的检查表应用到 $\mathbf{sSet}$、compactly generated spaces、$\mathbf{Ch}_k$ 特征 $0$、一般 $\mathbf{Ch}_R$、非负链复形、spectra、colored operads 和 enriched categories。
+- 已明确 rectification 正例必须写出底范畴假设、operad weak equivalence、admissibility、cofibrancy/flatness 和引用定理。
+- 已明确正特征和一般底环中 $E_\infty\to\operatorname{Com}$ 逐 arity quasi-isomorphism 不足以推出代数范畴 Quillen equivalence。
+
+### `S_homotopy_transfer_worked_examples.md`
+
+- 已补充 dg associative algebra 的转移乘法 $m_2^H$、三元运算 $m_3^H$、结合律同伦边界、Massey product 关系、formality 低阶判据和 dg Lie algebra 的 $\ell_2/\ell_3$ 转移形状。
+- 已明确 $m_3^H$ 依赖 contraction 选择，Massey product 有不定性，二者不能无条件等同。
+- 已区分 $A_\infty$-formality 与 strict dg formality，后者需要 rectification 或额外严格化输入。
+
+### `T_dendroidal_horns_segal_and_normality_examples.md`
+
+- 已给出两顶点树 inner horn、三顶点线性树、Segal core、boundary 与 horn 差异、corolla automorphism 和 degeneracy 的低阶样例。
+- 已明确 strict nerve 中 filler 唯一，一般 inner Kan dendroidal set 只要求 filler 存在。
+- Normal monomorphism 和 fully faithfulness 仍作为外部输入，不在附录中伪证。
+
+### `U_props_properads_graphical_calculus_examples.md`
+
+- 已补充 PROP interchange law、双代数兼容关系、Frobenius 关系、properad 连通图复合、PROP/properad 不连通差异、wheeled trace 公式和图替换结合律。
+- 已明确 properad 不含任意水平张量，wheeled contraction 需要 dualizability/trace。
+- 自由 properad/PROP 的完整图群胚构造仍作为外部输入。
+
+### `V_stratified_and_boundary_factorization_examples.md`
+
+- 已补充半空间、区间、圆周 trace、分层区间、hypersurface defect、corners 和 Fukaya skeleta 的使用边界。
+- 已明确无边界 disk 归一化不能直接用于带边界或分层空间。
+- Stratified factorization homology、sectorial descent 和 Fukaya skeletal descent 均保留为外部输入。
+
+### `W_sign_convention_crosswalk.md`
+
+- 已把同调分次、operadic suspension、suspended Hochschild cochains、brace signs、$A_\infty/L_\infty$ suspended 主定义和同伦转移符号检查放入同一转换表。
+- 已明确 unsuspended 高阶公式不是本书主定义；最终版若展示全公式，必须从 suspended convention 推出。
+- 该附录修复了定理账本中“符号已有低阶样例但缺少总表”的缺口。
+
+### `X_concrete_algebraic_examples_and_counterexamples.md`
+
+- 已加入 arity $0$ 与自由交换代数、tensor/symmetric algebra 差异、正特征 coinvariants 不 exact、特征 $2$ Lie 边界、$E_\infty$ rectification 风险、$HH_\*(k)$、$HH_0(M_n(k))$、带边界区间 module 条件例子，以及正特征中 $\operatorname{Sym}^p$ 不保持 acyclic complex 的显式计算。
+- 已把正特征 rectification、Morita invariance 和带边界 factorization 的深层结论保持为外部输入或边界说明。
+- 该附录用于防止把特征 $0$、交换、无边界或 strict 模型的直觉错误推广。
+
 ### `C_model_categories_and_quillen_adjunctions.md`
 
 - 已定义 lifting property、weak factorization system、模型范畴、cofibrant/fibrant replacement、homotopy category、Quillen adjunction、derived functor、Quillen equivalence、monoidal model category 和 monoid axiom。
@@ -207,7 +311,152 @@
 ### `D_source_theorem_index.md`
 
 - 已按章节索引所有主要外部输入定理，并标出主要来源和后续需补的严格化信息。
-- 当前索引仍是初稿；最终版需要把“主要来源”改成精确到定理编号、页码或 arXiv 版本。
+- 已新增外部输入状态标签、引用包定义和不倒用原则，区分外部可用、外部候选、研究边界和禁用为证明步骤的材料。
+- 已为 Koszul/bar-cobar、同伦转移、operad 模型结构、dendroidal 模型、Lurie-style 比较、localization、factorization homology、Fukaya category 和 2026 前沿建立最小可出版引用包。
+- Koszul/bar-cobar 引用包的 Ginzburg--Kapranov classical core 已由 GK-1--GK-7 定位；Fresse modern cobar/cofibrant replacement 已由 FRE-1--FRE-6 定位；Hinich dg-operad model context 已由 HIN-1--HIN-2 定位；Loday--Vallette/Fresse 书本紧凑表述已由 `FINAL_OPERAD_THEORY_CLOSURE.md` 关闭为 convention/bibliography production work。
+
+### `PUBLICATION_CLOSURE_MATRIX.md`
+
+- 已定义核心可读教材态、基本完本严格草稿态和最终出版态。
+- 已判定当前书稿达到基本完本严格草稿态和 operad theory 数学收口态，但尚未达到 camera-ready 出版态。
+- 已把基本完本封口项推进到 B13；production 剩余项压缩为 bibliography、page/tag 核验、局部公式指称校对、符号逐模型核查、模型假设翻译和正式参考文献。
+
+### `FINAL_OPERAD_THEORY_CLOSURE.md`
+
+- 已把剩余项目最终分类为内部证明、外部 locator、边界关闭或出版社级 production work。
+- 已判定 Koszul/bar-cobar 书本口径、HPT/同伦转移符号、Fukaya/分层几何均不再是 operad theory locator 空缺，而是 convention package 或外部几何边界。
+- 已给出最终规则：后续不得把边界关闭项升级为内部证明，不得重新把已定位项目标为未定位主题。
+
+### `PUBLICATION_PROOFING_LEDGER.md`
+
+- 已建立最终出版校对账本，明确出版校对不再横向增加主题。
+- 已记录第一轮出版校对动作：修正命题 X.9 自指证明、AF-2 圆周定位、附录 N/E 的符号入口和第十四章 rectification 定位边界。
+- 已把主要 theorem locator 收口到批次文件：Ginzburg--Kapranov classical Koszul core、Fresse modern cobar/cofibrant replacement、Hinich dg-operad model context、Markl homotopy transfer existence、Moerdijk--Weiss dendroidal nerve core、White/White--Yau model-category localization preservation、Pavlov--Scholbach modern admissibility/rectification、Hinich Dwyer--Kan localization、Heuts--Hinich--Moerdijk dendroidal-Lurie comparison、Lurie category-of-operators/algebra comparison、Pratali operadic straightening preprint locator、Deligne locator 和 Dunn additivity locator 均已登记。Loday--Vallette/Fresse 书本口径、HPT/transfer signs 和几何/Fukaya 假设包已由 `FINAL_OPERAD_THEORY_CLOSURE.md` 关闭为 convention package 或外部边界；剩余仅为 production work。
+
+### `INTERNAL_OPERAD_CLOSURE_AUDIT.md`
+
+- 已把审校重心切换到 operad theory 主体的内部闭合：有限集口径、代入乘积、operad 幺半对象定义、endomorphism operad、自由 operad、colored operad、Schur functor 和低阶例子。
+- 已确认第一至第七章及附录 A/B/H/K/P/U/X 的 operad theory 主体达到内部闭合严格草稿态。
+- 已修正第六章 Schur functor 中的左/右 $\Sigma_n$ 作用转换缺口，并在 `NOTATION.md` 中同步。
+- 后续内部任务应优先处理稳定编号、交叉引用、证明压缩和符号表，而不是继续横向扩张外部命题定位。
+
+### `INTERNAL_NUMBERING_AND_CROSSREF_AUDIT.md`
+
+- 已完成第一至第七章编号第一轮审计。
+- 已确认 2.8.1、5.16.1、6.2.1 属于可保留的插入编号。
+- 已把第七章 7.15 统一为“说明 7.15”。
+- 已把自由对称 operad 树群胚公式登记为“第四章加附录 H 内部闭合，最终出版只需文献对照”。
+
+### `LABEL_LEDGER_CH01_07.md`
+
+- 已为第一至第七章生成稳定 label 表。
+- 已把 `展开`、`解释`、`说明`、`注`、`警告` 纳入正式可引用 statement type。
+- 已确认 `2.8.1`、`2.8.2`、`5.16.1`、`6.2.1` 是可保留插入编号；`注 6.19` 已纳入稳定 label 表。
+- 后续正文编辑应优先使用该 label 表替换“上面”“前面”等散文引用。
+
+### `LABEL_LEDGER_CORE_APPENDICES.md`
+
+- 已为附录 A/B/H/K/P/U/X 生成稳定 label 表。
+- 已把 `计算 P.7` 和 `边界 X.8` 纳入正式可引用 statement type。
+- 已核对核心附录共有 104 个正式编号项，全部进入 label 表。
+- 该表与第一至第七章 label 表共同覆盖 operad theory 主体内部闭合所依赖的核心引用目标。
+
+### `LABEL_LEDGER_CH08_21.md`
+
+- 已为第八至第二十一章生成稳定 label 规则和编号项清单。
+- 已使用 statement type 白名单抽取，避免把证明行中的反向引用误登记为 label。
+- 已核对第八至第二十一章共有 413 个正式编号项，其中包括插入编号 `9.15.1`、`10.13.1`、`13.10.1`、`13.13.1`、`14.23.1`、`14.29.1`、`19.21.1`、`19.25.1` 和 `20.11.1`。
+- 结合第一至第七章 label 表，正文二十一章的可引用目标已经闭合。
+
+### `LABEL_LEDGER_REMAINING_APPENDICES.md`
+
+- 已为附录 C/D/E/F/G/I/J/L/M/N/O/Q/R/S/T/V/W/Y/Z 生成稳定 label 规则和编号项清单。
+- 已把 `错误命题`、`正确边界`、`事实`、`案例`、`模板`、`检查`、`表`、`低阶形状`、`使用规则` 和 `失败模式` 纳入正式可引用 statement type。
+- 已核对剩余附录共有 395 个正式编号项，全部进入 label 体系。
+- 结合核心附录 label 表，附录 A--Z 的可引用目标已经闭合。
+
+### `CROSSREF_REWRITE_AUDIT.md`
+
+- 已完成第一至第七章和核心附录 A/B/H/K/P/U/X 的第一轮散文交叉引用替换。
+- 已完成第八至第二十章、主要剩余附录和相关元文档的第二轮散文交叉引用替换。
+- 已把可直接定位的“上述规则”“由附录 A/B/H/K”、符号附录泛称和“第八、九章”等替换为具体编号引用。
+- 已登记剩余未替换项的类型：局部公式指称、结构标题、主题级概览和书目粒度统一。
+- 当前剩余项不阻断 operad theory 主体内部闭合。
+
+### `REFERENCE_LOCATOR_LEDGER.md`
+
+- 已把最终出版前的外部输入定位分为 P0、P1、P2 和 R 四类。
+- 已列出 P0 证明链必需包、P1 结构解释必需包、P2 背景源和 R 研究边界源。
+- 已明确 P0/P1 theorem locator 属于最终出版引用审校；已定位批次覆盖 Berger--Moerdijk、Cisinski--Moerdijk、Lurie HTT、Ayala--Francis、Ginzburg--Kapranov classical Koszul core、Fresse modern cobar/cofibrant replacement、Hinich dg-operad model context、Markl homotopy transfer existence、Moerdijk--Weiss dendroidal nerve core、White/White--Yau localization preservation、Pavlov--Scholbach admissibility/rectification、Hinich Dwyer--Kan localization、HHM dendroidal-Lurie comparison、Lurie algebra/category-of-operators comparison、Pratali operadic straightening preprint locator、Deligne locator 和 Dunn additivity locator。
+
+### `P0_REFERENCE_LOCATORS_BATCH_1.md`
+
+- 已定位 Berger-Moerdijk `arXiv:math/0206094v3` 中 operad transferred model structure、固定 operad algebra transferred structure 和早期 rectification 相关结论。
+- 已定位 Cisinski-Moerdijk `arXiv:0902.1954v2` 中 normal monomorphisms、inner anodyne/horn calculus、operadic model structure 和 fibrant weak equivalence criterion。
+- 已标记 Cisinski-Moerdijk erratum 影响需要最终出版前复核。
+
+### `P0_REFERENCE_LOCATORS_BATCH_2.md`
+
+- 已定位 Lurie *Higher Topos Theory* Theorem 3.2.0.1 作为 ordinary straightening/unstraightening 的 P0 来源。
+- 已明确该定位不覆盖 operadic straightening、monoidal localization 或 algebra localization comparison。
+
+### `P0_REFERENCE_LOCATORS_BATCH_3.md`
+
+- 已定位 Ayala-Francis `arXiv:1206.5522v6` 中 factorization homology 的总览定理、excision、圆周 Hochschild 计算、Eilenberg--Steenrod 型刻画和带边界版本。
+- 精确定位为 Theorem 1.2、Lemma 3.18、Theorem 3.19、Theorem 3.24 和 Theorem 3.26。
+- 已明确该定位不覆盖 Costello-Gwilliam/Lurie 的 locally constant factorization algebra 完整等价、stratified factorization homology、Fukaya descent 或 Hochschild sign model 的逐项核对；Dunn/Lurie additivity 已由 `P1_REFERENCE_LOCATORS_FINAL_SWEEP.md` 中 DUNN-1 定位。
+
+### `P0_REFERENCE_LOCATORS_BATCH_4.md`
+
+- 已定位 Ginzburg-Kapranov `arXiv:0709.1228` 中 quadratic operad Koszul duality 的 classical core。
+- 精确定位为 Definition 4.1.3、Proposition 4.1.4、Theorem 4.1.13、Theorem 4.2.5、Corollary 4.2.7、Theorem 3.2.16 和 Section 4.2.12。
+- 已明确该定位本身不覆盖 modern $\Omega\mathcal P^¡$、$\Omega B\mathcal P$、conilpotent cooperad twisting morphism 和 cofibrant resolution 版本；Fresse/Hinich 的一部分 modern locator 后续由 `P0_REFERENCE_LOCATORS_BATCH_5.md` 覆盖。
+
+### `P0_REFERENCE_LOCATORS_BATCH_5.md`
+
+- 已定位 Fresse `arXiv:0902.0177` 中 operadic cobar construction、twisted composite acyclicity、bar-cobar resolution entry、quasi-free/cofibrant replacement 和 homotopy morphism 入口。
+- 精确定位为 Section 3.7、Theorem 3.9、Theorem 3.10、Section 3.14、Theorem 4.2.4、Proposition 4.2.7 和 Proposition 4.2.8。
+- 已定位 Hinich `arXiv:q-alg/9702015` 中 dg-operad model structure 和 $\Sigma$-split operad algebra homotopy-category comparison，精确定位为 Theorem 6.1.1 和 Theorem 4.7.4。
+- 已明确该定位不覆盖 Loday--Vallette/Fresse 书本版本中 $\Omega\mathcal P^¡$、acyclic twisting morphism 和 bar-cobar counit 的紧凑 theorem numbering。
+
+### `P0_REFERENCE_LOCATORS_BATCH_6.md`
+
+- 已定位 Markl `arXiv:math/9907138v3` 中 strongly homotopy structures transfer over chain homotopy equivalences 的 operadic existence theorem。
+- 精确定位为 Definition 17、Theorem 19、Lemma 20、Theorem 27、Proposition 31、Theorem 33、Proposition 34、Proposition 35 和 Proposition 36。
+- 已明确该定位不覆盖 basic perturbation lemma 显式级数、Kadeishvili/Merkulov/Loday--Vallette tree signs、minimal model uniqueness 或 full formality obstruction theory。
+
+### `P0_REFERENCE_LOCATORS_BATCH_7.md`
+
+- 已定位 Moerdijk-Weiss `arXiv:math/0701293v2` 中 dendroidal nerve fully faithfulness、$\Delta\subset\Omega$、strict nerve unique fillers、homotopy coherent dendroidal nerve inner Kan 和 internal Hom inner Kan 条件。
+- 精确定位为 Section 3、Example 4.2、Section 4 after Example 4.1、Example 7.1、Proposition 7.2 和 Theorem 7.5。
+- 已明确该定位不覆盖 Cisinski-Moerdijk erratum 影响、树范畴 generalized Reedy 分解或 Heuts-Hinich-Moerdijk dendroidal-Lurie comparison。
+
+### `P0_REFERENCE_LOCATORS_BATCH_8.md`
+
+- 已定位 White `arXiv:1404.5197` 中 Bousfield localization preserves operad algebras 的模型范畴版本。
+- 精确定位为 Definition 3.1、Theorem 3.2、Corollary 3.4 和 Section 4/Theorems 4.5--4.6 的 monoidal localization criteria。
+- 已定位 White--Yau `arXiv:1503.06720` 中 colored operad 版本，精确定位为 Definition 7.2.1、Theorem 7.2.3 和 Theorems 7.4.1--7.4.3。
+- 已明确该定位不覆盖 operadic straightening、dendroidal-Lurie comparison、Pavlov--Scholbach 全部 symmetric flatness/rectification 或 Lurie/Hinich 型 infinity-categorical algebra localization comparison。
+
+### `P0_REFERENCE_LOCATORS_BATCH_9.md`
+
+- 已定位 Pavlov--Scholbach `arXiv:1410.5675v4` 中 colored symmetric operad admissibility、strong admissibility、rectification、strict-to-infinity algebra comparison 和 weak symmetric monoidal Quillen adjunction transport。
+- 精确定位为 Definition 2.1、Theorem 5.11、Theorems 6.3/6.7、Theorem 7.5、Theorem 7.11 和 Theorem 8.10。
+- 已定位 Pavlov--Scholbach `arXiv:1510.04969v3` 中 symmetric h-monoidality、symmetroidality 和 symmetric flatness 的 transfer/localization 稳定性，精确定位为 Theorems 5.6/5.7 和 Theorems 6.4/6.5。
+- 已定位 Lurie *Higher Algebra* Theorems 4.1.8.4 与 4.5.4.7 作为 associative/commutative strict algebra 到 infinity-categorical algebra objects 的比较入口。
+
+### `P0_REFERENCE_LOCATORS_BATCH_10.md`
+
+- 已定位 Hinich `arXiv:1311.4128` 中 Dwyer--Kan localization revisited 的 infinity localization、hammock comparison、underlying infinity-category、mapping spaces、fibrant-cofibrant subcategory 和 Quillen-pair passage。
+- 精确定位为 Section 1.1.2/1.1.3、Proposition 1.2.1、Definition 1.3.1、Theorem 1.3.3、Propositions 1.3.4/1.3.5 和 Proposition 1.5.1。
+- 已定位 Heuts--Hinich--Moerdijk dendroidal-Lurie comparison，精确定位为 Theorems 2.4.1、2.5.1、2.5.3、Corollary 2.5.4 和 Theorem 5.3.14。
+- 已定位 Lurie *Higher Algebra* Example 2.1.1.21、Definition 2.1.1.23 和 Proposition 2.1.1.27 作为 category-of-operators entry；Pratali `arXiv:2501.05263` 的 Theorem 2.10、Proposition 3.8、Proposition 4.6、Theorem 5.1 和 Corollary 5.2 作为 operadic straightening 的最新/P1 preprint locator。
+
+### `P1_REFERENCE_LOCATORS_FINAL_SWEEP.md`
+
+- 已定位 Lurie *Higher Algebra* Theorem 5.1.2.2 作为 Dunn additivity locator。
+- 已定位 McClure--Smith `arXiv:math/9910126v2` 和 Berger--Fresse `arXiv:math/0109158v2` 的 Deligne conjecture/brace/surjection operad locator，精确到 MS-1--MS-3 与 BF-1--BF-4。
+- 已把 May recognition、Poisson homology、$E_n$ formality、framed $E_2$/BV、stratified factorization 和 Fukaya geometry 记录为 P1 或几何边界 locator；这些不是 operad theory 内部证明。
 
 ### `E_signs_suspensions_and_graded_conventions.md`
 
@@ -230,7 +479,20 @@
 ### `21_research_frontier_2026.md`
 
 - 已把 2026 年核查过的近期 arXiv 条目标为研究边界，而非正文定理。
-- 后续若使用其中结果，必须补充版本号、定理编号、模型约定和依赖链。
+- 已加入版本表、模型差异表和进入正文的验证流程。
+- 后续若使用其中结果，必须补充版本号、定理编号、模型约定、符号转换和依赖链。
+
+### `Y_infinity_operadic_homology_and_koszul_frontier.md`
+
+- 已把 infinity-operadic homology 与 algebras over infinity-operads 的 Koszul 对偶方向转化为 strict operad 可验证接口。
+- 已证明 strict operad 的树指标线性化、Segal-linear strict 特化、ordinary algebra 与 dendroidal natural transformation 的等价，以及 Koszul extension 的 strict specialization test。
+- Hoffbeck-Moerdijk 的新结果仍保持研究边界；本附录不把 linear infinity-operad 的 Koszul duality 并入第八、九章定理链。
+
+### `Z_operadic_categories_relative_rezk_and_fukaya_frontier.md`
+
+- 已给出 operadic category 数据包、Boardman-Vogt interchange 低阶形式、relative dendroidal object、dendroidal Rezk nerve 接口和 Fukaya operadic interface。
+- 已证明 finite-set fiber flattening 与代入分块一致、relative strict nerve 的基本例子、线性限制退化为 ordinary relative object，以及 Fukaya $A_\infty$ 关系的条件性边界证明。
+- Operadic nerve、relative dendroidal Rezk nerve 和 Fukaya 高阶结构仍保持外部输入或研究边界。
 
 ## 后续审查清单
 

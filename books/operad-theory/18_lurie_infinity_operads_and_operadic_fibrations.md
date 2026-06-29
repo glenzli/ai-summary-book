@@ -193,7 +193,7 @@ N(\mathcal P^\otimes)\to N(\mathbf{Fin}_*)
 $$
 是 Lurie-style infinity-operad。该构造把 strict colored operad 嵌入 Lurie-style infinity-operads。
 
-**说明 18.19.** 这里的 $\mathcal P^\otimes$ 不是第十六章的 dendroidal nerve。前者是 over $N(\mathbf{Fin}_*)$ 的 quasi-category，后者是 presheaf on $\Omega$。二者通过模型比较相连，而不是逐项相等。
+**说明 18.19.** 这里的 $\mathcal P^\otimes$ 不是定义 16.14 的 dendroidal nerve。前者是 over $N(\mathbf{Fin}_*)$ 的 quasi-category，后者是 presheaf on $\Omega$。二者通过模型比较相连，而不是逐项相等。
 
 ## 18.7 与 dendroidal 模型的比较
 
@@ -204,6 +204,8 @@ $$
 **命题 18.22.** 若一个结论只依赖 infinity-operad 的同伦不变量，并且已知在 dendroidal 模型与 Lurie 模型的比较等价下保持，则可在两个模型之间转移。
 
 **证明.** 比较定理给出相应 homotopy theories 的等价。Homotopy invariant 的结论可表述为目标 infinity-category 中的等价不变性质。等价函子反映并保持等价，因此该性质在两边对应对象之间传递。$\square$
+
+**说明 18.23.** 规则 M.18 给出 strict operad、dendroidal nerve、category of operators nerve、Lurie-style infinity-operad 和模型范畴中代数对象之间的允许依赖路径，警告 M.19 列出禁止捷径。后续凡跨模型移动，默认按照这些规则执行。
 
 ## 18.8 本章小结
 

@@ -12,7 +12,7 @@
 
 ## 依赖前置知识
 
-需要第十一章的 Gerstenhaber 结构和 Deligne 猜想。本章先写普通未分次结合代数的 cochain 公式；分次版本采用附录 E 的 suspended Hochschild braces 约定。
+需要第十一章的 Gerstenhaber 结构和 Deligne 猜想。本章先写普通未分次结合代数的 cochain 公式；分次版本采用定义 E.18--定义 E.23 的 suspended Hochschild braces 约定。
 
 ## 12.1 Hochschild cochains
 

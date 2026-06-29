@@ -62,13 +62,13 @@ $$
 $$
 M_T=p\,\mu(\Phi_{T_L}\otimes\Phi_{T_R}).
 $$
-所有张量符号按附录 E 的 Koszul rule 解释。
+所有张量符号按约定 E.1 和约定 E.3 的 Koszul rule 解释。
 
 **定义 J.6.** 转移的未悬挂 $A_\infty$ 运算在本书中写作
 $$
 m_n^H=\sum_{T\in\operatorname{PBT}_n}\epsilon(T)M_T,
 $$
-其中 $\epsilon(T)$ 是由附录 E 的 suspended convention 决定的符号。低阶时取
+其中 $\epsilon(T)$ 是由定义 E.18--定义 E.23 的 suspended convention 决定的符号。低阶时取
 $$
 m_1^H=d_H,\qquad
 m_2^H=p\mu(i\otimes i).
@@ -128,6 +128,8 @@ $$
 $$
 I_\infty:H\rightsquigarrow A.
 $$
+
+**定位说明.** Markl MHT-6 支撑 strongly homotopy associative structures 在 chain homotopy equivalence 下的存在性转移。定义 J.6 和定义 J.9 的具体 sign convention 由定义 E.18--定义 E.23 与附录 W 的悬挂约定固定；Kadeishvili/Loday--Vallette/Fresse 的未悬挂公式作为 convention translation 使用。
 该定理的完整证明依赖 homological perturbation lemma 或 bar construction 上 coderivation 的转移。
 
 ## J.4 低阶 $A_\infty$ 恒等式的检查
@@ -164,7 +166,7 @@ $$
 $$
 ip=\operatorname{id}_A+d_Ah+hd_A.
 $$
-把 $ip$ 替换到两式中。含 $\operatorname{id}_A$ 的部分由 $\mu$ 的严格结合律相消。剩余含 $d_Ah$ 与 $hd_A$ 的部分可重写为 $d_Hm_3^H$、$m_3^H(d_H\otimes1\otimes1)$ 等边界项。完整符号由附录 E 的 suspended convention 给出。$\square$
+把 $ip$ 替换到两式中。含 $\operatorname{id}_A$ 的部分由 $\mu$ 的严格结合律相消。剩余含 $d_Ah$ 与 $hd_A$ 的部分可重写为 $d_Hm_3^H$、$m_3^H(d_H\otimes1\otimes1)$ 等边界项。完整符号由定义 E.18--定义 E.23 的 suspended convention 给出。$\square$
 
 ## J.5 $L_\infty$ 转移与反对称化
 
@@ -203,6 +205,8 @@ H\rightsquigarrow\mathfrak g.
 $$
 完整证明依赖 operadic homotopy transfer theorem，或由 $A_\infty$ 型 coderivation 转移在 cocommutative coalgebra 上的反对称版本推出。
 
+**定位说明.** Markl MHT-6 支撑 strongly homotopy Lie structures 在 chain homotopy equivalence 下的存在性转移。定义 J.15 的 shuffle signs 与反对称化公式由定义 E.18--定义 E.23 与附录 W 的悬挂约定固定；Merkulov/Loday--Vallette/Fresse 的未悬挂公式作为 convention translation 使用。
+
 ## J.6 Minimal models 与选择依赖
 
 **定义 J.18.** 若 $H=H_\*(A)$ 且 $d_H=0$，转移得到的 $A_\infty$ 或 $L_\infty$ 结构称为一个 minimal model。
@@ -218,8 +222,7 @@ $$
 1. 选择 normalized contraction；
 2. 用平面二叉树写 $A_\infty$ 运算；
 3. 用有根树加 shuffle 反对称化写 $L_\infty$ 运算；
-4. 用附录 E 的 suspended convention 管理符号；
+4. 用定义 E.18--定义 E.23 的 suspended convention 管理符号；
 5. 把全高阶恒等式和唯一性作为外部输入定理。
 
 本附录使第十三章的树公式具备明确的数据来源和低阶检查，但不替代 homological perturbation lemma 的完整证明。
-

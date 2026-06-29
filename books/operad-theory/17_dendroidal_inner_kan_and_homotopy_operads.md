@@ -1,6 +1,6 @@
 # 第十七章：Dendroidal inner Kan 条件与 homotopy operads
 
-第十六章把 strict colored operad 嵌入 dendroidal sets。本章放松 strict composition：不要求每棵树的全局运算由顶点运算严格唯一决定，而只要求缺少一个 inner face 的 horn 能被填充。这个条件是 quasi-category inner horn 条件的 operadic analogue。
+定义 16.14--命题 16.18 把 strict colored operad 嵌入 dendroidal sets。本章放松 strict composition：不要求每棵树的全局运算由顶点运算严格唯一决定，而只要求缺少一个 inner face 的 horn 能被填充。这个条件是 quasi-category inner horn 条件的 operadic analogue。
 
 ## 17.1 Inner horn fillers
 
@@ -23,7 +23,7 @@ $$
 $$
 都存在 filler。
 
-**说明 17.3.** 本书用“dendroidal infinity-operad”表示 inner Kan dendroidal set。Lurie-style infinity-operad 是另一种模型；二者的比较是后续外部输入定理，而不是定义相同。
+**说明 17.3.** 本书用“dendroidal infinity-operad”表示 inner Kan dendroidal set。Lurie-style infinity-operad 是另一种模型；二者的比较是外部输入定理 18.20，而不是定义相同。
 
 **命题 17.4.** 若 $X$ 是 inner Kan dendroidal set，则其线性限制
 $$
@@ -39,7 +39,7 @@ $$
 
 ## 17.2 Strict operads give unique fillers
 
-**定理 17.5.** 对任意 colored operad $\mathcal P$，其 dendroidal nerve $N_d(\mathcal P)$ 是 inner Kan，并且每个 inner horn 有唯一 filler。
+**定理 17.5.** 对任意 colored operad $\mathcal P$，其 dendroidal nerve $N_d(\mathcal P)$ 是 inner Kan，并且每个 inner horn 有唯一 filler。Moerdijk--Weiss 定位为 MW-4。
 
 **证明.** 设给定 horn
 $$
@@ -47,7 +47,7 @@ $$
 $$
 通过 Yoneda，这等价于为除 inner face $\partial_e:T/e\to T$ 之外的所有 elementary faces 指定 compatible operations in $\mathcal P$。
 
-由第十六章的严格 Segal 性，给出 $\Omega[T]\to N_d(\mathcal P)$ 等价于：
+由命题 16.18 的严格 Segal 性，给出 $\Omega[T]\to N_d(\mathcal P)$ 等价于：
 
 1. 为每条边 $a\in E(T)$ 指定颜色 $c_a$；
 2. 为每个顶点 $v\in V(T)$ 指定运算
@@ -150,7 +150,7 @@ $$
 $$
 N_d:\operatorname{Operad}_{\mathrm{col}}\to\mathbf{dSet}
 $$
-嵌入 $\mathbf{dSet}$。对 simplicial operads、topological operads 或 Lurie-style infinity-operads，需要使用 homotopy coherent dendroidal nerve 或相应比较构造；这些构造在适当模型结构下给出 Quillen adjunction 或 Quillen equivalence。
+嵌入 $\mathbf{dSet}$，fully faithfulness 定位为 MW-2。对 simplicial operads、topological operads 或 Lurie-style infinity-operads，需要使用 homotopy coherent dendroidal nerve 或相应比较构造；homotopy coherent dendroidal nerve 的 inner Kan 入口定位为 MW-5，dendroidal--Lurie 比较按 P0 引用定位批次 10 中 HHM-1--HHM-5 使用，并需保留模型结构与 fibrancy 假设。
 
 **说明 17.19.** 对集合值 strict operads，$N_d(\mathcal P)$ 是具有唯一 inner fillers 的 fibrant object。对 simplicial operads，不能把每个 simplicial operation space 只取 $0$-simplices 后当作完整同伦理论；这样会丢失高阶 simplex 所编码的同伦信息。
 

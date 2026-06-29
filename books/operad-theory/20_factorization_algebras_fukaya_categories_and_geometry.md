@@ -94,7 +94,7 @@ $$
 $$
 严格证明 finality 需要 embeddings 空间的 contractibility statement；此处使用 disks in Euclidean space 的标准同伦事实。$\square$
 
-**外部输入定理 20.9（excision）.** 若 $M$ 沿 collar 分解为
+**外部输入定理 20.9（excision；AF-1）.** 若 $M$ 沿 collar 分解为
 $$
 M=M_-\cup_{N\times\mathbb R}M_+,
 $$
@@ -106,6 +106,7 @@ $$
 \otimes_{\int_{N\times\mathbb R}A}
 \int_{M_+}A.
 $$
+本书引用 Ayala--Francis, arXiv:1206.5522v6, Lemma 3.18 作为该 topological manifolds 版本的外部来源；分层或 Fukaya 版本需另行定位。
 
 **说明 20.10.** Excision 是 factorization homology 的核心计算定理。它是 ordinary homology 的 Mayer-Vietoris 性质在 $E_n$-algebra 系数下的非交换版本。
 
@@ -115,7 +116,13 @@ $$
 $$
 与 Hochschild homology $HH_\*(A)$ 对应。这是 factorization homology 与第十一、十二章 Hochschild 理论的连接。
 
-该例的完整链级识别依赖 cyclic bar construction 和 $E_1$-algebra 的 factorization homology 计算，作为外部输入。
+该例的完整链级识别依赖 cyclic bar construction 和 $E_1$-algebra 的 factorization homology 计算，作为外部输入；本书引用 Ayala--Francis, arXiv:1206.5522v6, Theorem 3.19。
+
+**说明 20.11.1.** 外部输入定理 N.18 和说明 N.19 给出本例的严格使用边界：圆周计算应写成
+$$
+\int_{S^1}A\simeq A\otimes^{\mathbf L}_{A\otimes A^{op}}A
+$$
+或等价的 cyclic bar construction。若没有指定 derived relative tensor product、边界版本和链级模型，不能把该式当作普通张量积公式。
 
 ## 20.4 Dunn additivity 与迭代代数
 
@@ -189,6 +196,8 @@ Factorization homology 把 $E_n$-algebra 沿 $n$-manifold 积分。Fukaya 理论
 
 **说明 20.24.** 这类定理是当前研究活跃区域。除非指定具体几何类别、系数、局部模型和 gluing 定理，本书不把它作为全局定理使用。
 
+**说明 20.25.** 本章的计算性补充见定义 N.3、外部输入定理 N.15、外部输入定理 N.18 和外部输入定理 N.30；常见错误命题和不可混用约定见错误命题 O.23--正确边界 O.28。特别地，factorization homology 不等于普通同调，Fukaya category 的构造不由 operad 公理单独推出。
+
 ## 20.8 本章小结
 
 Locally constant factorization algebras 是 $E_n$-algebras 的几何化；factorization homology 是把 $E_n$-algebra 沿 $n$-manifold 积分的 colimit。Dunn additivity 解释了迭代 $E_n$-结构。Fukaya categories 是 $A_\infty$-categories 的几何来源，并在更高结构下与 operads、factorization algebras 和 topological field theories 相连。所有涉及辛几何分析和全局 gluing 的结论都必须作为外部输入处理。
@@ -204,4 +213,3 @@ Locally constant factorization algebras 是 $E_n$-algebras 的几何化；factor
 **练习 20.4.** 写出 $A_\infty$-category 中 $m_1,m_2,m_3$ 参与的一条低阶关系。
 
 **练习 20.5.** 说明为什么 Fukaya category 的构造不能只用形式 operad 公理完成，还需要分析定理。
-

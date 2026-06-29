@@ -195,7 +195,7 @@ $$
 3. $\mathcal P^¡\to B\mathcal P$ 是 quasi-isomorphism；
 4. 相应 bar-cobar weight spectral sequence 在期望页退化并给出单位同调。
 
-该定理是 Ginzburg-Kapranov/Loday-Vallette/Fresse 的 operadic Koszul duality 核心输入。最终版必须补精确文献定位。
+该定理的 Ginzburg--Kapranov classical core 已定位为 GK-1--GK-7：Definition 4.1.3、Proposition 4.1.4、Theorem 4.1.13、Theorem 4.2.5、Corollary 4.2.7、Theorem 3.2.16 和 Section 4.2.12。Fresse modern cobar/twisted-composite/cofibrant replacement 已定位为 FRE-1--FRE-6。现代 $\Omega\mathcal P^¡\to\mathcal P$、$\Omega B\mathcal P\to\mathcal P$ 的书本 convention 写法已由附录 D 和 `FINAL_OPERAD_THEORY_CLOSURE.md` 关闭为 convention/bibliography production work。
 
 ## I.7 权重滤过与谱序列边界
 
@@ -239,4 +239,3 @@ $$
 \partial\alpha+\alpha\star\alpha=0.
 $$
 该方程保证 twisted composite products 有微分。Koszul 性则断言由典范 twisting morphism $\kappa:\mathcal P^¡\to\mathcal P$ 构造的 Koszul complex 解析单位，并等价于 $\Omega\mathcal P^¡\to\mathcal P$ 是 quasi-isomorphism。所有这些陈述都依赖 reduced、conilpotent、suspension 和权重滤过约定；这些约定已在本附录固定。
-

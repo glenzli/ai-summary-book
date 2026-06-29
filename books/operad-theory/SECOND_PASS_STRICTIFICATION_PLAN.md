@@ -1,18 +1,18 @@
 # 第二轮严格化路线图
 
-核查日期：2026-06-29。
+核查日期：2026-06-30。
 
 本文件规定《Operad Theory》从第一轮主体草稿进入可审校教材形态所需的第二轮工作。它不是目录提纲，而是质量控制文件：每一项都必须能反映到正文、附录、资料源索引或审查记录中。
 
 ## 0. 当前状态判断
 
-截至本文件建立时，本书已经具备序章、二十一章主体章节和五个附录。主体第一轮草稿覆盖了普通 operad、colored operad、线性 operad、Koszul 对偶、bar-cobar、同伦代数、模型范畴中的 operad、simplicial/topological operads、dendroidal sets、Lurie-style infinity-operads、模型比较、factorization algebra、Fukaya category 入口和 2025-2026 研究边界。
+截至本文件当前核查时，本书已经具备序章、二十一章主体章节、附录 A-Z、资料源索引、数学审查记录、前沿审计、定理账本、完本闭包矩阵、引用定位账本和全书依赖图。当前基本完本严格草稿覆盖了普通 operad、colored operad、线性 operad、Koszul 对偶、bar-cobar、同伦代数、模型范畴中的 operad、simplicial/topological operads、dendroidal sets、Lurie-style infinity-operads、模型比较、factorization algebra、Fukaya category 入口和 2025-2026 研究边界。
 
-这仍不是最终教材。原因如下：
+这已经达到基本完本严格草稿态；结合 [FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md)，也已经达到 operad theory 数学收口态。但它仍不是 camera-ready 出版教材。原因如下：
 
-1. 许多大型定理仍以“外部输入定理”形式出现，尚未精确到原文定理编号、页码、版本或证明依赖链。
-2. 符号系统已经固定基础版本，但 $A_\infty$、$L_\infty$、brace、operadic suspension 与 Hochschild signs 的全套展开尚未逐项交叉校验。
-3. 模型范畴和 infinity-operad 部分覆盖面已经足够宽，但 transferred model structure、rectification、localization 和 straightening 的假设仍需逐语境核对。
+1. 大型定理已经由附录 D、REFERENCE_LOCATOR_LEDGER 和 locator 批次分层定位；后续只需 page/tag、bibliography 和 hypothesis translation 级核查。
+2. 符号系统已经固定基础版本，但 $A_\infty$、$L_\infty$、brace、operadic suspension 与 Hochschild signs 的全套展开若要进入 camera-ready 版本，仍需逐项交叉校验。
+3. 模型范畴和 infinity-operad 部分覆盖面已经足够宽；transferred model structure、rectification、localization 和 straightening 的假设翻译属于 production-level 表格工作。
 4. 2025-2026 年预印本只应作为研究边界；任何进入正文定理链的使用都需要版本核查和独立证明路径。
 
 ## 1. 第二轮总目标
@@ -54,7 +54,7 @@
 
 - 附录 B 中每个自然同构补全函子性证明。
 - 第二章自由代数公式改写为有限集 coend 版本，并说明 arity 骨架版本如何由附录 A 推出。
-- 第四章自由 operad 的树公式增加“自同构群作用”和“等变商”的显式检查。
+- 第四章对称自由构造的树群胚口径已由附录 H 和 `INTERNAL_NUMBERING_AND_CROSSREF_AUDIT.md` 接收；后续只需在最终排版时对照文献术语。
 
 ## 4. 优先级 B：线性与符号系统
 
@@ -88,7 +88,7 @@
 
 通过产物：
 
-- 附录 D 精确化第十四至十九章的定理来源。
+- 附录 D 继续把第十四至十九章的定理来源从引用包精确化到 theorem locator。
 - 第十四章增加 positive characteristic 下 rectification 失败或不可用的例子。
 - 第十九章增加一张“模型比较只可经外部输入定理使用”的依赖图。
 
@@ -142,7 +142,7 @@
 | 第十八至十九章 | Lurie 与模型比较 | 所有比较定理均进入附录 D |
 | 第二十章 | 几何应用 | factorization 与 Fukaya 只使用已声明的外部输入 |
 | 第二十一章 | 前沿边界 | arXiv 版本核查完成 |
-| 附录 A-J | 基础工具链、例子验算、模型假设、树约定和同伦代数计算 | 所有正文引用可回链 |
+| 附录 A-Z | 基础工具链、例子验算、模型假设、树约定、同伦代数计算、模型比较、几何计算、失败边界、低阶验算、Koszul/bar-cobar 计算、模型范畴案例、同伦转移样例、dendroidal horn 样例、PROP/properad 图计算、分层 factorization 样例、符号交叉核对、具体代数反例和前沿接口 | 所有正文引用可回链 |
 
 ## 9. 停止横向扩张原则
 

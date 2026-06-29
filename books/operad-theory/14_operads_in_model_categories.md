@@ -1,6 +1,6 @@
 # 第十四章：模型范畴中的 operad
 
-本章进入同伦论口径。前面章节中 operad 多在集合、模或链复形中定义；本章的目标是说明：何时可以把“逐 arity 弱等价”提升为 operad 的同伦理论，何时可以把 operad 代数范畴也赋予模型结构，以及何时一个 cofibrant resolution 真正给出可替换的同伦代数理论。
+本章进入同伦论口径。第一至第十三章中 operad 多在集合、模或链复形中定义；本章的目标是说明：何时可以把“逐 arity 弱等价”提升为 operad 的同伦理论，何时可以把 operad 代数范畴也赋予模型结构，以及何时一个 cofibrant resolution 真正给出可替换的同伦代数理论。
 
 本章只在一类足够良好的对称幺半模型范畴中陈述主定理。完整证明涉及小对象论证、monoid axiom、pushout-product axiom、树形 filtrations 和等变 cofibration 技术，故大型定理标为外部输入。
 
@@ -179,6 +179,10 @@ $$
 
 这些对象在一般底环上不能通过一句“取 cofibrant replacement”互相替代。
 
+**例 14.23.1（对称幂风险的显式来源）.** 命题 X.15 给出 $k=\mathbb F_p$ 上 acyclic chain complex $C$，但 $\operatorname{Sym}^p(C)$ 具有非零同调类；推论 X.16 说明自由 commutative dg algebra functor 因此不能在正特征中无条件保持 quasi-isomorphisms。
+
+**结论.** 例 14.23.1 只证明一个必要风险，不等于完整的非 rectification theorem。完整结论需要附录 D 的模型结构输入表、例 R.19 和 P0 引用定位批次 1 中 BM-4--BM-5 的外部输入；现代 symmetric flatness/rectification 版本按 P0 引用定位批次 9 中 PSAR-1--PSAR-6 与 PSP-1--PSP-2 使用。该例不承载这些外部定理，只标出其假设不可随意删除。
+
 ## 14.5 Weak equivalence of operads 与 rectification
 
 设
@@ -222,7 +226,7 @@ $$
 
 **警告 14.29.** 对 $E_\infty\to\operatorname{Com}$ 不能无条件推出同样结论。在特征 $0$ 链复形中通常可 rectification；在正特征或一般底环上，严格 commutative dg algebra 与 $E_\infty$-algebra 的同伦理论通常不同。
 
-**说明 14.29.1.** 后续凡使用 transferred operad model structure、operad algebra admissibility 或 rectification，必须逐项核对附录 G 的检查表。特别是：
+**说明 14.29.1.** 后续凡使用 transferred operad model structure、operad algebra admissibility 或 rectification，必须逐项核对定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 的检查表。特别是：
 
 1. operads 自身有模型结构；
 2. 固定 operad 的代数范畴有 transferred 模型结构；
@@ -278,7 +282,7 @@ $$
 
 第一个层次通常最容易建立，第二和第三个层次需要额外的幺半、等变和小性条件。Weak equivalence of operads 只有在 admissibility 与 rectification 条件满足时才可替换代数的同伦理论。Cofibrant resolution，尤其 Boardman-Vogt resolution，是把严格代数结构替换为同伦相干结构的标准机制。
 
-附录 G 给出本章所有模型结构假设的检查表。最终版若引用 Berger-Moerdijk、Hinich、Fresse 或 Pavlov-Scholbach 的定理，必须把本章的外部输入定理精确到文献版本和 theorem number。
+定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 给出本章所有模型结构假设的检查表。P0 引用定位批次 1 已定位 Berger--Moerdijk 的 BM-1--BM-5 和 Cisinski--Moerdijk 的 CM-1--CM-4；P0 引用定位批次 5 已定位 Hinich 的 HIN-1--HIN-2 和 Fresse 的 FRE-1--FRE-6；P0 引用定位批次 9 已定位 Pavlov--Scholbach colored/all-small/symmetric-flatness 版本的 PSAR/PSP 条目。最终出版只需把本章所用假设逐条对齐到相应 locator。
 
 ## 练习
 

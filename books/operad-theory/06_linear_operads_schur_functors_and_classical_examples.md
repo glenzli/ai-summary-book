@@ -24,6 +24,16 @@ M:\mathbf B_{\mathcal U}\to\mathbf{Mod}_R.
 $$
 它等价于带左 $R[\Sigma_n]$-模结构的模族 $M(n)=M([n])$，但本书继续以有限集口径作为定义。
 
+**约定 6.2.1（Schur functor 中的右作用）.** 当 arity 公式中出现
+$$
+M(n)\otimes_{R[\Sigma_n]}V^{\otimes n}
+$$
+时，$M(n)$ 的函子性左作用按命题 A.9 和约定 A.10 转换为右作用：
+$$
+m\cdot\sigma=\sigma^{-1}m.
+$$
+$V^{\otimes n}$ 带左 $\Sigma_n$-作用，按张量因子重排。所有 $\otimes_{R[\Sigma_n]}$ 均按这个右-左作用约定理解。
+
 **定义 6.3.** 设 $M,N$ 是 $R$-模值对称序列。定义代入乘积
 $$
 (M\circ N)(S)
@@ -91,7 +101,7 @@ S_M:\mathbf{Mod}_R\to\mathbf{Mod}_R,
 S_M(V)=
 \bigoplus_{n\ge0}M(n)\otimes_{R[\Sigma_n]}V^{\otimes n},
 $$
-其中 $\Sigma_n$ 对 $V^{\otimes n}$ 按张量因子置换作用。
+其中 $M(n)$ 使用约定 6.2.1 的右作用，$\Sigma_n$ 对 $V^{\otimes n}$ 按张量因子置换左作用。
 
 **命题 6.10.** 存在自然同构
 $$
@@ -119,10 +129,10 @@ $$
 \bigoplus_k
 M(k)\otimes_{R[\Sigma_k]}
 \left(
-\bigoplus_{n_1}N(n_1)\otimes_{\Sigma_{n_1}}V^{\otimes n_1}
+\bigoplus_{n_1}N(n_1)\otimes_{R[\Sigma_{n_1}]}V^{\otimes n_1}
 \right)\otimes\cdots\otimes
 \left(
-\bigoplus_{n_k}N(n_k)\otimes_{\Sigma_{n_k}}V^{\otimes n_k}
+\bigoplus_{n_k}N(n_k)\otimes_{R[\Sigma_{n_k}]}V^{\otimes n_k}
 \right),
 $$
 这正是 $S_M(S_N(V))$。所有同构由张量积、直和和诱导模的泛性质给出，因此关于 $V$ 自然。$\square$
@@ -220,7 +230,7 @@ $$
 $$
 这正是 Lie 代数公理。反过来，任意 Lie 代数的括号满足这两类关系，由生成元关系的泛性质给出唯一 operad 代数结构。同态条件正是保持括号的 $R$-线性映射。$\square$
 
-**注 6.19.** 若 $2$ 在 $R$ 中不可逆，反对称 $[y,x]=-[x,y]$ 不推出 $[x,x]=0$。一些作者把 Lie 代数定义中的 alternating 条件 $[x,x]=0$ 作为公理。本书后续涉及一般底环时会显式说明采用哪一种约定；在含 $\mathbb Q$ 的底环上二者等价。
+**注 6.19.** 若 $2$ 在 $R$ 中不可逆，反对称 $[y,x]=-[x,y]$ 不推出 $[x,x]=0$。一些作者把 Lie 代数定义中的 alternating 条件 $[x,x]=0$ 作为公理。本书在一般底环语境中会显式说明采用哪一种约定；在含 $\mathbb Q$ 的底环上二者等价。相关最小反例见例 X.6 和说明 X.7。
 
 ## 6.6 Poisson operad
 
@@ -247,7 +257,7 @@ $$
 
 ## 6.7 本章的边界
 
-本章只给出经典线性 operad 的入口。Gerstenhaber、BV、$E_n$、Koszul 对偶和 bar-cobar 构造需要链复形、悬挂、符号规则、二次对偶和模型范畴语言。后续章节会先建立这些工具，再把本章的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$ 和 $\operatorname{Pois}$ 纳入同伦代数框架。
+本章只给出经典线性 operad 的入口。Gerstenhaber、BV、$E_n$、Koszul 对偶和 bar-cobar 构造需要链复形、悬挂、符号规则、二次对偶和模型范畴语言。第八章至第十三章会先建立这些工具，再把本章的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$ 和 $\operatorname{Pois}$ 纳入同伦代数框架。
 
 ## 本章小结
 
@@ -267,4 +277,3 @@ $$
 **练习 6.4.** 在 $\operatorname{End}_V(3)$ 中写出 Jacobi 关系对应的三个树形复合。
 
 **练习 6.5.** 设 $R$ 的特征为 $2$。说明反对称关系 $[y,x]=-[x,y]$ 退化成什么，并解释为什么需要额外小心。
-

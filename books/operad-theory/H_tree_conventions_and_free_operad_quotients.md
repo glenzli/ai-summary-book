@@ -22,7 +22,7 @@ $$
 
 **命题 H.3.** 平面树代入严格满足结合律。
 
-**证明.** 这就是附录 B 命题 B.13。代入的两种顺序给出同一个顶点集合、同一个 incidence relation 和同一个逐层继承的平面顺序。$\square$
+**证明.** 这就是命题 B.13。代入的两种顺序给出同一个顶点集合、同一个 incidence relation 和同一个逐层继承的平面顺序。$\square$
 
 ## H.2 非平面叶标号树
 
@@ -99,7 +99,7 @@ $$
 
 **证明.** 在代表元层面，一个元素由 $E$-装饰树 $T$ 和 $E$-装饰树族 $T_s$ 给出。Grafting 后的树顶点集合是不交并，因此装饰也按原样合并。若改变任一代表元，即沿树同构替换装饰树，则 grafting 后得到的总树也由诱导同构相连。故该构造通过 coend 商。$\square$
 
-**命题 H.10.** 上述复合满足 operad 结合律和单位律。
+**命题 H.10.** 命题 H.9 的复合满足 operad 结合律和单位律。
 
 **证明.** 结合律来自 grafting 的结合律：若先把 $T_{s,t}$ graft 到 $T_s$，再 graft 到 $T$，或先把 $T_s$ graft 到 $T$，再把 $T_{s,t}$ graft 到对应叶上，最终顶点集合、边 incidence relation、根边和叶标号都相同。装饰也只是同一组顶点装饰的不交并。单位树是只有一个叶边且无内部顶点的树；grafting 它不改变原树。因此 operad 公理成立。$\square$
 
@@ -122,7 +122,7 @@ $$
 $$
 E\to U\mathcal O.
 $$
-由于 $\mathbb F(E)$ 的每个元素由 corolla 装饰经树 grafting 生成，operad morphism 必须把它送到上述逐顶点复合值，因此 $\Phi=\widehat\theta$。两种构造互逆，并且关于 $E$ 与 $\mathcal O$ 自然。$\square$
+由于 $\mathbb F(E)$ 的每个元素由 corolla 装饰经树 grafting 生成，operad morphism 必须把它送到定理 H.11 证明中构造的逐顶点复合值，因此 $\Phi=\widehat\theta$。两种构造互逆，并且关于 $E$ 与 $\mathcal O$ 自然。$\square$
 
 ## H.5 平面公式与对称公式的关系
 
@@ -157,4 +157,3 @@ $$
 \mathbb F(E)(S)=\int^{T\in\mathbf{Tree}_S}\prod_{v\in V(T)}E(\operatorname{In}(v)),
 $$
 而不是未说明自同构群和叶标号的“树的集合”。
-

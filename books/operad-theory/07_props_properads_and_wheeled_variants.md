@@ -8,7 +8,7 @@ Operad 编码“多输入、单输出”运算。许多代数结构还需要多�
 2. Properad：允许多输入、多输出，但只把连通图复合作为基本结构。
 3. Wheeled properad / wheeled PROP：允许把输出接回输入，从而出现 trace 和环路。
 
-本章只建立严格定义和基础例子；模型范畴、Koszul 对偶和 wheeled graph complex 留到后续章节。
+本章只建立严格定义和基础例子；模型范畴、Koszul 对偶和 wheeled graph complex 分别留到第十四章、第八至第九章以及外部输入定理 7.17 的文献边界。
 
 ## 依赖前置知识
 
@@ -190,13 +190,13 @@ $$
 - 插入单位边不改变复合；
 - 把图的顶点替换为连通无环子图时，先对子图复合再对外图复合，等于一次性对替换后的总图复合。
 
-**解释 7.15.** Properad 与 PROP 的区别在于：properad 的基本复合只沿连通图进行。PROP 还允许不连通图，因为水平张量可以把两个互不连接的运算并排放置。
+**说明 7.15.** Properad 与 PROP 的区别在于：properad 的基本复合只沿连通图进行。PROP 还允许不连通图，因为水平张量可以把两个互不连接的运算并排放置。
 
 **命题 7.16.** 每个 PROP $\mathsf P$ 给出 properad，其图复合由 PROP 的垂直复合、水平张量和置换组合而成。
 
 **证明.** 给定连通无环 directed graph，选择一个拓扑排序，把同一层顶点的装饰水平张量起来，再用置换把输出线接到下一层输入线，最后垂直复合各层。若选择不同拓扑排序，相邻可交换的独立顶点只改变水平张量的括号和置换；这些由 PROP 的对称幺半相干性和 interchange law 保证给出相同元素。图替换相干性同样由垂直复合结合律、水平张量结合律和 interchange law 推出。$\square$
 
-**外部输入定理 7.17.** 每个 properad $\mathcal P$ 有自由生成的 PROP $\operatorname{Prop}(\mathcal P)$，其不连通图由 $\mathcal P$ 的连通图复合和水平张量生成。该构造的完整证明依赖 directed graph groupoids 的商和相干性检查，后续使用时应引用 Markl-Shnider-Stasheff、Loday-Vallette 或 Fresse。
+**外部输入定理 7.17.** 每个 properad $\mathcal P$ 有自由生成的 PROP $\operatorname{Prop}(\mathcal P)$，其不连通图由 $\mathcal P$ 的连通图复合和水平张量生成。该构造的完整证明依赖 directed graph groupoids 的商和相干性检查；调用本定理时应引用 Markl-Shnider-Stasheff、Loday-Vallette 或 Fresse。
 
 ## 7.6 Wheeled 变体
 
@@ -235,4 +235,3 @@ $$
 **练习 7.4.** 给出一个 properad 中可复合的连通无环图，其既不是单纯 operad 树，也不是 PROP 中两个运算的水平张量。
 
 **练习 7.5.** 解释为什么 wheeled contraction 在无限维向量空间上通常没有基无关定义。
-
