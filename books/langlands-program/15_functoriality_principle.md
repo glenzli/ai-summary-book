@@ -185,7 +185,7 @@ $$
 $$
 \bigoplus_{w\mid v}\operatorname{Ind}_{W_{E_w}'}^{W_{K_v}'}\varphi_{\sigma_w},
 $$
-维数为 $n[E:K]$。若全局表示 $\operatorname{AI}_{E/K}(\sigma)$ 存在，则它应具有这些局部参数。
+其中每一项维数为 $n[E_w:K_v]$，直和总维数为 $\sum_{w\mid v}n[E_w:K_v]=n[E:K]$。若全局表示 $\operatorname{AI}_{E/K}(\sigma)$ 存在，则它应具有这些局部参数。
 
 **外部输入定理 15.20（Arthur-Clozel，solvable base change 与 automorphic induction）.** 对 cyclic 扩张以及更一般的 solvable 扩张，`GL(n)` 的 base change 和 automorphic induction 在 Arthur-Clozel 设置的 cuspidality、central character 和 isobaric decomposition 假设下存在，并满足几乎所有位置的局部参数限制或诱导相容性。
 

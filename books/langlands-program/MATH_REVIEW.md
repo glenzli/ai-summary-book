@@ -1,6 +1,6 @@
 # 数学审查记录
 
-本文档记录《Langlands 纲领》草稿的审查清单、逐章收口状态和后续补证任务。
+本文档记录《Langlands 纲领》审定前闭合版的审查清单、逐章收口状态和出版前维护任务。
 
 ## 全书审查清单
 
@@ -77,7 +77,7 @@
 ## 第五轮收口记录
 
 - 已新增 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，完成定理索引编号、解答练习编号、Markdown 相对链接和重点章节归一化回指审计。
-- 审计结果显示：551 个定理索引编号均有落点，134 个已解练习均能找到原题，278 个 `.md` 相对链接无断链。
+- 审计结果显示：551 个定理索引编号均有落点，134 个已解练习均能找到原题，281 个 `.md` 相对链接无断链。
 - 第五轮后，剩余工作降为局部措辞精修和少量主线小补维护。
 
 ## 第六轮收口记录
@@ -123,6 +123,14 @@
 - 已新增 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，固定参数、表示、L 函数、函子性、trace formula、几何 Langlands、函数域桥梁和费马应用的最终概念边界。
 - 已把 `GL(1)` 主线口径从“类域论和 Tate thesis 的组合”等口号式说法收紧为：类域论给出参数对应，Tate thesis 给出 L 函数解析接口。
 - 已明确禁止误读：一般 reductive group LLC 不是普通双射，数域完整全局 Langlands 不是已证定理，几何 Langlands 不是数论 Langlands 的简单翻译，费马应用不是完整 Langlands 纲领的直接推论。
+
+## 第十三轮出版前维护记录
+
+- 已将 README、CLOSURE_STATUS 和本审查记录中的残留旧状态口径改为审定前闭合版的出版前维护口径。
+- 已把 `GL(n)` 局部 LLC 的中心特征相容式写为 determinant 经局部 reciprocity 拉回的公式，并同步第 12、14 章的定理摘要和练习题面。
+- 已修正 automorphic induction 局部参数的维数说明：每个 $w\mid v$ 的诱导项维数为 $n[E_w:K_v]$，直和总维数为 $n[E:K]$。
+- 已把旧的归一化表章节化称呼统一改为 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，避免归一化引用混乱。
+- 本轮未新增定理、习题或同级主线；性质为出版前文字润色、排版统一和局部数学口径修正。
 
 ## 本轮严格性审查记录
 

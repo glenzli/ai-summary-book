@@ -49,9 +49,10 @@ $$
 1. $n=1$ 时，$\operatorname{rec}_{F,1}$ 等于第五章的局部类域论。
 2. 中心特征相容：
    $$
-   \omega_\pi=\det(\operatorname{rec}_{F,n}(\pi))
+   \omega_\pi(a)=\det(\operatorname{rec}_{F,n}(\pi))(\operatorname{rec}_F(a)),
+   \qquad a\in F^\times,
    $$
-   其中右侧通过局部类域论看作 $F^\times$ 的 character。
+   其中 $\operatorname{rec}_F$ 是第三章的局部 reciprocity map。
 3. 非分歧相容：若 $\pi$ 为 spherical 且 Satake 参数为 semisimple conjugacy class $s_\pi\subset\operatorname{GL}_n(\mathbb C)$，则
    $$
    \operatorname{rec}_{F,n}(\pi)(\operatorname{Fr}_F)=s_\pi
@@ -252,7 +253,7 @@ $$
 1. 几乎所有位置的 Frobenius characteristic polynomials 与 Satake polynomials 相同。
 2. 局部化与局部 Langlands 对应相容。
 3. 标准、Rankin-Selberg、对称幂、外方幂和 adjoint L 函数相容。
-4. 中心特征对应 determinant。
+4. 中心特征由 determinant 经局部 reciprocity 或相应全局 convention 对应。
 5. 函子性对应于有限维表示或 L 群同态。
 
 **注 14.27.** 猜想 14.26 不能直接写成 $G_K$ 的复表示与自守表示的双射。数域中应使用 $\ell$-adic Galois 表示、motivic Galois group 或 conjectural Langlands group 的版本；Archimedean 参数、Hodge-Tate weights、纯性和代数性条件都必须纳入。
@@ -276,7 +277,7 @@ $$
 
 **练习 14.2.** 对非分歧 $\pi$，由 Satake 参数推导标准局部 L 因子。
 
-**练习 14.3.** 说明局部 Langlands 中中心特征对应 determinant 如何退化为 $n=1$ 的局部类域论。
+**练习 14.3.** 说明局部 Langlands 中中心特征由 determinant 经局部 reciprocity 拉回的公式如何退化为 $n=1$ 的局部类域论。
 
 **练习 14.4.** 解释 Bernstein-Zelevinsky 分类中 parabolic induction 与参数 direct sum 的对应。
 

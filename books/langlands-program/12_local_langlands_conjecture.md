@@ -179,9 +179,10 @@ $$
 
 **注 12.22.** 对 $G=\operatorname{GL}_n$，条件 12.21 具体化为
 $$
-\omega_\pi\leftrightarrow\det\varphi_\pi
+\omega_\pi(a)=\det\varphi_\pi(\operatorname{rec}_F(a)),
+\qquad a\in F^\times,
 $$
-其中右侧通过局部类域论看作 $F^\times$ 的 character。
+其中 $\operatorname{rec}_F:F^\times\to W_F^{\operatorname{ab}}$ 采用第三章的几何 Frobenius 归一化。
 
 **条件 12.23（L 因子和 epsilon 因子）.** 对每个有限维 L 群表示
 $$
@@ -202,7 +203,7 @@ $$
 $$
 在 L 群中的半单共轭类等于第十一章的 Satake parameter。
 
-**条件 12.25（tempered 与离散）.** 参数 $\varphi$ bounded 当且仅当 packet $\Pi_\varphi(G)$ 中的表示为 tempered。参数 $\varphi$ discrete 时，对应 packet 应由离散系列或 essentially square-integrable modulo center 的表示组成，具体陈述需按 $Z_G(F)$ 的非紧性修正。
+**条件 12.25（tempered 与离散）.** 参数 $\varphi$ bounded 当且仅当 packet $\Pi_\varphi(G)$ 中所有表示均为 tempered。参数 $\varphi$ discrete 时，对应 packet 应由离散系列或 essentially square-integrable modulo center 的表示组成；若中心非紧，具体陈述还需按 $Z_G(F)$ 和所选中心特征修正。
 
 **条件 12.26（抛物诱导相容性）.** 若参数 $\varphi$ 通过某个 proper Levi subgroup $M$ 的 L 群
 $$
@@ -250,7 +251,7 @@ $$
 满足：
 
 1. $n=1$ 时为局部类域论；
-2. 中心特征对应 determinant；
+2. 中心特征由 determinant 经局部 reciprocity 拉回得到；
 3. Rankin-Selberg 局部 $L$ 因子、$\varepsilon$ 因子和 $\gamma$ 因子相容；
 4. 非分歧表示与 Satake 参数相容；
 5. tempered 表示对应 bounded 参数；
@@ -376,7 +377,7 @@ $$
 
 **练习 12.1.** 对 $G=\mathbb G_m$，说明猜想 12.17 如何退化为局部类域论。
 
-**练习 12.2.** 对 $G=\operatorname{GL}_n$，用 Schur 引理证明中心特征对应 determinant 的必要性。
+**练习 12.2.** 对 $G=\operatorname{GL}_n$，用 Schur 引理解释中心特征为什么必须由参数的 determinant 经局部 reciprocity 拉回得到。
 
 **练习 12.3.** 设 $\varphi$ 为 `GL(n)` 的参数，且对应 Weil-Deligne 表示为不可约表示的直和。计算 $S_\varphi$ 的连通分量群。
 

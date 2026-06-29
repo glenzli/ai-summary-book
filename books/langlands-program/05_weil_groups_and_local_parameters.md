@@ -179,10 +179,12 @@ n\text{ 维 Frobenius-semisimple}\\
 $$
 满足以下相容性：
 
-1. 中心特征对应 determinant：
+1. 中心特征相容：
    $$
-   \omega_\pi\quad\leftrightarrow\quad\det\varphi_\pi.
+   \omega_\pi(a)=\det\varphi_\pi(\operatorname{rec}_F(a)),
+   \qquad a\in F^\times,
    $$
+   其中 $\operatorname{rec}_F$ 采用第三章的一致化元到几何 Frobenius 的归一化。
 2. 对 $n=1$，该对应等于定理 5.14。
 3. 局部 L 因子和 epsilon 因子相容。
 4. 非分歧表示对应非分歧参数，Satake 参数等于 $\varphi_\pi(\operatorname{Fr}_F)$。

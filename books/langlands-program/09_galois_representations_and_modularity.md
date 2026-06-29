@@ -211,7 +211,7 @@ $$
 2. 自守侧：`GL(2,\mathbb A_\mathbb Q)` 的 cuspidal automorphic representation $\pi_f$。
 3. 经典桥梁：归一化 Hecke eigenform $f$。
 4. 局部相容：几乎所有 $p$ 处，Frobenius trace 等于 Hecke eigenvalue。
-5. L 函数相容：$L(\rho,s)=L(f,s)=L(\pi_f,s)$，其中三者均使用相同坏素数 Euler 因子、同一 Frobenius 方向和第 0 章归一化表中的 L 函数变量约定。
+5. L 函数相容：$L(\rho,s)=L(f,s)=L(\pi_f,s)$，其中三者均使用相同坏素数 Euler 因子、同一 Frobenius 方向和 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 中的 L 函数变量约定。
 
 因此，椭圆曲线模性是二维 Galois 表示与 `GL(2)` 自守表示对应的核心实例，而模性提升定理是证明这类对应的主要机制之一。
 

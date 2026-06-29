@@ -67,7 +67,7 @@ $\square$
 | proper pushforward | 对纤维的加权求和 | stack 情形需除以 automorphism group |
 | convolution of sheaves | Hecke algebra convolution | Haar 测度和 $q^{1/2}$ 正规化必须与经典 Satake 一致 |
 | local system $\mathcal E$ | Frobenius eigenvalue system | 对应 Galois 表示的 characteristic polynomial |
-| Tate twist | 函数乘以 $q$ 的幂 | 与第 0 章归一化表和几何 Satake 的半 Tate twist 对齐 |
+| Tate twist | 函数乘以 $q$ 的幂 | 与 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 和几何 Satake 的半 Tate twist 对齐 |
 
 ## 22.3 Drinfeld 和 Lafforgue 的函数域定理
 
