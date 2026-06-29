@@ -19,7 +19,7 @@
 | 凝聚集合定义 | `volume-1/03_condensed_sets.md` | 定义 | compact Hausdorff 站点 |
 | 凝聚阿贝尔群范畴 | `volume-1/04_condensed_abelian_groups.md` | 定义/形式推论 | 阿贝尔群值 sheaf |
 | profinite/CHaus 站点比较 | `volume-1/05_comparison_of_test_sites.md`, `volume-1/B_site_comparison_theorem.md` | 部分书内证明 | 稳定基与共同细化 |
-| Gleason 投射性 | `volume-1/06_extremally_disconnected_spaces.md`, `volume-1/D_stone_gleason.md` | 输入定理 | Gleason, Stone spaces |
+| Gleason 投射性 | `volume-1/06_extremally_disconnected_spaces.md`, `volume-1/D_stone_gleason.md`, `volume-1/O_gleason_projectivity_modules.md` | 输入定理 + 书内证明模块 | Gleason, Stone spaces, Sikorski extension |
 | Gleason cover 构造 | `volume-1/D_stone_gleason.md`, `volume-1/J_regular_open_and_gleason_cover_details.md` | 书内证明 + 输入定理 | regular open algebra; 投射性仍输入 |
 | ED 自由对象投射性 | `volume-1/07_free_objects_and_projectives.md` | 书内证明 | ED 满射分裂 |
 | ED 测试正合性 | `volume-1/08_exactness_and_first_ext.md` | 书内证明 | sheaf 满射局部提升 |
@@ -36,6 +36,8 @@
 | 边界例子与反例 | `volume-1/L_boundary_examples_and_counterexamples.md` | 书内证明 | 基础 sheaf 理论 / 普通张量积 / TopAb |
 | Ext/Tor 工作例题 | `volume-1/M_worked_ext_tor_examples.md` | 书内证明 | 两项投射分解 / 乘以 $n$ |
 | Stone 对偶完整证明链 | `volume-1/N_stone_duality_full_proof.md` | 书内证明 + 输入定理 | Boolean prime ideal theorem |
+| Gleason 投射性证明模块 | `volume-1/O_gleason_projectivity_modules.md` | 书内证明 + 输入定理 | regular open algebra / Sikorski / lifting |
+| Nöbeling 定理证明模块 | `volume-1/P_nobeling_proof_modules.md` | 书内证明 + 输入定理 | finite quotient / transfinite filtration |
 
 ## 卷二
 
@@ -57,6 +59,21 @@
 | Liquid 与 Banach/Fréchet 边界 | `volume-2/J_liquid_banach_frechet_boundaries.md` | 书内证明 + 输入定理 | 非闭像 / liquid realization |
 | 幺半 Bousfield 局部化 | `volume-2/K_monoidal_bousfield_localization_details.md` | 书内证明 + 输入定理 | presentable localization / 张量理想 |
 | 闭幺半局部化与内部 Hom | `volume-2/L_closed_monoidal_localization_and_internal_hom.md` | 书内证明 | closed monoidal category / dualizable |
+| Solid localization 生成核 | `volume-2/M_solid_localization_generation_and_completion.md` | 书内证明 + 输入定理 | Dirac-to-measure cone / solidification |
+| Analytic rational descent 义务 | `volume-2/N_analytic_descent_and_rational_localization_obligations.md` | 书内证明 + 输入定理 | rational localization / Čech totalization |
+| 可展示稳定局部化正合性 | `volume-2/O_presentable_localization_and_exactness.md` | 书内证明 + 输入定理 | reflective localization / stable exactness |
+| Liquid-Fréchet 闭值域检查 | `volume-2/P_liquid_frechet_complexes_and_closed_range.md` | 书内证明 + 输入定理 | Fréchet closed range / liquid realization |
+| Solid 主定理包 | `volume-2/Q_solid_main_theorem_package.md` | 书内证明 + 输入定理 | solid 反射局部化 / 张量理想 / profinite 测度 |
+| Analytic 主定理包 | `volume-2/R_analytic_main_theorem_package.md` | 书内证明 + 输入定理 | analyticization / Huber pair / rational descent |
+| Liquid 主定理包 | `volume-2/S_liquid_main_theorem_package.md` | 书内证明 + 输入定理 | \(p\)-liquid analytic ring / realization / Fredholm |
+| solid/analytic/liquid 统一闭包 | `volume-2/T_mainline_closure_theorem.md` | 书内证明 + 输入定理 | 附录 Q/R/S 主定理包 |
+| 第二卷出版级闭包审查 | `volume-2/U_publication_closure_audit.md` | 审查矩阵 | 附录 Q/R/S/T 与输入定理登记 |
+| Solidification 反射存在性证明模块 | `volume-2/V_solidification_reflection_proof.md` | 书内证明 + 输入定理 | presentable localization / Scholze 识别 |
+| Solid 核张量理想性证明模块 | `volume-2/W_solid_tensor_ideal_proof_modules.md` | 书内证明 + 输入定理 | localizing subcategory / profinite 测度张量公式 |
+| Analytic localization 证明模块 | `volume-2/X_analytic_localization_proof_modules.md` | 书内证明 + 输入定理 | analytic cone / analytic ring localization |
+| Rational descent 证明模块 | `volume-2/Y_rational_descent_proof_modules.md` | 书内证明 + 输入定理 | Čech nerve / compact generation / rational acyclicity |
+| Liquid realization 证明模块 | `volume-2/Z_liquid_realization_proof_modules.md` | 书内证明 + 输入定理 | 拓扑向量空间凝聚化 / realization exactness / Fredholm |
+| Scholze/Clausen-Scholze 核心定理图谱 | `volume-2/AA_scholze_clausen_scholze_core_theorem_atlas.md` | 输入闭包图谱 | condensed / solid / analytic / liquid / complex geometry |
 
 ## 卷三
 
@@ -83,6 +100,29 @@
 | $\mathbb P^n$ 线丛上同调 | `volume-3/S_projective_space_cohomology_bott_basic.md` | 书内证明 + 输入定理 | Cartan B / Čech 单项式 |
 | $\mathbb P^n$ 线丛 Serre 对偶 | `volume-3/T_projective_space_serre_duality.md` | 书内证明 | Čech residue / canonical bundle |
 | $\mathbb P^n$ 线丛 HRR | `volume-3/U_hrr_for_projective_space_line_bundles.md` | 书内证明 | Euler sequence / Todd class / residue |
+| Stein/Cartan 工具 | `volume-3/V_stein_cartan_and_coherent_sheaf_tools.md` | 书内证明 + 输入定理 | Cartan A/B / Stein acyclicity |
+| 相干层有限局部自由分解 | `volume-3/W_regular_local_rings_and_coherent_resolutions.md` | 书内证明 + 输入定理 | 正则局部环 / 有限整体维数 |
+| 有限性传播 | `volume-3/X_finiteness_from_vector_bundle_cases.md` | 书内证明 | hypercohomology spectral sequence |
+| Projective GAGA 证明结构 | `volume-3/Y_projective_gaga_proof_architecture.md` | 书内证明 + 输入定理 | Serre twisting / finite presentation |
+| 椭圆复形 Hodge 接口 | `volume-3/Z_elliptic_complexes_and_hodge_theorem.md` | 书内证明 + 输入定理 | Fredholm-Hodge / harmonic representatives |
+| 向量丛 Serre 对偶 Hodge 证明 | `volume-3/AA_vector_bundle_serre_duality_from_hodge.md` | 书内证明 + 输入定理 | Hodge star / Dolbeault pairing |
+| Cartan A/B 证明模块 | `volume-3/AB_cartan_theorems_proof_modules.md` | 书内证明 + 输入定理 | Weierstrass / Oka / Cousin |
+| Grauert 直接像与有限性 | `volume-3/AC_grauert_direct_image_and_finiteness.md` | 书内证明 + 输入定理 | proper direct image |
+| Dualizing complex 与 Serre 对偶 | `volume-3/AD_dualizing_complex_and_general_serre_duality.md` | 书内证明 + 输入定理 | Grothendieck-Serre duality |
+| 一般 GRR 形式 | `volume-3/AE_grothendieck_riemann_roch_general_formalism.md` | 书内证明 + 输入定理 | Chern character / Todd / pushforward |
+| Weierstrass-Oka coherence | `volume-3/AF_weierstrass_oka_coherence_local_algebra.md` | 书内证明 + 输入定理 | Weierstrass division / Oka |
+| Runge-Cousin 到 Cartan B | `volume-3/AG_runge_cousin_and_cartan_b_mechanism.md` | 书内证明 + 输入定理 | Runge approximation / Cousin |
+| Hörmander L2 与 Stein 消没 | `volume-3/AH_hormander_l2_and_stein_vanishing.md` | 书内证明 + 输入定理 | L2 estimate / elliptic regularity |
+| Projective GAGA graded module | `volume-3/AI_projective_gaga_graded_module_details.md` | 书内证明 + 输入定理 | Serre correspondence / twisting |
+| Grothendieck duality 构造义务 | `volume-3/AJ_grothendieck_duality_construction_obligations.md` | 书内证明 + 输入定理 | smooth / closed immersion / trace |
+| GRR deformation-to-normal-cone | `volume-3/AK_deformation_to_normal_cone_and_grr_modules.md` | 书内证明 + 输入定理 | projective bundle / regular immersion |
+| Weierstrass division 估计形式 | `volume-3/AL_weierstrass_division_estimates.md` | 书内证明 + 输入定理 | Banach 截断估计 / Neumann 级数 |
+| Hörmander 基本估计与闭值域 | `volume-3/AM_hormander_basic_estimate_and_closed_range.md` | 书内证明 + 输入定理 | Bochner-Kodaira / Hilbert 复形 |
+| Grauert Banach 复形模块 | `volume-3/AN_grauert_banach_complex_and_direct_images.md` | 书内证明 + 输入定理 | privileged covering / finite presentation |
+| 形式 GAGA 代数化 | `volume-3/AO_formal_functions_and_gaga_algebraization.md` | 书内证明 + 输入定理 | formal functions / Grothendieck existence |
+| GRR 局部化与推前相容 | `volume-3/AP_grr_localization_and_pushforward_compatibility.md` | 书内证明 + 输入定理 | \(K\)-theory localization / Chern character |
+| 复几何主定理包 | `volume-3/AQ_main_theorem_package_and_condensed_closure.md` | 书内证明 + 输入定理 | finite cohomology / duality / GAGA / GRR |
+| Clausen-Scholze 复几何核心定理图谱 | `volume-3/AR_clausen_scholze_complex_geometry_core_theorem_atlas.md` | 输入闭包图谱 | 建模 / Dolbeault / 有限性 / 对偶 / GAGA / HRR-GRR |
 
 ## 卷四
 
@@ -96,6 +136,8 @@
 | liquid 函数分析例子 | `volume-4/06_liquid_functional_analysis_examples.md` | 输入定理 + 例子 | liquid theory |
 | pro-etale 比较 | `volume-4/07_pro_etale_and_condensed.md`, `volume-4/D_pro_etale_comparison_details.md` | 比较性材料 | Bhatt-Scholze |
 | pyknotic/凝聚同伦入口 | `volume-4/E_current_directions_pyknotic_and_homotopy.md` | 当代方向 | Barwick-Haine |
+| 凝聚基础形式化证明义务 | `volume-4/F_formal_proof_obligations_for_condensed_basics.md` | 书内证明模块 | sites / sheaves / Ext-Tor |
+| 凝聚谱与 pyknotic 接口 | `volume-4/G_condensed_spectra_and_pyknotic_interfaces.md` | 书内证明 + 输入定理 | spectra-valued sheaves / hyperdescent |
 
 ## 输入定理集中清单
 
@@ -109,3 +151,5 @@
 8. Cartan A/B、Dolbeault lemma、Grauert finiteness、Serre duality、GAGA、HRR。
 9. Pyknotic objects 与 condensed/pyknotic homotopy 的基础定义。
 10. Rational Cech descent、Grauert/Fredholm-Hodge 有限性等应用层输入。
+11. Weierstrass division estimates、Bochner-Kodaira-Nakano identity、Grauert privileged covering、Grothendieck existence 和 localized Chern character compatibility。
+12. Sikorski extension theorem、Gleason lifting theorem、Nöbeling-Asgeirsson transfinite filtration 和谱值 solid/analytic localization。

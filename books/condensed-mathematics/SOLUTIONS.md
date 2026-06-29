@@ -184,6 +184,20 @@
 - N.3：若 $f$ 单射，任意非空基本开 $U_b$ 的原像 $U_{f(b)}$ 非空，故像稠密；反向若 $f(b)=f(c)$ 且 $b\ne c$，由 Stone 分离得到像避开某个非空开集，矛盾。
 - N.4：连续映射 $X\to Y$ 诱导每个有限开闭划分商之间的映射；命题 N.13 说明点由所有有限商相容数据唯一恢复。
 
+### 附录 O
+
+- O.1：由定义 \(\bigvee_iU_i=\operatorname{int}\overline{\bigcup_iU_i}\) 含每个 \(U_i\)；若 \(V\) 是 regular open 且含所有 \(U_i\)，则闭包包含关系给 \(\operatorname{int}\overline{\bigcup_iU_i}\subset V\)。
+- O.2：极不连通时任意 regular open \(U\) 满足 \(\overline U\) 开闭且 \(U=\operatorname{int}\overline U=\overline U\)，所以 regular open 即 clopen；由 regular open algebra 完备得 clopen algebra 完备。
+- O.3：Stone 对偶中连续映射 \(Y\to X\) 诱导 \(\operatorname{Clop}(X)\to\operatorname{Clop}(Y)\)；若原映射满射，则两个不同 clopen 在 \(X\) 中可由满射拉回区分，故诱导映射单射。
+- O.4：sheaf 满射给覆盖上局部提升；Gleason 投射性给该覆盖满射的截面；沿截面拉回局部提升得到 \(E\) 上的全局提升。
+
+### 附录 P
+
+- P.1：连续 \(f:S\to\mathbb Z\) 的像有限；各纤维 \(f^{-1}(n)\) clopen，有限 clopen 分解由某个有限离散商同时识别，因此 \(f\) 通过该商分解。
+- P.2：若 \(S_{n+1}\to S_n\) 的 fibers 大小为 \(m_x\)，则 \(Q_n\) 的秩为 \(|S_{n+1}|-|S_n|=\sum_x(m_x-1)\)。
+- P.3：任意有限线性关系只涉及有限多个基元素，这些元素都在某个早期 \(F_\alpha\) 中；该阶段已知线性无关，故系数全为零。
+- P.4：solid 自由对象需要把 profinite 测试对象上的整数值连续函数写成自由生成数据；没有 Nöbeling，自由/乘积型模型和 compact projective generator 的计算会失去基础。
+
 ## 卷二答案要点
 
 ### 第 0 章
@@ -310,6 +324,40 @@
 - L.2：在有理化局部化中，$\mathcal Hom_{\mathbb Q}(M\otimes\mathbb Q,N\otimes\mathbb Q)$ 可写为 $R\operatorname{Hom}_{\mathbb Z}(M,N\otimes\mathbb Q)$ 的 $\mathbb Q$-对象；若 $M$ perfect，则进一步等于 $R\operatorname{Hom}_{\mathbb Z}(M,N)\otimes\mathbb Q$。
 - L.3：无限直和 $\bigoplus_i\mathbb Z$ 不是 compact dualizable；$\operatorname{Hom}(\bigoplus_i\mathbb Z,-)\cong\prod_i(-)$ 不保持任意直和。
 - L.4：perfect complex 局部为有限秩向量丛的有限复形，因此有对偶复形，evaluation/coevaluation 满足 dualizable 条件。
+
+### 附录 M
+
+- M.1：对 cofiber sequence 应用 $R\operatorname{Hom}(K_S,-)$ 得 fiber sequence；若两项为零，第三项为零。
+- M.2：右伴随型函子 $R\operatorname{Hom}(-,C)$ 把 colimit 变成 limit，这是映射空间的泛性质。
+- M.3：右正合只控制短正合列的一端；张量理想性要求所有 kernel-local 对象张量任意对象后仍在 kernel 中。
+- M.4：有限离散 $S$ 时 solid measure 对象与 free 对象一致，Dirac map 已是等价，故 cone 为零。
+
+### 附录 N
+
+- N.1：普通张量的 associator 经 localization 后给 analytic 张量的 associator；coherence 图由函子性保持。
+- N.2：数据为 $M_1,M_2$、交叠等价 $M_1|_{12}\simeq M_2|_{12}$；二开覆盖无非平凡三重交叠条件。
+- N.3：映射空间和对象粘合在高阶交叠上有 coherence；只看 equalizer 会丢失高阶同伦相容。
+- N.4：ordinary sheaf descent 粘合 sheaf 截面；analytic descent 粘合稳定范畴对象，并要求 rational localization 与 analytic structure 相容。
+
+### 附录 O
+
+- O.1：由伴随三角恒等式，\(\eta_{LX}\circ L\eta_X\) 与恒等同伦；因 \(LX\) local，\(\eta_{LX}\) 是等价，故两者互逆。
+- O.2：对 cofiber sequence \(A\to B\to C\) 应用正合 \(L\)；若 \(LA=LB=0\)，则 \(LC=0\)，其他两种情形同理。
+- O.3：若对所有 local \(Z\) 映射空间等价，取 \(Z=LX,LY\) 得 \(Lf\) 在 local 子范畴中诱导所有 Hom 等价；由 Yoneda，\(Lf\) 是等价。
+- O.4：若 kernel 不是张量理想，局部等价 \(X\to X'\) 张量 \(Y\) 后可能不再是局部等价，故 \(L(X\otimes Y)\) 不由 \(LX,LY\) 决定。
+
+### 附录 P
+
+- P.1：闭子空间 \(F\subset E\) 的商 \(E/F\) 完备，因为商中 Cauchy 列可提升为 \(E\) 中逐步修正的 Cauchy 列；Hausdorff 性来自 \(F\) 闭。
+- P.2：若 \(u=d a+h+d^\ast b\) 且 \(du=0\)，则 \(0=\langle du,b\rangle=\langle d d^\ast b,b\rangle=\|d^\ast b\|^2\)，所以 \(d^\ast b=0\)。
+- P.3：附录 J 的紧算子 \(T:\ell^2\to\ell^2\)、\(T(x_n)=(x_n/n)\) 像非闭；其 cokernel 商拓扑非 Hausdorff。
+- P.4：需记录 \(\Gamma(X,\mathcal A^{0,q})\) 的 Fréchet 拓扑、\(\bar\partial\) 连续性、椭圆闭值域和有限维 Hodge 输入、liquid realization 的 exactness 范围、有限维上同调对应 perfect 对象。
+
+### 附录 Q-AA
+
+- Q-T：solid、analytic、liquid 主定理包和统一闭包的答案要点见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 6-9 节。
+- V-Z：solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 证明模块的逐题答案见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 10-14 节。
+- AA：Scholze 与 Clausen-Scholze 核心定理图谱的答案见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 15 节。
 
 ## 卷三答案要点
 
@@ -483,6 +531,164 @@
 - U.3：Euler sequence 在 $K$-理论中给 $[T]=(n+1)[\mathcal O(1)]-[\mathcal O]$；Todd class 乘法性把它化为 $\operatorname{td}(\mathcal O(1))^{n+1}$。
 - U.4：一般 HRR 需要对任意 proper smooth variety 的 pushforward、Todd class、Chern character 与 trace 相容；本附录只证明 $\mathbb P^n$ 的线丛模型。
 
+### 附录 V
+
+- V.1：标准开集 $U_i\simeq\mathbb A^n$；有限交 $U_{i_0\cdots i_p}$ 同构于 $\mathbb A^{n-p}\times(\mathbb C^\times)^p$，为 Stein。
+- V.2：由 V.10，全局截面左正合；Cartan B 给 $H^1$ 消失，因此满射在全局截面上仍满射。
+- V.3：二开覆盖给 $H^1\cong\operatorname{coker}(\Gamma(U_1,F)\oplus\Gamma(U_2,F)\to\Gamma(U_{12},F))$。
+- V.4：Cartan A 是 stalk 逐点生成；非紧 Stein 空间没有有限子覆盖紧性，不能从逐点有限生成推出全空间有限生成。
+
+### 附录 W
+
+- W.1：$\mathbb C\{z\}$ 的极大理想由 $z$ 生成，$\mathfrak m/\mathfrak m^2$ 一维，Krull 维数一；有限模有 $0\to R^a\to R^b\to M\to0$ 型分解。
+- W.2：在曲线局部坐标 $t$ 下，skyscraper sheaf $\mathbb C_p$ 有 $0\to\mathcal O\xrightarrow{t}\mathcal O\to\mathbb C_p\to0$。
+- W.3：用长度不超过 $n$ 的局部自由 resolution 计算 sheaf Ext；Hom 复形在次数 $>n$ 无项，故 cohomology 为零。
+- W.4：局部 resolution 的矩阵在交叠上不自动满足全局粘合 cocycle；全局有限 resolution 需要 resolution property。
+
+### 附录 X
+
+- X.1：把三项 resolution 拆为 $0\to K\to E^0\to F\to0$ 和 $0\to E^{-2}\to E^{-1}\to K\to0$，两次用长正合列传播有限维性。
+- X.2：有限过滤 $0=F_{-1}\subset F_0\subset\cdots\subset F_r=V$ 中每个 $F_i/F_{i-1}$ 有限维；短正合列归纳推出每个 $F_i$ 有限维。
+- X.3：没有全局有限局部自由 resolution 时，不能把 $\mathcal F$ 替换为有限个向量丛组成的有界复形，X.2 的谱序列无从建立。
+- X.4：Grauert finiteness 不要求全局 resolution；它直接处理任意紧复空间上的相干层。
+
+### 附录 Y
+
+- Y.1：把两条长正合列上下排列，已知两项比较同构；在目标项两侧用 exactness 追图，或直接应用 five lemma。
+- Y.2：$\operatorname{Hom}(F,G)=H^0(\mathcal Hom(F,G))$；若 $\mathcal Hom$ 与 $H^0$ 都比较同构，则 Hom 集比较同构。
+- Y.3：附录 H/S 给出 $\mathcal O(d)$ 的 Čech 单项式计算；解析标准覆盖有同样 Laurent 单项式复形，因此比较为同构。
+- Y.4：properness 控制全局全纯函数、保证上同调有限、允许 GAGA 代数化，并防止无穷远处出现额外解析截面。
+
+### 附录 Z
+
+- Z.1：若 $u\in\ker d_q\cap\ker d_{q-1}^\ast$，则 $\Delta_qu=d_{q-1}d_{q-1}^\ast u+d_q^\ast d_qu=0$。
+- Z.2：有限维情形中取正交分解 $\ker d_q=\operatorname{im}d_{q-1}\oplus(\operatorname{im}d_{q-1})^\perp\cap\ker d_q$；第二项等于 harmonic 部分。
+- Z.3：若 $\operatorname{im}D_{q-1}$ 不闭，则 quotient $\ker D_q/\operatorname{im}D_{q-1}$ 可能非 Hausdorff，不能同有限维 harmonic 空间同构。
+- Z.4：附录 Z 给向量丛上同调有限性；附录 X 在有全局有限 resolution 时把该有限性传播到相干层。
+
+### 附录 AA
+
+- AA.1：由 Stokes 定理，紧无边界流形上 exact top-degree form 的积分为零。
+- AA.2：Hermitian 内积满足 $\langle v,\star v\rangle=\|v\|^2$ 的抽象形式；非零向量范数平方非零。
+- AA.3：有限维向量空间之间的单射若源和目标维数相同，则为同构；Hodge star 给两侧 harmonic 空间维数相同。
+- AA.4：需要有限性、向量丛或 perfect resolution、Ext/sheaf Hom 计算，以及 dualizing object 的识别。
+
+### 附录 AB
+
+- AB.1：kernel 是关系 sheaf；若关系 sheaf 不相干，有限 presentation 的范畴无法对 kernel 封闭。
+- AB.2：长正合列中 $H^1(U,F')=0$，故 $\Gamma(U,F)\to\Gamma(U,F'')$ 满射。
+- AB.3：有限 jet quotient 把指定 germ 的提升问题化为相干商层上的全局截面提升。
+- AB.4：Čech cohomology 类可在细化后变成 coboundary；direct limit over refinements 正是 sheaf cohomology 的 Čech 描述。
+
+### 附录 AC
+
+- AC.1：点上的局部环是 $\mathbb C$；相干层就是有限生成 $\mathbb C$-模，即有限维向量空间。
+- AC.2：紧 Riemann surface 到点的映射 proper；AC.3 直接给所有相干层上同调有限维。
+- AC.3：有界性保证 hypercohomology 谱序列每个总次数只含有限多个相干项，extension 后仍相干。
+- AC.4：附录 X 需要全局有限局部自由 resolution；Grauert 不需要该假设。
+
+### 附录 AD
+
+- AD.1：曲线中 $n=1$，配对为 $H^0(F)\times\operatorname{Ext}^1(F,\omega)\to\mathbb C$ 和 $H^1(F)\times\operatorname{Hom}(F,\omega)\to\mathbb C$。
+- AD.2：若 $F=E$ 是向量丛，则 $R\mathcal Hom(E,\omega)\simeq E^\vee\otimes\omega$，AD.4 化为 AA.3。
+- AD.3：derived dual 的 cohomology 等于普通 cohomology 的线性对偶，需要各 cohomology 有限维。
+- AD.4：dualizing complex 可处理奇异空间中 canonical bundle 不再是单个线丛的情形。
+
+### 附录 AE
+
+- AE.1：令 $Y=*$，GRR 左侧是 $\operatorname{ch}(R\Gamma(X,E))=\chi(X,E)$，右侧是积分。
+- AE.2：Chern character 对直和可加，积分线性，Todd class 固定。
+- AE.3：使用 $Rg_\ast Rf_\ast=R(g\circ f)_\ast$ 和 $g_\ast f_\ast=(g\circ f)_\ast$。
+- AE.4：奇异情形中向量丛 $K^0$ 不一定控制所有相干层；需要 $G_0$ 或 perfect complexes 记录推前。
+
+### 附录 AF
+
+- AF.1：把 $g$ 按 $z_n$ 次数除以 $z_n^d$，商为高于等于 $d$ 的部分，余数为低于 $d$ 的截断。
+- AF.2：AF.2 直接给任意 $g$ 模 $f$ 同余于次数 $<d$ 的余数，因此由 $1,\ldots,z_n^{d-1}$ 生成。
+- AF.3：为了把某个非零元素化为 distinguished polynomial，需要选择使其最低非零齐次项含有纯 $z_n$ 幂的坐标。
+- AF.4：形式幂级数中除法只需代数递归；收敛幂级数还必须控制系数增长以保证商和余数收敛。
+
+### 附录 AG
+
+- AG.1：二开覆盖中 0-cochain $(b_1,b_2)$ 的 coboundary 为 $b_2|_{12}-b_1|_{12}$。
+- AG.2：三重交叠上的 2-cocycle 需要在三阶交叠满足相容，不能只由一个交叠截面分裂解决。
+- AG.3：sheaf cohomology 由覆盖细化的 Čech cohomology direct limit 给出；细化后变成 coboundary 的类在极限中为零。
+- AG.4：Runge-Cousin 路线依赖逼近和 cocycle 分裂；$\bar\partial$ 路线依赖解算子和估计。
+
+### 附录 AH
+
+- AH.1：\(\mathbb C\) 是 Stein，AH.4 给 Dolbeault 高阶 cohomology 消没，Dolbeault resolution 给 \(H^1(\mathbb C,\mathcal O)=0\)。
+- AH.2：由 \(0\to K\to O^r\to F\to0\)，用 \(H^q(O^r)=0\) 和 \(K\) 的消没，在长正合列中推出 \(H^q(F)=0\)。
+- AH.3：sheaf cohomology 使用光滑 Dolbeault resolution；\(L^2\) 弱解若无正则性，不一定给光滑 cochain。
+- AH.4：AH.6 要求全局有限自由 resolution；Cartan B 对任意 Stein 上相干层成立，条件更强。
+
+### 附录 AI
+
+- AI.1：\(\Gamma_\ast(O(d))=\bigoplus_m S_{m+d}\)，低于 \(-d\) 的次数为零。
+- AI.2：finite length torsion 支撑在 irrelevant ideal，Proj 上没有对应 stalk，因此 sheafification 为零。
+- AI.3：\(\operatorname{Hom}(F,G)\) 是 \(\operatorname{Hom}(O(-a)^r,G)\to\operatorname{Hom}(O(-b)^s,G)\) 的 kernel。
+- AI.4：低次项可能含 torsion 或生成不足；高次截断不改变 associated sheaf，并给有限生成控制。
+
+### 附录 AJ
+
+- AJ.1：若 \(X\) 是光滑曲线，则 \(f^!\mathbb C=\omega_X[1]\)。
+- AJ.2：divisor 由一个 nonzerodivisor \(s\) 定义，Koszul complex \(O_X\xrightarrow{s}O_X\) 的 dual 给 \(i^!O_X\simeq O_D(D)[-1]\)。
+- AJ.3：若不同嵌入分解给不同 \(f^!\)，duality 不能成为 functorial 六函子结构。
+- AJ.4：取 \(Y=*\)、\(G=\mathbb C\)，AJ.9 直接化为 AD.3。
+
+### 附录 AK
+
+- AK.1：\(H^\ast(\mathbb P^1_X)=H^\ast(X)\oplus H^{\ast-2}(X)\xi\)，其中 \(\xi=c_1(O(1))\)。
+- AK.2：zero section 的 Koszul complex 为 \(\lambda_{-1}(N^\vee)\)，给出 \(K\)-theory pushforward。
+- AK.3：deformation family 的一般 fiber 是原嵌入，特殊 fiber 是 normal cone；regular 情形 normal cone 为 normal bundle。
+- AK.4：分解后的每个因子满足 GRR 后，需要复合相容把等式拼回原 morphism。
+
+### 附录 AL
+
+- AL.1：此时 \(a=0\)，所以 \(\Phi=0\)；\(q=H_d(g)\)，\(r_0=R_d(g)\)。
+- AL.2：由 Cauchy 估计 \(\|g_k\|_r\le\rho^{-k}\|g\|_{r,\rho}\)，故 \(\|H_d(g)\|_{r,\rho'}\le\sum_{m\ge0}\rho^{-(m+d)}(\rho')^m\|g\|\)。
+- AL.3：每个 \(a_i\) 在原点消失，连续性给缩小 \(r\) 后 \(\|a_i\|_r\) 任意小；乘法和 \(H_d\) 的算子范数固定后可使乘积范数小于一。
+- AL.4：若 \(w e=T(e)\)，则关系包括 \(w e_j-\sum_kT_{kj}e_k=0\)；任意高次 \(w\)-项可由这些矩阵关系降到次数 \(<d\)。
+
+### 附录 AM
+
+- AM.1：若 \(x\perp\overline{\operatorname{im}T}\)，则 \(\langle Tu,x\rangle=0\) 对所有 \(u\) 成立，故 \(x\in\ker T^\ast\)；反向同理。
+- AM.2：若 \(T^\ast v=T^\ast v'\)，则 \(v-v'\in\ker T^\ast\)，而 \(f\perp\ker T^\ast\)，所以 \(\langle f,v\rangle=\langle f,v'\rangle\)。
+- AM.3：complete metric 允许用紧支光滑形式在 \(\bar\partial\) 与伴随的图范数中逼近，避免边界项破坏 Bochner-Kodaira 估计。
+- AM.4：\(i\partial\bar\partial |z|^2=i\,dz\wedge d\bar z\)，对 \((0,1)\)-形式给出正的零阶项，常数 \(c=1\)。
+
+### 附录 AN
+
+- AN.1：\(H^0=\ker(E^0\to E^1)\)，为有限自由模态射的 kernel；\(H^1=\operatorname{coker}(E^0\to E^1)\)。
+- AN.2：秩至少 \(r\) 等价于存在一个 \(r\times r\) minor 非零，这是开条件；故秩下半连续。
+- AN.3：张量 \(0\to B^q\to Z^q\to H^q\to0\) 后左端出现 \(\operatorname{Tor}_1(H^q,\mathbb C(y))\)，下一阶 boundaries 的变化也由相邻 cohomology 控制。
+- AN.4：properness 使 fiber 上同调由有限覆盖和有限 Banach 复形控制；非 proper 时截面可逃向无穷远，有限 presentation 和半连续性会失败。
+
+### 附录 AO
+
+- AO.1：\(A_n=\mathbb C[[t]]/(t^{n+1})\)；相容条件是 \(\mathcal G_{n+1}\otimes_{A_{n+1}}A_n\cong\mathcal G_n\)。
+- AO.2：completion 的定义即 \(\widehat M=\varprojlim M/I^{n+1}M\)；有限生成性保证该逆极限与张量 \(M\otimes_A\widehat A\) 相容。
+- AO.3：对 coherent \(\mathcal F\)，\(\operatorname{Hom}(\mathcal F,\mathcal G)=\Gamma(X,\mathcal Hom(\mathcal F,\mathcal G))\)，因为 sheaf Hom 表示局部 morphism 的 sheaf。
+- AO.4：graded module 路线用 twisting 与有限生成直接代数化；形式路线先比较所有 infinitesimal thickenings，再用 Grothendieck existence 代数化。
+
+### 附录 AP
+
+- AP.1：右正合列为 \(G_0(Z)\xrightarrow{i_\ast}G_0(X)\xrightarrow{j^\ast}G_0(U)\to0\)。
+- AP.2：短正合列或 distinguished triangle 在 \(K_0\) 中给 \([B]=[A]+[C]\)；派生推前保持三角形，所以推前尊重该关系。
+- AP.3：若 \(W\subset Z\) 是闭子簇，则 \(i_\ast[W]\) 是同一个闭子簇作为 \(X\) 的 cycle；若维数保持，系数不变。
+- AP.4：graph factorization 把一般 projective morphism 写为 closed immersion 后接 projection；若这两类基本因子满足 GRR，复合相容给原 morphism 的 GRR。
+
+### 附录 AQ
+
+- AQ.1：由 AQ.1，\(R\Gamma(X,F)\) 有界且每个 cohomology 有限维；在 \(D(\mathbb C)\) 中这等价于与有限维向量空间组成的有界复形 quasi-isomorphic，因此 perfect。
+- AQ.2：对 Riemann surface，\(n=1\) 且 \(\omega_X=K_X\)。AQ.3 给 \(H^i(X,L)^\vee\cong H^{1-i}(X,L^{-1}\otimes K_X)\)。
+- AQ.3：exact equivalence 保持短正合列、acyclic complex 和 quasi-isomorphism；逐项作用在 bounded complexes 上给三角范畴等价，quasi-inverse 由原等价的 quasi-inverse 逐项给出。
+- AQ.4：HRR 左侧是 \(\chi(X,E)=\sum_i(-1)^i\dim H^i(X,E)\)。若上同调不有限维或非有界，该交错和没有定义或不稳定。
+
+### 附录 AR
+
+- AR.1-AR.4：Clausen-Scholze 复几何核心定理图谱的答案见 [volume-3/SOLUTIONS.md](volume-3/SOLUTIONS.md) 第 6 节。
+
 ## 卷四答案要点
 
 ### 第 0 章
@@ -547,3 +753,17 @@
 - E.2：前四项为 $F(U)$、$\prod_iF(U_i)$、$\prod_{i,j}F(U_i\times_UU_j)$、$\prod_{i,j,k}F(U_i\times_UU_j\times_UU_k)$，并带有交替面映射。
 - E.3：谱值预层范畴逐点稳定；sheaf 条件由极限定义，对有限极限、有限余极限和 suspension 封闭。
 - E.4：凝聚阿贝尔群是阿贝尔群值 sheaf；0-截断 pyknotic abelian group 是离散空间值的阿贝尔群对象，等价于同一数据。
+
+### 附录 F
+
+- F.1：separated 是限制映射族的单射；gluing 是每个满足交叠相容的族位于该单射的像中；二者合起来就是等化子条件。
+- F.2：连续满射 \(q:K\to H\) 中 \(K\) 紧、\(H\) Hausdorff，则 \(q\) 闭；闭满射是 quotient map。
+- F.3：若截面在覆盖上为零，则在共同细化上所有代表为零；sheafification 的等价关系把它识别为零。
+- F.4：Ext 由 \(\operatorname{Hom}(P_\bullet,-)\) 的 cohomology 定义；不同投射分解给同伦等价 Hom 复形，比较定理保证定义独立。
+
+### 附录 G
+
+- G.1：阿贝尔群值 sheaf 对有限覆盖用一阶等化子；谱值 sheaf 要求对 Čech nerve 的 totalization 等价，包含高阶同伦相容。
+- G.2：谱值 sheaf 范畴是预 sheaf 稳定范畴的 left exact localization；fiber 是有限极限，故仍满足 sheaf 条件。
+- G.3：谱由所有同伦群检测；若每个测试对象上同伦群全为零，则每个 \(E(S)\) 是零谱，故 \(E\simeq0\)。
+- G.4：需检查生成 cone 的稳定化、局部化存在性、kernel 为张量理想，以及 localization 与谱值张量积相容。

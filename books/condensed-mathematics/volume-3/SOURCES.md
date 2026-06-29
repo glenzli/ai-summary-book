@@ -41,3 +41,26 @@
 - 附录 S 使用 $\mathbb P^n$ 的标准仿射覆盖、齐次 Laurent 单项式 Čech 复形、Cartan B 和基础 Serre duality 配对；不调用 Borel-Weil-Bott。
 - 附录 T 使用 Euler sequence、canonical bundle、Čech residue 和附录 S 的单项式基，证明 $\mathbb P^n$ 线丛情形的 Serre 对偶。
 - 附录 U 使用 $\mathbb P^n$ 的 cohomology 环、Euler sequence、Chern character、Todd class 和 residue 系数计算，证明线丛情形的 HRR。
+- 附录 V 使用 Stein 空间、Cartan A/B、相干层有限表示、acyclic 覆盖和 Čech-to-derived 谱序列；Cartan A/B 仍作为经典输入。
+- 附录 W 使用正则局部环、收敛幂级数环、Auslander-Buchsbaum/有限整体维数和相干层 stalk-to-sheaf 论证；交换代数定理作为输入。
+- 附录 X 使用 hypercohomology spectral sequence 和有限复形同调代数，证明向量丛有限性在有全局有限局部自由 resolution 时传播到相干层。
+- 附录 Y 使用 Serre twisting、projective GAGA 的 full faithfulness/essential surjectivity/cohomology comparison 模块和 finite presentation；完整代数化仍作为 GAGA 输入。
+- 附录 Z 使用 Hilbert complex、椭圆 Fredholm-Hodge 输入、harmonic forms 和 Dolbeault Laplacian；parametrix 与椭圆估计作为分析输入。
+- 附录 AA 使用 Dolbeault 配对、Hodge star、harmonic representatives 和有限维线性代数，证明向量丛 Serre 对偶的完美性；Hodge star 与 Laplacian 相容作为输入。
+- 附录 AB 使用 Weierstrass preparation/division、Oka coherence、Cousin 问题和 Cartan 定理的经典证明模块；这些多复变定理作为输入。
+- 附录 AC 使用 Grauert direct image theorem、semi-continuity 和 base change 形式；Grauert 定理作为输入，有限性作为推论证明。
+- 附录 AD 使用 dualizing complex 和 Grothendieck-Serre duality；dualizing complex 存在性和 global duality 作为输入。
+- 附录 AE 使用 Chern character、Todd class 和 Grothendieck-Riemann-Roch；GRR 本身作为输入，HRR 和函子性后果在书内证明。
+- 附录 AF 使用 Weierstrass division、distinguished polynomial、Oka coherence 的归纳骨架和收敛性边界；Weierstrass 定理作为输入。
+- 附录 AG 使用 Runge approximation、Cousin 分裂、Stein covering refinement 和 Čech direct limit，补 Cartan B 的证明机制。
+- 附录 AH 使用 Stein exhaustion、Hörmander $L^2$ estimates、椭圆正则性和 Dolbeault resolution，补 $\bar\partial$ 方法推出 Stein 消没的模块。
+- 附录 AI 使用 Serre correspondence、graded modules、twisting 和 analytic finite generation，补 projective GAGA 的代数化细节。
+- 附录 AJ 使用 smooth/closed immersion 的 $f^!$、Koszul duality、trace 和 Grothendieck duality，补 duality 构造义务。
+- 附录 AK 使用 projective bundle formula、regular immersion、deformation to the normal cone 和 graph factorization，补 GRR 证明模块。
+- 附录 AL 使用 Banach 幂级数范数、Cauchy 估计、Neumann 级数和 Weierstrass division 的估计形式，补 Oka coherence 所需的收敛控制。
+- 附录 AM 使用 Bochner-Kodaira-Nakano 恒等式、Hilbert 复形、闭值域判别和 Hahn-Banach 解算子，补 Hörmander 方法从基本估计到解方程的步骤。
+- 附录 AN 使用 Grauert privileged covering、有限 Banach 复形、半连续性和 base change 判别，补 direct image coherence 的证明模块。
+- 附录 AO 使用 theorem on formal functions、Grothendieck existence、解析形式邻域比较和形式 GAGA，补 projective GAGA 的代数化路线。
+- 附录 AP 使用 $K$-理论局部化、Chow/cohomology 局部化、Chern character 边界相容和 proper pushforward 复合，补 GRR 的局部化证明组织。
+- 附录 AQ 使用本卷所有主输入定理和第二卷 analytic/liquid 类型检查，补复几何主定理包在 condensed/analytic 语言中的闭包证明。
+- 附录 AR 使用 Clausen-Scholze 复几何讲义、第二卷 analytic/liquid 接口和第三卷 AQ 主定理包，把复几何核心定理整理成建模、Dolbeault、有限性、对偶、GAGA、HRR/GRR 和 six functor 接口的图谱；它不新增输入。

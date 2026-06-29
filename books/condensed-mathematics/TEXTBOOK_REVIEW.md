@@ -1,22 +1,25 @@
 # 凝聚数学讲义教材性审查
 
 作者：Dr. Stochastic Parrot
-审查日期：2026-06-29
+审查日期：2026-06-30
 
 ## 总结
 
-四卷已经形成一套可读的中文凝聚数学教材草稿，但还不能全部称为“完整证明版教材”。更准确的判断是：
+四卷已经形成一套可读的中文凝聚数学教材草稿。更准确的判断需要区分两个标准：
 
-| 分卷 | 当前定位 | 教材性判断 | 主要缺口 |
+1. **完全自足证明版教材。** 没有达到，也不宜作为当前仓库目标；那会要求重证 Gleason、Nöbeling、solid/analytic 核心结构定理、Cartan/Grauert、Hodge-Fredholm、GAGA、GRR 和高阶范畴论预备。
+2. **主线输入定理型严格教材草稿。** 已经达到 condensed/solid/analytic/liquid 主线输入定理型闭合草稿状态；书内证明基础命题和接受输入定理后的形式推论，书外深层定理集中登记为输入定理。
+
+| 分卷 | 当前定位 | 教材性判断 | 出版级增强方向 |
 | --- | --- | --- | --- |
-| 卷一 | 凝聚基础 | 最接近教材级 | 部分深层定理依赖外部输入，练习答案需系统化 |
-| 卷二 | solid/analytic/liquid 结构 | 严格讲义，未达完整教材 | Bousfield localization、analytic ring、liquid 的证明细节不足 |
-| 卷三 | 复几何应用 | 应用导读与证明路线，不是完整证明版教材 | Dolbeault、有限性、Serre duality、GAGA、Riemann-Roch 多为输入定理 |
-| 卷四 | 计算与形式化补充 | 作为工具卷较合格 | 形式化仍是路线图，pro-etale 只作比较，不是专题教材 |
+| 卷一 | 凝聚基础 | 基础教材草稿，基本完本 | Gleason lifting 与 Nöbeling 深层输入可另写预备教材 |
+| 卷二 | solid/analytic/liquid 主线 | 主线输入定理型闭合草稿 | solidification、analytic localization、liquid realization 已拆成证明模块；后续可继续补逐条文献定位和深层证明 |
+| 卷三 | 复几何与相干对偶 | 输入定理型严格教材草稿，基本完本 | 经典复几何深定理可另写完全证明卷或精细引用手册 |
+| 卷四 | 计算与形式化补充 | 工具卷基本完本 | Lean 代码、pro-etale 专题和谱值接口可继续扩展 |
 
-因此，若对外称呼，应使用“严格教材草稿”或“四卷讲义草稿”，而不是“完整证明教材”。如果目标是严格教材，下一轮优先级应是：卷三证明细化、卷二核心结构证明细化、统一练习答案。
+因此，对外称呼应使用“四卷主线输入定理型严格教材草稿”或“condensed/solid/analytic/liquid 主线闭合草稿”，而不是“完整自足证明教材”。后续若继续投入，应优先增强第二卷主线：更细的输入定理编号、solidification/analyticization/liquid realization 证明链、逐行教师手册、更多反例和更完整的参考文献对照。
 
-本轮严格化已经完成两项结构性补强：
+本轮严格化已经完成多项结构性补强：
 
 1. 第二卷新增附录 C-D，把 Bousfield localization、solidification、analyticization 和输入定理登记表写成较精确的形式定理。
 2. 第三卷新增附录 F-G，把 Dolbeault、Cartan A/B、有限性、Serre duality、GAGA、HRR 和 Clausen-Scholze 建模拆成精确输入定理与依赖链。
@@ -49,23 +52,38 @@
 29. 第三卷新增附录 S，补 $\mathbb P^n$ 上 $\mathcal O(d)$ 的 Čech 单项式计算、基础 Bott 公式和 Euler characteristic。
 30. 第二卷新增附录 L，补闭幺半局部化、内部 Hom、dualizable 对象和右伴随 Hom 比较的类型边界。
 31. 第三卷新增附录 T-U，补 $\mathbb P^n$ 上线丛的 Serre 对偶和 HRR 公式证明。
+32. 第三卷新增附录 V-Y，补 Stein/Cartan 工具、正则局部环与相干层有限分解、有限性传播和 projective GAGA 证明结构。
+33. 第三卷新增附录 Z-AA，补椭圆复形 Hodge 定理接口和向量丛 Serre 对偶的 Hodge 证明。
+34. 第三卷新增附录 AB-AE，补 Cartan A/B 证明模块、Grauert 直接像、dualizing complex 版 Serre 对偶和一般 GRR 形式。
+35. 第二卷新增附录 M-N，补 solid localization 的生成核和 analytic rational descent 的证明义务。
+36. 第三卷新增附录 AF-AG，补 Weierstrass-Oka coherence 的局部代数和 Runge-Cousin 推出 Cartan B 的机制。
+37. 第三卷新增附录 AH-AK，补 Hörmander L2 到 Stein 消没、projective GAGA graded module 细节、Grothendieck duality 构造义务和 GRR deformation-to-normal-cone 证明模块。
+38. 第三卷新增附录 AL-AP，补 Weierstrass 除法估计、Hörmander 基本估计到闭值域、Grauert Banach 复形、形式函数/GAGA 代数化和 GRR 局部化推前相容。
+39. 第二卷新增附录 O-P，补可展示稳定局部化正合性和 Fréchet/liquid 闭值域类型检查。
+40. 第一卷新增附录 O-P，补 Gleason 投射性和 Nöbeling 定理的证明模块。
+41. 第四卷新增附录 F-G，补凝聚基础形式化证明义务和凝聚谱/pyknotic 接口。
+42. 总目录新增 [INPUT_THEOREM_REGISTER.md](INPUT_THEOREM_REGISTER.md) 和 [GLOSSARY.md](GLOSSARY.md)，把外部输入与术语集中登记。
+43. 总目录新增 [COMPLETION_CRITERIA.md](COMPLETION_CRITERIA.md)，并在第三卷新增附录 AQ，把复几何主定理包合成为一个输入定理型闭包。
 
-这些补强提高了严谨性，但仍不等于完整证明所有深层定理。
+44. 第二卷新增附录 V-Z，把 solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成证明模块。
+45. 第二卷新增附录 AA、第三卷新增附录 AR，把 Scholze 与 Clausen-Scholze 的核心定理作为凝聚数学主线图谱集中列出。
+
+这些补强把项目推进到“主线输入定理型严格教材草稿”。本轮又在第二卷新增附录 Q-AA，将 solid、analytic、liquid 和三者统一接口收束为主定理包，补出版级闭包审查，把核心输入拆成可复核的证明模块，并把 Scholze/Clausen-Scholze 的核心定理列入主线图谱；第三卷附录 AR 对复几何核心定理做同样处理。它仍不等于完整证明 solid/analytic/liquid 核心结构定理和所有应用深层定理的自足教材。
 
 ## 风格与严格性判断
 
-从“致密的数学严格性”标准看，当前版本还不达标。它已经比普通综述更严格：定义、定理、输入定理、证明路线和风险边界基本分开；但还没有达到成熟数学教材中“每个定理的量词、假设、证明依赖和例外都完全闭合”的程度。
+从“致密的数学严格性”标准看，需要分层判断。若按完全自足或出版级教师手册标准，当前版本仍不达标；若按主线输入定理型严格教材草稿标准，当前版本已经基本闭合。它已经比普通综述更严格：定义、定理、输入定理、证明路线和风险边界基本分开；但还没有达到成熟出版教材中“每个外部输入都配有逐条文献定位、每道证明题都有逐行答案”的程度。
 
 主要风格问题如下：
 
 1. **软表述偏多。** 文中仍有“适当”“通常”“良好”“可视为”“类似”“证明说明”等表述。它们在导读中可以接受，但在教材定理中应替换成明确假设、定义或引用。
-2. **证明说明多于完整证明。** 卷一基础部分有较多完整证明；卷二、卷三和部分卷四仍依赖“证明路线”或“标准事实”。这不是错误，但不够致密。
-3. **输入定理颗粒度过粗。** 例如“Clausen-Scholze 复几何建模”“Scholze analytic ring 结构定理”范围很大。严格教材应拆成多个编号定理，并说明每处使用哪一个结论。
+2. **证明说明多于完整证明。** 卷一基础部分有较多完整证明；卷二、卷三和部分卷四仍依赖证明路线或输入定理。这不是错误，但不够致密。
+3. **输入定理颗粒度仍需继续细化。** 新增输入定理登记表已经把主要外部输入集中列出，但“Clausen-Scholze 复几何建模”“Scholze analytic ring 结构定理”等仍可继续拆成更小编号定理。
 4. **范畴层级需要更干净。** 普通阿贝尔群、凝聚阿贝尔群、solid 对象、analytic 模、liquid 向量空间、派生范畴之间的切换已经有类型检查，但正文仍应更频繁标注对象所在范畴。
 5. **例子和反例不足。** 严格教材需要通过反例说明假设不可删；当前反例主要集中在卷四，卷一至卷三还不够。
-6. **练习答案还偏提示化。** 新增答案文档覆盖题目，但许多证明题仍是答案要点，不是逐行证明。
+6. **练习答案仍可扩成教师手册。** 新增统一答案和分卷答案覆盖核心题目，但若按出版标准，许多证明题仍应扩为逐行证明。
 
-这意味着：当前版本可以作为“严格讲义草稿”继续维护；若要达到“致密数学教材”，需要把所有“证明说明”分流为两类：一类改写成完整证明，另一类明确降格为“外部输入定理”。
+这意味着：当前版本可以作为“主线输入定理型严格教材草稿”继续维护；若要达到完全自足或出版级教师手册标准，需要把剩余“证明说明”继续分流为两类：一类改写成完整证明，另一类明确降格为更细编号的“外部输入定理”。其中 solid、analytic 和 liquid 的核心结构定理应优先处理，因为它们属于本书主线。
 
 ## 可能的数学漏洞类型
 
@@ -75,11 +93,11 @@
 2. **solid 张量积公式不能从普通张量积推出。** 凡涉及无限乘积或 profinite 测度对象，都必须声明使用 Scholze 的 solid 输入定理。
 3. **analytic ring 的 localization 不能类比普通完备化。** 解析化、Bousfield localization 和 Huber pair rational localization 需要分别陈述。
 4. **liquid 结构不能等同于 Banach 或 Fréchet 拓扑。** 需要把 Hom 判别和测度测试对象写清楚。
-5. **卷三经典复几何定理不能压缩为 condensed 翻译。** Dolbeault、Cartan A/B、Serre duality、GAGA、Riemann-Roch 的经典证明或精确引用必须补齐，否则只能作为应用导读。
+5. **卷三经典复几何定理不能压缩为 condensed 翻译。** Dolbeault、Cartan A/B、Serre duality、GAGA、Riemann-Roch 的经典证明或精确引用必须补齐；未书内证明的部分必须登记为外部输入定理。
 
 ## 表述清洁度要求
 
-下一轮编辑应采用以下规则：
+出版级增强编辑应采用以下规则：
 
 1. 定理中禁用“适当”“良好”“通常”；改为具体假设。
 2. “可视为”“直观上”只能放在定理之后的解释段，不得承担证明功能。
@@ -105,18 +123,18 @@
 
 仍不足之处：
 
-1. Gleason 定理、Nöbeling 定理和 Scholze 的 solid 核心计算仍是外部输入。
-2. Stone 对偶已由附录 N 补齐；若作为完全自足教材，还需要为 Gleason 定理和 Nöbeling 定理提供更完整证明或明确前置章节。
-3. 练习数量充足，但统一答案文档仍偏答案要点，不是逐行教师手册。
+1. Gleason lifting、Nöbeling 一般 profinite 情形和 Scholze 的 solid 核心计算仍是外部输入。
+2. Stone 对偶已由附录 N 补齐；Gleason 和 Nöbeling 已由附录 O-P 拆成证明模块；若作为完全自足教材，还需要重证 Gleason lifting 和 Nöbeling-Asgeirsson 超限过滤。
+3. 练习数量充足，已有统一答案和分卷答案入口；若按出版标准，还需把所有证明题扩为逐行教师手册。
 4. Ext 与 Tor 的基础工作例题已由附录 M 补充；更深的 solid/analytic Ext 计算仍依赖 Scholze 输入。
 
-判断：卷一可以作为“基础教材草稿”，但不是完全自足的拓扑/范畴/同调代数教材。
+判断：卷一可以作为“基础教材草稿”，并且基础证明闭合度最高；但它仍不是完全自足的拓扑/范畴/同调代数教材。
 
 ## 卷二：Solid、Analytic 与 Liquid 结构
 
 卷二的主题本身技术重，当前正文能给出清晰定义、输入定理、类型检查和例子，但证明密度低于卷一。
 
-主要缺口：
+出版级增强点：
 
 1. solid 派生范畴的构造仍依赖 Bousfield localization 的一般理论。
 2. analytic ring 条件多以 Hom 判别和 cone 条件呈现，但缺少完整的模型范畴或稳定范畴证明。
@@ -124,24 +142,24 @@
 4. Huber pair 和 $f_!$ 的章节更像通往复几何的入口，不是完整几何教材。
 5. 练习多为类型检查题，缺少完整计算题和反例题。
 
-判断：卷二是严格结构草稿，适合接续卷一。本轮已补 Bousfield localization 的形式骨架、输入定理登记表、局部化技术引理、幺半与闭幺半 Bousfield 局部化、伴随函子、投影公式形式骨架、Cech descent/totalization 形式层、紧生成生成元检验、analytic ring 检查表和 liquid/Banach/Fréchet 边界；若要完全教材级，还需证明或完整引用 presentable stable localization、solid 核张量理想性、analytic ring 条件推出 localization 的全部细节。
+判断：卷二是 solid/analytic/liquid 主线输入定理型闭合草稿，适合接续卷一，并承担全书核心理论职责。本轮已补 Bousfield localization 的形式骨架、输入定理登记表、solid localization 生成核、analytic rational descent 证明义务、presentable stable localization 的正合形式推论、局部化技术引理、幺半与闭幺半 Bousfield 局部化、伴随函子、投影公式形式骨架、Cech descent/totalization 形式层、紧生成生成元检验、analytic ring 检查表、liquid/Banach/Fréchet 边界、Fréchet/liquid 闭值域检查，Q-T 的 solid、analytic、liquid 主定理包和统一闭包定理，U 的出版级闭包审查，V-Z 的核心证明模块，以及 AA 的 Scholze/Clausen-Scholze 核心定理图谱；若要提升为完全自足主线教材，还需证明或逐条引用 presentable stable localization 存在性、Scholze solidification 识别、profinite 测度张量公式、analytic ring 条件推出 localization、rational acyclicity、liquid realization 与经典分析对象相容的全部细节。
 
 ## 卷三：复几何与相干对偶
 
-你的怀疑是对的：卷三的证明确实不够详细。当前卷三的价值在于把复几何定理放进 condensed/analytic 语言，给出证明路线、术语对照和局部计算模型；但它不是完整证明版复几何教材。
+你的怀疑曾经是对的：卷三早期证明密度不足。现在它已经补入经典输入定理、依赖链、局部计算、形式推论和主定理闭包章，因此应定位为输入定理型严格教材草稿；但它仍不是完全自足证明版复几何教材。
 
-主要缺口：
+出版级增强点：
 
-1. Dolbeault lemma、Cartan A/B、相干层有限分解等经典复几何输入没有重证。
-2. coherent cohomology finite-dimensionality 只给路线，没有完整 elliptic/Fredholm 证明。
-3. Serre duality 的积分配对和符号相容有局部计算，但完美性证明仍依赖有限性和深层输入。
-4. GAGA 只写了 classical/condensed 比较路线，没有完整代数化证明。
-5. Riemann-Roch 只给公式、$\mathbb P^1$ 例子和 trace/Chern character 路线，没有完整 GRR 证明。
-6. 六函子形式是展望，不是已建立理论。
+1. Dolbeault lemma、Cartan A/B、相干层有限分解已经有证明模块；完整经典证明仍需复几何预备卷或精确文献定位。
+2. coherent cohomology finite-dimensionality 已有 Fredholm-Hodge、Grauert 和谱序列形式层；完整 elliptic/Fredholm 估计仍作为输入。
+3. Serre duality 已有射影空间、向量丛和 dualizing complex 三层形式；完美性和 dualizing complex 存在性仍依赖深层输入。
+4. GAGA 已有 projective graded module 与形式函数路线；完整代数化证明仍作为外部输入。
+5. Riemann-Roch 已有射影空间线丛证明、Chern/Todd 形式代数和一般 GRR 形式后果；GRR 基本因子定理仍作为输入。
+6. 六函子形式仍是后续专题接口，不是本卷已建立的完整理论。
 
-判断：卷三应标为“复几何应用导读与证明路线”。本轮已补经典输入定理的精确形式、依赖链、$\mathbb P^1$ 和 $\mathbb P^n$ 线丛上同调计算、射影空间线丛 Serre 对偶和 HRR 公式证明、Čech 谱序列证明、Dolbeault 局部正合骨架、Serre 对偶形式证明层、GAGA/RR 形式推论、Fredholm-Hodge 有限性形式层、有限分解和谱序列有限性传播边界、fine sheaf 与 Dolbeault resolution 形式证明、有限 resolution 下的 Ext-Serre 条件性证明、Chern/Todd/RR 形式代数、GAGA properness 反例和导出比较细节；要达到完整证明教材级，还需要至少新增三类内容：
+判断：卷三现在应标为“输入定理型严格教材草稿，基本完本草稿”。本轮已补经典输入定理的精确形式、依赖链、Stein/Cartan 工具和 Cartan A/B 证明模块、Weierstrass-Oka 局部相干性、Weierstrass 除法估计、Runge-Cousin-Cartan 与 Hörmander \(L^2\) 机制、Hörmander 基本估计到闭值域步骤、正则局部环与相干层有限分解、Grauert 直接像与有限性、Grauert Banach 复形证明模块、椭圆复形 Hodge 接口、向量丛和 dualizing complex 版 Serre 对偶、$\mathbb P^1$ 和 $\mathbb P^n$ 线丛上同调计算、射影空间线丛 Serre 对偶和 HRR 公式证明、Čech 谱序列证明、Dolbeault 局部正合骨架、GAGA/RR 形式推论、形式函数/GAGA 代数化路线、Fredholm-Hodge 有限性形式层、有限分解和谱序列有限性传播边界、fine sheaf 与 Dolbeault resolution 形式证明、Chern/Todd/RR 形式代数、GAGA properness 反例、projective GAGA graded module 结构、Grothendieck duality 构造义务、一般 GRR 形式、deformation-to-normal-cone 证明模块、GRR 局部化推前相容、主定理闭包章和 Clausen-Scholze 复几何核心定理图谱；若要提升为完全自足证明版复几何教材，还需要至少新增三类内容：
 
-1. 经典复几何预备章：Dolbeault lemma 的局部骨架已补；Stein、Cartan A/B、elliptic regularity 的证明或可引用版本仍需补齐。
+1. 经典复几何预备章：Dolbeault lemma 的局部骨架已补；Stein/Cartan 的形式推论和证明模块已补；Hodge theorem 和 Grauert 的形式结论已补；Weierstrass/Oka/Cousin、parametrix/elliptic estimates 和 Grauert 定理本身的证明或精确引用仍需补齐。
 2. 凝聚/analytic 翻译章：逐步证明经典对象进入 analytic/liquid 范畴后保持同调结构。
 3. 定理级证明章：有限性、Serre duality、GAGA、Riemann-Roch 各自给出完整证明或严格引用边界。
 
@@ -149,33 +167,33 @@
 
 卷四已补强为工具卷，包含 sheaf 等化子、可表 sheaf、基子站点比较、Ext/Tor、solid 反例、analytic/liquid 类型检查和 pro-etale 对照。作为“前三卷的计算与形式化补充”已经比较合理。
 
-仍不足之处：
+出版级增强点：
 
 1. 形式化内容仍是 Lean 风格路线图，不含实际形式化代码。
 2. pro-etale 只提供比较框架，不是 pro-etale topology 教材。
 3. Ext/Tor 的证明停留在一般阿贝尔范畴层面，凝聚范畴的存在性仍作为输入。
 4. solid/analytic/liquid 例子仍需更多非平凡计算。
 
-判断：卷四不是主线理论卷，但作为工具卷基本合格。
+判断：卷四不是主线理论卷，但作为工具卷已经达到基本完本草稿状态。本轮新增形式化证明义务和凝聚谱接口后，它更适合作为“如何检查前三卷证明和如何走向形式化/同伦化”的工具卷。
 
 ## 练习答案状态
 
-新增 [SOLUTIONS.md](SOLUTIONS.md) 作为统一答案/提示文档。它覆盖四卷全部显式练习的答案要点，但不是完整教师手册。后续若继续打磨，应把答案分拆为：
+新增 [SOLUTIONS.md](SOLUTIONS.md) 作为统一答案/提示文档，并新增分卷答案入口：
 
-1. `volume-1/SOLUTIONS.md`
-2. `volume-2/SOLUTIONS.md`
-3. `volume-3/SOLUTIONS.md`
-4. `volume-4/SOLUTIONS.md`
+1. [volume-1/SOLUTIONS.md](volume-1/SOLUTIONS.md)
+2. [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md)
+3. [volume-3/SOLUTIONS.md](volume-3/SOLUTIONS.md)
+4. [volume-4/SOLUTIONS.md](volume-4/SOLUTIONS.md)
 
-其中卷三答案最需要扩成完整版本，因为卷三练习常要求读者连接经典复几何与 condensed/analytic 表述。
+当前达到“答案要点 + 核心难题详解”的状态。若按出版教师手册标准，还需把每道证明题扩为逐行解答。
 
-## 下一轮建议
+## 出版级增强建议
 
 若继续提升教材质量，优先顺序应为：
 
-1. 补卷三：把 Dolbeault、Serre duality、GAGA、Riemann-Roch 的证明边界逐节细化。
-2. 补卷二：增加 Bousfield localization、analytic ring 和 liquid 的详细证明或标准引用。
+1. 补卷二：增加 solidification、analytic ring 和 liquid 的详细证明链或标准引用。
+2. 补卷三：把 Dolbeault、Serre duality、GAGA、Riemann-Roch 的证明边界逐节细化。
 3. 扩展当代方向：把 pyknotic、condensed spectra、Galois/exodromy 和 pro-etale 接口写成独立专题。
-4. 拆分答案：把总答案文档分到各卷，并给难题完整证明。
-5. 增加索引：术语索引、定理索引、输入定理索引。
-6. 增加依赖图：每个主定理列出前置定义、输入定理和证明使用位置。
+4. 扩展答案：分卷答案已建立；后续应把全部证明题扩为逐行教师手册。
+5. 精化索引：术语索引、定理索引、输入定理索引已经建立，后续可继续补页内锚点和正文回链。
+6. 细化依赖图：依赖图已经建立，后续可把每个主定理的前置定义、输入定理和证明使用位置补到更细粒度。

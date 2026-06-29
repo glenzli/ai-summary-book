@@ -55,12 +55,18 @@
 16. 已补 Stone 对偶完整证明链
     当前已新增附录 N，证明超滤子判别、Stone 空间紧 Hausdorff 性、$B\simeq\operatorname{Clop}(\operatorname{Stone}(B))$、profinite 空间的 Stone 恢复和有限离散商逆极限表示。Boolean prime ideal theorem 仍作为集合论输入。
 
+17. 已补 Gleason 投射性证明模块
+    当前已新增附录 O，证明 regular open algebra 完备性、ED 情形下 regular open 等于 clopen、Stone 空间端的 Sikorski extension 推出投射性，并标出从 Stone 端下降到一般 compact Hausdorff 端的 Gleason lifting 输入。
+
+18. 已补 Nöbeling 定理证明模块
+    当前已新增附录 P，证明有限和可数 profinite 情形，给出一般 profinite 情形的超限过滤输入和从过滤到自由性的代数引理，并说明该定理进入 solid 计算的方式。
+
 ## 第一卷外部输入定理
 
 以下结果作为第一卷外部输入定理使用。第一卷不再把它们列为正文缺口；第二卷会继续依赖其中的 solid/analytic 结构定理。
 
-1.  Gleason 定理  
-    极不连通紧 Hausdorff 空间等价于 compact Hausdorff 范畴中关于满射的投射对象。
+1.  Gleason lifting theorem
+    极不连通紧 Hausdorff 空间关于 compact Hausdorff 满射的提升性质。附录 O 已证明 Boolean algebra 端的模块和反向方向，一般 compact Hausdorff 下降仍引用 Gleason。
 
 2.  Gleason cover  
     任意紧 Hausdorff 空间存在极不连通紧 Hausdorff 空间满射覆盖。附录 J 构造 regular open Stone cover 的连续满射，投射性仍引用 Gleason。
@@ -75,7 +81,7 @@
     包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 E 给出本书所需版本，附录 H 补充正合 sheafification 和派生张量的比较证明；K-flat/K-injective 替换存在性仍引用 ringed topos 或 Grothendieck 范畴的标准理论。
 
 6.  Nöbeling 定理  
-    任意 profinite $S$ 上 $C(S,\mathbb Z)$ 自由。附录 F 给出 metrizable 情形证明和一般情形说明，但一般定理仍作为外部引用。
+    任意 profinite $S$ 上 $C(S,\mathbb Z)$ 自由。附录 F 和 P 给出有限、可数、超限过滤模块和一般情形说明，但一般 profinite 定理仍作为外部引用。
 
 7.  Solid 范畴结构定理  
     solid abelian groups 构成阿贝尔全子范畴、存在 solidification、乘积型对象给出紧投射生成元等。正文第十二章引用 Scholze 讲义。

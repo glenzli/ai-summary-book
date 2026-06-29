@@ -61,6 +61,10 @@ $$
 
 $\mathbb P^n$ 上线丛情形的可计算模型见附录 T；它用 Čech 单项式和 residue trace 直接证明完美配对。
 
+向量丛情形的 Hodge 理论证明见附录 AA；它把 Dolbeault 配对、harmonic representatives 和 Hodge star 合在一起证明完美性。
+
+一般相干层的 dualizing complex 形式和 Ext-Serre 完美配对见附录 AD。
+
 ## 5.5 本章小结
 
 Serre duality 是相干对偶的核心例子。condensed/analytic 方法的贡献在于把它放入统一的六函子语言中。

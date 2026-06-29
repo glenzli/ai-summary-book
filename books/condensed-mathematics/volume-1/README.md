@@ -1,7 +1,7 @@
 # 凝聚数学讲义：第一卷
 
 作者：Dr. Stochastic Parrot  
-状态：严格教材草稿，第一卷完整草稿  
+状态：严格教材草稿，第一卷基本完本草稿
 主资料源：Peter Scholze, *Lectures on Condensed Mathematics*；Asgeirsson 等，*Categorical Foundations of Formalized Condensed Mathematics*
 
 这是《凝聚数学讲义》的第一卷。目标不是写一篇“什么是凝聚数学”的介绍文章，而是按严格教材方式，从站点、sheaf、紧 Hausdorff 空间、profinite 空间、凝聚集合、凝聚阿贝尔群、solid 对象和 analytic rings 逐步建立理论。
@@ -50,8 +50,10 @@
 28. [附录 L：边界例子与反例](L_boundary_examples_and_counterexamples.md)
 29. [附录 M：Ext 与 Tor 工作例题](M_worked_ext_tor_examples.md)
 30. [附录 N：Stone 对偶的完整证明链](N_stone_duality_full_proof.md)
+31. [附录 O：Gleason 投射性定理的证明模块](O_gleason_projectivity_modules.md)
+32. [附录 P：Nöbeling 定理的证明模块](P_nobeling_proof_modules.md)
 
-## 第一卷计划
+## 第一卷结构
 
 - 第 0 章：问题背景、资料源和全书路线。
 - 第 1 章：站点、覆盖族、预层、sheaf 条件、可表 sheaf。
@@ -83,9 +85,11 @@
 - 附录 L：sheaf 满射、separated presheaf、站点比较、无限乘积张量和拓扑阿贝尔群的边界例子。
 - 附录 M：有限离散自由对象、两项投射分解、乘以 $n$ 的 Ext/Tor 工作例题。
 - 附录 N：滤子、超滤子、Stone 空间紧性、开闭代数同构和 profinite 逆极限表示。
+- 附录 O：regular open 完备 Boolean algebra、Sikorski extension、Gleason lifting 的证明模块。
+- 附录 P：Nöbeling 定理的有限、可数与超限过滤证明模块。
 
 ## 当前范围
 
-当前版本完成第一卷：基础部分给出书内证明，新增附录 H 将 sheafification 正合性和派生张量的同调代数基础补齐，附录 I-K 补投射分解、Gleason cover 形式细节和 ED 覆盖检测正合性的证明链，附录 L 补关键假设的边界例子，附录 M 补 Ext/Tor 工作例题，附录 N 补 Stone 对偶的完整证明链；solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。Gleason 投射性、Nöbeling 和 Scholze 的 solid/analytic 结构定理作为外部输入定理使用；第二卷继续展开这些高阶结构。
+当前版本完成第一卷：基础部分给出书内证明，新增附录 H 将 sheafification 正合性和派生张量的同调代数基础补齐，附录 I-K 补投射分解、Gleason cover 形式细节和 ED 覆盖检测正合性的证明链，附录 L 补关键假设的边界例子，附录 M 补 Ext/Tor 工作例题，附录 N 补 Stone 对偶的完整证明链，附录 O-P 补 Gleason 投射性和 Nöbeling 定理的证明模块；solid、analytic rings 和相干对偶部分给出严格定义、核心定理、输入定理和引用边界。Gleason lifting、Nöbeling 一般情形和 Scholze 的 solid/analytic 结构定理仍作为外部输入定理使用；第二卷继续展开这些高阶结构。
 
-总目录见 [凝聚数学讲义](../)。续卷见 [凝聚数学讲义：第二卷](../volume-2/)。
+分卷答案见 [SOLUTIONS.md](SOLUTIONS.md)。总目录见 [凝聚数学讲义](../)。续卷见 [凝聚数学讲义：第二卷](../volume-2/)。

@@ -190,7 +190,7 @@ $$
 
 设 $U_i\subset X$ 是有限 rational 覆盖，$U=\coprod_iU_i$，并令 $U_X^\bullet$ 为 Cech nerve。
 
-**输入定理 G.9（rational Cech descent）.** 对第二卷附录 D.6 的 analytic ring 构造，解析模范畴或其派生范畴满足
+**输入定理 G.9（rational Cech descent）.** 对第二卷附录 D.7 的 analytic ring 构造，解析模范畴或其派生范畴满足
 
 $$
 D(X)\simeq

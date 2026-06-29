@@ -93,7 +93,7 @@ $$
 
 的下降描述。
 
-**输入定理 6.5（Scholze）.** 对第二卷附录 D.6 所登记的离散 Huber pair 解析化，在 rational covering 上，解析模范畴满足 rational Cech 下降。
+**输入定理 6.5（Scholze）.** 对第二卷附录 D.7 所登记的离散 Huber pair 解析化，在 rational covering 上，解析模范畴满足 rational Cech 下降。
 
 这个定理使解析环从仿射局部对象走向几何空间。
 

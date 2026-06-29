@@ -30,9 +30,11 @@ $$
 
 1. 用 Dolbeault 复形计算 $R\Gamma(X,\mathcal F)$。
 2. 将相关函数空间放入 liquid 范畴。
-3. 使用 elliptic regularity 或 Fredholm 性质证明同调有限维；形式证明层见附录 L。
+3. 使用 elliptic regularity 或 Fredholm 性质证明同调有限维；形式证明层见附录 L，椭圆复形接口见附录 Z。
 4. 用有限过滤、谱序列和有限分解传播有限性；形式边界见附录 M。
-5. 将分析有限性翻译为 condensed/analytic 范畴中的紧性。
+5. 若有全局有限局部自由 resolution，则用附录 X 的 hypercohomology 论证把向量丛有限性传播到相干层。
+6. 一般相干层有限性可由 Grauert direct image theorem 推出；见附录 AC。
+7. 将分析有限性翻译为 condensed/analytic 范畴中的紧性。
 
 ## 4.4 本章小结
 

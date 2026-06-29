@@ -1,7 +1,7 @@
 # 凝聚数学讲义：第三卷
 
 作者：Dr. Stochastic Parrot  
-状态：应用导读草稿
+状态：输入定理型严格教材草稿，基本完本草稿
 副题：复几何与相干对偶
 
 本卷接续 [第一卷](../volume-1/) 与 [第二卷](../volume-2/)。第一卷建立凝聚基础，第二卷建立 solid、analytic、liquid 和 $f_!$ 的范畴语言；第三卷把这些工具放入复几何。
@@ -38,13 +38,36 @@
 28. [附录 S：射影空间上线丛上同调的单项式计算](S_projective_space_cohomology_bott_basic.md)
 29. [附录 T：射影空间上线丛的 Serre 对偶](T_projective_space_serre_duality.md)
 30. [附录 U：射影空间线丛的 Hirzebruch-Riemann-Roch](U_hrr_for_projective_space_line_bundles.md)
+31. [附录 V：Stein、Cartan 定理与相干层工具](V_stein_cartan_and_coherent_sheaf_tools.md)
+32. [附录 W：正则局部环与相干层有限分解](W_regular_local_rings_and_coherent_resolutions.md)
+33. [附录 X：从向量丛情形传播相干上同调有限性](X_finiteness_from_vector_bundle_cases.md)
+34. [附录 Y：Projective GAGA 的证明结构](Y_projective_gaga_proof_architecture.md)
+35. [附录 Z：椭圆复形与 Hodge 定理接口](Z_elliptic_complexes_and_hodge_theorem.md)
+36. [附录 AA：由 Hodge 理论推出向量丛 Serre 对偶](AA_vector_bundle_serre_duality_from_hodge.md)
+37. [附录 AB：Cartan A/B 的证明模块](AB_cartan_theorems_proof_modules.md)
+38. [附录 AC：Grauert 直接像定理与有限性](AC_grauert_direct_image_and_finiteness.md)
+39. [附录 AD：Dualizing complex 与一般 Serre 对偶](AD_dualizing_complex_and_general_serre_duality.md)
+40. [附录 AE：Grothendieck-Riemann-Roch 的一般形式](AE_grothendieck_riemann_roch_general_formalism.md)
+41. [附录 AF：Weierstrass 与 Oka coherence 的局部代数](AF_weierstrass_oka_coherence_local_algebra.md)
+42. [附录 AG：Runge、Cousin 与 Cartan B 的机制](AG_runge_cousin_and_cartan_b_mechanism.md)
+43. [附录 AH：Hörmander L2 方法与 Stein 消没](AH_hormander_l2_and_stein_vanishing.md)
+44. [附录 AI：Projective GAGA 的 graded module 细节](AI_projective_gaga_graded_module_details.md)
+45. [附录 AJ：Grothendieck duality 的构造义务](AJ_grothendieck_duality_construction_obligations.md)
+46. [附录 AK：Deformation to the normal cone 与 GRR 证明模块](AK_deformation_to_normal_cone_and_grr_modules.md)
+47. [附录 AL：Weierstrass 除法的估计形式](AL_weierstrass_division_estimates.md)
+48. [附录 AM：Hörmander 基本估计与闭值域步骤](AM_hormander_basic_estimate_and_closed_range.md)
+49. [附录 AN：Grauert 定理的 Banach 复形证明模块](AN_grauert_banach_complex_and_direct_images.md)
+50. [附录 AO：形式函数、形式 GAGA 与代数化](AO_formal_functions_and_gaga_algebraization.md)
+51. [附录 AP：GRR 的局部化与推前相容](AP_grr_localization_and_pushforward_compatibility.md)
+52. [附录 AQ：复几何主定理包与凝聚闭包](AQ_main_theorem_package_and_condensed_closure.md)
+53. [附录 AR：Clausen-Scholze 复几何核心定理图谱](AR_clausen_scholze_complex_geometry_core_theorem_atlas.md)
 
 ## 当前范围
 
-本卷给出复几何应用的应用导读草稿：它解释 compact complex manifolds、coherent analytic sheaves、Dolbeault 复形、Serre duality、GAGA 和 Riemann-Roch 在 condensed/analytic 语言中的位置。深层定理以 Clausen-Scholze 输入定理标注；本卷给出证明策略、范畴翻译、术语对照、局部计算模型和基础例子。附录 F-G 将经典输入定理和依赖链拆细，附录 H 给出 $\mathbb P^1$ 上线丛上同调的完整 Čech 计算，附录 I 给出 Čech-to-derived 谱序列和超上同调计算的同调代数证明，附录 J-K 补 Serre 对偶、GAGA 和 Riemann-Roch 在接受输入定理后的形式证明层，附录 L 补 Fredholm-Hodge 有限性的形式证明层，附录 M 补有限分解和谱序列传播有限性的严格边界，附录 N 补 fine sheaf、acyclic resolution 和 Dolbeault cohomology 计算的形式证明，附录 O 补从向量丛 Serre 对偶到相干层 Ext 形式的条件性同调代数推导，附录 P 补 Chern character、Todd class 和 Riemann-Roch 的形式代数，附录 Q 补 GAGA properness 反例和导出比较细节，附录 R 补 Dolbeault 局部正合的解析骨架，附录 S 补 $\mathbb P^n$ 上 $\mathcal O(d)$ 的 Čech 单项式计算，附录 T-U 补射影空间线丛的 Serre 对偶和 HRR 公式证明，避免把复几何深定理伪装成书内已证结论。
+本卷给出复几何应用的输入定理型严格教材草稿：它解释 compact complex manifolds、coherent analytic sheaves、Dolbeault 复形、Serre duality、GAGA 和 Riemann-Roch 在 condensed/analytic 语言中的位置。深层定理以 Clausen-Scholze 输入定理标注；本卷给出证明策略、范畴翻译、术语对照、局部计算模型和基础例子。附录 F-G 将经典输入定理和依赖链拆细，附录 H 给出 $\mathbb P^1$ 上线丛上同调的完整 Čech 计算，附录 I 给出 Čech-to-derived 谱序列和超上同调计算的同调代数证明，附录 J-K 补 Serre 对偶、GAGA 和 Riemann-Roch 在接受输入定理后的形式证明层，附录 L 补 Fredholm-Hodge 有限性的形式证明层，附录 M 补有限分解和谱序列传播有限性的严格边界，附录 N 补 fine sheaf、acyclic resolution 和 Dolbeault cohomology 计算的形式证明，附录 O 补从向量丛 Serre 对偶到相干层 Ext 形式的条件性同调代数推导，附录 P 补 Chern character、Todd class 和 Riemann-Roch 的形式代数，附录 Q 补 GAGA properness 反例和导出比较细节，附录 R 补 Dolbeault 局部正合的解析骨架，附录 S 补 $\mathbb P^n$ 上 $\mathcal O(d)$ 的 Čech 单项式计算，附录 T-U 补射影空间线丛的 Serre 对偶和 HRR 公式证明，附录 V-Y 补 Stein/Cartan 工具、正则局部环有限分解、有限性传播和 projective GAGA 证明结构，附录 Z-AA 补椭圆复形 Hodge 定理接口和向量丛 Serre 对偶的 Hodge 证明，附录 AB-AE 补 Cartan A/B、Grauert、一般 Serre duality 和 GRR 的精确深层输入模块，附录 AF-AK 补 Weierstrass-Oka、Runge-Cousin、Hörmander L2、graded GAGA、Grothendieck duality 构造义务和 deformation-to-normal-cone GRR 证明模块，附录 AL-AP 补 Weierstrass 除法估计、Hörmander 基本估计到闭值域、Grauert Banach 复形、形式函数/GAGA 代数化和 GRR 局部化推前相容，附录 AQ 把有限性、Serre duality、GAGA、HRR/GRR 和 condensed/analytic 建模合成主定理包，附录 AR 把 Clausen-Scholze 复几何核心定理整理为图谱，避免把复几何深定理伪装成书内已证结论。
 
 工具卷见 [凝聚数学讲义：第四卷](../volume-4/)。
 
 ## 资料
 
-资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
+资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，分卷答案见 [SOLUTIONS.md](SOLUTIONS.md)。

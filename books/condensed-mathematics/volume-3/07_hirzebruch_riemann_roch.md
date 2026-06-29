@@ -51,6 +51,8 @@ $$
 
 附录 U 进一步直接计算 $\operatorname{ch}(\mathcal O(d))\operatorname{td}(T_{\mathbb P^n})$ 的积分，证明 $\mathbb P^n$ 线丛情形的 HRR 公式。
 
+一般 Grothendieck-Riemann-Roch 的输入形式，以及它推出 HRR、可加性和复合相容的证明，见附录 AE。
+
 ## 7.5 本章小结
 
 Riemann-Roch 是前面有限性、对偶性和 GAGA 的综合应用。condensed/analytic 方法给出统一范畴背景，但 characteristic class 的完整构造需要更多几何输入。

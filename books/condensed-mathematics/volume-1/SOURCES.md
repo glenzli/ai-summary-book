@@ -53,6 +53,8 @@
 - 附录 L 使用基础 sheaf 理论、拓扑空间上的连续函数 sheaf、普通张量积和拓扑阿贝尔群的标准边界例子；不新增 condensed 数学输入。
 - 附录 M 使用第一卷附录 G-I 的同调代数规则，给出有限离散对象、两项投射分解、$\mathbb Z/n$ 型对象和 Tor 的工作例题；不新增外部来源。
 - 附录 N 使用 Boolean 代数、超滤子、Stone 对偶和 profinite 逆极限表示；Boolean prime ideal theorem 作为集合论输入，Stone 空间背景参考 Johnstone。
+- 附录 O 使用 regular open algebra、完备 Boolean algebra、Sikorski extension theorem、Stone 对偶和 Gleason lifting theorem，补 Gleason 投射性的证明模块。
+- 附录 P 使用 Asgeirsson 的 Nöbeling 定理形式化证明、有限商连续函数和超限过滤代数引理，补 Nöbeling 定理的证明模块。
 - 第 12-13 章主要依赖 Scholze 讲义第五、六讲和 Nöbeling 定理。
 - 第 14-15 章主要依赖 Scholze 讲义第七、八讲；当前只写第一卷所需定义、结构定理和纲要。
 

@@ -16,6 +16,8 @@
 10. liquid 函数分析例子的凝聚化证明。
 11. pro-etale 与 condensed site 的边界说明。
 12. 五个附录：形式化蓝图、练习解答、类型检查、pro-etale 对照和 pyknotic/凝聚同伦方向。
+13. 凝聚基础的形式化证明义务：站点、sheaf 等化子、可表 sheaf、sheafification exact、ED 投射和 Ext/Tor 接口。
+14. 凝聚谱、pyknotic 接口和谱值 sheaf 稳定性的证明模块。
 
 ## 数学口径
 
@@ -30,6 +32,7 @@
 - liquid 向量空间的深层判别定理。
 - pro-etale 理论中的 w-contractible 局部对象和同调消失结论。
 - pyknotic objects 与凝聚同伦类型的完整 $\infty$-范畴理论。
+- 谱值 solid/analytic localization 的 monoidal compatibility。
 
 这些内容不适合在第四卷重证；若继续扩展，应写成专题小册，而不是第五卷主线。
 
@@ -40,3 +43,4 @@
 - 形式化路线需要处理 universe、小性和 choice。
 - ordinary completion、solidification、analytic localization 和 liquid localization 不能混用。
 - 凝聚化拓扑向量空间时，必须保留连续线性结构，而不只是底层向量空间。
+- 谱值 sheaf 条件必须用 totalization/hyperdescent，不能退化为一阶等化子。

@@ -49,6 +49,8 @@ $$
 
 附录 Q 补充 properness 不可省略的 $\mathbb A^1$ 反例，并展开 exact equivalence 到 bounded derived equivalence、上同调比较到 $R\Gamma$ 比较的证明细节。
 
+Projective GAGA 的 classical 证明结构，包括 Serre twisting、cohomology comparison、full faithfulness 和 essential surjectivity 的模块化推导，见附录 Y。
+
 ## 6.5 本章小结
 
 GAGA 说明 algebraic 和 analytic 两种几何在 proper 条件下给出同一套相干理论。condensed/analytic 语言提供了统一的比较范畴。

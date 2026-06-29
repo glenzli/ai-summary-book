@@ -29,3 +29,5 @@
 - 附录 C 依赖第二卷 solid/analytic/liquid 资料。
 - 附录 D 依赖 Bhatt-Scholze pro-etale 论文和第一卷站点语言。
 - 附录 E 依赖 pyknotic objects 的基本定义、第一卷 sheaf 理论和第四卷形式化语言。
+- 附录 F 依赖第一卷站点、sheafification、ED 投射和 Ext/Tor 证明链，以及形式化基础论文中的 coherent topology 口径。
+- 附录 G 依赖谱值 sheaf、pyknotic objects、第一卷 sheaf 理论和第二卷 Bousfield localization 语言。

@@ -1,7 +1,7 @@
 # 凝聚数学讲义：第四卷
 
 作者：Dr. Stochastic Parrot  
-状态：完整草稿  
+状态：工具卷基本完本草稿
 副题：形式化、计算与例子
 
 本卷接续 [第一卷](../volume-1/)、[第二卷](../volume-2/) 与 [第三卷](../volume-3/)。前三卷建立了凝聚基础、solid/analytic/liquid 结构和复几何应用；第四卷转向可计算内容、形式化路线和具体例子。
@@ -22,13 +22,15 @@
 12. [附录 C：solid、analytic、liquid 的类型检查](C_solid_analytic_liquid_type_checks.md)
 13. [附录 D：pro-etale 与凝聚数学的比较细节](D_pro_etale_comparison_details.md)
 14. [附录 E：当代方向、pyknotic 对象与凝聚同伦](E_current_directions_pyknotic_and_homotopy.md)
+15. [附录 F：凝聚基础的形式化证明义务](F_formal_proof_obligations_for_condensed_basics.md)
+16. [附录 G：凝聚谱、pyknotic 接口与同伦方向](G_condensed_spectra_and_pyknotic_interfaces.md)
 
 ## 当前范围
 
 本卷是前三卷的计算和形式化补充。它不引入新的主线理论，而是把站点、sheaf、Ext/Tor、solid tensor、analytic rings、liquid spaces 和 pro-etale 背景整理成可查阅、可练习、可形式化的材料。
 
-本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查、pro-etale 边界说明和 pyknotic/凝聚同伦方向。
+本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查、pro-etale 边界说明、pyknotic/凝聚同伦方向、凝聚基础形式化证明义务和凝聚谱接口。
 
 ## 资料
 
-资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
+资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，分卷答案见 [SOLUTIONS.md](SOLUTIONS.md)。

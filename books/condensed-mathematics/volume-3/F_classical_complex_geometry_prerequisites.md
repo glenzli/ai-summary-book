@@ -32,7 +32,7 @@ $$
 
 是 $\mathcal O(E)$ 的 resolution。换言之，该复形在正次数处 exact，零次 kernel 为全纯截面。
 
-**本书不证明的部分.** 局部 $\bar\partial$-Poincaré lemma，即在 polydisc 上 $\bar\partial u=\alpha$ 的局部可解性。
+**本书不证明的部分.** 局部 $\bar\partial$-Poincaré lemma 所需的一变量 Cauchy-Green 基本解估计。其 sheaf 正合推导和 polydisc 同伦骨架见附录 R。
 
 **本书证明的推论 F.2.** 若 $X$ 是 paracompact 复流形，则
 
@@ -94,6 +94,8 @@ $$
 
 在 $q>0$ 行消失，故退化为 Čech 复形同调。证毕。
 
+Cartan A/B 接受后的有限生成、短正合列全局截面正合性和 Stein acyclic 覆盖工具见附录 V。
+
 ## F.3 相干上同调有限性
 
 **输入定理 F.6（Grauert finiteness / coherent finiteness）.** 若 $X$ 是紧复空间，$\mathcal F$ 是相干解析层，则
@@ -131,6 +133,8 @@ $$
 **推论 F.8.** 若接受 F.7，则向量丛 $E$ 的 $H^q(X,\mathcal O(E))$ 有限维。
 
 **证明.** 由 F.2，$H^q(X,\mathcal O(E))$ 由 Dolbeault 全局截面复形计算；由 F.7，该同调同构于有限维 harmonic forms 空间。附录 L 给出 Fredholm-Hodge 输入推出有限维性的形式证明。证毕。
+
+若相干层有全局有限局部自由 resolution，则向量丛有限性传播到相干层有限性；见附录 X。局部有限局部自由分解和其全局化边界见附录 W。
 
 ## F.4 Serre duality
 
