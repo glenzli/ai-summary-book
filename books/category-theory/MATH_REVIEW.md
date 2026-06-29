@@ -1,34 +1,45 @@
 # 数学审查记录
 
-本文档记录《范畴论》教材的审查清单、当前风险和后续校订任务。
+本文档记录《范畴论》教材的审查清单、外部输入边界和最终数学收口结果。
 
 ## 全书审查清单
 
-- [ ] 每章是否声明依赖前置知识。
-- [ ] 所有新增符号是否进入 `NOTATION.md`。
-- [ ] 每个定义是否说明所在宇宙或范畴。
-- [ ] 每个非平凡命题是否带完整证明或外部输入来源。
-- [ ] 每个泛性质是否写成自然同构、终对象/始对象或表示性陈述。
-- [ ] 是否避免把“同构”“等价”“同伦”等词混用。
-- [ ] $\infty$-范畴章节是否说明模型口径。
-- [ ] 外部输入定理是否进入 `SOURCES.md` 或章节末尾来源表。
-- [ ] 每个练习是否在 `SOLUTIONS.md` 中有对应答案。
-- [ ] 综合题是否在 `COMPREHENSIVE_SOLUTIONS.md` 中有对应答案。
-- [ ] 新术语是否进入 `TERM_INDEX.md`。
-- [ ] 新外部输入定理是否进入 `THEOREM_DEPENDENCIES.md`。
-- [ ] 章节资料源是否进入 `CHAPTER_SOURCE_NOTES.md`。
+- [x] 每章是否声明依赖前置知识。
+- [x] 所有新增符号是否进入 `NOTATION.md`。
+- [x] 每个定义是否说明所在宇宙或范畴。
+- [x] 每个非平凡命题是否带完整证明或外部输入来源。
+- [x] 每个泛性质是否写成自然同构、终对象/始对象或表示性陈述。
+- [x] 是否避免把“同构”“等价”“同伦”等词混用。
+- [x] $\infty$-范畴章节是否说明模型口径。
+- [x] 外部输入定理是否进入 `SOURCES.md` 或章节末尾来源表。
+- [x] 每个练习是否在 `SOLUTIONS.md` 中有对应答案。
+- [x] 综合题是否在 `COMPREHENSIVE_SOLUTIONS.md` 中有对应答案。
+- [x] 新术语是否进入 `TERM_INDEX.md`。
+- [x] 新外部输入定理是否进入 `THEOREM_DEPENDENCIES.md`。
+- [x] 章节资料源是否进入 `CHAPTER_SOURCE_NOTES.md`。
 
-## 当前初稿风险
+## 已知外部边界
 
-- 第一章的“完全忠实且本质满推出存在拟逆”使用选择原则；附录 A 已记录，但后续若形式化需明确选择强度。
-- 序章至第二章已进入终稿化第一轮：补入终稿阅读约定、骨架、等价边界例子、可表性边界、Yoneda 计算原则和对应答案。第三至第七章已进入终稿化第二轮：补入 Set 余等化子、创造极限、有限极限反例、偏序伴随、对角函子伴随、伴随保持性反例、生成族忠实判别、稠密与本质满边界、有伴随时 Kan 点态公式退化、Kan 延拓存在性边界、幂等单子和反射单子；相关练习答案已同步。第八至第十一章已进入终稿化第三轮：补入辫/对称幺半范畴、松幺半函子传代数对象、单子作为代数对象、非辫性例子、闭结构单位和指数律、非闭反例、Day 单位计算、富 Yoneda 全忠实、张量/余张量、集合值 coend 商公式、end/coend 形式 Yoneda 和存在性边界。第五章预层密度定理和第十一章 co-Yoneda 已补为正文证明。
+- 第一章的“完全忠实且本质满推出存在拟逆”使用选择原则；附录 A 已记录。若将来做形式化版本，需要选择强度标注。
+- 序章至第二章已进入终稿化第一轮：补入终稿阅读约定、骨架、等价边界例子、可表性边界、Yoneda 计算原则和对应答案。
+- 第三至第七章已进入终稿化第二轮：补入 Set 余等化子、创造极限、有限极限反例、偏序伴随、对角函子伴随、伴随保持性反例、生成族忠实判别、稠密与本质满边界、有伴随时 Kan 点态公式退化、Kan 延拓存在性边界、幂等单子和反射单子；相关练习答案已同步。
+- 第八至第十一章已进入终稿化第三轮：补入辫/对称幺半范畴、松幺半函子传代数对象、单子作为代数对象、非辫性例子、闭结构单位和指数律、非闭反例、Day 单位计算、富 Yoneda 全忠实、张量/余张量、集合值 coend 商公式、end/coend 形式 Yoneda 和存在性边界。第五章预层密度定理和第十一章 co-Yoneda 已补为正文证明。
 - 第八章 Mac Lane 相干性、第十二章局部可表现范畴伴随函子定理、第十四章 sheaf 化/Giraud、第十六章模型范畴局部化、第十九章 straightening、第二十章稳定同伦范畴三角结构、第二十一章高阶 Giraud、第二十二章高阶代数存在性定理均为外部输入。
 - 第十二至第十四章已进入终稿化第四轮：补入预层范畴局部可表现性、强生成子、紧生成对象检测自然同构、Set 有限生成与基数边界、image/coimage、核/余核判别单满、正合函子保持 image/coimage、模范畴 Grothendieck 性、阿贝尔非 Grothendieck 边界、separated 预层、plus 构造、sheaf 极限创建、sheaf 化反射泛性质和几何态射复合；plus 构造完整证明与 Giraud 定理仍作为外部输入。
-- 第十五至第十九章已进入终稿化第五轮：补入 2-函子、伪函子、单对象 2-范畴/幺半范畴比较、$\mathbf{Cat}$ 中等价判别、相对范畴、离散模型结构、Quillen 伴随保持 cofibrant/fibrant 对象、nerve 全忠实、ordinary nerve 为 Kan 的群胚判别、标准单纯形计算、左右映射空间模型、ordinary nerve 中等价边判别、correspondence 表示性口径、adjunction data 低维展开、walking adjunction、scaled nerve 低维口径、ordinary pullback 恢复、普通 Grothendieck construction、基为点/$[1]$/$[2]$ 的 straightening 低维模型、Cartesian 传输函子、纤维内态射判别和 Cartesian sections；完整 scaled model structure 与 straightening 仍作为外部输入。
-- 第二十至第二十三章已进入终稿化第六轮：第二十章补入有限余极限保持推出 exactness 判别和三角同伦范畴边界；第二十一章补入 sheaf 极限逐点计算、objectwise 离散 sheaf 恢复 ordinary sheaf；第二十二章补入普通幺半范畴中 $E_1$-代数恢复和幺半函子传递代数结构；第二十三章补入局部等价映射空间判别和局部对象极限创建。heart 阿贝尔性、一般谱序列收敛、hyperdescent 等价、高阶 Giraud、代数范畴 presentability、Ind 刻画、presentable 伴随函子定理和 $\operatorname{Pr}^L$ 幺半结构仍作为外部输入。
-- 第二十四至第二十八章已进入终稿化第七轮：第二十四章补入右/左可表示 profunctor 的伴随判别、离散关系例子和完全忠实单位判别；第二十五章补入 mate 对应、低维 exact square 和 Beck-Chevalley 粘合直观；第二十六章补入局部等价的余纤维判别；第二十七章补入 dg Yoneda 全忠实、单对象 dg category/dg algebra 比较和 $0$ 次集中边界；第二十八章补入恒等态射检查、proper compatibility 复合和 recollement 闭支撑恢复。$\mathbf{Prof}$ 双范畴相干性、高阶 equipment、Brown 表示性、presentable 稳定商、dg 模模型结构、dg nerve 稳定性、导出 Morita 定理、Hochschild 型 Morita 不变性以及具体几何理论中的六操作存在性仍为外部输入。
-- 第二十九至第三十三章已进入终稿化第八轮：第二十九章补入 relative functor 的局部化导出、只倒置同构时的 nerve 恢复和 Dwyer-Kan equivalence 的 $2$-out-of-$3$；第三十章修正 flasque swindle 的加性证明，并补入 localizing invariant 的零判别、additive invariant 的直和公式和 derived Morita 不变性；第三十一章补入 recollement 中闭支撑 heart 与 $\operatorname{Perv}(Z)$ 的等价；第三十二章补入 $E$-equivalence、Bousfield equivalent 谱给出相同局部等价类和偏序下局部等价类包含；第三十三章补入等价运输 t-结构、heart 和伴随的形式命题。Simplicial localization、hammock localization、Bergner-Joyal/Rezk 模型比较、Drinfeld quotient 构造、universal motives、K/HH/THH 局部化、perverse t-结构存在性、BBD gluing、Verdier 对偶 t-exactness、Morava $K$ 理论、Hopkins-Smith 定理、周期性定理、telescope conjecture、fracture square、Bernstein inequality、Riemann-Hilbert、$D$-module 六操作和 Kashiwara equivalence 仍为外部输入。
-- 第三十四至第三十八章已进入终稿化第九轮：第三十四章补入派生仿射拉回公式、cotangent complex 零判别和点处切映射的表示性来源；第三十五章补入 comparison functor 与遗忘函子的关系、单子性在等价替换下不变和恒等 Cech descent；第三十六章补入由 $\operatorname{QCoh}$ 判别栈等价、由 $f^*$ 重构态射和 $BG$ 基点环路的张量自同构解释；第三十七章补入支撑对平移、三角、张量幂的形式性质和 Balmer spectrum 对 tt-functor 的反变函子性；第三十八章补入相对 $K/TC$、相对 cyclotomic trace、$THH$ exact sequence 的零判别和相对不变量的 Morita 不变性。Derived/spectral stack representability、QCoh compact generation、Lurie-Pridham formal moduli、IndCoh/singular support、Barr-Beck-Lurie、comonadic Barr-Beck、faithfully flat descent、经典/高阶 Tannaka、$\operatorname{QCoh}(BG)\simeq\operatorname{Rep}(G)$、Balmer 分类定理、$\operatorname{Spc}(\operatorname{Perf}(R))$ 计算、有限谱 Balmer spectrum、THH localizing 性、cyclotomic refinement、TC 公式、cyclotomic trace 和 DGM 定理仍为外部输入。
+- 第十五至第十九章已进入终稿化第五轮：补入 2-函子、伪函子、单对象 2-范畴/幺半范畴比较、$\mathbf{Cat}$ 中等价判别、相对范畴、离散模型结构、Quillen 伴随保持 cofibrant/fibrant 对象、nerve 全忠实、ordinary nerve 为 Kan 的群胚判别、标准单纯形计算、左右映射空间模型、ordinary nerve 中等价边判别。
+- 同一轮还补入 correspondence 表示性口径、adjunction data 低维展开、walking adjunction、scaled nerve 低维口径、ordinary pullback 恢复、普通 Grothendieck construction、基为点/$[1]$/$[2]$ 的 straightening 低维模型、Cartesian 传输函子、纤维内态射判别和 Cartesian sections。
+- 完整 scaled model structure 与 straightening 仍作为外部输入。
+- 第二十至第二十三章已进入终稿化第六轮：第二十章补入有限余极限保持推出 exactness 判别和三角同伦范畴边界；第二十一章补入 sheaf 极限逐点计算、objectwise 离散 sheaf 恢复 ordinary sheaf；第二十二章补入普通幺半范畴中 $E_1$-代数恢复和幺半函子传递代数结构；第二十三章补入局部等价映射空间判别和局部对象极限创建。
+- heart 阿贝尔性、一般谱序列收敛、hyperdescent 等价、高阶 Giraud、代数范畴 presentability、Ind 刻画、presentable 伴随函子定理和 $\operatorname{Pr}^L$ 幺半结构仍作为外部输入。
+- 第二十四至第二十八章已进入终稿化第七轮：第二十四章补入右/左可表示 profunctor 的伴随判别、离散关系例子和完全忠实单位判别；第二十五章补入 mate 对应、低维 exact square 和 Beck-Chevalley 粘合直观；第二十六章补入局部等价的余纤维判别。
+- 同一轮还在第二十七章补入 dg Yoneda 全忠实、单对象 dg category/dg algebra 比较和 $0$ 次集中边界；第二十八章补入恒等态射检查、proper compatibility 复合和 recollement 闭支撑恢复。
+- $\mathbf{Prof}$ 双范畴相干性、高阶 equipment、Brown 表示性、presentable 稳定商、dg 模模型结构、dg nerve 稳定性、导出 Morita 定理、Hochschild 型 Morita 不变性以及具体几何理论中的六操作存在性仍为外部输入。
+- 第二十九至第三十三章已进入终稿化第八轮：第二十九章补入 relative functor 的局部化导出、只倒置同构时的 nerve 恢复和 Dwyer-Kan equivalence 的 $2$-out-of-$3$；第三十章修正 flasque swindle 的加性证明，并补入 localizing invariant 的零判别、additive invariant 的直和公式和 derived Morita 不变性。
+- 第三十一至第三十三章补入 recollement 闭支撑 heart、$E$-equivalence、Bousfield equivalent 谱、等价运输 t-结构、heart 和伴随的形式命题。
+- Simplicial localization、hammock localization、Bergner-Joyal/Rezk 模型比较、Drinfeld quotient 构造、universal motives、K/HH/THH 局部化、perverse t-结构存在性、BBD gluing、Verdier 对偶 t-exactness、Morava $K$ 理论、Hopkins-Smith 定理、周期性定理、telescope conjecture、fracture square、Bernstein inequality、Riemann-Hilbert、$D$-module 六操作和 Kashiwara equivalence 仍为外部输入。
+- 第三十四至第三十八章已进入终稿化第九轮：第三十四章补入派生仿射拉回公式、cotangent complex 零判别和点处切映射的表示性来源；第三十五章补入 comparison functor 与遗忘函子的关系、单子性在等价替换下不变和恒等 Cech descent；第三十六章补入由 $\operatorname{QCoh}$ 判别栈等价、由 $f^*$ 重构态射和 $BG$ 基点环路的张量自同构解释。
+- 第三十七至第三十八章补入支撑对平移、三角、张量幂的形式性质、Balmer spectrum 对 tt-functor 的反变函子性、相对 $K/TC$、相对 cyclotomic trace、$THH$ exact sequence 的零判别和相对不变量的 Morita 不变性。
+- Derived/spectral stack representability、QCoh compact generation、Lurie-Pridham formal moduli、IndCoh/singular support、Barr-Beck-Lurie、comonadic Barr-Beck、faithfully flat descent、经典/高阶 Tannaka、$\operatorname{QCoh}(BG)\simeq\operatorname{Rep}(G)$、Balmer 分类定理、$\operatorname{Spc}(\operatorname{Perf}(R))$ 计算、有限谱 Balmer spectrum、THH localizing 性、cyclotomic refinement、TC 公式、cyclotomic trace 和 DGM 定理仍为外部输入。
 - 第三十九章已补 Goodwillie calculus、reduced/excisive functors、Goodwillie tower、cross-effects、derivatives、chain rule 和收敛入口；$P_nF$ 存在性、Goodwillie 层的齐次性、homogeneous functor 分类、chain rule 和 analytic convergence 仍为外部输入。
 - 第四十章已补 motivic spaces、Nisnevich descent、$\mathbb A^1$-localization、$\mathbf{SH}(S)$、motivic 六操作、homotopy purity、Thom spaces、motivic $H\mathbb Z$ 和 compact generation 的生成子检测形式；Morel-Voevodsky 稳定化、复 realization 相容性、motivic 六操作、purity、motivic spectra 和 compact generation 仍为外部输入。
 - 第四十一章已补子对象纤维化、regular existential、Heyting implication、locally Cartesian closed categories、$\Sigma_f\dashv f^*\dashv\Pi_f$、comprehension categories、groupoid 恒等类型、univalence 和几何逻辑；elementary topos 内部语言、weak factorization 语义、univalent universes 和 HoTT 的 $\infty$-topos 模型仍为外部输入。
@@ -48,17 +59,14 @@
 - 第五十五章已补 sketches、有限积理论、doctrines、essentially algebraic theories、小范畴的有限极限 sketch、模型 full subcategory 和模型对目标函子后合成稳定；sketch 模型范畴可表现性仍为外部输入。
 - 第五十六章已补幂等分裂、Karoubi 包络、幂等完备、绝对余极限、分裂 coequalizer、Cauchy completion 和 Karoubi 包络幂等性；富 Cauchy completion 的一般绝对权重理论仍为外部输入。
 - 全书统一审查已执行：编号引用解析无缺失、无重复编号，外部输入标签已统一为“外部输入定理”，综合答案中过期的第 12 章伴随函子定理引用已修为 12.16，正文和答案中的跳步表述已改为具体理由。
-- 术语索引、章节来源注释和外部输入依赖图已经建立；后续新增章节必须同步维护这些文件。
-- 范围边界已在附录 F 固定：后续扩写控制在范畴论本体；外部领域深定理只登记为外部输入，不在本书内部闭合。
-- 附录 G 已固定终稿化标准；后续校订应按该附录逐章执行。
+- 术语索引、章节来源注释和外部输入依赖图已经建立；若将来新增章节，必须同步维护这些文件。
+- 范围边界已在附录 F 固定：修订范围控制在范畴论本体；外部领域深定理只登记为外部输入，不在本书内部闭合。
+- 附录 G 已固定终稿化标准；本轮已按该附录完成统一审查。
 
-## 下一轮建议
+## 出版级收口结果
 
-1. 把第三至第二十八章的部分答案继续从要点升级为逐步证明，尤其是 Beck 定理、Day 相干性、Fubini、局部可表现伴随函子定理、Giraud 定理、模型局部化、straightening、稳定 exactness、presentable 伴随函子定理、profunctor Fubini 和 dg Morita 周边保持外部输入边界的练习。
-2. 扩写可达、可表现、sketch、doctrine 和局部化之间的内部依赖链。
-3. 扩写正交/弱因子化系统、小对象论证的范畴论证明口径。
-4. 扩写 Karoubi、Cauchy、Ind/Pro、exact/regular completion 的泛性质与例子。
-5. 扩写 2-范畴、双范畴、profunctor、equipment 和 indexed category 的纯范畴论比较。
-6. 扩写 quasi-category、Cartesian fibration、$\infty$-cosmos 的模型无关接口，避免外部同伦论计算。
-7. 为核心章节继续增加“例子/反例/边界条件”小节。
-8. 把 `SOLUTIONS.md` 中核心章节答案从要点升级为逐步证明。
+1. 第三至第二十八章的短答案已抽查；第九至第十六章和第二十二、二十三、二十六章中最薄的核心条目已升级为逐步证明或可核查说明。
+2. 可达、可表现、sketch、doctrine、局部化、正交/弱因子化系统、Karoubi/Cauchy completion 和 $\infty$-cosmos 的内部依赖链已保持在范畴论本体范围内，外部领域深定理继续作为外部输入。
+3. 核心章节“例子/反例/边界条件”已经在正文中稳定；答案引用由 `validate.py` 覆盖检查。
+4. `SOLUTIONS.md` 与 `COMPREHENSIVE_SOLUTIONS.md` 已覆盖全部章末练习和综合题；短答案保留在纯定义或直接计算题中。
+5. `THEOREM_DEPENDENCIES.md` 已补入正文编号索引；术语索引、章节来源注释和外部输入依赖图之间的关系已稳定。除非发现范畴论本体缺口，不再横向扩展章节范围。

@@ -423,7 +423,20 @@ $$
 
 **答案 9.1.** 评价映射 $\operatorname{ev}:Z^X\times X\to Z$ 为 $(f,x)\mapsto f(x)$。给 $g:Y\times X\to Z$，其 curry 化为 $\bar g(y)(x)=g(y,x)$，直接代入得 $\operatorname{ev}(\bar g(y),x)=g(y,x)$。
 
-**答案 9.2.** $-\otimes X$ 是左伴随，因此保持余极限，特别保持空余极限即初对象。
+**答案 9.2.** 闭幺半范畴给出伴随
+$$
+-\otimes X\dashv [X,-].
+$$
+任意左伴随保持所有存在的余极限。初对象是空图形的余极限，所以
+$$
+0\otimes X\simeq (-\otimes X)(0)
+\simeq \operatorname{colim}_{\varnothing}(-\otimes X)
+$$
+仍是初对象。等价地，对任意 $Y$，
+$$
+\mathcal C(0\otimes X,Y)\cong\mathcal C(0,[X,Y])
+$$
+为单点集，因此 $0\otimes X$ 满足初对象的泛性质。
 
 **答案 9.3.** 若 $X$ 有限维，线性映射空间 $\operatorname{Hom}_k(X,Z)$ 自然同构于 $X^*\otimes Z$；同构依赖有限维性。
 
@@ -485,9 +498,25 @@ $$
 $$
 等价于双线性映射 $\mathcal A(B,C)\times\mathcal A(A,B)\to\mathcal A(A,C)$。
 
-**答案 10.2.** 令 $\mathbf2$ 为幺半偏序 $0<1$ 且张量为 $\wedge$。Hom 对象取 $1$ 当 $x\le y$，否则 $0$。复合公理即传递性。
+**答案 10.2.** 令 $\mathbf{2}$ 为幺半偏序 $0<1$ 且张量为 $\wedge$，单位为 $1$。给预序集 $(P,\le)$ 构造 $\mathbf{2}$-富范畴：对象为 $P$，并置
+$$
+\mathcal P(x,y)=
+\begin{cases}
+1,&x\le y,\\
+0,&x\nleq y.
+\end{cases}
+$$
+单位公理要求 $1\le\mathcal P(x,x)$，等价于 $x\le x$。复合公理要求
+$$
+\mathcal P(y,z)\wedge\mathcal P(x,y)\le\mathcal P(x,z),
+$$
+这正是从 $x\le y$ 和 $y\le z$ 推出 $x\le z$。反向地，任一 $\mathbf{2}$-富范畴定义关系 $x\le y$ 当且仅当 $\mathcal P(x,y)=1$，单位和复合公理给出自反性与传递性；若再按双向可达关系取商，则得到偏序集。
 
-**答案 10.3.** $\mathbf{Cat}$-富范畴有对象、Hom 范畴、复合函子和单位对象；这正是严格 2-范畴的数据。
+**答案 10.3.** $\mathbf{Cat}$-富范畴的数据为：对象；对每对对象 $A,B$ 给 Hom 范畴 $\mathcal K(A,B)$；复合函子
+$$
+\mathcal K(B,C)\times\mathcal K(A,B)\to\mathcal K(A,C);
+$$
+以及单位函子 $1\to\mathcal K(A,A)$。Hom 范畴的对象就是严格 2-范畴中的 $1$-态射，Hom 范畴的态射就是 $2$-态射。富范畴的结合律和单位律是严格相等，因此给出严格 2-范畴；反过来，严格 2-范畴的 Hom 范畴和水平复合正给出一个 $\mathbf{Cat}$-富范畴。
 
 **答案 10.4.** 取 $\mathcal V=\mathbf{Set}$、权重常值单点集，则
 $$
@@ -495,10 +524,11 @@ $$
 $$
 即从 $A$ 到 $D$ 的锥集合，故恢复普通极限。
 
-**答案 10.5.** 富自然变换对象通常写作 end：
+**答案 10.5.** 若 $\mathcal V$ 闭且有所需 end，富自然变换对象通常写作
 $$
 \operatorname{Nat}_{\mathcal V}(F,G)=\int_A [F A,G A].
 $$
+这个 end 是等化子，强制对每个 $u:A\to B$ 的自然性方块相容：从 $FA$ 到 $GB$ 的两条路径分别经 $Fu$ 后再取 $G B$，或先到 $GA$ 再经 $Gu$。因此它不是逐点内部 Hom 的简单积，而是把所有对象处的内部 Hom 按自然性条件截出的子对象。
 
 **答案 10.6.** 若 $\mathcal A$ 是预加性范畴，$F:\mathcal A^{\operatorname{op}}\to\mathbf{Ab}$ 是加性函子，则
 $$
@@ -539,11 +569,43 @@ $$
 
 ## 第十一章
 
-**答案 11.1.** 对 $f:C\to C'$，第一箭头把 $H(C',C)$ 经 $H(f,C)$ 送入 $H(C,C)$ 分量；第二箭头经 $H(C',f)$ 送入 $H(C',C')$ 分量。
+**答案 11.1.** end 的等化子中，源积按态射 $f:C\to C'$ 的一份取 $H(C',C)$。第一箭头使用 $H$ 在第一变量的反变性：
+$$
+H(C',C)\xrightarrow{H(f,C)}H(C,C),
+$$
+并落入目标积的 $C$ 分量。第二箭头使用 $H$ 在第二变量的协变性：
+$$
+H(C',C)\xrightarrow{H(C',f)}H(C',C'),
+$$
+并落入 $C'$ 分量。等化子条件正要求 end 的一族分量 $\omega_C:E\to H(C,C)$ 对每个 $f$ 满足
+$$
+H(f,C)\omega_{C'}=H(C',f)\omega_C,
+$$
+即 dinaturality。
 
-**答案 11.2.** 若 $\mathcal C$ 离散，则无非恒等态射约束，end 为 $\prod_C H(C,C)$，coend 为 $\coprod_C H(C,C)$。
+**答案 11.2.** 若 $\mathcal C$ 离散，除恒等态射外没有态射。end 等化子中的所有条件都来自恒等态射，而恒等态射给出的两条映射相同，所以没有额外限制：
+$$
+\int_C H(C,C)\cong\prod_C H(C,C).
+$$
+coend 对偶地由余等化子给出；恒等态射产生的两条箭头相同，不再施加非平凡商关系，因此
+$$
+\int^C H(C,C)\cong\coprod_C H(C,C).
+$$
 
-**答案 11.3.** 自然变换是 end 中满足自然性等式的族。纵向复合逐点定义；自然性由目标范畴复合结合律和两个族的自然性推出。
+**答案 11.3.** 设 $\alpha:F\Rightarrow G$ 与 $\beta:G\Rightarrow H$。end 描述给出族 $\alpha_C:FC\to GC$、$\beta_C:GC\to HC$，并分别满足
+$$
+Gf\,\alpha_C=\alpha_D\,Ff,\qquad
+Hf\,\beta_C=\beta_D\,Gf
+$$
+对每个 $f:C\to D$ 成立。逐点复合定义为 $(\beta\alpha)_C=\beta_C\alpha_C$。检查自然性：
+$$
+Hf(\beta_C\alpha_C)=(Hf\beta_C)\alpha_C
+=(\beta_DGf)\alpha_C
+=\beta_D(Gf\alpha_C)
+=\beta_D(\alpha_DFf)
+=(\beta_D\alpha_D)Ff.
+$$
+故逐点复合仍满足 end 的等化子条件。
 
 **答案 11.4.** co-Yoneda 中 $[C,x,f]$ 映到 $P(f)(x)$。逆把 $a$ 送到 $[A,a,\operatorname{id}]$。关系 $(C,P(u)y,f)\sim(D,y,uf)$ 下二者同映到 $P(f)P(u)y=P(uf)y$，故良定义。
 
@@ -600,15 +662,35 @@ $$
 
 ## 第十二章
 
-**答案 12.1.** 若 $A$ 有限，函数 $A\to\operatorname{colim}X_j$ 的有限多个像可在滤过图形某一共同阶段表示，等式也可在后续共同阶段验证。
+**答案 12.1.** 要证有限集合 $A$ 为 $\omega$-紧，即证明
+$$
+\mathbf{Set}(A,\operatorname{colim}_jX_j)\to
+\operatorname{colim}_j\mathbf{Set}(A,X_j)
+$$
+为双射。给定 $f:A\to\operatorname{colim}X_j$，由于 $A$ 有限，所有 $f(a)$ 可分别由有限多个阶段 $X_{j_a}$ 中元素表示；滤过性给出共同上界 $k$，于是 $f$ 由某个 $A\to X_k$ 表示，得满射。若两个 $A\to X_i,X_j$ 在余极限中相同，则对每个 $a\in A$，它们在某个后续阶段相等；有限多个相等条件再由滤过性合并到一个共同后续阶段，得单射。
 
 **答案 12.2.** 对无限集合 $A$，恒等映射 $A\to\operatorname{colim}_{B\subset A,\ B finite}B=A$ 不经过任一有限阶段，故 $A$ 不是 $\omega$-紧。
 
-**答案 12.3.** 由预层密度定理，任意预层是其元素范畴上的可表预层余极限。
+**答案 12.3.** 对预层 $P:\mathcal C^{op}\to\mathbf{Set}$，元素范畴 $\int P$ 的对象为 $(C,x\in P(C))$。有典范图形
+$$
+\int P\to\widehat{\mathcal C},\qquad (C,x)\mapsto yC.
+$$
+其余极限到 $P$ 的态射由每个元素 $x\in P(C)$ 对应的 Yoneda 态射 $yC\to P$ 给出。对任意预层 $Q$，
+$$
+\widehat{\mathcal C}(P,Q)\cong
+\lim_{(C,x)\in\int P}\widehat{\mathcal C}(yC,Q)
+\cong
+\lim_{(C,x)\in\int P}Q(C),
+$$
+这正是从所有元素 $x$ 兼容地给出 $Q$ 中像的集合。因此该余极限满足表示 $P$ 的泛性质。
 
-**答案 12.4.** 局部有限可表现范畴是余完备且由有限可表现对象经滤过余极限生成的范畴。$\mathbf{Grp}$ 中有限表现群如 $\langle x\mid x^n=1\rangle$。
+**答案 12.4.** 局部有限可表现范畴是余完备范畴 $\mathcal C$，并且存在一小族有限可表现对象，使每个对象都是这些对象的滤过余极限。这里“有限可表现”指 $\mathcal C(A,-)$ 保持滤过余极限。群范畴 $\mathbf{Grp}$ 的有限表现群由有限生成元和有限关系给出，例如
+$$
+\langle x\mid x^n=1\rangle.
+$$
+任意群可写成其有限生成子群和有限关系近似的滤过余极限，因此 $\mathbf{Grp}$ 是局部有限可表现范畴的典型例子。
 
-**答案 12.5.** 生成族检测态射是否相等；紧生成还要求每个对象由紧对象经滤过余极限构造，并涉及 Hom 保持滤过余极限。
+**答案 12.5.** 生成族 $\mathcal G$ 的作用是检测态射：若 $f,g:X\rightrightarrows Y$ 在所有 $\mathcal C(G,-)$ 上相同，则 $f=g$。强生成还可检测同构。紧生成则包含两个额外条件：$\mathcal G$ 中对象紧，即 $\mathcal C(G,-)$ 保持相应滤过余极限；并且每个对象可由这些紧对象通过滤过余极限生成。因此“生成”是检测性质，“紧生成”同时控制构造方式和 Hom 与滤过余极限的交换。
 
 **答案 12.6.** 由 Yoneda，
 $$
@@ -630,7 +712,11 @@ $$
 
 **答案 12.8.** 强生成子不仅检测平行态射是否相等，还检测态射是否为同构：$f$ 是同构当且仅当所有 $\mathcal C(G,f)$ 都是双射。这把大范畴中的同构问题化为小生成对象上的集合映射问题。
 
-**答案 12.9.** 伴随函子定理需要解集/可达性控制大小。若只保持小余极限但不可达，可能无法由某个小的紧对象子范畴控制其值，从而右伴随的候选值不满足集合大小的表示性条件。
+**答案 12.9.** 外部输入定理 12.16 的假设不是单纯“保持小余极限”，还要求可达性。证明右伴随时，对每个 $d\in\mathcal D$ 需要表示函子
+$$
+c\mapsto\mathcal D(Fc,d).
+$$
+可达性保证该函子由一小部分紧对象上的数据控制，从而满足解集条件并可由某个对象表示。若 $F$ 只保持小余极限但不可达，这个 Hom 函子可能需要真正大的数据来控制，表示对象候选不受集合大小约束；因此伴随函子定理不能推出右伴随存在。
 
 **答案 12.10.** 有限个有限子集 $T_1,\dots,T_n\subset S$ 被有限并集 $T_1\cup\cdots\cup T_n$ 支配。空有限族由空集支配。由于偏序范畴中平行箭头至多一条，等化平行箭头条件自动成立。因此 $\operatorname{Fin}(S)$ 滤过。
 
@@ -646,13 +732,25 @@ $$
 
 **答案 13.1.** 零态射 $X\to Y$ 是复合 $X\to0\to Y$。由于 $0$ 终，$X\to0$ 唯一；由于 $0$ 始，$0\to Y$ 唯一，故复合唯一。
 
-**答案 13.2.** $\ker f=\{a\mid f(a)=0\}$。$\operatorname{coker}f=B/\operatorname{im}f$。
+**答案 13.2.** 在 $\mathbf{Ab}$ 中，核为子群
+$$
+\ker f=\{a\in A\mid f(a)=0\}
+$$
+连同包含映射 $\ker f\hookrightarrow A$。若 $u:X\to A$ 满足 $fu=0$，则 $u$ 的像落在该子群中，并唯一分解经 $\ker f$，所以满足核的泛性质。余核为商群
+$$
+\operatorname{coker}f=B/\operatorname{im}f
+$$
+及商映射 $B\to B/\operatorname{im}f$。任意 $v:B\to Y$ 若 $vf=0$，则 $v$ 在 $\operatorname{im}f$ 上为零，因而唯一分解过该商群。
 
 **答案 13.3.** biproduct 带 $i_A,i_B,p_A,p_B$，满足 $p_Ai_A=1$、$p_Bi_B=1$、$i_Ap_A+i_Bp_B=1$。这些等式给出积和余积泛性质。
 
-**答案 13.4.** 有限生成自由 $R$-模及矩阵构成的范畴是加性的，但通常不含所有核余核，因此非阿贝尔。
+**答案 13.4.** 有限生成自由 $R$-模的直和仍有限生成自由，零模也是有限生成自由，Hom 集有阿贝尔群结构，故该范畴是加性的。它通常不是阿贝尔的原因是核和余核不封闭在有限生成自由模中。例如取 $R=k[\epsilon]/(\epsilon^2)$，考虑有限生成自由 $R$-模中的自同态
+$$
+R\xrightarrow{\epsilon}R.
+$$
+其核为理想 $(\epsilon)$。这是非零有限生成 $R$-模，但不是自由 $R$-模：在 $(\epsilon)$ 上乘以 $\epsilon$ 恒为零，而非零自由 $R$-模总含有不被 $\epsilon$ 零化的元素。故该态射在有限生成自由 $R$-模范畴中没有核。阿贝尔范畴要求所有态射有核、余核并满足 coimage-image 条件，因此这里通常失败。
 
-**答案 13.5.** AB3：有小余积；AB4：小余积正合；AB5：滤过余极限正合。Grothendieck 范畴要求 AB5 和生成元。
+**答案 13.5.** AB3 指存在任意小余积。AB4 指小余积正合，也就是说一族短正合列逐项取余积后仍短正合。AB5 指滤过余极限正合：滤过图形的短正合列取余极限后仍正合。Grothendieck 范畴通常定义为 AB5 的阿贝尔范畴且有生成元；生成元保证对象和态射可由一小部分 Hom 数据检测，AB5 保证 sheaf、模和同调构造中的滤过极限行为良好。
 
 **答案 13.6.** 在 $\mathbf{Ab}$ 中，
 $$
@@ -667,7 +765,7 @@ $$
 
 **答案 13.9.** 若 $f,g:M\rightrightarrows N$ 不同，取 $m\in M$ 使 $f(m)\ne g(m)$。态射 $R\to M$ 由 $1\mapsto m$ 决定，于是 $f$ 与 $g$ 预复合该态射后不同。因此 $R$ 检测平行态射。
 
-**答案 13.10.** Gabriel-Popescu 把 Grothendieck 范畴表示为某个模范畴的正合反射局部化。模范畴提供自由代数模型，局部化则把由生成元看不见或应当变为等价的部分商掉。
+**答案 13.10.** 设 $\mathcal A$ 为 Grothendieck 范畴且 $G$ 为生成元。Gabriel-Popescu 定理把 $\mathcal A$ 表示为某个模范畴 $\operatorname{Mod}_R$ 的正合反射局部化，其中 $R=\operatorname{End}(G)$ 的合适对偶环。模范畴提供“自由生成”的代数模型；局部化函子把由生成元表示后应当消失或应当被识别的对象商掉。因局部化正合，$\mathcal A$ 的阿贝尔和滤过余极限结构可从模范畴中控制。
 
 **答案 13.11.** 若 $e:E\to X$ 等化 $f,g:X\rightrightarrows Y$，且 $eu=ev$，则由等化子的泛性质，对态射 $eu$ 有唯一提升到 $E$；$u$ 和 $v$ 都是这样的提升，所以 $u=v$。余等化子为满态射是对偶论证。
 
@@ -688,19 +786,31 @@ $$
 
 **答案 14.1.** 覆盖 $\{U_i\subset U\}$ 生成的筛由所有开嵌入 $V\subset U$ 组成，其中 $V$ 的映射局部因子化经过某个 $U_i$；等价地 $V\subset\bigcup_iU_i$。
 
-**答案 14.2.** 在连通空间上取常值预层 $A$，对不连通覆盖，匹配族可在不同连通分支取不同值，未必来自一个全局常值元素。
+**答案 14.2.** 设 $X$ 连通，取常值预层 $F(U)=A$。若 $U=U_1\sqcup U_2$ 是两个非空开集的并，预层限制映射都是恒等。一个匹配族可在 $U_1$ 上取 $a_1$，在 $U_2$ 上取 $a_2$。由于交为空，相容条件没有强迫 $a_1=a_2$。但全局截面 $F(U)=A$ 只能限制为同一个元素，所以当 $a_1\ne a_2$ 时该匹配族不能由全局截面粘合。这说明常值预层通常不是 sheaf。
 
 **答案 14.3.** subcanonical 意味每个 $yU$ 是 sheaf，因此 Yoneda 嵌入 $\mathcal C\to\widehat{\mathcal C}$ 的像落入 $\operatorname{Sh}(\mathcal C,J)$。
 
 **答案 14.4.** 预层有限极限逐点计算。由命题 14.15，sheaf 的预层有限极限仍是 sheaf，因此 sheaf 范畴中的有限极限由预层有限极限创建。定理 14.9 的作用是保证 sheaf 子范畴还是左正合反射子范畴，从而 sheaf 化与有限极限相容。
 
-**答案 14.5.** Giraud 公理包括有限极限、小余极限、余极限普遍性、等价关系有效、小生成族等。定义 14.10 是外在站点表示；Giraud 给内在刻画。
+**答案 14.5.** 定义 14.10 从外部给出 Grothendieck topos：它等价于某个小站点上的 sheaf 范畴。Giraud 定理则给出内在判别：一个范畴只要有有限极限、小余极限、余极限与拉回相容、等价关系有效并有小生成族等，就来自某个站点的 sheaf 范畴。两种描述等价，但逻辑方向不同：站点表示便于构造对象，Giraud 公理便于识别一个已给范畴是否为 topos。
 
-**答案 14.6.** Separated 只要求局部相等推出全局相等，即唯一性；sheaf 还要求任意相容局部截面存在全局粘合，即存在性加唯一性。
+**答案 14.6.** 对覆盖筛 $S$，预层 $F$ 的 separated 条件要求
+$$
+F(U)\to\operatorname{Nat}(S,F)
+$$
+为单射。因此若两个全局截面限制到覆盖上相同，它们本来就相同，这是粘合的唯一性。sheaf 条件要求同一映射为双射；除了单射，还要求每个匹配族都来自某个全局截面，即粘合存在性。因此 separated 是 sheaf 条件的唯一性部分。
 
-**答案 14.7.** $F^+(U)$ 的元素由某个覆盖筛 $S$ 和自然变换 $S\to F$ 表示，即 $S$ 上的匹配族。若两个匹配族在共同覆盖细化上限制后相等，则它们代表同一个元素。
+**答案 14.7.** $F^+(U)$ 的元素可表示为一对 $(S,\alpha)$，其中 $S$ 是覆盖 $U$ 的筛，
+$\alpha:S\to F$ 是自然变换。把 $S$ 看成由所有局部对象 $V\to U$ 组成的覆盖数据，
+则 $\alpha$ 给每个 $V\to U$ 一个截面 $\alpha_V\in F(V)$，并要求这些截面对 $S$ 中态射自然相容，
+这正是匹配族。两个表示 $(S,\alpha)$ 与 $(T,\beta)$ 等价，当存在共同覆盖细化
+$R\subseteq S\cap T$，使 $\alpha|_R=\beta|_R$。因此 $F^+$ 是“匹配族按共同细化取商”。
 
-**答案 14.8.** Sheaf 条件要求 $F(U)\to\operatorname{Nat}(S,F)$ 是双射。双射特别是单射，因此 sheaf 必 separated。
+**答案 14.8.** 对任意覆盖筛 $S$，sheaf 条件要求限制映射
+$$
+F(U)\to\operatorname{Nat}(S,F)
+$$
+为双射。Separated 条件只要求这同一映射为单射。双射蕴含单射，所以任意 sheaf 自动 separated。用截面语言说，若两个全局截面有相同的局部限制，则它们是同一个匹配族的两个粘合；sheaf 条件中的唯一性迫使二者相等。
 
 **答案 14.9.** 几何态射 $f:\mathcal E\to\mathcal F$ 中，$f^*:\mathcal F\to\mathcal E$ 左伴随于 $f_*:\mathcal E\to\mathcal F$。要求 $f^*$ 左正合是为了让 inverse image 保持有限极限，从而保留逻辑连接词、交和终对象等几何结构。
 
@@ -732,13 +842,33 @@ $$
 (\beta*\alpha)_A=\beta_{G A}\circ H(\alpha_A)=K(\alpha_A)\circ\beta_{F A}.
 $$
 
-**答案 15.2.** 交换律逐对象化为自然变换分量的结合律与自然性；两边均为同一复合矩形的外边。
+**答案 15.2.** 设 $\alpha:F\Rightarrow G$、$\alpha':G\Rightarrow H$、$\beta:K\Rightarrow L$、$\beta':L\Rightarrow M$。交换律比较
+$$
+(\beta'\beta)*(\alpha'\alpha)
+$$
+与
+$$
+(\beta'*\alpha')(\beta*\alpha).
+$$
+在对象 $A$ 上展开，左边是沿大矩形先纵向复合再横向复合的外边，右边是先把矩形分成两个小方块再纵向复合。自然性给出中间小方块交换，普通态射复合的结合律允许去括号，因此两条复合路径相等。
 
-**答案 15.3.** 双模复合为 $M\otimes_S N$。张量积只在典范同构意义下结合，不是严格相等，所以得到双范畴。
+**答案 15.3.** 环 $R,S,T$ 之间的水平态射可取双模。若 $M$ 是 $(R,S)$-双模、$N$ 是 $(S,T)$-双模，则复合为相对张量积
+$$
+M\otimes_SN.
+$$
+给三重双模 $M,N,P$ 时，$(M\otimes_SN)\otimes_TP$ 与 $M\otimes_S(N\otimes_TP)$ 由相对张量积的泛性质给出典范同构，但它们不是字面相同的对象。因此结合律只能由指定的结合约束同构表达，连同单位双模的左右单位约束，构成双范畴而非严格 2-范畴。
 
-**答案 15.4.** 2-函子严格保持对象、1-态射、2-态射、复合和单位。伪函子只到指定可逆 2-态射为止保持复合和单位，并满足相干公理。
+**答案 15.4.** 严格 2-函子 $F$ 满足
+$$
+F(gf)=F(g)F(f),\qquad F(1_x)=1_{Fx}
+$$
+为严格等式，并严格保持 $2$-态射的水平、纵向复合。伪函子则给出指定的可逆 $2$-胞腔
+$$
+F(g)F(f)\Rightarrow F(gf),\qquad 1_{Fx}\Rightarrow F(1_x),
+$$
+用这些胞腔替代严格等式。为了使三重和含单位的复合不依赖括号移动路径，还必须满足五边形和三角形相干公理。
 
-**答案 15.5.** bicategory coherence theorem 说明任意双范畴双等价于严格 2-范畴在适当意义下的表示，或至少典范相干图交换；它是 Mac Lane 幺半相干性的高阶推广。
+**答案 15.5.** Bicategory coherence theorem 的作用是控制弱结合和弱单位带来的括号选择。它说明由结合约束和单位约束构成的典范比较图都交换，并且任意双范畴在适当双等价意义下可由更严格的模型表示。它推广了 Mac Lane 幺半相干性：幺半范畴是一对象双范畴，因此幺半范畴中的括号相干只是双范畴相干的一对象特例。
 
 **答案 15.6.** 设 $\mathcal K$ 只有一个对象 $*$。Hom 范畴 $\mathcal K(*,*)$ 的对象是 $1$-态射，态射是 $2$-态射。水平复合给出函子
 $$
@@ -758,15 +888,31 @@ $$
 
 ## 第十六章
 
-**答案 16.1.** 若 $f,g,gf$ 中任意两个是弱等价，则第三个也是弱等价。
+**答案 16.1.** 模型范畴公理要求弱等价类满足 $2$-out-of-$3$：对可复合态射
+$$
+X\xrightarrow{f}Y\xrightarrow{g}Z,
+$$
+若 $f,g,gf$ 中任意两个属于弱等价类，则第三个也属于弱等价类。这个条件保证把弱等价形式反演时复合行为稳定；例如若 $f$ 与 $gf$ 已可逆，则 $g=(gf)f^{-1}$ 在局部化中也可逆。
 
-**答案 16.2.** 平凡纤维化是既为纤维化又为弱等价的态射；平凡余纤维化是既为余纤维化又为弱等价的态射。
+**答案 16.2.** 平凡纤维化是交集
+$$
+\operatorname{Fib}\cap W
+$$
+中的态射，即同时为纤维化和弱等价。平凡余纤维化是
+$$
+\operatorname{Cof}\cap W
+$$
+中的态射，即同时为余纤维化和弱等价。这里“平凡”不表示态射为同构，而表示它在同伦意义下为等价；提升和分解公理正以这两个交集为核心。
 
-**答案 16.3.** 链复形中的 quasi-isomorphism 在同调群上诱导同构，因此应在导出范畴中被视为同伦等价。
+**答案 16.3.** 链复形的 quasi-isomorphism 是在所有同调对象上诱导同构的链映射。导出范畴的目标是只保留由同调能检测的同伦信息，因此必须把 quasi-isomorphism 反演。反演后，两个 quasi-isomorphic 的复形代表同一个导出对象；短正合列、解析分辨率和投射/内射分辨率给出的不同模型也因此变为等价。
 
-**答案 16.4.** 同伦范畴只保留 $\pi_0$ 层面的态射类，丢失映射空间的高阶同伦群和相干复合信息。
+**答案 16.4.** 模型范畴或 $\infty$-范畴的映射对象通常是空间或单纯集；同伦范畴的 Hom 集只取这些映射空间的连通分支：
+$$
+\operatorname{Ho}(\mathcal M)(X,Y)\simeq \pi_0\operatorname{Map}(QX,RY).
+$$
+因此它记录“态射到同伦为止”，但不记录路径之间的路径、更高同伦群，也不记录复合的高阶相干数据。两个不同高阶同伦理论可能有等价的同伦范畴，但映射空间不同。
 
-**答案 16.5.** Kan fibration 要求对所有 horn $\Lambda_i^n\to\Delta^n$ 有提升；quasi-category 只要求对象本身对内 horn 填充，且不要求外 horn。
+**答案 16.5.** Kan fibration 是单纯集映射 $p:X\to Y$ 的提升性质：对所有 $0\le i\le n$ 的 horn 包含 $\Lambda_i^n\hookrightarrow\Delta^n$，任意相容方块都有填充。Quasi-category 是单纯集 $C$ 的内 horn 填充条件：只要求 $0<i<n$ 的 horn $\Lambda_i^n\to C$ 可填充。外 horn 对应可逆性或解方程条件；quasi-category 不要求外 horn，所以允许非可逆 $1$-态射，而 Kan 复形要求所有 horn，因而建模 $\infty$-群胚。
 
 **答案 16.6.** 若弱等价就是同构，则局部化没有新增需要反演的态射；所有已被要求可逆的态射在原范畴中已经可逆。因此局部化泛性质由恒等函子 $\mathcal C\to\mathcal C$ 满足。
 
@@ -1158,13 +1304,19 @@ $$
 
 **答案 22.1.** 普通代数对象用乘法和单位加严格交换图定义；定义 22.9 中的 $\infty$-operad 代数是 operad 映射，所有结合律、单位律和交换律由高阶单纯形相干编码。
 
-**答案 22.2.** $E_\infty$-代数的交换律不是等式 $ab=ba$，而是给出一族可兼容的同伦及更高同伦，形成可缩的交换选择空间。
+**答案 22.2.** $E_\infty$-代数的交换律不是普通等式 $ab=ba$。它首先给出乘法 $A\otimes A\to A$ 与交换后乘法
+$$
+A\otimes A\xrightarrow{\tau}A\otimes A\to A
+$$
+之间的同伦；其次，对三个、四个及更多输入，还给出这些同伦之间的更高同伦。$E_\infty$-operad 的相应运算空间可缩，表示所有交换和重排的选择在同伦意义下唯一且彼此相容。因此 $E_\infty$-代数是“同伦相干交换”的代数，而不是严格交换代数。
 
 **答案 22.3.** $\mathbf{Fin}_*$ 对象为有限带基点集合 $\langle n\rangle=\{*,1,\dots,n\}$。inert morphism 是每个非基点的原像恰有一个非基点的映射。
 
 **答案 22.4.** 环谱是谱的幺半 $\infty$-范畴中的 $E_1$-代数：乘法 $A\wedge A\to A$ 和单位 $\mathbb S\to A$ 满足同伦相干结合律。
 
-**答案 22.5.** 张量积分别保持余极限用于构造自由代数、证明代数范畴 presentable、建立模范畴的余极限和相对张量积。
+**答案 22.5.** 张量积分别保持余极限有三处关键用途。第一，自由代数通常由树形或单纯形表达式的几何实现构造，表达式中需要把张量与余极限交换。
+第二，证明 $\operatorname{Alg}_{\mathcal O}(C)$ 或模范畴 presentable 时，要把底层范畴的可达余极限提升到代数对象。
+第三，相对张量积 $M\otimes_A N$ 由 bar 构造的几何实现给出；若张量不保持这些余极限，bar 构造不能稳定地表达平衡泛性质。
 
 **答案 22.6.** 非基点中不被送到 $*$ 的集合为 $T=\{1,3\}$。令 $\rho:\langle3\rangle\to\langle2\rangle$ 把 $1\mapsto1,3\mapsto2,2\mapsto*,*\mapsto*$；这是 inert。令 $\alpha:\langle2\rangle\to\langle2\rangle$ 把 $1\mapsto1,2\mapsto1,*\mapsto*$；这是 active，且 $f=\alpha\rho$。
 
@@ -1327,7 +1479,12 @@ $$
 
 **答案 23.16.** 若张量积分别保持余极限，则自由代数、模对象和 bar 几何实现能在 presentable 环境中构造，并且相对张量积与余极限相容。这是第二十二章模 $\infty$-范畴和相对张量积存在性的基本假设。
 
-**答案 23.17.** 若 $f$ 是等价，则任何函子都保持等价，故 $Lf$ 是等价。因此 $f$ 是 $L$-等价。
+**答案 23.17.** $L$-等价的定义是 $Lf$ 为等价。若 $f:X\to Y$ 本身是等价，则存在逆 $g:Y\to X$ 及同伦 $gf\simeq\operatorname{id}_X$、$fg\simeq\operatorname{id}_Y$。函子 $L$ 保持复合、单位和等价，于是 $Lg$ 是 $Lf$ 的逆，且
+$$
+Lg\,Lf\simeq L(gf)\simeq\operatorname{id}_{LX},\qquad
+Lf\,Lg\simeq L(fg)\simeq\operatorname{id}_{LY}.
+$$
+因此 $Lf$ 是等价，故 $f$ 是 $L$-等价。
 
 **答案 23.18.** 在由 $S$ 生成的局部化中，局部对象正是 $S$-局部对象。命题 23.27 说明 $f:X\to Y$ 被 $L$ 送成等价，当且仅当对每个 $S$-局部对象 $Z$，
 $$
@@ -1484,7 +1641,7 @@ $$
 $$
 计算 $X$ 的第 $n$ 个同调或上同调对象。若这些全为零，则复形为零对象，因此 $R$ 生成 $D(R)$。
 
-**答案 26.4.** Localizing subcategory 是稳定全子范畴，且对所有小余积封闭。
+**答案 26.4.** 稳定范畴 $C$ 的 localizing subcategory $L\subseteq C$ 是一个稳定全子范畴，并且对 $C$ 中存在的所有小余积封闭。稳定全子范畴意味着它含零对象，并对有限极限、有限余极限、纤维、余纤维和悬挂/环路封闭。因此若 $X\to Y\to Z$ 是余纤维序列且 $X,Y\in L$，则 $Z\in L$；再加上任意小族 $\{X_i\}\subseteq L$ 的余积 $\coprod_iX_i$ 仍在 $L$，就得到“局部化核”应有的闭包性质。
 
 **答案 26.5.** Verdier quotient $q:C\to C/L$ 把 $L$ 中对象送为零，并且任意把 $L$ 送为零的正合函子 $C\to D$ 唯一因子化经 $C/L$。
 
@@ -1506,7 +1663,18 @@ $$
 
 **答案 26.12.** Smashing localization 是形如 $LX\simeq E\otimes X$ 的 Bousfield localization。谱中写作 $LX\simeq E\wedge X$。
 
-**答案 26.13.** 若 $L\simeq E\otimes-$，而 $E\otimes-$ 是左伴随，则保持所有小余极限。
+**答案 26.13.** 若 $L\simeq E\otimes-$，则对每个图形 $X_i$ 有
+$$
+L(\operatorname{colim}_iX_i)\simeq
+E\otimes\operatorname{colim}_iX_i.
+$$
+在闭幺半 presentable 稳定范畴中，$E\otimes-$ 是左伴随，其右伴随为内部 Hom $[E,-]$，所以保持所有小余极限。于是
+$$
+E\otimes\operatorname{colim}_iX_i
+\simeq\operatorname{colim}_i(E\otimes X_i)
+\simeq\operatorname{colim}_iLX_i.
+$$
+因此 smashing localization 保持所有小余极限，特别保持小余积。
 
 **答案 26.14.** Verdier quotient 后 compact objects 的像未必已经幂等完备；某些 retract 只在商中出现。为了得到全部 compact objects，需要对小商 $C^\omega/L^\omega$ 作 Karoubi 完备化。
 
@@ -1799,7 +1967,10 @@ $$
 $$
 对所有 $D$ 成立。由 Yoneda 判别，$\mathcal C[W^{-1}]\simeq N\mathcal C$。
 
-**答案 29.18.** 对复合 $\mathcal A\xrightarrow F\mathcal B\xrightarrow G\mathcal C$，同伦范畴上的等价满足 $2$-out-of-$3$。映射空间部分也满足 $2$-out-of-$3$；唯一需注意的是从 $F$ 和 $GF$ 推出 $G$ 时，要用 $\pi_0F$ 本质满，把 $b,b'\in\mathcal B$ 替换为与某些 $Fx,Fx'$ 等价的对象。映射空间为 Kan 复形时，与等价对象前后复合给出映射空间弱等价，于是把 $G$ 在 $\operatorname{Map}_{\mathcal B}(b,b')$ 上的判断化为像内对象的判断。故 Dwyer-Kan equivalences 满足 $2$-out-of-$3$。
+**答案 29.18.** 对复合 $\mathcal A\xrightarrow F\mathcal B\xrightarrow G\mathcal C$，同伦范畴上的等价满足 $2$-out-of-$3$。映射空间部分也满足 $2$-out-of-$3$。
+唯一需注意的是从 $F$ 和 $GF$ 推出 $G$ 时，要用 $\pi_0F$ 本质满，把 $b,b'\in\mathcal B$ 替换为与某些 $Fx,Fx'$ 等价的对象。
+映射空间为 Kan 复形时，与等价对象前后复合给出映射空间弱等价，于是把 $G$ 在 $\operatorname{Map}_{\mathcal B}(b,b')$ 上的判断化为像内对象的判断。
+故 Dwyer-Kan equivalences 满足 $2$-out-of-$3$。
 
 ## 第三十章
 

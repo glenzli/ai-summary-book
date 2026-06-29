@@ -276,7 +276,7 @@
 | univalent universe | univalent universe | [第四十一章](41_categorical_logic_dependent_type_theory_and_univalence.md) | 满足相等类型等价于等价类型的 universe |
 | 几何逻辑 | geometric logic | [第四十一章](41_categorical_logic_dependent_type_theory_and_univalence.md) | 由有限合取、任意析取和存在量词生成的逻辑片段 |
 | $\operatorname{Disk}_n$ | little disks category | [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | 有限个 $\mathbb R^n$ 不交并及嵌入组成的对称幺半 $\infty$-范畴 |
-| 因子化同调 | factorization homology | [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | $E_n$-代数沿流形的对称幺半左 Kan 延拓 |
+| 因子化同调 | factorization homology | [第二十二章](22_higher_algebra_and_infinity_operads.md), [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | $E_n$-代数沿流形的对称幺半左 Kan 延拓 |
 | excision | excision | [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | 把 collar-gluing 下的因子化同调表达为相对张量积 |
 | 非阿贝尔 Poincare 对偶 | nonabelian Poincare duality | [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | $\int_MA$ 与 $\operatorname{Map}_c(M,B^nA)$ 的等价 |
 | factorization algebra | factorization algebra | [第四十二章](42_factorization_homology_en_algebras_and_nonabelian_poincare_duality.md) | 对不交开集多重乘法并满足 Weiss descent 的局部到整体结构 |
@@ -349,7 +349,6 @@
 | Morita $\infty$-范畴 | Morita $\infty$-category | [第二十二章](22_higher_algebra_and_infinity_operads.md) | 以代数为对象、双模为态射、相对张量积为复合 |
 | 单位双模 | unit bimodule | [第二十二章](22_higher_algebra_and_infinity_operads.md) | Morita $\infty$-范畴中的恒等 1-态射 |
 | 中心 | center | [第二十二章](22_higher_algebra_and_infinity_operads.md) | 代数作为双模的 endomorphism object |
-| 因子化同调 | factorization homology | [第二十二章](22_higher_algebra_and_infinity_operads.md) | 将 $E_n$-代数沿 $n$-流形局部到整体粘合 |
 | smooth/proper | smooth/proper | [第二十二章](22_higher_algebra_and_infinity_operads.md) | Morita 理论中刻画可对偶性的有限性条件 |
 | Frobenius 代数 | Frobenius algebra | [第二十二章](22_higher_algebra_and_infinity_operads.md) | 普通二维 TFT 的代数数据 |
 | fully dualizable | fully dualizable | [第二十二章](22_higher_algebra_and_infinity_operads.md) | 高维场论中可赋给点的完全可对偶对象 |

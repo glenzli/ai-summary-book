@@ -58,8 +58,8 @@
 
 ## G.5 当前终稿化状态
 
-当前版本已达到“完整草稿并进入基本终稿化收口”的状态。全书 0--56 章和附录 A--G 均已有稳定结构、练习与答案；外部输入边界已由 `THEOREM_DEPENDENCIES.md`、`CHAPTER_SOURCE_NOTES.md` 和 `MATH_REVIEW.md` 共同维护。
+当前版本已达到“出版级数学内容收口”的状态。全书 0--56 章和附录 A--G 均已有稳定结构、练习与答案；外部输入边界已由 `THEOREM_DEPENDENCIES.md`、`CHAPTER_SOURCE_NOTES.md` 和 `MATH_REVIEW.md` 共同维护，并在 `THEOREM_DEPENDENCIES.md` 中补入正文编号索引。
 
 最近一轮终稿化已处理第四十四至第五十六章的内部闭合点：语法范畴与分类 topos、正合完成与关系演算、cohesive modalities、exit-path 范畴、高阶 Morita、derivator、stacks/gerbes、范畴 Galois、polynomial functors、$\infty$-cosmoi、正交/因子化系统、sketches/doctrines 与 Karoubi/Cauchy completion。新增命题均配证明，新增练习均已同步答案。
 
-下一轮应进行全书级编辑统一：压缩重复术语、检查 `README.md` 的当前范围摘要、把早期章节答案中仍偏“要点式”的条目升级为可独立核查的证明，并继续抽查外部输入定理的来源和用途说明。
+最近一轮最终修订已把早期核心章节中最短的答案条目升级为可核查证明，并完成外部输入编号到依赖图的索引。除非发现范畴论本体缺口，不再横向扩展章节范围；若进入纸面或电子出版流程，剩余工作属于排版、版面索引和参考文献格式统一。
