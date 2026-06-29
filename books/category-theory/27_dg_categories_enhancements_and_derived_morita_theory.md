@@ -293,7 +293,49 @@ $$
 
 **证明.** 单对象 dg category 的对象和态射数据完全由 dg 代数 $A$ 给出。$\mathcal A^{op}\otimes\mathcal A$ 对应 enveloping dg algebra $A^{op}\otimes A$。恒等 bimodule 是 $A$ 作为 $(A,A)$-双模。代入定义 27.29 即得公式。$\square$
 
-## 27.7 本章小结
+## 27.7 dg Yoneda 全忠实与单对象例子
+
+**命题 27.32.** dg Yoneda 嵌入
+
+$$
+h:\mathcal A\to\operatorname{Mod}_{\mathcal A}
+$$
+
+在 Hom 复形上全忠实，即存在自然 quasi-isomorphism
+
+$$
+\mathcal A(a,b)\simeq
+\underline{\operatorname{Hom}}_{\operatorname{Mod}_{\mathcal A}}(h_a,h_b).
+$$
+
+**证明.** 在命题 27.9 中取 $M=h_b$，得到
+
+$$
+\underline{\operatorname{Hom}}_{\operatorname{Mod}_{\mathcal A}}(h_a,h_b)
+\simeq h_b(a)=\mathcal A(a,b).
+$$
+
+该等价对 $a,b$ 自然，并与复合相容，因为富 Yoneda 等价由模作用和单位给出。$\square$
+
+**例子 27.33（单对象 dg 范畴）.** 单对象 dg category 等价于 dg algebra。唯一对象 $*$ 的 Hom 复形
+
+$$
+A=\mathcal A(*,*)
+$$
+
+带有由复合给出的乘法 $A\otimes A\to A$ 和单位 $k\to A$。反过来，任意 dg algebra $A$ 给出一个单对象 dg category。右 dg 模正是右 dg $A$-模。
+
+**命题 27.34.** 若 dg category $\mathcal A$ 的 Hom 复形全都集中在 $0$ 次，且微分为零，则 $H^0(\mathcal A)$ 恢复底层普通 $k$-线性范畴。
+
+**证明.** 此时
+
+$$
+H^0(\mathcal A(x,y))=\mathcal A(x,y)^0
+$$
+
+且没有非零边界需要取商。复合在 $H^0$ 上就是原来的 $k$-双线性复合，所以 $H^0(\mathcal A)$ 正是底层 $k$-线性范畴。$\square$
+
+## 27.8 本章小结
 
 dg 范畴是链复形富范畴；$H^0$ 给出普通同伦范畴，但会丢失链级和高阶信息。dg 模范畴 $D(\mathcal A)$ 是稳定 presentable $\infty$-范畴，可表模紧生成它，perfect modules 正是紧对象。Quasi-equivalence 强于 Morita equivalence；导出 Morita 理论表明 dg 双模与导出相对张量积才是组织 dg 范畴的自然广义态射。对于紧生成稳定 $k$-线性范畴，dg enhancement 把抽象稳定同伦论连接到显式代数模型。
 
@@ -330,3 +372,9 @@ dg 范畴是链复形富范畴；$H^0$ 给出普通同伦范畴，但会丢失�
 **练习 27.15.** 说明 $D(\mathcal A)^\omega\simeq\operatorname{Perf}(\mathcal A)$ 的意义。
 
 **练习 27.16.** 对普通代数 $A$，写出 Hochschild chains 的导出张量公式。
+
+**练习 27.17.** 用 dg Yoneda 证明 $h:\mathcal A\to\operatorname{Mod}_{\mathcal A}$ 在 Hom 复形上全忠实。
+
+**练习 27.18.** 证明单对象 dg category 与 dg algebra 等价。
+
+**练习 27.19.** 若 Hom 复形集中在 $0$ 次，说明 dg 函子就是普通 $k$-线性函子。

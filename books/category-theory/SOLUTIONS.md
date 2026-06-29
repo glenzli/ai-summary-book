@@ -1392,6 +1392,24 @@ $$
 
 **答案 24.10.** Profunctor 复合用 coend 平衡中间范畴变量；Morita 理论中双模复合用相对张量积 $M\otimes_BN$ 平衡中间代数 $B$ 的作用。后者是前者在线性、导出或谱值环境中的高阶代数版本。
 
+**答案 24.11.** 若 $P(c,d)\cong\mathcal D(Fc,d)$ 且 $P(c,d)\cong\mathcal C(c,Gd)$，合并得到自然同构
+$$
+\mathcal D(Fc,d)\cong\mathcal C(c,Gd).
+$$
+这正是伴随 $F\dashv G$ 的 Hom-集定义。
+
+**答案 24.12.** 离散范畴中没有非恒等态射，coend 的平衡关系没有额外识别。因此
+$$
+(Q\circ P)(c,e)=\coprod_d P(c,d)\times Q(d,e).
+$$
+若每个集合至多一个元素，该集合非空当且仅当存在 $d$ 使 $cPd$ 且 $dQe$，正是关系复合。
+
+**答案 24.13.** Profunctor 伴随的单位在 $(c,c')$ 处为
+$$
+\mathcal C(c,c')\to\mathcal D(Fc,Fc').
+$$
+单位为同构当且仅当所有这些 Hom 映射为双射，也就是 $F$ 完全忠实。
+
 ## 第二十五章
 
 **答案 25.1.** $\mathcal V$-profunctor $M:\mathcal A\nrightarrow\mathcal B$ 是富函子
@@ -1440,6 +1458,20 @@ $$
 
 **答案 25.14.** Morita 理论既有代数之间的结构保持映射，也有双模作为广义态射；复合由相对张量积给出。Equipment 或 $(\infty,2)$-equipment 能同时记录这些方向、二重胞腔和 Beck-Chevalley 型相干。
 
+**答案 25.15.** 若 $L\dashv R$、$L'\dashv R'$，左侧自然变换 $\alpha:LA\to BL'$ 的右 mate 为复合
+$$
+A R'\xrightarrow{\eta}R L A R'\xrightarrow{R\alpha R'}R B L'R'\xrightarrow{R B\varepsilon'}R B.
+$$
+这里 $\eta$ 是 $L\dashv R$ 的单位，$\varepsilon'$ 是 $L'\dashv R'$ 的余单位。
+
+**答案 25.16.** 在 $(a,b)$ 处，$F_*$ 给出 $\mathcal B(Fa,b)$。目标 profunctor 经 co-Yoneda 化简为 $\mathcal B'(Gu(a),v(b))$。若 $vF=Gu$，分量就是
+$$
+\mathcal B(Fa,b)\to\mathcal B'(vF(a),v(b))=\mathcal B'(Gu(a),v(b)),
+$$
+即把态射送到其在 $v$ 下的像。
+
+**答案 25.17.** Beck-Chevalley 比较表达沿方块两条路径得到的重索引/推前相同。若两个相邻方块的比较都是同构，则外矩形的两条路径可分解为这两个比较的复合，因此外矩形比较也是同构。故 exact squares 应对粘合封闭。
+
 ## 第二十六章
 
 **答案 26.1.** 对有滤过余极限的 $\infty$-范畴 $C$，对象 $K$ compact，若 $\operatorname{Map}_C(K,-)$ 保持滤过余极限。稳定情形可等价地用映射谱函子表述。
@@ -1477,6 +1509,24 @@ $$
 **答案 26.13.** 若 $L\simeq E\otimes-$，而 $E\otimes-$ 是左伴随，则保持所有小余极限。
 
 **答案 26.14.** Verdier quotient 后 compact objects 的像未必已经幂等完备；某些 retract 只在商中出现。为了得到全部 compact objects，需要对小商 $C^\omega/L^\omega$ 作 Karoubi 完备化。
+
+**答案 26.15.** 若 $\operatorname{cofib}(f)$ 是 $L$-acyclic，则对余纤维序列
+$$
+X\to Y\to\operatorname{cofib}(f)
+$$
+应用 $L$ 得
+$$
+LX\to LY\to0.
+$$
+稳定范畴中余纤维为零等价于第一箭头为等价，因此 $Lf$ 是等价。
+
+**答案 26.16.** 序列 $A_X\to X\to LX$ 中第三项是局部化函子 $L$ 的值。局部化幂等性给出 $LX\to L^2X$ 为等价，因此 $LX$ 按定义是局部对象。
+
+**答案 26.17.** 有理化 $L(X)=H\mathbb Q\wedge X$。所以 $X$ 为 $L$-acyclic 当且仅当
+$$
+H\mathbb Q\wedge X\simeq0.
+$$
+态射 $f$ 为有理等价当且仅当 $H\mathbb Q\wedge\operatorname{cofib}(f)\simeq0$。
 
 ## 第二十七章
 
@@ -1547,6 +1597,16 @@ $$
 $$
 HH(A)\simeq A\otimes^{\mathbb L}_{A^{op}\otimes A}A.
 $$
+
+**答案 27.17.** 在 dg Yoneda 中取 $M=h_b$：
+$$
+\underline{\operatorname{Hom}}_{\operatorname{Mod}_{\mathcal A}}(h_a,h_b)\simeq h_b(a)=\mathcal A(a,b).
+$$
+该 quasi-isomorphism 对 $a,b$ 自然，并与复合相容，因此 Yoneda 嵌入在 Hom 复形上全忠实。
+
+**答案 27.18.** 单对象 dg category 的唯一 Hom 复形 $A=\mathcal A(*,*)$ 带有复合乘法 $A\otimes A\to A$ 和单位 $k\to A$，满足 dg algebra 公理。反过来，dg algebra $A$ 定义一个单对象 dg category，Hom 复形为 $A$，复合为乘法。
+
+**答案 27.19.** 若 Hom 复形集中在 $0$ 次，dg 函子在 Hom 上的链映射就是 $0$ 次 $k$-模同态，并且相容于复合和单位。因此它正是普通 $k$-线性范畴之间的 $k$-线性函子。
 
 ## 第二十八章
 
@@ -1657,6 +1717,28 @@ $$
 g^*f_*\simeq f'_*g'^*,\qquad g^*f_!\simeq f'_!g'^*
 $$
 就是这一比较在稳定 presentable $\infty$-范畴值 sheaf 理论中的版本。
+
+**答案 28.16.** 对恒等态射，$\operatorname{id}^*$、$\operatorname{id}_!$ 都是恒等函子。投影公式变为
+$$
+A\otimes_X\operatorname{id}^*B=A\otimes_XB\simeq A\otimes_XB=\operatorname{id}_!A\otimes_XB,
+$$
+因此是恒等同构。
+
+**答案 28.17.** 若 $f,g$ proper，则 $f_!\simeq f_*$、$g_!\simeq g_*$. 由复合相干
+$$
+(gf)_!\simeq g_!f_!,\qquad (gf)_*\simeq g_*f_*.
+$$
+代入 proper compatibility 得 $(gf)_!\simeq(gf)_*$。
+
+**答案 28.18.** Recollement 给出余纤维序列
+$$
+j_!j^*K\to K\to i_*i^*K.
+$$
+若 $j^*K=0$，则第一项为零，所以序列为
+$$
+0\to K\to i_*i^*K.
+$$
+稳定范畴中这推出 $K\simeq i_*i^*K$。
 
 ## 第二十九章
 

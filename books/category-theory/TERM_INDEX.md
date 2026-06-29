@@ -155,6 +155,7 @@
 | 局部等价 | local equivalence | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | 被局部化函子送为等价的态射 |
 | $\operatorname{Pr}^L$ | $\operatorname{Pr}^L$ | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | presentable $\infty$-categories 与左伴随组成的 $\infty$-范畴 |
 | profunctor | profunctor | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 从 $\mathcal C$ 到 $\mathcal D$ 的广义态射 $\mathcal C^{op}\times\mathcal D\to\mathbf{Set}$ |
+| 可表示 profunctor | representable profunctor | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 由函子表示为 $\mathcal D(Fc,d)$ 或 $\mathcal C(c,Gd)$ 的 profunctor |
 | Cauchy completion | Cauchy completion | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 通过分裂幂等得到的 Karoubi 完备化 |
 | 加权余极限 | weighted colimit | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 由权重 $W$ 加权的余极限，常用 coend 表示 |
 | $\infty$-correspondence | $\infty$-correspondence | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | space 值 profunctor 或高阶 span 型广义态射 |
@@ -163,16 +164,19 @@
 | companion | companion | [第二十五章](25_enriched_profunctors_equipments_and_base_change.md) | 垂直函子诱导的同向水平 profunctor |
 | conjoint | conjoint | [第二十五章](25_enriched_profunctors_equipments_and_base_change.md) | 垂直函子诱导的反向水平 profunctor |
 | Beck-Chevalley 条件 | Beck-Chevalley condition | [第二十五章](25_enriched_profunctors_equipments_and_base_change.md) | base change 比较态射为同构的 exact square 条件 |
+| mate 对应 | mate correspondence | [第二十五章](25_enriched_profunctors_equipments_and_base_change.md), [第二十八章](28_six_functor_formalism_base_change_and_projection_formula.md) | 由伴随单位和余单位在左右伴随侧转换自然变换 |
 | compact object | compact object | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 映射函子保持滤过余极限的对象 |
 | compactly generated | compactly generated | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 由一小集紧对象检测并生成的稳定 presentable 范畴 |
 | localizing subcategory | localizing subcategory | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 稳定且对小余积封闭的全子范畴 |
 | Verdier quotient | Verdier quotient | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 把稳定子范畴对象强制为零的稳定商 |
 | Brown 表示性 | Brown representability | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | cohomological functor 或伴随存在性的表示定理 |
 | smashing localization | smashing localization | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 由张量某个对象给出的 Bousfield 局部化 |
+| $L$-acyclic object | $L$-acyclic object | [第二十六章](26_compact_generation_brown_representability_and_bousfield_localization.md) | 被局部化函子 $L$ 送为零的对象 |
 | dg 范畴 | dg category | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | 链复形范畴 $\operatorname{Ch}(k)$ 上的富范畴 |
 | $H^0(\mathcal A)$ | homotopy category of a dg category | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | Hom 取 $0$ 次同调得到的普通范畴 |
 | quasi-equivalence | quasi-equivalence | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | Hom 复形 quasi-isomorphism 且 $H^0$ 本质满的 dg 函子 |
 | dg 模 | dg module | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | dg 函子 $\mathcal A^{op}\to\operatorname{Ch}(k)$ |
+| dg Yoneda | dg Yoneda | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | 可表 dg 模 $h_a$ 表示取值 $M(a)$ 的富 Yoneda 等价 |
 | perfect module | perfect module | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | 由可表 dg 模经有限稳定操作和 retract 生成的紧对象 |
 | pretriangulated dg category | pretriangulated dg category | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | 可表模对悬挂和锥封闭的 dg 范畴 |
 | dg enhancement | dg enhancement | [第二十七章](27_dg_categories_enhancements_and_derived_morita_theory.md) | 由 pretriangulated dg category 给出的三角或稳定 $\infty$-范畴增强 |

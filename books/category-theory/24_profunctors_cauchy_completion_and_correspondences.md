@@ -256,7 +256,61 @@ $$
 
 该结构是 ordinary $\mathbf{Prof}$ 的高阶版本，也是第二十二章 Morita $\infty$-范畴中“以 bimodule 为态射、相对张量积为复合”的抽象原型。
 
-## 24.7 本章小结
+## 24.7 可表示 Profunctor、关系与边界例子
+
+**定义 24.17.** Profunctor $P:\mathcal C\nrightarrow\mathcal D$ 称为右可表示，若存在函子 $F:\mathcal C\to\mathcal D$ 和自然同构
+
+$$
+P(c,d)\cong\mathcal D(Fc,d).
+$$
+
+称为左可表示，若存在函子 $G:\mathcal D\to\mathcal C$ 和自然同构
+
+$$
+P(c,d)\cong\mathcal C(c,Gd).
+$$
+
+**命题 24.18.** 若 $P$ 同时右可表示为 $F_*$ 且左可表示为 $G^*$，则 $F\dashv G$。
+
+**证明.** 两种可表示性给出自然同构
+
+$$
+\mathcal D(Fc,d)\cong P(c,d)\cong\mathcal C(c,Gd).
+$$
+
+该同构对 $c,d$ 自然，因此正是伴随 $F\dashv G$ 的 Hom-集刻画。$\square$
+
+**例子 24.19（离散范畴）.** 若 $\mathcal C,\mathcal D$ 是离散范畴，则 profunctor
+
+$$
+P:\mathcal C^{op}\times\mathcal D\to\mathbf{Set}
+$$
+
+只是给每对对象 $(c,d)$ 指定一个集合 $P(c,d)$。若所有 $P(c,d)$ 至多一个元素，则它等价于从对象集 $\operatorname{Ob}\mathcal C$ 到 $\operatorname{Ob}\mathcal D$ 的二元关系。此时 coend 复合退化为关系复合：
+
+$$
+(Q\circ P)(c,e)\ne\varnothing
+\quad\Longleftrightarrow\quad
+\exists d,\ P(c,d)\ne\varnothing,\ Q(d,e)\ne\varnothing.
+$$
+
+**命题 24.20.** 函子 $F:\mathcal C\to\mathcal D$ 完全忠实，当且仅当由 profunctor 伴随 $F_*\dashv F^*$ 的单位
+
+$$
+\operatorname{id}_{\mathcal C}\to F^*F_*
+$$
+
+为同构。
+
+**证明.** 单位在 $(c,c')$ 处分量是
+
+$$
+\mathcal C(c,c')\to\mathcal D(Fc,Fc').
+$$
+
+这正是 $F$ 的 Hom 映射。因此所有分量为双射，当且仅当 $F$ 完全忠实。$\square$
+
+## 24.8 本章小结
 
 Profunctor 把函子、关系、双模和 correspondence 统一为“广义态射”。Coend 复合给出 $\mathbf{Prof}$ 的双范畴结构；Cauchy completion 说明幂等分裂是 Morita 不变量的基本有限性修正；$\infty$-correspondence 则把这些思想提升到高阶范畴和高阶代数。
 
@@ -281,3 +335,9 @@ Profunctor 把函子、关系、双模和 correspondence 统一为“广义态�
 **练习 24.9.** 比较 profunctor $C^{op}\times D\to\mathbf{Set}$ 与 $\infty$-correspondence $C^{op}\times D\to\mathcal S$。
 
 **练习 24.10.** 解释为什么 Morita 理论中的双模复合可看作 profunctor coend 复合的高阶代数版本。
+
+**练习 24.11.** 证明命题 24.18。
+
+**练习 24.12.** 对离散范畴，验证 profunctor coend 复合退化为关系复合。
+
+**练习 24.13.** 用命题 24.20 重新证明完全忠实函子的 Hom 判别。

@@ -129,7 +129,7 @@ $$
 以及自然变换 $\alpha:vF\Rightarrow Gu$，则 $\alpha$ 诱导 profunctor 二重胞腔
 
 $$
-F_*\to u^*G_*v_*.
+F_*\to v^*G_*u_*.
 $$
 
 它在对象上由态射
@@ -210,7 +210,57 @@ $$
 
 这些模型用于精确定义高阶 Beck-Chevalley 条件、base change、six functor formalisms 和 extended TFT 中的可对偶性。
 
-## 25.8 本章小结
+## 25.8 Mate 对应与低维 exact square
+
+**定义 25.18.** 设 $L\dashv R$ 与 $L'\dashv R'$ 为两个伴随。给定自然变换
+
+$$
+\alpha:L A\to B L',
+$$
+
+其右 mate 是由单位和余单位复合得到的自然变换
+
+$$
+A R'\to R B.
+$$
+
+反向也可从右 mate 恢复左 mate。Mate 对应是伴随演算中把“左伴随侧方块”转为“右伴随侧方块”的标准操作。
+
+**命题 25.19.** 在 $\mathbf{Prof}$ 中，若自然方块严格交换
+
+$$
+\begin{matrix}
+\mathcal A&\xrightarrow{F}&\mathcal B\\
+u\downarrow&&\downarrow v\\
+\mathcal A'&\xrightarrow{G}&\mathcal B',
+\end{matrix}
+$$
+
+即 $vF=Gu$，则由 companion/conjoint 得到的典范二重胞腔
+
+$$
+F_*\to v^*G_*u_*
+$$
+
+是由恒等比较诱导的。若方块是同构交换，则相应 mate 也是同构。
+
+**证明.** 在 $(a,b)$ 处，左侧为 $\mathcal B(Fa,b)$。右侧经 co-Yoneda 化简为
+
+$$
+\mathcal B'(Gu(a),v(b)).
+$$
+
+严格等式 $vF=Gu$ 给出函数
+
+$$
+\mathcal B(Fa,b)\to\mathcal B'(vF(a),v(b))=\mathcal B'(Gu(a),v(b)).
+$$
+
+这正是由 $v$ 作用于态射得到的二重胞腔。若方块以自然同构交换，则用该自然同构前后复合得到可逆比较；mate 对应保持可逆性，因为它由伴随等价的映射集同构定义。$\square$
+
+**例子 25.20.** 恒等拉回方块的 Beck-Chevalley 比较是恒等同构。复合两个满足 Beck-Chevalley 的方块时，外矩形的比较是两个比较同构的复合；因此 exact squares 对水平和垂直粘合封闭，这是六操作中基变换相干的低维原型。
+
+## 25.9 本章小结
 
 富 profunctor 把第二十四章的广义态射推广到富环境。Equipment 同时记录垂直函子和水平 profunctor，使 companion、conjoint、base change 与 Beck-Chevalley 条件成为统一语言。它是从 ordinary indexed categories 过渡到 Cartesian fibrations、correspondences 和 Morita $(\infty,2)$-范畴的关键桥梁。
 
@@ -243,3 +293,9 @@ $$
 **练习 25.13.** 说明 equipment 比 ordinary bicategory 多记录了什么。
 
 **练习 25.14.** 解释 Morita 理论为什么自然需要 equipment 或 $(\infty,2)$-equipment 语言。
+
+**练习 25.15.** 写出一个左 mate 到右 mate 的单位-余单位复合公式。
+
+**练习 25.16.** 在命题 25.19 中逐对象计算二重胞腔的分量。
+
+**练习 25.17.** 说明 exact squares 为什么应当对粘合封闭。

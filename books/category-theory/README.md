@@ -107,6 +107,8 @@
 
 第二十至第二十三章已进入第六轮终稿化补强：新增稳定 $\infty$-范畴中有限余极限保持推出 exactness 的判别、三角同伦范畴边界、$\infty$-sheaf 极限逐点计算、objectwise 离散 sheaf 到 ordinary sheaf 的恢复、普通幺半范畴中 $E_1$-代数对象的恢复、幺半函子传递代数结构、局部等价的映射空间判别和局部对象极限创建；相应练习与答案已同步。
 
+第二十四至第二十八章已进入第七轮终稿化补强：新增可表示 profunctor 的伴随判别、离散关系例子、完全忠实函子的 profunctor 单位判别、mate 对应、低维 exact square 计算、局部等价的余纤维判别、dg Yoneda 全忠实、单对象 dg category 与 dg algebra 比较、六操作恒等态射检查、proper compatibility 复合和 recollement 闭支撑恢复；相应练习与答案已同步。
+
 ## 审稿辅助文件
 
 - [TERM_INDEX.md](TERM_INDEX.md)：核心术语索引。

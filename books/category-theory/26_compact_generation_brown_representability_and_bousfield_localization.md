@@ -154,7 +154,39 @@ $$
 
 这是 Neeman-Thomason 型定理的 $\infty$-范畴版本。
 
-## 26.7 本章小结
+## 26.7 局部等价的余纤维判别
+
+**定义 26.21.** 对 exact localization $L:C\to C$，态射 $f:X\to Y$ 称为 $L$-equivalence，若 $Lf$ 是等价。
+
+**命题 26.22.** 在稳定 presentable $\infty$-范畴中，态射 $f:X\to Y$ 是 $L$-equivalence，当且仅当
+
+$$
+\operatorname{cofib}(f)
+$$
+
+是 $L$-acyclic。
+
+**证明.** 对余纤维序列
+
+$$
+X\to Y\to\operatorname{cofib}(f)
+$$
+
+应用正合函子 $L$，得到余纤维序列
+
+$$
+LX\to LY\to L\operatorname{cofib}(f).
+$$
+
+在稳定范畴中，$LX\to LY$ 是等价，当且仅当其余纤维为零。因此 $Lf$ 是等价，当且仅当 $L\operatorname{cofib}(f)\simeq0$，也就是 $\operatorname{cofib}(f)$ 为 $L$-acyclic。$\square$
+
+**推论 26.23.** 若 $A_X\to X\to LX$ 是命题 26.15 的局部化余纤维序列，则 $X\to LX$ 是 $L$-equivalence，且 $A_X$ 是所有阻碍 $X$ 局部性的 acyclic 部分。
+
+**证明.** 由余纤维序列 $A_X\to X\xrightarrow{\eta_X}LX$，态射 $\eta_X$ 的余纤维为 $\Sigma A_X$。因为 $LA_X\simeq0$ 且 $L$ 正合，$L\Sigma A_X\simeq0$。命题 26.22 应用于 $\eta_X$ 给出它是 $L$-equivalence；纤维 $A_X$ 正是被局部化杀掉的部分。$\square$
+
+**例子 26.24.** 若 $L$ 是有理化 $H\mathbb Q\wedge-$，则 $f$ 是有理等价，当且仅当 $\operatorname{cofib}(f)$ 的有理化为零。这个表述只使用稳定范畴的余纤维演算，而不依赖具体谱同伦群计算。
+
+## 26.8 本章小结
 
 紧生成把稳定 presentable $\infty$-范畴的大小控制在小的 compact objects 上。Brown 表示性和 presentable 伴随函子定理保证许多自然函子有伴随。Bousfield localization、Verdier quotient 和 smashing localization 则描述稳定同伦论和导出范畴中最常见的“局部化计算”。
 
@@ -187,3 +219,9 @@ $$
 **练习 26.13.** 说明为什么 smashing localization 保持小余极限。
 
 **练习 26.14.** 解释 Neeman-Thomason 型定理中为什么需要幂等完备化。
+
+**练习 26.15.** 证明命题 26.22 的反向。
+
+**练习 26.16.** 对任意 $X$，说明 $A_X\to X$ 的余纤维为什么是局部对象。
+
+**练习 26.17.** 在有理化例子中，把 $L$-acyclic 条件写成 $H\mathbb Q\wedge X\simeq0$。

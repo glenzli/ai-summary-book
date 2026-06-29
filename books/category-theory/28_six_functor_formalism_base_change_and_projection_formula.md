@@ -328,7 +328,57 @@ $$
 
 **注 28.23.** 这解释了为什么本书先建立 profunctor、equipment 和 indexed categories，再进入六操作。六操作不是孤立的几何技术，而是范畴化的 base change 与 adjunction calculus。
 
-## 28.8 本章小结
+## 28.8 形式相干的低维检查
+
+**命题 28.24.** 对恒等态射 $\operatorname{id}_X:X\to X$，六操作资料中的
+
+$$
+\operatorname{id}_X^*,\quad \operatorname{id}_{X*},\quad \operatorname{id}_{X!},\quad \operatorname{id}_X^!
+$$
+
+都与恒等函子相容；相应基变换和投影公式退化为恒等比较。
+
+**证明.** 稳定系数系统是反变函子，因此恒等态射被送到恒等函子。若 $f_!,f^!$ 作为额外六操作资料与复合相干，则恒等态射的左、右 adjoint 也由恒等函子给出。基变换方块若全为恒等，命题 28.8 的单位-余单位复合就是伴随三角恒等式，故为恒等；投影公式则为
+
+$$
+A\otimes_XB\simeq A\otimes_XB.
+$$
+
+$\square$
+
+**命题 28.25.** 若 $f:X\to Y$ 与 $g:Y\to Z$ 都满足 proper compatibility，则复合 $gf$ 也满足 proper compatibility。
+
+**证明.** Proper compatibility 给出 $f_!\simeq f_*$ 与 $g_!\simeq g_*$. 由六操作的复合相干，
+
+$$
+(gf)_!\simeq g_!f_!,\qquad (gf)_*\simeq g_*f_*.
+$$
+
+代入前两个等价得到
+
+$$
+(gf)_!\simeq g_!f_!\simeq g_*f_*\simeq(gf)_*.
+$$
+
+$\square$
+
+**命题 28.26.** 若 recollement 序列
+
+$$
+j_!j^*K\to K\to i_*i^*K
+$$
+
+成立，则 $\ker(j^*)$ 由闭部分的本质像生成：若 $j^*K\simeq0$，则 $K\simeq i_*i^*K$。
+
+**证明.** 在该余纤维序列中，若 $j^*K\simeq0$，则第一项 $j_!j^*K\simeq0$。因此余纤维序列退化为
+
+$$
+0\to K\to i_*i^*K,
+$$
+
+在稳定范畴中推出 $K\simeq i_*i^*K$。$\square$
+
+## 28.9 本章小结
 
 六操作形式主义由稳定闭幺半 presentable $\infty$-范畴的参数化系统、伴随对、基变换、投影公式、proper compatibility、recollement 和 Verdier 对偶构成。它把 topos 和 sheaf 理论中的局部-整体原则，与稳定同伦论、Morita 理论和高阶 base change 相连。具体几何理论中的六操作存在性是大型外部输入；本章提供的是可检查的抽象结构和相干关系。
 
@@ -363,3 +413,9 @@ $$
 **练习 28.14.** 若 $K$ dualizable，证明 $\mathbb D_X(K)\simeq K^\vee\otimes\omega_X$。
 
 **练习 28.15.** 解释六操作基变换与 equipment 中 Beck-Chevalley 条件的关系。
+
+**练习 28.16.** 对恒等态射验证投影公式退化为恒等同构。
+
+**练习 28.17.** 证明 proper compatibility 对复合封闭。
+
+**练习 28.18.** 若 $j^*K=0$，用 recollement 证明 $K\simeq i_*i^*K$。
