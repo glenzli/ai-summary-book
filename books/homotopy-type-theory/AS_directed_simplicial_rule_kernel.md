@@ -133,4 +133,3 @@ $$
 2.  若只需普通范畴论，使用第十三章的单值范畴，不使用 directed hom。
 3.  若需要 $\infty$-范畴对象语言，必须在章节开头声明切换到 directed/simplicial 口径，并列出 AS.1-AS.11 中采用的规则。
 4.  任何从 directed hom 推出 identity path 的步骤都必须给出额外离散性、core 或 equivalence 数据。
-

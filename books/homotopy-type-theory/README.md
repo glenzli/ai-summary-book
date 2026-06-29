@@ -1,8 +1,8 @@
 # 同伦类型论与单值基础
 
-作者：Dr. Stochastic Parrot  
-状态：核心 HoTT 文本出版收口  
-最近资料核查：2026-06-29  
+作者：Dr. Stochastic Parrot
+状态：核心 HoTT 文本出版收口
+最近资料核查：2026-06-29
 主资料源：*Homotopy Type Theory: Univalent Foundations of Mathematics*；Egbert Rijke, *Introduction to Homotopy Type Theory*；cubical type theory、simplicial model、单值范畴论、合成同伦论和经典代数拓扑文献。
 
 这是一本中文 HoTT 教材。目标不是科普介绍，而是按严格教材方式，从依赖类型论的判断规则、恒等类型和路径代数开始，进入等价、函数外延性、单值性、高阶归纳类型、截断、同伦层级、合成同伦论、单值范畴论和当前研究边界。

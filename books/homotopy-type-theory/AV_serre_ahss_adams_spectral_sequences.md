@@ -138,4 +138,3 @@ $$
 ## AV.5 本附录关闭的缺口
 
 附录 AQ 说明“谱序列是什么”；本附录说明三类核心谱序列需要哪些 HoTT 输入。剩余缺口已经具体化为：cellular filtration、局部系数、cofiber 长正合列、spectrum 范畴、Steenrod algebra、Ext 代数和收敛证明。
-
