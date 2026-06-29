@@ -42,7 +42,7 @@ R\Gamma(X,\mathcal F)
 \left(\mathcal A^{0,\bullet}(X,\mathcal F),\bar\partial\right)
 $$
 
-在合适的 condensed/analytic 派生范畴中成立。
+在第二卷 D.6 和第三卷 AR.2 所指定的 condensed/analytic/liquid 派生范畴中成立。
 
 ## 3.4 证明路线
 

@@ -69,10 +69,11 @@
 按标准 B，本书现在可以称为“condensed/solid/analytic/liquid 主线输入定理型闭合草稿”。仍可继续做的工作属于出版级增强：
 
 1. **输入定理编号回填正文。** 现有登记表已集中列出外部输入；后续可把每个正文定理的引用进一步回填到具体输入编号。
-2. **教师手册级答案。** 分卷答案已经建立；出版级版本应把所有证明题扩成逐行解答。
-3. **反例密度继续提高。** 重要技术假设已有边界例子；后续可为每个关键假设配置一个删除失败例子。
-4. **主线核心输入自足化。** 若要重证 solidification、analytic localization、liquid realization 等主线核心定理，需要把 Scholze/Clausen-Scholze 的长证明展开为独立章节。
-5. **深层应用输入自足化。** 若要重证 Cartan/Grauert、Hodge-Fredholm、GAGA 和 GRR，需要另写复几何、代数几何和泛函分析预备教材。
+2. **引用定位提升。** [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 已建立 L0-L3 状态；后续应把核心输入从 L1 提升到 L2/L3。
+3. **教师手册级答案。** 分卷答案已经建立；出版级版本应把所有证明题扩成逐行解答。
+4. **反例密度继续提高。** 重要技术假设已有边界例子；后续可为每个关键假设配置一个删除失败例子。
+5. **主线核心输入自足化。** 若要重证 solidification、analytic localization、liquid realization 等主线核心定理，需要把 Scholze/Clausen-Scholze 的长证明展开为独立章节。
+6. **深层应用输入自足化。** 若要重证 Cartan/Grauert、Hodge-Fredholm、GAGA 和 GRR，需要另写复几何、代数几何和泛函分析预备教材。
 
 ## 4. 为什么之前一直没有推到基本完本
 

@@ -17,7 +17,7 @@
 | 卷三 | 复几何与相干对偶 | 输入定理型严格教材草稿，基本完本 | 经典复几何深定理可另写完全证明卷或精细引用手册 |
 | 卷四 | 计算与形式化补充 | 工具卷基本完本 | Lean 代码、pro-etale 专题和谱值接口可继续扩展 |
 
-因此，对外称呼应使用“四卷主线输入定理型严格教材草稿”或“condensed/solid/analytic/liquid 主线闭合草稿”，而不是“完整自足证明教材”。后续若继续投入，应优先增强第二卷主线：更细的输入定理编号、solidification/analyticization/liquid realization 证明链、逐行教师手册、更多反例和更完整的参考文献对照。
+因此，对外称呼应使用“四卷主线输入定理型严格教材草稿”或“condensed/solid/analytic/liquid 主线闭合草稿”，而不是“完整自足证明教材”。后续若继续投入，应优先增强第二卷主线：更细的输入定理编号、solidification/analyticization/liquid realization 证明链、逐行教师手册、更多反例和更完整的参考文献对照。引用定位和校对优先级见 [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 与 [PUBLICATION_PROOFREADING_AUDIT.md](PUBLICATION_PROOFREADING_AUDIT.md)。
 
 本轮严格化已经完成多项结构性补强：
 
@@ -67,6 +67,7 @@
 
 44. 第二卷新增附录 V-Z，把 solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成证明模块。
 45. 第二卷新增附录 AA、第三卷新增附录 AR，把 Scholze 与 Clausen-Scholze 的核心定理作为凝聚数学主线图谱集中列出。
+46. 总目录新增 [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 和 [PUBLICATION_PROOFREADING_AUDIT.md](PUBLICATION_PROOFREADING_AUDIT.md)，进入出版级引用定位和软表述校对阶段。
 
 这些补强把项目推进到“主线输入定理型严格教材草稿”。本轮又在第二卷新增附录 Q-AA，将 solid、analytic、liquid 和三者统一接口收束为主定理包，补出版级闭包审查，把核心输入拆成可复核的证明模块，并把 Scholze/Clausen-Scholze 的核心定理列入主线图谱；第三卷附录 AR 对复几何核心定理做同样处理。它仍不等于完整证明 solid/analytic/liquid 核心结构定理和所有应用深层定理的自足教材。
 

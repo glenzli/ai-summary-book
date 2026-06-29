@@ -40,7 +40,7 @@ $$
 \mathcal M_{<p}[S]=\varinjlim_{q<p}\mathcal M_q[S].
 $$
 
-**输入定理 5.1（Scholze）.** 对合适的 $p$，$(\mathbb R,\mathcal M_{<p})$ 是解析环。
+**输入定理 5.1（Scholze）.** 对第二卷输入定理 D.5 指定范围内的 $p$，$(\mathbb R,\mathcal M_{<p})$ 是解析环。
 
 这一定理是 liquid 理论的核心输入。它不是 Banach 空间常识，而是凝聚数学中的解析环定理。
 
@@ -85,7 +85,7 @@ $$
 
 ## 5.6 输入定理：良好范畴性质
 
-**输入定理 5.3（Scholze）.** $p$-liquid 实向量空间形成良好的阿贝尔/派生范畴环境，并有与解析化相容的张量结构。
+**输入定理 5.3（Scholze）.** $p$-liquid 实向量空间所在的 analytic 模范畴具有 kernel、cokernel、扩张、派生范畴和与解析化相容的张量结构。
 
 本卷后续只使用该定理的三个后果：
 

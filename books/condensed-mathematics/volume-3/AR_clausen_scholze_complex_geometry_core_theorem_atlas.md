@@ -120,7 +120,7 @@ $$
 
 ## AR.7 Six functor 接口
 
-**核心定理 AR.7（复几何中的 \(f_!,f^!,\otimes,R\mathcal Hom\) 接口）。** 对适当 morphism \(f\)，复几何中的 pushforward、proper/compact-support pushforward、pullback、exceptional pullback、tensor 和 internal Hom 组成与 condensed/analytic language 相容的六函子结构。
+**核心定理 AR.7（复几何中的 \(f_!,f^!,\otimes,R\mathcal Hom\) 接口）。** 对满足相应 six-functor 输入假设的 morphism \(f\)，复几何中的 pushforward、proper/compact-support pushforward、pullback、exceptional pullback、tensor 和 internal Hom 组成与 condensed/analytic language 相容的六函子结构。
 
 **书内部分。** 第八章和第二卷附录 F、L 证明接受 \(f_!\)、projection formula 和 adjunction 后，\(f^!\) 与 internal Hom 公式如何推出。
 

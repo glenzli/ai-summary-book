@@ -32,7 +32,7 @@
 
 ## AA.2 Condensed 基础核心
 
-**核心定理 AA.1（测试站点与 sheaf 比较）。** compact Hausdorff 站点、profinite 测试子站点和极不连通测试对象给出等价的凝聚对象检测方式；在合适小性约定下，凝聚集合与凝聚阿贝尔群由这些测试对象上的 sheaf 条件控制。
+**核心定理 AA.1（测试站点与 sheaf 比较）。** compact Hausdorff 站点、profinite 测试子站点和极不连通测试对象给出等价的凝聚对象检测方式；固定 universe 并取测试对象小骨架后，凝聚集合与凝聚阿贝尔群由这些测试对象上的 sheaf 条件控制。
 
 **书内部分。** 第一卷证明 compact Hausdorff 的基本闭性、sheaf 等化子条件、profinite 站点比较的形式部分、Stone 对偶链和 ED 覆盖检测。
 
@@ -147,7 +147,7 @@ $$
 
 ## AA.5 Liquid 核心
 
-**核心定理 AA.10（\(p\)-liquid analytic ring）。** 对合适的 \(p\)，\((\mathbb R,\mathcal M_{<p})\) 是 analytic ring，其 analytic module category 给出 \(p\)-liquid 实向量空间理论。
+**核心定理 AA.10（\(p\)-liquid analytic ring）。** 对输入定理 D.5 指定范围内的 \(p\)，\((\mathbb R,\mathcal M_{<p})\) 是 analytic ring，其 analytic module category 给出 \(p\)-liquid 实向量空间理论。
 
 **书内部分。** 第二卷第五章、附录 S 给出 liquid 入口和接受输入后的有限维、Fredholm、Dolbeault 类型后果。
 

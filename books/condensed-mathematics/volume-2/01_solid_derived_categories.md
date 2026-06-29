@@ -103,17 +103,23 @@ $$
 L^\square:D(\mathbf{CondAb})\to D_{\square}(\mathbb Z).
 $$
 
-并且 $L^\square$ 可视为使所有映射
+并且 \(L^\square\) 是使所有映射
 
 $$
 \mathbb Z[\underline S]\to\mathbb Z^\square[S]
 $$
 
-变为同构的 Bousfield localization。
+变为等价的反射 Bousfield localization：对任意 solid 对象 \(C\)，自然映射
+
+$$
+R\operatorname{Hom}(L^\square M,C)\to R\operatorname{Hom}(M,C)
+$$
+
+为等价。
 
 **定义 1.6.** $L^\square C$ 称为 $C$ 的派生 solidification。
 
-若 $M$ 是凝聚阿贝尔群，第一卷的 $M^\square$ 是对象层面的 solidification；在良好情形下，它与 $H^0(L^\square M)$ 相容。
+若 $M$ 是凝聚阿贝尔群，第一卷的 $M^\square$ 是对象层面的 solidification；它与 \(H^0(L^\square M)\) 的相容性作为输入定理 D.1 的一部分使用。
 
 ## 1.5 solid 对象的生成元
 

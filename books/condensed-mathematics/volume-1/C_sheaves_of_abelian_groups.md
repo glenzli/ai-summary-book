@@ -54,7 +54,7 @@ $$
 \operatorname{Hom}_{\operatorname{PSh}}(F,iA).
 $$
 
-本书使用以下标准事实：
+以下结果在第一卷附录 H 中证明，后文不再作为未定位的“标准事实”使用。
 
 **定理 C.1.** 阿贝尔群值 sheafification 是正合函子。
 

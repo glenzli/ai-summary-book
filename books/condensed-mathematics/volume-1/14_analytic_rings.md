@@ -110,11 +110,11 @@ $$
 
 **定理 14.8（Scholze）.** 若 $(A,\mathcal M)$ 是解析环，则：
 
-1. $(A,\mathcal M)\text{-}\mathbf{Mod}$ 是良好的阿贝尔/导出范畴环境。
-2. 包含到 $A$-模范畴的导出范畴有左伴随，可视为解析化。
-3. 若 $A$ 交换，则导出范畴上有与解析化相容的对称幺半张量积。
+1. 存在 analytic 派生范畴 \(D(A,\mathcal M)\subset D(A)\)。
+2. 包含函子有左伴随 \(L_{(A,\mathcal M)}:D(A)\to D(A,\mathcal M)\)，后文称为解析化。
+3. 若 $A$ 交换，则 \(D(A,\mathcal M)\) 带有由 analytic kernel 张量理想性下降得到的对称幺半张量积。
 
-**证明说明.** 这是 Scholze 讲义第七讲的基本结构定理。完整证明依赖 Lemma 5.10 和 analytic condition 的 Bousfield localization 解释。
+**证明说明.** 第二卷输入定理 D.4 和附录 X 使用本结构定理的精确形式。本章只作为入口，不证明 analytic ring 公理推出 Bousfield localization 和张量相容。
 
 ## 14.5 与 solid 的关系
 

@@ -34,7 +34,7 @@ $$
 
 在复几何中，$\mathcal O_X$ 的截面通常形成 Fréchet 空间。condensed/analytic 方法将其视为 analytic 或 liquid 模对象。
 
-**输入定理 1.1（Clausen-Scholze，形式）.** 对适当的复解析空间 $X$，存在 analytic 派生范畴
+**输入定理 1.1（Clausen-Scholze，形式）.** 对 Clausen-Scholze 建模输入适用范围内的复解析空间 $X$，存在 analytic 派生范畴
 
 $$
 D_{\operatorname{an}}(X)
