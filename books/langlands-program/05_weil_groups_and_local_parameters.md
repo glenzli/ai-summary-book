@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第三章的局部类域论和第四章的光滑表示。需要知道局部域的绝对 Galois 群、惯性群和 Frobenius 元。
+需要第三章的局部类域论和第四章的光滑表示。需要知道局部域的绝对 Galois 群、惯性群和 Frobenius 元；附录 A.2 给出分解群、惯性群、非分歧 Frobenius 和高阶分歧群的代数数论接口。附录 AE 给出 `GL(2)` principal series、Steinberg 和 supercuspidal 参数例子，供本章定义后立即计算。
+
+收口归一化回指：本章 Weil 群、Weil-Deligne 数据、局部 reciprocity、Satake 参数和局部 L 因子均采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节的 convention。
 
 ## 5.1 非 Archimedean 局部 Weil 群
 
@@ -186,6 +188,8 @@ $$
 4. 非分歧表示对应非分歧参数，Satake 参数等于 $\varphi_\pi(\operatorname{Fr}_F)$。
 
 本定理的完整证明超出本书当前章节范围。`GL(2)` 的特殊情形可由 Bushnell-Henniart 等理论处理；一般 `GL(n)` 由 Harris-Taylor、Henniart 等工作完成。
+
+**注 5.15.1.** 附录 AE 展开 `GL(2)` 的三个基本模型：主级数对应两个一维参数的直和，Steinberg twist 对应非零 monodromy 的 special parameter，supercuspidal 对应不可约二维 Weil 表示。这是理解一般 `GL(n)` Langlands 分类前最小的可计算例子。
 
 ## 5.7 一般 reductive 群的局部 Langlands 猜想
 

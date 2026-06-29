@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第一章的函数域和 adeles，第十三章的全局自守表示，第十八至二十一章的几何 Langlands 基本对象。需要 étale fundamental group、Frobenius trace、Grothendieck sheaf-function dictionary 和 moduli stack 的基础。本章把 sheaf-function dictionary、Grothendieck-Lefschetz trace formula 和 Drinfeld-Lafforgue 函数域结果作为外部输入。
+需要第一章的函数域和 adeles，第十三章的全局自守表示，第十八至二十一章的几何 Langlands 基本对象。需要 étale fundamental group、Frobenius trace、Grothendieck sheaf-function dictionary 和 moduli stack 的基础。本章把 sheaf-function dictionary、Grothendieck-Lefschetz trace formula 和 Drinfeld-Lafforgue 函数域结果作为外部输入。附录 S 给出 shtuka stacks、Lafforgue `GL(n)` 定理和 V. Lafforgue excursion operators 的技术接口；附录 AC 给出 Fargues-Fontaine 曲线和 local shtukas，用于说明局部几何化与全局函数域几何化的区别。
+
+收口归一化回指：本章是函数域 Galois 表示、Satake 参数和 sheaf-function dictionary 的交叉点；几何/算术 Frobenius、trace function 和 Tate twist convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、9 节。
 
 ## 22.1 函数域的双重身份
 
@@ -65,6 +67,8 @@ $\square$
 
 **注 22.8.** Drinfeld-Lafforgue 理论不是几何 Langlands 范畴等价本身，但它使用曲线、shtukas 和几何方法证明函数域全局 Langlands。它是数论 Langlands 与几何方法之间最强的桥梁之一。
 
+**注 22.8.1.** 附录 S 将本节结果拆成 `GL(2)`、`GL(n)` 和一般还原群函数域参数化三层：Drinfeld、Laurent Lafforgue 和 V. Lafforgue。第十四章使用的是其中 `GL(n)` 层；一般 $G$ 的 excursion operator 形式不等同于完整 Arthur packet 分类。
+
 ## 22.4 Shtukas 的角色
 
 **定义 22.9.** 粗略地说，$G$-shtuka 是曲线 $X/\mathbb F_q$ 上的 $G$-bundle，连同若干点处的 Hecke 修改和 Frobenius pullback 之间的同构。对 `GL(n)`，它可看作向量丛及其 Frobenius-twisted Hecke 修改数据。
@@ -78,6 +82,8 @@ $\square$
 数域没有对应的代数曲线 $X/\mathbb F_q$，因此不能直接用 $\operatorname{Bun}_G(X)$ 和 Frobenius trace 替代 adelic 商。
 
 **注 22.12.** 数域仍有 Arakelov geometry、Shimura varieties、locally symmetric spaces 和 perfectoid spaces 等几何替代物，但它们不提供一个简单的“数域曲线”使几何 Langlands 原样适用。
+
+**注 22.12.1.** Fargues-Fontaine 曲线提供的是 $p$-adic 局部域的几何化，而不是数域本身的全局曲线替代物。附录 AC 中的 local shtukas 和 Fargues-Scholze 谱作用解释局部 LLC 的几何来源；本章的函数域桥梁则依赖全局曲线 $X/\mathbb F_q$、Frobenius trace 和 adelic quotient。两者都使用曲线和 shtuka 型对象，但对应的基域、谱侧和自动侧不同。
 
 **例 22.13.** 对 `GL(2)/\mathbb Q`，模曲线和 Shimura curves 的上同调构造二维 Galois 表示。这是第九章 Deligne 表示和第十章模性提升的几何背景。对更高维和一般群，需要 Shimura varieties 或 locally symmetric spaces 的上同调，并带来 torsion、boundary cohomology 和 endoscopy 等问题。
 

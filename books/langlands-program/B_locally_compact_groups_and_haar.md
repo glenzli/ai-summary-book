@@ -1,5 +1,7 @@
 # 附录 B：局部紧群与 Haar 测度
 
+收口归一化回指：本附录固定 Haar 测度、商测度、restricted product 测度、卷积和开紧子群体积 convention；与 Hecke 代数、Satake、Tate thesis 和 trace formula 比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、8 节。
+
 ## B.1 局部紧群
 
 **定义 B.1.** 拓扑群 $G$ 称为局部紧群，若其拓扑空间局部紧且 Hausdorff。若单位元有开紧子群基，则称 $G$ 为 locally profinite group。

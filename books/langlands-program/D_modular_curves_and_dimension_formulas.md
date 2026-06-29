@@ -1,5 +1,7 @@
 # 附录 D：模曲线和维数公式
 
+收口归一化回指：本附录支撑 classical modular form normalization、权二微分、Hecke 算子和级 `2` 矛盾；与 adelic 表示、Galois 表示和费马应用比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 5、6、8 节。
+
 ## D.1 模曲线
 
 **定义 D.1.** 对同余子群 $\Gamma\subset\operatorname{SL}_2(\mathbb Z)$，模曲线的复点为紧化商
@@ -34,7 +36,7 @@ $$
 
 ## D.3 级 2 的计算
 
-**命题 D.6.** 
+**命题 D.6.**
 $$
 S_2(\Gamma_0(2))=0.
 $$

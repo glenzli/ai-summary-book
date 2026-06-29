@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第十二章的 L-packet，第十三章的自守谱，第十五章的函子性，第十六章的 stable trace formula 和 endoscopy。需要知道 tempered representation、discrete automorphic spectrum、isobaric sum、component group 和 stable character。Arthur 对 classical groups 的分类、Mok 对 unitary groups 的分类、局部 Arthur packets 和 multiplicity formula 均作为外部输入。
+需要第十二章的 L-packet，第十三章的自守谱，第十五章的函子性，第十六章的 stable trace formula 和 endoscopy。需要知道 tempered representation、discrete automorphic spectrum、isobaric sum、component group 和 stable character。Arthur 对 classical groups 的分类、Mok 对 unitary groups 的分类、局部 Arthur packets 和 multiplicity formula 均作为外部输入。附录 X 给出 classical groups、unitary groups、multiplicity formula、standard transfer 和 inner form refinements 的逐群接口。
+
+收口归一化回指：本章 Arthur 参数、standard transfer、局部 packet 和 multiplicity formula 的符号均依赖第十二、十六章 convention；Satake、tempered normalization 和 transfer convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
 
 ## 17.1 离散谱与残余谱
 
@@ -87,6 +89,8 @@ $$
 
 **注 17.11.** 这是 Arthur 对 classical groups 的全局参数接口形式。完整定义需要区分 symplectic、special orthogonal、orthogonal、unitary groups，以及中心、outer automorphisms 和 pure inner forms。
 
+**注 17.11.1.** 附录 X 把这些差异展开为 self-duality sign、component group、standard transfer、Mok unitary version 和 inner form refinements。第十七章只保留统一形式符号。
+
 **定义 17.12.** 若所有 $b_i=1$，则称 $\psi$ 为 tempered Arthur 参数。若存在 $b_i>1$，则 $\psi$ 对应非 tempered 贡献。
 
 ## 17.5 Component Group 与 Multiplicity Formula
@@ -134,6 +138,10 @@ $$
 其中 $\psi=\boxplus_i(\pi_i,b_i)$，而 $[b_i]$ 表示 $\operatorname{SL}_2(\mathbb C)$ 的 $b_i$ 维不可约表示在 `GL` 侧产生的 Speh 型或相应 isobaric 数据。
 
 **注 17.18.** 该转移通常不是 cuspidal。Arthur $\operatorname{SL}_2$ 非平凡时，目标 `GL(N)` 表示反映 residual 或非 tempered 行为。
+
+**注 17.18.1.** 附录 L 从 Eisenstein series 的常数项和 residues 角度解释 residual spectrum 的来源，并说明为何 Arthur 参数需要额外的 $\operatorname{SL}_2(\mathbb C)$ 因子记录非 tempered 贡献。
+
+**注 17.18.2.** 附录 N 从局部 packet 和内形式角度补充另一侧：Arthur multiplicity formula 中出现的 component group character 不是形式符号，而是局部 enhanced packet 与稳定字符恒等式的全局汇总。
 
 ## 17.7 局部-全局相容性
 

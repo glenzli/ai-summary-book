@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要基本代数几何、有限域上曲线、局部域、Galois 表示和第六章的 Hecke eigenform L 函数。本章把 Neron 模型、Tate 算法、Neron-Ogg-Shafarevich 判别准则和导子公式作为外部输入。
+需要基本代数几何、有限域上曲线、局部域、Galois 表示和第六章的 Hecke eigenform L 函数。本章把 Neron 模型、Tate 算法、Neron-Ogg-Shafarevich 判别准则和导子公式作为外部输入。附录 AD 集中给出 Neron 模型、Kodaira 符号、Ogg conductor formula、Tate algorithm 和 Frey 曲线局部导子的技术接口。
+
+收口归一化回指：本章点计数 Frobenius、Tate module、Hasse-Weil Euler factor、导子和模形式比较均需使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 6、7、8 节。
 
 ## 8.1 椭圆曲线和 Weierstrass 方程
 
@@ -164,6 +166,8 @@ $$
 2. 若 $E$ 在 $p$ 处有乘法约化，则 $f_p(E)=1$。
 3. 若 $E$ 在 $p$ 处有加法约化，则 $f_p(E)\ge2$。
 4. $f_p(E)$ 可由 Tate 算法从局部最小 Weierstrass 方程计算。
+
+**注 8.17.1.** 附录 AD.3--AD.6 把本定理拆成 Kodaira-Neron 分类、Tate curve 乘法约化、Ogg conductor formula 和 Tate algorithm 输出。对 residue characteristic 不为 $2,3$ 的局部域，附录 AD.10 的表可直接读出 $v(\Delta_E)$、components 数和 conductor exponent。
 
 **定义 8.18.** 椭圆曲线 $E/\mathbb Q$ 称为半稳定的（semistable），若它在每个素数处只有好约化或乘法约化。等价地，它没有加法约化。
 

@@ -6,6 +6,8 @@
 2. Fourier 展开上的系数公式。
 3. 有限 adelic Hecke algebra 对 $K$-不变量的作用。
 
+收口归一化回指：本附录比较经典 Hecke 算子和 adelic 球 Hecke 作用时，采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、5 节的 Haar、Satake 和 classical normalization convention。
+
 ## H.1 双陪集算子
 
 设 $\Gamma\subset\operatorname{SL}_2(\mathbb Z)$ 为同余子群，$\alpha\in\operatorname{GL}_2^+(\mathbb Q)$，并假设

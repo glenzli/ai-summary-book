@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要基本域论、Dedekind 整环、有限扩张、完备赋值域和局部紧拓扑群的初步知识。Haar 测度只在本章末尾作准备性陈述。
+需要基本域论、Dedekind 整环、有限扩张、完备赋值域和局部紧拓扑群的初步知识。Haar 测度只在本章末尾作准备性陈述。附录 F 给出本章所用 Pontryagin 对偶、adeles 自对偶性、$\mathbb A_\mathbb Q/\mathbb Q$ 基本域和 Poisson 求和的分析接口。
+
+收口归一化回指：本章使用的绝对值、乘积公式、adeles、ideles、Haar 测度和 Fourier 测度 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 的第 1、3 节。
 
 ## 1.1 整体域和局部域
 
@@ -154,6 +156,8 @@ $$
 
 该定理是 adelic Fourier analysis 的基础。对 $K=\mathbb Q$ 可用 $\mathbb R\times\prod_p\mathbb Z_p$ 的基本域直接证明；一般情形需要 Minkowski 理论或函数域上的 Riemann-Roch。
 
+**注 1.15.1.** 附录 F 的命题 F.18.1 给出 $K=\mathbb Q$ 时的完整证明：$\mathbb Q$ 在 $\mathbb A_\mathbb Q$ 中离散，且 $[0,1]\times\prod_p\mathbb Z_p$ 映到 $\mathbb A_\mathbb Q/\mathbb Q$ 为满。一般整体域情形仍按本定理作为外部输入使用。
+
 ## 1.5 Idele 群
 
 **定义 1.16.** 整体域 $K$ 的 idele 群是 restricted product
@@ -219,6 +223,8 @@ $$
 是拓扑群同构。在适当自对偶 Haar 测度下，Fourier 反演和 Poisson summation 对 $\mathcal S(\mathbb A_K)$ 成立。
 
 本定理是第二章 Tate thesis 的分析基础。
+
+**注 1.21.1.** 附录 F.4--F.5 把本定理拆成 annihilator、$\widehat{\mathbb A_K/K}\simeq K$、adele Poisson summation 和 idele 缩放公式。第二章的 theta 恒等式具体使用命题 F.21.1。
 
 ## 1.7 本章小结
 

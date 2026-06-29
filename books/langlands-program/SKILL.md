@@ -23,6 +23,19 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 - 范畴语言用于表达表示范畴、层范畴、函子性、Hecke 作用和几何 Langlands 的谱-自守对应；不得把普通 Langlands 纲领强行改写成空泛的“范畴哲学”。
 - 费马大定理作为单独应用章处理：只证明“由半稳定椭圆曲线模性定理、Ribet 降层定理和 Frey 曲线性质推出费马大定理”的严格逻辑链；Wiles-Taylor-Wiles 机器本身必须标注为外部输入，除非另写完整专题卷。
 
+## 外部输入分级和防发散规则
+
+- 外部理论不得自动展开。每次引入外部定理前，先判定它在 Langlands 主线中的角色：核心结构、支撑接口、还是卫星理论。
+- 核心结构可以在本书内展开到可计算层：直接定义 Langlands 对象、参数、L 因子、Hecke 作用、Satake 参数、局部-整体相容、函子性或几何 Langlands 基本范畴的材料。
+- 支撑接口只给精确定理陈述、假设、归一化、使用位置和资料源：例如完整类域论证明、Tate thesis 完整解析证明、Neron 模型存在性、Tate algorithm 全流程、Taylor-Wiles patching、Arthur trace formula 稳定化、完整 derived algebraic geometry。
+- 卫星理论不并入本书主体；只在 `MATH_REVIEW.md` 标成“另卷/专题理论”。例如一般代数几何基础、完整 p-adic Hodge theory、完整 Bruhat-Tits 理论、完整 D-module 六运算构造、完整 Fargues-Scholze 证明。
+- 是否展开的判定问题：
+  1. 不展开是否会导致某个 Langlands 对象无法定义？
+  2. 不展开是否会导致局部因子、参数、导子、Hecke 本征值或归一化无法计算？
+  3. 不展开是否会破坏某个应用章的逻辑链？
+  4. 展开后是否仍服务于本书主线，而不是转入另一门理论的完整课程？
+- 若答案只支持“背景理解”，则保留为外部输入或另卷；若答案支持“定义、计算或逻辑闭环必需”，才写入正文或附录。
+
 ## 资料源规则
 
 - 优先使用正式教材、专著、作者讲义和原始论文：Tate, Weil, Langlands, Gelbart, Bump, Goldfeld-Hundley, Jacquet-Langlands, Godement-Jacquet, Arthur, Clozel, Milne, Neukirch, Serre, Silverman, Diamond-Shurman, Cornell-Silverman-Stevens, Harris-Taylor, Bushnell-Henniart, Frenkel, Gaitsgory 等。

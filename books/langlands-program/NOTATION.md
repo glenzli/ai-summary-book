@@ -2,6 +2,8 @@
 
 本文档记录《Langlands 纲领》的固定符号。后续章节不得随意更改。
 
+归一化 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)；本文只固定记号。
+
 ## 集合论与范畴
 
 - 固定 Grothendieck universes

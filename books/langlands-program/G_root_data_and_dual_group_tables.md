@@ -2,6 +2,8 @@
 
 本附录补充第十一章的计算层。目标是让读者能从矩阵群直接算出 root datum、dual group 和若干基本 L 群，而不是只引用分类定理。
 
+收口归一化回指：本附录涉及 dual group、L group、L homomorphism、Satake 参数和 L 群表示给出的局部因子；与第十一至十五章比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、8 节。
+
 ## G.1 Split Torus
 
 **定义 G.1.** 设 $T=\mathbb G_m^r$。其 character lattice 和 cocharacter lattice 为

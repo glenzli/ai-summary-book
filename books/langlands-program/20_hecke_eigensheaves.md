@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第十八章的 $\operatorname{Bun}_G$ 和 Hecke correspondence，第十九章的几何 Satake。需要 local systems、D-modules 或 $\ell$-adic sheaves、张量函子和 derived categories。完整几何 Langlands 需要 derived stacks、renormalized sheaf categories 和 spectral side；本章只陈述基础接口。
+需要第十八章的 $\operatorname{Bun}_G$ 和 Hecke correspondence，第十九章的几何 Satake。需要 local systems、D-modules 或 $\ell$-adic sheaves、张量函子和 derived categories。完整几何 Langlands 需要 derived stacks、renormalized sheaf categories 和 spectral side；本章只陈述基础接口。附录 O 固定 D-modules、kernel formalism 和 IndCoh 口径，附录 AB 给出 derived stacks、six functors、kernel functor 和 renormalization 的技术层，供本章和第二十一章引用。
+
+收口归一化回指：本章 Hecke eigensheaf 到 Hecke eigenfunction 的比较必须声明 Frobenius trace、Tate twist 和几何 Satake normalization；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
 
 ## 20.1 对偶群局部系统
 
@@ -95,6 +97,12 @@ $$
 $$
 
 **注 20.8.** 猜想 20.7 是朴素形式。完整几何 Langlands 不是简单地给每个 local system 一个 sheaf；它应是 spectral side 上 quasi-coherent 或 ind-coherent sheaves 与 automorphic side 上 D-modules 的范畴等价。Hecke eigensheaf 是该范畴等价在 skyscraper sheaf 或点对象上的影子。
+
+**注 20.8.1.** 本章的 Hecke functor 应理解为 correspondence kernel functor。若
+$$
+\operatorname{Bun}_G\xleftarrow{h_1}\operatorname{Hecke}_G\xrightarrow{h_2}\operatorname{Bun}_G\times X
+$$
+为 Hecke correspondence，几何 Satake 对象给出 kernel，随后由 six functor formalism 定义 $\mathsf H_V$。附录 AB.4 把这个构造作为一般 kernel formalism 的特例写出。
 
 ## 20.4 `GL(1)` 的几何 Langlands
 

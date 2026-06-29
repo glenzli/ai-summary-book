@@ -10,7 +10,9 @@ $$
 
 ## 依赖前置知识
 
-需要第十一章的对偶群和根资料，第十八章的 affine Grassmannian 与 Schubert varieties。需要 perverse sheaves、intersection cohomology、卷积、Tannakian category 和 equivariant derived category 的基础。本章把几何 Satake 等价作为外部输入定理，只证明若干形式后果。
+需要第十一章的对偶群和根资料，第十八章的 affine Grassmannian 与 Schubert varieties。需要 perverse sheaves、intersection cohomology、卷积、Tannakian category 和 equivariant derived category 的基础。本章把几何 Satake 等价作为外部输入定理，只证明若干形式后果。附录 Y 给出 Ran space、Beilinson-Drinfeld Grassmannian、factorization 和 fusion 对本章张量结构的技术支撑。
+
+收口归一化回指：本章比较几何 Satake 与经典 Satake 时必须追踪 $q^{\langle\rho,\lambda\rangle}$、Tate twist 和 sheaf-function convention；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、9 节。
 
 ## 19.1 Affine Grassmannian 的 Schubert 分层
 

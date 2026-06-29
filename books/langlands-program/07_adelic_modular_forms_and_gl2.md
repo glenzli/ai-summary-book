@@ -8,6 +8,8 @@
 
 需要第一章的 adeles、第四章的光滑表示、第六章的经典模形式和 Hecke 算子。Strong approximation、经典-adelic 对应和 newform theory 在本章作为外部输入使用。
 
+收口归一化回指：本章是 classical normalization 与 automorphic normalization 的主要转换点；Satake roots、unitary normalization、标准 L 函数和平移公式见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、5、8 节。
+
 ## 7.1 `GL(2)` 的 adelic 商
 
 本章固定
@@ -185,6 +187,8 @@ $$
 
 **注 7.17.1.** 附录 H 证明经典 Hecke 双陪集代表如何嵌入有限 adelic Hecke algebra，并说明好素数处 $\mathbf 1_{K_p\operatorname{diag}(1,p)K_p}$ 的作用如何给出经典 $T_p$ 本征值。
 
+**注 7.17.2.** 附录 J 进一步解释 oldforms、newforms、Atkin-Lehner operators 和 local newvectors 的关系；特别地，classical newform 的级对应 $\pi_f$ 的 adelic conductor。
+
 ## 7.8 好素数处的 Satake 参数
 
 设 $f(q)=\sum_{n\ge1}a_nq^n$ 是归一化 Hecke eigenform，权 $k$、nebentypus $\varepsilon$、级 $N$。设 $p\nmid N$。
@@ -259,3 +263,9 @@ $$
 **练习 7.4.** 证明定义 7.18 和命题 7.19 的等价性。
 
 **练习 7.5.** 解释为什么 oldform 可能对应同一个自守表示中的不同 level vectors，而不是不同的全局表示。
+
+**练习 7.6.** 设 $f$ 为权 $k$ 的归一化 Hecke eigenform，好素数 $p$ 处 classical Satake roots 为 $\alpha_p,\beta_p$。证明 unitary automorphic normalization 下
+$$
+L(s,\pi_f,\operatorname{Std})=L(f,s+(k-1)/2)
+$$
+在所有好素数 Euler factors 上相容。

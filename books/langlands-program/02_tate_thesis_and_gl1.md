@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第一章的 adeles、ideles、idele class group、Haar 测度和 Fourier 变换约定。局部函数方程和 Poisson summation 在本章作为外部输入。
+需要第一章的 adeles、ideles、idele class group、Haar 测度和 Fourier 变换约定。附录 F 给出 Schwartz-Bruhat 空间、紧开陪集 Fourier 变换、adele Poisson summation、idele 缩放公式和 Tate theta 恒等式。局部函数方程、Archimedean gamma 因子和整体 zeta 积分的完整解析延拓仍作为 Tate thesis 的外部输入。
+
+收口归一化回指：本章所有 zeta integral、乘法测度、Fourier 变换、Tate thesis 函数方程和 `GL(1)` L 函数变量均按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、8 节处理。
 
 ## 2.1 Schwartz-Bruhat 函数
 
@@ -149,7 +151,11 @@ $$
 $$
 其中 $\varepsilon(s,\chi)$ 是由局部 epsilon 因子乘积给出的显式函数。若 $\chi$ 非平凡，则 $\Lambda(s,\chi)$ 整；若 $\chi$ 平凡，则只可能在 $s=0,1$ 有单极点。非酉 quasi-character 的情形可化为酉特征乘以 idele norm 的复幂，因此相当于把变量 $s$ 平移。
 
-**证明草图.** 取 $\Phi\in\mathcal S(\mathbb A_K)$，把整体 zeta 积分改写为 $C_K$ 上的积分。使用 $\mathbb A_K/K$ 上的 Poisson summation 比较 $\Phi$ 与 $\widehat\Phi$ 的 theta series。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明依赖 Poisson summation、Haar 测度归一化和局部 Tate 理论。$\square$
+**证明草图.** 取 $\Phi\in\mathcal S(\mathbb A_K)$，把整体 zeta 积分改写为 $C_K$ 上的积分。附录 F 的命题 F.21.1 给出 theta 恒等式
+$$
+\Theta_\Phi(t)=|t|_{\mathbb A}^{-1}\Theta_{\widehat\Phi}(t^{-1}),
+$$
+它来自 $\mathbb A_K/K$ 上的 Poisson summation 和 idele 缩放公式。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系；平凡特征的可能极点来自 $\Phi(0)$ 与 $\widehat\Phi(0)$ 的常数项。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明还依赖局部 Tate 理论、Archimedean gamma 因子估计和整体积分截断。$\square$
 
 ## 2.6 `GL(1)` Langlands
 

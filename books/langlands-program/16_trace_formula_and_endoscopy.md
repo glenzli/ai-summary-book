@@ -8,6 +8,8 @@
 
 需要第四章的 Hecke 代数，第十三章的自守表示和自守谱，第十五章的函子性。需要知道局部紧群上的测试函数、orbital integral、parabolic subgroup、Levi subgroup 和稳定共轭的基本概念。本章把 Arthur-Selberg trace formula、稳定 trace formula、transfer factors、fundamental lemma 和端oscopic classification 作为外部输入。
 
+收口归一化回指：本章的测试函数、Haar 测度、transfer factor、匹配 orbital integral 和谱侧 trace 对 convention 极敏感；本书只固定接口，测度与 Satake convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节。
+
 ## 16.1 测试函数与卷积算子
 
 设 $K$ 为整体域，$G/K$ 为 connected reductive group。令
@@ -72,6 +74,10 @@ $$
 
 **注 16.8.** 定理 16.7 是接口陈述。完整 Arthur trace formula 的陈述需要大量关于截断、加权 characters、加权 orbital integrals 和 $(G,M)$-families 的技术。本书只使用它作为比较不同群自守谱的工具。
 
+**注 16.8.1.** 附录 R 把这个接口进一步拆成紧商核公式、Arthur truncation、weighted orbital integrals、谱展开、invariant trace formula 和稳定化公式。阅读本章 endoscopy 比较时，应把附录 R 作为项级索引使用。
+
+**注 16.8.2.** 谱侧的 $\operatorname{tr}\pi(f)$ 和几何侧的 orbital integrals 都依赖局部调和分析。附录 Z 记录 Harish-Chandra character theorem、Plancherel 和 local Paley-Wiener 如何支撑这些分布项。
+
 **定义 16.9.** Trace formula 的稳定化是把
 $$
 J_{\operatorname{geom}}^G(f)
@@ -135,6 +141,8 @@ $$
 
 **注 16.19.** Transfer factor 的归一化是 endoscopy 中最精细的部分之一。不同归一化会改变局部字符恒等式中的符号和 packet 参数化。
 
+**注 16.19.1.** 附录 N 给出 endoscopic datum、matching orbital integral、stable character 和局部 packet 的模型接口。本章只说明 trace formula 比较的全局作用；附录 N 负责展示这些局部符号为何不是装饰性数据。
+
 ## 16.7 Fundamental Lemma
 
 **外部输入定理 16.20（Fundamental lemma，Ngô）.** 对非 Archimedean 局部域上的非分歧 endoscopic datum，单位元测试函数
@@ -149,14 +157,15 @@ $$
 
 **注 16.21.** Fundamental lemma 是稳定 trace formula 可用的关键局部输入。没有它，无法在几乎所有非分歧位置把几何侧的 Euler product 型比较拼接成全局恒等式。
 
+**注 16.21.1.** 在非分歧基本情形，附录 N 把 fundamental lemma 写成单位球 Hecke 函数的匹配陈述，并解释它如何进入稳定化公式。
+
 ## 16.8 稳定 Trace Formula 与谱转移
 
 **外部输入定理 16.22（稳定 trace formula，接口形式）.** 对适当测试函数，Arthur trace formula 可稳定化为
 $$
 I^G(f)
 =
-S^G(f)
-+
+S^G(f)\;+
 \sum_{H} \iota(G,H)S^H(f^H),
 $$
 其中：

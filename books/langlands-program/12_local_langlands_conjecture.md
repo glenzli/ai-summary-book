@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第四章的光滑表示和 Hecke 代数，第五章的 Weil-Deligne 参数，第十一章的 L 群、L 同态和 Satake 参数。需要知道局部域上的不可约可容许表示、抛物诱导、tempered representation 和 essentially square-integrable representation 的基本定义。本章把 `GL(n)` 局部 Langlands、Archimedean 局部 Langlands、一般还原群的 enhanced LLC 和 endoscopic character identities 作为外部输入或猜想。
+需要第四章的光滑表示和 Hecke 代数，第五章的 Weil-Deligne 参数，第十一章的 L 群、L 同态和 Satake 参数。需要知道局部域上的不可约可容许表示、抛物诱导、tempered representation 和 essentially square-integrable representation 的基本定义。附录 Z 给出 temperedness、characters 和 Plancherel 的局部调和分析口径，附录 AA 给出 depth、parahoric 和 hyperspecial 的结构口径，附录 AC 给出 Fargues-Fontaine 曲线、local Shimura varieties 和 Fargues-Scholze semisimple LLC 的几何接口，附录 AE 给出 `GL(2)` 局部 LLC 的 principal series、Steinberg 和 supercuspidal 例子。本章把 `GL(n)` 局部 Langlands、Archimedean 局部 Langlands、一般还原群的 enhanced LLC 和 endoscopic character identities 作为外部输入或猜想。
+
+收口归一化回指：本章所有 LLC 陈述均默认几何 Frobenius、归一化抛物诱导和归一化 Satake 参数；具体 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节。
 
 ## 12.1 表示侧：不可约可容许表示
 
@@ -129,6 +131,8 @@ $$
 
 **注 12.16.** 对 $\operatorname{SL}_n$、orthogonal groups 和 symplectic groups，centralizer 可以非连通；这正是 L-packet 含多个表示的来源之一。
 
+**注 12.16.1.** 附录 N 以 tori、$\operatorname{SL}_2$ 和 quaternion algebra 内形式为模型例子，说明 component group、内形式和 stable character identity 如何改变 packet 的形状。本章的猜想陈述只给出一般口径，具体例子应与该附录合读。
+
 ## 12.4 局部 Langlands 猜想：packet 形式
 
 **猜想 12.17（局部 Langlands，packet 形式）.** 设 $G/F$ 为 connected reductive group。存在一个映射
@@ -160,6 +164,8 @@ $$
 其中 $G'$ 遍历与 $G$ 相关的内形式或纯内形式。对固定的 $G'$，右侧由内形式对应的 character 条件切出。
 
 **注 12.20.** 猜想 12.19 的完整陈述需要 Kottwitz 符号、Galois cohomology、rigid inner forms 和 transfer factor normalization。本书在本章只固定接口：packet 内部由 component group 的表示控制。
+
+**注 12.20.1.** 若只研究 quasi-split group 的 coarse packet，容易误以为 LLC 是单群上的集合分解。附录 N 的 Jacquet-Langlands 和 endoscopy 例子说明：内形式与 packet 内部参数必须同时出现，稳定 trace formula 才能看到正确的谱侧分布。
 
 ## 12.5 LLC 应满足的相容性
 
@@ -252,6 +258,8 @@ $$
 
 **注 12.33.** 该定理由 Harris-Taylor、Henniart 及相关工作建立；Scholze 给出了另一种几何证明路线。本书后续在 `GL(n)` 章节把定理 12.32 作为外部输入，而不重建其证明。
 
+**注 12.33.1.** 对 `GL(2)`，附录 AE 给出定理 12.32 的可计算影子：principal series、Steinberg twists 和 supercuspidals 分别对应可约半单参数、带 monodromy 的 special parameters 和不可约二维 Weil 参数。
+
 **命题 12.34.** 对 `GL(n)`，packet 形式 LLC 与定理 12.32 的双射形式等价。
 
 **证明.** 命题 12.15 给出 `GL(n)` 的 component group 平凡，因此 packet 内没有额外有限群表示参数。猜想 12.17 的每个非空 packet 至多一个元素。定理 12.32 说明每个 $n$ 维 Frobenius-semisimple Weil-Deligne 参数都来自唯一不可约可容许表示。因此 packet 形式退化为双射形式。$\square$
@@ -320,6 +328,8 @@ $$
 4. 许多 quasi-split classical groups，通过 Arthur、Mok 及相关 endoscopic classification 给出。
 
 **注 12.43.** 定理 12.42 不是“所有 reductive groups 的 LLC 已完全定理化”的声明。一般 reductive 群的最精确版本涉及 enhanced parameters、rigid inner forms、wild ramification 和稳定 character identities；本书在需要使用具体群时会单独声明所需外部输入。
+
+**注 12.43.1.** Fargues-Scholze 的几何化给出 $p$-adic reductive groups 的 semisimple 参数化和谱作用框架，见附录 AC.6。它解释了为什么局部 LLC 可以被看作 Fargues-Fontaine 曲线上 sheaves on $\operatorname{Bun}_G$ 的谱分解；但它不替代本章猜想 12.19 中所有 enhanced packet、内形式标号和 endoscopic character identities。
 
 ## 12.9 与全局 Langlands 的接口
 

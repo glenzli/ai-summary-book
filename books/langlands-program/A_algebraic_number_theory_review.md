@@ -1,5 +1,7 @@
 # 附录 A：代数数论复习
 
+收口归一化回指：本附录固定赋值、剩余域大小、Frobenius、分歧、Artin 导子和类域论前置语言；与 adeles、reciprocity、Galois 表示和 L 因子比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 1、2、3、6、8 节。
+
 ## A.1 整体域与位置
 
 **定义 A.1.** 整体域是数域或有限域上的一变量函数域。其位置集合记为 $V_K$。对 $v\in V_K$，完备化为 $K_v$。
@@ -21,7 +23,28 @@ $$
 
 设 $L/K$ 为 Galois 扩张，$w\mid v$。
 
-**定义 A.4.** 分解群和惯性群分别为
+**定义 A.4.** 设 $L/K$ 为有限扩张，$v$ 为 $K$ 的非 Archimedean 位置。若
+$$
+\mathfrak p_v\mathcal O_L=\prod_{w\mid v}\mathfrak p_w^{e(w/v)},
+$$
+则 $e(w/v)$ 称为 ramification index。剩余域扩张次数
+$$
+f(w/v)=[k_w:k_v]
+$$
+称为 residue degree。若 $L/K$ 为 Galois，则所有 $w\mid v$ 的 $e(w/v)$ 相同，所有 $f(w/v)$ 相同，并记为 $e_v$、$f_v$；$w\mid v$ 的个数记为 $g_v$。
+
+**外部输入 A.4.1（素理想分解公式）.** 对有限可分扩张 $L/K$ 和非 Archimedean 位置 $v$，有
+$$
+\sum_{w\mid v}e(w/v)f(w/v)=[L:K].
+$$
+若 $L/K$ 为 Galois，则
+$$
+e_vf_vg_v=[L:K].
+$$
+
+该定理是 Dedekind 域整数闭包和局部化理论的标准结果。
+
+**定义 A.4.2.** 若 $L/K$ 为 Galois，分解群和惯性群分别为
 $$
 D_w=\{\sigma\in\operatorname{Gal}(L/K):\sigma w=w\},
 $$
@@ -29,13 +52,69 @@ $$
 I_w=\ker(D_w\to\operatorname{Gal}(k_w/k_v)).
 $$
 
+**命题 A.4.3.** 设 $L/K$ 为有限 Galois 扩张。则 $D_w$ 自然同构于局部扩张 $L_w/K_v$ 的 Galois 群：
+$$
+D_w\simeq\operatorname{Gal}(L_w/K_v).
+$$
+并且有精确列
+$$
+1\to I_w\to D_w\to\operatorname{Gal}(k_w/k_v)\to1.
+$$
+
+**证明草图.** 元素 $\sigma\in D_w$ 保持 $w$，故连续作用于 $L$ 在 $w$ 处的完备化 $L_w$，并固定 $K_v$，得到 $D_w\to\operatorname{Gal}(L_w/K_v)$。反向由 $L$ 在 $L_w$ 中稠密和 $K$-嵌入延拓唯一性给出。对整数环取作用，$D_w$ 保持 $\mathcal O_w$ 和 $\mathfrak p_w$，因此作用在 $k_w$ 上；核正是按定义在剩余域上平凡的元素。剩余域有限域扩张为 Galois，且局部 Galois 理论给出满射。$\square$
+
+**推论 A.4.4.** 在有限 Galois 情形，
+$$
+|D_w|=e_vf_v,\qquad |I_w|=e_v.
+$$
+
+**证明.** Galois 群 $\operatorname{Gal}(L/K)$ 传递作用在 $w\mid v$ 的集合上，稳定子为 $D_w$。由 orbit-stabilizer，
+$$
+|\operatorname{Gal}(L/K)|=g_v|D_w|.
+$$
+结合 A.4.1 的 $e_vf_vg_v=[L:K]$ 得 $|D_w|=e_vf_v$。精确列 A.4.3 的商为 $\operatorname{Gal}(k_w/k_v)$，其阶为 $f_v$，故 $|I_w|=e_v$。$\square$
+
 **定义 A.5.** 若 $w/v$ 非分歧，算术 Frobenius 为
 $$
 \operatorname{Frob}_w^{\operatorname{arith}}(x)=x^{q_v}
 $$
 在剩余域上的作用。几何 Frobenius 是其逆。
 
+**命题 A.5.1.** $w/v$ 非分歧当且仅当 $I_w=1$。此时 $D_w$ 由 Frobenius 元生成，并有
+$$
+D_w\simeq\operatorname{Gal}(k_w/k_v).
+$$
+
+**证明.** 非分歧按定义等价于 $e_v=1$ 且剩余域扩张可分；有限域扩张自动可分。由推论 A.4.4，$|I_w|=e_v$，故非分歧等价于 $I_w=1$。此时 A.4.3 给出 $D_w\simeq\operatorname{Gal}(k_w/k_v)$，后者由算术 Frobenius 生成；采用几何 Frobenius convention 时生成元取其逆。$\square$
+
 **注 A.6.** 本书局部类域论和局部 L 因子默认几何 Frobenius；模形式和 $\ell$-adic Galois 表示章节常用算术 Frobenius。比较时必须取逆或调整 Tate twist。
+
+**定义 A.6.1（lower ramification groups）.** 对有限 Galois 局部扩张 $E/F$，令 $G=\operatorname{Gal}(E/F)$，整数环为 $\mathcal O_E$，极大理想为 $\mathfrak p_E$。对 $i\ge -1$ 定义
+$$
+G_i=\{\sigma\in G:\sigma(x)-x\in\mathfrak p_E^{i+1}\text{ for all }x\in\mathcal O_E\}.
+$$
+于是
+$$
+G_{-1}=G,\qquad G_0=I_{E/F}.
+$$
+$G_1$ 称为 wild inertia subgroup。
+
+**命题 A.6.2.** $G_i$ 构成递降正规子群列
+$$
+G=G_{-1}\supset G_0\supset G_1\supset\cdots
+$$
+且当 $i$ 足够大时 $G_i=1$。
+
+**证明草图.** 若 $\sigma(x)-x\in\mathfrak p_E^{i+2}$，则也在 $\mathfrak p_E^{i+1}$ 中，故递降。正规性来自 valuation 被 Galois 作用保持：
+$$
+\tau\sigma\tau^{-1}(x)-x
+=\tau\left(\sigma(\tau^{-1}x)-\tau^{-1}x\right),
+$$
+右侧的 valuation 条件与 $\sigma$ 的条件相同。有限扩张中非平凡 automorphism 在某个有限 jet 上可被检测，因此高阶同余最终只剩恒等元。$\square$
+
+**外部输入 A.6.3（ramification quotient structure）.** 对有限 Galois 局部扩张，$G_0/G_1$ 是阶与 residue characteristic 互素的 cyclic group；对 $i\ge1$，$G_i/G_{i+1}$ 是 elementary Abelian $p$-group，其中 $p=\operatorname{char}k_F$。Upper numbering filtration 由 Herbrand 函数从 lower numbering 得到，并与取商相容。
+
+本书在 Artin conductor、Swan conductor、Ribet 降层和局部 Langlands 分歧条件中使用该结构，但不重证 Herbrand 理论。
 
 ## A.3 Artin 导子
 

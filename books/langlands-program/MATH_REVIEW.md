@@ -1,6 +1,6 @@
 # 数学审查记录
 
-本文档记录《Langlands 纲领》草稿的审查清单、当前风险和后续补证任务。
+本文档记录《Langlands 纲领》草稿的审查清单、逐章收口状态和后续补证任务。
 
 ## 全书审查清单
 
@@ -14,30 +14,65 @@
 - [ ] 是否区分 complex representations、l-adic representations、mod p representations。
 - [ ] 是否说明 Frobenius 归一化。
 - [ ] 是否说明 Haar 测度和 Fourier 变换归一化。
+- [ ] 跨章节比较参数、L 因子、Hecke 本征值或 Galois 表示时，是否回指 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
+- [ ] 每个外部输入是否已按“核心结构、支撑接口、卫星理论”分级；是否避免把非主线外部理论无节制并入本书。
 
-## 当前风险
+## 外部输入分级审查规则
 
-- 第一章中 `\mathbb A_K/K` 紧性、Poisson summation 和 self-duality 暂作为外部输入；附录 B 已补 Haar 测度、商测度、restricted product 积分和卷积基础，附录 F 已补 Fourier/Pontryagin/Poisson 的接口与若干基本计算。完整 Fourier inversion、Plancherel 和 Poisson summation 仍作为外部输入。
-- 第二章中 Tate thesis 的局部函数方程和整体函数方程暂作为外部输入；后续应拆成若干引理证明。
-- 第三章中局部和全局类域论作为外部输入；后续需要在代数数论附录中补 Artin 映射的存在、唯一性、norm subgroup 定理和局部-整体相容性。
-- 第四章中 Haar 测度存在唯一性、Satake 同构和 Harish-Chandra 理论作为外部输入；后续应补紧群平均、Iwasawa 分解和球 Hecke 代数计算。
-- 第五章中 `GL(n)` 局部 Langlands 和一般 reductive 群的 L-packet 陈述作为外部输入或猜想；后续应补 `GL(1)` 完整证明、`GL(2)` 例子和非分歧 Satake 参数计算。
-- 第六章中模形式空间有限维性、Hecke 算子良定义性、Euler 乘积、newform 函数方程和 Deligne Galois 表示作为外部输入；附录 H 已补 Hecke 双陪集代表、Fourier 系数计算、Petersson 内积和 adelic Hecke 比较。模曲线线丛和 Atkin-Lehner-Li 完整理论仍需扩写。
-- 第七章中 strong approximation、经典-adelic 对应、cuspidal spectrum 张量积分解、newform 生成自守表示和好素数局部 Langlands 相容作为外部输入；附录 H 已补好素数球 Hecke 代数与经典 $T_p$ 的比较，strong approximation 和 newform 生成定理仍作为外部输入。
-- 第八章中最小模型、Neron-Ogg-Shafarevich、Tate 算法、导子公式、Frobenius 多项式和模性定理作为外部输入；后续应补 Neron 模型、Kodaira 类型和坏约化局部因子计算。
-- 第九章中 Fontaine-Mazur 作为猜想背景；稳定格、Deligne 表示、椭圆曲线模性、模性提升和 `$R=T$` 原理作为外部输入；后续应补 Galois deformation theory、Selmer 群和 Taylor-Wiles patching 的精确定理版本。
-- 第十章中局部-整体相容性、Serre 模性定理、Ribet 降层和 Frey 曲线局部导子计算作为外部输入；后续应补精确定理陈述、局部类型分类和 conductor 计算。
-- 第十一章中 reductive group 结构定理、根资料分类、pinning 的 Galois 作用、unramified Satake parameter 作为外部输入；附录 G 已补 `GL(n)`、`SL(n)`、`PGL(n)`、restriction of scalars torus 和若干 L 同态计算。完整 algebraic groups 证明附录仍需扩写。
-- 第十二章中 `GL(n)` LLC、tori 的 LLC、Archimedean LLC、enhanced LLC、endoscopic character identities 和 classical groups 的已知情形作为外部输入或猜想；后续应补 component group、rigid inner forms、Kottwitz 符号和 tempered/discrete 参数的精确定义。
-- 第十三章中自守表示的 restricted tensor product 分解、离散谱理论、初始收敛估计、Godement-Jacquet、Rankin-Selberg、Langlands-Shahidi 和一般 L 函数解析性质作为外部输入或猜想；附录 I 已补 Godement-Jacquet、Rankin-Selberg、局部函数方程和 converse theorem 的积分接口。Spectral decomposition、Eisenstein series 常数项和 Langlands-Shahidi 局部系数仍需扩写。
-- 第十四章中 Bernstein-Zelevinsky 分类、`GL(n)` LLC、Rankin-Selberg 理论、强重数一、converse theorem、Lafforgue 函数域定理和数域 regular algebraic Galois 表示构造作为外部输入；附录 I 已补 `GL(n)` 标准 L 函数和 Rankin-Selberg L 函数的积分来源。精确归一化、局部因子 convention 和数域开放情形边界仍需扩写。
-- 第十五章中一般函子性、强转移、endoscopic transfer、任意 symmetric/exterior/tensor power lifts 仍属猜想或部分已知；solvable base change、automorphic induction、若干低阶 lifts、Arthur-Mok 型转移作为外部输入。
-- 第十六章中 Arthur trace formula、稳定 trace formula、transfer factor、fundamental lemma、twisted trace formula 作为外部输入；后续应补 invariant trace formula 的精确项和测度归一化。
-- 第十七章中 Arthur packets、multiplicity formula、classical groups 标准转移和 L 函数判别符号作为外部输入；后续应补局部 A-packet 和 global Arthur parameter 的精确定义。
-- 第十八至二十二章中代数栈、affine Grassmannian、几何 Satake、Hecke eigensheaves、categorical geometric Langlands、sheaf-function dictionary、shtukas 和 Ngô 支持定理作为外部输入；后续应补 derived stack 和 sheaf theory 口径。
-- 附录 A-D 和 F 已加入若干关键证明：数域乘积公式、ray class 的 idele 描述、Artin 导子基本性质、卷积结合律、商测度、smooth dual、中心特征、有限长度可容许性、$X_0(2)$ 的 genus 计算、非 Archimedean Fourier 基本计算和 adele Poisson summation 的推导。它们仍不是完整专著级证明替代；类域论、Haar 存在唯一性、Fourier inversion、模曲线代数化和 newform 理论仍作为外部输入。
-- 费马应用章当前证明的是“由模性定理、Ribet 降层和 Frey 曲线性质推出费马大定理”的严格逻辑链；不是 Wiles-Taylor-Wiles 证明本身。
-- `S_2(\Gamma_0(2))=0` 使用模曲线 genus 公式；附录 D 已补 $\mu=3$、$c=2$、$e_2=1$、$e_3=0$ 的计算和权 $2$ cusp forms 与微分形式的局部说明。一般 $X_0(N)$ 维数公式的完整 Riemann-Hurwitz 证明仍作为外部输入。
+本书不以重写所有相关数学理论为目标。外部输入按以下三类处理：
+
+1. 核心结构：直接定义或计算 Langlands 主线对象，例如 adeles、Weil-Deligne 参数、Satake 参数、Hecke 作用、L 群、局部 L 因子、导子、packet、几何 Satake。此类可以在本书内展开到可计算层。
+2. 支撑接口：证明很深但本书需要其结论，例如完整类域论、Tate thesis 解析延拓、Neron 模型存在性、Ribet 降层、模性提升、Arthur trace formula、Fargues-Scholze。此类写精确定理、假设、归一化、使用位置和来源，不追求全证明。
+3. 卫星理论：本身可构成独立课程或专著，例如完整代数几何、完整 p-adic Hodge theory、完整 Bruhat-Tits 理论、完整 D-module/derived stack 六运算构造。此类只给接口，并在后续计划中标为另卷。
+
+新增材料前必须回答：该材料是否定义 Langlands 对象，是否影响参数/L 因子/导子/Hecke 本征值计算，是否是应用章逻辑闭环必需。若不是，则不在本书主体展开。
+
+## 收口判定
+
+本次审查采用 [CLOSURE_STATUS.md](CLOSURE_STATUS.md) 的标准。
+
+- 当前结论：本书已经进入主线基本收口候选状态；尚未是最终审定版。
+- 后续原则：不再新增同级主线，不再把外部理论扩写成完整背景专著。
+- 必需方向：逐章收口台账维护、外部输入来源维护、阅读路径和习题回指维护。
+- 可后置方向：class formation 完整证明、Taylor-Wiles patching、Arthur trace formula 完整证明、D-module/derived stack 六运算、perfectoid/diamond/Fargues-Fontaine 完整技术层。
+
+## 第一轮收口记录
+
+- 已在第 1-22 章和第 90 章中对涉及 convention 的高风险章节加入 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 回指。
+- 已新增 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)，把 `GL(1)`、费马应用、一般算术 Langlands 和几何 Langlands 四条路径改写为最短证明链。
+- 已新增 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)，记录四条主线的已解习题覆盖和基本收口前最小新增题目。
+- 已补入 `3.5`、`7.6` 两道收口题，并补齐 `15.3`、`20.4` 的解答；习题层面的四条主线基本闭合。
+
+## 第二轮收口记录
+
+- 已完成 `THEOREM_INDEX.md`、`E_external_input_theorem_index.md` 和 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md) 的状态一致性审计；结果记录于 [INDEX_CONSISTENCY_AUDIT.md](INDEX_CONSISTENCY_AUDIT.md)。
+- 已把 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 回指补入高风险附录 A、B、C、D、F、G、H、I、J、K、L、M、N、O、P、Q、R、S、T、U、V、W、X、Y、Z、AA、AB、AC、AD、AE。
+- 当前达到主线基本收口候选状态；下一步应做交叉引用审稿和编号一致性检查。
+
+## 逐章收口缺口
+
+逐章风险已经改写为 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)。本轮判定如下。
+
+| 类型 | 状态 | 后续动作 |
+|---|---|---|
+| 新增同级主线 | 无需新增 | 继续禁止横向扩张为第五条主线 |
+| 应用链阻断项 | 未发现 | 费马应用继续只使用外部输入定理和本书已证引理 |
+| 猜想误用风险 | 未发现阻断项 | 维护 `P/S/E/C` 状态标记 |
+| 归一化缺口 | 高风险层已闭合 | 新增或改写段落必须回指 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) |
+| 外部输入来源 | 重点条目已拆细 | 后续维护 [E_external_input_theorem_index.md](E_external_input_theorem_index.md)，新增外部输入必须先登记 |
+| 编号和交叉引用 | 仍需审稿 | 下一轮检查正文、附录、定理索引和习题答案回指 |
+
+## 第三轮收口记录
+
+- 已新增 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，把原“当前风险”逐条改写为正文章节台账、附录层台账、非阻断后置项和下一轮优先级。
+- 已确认完整 Tate thesis、class formation、Taylor-Wiles、Arthur trace formula、D-module/IndCoh、perfectoid/diamond 等理论不再作为本书基本收口阻断项。
+- 第三轮后，收口任务从“风险补写”压缩为外部输入来源处理、交叉引用审稿和编号一致性检查。
+
+## 第四轮收口记录
+
+- 已精校 [E_external_input_theorem_index.md](E_external_input_theorem_index.md)，把 Frey 曲线局部性质、Satake、Arthur、几何 Satake 和 Fargues-Scholze 拆成更具体的外部输入条目。
+- 已在 [SOURCES.md](SOURCES.md) 中补入 Frey-Hellegouarch 曲线来源入口。
+- 当前剩余工作进一步收缩为编号一致性检查、交叉引用审稿和局部措辞精修。
 
 ## 本轮严格性审查记录
 
@@ -75,26 +110,59 @@
 - 已新增附录 G：补 `GL(n)`、`SL(n)`、`PGL(n)`、classical dual groups、split L 群、restriction of scalars torus 和 determinant/symmetric square L 同态计算。
 - 已新增附录 H：补 Hecke 双陪集算子、$\Gamma_0(N)$ 好/坏素数代表、Fourier 系数公式、Petersson 内积和 adelic Hecke algebra 比较。
 - 已新增附录 I：补 Godement-Jacquet、Rankin-Selberg、Whittaker 模型、全局 unfolding、converse theorem 和函子性检测的积分接口。
+- 已新增附录 J：补 degeneracy maps、old/new 分解、Atkin-Lehner involutions、Casselman newvector theorem、局部导子和费马应用中的级 $2$ 矛盾。
+- 已新增附录 K：补 Galois deformation functor、局部变形条件、Selmer 群、Hecke algebra、$R=T$、Taylor-Wiles patching 和模性提升逻辑。
+- 已新增附录 L：补 Eisenstein series、constant term formula、intertwining operators、continuous spectrum、residual spectrum、Arthur 参数和 trace formula 谱侧接口。
+- 已新增附录 M：补 Langlands-Shahidi local coefficient、局部 $\gamma$ 因子、局部 L 因子、全局 Eisenstein 函数方程和函子性解析接口。
+- 已新增附录 N：补 tori 的 LLC、$\operatorname{SL}_2$ packet 现象、Jacquet-Langlands 内形式、endoscopic datum、stable character 和 fundamental lemma 接口。
+- 已新增附录 O：补 D-modules、six functors、kernel formalism、QCoh/IndCoh、singular support 和 categorical geometric Langlands 的谱侧技术口径。
+- 已新增附录 P：补球 Hecke 代数、Cartan 分解、Satake 变换、spherical representations、`GL(n)` 非分歧 L 因子和几何 Satake 的函数迹接口。
+- 已新增附录 Q：补 Bernstein-Zelevinsky segments、multisegments、Langlands quotient theorem、tempered/generic classification 和 `GL(n)` 局部因子相容接口。
+- 已新增附录 R：补紧商 trace formula 核公式、Arthur truncation、weighted orbital integrals、谱展开、invariant trace formula、稳定化和 base change/endoscopic classification 应用接口。
+- 已新增附录 S：补函数域双商、Hecke correspondences、shtukas、Drinfeld/Laurent Lafforgue 定理、V. Lafforgue excursion operators 和 sheaf-function 桥梁。
+- 已新增附录 T：补模曲线 local systems、Hecke correspondences、Eichler-Shimura、Deligne 表示、weight two 椭圆曲线相容和 residual representations。
+- 已新增附录 U：补 regular algebraic automorphic Galois representations、Shimura varieties cohomology、unitary group realization、p-adic Hodge comparison、局部-整体相容和 automorphy lifting 接口。
+- 已新增附录 V：补 class formations、局部/全局 Artin reciprocity、norm subgroup theorem、ray class fields、conductors 和 `GL(1)` Langlands 的 character 形式。
+- 已新增附录 W：补模曲线代数化、权二 cusp forms 与微分、$X_0(2)$ genus、Hecke correspondences、old/new decomposition、Atkin-Lehner signs 和费马应用中的级 $2$ 矛盾。
+- 已新增附录 X：补 Arthur classification 的 classical groups 范围、self-duality sign、local/global packets、multiplicity formula、standard transfer、inner form refinements 和 beyond endoscopy 接口。
+- 已新增附录 Y：补 Ran space、factorization objects、Beilinson-Drinfeld Grassmannian、fusion、几何 Satake、Hecke action 和 categorical geometric Langlands 的技术层。
+- 已新增附录 Z：补局部调和分析、Harish-Chandra temperedness、characters、Plancherel、Bernstein decomposition、local Paley-Wiener 和 local character expansion 接口。
+- 已新增附录 AA：补 Bruhat-Tits buildings、parahoric group schemes、hyperspecial subgroups、Cartan/Iwahori 分解、Moy-Prasad filtrations 和非分歧 LLC 的结构接口。
+- 已新增附录 AB：补 derived stacks、cotangent complex、QCoh/IndCoh comparison、singular support、six functors、kernel formalism、renormalized D-modules 和 spectral action 接口。
+- 已新增附录 AC：补 perfectoid spaces、diamonds、Fargues-Fontaine curve、$G$-bundles on FF curve、local Shimura varieties、local shtuka cohomology 和 Fargues-Scholze 几何局部 Langlands。
+- 已扩充附录 F：补对偶测度缩放、有限 Abel 群 Fourier 反演、非 Archimedean 紧开陪集 Fourier 公式、$\mathbb A_\mathbb Q/\mathbb Q$ 基本域证明、idele 缩放 Poisson、经典 Poisson 的 adele 推导和 Tate theta 恒等式。
+- 已扩充附录 A：补有限扩张中的 ramification index、residue degree、分解群-局部 Galois 群同构、惯性精确列、非分歧 Frobenius、lower ramification groups 和 Herbrand upper numbering 接口。
+- 已新增附录 AD：补 Neron model、Kodaira-Neron classification、Tate curve、Ogg conductor formula、Tate algorithm 输出、坏约化局部 L 因子和 Frey 曲线 residual conductor 降到级 $2$ 的局部计算接口。
+- 已新增附录 AE：补 `GL(2)` principal series、Steinberg twists、supercuspidals、admissible pairs、Weil-Deligne 参数、局部 L 因子、conductor 和椭圆曲线局部表示类型接口。
 
-## 后续补证计划
+## 收口阶段补证计划
 
-1. 继续扩写 Fourier 分析附录：Fourier inversion、Plancherel、Poisson summation 和 $\mathbb A_K/K$ 紧性的完整证明。
-2. 继续扩写代数数论附录：Dedekind 域完整证明、分解群、惯性群、高阶分歧群和类域论 class formation。
-3. 扩充第三章：加入 ray class groups、idele class characters 的 conductor 和 Dirichlet 特征比较。
-4. 扩充第六章和附录 H：补 Hecke 算子交换关系、diamond operators、Petersson 伴随公式的完整证明和 Atkin-Lehner-Li old/new 分解。
-5. 补写椭圆曲线章，定义 Neron 模型、约化类型和导子。
-6. 扩充第五章：加入 `GL(2)` 的 principal series、Steinberg 表示和 supercuspidal 参数例子。
-7. 扩充第六章：加入 diamond operators、Petersson 内积、newform oldform 分解和 Atkin-Lehner involution。
-8. 扩充第七章：补 strong approximation 证明、经典-adelic 对应的良定义性检查和 $K_0(N)$-双陪集与 Hecke 算子的精确比较。
-9. 扩充第八章：补 Neron 模型、Tate 算法表、Kodaira 符号和 conductor-discriminant 关系。
-10. 扩充第九章：补 deformation functor、Mazur representability、local deformation conditions、Selmer duality 和 Taylor-Wiles patching 的最小版本。
-11. 扩充第十章：补 Ribet 降层精确陈述、Serre weight/level recipe、Frey 曲线在 $2$ 和 $q\mid abc$ 处的 Tate algorithm 计算。
-12. 扩充第十一章和附录 G：补 pinning 与 diagram automorphism、非分歧群的 hyperspecial subgroup、Satake 同构证明和更多 classical group root datum 表。
-13. 扩充第十二章：补 Bernstein-Zelevinsky 分类、Langlands quotient theorem、component group 例子、$\operatorname{SL}_2$ packet 计算和 enhanced LLC 的 rigid inner twist 版本。
-14. 扩充第十三章和附录 I：补自守形式空间的精确定义、Eisenstein series、残余谱、Godement-Jacquet 局部计算细节、Rankin-Selberg unfolding 完整模型和 Langlands-Shahidi 局部系数。
-15. 扩充第十四章：补 `GL(n)` 局部 LLC 的归一化比较、Zelevinsky multisegments、Rankin-Selberg 局部因子定义、converse theorem 精确假设和 Lafforgue 定理的纯性条件。
-16. 扩充第十五章：补 Arthur-Clozel base change 精确陈述、automorphic induction 局部公式、isobaric sum、low symmetric power lift 的条件和 endoscopic transfer factor 的接口。
-17. 扩充第十六章：补 Arthur trace formula 的几何侧、谱侧、稳定化和 fundamental lemma 的精确定理版本。
-18. 扩充第十七章：补 Arthur classification 的 group-by-group 陈述、unitary groups 的 Mok 版本和内形式修正。
-19. 扩充几何章节：补 D-modules、perverse sheaves、Beilinson-Drinfeld Grassmannian、factorization 和 singular support。
-20. 扩充附录：把 A-E 和新建索引文件继续改写为可独立阅读的证明卷与交叉引用系统。
+以下计划取代原先的横向扩写清单。每一项都必须服务 Langlands 主线闭合。
+
+### A. 基本收口必需
+
+1. 维护 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)：Frobenius、Artin reciprocity、Satake、Haar、Fourier、L 函数变量、Tate twist、classical normalization 与 unitary normalization 的跨章比较必须回指该表。
+2. 维护 `THEOREM_INDEX.md` 与 `E_external_input_theorem_index.md`：每个外部输入必须有来源、使用章节、状态和分级。
+3. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每一步标注已证、证明草图、外部输入或猜想。
+4. 维持 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md) 的覆盖状态；新增习题必须服务四条主线闭环。
+5. 维护 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)：只保留会阻断阅读路径、外部输入状态或归一化一致性的缺口。
+
+### B. 主线小补
+
+1. 第三章精校 ray class characters、idele class characters 的 conductor 和 Dirichlet 特征比较；不证明完整 class formation。
+2. 第七章精校 classical-to-adelic 比较的检查表和 Hecke 算子对应；strong approximation 仍作为外部输入。
+3. 第八至十章精校 Frey 曲线导子、Ribet 降层假设和级 $2$ 矛盾的交叉引用；Taylor-Wiles 和 Ribet 证明仍作为外部输入。
+4. 第十一至十四章精校 rank-one Satake、`GL(2)` 非分歧参数和 `GL(n)` 局部因子归一化例子。
+5. 第十五至十七章精校 functoriality、trace formula、endoscopy、Arthur 参数之间的对象字典；不证明 Arthur trace formula。
+6. 第十八至二十二章精校几何 Satake、Hecke eigensheaf 和谱侧范畴的最短对象链；D-module 和 derived stack 技术保持接口性质。
+
+### C. 后置或另卷
+
+1. 完整 LCA Fourier inversion、Plancherel、Poisson summation 和 Tate thesis 解析证明。
+2. 完整 class formation、Herbrand 理论、different/discriminant 公式和 cohomological class field theory。
+3. 完整模曲线代数化、Atkin-Lehner-Li old/new 分解和 Deligne 表示构造。
+4. 完整 Neron 模型存在性、Tate algorithm 逐步证明和残数特征 $2,3$ 的全表。
+5. 完整 Taylor-Wiles patching、Poitou-Tate、p-adic Hodge 局部变形环和 automorphy lifting 证明。
+6. 完整 Harish-Chandra、Bruhat-Tits、Bernstein center、Plancherel 和 Paley-Wiener 理论。
+7. 完整 Arthur trace formula、稳定化、fundamental lemma、twisted trace formula 和 Arthur-Mok 分类证明。
+8. 完整 D-module、IndCoh、derived stack、six functors、factorization、perfectoid、diamond 和 Fargues-Fontaine 技术层。

@@ -8,6 +8,8 @@
 
 需要第一章的局部域和整体域，第四章的局部紧群与光滑表示，第五章的 Weil 群与局部参数。需要基本代数几何中的 affine group scheme、smoothness、base change 和 Lie algebra 权空间分解。本章把 connected reductive groups 的结构定理、根资料分类定理和 pinning 的 Galois 作用作为外部输入。
 
+收口归一化回指：本章 L 群、L 同态、非分歧参数、Satake 参数和 L 群表示给出的局部因子按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、8 节解释。
+
 ## 11.1 代数群与还原群
 
 本节设 $F$ 为任意域，固定代数闭包 $\overline F$。当涉及绝对 Galois 群时，在 $\overline F$ 中固定可分闭包 $F^{\operatorname{sep}}$，并写
@@ -502,6 +504,8 @@ $$
 ## 11.9 非分歧参数与 Satake
 
 本节把第四章的 Satake 同构与本章的 L 群语言连接起来。设 $F$ 为非 Archimedean 局部域，$\mathcal O_F$ 为整数环，剩余域大小为 $q$。
+
+附录 P 给出 split hyperspecial 情形下的 Satake 变换和 `GL(n)` 显式计算，附录 AA 给出 hyperspecial subgroup、Cartan decomposition 和 unramified reductive group 的 Bruhat-Tits 来源。本节只把这些结果翻译成 L 群中的半单共轭类。
 
 **定义 11.50.** $G/F$ 称为 unramified reductive group，若 $G$ 为 quasi-split，且在某个非分歧有限扩张上 split，并存在 reductive $\mathcal O_F$-model $\mathcal G$ 使
 $$

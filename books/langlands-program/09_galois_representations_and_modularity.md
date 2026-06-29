@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第五章的局部参数、第六章的 Deligne 表示、第七章的自守表示和第八章的 Tate module。Galois cohomology、deformation rings、Hecke algebras 和 Taylor-Wiles patching 本章只作为外部输入出现。
+需要第五章的局部参数、第六章的 Deligne 表示、第七章的自守表示和第八章的 Tate module。Galois cohomology、deformation rings、Hecke algebras 和 Taylor-Wiles patching 本章只作为外部输入出现。附录 T 给出 Deligne 表示的模曲线上同调来源；附录 U 给出 p-adic Hodge 和 automorphy lifting 的高维接口。
+
+收口归一化回指：本章是算术 Frobenius、几何 Frobenius、Tate twist、Deligne 表示和自守 Satake 参数的比较点；统一 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、5、6、7 节。
 
 ## 9.1 $\ell$-adic Galois 表示
 
@@ -189,7 +191,9 @@ R\cong T.
 $$
 该同构把 Galois 侧的 lift 与自守侧的 Hecke eigenforms 识别起来。
 
-**注 9.22.** $R=T$ 不是一个单独形式定理，而是一类定理的共同结构。证明涉及 Galois cohomology、Selmer 群、Taylor-Wiles primes、patching 和 commutative algebra。本书将其作为外部输入，不在此章展开。
+**注 9.22.** $R=T$ 不是一个单独形式定理，而是一类定理的共同结构。证明涉及 Galois cohomology、Selmer 群、Taylor-Wiles primes、patching 和 commutative algebra。附录 K 给出 deformation functor、Selmer tangent space、Hecke algebra 和 patching 的接口，但仍把完整 Taylor-Wiles 证明作为外部输入。
+
+**注 9.22.1.** 附录 U 从 p-adic Hodge 和 Shimura variety/cohomology 角度记录更高维 automorphy lifting 的共同接口。本章的二维半稳定情形是该方法的历史核心样本，但不是一般定理的全部范围。
 
 ## 9.7 半稳定模性和费马大定理
 

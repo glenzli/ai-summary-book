@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要椭圆曲线、模形式、Galois 表示和导子的基础定义。相关对象将在本书第二部分系统展开；本章先给出足够支撑逻辑链的定义和外部输入。
+需要椭圆曲线、模形式、Galois 表示和导子的基础定义。相关对象将在本书第二部分系统展开；本章先给出足够支撑逻辑链的定义和外部输入。附录 T 解释模形式 Galois 表示和 residual representations 的来源，附录 U 解释模性提升背后的 p-adic Hodge/patching 接口，附录 AD 解释 Frey 曲线的判别式、半稳定性、Tate algorithm 局部导子和 residual conductor 降到级 $2$ 的接口；本章不重证这些外部输入。
+
+收口归一化回指：本章只使用费马应用所需的逻辑链；Frey 曲线 Frobenius trace、残余表示、导子和模形式 L 函数比较按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 5、6、7、8 节。
 
 ## 90.1 费马大定理和指数归约
 
@@ -89,9 +91,13 @@ a_\ell(f)\pmod{\mathfrak p}
 $$
 并且行列式也相容。
 
+**注 90.8.1.** 附录 W 把“权 $2$、级 $2$ newform”所在的 classical new subspace、old/new 分解和 $S_2(\Gamma_0(2))=0$ 的模曲线来源集中说明。费马应用只使用这些结果的逻辑后果。
+
+**注 90.8.2.** 附录 AD 把 Frey 曲线局部性质拆为可检查的局部椭圆曲线语句：判别式为 $16a^{2p}b^{2p}c^{2p}$，奇坏素数处为乘法约化，半稳定导子在这些素数处指数为 $1$，而模 $p$ residual conductor 删除这些奇素数。第十章用这些输入执行 Ribet 降层。
+
 ## 90.4 级 `2` 处没有权 `2` cusp form
 
-**引理 90.9.** 
+**引理 90.9.**
 $$
 S_2(\Gamma_0(2))=0.
 $$

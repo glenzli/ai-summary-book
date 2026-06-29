@@ -12,6 +12,8 @@ $$
 
 需要第十一章的 L 群和 L 同态，第十二章的局部 L-packet，第十三章的全局自守表示和 L 函数，第十四章的 `GL(n)` converse theorem。需要知道 base change、automorphic induction、isobaric sum、Rankin-Selberg L 函数和 trace formula 的基本接口。本章把一般函子性、base change、automorphic induction、若干 symmetric power lifts、tensor product lifts 和 endoscopic transfer 的已知情形作为外部输入或猜想。
 
+收口归一化回指：本章的函子性相容性以非分歧 Satake 参数和 L 群表示的局部因子为检测对象；相关 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
+
 ## 15.1 从 L 同态到局部参数推前
 
 本章固定整体域 $K$。设 $H/K$ 与 $G/K$ 为 connected reductive groups。由于数域情形没有无条件构造的全局 Langlands 群，本章把
@@ -158,6 +160,8 @@ $$
 具有解析延拓、函数方程和有界性条件，则 $\Pi$ 为 automorphic。因此 $\Pi$ 给出沿 $\xi$ 的 functorial lift。
 
 **注 15.17.** 这解释了为什么第十三章的 L 函数解析性质和第十四章的 converse theorem 是函子性的技术核心。许多已知 lift 的证明不是直接构造自守形式，而是构造足够多 L 函数的函数方程，再应用 converse theorem。
+
+**注 15.17.1.** Langlands-Shahidi 方法提供这些函数方程的一类重要来源：由 maximal parabolic 的 adjoint action 得到局部 $\gamma$ 因子和全局 L 函数解析性质，再把它们输入 converse theorem 或低阶 lift 的证明。附录 M 固定这一方法的局部系数语言。
 
 ## 15.6 Base change 与 automorphic induction
 

@@ -16,6 +16,8 @@ Hecke 算子不再只是 Hecke 代数中的卷积算子，而是由 Hecke corres
 
 需要代数几何中的光滑射影曲线、主丛、代数栈、纤维积和层范畴。需要第十一章的还原群和对偶群。几何 Langlands 的完整理论涉及 derived algebraic geometry、D-modules、$\ell$-adic sheaves、perverse sheaves 和 factorization structures；本章只建立基础几何对象。
 
+收口归一化回指：本章连接函数域 adeles 与曲线几何时采用第二十二章和 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节的 sheaf-function convention。
+
 ## 18.1 曲线与函数域类比
 
 设 $k$ 为代数闭域，$X/k$ 为光滑射影连通曲线。其函数域记为

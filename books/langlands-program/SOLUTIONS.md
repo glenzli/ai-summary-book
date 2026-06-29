@@ -156,6 +156,31 @@ $$
 
 **解答.** 若 Dirichlet 特征 $\chi$ 的导子为 $N_\chi$，则对应 Hecke 特征在 $p\nmid N_\chi$ 处非分歧，在 $p\mid N_\chi$ 处可能分歧且导子指数等于局部字符在 $\mathbb Z_p^\times$ 上的导子指数。通过局部类域论，Galois 表示 $\rho_\chi$ 在 $p\nmid N_\chi$ 处惯性作用平凡，在 $p\mid N_\chi$ 处惯性作用由 $\chi_p|\mathbb Z_p^\times$ 给出。因此分歧素数正是 $N_\chi$ 的素因子。$\square$
 
+**练习 3.5.** 有限阶 Hecke 特征的 conductor 和 ray class factorization。
+
+**解答.** 对非 Archimedean 位置 $v$，令 $n_v$ 为最小非负整数，使得
+$$
+\chi_v|_{1+\mathfrak p_v^{n_v}}=1,
+$$
+其中 $n_v=0$ 表示 $\chi_v$ 在 $\mathcal O_v^\times$ 上平凡。因为 $\chi$ 是 idele class character，$\chi_v$ 对几乎所有 $v$ 非分歧，所以只有有限多个 $n_v$ 非零。定义
+$$
+\mathfrak f(\chi)=\prod_{v<\infty}\mathfrak p_v^{n_v}.
+$$
+设 $U(\mathfrak f)=\prod_{v<\infty}U_v$，其中
+$$
+U_v=
+\begin{cases}
+1+\mathfrak p_v^{n_v},& n_v>0,\\
+\mathcal O_v^\times,& n_v=0.
+\end{cases}
+$$
+则 $\chi$ 在 $U(\mathfrak f)$ 上平凡，并且在 $K^\times$ 上平凡，所以它通过商
+$$
+K^\times\backslash\mathbb A_K^\times/
+\left(K_\infty^\times\cdot U(\mathfrak f)\right)
+$$
+的有限部分分解。加入实位符号条件后，该商就是相应 modulus 的 ray class group。因此 conductor 是使 $\chi$ 通过 ray class group 分解的最小有限模。类域论再把该 ray class group 的 character 解释为 ray class field 的 Abel Galois character。$\square$
+
 ## 第四章
 
 **练习 4.1.** 设 $G$ 为 locally profinite group，$J\subset G$ 开紧。证明 $e_J=\mathbf 1_J$ 在 $\operatorname{vol}(J)=1$ 时为幂等元。
@@ -295,6 +320,29 @@ $$
 $$
 对所有 $g$ 成立。取 $g$ 的无穷分量给出某个尖点的坐标后，该积分抽取 Fourier 展开中的常数项。所有尖点常数项为零等价于经典 cusp form 条件。$\square$
 
+**练习 7.6.** Classical normalization 与 unitary automorphic normalization 的变量平移。
+
+**解答.** 好素数 $p\nmid N$ 处，classical Satake roots 满足
+$$
+X^2-a_pX+\varepsilon(p)p^{k-1}=(X-\alpha_p)(X-\beta_p),
+$$
+因此 classical Euler factor 为
+$$
+L_p(f,s)=(1-\alpha_pp^{-s})^{-1}(1-\beta_pp^{-s})^{-1}.
+$$
+对应的 unitary automorphic normalization 把 Satake 参数改为
+$$
+\left(\alpha_pp^{-(k-1)/2},\beta_pp^{-(k-1)/2}\right).
+$$
+于是
+$$
+L_p(s,\pi_f,\operatorname{Std})
+=\prod_{\gamma\in\{\alpha_p,\beta_p\}}
+\left(1-\gamma p^{-(k-1)/2}p^{-s}\right)^{-1}
+=L_p(f,s+(k-1)/2).
+$$
+对所有好素数取乘积得到未完成 L 函数的相容公式。坏素数和 Archimedean gamma factors 需按 newform theory 和所选完成因子另行声明。$\square$
+
 ## 第八章至第十章
 
 **练习 8.1.** 好约化处局部因子的 Frobenius 表达式。
@@ -376,6 +424,25 @@ $$
 $$
 或相应 packet 形式。弱转移只要求几乎所有非分歧位置的 Satake 参数满足该等式。因为强条件对所有位置成立，限制到几乎所有非分歧位置即得到弱条件。$\square$
 
+**练习 15.3.** 弱转移推出非分歧部分 L 函数相容。
+
+**解答.** 取有限集合 $S$，使得 $v\notin S$ 时 $\sigma_v,\Pi_v$ 均非分歧，且弱转移条件成立。记 $\sigma_v$ 的 Satake 参数为 $s_{\sigma_v}\in{}^LH$，则 $\Pi_v$ 的 Satake 参数为
+$$
+s_{\Pi_v}=\xi(s_{\sigma_v})
+$$
+的共轭类。于是
+$$
+L(s,\Pi_v,r)
+=\det(1-r(s_{\Pi_v})q_v^{-s})^{-1}
+=\det(1-(r\circ\xi)(s_{\sigma_v})q_v^{-s})^{-1}
+=L(s,\sigma_v,r\circ\xi).
+$$
+对所有 $v\notin S$ 取乘积，得
+$$
+L^S(s,\Pi,r)=L^S(s,\sigma,r\circ\xi).
+$$
+该结论只使用非分歧 Satake 参数相容；坏位置的局部因子需要强转移或额外局部理论。$\square$
+
 ## 第十六章至第二十二章
 
 **练习 16.1.** 为什么 trace formula 比较可产生函子性转移。
@@ -404,6 +471,24 @@ $$
 (V\otimes W)_{\mathcal E}\simeq V_{\mathcal E}\otimes W_{\mathcal E},
 $$
 并且平坦连接也按这些操作诱导。因此 $V\mapsto V_{\mathcal E}$ 是从 $\operatorname{Rep}(\widehat G)$ 到局部系统范畴的张量函子。$\square$
+
+**练习 20.4.** Frobenius trace 如何把 Hecke eigensheaf 变成 Hecke eigenfunction。
+
+**解答.** 设底域为 $\mathbb F_q$。对 $\mathcal F$ 在 $\operatorname{Bun}_G$ 上的 $\ell$-adic complex，定义 trace function
+$$
+f_{\mathcal F}(x)=\operatorname{Tr}(\operatorname{Fr}_x\mid \mathcal F_x),
+\qquad x\in\operatorname{Bun}_G(\mathbb F_q),
+$$
+其中 Frobenius convention 按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节固定。若 $\mathcal F$ 是 eigenvalue 为 $\mathcal E$ 的 Hecke eigensheaf，则对每个 $V\in\operatorname{Rep}(\widehat G)$ 有
+$$
+\mathsf H_V(\mathcal F)\cong \mathcal F\boxtimes V_{\mathcal E}.
+$$
+对 $\mathbb F_q$-点取 Frobenius trace，左侧给出 Hecke correspondence 诱导的 Hecke operator 作用在函数 $f_{\mathcal F}$ 上；右侧的 trace 等于
+$$
+f_{\mathcal F}(x)\cdot
+\operatorname{Tr}(\operatorname{Fr}_y\mid (V_{\mathcal E})_y)
+$$
+的形式。因此 $f_{\mathcal F}$ 是 Hecke eigenfunction，其 eigenvalue 由 $\widehat G$-local system $\mathcal E$ 在点 $y$ 处的 Frobenius conjugacy class 通过表示 $V$ 取 trace 给出。$\square$
 
 **练习 22.1.** 函数域如何同时具有 adelic 和曲线几何描述。
 
@@ -519,6 +604,106 @@ $$
 =\prod_p\mathbf 1_{\mathbb Z_p}.
 $$
 $\square$
+
+**练习 F.4.** 从 F.20 推出 $\mathbb Q$ 上 classical Poisson summation 的形式
+$$
+\sum_{n\in\mathbb Z}f(n)=\sum_{n\in\mathbb Z}\widehat f(n)
+$$
+在合适的 Archimedean Schwartz 函数上成立。
+
+**解答.** 取
+$$
+\Phi=f\otimes\prod_p\mathbf 1_{\mathbb Z_p}\in\mathcal S(\mathbb A_\mathbb Q).
+$$
+对 $q\in\mathbb Q$，有限部分非零当且仅当 $q\in\mathbb Z$，所以
+$$
+\sum_{q\in\mathbb Q}\Phi(q)=\sum_{n\in\mathbb Z}f(n).
+$$
+由 F.3 的解答和张量分解，
+$$
+\widehat\Phi=\widehat f\otimes\prod_p\mathbf 1_{\mathbb Z_p}.
+$$
+因此
+$$
+\sum_{q\in\mathbb Q}\widehat\Phi(q)=\sum_{n\in\mathbb Z}\widehat f(n).
+$$
+把这两个等式代入 adele Poisson 公式 F.20 得到 classical Poisson summation。$\square$
+
+**练习 F.5.** 说明 Tate thesis 中平凡特征的极点为什么来自 Poisson summation 中的零点项。
+
+**解答.** Tate theta 恒等式写为
+$$
+\Theta_\Phi^\times(t)+\Phi(0)
+=|t|_{\mathbb A}^{-1}
+\left(\Theta_{\widehat\Phi}^\times(t^{-1})+\widehat\Phi(0)\right).
+$$
+把整体 zeta 积分改写为 idele class group 上的 theta 积分并按 $|t|_{\mathbb A}\ge1$ 与 $|t|_{\mathbb A}<1$ 分裂时，非零项给出在大区域快速衰减的积分。平凡特征下，常数项 $\Phi(0)$ 与 $\widehat\Phi(0)$ 不被 character 积分消掉；沿 idele norm 方向积分这些常数项会产生形如
+$$
+\frac{\Phi(0)}{s}
+\quad\text{和}\quad
+\frac{\widehat\Phi(0)}{1-s}
+$$
+的简单极点项。非平凡特征在紧的 norm-one idele class 方向上积分常数项为 $0$，因此没有同一来源的极点。$\square$
+
+**练习 F.6.** 用命题 F.11.1 计算 $\widehat{\mathbf 1_{a+b\mathcal O_F}}$。
+
+**解答.** 在 F.11.1 中取 $L=b\mathcal O_F$。则
+$$
+L^\perp=b^{-1}\mathfrak d_\psi^{-1},
+$$
+并且
+$$
+\operatorname{vol}(L)=|b|\operatorname{vol}(\mathcal O_F).
+$$
+因此
+$$
+\widehat{\mathbf 1_{a+b\mathcal O_F}}(y)
+=
+\psi(ay)|b|\operatorname{vol}(\mathcal O_F)
+\mathbf 1_{b^{-1}\mathfrak d_\psi^{-1}}(y).
+$$
+若 $\psi$ 的 conductor 为 $\mathcal O_F$ 且 $\operatorname{vol}(\mathcal O_F)=1$，该式化为
+$$
+\widehat{\mathbf 1_{a+b\mathcal O_F}}(y)
+=
+\psi(ay)|b|\mathbf 1_{b^{-1}\mathcal O_F}(y).
+$$
+$\square$
+
+**练习 F.7.** 证明命题 F.18.1 中使用的局部条件 $x_p-q_0\in\mathbb Z_p$ 可由中国剩余定理同时满足。
+
+**解答.** 对有限集合 $S$ 中每个 $p$，取 $n_p$ 使 $p^{n_p}x_p\in\mathbb Z_p$。在商群 $p^{-n_p}\mathbb Z_p/\mathbb Z_p$ 中，$x_p$ 的类可写成
+$$
+\frac{c_p}{p^{n_p}}\pmod{\mathbb Z_p},
+\qquad c_p\in\mathbb Z.
+$$
+令
+$$
+N=\prod_{p\in S}p^{n_p}.
+$$
+希望 $q_0=A/N$ 满足
+$$
+\frac{A}{N}-\frac{c_p}{p^{n_p}}\in\mathbb Z_p.
+$$
+这等价于同余
+$$
+A\equiv c_p\frac{N}{p^{n_p}}\pmod{p^{n_p}}.
+$$
+这些模数 $p^{n_p}$ 两两互素，所以中国剩余定理给出整数 $A$ 同时满足所有同余。取 $q_0=A/N$ 即得所需局部条件。$\square$
+
+**练习 F.8.** 从命题 F.21.1 推出平凡特征时 Tate 整体 zeta 积分中常数项对 $s=0,1$ 的贡献形式。
+
+**解答.** 平凡特征时，整体 zeta 积分可写成
+$$
+\int_{K^\times\backslash\mathbb A_K^\times}\Theta_\Phi^\times(t)|t|_{\mathbb A}^s\,d^\times t
+$$
+的适当归一化形式。用 F.21.1 把 $|t|_{\mathbb A}<1$ 的部分换成 $\widehat\Phi$ 在 $t^{-1}$ 处的 theta series。该替换产生常数项
+$$
+-\Phi(0)
+\quad\text{和}\quad
+|t|_{\mathbb A}^{-1}\widehat\Phi(0).
+$$
+沿正实 norm 方向积分时，第一类项给出 $s=0$ 附近的简单极点贡献，第二类项给出 $s=1$ 附近的简单极点贡献。非零 theta 项在 Schwartz 衰减和截断后给出全纯部分；因此平凡特征的极点只来自这两个零点项。$\square$
 
 ## 附录 G
 
@@ -700,3 +885,747 @@ $$
 L^S(s,\pi,\operatorname{Sym}^2).
 $$
 $\square$
+
+## 附录 J
+
+**练习 J.3.** 解释为什么 oldforms 与 newforms 的区分不是由好素数 Hecke eigenvalues 决定的。
+
+**解答.** 若 $f$ 是低级 $M$ 的 newform，$M\mid N$，其 degeneracy image 在级 $N$ 中是 oldform。对所有 $p\nmid N$，该 oldform 的 $T_p$ 本征值与原来的 $f$ 相同，因为 degeneracy maps 只改变 $p\mid N/M$ 处的 level vector。强重数一说明几乎所有好素数 Hecke eigenvalues 决定的是全局自守表示 $\pi_f$，而不是该表示中选择的具体 level vector。New/old 区分发生在坏素数处的最小级，即导子层。$\square$
+
+**练习 J.4.** 设 $\pi_p$ 非分歧。用 J.10 说明 $a(\pi_p)=0$。
+
+**解答.** 非分歧表示的定义是
+$$
+\pi_p^{\operatorname{GL}_2(\mathbb Z_p)}\ne0.
+$$
+而
+$$
+K_1(p^0)=\operatorname{GL}_2(\mathbb Z_p).
+$$
+所以满足 J.10 中不变量非零的最小 $m$ 至多为 $0$。因 $m\ge0$，得到
+$$
+a(\pi_p)=0.
+$$
+$\square$
+
+**练习 J.5.** 用 J.16 重写费马应用章中“级 $2$ 无 newform”的矛盾。
+
+**解答.** Frey 曲线和 Ribet 降层给出一个权 $2$、级 $2$ 的 newform，因此由 J.16，
+$$
+S_2(\Gamma_0(2))_{\operatorname{new}}\ne0.
+$$
+但
+$$
+S_2(\Gamma_0(2))_{\operatorname{new}}\subset S_2(\Gamma_0(2)).
+$$
+附录 D 证明 $S_2(\Gamma_0(2))=0$，于是 new subspace 也为 $0$，矛盾。$\square$
+
+## 附录 K
+
+**练习 K.1.** 对 $k[\epsilon]/(\epsilon^2)$，验证 lift 条件等价于 $1$-cocycle 条件。
+
+**解答.** 写 lift 为
+$$
+\rho_\epsilon(g)=(1+\epsilon c(g))\overline\rho(g).
+$$
+表示条件 $\rho_\epsilon(gh)=\rho_\epsilon(g)\rho_\epsilon(h)$ 给出
+$$
+1+\epsilon c(gh)
+=(1+\epsilon c(g))\overline\rho(g)(1+\epsilon c(h))\overline\rho(g)^{-1}.
+$$
+比较 $\epsilon$ 系数：
+$$
+c(gh)=c(g)+\operatorname{Ad}(\overline\rho(g))c(h).
+$$
+这正是 $c$ 为 $Z^1(G,\operatorname{ad}\overline\rho)$ 中 cocycle 的条件。$\square$
+
+**练习 K.3.** 写出 fixed determinant 变形问题中 tangent representation 为什么是 $\operatorname{ad}^0\overline\rho$。
+
+**解答.** 对双数 lift
+$$
+\rho_\epsilon(g)=(1+\epsilon c(g))\overline\rho(g),
+$$
+行列式为
+$$
+\det\rho_\epsilon(g)=\det(1+\epsilon c(g))\det\overline\rho(g)
+=(1+\epsilon\operatorname{tr}c(g))\det\overline\rho(g).
+$$
+若固定 determinant，则 $\operatorname{tr}c(g)=0$ 对所有 $g$ 成立。因此 tangent cocycle 取值于 trace-zero adjoint representation
+$$
+\operatorname{ad}^0\overline\rho.
+$$
+$\square$
+
+**练习 K.5.** 用命题 K.19 解释“$R=T$ 推出模性提升”的逻辑。
+
+**解答.** Lift $\rho$ 对应 deformation ring 的一个点
+$$
+x_\rho:R_{\mathcal S}\to\mathcal O.
+$$
+若 $R_{\mathcal S}\simeq T_\mathfrak m$，该点就是 Hecke algebra 的一组特征值。Hecke algebra 作用在模形式或相应同调空间上，所以该特征值系统来自 Hecke eigenclass。由 Hecke 侧 Galois 表示，该 eigenclass 对应的 Galois 表示在几乎所有 Frobenius trace 上与 $\rho$ 相同。Chebotarev 给出两者半单同构，因此 $\rho$ 来自模形式。$\square$
+
+## 附录 L
+
+**练习 L.1.** 对 `GL(2)`，写出 Bruhat decomposition 并说明为何常数项有两个 Weyl 项。
+
+**解答.** 对 $G=\operatorname{GL}_2$ 和 Borel $B$，
+$$
+G(K)=B(K)\sqcup B(K)wB(K),
+\qquad
+w=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+$$
+Weyl group 有两个元素：单位元和 $w$。计算 Eisenstein series 沿 $B$ 的常数项时，对
+$$
+B(K)\backslash G(K)/B(K)
+$$
+分解求和，因此只有两个贡献：单位元项给出原 section，非平凡 Weyl 元项给出 standard intertwining operator。$\square$
+
+**练习 L.4.** 比较 cuspidal spectrum、residual spectrum 和 continuous spectrum 的定义差异。
+
+**解答.** Cuspidal spectrum 由常数项全为零的 cusp forms 生成，属于离散谱。Residual spectrum 由 Eisenstein series 的 poles 的 residues 生成，也属于离散 $L^2$ 谱，但通常来自 proper Levi 的 cuspidal data。Continuous spectrum 由 Eisenstein series 在 unitary axis 上的连续参数积分给出，不是离散直和，而是直接积分。三者都出现在完整自守谱分解中。$\square$
+
+**练习 L.5.** 解释第十七章非 tempered Arthur 参数为什么需要一个额外的 $\operatorname{SL}_2(\mathbb C)$ 因子。
+
+**解答.** 普通 Langlands 参数记录局部或全局 Weil 型数据。Residual spectrum 中的许多表示来自 parabolic induction 和 Eisenstein residues，局部分量常偏离 tempered。Arthur 参数额外加入
+$$
+\operatorname{SL}_2(\mathbb C)
+$$
+因子，用其非平凡代数表示记录这种非 tempered 偏移的大小。若该因子平凡，参数接近 tempered Langlands 参数；若非平凡，则对应的 packet 可能含 residual 或非 tempered 离散谱表示。$\square$
+
+## 附录 M
+
+**练习 M.1.** 对 maximal parabolic $P=MN$，解释为何 $\operatorname{Lie}({}^LN)$ 上的 adjoint action 给出若干 L 群表示。
+
+**解答.** Levi 对偶群 ${}^LM$ 通过共轭作用作用在 ${}^LN$ 的 Lie algebra 上：
+$$
+\operatorname{Ad}:{}^LM\to\operatorname{GL}(\operatorname{Lie}({}^LN)).
+$$
+按中心 cocharacter 或根高度分解 $\operatorname{Lie}({}^LN)$，可得有限个半单成分
+$$
+\operatorname{Lie}({}^LN)=\bigoplus_i V_i.
+$$
+每个成分给出表示
+$$
+r_i:{}^LM\to\operatorname{GL}(V_i).
+$$
+Langlands-Shahidi 方法正是为 generic cuspidal data $\pi$ 构造与这些 $r_i$ 相联的局部和全局因子。$\square$
+
+**练习 M.2.** 说明 local coefficient 为什么应控制局部 $\gamma$ 因子。
+
+**解答.** Intertwining operator 的局部函数方程把同一个诱导表示沿 Weyl 元前后比较。Whittaker functional 在 generic 情形唯一，所以归一化 intertwining operator 对 Whittaker functional 的影响只能是一个标量。这个标量就是 local coefficient。全局 Eisenstein 函数方程分解为局部 intertwining operators 的乘积；把全局函数方程按 Euler product 分解后，每个局部标量必须给出相应的局部 $\gamma(s,\pi,r,\psi)$ 因子。$\square$
+
+**练习 M.5.** 若 functorial lift $\Pi$ 到 `GL(N)` 已知，解释附录 M 的 L 因子与 `GL(N)` 标准 L 因子为何相容。
+
+**解答.** Functorial lift 的定义要求几乎所有非分歧位置满足
+$$
+\varphi_{\Pi_v}=r\circ\varphi_{\pi_v}.
+$$
+因此在这些位置，
+$$
+L(s,\Pi_v,\operatorname{Std})
+=\det(1-\operatorname{Std}(\varphi_{\Pi_v}(\operatorname{Fr}_v))q_v^{-s})^{-1}
+=L(s,\pi_v,r).
+$$
+两侧的 ramified 因子还需要局部理论归一化。Langlands-Shahidi 方法提供一套由 $\gamma$ 因子和函数方程刻画的归一化；若该归一化与 `GL(N)` LLC 和 Rankin-Selberg 归一化相容，则得到完全 L 函数相等。$\square$
+
+## 附录 N
+
+**练习 N.1.** 解释为什么 split torus 的 L-packet 为单元素。
+
+**解答.** 设 $T\simeq\mathbb G_m^r$。局部类域论给出
+$$
+\operatorname{Hom}_{\operatorname{cont}}(T(F),\mathbb C^\times)
+\simeq
+H^1(W_F,\widehat T)
+$$
+在 split 情形即 $r$ 个 `GL(1)` 对应的乘积。由于 $T(F)$ Abel，每个不可约光滑表示就是一个 character。给定参数只对应这个 character，没有非平凡 Weyl 群或非连通 centralizer 造成多个表示。因此 packet 为单元素。$\square$
+
+**练习 N.4.** 说明 local Jacquet-Langlands 为什么迫使 LLC 同时考虑内形式。
+
+**解答.** 设 $D/F$ 为 quaternion division algebra。$D^\times$ 是 $\operatorname{GL}_2(F)$ 的内形式而非同构群。Local Jacquet-Langlands 把 $D^\times$ 的某些不可约表示对应到 $\operatorname{GL}_2(F)$ 的离散系列表示。若只在 quasi-split 群 $\operatorname{GL}_2$ 上记录参数，就无法说明同一类离散参数在内形式上出现的表示。Enhanced LLC 因此把相关内形式一起纳入，并用 component group 或 Kottwitz 数据切分每个内形式上的成员。$\square$
+
+**练习 N.5.** 解释 fundamental lemma 在稳定 trace formula 中的局部角色。
+
+**解答.** 稳定 trace formula 比较要求在每个局部位置选择匹配测试函数，使 orbital integrals 经 transfer factor 后相等。非分歧位置占几乎所有位置，通常选择 hyperspecial compact subgroup 的单位元函数。Fundamental lemma 断言这些单位元函数在 endoscopic transfer 下匹配。于是全局几何侧比较可以在几乎所有位置无额外误差地分解，只剩有限多个 ramified 位置需要单独控制。$\square$
+
+## 附录 O
+
+**练习 O.2.** 把 Hecke functor 写成 kernel transform。
+
+**解答.** Hecke stack 给出 correspondence
+$$
+\operatorname{Bun}_G\xleftarrow{h_1}\operatorname{Hecke}_G\xrightarrow{h_2}\operatorname{Bun}_G\times X.
+$$
+几何 Satake 给每个 $V\in\operatorname{Rep}(\widehat G)$ 一个在 Hecke stack 相对位置方向上的 kernel $\mathcal K_V$。于是 Hecke functor 形如
+$$
+\mathsf H_V(\mathcal F)=h_{2,!}\bigl(h_1^!\mathcal F\otimes\mathcal K_V\bigr)
+$$
+或按所选 sheaf theory 改用相应的 $*$、$!$ 版本。这正是 correspondence kernel transform 的标准形式。$\square$
+
+**练习 O.3.** 说明为什么谱侧常取 $\operatorname{IndCoh}_{\mathcal N}$ 而不是全部 $\operatorname{QCoh}$。
+
+**解答.** $\operatorname{LocSys}_{\widehat G}(X)$ 通常是奇异 derived stack，特别在 reducible local systems 处有非平凡 automorphism 和 obstruction theory。全部 $\operatorname{QCoh}$ 对这些奇异方向过大，不能正确匹配自动侧由 Eisenstein、constant term 和 nilpotent 现象控制的范畴。$\operatorname{IndCoh}$ 能记录奇异方向，而下标 $\mathcal N$ 限制 singular support 落在 nilpotent cone 中，从而保留几何 Langlands 需要的谱侧对象并排除过大的非 nilpotent 方向。$\square$
+
+**练习 O.4.** 解释 Riemann-Hilbert 对应在复曲线几何 Langlands 中的作用。
+
+**解答.** 当 $k=\mathbb C$ 且考虑正则 holonomic D-modules 时，Riemann-Hilbert 对应把 D-modules 与 constructible sheaves 或 perverse sheaves 联系起来。因此同一个 Hecke eigensheaf 可以在 de Rham 语言中写成 D-module，也可以在 Betti 语言中用拓扑局部系统和 constructible sheaves 表示。几何 Langlands 的不同版本使用这些口径时，必须通过 Riemann-Hilbert 或其派生增强来比较 Hecke 作用和本征条件。$\square$
+
+## 附录 P
+
+**练习 P.1.** 对 `GL(2)` 写出 Cartan 分解中的双陪集代表。
+
+**解答.** 对 $G=\operatorname{GL}_2(F)$ 和 $K=\operatorname{GL}_2(\mathcal O_F)$，Smith normal form 给出
+$$
+G=\bigsqcup_{a\ge b}K
+\begin{pmatrix}\varpi^a&0\\0&\varpi^b\end{pmatrix}
+K.
+$$
+若模去中心方向，也可把代表写成
+$$
+\begin{pmatrix}\varpi^m&0\\0&1\end{pmatrix},
+\qquad m\ge0,
+$$
+再乘以中心元素 $\varpi^b I_2$。$\square$
+
+**练习 P.3.** 对 `GL(2)` 的非分歧主级数，写出标准 L 因子的 Satake 参数公式。
+
+**解答.** 设
+$$
+\pi=\operatorname{Ind}_B^{\operatorname{GL}_2(F)}(\chi_1\otimes\chi_2)
+$$
+为归一化非分歧主级数，令
+$$
+\alpha=\chi_1(\varpi),\qquad \beta=\chi_2(\varpi).
+$$
+Satake 参数为无序二元组 $\{\alpha,\beta\}$，标准表示下的局部 L 因子为
+$$
+L(s,\pi,\operatorname{Std})
+=(1-\alpha q^{-s})^{-1}(1-\beta q^{-s})^{-1}.
+$$
+$\square$
+
+**练习 P.5.** 解释为什么几何 Satake 是 Satake 同构的范畴化。
+
+**解答.** Classical Satake 同构把球 Hecke 代数识别为 $\widehat G$ 的表示环或 Weyl 不变量坐标环。几何 Satake 把这个环提升为范畴等价：
+$$
+\operatorname{Perv}_{G(\mathcal O)}(\operatorname{Gr}_G)
+\simeq
+\operatorname{Rep}(\widehat G).
+$$
+左侧的卷积对应右侧的张量积。对有限域上的对象取 Frobenius trace 函数，卷积范畴降到球 Hecke 代数，张量范畴的 Grothendieck ring 降到表示环。因此 classical Satake 是几何 Satake 的函数迹影子。$\square$
+
+## 附录 Q
+
+**练习 Q.1.** 对 `GL(2)`，列出 principal series、Steinberg twist 和 supercuspidal 三类不可约表示在 LLC 中的大致参数形状。
+
+**解答.** Principal series 对应可约二维 Weil-Deligne 参数
+$$
+\chi_1\oplus\chi_2,\qquad N=0.
+$$
+Steinberg twist $\operatorname{St}\otimes\chi$ 对应同一个 character 上的 special 参数，半单部分为
+$$
+\chi|\cdot|^{1/2}\oplus\chi|\cdot|^{-1/2}
+$$
+并带非零 nilpotent operator $N$。Supercuspidal 表示对应不可约二维 Weil 表示，通常不由 proper Levi 的 character 诱导而来。精确归一化依赖本书的 Frobenius 和 $|\cdot|$ convention。$\square$
+
+**练习 Q.3.** 对 segment $[\rho,\rho\nu]$，说明它的 degree 是 $2\deg\rho$。
+
+**解答.** 若 $\rho$ 是 $G_m=\operatorname{GL}_m(F)$ 的 cuspidal representation，则 $\deg\rho=m$。Segment $[\rho,\rho\nu]$ 含两个 cuspidal twists，均属于 $G_m$。因此该 segment 对应的总 degree 为
+$$
+m+m=2m=2\deg\rho.
+$$
+$\square$
+
+**练习 Q.5.** 解释非分歧主级数的 Satake 参数和 Weil-Deligne 参数为何给出同一 Euler 因子。
+
+**解答.** 非分歧主级数由非分歧 characters $\chi_i$ 给出。Satake 参数记录数值
+$$
+\alpha_i=\chi_i(\varpi).
+$$
+局部类域论把 $\chi_i$ 变成 Weil 群的非分歧 character，其在几何 Frobenius 上的值同为 $\alpha_i$。因此 Weil-Deligne 参数的 Frobenius 半单特征值与 Satake 参数一致，标准 Euler 因子两种写法都为
+$$
+\prod_i(1-\alpha_iq^{-s})^{-1}.
+$$
+$\square$
+
+## 附录 R
+
+**练习 R.1.** 在紧商情形，从核 $K_f(x,y)$ 推导几何侧 orbital integral。
+
+**解答.** 紧商时
+$$
+\operatorname{tr}R(f)=\int_{[G]}K_f(x,x)\,dx
+=\int_{[G]}\sum_{\gamma\in G(K)}f(x^{-1}\gamma x)\,dx.
+$$
+按 $G(K)$-共轭类分组。固定 $\gamma$ 后，共轭类求和等价于 $G_\gamma(K)\backslash G(K)$ 上求和，故该部分为
+$$
+\int_{G_\gamma(K)\backslash G(\mathbb A)}f(x^{-1}\gamma x)\,dx.
+$$
+再用 Weil 积分公式分解为
+$$
+\operatorname{vol}(G_\gamma(K)\backslash G_\gamma(\mathbb A))
+\int_{G_\gamma(\mathbb A)\backslash G(\mathbb A)}
+f(x^{-1}\gamma x)\,dx.
+$$
+后一个积分就是 orbital integral。$\square$
+
+**练习 R.3.** 说明 ordinary orbital integral 与 stable orbital integral 的差别。
+
+**解答.** Ordinary orbital integral 固定一个 $G(F)$-共轭类：
+$$
+O_\gamma(f)=\int_{G_\gamma(F)\backslash G(F)}f(x^{-1}\gamma x)\,dx.
+$$
+Stable orbital integral 则把同一个 stable conjugacy class 内的若干 $G(F)$-共轭类按符号或 transfer factor 归一化加总。Endoscopy 比较的是 stable distributions；因此单个 ordinary orbital integral 通常不是正确的不变量，必须组合成 stable orbital integral。$\square$
+
+**练习 R.5.** 把 base change 的 trace formula 证明框架拆成三步。
+
+**解答.** 第一步，构造源群和目标群上的匹配测试函数，通常一侧为 twisted orbital integrals，另一侧为普通 orbital integrals。第二步，应用 twisted trace formula 和 ordinary trace formula，把几何侧匹配转化为谱侧分布恒等式。第三步，利用 characters 或 pseudo-coefficients 的线性无关性，从谱侧分布恒等式中分离出表示，得到 base change lift，并检查非分歧位置的参数限制公式。$\square$
+
+## 附录 S
+
+**练习 S.1.** 说明 $\operatorname{Bun}_G(\mathbb F_q)$ 与 adelic 双商的关系。
+
+**解答.** 对 $G$-bundle 选择泛点平凡化，可在每个闭点得到局部粘合数据，即 $G(K_x)$ 中的元素。几乎所有闭点处 bundle 可由 $G(\mathcal O_x)$ 平凡化，所以得到一个 adele 元素。改变泛点平凡化对应左乘 $G(K)$，改变局部平凡化对应右乘 $G(\mathcal O_{\mathbb A})$。因此得到
+$$
+\operatorname{Bun}_G(\mathbb F_q)
+\sim
+G(K)\backslash G(\mathbb A_K)/G(\mathcal O_{\mathbb A})
+$$
+的 groupoid 形式对应；严格计数时需保留 automorphism group。$\square$
+
+**练习 S.3.** 说明 Lafforgue 定理中 Satake polynomial 与 Frobenius characteristic polynomial 的相容性。
+
+**解答.** 若 $\pi$ 是 $\operatorname{GL}_n(\mathbb A_K)$ 的 cuspidal automorphic representation，Lafforgue 对应给出 $\ell$-adic 表示 $\rho_\pi$。在 $\pi$ 与 $\rho_\pi$ 均非分歧的闭点 $v$，$\pi_v$ 有 Satake 参数
+$$
+\operatorname{diag}(\alpha_{1,v},\ldots,\alpha_{n,v}).
+$$
+相容性要求几何 Frobenius 或算术 Frobenius按约定调整后，$\rho_\pi(\operatorname{Frob}_v)$ 的 characteristic polynomial 为
+$$
+\prod_i(1-\alpha_{i,v}T).
+$$
+因此局部 Hecke L 因子和 Galois L 因子相同。$\square$
+
+**练习 S.4.** 解释 excursion operators 为什么需要多个 Galois 元素。
+
+**解答.** 对一般对偶群 $\widehat G$，单个元素在某个固定表示下的 trace 不足以恢复半单共轭类，更不足以记录多个 Galois 元素之间的乘法关系。Excursion operators 允许取有限集合 $I$、多个 Galois 元素 $(\gamma_i)$ 和任意 invariant function
+$$
+f\in\mathcal O(\widehat G\backslash\widehat G^I/\widehat G).
+$$
+这些函数同时检测多个元素的相对位置。由 invariant theory，它们能刻画 semisimple global Langlands parameter 的 $\widehat G$-共轭类。$\square$
+
+## 附录 T
+
+**练习 T.1.** 从 trace 和 determinant 推导定理 T.8 的 Euler 因子公式。
+
+**解答.** 对 $p\nmid N\ell$，定理 T.8 给出
+$$
+\operatorname{tr}\rho_{f,\ell}(\operatorname{Frob}^{\operatorname{arith}}_p)=a_p,\qquad
+\det\rho_{f,\ell}(\operatorname{Frob}^{\operatorname{arith}}_p)=\varepsilon(p)p^{k-1}.
+$$
+二维矩阵的 characteristic polynomial 为
+$$
+X^2-a_pX+\varepsilon(p)p^{k-1}.
+$$
+因此
+$$
+\det(1-\rho_{f,\ell}(\operatorname{Frob}^{\operatorname{arith}}_p)p^{-s})
+=1-a_pp^{-s}+\varepsilon(p)p^{k-1}p^{-2s},
+$$
+取倒数即得 Euler 因子。$\square$
+
+**练习 T.3.** 说明 residual representation 为什么只在半单化意义下与稳定格无关。
+
+**解答.** 同一个 $\ell$-adic 表示可能有多个 Galois 稳定格。不同稳定格的模 $\lambda$ 约化不必同构，因为扩张类可能改变。但 Brauer-Nesbitt 定理说明，若两个约化表示来自同一个 characteristic-zero 表示，则它们的半单化由几乎所有 Frobenius characteristic polynomials 决定，因此相同。所以 residual representation 通常定义为约化后的半单化。$\square$
+
+**练习 T.5.** 说明 Deligne 表示在费马应用链中的最小使用范围。
+
+**解答.** 费马应用只需要从权 $2$ newform 得到二维 Galois 表示，并在好素数处满足 trace 等于 Hecke eigenvalue；再取稳定格约化得到 residual representation。Ribet 降层比较的是这些 residual representations 的 ramification 和导子。应用章不需要 Deligne 构造的完整 cohomological proof，也不需要一般权或一般 level 的全部精细性质。$\square$
+
+## 附录 U
+
+**练习 U.2.** 说明 Shimura variety cohomology 为什么同时携带 Hecke 和 Galois 作用。
+
+**解答.** Shimura variety 的 canonical model 定义在 reflex field $E$ 上，因此其 $\ell$-adic cohomology 自然带有 $\operatorname{Gal}(\overline E/E)$ 作用。另一方面，改变有限 adelic level 的 correspondences 给出 Hecke operators，它们作为代数 correspondences 作用在同一 cohomology 上。这两类作用都来自定义在数域上的几何 correspondences 和 functoriality，因此彼此交换。$\square$
+
+**练习 U.4.** 说明局部-整体相容在非分歧位置退化为 Satake-Frobenius 相容。
+
+**解答.** 若 $v\nmid\ell$ 且 $\pi_v$ 非分歧，则 $\pi_v$ 的局部 Langlands 参数由 Satake parameter 给出，惯性作用平凡且 monodromy 为 $0$。局部-整体相容要求 $r_{\ell,\iota}(\pi)|_{G_{K_v}}$ 的 Weil-Deligne 参数等于该局部参数。于是该条件只剩下 Frobenius 半单共轭类相等，也就是 Galois 表示的 Frobenius characteristic polynomial 等于自守侧 Satake polynomial。$\square$
+
+**练习 U.5.** 解释 p-adic Hodge 条件在 automorphy lifting 中的角色。
+
+**解答.** Automorphy lifting 比较的是满足指定局部条件的 deformation ring 和 Hecke algebra。在 $v\mid\ell$ 处，局部条件不能只用 ramification 描述，而要指定 de Rham、crystalline、ordinary 或 potentially semistable 等 p-adic Hodge 类型。这些条件定义局部变形环，并控制其维数、不可约分支和与 automorphic local factors 的相容性。没有这些局部 p-adic Hodge 条件，patching 中的全局变形问题不会有正确的几何大小。$\square$
+
+## 附录 V
+
+**练习 V.1.** 用局部 reciprocity 计算非分歧 character 的 Frobenius 值。
+
+**解答.** 设 $\chi:F^\times\to\mathbb C^\times$ 非分歧。局部 reciprocity 采用几何 Frobenius 归一化：
+$$
+\operatorname{rec}_F(\varpi)=\operatorname{Fr}_F.
+$$
+对应 Weil character 为
+$$
+\rho_\chi=\chi\circ\operatorname{rec}_F^{-1}.
+$$
+因此
+$$
+\rho_\chi(\operatorname{Fr}_F)=\chi(\varpi).
+$$
+$\square$
+
+**练习 V.3.** 对 $K=\mathbb Q$，把 Dirichlet characters 写成 finite idele class characters。
+
+**解答.** Dirichlet character $\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$ 给出
+$$
+\widehat{\mathbb Z}^\times\to(\mathbb Z/N\mathbb Z)^\times\xrightarrow{\chi}\mathbb C^\times.
+$$
+在 $\mathbb A_\mathbb Q^\times$ 上令无穷正实方向和平凡有理数对角作用按乘积公式抵消，得到
+$$
+\mathbb Q^\times\backslash\mathbb A_\mathbb Q^\times\to\mathbb C^\times.
+$$
+局部地，$p\nmid N$ 时该 character 在 $\mathbb Z_p^\times$ 上平凡；$p\mid N$ 时由模 $p^{v_p(N)}$ 的分量给出。$\square$
+
+**练习 V.5.** 说明为什么一般 Hecke quasi-character 不应写成 profinite Galois character。
+
+**解答.** Profinite Galois group 的连续复 character 有紧像；在有限阶 Artin 情形中像为有限群。一般 Hecke quasi-character 可含
+$$
+|\cdot|^s:C_K\to\mathbb C^\times
+$$
+这样的非有限阶非紧方向。它自然是 idele class group 或 Weil group 的 character，但不是普通 profinite Galois group 的连续复 character。因此 `GL(1)` 的一般 quasi-character 必须放在 Weil 侧。$\square$
+
+## 附录 W
+
+**练习 W.1.** 用 genus formula 重新计算 $X_0(2)$ 的 genus。
+
+**解答.** 对 $\Gamma_0(2)$，
+$$
+\mu=3,\qquad c=2,\qquad e_2=1,\qquad e_3=0.
+$$
+代入
+$$
+g=1+\frac{\mu}{12}-\frac{e_2}{4}-\frac{e_3}{3}-\frac c2
+$$
+得
+$$
+g=1+\frac14-\frac14-1=0.
+$$
+$\square$
+
+**练习 W.4.** 说明 oldforms 为什么不改变几乎所有好素数 Hecke eigenvalues。
+
+**解答.** Oldform 来自低级 $M\mid N$ 的 form 通过 degeneracy maps 拉回。若 $p\nmid N$，Hecke correspondence $T_p$ 与这些 degeneracy maps 在 moduli 解释下交换，因为 degree $p$ isogeny 与改变 level 的操作发生在互素 level 上。因此 oldform 在所有 $p\nmid N$ 的 Hecke eigenvalue 与原低级 newform 相同。Old/new 差别反映在坏素数和最小 level，即导子处。$\square$
+
+**练习 W.5.** 用 W.19 重述费马应用中的最终矛盾。
+
+**解答.** Frey 曲线、半稳定模性和 Ribet 降层给出一个权 $2$、级 $2$ newform，即
+$$
+S_2(\Gamma_0(2))_{\operatorname{new}}\ne0.
+$$
+但 W.9 证明
+$$
+S_2(\Gamma_0(2))=0.
+$$
+由 W.15，new subspace 也为 $0$。这与降层结论矛盾，因此原 Fermat 反例不存在。$\square$
+
+## 附录 X
+
+**练习 X.1.** 对 $\psi=(\pi,1)$，说明 Arthur 参数何时是 tempered。
+
+**解答.** 参数 $\psi=(\pi,1)$ 中第二个分量 $1$ 表示 Arthur $\operatorname{SL}_2(\mathbb C)$ 只取一维平凡表示。因此它不引入 $|w|$ 的非零幂。若 $\pi$ 本身对应 tempered cuspidal datum，则局部化后的 Arthur 参数给出的 Langlands 参数在 Weil 群上 bounded modulo center，所以是 tempered。非 tempered 现象在这种记号中来自某个 $b_i>1$。$\square$
+
+**练习 X.2.** 解释 component group character 为什么进入 multiplicity formula。
+
+**解答.** 同一个 Arthur parameter 通常给出一个 packet，而不是单个表示。Packet 内成员由 component group 的 characters 区分。Arthur multiplicity formula 要决定 restricted tensor product
+$$
+\pi=\otimes_v'\pi_v
+$$
+是否出现在离散谱中，以及重数是多少。这个判定由各局部 component group characters 的乘积与 global Arthur sign character 比较给出。因此没有 component group character，就无法从 packet 集合层面计算 multiplicity。$\square$
+
+**练习 X.3.** 写出 standard transfer 在非分歧 Satake 参数上的公式。
+
+**解答.** 若 $\pi_v$ 是 $G(K_v)$ 的 spherical member，Satake 参数为
+$$
+s_v\rtimes\operatorname{Fr}_v\in{}^LG.
+$$
+标准转移到 $\operatorname{GL}_N$ 后，非分歧 Satake 参数为
+$$
+\operatorname{Std}(s_v\rtimes\operatorname{Fr}_v)
+\in \operatorname{GL}_N(\mathbb C).
+$$
+因此标准 L 因子满足
+$$
+L(s,\pi_v,\operatorname{Std})
+=
+\det(1-\operatorname{Std}(s_v)q_v^{-s})^{-1},
+$$
+这等于转移后的 $\operatorname{GL}_N$ 标准局部因子。$\square$
+
+## 附录 Y
+
+**练习 Y.1.** 解释 Ran space 为什么适合记录多点 Hecke 修改。
+
+**解答.** Hecke 修改可以发生在曲线的任意有限多个点上，而点数本身也可变化。Ran space 的点正是非空有限子集，因此它同时记录“修改发生在哪里”和“有多少个修改点”。当有限点集分裂成互不相交的两部分时，factorization 结构表达这些修改彼此独立。$\square$
+
+**练习 Y.3.** 解释 fusion 如何给出 convolution 的交换约束。
+
+**解答.** 两个 Hecke 修改在不同点时作用在 disjoint formal discs 上，因此交换次序给出同构。让两个点在 $X^2$ 中沿对角线相碰，BD Grassmannian 的 nearby cycles 把“不同点处的外积”专化为单点 affine Grassmannian 上的 convolution。不同点处的交换同构专化后成为 convolution product 的交换约束。$\square$
+
+**练习 Y.5.** 说明 Hecke eigensheaf 条件为什么必须对所有 $V\in\operatorname{Rep}(\widehat G)$ 张量相容。
+
+**解答.** 一个 $\widehat G$-local system 等价于张量函子
+$$
+\operatorname{Rep}(\widehat G)\to\operatorname{Loc}(X).
+$$
+若只给单个表示 $V$ 的 Hecke 本征同构，只能得到 associated local system $V_{\mathcal E}$，不能恢复主 $\widehat G$-local system。要求所有 $V$ 的本征同构并与 $V\otimes W$、直和、对偶相容，正是保证这些 associated local systems 来自同一个 tensor functor。$\square$
+
+## 附录 Z
+
+**练习 Z.1.** 证明 $\pi(f)$ 的像落在某个开紧不变量空间中。
+
+**解答.** 因为 $f\in C_c^\infty(G)$，存在开紧子群 $J$ 使 $f$ 左 $J$-不变。对任意 $j\in J$，
+$$
+\pi(j)\pi(f)v
+=\int_G f(g)\pi(jg)v\,dg
+=\int_G f(j^{-1}g')\pi(g')v\,dg'
+=\pi(f)v.
+$$
+所以 $\pi(f)v\in\pi^J$。若 $\pi$ admissible，则 $\pi^J$ 有限维。$\square$
+
+**练习 Z.3.** 说明 character distribution 为什么是 trace formula 谱侧的局部输入。
+
+**解答.** Trace formula 的谱侧包含局部测试函数在局部表示上的 trace。对 admissible representation $\pi$，该 trace 是
+$$
+\Theta_\pi(f)=\operatorname{tr}\pi(f).
+$$
+Harish-Chandra character theorem 保证 $\Theta_\pi$ 是良定义 invariant distribution，并在 regular semisimple locus 上由函数表示。这样谱侧才能作为分布与几何侧 orbital integrals 比较。$\square$
+
+**练习 Z.5.** 说明 Paley-Wiener theorem 在构造测试函数时的作用。
+
+**解答.** 在 trace formula 应用中，常要选择局部测试函数，使它在某些表示上 trace 非零，在其他 Bernstein components 上消失或满足指定标量。Local Paley-Wiener theorem 描述哪些 spectral-side functions 来自 compactly supported smooth functions。因此它提供从“想要的谱侧过滤条件”反推“存在局部测试函数”的定理依据。$\square$
+
+## 附录 AA
+
+**练习 AA.1.** 对 $\operatorname{GL}_n$，说明 hyperspecial subgroup 的 integral model 来源。
+
+**解答.** 取
+$$
+\mathcal G=\operatorname{GL}_{n,\mathcal O_F}.
+$$
+这是 $\mathcal O_F$ 上的 reductive group scheme，generic fiber 为 $\operatorname{GL}_{n,F}$，特殊纤维为 $\operatorname{GL}_{n,k_F}$。因此
+$$
+\mathcal G(\mathcal O_F)=\operatorname{GL}_n(\mathcal O_F)
+$$
+是 hyperspecial maximal compact subgroup。$\square$
+
+**练习 AA.3.** 用 Cartan decomposition 说明球 Hecke 代数有双陪集基。
+
+**解答.** Cartan decomposition 给出
+$$
+G(F)=\bigsqcup_{\lambda\in X_*(T)^+}K\lambda(\varpi)K.
+$$
+球 Hecke 代数由 compactly supported bi-$K$-invariant functions 组成，因此每个函数在这些双陪集上常值，且只支持有限多个双陪集。故特征函数
+$$
+\mathbf 1_{K\lambda(\varpi)K}
+$$
+构成向量空间基。$\square$
+
+**练习 AA.4.** 说明 spherical representation 的 depth 为 $0$。
+
+**解答.** 若 $\pi$ spherical，则存在 hyperspecial vertex $x$ 对应的 $K=G(F)_{x,0}$，使
+$$
+\pi^K\ne0.
+$$
+Moy-Prasad filtration 满足 $G(F)_{x,0+}\subset K$，所以同一非零向量也被 $G(F)_{x,0+}$ 固定。Depth 非负，故 $\operatorname{depth}(\pi)=0$。$\square$
+
+## 附录 AB
+
+**练习 AB.1.** 说明 derived structure 如何记录 obstruction data。
+
+**解答.** 对 derived moduli problem $X$，点 $x\in X$ 处的 tangent complex
+$$
+T_xX=\operatorname{RHom}(x^*L_X,k)
+$$
+不是只在次数 $0$ 有同调。其 $H^0$ 给出一阶变形，负次数或正次数的相应 convention 给出 automorphisms 与 obstruction groups。若只取 classical truncation $t_0X$，则 cotangent complex 被截断，非平凡 obstruction class 只能表现为 classical moduli 的奇异性，而不再作为 functorial complex 参与 pullback、base change 和 singular support。因此 derived structure 以 cotangent complex 的形式保存 obstruction data。$\square$
+
+**练习 AB.2.** 解释 smooth stack 情形下 QCoh 与 IndCoh 的关系。
+
+**解答.** 若 $X$ smooth，则 dualizing object $\omega_X$ 是可逆的移位 line object。Gaitsgory 的比较函子
+$$
+\Upsilon_X:\operatorname{QCoh}(X)\to\operatorname{IndCoh}(X),
+\qquad
+\mathcal F\mapsto \mathcal F\otimes\omega_X
+$$
+在这种情形是等价。几何原因是 smoothness 使 !-pullback 与 $*$-pullback 只差相对维数移位和 line twist，coherent sheaves 的 ind-completion 不产生额外 singular directions。Singular stack 中该结论失效，差异由 singularity stack 记录。$\square$
+
+**练习 AB.3.** 把 Hecke functor 写成 correspondence kernel functor。
+
+**解答.** Hecke stack 给出 correspondence
+$$
+\operatorname{Bun}_G\xleftarrow{h_1}\operatorname{Hecke}_G\xrightarrow{h_2}\operatorname{Bun}_G\times X.
+$$
+对 $V\in\operatorname{Rep}(\widehat G)$，几何 Satake 给出 Hecke correspondence 上的 kernel $\mathcal S_V$。在选定 sheaf theory 中，kernel functor 为
+$$
+\Phi_{\mathcal S_V}(\mathcal F)
+=h_{2,!}(h_1^!\mathcal F\otimes\mathcal S_V)
+$$
+或在相应有限性条件下使用 $h_{2,*}$ 的版本。该函子正是第二十章使用的
+$$
+\mathsf H_V:\mathcal D(\operatorname{Bun}_G)\to \mathcal D(\operatorname{Bun}_G\times X).
+$$
+几何 Satake 的 convolution tensor structure 保证 $V\mapsto\mathsf H_V$ 是张量作用。$\square$
+
+**练习 AB.4.** 说明 $\operatorname{Bun}_G$ 非 quasi-compact 对 D-module category 的影响。
+
+**解答.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan type 分层，通常含有无限多个 quasi-compact substacks。因此 naive D-module category 的 compact generation、连续 functor 的定义以及 $!$-extension 的存在性不能直接由 finite type stack 的定理推出。Eisenstein series 和 constant term 又需要沿非 proper correspondence 做推拉操作。Renormalized D-module category 通过改变生成对象或用 co-truncative substacks 控制无限边界，使这些函子具有适当连续性和伴随性。$\square$
+
+**练习 AB.5.** 解释 nilpotent singular support 在谱侧的作用。
+
+**解答.** 谱侧 $\operatorname{LocSys}_{\widehat G}(X)$ 一般是 derived singular stack。全部 $\operatorname{IndCoh}$ 允许任意 singular directions，范畴会过大；$\operatorname{QCoh}$ 又忽略一部分 !-functorial behavior。Nilpotent singular support 条件在
+$$
+\operatorname{Sing}(\operatorname{LocSys}_{\widehat G}(X))
+$$
+中选出由 nilpotent cone 控制的闭锥，定义
+$$
+\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X)).
+$$
+该条件与 Eisenstein/constant term、Arthur 型非离散现象和自动侧的连续谱相匹配，因此是谱侧大小控制条件。$\square$
+
+## 附录 AC
+
+**练习 AC.1.** 说明 Fargues-Fontaine 曲线如何把 Newton slope 几何化。
+
+**解答.** Isocrystal 带有 Frobenius slope decomposition，其数值由 Newton polygon 记录。Fargues-Fontaine construction 把 isocrystal 送到曲线 $X_{FF}$ 上的 vector bundle；slope 为 $\lambda$ 的 isocrystal 分量对应 semistable vector bundle $\mathcal O(\lambda)$ 型分量。因此 isocrystal 的 Newton slope 在几何侧变为 vector bundle 的 Harder-Narasimhan slope，Newton polygon 变为 Harder-Narasimhan polygon。$\square$
+
+**练习 AC.2.** 解释 $B(G)$ 与 $G$-bundles 的关系。
+
+**解答.** 对局部域 $F$ 上的 connected reductive group $G$，Kottwitz 集合 $B(G)$ 分类 $G$-isocrystals up to $\sigma$-conjugacy。Fargues-Fontaine 理论把这些 $G$-isocrystals 解释为 $X_{FF}$ 上的 $G$-bundles：
+$$
+b\in B(G)\longmapsto \mathcal E_b.
+$$
+Newton point 给出 $\mathcal E_b$ 的 Harder-Narasimhan type，Kottwitz invariant 给出连通分量数据。Basic 元素对应 semistable $G$-bundles，其 automorphism group 是内形式 $J_b(F)$。$\square$
+
+**练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_F$ 作用。
+
+**解答.** Local Shimura variety 或 diamond $\operatorname{Sht}_{G,b,\mu}$ 参数化从平凡 $G$-bundle 到 $\mathcal E_b$ 的 modifications。改变源端 trivialization 给出 $G(F)$ 作用，改变目标端 $\mathcal E_b$ 的 self-quasi-isogeny 给出 $J_b(F)$ 作用，定义域的 descent datum 和 Frobenius 结构给出 Weil group $W_F$ 作用。于是
+$$
+R\Gamma_c(\operatorname{Sht}_{G,b,\mu},\mathcal L_\xi)
+$$
+自然成为 $G(F)\times J_b(F)\times W_F$ 的表示对象。$\square$
+
+**练习 AC.4.** 解释 Fargues-Scholze 结果为什么主要给出 semisimple 参数化。
+
+**解答.** Fargues-Scholze 通过 stack of Langlands parameters 与 $\operatorname{Bun}_G(X_{FF})$ 上 sheaves 的 spectral action 构造不可约光滑表示的参数。该 construction 捕捉的是参数的半单谱支撑，足以得到广义的 semisimple LLC map。完整 LLC 还需要 monodromy、component group representations、Whittaker normalization、inner twist normalization 和 endoscopic character identities 等附加结构。因此该结果是局部 Langlands 的强几何框架，但不自动给出猜想 12.19 的全部增强数据。$\square$
+
+**练习 AC.5.** 比较全局几何 Langlands 与 Fargues-Fontaine 几何局部 Langlands 的曲线和谱侧。
+
+**解答.** 全局几何 Langlands 的曲线是代数闭域或有限域上的光滑射影曲线 $X$；自动侧是 $\operatorname{Bun}_G(X)$ 上的 sheaves，谱侧是 $\widehat G$-local systems on $X$。Fargues-Fontaine 几何局部 Langlands 的曲线是由 $p$-adic 局部域构造的 $X_{FF}$；自动侧是 $X_{FF}$ 上 $G$-bundles 的 stack 及其 sheaves，谱侧是局部 Weil group 或 L 群参数的 stack。二者都把 Hecke 修改和谱作用作为核心结构，但全局理论编码函数域或代数曲线上的全局局部系统，局部理论编码单个 $p$-adic 域的局部参数。$\square$
+
+## 附录 AD
+
+**练习 AD.1.** 用变量变换权重解释为什么判别式按 $u^{-12}$ 缩放。
+
+**解答.** Weierstrass 变换
+$$
+x=u^2x'+r,\qquad y=u^3y'+u^2sx'+t
+$$
+把 $x$ 赋予权重 $2$，把 $y$ 赋予权重 $3$。判别式是三次多项式根差平方乘积的相对不变量；对短方程
+$$
+y^2=(x-e_1)(x-e_2)(x-e_3),
+$$
+若 $x=u^2x'$，则每个根差乘以 $u^2$，三个根差平方总共乘以 $u^{12}$。因此旧判别式满足 $\Delta=u^{12}\Delta'$，即新方程判别式为 $\Delta'=u^{-12}\Delta$。长 Weierstrass 方程的标准不变量给出同一权重结论。$\square$
+
+**练习 AD.2.** 用 Kodaira 表说明半稳定椭圆曲线的导子是坏乘法素数的一次乘积。
+
+**解答.** 半稳定表示每个局部约化类型只可能是 $I_0$ 或 $I_n$。Kodaira 表中 $I_0$ 为好约化，导子指数 $f=0$；$I_n$，$n\ge1$，为乘法约化，导子指数 $f=1$。因此全局导子
+$$
+N_E=\prod_p p^{f_p(E)}
+$$
+只在坏乘法素数处出现，且每个这样的素数指数为 $1$。$\square$
+
+**练习 AD.3.** 说明 split multiplicative 与 nonsplit multiplicative 的局部 L 因子为什么只差一个符号。
+
+**解答.** Split multiplicative reduction 由 Tate curve 给出，$V_\ell(E)^{I_F}$ 上 Frobenius 的有效特征值为 $1$，故局部因子为
+$$
+(1-q^{-s})^{-1}.
+$$
+Nonsplit multiplicative reduction 在一个非分歧二次扩张后变为 split；相应局部表示是 split 情形再张量非平凡 unramified quadratic character。该 character 在 Frobenius 上取值 $-1$，所以特征值由 $1$ 变为 $-1$，局部因子变为
+$$
+(1+q^{-s})^{-1}.
+$$
+$\square$
+
+**练习 AD.4.** 对 Frey 曲线 $y^2=x(x-a^p)(x+b^p)$ 计算三根差并推出判别式。
+
+**解答.** 三根为
+$$
+0,\qquad a^p,\qquad -b^p.
+$$
+根差为
+$$
+0-a^p=-a^p,\qquad 0-(-b^p)=b^p,\qquad a^p-(-b^p)=a^p+b^p=c^p.
+$$
+对三次方程 $y^2=\prod_i(x-e_i)$，判别式为
+$$
+16\prod_{i<j}(e_i-e_j)^2.
+$$
+所以
+$$
+\Delta=16a^{2p}b^{2p}c^{2p}.
+$$
+$\square$
+
+**练习 AD.5.** 解释为什么 $v_q(\Delta_E)$ 被 $p$ 整除会导致 residual conductor 可能小于 $E$ 的 conductor。
+
+**解答.** 在乘法约化处，$E$ 局部上由 Tate curve 描述，扩张类由 Tate parameter $q_E$ 控制，且
+$$
+v(q_E)=v_q(\Delta_E).
+$$
+$p$-torsion 表示的惯性作用由该 Tate parameter 在 $F^\times/(F^\times)^p$ 中的类控制。若 $v_q(\Delta_E)$ 被 $p$ 整除，则 valuation 部分在模 $p$ 后消失；在 Frey 曲线的局部情形中，剩余单位部分也满足降层所需条件，于是模 $p$ 表示的 ramification 比 $\ell$-adic lift 更小。故曲线本身的 conductor 在 $q$ 处有指数 $1$，但 residual conductor 可以不含 $q$。$\square$
+
+## 附录 AE
+
+**练习 AE.1.** 设 $\chi_1,\chi_2$ 非分歧，计算 principal series 的 Satake 参数和 L 因子。
+
+**解答.** 非分歧 character 由 $\chi_i(\varpi)=\alpha_i$ 决定。归一化 principal series $I(\chi_1,\chi_2)$ 的 Satake 参数为
+$$
+\operatorname{diag}(\alpha_1,\alpha_2)
+$$
+在 $\operatorname{GL}_2(\mathbb C)$ 中的共轭类。对应 Weil-Deligne 参数为
+$$
+\varphi_{\chi_1}\oplus\varphi_{\chi_2},\qquad N=0.
+$$
+因此标准 L 因子为
+$$
+L(s,I(\chi_1,\chi_2))
+=
+(1-\alpha_1q^{-s})^{-1}(1-\alpha_2q^{-s})^{-1}.
+$$
+$\square$
+
+**练习 AE.2.** 解释 Steinberg 表示为什么需要非零 monodromy $N$。
+
+**解答.** Steinberg 表示出现在 principal series 的 reducibility point，此时两个 inducing characters 相差 $|\cdot|$。若只取半单直和参数，就不能区分 Steinberg factor 和同一半简化下的一维 quotient/character 型对象。Weil-Deligne 参数中的 nilpotent operator
+$$
+N\ne0
+$$
+把两个相邻 character 连成一个 indecomposable Jordan block，并满足
+$$
+r(w)Nr(w)^{-1}=|w|N.
+$$
+这个非零 monodromy 正是 Steinberg 表示本质平方可积和 conductor 指数 $1$ 的参数侧记录。$\square$
+
+**练习 AE.3.** 说明 supercuspidal 参数为什么不能是两个 character 的直和。
+
+**解答.** 两个 character 的直和参数
+$$
+\varphi=\chi_1\oplus\chi_2
+$$
+来自 Levi subgroup $\operatorname{GL}_1\times\operatorname{GL}_1$。LLC 与 parabolic induction 相容，因此对应表示应属于 Borel parabolic induction 的 subquotient，即 principal series 或其极限情形。Supercuspidal 的定义正是“不作为 proper parabolic induction 的 subquotient 出现”。所以 supercuspidal 参数不能是两个 character 的直和，而应为不可约二维 Weil 表示。$\square$
+
+**练习 AE.4.** 比较乘法约化椭圆曲线与 Steinberg twist 的共同特征。
+
+**解答.** 乘法约化椭圆曲线由 Tate curve 描述，其 Tate module 给出带非平凡扩张结构的 Weil-Deligne 参数。该参数半简化可约，但 monodromy $N$ 非零。Steinberg twist 的参数也正是可约 Weil 半简化加非零 $N$ 的 special parameter。因此乘法约化在自守侧对应 Steinberg twist；split/nonsplit 的差异由一个非分歧 quadratic character 的符号记录。$\square$
+
+**练习 AE.5.** 用 AE.13 解释 `GL(2)` LLC 比 `GL(1)` 多出的现象。
+
+**解答.** `GL(1)` LLC 只有 characters 与一维 Weil 参数，既没有 parabolic induction，也没有 monodromy block 或 supercuspidal 二维不可约参数。`GL(2)` 已出现三种新现象：两个 character 直和对应 principal series；两个相邻 character 可形成带非零 $N$ 的 Steinberg 参数；不可约二维 Weil 表示对应 supercuspidal。它们分别反映 induction、monodromy 和 genuinely two-dimensional Galois/Weil 参数，是高阶 Langlands 理论的最小模型。$\square$

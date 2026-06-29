@@ -12,6 +12,8 @@ $$
 
 需要第一章的 adeles，第七章的 `GL(2)` 自守表示，第十一章的 L 群和 Satake 参数，第十二章的局部 Langlands 参数。需要知道局部紧群表示、restricted tensor product、抛物子群、Levi 分解和 cuspidal constant term。本章把自守表示的离散谱分解、张量积分解、强重数一、Godement-Jacquet 理论、Langlands-Shahidi 方法、Rankin-Selberg 方法和一般 Langlands 解析性质作为外部输入或猜想。
 
+收口归一化回指：本章采用 automorphic normalization；非分歧局部因子、Satake 参数、Haar 测度和与 classical modular form normalization 的变量平移见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、5、8 节。
+
 ## 13.1 自守商与中心特征
 
 本章固定整体域 $K$，其 adele 环为 $\mathbb A_K$。设 $G/K$ 为 connected reductive group，中心为 $Z_G$。
@@ -91,6 +93,8 @@ $$
 **证明.** 若 $G$ modulo center anisotropic，则 $G$ 没有定义在 $K$ 上的 proper parabolic subgroup。尖点条件要求对所有 proper parabolic subgroup 的常数项为零；索引集合为空，因此条件自动满足。$\square$
 
 **注 13.9.** 对 $G=\operatorname{GL}_n$，proper parabolic subgroups 存在，尖点条件是强约束。对 $G=\operatorname{GL}_2$，它退化为第七章沿上三角 Borel 的 unipotent radical 积分为零。
+
+**注 13.9.1.** 完整 $L^2$ 自守谱还包含 Eisenstein series 产生的连续谱与残余谱。附录 L 给出常数项公式、intertwining operators 和 residual spectrum 的接口；本章后续主要聚焦 cuspidal representations。
 
 ## 13.3 自守表示与张量积分解
 
@@ -233,7 +237,7 @@ $$
 
 **外部输入定理 13.30（Rankin-Selberg 与 Langlands-Shahidi，接口形式）.** 对若干重要的 $r$，包括 `GL(n)\times GL(m)` 的 Rankin-Selberg 表示以及许多由 maximal parabolic subgroup 的 adjoint action 给出的表示，局部和全局 L 函数可由 Rankin-Selberg 积分或 Langlands-Shahidi 方法构造，并满足 meromorphic continuation 和函数方程。
 
-**注 13.31.** 定理 13.30 不是任意 reductive group 与任意 L 群表示的完整定理。一般解析性质通常需要 functoriality，或需要单独构造相应 integral representation。附录 I 展开 Godement-Jacquet、Rankin-Selberg 和 converse theorem 的积分接口。
+**注 13.31.** 定理 13.30 不是任意 reductive group 与任意 L 群表示的完整定理。一般解析性质通常需要 functoriality，或需要单独构造相应 integral representation。附录 I 展开 Godement-Jacquet、Rankin-Selberg 和 converse theorem 的积分接口；附录 M 展开 Langlands-Shahidi local coefficient、局部 $\gamma$ 因子和由 Eisenstein 函数方程产生 L 因子的接口。
 
 ## 13.8 标准例子
 

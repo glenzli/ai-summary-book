@@ -2,6 +2,8 @@
 
 本附录补充第十三、十四章中 `GL(n)` L 函数解析性质的来源。Euler 乘积只给出局部因子的形式定义；解析延拓和函数方程来自全局积分、局部函数方程和 Fourier 分析。
 
+收口归一化回指：本附录的 Schwartz-Bruhat 测度、Godement-Jacquet 因子、Rankin-Selberg 因子和 converse theorem 检测均按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、8 节解释。
+
 ## I.1 Godement-Jacquet 局部积分
 
 设 $F$ 为局部域，$G=\operatorname{GL}_n(F)$，$M_n(F)$ 为 $n\times n$ 矩阵空间。令 $\mathcal S(M_n(F))$ 为 Schwartz-Bruhat 空间。

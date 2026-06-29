@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第五章的 Weil-Deligne 表示，第十二章的局部 Langlands 猜想，第十三章的全局自守表示和 L 函数。需要知道 `GL(n)` 的 parabolic subgroups、Levi subgroups、归一化抛物诱导和标准表示。本章把 Bernstein-Zelevinsky 分类、局部 Langlands for `GL(n)`、Godement-Jacquet、Rankin-Selberg、强重数一、converse theorem、Lafforgue 函数域全局定理和数域中 regular algebraic automorphic representations 的 Galois 表示构造作为外部输入。
+需要第五章的 Weil-Deligne 表示，第十二章的局部 Langlands 猜想，第十三章的全局自守表示和 L 函数。需要知道 `GL(n)` 的 parabolic subgroups、Levi subgroups、归一化抛物诱导和标准表示。本章把 Bernstein-Zelevinsky 分类、局部 Langlands for `GL(n)`、Godement-Jacquet、Rankin-Selberg、强重数一、converse theorem、Lafforgue 函数域全局定理和数域中 regular algebraic automorphic representations 的 Galois 表示构造作为外部输入。附录 AE 给出 `GL(2)` 的 principal series、Steinberg 和 supercuspidal 低维模型，附录 Q 给出一般 `GL(n)` 的 Bernstein-Zelevinsky 接口。
+
+收口归一化回指：本章集中比较 `GL(n)` LLC、Rankin-Selberg 因子、函数域 Galois 表示和数域 regular algebraic 表示；Frobenius、Satake、Tate twist 和 L 函数变量 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6、7、8 节。
 
 ## 14.1 `GL(n)` 的特殊性
 
@@ -112,6 +114,8 @@ $$
 \operatorname{rec}_{F,n_i}(\delta_i)\otimes|\cdot|^{t_i}.
 $$
 
+**注 14.6.1.** 附录 Q 把定理 14.6 拆成 cuspidal support、segments、multisegments、Langlands quotient theorem、tempered/generic 分类和局部因子相容。本章只使用这些结果组织 `GL(n)` 对应的已知定理边界。
+
 **注 14.7.** 定理 14.6 说明 `GL(n)` 的局部 LLC 与抛物诱导相容：表示侧的 parabolic induction 对应参数侧的 direct sum。一般 reductive 群中，这一语句会被 L-packet、R-groups 和 reducibility 现象复杂化。
 
 ## 14.4 全局 `GL(n)` 自守表示
@@ -213,6 +217,8 @@ $$
 
 **注 14.20.** 函数域情形的 Frobenius convention 必须谨慎。本书局部 L 因子默认几何 Frobenius，而 $\ell$-adic Galois 表示文献常用算术 Frobenius。比较 Euler 因子时必须明确采用哪一个。
 
+**注 14.20.1.** 附录 S 给出 Drinfeld、Laurent Lafforgue 和 V. Lafforgue 的函数域接口，并解释 shtukas 与 excursion operators 的角色。
+
 **推论 14.21.** 在函数域 `GL(n)` 情形，几乎所有局部 Euler 因子同时决定自守表示和对应 Galois 表示的半单化。
 
 **证明.** 自守侧由强重数一确定。Galois 侧由 Chebotarev density theorem 确定半单连续表示的特征多项式数据。因此几乎所有非分歧 Euler 因子确定两侧半单对象。$\square$
@@ -234,6 +240,8 @@ $$
 与 $\pi_v$ 的 Satake polynomial 相同，至多差由归一化 convention 决定的 Tate twist、对偶或 $|\det|$ 平移。
 
 **注 14.24.** 定理 14.23 是接口表述，不是单一来源的完整定理。其证明来自 Shimura varieties、cohomology of locally symmetric spaces、Taylor-Wiles-Kisin patching、Harris-Taylor、Clozel、Taylor、Scholze、Caraiani、Harris-Lan-Taylor-Thorne 等一系列工作。一般数域、一般 regular algebraic $\pi$ 和非极化情形仍需额外假设或属于开放问题。
+
+**注 14.24.1.** 附录 U 将定理 14.23 的常用假设拆成 regular algebraic、polarizable、Shimura variety realization、p-adic Hodge condition 和 local-global compatibility。该附录用于防止把“数域 `GL(n)` 已知构造”误读为完整数域 Langlands 对应。
 
 **注 14.25.** 第九、十章讨论的模形式和椭圆曲线 Galois 表示是 $n=2$、$K=\mathbb Q$ 的特殊来源。费马大定理使用的是非常具体的 `GL(2)/\mathbb Q` 模性与降层，而不是数域上完整 `GL(n)` 全局 Langlands。
 

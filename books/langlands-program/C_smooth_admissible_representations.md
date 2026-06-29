@@ -1,5 +1,7 @@
 # 附录 C：Smooth Admissible Representations
 
+收口归一化回指：本附录涉及 smooth vectors、Hecke idempotents、compact induction、Jacquet modules 和归一化抛物诱导；与局部 Langlands、Satake 和谱分解比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、8 节。
+
 ## C.1 光滑表示
 
 设 $G$ 为 locally profinite group。

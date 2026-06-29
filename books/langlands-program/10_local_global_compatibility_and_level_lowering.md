@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第五章的局部参数，第七章的 `GL(2)` 自守表示，第八章的椭圆曲线导子，第九章的残余表示和模性。本章把局部-整体相容性、Serre 导子、Serre 模性定理和 Ribet 降层作为外部输入。
+需要第五章的局部参数，第七章的 `GL(2)` 自守表示，第八章的椭圆曲线导子，第九章的残余表示和模性。本章把局部-整体相容性、Serre 导子、Serre 模性定理和 Ribet 降层作为外部输入。附录 AD 给出本章使用的椭圆曲线约化类型、Tate algorithm、Ogg conductor formula 和 Frey 曲线局部导子接口。
+
+收口归一化回指：本章比较 $\rho_{f,\lambda}|_{G_{\mathbb Q_q}}$、Weil-Deligne 参数、局部 `GL(2)` 表示和 residual conductor；所有 Frobenius、Tate twist 和局部因子转换见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、7 节。
 
 ## 10.1 局部-整体相容性的形式
 
@@ -131,6 +133,8 @@ $$
 5. 在素数 $2$ 处，局部计算使最终剩余级为 $2$。
 
 **注 10.12.** 第 3 项是 Frey 曲线构造的关键：曲线本身在 $q\mid abc$ 处有乘法坏约化，故 $q$ 出现在 $N_E$ 中；但当 $q\ne p$ 时，由于判别式在这些素数处的指数含有 $p$ 的倍数，模 $p$ 表示的 ramification 降低，从而 prime-to-$p$ 残余导子不含这些 $q$。素数 $p$ 处不是用同一个“删除 $q$”论证处理，而是进入 Serre weight 和局部有限平坦条件。
+
+**注 10.12.1.** 附录 AD.7 将本节的 Frey 曲线局部输入拆为判别式计算、奇素数处乘法约化、$v_q(\Delta_E)$ 被 $p$ 整除、以及 residual conductor 降到 $2$ 四个步骤。命题 AD.21 说明这些步骤正推出定理 10.11 的接口形式。
 
 **命题 10.13（Frey-Ribet 级数结论）.** 接受半稳定模性定理、Frey 曲线局部导子计算和 Ribet 降层定理，则 Fermat 反例给出的模 $p$ 表示
 $$

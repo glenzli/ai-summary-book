@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第十八章的 $\operatorname{Bun}_G$，第十九章的几何 Satake，第二十章的 Hecke eigensheaves。需要派生代数几何、D-modules、ind-coherent sheaves、quasi-coherent sheaves、singular support 和 stack 上的范畴。完整理论采用 Gaitsgory-Lurie、Arinkin-Gaitsgory 等框架；本章只给出严格接口。
+需要第十八章的 $\operatorname{Bun}_G$，第十九章的几何 Satake，第二十章的 Hecke eigensheaves。需要派生代数几何、D-modules、ind-coherent sheaves、quasi-coherent sheaves、singular support 和 stack 上的范畴。完整理论采用 Gaitsgory-Lurie、Arinkin-Gaitsgory 等框架；本章只给出严格接口。附录 O 给出本章所用 D-module、IndCoh 和 singular support 的技术索引，附录 AB 给出 derived stacks、cotangent complex、six functors、renormalization 和 spectral action 的更细接口。
+
+收口归一化回指：本章只固定范畴化接口；若与有限域函数迹或局部几何 Langlands 比较，必须使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
 
 ## 21.1 谱侧局部系统模栈
 
@@ -32,6 +34,10 @@ $$
 
 **注 21.4.** 对一般 $G$，正确谱侧通常不是全部 quasi-coherent sheaves，而是带 nilpotent singular support 的 ind-coherent sheaves。该修正反映 Eisenstein series、非半单 local systems 和连续谱现象。
 
+**注 21.4.1.** Nilpotent singular support 是现代范畴几何 Langlands 中控制谱侧大小的关键条件。附录 O 将其作为外部输入理论给出，并说明它如何进入 $\operatorname{IndCoh}_{\mathcal N}$。
+
+**注 21.4.2.** $\operatorname{LocSys}_{\widehat G}(X)$ 的 derived structure 不是形式修饰。其 cotangent complex 记录 infinitesimal deformations 与 obstructions，singularity stack 则给出 singular support 的载体。附录 AB.1--AB.3 固定这些对象，使 $\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X))$ 成为可检验的范畴表达式，而不是点集上的记号。
+
 ## 21.2 自动侧范畴
 
 **定义 21.5.** 自动侧范畴记为
@@ -45,6 +51,8 @@ $$
 在 $\ell$-adic 口径下，取相应 constructible derived category。
 
 **注 21.6.** $\operatorname{Bun}_G$ 非紧且不是有限型，因此 naive D-module category 往往不足以支撑所有 functorial operations。现代处理使用 renormalized categories、compact generation 和 !-extension 的精细版本。
+
+**注 21.6.1.** 自动侧的 renormalization 与谱侧的 singular support 是同一范畴等价两端的大小控制条件。附录 AB.5 说明 $\operatorname{Bun}_G$ 的非 quasi-compact 性如何迫使 renormalized D-modules 进入陈述；附录 AB.6 说明 spectral action 如何把 Hecke 本征层提升为谱侧范畴作用。
 
 ## 21.3 范畴化几何 Langlands
 
@@ -102,6 +110,8 @@ $$
 的推拉操作，对应到自动侧 $\operatorname{Bun}_H$ 与 $\operatorname{Bun}_G$ 之间的 kernel functor 或 theta/Eisenstein 型函子。
 
 **注 21.13.** 这比数论函子性更范畴化：数论侧期待自守表示转移；几何侧期待范畴之间的函子与谱侧映射相容。
+
+**注 21.13.1.** 附录 Y 说明 Hecke action 的 factorization 结构为何是范畴化几何 Langlands 的基础输入。若没有多点 Hecke 修改和 tensor compatibility，就不能从 Hecke eigensheaves 恢复完整的 $\widehat G$-local system。
 
 ## 21.6 本章小结
 

@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要第一章的局部域、整体域、ideles 和 idele class group，第二章的 Hecke 特征和 Tate L 函数。有限 Galois 扩张、分解群、惯性群和 Frobenius 元作为代数数论基础使用。
+需要第一章的局部域、整体域、ideles 和 idele class group，第二章的 Hecke 特征和 Tate L 函数。有限 Galois 扩张、分解群、惯性群和 Frobenius 元作为代数数论基础使用。附录 V 给出 class formation、Artin reciprocity、norm subgroup theorem、ray class fields 和 conductor 的接口。
+
+收口归一化回指：本章 reciprocity map、一致化元、几何 Frobenius、算术 Frobenius 和一维局部 L 因子的 convention 固定在 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6 节。
 
 ## 3.1 局部类域论的陈述
 
@@ -48,6 +50,8 @@ $$
 这里 $N_{L/F}:L^\times\to F^\times$ 是域范数。
 
 **注 3.3.** 有些资料采用算术 Frobenius 归一化。若采用该归一化，本书中的 $\operatorname{rec}_F$ 要取逆。后续所有 L 因子相容性都依赖当前选择：一致化元对应几何 Frobenius。
+
+**注 3.3.1.** 附录 V 把定理 3.2 和后续全局 reciprocity 放入 class formation 口径，并解释 norm subgroup theorem 如何分类有限 Abel 扩张。本章只使用其 `GL(1)` Langlands 形式。
 
 ## 3.2 非分歧局部对应
 
@@ -234,3 +238,5 @@ $$
 可以被看作 Artin reciprocity 的全局版本。
 
 **练习 3.4.** 对 Dirichlet 特征 $\chi$，说明它作为 $\mathbb Q$ 上有限阶 Hecke 特征时，对应的一维 Galois 表示在哪些素数处分歧。
+
+**练习 3.5.** 设 $\chi:C_K\to\mathbb C^\times$ 为有限阶 Hecke 特征。用各局部分量 $\chi_v$ 的导子指数写出 $\chi$ 的整体 conductor，并说明该 conductor 如何控制 $\chi$ 通过某个 ray class group 分解。

@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要局部紧拓扑群、向量空间和基本表示论。非 Archimedean 局部域上的代数群 $G(F)$ 是全不连通局部紧群；Archimedean 情形需要 Lie 群表示论，本章只给出接口。
+需要局部紧拓扑群、向量空间和基本表示论。非 Archimedean 局部域上的代数群 $G(F)$ 是全不连通局部紧群；Archimedean 情形需要 Lie 群表示论，本章只给出接口。附录 Z 记录 Harish-Chandra character、Plancherel 和 Bernstein-Paley-Wiener 接口；附录 AA 记录 Bruhat-Tits、parahoric 和 hyperspecial 的结构来源。
+
+收口归一化回指：本章卷积、Hecke 幂等元、开紧子群体积和归一化抛物诱导的 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节。
 
 ## 4.1 局部紧群和 Haar 测度
 
@@ -140,6 +142,8 @@ $$
 是交换代数，并与对偶群 $\widehat G$ 的表示环或其 Weyl 不变量坐标环有典范同构。不可约球表示的 Hecke 本征值等价于 $\widehat G$ 中的半单共轭类。
 
 本定理是“非分歧局部 Langlands 参数”的表示论入口。第五章将把该半单共轭类写成 Frobenius 参数。
+
+**注 4.15.1.** 附录 P 把本定理拆成球 Hecke 代数、Cartan 分解、Satake 变换和 `GL(n)` 非分歧公式；附录 AA 解释 hyperspecial subgroup 和 Cartan 分解的 Bruhat-Tits 来源。第四章只使用其接口；涉及具体 eigenvalue 和 Euler 因子的计算应引用附录 P/AA。
 
 ## 4.5 抛物诱导的最小接口
 
