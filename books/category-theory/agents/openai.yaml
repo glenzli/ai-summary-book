@@ -1,0 +1,4 @@
+interface:
+  display_name: "Category Theory Textbook"
+  short_description: "Write and review a rigorous Chinese category theory textbook."
+  default_prompt: "Use $category-theory to write or revise the rigorous Chinese category theory textbook."
