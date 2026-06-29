@@ -134,7 +134,7 @@ F(A)\otimes\mathcal A(B,A)
 \longrightarrow F(B),
 $$
 
-其中最后一箭头是反变富函子 $F:\mathcal A^{op}\to\mathcal V$ 对 Hom 的作用，即
+其中最后一箭头是反变富函子 $F:\mathcal A^{\operatorname{op}}\to\mathcal V$ 对 Hom 的作用，即
 
 $$
 \mathcal A(B,A)\to [F(A),F(B)]
@@ -180,9 +180,100 @@ $$
 
 **注 10.12.** 普通极限是加权极限的特例。选择常值权重 $\mathbb 1$ 可恢复 conical limit。
 
-## 10.6 本章小结
+## 10.6 富满忠实、张量与边界条件
 
-富范畴把 Hom 集替换为 Hom 对象，因此能统一线性范畴、度量空间、拓扑富范畴和谱富范畴。富自然变换由 end 给出，enriched Yoneda 由 end 公式和闭结构证明。加权极限是富环境中正确的极限概念。
+**例子 10.13（一对象富范畴）.** 一对象 $\mathcal V$-富范畴等价于 $\mathcal V$ 中的代数对象。若唯一对象为 $*$，则 Hom 对象 $M=\mathcal A(*,*)$ 带有复合
+
+$$
+M\otimes M\to M
+$$
+
+和单位 $\mathbb1\to M$，富范畴的结合律和单位律正是代数对象公理。
+
+**例子 10.14（度量空间的富函子）.** 对 $\mathcal V=([0,\infty],\ge,+,0)$，富函子 $F:X\to Y$ 是非扩张映射。确切地说，Hom 态射
+
+$$
+d_X(x,x')\to d_Y(Fx,Fx')
+$$
+
+在偏序 $([0,\infty],\ge)$ 中存在，当且仅当
+
+$$
+d_Y(Fx,Fx')\le d_X(x,x').
+$$
+
+因此富函子不增加距离。
+
+**定义 10.15.** 富函子 $F:\mathcal A\to\mathcal B$ 称为富满忠实（fully faithful enriched functor），若对任意 $A,A'\in\mathcal A$，Hom 态射
+
+$$
+\mathcal A(A,A')\to\mathcal B(FA,FA')
+$$
+
+是 $\mathcal V$ 中的同构。若底层普通范畴上的函子本质满，则称 $F$ 在通常意义下本质满。
+
+**命题 10.16（富 Yoneda 嵌入全忠实）.** 设定理 10.10 的假设成立。富 Yoneda 嵌入
+
+$$
+y:\mathcal A\to\operatorname{Fun}_{\mathcal V}(\mathcal A^{\operatorname{op}},\mathcal V),
+\qquad
+A\mapsto\mathcal A(-,A)
+$$
+
+是富满忠实的。
+
+**证明.** 对任意 $A,B$，由定理 10.10 取 $F=\mathcal A(-,B)$，得到
+
+$$
+\operatorname{Fun}_{\mathcal V}(\mathcal A^{\operatorname{op}},\mathcal V)(\mathcal A(-,A),\mathcal A(-,B))
+\cong
+\mathcal A(A,B).
+$$
+
+这正是 Yoneda 嵌入在 Hom 对象上的比较态射为同构。$\square$
+
+**定义 10.17.** 设 $\mathcal A$ 为 $\mathcal V$-富范畴。若 $V\in\mathcal V$ 且 $A\in\mathcal A$，对象 $V\odot A\in\mathcal A$ 称为 $A$ 被 $V$ 张量（tensor），若对任意 $B$ 有自然同构
+
+$$
+\mathcal A(V\odot A,B)\cong [V,\mathcal A(A,B)].
+$$
+
+对象 $A^V\in\mathcal A$ 称为 $A$ 被 $V$ 余张量（cotensor），若对任意 $B$ 有自然同构
+
+$$
+\mathcal A(B,A^V)\cong [V,\mathcal A(B,A)].
+$$
+
+**命题 10.18（一对象权重）.** 设 $\mathcal J$ 为一对象单位富范畴，权重由对象 $W\in\mathcal V$ 给出，图形 $D:\mathcal J\to\mathcal A$ 选出对象 $A\in\mathcal A$。若相应张量和余张量存在，则
+
+$$
+W\star D\cong W\odot A,\qquad
+\{W,D\}\cong A^W.
+$$
+
+**证明.** 加权余极限的定义给出
+
+$$
+\mathcal A(W\star D,B)
+\cong
+\operatorname{Fun}_{\mathcal V}(\mathcal J,\mathcal V)(W,\mathcal A(A,B)).
+$$
+
+一对象富函子范畴的 Hom 对象在此处就是内部 Hom $[W,\mathcal A(A,B)]$。因此右边表示张量 $W\odot A$ 的泛性质。加权极限同理：
+
+$$
+\mathcal A(B,\{W,D\})
+\cong
+[W,\mathcal A(B,A)],
+$$
+
+这正是余张量 $A^W$ 的泛性质。$\square$
+
+**例子 10.19（存在性边界）.** 定义 10.6 中的富函子范畴 Hom 对象由 end 给出。若 $\mathcal V$ 缺少相应的积和等化子，该 end 未必存在，因此富函子范畴不是仅由对象级数据自动产生的。类似地，加权极限要求表示对象存在；定义 10.11 是泛性质，不是存在性定理。
+
+## 10.7 本章小结
+
+富范畴把 Hom 集替换为 Hom 对象，因此能统一线性范畴、度量空间、拓扑富范畴和谱富范畴。富自然变换由 end 给出，enriched Yoneda 由 end 公式和闭结构证明，并推出富 Yoneda 嵌入全忠实。加权极限是富环境中正确的极限概念；张量和余张量是一对象权重的基本特例。所有这些存在性都依赖基范畴中的 end、闭结构和表示对象。
 
 ## 练习
 
@@ -199,3 +290,13 @@ $$
 **练习 10.6.** 在 $\mathcal V=\mathbf{Ab}$ 的情形下，把定理 10.10 写成预加性范畴上的加性 Yoneda 引理。
 
 **练习 10.7.** 解释定理 10.10 的证明中为什么需要闭结构。
+
+**练习 10.8.** 证明一对象 $\mathcal V$-富范畴与 $\mathcal V$ 中的代数对象等价。
+
+**练习 10.9.** 用定理 10.10 证明富 Yoneda 嵌入富满忠实。
+
+**练习 10.10.** 对 $\mathcal V=([0,\infty],\ge,+,0)$，验证富范畴的结合律等价于三角不等式，富函子等价于非扩张映射。
+
+**练习 10.11.** 展开命题 10.18 中加权极限部分的证明。
+
+**练习 10.12.** 给出一个理由说明：若 $\mathcal V$ 缺少无限积，则小富范畴之间的富函子范畴 Hom 对象可能不存在。

@@ -13,6 +13,10 @@ $$
 
 **答案 0.3.** 同构要求存在严格可逆函子，等价只要求完全忠实且本质满。例：一个含两个同构对象和一条唯一同构的群胚等价于终范畴，但对象数不同，所以不严格同构。
 
+**答案 0.4.** 终对象的定义只保证对每个 $X$，Hom 集 $\mathcal C(X,1)$ 是单点集。若 $1$ 与 $1'$ 都终，则存在唯一态射 $1\to1'$ 与 $1'\to1$，且复合必为恒等，所以二者唯一同构。除非范畴的数据本身把 $1$ 与 $1'$ 定义为同一对象，否则不能说严格相等。
+
+**答案 0.5.** 范畴等价的拟逆构造需要为目标范畴中每个对象选择一个同构于它的像对象。不同选择给出可能不同的拟逆函子，但完全忠实性和本质满性保证这些拟逆之间唯一到自然同构相容，因此等价结论不依赖具体选择。
+
 ## 第一章
 
 **答案 1.1.** 若采用含幺环和保持单位的环同态，恒等函数保持加法、乘法和单位；两个保持单位的环同态复合仍保持这些结构。函数复合的结合律和单位律给出范畴公理。
@@ -35,6 +39,18 @@ $$
 
 **答案 1.8.** 令 $\mathcal C$ 为有两个同构对象 $a,b$ 的连通群胚，且任意 Hom 集单点；令 $\mathcal D=*$。唯一函子 $\mathcal C\to\mathcal D$ 完全忠实且本质满，是等价；但对象数不同，不可能是严格同构。
 
+**答案 1.9.** 若 $\mathcal S,\mathcal T$ 都是 $\mathcal C$ 的骨架，则包含函子 $\mathcal S\hookrightarrow\mathcal C$ 与 $\mathcal T\hookrightarrow\mathcal C$ 都是等价。对每个 $S\in\mathcal S$，存在唯一到同构的 $T\in\mathcal T$ 与其同构；骨架条件使该 $T$ 唯一。选择这些同构并用全子范畴的 Hom 集识别得到等价 $\mathcal S\simeq\mathcal T$。
+
+**答案 1.10.** 若 $F$ 完全忠实且 $F(f)$ 有逆 $u$，由完全性取 $g$ 使 $F(g)=u$。则
+$$
+F(gf)=uF(f)=\operatorname{id},\qquad F(fg)=F(f)u=\operatorname{id}.
+$$
+由忠实性得 $gf=\operatorname{id}$、$fg=\operatorname{id}$，故 $f$ 是同构。
+
+**答案 1.11.** 唯一函子 $BG\to *$ 对非平凡群 $G$ 本质满，但不忠实，因为 Hom 映射 $G\to\{*\}$ 不是单射。
+
+**答案 1.12.** 唯一函子 $BG\to *$ 本质满且完全，因为 $G\to\{*\}$ 为满射；当 $G$ 非平凡时不忠实，因为该 Hom 映射不是单射。因此它不是范畴等价。
+
 ## 第二章
 
 **答案 2.1.** 在 $\mathcal C^{\operatorname{op}}$ 中，始对象变为终对象。由终对象唯一性，始对象在唯一同构意义下唯一。
@@ -51,6 +67,29 @@ $$
 
 **答案 2.5.** 若 $y(f):yA\to yB$ 是同构，则其逆为某个 $y(g)$，因为 $y$ 完全忠实。于是 $y(gf)=\operatorname{id}_{yA}$ 且 $y(fg)=\operatorname{id}_{yB}$；忠实性给出 $gf=\operatorname{id}_A$、$fg=\operatorname{id}_B$。
 
+**答案 2.6.** 若 $\mathcal C(A,-)\cong F\cong\mathcal C(B,-)$，则特别有自然同构 $\mathcal C(A,-)\cong\mathcal C(B,-)$。协变 Yoneda 给出唯一同构 $B\to A$，等价地 $A\cong B$；方向取决于采用 $\mathcal C(A,-)$ 的协变 Yoneda 约定。
+
+**答案 2.7.** 恒等函子由单点集 $1$ 表示，因为
+$$
+\mathbf{Set}(1,X)\cong X
+$$
+自然成立。泛元素是 $1$ 中唯一元素在 $\operatorname{id}_{\mathbf{Set}}(1)=1$ 中的元素。
+
+**答案 2.8.** 若常值双点函子由 $A$ 表示，则
+$$
+\mathbf{Set}(A,\varnothing)\cong 2.
+$$
+这迫使 $A=\varnothing$ 不成立时左边为空；若 $A=\varnothing$，左边为单点集，也不等于双点集。故不可表。
+
+**答案 2.9.** 因 Hom 出余积为积，
+$$
+\operatorname{Nat}(yA\sqcup yB,Q)
+\cong\operatorname{Nat}(yA,Q)\times\operatorname{Nat}(yB,Q)
+\cong Q(A)\times Q(B).
+$$
+
+**答案 2.10.** 逐对象同构 $V\cong V^*$ 依赖选基。若存在自然同构 $\operatorname{id}\Rightarrow(-)^*$，则对每个线性自同构 $g:V\to V$ 都必须与所选同构交换；但选基得到的同构在换基下不保持。自然映射存在的是 $V\to V^{**}$，不是一般的 $V\to V^*$。
+
 ## 第三章
 
 **答案 3.1.** 图形为 $A\xrightarrow{f}C\xleftarrow{g}B$。拉回 $P$ 带 $p_A:P\to A,p_B:P\to B$，满足 $fp_A=gp_B$；任意 $X$ 上相容二元组唯一分解经 $P$。
@@ -66,6 +105,38 @@ $$
 两箭头 $P\rightrightarrows Q$ 由 $D(\alpha)p_j$ 与 $p_k$ 给出。其等化子即极限。
 
 **答案 3.5.** 极限逐点由第三章命题 3.12。余极限逐点同理，因自然变换到逐点余极限的自然性逐对象验证，且目标范畴 $\mathbf{Set}$ 余极限逐点存在。
+
+**答案 3.6.** 若 $Q=\operatorname{colim}D$，结构映射为 $\iota_j:Dj\to Q$，则
+$$
+\mathcal C(Q,X)\to\lim_{j\in\mathcal J^{op}}\mathcal C(Dj,X)
+$$
+把 $h:Q\to X$ 送到族 $h\iota_j$。相容性来自余锥条件。反向地，相容族 $h_j:Dj\to X$ 是到 $X$ 的余锥，由余极限泛性质唯一给出 $h:Q\to X$。对 $X$ 的自然性由后复合保持。
+
+**答案 3.7.** 若 $L\dashv U$，单位 $\eta_j:j\to ULj$ 给出 $j/U$ 中对象 $(Lj,\eta_j)$。任意 $(i,\alpha:j\to Ui)$ 对应唯一 $\bar\alpha:Lj\to i$，满足 $U\bar\alpha\,\eta_j=\alpha$，故 $(Lj,\eta_j)$ 为始对象。
+
+**答案 3.8.** 对偏序包含 $A\hookrightarrow P$，$p/U$ 是由所有 $a\in A$ 且 $p\le a$ 组成的偏序。因此包含共尾当且仅当每个集合
+$$
+A_{\ge p}=\{a\in A\mid p\le a\}
+$$
+非空且其可比性无向图连通。若这些 $A_{\ge p}$ 还都是滤过的，则连通性自动成立。
+
+**答案 3.9.** 设 $t$ 为终对象。$D(t)$ 带余锥 $D(j)\xrightarrow{D(!)}D(t)$。任意余锥 $\lambda_j:Dj\to X$ 中，$\lambda_t:D(t)\to X$ 唯一决定全体分量，因为 $\lambda_j=\lambda_tD(j\to t)$。故 $D(t)$ 为余极限。
+
+**答案 3.10.** 满射：任意代表 $(p,x)$，取 $a\in A$ 且 $p\le a$，则 $(p,x)$ 与 $(a,D(p\le a)x)$ 等价。单射：若 $a,b\in A$ 的元素在 $\operatorname{colim}_P D$ 中相等，滤过性给出 $p\ge a,b$ 使二者在 $D(p)$ 中相等；再取 $c\in A$ 且 $p\le c$，则二者已在 $\operatorname{colim}_A D$ 中相等。
+
+**答案 3.11.** 令 $R=\{(f(a),g(a))\mid a\in A\}$。包含 $R$ 的等价关系的交仍是包含 $R$ 的等价关系，因此存在最小等价关系 $\sim$。商映射 $q:B\to B/{\sim}$ 满足 $qf=qg$。若 $r:B\to Q$ 满足 $rf=rg$，则关系核
+$$
+b\equiv b'\quad\Longleftrightarrow\quad r(b)=r(b')
+$$
+是包含 $R$ 的等价关系，故 $\sim$ 包含于 $\equiv$，于是 $r$ 唯一分解经 $q$。
+
+**答案 3.12.** 给环值图形 $D:\mathcal J\to\mathbf{Ring}$。先在 Set 中取底层极限 $L$，即相容族集合。逐坐标定义加法、乘法、$0$ 和 $1$：
+$$
+(x_j)+(y_j)=(x_j+y_j),\qquad (x_j)(y_j)=(x_jy_j),\qquad 0=(0_j),\qquad 1=(1_j).
+$$
+因为结构映射是保持单位的环同态，相容族对这些运算封闭。投影是环同态。任意环到图形的相容锥在底层集合上唯一分解，经逐坐标运算检查该分解保持加法、乘法和单位，故忘却函子创造小极限。
+
+**答案 3.13.** 非空集合范畴有终对象 $1$，有限积由通常笛卡尔积给出，空积为 $1$，有限个非空集合的积仍非空。但例子 3.22 中两函数 $\{*\}\rightrightarrows\{0,1\}$ 的等化子在 Set 中为空集，不属于该范畴，因此没有所有等化子。有限极限若全存在则等化子存在，所以它没有所有有限极限。
 
 ## 第四章
 
@@ -96,6 +167,67 @@ $$
 $$
 由表示性，$G L$ 是 $GD$ 的极限。
 
+**答案 4.6.** 若 $G$ 完全忠实，则在伴随双射下
+$$
+\mathcal D(FGY,Y)\to\mathcal C(GY,GY)
+$$
+中 $\varepsilon_Y$ 对应 $\operatorname{id}_{GY}$，且由全忠实性推出 $\varepsilon_Y$ 为同构。反过来若 $\varepsilon$ 同构，则任意 $h:GX\to GY$ 的逆像为
+$$
+\varepsilon_YF(h)\varepsilon_X^{-1}:X\to Y,
+$$
+从而 $G$ 在 Hom 集上为双射。
+
+**答案 4.7.** 若环境余极限 $C$ 已在 $\mathcal A$ 中，则对任意 $A\in\mathcal A$，
+$$
+\mathcal A(C,A)\cong\mathcal C(IC,IA)
+\cong\lim_j\mathcal C(IDj,IA)
+\cong\lim_j\mathcal A(Dj,A).
+$$
+所以 $C$ 满足 $\mathcal A$ 中余极限的表示性。
+
+**答案 4.8.** 由伴随和全忠实性，
+$$
+\mathcal A(LIA,B)\cong\mathcal C(IA,IB)\cong\mathcal A(A,B)
+$$
+对 $B$ 自然。Yoneda 引理给出 $LIA\cong A$，这就是余单位为同构。
+
+**答案 4.9.** $G_{\operatorname{ab}}=G/[G,G]$。任意群同态 $G\to A$ 到阿贝尔群 $A$ 都杀死交换子子群 $[G,G]$，故唯一分解为群同态 $G_{\operatorname{ab}}\to A$。这给出
+$$
+\mathbf{Ab}(G_{\operatorname{ab}},A)\cong\mathbf{Grp}(G,IA),
+$$
+所以 $\mathbf{Ab}$ 是 $\mathbf{Grp}$ 的反射子范畴。
+
+**答案 4.10.** 余反射子范畴指包含 $I:\mathcal A\hookrightarrow\mathcal C$ 有右伴随 $R$。若 $C=\lim ID$ 在环境范畴中存在，则
+$$
+\mathcal A(A,RC)\cong\mathcal C(IA,C)
+\cong\lim_j\mathcal C(IA,IDj)
+\cong\lim_j\mathcal A(A,Dj),
+$$
+故 $RC$ 是 $\mathcal A$ 中的极限。
+
+**答案 4.11.** 在偏序范畴中 Hom 集至多单点。伴随双射
+$$
+Q(fp,q)\cong P(p,gq)
+$$
+等价于左侧非空当且仅当右侧非空，即 $f(p)\le q$ 当且仅当 $p\le g(q)$。
+
+**答案 4.12.** 若 $\mathcal C$ 有终对象 $1$，唯一函子 $!:\mathcal C\to *$ 的右伴随把 $*$ 送到 $1$，因为
+$$
+*(!X,*)\cong\{*\}\cong\mathcal C(X,1).
+$$
+若 $\mathcal C$ 有始对象 $0$，同理把 $*$ 送到 $0$ 给出左伴随，因为
+$$
+\mathcal C(0,X)\cong\{*\}\cong *(*,!X).
+$$
+
+**答案 4.13.** 笛卡尔闭范畴中指数对象 $Y^A$ 按定义满足自然同构
+$$
+\mathcal C(A\times X,Y)\cong\mathcal C(X,Y^A).
+$$
+这正是函子 $A\times -$ 左伴随于 $(-)^A$ 的 Hom 双射。
+
+**答案 4.14.** 忘却函子 $U:\mathbf{Grp}\to\mathbf{Set}$ 是右伴随，但不保持余积。两个平凡群在 $\mathbf{Grp}$ 中的余积仍为平凡群，其底层集合为单点；而两个单点集在 $\mathbf{Set}$ 中的余积有两个元素。因此 $U$ 不保持该余积。
+
 ## 第五章
 
 **答案 5.1.** 投影函子 $\int_{\mathcal C}P\to\mathcal C$ 送 $(C,x)$ 到 $C$，送态射 $f:(C,x)\to(D,y)$ 到 $f:C\to D$。
@@ -107,6 +239,15 @@ $$
 **答案 5.4.** 若 $f,g:X\rightrightarrows Y$ 不同，取 $x\in X$ 使 $f(x)\ne g(x)$。单点集 $1\to X$ 选出 $x$，于是 $f\circ x\ne g\circ x$。
 
 **答案 5.5.** 群同态 $\mathbb Z\to G$ 等价于选择 $G$ 的一个元素。若 $f,g:G\rightrightarrows H$ 不同，取 $x$ 使 $f(x)\ne g(x)$，对应 $\mathbb Z\to G$ 检测二者不同。
+
+**答案 5.6.** 单对象族 $\{G\}$ 生成意味着任意不同 $f,g:X\rightrightarrows Y$ 可被某个 $u:G\to X$ 区分，即 $\mathcal C(G,f)\ne\mathcal C(G,g)$。这正是 Hom 函子 $\mathcal C(G,-)$ 在 Hom 集上映射为单射，也就是忠实。
+
+**答案 5.7.** $\mathbf{Ab}(\mathbb Z,A)\cong A$，所以 $\mathbb Z$ 检测不同群同态，因而是生成元。若 $e:B\to C$ 是满同态且 $f:\mathbb Z\to C$，则 $f(1)=c$ 可提升为某个 $b\in B$，由 $1\mapsto b$ 唯一确定 $\tilde f:\mathbb Z\to B$，且 $e\tilde f=f$。故 $\mathbb Z$ 投射。
+
+**答案 5.8.** 当 $\mathcal C=*$ 时，预层就是集合 $S$，元素范畴是离散集合 $S$，每个元素对应一个可表预层即单点集。密度公式变成
+$$
+S\cong\coprod_{s\in S}1.
+$$
 
 ## 第六章
 
@@ -123,6 +264,45 @@ $$
 P\cong \operatorname{Lan}_{y_P} y
 $$
 沿元素范畴投影到 $\mathcal C$ 后由 Yoneda 嵌入作左 Kan 延拓；点态公式就是 co-Yoneda 公式。
+
+**答案 6.6.** 对恒等 $v=\operatorname{id}_d$，$R(v)$ 与 $\operatorname{id}_{R(d)}$ 在所有投影下都等于同一投影。对 $d\xrightarrow{v}d'\xrightarrow{w}d''$，$R(w)R(v)$ 与 $R(wv)$ 在任意投影 $p_{(c,\beta:d''\to Kc)}$ 下都等于 $p_{(c,\beta wv)}$，故相等。
+
+**答案 6.7.** 若 $(c',\beta:Kc\to Kc')$ 是 $Kc/K$ 的对象，完全忠实性给出唯一 $u:c\to c'$ 使 $K(u)=\beta$。这正是从 $(c,\operatorname{id})$ 到 $(c',\beta)$ 的唯一态射，因此 $(c,\operatorname{id})$ 为始对象。
+
+**答案 6.8.** 若 $H:\mathcal E\to\mathcal E'$ 保持所有 $d/K$ 形状极限，则
+$$
+H((\operatorname{Ran}_K F)(d))
+\cong H\left(\lim_{d/K}F\right)
+\cong \lim_{d/K}HF
+\cong(\operatorname{Ran}_K HF)(d),
+$$
+且这些同构对 $d$ 自然。
+
+**答案 6.9.** 当 $K:\mathcal C\to *$ 时，唯一对象 $*/K$ 与 $K/*$ 都同构于 $\mathcal C$。故
+$$
+\operatorname{Lan}_KF(*)\cong\operatorname{colim}_{\mathcal C}F,\qquad
+\operatorname{Ran}_KF(*)\cong\lim_{\mathcal C}F.
+$$
+
+**答案 6.10.** 对任意 $X$，限制给出
+$$
+\operatorname{Cocone}(F\pi,X)\to\operatorname{Cocone}(F\pi V,X).
+$$
+因 $V$ 共尾，第三章定理 3.16 的构造把右侧余锥唯一扩张为 $K/d$ 上余锥，且扩张和限制互逆。因此两个余锥函子自然同构，表示对象即同构。
+
+**答案 6.11.** 若 $K\dashv R$，余单位 $\varepsilon_d:KRd\to d$ 给出 $K/d$ 中对象。任意 $(c,\alpha:Kc\to d)$ 的伴随转置为唯一 $\bar\alpha:c\to Rd$，满足 $\varepsilon_dK\bar\alpha=\alpha$，这正是 $(c,\alpha)\to(Rd,\varepsilon_d)$ 的唯一态射。
+
+**答案 6.12.** 对 $i:\{0,1\}\hookrightarrow[1]$，$0/i$ 有两个对象 $(0,\operatorname{id}:0\to0)$ 与 $(1,0\to1)$，且由于 $\{0,1\}$ 为离散范畴，没有二者之间的非恒等态射。因此
+$$
+(\operatorname{Ran}_iF)(0)\cong A\times B.
+$$
+$1/i$ 只有 $(1,\operatorname{id})$，因为不存在 $1\to0$，所以
+$$
+(\operatorname{Ran}_iF)(1)\cong B.
+$$
+右 Kan 延拓给出的箭头 $A\times B\to B$ 是第二投影。
+
+**答案 6.13.** 取 $K:\varnothing\to *$ 和空图形 $F:\varnothing\to\mathcal E$。右 Kan 延拓在 $*$ 处应为 $\lim_\varnothing F$，即终对象。若 $\mathcal E$ 没有终对象，则该右 Kan 延拓不存在。
 
 ## 第七章
 
@@ -144,6 +324,59 @@ $$
 
 **答案 7.5.** 余单子为 $(G,\epsilon,\delta)$，其中 $\epsilon:G\to\operatorname{id}$、$\delta:G\to G^2$，满足对偶单位律和结合律。余代数为 $a:A\to G A$，满足 $\epsilon_Aa=\operatorname{id}$ 与 $\delta_Aa=G(a)a$。
 
+**答案 7.6.** $J(\operatorname{id}_X)=\eta_X$，即 Kleisli 恒等。若 $X\xrightarrow{f}Y\xrightarrow{g}Z$，则
+$$
+Jg\circ_K Jf
+=\mu_ZT(\eta_Zg)\eta_Yf
+=\mu_ZT\eta_Z\,Tg\,\eta_Yf
+=\eta_Zgf
+=J(gf),
+$$
+其中用 $\eta$ 自然性和单位律。
+
+**答案 7.7.** 余单位在对象 $Y$ 处是 Kleisli 态射 $TY\to Y$，即 $\mathcal C$ 中的 $\operatorname{id}_{TY}:TY\to TY$。在 $Y=JX=X$ 时，右伴随 $G_T$ 把它送为
+$$
+T^2X\xrightarrow{T\operatorname{id}}T^2X\xrightarrow{\mu_X}TX,
+$$
+即单子乘法 $\mu_X$。
+
+**答案 7.8.** 给 $k:X\to A$，延拓必须满足 $h\eta_X=k$。候选为 $h=aTk$。它是代数同态且满足 $h\eta_X=k$。若 $h$ 是任意代数同态，则
+$$
+h=h\mu_XT\eta_X=aTh\,T\eta_X=aT(h\eta_X)=aTk,
+$$
+故唯一。
+
+**答案 7.9.** 列表单子的自由代数 $F^TX$ 是 $X$ 上有限字集合，代数结构为拼接。Eilenberg-Moore 代数是幺半群。Kleisli 态射 $X\to Y$ 是函数 $X\to T(Y)$，即给每个 $x$ 指定一个 $Y$ 中有限字。
+
+**答案 7.10.** 函子把 $f:X\to TY$ 送到 $\mu_YTf:TX\to TY$。对 $g:Y\to TZ$，
+$$
+\mu_ZT(\mu_ZTg f)
+=\mu_ZT\mu_ZT^2gTf
+=\mu_Z\mu_{TZ}T^2gTf
+=\mu_ZTg\,\mu_YTf,
+$$
+其中用结合律和 $\mu$ 的自然性。右端正是两个代数同态的复合。
+
+**答案 7.11.** 恒等单子的 Kleisli Hom 为
+$$
+\mathcal C_{\operatorname{id}}(X,Y)=\mathcal C(X,Y),
+$$
+复合和恒等都为原来的复合和恒等。Eilenberg-Moore 代数为 $(A,a:A\to A)$，单位律强制 $a=\operatorname{id}_A$，代数同态条件自动化为普通态射条件。
+
+**答案 7.12.** 对反射 $L:\mathcal C\rightleftarrows\mathcal A:I$，诱导单子为 $T=IL$。单位为反射单位 $\eta_X:X\to ILX$。乘法为
+$$
+T^2=ILIL\xrightarrow{I\varepsilon L}IL=T,
+$$
+其中 $\varepsilon:LI\to\operatorname{id}_{\mathcal A}$ 是余单位。
+
+**答案 7.13.** 阿贝尔化反射的单子把群 $G$ 送到
+$$
+G_{\operatorname{ab}}=G/[G,G],
+$$
+再视为群。单位为商映射 $G\to G/[G,G]$。由于阿贝尔群再次阿贝尔化不变，乘法 $(G_{\operatorname{ab}})_{\operatorname{ab}}\to G_{\operatorname{ab}}$ 是同构。
+
+**答案 7.14.** 任意单子 $T$ 都由 Kleisli 伴随 $J\dashv G_T$ 诱导，也由 Eilenberg-Moore 伴随 $F^T\dashv U^T$ 诱导。二者中间范畴通常不同：前者的对象与 $\mathcal C$ 相同，态射为 $X\to TY$；后者对象为所有 $T$-代数。因此“由伴随产生单子”不确定唯一伴随。
+
 ## 第八章
 
 **答案 8.1.** $(\mathbf{Set},\sqcup,\varnothing)$ 是幺半范畴，结合和单位由集合余积同构给出。它不是笛卡尔幺半结构，因为单位应为终对象而非始对象。
@@ -159,6 +392,32 @@ $$
 **答案 8.4.** 余代数对象为 $C$ 加态射 $\Delta:C\to C\otimes C$ 与 $\epsilon:C\to\mathbb1$，满足对偶的余结合律和余单位律。
 
 **答案 8.5.** 辫子满足两个六边形，表达 $\beta_{X,Y\otimes Z}$ 与 $\beta_{X,Y},\beta_{X,Z}$ 的相容，以及 $\beta_{X\otimes Y,Z}$ 与 $\beta_{X,Z},\beta_{Y,Z}$ 的相容。对称还要求 $\beta_{Y,X}\beta_{X,Y}=\operatorname{id}$。
+
+**答案 8.6.** 函子复合给出严格幺半范畴。余代数对象是自函子 $G$ 加自然变换
+$$
+\delta:G\Rightarrow G^2,\qquad \epsilon:G\Rightarrow\operatorname{id}_{\mathcal C}
+$$
+满足余结合律和余单位律。这正是余单子的定义。
+
+**答案 8.7.** 给定 $(A,m: A\times A\to A,u:1\to A)$，令 $e=u(*)$，二元运算为 $a\cdot b=m(a,b)$。代数对象结合律和单位律逐元素展开为
+$$
+(a\cdot b)\cdot c=a\cdot(b\cdot c),\qquad e\cdot a=a=a\cdot e.
+$$
+反向构造显然给出乘法和单位映射。保持代数结构的态射正是幺半群同态。
+
+**答案 8.8.** 单位映射 $\varnothing\to A$ 唯一。左单位律要求 $m:A\sqcup A\to A$ 在右副本上为恒等，右单位律要求它在左副本上为恒等，因此 $m$ 只能是折叠映射 $\nabla=[\operatorname{id},\operatorname{id}]$。该乘法与余积交换同构复合后仍是 $\nabla$，故它是交换代数对象。
+
+**答案 8.9.** 结合律左边为
+$$
+(FA\otimes FA)\otimes FA\to F(A\otimes A)\otimes FA\to F((A\otimes A)\otimes A)\to F(A\otimes A)\to FA.
+$$
+右边为
+$$
+(FA\otimes FA)\otimes FA\to FA\otimes(FA\otimes FA)\to FA\otimes F(A\otimes A)\to F(A\otimes(A\otimes A))\to F(A\otimes A)\to FA.
+$$
+松幺半函子的结合相干图把前半段识别，$A$ 的结合律把后半段识别，因此两边相等。
+
+**答案 8.10.** 设 $K_2$ 为常值二元集函子，$S(X)=X\times X$。若复合幺半结构有辫子，则有自然同构 $K_2S\cong SK_2$。但 $K_2S$ 是常值二元集函子，而 $SK_2$ 是常值四元集函子。二元集与四元集不同构，矛盾。
 
 ## 第九章
 
@@ -179,6 +438,44 @@ $$
 $$
 \coprod_{f:c\to c'}H(c',c)\rightrightarrows\coprod_cH(c,c)\to\int^cH(c,c).
 $$
+
+**答案 9.6.** 对态射 $h:Z\to Z'$，比较
+$$
+[\mathbb1,Z]\to[\mathbb1,Z']\qquad\text{与}\qquad Z\to Z'
+$$
+在任意 $Y$ 上表示的 Hom 映射。二者都对应复合
+$$
+\mathcal C(Y\otimes\mathbb1,Z)\xrightarrow{h\circ-}\mathcal C(Y\otimes\mathbb1,Z'),
+$$
+故命题 9.11 的同构对 $Z$ 自然。
+
+**答案 9.7.** 在笛卡尔闭范畴中 $[X,Z]=Z^X$ 且 $\otimes=\times$。命题 9.12 给出
+$$
+Z^{X\times Y}\cong (Z^Y)^X.
+$$
+这正是指数律；其 Hom 集证明为
+$$
+\mathcal C(T,Z^{X\times Y})\cong\mathcal C(T\times X\times Y,Z)
+\cong\mathcal C(T,(Z^Y)^X).
+$$
+
+**答案 9.8.** 若 $-\sqcup X$ 有右伴随，则它是左伴随，因此保持初对象。但初对象 $\varnothing$ 被送到 $X$。当 $X\ne\varnothing$ 时，$X$ 不是初对象，矛盾。
+
+**答案 9.9.** 在对象 $c$ 处，
+$$
+(P\star y\mathbb1)(c)=\int^{a,b}P(a)\times\mathcal C(b,\mathbb1)\times\mathcal C(c,a\otimes b).
+$$
+先对 $b$ 用 co-Yoneda，得
+$$
+\int^a P(a)\times\mathcal C(c,a\otimes\mathbb1).
+$$
+由右单位约束化为 $\int^aP(a)\times\mathcal C(c,a)$，再用 co-Yoneda 得 $P(c)$。
+
+**答案 9.10.** 在偏序范畴中，有限积是交 $\wedge$。笛卡尔闭要求对每个 $x$，函子 $(-)\wedge x$ 有右伴随 $(-)^x$，即
+$$
+y\wedge x\le z\Longleftrightarrow y\le z^x.
+$$
+这正是偏序意义下右伴随的定义。反过来，若这些右伴随存在，则指数对象由 $z^x$ 给出，故范畴笛卡尔闭。
 
 ## 第十章
 
@@ -203,13 +500,42 @@ $$
 \operatorname{Nat}_{\mathcal V}(F,G)=\int_A [F A,G A].
 $$
 
-**答案 10.6.** 若 $\mathcal A$ 是预加性范畴，$F:\mathcal A^{op}\to\mathbf{Ab}$ 是加性函子，则
+**答案 10.6.** 若 $\mathcal A$ 是预加性范畴，$F:\mathcal A^{\operatorname{op}}\to\mathbf{Ab}$ 是加性函子，则
 $$
 \operatorname{Nat}_{\mathbf{Ab}}(\mathcal A(-,A),F)\cong F(A)
 $$
 是阿贝尔群同构。自然变换由 $\operatorname{id}_A$ 的像决定，任意 $x\in F(A)$ 给出 $\alpha_B(f:B\to A)=F(f)(x)$。
 
 **答案 10.7.** 证明需要把态射 $X\to[\mathcal A(B,A),F(B)]$ 与评价型态射 $X\otimes\mathcal A(B,A)\to F(B)$ 互相转换；这正是内部 Hom 与张量的伴随，即闭结构。
+
+**答案 10.8.** 若富范畴只有一个对象 $*$，唯一 Hom 对象 $M=\mathcal A(*,*)$ 带复合 $M\otimes M\to M$ 和单位 $\mathbb1\to M$。富范畴公理正是结合律和单位律。反向由任意代数对象 $M$ 构造一对象富范畴。
+
+**答案 10.9.** 对 $A,B\in\mathcal A$，定理 10.10 应用于富预层 $\mathcal A(-,B)$ 给出
+$$
+\operatorname{Fun}_{\mathcal V}(\mathcal A^{\operatorname{op}},\mathcal V)(\mathcal A(-,A),\mathcal A(-,B))
+\cong \mathcal A(A,B).
+$$
+这说明 Yoneda 嵌入在 Hom 对象上给出同构，故富满忠实。
+
+**答案 10.10.** 在 $([0,\infty],\ge,+,0)$ 中，复合态射
+$$
+d(y,z)+d(x,y)\to d(x,z)
+$$
+存在当且仅当 $d(y,z)+d(x,y)\ge d(x,z)$，即三角不等式。单位态射 $0\to d(x,x)$ 存在当且仅当 $0\ge d(x,x)$，即 $d(x,x)=0$。富函子的 Hom 态射存在当且仅当 $d_Y(Fx,Fx')\le d_X(x,x')$。
+
+**答案 10.11.** 加权极限定义给出
+$$
+\mathcal A(B,\{W,D\})
+\cong
+\operatorname{Fun}_{\mathcal V}(\mathcal J,\mathcal V)(W,\mathcal A(B,A)).
+$$
+当 $\mathcal J$ 为一对象单位富范畴时，右边等于 $[W,\mathcal A(B,A)]$。这正是余张量 $A^W$ 的泛性质，所以 $\{W,D\}\cong A^W$。
+
+**答案 10.12.** 富函子范畴的 Hom 对象通常是
+$$
+\int_A \mathcal B(FA,GA)
+$$
+或闭情形下的相应内部 Hom end。end 的等化子公式需要对所有对象取积。若 $\mathcal V$ 没有所需无限积，该 end 可能没有对象承载，因此富函子范畴 Hom 对象可能不存在。
 
 ## 第十一章
 
@@ -226,6 +552,51 @@ $$
 P\cong\int^C P(C)\times yC.
 $$
 右边是按元素 $x\in P(C)$ 对可表 $yC$ 作的余商，即元素范畴上的可表预层余极限。
+
+**答案 11.6.** 给一个集合 $E$ 上的余 dinatural 族 $q_C:H(C,C)\to E$，等价于给出从余积 $\coprod_C H(C,C)$ 到 $E$ 的映射，且对每个 $f:C\to C'$ 与 $x\in H(C',C)$ 有
+$$
+q_C(H(f,C)x)=q_{C'}(H(C',f)x).
+$$
+这正是该映射在命题 11.8 的等价关系上常值。故它唯一分解过商集合，商集合满足 coend 的始性。
+
+**答案 11.7.** 因为 $\mathcal C$ 离散，end 为
+$$
+\prod_{C\in\mathcal C}\{0,1\},
+$$
+coend 为
+$$
+\coprod_{C\in\mathcal C}\{0,1\}.
+$$
+当对象集无限时，二者都是无限集合，因此不属于 $\mathbf{FinSet}$。
+
+**答案 11.8.** 由命题 11.6，
+$$
+\int_C\mathbf{Set}(\mathcal C(C,A),P(C))
+\cong
+\operatorname{Nat}(\mathcal C(-,A),P).
+$$
+反变 Yoneda 引理把右边自然同构于 $P(A)$。
+
+**答案 11.9.** 映射 $\Phi$ 把代表 $(C,f:C\to A,x\in F(C))$ 送到 $F(f)(x)$。逆映射把 $a\in F(A)$ 送到代表
+$$
+[A,\operatorname{id}_A,a].
+$$
+由 coend 关系，任意代表 $[C,f,x]$ 等于 $[A,\operatorname{id}_A,F(f)(x)]$，故两者互逆。
+
+**答案 11.10.** 一对象范畴中每个态射是 $m\in M$。余等化子源的一份 $H(*,*)$ 可记为 $S$。第一箭头由第一变量作用给出 $x\mapsto x\cdot m$，第二箭头由第二变量作用给出 $x\mapsto m\cdot x$，所以 coend 商关系为 $x\cdot m\sim m\cdot x$。
+
+**答案 11.11.** 离散有限情形中没有非恒等态射关系，故
+$$
+\int^{c\in C}\int^{d\in D}H(c,d,c,d)
+\cong
+\coprod_{c\in C}\coprod_{d\in D}H(c,d,c,d).
+$$
+有限余积可按索引重排，得到
+$$
+\coprod_{(c,d)\in C\times D}H(c,d,c,d)
+\cong
+\int^{(c,d)}H(c,d,c,d).
+$$
 
 ## 第十二章
 
@@ -261,6 +632,16 @@ $$
 
 **答案 12.9.** 伴随函子定理需要解集/可达性控制大小。若只保持小余极限但不可达，可能无法由某个小的紧对象子范畴控制其值，从而右伴随的候选值不满足集合大小的表示性条件。
 
+**答案 12.10.** 有限个有限子集 $T_1,\dots,T_n\subset S$ 被有限并集 $T_1\cup\cdots\cup T_n$ 支配。空有限族由空集支配。由于偏序范畴中平行箭头至多一条，等化平行箭头条件自动成立。因此 $\operatorname{Fin}(S)$ 滤过。
+
+**答案 12.11.** 写 $X\cong\operatorname{colim}_iA_i$。因 $F,G$ 保持该滤过余极限，
+$$
+FX\cong\operatorname{colim}_iFA_i,\qquad GX\cong\operatorname{colim}_iGA_i.
+$$
+自然性给出图形间自然变换 $(FA_i)\to(GA_i)$，其余极限态射正是 $\eta_X$。若每个 $\eta_{A_i}$ 为同构，则该图形同构的余极限仍为同构。
+
+**答案 12.12.** 可数无限集合 $A$ 在 $\mathbf{Set}$ 中不是 $\omega$-紧，因为它不是有限集合；但 $|A|<\omega_1$，由例子 12.5 它是 $\omega_1$-紧对象。
+
 ## 第十三章
 
 **答案 13.1.** 零态射 $X\to Y$ 是复合 $X\to0\to Y$。由于 $0$ 终，$X\to0$ 唯一；由于 $0$ 始，$0\to Y$ 唯一，故复合唯一。
@@ -288,6 +669,21 @@ $$
 
 **答案 13.10.** Gabriel-Popescu 把 Grothendieck 范畴表示为某个模范畴的正合反射局部化。模范畴提供自由代数模型，局部化则把由生成元看不见或应当变为等价的部分商掉。
 
+**答案 13.11.** 若 $e:E\to X$ 等化 $f,g:X\rightrightarrows Y$，且 $eu=ev$，则由等化子的泛性质，对态射 $eu$ 有唯一提升到 $E$；$u$ 和 $v$ 都是这样的提升，所以 $u=v$。余等化子为满态射是对偶论证。
+
+**答案 13.12.** 群同态 $f:A\to B$ 单射当且仅当 $\ker f=0$。它满射当且仅当 $B/\operatorname{im}f=0$，而后者正是 $\operatorname{coker}f=0$。这验证了命题 13.18 在 $\mathbf{Ab}$ 中的具体形式。
+
+**答案 13.13.** 正合函子保持核和余核，因此
+$$
+F(\operatorname{im}f)
+=F(\ker(\operatorname{coker}f))
+\cong
+\ker(\operatorname{coker}(Ff))
+=\operatorname{im}(Ff).
+$$
+
+**答案 13.14.** 若有限阿贝尔群范畴有可数余积 $\coprod_{n\in\mathbb N}\mathbb Z/2$，则包含到 $\mathbf{Ab}$ 后应满足同一余积泛性质，因而同构于可数直和 $\bigoplus_{\mathbb N}\mathbb Z/2$。该群无限，不属于有限阿贝尔群范畴，矛盾。
+
 ## 第十四章
 
 **答案 14.1.** 覆盖 $\{U_i\subset U\}$ 生成的筛由所有开嵌入 $V\subset U$ 组成，其中 $V$ 的映射局部因子化经过某个 $U_i$；等价地 $V\subset\bigcup_iU_i$。
@@ -296,9 +692,9 @@ $$
 
 **答案 14.3.** subcanonical 意味每个 $yU$ 是 sheaf，因此 Yoneda 嵌入 $\mathcal C\to\widehat{\mathcal C}$ 的像落入 $\operatorname{Sh}(\mathcal C,J)$。
 
-**答案 14.4.** 预层有限极限逐点计算；sheaf 化 $a$ 左正合，保持有限极限，所以 sheaf 范畴有限极限可由预层极限后 sheaf 化得到。若预层极限已是 sheaf，则无需再 sheaf 化。
+**答案 14.4.** 预层有限极限逐点计算。由命题 14.15，sheaf 的预层有限极限仍是 sheaf，因此 sheaf 范畴中的有限极限由预层有限极限创建。定理 14.9 的作用是保证 sheaf 子范畴还是左正合反射子范畴，从而 sheaf 化与有限极限相容。
 
-**答案 14.5.** Giraud 公理包括有限极限、小余极限、余极限普遍性、等价关系有效、小生成族等。定义 14.7 是外在站点表示；Giraud 给内在刻画。
+**答案 14.5.** Giraud 公理包括有限极限、小余极限、余极限普遍性、等价关系有效、小生成族等。定义 14.10 是外在站点表示；Giraud 给内在刻画。
 
 **答案 14.6.** Separated 只要求局部相等推出全局相等，即唯一性；sheaf 还要求任意相容局部截面存在全局粘合，即存在性加唯一性。
 
@@ -313,6 +709,21 @@ $$
 F^+(U)=\operatorname{Nat}(yU,F)\cong F(U)
 $$
 由 Yoneda 引理得到，所以 plus 构造不改变预层。
+
+**答案 14.11.** 若 $F,G$ 是 sheaf，则预层积 $(F\times G)(U)=F(U)\times G(U)$。对覆盖筛 $S$，
+$$
+\operatorname{Nat}(S,F\times G)\cong\operatorname{Nat}(S,F)\times\operatorname{Nat}(S,G)
+\cong F(U)\times G(U).
+$$
+故 $F\times G$ 是 sheaf，并给出 sheaf 范畴中的二元积。
+
+**答案 14.12.** 若 $F$ 是 sheaf，则 $F$ 已在反射子范畴中。由命题 14.16，对任意 sheaf $G$，
+$$
+\operatorname{Sh}(aF,G)\cong\widehat{\mathcal C}(F,iG)\cong\operatorname{Sh}(F,G).
+$$
+由 Yoneda 引理，$aF\cong F$，单位 $F\to iaF$ 是同构。
+
+**答案 14.13.** 若 $f^*,g^*$ 都保持有限极限，则复合 $f^*g^*$ 也保持有限极限，因为有限极限先被 $g^*$ 送为有限极限，再被 $f^*$ 保持。复合 inverse image 仍是左伴随，右伴随为对应 direct image 的反向复合。
 
 ## 第十五章
 
@@ -1142,6 +1553,1059 @@ $$
 **答案 29.14.** Rezk nerve 把 relative category 送到 complete Segal space 模型，使只给定 weak equivalences 的数据能表示完整的同伦理论。
 
 **答案 29.15.** 若构造由 localization 泛性质刻画，则任何模型中得到的对象都满足同一泛性质。由 localization 的唯一性，不同模型给出等价结果。
+
+## 第三十章
+
+**答案 30.1.** Exact sequence 是正合函子列 $A\to B\to C$，其中 $A\to B$ 全忠实，复合 $A\to C$ 为零，并且 $\operatorname{Kar}(B/A)\to C$ 是等价。
+
+**答案 30.2.** 对稳定全子范畴 $A\subseteq B$，商函子 $B\to B/A$ 按定义把 $A$ 送为零。再作幂等完备化得到 $A\to B\to\operatorname{Kar}(B/A)$，第三个条件成为恒等，因此是 exact sequence。
+
+**答案 30.3.** Flasque 稳定范畴是存在正合自函子 $T:C\to C$，使 $\operatorname{id}_C\oplus T\simeq T$ 的稳定范畴。
+
+**答案 30.4.** 加性不变量 $E$ 给出 $E(C)\oplus E(T)\simeq E(T)$。稳定范畴中这表示 $E(C)$ 被无限吸收；由 Eilenberg swindle，$E(C)\simeq0$。
+
+**答案 30.5.** dg quotient $\mathcal B/\mathcal A$ 是 dg 函子 $q:\mathcal B\to\mathcal B/\mathcal A$，使 $\mathcal A$ 中对象变为零，并且任意把 $\mathcal A$ 送为零的 dg 函子唯一地经它因子化，唯一性在导出映射空间中理解。
+
+**答案 30.6.** Drinfeld quotient 对每个 $a\in\mathcal A$ 添加次数 $-1$ 的 $\varepsilon_a$，满足 $d\varepsilon_a=\operatorname{id}_a$。所以 $\operatorname{id}_a$ 在 Hom 复形中是边界，$H^0$ 中为零；对象 $a$ 因而成为零对象。
+
+**答案 30.7.** Additive invariant 是保持滤过余极限且把 split-exact sequences 送为直和分解的函子
+$$
+E:\operatorname{Cat}^{\operatorname{perf}}_\infty\to\mathcal D.
+$$
+
+**答案 30.8.** Localizing invariant 是保持滤过余极限且把 exact sequences
+$$
+A\to B\to C
+$$
+送为纤维序列 $E(A)\to E(B)\to E(C)$ 的函子。
+
+**答案 30.9.** Split-exact sequence 是 exact sequence 的特殊情形。Localizing invariant 把它送为纤维序列；由于序列 split，该纤维序列 split，得到直和分解。因此它是 additive invariant。
+
+**答案 30.10.** 对 exact sequence $A\to B\to C$，非连通代数 $K$-理论给出谱纤维序列
+$$
+K(A)\to K(B)\to K(C).
+$$
+
+**答案 30.11.** $\operatorname{Mot}_{\operatorname{add}}$ 配有 $U_{\operatorname{add}}$，使左伴随 $\operatorname{Mot}_{\operatorname{add}}\to\mathcal D$ 等价于取值于 $\mathcal D$ 的 additive invariants。
+
+**答案 30.12.** $\operatorname{Mot}_{\operatorname{loc}}$ 配有 $U_{\operatorname{loc}}$，使左伴随 $\operatorname{Mot}_{\operatorname{loc}}\to\mathcal D$ 等价于取值于 $\mathcal D$ 的 localizing invariants。
+
+**答案 30.13.** 任意 localizing invariant $E$ 因子化为 $\overline E\circ U_{\operatorname{loc}}$。若 $U_{\operatorname{loc}}(A)\simeq U_{\operatorname{loc}}(B)$，应用 $\overline E$ 得 $E(A)\simeq E(B)$。
+
+**答案 30.14.** Hochschild chains 可写为恒等 bimodule 的导出 trace：
+$$
+HH(\mathcal A)=\mathcal A\otimes^{\mathbb L}_{\mathcal A^{op}\otimes\mathcal A}\mathcal A.
+$$
+
+**答案 30.15.** $M_n(R)$ 与 $R$ Morita 等价，因此 $\operatorname{Perf}(M_n(R))\simeq\operatorname{Perf}(R)$。Morita 不变的 $K$ 和 $HH$ 给出
+$$
+K(M_n(R))\simeq K(R),\qquad HH(M_n(R))\simeq HH(R).
+$$
+
+## 第三十一章
+
+**答案 31.1.** $D^b_c(X,\Lambda)$ 是 $D^b(X,\Lambda)$ 中 cohomology sheaves 沿给定有限层化的每个 stratum 局部常值且 stalk 有有限生成同调的对象组成的全子范畴。
+
+**答案 31.2.** 对有限层化按 strata 数归纳。取开 stratum $j:U\hookrightarrow X$ 和闭补 $i:Z\hookrightarrow X$。若所有 stratum restrictions 为零，则 $j^*K=0$ 且 $i^*K=0$。由 recollement 序列 $j_!j^*K\to K\to i_*i^*K$ 得 $K=0$。
+
+**答案 31.3.** 标准 t-结构为
+$$
+D^{\le0}=\{K\mid H^i(K)=0,\ i>0\},\qquad
+D^{\ge0}=\{K\mid H^i(K)=0,\ i<0\}.
+$$
+
+**答案 31.4.** Middle perverse t-structure 给出
+$$
+H^i(i_\alpha^*K)=0\quad(i>-\dim_\mathbb C S_\alpha),
+$$
+和
+$$
+H^i(i_\alpha^!K)=0\quad(i<-\dim_\mathbb C S_\alpha).
+$$
+
+**答案 31.5.** 一点空间唯一 stratum 的维数为 $0$，且 $i^*=i^!=\operatorname{id}$。Perverse 条件要求 cohomology 只在 $0$ 次非零，因此 heart 是有限维 $\Lambda$-模范畴。
+
+**答案 31.6.** Recollement 下 t-结构粘合指
+$$
+K\in D^{\le0}(X)\iff j^*K\in D^{\le0}(U),\ i^*K\in D^{\le0}(Z),
+$$
+且
+$$
+K\in D^{\ge0}(X)\iff j^*K\in D^{\ge0}(U),\ i^!K\in D^{\ge0}(Z).
+$$
+
+**答案 31.7.** $K$ perverse 当且仅当 $j^*K$ perverse，$i^*K\in{}^pD^{\le0}(Z)$，且 $i^!K\in{}^pD^{\ge0}(Z)$。
+
+**答案 31.8.** 中间延拓为
+$$
+j_{!*}P=\operatorname{im}({}^pj_!P\to{}^pj_*P)
+$$
+在 perverse heart 中的 image。
+
+**答案 31.9.** 若 $0\ne Q\subseteq j_{!*}P$，则 $j^*Q\subseteq P$。因 $P$ simple，$j^*Q$ 为 $0$ 或 $P$。第一种使 $Q$ 闭支撑，矛盾；第二种使 quotient 闭支撑，也矛盾，故 $Q=j_{!*}P$。
+
+**答案 31.10.** Verdier 对偶交换 perverse t-结构两半：
+$$
+\mathbb D({}^pD^{\le0})={}^pD^{\ge0},\qquad
+\mathbb D({}^pD^{\ge0})={}^pD^{\le0}.
+$$
+因此它给出 $\operatorname{Perv}(X)^{op}\simeq\operatorname{Perv}(X)$。
+
+**答案 31.11.** Verdier 对偶交换 $j_!$ 与 $j_*$，并把 perverse heart 反等价到自身。因此它把 image
+$$
+\operatorname{im}({}^pj_!P\to{}^pj_*P)
+$$
+送到
+$$
+\operatorname{im}({}^pj_!\mathbb D_UP\to{}^pj_*\mathbb D_UP),
+$$
+即 $j_{!*}(\mathbb D_UP)$。
+
+**答案 31.12.** Nearby cycles 描述一般纤维靠近特殊纤维的极限信息；vanishing cycles 描述退化中真正消失或新产生的奇异信息。适当平移后它们保持 perverse sheaves，并通过标准三角连接 $i^*$、$\psi_f$ 和 $\phi_f$。
+
+## 第三十二章
+
+**答案 32.1.** 谱 $E$ 的 Bousfield class 是
+$$
+\langle E\rangle=\{X\in\mathbf{Sp}\mid E\wedge X\simeq0\}.
+$$
+它记录 $E$ 看不见的谱。
+
+**答案 32.2.** 若 $E\simeq F\wedge G$ 且 $F\wedge X\simeq0$，则
+$$
+E\wedge X\simeq F\wedge G\wedge X\simeq0.
+$$
+所以所有 $F$-acyclic 都是 $E$-acyclic，$\langle E\rangle\le\langle F\rangle$。
+
+**答案 32.3.** 因为
+$$
+(\bigvee_iE_i)\wedge X\simeq\bigvee_i(E_i\wedge X),
+$$
+左边为零当且仅当每个 $E_i\wedge X$ 为零。因此楔和的 acyclics 是各 acyclics 的交，对应 Bousfield classes 的 join。
+
+**答案 32.4.** 固定素数 $p$，
+$$
+K(n)_*\cong\mathbb F_p[v_n^{\pm1}],\qquad |v_n|=2(p^n-1).
+$$
+
+**答案 32.5.** 有限 $p$-local 谱 $F$ 的 chromatic type 为 $n$，若 $K(m)_*F=0$ 对 $m<n$，且 $K(n)_*F\ne0$。
+
+**答案 32.6.** 厚子范畴定理说，$p$-local finite spectra 的 thick subcategories 由 chromatic type 分类，形成按 type 排列的链。
+
+**答案 32.7.** $v_n$-self map 是 $\Sigma^dF\to F$，在 $K(n)_*$ 上为同构并在其他高度上呈幂零行为。其 telescope 是迭代该自映射的余极限。
+
+**答案 32.8.** Telescope conjecture 断言有限局部化 $L_n^f$ 与由 telescope 谱 $T(0),\dots,T(n)$ 给出的 Bousfield localization 一致，等价形式依具体记号而定。
+
+**答案 32.9.** 若猜想成立，则 $L_n^f$ 的 acyclics 由
+$$
+(T(0)\vee\cdots\vee T(n))\wedge X\simeq0
+$$
+检测，也就是由每个 $T(i)\wedge X$ 是否为零检测。
+
+**答案 32.10.** Chromatic fracture square 形如
+$$
+\begin{array}{c}
+L_nX\to L_{K(n)}X\\
+\downarrow\quad\downarrow\\
+L_{n-1}X\to L_{n-1}L_{K(n)}X.
+\end{array}
+$$
+它是同伦拉回方块。
+
+**答案 32.11.** 若 $L_{n-1}X=0$ 且 $L_{K(n)}X=0$，则右下角也为零，拉回为 $0\times_00=0$。所以 $L_nX=0$。反向由投影到两个角得到。
+
+**答案 32.12.** Chromatic localization 是以 $E=K(n)$、$E(n)$、$T(n)$ 或其楔和定义的 $E$-acyclics 为核的 Bousfield localization。
+
+**答案 32.13.** 若 smashing localization 的 acyclics 由 compact objects 生成，则 Neeman-Thomason 型定理描述 quotient 的 compact objects：
+$$
+(\mathbf{Sp}/A)^\omega\simeq\operatorname{Kar}(\mathbf{Sp}^\omega/A^\omega).
+$$
+因此有限谱的厚子范畴控制大范畴局部化后的紧对象。
+
+## 第三十三章
+
+**答案 33.1.** 对光滑 $X$，$D_X$ 是由 $\mathcal O_X$ 与切向量场 $\mathcal T_X$ 生成的 filtered sheaf of rings，满足 $\xi f-f\xi=\xi(f)$。
+
+**答案 33.2.** 左 $D_X$-module 给出切向量场对 $M$ 的作用，满足 Leibniz 公式，因此等价于 connection；$D_X$ 的 Lie bracket 关系对应曲率为零，即 flatness。反向由 flat connection 延拓出 $D_X$-作用。
+
+**答案 33.3.** 对 coherent $D_X$-module $M$，选 good filtration，取 associated graded 为 $\operatorname{gr}D_X\simeq\operatorname{Sym}\mathcal T_X$ 上的模。其在 $T^*X$ 中的支撑为 $\operatorname{Char}(M)$。
+
+**答案 33.4.** Bernstein inequality 说非零 coherent $D_X$-module 满足 $\dim\operatorname{Char}(M)\ge\dim X$。若等号成立，则 $M$ holonomic。
+
+**答案 33.5.** 点空间上 $D_X=\mathbb C$，所以 regular holonomic $D_X$-modules 就是有限维复向量空间。
+
+**答案 33.6.** 对左 $D_X$-module $M$，
+$$
+\operatorname{DR}_X(M)=
+[M\to\Omega_X^1\otimes M\to\cdots\to\Omega_X^{\dim X}\otimes M][\dim X].
+$$
+
+**答案 33.7.** 平凡 connection 给出通常解析 de Rham complex。Poincaré lemma 说明它 quasi-isomorphic 于 $\mathbb C_X$，所以按本章约定
+$$
+\operatorname{DR}_X(\mathcal O_X)\simeq\mathbb C_X[\dim X].
+$$
+
+**答案 33.8.** Riemann-Hilbert correspondence 给出
+$$
+D^b_{\operatorname{rh}}(D_X)\simeq D^b_c(X,\mathbb C),
+$$
+并在 heart 层把 regular holonomic $D_X$-modules 对应到 perverse sheaves。
+
+**答案 33.9.** de Rham 或 solution functor 的平移约定使 regular holonomic $D_X$-module 的标准 heart 被送入 perverse t-结构 heart；因此 heart 层得到 regular holonomic modules 与 $\operatorname{Perv}(X)$ 的等价。
+
+**答案 33.10.** Proper $f$ 下 sheaf 侧 $f_!=f_*$。Riemann-Hilbert 等价与六操作相容，所以 $D$-module 的 proper direct image 对应 sheaf 的 direct image。
+
+**答案 33.11.** Kashiwara equivalence 说闭嵌入 $i:Z\hookrightarrow X$ 下，$D_Z$-modules 等价于支撑在 $Z$ 上的 $D_X$-modules。
+
+**答案 33.12.** Recollement 中闭部分由支撑在闭子空间的对象给出。Kashiwara equivalence 正是 $D$-module 理论中把闭部分识别为 $Z$ 上 $D_Z$-modules 的定理。
+
+## 第三十四章
+
+**答案 34.1.** 常用模型包括 simplicial commutative rings、特征 $0$ 下的非正 commutative dg algebras、connective $E_\infty$-rings。
+
+**答案 34.2.** Derived affine scheme 是 $\operatorname{Spec}A$，其中 $A$ 是 connective $E_\infty$-ring；$\operatorname{dAff}=(\operatorname{CAlg}^{cn})^{op}$。
+
+**答案 34.3.** 普通环 $R$ 给出离散 $E_\infty$-ring $HR$。离散对象之间的映射空间退化为普通环同态集合，因此普通仿射概形全忠实嵌入派生仿射概形。
+
+**答案 34.4.** Prestack 是函子 $F:\operatorname{dAff}^{op}\to\mathcal S$。若它对给定拓扑的覆盖满足 hyperdescent，则称为 derived stack。
+
+**答案 34.5.** 因 $\operatorname{dAff}=(\operatorname{CAlg}^{cn})^{op}$，
+$$
+\operatorname{Map}_{\operatorname{dAff}}(\operatorname{Spec}B,\operatorname{Spec}A)
+\simeq
+\operatorname{Map}_{\operatorname{CAlg}^{cn}}(A,B).
+$$
+
+**答案 34.6.** 对 $\operatorname{Spec}A$，
+$$
+\operatorname{QCoh}(\operatorname{Spec}A)=\operatorname{Mod}_A.
+$$
+
+**答案 34.7.** 对 derived stack $X$，
+$$
+\operatorname{QCoh}(X)=\lim_{\operatorname{Spec}A\to X}\operatorname{Mod}_A.
+$$
+极限沿所有仿射测试对象到 $X$ 的图形取。
+
+**答案 34.8.** 若 $X=\operatorname{Spec}A$，overcategory 有终对象 $\operatorname{Spec}A\to X$，所以极限等于该终对象处的值 $\operatorname{Mod}_A$。
+
+**答案 34.9.** Cotangent complex $L_A$ 表示导子：
+$$
+\operatorname{Map}_{\operatorname{Mod}_A}(L_A,M)\simeq\operatorname{Der}(A,M).
+$$
+相对版本 $L_{B/A}$ 表示 $A$-线性导子。
+
+**答案 34.10.** 对 $A\to B\to C$，导子限制给纤维序列
+$$
+\operatorname{Der}_B(C,M)\to\operatorname{Der}_A(C,M)\to\operatorname{Der}_A(B,M).
+$$
+用 cotangent complex 表示并对所有 $M$ 应用 Yoneda，得到
+$$
+C\otimes_BL_{B/A}\to L_{C/A}\to L_{C/B}.
+$$
+
+**答案 34.11.** Formal moduli problem 是 $F:\operatorname{Art}_k\to\mathcal S$，满足 $F(k)=*$，并把小拉回方块送为拉回方块。
+
+**答案 34.12.** Lurie-Pridham 定理说，在特征 $0$ 下，formal moduli problems 的 $\infty$-范畴等价于 dg Lie algebras 的合适 $\infty$-范畴。
+
+**答案 34.13.** 点 $x:\operatorname{Spec}k\to X$ 的一阶变形由
+$$
+\operatorname{Map}_k(x^*L_X,M)
+$$
+控制。因此切复形是 $x^*L_X$ 的线性对偶，记作 $T_xX$。
+
+**答案 34.14.** $\operatorname{QCoh}$ 适合准凝聚复形和张量几何；$\operatorname{IndCoh}$ 更适合奇异空间、Grothendieck duality、! pullback 和分布型对象。光滑情形二者接近，奇异情形差别关键。
+
+## 第三十五章
+
+**答案 35.1.** Monad 是函子 $T:C\to C$ 连同单位 $\eta:\operatorname{id}\to T$ 和乘法 $\mu:T^2\to T$，满足结合律和单位律的同伦相干形式。
+
+**答案 35.2.** 伴随 $F:C\rightleftarrows D:G$ 产生 monad $GF$；单位来自伴随单位，乘法为 $GFGF\xrightarrow{G\varepsilon F}GF$。
+
+**答案 35.3.** Comparison functor $K:D\to\operatorname{Alg}_{GF}(C)$ 把 $Y$ 送到 $GY$，其 $GF$-作用为 $GFGY\xrightarrow{G\varepsilon_Y}GY$。
+
+**答案 35.4.** Split augmented simplicial object 是带额外退化或 contracting homotopy 的增广单纯对象，使其同伦相干地收缩到增广目标。
+
+**答案 35.5.** 额外退化给出单纯对象到常值增广目标的同伦收缩。几何实现是 colimit，保持该收缩，因此 $|X_\bullet|\simeq X_{-1}$。
+
+**答案 35.6.** Barr-Beck-Lurie 定理说：若 $G$ 保守并保持 $G$-split simplicial objects 的几何实现，则 $D\to\operatorname{Alg}_{GF}(C)$ 是等价。
+
+**答案 35.7.** 若 $D\simeq\operatorname{Alg}_T(C)$，遗忘函子反映等价，因为 algebra morphism 是等价当且仅当其底层 $C$ 中态射是等价。
+
+**答案 35.8.** 自由-遗忘伴随 $A\otimes-:\mathbf{Sp}\rightleftarrows\operatorname{Mod}_A:U$ 的复合 monad 是 $A\otimes-$，其代数正是 $A$-modules。
+
+**答案 35.9.** Functor $F:C\to D$ comonadic，若 $C\to\operatorname{Coalg}_{FG}(D)$ 是等价，其中 $FG$ 是由伴随产生的 comonad。
+
+**答案 35.10.** Cech nerve $U_\bullet$ 是 $U\times_X\cdots\times_XU$ 组成的增广单纯对象。Descent data 是 $U_\bullet$ 上对象及其所有高阶 cocycle 相容。
+
+**答案 35.11.** 若 $f^*$ comonadic，则 $\mathcal D(X)$ 等价于 comonad $f^*f_*$ 的 coalgebras。该 coalgebra 范畴由 Cech cobar construction 的 totalization 给出，即 Cech descent data。
+
+**答案 35.12.** 对 faithfully flat $A\to B$，数据是 $B$-模 $M$，同构
+$$
+B\otimes_A M\simeq M\otimes_A B
+$$
+在 $B\otimes_AB$ 上，且在 $B\otimes_AB\otimes_AB$ 上满足 cocycle condition。
+
+## 第三十六章
+
+**答案 36.1.** Neutral Tannakian category 是刚性 $k$-线性阿贝尔对称幺半范畴 $\mathcal C$，配 faithful exact $k$-线性对称幺半 fiber functor $\omega:\mathcal C\to\operatorname{Vect}_k^{fd}$。
+
+**答案 36.2.** 张量自同构群函子为
+$$
+\operatorname{Aut}^{\otimes}(\omega)(R)=\operatorname{Aut}^{\otimes}(\omega_R),
+$$
+其中 $\omega_R$ 是标量扩张后的 fiber functor。
+
+**答案 36.3.** 经典 Tannaka duality 说 $G=\operatorname{Aut}^{\otimes}(\omega)$ 是仿射群概形，且
+$$
+\mathcal C\simeq\operatorname{Rep}_k^{fd}(G)
+$$
+作为对称幺半范畴。
+
+**答案 36.4.** Matrix coefficient coalgebra 为
+$$
+\mathcal O(G)=\int^{X\in\mathcal C}\omega(X)^\vee\otimes\omega(X).
+$$
+
+**答案 36.5.** 刚性提供对偶、评价和余评价，使张量自同构在 $X$ 和 $X^\vee$ 上相互决定；矩阵系数因而能控制整个群函子。
+
+**答案 36.6.** 自然映射为
+$$
+X(A)\to\operatorname{Fun}^{L,\otimes}(\operatorname{QCoh}(X),\operatorname{Mod}_A),
+$$
+把点 $x:\operatorname{Spec}A\to X$ 送到 pullback $x^*$。
+
+**答案 36.7.** 保小余极限的对称幺半函子 $\operatorname{Mod}_R\to\operatorname{Mod}_A$ 由 $R$ 的像决定，等价于 $E_\infty$-ring map $R\to A$。对应函子为 $-\otimes_RA$。
+
+**答案 36.8.** 若 $\operatorname{QCoh}(X)\simeq\operatorname{Tot}\operatorname{QCoh}(U_\bullet)$，则从 $\operatorname{QCoh}(X)$ 到 $\operatorname{Mod}_A$ 的张量函子等价于 $U_\bullet$ 上相容的张量函子，即点的 descent data。
+
+**答案 36.9.** Classifying stack $BG$ 把 $A$ 送到 $\operatorname{Spec}A$ 上 $G$-torsors 的空间。
+
+**答案 36.10.** 在适当假设下，
+$$
+\operatorname{QCoh}(BG)\simeq\operatorname{Rep}(G)
+$$
+作为对称幺半 presentable $\infty$-范畴；经典有限维部分恢复有限维表示。
+
+**答案 36.11.** Fiber functor 对应基点 $*\to BG$。其张量自同构群是 loop group $\Omega_*BG\simeq G$，所以带 fiber functor 的 $\operatorname{QCoh}(BG)$ 恢复 $G$。
+
+## 第三十七章
+
+**答案 37.1.** tt-category 是本质小幂等完备三角范畴，配有精确对称幺半结构 $\otimes$，且张量对每个变量保持三角。
+
+**答案 37.2.** Thick tensor ideal 是 thick subcategory $I\subseteq T$，满足若 $x\in I$ 且 $t\in T$，则 $x\otimes t\in I$。
+
+**答案 37.3.** 取所有包含给定对象族的 thick tensor ideals 的交。交仍对三角、直和项和张量封闭，因此是最小 thick tensor ideal。
+
+**答案 37.4.** Proper thick tensor ideal $\mathfrak p$ prime，若 $x\otimes y\in\mathfrak p$ 蕴含 $x\in\mathfrak p$ 或 $y\in\mathfrak p$。
+
+**答案 37.5.** $\operatorname{Spc}(T)$ 是 prime thick tensor ideals 的集合。对象 $x$ 的支撑为
+$$
+\operatorname{supp}(x)=\{\mathfrak p\mid x\notin\mathfrak p\}.
+$$
+
+**答案 37.6.** 对 prime $\mathfrak p$，$x\otimes y\notin\mathfrak p$ 当且仅当 $x\notin\mathfrak p$ 且 $y\notin\mathfrak p$。因此
+$$
+\operatorname{supp}(x\otimes y)=\operatorname{supp}(x)\cap\operatorname{supp}(y).
+$$
+
+**答案 37.7.** Thomason subset 是 quasi-compact open subsets 的补的并。Spectral/noetherian 情形中它与常见 specialization-closed 条件相容。
+
+**答案 37.8.** Balmer 分类定理说 rigid tt-category 中 radical thick tensor ideals 与 $\operatorname{Spc}(T)$ 的 Thomason subsets 对应，$I$ 送到 $\bigcup_{x\in I}\operatorname{supp}(x)$。
+
+**答案 37.9.** 对交换环 $R$，
+$$
+\operatorname{Spc}(\operatorname{Perf}(R))\cong\operatorname{Spec}R.
+$$
+Perfect complex 的支撑对应局部化后非零的素理想集合。
+
+**答案 37.10.** 若 $P$ perfect 且所有 $P_\mathfrak p=0$，则每个 cohomology module 的所有局部化为零。Noetherian 情形中这推出 cohomology modules 为零，故 $P=0$。
+
+**答案 37.11.** 有限 $p$-local spectra 的 thick tensor ideals 由 chromatic type 分类；Balmer primes 与高度层相联系，反映 Morava $K(n)$ 的检测层级。
+
+**答案 37.12.** 若 $I$ 是 tensor ideal，商中被倒置的态射张量任意对象后仍被倒置。因此张量由 Verdier quotient 泛性质下降到 $T/I$。
+
+## 第三十八章
+
+**答案 38.1.** $THH(C)$ 是小稳定幂等完备 $\infty$-范畴 $C$ 的谱值 Hochschild trace，即 Morita $(\infty,2)$-范畴中恒等 bimodule 的 trace。
+
+**答案 38.2.** 对 $E_1$-ring $R$，cyclic bar construction 为 $[n]\mapsto R^{\otimes(n+1)}$，几何实现给出 $THH(R)$。
+
+**答案 38.3.** Morita equivalence 识别双模理论和恒等 bimodule，因此识别恒等 bimodule 的 trace，故 $THH$ Morita invariant。
+
+**答案 38.4.** Cyclic bar construction 有循环对称性；这些循环算子组合成 $S^1$-作用。因此 $THH$ 自然是带圆作用的谱。
+
+**答案 38.5.** Cyclotomic spectrum 是带 $\mathbb T$-作用的谱 $X$，并配有 Frobenius 映射 $X\to X^{tC_p}$，满足相干条件。
+
+**答案 38.6.** $THH(C)$ 不仅有圆作用，还自然带 Frobenius/Tate 型 cyclotomic 结构，因此提升为 cyclotomic spectrum。
+
+**答案 38.7.** $p$-complete 约定下，
+$$
+TC(X;p)=\operatorname{fib}(X^{h\mathbb T}\xrightarrow{\operatorname{can}-\varphi}X^{t\mathbb T}).
+$$
+
+**答案 38.8.** $TC$ 是 cyclotomic spectra 上的函子；若 $X\simeq Y$ 为 cyclotomic 等价，则应用 $TC$ 得 $TC(X)\simeq TC(Y)$。
+
+**答案 38.9.** Cyclotomic trace 是自然变换
+$$
+\operatorname{tr}_{cycl}:K(C)\to TC(C).
+$$
+
+**答案 38.10.** Dennis trace 是 $K(C)\to THH(C)$。Cyclotomic trace 可看作 Dennis trace 与 $THH$ 的 cyclotomic refinement 结合后到 $TC$ 的提升。
+
+**答案 38.11.** Dundas-Goodwillie-McCarthy 定理说，在 nilpotent 相对情形中，相对 $K$-理论与相对 $TC$ 的 $p$-完成等价。
+
+**答案 38.12.** Trace methods 先把 $K$-理论映到 Morita/localizing invariant $THH$，再利用圆作用、Tate construction 和 Frobenius 形成 $TC$；这把 $K$-计算转化为更稳定的谱论固定点计算。
+
+## 第三十九章
+
+**答案 39.1.** Reduced functor 是满足 $F(0)\simeq0$ 的函子。
+
+**答案 39.2.** $1$-excisive functor 把 homotopy pushout squares 送到 homotopy pullback squares。
+
+**答案 39.3.** 正合函子保持有限余极限，所以把 pushout square 送到 pushout square。稳定目标中 pushout square 等价于 pullback square，因此它 $1$-excisive。
+
+**答案 39.4.** $F$ 为 $n$-excisive，若它把 strongly homotopy cocartesian $(n+1)$-cubes 送到 homotopy cartesian $(n+1)$-cubes。
+
+**答案 39.5.** $P_nF$ 是从 $F$ 到 $n$-excisive functor 的 universal approximation：任意 $F\to G$ 且 $G$ 为 $n$-excisive，唯一因子化经 $P_nF$。
+
+**答案 39.6.** Goodwillie tower 是 $\cdots\to P_nF\to P_{n-1}F\to\cdots$。第 $n$ 层为
+$$
+D_nF=\operatorname{fib}(P_nF\to P_{n-1}F).
+$$
+
+**答案 39.7.** $n$-homogeneous functor 是 $n$-excisive 且 $P_{n-1}F\simeq0$ 的函子。
+
+**答案 39.8.** 对 reduced $F$，
+$$
+\operatorname{cr}_2F(X,Y)=\operatorname{fib}(F(X\vee Y)\to F(X)\times F(Y)).
+$$
+
+**答案 39.9.** 若 $F$ reduced 且 $1$-excisive，则 $X\vee Y$ 的 pushout square 被送到 pullback：
+$$
+F(X\vee Y)\simeq F(X)\times_{F(0)}F(Y)\simeq F(X)\times F(Y).
+$$
+因此二重 cross-effect 为零。
+
+**答案 39.10.** $\operatorname{cr}_nF$ 由所有子集楔和形成的立方图全纤维定义。置换变量置换该立方图，因此给出自然 $\Sigma_n$-作用。
+
+**答案 39.11.** 对 spaces 到 spectra 的合适 reduced finitary functor，
+$$
+D_nF(X)\simeq(\partial_nF\wedge X^{\wedge n})_{h\Sigma_n}.
+$$
+
+**答案 39.12.** Goodwillie chain rule 说
+$$
+\partial_*(F\circ G)\simeq\partial_*F\circ\partial_*G
+$$
+其中右侧为 symmetric sequences 的 composition product。
+
+**答案 39.13.** Tower 在 $X$ 处收敛，若
+$$
+F(X)\to\lim_nP_nF(X)
+$$
+为等价。
+
+## 第四十章
+
+**答案 40.1.** $\operatorname{Sm}_S$ 是 $S$ 上光滑有限型概形范畴；
+$$
+\mathcal P(\operatorname{Sm}_S)=\operatorname{Fun}(\operatorname{Sm}_S^{op},\mathcal S).
+$$
+
+**答案 40.2.** Nisnevich sheaves of spaces 是 $\operatorname{Sm}_S$ 上对 Nisnevich 覆盖满足下降的 space-valued sheaves。
+
+**答案 40.3.** Motivic spaces $\mathbf H(S)$ 是 Nisnevich sheaves of spaces 关于所有 $X\times\mathbb A^1\to X$ 的 accessible localization。
+
+**答案 40.4.** 预层范畴 presentable；Nisnevich sheaf 化是 accessible localization；再作 $\mathbb A^1$ accessible localization 仍 presentable。因此 $\mathbf H(S)$ presentable。
+
+**答案 40.5.** $F$ 为 $\mathbb A^1$-invariant，若对所有 $X$，
+$$
+F(X)\simeq F(X\times\mathbb A^1).
+$$
+
+**答案 40.6.** 局部对象对 $X\times\mathbb A^1\to X$ 取映射空间为等价。由 Yoneda，这等价于 $F(X)\simeq F(X\times\mathbb A^1)$。
+
+**答案 40.7.** Tate sphere 为
+$$
+T=\mathbb A^1/(\mathbb A^1\setminus0)\simeq S^1\wedge\mathbb G_m.
+$$
+
+**答案 40.8.** Stable motivic homotopy category 是
+$$
+\mathbf{SH}(S)=\operatorname{Sp}_T(\mathbf H_*(S)).
+$$
+
+**答案 40.9.** 复点 functor 把光滑 $\mathbb C$-概形送到拓扑空间，并把 Nisnevich 和 $\mathbb A^1$ 等价送到拓扑等价；由局部化和稳定化泛性质得到 $\mathbf{SH}(\mathbb C)\to\mathbf{Sp}$。
+
+**答案 40.10.** Motivic 六操作为
+$$
+f^*,f_*,f_!,f^!,-\otimes-,\underline{\operatorname{Hom}},
+$$
+满足基变换、投影公式、proper compatibility、purity 和 localization。
+
+**答案 40.11.** 对开闭分解 $j:U\hookrightarrow X$、$i:Z\hookrightarrow X$，
+$$
+j_!j^*E\to E\to i_*i^*E
+$$
+是 motivic localization triangle。
+
+**答案 40.12.** Homotopy purity 说闭嵌入 $i:Z\hookrightarrow X$ 的商
+$$
+X/(X\setminus Z)
+$$
+等价于法丛 $N_{Z/X}$ 的 Thom space。
+
+**答案 40.13.** 零向量丛总空间为 $X$，补为空，所以
+$$
+\operatorname{Th}(0_X)=X/\varnothing\simeq X_+.
+$$
+
+**答案 40.14.** 若 $\mathbf{SH}(S)$ 由 smooth schemes 的悬挂谱及 Tate twists 紧生成，则保持小余极限的正合函子只需在这些生成子上检测零对象，即可在生成的 localizing subcategory 上检测等价。
+
+## 第四十一章
+
+**答案 41.1.** $\operatorname{Sub}_{\mathcal C}(X)$ 是所有单态 $U\hookrightarrow X$ 的同构类，按因子化排序。
+
+**答案 41.2.** 态射 $f:X\to Y$ 把子对象 $V\hookrightarrow Y$ 拉回为 $f^*V\hookrightarrow X$。恒等态射的拉回为恒等，复合态射的拉回由 pullback 粘合性质等于迭代拉回，所以得到反变函子。
+
+**答案 41.3.** Regular category 是有有限极限、每个态射有 image factorization，且 regular epimorphisms 在 pullback 下稳定的范畴。
+
+**答案 41.4.** 对 $U\hookrightarrow X$，令 $\exists_f(U)$ 为 $U\to X\xrightarrow fY$ 的 image。则
+$$
+\exists_f(U)\le V\Longleftrightarrow U\le f^*V,
+$$
+故 $\exists_f\dashv f^*$。
+
+**答案 41.5.** Cartesian closed category 是有有限积且每个 $-\times A$ 有右伴随 $(-)^A$ 的范畴。
+
+**答案 41.6.** Heyting implication $P\Rightarrow Q$ 由伴随条件
+$$
+R\le(P\Rightarrow Q)\Longleftrightarrow R\wedge P\le Q
+$$
+刻画。
+
+**答案 41.7.** Locally Cartesian closed category 是有有限极限且每个 slice $\mathcal C/X$ 都 Cartesian closed 的范畴。
+
+**答案 41.8.** $\Sigma_f(U\to X)=U\to X\xrightarrow fY$。Slice 态射 $\Sigma_fU\to V$ 等价于 $U\to X\times_YV$，故 $\Sigma_f\dashv f^*$。
+
+**答案 41.9.** $\Pi_f$ 是 $f^*$ 的右伴随；在类型论中它把 $X$ 上依赖于 $f$ 的族送到 $Y$ 上的依赖函数类型。
+
+**答案 41.10.** Comprehension category 是 fibration $p:\mathcal T\to\mathcal C$ 配到箭头范畴的 comprehension 函子，解释上下文、类型和上下文扩张。
+
+**答案 41.11.** 类型 $A$ 在上下文 $\Gamma$ 中给出投影 $\Gamma.A\to\Gamma$；项就是选择每个上下文元素上的一个元素，即 section $\Gamma\to\Gamma.A$。
+
+**答案 41.12.** 在 groupoid 语义中，$x$ 与 $y$ 的恒等证据是从 $x$ 到 $y$ 的可逆箭头；路径对象为箭头对象，恒等箭头给出对角线因子化。
+
+**答案 41.13.** Univalent universe 是 fibration $p:\mathcal U_\bullet\to\mathcal U$，使恒等类型 $\operatorname{Id}_{\mathcal U}(A,B)$ 与等价类型 $\operatorname{Equiv}(A,B)$ 等价。
+
+**答案 41.14.** 几何态射逆像 $f^*$ 保持有限极限且作为左伴随保持小余极限；几何逻辑只用有限合取、任意析取和存在量词，因此解释被 $f^*$ 保持。
+
+## 第四十二章
+
+**答案 42.1.** $\operatorname{Disk}_n$ 是由有限个 $\mathbb R^n$ 不交并组成、态射为空间化嵌入、幺半结构为不交并的对称幺半 $\infty$-范畴。
+
+**答案 42.2.** $E_n$-代数是对称幺半函子 $A:\operatorname{Disk}_n\to C$。
+
+**答案 42.3.** 因为 $A$ 对称幺半，
+$$
+A\left(\bigsqcup_I\mathbb R^n\right)\simeq\bigotimes_I A(\mathbb R^n).
+$$
+
+**答案 42.4.** 因子化同调定义为
+$$
+\int_MA=(\operatorname{Lan}_{\operatorname{Disk}_n\hookrightarrow\operatorname{Mfld}_n}A)(M)
+\simeq\operatorname*{colim}_{\operatorname{Disk}_{n/M}}A(U).
+$$
+
+**答案 42.5.** $\operatorname{id}_{\mathbb R^n}$ 是 $\operatorname{Disk}_{n/\mathbb R^n}$ 的终对象，所以余极限等于 $A(\mathbb R^n)$。
+
+**答案 42.6.** 因子化同调是对称幺半左 Kan 延拓，故保持不交并对应的幺半积：
+$$
+\int_{M\sqcup N}A\simeq\int_MA\otimes\int_NA.
+$$
+
+**答案 42.7.** 若 $M=M_-\cup_{N\times\mathbb R}M_+$，则
+$$
+\int_MA\simeq
+\left(\int_{M_-}A\right)\otimes_{\int_{N\times\mathbb R}A}
+\left(\int_{M_+}A\right).
+$$
+
+**答案 42.8.** 圆盘值给出局部输入；不交并给出张量；每次 collar-gluing 用 excision 化为相对张量积，所以可递归计算。
+
+**答案 42.9.** 对 $E_1$-代数 $A$，
+$$
+\int_{S^1}A\simeq HH(A).
+$$
+
+**答案 42.10.** $S^1$ 的旋转作用在 $\operatorname{Disk}_{1/S^1}$ 上，因此作用在余极限 $\int_{S^1}A$ 上；经 $\int_{S^1}A\simeq HH(A)$ 得到 $HH(A)$ 的圆作用。
+
+**答案 42.11.** $E_n$-空间 $A$ grouplike，若 $\pi_0(A)$ 在诱导乘法下为群。
+
+**答案 42.12.** 非阿贝尔 Poincare 对偶说，对 grouplike $E_n$-空间 $A$，
+$$
+\int_MA\simeq\operatorname{Map}_c(M,B^nA).
+$$
+
+**答案 42.13.** 当 $M=\mathbb R^n$，右侧为 $\operatorname{Map}_*(S^n,B^nA)\simeq\Omega^nB^nA\simeq A$，与 $\int_{\mathbb R^n}A\simeq A$ 一致。
+
+**答案 42.14.** Factorization algebra 是带有不交开集到大开集的多重乘法并满足 Weiss cosheaf descent 的 prefactorization algebra；$\mathbb R^n$ 上局部常值者与 $E_n$-代数等价。
+
+## 第四十三章
+
+**答案 43.1.** $\operatorname{ProFin}$ 的覆盖族是有限族 $\{S_i\to S\}$，使 $\coprod_iS_i\to S$ 为满射。
+
+**答案 43.2.** Condensed set 是 $\operatorname{ProFin}$ 上的 set-valued sheaf；condensed abelian group 是 abelian group-valued sheaf。
+
+**答案 43.3.** 对集合 $A$，令 $\underline A(S)=\operatorname{Map}_{cts}(S,A_{disc})$。连续映射到离散目标可沿 profinite 满覆盖粘合，因此是 sheaf。
+
+**答案 43.4.** 自然变换 $\underline A\to\underline B$ 由点 $*$ 上的函数 $A\to B$ 决定；任意函数又由复合诱导自然变换，所以全忠实。
+
+**答案 43.5.** 拓扑空间 $T$ 的凝聚化为 $\underline T(S)=\operatorname{Map}_{cts}(S,T)$。
+
+**答案 43.6.** 若 $T$ 离散，则 $\operatorname{Map}_{cts}(S,T)$ 正是离散集合嵌入的定义。
+
+**答案 43.7.** 自由 condensed abelian group $\mathbb Z[X]$ 是遗忘函子 $\operatorname{Cond}(\mathbf{Ab})\to\operatorname{Cond}(\mathbf{Set})$ 的左伴随作用于 $X$。
+
+**答案 43.8.** 它有足够 colimits、生成元，且 filtered colimits exact；因此可进行通常的 Abelian 和 derived 同调代数。
+
+**答案 43.9.** Solidification 是反射性对称幺半局部化
+$$
+(-)^{\mathrm{solid}}:\operatorname{Cond}(\mathbf{Ab})\to\operatorname{Solid}.
+$$
+
+**答案 43.10.** Solid tensor product 定义为
+$$
+M\otimes^{\mathrm{solid}} N=(M\otimes N)^{\mathrm{solid}}.
+$$
+
+**答案 43.11.** $M\otimes^{\mathrm{solid}} N$ 是某对象经 solidification 后的值，故属于 solid objects 的本质像。
+
+**答案 43.12.** 对 solid commutative algebra $A$，solid $A$-module 是 $\operatorname{Solid}$ 中的 $A$-module。
+
+**答案 43.13.** Solidification 是左伴随；导出后仍为左伴随，因此保持小余极限。
+
+**答案 43.14.** 拓扑对象通过 $S\mapsto\operatorname{Map}_{cts}(S,T)$ 变为 sheaf，连续运算变为逐点运算；于是问题进入 condensed sheaves 与 modules 的范畴论框架。
+
+## 第四十四章
+
+**答案 44.1.** 有限极限语法范畴的对象为上下文中的公式 $\{\vec x\mid\varphi\}$，态射为可证唯一存在的函数式关系，并按理论可证等价取商。
+
+**答案 44.2.** 空有限积理论中对象只记录有限变量上下文 $n$；从 $n$ 到 $m$ 的代换等价于函数 $m\to n$，故得到有限集范畴的对偶骨架。
+
+**答案 44.3.** Regular 逻辑允许有限合取和存在量词，并按可证蕴含解释为子对象排序。
+
+**答案 44.4.** Coherent category 是 regular category，并且每个子对象格有有限并且 pullback 保持这些有限并。
+
+**答案 44.5.** 同一对象上公式 $\varphi,\psi$ 的解释为子对象 $U,V$；析取解释为 $U\vee V$。
+
+**答案 44.6.** 分类 topos $\mathcal E_T$ 满足
+$$
+\operatorname{Geom}(\mathcal F,\mathcal E_T)\simeq\operatorname{Mod}_T(\mathcal F)
+$$
+自然于 Grothendieck topos $\mathcal F$。
+
+**答案 44.7.** 若两个 topos 都表示 $\operatorname{Mod}_T(-)$，则它们表示同一 2-函子；由 2-Yoneda，在等价意义下唯一。
+
+**答案 44.8.** 泛模型是分类 topos 中对应恒等几何态射的 $T$-模型。
+
+**答案 44.9.** $\mathcal F$ 中模型 $M$ 对应几何态射 $f:\mathcal F\to\mathcal E_T$，且 $M\simeq f^*U_T$。
+
+**答案 44.10.** Tripos 是 $P:\mathcal C^{op}\to\mathbf{Heyt}$，带纤维 Heyting 结构、量词伴随、Beck-Chevalley 和 generic predicate 等结构。
+
+**答案 44.11.** Generic predicate 是 $\Omega$ 上谓词 $\top_\Omega$，使任意谓词由某个 classifying map 拉回得到。
+
+**答案 44.12.** 对 topos $\mathcal E$，取 $P(X)=\operatorname{Sub}(X)$；子对象分类子给 generic predicate，内部 Heyting 结构和量词给 tripos 结构。
+
+**答案 44.13.** Tripos-to-topos 把 tripos 生成 elementary topos；对象可由 partial equivalence relations 表示，态射由功能性关系表示。
+
+**答案 44.14.** 来自 topos 的 tripos 已编码子对象、逻辑和分类子；PER 在 topos 中有有效商，因此 tripos-to-topos 恢复原 topos。
+
+## 第四十五章
+
+**答案 45.1.** 关系 $R:X\nrightarrow Y$ 是子对象 $R\hookrightarrow X\times Y$。
+
+**答案 45.2.** 复合为
+$$
+S\circ R=\exists_{\pi_{XZ}}\bigl(\pi_{XY}^*R\wedge\pi_{YZ}^*S\bigr)\hookrightarrow X\times Z.
+$$
+
+**答案 45.3.** 在集合中该子集由所有 $(x,z)$ 组成，使存在 $y$ 满足 $(x,y)\in R$ 且 $(y,z)\in S$，即通常关系复合。
+
+**答案 45.4.** 态射 $f:X\to Y$ 的图像关系是 $(\operatorname{id}_X,f):X\to X\times Y$ 的 image。
+
+**答案 45.5.** $\Gamma_g\circ\Gamma_f$ 由存在 $y=f(x)$ 且 $z=g(y)$ 描述，等价于 $z=gf(x)$，故为 $\Gamma_{gf}$。
+
+**答案 45.6.** Regular completion 是 regular category $\mathcal C_{\mathrm{reg}}$ 与 lex 函子 $\mathcal C\to\mathcal C_{\mathrm{reg}}$，使
+$$
+\operatorname{Reg}(\mathcal C_{\mathrm{reg}},\mathcal R)\simeq\operatorname{Lex}(\mathcal C,\mathcal R).
+$$
+
+**答案 45.7.** Exact category 是 regular category，其中每个内部等价关系都是某个态射的 kernel pair。
+
+**答案 45.8.** Exact completion 是 exact category $\mathcal C_{\mathrm{ex}}$ 与 regular functor $\mathcal C\to\mathcal C_{\mathrm{ex}}$，泛地把 regular functor 延拓到 exact functor。
+
+**答案 45.9.** 若 $\mathcal C$ 已 exact，则它自身满足 exact completion 的泛性质；由表示对象唯一性，$\mathcal C_{\mathrm{ex}}\simeq\mathcal C$。
+
+**答案 45.10.** 内部等价关系 $R\rightrightarrows X$ effective，若它是某个 $q:X\to Q$ 的 kernel pair。
+
+**答案 45.11.** Exact category 中每个等价关系为 kernel pair；regular epi 和 kernel pair 在 pullback 下稳定，因此商稳定。
+
+**答案 45.12.** Allegory 是 locally posetal 2-category，带关系反向 involution 和 meet/关系演算公理。
+
+**答案 45.13.** 若 $R\hookrightarrow X\times Y$，则 $R^\circ\hookrightarrow Y\times X$ 由乘积交换 $X\times Y\cong Y\times X$ 得到。
+
+**答案 45.14.** 拉回后取交解释 $R(x,y)\wedge S(y,z)$，沿 $X\times Y\times Z\to X\times Z$ 取 image 解释 $\exists y$，所以得到关系复合。
+
+## 第四十六章
+
+**答案 46.1.** 典型伴随串为
+$$
+\Pi\dashv\operatorname{Disc}\dashv\Gamma\dashv\operatorname{Codisc}.
+$$
+
+**答案 46.2.** $\Pi$ 取 shape，$\operatorname{Disc}$ 给离散对象，$\Gamma$ 取全局截面，$\operatorname{Codisc}$ 给余离散对象。
+
+**答案 46.3.** 对伴随 $L\dashv R$，$L$ 全忠实当且仅当单位 $\operatorname{id}\to RL$ 为等价；这是伴随的标准判别。
+
+**答案 46.4.** $\int=\operatorname{Disc}\Pi$，$\flat=\operatorname{Disc}\Gamma$，$\sharp=\operatorname{Codisc}\Gamma$。
+
+**答案 46.5.** 若 $\Gamma\operatorname{Disc}\simeq\operatorname{id}$，则
+$$
+\flat\flat=\operatorname{Disc}\Gamma\operatorname{Disc}\Gamma\simeq\operatorname{Disc}\Gamma=\flat.
+$$
+
+**答案 46.6.** Left exact modality 是保持有限极限的反射性局部化，等价于 left exact 幂等 monad。
+
+**答案 46.7.** Pullback 是有限极限；left exact localization 按定义保持有限极限，故保持 pullback。
+
+**答案 46.8.** 恒等类型由对角线和 pullback/path object 结构解释；left exact modality 保持有限极限，因此与恒等类型构造相容。
+
+**答案 46.9.** Modal type theory 是依赖类型论加模态算子 $\bigcirc$ 和单位 $A\to\bigcirc A$，满足反射、幂等和替换相容规则。
+
+**答案 46.10.** Differential cohesive $\infty$-topos 是 cohesive $\infty$-topos，另带 infinitesimal/de Rham 模态以编码无穷小结构。
+
+**答案 46.11.** $X_{\mathrm{dR}}$ 是把无穷小加厚方向局部化后的 de Rham shape。
+
+**答案 46.12.** 若 $X$ 已对无穷小加厚局部，即是该局部化的局部对象，则局部化单位 $X\to X_{\mathrm{dR}}$ 为等价。
+
+**答案 46.13.** 在合适群对象假设下，
+$$
+H^n(X;A)=\pi_0\operatorname{Map}_{\mathcal H}(X,B^nA).
+$$
+
+**答案 46.14.** 由 $\Pi\dashv\operatorname{Disc}$，
+$$
+\operatorname{Map}_{\mathcal H}(X,\operatorname{Disc}B^nA)
+\simeq
+\operatorname{Map}_{\mathcal S}(\Pi X,B^nA),
+$$
+取 $\pi_0$ 得到 shape 上的 cohomology。
+
+## 第四十七章
+
+**答案 47.1.** 层化空间是拓扑空间 $X$ 配连续映射 $X\to P$ 到偏序集的 Alexandrov 拓扑，纤维为 strata。
+
+**答案 47.2.** Conically stratified space 是每点邻域同胚于 $\mathbb R^k\times C(L)$ 且层化由链接 $L$ 的层化诱导的层化空间。
+
+**答案 47.3.** Exit path 是路径 $\gamma$，使层标号随时间只能沿偏序增大。
+
+**答案 47.4.** $\operatorname{Exit}(X)$ 的对象为点，$n$-单纯形为保持 exit 条件的 $\Delta^n\to X$。
+
+**答案 47.5.** 单层时 exit 条件自动满足，exit simplicial set 等于 singular complex，即 fundamental $\infty$-groupoid。
+
+**答案 47.6.** 若闭层 $Z$ 小于开层 $U$，路径可从 $Z$ 到 $U$；反向要求 $U\le Z$，不满足。
+
+**答案 47.7.** Constructible sheaf 是在每个 stratum 上限制为 locally constant 的 sheaf。
+
+**答案 47.8.** 对好的 conically stratified space，
+$$
+\operatorname{Shv}_{cbl}(X;\mathcal S)\simeq\operatorname{Fun}(\operatorname{Exit}(X),\mathcal S).
+$$
+
+**答案 47.9.** 单层时 $\operatorname{Exit}(X)\simeq\Pi_\infty(X)$，constructible 即 locally constant，故恢复局部系统分类。
+
+**答案 47.10.** 限制到 $\operatorname{Exit}(U)$ 和 $\operatorname{Exit}(Z)$ 给两部分数据；从 $Z$ 进入 $U$ 的 exit morphisms 给跨层传输映射。
+
+**答案 47.11.** Perverse sheaf 是 constructible derived sheaf 中满足支撑和余支撑条件、落入 perverse heart 的对象。
+
+**答案 47.12.** Exit-path 范畴编码局部系统和跨层 monodromy；perverse 条件是在这些数据上增加同调维数限制。
+
+**答案 47.13.** 层化因子化同调使用层化 $\operatorname{Disk}$-范畴和各层代数系数，并满足层化 excision。
+
+**答案 47.14.** 单层时层化 $\operatorname{Disk}$-范畴就是普通 $\operatorname{Disk}_n$，左 Kan 延拓定义相同，因此恢复普通因子化同调。
+
+## 第四十八章
+
+**答案 48.1.** $\operatorname{Alg}_n(C)$ 的对象为 $E_n$-代数，1-态射为 $E_{n-1}$-双模，更高态射递归由更低阶双模和同伦给出。
+
+**答案 48.2.** $n=1$ 时对象为结合代数，1-态射为双模，复合为相对张量积，即普通 Morita bicategory。
+
+**答案 48.3.** Proper 指底层对象有限或可对偶；smooth 指 $A$ 作为 $A^{op}\otimes A$-module 为 perfect。
+
+**答案 48.4.** 稳定线性 Morita 语境中 fully dualizable 对象通常由 smooth 和 proper 这两个有限性条件控制。
+
+**答案 48.5.** 取 $P=k^n$ 与 $Q=(k^n)^*$，有
+$$
+P\otimes_{M_n(k)}Q\simeq k,\qquad Q\otimes_kP\simeq M_n(k),
+$$
+故 Morita 等价。
+
+**答案 48.6.** Morita trace 是 Morita $(\infty,2)$-范畴中恒等双模 $\operatorname{id}_A$ 的 trace。
+
+**答案 48.7.** 对合适 $E_1$-代数，
+$$
+\operatorname{Tr}(\operatorname{id}_A)\simeq HH(A)\simeq\int_{S^1}A.
+$$
+
+**答案 48.8.** Morita 等价对象的恒等 1-态射在共轭下对应，trace 不变；由 trace 与 $HH$ 的等价，$HH$ Morita 不变。
+
+**答案 48.9.** Higher Hochschild object 可由
+$$
+\int_{S^k\times\mathbb R^{n-k}}A
+$$
+等因子化同调表达。
+
+**答案 48.10.** $k=1,n=1$ 时空间为 $S^1$，故得到 $\int_{S^1}A\simeq HH(A)$。
+
+**答案 48.11.** 增广 $E_n$-代数是 $E_n$-代数 $A$ 配态射 $\epsilon:A\to\mathbb 1$。
+
+**答案 48.12.** $E_n$-Koszul dual 可写为 $A^!=\operatorname{End}_A(\mathbb 1)$，也可由 $n$-重 bar/cobar 构造给出。
+
+**答案 48.13.** 若 $A=\mathbb 1$，则
+$$
+A^!=\operatorname{End}_{\mathbb 1}(\mathbb 1)\simeq\mathbb 1.
+$$
+
+**答案 48.14.** Bar 构造把乘法迭代转成余乘法型结构，cobar 反向恢复乘法；在收敛条件下，局部代数数据由对偶余代数控制。
+
+## 第四十九章
+
+**答案 49.1.** 预 derivator 是严格 2-函子 $\mathbb D:\mathbf{Cat}^{op}\to\mathbf{CAT}$。
+
+**答案 49.2.** 对 $I\xrightarrow uJ\xrightarrow vK$，2-函子反变给出
+$$
+(vu)^*=\mathbb D(vu)=\mathbb D(u)\mathbb D(v)=u^*v^*.
+$$
+
+**答案 49.3.** 核心公理包括：小 coproducts 送 products、点值联合保守、每个 $u^*$ 有左右伴随 $u_!\dashv u^*\dashv u_*$、Kan 延拓满足同伦点态公式。
+
+**答案 49.4.** $u_!$ 是同伦左 Kan 延拓，$u_*$ 是同伦右 Kan 延拓。
+
+**答案 49.5.** 唯一函子 $u:I\to *$ 的左伴随 $u_!$ 把 $I$-图送到同伦余极限，右伴随 $u_*$ 送到同伦极限。
+
+**答案 49.6.** 左 Kan 延拓点态公式为
+$$
+j^*u_!X\simeq\operatorname{hocolim}_{(u/j)}X|_{(u/j)}.
+$$
+
+**答案 49.7.** 若 $u$ 有拟逆 $v$，则 $u^*v^*\cong(uv)^*\cong\operatorname{id}$ 且 $v^*u^*\cong(vu)^*\cong\operatorname{id}$。
+
+**答案 49.8.** Stable derivator 是 pointed derivator，且 cocartesian squares 与 cartesian squares 一致。
+
+**答案 49.9.** 稳定性定义即说明同伦 pushout square 同时为同伦 pullback square，反之亦然。
+
+**答案 49.10.** 稳定 derivator 的基础范畴 $\mathbb D(*)$ 有典范三角范畴结构。
+
+**答案 49.11.** 对 $\infty$-category $C$，定义
+$$
+\mathbb D_C(I)=h\operatorname{Fun}(N(I),C).
+$$
+
+**答案 49.12.** $N(*)=\Delta^0$，$\operatorname{Fun}(\Delta^0,C)\simeq C$，故 $\mathbb D_C(*)\simeq hC$。
+
+## 第五十章
+
+**答案 50.1.** Groupoid-valued prestack 是伪函子 $F:\mathcal C^{op}\to\mathbf{Grpd}$。
+
+**答案 50.2.** Stack 条件要求对每个覆盖 $U_\bullet\to U$，$F(U)\to\operatorname{Desc}(F,U_\bullet)$ 为 groupoids 的等价。
+
+**答案 50.3.** Set 可视为离散 groupoid；sheaf 的唯一粘合条件正是离散 groupoid 情形的 descent 等价。
+
+**答案 50.4.** Descent datum 为局部对象 $x_i$、重叠同构 $\phi_{ij}:x_i|_{U_{ij}}\to x_j|_{U_{ij}}$，满足三重交 cocycle 条件。
+
+**答案 50.5.** Stack 条件的本质满性给出全局粘合对象，完全忠实性给出唯一性到唯一同构。
+
+**答案 50.6.** $G$-torsor 是带右 $G$-作用、局部同构于 $G$ 正则作用的 sheaf。
+
+**答案 50.7.** $BG(U)$ 是 $U$ 上 $G|_U$-torsors 的 groupoid。
+
+**答案 50.8.** $H^1(U,G)$ 可识别为 $G$-torsors 的同构类，即 $\pi_0BG(U)$。
+
+**答案 50.9.** 平凡群的 torsor 局部且全局均为单点 sheaf，故每个 $BG(U)$ 为终 groupoid。
+
+**答案 50.10.** Gerbe 是局部非空且任意两个局部对象进一步局部同构的 stack；$A$-banded gerbe 还指定 automorphism sheaf 与 $A$ 的相容识别。
+
+**答案 50.11.** $A$-banded gerbes 的等价类由 $H^2(U,A)$ 分类。
+
+**答案 50.12.** 局部平凡化后，重叠比较给 $g_{ij}\in G(U_{ij})$，三重交条件为 $g_{ij}g_{jk}=g_{ik}$。
+
+**答案 50.13.** Higher stack 是满足超下降的 space-valued 或 $\infty$-groupoid-valued sheaf。
+
+**答案 50.14.** Groupoid 逐点取 nerve 得到 1-truncated spaces；groupoid descent 变为 1-truncated space descent。
+
+## 第五十一章
+
+**答案 51.1.** Descent datum 是 $X\to E$ 配同构 $\pi_1^*X\simeq\pi_2^*X$，满足三重纤维积上的 cocycle 条件。
+
+**答案 51.2.** Descent category 的对象为带 descent datum 的对象，态射为与 datum 相容的态射。
+
+**答案 51.3.** 对 $Y\to B$，$p^*Y=E\times_BY$；在 $E\times_BE$ 上两种拉回均同构于 $E\times_BE\times_BY$，给典范 descent datum。
+
+**答案 51.4.** $p$ effective descent，若 $p^*:\mathcal C_{/B}\to\operatorname{Desc}(p)$ 为等价。
+
+**答案 51.5.** 若 $p$ 是同构，则 slice 拉回是等价，且 descent datum 平凡，因此 $p$ effective descent。
+
+**答案 51.6.** Grothendieck topos 中 epimorphisms 是 effective descent morphisms。
+
+**答案 51.7.** 若 $p^*$ monadic 且 monad 代数范畴等价于 descent category，则 $\mathcal C_{/B}\simeq\operatorname{Desc}(p)$。
+
+**答案 51.8.** 范畴 Galois 结构由反射伴随 $I\dashv H$ 及合适 extension/fibration 类组成，并要求 pullback 稳定和反射相容。
+
+**答案 51.9.** Trivial covering 是由反射子范畴对象拉回得到的 extension；covering 是经某 effective descent morphism 拉回后 trivial 的 extension。
+
+**答案 51.10.** Trivial covering 是 pullback 得到的；再次 pullback 由 pullback 粘合性质仍为同类 pullback。
+
+**答案 51.11.** Normal extension 是 covering $p$，使 $p^*p$ trivial 且 $p$ 满足有效下降。
+
+**答案 51.12.** Galois groupoid 是 kernel pair $E\times_BE\rightrightarrows E$ 在 Galois 结构下反射得到的内部 groupoid。
+
+**答案 51.13.** 合适 Galois 结构中，normal extensions over $B$ 与相应 Galois groupoids 的 actions 等价。
+
+**答案 51.14.** 对有限 Galois 扩张 $L/K$，$L\otimes_KL\cong\prod_{\sigma\in G}L$；descent datum 等价于每个 $\sigma$ 的半线性作用，cocycle 即群作用律。
+
+## 第五十二章
+
+**答案 52.1.** 由 $I\xleftarrow{s}E\xrightarrow pB\xrightarrow tJ$ 定义 $P=\Sigma_t\Pi_ps^*:\mathcal C_{/I}\to\mathcal C_{/J}$。
+
+**答案 52.2.** 当 $I=J=1$，$\Pi_p$ 在每个 $b$ 上给 $X^{E_b}$，$\Sigma_t$ 对 $b\in B$ 求和，得 $P(X)=\sum_{b\in B}X^{E_b}$。
+
+**答案 52.3.** Container 是 shapes 集合 $B$ 与 positions 映射 $E\to B$，扩张为 $X\mapsto\sum_{b\in B}X^{E_b}$。
+
+**答案 52.4.** 一元多项式 $1\leftarrow E\to B\to1$ 唯一非平凡数据正是 $E\to B$，即 container。
+
+**答案 52.5.** Species 是函子 $F:\mathbf{FinBij}\to\mathbf{Set}$。
+
+**答案 52.6.** 解析函子为
+$$
+\widehat F(X)=\sum_{n\ge0}F[n]\times_{\Sigma_n}X^n.
+$$
+
+**答案 52.7.** 若 $F[n]=1$，则 $\widehat F(X)=\sum_nX^n/\Sigma_n$，即有限多重集。
+
+**答案 52.8.** $\Sigma_n$ 同时重排结构标号和标签位置；取商即遗忘具体编号。
+
+**答案 52.9.** W-type 是多项式函子 $P$ 的初代数 $\alpha:P(W)\to W$。
+
+**答案 52.10.** $1+X$-代数是点 $1\to A$ 与后继 $A\to A$；初此类代数正是自然数对象。
+
+**答案 52.11.** 多项式单子是多项式函子配单位 $\eta:\operatorname{id}\to P$ 和乘法 $\mu:P^2\to P$，且二者为多项式自然变换。
+
+**答案 52.12.** List functor 的单位给长度 1 列表，乘法拼接列表的列表；空列表和拼接结合律给单子律。
+
+## 第五十三章
+
+**答案 53.1.** $\infty$-cosmos 是满足 isofibration、equivalence、cotensor、pullback 等公理的 simplicially enriched category。
+
+**答案 53.2.** Quasi-categories、complete Segal spaces、合适 marked simplicial sets 和 simplicial categories 都给例子。
+
+**答案 53.3.** $\mathcal K_2$ 与 $\mathcal K$ 同对象，Hom category 为 $h\operatorname{map}_{\mathcal K}(A,B)$。
+
+**答案 53.4.** Quasi-category 的同伦范畴以 0-单纯形为对象，1-单纯形按 2-单纯形同伦取商；内角填充保证复合，取商后为普通范畴。
+
+**答案 53.5.** Equivalence 是在 homotopy 2-category $\mathcal K_2$ 中成为等价的态射。
+
+**答案 53.6.** Isofibration 是 $\infty$-cosmos 公理指定的 fibration-like maps，支持等价提升并在 pullback 下稳定。
+
+**答案 53.7.** Isofibration 的 pullback 稳定是 $\infty$-cosmos 公理之一。
+
+**答案 53.8.** $\infty$-cosmos 中 adjunction 是 $\mathcal K_2$ 中的 adjunction，配单位、余单位并满足三角恒等式。
+
+**答案 53.9.** 若 $f\dashv u$ 且 $c$ 表示 $D$ 的 colimit，则
+$$
+\mathcal K_2(fc,y)\cong\mathcal K_2(c,uy)\cong\lim\mathcal K_2(D-,uy)\cong\lim\mathcal K_2(fD-,y).
+$$
+
+**答案 53.10.** Module/profunctor $A\nrightarrow B$ 是从 $A$ 到 $B$ 的 bimodule 型对象，可由 span、comma 或映射对象抽象表示。
+
+**答案 53.11.** 态射 $f:A\to B$ 诱导 representable module $(a,b)\mapsto\operatorname{map}_B(fa,b)$。
+
+**答案 53.12.** $\infty$-cosmos 抽取不同 $\infty$-category 模型共有结构，使伴随、极限、Kan 延拓等定理可跨模型转移。
+
+## 第五十四章
+
+**答案 54.1.** $f\perp g$ 指任意以 $f$ 为左边、$g$ 为右边的交换方块存在唯一对角填充。
+
+**答案 54.2.** 若 $\mathcal S\subseteq\mathcal T$，正交于 $\mathcal T$ 中所有态射当然正交于 $\mathcal S$ 中所有态射，故 ${}^\perp\mathcal T\subseteq{}^\perp\mathcal S$；右正交同理。
+
+**答案 54.3.** 正交因子化系统是态射类 $(\mathcal E,\mathcal M)$，每个态射分解为 $me$，且 $\mathcal E={}^\perp\mathcal M$、$\mathcal M=\mathcal E^\perp$。
+
+**答案 54.4.** 两个分解 $me=m'e'$ 之间由 $e\perp m'$ 与 $e'\perp m$ 得到互逆比较态射；唯一填充保证复合为恒等。
+
+**答案 54.5.** 每个函数分解为满射到像再单射入陪域。满射-单射方块中，填充由选择原像定义，单射保证良定义和唯一。
+
+**答案 54.6.** $X$ 为 $\mathcal S$-局部，若对每个 $s:A\to B$，$\mathcal C(B,X)\to\mathcal C(A,X)$ 为双射。
+
+**答案 54.7.** $s\perp(X\to1)$ 的填充正是把任意 $A\to X$ 唯一延拓为 $B\to X$，等价于上述 Hom 映射双射。
+
+**答案 54.8.** 弱因子化系统是 $(\mathcal L,\mathcal R)$，每个态射分解为 $rl$，且 $\mathcal L$、$\mathcal R$ 由相互提升性质刻画，提升不要求唯一。
+
+**答案 54.9.** 正交提升给唯一填充，特别给存在填充；遗忘唯一性即得弱因子化系统。
+
+**答案 54.10.** 若 $f$ 是 $g\in\mathcal L$ 的 retract，则任意 $f$ 对 $r\in\mathcal R$ 的方块可扩张为 $g$ 的方块，取填充后沿 retract 投回得到填充；故 $f\in\mathcal L$。右类对偶。
+
+## 第五十五章
+
+**答案 55.1.** Sketch 是小范畴配一族指定锥和指定余锥。
+
+**答案 55.2.** Sketch 在 $\mathcal C$ 中的模型是函子 $\mathcal S\to\mathcal C$，把指定锥送为极限锥、指定余锥送为余极限余锥。
+
+**答案 55.3.** 空 sketch 没有额外条件，因此模型就是所有函子 $\mathcal S\to\mathcal C$，态射为自然变换。
+
+**答案 55.4.** 有限积理论是带有限积的小范畴；模型是保持有限积的函子。
+
+**答案 55.5.** 群对象由 $m:G\times G\to G$、$e:1\to G$、$i:G\to G$ 及群公理交换图组成，这些只用有限积。
+
+**答案 55.6.** Doctrine 指定一类结构及保持该结构的函子，如 finite product、finite limit、regular、coherent、geometric doctrine。
+
+**答案 55.7.** 若 doctrine 更强，则保持其结构的函子自动保持较弱 doctrine 的结构，因此模型类包含关系反向。
+
+**答案 55.8.** Essentially algebraic theory 允许部分运算，其定义域由有限极限条件给出；等价地可由有限极限 sketch 表示。
+
+**答案 55.9.** 小范畴的复合只定义在 $M\times_OM$ 上，这是 pullback 定义域，故是 essentially algebraic。
+
+**答案 55.10.** 用 sorts $O,M$、源靶 $s,t$、恒等 $e$、pullback $M\times_OM$ 和复合 $c$，再加入结合与单位交换图，即得到小范畴的有限极限 sketch。
+
+**答案 55.11.** 小 sketch 在 locally presentable category 中的模型范畴在合适小性条件下 locally presentable。
+
+**答案 55.12.** 模型是满足保持指定锥/余锥条件的函子；模型间态射仍是普通自然变换，所以模型范畴是函子范畴的 full subcategory。
+
+## 第五十六章
+
+**答案 56.1.** 幂等态射是满足 $e^2=e$ 的自态射 $e:X\to X$。
+
+**答案 56.2.** 幂等 $e$ 分裂，若存在 $r:X\to Y$、$s:Y\to X$，使 $rs=\operatorname{id}_Y$ 且 $sr=e$。
+
+**答案 56.3.** 两个分裂 $e=sr=s'r'$ 给 $u=r's$ 与 $v=rs'$；计算得 $vu=\operatorname{id}$、$uv=\operatorname{id}$。
+
+**答案 56.4.** $\operatorname{Kar}(\mathcal C)$ 的对象为 $(X,e)$，其中 $e$ 幂等；态射 $f:(X,e)\to(Y,d)$ 满足 $f=dfe$。
+
+**答案 56.5.** 若 $p$ 是 $(X,e)$ 上幂等，则 $(X,p)$ 存在，$p:(X,e)\to(X,p)$ 与 $p:(X,p)\to(X,e)$ 给出分裂。
+
+**答案 56.6.** 从 $(X,\operatorname{id})$ 到 $(Y,\operatorname{id})$ 的态射条件为空条件，故 Hom 集与 $\mathcal C(X,Y)$ 相同。
+
+**答案 56.7.** 幂等完备范畴是每个幂等都分裂的范畴。
+
+**答案 56.8.** 嵌入全忠实；任意 $(X,e)$ 中 $e$ 在 $\mathcal C$ 分裂，所以 $(X,e)$ 同构于某个 $(Y,\operatorname{id})$，故本质满。
+
+**答案 56.9.** 绝对余极限是被所有函子保持的余极限。
+
+**答案 56.10.** 分裂 coequalizer 的泛性质由有限等式和 splitting data 验证；任意函子保持等式与复合，故保持它。
+
+**答案 56.11.** 普通范畴 Cauchy complete，若所有绝对余极限存在；普通小范畴中等价于幂等完备。
+
+**答案 56.12.** Karoubi 包络自由加入所有幂等分裂：到任意幂等完备范畴的函子都唯一延拓到 $\operatorname{Kar}(\mathcal C)$。
 
 ## 附录 A
 

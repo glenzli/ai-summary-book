@@ -138,7 +138,37 @@ $$
 
 **证明.** 设 $\alpha:P\to Q$ 是逐点满射，且给定态射 $f:yC\to Q$。由 Yoneda 引理，$f$ 对应元素 $q\in Q(C)$。由于 $\alpha_C:P(C)\to Q(C)$ 满，存在 $p\in P(C)$ 使 $\alpha_C(p)=q$。元素 $p$ 对应 $\tilde f:yC\to P$，并且 $\alpha\tilde f=f$，因为二者在 Yoneda 对应下都给出 $q$。$\square$
 
-## 5.5 本章小结
+## 5.5 生成与稠密的边界条件
+
+**命题 5.9.** 对象族 $\mathcal G$ 是 $\mathcal C$ 的生成族，当且仅当函子
+
+$$
+\prod_{G\in\mathcal G}\mathcal C(G,-):\mathcal C\to\prod_{G\in\mathcal G}\mathbf{Set}
+$$
+
+忠实。
+
+**证明.** 该乘积函子把态射 $f:X\to Y$ 送到族
+
+$$
+(fu:G\to Y)_{G\in\mathcal G,\ u:G\to X}.
+$$
+
+它忠实当且仅当任意平行态射 $f,g:X\rightrightarrows Y$ 若对所有 $G$ 和所有 $u:G\to X$ 都有 $fu=gu$，则 $f=g$。这正是生成族定义的否定形式。$\square$
+
+**例子 5.10.** 在 $\mathbf{Set}$ 中，单点集 $1$ 是生成元，因为函数 $f,g:X\rightrightarrows Y$ 若不同，则存在 $x\in X$ 使 $f(x)\ne g(x)$；该元素等价于态射 $1\to X$。在 $\mathbf{Grp}$ 中，整数群 $\mathbb Z$ 是生成元，因为群同态 $\mathbb Z\to G$ 等价于选择 $G$ 的一个元素。
+
+**例子 5.11（非生成元）.** $\mathbf{Grp}$ 中平凡群 $1$ 不是生成元。对任意群 $G$，从 $1$ 到 $G$ 只有一个群同态。因此若 $f,g:G\rightrightarrows H$ 是不同群同态，预复合所有 $1\to G$ 的态射仍无法区分它们。
+
+**例子 5.12（稠密不等于本质满）.** Yoneda 嵌入
+
+$$
+y:\mathcal C\to\widehat{\mathcal C}
+$$
+
+是稠密的，即每个预层是可表预层的典范余极限。但除非每个预层都可表，$y$ 不是本质满。例如当 $\mathcal C=*$ 时，$\widehat{\mathcal C}\simeq\mathbf{Set}$，Yoneda 嵌入只命中单点集；它是稠密的，因为每个集合是若干单点集的余积，但它不是本质满。
+
+## 5.6 本章小结
 
 可表预层不只是例子，而是预层范畴的基本构件。任意预层都是可表预层按其元素范畴组织的余极限；可表预层族检测自然变换，并且相对于逐点满射投射。后续 Kan 延拓、sheaf 化和可表现范畴都会反复使用这一思想。
 
@@ -153,3 +183,9 @@ $$
 **练习 5.4.** 证明 $\mathbf{Set}$ 中单点集合是生成元。
 
 **练习 5.5.** 说明为什么 $\mathbf{Grp}$ 中整数群 $\mathbb Z$ 是生成元。
+
+**练习 5.6.** 证明命题 5.9 在单个生成元 $G$ 的情形下等价于 $\mathcal C(G,-)$ 忠实。
+
+**练习 5.7.** 证明 $\mathbf{Ab}$ 中 $\mathbb Z$ 是投射生成元。
+
+**练习 5.8.** 对 $\mathcal C=*$，把预层密度定理具体写成“每个集合是单点集的余积”。

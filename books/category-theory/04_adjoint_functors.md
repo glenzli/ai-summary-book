@@ -222,9 +222,205 @@ $$
 
 故 $\theta:F'\Rightarrow F$ 是自然同构。若另有相容自然同构，则其每个分量诱导同一个表示同构，仍由 Yoneda 唯一性相等。$\square$
 
-## 4.6 本章小结
+## 4.6 全忠实伴随与反射子范畴
 
-伴随是范畴论中最重要的结构之一。它可以写成 Hom 集自然双射，也可以写成单位、余单位和三角恒等式。左伴随保持余极限，右伴随保持极限，这一事实解释了自由构造、遗忘构造和许多几何/代数反向函子的形式性质。
+**命题 4.9.** 设 $F:\mathcal C\rightleftarrows\mathcal D:G$，且 $F\dashv G$，单位和余单位分别为 $\eta$ 与 $\varepsilon$。
+
+1. $F$ 完全忠实当且仅当 $\eta:\operatorname{id}_{\mathcal C}\Rightarrow GF$ 是自然同构。
+2. $G$ 完全忠实当且仅当 $\varepsilon:FG\Rightarrow\operatorname{id}_{\mathcal D}$ 是自然同构。
+
+**证明.** 证明第一条。对任意 $X,Y\in\mathcal C$，伴随双射给出
+
+$$
+\mathcal D(FX,FY)\cong\mathcal C(X,GFY).
+$$
+
+在该双射下，态射 $F(f):FX\to FY$ 对应于
+
+$$
+X\xrightarrow{f}Y\xrightarrow{\eta_Y}GFY.
+$$
+
+因此自然映射
+
+$$
+\mathcal C(X,Y)\to\mathcal D(FX,FY)
+$$
+
+经伴随识别后正是
+
+$$
+\mathcal C(X,Y)\xrightarrow{\mathcal C(X,\eta_Y)}\mathcal C(X,GFY).
+$$
+
+若 $F$ 完全忠实，则该映射对所有 $X$ 为双射。由 Yoneda 引理，$\eta_Y:Y\to GFY$ 是同构。对所有 $Y$ 如此，故 $\eta$ 是自然同构。
+
+反过来，若 $\eta$ 是自然同构，则任意 $h:FX\to FY$ 对应于
+
+$$
+G(h)\eta_X:X\to GFY.
+$$
+
+再与 $\eta_Y^{-1}:GFY\to Y$ 复合得到
+
+$$
+\eta_Y^{-1}G(h)\eta_X:X\to Y.
+$$
+
+这个构造是 $F$ 在 Hom 集上诱导映射的逆映射，故 $F$ 完全忠实。第二条对偶，或把第一条用于反伴随 $G^{op}\dashv F^{op}$。$\square$
+
+**定义 4.10.** 设 $\mathcal A$ 是 $\mathcal C$ 的全子范畴，包含函子为
+
+$$
+I:\mathcal A\hookrightarrow\mathcal C.
+$$
+
+若 $I$ 有左伴随 $L:\mathcal C\to\mathcal A$，则称 $\mathcal A$ 是 $\mathcal C$ 的反射子范畴（reflective subcategory），$L$ 称为反射函子，单位
+
+$$
+\eta_X:X\to I L X
+$$
+
+称为 $X$ 到 $\mathcal A$ 的反射。若 $I$ 有右伴随，则称 $\mathcal A$ 为余反射子范畴（coreflective subcategory）。
+
+**命题 4.11.** 对全子范畴 $I:\mathcal A\hookrightarrow\mathcal C$，给出左伴随 $L\dashv I$ 等价于对每个 $X\in\mathcal C$ 给出对象 $LX\in\mathcal A$ 与态射
+
+$$
+\eta_X:X\to I L X
+$$
+
+使得对任意 $A\in\mathcal A$，预复合 $\eta_X$ 给出双射
+
+$$
+\mathcal A(LX,A)\cong \mathcal C(X,I A).
+$$
+
+在此情形下，余单位
+
+$$
+L I A\to A
+$$
+
+是同构。
+
+**证明.** 若 $L\dashv I$，伴随双射正给出上述双射，而 $\eta_X$ 是单位。由于 $I$ 完全忠实，命题 4.9 的对偶形式说明余单位 $LIA\to A$ 是同构。
+
+反过来，若对每个 $X$ 已给出上述泛性质，则对态射 $u:X\to Y$，把复合
+
+$$
+X\xrightarrow{u}Y\xrightarrow{\eta_Y}I L Y
+$$
+
+代入 $X$ 的泛性质，得到唯一态射
+
+$$
+L u:LX\to LY
+$$
+
+满足
+
+$$
+I(Lu)\eta_X=\eta_Yu.
+$$
+
+恒等和复合由唯一性验证，故 $L$ 是函子。上述双射对 $X$ 与 $A$ 自然，因而给出伴随 $L\dashv I$。$\square$
+
+## 4.7 反射子范畴中的余极限
+
+**命题 4.12.** 设 $\mathcal A\subseteq\mathcal C$ 是反射子范畴，反射函子为 $L:\mathcal C\to\mathcal A$，包含为 $I:\mathcal A\hookrightarrow\mathcal C$。令 $D:\mathcal J\to\mathcal A$ 为图形。若 $\mathcal C$ 中存在余极限
+
+$$
+C=\operatorname{colim}_{j\in\mathcal J}I D(j),
+$$
+
+则 $\mathcal A$ 中存在余极限，并由
+
+$$
+L C
+$$
+
+给出。对偶地，余反射子范畴中的极限可由先在环境范畴取极限再余反射得到。
+
+**证明.** 记 $i_j:I D(j)\to C$ 为 $\mathcal C$ 中的余极限结构映射。复合
+
+$$
+I D(j)\xrightarrow{i_j}C\xrightarrow{\eta_C}I L C
+$$
+
+由于 $I$ 全忠实，对应于 $\mathcal A$ 中的态射
+
+$$
+\bar i_j:D(j)\to L C.
+$$
+
+它们构成 $D$ 的余锥。对任意 $A\in\mathcal A$，有自然双射
+
+$$
+\mathcal A(L C,A)
+\cong \mathcal C(C,I A)
+\cong \lim_{j\in\mathcal J^{op}}\mathcal C(I D(j),I A)
+\cong \lim_{j\in\mathcal J^{op}}\mathcal A(D(j),A).
+$$
+
+第一步是伴随，第二步是 $C$ 的余极限表示性，第三步用 $I$ 全忠实。该表示性正说明 $L C$ 是 $\mathcal A$ 中的余极限。对偶命题同理。$\square$
+
+## 4.8 例子与边界条件
+
+**例子 4.13（偏序中的伴随）.** 把偏序集 $P,Q$ 看作薄范畴。单调映射
+
+$$
+f:P\to Q,\qquad g:Q\to P
+$$
+
+构成伴随 $f\dashv g$，当且仅当对所有 $p\in P,q\in Q$ 有
+
+$$
+f(p)\le q\quad\Longleftrightarrow\quad p\le g(q).
+$$
+
+这正是 Galois connection。单位条件是 $p\le g f(p)$，余单位条件是 $f g(q)\le q$；三角恒等式在薄范畴中自动由偏序的至多一个态射性质给出。
+
+**例子 4.14（积和余积作为伴随）.** 若 $\mathcal C$ 有二元积，则对角函子
+
+$$
+\Delta:\mathcal C\to\mathcal C\times\mathcal C,\qquad X\mapsto(X,X)
+$$
+
+有右伴随
+
+$$
+\times:\mathcal C\times\mathcal C\to\mathcal C,\qquad (A,B)\mapsto A\times B,
+$$
+
+因为有自然双射
+
+$$
+\mathcal C(X,A\times B)\cong\mathcal C(X,A)\times\mathcal C(X,B)
+\cong(\mathcal C\times\mathcal C)(\Delta X,(A,B)).
+$$
+
+若 $\mathcal C$ 有二元余积，则 $\Delta$ 有左伴随 $\sqcup$，因为
+
+$$
+\mathcal C(A\sqcup B,X)\cong\mathcal C(A,X)\times\mathcal C(B,X)
+\cong(\mathcal C\times\mathcal C)((A,B),\Delta X).
+$$
+
+因此积和余积不是孤立构造，而是同一个对角函子的右、左伴随。
+
+**例子 4.15（左伴随不必保持极限）.** 自由群函子
+
+$$
+F:\mathbf{Set}\to\mathbf{Grp}
+$$
+
+是左伴随，但不保持终对象。$\mathbf{Set}$ 的终对象是单点集 $1$，而 $F(1)\cong\mathbb Z$。$\mathbf{Grp}$ 的终对象是平凡群，$\mathbb Z$ 不同构于平凡群。因此左伴随保持余极限，但一般不保持极限。
+
+对偶地，右伴随一般不保持余极限。忘却函子 $U:\mathbf{Grp}\to\mathbf{Set}$ 是右伴随，但不保持始对象：$\mathbf{Grp}$ 的始对象是平凡群，其底层集合是单点集，而 $\mathbf{Set}$ 的始对象是空集。
+
+## 4.9 本章小结
+
+伴随是范畴论中最重要的结构之一。它可以写成 Hom 集自然双射，也可以写成单位、余单位和三角恒等式。左伴随保持余极限，右伴随保持极限。全忠实伴随可由单位或余单位是否为同构来检测；反射子范畴把“在环境范畴中自由逼近某类对象”的思想精确化，并解释了许多局部化与 sheaf 化构造的形式模式。
 
 ## 练习
 
@@ -237,3 +433,25 @@ $$
 **练习 4.4.** 设 $F\dashv G$。证明 $F$ 完全忠实当且仅当单位 $\eta:\operatorname{id}\Rightarrow GF$ 是自然同构。
 
 **练习 4.5.** 对偶化定理 4.7，写出右伴随保持极限的完整证明。
+
+**练习 4.6.** 直接证明 $G$ 完全忠实当且仅当余单位 $\varepsilon:FG\to\operatorname{id}_{\mathcal D}$ 是自然同构。
+
+**练习 4.7.** 设 $\mathcal A\subseteq\mathcal C$ 是反射子范畴。证明若 $D:\mathcal J\to\mathcal A$ 的环境余极限已经落在 $\mathcal A$ 中，则该对象也是 $\mathcal A$ 中的余极限。
+
+**练习 4.8.** 证明命题 4.11 中的余单位 $LIA\to A$ 是同构，并说明这正是包含函子全忠实的反映。
+
+**练习 4.9.** 证明阿贝尔化函子
+$$
+(-)_{\operatorname{ab}}:\mathbf{Grp}\to\mathbf{Ab}
+$$
+使 $\mathbf{Ab}$ 成为 $\mathbf{Grp}$ 的反射子范畴。
+
+**练习 4.10.** 写出余反射子范畴的对偶定义，并证明其中的极限由环境极限再余反射给出。
+
+**练习 4.11.** 设 $f:P\to Q$、$g:Q\to P$ 是偏序集间单调映射。证明 $f\dashv g$ 当且仅当 $f(p)\le q\Leftrightarrow p\le g(q)$。
+
+**练习 4.12.** 证明若 $\mathcal C$ 有终对象，则唯一函子 $\mathcal C\to *$ 有右伴随；若 $\mathcal C$ 有始对象，则它有左伴随。
+
+**练习 4.13.** 当 $\mathcal C$ 为笛卡尔闭范畴时，证明二元积函子 $A\times -$ 左伴随于指数函子 $(-)^A$。
+
+**练习 4.14.** 给出一个右伴随不保持余积的例子。

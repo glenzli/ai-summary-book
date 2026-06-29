@@ -60,6 +60,7 @@
 - 小图形范畴通常记为 $\mathcal J$。
 - 图形写作 $D:\mathcal J\to\mathcal C$。
 - 极限和余极限写作 $\lim_{\mathcal J}D$ 与 $\operatorname{colim}_{\mathcal J}D$。
+- 对 $U:\mathcal I\to\mathcal J$，共尾性使用逗号范畴 $j/U$，始性使用 $U/j$。
 - 伴随写作
   $$
   F:\mathcal C\rightleftarrows\mathcal D:G,\qquad F\dashv G.
@@ -75,6 +76,16 @@
   $$
 - 逗号范畴写作 $K/d$、$d/K$、$\mathcal C/X$ 或 $X/\mathcal C$。
 - 元素范畴写作 $\int_{\mathcal C}P$。
+- 反射子范畴通常写作
+  $$
+  L:\mathcal C\rightleftarrows\mathcal A:I,\qquad L\dashv I,
+  $$
+  其中 $I:\mathcal A\hookrightarrow\mathcal C$ 为包含；余反射子范畴写作 $I\dashv R$。
+- 单子写作 $(T,\eta,\mu)$。其 Kleisli 范畴写作 $\mathcal C_T$，Eilenberg-Moore 范畴写作 $\mathcal C^T$，自由-遗忘伴随写作
+  $$
+  F^T:\mathcal C\rightleftarrows\mathcal C^T:U^T,
+  $$
+  Kleisli 伴随写作 $J:\mathcal C\rightleftarrows\mathcal C_T:G_T$。
 
 ## 幺半、富范畴和 coend
 
@@ -89,6 +100,7 @@
 - $\mathcal V$-富范畴的 Hom 对象写作 $\mathcal A(A,B)\in\mathcal V$。
 - 富自然变换对象写作 $\operatorname{Nat}_{\mathcal V}(F,G)$。
 - 富函子范畴写作 $\operatorname{Fun}_{\mathcal V}(\mathcal A,\mathcal B)$。
+- 富范畴中对象 $A$ 被 $V\in\mathcal V$ 张量写作 $V\odot A$；被 $V$ 余张量写作 $A^V$。
 
 ## Topos 与可表现范畴
 
@@ -188,6 +200,86 @@
 - Dwyer-Kan simplicial localization 写作 $L(\mathcal C,W)$。
 - Coherent nerve 写作 $N_{\operatorname{hc}}$。
 - Complete Segal space 常简写为 CSS；simplicial space 写作 $X:\Delta^{op}\to\mathcal S$。
+- 小幂等完备稳定 $\infty$-范畴组成的 $\infty$-范畴写作 $\operatorname{Cat}^{\operatorname{perf}}_\infty$。
+- Additive 和 localizing motives 分别写作 $\operatorname{Mot}_{\operatorname{add}}$ 与 $\operatorname{Mot}_{\operatorname{loc}}$，普遍函子写作 $U_{\operatorname{add}}$ 与 $U_{\operatorname{loc}}$。
+- 代数 $K$-理论、Hochschild homology 和 topological Hochschild homology 分别写作 $K(C)$、$HH(C)$、$THH(C)$。
+- 可构造导出范畴写作 $D^b_c(X,\Lambda)$ 或 $D^b_c(X)$。
+- stratum 嵌入常写作 $i_\alpha:S_\alpha\hookrightarrow X$。
+- Perverse t-结构两半写作 ${}^pD^{\le0}(X)$ 与 ${}^pD^{\ge0}(X)$。
+- Perverse sheaves 的 heart 写作 $\operatorname{Perv}(X)$。
+- 开嵌入 $j:U\hookrightarrow X$ 的中间延拓写作 $j_{!*}$。
+- Nearby cycles 与 vanishing cycles 写作 $\psi_f$ 与 $\phi_f$。
+- 谱 $E$ 的 Bousfield class 写作 $\langle E\rangle$。
+- Morava $K$-theory 写作 $K(n)$，Johnson-Wilson 型局部化常写作 $L_n$。
+- Telescope 谱写作 $T(n)$，有限局部化写作 $L_n^f$。
+- $K(n)$-localization 写作 $L_{K(n)}$。
+- 微分算子层写作 $D_X$，regular holonomic $D_X$-modules 的导出范畴写作 $D^b_{\operatorname{rh}}(D_X)$。
+- de Rham 和 solution functors 写作 $\operatorname{DR}_X$ 与 $\operatorname{Sol}_X$。
+- Characteristic variety 写作 $\operatorname{Char}(M)\subseteq T^*X$。
+- Connective $E_\infty$-rings 的 $\infty$-范畴写作 $\operatorname{CAlg}^{cn}$，派生仿射范畴写作 $\operatorname{dAff}$。
+- Derived prestack 写作 $F:\operatorname{dAff}^{op}\to\mathcal S$。
+- 派生栈的 quasi-coherent complexes 写作 $\operatorname{QCoh}(X)$，perfect complexes 写作 $\operatorname{Perf}(X)$。
+- Cotangent complex 写作 $L_A,L_{B/A},L_X$；点 $x$ 处切复形写作 $T_xX$。
+- Ind-coherent sheaves 写作 $\operatorname{IndCoh}(X)$，带奇异支撑条件的子范畴写作 $\operatorname{IndCoh}_{\mathcal N}(X)$。
+- 在 $\infty$-范畴语境中，monad 通常写作 $T:C\to C$，其代数 $\infty$-范畴写作 $\operatorname{Alg}_T(C)$。
+- Cech nerve 写作 $U_\bullet\to X$，totalization 写作 $\operatorname{Tot}$。
+- Neutral Tannakian category 的 fiber functor 写作 $\omega:\mathcal C\to\operatorname{Vect}_k^{fd}$。
+- 张量自同构群函子写作 $\operatorname{Aut}^{\otimes}(\omega)$。
+- Classifying stack 写作 $BG$，表示范畴写作 $\operatorname{Rep}(G)$。
+- Tensor triangular category 常写作 $T$，Balmer spectrum 写作 $\operatorname{Spc}(T)$。
+- 对象 $x\in T$ 的 Balmer support 写作 $\operatorname{supp}(x)$。
+- Prime thick tensor ideal 常写作 $\mathfrak p$。
+- Topological Hochschild homology 写作 $THH(C)$ 或 $THH(R)$。
+- Topological cyclic homology 写作 $TC(C)$ 或 $TC(R)$。
+- 圆群写作 $\mathbb T=S^1$，Tate construction 写作 $X^{tC_p}$。
+- Cyclotomic trace 写作 $\operatorname{tr}_{cycl}:K(C)\to TC(C)$。
+- Goodwillie $n$-excisive approximation 写作 $P_nF$，homogeneous layer 写作 $D_nF$。
+- Cross-effect 写作 $\operatorname{cr}_nF$，Goodwillie derivative 写作 $\partial_nF$。
+- $S$ 上光滑概形范畴写作 $\operatorname{Sm}_S$，motivic spaces 写作 $\mathbf H(S)$。
+- Stable motivic homotopy category 写作 $\mathbf{SH}(S)$。
+- Tate sphere 写作 $T=\mathbb A^1/(\mathbb A^1\setminus0)$，Thom space 写作 $\operatorname{Th}(V)$。
+- Motivic Eilenberg-Mac Lane spectrum 写作 $H\mathbb Z$。
+- 子对象偏序写作 $\operatorname{Sub}_{\mathcal C}(X)$，存在量词左伴随写作 $\exists_f$。
+- Slice 上替换、依赖和与依赖积写作
+  $$
+  \Sigma_f\dashv f^*\dashv\Pi_f.
+  $$
+- Comprehension category 的上下文扩张写作 $\Gamma.A\to\Gamma$。
+- Universe 写作 $\mathcal U$，univalence 中的等价类型写作 $\operatorname{Equiv}(A,B)$。
+- 小圆盘范畴写作 $\operatorname{Disk}_n$，流形范畴写作 $\operatorname{Mfld}_n$。
+- 因子化同调写作 $\int_MA$，圆盘 overcategory 写作 $\operatorname{Disk}_{n/M}$。
+- $E_n$-代数范畴写作 $\operatorname{Alg}_{E_n}(C)$。
+- $n$-重 delooping 写作 $B^nA$，紧支撑映射空间写作 $\operatorname{Map}_c(M,B^nA)$。
+- Profinite sets 范畴写作 $\operatorname{ProFin}$。
+- Condensed sets 与 condensed abelian groups 写作 $\operatorname{Cond}(\mathbf{Set})$ 与 $\operatorname{Cond}(\mathbf{Ab})$。
+- 离散集合或拓扑空间的凝聚化写作 $\underline A$ 或 $\underline T$。
+- Solidification 写作 $(-)^{\mathrm{solid}}$，solid tensor product 写作 $\otimes^{\mathrm{solid}}$。
+- Solid $A$-modules 写作 $\operatorname{Mod}^{\mathrm{solid}}_A$，solid derived category 写作 $D_{\mathrm{solid}}(A)$。
+- 理论 $T$ 的语法范畴写作 $\mathcal C_T^{\operatorname{syn}}$，分类 topos 写作 $\mathcal E_T$，泛模型写作 $U_T$。
+- 几何态射范畴写作 $\operatorname{Geom}(\mathcal F,\mathcal E)$，$T$-模型范畴写作 $\operatorname{Mod}_T(\mathcal F)$。
+- Tripos 常写作 $P:\mathcal C^{op}\to\mathbf{Heyt}$，generic predicate 的分类对象写作 $\Omega$。
+- 关系写作 $R:X\nrightarrow Y$，态射 $f$ 的图像关系写作 $\Gamma_f$，反向关系写作 $R^\circ$。
+- Regular 和 exact completions 写作 $\mathcal C_{\mathrm{reg}}$ 与 $\mathcal C_{\mathrm{ex}}$。
+- Cohesive 伴随串写作 $\Pi\dashv\operatorname{Disc}\dashv\Gamma\dashv\operatorname{Codisc}$。
+- Cohesive 模态写作 $\int,\flat,\sharp$；de Rham shape 写作 $X_{\mathrm{dR}}$。
+- 层化空间的 exit-path $\infty$-category 写作 $\operatorname{Exit}(X)$。
+- Constructible sheaves 写作 $\operatorname{Shv}_{cbl}(X;\mathcal S)$。
+- $n$-重 Morita 范畴写作 $\operatorname{Alg}_n(C)$。
+- Morita trace 写作 $\operatorname{Tr}(\operatorname{id}_A)$。
+- 增广 $E_n$-代数的 Koszul dual 写作 $A^!$，$n$-重 bar 构造写作 $\operatorname{Bar}^n(A)$。
+- Derivator 写作 $\mathbb D:\mathbf{Cat}^{op}\to\mathbf{CAT}$；限制函子写作 $u^*$，同伦 Kan 延拓写作 $u_!,u_*$。
+- 由 $\infty$-category $C$ 诱导的 derivator 写作 $\mathbb D_C(I)=h\operatorname{Fun}(N(I),C)$。
+- Stack 的 descent category 写作 $\operatorname{Desc}(F,U_\bullet)$；classifying stack 写作 $BG$。
+- Descent morphism $p:E\to B$ 的 descent category 写作 $\operatorname{Desc}(p)$。
+- Galois 群写作 $\operatorname{Gal}(L/K)$。
+- 多项式函子用图 $I\xleftarrow{s}E\xrightarrow{p}B\xrightarrow{t}J$ 表示，并写作 $P=\Sigma_t\Pi_ps^*$。
+- Species 的解析函子写作 $\widehat F(X)=\sum_{n\ge0}F[n]\times_{\Sigma_n}X^n$。
+- W-type 通常写作 $W$，其结构映射写作 $\alpha:P(W)\to W$。
+- $\infty$-cosmos 写作 $\mathcal K$，其 homotopy 2-category 写作 $\mathcal K_2$，映射 quasi-category 写作 $\operatorname{map}_{\mathcal K}(A,B)$。
+- 态射正交写作 $f\perp g$；态射类正交写作 ${}^\perp\mathcal S$ 与 $\mathcal S^\perp$。
+- 正交因子化系统写作 $(\mathcal E,\mathcal M)$，弱因子化系统写作 $(\mathcal L,\mathcal R)$。
+- Sketch 通常写作 $\mathcal S$，理论常写作 $\mathbb T$。
+- Karoubi 包络写作 $\operatorname{Kar}(\mathcal C)$。
 
 ## 证明用语
 

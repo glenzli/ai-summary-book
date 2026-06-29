@@ -1,0 +1,174 @@
+# 第三十八章：Topological Hochschild homology、cyclotomic trace 与 $TC$
+
+## 本章目标
+
+本章补充第三十章中 trace methods 的核心。Algebraic $K$-theory 很难直接计算；topological Hochschild homology $THH$、topological cyclic homology $TC$ 和 cyclotomic trace
+
+$$
+K\to TC
+$$
+
+把 $K$-理论问题转化为带圆作用和 Frobenius 结构的谱论问题。本章关注范畴论结构：trace、circle action、cyclotomic spectra、localizing invariants 和纤维序列。
+
+## 依赖前置知识
+
+需要 stable $\infty$-categories、Morita theory、Hochschild chains、spectra、circle actions、limits/colimits、localizing invariants、noncommutative motives 和 Bousfield localization。
+
+## 38.1 $THH$ 作为谱值 trace
+
+**定义 38.1.** 对小稳定幂等完备 $\infty$-范畴 $C$，topological Hochschild homology $THH(C)$ 是 $C$ 的谱值 Hochschild trace。若 $C=\operatorname{Perf}(R)$，也写作 $THH(R)$。
+
+**例子 38.2.** 对 $E_1$-ring spectrum $R$，$THH(R)$ 可由 cyclic bar construction 计算：
+
+$$
+[n]\mapsto R^{\otimes(n+1)}.
+$$
+
+其几何实现给出 $THH(R)$。
+
+**命题 38.3.** $THH$ 对 Morita equivalence 不变。
+
+**证明.** $THH(C)$ 是稳定 Morita $(\infty,2)$-范畴中恒等 bimodule 的 trace。Morita equivalence 识别对象的双模 endomorphism theory 和恒等 bimodule，因此识别 trace。对 $R$ 与 $S$，若 $\operatorname{Perf}(R)\simeq\operatorname{Perf}(S)$，则 $THH(R)\simeq THH(S)$。$\square$
+
+**外部输入定理 38.4.** $THH$ 是 localizing invariant：exact sequence
+
+$$
+A\to B\to C
+$$
+
+给出谱纤维序列
+
+$$
+THH(A)\to THH(B)\to THH(C).
+$$
+
+## 38.2 圆作用与 cyclotomic structure
+
+**定义 38.5.** 设 $\mathbb T=S^1$。带圆作用的谱是函子
+
+$$
+B\mathbb T\to\mathbf{Sp}.
+$$
+
+由 cyclic bar construction 的循环对称性，$THH(C)$ 自然带 $\mathbb T$-作用。
+
+**定义 38.6.** Cyclotomic spectrum 是带 $\mathbb T$-作用的谱 $X$，并对每个素数 $p$ 配有 Frobenius 型结构映射
+
+$$
+\varphi_p:X\to X^{tC_p}
+$$
+
+满足相干条件。这里 $X^{tC_p}$ 是 Tate construction。
+
+**外部输入定理 38.7.** 对每个合适的小稳定 $\infty$-范畴 $C$，$THH(C)$ 自然提升为 cyclotomic spectrum。
+
+**命题 38.8.** 忘却 cyclotomic 结构后，$THH(C)$ 仍保留圆作用。
+
+**证明.** Cyclotomic spectrum 的数据包含带 $\mathbb T$-作用的底层谱以及额外 Frobenius 映射。忘却额外 Frobenius 数据即得到带圆作用谱。$\square$
+
+## 38.3 $TC$ 的定义形式
+
+**定义 38.9.** Topological cyclic homology $TC(X)$ 是 cyclotomic spectrum $X$ 的某个 functorial invariant。Nikolaus-Scholze 公式把 $p$-complete 情形写为 equalizer 或 fiber：
+
+$$
+TC(X;p)=\operatorname{fib}\left(
+X^{h\mathbb T}\xrightarrow{\operatorname{can}-\varphi}
+X^{t\mathbb T}
+\right)
+$$
+
+在合适 $p$-complete 约定下成立。
+
+**定义 38.10.** 对小稳定 $\infty$-范畴 $C$，定义
+
+$$
+TC(C)=TC(THH(C)).
+$$
+
+**命题 38.11.** 若 $THH(C)\simeq THH(D)$ 作为 cyclotomic spectra，则 $TC(C)\simeq TC(D)$。
+
+**证明.** $TC$ 是 cyclotomic spectra 上的函子。等价对象在任意 $\infty$-范畴值函子下送为等价对象，故结论成立。$\square$
+
+## 38.4 Cyclotomic trace
+
+**外部输入定理 38.12（cyclotomic trace）.** 存在自然变换
+
+$$
+\operatorname{tr}_{cycl}:K(C)\to TC(C)
+$$
+
+从 algebraic $K$-theory 到 topological cyclic homology，称为 cyclotomic trace。它对 exact functors 自然，并与 Morita equivalence 相容。
+
+**定义 38.13.** Dennis trace 是自然变换
+
+$$
+K(C)\to THH(C),
+$$
+
+cyclotomic trace 可视为 Dennis trace 加上 cyclotomic refinement 后到 $TC$ 的提升。
+
+**命题 38.14.** 若 $C\simeq D$ Morita equivalent，则 cyclotomic trace 的方块
+
+$$
+\begin{array}{c}
+K(C)\to TC(C)\\
+\downarrow\quad\downarrow\\
+K(D)\to TC(D)
+\end{array}
+$$
+
+交换且竖箭头为等价。
+
+**证明.** $K$ 与 $TC$ 都是 Morita invariant，cyclotomic trace 对 exact/Morita functors 自然。因此 Morita equivalence 诱导两侧等价，自然性给出交换方块。$\square$
+
+## 38.5 Dundas-Goodwillie-McCarthy 定理
+
+**外部输入定理 38.15（Dundas-Goodwillie-McCarthy）.** 对合适的 connective ring spectra 映射 $A\to B$，若其在 $\pi_0$ 上为带 nilpotent kernel 的满射，则相对 $K$-理论与相对 $TC$ 在 $p$-完成后等价：
+
+$$
+\operatorname{fib}(K(A)\to K(B))^\wedge_p
+\simeq
+\operatorname{fib}(TC(A)\to TC(B))^\wedge_p.
+$$
+
+**命题 38.16.** 在定理 38.15 的假设下，若能计算 $TC(A)\to TC(B)$ 的纤维，则可计算相对 $K$-理论的 $p$-完成。
+
+**证明.** 定理直接给出两个纤维谱的 $p$-完成等价。谱等价保留所有同伦群，因此右侧的计算给出左侧相对 $K$-群的 $p$-完成。$\square$
+
+## 38.6 Trace methods 的范畴论意义
+
+**命题 38.17.** Trace methods 把 $K$-理论问题因子化为 localizing invariants 和 cyclotomic fixed point constructions 的组合。
+
+**证明.** Cyclotomic trace 是自然变换 $K\to TC$。$TC$ 由 $THH$ 先取 trace 得到 cyclotomic spectrum，再取 homotopy fixed points、Tate construction 和 Frobenius equalizer/fiber 得到。因此 $K$-理论问题可先映到 $THH$ 这类 localizing/Morita invariant，再通过 cyclotomic 结构做固定点计算。$\square$
+
+**注 38.18.** 这也是非交换 motives 的一个重要动机：$K$、$THH$、$TC$ 都是稳定范畴的不变量，而非某个环呈现的不变量。它们的自然变换应在 motives 或 localizing invariants 的范畴中理解。
+
+## 38.7 本章小结
+
+$THH$ 是谱值 Hochschild trace，天然带圆作用并提升为 cyclotomic spectrum。$TC$ 从 cyclotomic structure 中提取算术信息。Cyclotomic trace $K\to TC$ 把难计算的代数 $K$-理论连接到更可计算的固定点与 Tate 构造。Dundas-Goodwillie-McCarthy 定理说明在 nilpotent 相对情形中，这种近似是 $p$-完成等价。
+
+## 练习
+
+**练习 38.1.** 定义 $THH(C)$ 的 trace 口径。
+
+**练习 38.2.** 对 $E_1$-ring $R$ 写出 cyclic bar construction。
+
+**练习 38.3.** 证明 $THH$ 对 Morita equivalence 不变。
+
+**练习 38.4.** 说明 $THH$ 为什么有圆作用。
+
+**练习 38.5.** 定义 cyclotomic spectrum。
+
+**练习 38.6.** 陈述 $THH$ 的 cyclotomic refinement。
+
+**练习 38.7.** 写出 Nikolaus-Scholze 形式的 $TC$ 公式。
+
+**练习 38.8.** 证明 cyclotomic 等价诱导 $TC$ 等价。
+
+**练习 38.9.** 陈述 cyclotomic trace。
+
+**练习 38.10.** 说明 Dennis trace 与 cyclotomic trace 的关系。
+
+**练习 38.11.** 陈述 Dundas-Goodwillie-McCarthy 定理。
+
+**练习 38.12.** 解释 trace methods 的范畴论意义。

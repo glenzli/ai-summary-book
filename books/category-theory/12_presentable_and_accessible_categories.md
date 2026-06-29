@@ -80,10 +80,10 @@ $$
 
 ## 12.6 预层范畴与伴随函子定理
 
-**命题 12.A.** 若 $\mathcal C$ 是小范畴，则预层范畴
+**命题 12.13.** 若 $\mathcal C$ 是小范畴，则预层范畴
 
 $$
-\widehat{\mathcal C}=\operatorname{Fun}(\mathcal C^{op},\mathbf{Set})
+\widehat{\mathcal C}=\operatorname{Fun}(\mathcal C^{\operatorname{op}},\mathbf{Set})
 $$
 
 是局部可表现范畴。更具体地，可表预层构成小生成族，并且任意预层是可表预层的典范小余极限。
@@ -108,7 +108,7 @@ $$
 
 因此可表预层是 $\omega$-紧对象，并生成整个预层范畴。故 $\widehat{\mathcal C}$ 局部可表现。$\square$
 
-**定义 12.B.** 局部可表现范畴 $\mathcal C$ 的一个小全子范畴 $\mathcal G$ 称为强生成子，若态射 $f:X\to Y$ 是同构当且仅当对所有 $G\in\mathcal G$，
+**定义 12.14.** 局部可表现范畴 $\mathcal C$ 的一个小全子范畴 $\mathcal G$ 称为强生成子，若态射 $f:X\to Y$ 是同构当且仅当对所有 $G\in\mathcal G$，
 
 $$
 \mathcal C(G,f):\mathcal C(G,X)\to\mathcal C(G,Y)
@@ -116,11 +116,11 @@ $$
 
 是双射。
 
-**命题 12.C.** 若 $\mathcal C$ 局部 $\kappa$-可表现，则其 $\kappa$-紧对象的小骨架构成强生成子。
+**命题 12.15.** 若 $\mathcal C$ 局部 $\kappa$-可表现，则其 $\kappa$-紧对象的小骨架构成强生成子。
 
 **证明.** 设 $\mathcal G$ 为 $\kappa$-紧对象小骨架。若 $f:X\to Y$ 在所有 $G\in\mathcal G$ 上诱导双射，则 $X$ 与 $Y$ 作为 $\mathcal G$ 中对象的 $\kappa$-滤过余极限时，所有来自紧生成对象的元素和关系都被 $f$ 完全检测。更具体地，任意 $G\to Y$ 由满性提升到 $G\to X$，这说明 $f$ 在由 $\mathcal G$ 生成的逗号图形上本质满；任意两个 $G\to X$ 若复合到 $Y$ 相同，则由单射性在后续滤过阶段相同。由于 $X,Y$ 均由这些紧对象滤过生成，$f$ 诱导的余极限比较为同构。反向显然。$\square$
 
-**外部输入定理 12.D（局部可表现范畴的伴随函子定理）.** 设 $\mathcal C,\mathcal D$ 为局部可表现范畴。函子
+**外部输入定理 12.16（局部可表现范畴的伴随函子定理）.** 设 $\mathcal C,\mathcal D$ 为局部可表现范畴。函子
 
 $$
 F:\mathcal C\to\mathcal D
@@ -130,9 +130,44 @@ $$
 
 该定理是普通伴随函子定理在可表现范畴语境中的强形式；它解释了为什么 presentable $\infty$-category 中的左伴随通常被定义为保持余极限的可达函子。
 
-## 12.7 本章小结
+## 12.7 生成检测与基数边界
 
-可表现范畴理论提供控制“大范畴”的方法：对象由小对象经滤过余极限生成，函子由其在小对象上的行为控制。该语言在模型范畴、Grothendieck 范畴和 presentable $\infty$-categories 中反复出现。
+**命题 12.17（紧生成对象检测自然同构）.** 设 $\mathcal C$ 局部 $\kappa$-可表现，$\mathcal G$ 为 $\kappa$-紧对象的小骨架。设 $\mathcal D$ 有 $\kappa$-滤过余极限，且函子
+
+$$
+F,G:\mathcal C\to\mathcal D
+$$
+
+保持 $\kappa$-滤过余极限。若自然变换 $\eta:F\Rightarrow G$ 在所有 $A\in\mathcal G$ 上的分量 $\eta_A$ 都是同构，则 $\eta$ 是自然同构。
+
+**证明.** 任取 $X\in\mathcal C$。由局部 $\kappa$-可表现性，$X$ 可写为 $\mathcal G$ 中对象的 $\kappa$-滤过余极限：
+
+$$
+X\cong\operatorname{colim}_{i\in\mathcal J}A_i.
+$$
+
+因 $F,G$ 保持该类余极限，
+
+$$
+F X\cong\operatorname{colim}_i F A_i,\qquad
+G X\cong\operatorname{colim}_i G A_i.
+$$
+
+分量 $\eta_X$ 与由 $\eta_{A_i}$ 诱导的余极限态射相同。每个 $\eta_{A_i}$ 是同构，故其余极限仍是同构。于是所有分量均为同构。$\square$
+
+**例子 12.18（$\mathbf{Set}$ 的有限生成）.** 每个集合 $S$ 是其有限子集偏序范畴 $\operatorname{Fin}(S)$ 上包含函子的滤过余极限：
+
+$$
+S\cong\operatorname{colim}_{T\in\operatorname{Fin}(S)}T.
+$$
+
+有限子集的任意有限族被其并集支配，因此 $\operatorname{Fin}(S)$ 滤过。这说明 $\mathbf{Set}$ 由有限集合经滤过余极限生成。
+
+**例子 12.19（紧性依赖基数）.** 可表现性依赖所选正则基数。一个可数无限集合不是 $\omega$-紧对象，因为它不是有限集合；但它是 $\omega_1$-紧对象，因为其基数小于 $\omega_1$，由例子 12.5 得到 $\omega_1$-紧性。
+
+## 12.8 本章小结
+
+可表现范畴理论提供控制“大范畴”的方法：对象由小对象经滤过余极限生成，函子和自然变换由其在小对象上的行为控制。该语言在模型范畴、Grothendieck 范畴和 presentable $\infty$-categories 中反复出现。紧性不是绝对概念；改变正则基数会改变“可表现对象”的范围。
 
 ## 练习
 
@@ -152,4 +187,10 @@ $$
 
 **练习 12.8.** 解释强生成子与“检测同构”的关系。
 
-**练习 12.9.** 使用外部输入定理 12.D，说明为什么保持小余极限但不可达的函子不一定有右伴随。
+**练习 12.9.** 使用外部输入定理 12.16，说明为什么保持小余极限但不可达的函子不一定有右伴随。
+
+**练习 12.10.** 证明 $\operatorname{Fin}(S)$ 对任意集合 $S$ 都是滤过范畴。
+
+**练习 12.11.** 在命题 12.17 中，说明为什么 $\eta_X$ 可识别为同构族 $\eta_{A_i}$ 的余极限。
+
+**练习 12.12.** 给出一个对象相对于某个 $\kappa$ 紧、但相对于较小正则基数不紧的例子。

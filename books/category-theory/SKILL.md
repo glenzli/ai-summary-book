@@ -23,6 +23,9 @@ description: Use when writing, revising, or checking the rigorous Chinese catego
 - 后段进入同伦与高阶理论：2-范畴、双范畴、模型范畴、单纯集、quasi-category、Cartesian fibration、稳定 $\infty$-范畴、高阶 topos 和高阶代数。
 - $\infty$-范畴默认采用 quasi-category 口径；与 simplicial categories、complete Segal spaces、relative categories 的比较作为后续章节专题处理。
 - 固定 Grothendieck universes 处理大小问题；所有“范畴的范畴”必须说明小性层级。
+- 后续扩写以范畴论本体为边界；外部数学理论只作为范畴论接口或例子出现。
+- 若使用外部领域深定理，只标为“外部输入定理”并记录来源；不在本教材内部补其证明。
+- 具体边界见 `F_scope_boundary_and_external_input_policy.md`。
 
 ## 资料源规则
 
