@@ -42,8 +42,8 @@
 
 ## 章节依赖映射
 
-- 第 1-5 章主要依赖 Scholze 讲义第一、二讲以及形式化基础论文中的站点比较结果。
-- 第 6-8 章依赖 Gleason 的极不连通空间定理、Stone 对偶和 Scholze 讲义中的投射生成元思想。
+- 第 1-5 章依赖 S26 Lecture I-II 的 condensed/profinite 站点入口，以及 ABKMT24 的 coherent topology、regular/extensive topology 和 ProFin/CHaus/Stonean 比较；出版 locator 见总台账 1.1。
+- 第 6-8 章依赖输入 A.1-A.3：Boolean prime ideal theorem、Sikorski/Gleason 背景和极不连通紧 Hausdorff 空间的投射性；书内只证明 Stone/Gleason cover 的形式模块。
 - 第 9-11 章使用 sheaf of modules 的标准闭对称幺半结构和导出张量理论。
 - 附录 G 使用标准同调代数，计算投射对象上的 Ext 消失、平坦对象上的 Tor 消失和长正合列。
 - 附录 H 使用 sheafification 的 plus 构造、Grothendieck 阿贝尔范畴和 Spaltenstein 型 K-flat/K-injective 替换理论；plus 构造给出书内证明，K-flat/K-injective 存在性作为一般同调代数输入。
@@ -55,12 +55,13 @@
 - 附录 N 使用 Boolean 代数、超滤子、Stone 对偶和 profinite 逆极限表示；Boolean prime ideal theorem 作为集合论输入，Stone 空间背景参考 Johnstone。
 - 附录 O 使用 regular open algebra、完备 Boolean algebra、Sikorski extension theorem、Stone 对偶和 Gleason lifting theorem，补 Gleason 投射性的证明模块。
 - 附录 P 使用 Asgeirsson 的 Nöbeling 定理形式化证明、有限商连续函数和超限过滤代数引理，补 Nöbeling 定理的证明模块。
-- 第 12-13 章主要依赖 Scholze 讲义第五、六讲和 Nöbeling 定理。
-- 第 14-15 章主要依赖 Scholze 讲义第七、八讲；当前只写第一卷所需定义、结构定理和纲要。
+- 第 12-13 章依赖输入 B.1-B.4：Nöbeling theorem、solidification、solid tensor product 和 profinite measure tensor formula；出版 locator 见总台账第 2 节。
+- 第 14-15 章依赖输入 C.1 和 C.4，以及第二卷 D.4、D.7 的 analytic localization/rational descent 口径；第一卷只写所需定义、结构定理和纲要。
 
 ## 引用纪律
 
 - 正文不大量转述来源原文；只重写数学内容。
 - 若某个定理来自来源但本书暂不证明，必须标注“来源”和“后续依赖程度”。
+- 外部输入的精确编号统一引用总目录 [INPUT_THEOREM_REGISTER.md](../INPUT_THEOREM_REGISTER.md)，文献定位统一引用 [REFERENCE_LOCATOR_LEDGER.md](../REFERENCE_LOCATOR_LEDGER.md)。
 - 若本书给出自己的证明，需要检查证明是否只使用本书已建立的引理。
 - 若不同来源采用不同站点口径，例如 compact Hausdorff、profinite、extremally disconnected 或 $\kappa$-small 版本，必须在正文说明口径差异。

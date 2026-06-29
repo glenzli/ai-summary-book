@@ -65,7 +65,7 @@ $$
 
 **输入定理 R.6（analytic 闭结构）.** \(D(A,\mathcal M)\) 带有与 \(D(A)\) 相容的闭对称幺半结构。
 
-R.6 可由 R.4-R.5 经幺半局部化推出；在实际引用中，Scholze 的 analytic ring 定理通常直接给出 R.4-R.6 的组合形式。
+R.6 可由 R.4-R.5 经幺半局部化推出；本文引用 Scholze 的 analytic ring 定理时，把 R.4-R.6 作为同一个输入包使用。
 
 ## R.3 Analyticization
 
@@ -205,4 +205,3 @@ $$
 2. 写出 R.9 中单位约束下降的证明。
 3. 对二开 rational cover，写出 R.14 的 descent datum。
 4. 解释为什么 R.16 需要 perfect 性本身满足 descent。
-

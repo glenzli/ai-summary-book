@@ -36,7 +36,7 @@ $$
 
 ## 2.3 凝聚表述
 
-**输入定理 2.2（Clausen-Scholze，形式）.** 对适当的 $X$，存在 faithful 的范畴解释，把 $\operatorname{Coh}(X)$ 和 $D_{\operatorname{coh}}(X)$ 放入 analytic/liquid 派生范畴中，并保持导出全局截面。
+**输入定理 2.2（Clausen-Scholze，形式）.** 对第三卷附录 AR.1 所登记的 Clausen-Scholze 建模输入适用范围内的复解析对象 $X$，存在 faithful 的范畴解释，把 $\operatorname{Coh}(X)$ 和 $D_{\operatorname{coh}}(X)$ 放入 analytic/liquid 派生范畴中，并保持导出全局截面。
 
 这意味着，经典的
 

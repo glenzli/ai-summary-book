@@ -19,10 +19,10 @@
 
 ## 章节依赖映射
 
-- 第 1 章依赖形式化基础论文。
-- 第 2-4 章依赖第一、二卷中的站点、同调和 solid 结构。
-- 第 5-6 章依赖第二卷 analytic/liquid 内容。
-- 第 7 章依赖 Bhatt-Scholze 的 pro-etale topology。
+- 第 1 章依赖 ABKMT24 的 coherent topology 与 condensed set equivalence locator，并引用第一卷固定 universe 下的站点比较口径。
+- 第 2-4 章依赖第一、二卷中的站点、同调和输入 B.1-B.4 的 solid 结构；solid 计算只在 Scholze/A23 输入允许范围内使用。
+- 第 5-6 章依赖第二卷输入 C.1-C.5 的 analytic/liquid 内容，并把 Banach/Fréchet 比较限制在 realization 适用范围内。
+- 第 7 章依赖 Bhatt-Scholze 的 pro-etale topology，作为后续几何接口，不反向改变第一至三卷的 condensed/solid/analytic/liquid 主线。
 - 第 8 章整理计算目录和后续问题。
 - 附录 A 依赖形式化基础论文、第一卷站点比较和一般同调代数。
 - 附录 B 依赖第二、三章的证明与第四至七章的例子。

@@ -144,11 +144,11 @@ liquid 也应放在第二卷，而不是只在第三卷 Dolbeault 应用里出�
 
 因此，当前状态应表述为：
 
-> 四卷已经达到“condensed/solid/analytic/liquid 主线输入定理型闭合草稿”。凝聚基础证明闭合度较高；solid、analytic 和 liquid 主线已经纳入教材结构，并由第二卷附录 Q-T 收束为主定理包，附录 U 给出出版级闭包审查，附录 V-Z 把核心输入进一步拆成证明模块，附录 AA 与第三卷附录 AR 把 Scholze/Clausen-Scholze 定理列为核心图谱；其深层测度、张量、rational acyclicity、realization 和复几何建模定理仍以 Scholze/Clausen-Scholze 输入定理使用。
+> 四卷已经达到“condensed/solid/analytic/liquid 主线输入定理型最终收口版”。凝聚基础证明闭合度较高；solid、analytic 和 liquid 主线已经纳入教材结构，并由第二卷附录 Q-T 收束为主定理包，附录 U 给出出版级闭包审查，附录 V-Z 把核心输入进一步拆成证明模块，附录 AA 与第三卷附录 AR 把 Scholze/Clausen-Scholze 定理列为核心图谱；其深层测度、张量、rational acyclicity、realization 和复几何建模定理仍以 Scholze/Clausen-Scholze 输入定理使用。
 
 ## 5. 后续写作优先级
 
-若继续推进，优先级不应再放在新增复几何应用，而应先补第二卷主线：
+若继续维护，优先级不应再放在新增复几何应用，而应先做非阻塞精修：
 
 1. 将附录 Q 中 Q.4-Q.6 展开为 solidification 的完整证明链或逐条文献证明；
 2. 将附录 R 中 R.4-R.13 展开为 analytic ring、analyticization、rational localization 与 Čech descent 的完整证明链或逐条文献证明；

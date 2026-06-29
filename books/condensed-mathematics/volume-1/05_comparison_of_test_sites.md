@@ -4,7 +4,7 @@
 
 凝聚集合可以从紧 Hausdorff 空间站点进入，也常从 profinite 空间站点进入。本章解释这两个口径之间的关系：$\mathbf{CHaus}$ 给出直观定义，$\mathbf{ProFin}$ 给出更小、更可计算的测试范畴。
 
-本章会使用一个标准的站点比较定理。完整证明属于一般 topos theory；本书给出足够用于后续的版本和证明思路。
+本章会使用一个标准的站点比较定理。完整证明属于一般 topos theory；本书给出足够用于后续的稳定基版本；完整展开见 [附录 B](B_site_comparison_theorem.md)，形式化证明义务见第四卷第二章和第四卷附录 A。
 
 ## 依赖前置知识
 
@@ -37,18 +37,26 @@ $$
 
 因此，我们希望知道：是否可以只在 profinite 空间上测试 sheaf？
 
-答案是肯定的，适当表述后，$\mathbf{ProFin}$ 是 $\mathbf{CHaus}$ 的一个基。
+答案是肯定的，但严格说法不是“随便取一个大子范畴”。本章固定第一卷附录 A 的 universe 约定，并在该 universe 内取 $\mathbf{CHaus}_{\mathcal U}$ 与 $\mathbf{ProFin}_{\mathcal U}$ 的小骨架。包含
+
+$$
+i:\mathbf{ProFin}_{\mathcal U}\hookrightarrow \mathbf{CHaus}_{\mathcal U}
+$$
+
+在有限联合满射拓扑下满足稳定基条件：每个紧 Hausdorff 空间有 profinite 满射覆盖，profinite 对象在紧 Hausdorff 底上的纤维积仍是 profinite，并且任意覆盖在 profinite 底上可由 profinite 覆盖共同细化。
 
 ## 5.2 基与站点比较
 
-**定义 5.1.** 设 $(\mathcal C,J)$ 为站点，$\mathcal D\subset\mathcal C$ 为全子范畴。称 $\mathcal D$ 是 $\mathcal C$ 的一个基，如果满足：
+**定义 5.1（稳定基子站点）.** 设 $(\mathcal C,J)$ 为小站点，$\mathcal D\subset\mathcal C$ 为全子范畴。称 $\mathcal D$ 是 $\mathcal C$ 的稳定基子站点，如果满足：
 
-1. 对每个 $U\in\mathcal C$，存在覆盖族 $\{D_i\to U\}$，其中 $D_i\in\mathcal D$。
-2. 若 $D\in\mathcal D$ 且 $U\to D$ 是 $\mathcal C$ 中的态射，则存在覆盖族 $\{D_j\to U\}$，其中 $D_j\in\mathcal D$。
+1. $\mathcal D$ 的拓扑由 $\mathcal C$ 限制得到。
+2. 对每个 $U\in\mathcal C$，存在覆盖族 $\{D_i\to U\}$，其中 $D_i\in\mathcal D$。
+3. 若 $D_1,D_2\in\mathcal D$ 且有映射 $D_1\to U\leftarrow D_2$，其中 $U\in\mathcal C$，则 $D_1\times_UD_2$ 存在且属于 $\mathcal D$。
+4. 若 $D\in\mathcal D$ 且 $\{U_a\to D\}$ 是 $\mathcal C$ 中覆盖，则存在 $\mathcal D$ 中覆盖 $\{D_b\to D\}$ 共同细化它。
 
-第二条的意思是：把 $\mathcal D$ 中对象沿任意态射拉回后，仍能被 $\mathcal D$ 中对象覆盖。
+第四条的意思是：在 $\mathcal D$ 中检验 sheaf 条件时，不会丢失 $\mathcal C$ 中覆盖的交叠信息。若只知道 $\mathcal D$ 的对象覆盖所有对象，而没有纤维积和共同细化条件，则限制到 $\mathcal D$ 的数据一般不足以恢复 $\mathcal C$ 上的 sheaf。
 
-**定理 5.2（站点比较定理，基版本）.** 设 $\mathcal D\subset \mathcal C$ 是站点 $(\mathcal C,J)$ 的基，并在 $\mathcal D$ 上赋予诱导拓扑。则限制函子
+**定理 5.2（站点比较定理，稳定基版本）.** 设 $\mathcal D\subset \mathcal C$ 是站点 $(\mathcal C,J)$ 的稳定基子站点。则限制函子
 
 $$
 \operatorname{Sh}(\mathcal C,J)
@@ -70,9 +78,9 @@ F(U)=
 \right),
 $$
 
-其中纤维积项再用 $\mathcal D$-覆盖计算。基条件保证这个定义与覆盖选择无关，并满足 sheaf 条件。完整证明需要检查自然性、覆盖独立性和拟逆。证毕。
+其中 $D_i\times_UD_j\in\mathcal D$ 由稳定基条件保证。若采用附录 B 的较弱版本，则该交对象只需能被 $\mathcal D$-对象覆盖，公式改写为切片范畴上的极限。共同细化条件保证该定义与覆盖选择无关，并满足 $\mathcal C$ 上的 sheaf 条件。完整证明需要检查自然性、覆盖独立性和拟逆，见附录 B。证毕。
 
-**注 5.3.** 定理 5.2 是 sheaf 理论的标准工具。本书后续使用它时，会明确指出所用子范畴是否确实构成基。
+**注 5.3.** 定理 5.2 是 sheaf 理论的标准工具。本书后续使用它时，会明确指出所用子范畴是否确实构成稳定基，或引用附录 B 中允许交对象再被覆盖的弱版本。
 
 ## 5.3 Profinite 空间是一个基
 
@@ -112,22 +120,38 @@ $$
 
 下 $\Delta_K$ 的逆像，因此闭。$P\times Q$ 是 profinite 空间，闭子空间仍 profinite。证毕。
 
-**命题 5.6.** $\mathbf{ProFin}$ 是 $\mathbf{CHaus}$ 在有限联合满射拓扑下的基。
+**命题 5.6.** 在固定 universe 和小骨架约定下，$\mathbf{ProFin}_{\mathcal U}$ 是 $\mathbf{CHaus}_{\mathcal U}$ 在有限联合满射拓扑下的稳定基子站点。
 
-**证明.** 第一条由定理 5.4 给出：任意 $K\in\mathbf{CHaus}$ 有 profinite 空间 $P$ 满射到 $K$，于是 $\{P\to K\}$ 是覆盖。
+**证明.** 拓扑由限制得到，这是定义。
 
-第二条设 $P\in\mathbf{ProFin}$，且 $K\to P$ 是 $\mathbf{CHaus}$ 中的态射。由定理 5.4，取 profinite 空间 $Q$ 和满射 $Q\to K$。则 $Q\to K$ 本身就是用 profinite 对象覆盖 $K$，满足基条件。若需要处理纤维积，相容性由引理 5.5 保证。证毕。
+覆盖性由定理 5.4 给出：任意 $K\in\mathbf{CHaus}_{\mathcal U}$ 有 profinite 空间 $P$ 满射到 $K$，于是 $\{P\to K\}$ 是覆盖。
+
+纤维积稳定性由引理 5.5 给出：若 $P,Q$ 是 profinite，且 $P\to K\leftarrow Q$ 是紧 Hausdorff 底上的两条映射，则 $P\times_KQ$ 是 profinite。
+
+共同细化条件如下。设 $P\in\mathbf{ProFin}_{\mathcal U}$，且
+
+$$
+\{K_a\to P\}_{a=1}^n
+$$
+
+是 $\mathbf{CHaus}_{\mathcal U}$ 中有限联合满射覆盖。对每个 $a$，由定理 5.4 取 profinite 满射 $Q_a\to K_a$。则复合族
+
+$$
+\{Q_a\to K_a\to P\}_{a=1}^n
+$$
+
+仍是有限联合满射覆盖，并且所有 $Q_a$ 都属于 $\mathbf{ProFin}_{\mathcal U}$。它共同细化原覆盖。因此 $\mathbf{ProFin}_{\mathcal U}$ 满足稳定基条件。证毕。
 
 ## 5.4 凝聚集合的 profinite 定义
 
-由站点比较定理得到：
+由定理 5.2 得到：
 
 **定理 5.7.** 限制函子给出范畴等价
 
 $$
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}})
+\operatorname{Sh}(\mathbf{CHaus}_{\mathcal U},J_{\operatorname{surj}})
 \simeq
-\operatorname{Sh}(\mathbf{ProFin},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{ProFin}_{\mathcal U},J_{\operatorname{surj}}).
 $$
 
 因此也可以定义

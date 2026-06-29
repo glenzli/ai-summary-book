@@ -105,7 +105,7 @@ $$
 
 ## D.5 liquid analytic ring
 
-**输入定理 D.5.** 对指定范围的 $p$，$(\mathbb R,\mathcal M_{<p})$ 是 analytic ring，其解析模范畴给出 $p$-liquid 实向量空间。
+**输入定理 D.5.** 对 \(0<p\le 1\)，$(\mathbb R,\mathcal M_{<p})$ 是 analytic ring，其解析模范畴给出 $p$-liquid 实向量空间。
 
 **使用位置.** 第五章、第三卷 Dolbeault/liquid 模型。
 
@@ -117,13 +117,13 @@ $$
 
 ## D.6 liquid realization
 
-**输入定理 D.6.** 对核 Fréchet 空间、Banach 空间的合适子类、有限维向量空间和连续线性映射，存在 realization 过程
+**输入定理 D.6.** 对文献中指定、并在本书作为输入范围登记的拓扑向量空间子范畴 \(\mathcal T_p\)，存在 realization 过程
 
 $$
 \mathcal L_p:E\mapsto E_{\mathrm{liq}}
 $$
 
-进入 $p$-liquid analytic 模范畴，并与有限极限、有限直和、闭子空间 kernel、有限维 quotient 和闭值域短正合列相容。
+进入 $p$-liquid analytic 模范畴。本文只在 \(\mathcal T_p\) 的下列性质内使用它：\(\mathcal T_p\) 包含有限维实向量空间和本文使用的核 Fréchet/Dolbeault 型对象；\(\mathcal L_p\) 与有限极限、有限直和、闭子空间 kernel、有限维 quotient 和闭值域短正合列相容。
 
 **使用位置.** 第五章、附录 J、附录 P、附录 S；第三卷 Dolbeault 复形和 Hodge/Fredholm 有限性接口。
 

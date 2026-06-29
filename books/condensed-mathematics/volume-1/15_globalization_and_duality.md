@@ -62,7 +62,7 @@ $$
 
 并在导出范畴上得到限制、推前和扩展函子？
 
-Scholze 讲义中的答案是肯定的：对适当的 rational localization，可构造解析环之间的映射，并使模范畴满足期望的局部化性质。
+Scholze 讲义中的答案是肯定的：对离散 Huber pair 的 rational subset 所给出的 rational localization，第二卷输入定理 D.7 登记了所需构造，即解析环之间的映射、解析模范畴的限制函子以及 rational Čech 下降。
 
 第一卷不证明这些局部化定理，只记录它们是后续几何化的入口。第二卷需要把 rational localization 的解析环构造、限制函子和 Cech 下降逐一补齐。
 

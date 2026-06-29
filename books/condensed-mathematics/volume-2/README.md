@@ -1,7 +1,7 @@
 # 凝聚数学讲义：第二卷
 
-作者：Dr. Stochastic Parrot  
-状态：solid/analytic/liquid 主线输入定理型闭合草稿
+作者：Dr. Stochastic Parrot
+状态：solid/analytic/liquid 主线输入定理型最终收口版
 副题：Solid、Analytic 与 Liquid 结构
 
 本卷接续 [第一卷](../volume-1/)。第一卷建立站点、凝聚集合、凝聚阿贝尔群、投射生成元、基本同调代数、solid 与 analytic 的入口；第二卷把这些入口发展成 solid、analytic 与 liquid 主线。本卷不是应用附录，而是全书的核心理论卷之一。
@@ -58,7 +58,7 @@
 
 ## 当前范围
 
-当前版本完成第二卷主线输入定理型闭合草稿：它给出 solid 派生范畴、solid 环与模、解析环、解析化、liquid 入口、离散 Huber pair、$f_!$ 与复几何应用的范畴语言。Scholze 和 Clausen-Scholze 的深层结构定理以输入定理形式标注；附录 A 记录证明路线，附录 B 做类型检查，附录 C-D 把 localization 形式定理和输入定理颗粒度写清，附录 E 证明局部等价、局部化核、张量理想、幺半下降和相对张量积的技术引理，附录 F 证明伴随函子、投影公式和内部 Hom 相容的形式骨架，附录 G 补 Cech nerve、totalization、稳定范畴值 descent 和 rational Cech 下降的形式推论，附录 H 补紧生成、localizing subcategory 和生成元检验的形式证明，附录 I 补 analytic ring 公理检查表、cone 判别和失败模式，附录 J 补 liquid 与 Banach/Fréchet 的边界，附录 K 补幺半 Bousfield 局部化和相对张量积的下降判别，附录 L 补闭幺半局部化与内部 Hom 的类型边界，附录 M-N 补 solid localization 的生成核口径和 analytic/rational descent 的证明义务，附录 O-P 补可展示稳定局部化的正合形式和 Fréchet/liquid 闭值域类型检查，附录 Q-T 把 solid、analytic、liquid 和三者统一接口整理成主定理包，附录 U 给出出版级闭包审查，附录 V-Z 进一步把 solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成教材内部证明模块，附录 AA 把 Scholze 与 Clausen-Scholze 的核心定理作为主线图谱集中列出。真正证明 compact complex manifolds 的 finiteness、Serre duality、GAGA 和 Riemann-Roch 留给第三卷。
+当前版本完成第二卷主线输入定理型最终收口：它给出 solid 派生范畴、solid 环与模、解析环、解析化、liquid 入口、离散 Huber pair、$f_!$ 与复几何应用的范畴语言。Scholze 和 Clausen-Scholze 的深层结构定理以输入定理形式标注；附录 A 记录证明路线，附录 B 做类型检查，附录 C-D 把 localization 形式定理和输入定理颗粒度写清，附录 E 证明局部等价、局部化核、张量理想、幺半下降和相对张量积的技术引理，附录 F 证明伴随函子、投影公式和内部 Hom 相容的形式骨架，附录 G 补 Cech nerve、totalization、稳定范畴值 descent 和 rational Cech 下降的形式推论，附录 H 补紧生成、localizing subcategory 和生成元检验的形式证明，附录 I 补 analytic ring 公理检查表、cone 判别和失败模式，附录 J 补 liquid 与 Banach/Fréchet 的边界，附录 K 补幺半 Bousfield 局部化和相对张量积的下降判别，附录 L 补闭幺半局部化与内部 Hom 的类型边界，附录 M-N 补 solid localization 的生成核口径和 analytic/rational descent 的证明义务，附录 O-P 补可展示稳定局部化的正合形式和 Fréchet/liquid 闭值域类型检查，附录 Q-T 把 solid、analytic、liquid 和三者统一接口整理成主定理包，附录 U 给出出版级闭包审查，附录 V-Z 进一步把 solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成教材内部证明模块，附录 AA 把 Scholze 与 Clausen-Scholze 的核心定理作为主线图谱集中列出。真正证明 compact complex manifolds 的 finiteness、Serre duality、GAGA 和 Riemann-Roch 留给第三卷。
 
 若后续扩写到出版级篇幅，第二卷是最自然的拆分对象：solid 可独立成卷，analytic 与 liquid 可独立成卷。当前仓库暂不移动文件。
 

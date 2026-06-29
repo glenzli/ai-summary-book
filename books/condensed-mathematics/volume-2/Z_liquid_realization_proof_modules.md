@@ -28,13 +28,13 @@ $$
 
 ## Z.2 Liquid realization 输入
 
-**输入定理 Z.3（liquid realization functor）。** 对核 Fréchet 空间、Banach 空间的合适子类和有限维向量空间，存在函子
+**输入定理 Z.3（liquid realization functor）。** 对第二卷输入定理 D.6 中登记的拓扑向量空间子范畴 \(\mathcal T_p\)，存在函子
 
 $$
 \mathcal L_p:E\mapsto E_{\mathrm{liq}}
 $$
 
-从这些拓扑向量空间及连续线性映射到 \(D_{\mathrm{liq},p}\)，满足：
+从 \(\mathcal T_p\) 及其允许的连续线性映射到 \(D_{\mathrm{liq},p}\)。本书只使用以下性质：
 
 1. \(\mathcal L_p(\mathbb R)\) 是单位对象；
 2. 保持有限直和；
@@ -147,4 +147,3 @@ $$
 2. 证明 Z.1 的 sheaf 条件。
 3. 给出像不闭时 quotient 非 Hausdorff 的例子。
 4. 证明 Z.11 中 perfect 性的最后一步。
-

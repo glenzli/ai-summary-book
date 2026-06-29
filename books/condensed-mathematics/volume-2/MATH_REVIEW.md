@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-第二卷已经完成 solid/analytic/liquid 主线输入定理型闭合草稿，现有内容包括：
+第二卷已经完成 solid/analytic/liquid 主线输入定理型最终收口版，现有内容包括：
 
 1. 第二卷主题、边界和资料源。
 2. solid 派生范畴的基本定义和结构定理。
@@ -66,4 +66,4 @@
 
 ## 当前数学口径
 
-当前版本可作为第二卷 solid/analytic/liquid 主线输入定理型闭合草稿使用。solid/analytic/liquid 的核心结构定理以输入定理标注；附录 A 给出证明路线，附录 B 给出类型检查和例子，附录 C-D 进一步补充 Bousfield localization 的形式骨架和输入定理登记表，附录 E-P 把接受输入定理后的范畴论推论、solid 生成核、analytic descent 证明义务、幺半局部化判别、闭结构与内部 Hom、投影公式形式层、Cech descent 形式层、生成元检验、analytic ring 失败模式、presentable localization 正合性和 liquid/Fréchet 分析边界写成完整证明或检查表，附录 Q-T 将三条主线分别收束为主定理包并给出统一闭包，附录 U 完成出版级闭包审查，附录 V-Z 把 Scholze/Clausen-Scholze 核心输入进一步拆成可复核的证明模块，附录 AA 把这些核心定理放入主线图谱：一般范畴论与同调代数部分在书内证明，solid/analytic/liquid 的深层测度、张量、rational acyclicity、realization 和复几何建模仍明确登记为外部输入。本卷不声称替代 Scholze 讲义中的长证明，而是提供定义、范畴语言、基本推论和后续几何应用的接口。
+当前版本可作为第二卷 solid/analytic/liquid 主线输入定理型最终收口版使用。solid/analytic/liquid 的核心结构定理以输入定理标注；附录 A 给出证明路线，附录 B 给出类型检查和例子，附录 C-D 进一步补充 Bousfield localization 的形式骨架和输入定理登记表，附录 E-P 把接受输入定理后的范畴论推论、solid 生成核、analytic descent 证明义务、幺半局部化判别、闭结构与内部 Hom、投影公式形式层、Cech descent 形式层、生成元检验、analytic ring 失败模式、presentable localization 正合性和 liquid/Fréchet 分析边界写成完整证明或检查表，附录 Q-T 将三条主线分别收束为主定理包并给出统一闭包，附录 U 完成出版级闭包审查，附录 V-Z 把 Scholze/Clausen-Scholze 核心输入进一步拆成可复核的证明模块，附录 AA 把这些核心定理放入主线图谱：一般范畴论与同调代数部分在书内证明，solid/analytic/liquid 的深层测度、张量、rational acyclicity、realization 和复几何建模仍明确登记为外部输入。本卷不声称替代 Scholze 讲义中的长证明，而是提供定义、范畴语言、基本推论和后续几何应用的接口。

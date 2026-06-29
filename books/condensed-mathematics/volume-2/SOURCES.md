@@ -23,17 +23,17 @@
 ## 引用纪律
 
 - 对第一卷已有结论，引用第一卷章节。
-- 对 Scholze 讲义中的长定理，标明“输入定理”。
+- 对 Scholze/Clausen-Scholze 讲义中的长定理，标明总目录中的输入编号，并在需要时引用 [REFERENCE_LOCATOR_LEDGER.md](../REFERENCE_LOCATOR_LEDGER.md) 的 S26/CS26 locator。
 - 对第二卷自行证明的命题，必须写出所用第一卷定理。
 - 任何涉及 liquid 或复几何的陈述，若只是路线图，必须明确写为路线图。
 
 ## 章节依赖映射
 
-- 第 1-2 章主要依赖 Scholze 讲义中的 solid abelian groups 与 solid tensor product。
-- 第 3-4 章主要依赖 Scholze 讲义中的 analytic rings 和 Bousfield localization 观点。
-- 第 5 章主要依赖 Scholze 的 liquid vector spaces 构造。
-- 第 6-7 章主要依赖 Scholze 讲义中的离散 Huber pair、解析环全局化和相干对偶。
-- 第 8 章主要依赖 Clausen-Scholze 复几何讲义，当前只给范畴语言和目标定理路线图。
+- 第 1-2 章依赖输入 B.2-B.4：solidification、solid tensor product 和 profinite measure tensor formula；locator 见总台账第 2 节。
+- 第 3-4 章依赖输入 C.1：analytic ring localization；Bousfield localization 的形式部分在本卷附录 C、E、K、O、V 中书内证明。
+- 第 5 章依赖输入 C.2-C.3：liquid realization 和 \(p\)-liquid analytic ring；允许的 \(p\) 与 realization 适用范围按输入定理陈述，不用“合适的 \(p\)”作假设。
+- 第 6-7 章依赖输入 C.4 以及本卷 D.7：离散 Huber pair、rational localization 和 rational Čech descent；相干对偶接口依赖 S26 Lecture XI locator。
+- 第 8 章依赖 CS26 复几何输入和第三卷 AR 图谱；本卷只给 analytic/liquid 类型接口和目标定理路线图。
 - 附录 A-B 主要用于把输入定理的证明路线和公式类型检查显式化，不引入新的外部来源。
 - 附录 C 使用 presentable stable category 与 Bousfield localization 的标准形式定理；作为范畴论输入使用。
 - 附录 D 不引入新定理，只把第二卷已经使用的输入定理拆成更精确的引用颗粒。

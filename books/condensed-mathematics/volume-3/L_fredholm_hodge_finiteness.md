@@ -121,7 +121,13 @@ $$
 
 **定义 L.6.** 闭算子 $T$ 称为 Fredholm，如果 $\ker T$ 有限维，$\operatorname{im}T$ 闭，且 cokernel 有限维。
 
-**输入定理 L.7（椭圆 Fredholm 性）.** 紧光滑流形上的椭圆微分算子在合适 Sobolev 完备化之间给出 Fredholm 算子。特别地，Dolbeault Laplacian
+**输入定理 L.7（椭圆 Fredholm 性）.** 设 \(T:\Gamma(M,E)\to\Gamma(M,F)\) 是紧光滑流形上阶数为 \(m\) 的椭圆微分算子。对任意 Sobolev 阶数 \(s\)，连续延拓
+
+$$
+T:H^s(M,E)\to H^{s-m}(M,F)
+$$
+
+是 Fredholm 算子。特别地，Dolbeault Laplacian
 
 $$
 \Delta_{\bar\partial,q}

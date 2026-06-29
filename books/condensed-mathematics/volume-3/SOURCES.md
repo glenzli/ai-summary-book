@@ -13,16 +13,37 @@
 3. 第一卷与第二卷。  
    用途：本卷不重建凝聚基础和 analytic/liquid 范畴，只引用前两卷。
 
+## 经典复几何来源
+
+1. Henri Cartan, *Varietes analytiques complexes et cohomologie*.
+   用途：Cartan 定理 A/B、Stein acyclicity 和 Cousin/Runge 证明路线的原始来源之一。
+
+2. Hans Grauert, *Ein Theorem der analytischen Garbentheorie und Modulraeume komplexer Strukturen*, Publ. Math. IHES 5 (1960).
+   用途：Grauert direct image theorem 和 coherent finiteness 输入。
+
+3. Jean-Pierre Serre, *Un theoreme de dualite*, Comment. Math. Helv. 29 (1955), 9-26.
+   用途：Serre duality 的经典来源。
+
+4. Jean-Pierre Serre, *Geometrie algebrique et geometrie analytique*, Ann. Inst. Fourier 6 (1956), 1-42.
+   用途：GAGA 的经典来源。
+
+5. Armand Borel and Jean-Pierre Serre, *Le theoreme de Riemann-Roch*, Bull. Soc. Math. France 86 (1958), 97-136；SGA 6, LNM 225, Expose III.
+   用途：GRR/HRR 的经典输入来源。
+
+6. Raymond O. Wells, *Differential Analysis on Complex Manifolds*；Daniel Huybrechts, *Complex Geometry*.
+   用途：Dolbeault lemma、elliptic/Hodge theory、Serre duality 和 Hodge-Fredholm 输入的教材定位。
+
 ## 引用纪律
 
 - 第三卷的深层复几何定理均标为输入定理，除非正文真的给出完整证明。
 - classical theorem 与 condensed theorem 分开写。
+- 凝聚/analytic 复几何 locator 统一见总目录 [REFERENCE_LOCATOR_LEDGER.md](../REFERENCE_LOCATOR_LEDGER.md) 第 3 节；classical theorem 的定位状态见总目录 [INPUT_THEOREM_REGISTER.md](../INPUT_THEOREM_REGISTER.md) D 类输入和 locator 台账第 4 节。
 - 若某节只是说明范畴语言，必须明确不声称完成证明。
 
 ## 章节依赖映射
 
-- 第 1-3 章主要依赖 Clausen-Scholze 对复解析对象和 Dolbeault/liquid 模型的处理。
-- 第 4-7 章主要依赖 Clausen-Scholze 的有限性、Serre duality、GAGA 和 Riemann-Roch。
+- 第 1-3 章依赖第三卷 AR.1-AR.2 与输入 C.2-C.5：Clausen-Scholze 对复解析对象、holomorphic functions、coherent sheaves 和 Dolbeault/liquid 接口的建模；classical Dolbeault lemma 仍是 D.1。
+- 第 4-7 章依赖第三卷 AR.3-AR.6 与输入 D.3-D.7：coherent cohomology finite-dimensionality、Serre duality、GAGA 和 HRR/GRR；CS26 locator 已登记，经典证明来源已经分层定位，部分仍需最终 theorem/page locator。
 - 第 8 章整理 six functor formalism 的位置。
 - 附录 A-B 用于说明证明路线和术语翻译，不引入新的外部来源。
 - 附录 C-E 使用经典复几何标准事实，包括 Cartan A/B、Dolbeault lemma、Serre duality 和 $\mathbb P^1$ 上线丛上同调计算。

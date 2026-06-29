@@ -22,13 +22,13 @@ $$
 D_{\mathrm{liq},p}(\mathbb R)=D(\mathbb R,\mathcal M_{<p}).
 $$
 
-**输入定理 S.2（liquid realization）.** 存在从适当的拓扑向量空间范畴到 \(D_{\mathrm{liq},p}(\mathbb R)\) 或其心脏的 realization 过程
+**输入定理 S.2（liquid realization）.** 对文献中规定的 realization 适用子范畴 \(\mathcal T_p\)，存在从 \(\mathcal T_p\) 到 \(D_{\mathrm{liq},p}(\mathbb R)\) 或其心脏的 realization 过程
 
 $$
 \mathcal L_p:E\mapsto E_{\mathrm{liq}},
 $$
 
-在核 Fréchet 空间、Banach 空间的合适子类、有限维向量空间和连续线性映射上与经典结构相容。
+在核 Fréchet 空间、满足该输入定理假设的 Banach 空间子类、有限维向量空间和允许的连续线性映射上与经典结构相容。
 
 **输入定理 S.3（exactness 范围）.** \(\mathcal L_p\) 保持有限直和、有限极限、闭嵌入的 kernel、有限维 quotient，并把满足闭值域条件的短正合列送到 liquid 范畴中的 fiber/cofiber sequence。
 
@@ -162,4 +162,3 @@ $$
 2. 在 S.9 中写出 exact triangle 的 cohomology 长正合列。
 3. 给出像不闭的连续线性映射例子，并说明 S.9 为什么不能用。
 4. 对 compact Riemann surface 的 \(\mathcal O\) 写出 S.13 的对象和 cohomology。
-

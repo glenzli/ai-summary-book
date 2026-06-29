@@ -144,28 +144,28 @@ $$
 
 ## B.7 用于凝聚集合
 
-在本书中：
+在本书中先固定第一卷附录 A 的 universe，并取小骨架。于是：
 
 $$
-\mathcal C=\mathbf{CHaus},
+\mathcal C=\mathbf{CHaus}_{\mathcal U},
 \qquad
-\mathcal D=\mathbf{ProFin}.
+\mathcal D=\mathbf{ProFin}_{\mathcal U}.
 $$
 
-第五章证明或引用了 $\mathbf{ProFin}$ 是 $\mathbf{CHaus}$ 的基，因此
+第五章证明或引用了 $\mathbf{ProFin}_{\mathcal U}$ 是 $\mathbf{CHaus}_{\mathcal U}$ 的稳定基子站点，因此
 
 $$
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}})
+\operatorname{Sh}(\mathbf{CHaus}_{\mathcal U},J_{\operatorname{surj}})
 \simeq
-\operatorname{Sh}(\mathbf{ProFin},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{ProFin}_{\mathcal U},J_{\operatorname{surj}}).
 $$
 
-同理，若 $\mathbf{ED}$ 表示极不连通紧 Hausdorff 空间范畴，则 Gleason cover 给出 $\mathbf{ED}$ 对 $\mathbf{CHaus}$ 的覆盖基。于是也有
+同理，若 $\mathbf{ED}_{\mathcal U}$ 表示极不连通紧 Hausdorff 空间的小骨架，则 Gleason cover 给出 $\mathbf{ED}_{\mathcal U}$ 对 $\mathbf{CHaus}_{\mathcal U}$ 的覆盖基。于是也有
 
 $$
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}})
+\operatorname{Sh}(\mathbf{CHaus}_{\mathcal U},J_{\operatorname{surj}})
 \simeq
-\operatorname{Sh}(\mathbf{ED},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{ED}_{\mathcal U},J_{\operatorname{surj}}).
 $$
 
 这解释了为什么正文可以在 $\mathbf{CHaus}$、$\mathbf{ProFin}$ 与 $\mathbf{ED}$ 之间切换：切换的是测试站点，不是 sheaf 范畴本身。

@@ -36,7 +36,7 @@
 6. 练习有答案要点；
 7. 不把外部输入写成已证定理。
 
-**当前判断。** 已达到本项目合理的“主线输入定理型闭合草稿”标准。solid、analytic 和 liquid 已纳入主线卷；第二卷附录 Q-Z 已将三条主线收束为主定理包、完成出版级闭包审查，并把 solidification、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成证明模块；第二卷附录 AA 和第三卷附录 AR 又把 Scholze/Clausen-Scholze 的核心定理集中列为主线图谱。其深层核心结构定理仍作为精确输入定理登记，接受输入后的形式推论、类型检查、例子和依赖链已经闭合。
+**当前判断。** 已达到本项目合理的“主线输入定理型最终收口版”标准。solid、analytic 和 liquid 已纳入主线卷；第二卷附录 Q-Z 已将三条主线收束为主定理包、完成出版级闭包审查，并把 solidification、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成证明模块；第二卷附录 AA 和第三卷附录 AR 又把 Scholze/Clausen-Scholze 的核心定理集中列为主线图谱。其深层核心结构定理仍作为精确输入定理登记，接受输入后的形式推论、类型检查、例子和依赖链已经闭合。
 
 ### 标准 C：研究导读完本
 
@@ -64,16 +64,18 @@
 | HRR/GRR | 中 | localized Chern character/GRR basic factors | 形式闭合，深层输入外部 |
 | pro-etale/pyknotic | 中 | 高阶拓扑与谱值 localization | 工具卷闭合 |
 
-## 3. 基本完本之后还差什么
+## 3. 最终收口后的非阻塞维护
 
-按标准 B，本书现在可以称为“condensed/solid/analytic/liquid 主线输入定理型闭合草稿”。仍可继续做的工作属于出版级增强：
+按标准 B，本书现在可以称为“condensed/solid/analytic/liquid 主线输入定理型最终收口版”。仍可继续做的工作属于非阻塞出版维护：
 
 1. **输入定理编号回填正文。** 现有登记表已集中列出外部输入；后续可把每个正文定理的引用进一步回填到具体输入编号。
-2. **引用定位提升。** [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 已建立 L0-L3 状态；后续应把核心输入从 L1 提升到 L2/L3。
+2. **引用定位提升。** [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 已建立 L0-L3 状态；凝聚主线输入已经提升到 L2/L3，经典输入已经从 L0 清到 L1/L2/L3 分层状态。后续重点是给 Boolean/Sikorski 补 edition locator，并给 Cartan、Grauert、Dolbeault、Hodge-Fredholm 和 GRR 补 theorem/page。
 3. **教师手册级答案。** 分卷答案已经建立；出版级版本应把所有证明题扩成逐行解答。
 4. **反例密度继续提高。** 重要技术假设已有边界例子；后续可为每个关键假设配置一个删除失败例子。
 5. **主线核心输入自足化。** 若要重证 solidification、analytic localization、liquid realization 等主线核心定理，需要把 Scholze/Clausen-Scholze 的长证明展开为独立章节。
 6. **深层应用输入自足化。** 若要重证 Cartan/Grauert、Hodge-Fredholm、GAGA 和 GRR，需要另写复几何、代数几何和泛函分析预备教材。
+
+这些项目不影响最终收口判断；它们只会把本书从“输入定理型最终收口版”继续推向“完全自足证明版”或“逐题教师手册版”。
 
 ## 4. 为什么之前一直没有推到基本完本
 
@@ -96,7 +98,7 @@
 10. Scholze/Clausen-Scholze 核心定理图谱；
 11. 基本完本判据、定理索引和依赖图。
 
-因此，按标准 B，本书已经从“继续膨胀的讲义”推进到“主线输入定理型闭合草稿”。按标准 A，它仍然不是也不应被声称为完全自足证明版教材。
+因此，按标准 B，本书已经从“继续膨胀的讲义”推进到“主线输入定理型最终收口版”。按标准 A，它仍然不是也不应被声称为完全自足证明版教材。
 
 ## 5. 对外口径
 
