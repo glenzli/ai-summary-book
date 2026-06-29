@@ -191,9 +191,19 @@ $$
 
 **注 5.15.1.** 附录 AE 展开 `GL(2)` 的三个基本模型：主级数对应两个一维参数的直和，Steinberg twist 对应非零 monodromy 的 special parameter，supercuspidal 对应不可约二维 Weil 表示。这是理解一般 `GL(n)` Langlands 分类前最小的可计算例子。
 
+**收口精修 5.A（局部参数使用表）.** 本章之后的局部参数只按以下层次使用：
+
+| 层次 | 参数对象 | 状态 |
+|---|---|---|
+| `GL(1)` | 一维 Weil 参数 | 由局部类域论证明 |
+| 非分歧球表示 | $\widehat G$ 中半单 Satake 共轭类 | 由 Satake 同构给出接口 |
+| `GL(n)` | $n$ 维 Frobenius-semisimple Weil-Deligne 表示 | 外部输入定理 |
+| 一般 reductive group | ${}^LG$-值参数和 L-packet | 猜想或已知特殊情形 |
+| 几何局部 LLC | Fargues-Scholze semisimple 参数框架 | 附录 AC 接口，不替代 enhanced LLC |
+
 ## 5.7 一般 reductive 群的局部 Langlands 猜想
 
-**猜想 5.16（局部 Langlands，L-packet 形式）.** 设 $G/F$ 为 connected reductive group。合适的 Langlands 参数
+**猜想 5.16（局部 Langlands，L-packet 形式）.** 设 $G/F$ 为 connected reductive group。满足定义 5.15 中连续性、半单性、代数性和 bounded/admissible 条件的 Langlands 参数
 $$
 \varphi:W_F'\to{}^LG
 $$

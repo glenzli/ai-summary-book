@@ -25,7 +25,7 @@ $$
 \begin{pmatrix}d&0\\0&1\end{pmatrix}\gamma
 \begin{pmatrix}d^{-1}&0\\0&1\end{pmatrix}
 $$
-在适当分母清理后落入 $\Gamma_0(M)$ 对应的 commensurator，且 $M\mid N$ 保证下左项满足模 $M$ 条件。尖点消失性由有限映射 $X_0(N)\to X_0(M)$ 下 holomorphic differentials 的 pullback 保持。完整证明通常用模曲线 degeneracy maps 表述。$\square$
+在乘以公共分母后落入 $\Gamma_0(M)$ 对应的 commensurator，且 $M\mid N$ 保证下左项满足模 $M$ 条件。尖点消失性由有限映射 $X_0(N)\to X_0(M)$ 下 holomorphic differentials 的 pullback 保持。完整证明通常用模曲线 degeneracy maps 表述。$\square$
 
 **定义 J.3.** Old subspace 定义为
 $$
@@ -49,7 +49,7 @@ S_k(\Gamma_0(N),\varepsilon)_{\operatorname{old}}
 \oplus
 S_k(\Gamma_0(N),\varepsilon)_{\operatorname{new}}
 $$
-在合适 Petersson inner product 和 nebentypus convention 下成立。New subspace 有归一化 Hecke eigenform 基；每个 newform 对应导子为 $N$ 的 cuspidal automorphic representation of $\operatorname{GL}_2(\mathbb A_\mathbb Q)$。
+在本附录固定的 Petersson inner product 和 nebentypus convention 下成立。New subspace 有归一化 Hecke eigenform 基；每个 newform 对应导子为 $N$ 的 cuspidal automorphic representation of $\operatorname{GL}_2(\mathbb A_\mathbb Q)$。
 
 **注 J.5.** 第七章把“newform 生成的自守表示”作为外部输入。J.4 是其经典模形式侧来源；局部表示侧来源是 Casselman newvector theorem。
 
@@ -65,7 +65,7 @@ W_Qf=f|_kw_Q
 $$
 作用于 $S_k(\Gamma_0(N),\varepsilon)$，并带有依赖 nebentypus 的归一化因子。
 
-**外部输入定理 J.7（Atkin-Lehner operators）.** $W_Q$ 在合适归一化下给出 $S_k(\Gamma_0(N),\varepsilon)$ 的自同构，保持 new subspace，并与 Hecke 算子满足标准交换关系。若 $f$ 为 newform，则 $W_Nf$ 为 $f$ 的共轭或 contragredient 相关 newform，特征值进入函数方程的 root number。
+**外部输入定理 J.7（Atkin-Lehner operators）.** $W_Q$ 在 Atkin-Lehner-Li normalization 下给出 $S_k(\Gamma_0(N),\varepsilon)$ 的自同构，保持 new subspace，并与 Hecke 算子满足标准交换关系。若 $f$ 为 newform，则 $W_Nf$ 为 $f$ 的共轭或 contragredient 相关 newform，特征值进入函数方程的 root number。
 
 **命题 J.8.** 若 $f$ 为权 $k$、级 $N$ newform，则第六章完成 L 函数函数方程中的常数 $\eta_f$ 可由全局 Atkin-Lehner involution 和 nebentypus 归一化表达。
 

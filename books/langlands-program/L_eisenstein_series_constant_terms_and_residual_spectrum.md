@@ -43,7 +43,7 @@ E_{P'}(g,\phi,\lambda)
 =
 \sum_w M(w,\lambda)\phi_\lambda(g)
 $$
-的适当版本，其中 $M(w,\lambda)$ 是 standard intertwining operator。精确求和集合依 $P,P'$ 和 associate parabolic classes 而定。
+的 Langlands constant term 版本，其中 $M(w,\lambda)$ 是 standard intertwining operator。精确求和集合依 $P,P'$ 和 associate parabolic classes 而定。
 
 **定义 L.6.** Standard intertwining operator 在收敛区域中由积分
 $$

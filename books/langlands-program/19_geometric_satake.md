@@ -138,6 +138,8 @@ $$
 $$
 为由 Hecke correspondence 和 kernel $\mathcal S_V$ 给出的函子。
 
+**收口精修 19.A（最小 Hecke 作用模型）.** 若 $V=V_\lambda$ 是最高权 $\lambda$ 的 $\widehat G$-表示，则 $\mathcal S_V$ 可看作 affine Grassmannian 中 Schubert 闭包 $\overline{\operatorname{Gr}}_\lambda$ 上的交叉上同调 sheaf。Hecke 函子 $\mathsf H_V$ 在点 $x\in X$ 处允许 $G$-bundle 发生相对位置不超过 $\lambda$ 的修改。对 $G=\mathbb G_m$，这只是把线丛张量 $\mathcal O_X(nx)$；取 Frobenius trace 后，对应的函数操作就是经典 Hecke 算子在该点的求和。一般 $G$ 的定义把这个线丛例子替换为由 $\operatorname{Rep}(\widehat G)$ 控制的修改类型。
+
 **命题 19.15.** 对 $V,W\in\operatorname{Rep}(\widehat G)$，Hecke 函子满足形式相容
 $$
 \mathsf H_V\circ\mathsf H_W
@@ -152,7 +154,7 @@ $$
 
 **命题 19.16.** 若 $k=\mathbb F_q$，对 $\operatorname{Sat}_G$ 中的 sheaf 取 Frobenius trace，可得到 spherical Hecke algebra 的函数；几何 Satake 的 Grothendieck ring 版本恢复经典 Satake 同构。
 
-**证明草图.** Grothendieck sheaf-function dictionary 把 $G[[t]]$-等变 sheaves 送到 $G(\mathcal O)$-双不变紧支撑函数。卷积 sheaf 的 Frobenius trace 对应函数卷积。几何 Satake 把 Grothendieck ring 识别为 $\operatorname{Rep}(\widehat G)$ 的表示环；经典 Satake 同构也把球 Hecke 代数识别为该表示环的适当 $q^{1/2}$ 归一化形式。$\square$
+**证明草图.** Grothendieck sheaf-function dictionary 把 $G[[t]]$-等变 sheaves 送到 $G(\mathcal O)$-双不变紧支撑函数。卷积 sheaf 的 Frobenius trace 对应函数卷积。几何 Satake 把 Grothendieck ring 识别为 $\operatorname{Rep}(\widehat G)$ 的表示环；经典 Satake 同构也把球 Hecke 代数识别为该表示环的半 Tate twist，即 $q^{1/2}$ 归一化形式。$\square$
 
 **注 19.17.** 因此几何 Satake 不只是几何类比；它给出经典 Satake 同构的范畴化。
 

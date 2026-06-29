@@ -71,7 +71,7 @@ $$
 
 **证明草图.** 自守表示的 restricted tensor product 分解给出 matrix coefficient 的张量分解。Schwartz-Bruhat 函数也为 restricted tensor product。绝对收敛保证可应用 Fubini；附录 B 的 restricted product 积分公式把整体积分写成局部积分乘积。$\square$
 
-**外部输入定理 I.7（Godement-Jacquet 全局定理）.** 适当选取局部数据时，$Z(s,\Phi,\varphi,\varphi^\vee)$ 表示 $L(s,\pi,\operatorname{Std})$ 乘以有限多个可控局部修正因子。Fourier 变换 $\Phi\mapsto\widehat\Phi$ 和 Poisson summation on $M_n(K)\subset M_n(\mathbb A_K)$ 给出 $L(s,\pi,\operatorname{Std})$ 的 meromorphic continuation 和函数方程。
+**外部输入定理 I.7（Godement-Jacquet 全局定理）.** 取几乎所有非分歧位置的 spherical vector 与标准 Schwartz 函数，并在有限多个 ramified 或 Archimedean 位置固定局部测试数据，则 $Z(s,\Phi,\varphi,\varphi^\vee)$ 表示 $L(s,\pi,\operatorname{Std})$ 乘以有限多个局部修正因子。Fourier 变换 $\Phi\mapsto\widehat\Phi$ 和 Poisson summation on $M_n(K)\subset M_n(\mathbb A_K)$ 给出 $L(s,\pi,\operatorname{Std})$ 的 meromorphic continuation 和函数方程。
 
 **注 I.8.** 对 cuspidal $\pi$ 且 $n>1$，标准 L 函数为 entire；$n=1$ 时退化为 Tate thesis，平凡 character 有标准极点。
 
@@ -96,7 +96,7 @@ $$
 
 设 $\pi$ 和 $\pi'$ 分别为 $\operatorname{GL}_n(F)$ 与 $\operatorname{GL}_m(F)$ 的 generic representations。
 
-**定义 I.11.** Rankin-Selberg 局部 zeta integrals 是由 Whittaker functions $W\in\mathcal W(\pi,\psi)$、$W'\in\mathcal W(\pi',\psi^{-1})$ 和必要的 Schwartz 函数构造的积分。典型情形 $m=n-1$ 中，可写成沿适当商空间的积分
+**定义 I.11.** Rankin-Selberg 局部 zeta integrals 是由 Whittaker functions $W\in\mathcal W(\pi,\psi)$、$W'\in\mathcal W(\pi',\psi^{-1})$ 和必要的 Schwartz 函数构造的积分。典型情形 $m=n-1$ 中，可写成沿 $N_{n-1}(F)\backslash\operatorname{GL}_{n-1}(F)$ 的积分
 $$
 Z(s,W,W')
 =
@@ -115,7 +115,7 @@ $$
 Z(1-s,\widetilde W,\widetilde W')
 =\gamma(s,\pi\times\pi',\psi)Z(s,W,W')
 $$
-在适当归一化下成立。若 $\pi,\pi'$ 非分歧，Satake 参数分别为 $(\alpha_i)$ 和 $(\beta_j)$，则
+在 Jacquet-Piatetski-Shapiro-Shalika 的 Whittaker、Haar 测度和 contragredient normalization 下成立。若 $\pi,\pi'$ 非分歧，Satake 参数分别为 $(\alpha_i)$ 和 $(\beta_j)$，则
 $$
 L(s,\pi\times\pi')
 =
@@ -126,7 +126,7 @@ $$
 
 设 $K$ 为整体域，$\pi$ 和 $\pi'$ 为 cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 和 $\operatorname{GL}_m(\mathbb A_K)$，并假设它们 generic。
 
-**外部输入定理 I.13（全局 Rankin-Selberg unfolding）.** 对 cusp forms $\varphi\in\pi$、$\varphi'\in\pi'$ 和适当 Eisenstein series 或 kernel，Rankin-Selberg 全局积分可 unfolding 为 Whittaker functions 的积分，并在可分解数据下分解为局部 zeta integrals：
+**外部输入定理 I.13（全局 Rankin-Selberg unfolding）.** 对 cusp forms $\varphi\in\pi$、$\varphi'\in\pi'$ 和所选 Rankin-Selberg 模型中的 Eisenstein series 或 kernel，Rankin-Selberg 全局积分可 unfolding 为 Whittaker functions 的积分，并在可分解数据下分解为局部 zeta integrals：
 $$
 Z(s,\varphi,\varphi')
 =\prod_v Z(s,W_v,W_v').
@@ -148,7 +148,7 @@ L(s,\Pi\times\tau)
 $$
 及其 contragredient 版本具有 meromorphic continuation、函数方程和竖带有界性。
 
-**外部输入定理 I.17（Converse theorem 的积分表示背景）.** Cogdell-Piatetski-Shapiro converse theorem 证明：在适当局部有限性、中心特征和单位性假设下，Rankin-Selberg 测试条件推出 $\Pi$ 是 automorphic。
+**外部输入定理 I.17（Converse theorem 的积分表示背景）.** Cogdell-Piatetski-Shapiro converse theorem 证明：在中心特征、可容许性、有限 ramification 集、unitary normalization after twist 和竖带有界性等标准假设下，Rankin-Selberg 测试条件推出 $\Pi$ 是 automorphic。
 
 **注 I.18.** 这解释了为什么第十五章的函子性证明常被转化为 L 函数解析性质证明：若 L 群同态给出候选局部参数族，构造 `GL(N)` 上的候选 $\Pi$ 后，只要能证明所有必要 twist 的 Rankin-Selberg L 函数满足 converse theorem 条件，就可推出 $\Pi$ 自守。
 

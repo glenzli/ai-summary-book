@@ -181,11 +181,11 @@ $$
 $$
 使得 $\rho\bmod\mathfrak m_\mathcal O$ 的半单化同构于 $\overline\rho$。
 
-**外部输入定理 9.20（模性提升，接口形式）.** 设 $\rho:G_\mathbb Q\to\operatorname{GL}_2(\mathcal O)$ 是满足适当局部条件的连续、奇、几何二维 $\ell$-adic 表示。若残余表示 $\overline\rho$ 绝对不可约且已知是模的，并且 $\rho$ 满足 Taylor-Wiles 型局部变形条件，则 $\rho$ 是模的。
+**外部输入定理 9.20（模性提升，接口形式）.** 设 $\rho:G_\mathbb Q\to\operatorname{GL}_2(\mathcal O)$ 是连续、奇、几何二维 $\ell$-adic 表示，并在每个 ramified prime 和 $\ell$-adic prime 处满足某个已固定 Taylor-Wiles 型局部变形问题的条件。若残余表示 $\overline\rho$ 绝对不可约且已知是模的，并且这些局部变形条件与相应 Hecke 侧局部类型匹配，则 $\rho$ 是模的。
 
 本定理的精确版本有许多变体：minimal、semistable、ordinary、potentially Barsotti-Tate、potentially semistable 等。每个版本都需要具体局部变形环和 Hecke 代数的比较。
 
-**外部输入定理 9.21（$R=T$ 原理，接口形式）.** 在 Taylor-Wiles 方法中，给定残余表示 $\overline\rho$ 和局部变形条件，可构造 universal deformation ring $R$ 与相应 Hecke algebra $T$。在适当假设下有同构
+**外部输入定理 9.21（$R=T$ 原理，接口形式）.** 在 Taylor-Wiles 方法中，给定残余表示 $\overline\rho$ 和局部变形条件，可构造 universal deformation ring $R$ 与相应 Hecke algebra $T$。当残余表示、局部变形环、Taylor-Wiles primes 和 Hecke 模满足所选版本的 patching 与数值判据假设时，有同构
 $$
 R\cong T.
 $$
@@ -211,7 +211,7 @@ $$
 2. 自守侧：`GL(2,\mathbb A_\mathbb Q)` 的 cuspidal automorphic representation $\pi_f$。
 3. 经典桥梁：归一化 Hecke eigenform $f$。
 4. 局部相容：几乎所有 $p$ 处，Frobenius trace 等于 Hecke eigenvalue。
-5. L 函数相容：$L(\rho,s)=L(f,s)=L(\pi_f,s)$，在适当局部因子和归一化下成立。
+5. L 函数相容：$L(\rho,s)=L(f,s)=L(\pi_f,s)$，其中三者均使用相同坏素数 Euler 因子、同一 Frobenius 方向和第 0 章归一化表中的 L 函数变量约定。
 
 因此，椭圆曲线模性是二维 Galois 表示与 `GL(2)` 自守表示对应的核心实例，而模性提升定理是证明这类对应的主要机制之一。
 

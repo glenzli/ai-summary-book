@@ -29,21 +29,21 @@ $$
 2. Hecke correspondence；
 3. $\widehat G$-local systems on $X$。
 
-**命题 22.2.** $\operatorname{Bun}_G(\mathbb F_q)$ 的点集与 adelic 双商
+**命题 22.2.** Weil uniformization 诱导 $\operatorname{Bun}_G(\mathbb F_q)$ 的点集与 adelic 双商
 $$
 G(K)\backslash G(\mathbb A_K)/G(\mathcal O_{\mathbb A})
 $$
-在自然意义下对应。
+之间的标准对应。
 
 **证明草图.** 第十八章的 Weil uniformization 给出该双商描述。一个 $G$-bundle 在 generic point 上平凡化后，由各闭点处的相对位置给出 adele 数据；改变 generic trivialization 对应左乘 $G(K)$，改变局部平凡化对应右乘 $G(\mathcal O_{\mathbb A})$。$\square$
 
 ## 22.2 Sheaf-Function Dictionary
 
-**外部输入定理 22.3（sheaf-function dictionary）.** 设 $\mathcal X/\mathbb F_q$ 为合适的代数栈，$\mathcal F$ 为 $\ell$-adic complex。对每个 $x\in\mathcal X(\mathbb F_q)$，定义
+**外部输入定理 22.3（sheaf-function dictionary）.** 设 $\mathcal X/\mathbb F_q$ 为局部有限型且满足 Grothendieck-Lefschetz trace formula 所需有限性条件的代数栈，$\mathcal F$ 为 constructible $\ell$-adic complex。对每个 $x\in\mathcal X(\mathbb F_q)$，定义
 $$
 f_{\mathcal F}(x)=\sum_i(-1)^i\operatorname{tr}(\operatorname{Frob}_x\mid H^i(\mathcal F_{\bar x})).
 $$
-该过程把 sheaves 上的六 functor 操作转化为函数上的拉回、推前和卷积操作，在适当有限性条件下成立。
+该过程把 sheaves 上的六 functor 操作转化为函数上的拉回、推前和卷积操作；对非 proper 映射或非有限型栈，必须分别验证 compact support、收敛和 automorphism 权重条件。
 
 **注 22.4.** 对 stack，需要除以 automorphism group 或使用 groupoid cardinality 修正。严格公式依赖 Grothendieck-Lefschetz trace formula for stacks。
 
@@ -59,6 +59,16 @@ $$
 $$
 $\square$
 
+**收口精修 22.A（sheaf-function convention 表）.** 本章把几何对象转成函数时使用以下约定：
+
+| 几何侧 | 函数侧 | 归一化提醒 |
+|---|---|---|
+| $\ell$-adic complex $\mathcal F$ | trace function $f_{\mathcal F}$ | 使用同一 Frobenius 方向；若换成算术 Frobenius，需要整体取逆约定 |
+| proper pushforward | 对纤维的加权求和 | stack 情形需除以 automorphism group |
+| convolution of sheaves | Hecke algebra convolution | Haar 测度和 $q^{1/2}$ 正规化必须与经典 Satake 一致 |
+| local system $\mathcal E$ | Frobenius eigenvalue system | 对应 Galois 表示的 characteristic polynomial |
+| Tate twist | 函数乘以 $q$ 的幂 | 与第 0 章归一化表和几何 Satake 的半 Tate twist 对齐 |
+
 ## 22.3 Drinfeld 和 Lafforgue 的函数域定理
 
 **外部输入定理 22.6（Drinfeld, `GL(2)` over function fields）.** 对函数域上的 `GL(2)`，Drinfeld 证明了相应的全局 Langlands 对应，将 rank-two $\ell$-adic Galois 表示与 cuspidal automorphic representations 联系起来。
@@ -71,11 +81,11 @@ $\square$
 
 ## 22.4 Shtukas 的角色
 
-**定义 22.9.** 粗略地说，$G$-shtuka 是曲线 $X/\mathbb F_q$ 上的 $G$-bundle，连同若干点处的 Hecke 修改和 Frobenius pullback 之间的同构。对 `GL(n)`，它可看作向量丛及其 Frobenius-twisted Hecke 修改数据。
+**定义 22.9.** 在本书所需的接口层面，$G$-shtuka 是曲线 $X/\mathbb F_q$ 上的 $G$-bundle，连同若干点处的 Hecke 修改和 Frobenius pullback 之间的同构。对 `GL(n)`，它可表述为向量丛及其 Frobenius-twisted Hecke 修改数据。
 
 **注 22.10.** Shtukas 同时包含 Hecke correspondence 和 Frobenius。它们的上同调携带 Galois 作用与 Hecke 作用，是 Drinfeld-Lafforgue 证明函数域 Langlands 的几何核心。
 
-**外部输入定理 22.11（shtuka cohomology 的接口）.** Shtuka 模空间的 $\ell$-adic cohomology 同时带有 Hecke algebra 作用和 Galois group 作用。适当分解这些上同调可构造函数域 Langlands 对应中的 Galois 表示。
+**外部输入定理 22.11（shtuka cohomology 的接口）.** Shtuka 模空间的 $\ell$-adic cohomology 同时带有 Hecke algebra 作用和 Galois group 作用。通过 excursion operators、Hecke 作用的谱分解或 `GL(n)` 情形中的 cuspidal 分解提取这些上同调，可构造函数域 Langlands 对应中的 Galois 表示。
 
 ## 22.5 数域情形为什么更难
 

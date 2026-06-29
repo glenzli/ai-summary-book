@@ -55,7 +55,7 @@ $$
 
 1. $f$ 在有限 adele 方向右平移下 locally constant，且存在开紧子群 $K_f\subset G(\mathbb A_{K,f})$ 使 $f(gk)=f(g)$；
 2. 在 Archimedean 位置，$f$ 为 $C^\infty$，且在 maximal compact subgroup 和 enveloping algebra 作用下满足 $K_\infty$-finite 与 $Z(\mathfrak g_\infty)$-finite 条件；
-3. $f$ 满足适当 moderate growth 条件；
+3. $f$ 满足 moderate growth 条件：相对于某个 adelic height function $\|g\|$，存在常数 $C,N$ 使得 $|f(g)|\le C\|g\|^N$；
 4. 若固定中心特征，则满足定义 13.1 的中心变换律。
 
 自守形式空间记为
@@ -181,7 +181,7 @@ $$
 
 **证明.** 由 Satake 同构，spherical Hecke eigencharacter 等价于 L 群中的 Satake parameter 半单共轭类。定义 13.15 只使用该半单共轭类在 $r_v$ 下的 characteristic polynomial。Characteristic polynomial 对共轭不变，因此局部因子只依赖 Hecke eigencharacter。$\square$
 
-**外部输入定理 13.21（Euler 乘积的初始收敛，接口形式）.** 在许多标准情形中，例如 `GL(n)` 的标准 L 函数和 Rankin-Selberg L 函数，$L^S(s,\pi,r)$ 在某个右半平面绝对收敛。一般 reductive group 与任意 $r$ 的初始收敛可由适当的 Satake 参数估计或 functorial transfer 推出；在本书中未建立这些估计时，收敛性作为外部输入或猜想处理。
+**外部输入定理 13.21（Euler 乘积的初始收敛，接口形式）.** 对本书实际调用的标准情形，例如 Hecke L 函数、`GL(n)` 的标准 L 函数和 `GL(n)\times GL(m)` 的 Rankin-Selberg L 函数，$L^S(s,\pi,r)$ 在某个右半平面绝对收敛。对一般 reductive group 与任意 $r$，本书不从 Satake 参数估计推出初始收敛；未列入上述标准情形时，收敛性必须作为单独外部输入或猜想登记。
 
 **注 13.22.** 不能把形式 Euler 乘积自动视为全平面解析函数。Euler 乘积首先只在某个可能存在的收敛半平面定义；解析延拓和函数方程是额外深性质。
 
@@ -210,7 +210,7 @@ $$
 $$
 \psi:K\backslash\mathbb A_K\to\mathbb C^\times,
 $$
-局部 epsilon 因子若已定义，则全局 epsilon 因子形式上为
+局部 epsilon 因子若已定义，则全局 epsilon 因子定义为乘积
 $$
 \varepsilon(s,\pi,r)=\prod_v\varepsilon(s,\pi_v,r,\psi_v).
 $$
@@ -222,7 +222,7 @@ $$
 $$
 r:{}^LG\to\operatorname{GL}(V)
 $$
-为有限维 L 群表示。适当完成后的 L 函数 $L(s,\pi,r)$ 应具有 meromorphic continuation 到整个复平面，并满足函数方程
+为有限维 L 群表示。补入定义 13.24 的所有 ramified 与 Archimedean 局部因子后的 L 函数 $L(s,\pi,r)$ 应具有 meromorphic continuation 到整个复平面，并满足函数方程
 $$
 L(s,\pi,r)
 =
@@ -235,7 +235,7 @@ $$
 
 **外部输入定理 13.29（Godement-Jacquet）.** 对 $G=\operatorname{GL}_n$ 和标准表示 $r=\operatorname{Std}$，cuspidal automorphic representation $\pi$ 的标准 L 函数具有解析延拓和函数方程。其证明来自 Godement-Jacquet zeta integrals。
 
-**外部输入定理 13.30（Rankin-Selberg 与 Langlands-Shahidi，接口形式）.** 对若干重要的 $r$，包括 `GL(n)\times GL(m)` 的 Rankin-Selberg 表示以及许多由 maximal parabolic subgroup 的 adjoint action 给出的表示，局部和全局 L 函数可由 Rankin-Selberg 积分或 Langlands-Shahidi 方法构造，并满足 meromorphic continuation 和函数方程。
+**外部输入定理 13.30（Rankin-Selberg 与 Langlands-Shahidi，接口形式）.** 对本书使用的若干重要 $r$，包括 `GL(n)\times GL(m)` 的 Rankin-Selberg 表示，以及 Langlands-Shahidi 理论可处理的 maximal parabolic subgroup 的 adjoint action 表示，局部和全局 L 函数可由 Rankin-Selberg 积分或 Langlands-Shahidi 方法构造，并满足 meromorphic continuation 和函数方程。
 
 **注 13.31.** 定理 13.30 不是任意 reductive group 与任意 L 群表示的完整定理。一般解析性质通常需要 functoriality，或需要单独构造相应 integral representation。附录 I 展开 Godement-Jacquet、Rankin-Selberg 和 converse theorem 的积分接口；附录 M 展开 Langlands-Shahidi local coefficient、局部 $\gamma$ 因子和由 Eisenstein 函数方程产生 L 因子的接口。
 

@@ -21,15 +21,15 @@ $$
 $$
 D\operatorname{-mod}(X)\simeq\operatorname{QCoh}(X_{\operatorname{dR}})
 $$
-在合适 derived 口径下成立。
+在 de Rham prestack 与 derived algebraic geometry 的标准口径下成立。
 
-**外部输入定理 O.3（D-modules as sheaves on de Rham stack）.** 对 smooth schemes 和更一般的合适 derived stacks，上述等价成立，并与 pullback、pushforward、tensor product 和 Verdier duality 相容。
+**外部输入定理 O.3（D-modules as sheaves on de Rham stack）.** 对 smooth schemes 和 D-module formalism 已建立的 QCA 或 derived stacks，上述等价成立，并与 pullback、pushforward、tensor product 和 Verdier duality 相容。
 
 **注 O.4.** 第二十章中 Hecke eigensheaf 的 Betti、de Rham 和 $\ell$-adic 版本取决于基域和 coefficient theory。本附录采用 characteristic $0$ 的 D-module 口径。
 
 ## O.2 Six Functors 和 Kernels
 
-**外部输入定理 O.5（six functor formalism）.** 对合适的 schemes/stacks 和 sheaf theory，存在函子
+**外部输入定理 O.5（six functor formalism）.** 对固定的 schemes/stacks 范围和 sheaf theory，并在相应 properness、smoothness、constructibility 或 QCA hypotheses 下，存在函子
 $$
 f^*,\quad f_*,\quad f^!,\quad f_!,\quad \otimes,\quad \mathcal H om
 $$
@@ -57,7 +57,7 @@ $$
 $$
 \mathsf H_V(\mathcal F)=h^\rightarrow_!(h^{\leftarrow,*}\mathcal F\otimes\mathcal S_V)
 $$
-的适当版本。这正是第十九、二十章使用的 Hecke functor 形式。$\square$
+的 $!$ 或 $*$ 版本。这正是第十九、二十章使用的 Hecke functor 形式。$\square$
 
 ## O.3 QCoh、IndCoh 和 Perfect Stacks
 
@@ -107,7 +107,7 @@ D\operatorname{-mod}(\operatorname{Bun}_G)
 \operatorname{IndCoh}_{\mathcal N_{\operatorname{glob}}}
 (\operatorname{LocSys}_{\widehat G}(X))
 $$
-在适当的 level、twist、中心和 stack-theoretic 修正下成立。
+在固定 level structure、twisting line bundle、central character 或 gerbe、automorphic category renormalization 和 stack quotient convention 后成立。
 
 **外部输入定理 O.16（若干已知情形和构造）.** 几何 Langlands 的范畴形式在若干情形和方向上已有深刻结果，包括：
 
@@ -136,7 +136,7 @@ $$
 $$
 和 de Rham 描述，即 flat $\widehat G$-bundles。
 
-**外部输入定理 O.19（Riemann-Hilbert correspondence）.** 对复光滑代数簇，regular holonomic D-modules 与 perverse sheaves/constructible sheaves 之间有 Riemann-Hilbert correspondence。适当 stacky 和 derived 推广用于比较 Betti 与 de Rham 几何 Langlands。
+**外部输入定理 O.19（Riemann-Hilbert correspondence）.** 对复光滑代数簇，regular holonomic D-modules 与 perverse sheaves/constructible sheaves 之间有 Riemann-Hilbert correspondence。用于 Betti 与 de Rham 几何 Langlands 比较的 stacky 和 derived 推广需要分别固定 holonomicity、constructibility 和 finiteness hypotheses。
 
 ## O.7 本附录小结
 

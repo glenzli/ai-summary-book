@@ -135,7 +135,7 @@
 | 12.45 | P | 几乎处处非分歧时 Euler 乘积可形式定义 | 非分歧参数 |
 | 13.8 | P | anisotropic modulo center 情形自守形式尖点 | 紧商积分 |
 | 13.11 | E | 自守表示 restricted tensor product 分解 | Flath 分解 |
-| 13.14 | P | 合适坏位置有限集存在 | 几乎处处非分歧 |
+| 13.14 | P | 坏位置有限集存在 | 几乎处处非分歧 |
 | 13.17 | P | `GL(n)` 标准局部因子由 Satake 参数给出 | 11.51 |
 | 13.20 | P | 非分歧局部因子只依赖 spherical Hecke eigencharacter | Satake 参数 |
 | 13.21 | E | Euler 乘积初始收敛接口 | 标准 L 函数估计 |
@@ -157,7 +157,7 @@
 | 14.19 | E | 函数域 `GL(n)` 全局 Langlands | Lafforgue |
 | 14.21 | P | 函数域中 Euler 因子同时决定双方 | 14.19、Chebotarev |
 | 14.23 | E | 数域 regular algebraic 情形的 Galois 表示构造 | Harris-Taylor、Clozel 等 |
-| 14.26 | C | 数域 `GL(n)` 全局 Langlands 粗略形式 | 纲领性陈述 |
+| 14.26 | C | 数域 `GL(n)` 全局 Langlands 接口形式 | 纲领性陈述 |
 | 15.2 | P | L 同态推前局部参数 | L 同态定义 |
 | 15.7 | P | 强转移推出弱转移 | 定义比较 |
 | 15.8 | P | `GL(N)` 目标弱转移唯一 | 强重数一 |
@@ -173,7 +173,7 @@
 | 15.29 | S | 函子性与 Galois 表示复合相容 | Frobenius-Satake 相容 |
 | 16.2 | P | 测试函数卷积保持右有限自守函数 | 紧支撑积分 |
 | 16.5 | E | 紧商 trace formula 接口 | Selberg/Arthur trace formula |
-| 16.7 | E | Arthur trace formula 粗略接口 | Arthur trace formula |
+| 16.7 | E | Arthur trace formula 结构接口 | Arthur trace formula |
 | 16.13 | S | `GL(n)` 中 regular semisimple 稳定共轭等于普通共轭 | 特征多项式 |
 | 16.18 | E | endoscopic transfer 的存在接口 | transfer factors |
 | 16.20 | E | fundamental lemma | Ngô |

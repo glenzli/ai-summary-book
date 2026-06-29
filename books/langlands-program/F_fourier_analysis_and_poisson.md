@@ -44,7 +44,7 @@ $$
 $$
 \widehat H\simeq \widehat G/H^\perp
 $$
-在适当的商拓扑意义下成立。
+在 quotient topology 意义下成立。
 
 **命题 F.6.** 若 $H\subset G$ 离散且 $G/H$ 紧，则 $H^\perp\subset\widehat G$ 离散且 $\widehat G/H^\perp$ 紧。
 
@@ -69,7 +69,7 @@ $$
 \widehat f(y)=\int_G f(x)\psi(xy)\,dx.
 $$
 
-**外部输入定理 F.8（Fourier inversion and Plancherel）.** 对局部紧 Abel 群 $G$，存在与 $dx$ 对偶的 Haar 测度 $d\chi$ on $\widehat G$，使得合适函数 $f$ 满足 Fourier inversion：
+**外部输入定理 F.8（Fourier inversion and Plancherel）.** 对局部紧 Abel 群 $G$，存在与 $dx$ 对偶的 Haar 测度 $d\chi$ on $\widehat G$，使得 $f,\widehat f\in L^1$ 的函数满足 Fourier inversion：
 $$
 f(x)=\int_{\widehat G}\widehat f(\chi)\chi(x)^{-1}\,d\chi.
 $$
@@ -394,7 +394,7 @@ $$
 $$
 \sum_{n\in\mathbb Z}f(n)=\sum_{n\in\mathbb Z}\widehat f(n)
 $$
-在合适的 Archimedean Schwartz 函数上成立。
+对 $f\in\mathcal S(\mathbb R)$ 成立。
 
 **练习 F.5.** 说明 Tate thesis 中平凡特征的极点为什么来自 Poisson summation 中的零点项。
 

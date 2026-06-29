@@ -434,7 +434,7 @@ W_F'\xrightarrow{\xi\circ\varphi_H}{}^LG\to W_F
 $$
 仍等于自然投影。$\square$
 
-**猜想 11.44（Langlands 函子性，局部接口）.** 对适当的 L 同态
+**猜想 11.44（Langlands 函子性，局部接口）.** 对与 Weil 投影相容并保持相关内形式 relevance 条件的 L 同态
 $$
 \xi:{}^LH\to{}^LG,
 $$
@@ -521,7 +521,7 @@ $$
 $$
 s_\pi\rtimes\operatorname{Fr}_F\in \widehat G\rtimes W_F
 $$
-的半单共轭类。该共轭类称为 $\pi$ 的 Satake parameter。反过来，适当的半单共轭类给出 spherical Hecke algebra 的 character。
+的半单共轭类。该共轭类称为 $\pi$ 的 Satake parameter。反过来，$\widehat G\rtimes\operatorname{Fr}_F$ 中的 semisimple $\widehat G$-twisted conjugacy class 给出 spherical Hecke algebra 的 character。
 
 **注 11.52.** 若 $G$ split，则 $W_F$ 对 $\widehat G$ 作用平凡，非分歧 Satake 参数可写成 $\widehat G$ 中的半单共轭类 $s_\pi$。若 $G$ 非 split 但 unramified，则参数自然位于连通分量
 $$

@@ -74,7 +74,7 @@ $$
 g\mapsto \ell(\pi(g)v).
 $$
 
-**定义 C.11.** 表示称为 tempered，若其 matrix coefficients 满足 Harish-Chandra 的 tempered 增长条件。称为 square-integrable modulo center，若适当 matrix coefficients 在 $G/Z_G$ 上平方可积。
+**定义 C.11.** 表示称为 tempered，若其 matrix coefficients 满足 Harish-Chandra 的 tempered 增长条件。称为 square-integrable modulo center，若在固定 unitary central character 后，其 $K$-finite matrix coefficients 在 $G/Z_G$ 上平方可积。
 
 **注 C.12.** 本书正文把 tempered 与 discrete series 的精确定理作为外部输入；附录只固定术语接口。
 

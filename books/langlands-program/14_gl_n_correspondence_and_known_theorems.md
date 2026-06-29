@@ -187,7 +187,7 @@ $$
 
 `GL(n)` 的 converse theorem 是全局函子性证明中的核心工具：若一个候选表示有足够多扭曲 L 函数的解析性质，则它是自守的。
 
-**外部输入定理 14.16（Cogdell-Piatetski-Shapiro converse theorem，接口形式）.** 设 $\Pi=\otimes_v'\Pi_v$ 为 $\operatorname{GL}_n(\mathbb A_K)$ 的 irreducible admissible representation，满足适当中心特征、局部有限性和单位性条件。若对所有足够多的 cuspidal automorphic representations $\tau$ of $\operatorname{GL}_m(\mathbb A_K)$，$1\le m\le n-1$，扭曲 L 函数
+**外部输入定理 14.16（Cogdell-Piatetski-Shapiro converse theorem，接口形式）.** 设 $\Pi=\otimes_v'\Pi_v$ 为 $\operatorname{GL}_n(\mathbb A_K)$ 的 irreducible admissible representation，满足 converse theorem 的标准输入假设：中心特征、可容许性、有限 ramification 集，以及可经实数 twist 归一化到 unitary 的增长条件。若对所有足够多的 cuspidal automorphic representations $\tau$ of $\operatorname{GL}_m(\mathbb A_K)$，$1\le m\le n-1$，扭曲 L 函数
 $$
 L(s,\Pi\times\tau)
 $$
@@ -247,7 +247,7 @@ $$
 
 ## 14.9 全局 `GL(n)` Langlands 猜想
 
-**猜想 14.26（数域 `GL(n)` 全局 Langlands，粗略形式）.** 设 $K$ 为数域。适当的 $n$ 维 Galois、Weil 或 conjectural Langlands group 表示应与 cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 对应，并满足：
+**猜想 14.26（数域 `GL(n)` 全局 Langlands，接口形式）.** 设 $K$ 为数域。满足连续性、几何性、纯性、Archimedean 代数性和局部 ramification 有限性条件的 $n$ 维 Galois、Weil 或 conjectural Langlands group 表示，应与 cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 对应，并满足：
 
 1. 几乎所有位置的 Frobenius characteristic polynomials 与 Satake polynomials 相同。
 2. 局部化与局部 Langlands 对应相容。
@@ -255,7 +255,16 @@ $$
 4. 中心特征对应 determinant。
 5. 函子性对应于有限维表示或 L 群同态。
 
-**注 14.27.** 猜想 14.26 不能直接写成 $G_K$ 的复表示与自守表示的双射。数域中应使用 $\ell$-adic Galois 表示、motivic Galois group 或 conjectural Langlands group 的合适版本；Archimedean 参数、Hodge-Tate weights、纯性和代数性条件都必须纳入。
+**注 14.27.** 猜想 14.26 不能直接写成 $G_K$ 的复表示与自守表示的双射。数域中应使用 $\ell$-adic Galois 表示、motivic Galois group 或 conjectural Langlands group 的版本；Archimedean 参数、Hodge-Tate weights、纯性和代数性条件都必须纳入。
+
+**收口精修 14.A（已知定理与开放边界）.** 本章后续引用 `GL(n)` 结果时按下表区分：
+
+| 层次 | 状态 | 本书使用方式 |
+|---|---|---|
+| 局部 `GL(n)` | 定理级结果 | 作为局部参数、局部 L 因子和 local-global compatibility 的标准接口 |
+| 函数域全局 `GL(n)` | Drinfeld-Lafforgue 定理级结果 | 作为完整全局对应的函数域模型 |
+| 数域 regular algebraic、极化等情形 | 条件性或带假设的构造定理族 | 作为 Galois 表示构造和相容性输入 |
+| 一般数域全局 `GL(n)` | 猜想 | 不在证明链中当作已证定理使用 |
 
 ## 14.10 本章小结
 

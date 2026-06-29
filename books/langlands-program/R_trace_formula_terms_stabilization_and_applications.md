@@ -61,7 +61,7 @@ a^M(\gamma)J_M^G(\gamma,f).
 $$
 这里 $J_M^G(\gamma,f)$ 是 weighted orbital integral，$a^M(\gamma)$ 是全局体积、Tamagawa 和 centralizer 数据组成的系数。
 
-**外部输入定理 R.7（几何展开）.** 对合适的测试函数 $f$，Arthur 分布 $J(f)$ 有定义 R.6 所示的几何展开。若 $G$ anisotropic modulo center，则 weighted orbital integrals 退化为普通 orbital integrals，并回到命题 R.3。
+**外部输入定理 R.7（几何展开）.** 对 Arthur invariant trace formula 的测试函数空间中的 $f$，Arthur 分布 $J(f)$ 有定义 R.6 所示的几何展开。若 $G$ anisotropic modulo center，则 weighted orbital integrals 退化为普通 orbital integrals，并回到命题 R.3。
 
 **命题 R.8.** 普通 orbital integral 是 weighted orbital integral 的 $M=G$ 特例。
 

@@ -127,7 +127,7 @@ T_\mathfrak m
 $$
 是由 $T_\ell$、diamond operators 和必要的 $U_\ell$ 在相应模形式或同调空间上作用生成的有限 $W(k)$-algebra 的 $\mathfrak m$-adic 局部化。
 
-**外部输入定理 K.15（Hecke 侧 Galois 表示）.** 在适当条件下，存在 Galois 表示
+**外部输入定理 K.15（Hecke 侧 Galois 表示）.** 对由模形式或模曲线同调构造、并按残余 maximal ideal $\mathfrak m$ 局部化的 Hecke algebra，且在残余不可约性和局部类型已固定的条件下，存在 Galois 表示
 $$
 \rho_T:G_{\mathbb Q,S}\to\operatorname{GL}_2(T_\mathfrak m)
 $$
@@ -174,7 +174,7 @@ $$
 
 ## K.6 半稳定模性和费马应用
 
-**外部输入定理 K.20（半稳定模性定理的变形论形状）.** 若 $E/\mathbb Q$ 为半稳定椭圆曲线，则对合适素数 $p$，残余表示 $\overline\rho_{E,p}$ 可置于 Taylor-Wiles minimal 或 nearly minimal 变形问题中。结合残余模性和 `R=T`，得到 $p$-adic 表示 $\rho_{E,p}$ 模，进而 $E$ 模。
+**外部输入定理 K.20（半稳定模性定理的变形论形状）.** 若 $E/\mathbb Q$ 为半稳定椭圆曲线，则可选取 Taylor-Wiles 论证允许的素数 $p$，使残余表示 $\overline\rho_{E,p}$ 进入 minimal 或 nearly minimal 变形问题。结合残余模性、必要时的 $3$-$5$ switch 和 `R=T`，得到 $p$-adic 表示 $\rho_{E,p}$ 模，进而 $E$ 模。
 
 **命题 K.21.** 第九十章费马应用只使用 K.20 的结论，而不使用其证明内部结构。
 

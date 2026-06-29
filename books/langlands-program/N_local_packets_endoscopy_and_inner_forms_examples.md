@@ -63,7 +63,7 @@ $$
 
 **注 N.6.** `SL(2)` 的局部 packets 可通过限制 `GL(2)` 的表示来观察。若 $\widetilde\pi$ 是 $\operatorname{GL}_2(F)$ 的 irreducible admissible representation，则其限制到 $\operatorname{SL}_2(F)$ 通常分解为有限直和。组成这些 summands 的集合与同一个 projective Langlands 参数相关。
 
-**外部输入定理 N.7（`SL(2)` packet 的限制模型）.** 对合适的 $\widetilde\pi\in\operatorname{Irr}(\operatorname{GL}_2(F))$，限制
+**外部输入定理 N.7（`SL(2)` packet 的限制模型）.** 对 $\widetilde\pi\in\operatorname{Irr}(\operatorname{GL}_2(F))$，限制
 $$
 \widetilde\pi|_{\operatorname{SL}_2(F)}
 $$
@@ -103,7 +103,7 @@ $$
 $$
 为 L homomorphism，使 $\widehat H$ 与 $\operatorname{Cent}_{\widehat G}(s)^\circ$ 相关。
 
-**外部输入定理 N.13（endoscopic transfer，局部接口）.** 给定 endoscopic datum 和 transfer factor，可在合适测试函数空间上定义 matching orbital integrals。稳定 orbital integrals 的匹配诱导 stable distributions 和 characters 之间的转移。
+**外部输入定理 N.13（endoscopic transfer，局部接口）.** 给定 endoscopic datum、transfer factor normalization 和局部 trace formula 使用的 Hecke 或 Harish-Chandra-Schwartz 测试函数空间，可定义 matching orbital integrals。稳定 orbital integrals 的匹配诱导 stable distributions 和 characters 之间的转移。
 
 **定义 N.14.** 对一个 L-packet $\Pi_\varphi(G)$，stable character 形式上是
 $$

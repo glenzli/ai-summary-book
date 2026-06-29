@@ -77,7 +77,7 @@ $$
 
 本节设 $k$ 为有限域或代数闭域，并取函数域 $K_X$。
 
-**外部输入定理 18.8（Weil uniformization，接口形式）.** 对适当意义下的 $k$-点，有双商描述
+**外部输入定理 18.8（Weil uniformization，接口形式）.** 取 $\operatorname{Bun}_G(X)(k)$ 的同构类集合，即 $k$-点 groupoid 的 $\pi_0$，有双商描述
 $$
 \operatorname{Bun}_G(X)(k)
 \simeq
@@ -169,7 +169,7 @@ $$
 
 设 $\mathcal D(\operatorname{Bun}_G)$ 表示 $\operatorname{Bun}_G$ 上选定的 sheaf theory 的 derived category；可取 $\ell$-adic sheaves 或 D-modules，依 $k$ 的特征而定。
 
-**定义 18.17.** 给定 $\operatorname{Hecke}_G$ 上的 kernel $\mathcal K$，Hecke 函子形式上定义为
+**定义 18.17.** 给定 $\operatorname{Hecke}_G$ 上的 kernel $\mathcal K$，Hecke 函子通过 pull-push 公式定义为
 $$
 \mathsf H_{\mathcal K}(\mathcal F)
 =

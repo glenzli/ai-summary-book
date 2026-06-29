@@ -48,7 +48,7 @@ f(x^{-1}\gamma x)\,dx,
 $$
 其中 $G_\gamma$ 为 $\gamma$ 的 centralizer。测度由 $G_\gamma(\mathbb A_K)$ 和 $G(\mathbb A_K)$ 的 Haar 测度诱导。
 
-**外部输入定理 16.5（紧商 trace formula，接口形式）.** 若 $[G]$ modulo center 紧，且 $f$ 满足合适正则性条件，则
+**外部输入定理 16.5（紧商 trace formula，接口形式）.** 若 $[G]$ modulo center 紧，且 $f$ 为紧支撑模中心的光滑测试函数，使右正则卷积算子为 trace class，则
 $$
 \sum_{\pi}m(\pi)\operatorname{tr}\pi(f)
 =
@@ -62,7 +62,7 @@ $$
 
 一般 reductive group 的自守商非紧，$L^2([G])$ 含有连续谱。
 
-**外部输入定理 16.7（Arthur trace formula，粗略接口）.** 对适当测试函数 $f$，有恒等式
+**外部输入定理 16.7（Arthur trace formula，结构接口）.** 对 Arthur trace formula 测试函数空间中的 $f$，有恒等式
 $$
 J_{\operatorname{spec}}^G(f)=J_{\operatorname{geom}}^G(f),
 $$
@@ -90,11 +90,11 @@ $$
 
 **定义 16.10.** 两个 semisimple 元素 $\gamma,\gamma'\in G(F)$ 称为稳定共轭，若它们在 $G(\overline F)$ 中共轭。
 
-**定义 16.11.** 设 $\gamma$ 为 strongly regular semisimple element。稳定轨道积分形式上定义为
+**定义 16.11.** 设 $\gamma$ 为 strongly regular semisimple element。固定轨道积分的 Haar 测度和 Kottwitz sign 后，稳定轨道积分定义为
 $$
 SO_\gamma(f)=\sum_{\gamma'}e(G_{\gamma'})O_{\gamma'}(f),
 $$
-其中 $\gamma'$ 遍历 $\gamma$ 的稳定共轭类中的 $G(F)$-共轭类，$e(G_{\gamma'})$ 为适当符号或 Kottwitz sign。
+其中 $\gamma'$ 遍历 $\gamma$ 的稳定共轭类中的 $G(F)$-共轭类，$e(G_{\gamma'})$ 为固定 Kottwitz sign convention 后的符号。
 
 **注 16.12.** 稳定轨道积分不是单个轨道积分。它把同一稳定共轭类中的多个 rational conjugacy classes 组合起来。Endoscopy 正是研究这些组合如何从另一个群的稳定轨道积分转移而来。
 
@@ -137,7 +137,7 @@ SO_{\gamma_H}(f^H)
 $$
 其中 $\gamma_G$ 遍历与 $\gamma_H$ 匹配的 $G(F)$-共轭类。
 
-**外部输入定理 16.18（transfer 的存在，接口形式）.** 在合适的函数空间和归一化下，对 $G$ 上的测试函数 $f^G$ 存在 $H$ 上的匹配函数 $f^H$，反之在稳定分布意义下也有相应转移。
+**外部输入定理 16.18（transfer 的存在，接口形式）.** 固定 endoscopic datum、transfer factor normalization 和 trace formula 使用的 Hecke/Schwartz 测试函数空间后，对 $G$ 上的测试函数 $f^G$ 存在 $H$ 上的匹配函数 $f^H$，反之在稳定分布意义下也有相应转移。
 
 **注 16.19.** Transfer factor 的归一化是 endoscopy 中最精细的部分之一。不同归一化会改变局部字符恒等式中的符号和 packet 参数化。
 
@@ -153,7 +153,7 @@ $$
 $$
 \mathbf 1_{H(\mathcal O_F)}
 $$
-在合适 transfer factor 归一化下匹配。更一般的 weighted fundamental lemma 也在稳定 trace formula 中使用。
+在所固定的 Kottwitz-Shelstad transfer factor 归一化下匹配。更一般的 weighted fundamental lemma 也在稳定 trace formula 中使用。
 
 **注 16.21.** Fundamental lemma 是稳定 trace formula 可用的关键局部输入。没有它，无法在几乎所有非分歧位置把几何侧的 Euler product 型比较拼接成全局恒等式。
 
@@ -161,7 +161,7 @@ $$
 
 ## 16.8 稳定 Trace Formula 与谱转移
 
-**外部输入定理 16.22（稳定 trace formula，接口形式）.** 对适当测试函数，Arthur trace formula 可稳定化为
+**外部输入定理 16.22（稳定 trace formula，接口形式）.** 对 invariant trace formula 的测试函数空间中且已选择 endoscopic matching 的测试函数，Arthur trace formula 可稳定化为
 $$
 I^G(f)
 =
@@ -185,7 +185,7 @@ $$
 
 Base change 和 automorphic induction 常通过 twisted trace formula 证明。
 
-**定义 16.25.** 若 $\theta$ 是 $G$ 的 automorphism，twisted orbital integral 形式上为
+**定义 16.25.** 若 $\theta$ 是 $G$ 的 automorphism，并固定商空间上的 Haar 测度，twisted orbital integral 定义为
 $$
 O_{\gamma,\theta}(f)=
 \int_{G_{\gamma,\theta}(F)\backslash G(F)}
@@ -196,6 +196,16 @@ $$
 **外部输入定理 16.26（twisted trace formula 的 base change 接口）.** 对 cyclic base change，比较 $\operatorname{GL}_n$ 的 twisted trace formula 与目标群的 ordinary trace formula，可证明 base change lift 的存在，并与非分歧位置的 Weil 群限制相容。
 
 **注 16.27.** Arthur-Clozel 的 solvable base change 和 automorphic induction 使用了 twisted trace formula。第十五章把它们作为函子性的例子；本章说明其技术来源。
+
+**收口精修 16.A（trace formula 使用边界）.** 本书不证明稳定 trace formula；引用时必须同时记录以下输入：
+
+| 输入 | 作用 |
+|---|---|
+| Haar 测度、中心和截断归一化 | 使谱侧与几何侧处在同一等式中 |
+| matching functions 与 transfer factors | 允许不同群之间比较轨道积分 |
+| fundamental lemma | 保证非分歧处的单位元匹配 |
+| stable characters 和 packet 参数化 | 把稳定谱分布翻译为自守表示 packets |
+| Arthur、Mok、Arthur-Clozel 等分类结果 | 将 trace formula 比较转成具体函子性或 endoscopic transfer |
 
 ## 16.10 本章小结
 

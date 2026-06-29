@@ -63,9 +63,9 @@ $$
 \xrightarrow{\sim}
 \operatorname{DMod}(\operatorname{Bun}_G)
 $$
-或在适当情形下的相应 $\ell$-adic/Betti 版本。该等价应与 Hecke 作用、Eisenstein series、constant term、Verdier duality 和 functoriality 相容。
+或者，在分别固定 Betti 或 $\ell$-adic six-functor formalism、constructibility 与 singular-support 条件后，写成相应版本。该等价应与 Hecke 作用、Eisenstein series、constant term、Verdier duality 和 functoriality 相容。
 
-**注 21.8.** 对某些群和某些开子范畴，定理形式已知；完整一般形式依赖深层 derived algebraic geometry。这里将其作为现代几何 Langlands 的目标陈述。
+**注 21.8.** 已知定理版本依赖具体群、基域口径和所取子范畴；本书不列完整已知清单。完整一般形式依赖深层 derived algebraic geometry，这里将其作为现代几何 Langlands 的目标陈述。
 
 **命题 21.9.** 若范畴等价 21.7 存在，则第二十章的 Hecke eigensheaf 形式应由谱侧 skyscraper sheaf 推出。
 

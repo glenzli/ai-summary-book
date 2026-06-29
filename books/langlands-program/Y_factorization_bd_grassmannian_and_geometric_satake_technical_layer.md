@@ -8,7 +8,7 @@
 
 **定义 Y.1.** Ran space $\operatorname{Ran}(X)$ 的点可理解为 $X$ 的非空有限子集。更精确地，它是有限集合 $I$ 上 $X^I$ 的 colimit，转移映射由有限集合的满射诱导。
 
-**定义 Y.2.** 一个 factorization object 粗略地是在所有 $X^I$ 上给出对象 $\mathcal F_I$，并在互不相交的点集上给出乘法同构
+**定义 Y.2.** 在本附录的接口层面，一个 factorization object 是在所有 $X^I$ 上给出对象 $\mathcal F_I$，并在互不相交的点集上给出乘法同构
 $$
 \mathcal F_{I\sqcup J}|_{(X^I\times X^J)_{\operatorname{disj}}}
 \simeq

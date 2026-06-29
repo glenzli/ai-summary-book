@@ -120,7 +120,7 @@ $$
 2. 右 $K_0(N)$-变换由 nebentypus $\varepsilon$ 控制。
 3. 无穷处为权 $k$ 的 $K_\infty$-type。
 4. 在中心上具有由 $\varepsilon$ 和权 $k$ 决定的中心特征。
-5. 满足适当的增长条件。
+5. 满足经典模形式在尖点处的 holomorphy 或 cuspidality 转译得到的 moderate growth 条件。
 
 在该对应下，尖点形式对应 adelic 尖点形式。
 
@@ -151,7 +151,7 @@ $$
 
 1. $\Phi(zg)=\omega(z)\Phi(g)$。
 2. $\Phi$ 在有限处右平移下光滑，即存在开紧 $K_f$ 使 $\Phi(gk)=\Phi(g)$。
-3. $\Phi$ 在无穷处为 $K_\infty$-finite 且满足适当的光滑性和增长条件。
+3. $\Phi$ 在无穷处为 $C^\infty$、$K_\infty$-finite，并满足 moderate growth 条件。
 4. $\Phi$ 满足尖点条件。
 
 右正则作用使 $\mathcal A_0(G,\omega)$ 成为 $G(\mathbb A_\mathbb Q)$ 的表示。
@@ -188,6 +188,16 @@ $$
 **注 7.17.1.** 附录 H 证明经典 Hecke 双陪集代表如何嵌入有限 adelic Hecke algebra，并说明好素数处 $\mathbf 1_{K_p\operatorname{diag}(1,p)K_p}$ 的作用如何给出经典 $T_p$ 本征值。
 
 **注 7.17.2.** 附录 J 进一步解释 oldforms、newforms、Atkin-Lehner operators 和 local newvectors 的关系；特别地，classical newform 的级对应 $\pi_f$ 的 adelic conductor。
+
+**收口精修 7.A（classical-to-adelic 检查表）.** 后续把经典 newform 送入自守表示时，逐项使用以下翻译：
+
+| 经典对象 | adelic 对象 | 后续使用 |
+|---|---|---|
+| $\Gamma_0(N)$ 变换律 | 左 $G(\mathbb Q)$-不变和右 $K_0(N)$-型 | 定义全局表示 $\pi_f$ |
+| 权 $k$ 与 nebentypus | 无穷处 $K_\infty$-type 和中心特征 | 固定代数性、行列式和 Hodge-Tate 权 |
+| 尖点条件 | 沿 unipotent radical 的常数项为 $0$ | 保证表示位于离散 cuspidal 谱 |
+| 好素数 $T_p$ 本征值 | 球 Hecke 算子本征值 | 给出 Satake 参数和 Euler 因子 |
+| newform 的最小级 | local newvector 的 conductor | 与 Galois 表示导子和降层比较 |
 
 ## 7.8 好素数处的 Satake 参数
 

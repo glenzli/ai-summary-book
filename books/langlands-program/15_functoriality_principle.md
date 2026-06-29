@@ -98,7 +98,7 @@ $$
 $$
 \xi:{}^LH\to{}^LG
 $$
-为 L 同态，设 $\sigma$ 为 $H(\mathbb A_K)$ 的 cuspidal automorphic representation，满足适当的代数性、中心特征和局部 relevance 条件。则存在 $G(\mathbb A_K)$ 的自守表示 $\Pi$，使 $\Pi$ 是 $\sigma$ 沿 $\xi$ 的弱函子性转移。
+为 L 同态，设 $\sigma$ 为 $H(\mathbb A_K)$ 的 cuspidal automorphic representation，并固定使源端 packet、目标端 packet 和中心特征均有定义的局部 relevance 条件；若涉及 Galois 表示比较，还要求相应 algebraicity 或 cohomological 条件。则存在 $G(\mathbb A_K)$ 的自守表示 $\Pi$，使 $\Pi$ 是 $\sigma$ 沿 $\xi$ 的弱函子性转移。
 
 **猜想 15.11（Langlands 函子性，强形式）.** 在局部 LLC、packet 参数化和内形式数据均已固定的情形，$\Pi$ 可取为满足定义 15.6 的强转移；若转移目标不是单一表示而是 packet 或稳定分布，则应存在相应稳定转移，并满足局部字符恒等式。
 
@@ -153,7 +153,7 @@ $$
 $$
 若 $\Pi$ 是自守表示，则它满足定义 15.6 的每个局部条件。$\square$
 
-**外部输入定理 15.16（converse theorem 的函子性用途）.** 在许多 `GL(N)` 目标问题中，若候选对象 $\Pi=\otimes_v'\Pi_v$ 满足适当的中心特征、局部可容许性、单位性，并且对足够多的 cuspidal twists $\tau$，Rankin-Selberg L 函数
+**外部输入定理 15.16（converse theorem 的函子性用途）.** 在目标为 `GL(N)` 且候选对象 $\Pi=\otimes_v'\Pi_v$ 满足 converse theorem 标准输入假设的情形，若对足够多的 cuspidal twists $\tau$，Rankin-Selberg L 函数
 $$
 L(s,\Pi\times\tau)
 $$
@@ -187,7 +187,7 @@ $$
 $$
 维数为 $n[E:K]$。若全局表示 $\operatorname{AI}_{E/K}(\sigma)$ 存在，则它应具有这些局部参数。
 
-**外部输入定理 15.20（Arthur-Clozel，solvable base change 与 automorphic induction）.** 对 cyclic 扩张以及更一般的 solvable 扩张，`GL(n)` 的 base change 和 automorphic induction 在适当假设下存在，并满足几乎所有位置的局部参数限制或诱导相容性。
+**外部输入定理 15.20（Arthur-Clozel，solvable base change 与 automorphic induction）.** 对 cyclic 扩张以及更一般的 solvable 扩张，`GL(n)` 的 base change 和 automorphic induction 在 Arthur-Clozel 设置的 cuspidality、central character 和 isobaric decomposition 假设下存在，并满足几乎所有位置的局部参数限制或诱导相容性。
 
 **注 15.21.** Base change 与 automorphic induction 是函子性的基本例子。它们在类域论中已经出现：$n=1$ 时，base change 是 Hecke 特征的 norm pullback，automorphic induction 对应 Weil 群表示的诱导。
 
@@ -269,7 +269,7 @@ Endoscopy 涉及某个 endoscopic group $H$ 与目标群 $G$ 的 L 群关系。�
 
 **注 15.27.** Endoscopy 将在第十六章专门展开。本章只记录它与函子性的关系：endoscopic classification 通常通过 trace formula 证明某些从 $H$ 到 $G$ 或从 classical groups 到 `GL(N)` 的转移。
 
-**外部输入定理 15.28（Arthur-Mok 型分类的函子性接口）.** 对若干 quasi-split classical groups 和 unitary groups，Arthur、Mok 及相关工作构造了到适当 `GL(N)` 的稳定转移，并用其描述离散自守谱。该转移在非分歧位置与标准 L 群嵌入给出的 Satake 参数推前相容。
+**外部输入定理 15.28（Arthur-Mok 型分类的函子性接口）.** 对若干 quasi-split classical groups 和 unitary groups，Arthur、Mok 及相关工作构造了到由标准 L 群表示确定的 `GL(N)` 的稳定转移，并用其描述离散自守谱。该转移在非分歧位置与标准 L 群嵌入给出的 Satake 参数推前相容。
 
 ## 15.9 Galois 表示侧的函子性
 

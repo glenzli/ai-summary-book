@@ -45,9 +45,9 @@ $$
 
 ## U.3 从一般 `GL(n)` 到 Shimura varieties
 
-许多 $\operatorname{GL}_n$ 表示不直接来自 $\operatorname{GL}_n$ 的 Shimura variety，因为 $\operatorname{GL}_n$ 本身通常没有合适的 Shimura datum。常用策略是把它们转移到 unitary 或 similitude groups。
+许多 $\operatorname{GL}_n$ 表示不直接来自 $\operatorname{GL}_n$ 的 Shimura variety，因为 $\operatorname{GL}_n$ 本身通常没有可产生所需 Hermitian symmetric domain 的 Shimura datum。常用策略是把它们转移到 unitary 或 similitude groups。
 
-**外部输入定理 U.8（Unitary group realization）.** 在适当 polarization 和 base change 假设下，regular algebraic conjugate self-dual $\operatorname{GL}_n$ 表示可与 unitary group 的 cohomological automorphic representations 相关，并出现在相应 Shimura varieties 的 cohomology 中。
+**外部输入定理 U.8（Unitary group realization）.** 在 conjugate self-duality 或 polarization、CM/totally real base field、base change descent 和 cohomological weight 条件均固定的情形，regular algebraic conjugate self-dual $\operatorname{GL}_n$ 表示可与 unitary group 的 cohomological automorphic representations 相关，并出现在相应 Shimura varieties 的 cohomology 中。
 
 **命题 U.9.** 定理 U.8 解释了为什么 polarizable/self-dual 假设常出现在数域 Galois 表示构造中。
 
@@ -87,7 +87,7 @@ $$
 
 ## U.6 与模性提升和费马应用的接口
 
-**外部输入定理 U.15（Automorphy lifting interface）.** 设 $\overline\rho:G_K\to\operatorname{GL}_n(\overline{\mathbb F}_\ell)$ 是 residual representation。若某个 lift 已知 automorphic，且另一个 lift 满足适当局部 deformation conditions、adequacy、polarization 和 Hodge-Tate regularity，则可推出该 lift automorphic。
+**外部输入定理 U.15（Automorphy lifting interface）.** 设 $\overline\rho:G_K\to\operatorname{GL}_n(\overline{\mathbb F}_\ell)$ 是 residual representation。若某个 lift 已知 automorphic，且另一个 lift 满足已固定的 ramified 与 $v\mid\ell$ 局部 deformation conditions、adequacy、polarization、regular Hodge-Tate weights 和 Taylor-Wiles patching 所需全局假设，则可推出该 lift automorphic。
 
 **命题 U.16.** Taylor-Wiles patching 是定理 U.15 的代数核心，而 p-adic Hodge theory 提供局部条件。
 

@@ -12,7 +12,7 @@ $$
 $$
 使 $G(F)$ 作用其上。Apartments 由 maximal $F$-split tori 参数化，facets 对应 parahoric subgroups。
 
-**定义 AA.2.** 若 $x\in\mathcal B(G,F)$，其 stabilizer 的合适紧开子群记为
+**定义 AA.2.** 若 $x\in\mathcal B(G,F)$，由 Bruhat-Tits group scheme 的 connected special fiber 对应的紧开子群记为
 $$
 G(F)_{x,0},
 $$
@@ -115,7 +115,7 @@ $$
 
 **命题 AA.16.** 球 Hecke 代数可由 Iwahori-Hecke 代数的 $K$-biinvariant corner 获得。
 
-**证明草图.** 若 $I\subset K$，则 $e_K$ 可在 Iwahori-Hecke algebra 的合适 completion 或 finite sum setting 中作为 $K$-平均 idempotent 表示。Bi-$K$-invariant convolution algebra 等同于
+**证明草图.** 若 $I\subset K$，则 $e_K=\operatorname{vol}(K)^{-1}\mathbf 1_K$ 可在相应 Hecke algebra multiplier 或 finite double-coset setting 中作为 $K$-平均 idempotent 表示。Bi-$K$-invariant convolution algebra 等同于
 $$
 e_K\mathcal H(G,I)e_K.
 $$

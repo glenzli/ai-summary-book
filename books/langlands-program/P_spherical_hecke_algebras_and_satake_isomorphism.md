@@ -81,7 +81,7 @@ $$
 $$
 \mathcal S(T_\lambda)=q^{\langle\rho,\lambda\rangle}e^\lambda+\sum_{\mu<\lambda}c_{\lambda\mu}e^\mu
 $$
-在适当 dominance order 下成立。完整证明需处理根子群积分和 Weyl 群归一化。$\square$
+在由正 coroot cone 定义的 dominance order 下成立。完整证明需处理根子群积分和 Weyl 群归一化。$\square$
 
 ## P.4 非分歧表示和 Satake 参数
 

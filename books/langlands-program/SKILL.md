@@ -19,7 +19,7 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 ## 范围口径
 
 - 本书以数论 Langlands 为主线：局部域、整体域、adeles、ideles、Tate thesis、类域论、`GL(1)`、`GL(2)`、`GL(n)`、自守表示、Galois 表示、L 群、函子性和相容 L 函数。
-- 几何 Langlands 作为后半部分专题处理：曲线上的 `G`-bundles、Hecke 修改、D-模或 l-adic sheaves、Hecke eigensheaves、谱侧和几何 Satake。
+- 几何 Langlands 作为后半部分专题处理：曲线上的 `G`-bundles、Hecke 修改、D-模或 $\ell$-adic sheaves、Hecke eigensheaves、谱侧和几何 Satake。
 - 范畴语言用于表达表示范畴、层范畴、函子性、Hecke 作用和几何 Langlands 的谱-自守对应；不得把普通 Langlands 纲领强行改写成空泛的“范畴哲学”。
 - 费马大定理作为单独应用章处理：只证明“由半稳定椭圆曲线模性定理、Ribet 降层定理和 Frey 曲线性质推出费马大定理”的严格逻辑链；Wiles-Taylor-Wiles 机器本身必须标注为外部输入，除非另写完整专题卷。
 
@@ -59,7 +59,7 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 
 - 是否已经声明数域、函数域、局部域、赋值归一化和 Haar 测度归一化。
 - 每个 restricted product 是否说明“几乎所有位置”的开紧子群或子环。
-- 每个特征、表示和 L 函数是否说明局部/整体、复值/l-adic、连续性、光滑性、可容许性和中心特征等条件。
+- 每个特征、表示和 L 函数是否说明局部/整体、复值/$\ell$-adic、连续性、光滑性、可容许性和中心特征等条件。
 - 自守形式和自守表示是否区分函数模型、表示模型和 Hecke 本征数据。
 - Galois 表示是否说明系数域、拓扑、半单化、ramification 条件和 Frobenius 归一化。
 - L 群和 Langlands 参数是否说明 Weil 群、Weil-Deligne 群或 Galois 群版本。
@@ -70,7 +70,7 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 ## 本书口径
 
 - 第一部分建立基础语言：整体域、局部域、adeles、ideles、Haar 测度、Fourier 分析、Tate thesis。
-- 第二部分说明 `GL(1)` Langlands 与类域论的等价关系。
+- 第二部分说明 `GL(1)` Langlands 的类域论参数对应，并用 Tate thesis 固定 L 函数解析接口。
 - 第三部分进入 `GL(2)`：模形式、椭圆曲线、Galois 表示、局部因子和模性。
 - 第四部分进入一般还原群：L 群、局部参数、全局自守表示、函子性、trace formula 和 endoscopy。
 - 第五部分进入几何 Langlands：从 Hecke 算子到 Hecke eigensheaves 和谱-自守范畴。

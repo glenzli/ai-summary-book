@@ -175,13 +175,13 @@ $$
 \operatorname{diag}(\chi_1(\varpi),\chi_2(\varpi))
 \in\operatorname{GL}_2(\mathbb C)
 $$
-在适当归一化下的共轭类。
+在采用 normalized parabolic induction 与几何 Frobenius convention 时的共轭类。
 
 ## 4.6 Archimedean 位置的接口
 
 若 $F=\mathbb R$ 或 $\mathbb C$，群 $G(F)$ 是实 Lie 群，不属于本章前几节的局部 profinite 口径。光滑表示需要替换为 Fréchet 表示、Harish-Chandra 模和 $(\mathfrak g,K)$-模。
 
-**外部输入定理 4.20（Harish-Chandra 理论，接口形式）.** 对实 reductive 群，合适的不可约可容许表示可由 Harish-Chandra 模研究；其无穷小特征和 Langlands 分类给出 Archimedean 局部 Langlands 参数所需的表示论输入。
+**外部输入定理 4.20（Harish-Chandra 理论，接口形式）.** 对实 reductive 群，irreducible admissible Fréchet representations 可通过相应 Harish-Chandra 模研究；其无穷小特征和 Langlands 分类给出 Archimedean 局部 Langlands 参数所需的表示论输入。
 
 本书在进入 Archimedean 局部 Langlands 时会单独声明所需版本。
 

@@ -205,7 +205,7 @@ f(z)=O(e^{-2\pi y/h}),\qquad g(z)=O(e^{-2\pi y/h})
 $$
 当 $y\to\infty$。因此 integrand 至多为指数衰减乘以多项式 $y^k$，在 cusp 邻域可积。有限多个 cusp 相加仍收敛。$\square$
 
-**外部输入定理 H.13（Hecke 算子的正规性）.** 对 unitary nebentypus，Hecke 算子在 Petersson inner product 下满足标准伴随关系。特别地，当 nebentypus 平凡且 $\ell\nmid N$ 时，合适归一化的 $T_\ell$ 为 self-adjoint，并可在有限维空间 $S_k(\Gamma_0(N))$ 上对角化。
+**外部输入定理 H.13（Hecke 算子的正规性）.** 对 unitary nebentypus，Hecke 算子在 Petersson inner product 下满足标准伴随关系。特别地，当 nebentypus 平凡且 $\ell\nmid N$ 时，按第六章采用的 classical Hecke normalization，$T_\ell$ 为 self-adjoint，并可在有限维空间 $S_k(\Gamma_0(N))$ 上对角化。
 
 **注 H.14.** 第六章使用共同 Hecke eigenforms；其存在可由有限维性、Hecke 算子交换性和 Petersson inner product 下的正规性推出。完整 newform theory 还需 old/new 分解和 Atkin-Lehner-Li 理论。
 

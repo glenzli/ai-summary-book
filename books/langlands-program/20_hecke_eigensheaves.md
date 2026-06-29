@@ -89,7 +89,7 @@ $$
 
 ## 20.3 几何 Langlands 的基本形式
 
-**猜想 20.7（几何 Langlands，朴素本征层形式）.** 对适当的 $\widehat G$-local system $\mathcal E$ on $X$，应存在 $\operatorname{Bun}_G$ 上的 Hecke eigensheaf $\mathcal F_{\mathcal E}$，使得对所有 $V\in\operatorname{Rep}(\widehat G)$ 有
+**猜想 20.7（几何 Langlands，朴素本征层形式）.** 对选定口径中的 $\widehat G$-local system $\mathcal E$ on $X$，即 $k=\mathbb C$ 时取 de Rham 或 Betti 口径、有限域比较时取 $\ell$-adic 口径，并假设其点对象在所用谱侧范畴中存在，应存在 $\operatorname{Bun}_G$ 上的 Hecke eigensheaf $\mathcal F_{\mathcal E}$，使得对所有 $V\in\operatorname{Rep}(\widehat G)$ 有
 $$
 \mathsf H_V(\mathcal F_{\mathcal E})
 \cong

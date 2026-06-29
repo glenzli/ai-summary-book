@@ -53,6 +53,13 @@ $$
 
 **注 3.3.1.** 附录 V 把定理 3.2 和后续全局 reciprocity 放入 class formation 口径，并解释 norm subgroup theorem 如何分类有限 Abel 扩张。本章只使用其 `GL(1)` Langlands 形式。
 
+**收口精修 3.A（类域论使用点）.** 后文调用本章时只使用以下接口：
+
+1. 有限阶 Hecke character 的导子给出 ray class group 上的特征，并经全局 reciprocity 对应有限 Abel Galois 特征。
+2. 一般 quasi-character 属于 Weil group 或 idele class group 口径；若不要求有限阶，不能直接视为 profinite Galois group 的复特征。
+3. 非分歧局部对应由一致化元和几何 Frobenius 的归一化固定；改变 Frobenius 约定会同时改变 Satake 参数和 Euler 因子的写法。
+4. conductor、epsilon factor 和局部-全局乘积分解的完整相容性作为 Tate 理论和全局类域论输入使用，本章不重新证明。
+
 ## 3.2 非分歧局部对应
 
 **定义 3.4.** 连续特征 $\chi:F^\times\to\mathbb C^\times$ 称为非分歧的，若

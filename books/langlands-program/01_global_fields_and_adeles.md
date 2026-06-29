@@ -220,11 +220,21 @@ $$
 \mathbb A_K\longrightarrow\widehat{\mathbb A_K},\qquad
 a\longmapsto (x\mapsto \psi(ax))
 $$
-是拓扑群同构。在适当自对偶 Haar 测度下，Fourier 反演和 Poisson summation 对 $\mathcal S(\mathbb A_K)$ 成立。
+是拓扑群同构。取由 $\psi$ 唯一确定的 self-dual Haar 测度后，Fourier 反演和 Poisson summation 对 $\mathcal S(\mathbb A_K)$ 成立。
 
 本定理是第二章 Tate thesis 的分析基础。
 
 **注 1.21.1.** 附录 F.4--F.5 把本定理拆成 annihilator、$\widehat{\mathbb A_K/K}\simeq K$、adele Poisson summation 和 idele 缩放公式。第二章的 theta 恒等式具体使用命题 F.21.1。
+
+**收口精修 1.A（adelic analysis 使用边界）.** 后文从本章调用的分析输入只有下表项目：
+
+| 输入 | 本章状态 | 后续作用 |
+|---|---|---|
+| 乘积公式 | 已证明 | 使 idele norm 下降到 $C_K$ |
+| $\mathbb A_K/K$ 紧性 | 外部输入 | 支撑 Fourier analysis 和 Poisson summation |
+| adeles 自对偶性 | 外部输入 | 固定 self-dual measure 和 Fourier transform |
+| adele Poisson summation | 附录 F 接口 | 进入 Tate thesis 的 theta 恒等式 |
+| restricted product 拓扑 | 已定义 | 统一局部对象为全局 adelic 对象 |
 
 ## 1.7 本章小结
 

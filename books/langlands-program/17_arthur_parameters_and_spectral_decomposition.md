@@ -25,7 +25,7 @@ $$
 
 ## 17.2 Tempered 猜想与 Arthur 的修正
 
-**猜想 17.4（Ramanujan-tempered 预期，粗略形式）.** 对许多合适归一化的 cuspidal automorphic representations $\pi$，若 $v$ 非分歧，则 Satake 参数应在 tempered compact real form 中有有界像；等价地，局部分量 $\pi_v$ 应为 tempered。
+**猜想 17.4（Ramanujan-tempered 预期，接口形式）.** 对按 unitary automorphic normalization 处理且不属于 residual 或 CAP 型例外的 cuspidal automorphic representations $\pi$，若 $v$ 非分歧，则 Satake 参数应在 tempered compact real form 中有有界像；等价地，局部分量 $\pi_v$ 应为 tempered。
 
 **注 17.5.** 对一般群和一般数域，该猜想未完全证明。更重要的是，离散谱并不全由 tempered cuspidal representations 组成；residual spectrum 和 endoscopic lifts 产生非 tempered 离散表示。Arthur 参数正是为了系统描述这些非 tempered 离散谱。
 
@@ -85,7 +85,7 @@ $$
    \sum_i n_ib_i=N
    $$
    其中 $N$ 由 $G$ 的标准 L 嵌入决定。
-4. $\pi_i$ 满足适当 self-duality、正交或辛型符号条件。
+4. $\pi_i$ 满足由 $G$ 的对偶群类型和 $b_i$ 的奇偶性决定的 self-duality、conjugate self-duality、正交或辛型符号条件。
 
 **注 17.11.** 这是 Arthur 对 classical groups 的全局参数接口形式。完整定义需要区分 symplectic、special orthogonal、orthogonal、unitary groups，以及中心、outer automorphisms 和 pure inner forms。
 
@@ -106,7 +106,7 @@ $$
 \mathcal S_\psi=\pi_0(S_\psi/Z(\widehat G)^{\Gamma_K}).
 $$
 
-**定义 17.14.** 全局 A-packet 形式上为 restricted product
+**定义 17.14.** 在本书的接口层面，全局 A-packet 记为 restricted product
 $$
 \Pi_\psi=\prod_v'\Pi_{\psi_v}(G/K_v),
 $$
@@ -120,7 +120,7 @@ L^2_{\operatorname{disc}}(G)
 \bigoplus_{\pi\in\Pi_\psi}
 m(\pi)\,\pi,
 $$
-其中 $\psi$ 遍历合适的全局 Arthur 参数，multiplicity $m(\pi)$ 由 $\mathcal S_\psi$ 的字符、局部 packet 参数化和全局 epsilon character 决定。
+其中 $\psi$ 遍历定义 17.10 所述且满足符号、中心特征和局部 relevance 条件的全局 Arthur 参数，multiplicity $m(\pi)$ 由 $\mathcal S_\psi$ 的字符、局部 packet 参数化和全局 epsilon character 决定。
 
 **注 17.16.** 定理 17.15 的完整版本包含稳定 trace formula、endoscopic transfer、局部字符恒等式和内形式修正。本书当前只把它作为后续谱分解和 functoriality 的接口。
 
@@ -184,6 +184,16 @@ Arthur 参数中的块 $(\pi_i,b_i)$ 与 L 函数极点相关。
 **外部输入定理 17.23（L 函数判别符号，接口形式）.** 对 classical groups，cuspidal representation $\pi_i$ 的 self-duality 类型可通过 symmetric square 或 exterior square L 函数在 $s=1$ 的极点判别。该符号决定 $\pi_i$ 是否能出现在给定 $G$ 的 Arthur 参数中。
 
 **注 17.24.** 这解释了为什么第十五章中的 symmetric/exterior square L 函数不仅是函子性例子，也进入 classical groups 谱分解的参数条件。
+
+**收口精修 17.A（Arthur 输入边界）.** 本章后续只使用 Arthur 理论的以下接口：
+
+| 输入 | 作用 | 状态 |
+|---|---|---|
+| 局部 A-packets | 组织非 tempered 局部分量 | 外部输入 |
+| 全局参数 $\boxplus_i(\pi_i,b_i)$ | 描述 classical groups 离散谱 | 外部输入 |
+| multiplicity formula | 判定 packet 中表示出现与重数 | 外部输入 |
+| standard transfer to `GL(N)` | 连接 functoriality 和 L 函数 | 外部输入 |
+| self-duality sign criterion | 限定哪些 `GL(n)` cuspidal data 可进入参数 | 外部输入 |
 
 ## 17.10 本章小结
 

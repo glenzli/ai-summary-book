@@ -609,7 +609,7 @@ $\square$
 $$
 \sum_{n\in\mathbb Z}f(n)=\sum_{n\in\mathbb Z}\widehat f(n)
 $$
-在合适的 Archimedean Schwartz 函数上成立。
+对 $f\in\mathcal S(\mathbb R)$ 成立。
 
 **解答.** 取
 $$
@@ -697,7 +697,7 @@ $$
 $$
 \int_{K^\times\backslash\mathbb A_K^\times}\Theta_\Phi^\times(t)|t|_{\mathbb A}^s\,d^\times t
 $$
-的适当归一化形式。用 F.21.1 把 $|t|_{\mathbb A}<1$ 的部分换成 $\widehat\Phi$ 在 $t^{-1}$ 处的 theta series。该替换产生常数项
+的 Tate thesis normalization。用 F.21.1 把 $|t|_{\mathbb A}<1$ 的部分换成 $\widehat\Phi$ 在 $t^{-1}$ 处的 theta series。该替换产生常数项
 $$
 -\Phi(0)
 \quad\text{和}\quad
@@ -1476,7 +1476,7 @@ $$
 
 **练习 AB.4.** 说明 $\operatorname{Bun}_G$ 非 quasi-compact 对 D-module category 的影响。
 
-**解答.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan type 分层，通常含有无限多个 quasi-compact substacks。因此 naive D-module category 的 compact generation、连续 functor 的定义以及 $!$-extension 的存在性不能直接由 finite type stack 的定理推出。Eisenstein series 和 constant term 又需要沿非 proper correspondence 做推拉操作。Renormalized D-module category 通过改变生成对象或用 co-truncative substacks 控制无限边界，使这些函子具有适当连续性和伴随性。$\square$
+**解答.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan type 分层，通常含有无限多个 quasi-compact substacks。因此 naive D-module category 的 compact generation、连续 functor 的定义以及 $!$-extension 的存在性不能直接由 finite type stack 的定理推出。Eisenstein series 和 constant term 又需要沿非 proper correspondence 做推拉操作。Renormalized D-module category 通过改变生成对象或用 co-truncative substacks 控制无限边界，使这些函子具有所需连续性和伴随性。$\square$
 
 **练习 AB.5.** 解释 nilpotent singular support 在谱侧的作用。
 

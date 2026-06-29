@@ -6,7 +6,7 @@
 
 设 $F$ 为 $p$-adic local field。
 
-**外部输入定理 AC.1（perfectoid spaces and diamonds）.** Perfectoid spaces 构成一类适合 $p$-adic 几何的空间。Diamonds 是 perfectoid spaces 的 pro-etale sheaves quotient，支持 etale cohomology、six functors 的适当形式和 moduli of local shtukas。
+**外部输入定理 AC.1（perfectoid spaces and diamonds）.** Perfectoid spaces 构成一类适合 $p$-adic 几何的空间。Diamonds 是 perfectoid spaces 的 pro-etale sheaves quotient；在 Scholze 的 diamond/v-stack finiteness hypotheses 下，它们支持 etale cohomology、six functors 和 moduli of local shtukas。
 
 **定义 AC.2.** 若 $X$ 为 adic space，其 diamond 记为
 $$

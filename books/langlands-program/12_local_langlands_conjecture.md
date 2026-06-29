@@ -155,7 +155,7 @@ $$
 
 **注 12.18.** 对一般 $G$，猜想 12.17 只是 coarse form。它把 packet 作为一个集合给出，但没有说明 packet 内每个表示如何命名，也没有说明内形式之间如何同时参数化。Enhanced LLC 用定义 12.13 的增强参数给出更精细的形式。
 
-**猜想 12.19（增强局部 Langlands）.** 固定适当的 rigid inner twist 数据。存在自然双射
+**猜想 12.19（增强局部 Langlands）.** 固定 rigid inner twist 数据，例如一组内形式 $G'$ 及其 rigid cocycle 或 Kottwitz 参数。存在自然双射
 $$
 \bigsqcup_{G'}\operatorname{Irr}(G'(F))
 \longleftrightarrow
@@ -216,7 +216,7 @@ $$
 $$
 则局部函子性预期把 $\Pi_{\varphi_H}(H)$ 转移到 $\Pi_{\xi\circ\varphi_H}(G)$。
 
-**条件 12.28（稳定性和 endoscopy）.** 对每个参数 $\varphi$，packet 的适当线性组合应给出稳定分布 character。Endoscopic transfer 应由 component group character 和 transfer factors 控制。
+**条件 12.28（稳定性和 endoscopy）.** 固定 Whittaker datum 与 transfer factor normalization 后，对每个参数 $\varphi$，由 component group 参数化指定的 packet 线性组合应给出稳定分布 character。Endoscopic transfer 应由 component group character 和 transfer factors 控制。
 
 **注 12.29.** 条件 12.28 是一般 reductive 群 LLC 的技术核心之一。没有稳定 character identity，packet 的内部参数化通常不是唯一规范的。
 
@@ -357,6 +357,16 @@ $$
 在惯性不变量上的 characteristic polynomial 的倒数。因此每个局部因子由 Satake parameter 决定，乘积也由这些参数决定。$\square$
 
 **注 12.46.** 全局章节将研究 $L^S(s,\pi,r)$ 的收敛、解析延拓和函数方程。局部 LLC 只提供局部因子的定义和相容性，不单独证明全局解析性质。
+
+**收口精修 12.A（LLC 状态边界）.** 本章把局部 Langlands 分成以下可调用层次：
+
+| 层次 | 本书使用方式 | 状态 |
+|---|---|---|
+| Tori 和 `GL(1)` | 作为类域论模型 | 定理级输入 |
+| `GL(n)` | 定义局部因子、Satake 参数和 local-global compatibility 的标准接口 | 外部输入定理 |
+| Archimedean groups | 解释无穷处参数和代数性 | 外部输入定理 |
+| Classical groups | 进入 Arthur packets 和 standard transfer | Arthur-Mok 等外部输入 |
+| 一般 enhanced LLC | packet、component group、inner form 和 endoscopy 的总框架 | 猜想或已知特殊情形，不能当作全体已证 |
 
 ## 12.10 本章小结
 

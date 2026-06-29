@@ -157,6 +157,16 @@ $$
 $$
 它来自 $\mathbb A_K/K$ 上的 Poisson summation 和 idele 缩放公式。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系；平凡特征的可能极点来自 $\Phi(0)$ 与 $\widehat\Phi(0)$ 的常数项。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明还依赖局部 Tate 理论、Archimedean gamma 因子估计和整体积分截断。$\square$
 
+**收口精修 2.A（Tate thesis 使用边界）.** 本书后续只使用 Tate thesis 的以下接口：
+
+| 输入 | 使用位置 | 状态 |
+|---|---|---|
+| 非分歧局部 zeta integral 计算 | Euler 因子和 Satake 比较 | 本章例子给出 |
+| 局部函数方程与 epsilon 因子 | 局部因子相容和 functional equation | 外部输入 |
+| Archimedean gamma 因子 | 完成 L 函数 | 外部输入 |
+| Poisson-theta 恒等式 | 整体函数方程骨架 | 附录 F 接口 |
+| 类域论解释 Hecke 特征 | `GL(1)` Langlands | 第三章和附录 V 接口 |
+
 ## 2.6 `GL(1)` Langlands
 
 **定义 2.14.** `GL(1)` 在 $K$ 上的全局自守表示，在本书中指 Hecke 特征

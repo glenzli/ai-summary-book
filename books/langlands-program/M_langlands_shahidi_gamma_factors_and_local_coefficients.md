@@ -50,7 +50,7 @@ $$
 $$
 其中 $\operatorname{Hom}_{U(F)}(\pi,\psi_U)$ 的元素称为 Whittaker functional。
 
-**外部输入定理 M.5（Whittaker uniqueness）.** 对 quasi-split reductive group 的合适 irreducible admissible generic representations，Whittaker functional 在标量倍下唯一：
+**外部输入定理 M.5（Whittaker uniqueness）.** 对 quasi-split reductive group 的 irreducible admissible generic representations，Whittaker functional 在标量倍下唯一：
 $$
 \dim\operatorname{Hom}_{U(F)}(\pi,\psi_U)=1.
 $$
@@ -84,7 +84,7 @@ $$
 C(s,\tau,w,\psi)
 =\prod_i \gamma(a_i s,\tau,r_i,\psi)
 $$
-在适当归一化和整数 $a_i$ 下成立。
+在 Shahidi 的 standard intertwining operator、Haar 测度、加法特征 $\psi$ 和 $s$-parameter normalization 下成立，其中整数 $a_i$ 由 $P$ 的 adjoint action 分解决定。
 
 **注 M.10.** 精确的 $a_i$、对偶、中心 character 和 $\rho$-shift 依赖 parabolic 和归一化。正文中使用该方法时必须声明采用的 $s$ convention。
 
@@ -142,7 +142,7 @@ L(s,\pi_n\boxtimes\pi_m^\vee,r)
 =L(s,\pi_n\times\pi_m^\vee).
 $$
 
-**例 M.18（Symmetric square for `GL(2)`）.** 在适当 classical group 或 $\operatorname{GSpin}$ 群的 Shahidi 设置中，adjoint action 的某个分量给出 $\operatorname{Sym}^2$ 或 exterior square L 函数。Gelbart-Jacquet 的 symmetric square lift 可与这些 L 函数解析性质相互校验。
+**例 M.18（Symmetric square for `GL(2)`）.** 在 classical group 或 $\operatorname{GSpin}$ 群的 Shahidi 设置中，adjoint action 的某个分量给出 $\operatorname{Sym}^2$ 或 exterior square L 函数。Gelbart-Jacquet 的 symmetric square lift 可与这些 L 函数解析性质相互校验。
 
 **例 M.19（Adjoint L 函数）.** 对许多 groups，adjoint representation 出现在某个 parabolic 的 $\operatorname{Lie}(\widehat N)$ 中。相应 adjoint L 函数的 poles 与残余谱、Plancherel measure 和 functorial transfer 密切相关。
 

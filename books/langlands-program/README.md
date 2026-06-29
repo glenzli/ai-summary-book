@@ -1,7 +1,7 @@
 # Langlands 纲领：从 `GL(1)` 到几何 Langlands
 
 作者：Dr. Stochastic Parrot
-状态：严格教材草稿，主线基本收口候选，审稿中
+状态：严格教材草稿，审定前闭合版，待出版级审定
 主资料源：Tate, Weil, Langlands, Gelbart, Bump, Goldfeld-Hundley, Jacquet-Langlands, Godement-Jacquet, Arthur, Milne, Serre, Silverman, Diamond-Shurman, Cornell-Silverman-Stevens, Bushnell-Henniart, Frenkel, Gaitsgory
 
 本书目标是写成一部数学化、专业化、成体系的 Langlands 纲领教材，而不是导览文章。正文从整体域、局部域、adeles 和 Tate thesis 开始，逐步进入类域论、`GL(1)` Langlands、模形式和椭圆曲线、`GL(n)` 自守表示、Galois 表示、L 群、函子性和几何 Langlands。费马大定理的证明作为单独应用章处理。
@@ -17,13 +17,13 @@
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 中追溯。
 - 外部定理按“核心结构、支撑接口、卫星理论”分级；只有直接服务 Langlands 对象、参数、L 因子、Hecke 作用、局部-整体相容或应用链闭环的内容才在本书展开，其他深层理论保留为外部输入或另卷。
 
-符号约定见 [NOTATION.md](NOTATION.md)，归一化总表见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，逐章收口台账见 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，收口标准见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。主要定理状态见 [THEOREM_INDEX.md](THEOREM_INDEX.md)，章节依赖见 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)，主线最短证明链见 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)，核心习题解答见 [SOLUTIONS.md](SOLUTIONS.md)，习题覆盖审查见 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)。
+符号约定见 [NOTATION.md](NOTATION.md)，归一化总表见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，概念审定见 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，逐章收口台账见 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，编号审计见 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，收口标准见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。主要定理状态见 [THEOREM_INDEX.md](THEOREM_INDEX.md)，章节依赖见 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)，主线最短证明链见 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)，核心习题解答见 [SOLUTIONS.md](SOLUTIONS.md)，习题覆盖审查见 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)。
 
 ## 当前收口判定
 
 本书已经达到主线广度基本固定：`GL(1)`、`GL(2)` 与费马应用、一般算术 Langlands、几何 Langlands 四条路径均已建立，附录 A-AE 已承担主要支撑接口。
 
-本书已经进入主线基本收口候选状态。第一轮收口完成高风险主章的归一化回指，并建立主线最短证明链和习题覆盖表；第二轮收口完成索引一致性审计和高风险附录的归一化回指；第三轮收口完成逐章风险清理并建立收口缺口台账；第四轮收口完成重点外部输入来源拆分。剩余工作不应继续横向扩张新理论分支，而应集中在编号和交叉引用审稿。判据和任务分级见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。
+本书已经进入审定前闭合版。第一轮收口完成高风险主章的归一化回指，并建立主线最短证明链和习题覆盖表；第二轮收口完成索引一致性审计和高风险附录的归一化回指；第三轮收口完成逐章风险清理并建立收口缺口台账；第四轮收口完成重点外部输入来源拆分；第五轮收口完成编号和交叉引用审计；第六轮补入第 3、7、10、14、16、19、22、90 章的接口检查表和最小模型说明；第七轮补入第 1、2、5、8、12、17 章的使用边界表并完成附录层精校状态审稿；第八轮修正 $\ell$-adic 记法、旧状态措辞和若干接口表述；第九轮收紧主体章节的高风险假设、归一化和版本选择；第十轮收紧主体证明链直接引用的附录接口，并抽查外部输入索引和资料源索引；第十一轮统一最终收口口径；第十二轮完成最终概念审定。当前剩余工作不应继续横向扩张新理论分支，而应集中在出版前文字审校、来源维护、编号维护、归一化维护和排版审稿。判据和任务分级见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。
 
 ## 建议总目录
 
@@ -97,14 +97,16 @@
 - [附录 AD：椭圆曲线约化、Neron 模型、Kodaira 符号和 Tate Algorithm](AD_elliptic_curves_reduction_neron_kodaira_tate_algorithm.md)
 - [附录 AE：`GL(2)` 局部 Langlands 的 Principal Series、Steinberg 和 Supercuspidal 例子](AE_local_gl2_principal_steinberg_supercuspidal_examples.md)
 
-## 当前已起草内容
+## 当前文件清单
 
 - [SKILL.md](SKILL.md)：本教材的写作约束。
 - [NOTATION.md](NOTATION.md)：全书符号和局部-整体约定。
 - [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)：Frobenius、reciprocity、Haar/Fourier、Satake、Galois 表示和 L 函数变量归一化总表。
+- [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)：最终概念审定，固定参数、表示、L 函数、函子性、几何 Langlands 和费马应用的概念边界。
 - [SOURCES.md](SOURCES.md)：主要资料源清单。
 - [MATH_REVIEW.md](MATH_REVIEW.md)：审查清单和逐章收口状态。
 - [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)：逐章收口缺口审查台账。
+- [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)：编号一致性、习题解答回指和 Markdown 链接审计。
 - [CLOSURE_STATUS.md](CLOSURE_STATUS.md)：收口标准、当前状态、准入规则和后置另卷清单。
 - [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：`GL(1)`、费马应用、一般算术 Langlands 和几何 Langlands 的最短证明链。
 - [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)：四条主线的习题覆盖矩阵和收口用新增题目建议。
@@ -112,28 +114,28 @@
 - [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)：章节依赖图、阅读路径和证明依赖层级。
 - [SOLUTIONS.md](SOLUTIONS.md)：核心习题解答与提示。
 - [00_preface_and_scope.md](00_preface_and_scope.md)：序章。
-- [01_global_fields_and_adeles.md](01_global_fields_and_adeles.md)：第一章初稿。
-- [02_tate_thesis_and_gl1.md](02_tate_thesis_and_gl1.md)：第二章初稿。
-- [03_class_field_theory_as_gl1.md](03_class_field_theory_as_gl1.md)：第三章初稿。
-- [04_local_groups_haar_and_smooth_representations.md](04_local_groups_haar_and_smooth_representations.md)：第四章初稿。
-- [05_weil_groups_and_local_parameters.md](05_weil_groups_and_local_parameters.md)：第五章初稿。
-- [06_modular_forms_and_hecke_operators.md](06_modular_forms_and_hecke_operators.md)：第六章初稿。
-- [07_adelic_modular_forms_and_gl2.md](07_adelic_modular_forms_and_gl2.md)：第七章初稿。
-- [08_elliptic_curves_conductors_l_functions.md](08_elliptic_curves_conductors_l_functions.md)：第八章初稿。
-- [09_galois_representations_and_modularity.md](09_galois_representations_and_modularity.md)：第九章初稿。
-- [10_local_global_compatibility_and_level_lowering.md](10_local_global_compatibility_and_level_lowering.md)：第十章初稿。
-- [11_reductive_groups_dual_groups_l_groups.md](11_reductive_groups_dual_groups_l_groups.md)：第十一章初稿。
-- [12_local_langlands_conjecture.md](12_local_langlands_conjecture.md)：第十二章初稿。
-- [13_global_automorphic_representations_and_l_functions.md](13_global_automorphic_representations_and_l_functions.md)：第十三章初稿。
-- [14_gl_n_correspondence_and_known_theorems.md](14_gl_n_correspondence_and_known_theorems.md)：第十四章初稿。
-- [15_functoriality_principle.md](15_functoriality_principle.md)：第十五章初稿。
-- [16_trace_formula_and_endoscopy.md](16_trace_formula_and_endoscopy.md)：第十六章初稿。
-- [17_arthur_parameters_and_spectral_decomposition.md](17_arthur_parameters_and_spectral_decomposition.md)：第十七章初稿。
-- [18_curves_g_bundles_and_hecke_modifications.md](18_curves_g_bundles_and_hecke_modifications.md)：第十八章初稿。
-- [19_geometric_satake.md](19_geometric_satake.md)：第十九章初稿。
-- [20_hecke_eigensheaves.md](20_hecke_eigensheaves.md)：第二十章初稿。
-- [21_spectral_side_local_systems_and_categorical_correspondence.md](21_spectral_side_local_systems_and_categorical_correspondence.md)：第二十一章初稿。
-- [22_function_field_bridge_and_arithmetic_geometry.md](22_function_field_bridge_and_arithmetic_geometry.md)：第二十二章初稿。
+- [01_global_fields_and_adeles.md](01_global_fields_and_adeles.md)：第一章正文稿。
+- [02_tate_thesis_and_gl1.md](02_tate_thesis_and_gl1.md)：第二章正文稿。
+- [03_class_field_theory_as_gl1.md](03_class_field_theory_as_gl1.md)：第三章正文稿。
+- [04_local_groups_haar_and_smooth_representations.md](04_local_groups_haar_and_smooth_representations.md)：第四章正文稿。
+- [05_weil_groups_and_local_parameters.md](05_weil_groups_and_local_parameters.md)：第五章正文稿。
+- [06_modular_forms_and_hecke_operators.md](06_modular_forms_and_hecke_operators.md)：第六章正文稿。
+- [07_adelic_modular_forms_and_gl2.md](07_adelic_modular_forms_and_gl2.md)：第七章正文稿。
+- [08_elliptic_curves_conductors_l_functions.md](08_elliptic_curves_conductors_l_functions.md)：第八章正文稿。
+- [09_galois_representations_and_modularity.md](09_galois_representations_and_modularity.md)：第九章正文稿。
+- [10_local_global_compatibility_and_level_lowering.md](10_local_global_compatibility_and_level_lowering.md)：第十章正文稿。
+- [11_reductive_groups_dual_groups_l_groups.md](11_reductive_groups_dual_groups_l_groups.md)：第十一章正文稿。
+- [12_local_langlands_conjecture.md](12_local_langlands_conjecture.md)：第十二章正文稿。
+- [13_global_automorphic_representations_and_l_functions.md](13_global_automorphic_representations_and_l_functions.md)：第十三章正文稿。
+- [14_gl_n_correspondence_and_known_theorems.md](14_gl_n_correspondence_and_known_theorems.md)：第十四章正文稿。
+- [15_functoriality_principle.md](15_functoriality_principle.md)：第十五章正文稿。
+- [16_trace_formula_and_endoscopy.md](16_trace_formula_and_endoscopy.md)：第十六章正文稿。
+- [17_arthur_parameters_and_spectral_decomposition.md](17_arthur_parameters_and_spectral_decomposition.md)：第十七章正文稿。
+- [18_curves_g_bundles_and_hecke_modifications.md](18_curves_g_bundles_and_hecke_modifications.md)：第十八章正文稿。
+- [19_geometric_satake.md](19_geometric_satake.md)：第十九章正文稿。
+- [20_hecke_eigensheaves.md](20_hecke_eigensheaves.md)：第二十章正文稿。
+- [21_spectral_side_local_systems_and_categorical_correspondence.md](21_spectral_side_local_systems_and_categorical_correspondence.md)：第二十一章正文稿。
+- [22_function_field_bridge_and_arithmetic_geometry.md](22_function_field_bridge_and_arithmetic_geometry.md)：第二十二章正文稿。
 - [A_algebraic_number_theory_review.md](A_algebraic_number_theory_review.md)：附录 A，含乘积公式、素理想分解、分解群、惯性群、高阶分歧群、ray class、idele class 和导子补充。
 - [B_locally_compact_groups_and_haar.md](B_locally_compact_groups_and_haar.md)：附录 B，含 Haar 测度、卷积、商测度和 restricted product 积分补充。
 - [C_smooth_admissible_representations.md](C_smooth_admissible_representations.md)：附录 C，含 Hecke 作用、Schur 引理、smooth dual 和可容许性补充。
@@ -165,11 +167,15 @@
 - [AC_fargues_fontaine_curve_diamonds_local_shtukas_geometric_local_langlands.md](AC_fargues_fontaine_curve_diamonds_local_shtukas_geometric_local_langlands.md)：附录 AC，含 perfectoid/diamonds、Fargues-Fontaine curve、$G$-bundles、local Shimura varieties、Fargues-Scholze 几何局部 Langlands。
 - [AD_elliptic_curves_reduction_neron_kodaira_tate_algorithm.md](AD_elliptic_curves_reduction_neron_kodaira_tate_algorithm.md)：附录 AD，含 Neron models、Kodaira symbols、Tate algorithm、Ogg conductor formula、Tate curve 和 Frey 曲线局部导子。
 - [AE_local_gl2_principal_steinberg_supercuspidal_examples.md](AE_local_gl2_principal_steinberg_supercuspidal_examples.md)：附录 AE，含 `GL(2)` principal series、Steinberg twists、supercuspidals、Weil-Deligne 参数和局部 L 因子。
-- [90_fermat_last_theorem_application.md](90_fermat_last_theorem_application.md)：费马大定理应用章初稿。
+- [90_fermat_last_theorem_application.md](90_fermat_last_theorem_application.md)：费马大定理应用章正文稿。
 
 ## 当前教材化补强层
 
 - 全书主要结果已由 [THEOREM_INDEX.md](THEOREM_INDEX.md) 标记为 `P`、`S`、`E`、`C` 四类，分别对应已证、证明草图、外部输入和猜想。
 - 全书阅读路径已由 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md) 分成 `GL(1)`、费马应用、一般数论 Langlands 和几何 Langlands 四条路径。
 - 核心习题解答已覆盖第 1 至 5 章、若干 `GL(2)` 计算、一般 Langlands 基础、几何 Langlands 入门和费马应用章。
-- 附录 A-D、F-AE 已从接口复习扩展为带关键证明、Fourier/Poisson 计算、积分接口、谱分解接口、局部 packet 例子、几何范畴技术层、`GL(n)` 局部分类、`GL(2)` 局部 LLC 例子、trace formula 稳定化、函数域 shtuka 接口、模曲线上同调、p-adic Hodge/Shimura 接口、class formation、Atkin-Lehner-Li、Arthur 分类、factorization/BD Grassmannian、局部调和分析、Bruhat-Tits、derived stacks、Fargues-Fontaine 和椭圆曲线局部约化接口的参考附录，但还不是可替代专著的完整证明卷。
+- 附录 A-D、F-AE 已从接口复习扩展为带关键证明、Fourier/Poisson 计算、积分接口、谱分解接口、局部 packet 例子、几何范畴技术层、`GL(n)` 局部分类、`GL(2)` 局部 LLC 例子、trace formula 稳定化、函数域 shtuka 接口、模曲线上同调、p-adic Hodge/Shimura 接口、class formation、Atkin-Lehner-Li、Arthur 分类、factorization/BD Grassmannian、局部调和分析、Bruhat-Tits、derived stacks、Fargues-Fontaine 和椭圆曲线局部约化接口的参考附录；这些附录已达到主体可引用接口深度，但仍不是可替代专著的完整证明卷。
+
+## 最终收口型审定结论
+
+本书当前状态为审定前闭合版：四条主线、应用链、概念边界、外部输入边界、编号索引、交叉引用、习题回指和资料源大类均已闭合。后续进入出版前审定时，只应接受数学错误修正、来源补强、排版统一、术语统一和索引维护；新增大块理论、附录群或第五条主线应另列为新版本或另卷目标。

@@ -121,7 +121,7 @@ L_p(E,s)=
 \end{cases}
 $$
 
-**注 8.12.** 该定义是椭圆曲线 Hasse-Weil L 函数的标准局部因子口径。若用 l-adic 表示统一定义，则坏约化局部因子来自惯性不变量空间；见 8.7 节。
+**注 8.12.** 该定义是椭圆曲线 Hasse-Weil L 函数的标准局部因子口径。若用 $\ell$-adic 表示统一定义，则坏约化局部因子来自惯性不变量空间；见 8.7 节。
 
 ## 8.5 Hasse-Weil L 函数
 
@@ -158,7 +158,7 @@ $$
 $$
 N_E=\prod_p p^{f_p(E)}
 $$
-其中 $f_p(E)$ 是 $E$ 在 $p$ 处的局部导子指数。它可由 l-adic Tate module 的 Artin 导子定义，且与辅助素数 $\ell\ne p$ 无关。
+其中 $f_p(E)$ 是 $E$ 在 $p$ 处的局部导子指数。它可由 $\ell$-adic Tate module 的 Artin 导子定义，且与辅助素数 $\ell\ne p$ 无关。
 
 **外部输入定理 8.17（导子和约化类型）.** 局部导子指数满足：
 
@@ -250,11 +250,21 @@ $$
 
 **注 8.27.** Wiles 和 Taylor-Wiles 首先证明了半稳定情形中足以推出费马大定理的模性；完整有理数域上椭圆曲线模性后来由 Breuil-Conrad-Diamond-Taylor 等工作完成。本书在费马应用章只需要半稳定模性。
 
+**收口精修 8.A（椭圆曲线到 `GL(2)` 接口表）.** 后续只从本章提取以下数据：
+
+| 椭圆曲线侧 | Langlands 侧 | 使用位置 |
+|---|---|---|
+| $a_p(E)=p+1-\#E(\mathbb F_p)$ | 好素数 Frobenius trace | 与模形式 $a_p(f)$ 比较 |
+| $T_\ell(E)$ 和 $\rho_{E,\ell}$ | 二维 $\ell$-adic Galois 表示 | 第九章模性和第十章 residual 表示 |
+| conductor $N_E$ | newform level 和 automorphic conductor | 第七至十章级结构比较 |
+| Neron-Ogg-Shafarevich | 好约化与非分歧性 | 局部-整体相容 |
+| Frey 曲线局部导子 | residual level 降到 $2$ | 第十章和第九十章 |
+
 ## 8.9 与前后章节的关系
 
 本章把椭圆曲线和 Langlands 主线连接起来：
 
-1. 椭圆曲线 $E/\mathbb Q$ 给出二维 l-adic Galois 表示 $\rho_{E,\ell}$。
+1. 椭圆曲线 $E/\mathbb Q$ 给出二维 $\ell$-adic Galois 表示 $\rho_{E,\ell}$。
 2. 好素数处，$\rho_{E,\ell}$ 的 Frobenius trace 等于 $a_p(E)$。
 3. Hasse-Weil L 函数由这些局部 Frobenius 数据组成。
 4. 模性定理把同一个 L 函数识别为权 $2$ newform 的 L 函数。
@@ -264,7 +274,7 @@ $$
 
 ## 8.10 本章小结
 
-椭圆曲线的局部约化决定 Hasse-Weil L 函数的局部因子和导子。Tate module 给出二维 l-adic Galois 表示，其好约化处 Frobenius 多项式为 $X^2-a_p(E)X+p$。模性定理断言这些数据来自权 $2$ newform，从而把椭圆曲线放入 `GL(2)` Langlands 框架。
+椭圆曲线的局部约化决定 Hasse-Weil L 函数的局部因子和导子。Tate module 给出二维 $\ell$-adic Galois 表示，其好约化处 Frobenius 多项式为 $X^2-a_p(E)X+p$。模性定理断言这些数据来自权 $2$ newform，从而把椭圆曲线放入 `GL(2)` Langlands 框架。
 
 ## 练习
 

@@ -8,7 +8,7 @@
 $$
 \pi:\mathcal E\to Y_1(N)
 $$
-为 universal elliptic curve，在适当精细 level 或 stack 口径下理解。
+为 universal elliptic curve；当 level 不足以给出 fine moduli scheme 时，按 modular stack 口径理解。
 
 **定义 T.1.** 对 $k\ge2$，令
 $$

@@ -14,7 +14,7 @@ G(K)\backslash G(\mathbb A_K)/K_N
 $$
 上的函数，其中 $K_N$ 是某个 level subgroup。
 
-**命题 S.1.** 当 $G$ split 且 level 适当时，双商
+**命题 S.1.** 当 $G$ split 且 $K_N$ 是由有限闭点集 $N$ 上的 level structure 与 $X\setminus N$ 上 hyperspecial level 给出的开紧子群时，双商
 $$
 G(K)\backslash G(\mathbb A_K)/K_N
 $$
@@ -36,7 +36,7 @@ $$
 
 ## S.3 Shtukas
 
-**定义 S.4.** 粗略地，一个带 $r$ 条腿的 $G$-shtuka 是数据
+**定义 S.4.** 在本附录的接口层面，一个带 $r$ 条腿的 $G$-shtuka 是数据
 $$
 (\mathcal E_0,\ldots,\mathcal E_r;x_1,\ldots,x_r;\beta_i;\iota)
 $$
@@ -52,7 +52,7 @@ $$
 
 ## S.4 Drinfeld 和 Lafforgue 的 `GL(n)` 定理
 
-**外部输入定理 S.7（Drinfeld for `GL(2)`）.** 对函数域 $K$，`GL(2)` 的 cuspidal automorphic representations 与适当二维 $\ell$-adic Galois representations 之间存在 Langlands 对应，满足几乎所有位置的 Frobenius-Satake 相容性。
+**外部输入定理 S.7（Drinfeld for `GL(2)`）.** 对函数域 $K$，`GL(2)` 的 cuspidal automorphic representations 与连续、不可约、几乎处处非分歧且 determinant 与中心特征匹配的二维 $\ell$-adic Galois representations 之间存在 Langlands 对应，满足几乎所有位置的 Frobenius-Satake 相容性。
 
 **外部输入定理 S.8（Laurent Lafforgue for `GL(n)`）.** 对函数域 $K$，cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 与不可约 $n$ 维 $\ell$-adic Galois representations 之间存在相容对应，满足：
 

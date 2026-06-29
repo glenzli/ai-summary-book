@@ -19,20 +19,20 @@
 
 ## 当前判定
 
-截至本次审查，本书已经进入主线基本收口候选状态。这里的“候选”表示四条主线、关键归一化、索引一致性和应用链均已形成可审查闭环；它不表示最终审定版，也不表示外部输入理论已在本书内完整证明。
+截至第十二轮最终概念审定，本书已经进入审定前闭合版。这里的“审定前闭合”表示四条主线、关键归一化、索引一致性、概念边界、局部主线小补、主体与附录接口、来源索引和应用链均已形成可审查闭环；它不表示最终出版审定版，也不表示外部输入理论已在本书内完整证明。
 
 | 项目 | 当前状态 | 判定 |
 |---|---|---|
-| 主线目录 | 已覆盖四条主线，附录 A-AE 已承担主要支撑接口 | 闭合 |
-| 对象链 | 四条主线的域、群、表示、参数、Hecke 作用、L 因子、导子、谱对象和几何对象均已有定义或外部输入落点 | 主线闭合 |
-| 定理状态 | `THEOREM_INDEX.md` 已建立，且 [INDEX_CONSISTENCY_AUDIT.md](INDEX_CONSISTENCY_AUDIT.md) 未发现阻塞收口的状态冲突 | 主线闭合 |
-| 外部输入 | 已建立三分法，重点外部输入来源已在附录 E 拆细；后续只允许维护来源和使用位置 | 接口闭合 |
-| 归一化 | 已建立 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，高风险主章和高风险附录均已加入回指 | 高风险层闭合 |
+| 主线目录 | 已覆盖四条主线，附录 A-AE 已承担主要支撑接口；不再新增第五条同级主线 | 闭合 |
+| 对象链 | 四条主线的域、群、表示、参数、Hecke 作用、L 因子、导子、谱对象和几何对象均已有定义或外部输入落点；概念边界见 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md) | 主线闭合 |
+| 定理状态 | `THEOREM_INDEX.md` 已建立，且 [INDEX_CONSISTENCY_AUDIT.md](INDEX_CONSISTENCY_AUDIT.md) 与 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md) 未发现阻塞收口的状态冲突 | 主线闭合 |
+| 外部输入 | 已建立三分法，重点外部输入来源已在附录 E 拆细；主体和附录中被证明链引用的外部输入已收紧假设和版本选择 | 接口闭合 |
+| 归一化 | 已建立 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，高风险主章和高风险附录均已加入回指，审定前通读已收紧残留泛称 | 高风险层闭合 |
 | 费马应用链 | 逻辑链已经成立，局部导子、级数矛盾、外部输入状态和习题闭环均已补接口 | 应用闭合 |
 | 一般算术 Langlands | 对象链、最短证明链、trace formula/endoscopy/Arthur/functoriality 的状态边界已集中说明 | 对象链闭合 |
 | 几何 Langlands | 主线入口、几何 Satake、Hecke eigensheaf、谱侧范畴和函数域桥梁均已形成接口链 | 接口闭合 |
 
-结论：本书不应继续横向扩张新的大方向。逐章风险清理已转写为 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，重点外部输入来源已在 [E_external_input_theorem_index.md](E_external_input_theorem_index.md) 拆细；后续工作应进入审稿型收口：检查编号和交叉引用，并修正局部证明细节。
+结论：本书不应继续横向扩张新的大方向。逐章风险清理已转写为 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，重点外部输入来源已在 [E_external_input_theorem_index.md](E_external_input_theorem_index.md) 拆细，编号与交叉引用审计已记录于 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，概念边界已记录于 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，第六、七轮主线小补已补入正文，第八至十轮审定前通读已完成主体和附录接口严格化；后续工作是出版前审定维护：修正局部证明细节、措辞、来源标注、索引和排版。
 
 ## 是否还需主线扩张
 
@@ -45,15 +45,15 @@
 
 允许的后续新增内容只应是主线小补，不应成为新附录群。
 
-## 收口必需工作
+## 收口维护规则
 
-以下任务是达到基本收口所必需的，不属于横向扩张。
+以下任务用于维持审定前闭合状态，不属于横向扩张。
 
 1. 维护 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 的总约定地位；新增或修订涉及 Frobenius、Artin reciprocity、Satake、Haar、Fourier、L 函数变量和 Tate twist 的段落时必须回指该表。
 2. 维持 `MATH_REVIEW.md` 和 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md) 的收口清单，避免把背景专著项目重新提升为正文目标。
 3. 维护 `THEOREM_INDEX.md` 和 `E_external_input_theorem_index.md`，保证每个主章外部输入都有来源、使用章节和状态。
 4. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每条阅读路径都应标明本书证明、证明草图、外部输入或猜想。
-5. 为主线核心接口补少量例子：rank-one Satake、`GL(2)` 非分歧参数、Frey 曲线导子、`SL_2` packet、几何 Satake 的最小 Hecke 作用。
+5. 维护主线核心接口例子：rank-one Satake、`GL(2)` 非分歧参数、Frey 曲线导子、`SL_2` packet、几何 Satake 的最小 Hecke 作用。
 6. 维护 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)，确保四条主线都有已解闭环练习。
 
 ## 主线小补准入
@@ -89,9 +89,10 @@
 
 这些理论可以被精确引用，但不再驱动本书继续扩张。
 
-## 下一步收口顺序
+## 出版前审定维护顺序
 
-1. 检查全书编号、交叉引用和习题答案回指。
-2. 根据逐章审查结果修正局部状态标记。
+1. 全文通读，修正数学错误、措辞不严、来源不明和归一化回指缺失。
+2. 维护编号、交叉引用、外部输入索引和习题解答回指。
+3. 发布前再做一次全量编号、链接、格式和术语审计。
 
-完成上述步骤后，本书可从“基本收口候选”进入“审定前版本”；再之后的工作应是局部打磨和审稿，而不是新增大块理论。
+从本状态开始，新增大块理论必须被视为另卷或新版本目标，而不是当前审定前闭合版的收口任务。

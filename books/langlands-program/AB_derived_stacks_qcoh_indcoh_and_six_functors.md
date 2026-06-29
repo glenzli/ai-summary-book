@@ -15,7 +15,7 @@ $$
 (\operatorname{Spec}A)_{\operatorname{cl}}=\operatorname{Spec}H^0(A).
 $$
 
-**定义 AB.2.** Derived stack 是 derived affines 上满足适当 Grothendieck topology descent 的 functor
+**定义 AB.2.** Derived stack 是 derived affines 上满足 etale、smooth 或 fppf Grothendieck topology descent 的 functor
 $$
 X:\operatorname{CAlg}^{\operatorname{cn}}\to\mathcal S
 $$
@@ -24,7 +24,7 @@ $$
 \mathbb L_X.
 $$
 
-**外部输入定理 AB.3（cotangent complex formalism）.** 对合适的 derived Artin stacks，cotangent complex 存在并满足 transitivity triangle、base change、smooth/etale 判别和 deformation theory 控制性质。
+**外部输入定理 AB.3（cotangent complex formalism）.** 对 locally almost of finite presentation 的 derived Artin stacks，cotangent complex 存在并满足 transitivity triangle、base change、smooth/etale 判别和 deformation theory 控制性质。
 
 **命题 AB.4.** Derived structure 记录 classical truncation 丢失的 obstruction data。
 
@@ -57,7 +57,7 @@ $$
 
 **定义 AB.9.** 对 derived stack $X$，$\operatorname{QCoh}(X)$ 是 quasi-coherent sheaves 的 stable presentable category。$\operatorname{IndCoh}(X)$ 是 coherent sheaves 的 ind-completion，适合处理 singular stacks 上的 !-pullback 和 duality。
 
-**外部输入定理 AB.10（QCoh/IndCoh comparison）.** 若 $X$ 为合适的 eventually coconnective derived stack，存在 functor
+**外部输入定理 AB.10（QCoh/IndCoh comparison）.** 若 $X$ 为 eventually coconnective 且满足 Gaitsgory-Rozenblyum 框架中 finiteness hypotheses 的 derived stack，存在 functor
 $$
 \Upsilon_X:\operatorname{QCoh}(X)\to\operatorname{IndCoh}(X).
 $$
@@ -69,7 +69,7 @@ $$
 
 ## AB.4 Six functors and kernels
 
-**外部输入定理 AB.12（six functor formalism for sheaf theories）.** 对合适的 sheaf theory，包括 D-modules、constructible sheaves、IndCoh 或 variants，存在 functors
+**外部输入定理 AB.12（six functor formalism for sheaf theories）.** 对固定的 sheaf theory，包括 D-modules、constructible sheaves、IndCoh 或 variants，并在相应 finiteness、properness、smoothness 或 constructibility hypotheses 下，存在 functors
 $$
 f^*,\quad f_*,\quad f^!,\quad f_!,\quad \otimes,\quad \mathcal Hom
 $$

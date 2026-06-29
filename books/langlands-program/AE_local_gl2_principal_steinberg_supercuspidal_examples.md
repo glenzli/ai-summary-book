@@ -112,11 +112,11 @@ $$
 
 **定义 AE.9.** 不可约光滑表示 $\pi$ of $\operatorname{GL}_2(F)$ 称为 supercuspidal，若它不是任何 proper parabolic subgroup 归一化诱导表示的 subquotient。等价地，它的 matrix coefficients modulo center compactly supported。
 
-**外部输入定理 AE.10（`GL(2)` supercuspidals and admissible pairs）.** 当 residue characteristic 不为 $2$ 或在适当修正后，许多 supercuspidal representations 由 admissible pairs $(E/F,\theta)$ 构造，其中 $E/F$ 为二次扩张，$\theta:E^\times\to\mathbb C^\times$ 为不经 norm 从 $F^\times$ 降下的 character。相应 Weil 参数为
+**外部输入定理 AE.10（`GL(2)` supercuspidals and admissible pairs）.** 在 tame 情形，特别是 residue characteristic 不为 $2$ 时，许多 supercuspidal representations 由 admissible pairs $(E/F,\theta)$ 构造，其中 $E/F$ 为二次扩张，$\theta:E^\times\to\mathbb C^\times$ 为不经 norm 从 $F^\times$ 降下的 character。相应 Weil 参数为
 $$
 \varphi_\pi=\operatorname{Ind}_{W_E}^{W_F}\varphi_\theta.
 $$
-一般情形需要 Bushnell-Henniart 类型理论。
+wild 情形，尤其 residue characteristic 为 $2$ 时，需要 Bushnell-Henniart 类型理论；本附录不把该分类化约为 admissible-pair 模型。
 
 **命题 AE.11.** 若 $\pi$ 为 supercuspidal，则其 LLC 参数 $\varphi_\pi$ 是不可约二维 Weil 表示，且 $N=0$。
 

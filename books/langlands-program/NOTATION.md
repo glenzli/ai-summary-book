@@ -12,7 +12,7 @@
   $$
   若不特别说明，“集合”指 $\mathcal U$-小集合。
 - 范畴通常记为 $\mathcal C,\mathcal D$；函子写作 $F:\mathcal C\to\mathcal D$。
-- 表示范畴写作 $\operatorname{Rep}(G)$，具体光滑、连续、代数或 l-adic 条件必须在上下文中声明。
+- 表示范畴写作 $\operatorname{Rep}(G)$，具体光滑、连续、代数或 $\ell$-adic 条件必须在上下文中声明。
 - 对象的同构类集合写作 $\pi_0(\mathcal C)$，但只在该集合确实小的情况下使用。
 
 ## 域、赋值和完备化
@@ -290,7 +290,7 @@
   $$
   L(E,s)=\prod_pL_p(E,s).
   $$
-- l-adic Tate module 写作 $T_\ell(E)$，相关表示写作
+- $\ell$-adic Tate module 写作 $T_\ell(E)$，相关表示写作
   $$
   \rho_{E,\ell}:G_{\mathbb Q}\to\operatorname{GL}_2(\mathbb Z_\ell).
   $$

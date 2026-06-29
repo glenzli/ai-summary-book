@@ -64,7 +64,7 @@ $$
 $$
 f(1)=\int_{\widehat G_{\operatorname{temp}}}\Theta_\pi(f)\,d\mu_{\operatorname{Pl}}(\pi)
 $$
-在合适归一化下成立。
+在固定 Haar 测度并取相应 Plancherel measure normalization 后成立。
 
 **命题 Z.11.** Plancherel support 只含 tempered representations。
 
@@ -99,7 +99,7 @@ $$
 $$
 \Theta_\pi(\exp X)=\sum_{\mathcal O}c_{\mathcal O}(\pi)\widehat\mu_{\mathcal O}(X)
 $$
-在适当小邻域和特征限制下成立。
+在 $0$ 的充分小邻域和标准 good-characteristic hypotheses 下成立。
 
 **命题 Z.17.** Local character expansion 是稳定字符和 endoscopy 的局部技术输入之一。
 
