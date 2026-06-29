@@ -143,7 +143,68 @@ $$
 
 **注 38.18.** 这也是非交换 motives 的一个重要动机：$K$、$THH$、$TC$ 都是稳定范畴的不变量，而非某个环呈现的不变量。它们的自然变换应在 motives 或 localizing invariants 的范畴中理解。
 
-## 38.7 本章小结
+## 38.7 相对 trace 与形式后果
+
+**定义 38.19.** 对 exact functor $F:C\to D$，定义相对 $K$-理论和相对 $TC$ 为纤维
+
+$$
+K(C,D)=\operatorname{fib}(K(C)\to K(D)),
+\qquad
+TC(C,D)=\operatorname{fib}(TC(C)\to TC(D)).
+$$
+
+**命题 38.20.** Cyclotomic trace 自然诱导相对 trace
+
+$$
+K(C,D)\to TC(C,D).
+$$
+
+**证明.** 自然变换 $K\to TC$ 给出交换方块
+
+$$
+\begin{array}{c}
+K(C)\to K(D)\\
+\downarrow\quad\downarrow\\
+TC(C)\to TC(D).
+\end{array}
+$$
+
+稳定 $\infty$-范畴中，交换方块诱导纤维之间的自然映射。因此得到
+
+$$
+\operatorname{fib}(K(C)\to K(D))\to
+\operatorname{fib}(TC(C)\to TC(D)).
+$$
+
+这就是相对 cyclotomic trace。$\square$
+
+**命题 38.21.** 若 $A\to B\to C$ 是 small stable idempotent-complete $\infty$-categories 的 exact sequence 且 $THH(A)\simeq0$，则
+
+$$
+THH(B)\simeq THH(C).
+$$
+
+若 $THH(C)\simeq0$，则 $THH(A)\simeq THH(B)$。
+
+**证明.** 由外部输入定理 38.4，有纤维序列
+
+$$
+THH(A)\to THH(B)\to THH(C).
+$$
+
+在稳定范畴中，纤维为零的态射是等价，所以 $THH(A)\simeq0$ 蕴含 $THH(B)\to THH(C)$ 为等价。若 $THH(C)\simeq0$，则 $THH(B)\to0$ 的纤维为 $THH(B)$，而该纤维等价于 $THH(A)$，故 $THH(A)\simeq THH(B)$。$\square$
+
+**命题 38.22.** 若 $C\to D$ 与 $C'\to D'$ 是 Morita 等价的 exact functors，即有交换到同伦的方块并且 $C\simeq C'$、$D\simeq D'$ 均为 Morita equivalences，则相对 $K$-理论和相对 $TC$ 分别等价。
+
+**证明.** $K$ 和 $TC$ 都对 Morita equivalence 不变。于是得到纤维序列之间的竖向等价方块
+
+$$
+K(C)\to K(D),\qquad K(C')\to K(D')
+$$
+
+以及对应的 $TC$ 方块。稳定范畴中，两个可比较态射的源和靶均为等价时，其纤维也等价。因此相对 $K$ 与相对 $TC$ 均被识别。$\square$
+
+## 38.8 本章小结
 
 $THH$ 是谱值 Hochschild trace，天然带圆作用并提升为 cyclotomic spectrum。$TC$ 从 cyclotomic structure 中提取算术信息。Cyclotomic trace $K\to TC$ 把难计算的代数 $K$-理论连接到更可计算的固定点与 Tate 构造。Dundas-Goodwillie-McCarthy 定理说明在 nilpotent 相对情形中，这种近似是 $p$-完成等价。
 
@@ -172,3 +233,9 @@ $THH$ 是谱值 Hochschild trace，天然带圆作用并提升为 cyclotomic spe
 **练习 38.11.** 陈述 Dundas-Goodwillie-McCarthy 定理。
 
 **练习 38.12.** 解释 trace methods 的范畴论意义。
+
+**练习 38.13.** 定义相对 $K$-理论和相对 $TC$。
+
+**练习 38.14.** 证明 cyclotomic trace 诱导相对 trace $K(C,D)\to TC(C,D)$。
+
+**练习 38.15.** 证明 exact sequence 中 $THH(A)=0$ 时 $THH(B)\simeq THH(C)$。

@@ -122,10 +122,10 @@
 | EXT-103 | Cyclotomic trace | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 核心依赖 | Bökstedt-Hsiang-Madsen, Dundas-McCarthy | $K\to TC$ 自然变换 |
 | EXT-104 | Dundas-Goodwillie-McCarthy theorem | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 结构依赖 | Dundas-Goodwillie-McCarthy | nilpotent extensions 的相对 $K$ 与相对 $TC$ |
 | EXT-105 | Goodwillie $n$-excisive approximation | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 核心依赖 | Goodwillie, Lurie HA | Taylor tower、$P_nF$ 泛性质 |
-| EXT-106 | Goodwillie derivatives and homogeneous functor classification | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 核心依赖 | Goodwillie, Arone-Ching | $\partial_nF$、$\Sigma_n$-spectra、homogeneous layers |
+| EXT-106 | Goodwillie layers, derivatives and homogeneous functor classification | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 核心依赖 | Goodwillie, Arone-Ching | $D_nF$ 的齐次性、$\partial_nF$、$\Sigma_n$-spectra、homogeneous layers |
 | EXT-107 | Goodwillie chain rule and operad structure | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 结构依赖 | Arone-Ching, Lurie HA, Heuts | derivatives of composite functors、spectral Lie operad |
 | EXT-108 | Goodwillie tower convergence | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 结构依赖 | Goodwillie | analytic functors、connectivity estimates |
-| EXT-109 | Morel-Voevodsky motivic homotopy category | [第四十章](40_motivic_homotopy_a1_localization_and_six_operations.md) | 核心依赖 | Morel-Voevodsky, Hoyois | $\mathbb A^1$-localization、motivic spaces、$\mathbf{SH}(S)$ |
+| EXT-109 | Morel-Voevodsky motivic homotopy category and realization compatibility | [第四十章](40_motivic_homotopy_a1_localization_and_six_operations.md) | 核心依赖 | Morel-Voevodsky, Hoyois | $\mathbb A^1$-localization、motivic spaces、$\mathbf{SH}(S)$、复 realization 与局部化/稳定化相容 |
 | EXT-110 | Motivic six functor formalism | [第四十章](40_motivic_homotopy_a1_localization_and_six_operations.md) | 核心依赖 | Ayoub, Cisinski-Déglise, Hoyois | $\mathbf{SH}(-)$、base change、projection formula、purity |
 | EXT-111 | Homotopy purity theorem | [第四十章](40_motivic_homotopy_a1_localization_and_six_operations.md) | 核心依赖 | Morel-Voevodsky | Thom spaces、closed immersions、purity |
 | EXT-112 | Motivic Eilenberg-Mac Lane spectra and motives | [第四十章](40_motivic_homotopy_a1_localization_and_six_operations.md) | 结构依赖 | Voevodsky, Cisinski-Déglise, Robalo | motives as modules、motivic cohomology |

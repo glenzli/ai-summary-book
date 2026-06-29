@@ -51,10 +51,10 @@ $$
 **证明.** 由 $\operatorname{id}_C\oplus T\simeq T$，应用 $E$ 得
 
 $$
-E(C)\oplus E(T)\simeq E(T).
+E(\operatorname{id}_C)+E(T)=E(T)
 $$
 
-在稳定范畴中，若一个对象 $X$ 满足 $X\oplus Y\simeq Y$ 且该同构由不变量的加性结构给出，则 $X$ 的恒等映射在群完备化意义下为零；稳定范畴中这推出 $X\simeq0$。取 $X=E(C)$ 得结论。$\square$
+作为 $\operatorname{End}_{\mathcal D}(E(C))$ 中的等式。这里加号来自稳定范畴中的加性结构，$E(T)$ 表示自函子 $T$ 诱导的自映射。两边相消得 $\operatorname{id}_{E(C)}=0$。稳定范畴中对象恒等态射为零当且仅当对象为零，故 $E(C)\simeq0$。$\square$
 
 ## 30.2 dg quotient 与 Drinfeld quotient
 
@@ -183,7 +183,57 @@ $$
 K(M_n(R))\simeq K(R),\qquad HH(M_n(R))\simeq HH(R).
 $$
 
-## 30.6 本章小结
+## 30.6 形式后果与零判别
+
+**命题 30.20.** 设 $E$ 是 localizing invariant，且
+
+$$
+A\to B\to C
+$$
+
+是 exact sequence。若 $E(A)\simeq0$，则 $E(B)\to E(C)$ 为等价；若 $E(C)\simeq0$，则 $E(A)\to E(B)$ 为等价。
+
+**证明.** Localizing invariant 把 exact sequence 送为纤维序列
+
+$$
+E(A)\to E(B)\to E(C).
+$$
+
+在稳定范畴中，纤维为零的态射是等价，所以 $E(A)\simeq0$ 蕴含 $E(B)\simeq E(C)$。若 $E(C)\simeq0$，则 $E(B)\to0$ 的纤维为 $E(B)$，而该纤维又等价于 $E(A)$，故 $E(A)\to E(B)$ 是等价。$\square$
+
+**命题 30.21.** 若 $E$ 是 additive invariant，则
+
+$$
+E(A\oplus B)\simeq E(A)\oplus E(B)
+$$
+
+对小幂等完备稳定 $\infty$-范畴 $A,B$ 成立。
+
+**证明.** 有 split-exact sequence
+
+$$
+A\to A\oplus B\to B,
+$$
+
+其中第一箭头为第一因子嵌入，第二箭头为投影，并由第二因子嵌入分裂。Additive invariant 按定义把 split-exact sequences 送为直和分解，所以得到所需等价。$\square$
+
+**命题 30.22.** 若 dg 范畴 $\mathcal A,\mathcal B$ derived Morita equivalent，则任意通过 perfect module 范畴定义的 additive 或 localizing invariant 在二者上取相同值。
+
+**证明.** Derived Morita equivalence 的含义是
+
+$$
+\operatorname{Perf}(\mathcal A)\simeq\operatorname{Perf}(\mathcal B)
+$$
+
+作为小幂等完备稳定 $\infty$-范畴等价。Additive 和 localizing invariants 是定义在 $\operatorname{Cat}^{\operatorname{perf}}_\infty$ 上的函子，因此保持等价对象，给出
+
+$$
+E(\operatorname{Perf}(\mathcal A))\simeq E(\operatorname{Perf}(\mathcal B)).
+$$
+
+这正是通过 perfect modules 解释的 dg 不变量相等。$\square$
+
+## 30.7 本章小结
 
 dg quotient 和稳定 Verdier quotient 是同一个局部化思想在 dg 增强和稳定 $\infty$-范畴中的表现。Localizing invariants 把 exact sequences 送到纤维序列；noncommutative motives 用普遍性质统一所有 additive 或 localizing invariants。代数 $K$-理论、Hochschild 型不变量和 trace 结构是这一理论的基本例子。
 
@@ -218,3 +268,9 @@ dg quotient 和稳定 Verdier quotient 是同一个局部化思想在 dg 增强�
 **练习 30.14.** 写出 Hochschild chains 的 trace 公式。
 
 **练习 30.15.** 说明为什么 $K(M_n(R))\simeq K(R)$ 与 $HH(M_n(R))\simeq HH(R)$。
+
+**练习 30.16.** 设 $E$ 为 localizing invariant。证明 exact sequence $A\to B\to C$ 中若 $E(A)=0$，则 $E(B)\simeq E(C)$。
+
+**练习 30.17.** 证明 additive invariant 把 $A\oplus B$ 送到 $E(A)\oplus E(B)$。
+
+**练习 30.18.** 证明 derived Morita equivalent 的 dg 范畴有相同的 additive 和 localizing invariants。

@@ -178,7 +178,69 @@ $$
 
 **注 34.21.** $\operatorname{QCoh}$ 更像函数；$\operatorname{IndCoh}$ 更像分布。二者通过 dualizing sheaf、! pullback 和 Grothendieck duality 相连。
 
-## 34.7 本章小结
+## 34.7 仿射计算与一阶形式后果
+
+**命题 34.22（仿射拉回）.** 给定 connective $E_\infty$-rings 的图形
+
+$$
+B\to A,\qquad B\to C,
+$$
+
+在 $\operatorname{dAff}$ 中有自然等价
+
+$$
+\operatorname{Spec}A\times_{\operatorname{Spec}B}\operatorname{Spec}C
+\simeq
+\operatorname{Spec}(A\otimes_B C).
+$$
+
+**证明.** 对任意测试对象 $\operatorname{Spec}T$，由反范畴定义与 $\operatorname{CAlg}^{cn}$ 中张量积的推出泛性质，
+
+$$
+\begin{aligned}
+\operatorname{Map}_{\operatorname{dAff}}(\operatorname{Spec}T,\operatorname{Spec}(A\otimes_BC))
+&\simeq\operatorname{Map}_{\operatorname{CAlg}^{cn}}(A\otimes_BC,T)\\
+&\simeq
+\operatorname{Map}_{\operatorname{CAlg}^{cn}}(A,T)
+\times_{\operatorname{Map}_{\operatorname{CAlg}^{cn}}(B,T)}
+\operatorname{Map}_{\operatorname{CAlg}^{cn}}(C,T).
+\end{aligned}
+$$
+
+右端正是从 $\operatorname{Spec}T$ 到拉回
+
+$$
+\operatorname{Spec}A\times_{\operatorname{Spec}B}\operatorname{Spec}C
+$$
+
+的映射空间。由 $\infty$-Yoneda 引理得到结论。$\square$
+
+**命题 34.23.** 对映射 $A\to B$，$L_{B/A}\simeq0$ 当且仅当对所有 $B$-module $M$，导子空间 $\operatorname{Der}_A(B,M)$ 可缩。
+
+**证明.** 由定义 34.14，
+
+$$
+\operatorname{Der}_A(B,M)\simeq
+\operatorname{Map}_{\operatorname{Mod}_B}(L_{B/A},M).
+$$
+
+若 $L_{B/A}\simeq0$，则右侧为从零对象到 $M$ 的映射空间，故可缩。反过来，若这些映射空间对所有 $M$ 可缩，则 $L_{B/A}$ 与零对象表示同一函子；由稳定 $\infty$-范畴的 Yoneda 判别，$L_{B/A}\simeq0$。$\square$
+
+**命题 34.24（切映射的形式来源）.** 设 $f:X\to Y$ 为具有 cotangent complexes 的 derived stacks 间态射，$x:\operatorname{Spec}k\to X$ 为点，$y=f\circ x$。Cotangent complexes 的函子性给出映射
+
+$$
+x^*f^*L_Y\simeq y^*L_Y\to x^*L_X,
+$$
+
+取线性对偶得到切复形映射
+
+$$
+T_xX\to T_yY.
+$$
+
+**证明.** $Y$ 上的一阶变形沿 $f$ 拉回为 $X$ 上的一阶变形。按 cotangent complex 的表示性，这一拉回自然变换由 $x^*f^*L_Y\to x^*L_X$ 表示。对 $k$-module 取映射到 $k$ 的内部 Hom，即得到对偶方向的切复形映射。$\square$
+
+## 34.8 本章小结
 
 Derived algebraic geometry 把仿射概形替换为 connective $E_\infty$-rings 的反范畴，把几何对象看作满足下降的 functor of points。$\operatorname{QCoh}$ 是稳定 presentable $\infty$-范畴值 sheaf；cotangent complex 用表示性刻画导子并控制变形；formal moduli problems 把局部变形理论与 Lie 型代数对象联系起来；IndCoh 和 singular support 则为奇异几何和表示论提供更精细的范畴工具。
 
@@ -211,3 +273,12 @@ Derived algebraic geometry 把仿射概形替换为 connective $E_\infty$-rings 
 **练习 34.13.** 说明点处切复形如何由 cotangent complex 对偶给出。
 
 **练习 34.14.** 比较 $\operatorname{QCoh}$ 与 $\operatorname{IndCoh}$ 的用途。
+
+**练习 34.15.** 证明派生仿射对象的拉回公式
+$$
+\operatorname{Spec}A\times_{\operatorname{Spec}B}\operatorname{Spec}C\simeq\operatorname{Spec}(A\otimes_BC).
+$$
+
+**练习 34.16.** 证明 $L_{B/A}\simeq0$ 等价于所有 $A$-线性导子空间 $\operatorname{Der}_A(B,M)$ 可缩。
+
+**练习 34.17.** 说明态射 $X\to Y$ 如何诱导点处切复形的映射。

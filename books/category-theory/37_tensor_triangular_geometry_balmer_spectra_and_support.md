@@ -134,7 +134,69 @@ $$
 
 **注 37.16.** 这与第二十六章的稳定 presentable quotient 和第三十二章的 chromatic localization 对应：小的 compact 层面由 tt-geometry 分类，大的 presentable 层面由 Bousfield localization 实现。
 
-## 37.7 本章小结
+## 37.7 支撑的形式性质与函子性
+
+**命题 37.17.** 对 $T$ 中任意 distinguished triangle
+
+$$
+x\to y\to z\to \Sigma x
+$$
+
+有
+
+$$
+\operatorname{supp}(\Sigma x)=\operatorname{supp}(x),
+\qquad
+\operatorname{supp}(y)\subseteq\operatorname{supp}(x)\cup\operatorname{supp}(z).
+$$
+
+**证明.** Thick 子范畴对平移封闭，所以 $x\in\mathfrak p$ 当且仅当 $\Sigma x\in\mathfrak p$，第一式成立。若 $\mathfrak p$ 不属于 $\operatorname{supp}(x)\cup\operatorname{supp}(z)$，则 $x,z\in\mathfrak p$。由于 $\mathfrak p$ 是 triangulated subcategory，三角中两项属于 $\mathfrak p$ 蕴含第三项 $y$ 也属于 $\mathfrak p$。故 $\mathfrak p\notin\operatorname{supp}(y)$，得到包含关系。$\square$
+
+**命题 37.18.** 对任意 $n\ge1$，
+
+$$
+\operatorname{supp}(x^{\otimes n})=\operatorname{supp}(x).
+$$
+
+因此 Balmer 支撑只看对象的 tensor-nilpotence radical。
+
+**证明.** 由命题 37.6，
+
+$$
+\operatorname{supp}(x^{\otimes n})
+=\underbrace{\operatorname{supp}(x)\cap\cdots\cap\operatorname{supp}(x)}_{n\text{ 次}}
+=\operatorname{supp}(x).
+$$
+
+这说明把对象替换为正张量幂不改变其支撑。$\square$
+
+**命题 37.19（谱的函子性）.** 若 $F:T\to T'$ 是 tt-functor，则对任意 prime $\mathfrak q\in\operatorname{Spc}(T')$，原像
+
+$$
+F^{-1}(\mathfrak q)=\{x\in T\mid F(x)\in\mathfrak q\}
+$$
+
+是 $T$ 的 prime thick tensor ideal。因而 $F$ 诱导连续映射
+
+$$
+\operatorname{Spc}(T')\to\operatorname{Spc}(T).
+$$
+
+**证明.** 因 $F$ 保三角、直和项和张量，$F^{-1}(\mathfrak q)$ 是 thick tensor ideal。它 proper，因为 $F(\mathbb 1_T)\simeq\mathbb 1_{T'}$，而 prime ideal $\mathfrak q$ 不含单位。若 $x\otimes y\in F^{-1}(\mathfrak q)$，则
+
+$$
+F(x)\otimes F(y)\simeq F(x\otimes y)\in\mathfrak q.
+$$
+
+由 $\mathfrak q$ prime，$F(x)\in\mathfrak q$ 或 $F(y)\in\mathfrak q$，即 $x\in F^{-1}(\mathfrak q)$ 或 $y\in F^{-1}(\mathfrak q)$。连续性由
+
+$$
+F^{-1}_{\operatorname{Spc}}(\operatorname{supp}(x))=\operatorname{supp}(F(x))
+$$
+
+对支撑基开集的计算得到。$\square$
+
+## 37.8 本章小结
 
 Tensor triangular geometry 用 prime thick tensor ideals 构造 $\operatorname{Spc}(T)$，把稳定同伦论、代数几何和表示论中的支撑理论统一起来。Balmer spectrum 把“对象在哪里非零”变成拓扑支撑；分类定理把 radical thick tensor ideals 与 Thomason subsets 对应。它是 compact tensor triangulated categories 的几何化语言。
 
@@ -163,3 +225,9 @@ Tensor triangular geometry 用 prime thick tensor ideals 构造 $\operatorname{S
 **练习 37.11.** 说明有限谱的 tt-geometry 与 chromatic type 的关系。
 
 **练习 37.12.** 解释 thick tensor ideal 为什么允许张量结构下降到 Verdier quotient。
+
+**练习 37.13.** 证明三角 $x\to y\to z\to\Sigma x$ 给出 $\operatorname{supp}(y)\subseteq\operatorname{supp}(x)\cup\operatorname{supp}(z)$。
+
+**练习 37.14.** 证明 $\operatorname{supp}(x^{\otimes n})=\operatorname{supp}(x)$。
+
+**练习 37.15.** 证明 tt-functor $F:T\to T'$ 诱导 $\operatorname{Spc}(T')\to\operatorname{Spc}(T)$。

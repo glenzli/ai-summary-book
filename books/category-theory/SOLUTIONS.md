@@ -1783,6 +1783,24 @@ $$
 
 **答案 29.15.** 若构造由 localization 泛性质刻画，则任何模型中得到的对象都满足同一泛性质。由 localization 的唯一性，不同模型给出等价结果。
 
+**答案 29.16.** 若 $F:(\mathcal C,W)\to(\mathcal D,V)$ 把 $W$ 送入 $V$，则复合
+$$
+N\mathcal C\to N\mathcal D\to\mathcal D[V^{-1}]
+$$
+把 $W$ 送为等价。由 $\mathcal C[W^{-1}]$ 的泛性质，它唯一因子化为
+$$
+\mathcal C[W^{-1}]\to\mathcal D[V^{-1}].
+$$
+两个因子化若预合成到 $N\mathcal C$ 后相同，则由泛性质中的全忠实性相同，所以选择空间可缩。
+
+**答案 29.17.** 若 $W$ 是所有同构，则任意函子 $N\mathcal C\to D$ 自动把 $W$ 送到等价。故 localization 泛性质给出
+$$
+\operatorname{Fun}(\mathcal C[W^{-1}],D)\simeq\operatorname{Fun}(N\mathcal C,D)
+$$
+对所有 $D$ 成立。由 Yoneda 判别，$\mathcal C[W^{-1}]\simeq N\mathcal C$。
+
+**答案 29.18.** 对复合 $\mathcal A\xrightarrow F\mathcal B\xrightarrow G\mathcal C$，同伦范畴上的等价满足 $2$-out-of-$3$。映射空间部分也满足 $2$-out-of-$3$；唯一需注意的是从 $F$ 和 $GF$ 推出 $G$ 时，要用 $\pi_0F$ 本质满，把 $b,b'\in\mathcal B$ 替换为与某些 $Fx,Fx'$ 等价的对象。映射空间为 Kan 复形时，与等价对象前后复合给出映射空间弱等价，于是把 $G$ 在 $\operatorname{Map}_{\mathcal B}(b,b')$ 上的判断化为像内对象的判断。故 Dwyer-Kan equivalences 满足 $2$-out-of-$3$。
+
 ## 第三十章
 
 **答案 30.1.** Exact sequence 是正合函子列 $A\to B\to C$，其中 $A\to B$ 全忠实，复合 $A\to C$ 为零，并且 $\operatorname{Kar}(B/A)\to C$ 是等价。
@@ -1791,7 +1809,11 @@ $$
 
 **答案 30.3.** Flasque 稳定范畴是存在正合自函子 $T:C\to C$，使 $\operatorname{id}_C\oplus T\simeq T$ 的稳定范畴。
 
-**答案 30.4.** 加性不变量 $E$ 给出 $E(C)\oplus E(T)\simeq E(T)$。稳定范畴中这表示 $E(C)$ 被无限吸收；由 Eilenberg swindle，$E(C)\simeq0$。
+**答案 30.4.** 自然等价 $\operatorname{id}_C\oplus T\simeq T$ 经过加性不变量给出
+$$
+\operatorname{id}_{E(C)}+E(T)=E(T)
+$$
+作为 $E(C)$ 的自映射等式。稳定范畴的 Hom 是加性群，消去 $E(T)$ 得 $\operatorname{id}_{E(C)}=0$，故 $E(C)\simeq0$。
 
 **答案 30.5.** dg quotient $\mathcal B/\mathcal A$ 是 dg 函子 $q:\mathcal B\to\mathcal B/\mathcal A$，使 $\mathcal A$ 中对象变为零，并且任意把 $\mathcal A$ 送为零的 dg 函子唯一地经它因子化，唯一性在导出映射空间中理解。
 
@@ -1830,6 +1852,23 @@ $$
 $$
 K(M_n(R))\simeq K(R),\qquad HH(M_n(R))\simeq HH(R).
 $$
+
+**答案 30.16.** Localizing invariant 把 exact sequence $A\to B\to C$ 送为纤维序列
+$$
+E(A)\to E(B)\to E(C).
+$$
+若 $E(A)=0$，则 $E(B)\to E(C)$ 的纤维为零，故该态射是等价。
+
+**答案 30.17.** $A\to A\oplus B\to B$ 是 split-exact sequence。Additive invariant 按定义把它送为直和分解，故
+$$
+E(A\oplus B)\simeq E(A)\oplus E(B).
+$$
+
+**答案 30.18.** Derived Morita equivalence 给出
+$$
+\operatorname{Perf}(\mathcal A)\simeq\operatorname{Perf}(\mathcal B)
+$$
+作为小幂等完备稳定 $\infty$-范畴等价。Additive 或 localizing invariant 是这类范畴上的函子，因而把等价对象送到等价对象。
 
 ## 第三十一章
 
@@ -1892,6 +1931,12 @@ $$
 
 **答案 31.12.** Nearby cycles 描述一般纤维靠近特殊纤维的极限信息；vanishing cycles 描述退化中真正消失或新产生的奇异信息。适当平移后它们保持 perverse sheaves，并通过标准三角连接 $i^*$、$\psi_f$ 和 $\phi_f$。
 
+**答案 31.13.** 对 $H\in\operatorname{Perv}(Z)$，recollement 给出 $j^*i_*H=0$ 且 $i^*i_*H=i^!i_*H=H$，所以粘合条件说明 $i_*H$ perverse。若 $K\in\operatorname{Perv}(X)$ 且 $j^*K=0$，则三角
+$$
+j_!j^*K\to K\to i_*i^*K
+$$
+给出 $K\simeq i_*i^*K$。再由 $i^!K\simeq i^*K$ 和粘合条件可知 $i^*K\in\operatorname{Perv}(Z)$。因此闭支撑 perverse sheaves 正是 $i_*\operatorname{Perv}(Z)$。
+
 ## 第三十二章
 
 **答案 32.1.** 谱 $E$ 的 Bousfield class 是
@@ -1951,6 +1996,14 @@ $$
 $$
 因此有限谱的厚子范畴控制大范畴局部化后的紧对象。
 
+**答案 32.14.** $f:X\to Y$ 是 $E$-equivalence，若
+$$
+E\wedge\operatorname{cofib}(f)\simeq0.
+$$
+若 $\langle E\rangle=\langle F\rangle$，则 $\operatorname{cofib}(f)$ 为 $E$-acyclic 当且仅当为 $F$-acyclic，所以两者给出相同的局部等价类。
+
+**答案 32.15.** 若 $\langle E\rangle\le\langle F\rangle$ 且 $f$ 是 $F$-equivalence，则 $\operatorname{cofib}(f)$ 为 $F$-acyclic。由偏序定义，它也是 $E$-acyclic，故 $f$ 是 $E$-equivalence。
+
 ## 第三十三章
 
 **答案 33.1.** 对光滑 $X$，$D_X$ 是由 $\mathcal O_X$ 与切向量场 $\mathcal T_X$ 生成的 filtered sheaf of rings，满足 $\xi f-f\xi=\xi(f)$。
@@ -1987,6 +2040,25 @@ $$
 **答案 33.11.** Kashiwara equivalence 说闭嵌入 $i:Z\hookrightarrow X$ 下，$D_Z$-modules 等价于支撑在 $Z$ 上的 $D_X$-modules。
 
 **答案 33.12.** Recollement 中闭部分由支撑在闭子空间的对象给出。Kashiwara equivalence 正是 $D$-module 理论中把闭部分识别为 $Z$ 上 $D_Z$-modules 的定理。
+
+**答案 33.13.** 设 $\Phi:\mathcal C\simeq\mathcal D$，把
+$$
+\mathcal C_{\le0}=\Phi^{-1}(\mathcal D_{\le0}),\qquad
+\mathcal C_{\ge0}=\Phi^{-1}(\mathcal D_{\ge0})
+$$
+作为定义。平移闭合、正交性和截断三角都由 $\mathcal D$ 侧通过 $\Phi$ 和准逆运输回来。因此这是一组 t-结构；heart 是两半交，故 $\Phi$ 限制为 heart 等价。
+
+**答案 33.14.** 若 $F\dashv G$，并用等价 $\Phi_X,\Phi_Y$ 共轭得到 $\widetilde F=\Phi_YF\Phi_X^{-1}$、$\widetilde G=\Phi_XG\Phi_Y^{-1}$，则
+$$
+\operatorname{Map}(\widetilde F A,B)
+\simeq
+\operatorname{Map}(F\Phi_X^{-1}A,\Phi_Y^{-1}B)
+\simeq
+\operatorname{Map}(\Phi_X^{-1}A,G\Phi_Y^{-1}B)
+\simeq
+\operatorname{Map}(A,\widetilde G B).
+$$
+所以 $\widetilde F\dashv\widetilde G$。Riemann-Hilbert 下六操作相容性的形式部分正是这种伴随和函子结构的等价运输。
 
 ## 第三十四章
 
@@ -2045,6 +2117,30 @@ $$
 
 **答案 34.14.** $\operatorname{QCoh}$ 适合准凝聚复形和张量几何；$\operatorname{IndCoh}$ 更适合奇异空间、Grothendieck duality、! pullback 和分布型对象。光滑情形二者接近，奇异情形差别关键。
 
+**答案 34.15.** 对任意测试对象 $\operatorname{Spec}T$，
+$$
+\operatorname{Map}(\operatorname{Spec}T,\operatorname{Spec}(A\otimes_BC))
+\simeq
+\operatorname{Map}_{\operatorname{CAlg}}(A\otimes_BC,T).
+$$
+由推出泛性质，右侧等于
+$$
+\operatorname{Map}(A,T)\times_{\operatorname{Map}(B,T)}\operatorname{Map}(C,T),
+$$
+这正是到 $\operatorname{Spec}A\times_{\operatorname{Spec}B}\operatorname{Spec}C$ 的映射空间。由 Yoneda 得结论。
+
+**答案 34.16.** 由表示性
+$$
+\operatorname{Der}_A(B,M)\simeq\operatorname{Map}_{\operatorname{Mod}_B}(L_{B/A},M).
+$$
+若 $L_{B/A}=0$，所有映射空间可缩。反过来，若右侧对所有 $M$ 可缩，则 $L_{B/A}$ 和零对象表示同一函子；由 Yoneda，$L_{B/A}\simeq0$。
+
+**答案 34.17.** 态射 $f:X\to Y$ 把 $Y$ 上一阶变形拉回为 $X$ 上一阶变形。由 cotangent complex 的表示性，这给出
+$$
+x^*f^*L_Y\simeq y^*L_Y\to x^*L_X.
+$$
+对 $k$-module 取线性对偶，得到切复形映射 $T_xX\to T_yY$。
+
 ## 第三十五章
 
 **答案 35.1.** Monad 是函子 $T:C\to C$ 连同单位 $\eta:\operatorname{id}\to T$ 和乘法 $\mu:T^2\to T$，满足结合律和单位律的同伦相干形式。
@@ -2074,6 +2170,12 @@ $$
 B\otimes_A M\simeq M\otimes_A B
 $$
 在 $B\otimes_AB$ 上，且在 $B\otimes_AB\otimes_AB$ 上满足 cocycle condition。
+
+**答案 35.13.** Comparison functor 把 $Y\in D$ 送为 $GY$，其 $GF$-代数结构由 $GFGY\xrightarrow{G\varepsilon_Y}GY$ 给出。遗忘函子只忘掉这个结构，保留底层对象 $GY$，所以 $U\circ K\simeq G$。
+
+**答案 35.14.** 若 $E:D'\simeq D$ 且 $G:D\to C$ monadic，则 $G\circ E$ 的左伴随是 $E^{-1}F$，产生的 monad 仍等价于 $GF$。Comparison functor $D'\to\operatorname{Alg}_{GF}(C)$ 是 $E$ 后接 $D\simeq\operatorname{Alg}_{GF}(C)$，因此是等价。
+
+**答案 35.15.** 恒等覆盖的 Cech nerve 是常值单纯对象 $X_\bullet=X$。应用系数系统后得到常值 cosimplicial 对象 $\mathcal D(X)$。常值 cosimplicial 对象的 totalization 是其常值项，所以 descent 等价为恒等。
 
 ## 第三十六章
 
@@ -2118,6 +2220,20 @@ $$
 
 **答案 36.11.** Fiber functor 对应基点 $*\to BG$。其张量自同构群是 loop group $\Omega_*BG\simeq G$，所以带 fiber functor 的 $\operatorname{QCoh}(BG)$ 恢复 $G$。
 
+**答案 36.12.** 对每个 $A$，张量等价 $\Phi:\operatorname{QCoh}(X)\simeq\operatorname{QCoh}(Y)$ 给出预合成等价
+$$
+\operatorname{Fun}^{L,\otimes}_{good}(\operatorname{QCoh}(Y),\operatorname{Mod}_A)
+\simeq
+\operatorname{Fun}^{L,\otimes}_{good}(\operatorname{QCoh}(X),\operatorname{Mod}_A).
+$$
+由高阶 Tannaka，这等价于 $Y(A)\simeq X(A)$。对所有 $A$ 自然，故 functor of points 等价，$X\simeq Y$。
+
+**答案 36.13.** 对点 $x:\operatorname{Spec}A\to X$，复合
+$$
+\operatorname{QCoh}(Y)\xrightarrow{f^*}\operatorname{QCoh}(X)\xrightarrow{x^*}\operatorname{Mod}_A
+$$
+是 $f\circ x$ 对应的 pullback。高阶 Tannaka 说明这些张量函子恢复所有 $A$-点，因此 $f^*$ 决定 $f$。
+
 ## 第三十七章
 
 **答案 37.1.** tt-category 是本质小幂等完备三角范畴，配有精确对称幺半结构 $\otimes$，且张量对每个变量保持三角。
@@ -2154,6 +2270,17 @@ Perfect complex 的支撑对应局部化后非零的素理想集合。
 
 **答案 37.12.** 若 $I$ 是 tensor ideal，商中被倒置的态射张量任意对象后仍被倒置。因此张量由 Verdier quotient 泛性质下降到 $T/I$。
 
+**答案 37.13.** 若 prime $\mathfrak p$ 不在 $\operatorname{supp}(x)\cup\operatorname{supp}(z)$ 中，则 $x,z\in\mathfrak p$。因为 $\mathfrak p$ 是 triangulated subcategory，三角中两项在 $\mathfrak p$ 蕴含第三项 $y$ 也在 $\mathfrak p$。故 $\mathfrak p\notin\operatorname{supp}(y)$。
+
+**答案 37.14.** 由张量支撑公式，
+$$
+\operatorname{supp}(x^{\otimes n})
+=\operatorname{supp}(x)\cap\cdots\cap\operatorname{supp}(x)
+=\operatorname{supp}(x).
+$$
+
+**答案 37.15.** 对 prime $\mathfrak q\subset T'$，原像 $F^{-1}(\mathfrak q)$ 对三角、直和项和张量封闭，且不含单位。若 $x\otimes y$ 落入原像，则 $F(x)\otimes F(y)\in\mathfrak q$，由 prime 性得 $F(x)\in\mathfrak q$ 或 $F(y)\in\mathfrak q$。所以原像是 prime。支撑基开集满足逆像公式 $\operatorname{supp}(x)\mapsto\operatorname{supp}(F(x))$，故得到连续映射。
+
 ## 第三十八章
 
 **答案 38.1.** $THH(C)$ 是小稳定幂等完备 $\infty$-范畴 $C$ 的谱值 Hochschild trace，即 Morita $(\infty,2)$-范畴中恒等 bimodule 的 trace。
@@ -2185,6 +2312,28 @@ $$
 **答案 38.11.** Dundas-Goodwillie-McCarthy 定理说，在 nilpotent 相对情形中，相对 $K$-理论与相对 $TC$ 的 $p$-完成等价。
 
 **答案 38.12.** Trace methods 先把 $K$-理论映到 Morita/localizing invariant $THH$，再利用圆作用、Tate construction 和 Frobenius 形成 $TC$；这把 $K$-计算转化为更稳定的谱论固定点计算。
+
+**答案 38.13.** 对 exact functor $C\to D$，
+$$
+K(C,D)=\operatorname{fib}(K(C)\to K(D)),\qquad
+TC(C,D)=\operatorname{fib}(TC(C)\to TC(D)).
+$$
+
+**答案 38.14.** 自然变换 $K\to TC$ 给出交换方块
+$$
+\begin{array}{c}
+K(C)\to K(D)\\
+\downarrow\quad\downarrow\\
+TC(C)\to TC(D).
+\end{array}
+$$
+稳定范畴中交换方块诱导纤维之间的映射，因此得到 $K(C,D)\to TC(C,D)$。
+
+**答案 38.15.** $THH$ localizing，故 exact sequence $A\to B\to C$ 给出纤维序列
+$$
+THH(A)\to THH(B)\to THH(C).
+$$
+若 $THH(A)=0$，则 $THH(B)\to THH(C)$ 的纤维为零，故为等价。
 
 ## 第三十九章
 
@@ -2265,7 +2414,7 @@ $$
 \mathbf{SH}(S)=\operatorname{Sp}_T(\mathbf H_*(S)).
 $$
 
-**答案 40.9.** 复点 functor 把光滑 $\mathbb C$-概形送到拓扑空间，并把 Nisnevich 和 $\mathbb A^1$ 等价送到拓扑等价；由局部化和稳定化泛性质得到 $\mathbf{SH}(\mathbb C)\to\mathbf{Sp}$。
+**答案 40.9.** 外部输入是：复点 functor 与 Nisnevich descent、$\mathbb A^1$-局部化和 $T$-稳定化相容。给定该相容性后，由局部化泛性质先得到 motivic spaces 到 spaces 的函子，再由稳定化泛性质得到 $\mathbf{SH}(\mathbb C)\to\mathbf{Sp}$。
 
 **答案 40.10.** Motivic 六操作为
 $$
@@ -2290,7 +2439,11 @@ $$
 \operatorname{Th}(0_X)=X/\varnothing\simeq X_+.
 $$
 
-**答案 40.14.** 若 $\mathbf{SH}(S)$ 由 smooth schemes 的悬挂谱及 Tate twists 紧生成，则保持小余极限的正合函子只需在这些生成子上检测零对象，即可在生成的 localizing subcategory 上检测等价。
+**答案 40.14.** 若 $\mathcal G$ 是 compact generators，则 $X=0$ 当且仅当
+$$
+\operatorname{Map}(\Sigma^mG,X)\simeq *
+$$
+对所有 $G\in\mathcal G$ 和 $m\in\mathbb Z$ 成立。因为与 $X$ 正交的对象形成 localizing subcategory，若它包含所有生成子就包含整个范畴；于是 $X$ 与自身正交，恒等态射为零。态射是否为等价可对其纤维应用同一判别。Realization functor 是否保守是额外信息，不能仅由 compact generation 推出。
 
 ## 第四十一章
 

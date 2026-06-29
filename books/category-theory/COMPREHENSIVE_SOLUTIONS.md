@@ -579,7 +579,7 @@
    $$
    X/(X\setminus Z)\simeq\operatorname{Th}(N_{Z/X}).
    $$
-5. 若 $\mathbf{SH}(S)$ 由 smooth schemes 的悬挂谱和 Tate twists 紧生成，则保持小余极限的正合 realization functor 只需在这些紧生成子上检测零对象；对一般态射，检测其纤维是否为零即可。
+5. 若 $\mathbf{SH}(S)$ 由 smooth schemes 的悬挂谱和 Tate twists 紧生成，则对象 $X$ 为零可由所有生成子及其平移到 $X$ 的映射空间为零检测；态射是否为等价可转化为其纤维是否为零。某个 realization functor 是否保守还需要额外证明其核为零，不能仅由 compact generation 推出。
 
 ## 综合题 36
 

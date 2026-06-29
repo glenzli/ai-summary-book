@@ -261,7 +261,7 @@
 2. 证明 $\mathbf H(S)$ presentable，并刻画局部对象。
 3. 定义 Tate sphere 和 $\mathbf{SH}(S)$。
 4. 写出 motivic localization triangle 和 homotopy purity。
-5. 说明 compact generation 如何帮助 realization functor 检测等价。
+5. 说明 compact generation 如何用紧生成子检测对象与态射，并指出 realization functor 保守性为何是额外假设。
 
 **综合题 36.** 连接范畴逻辑、依赖类型和 univalence。
 

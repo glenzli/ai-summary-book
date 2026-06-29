@@ -164,15 +164,33 @@ $$
 
 的对应态射。反等价把 image 送为 image，因为在阿贝尔范畴中反等价交换 kernel 与 cokernel 并保持 image/coimage 同构。故得到所需等价。$\square$
 
+**命题 31.17（闭支撑 heart）.** 在由 recollement 粘合的 t-结构下，$i_*:\operatorname{Perv}(Z)\to\operatorname{Perv}(X)$ 全忠实，且其本质像正是满足 $j^*K\simeq0$ 的 perverse sheaves。
+
+**证明.** Recollement 给出 $j^*i_*\simeq0$，$i^*i_*\simeq\operatorname{id}$ 和 $i^!i_*\simeq\operatorname{id}$。若 $H\in\operatorname{Perv}(Z)$，则由粘合判别，
+
+$$
+j^*i_*H\simeq0,\qquad i^*i_*H\simeq H\in{}^pD^{\le0}(Z),\qquad i^!i_*H\simeq H\in{}^pD^{\ge0}(Z),
+$$
+
+故 $i_*H\in\operatorname{Perv}(X)$。全忠实性是 recollement 公理的一部分。
+
+反过来，若 $K\in\operatorname{Perv}(X)$ 且 $j^*K\simeq0$，则 recollement 三角
+
+$$
+j_!j^*K\to K\to i_*i^*K
+$$
+
+给出 $K\simeq i_*i^*K$。应用 $i^!$ 得 $i^!K\simeq i^*K$。由 $K$ perverse 和粘合条件，$i^*K\in{}^pD^{\le0}(Z)$ 且 $i^!K\in{}^pD^{\ge0}(Z)$，于是 $i^*K\in\operatorname{Perv}(Z)$。故 $K$ 位于 $i_*$ 的本质像中。$\square$
+
 ## 31.6 Nearby cycles 与 vanishing cycles 入口
 
-**定义 31.17.** 给定函数 $f:X\to\mathbb A^1$，nearby cycles $\psi_f$ 和 vanishing cycles $\phi_f$ 是连接一般纤维、特殊纤维和奇异消失信息的函子。它们通常定义在可构造导出范畴上：
+**定义 31.18.** 给定函数 $f:X\to\mathbb A^1$，nearby cycles $\psi_f$ 和 vanishing cycles $\phi_f$ 是连接一般纤维、特殊纤维和奇异消失信息的函子。它们通常定义在可构造导出范畴上：
 
 $$
 \psi_f,\phi_f:D^b_c(X_\eta)\text{ 或 }D^b_c(X)\to D^b_c(X_0).
 $$
 
-**外部输入定理 31.18.** 在合适代数或解析语境中，nearby cycles 与 vanishing cycles 与 perverse t-结构相容：适当平移后的 $\psi_f$ 与 $\phi_f$ 把 perverse sheaves 送到 perverse sheaves，并参与标准三角
+**外部输入定理 31.19.** 在合适代数或解析语境中，nearby cycles 与 vanishing cycles 与 perverse t-结构相容：适当平移后的 $\psi_f$ 与 $\phi_f$ 把 perverse sheaves 送到 perverse sheaves，并参与标准三角
 
 $$
 i^*K\to \psi_fK\to \phi_fK\to
@@ -180,7 +198,7 @@ $$
 
 或其变体。
 
-**注 31.19.** 这些函子是六操作、monodromy 和层化奇异性相互作用的入口。完整理论需要 étale 或解析 topology、monodromy action 和 vanishing cycle functor 的构造，本书当前只记录范畴论位置。
+**注 31.20.** 这些函子是六操作、monodromy 和层化奇异性相互作用的入口。完整理论需要 étale 或解析 topology、monodromy action 和 vanishing cycle functor 的构造，本书当前只记录范畴论位置。
 
 ## 31.7 本章小结
 
@@ -211,3 +229,5 @@ Perverse t-结构由 restriction/corestriction 的维数不等式定义，也可
 **练习 31.11.** 证明 $\mathbb D_X(j_{!*}P)\simeq j_{!*}(\mathbb D_UP)$。
 
 **练习 31.12.** 说明 nearby cycles 与 vanishing cycles 在 perverse sheaf 理论中的作用。
+
+**练习 31.13.** 在 recollement 粘合的 t-结构下，证明支撑在闭补 $Z$ 上的 perverse sheaves 等价于 $\operatorname{Perv}(Z)$。

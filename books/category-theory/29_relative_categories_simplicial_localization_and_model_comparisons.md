@@ -161,7 +161,97 @@ $$
 
 **例子 29.23.** Presentable $\infty$-categories 可用 combinatorial model categories 的左 Bousfield localizations 建模，也可直接用 accessible localizations of presheaf $\infty$-categories 建模。具体模型不同，左伴随、局部对象、映射空间和 Bousfield localization 的 $\infty$-范畴意义相同。
 
-## 29.7 本章小结
+## 29.7 局部化的形式后果
+
+**命题 29.24（相对函子的导出）.** 设
+
+$$
+F:(\mathcal C,W)\to(\mathcal D,V)
+$$
+
+是 relative functor，即 $F(W)\subseteq V$。若两个 $\infty$-categorical localizations 存在，则存在本质唯一的函子
+
+$$
+\overline F:\mathcal C[W^{-1}]\to\mathcal D[V^{-1}]
+$$
+
+使得图
+
+$$
+N\mathcal C\to\mathcal C[W^{-1}]\xrightarrow{\overline F}\mathcal D[V^{-1}]
+$$
+
+与
+
+$$
+N\mathcal C\xrightarrow{NF}N\mathcal D\to\mathcal D[V^{-1}]
+$$
+
+等价交换。该构造与复合相容，唯一性理解为选择空间可缩。
+
+**证明.** 复合
+
+$$
+N\mathcal C\xrightarrow{NF}N\mathcal D\to\mathcal D[V^{-1}]
+$$
+
+把 $W$ 中态射送为等价，因为 $F(W)\subseteq V$。由 $\mathcal C[W^{-1}]$ 的泛性质，它唯一因子化经 $\mathcal C[W^{-1}]$，得到 $\overline F$。若有两个这样的因子化，则它们预复合到 $N\mathcal C$ 后等价；定义 29.2 中的全忠实性说明二者本身等价。对复合 $G\circ F$，直接导出与先导出 $F$ 再导出 $G$ 的两个函子预复合到 $N\mathcal C$ 后相同，故仍由全忠实性得到相容。$\square$
+
+**命题 29.25（只倒置同构时无变化）.** 若 $W$ 正是 $\mathcal C$ 中所有同构，则
+
+$$
+N\mathcal C\to\mathcal C[W^{-1}]
+$$
+
+是 $\infty$-范畴等价。
+
+**证明.** 对任意 $\infty$-范畴 $D$，任意函子 $N\mathcal C\to D$ 自动把 $\mathcal C$ 中同构送为 $D$ 中等价。因此定义 29.2 中本质像条件没有限制，预复合给出
+
+$$
+\operatorname{Fun}(\mathcal C[W^{-1}],D)\simeq\operatorname{Fun}(N\mathcal C,D)
+$$
+
+对所有 $D$ 成立。由 $\infty$-范畴的 Yoneda 判别，$\mathcal C[W^{-1}]\simeq N\mathcal C$。$\square$
+
+**命题 29.26.** 在映射空间为 Kan 复形的 simplicial categories 之间，Dwyer-Kan equivalences 满足 $2$-out-of-$3$。
+
+**证明.** 设 $\mathcal A\xrightarrow{F}\mathcal B\xrightarrow{G}\mathcal C$ 为 simplicial functors。若 $F$ 和 $G$ 都是 Dwyer-Kan equivalences，则 $GF$ 显然也是，因为映射空间弱等价和同伦范畴等价都对复合封闭。
+
+若 $F$ 和 $GF$ 是 Dwyer-Kan equivalences，则 $\pi_0F$ 和 $\pi_0(GF)$ 是范畴等价，故 $\pi_0G$ 也是范畴等价。需证 $G$ 在所有映射空间上为弱等价。任取 $b,b'\in\mathcal B$。由 $\pi_0F$ 本质满，存在 $x,x'\in\mathcal A$ 以及 $\pi_0\mathcal B$ 中的同构 $Fx\simeq b$、$Fx'\simeq b'$。在映射空间为 Kan 复形的 simplicial category 中，与等价对象前后复合诱导映射空间弱等价，因此有弱等价
+
+$$
+\operatorname{Map}_{\mathcal B}(b,b')\simeq
+\operatorname{Map}_{\mathcal B}(Fx,Fx')
+$$
+
+和
+
+$$
+\operatorname{Map}_{\mathcal C}(Gb,Gb')\simeq
+\operatorname{Map}_{\mathcal C}(GFx,GFx').
+$$
+
+而
+
+$$
+\operatorname{Map}_{\mathcal A}(x,x')\to
+\operatorname{Map}_{\mathcal B}(Fx,Fx')\to
+\operatorname{Map}_{\mathcal C}(GFx,GFx')
+$$
+
+中第一箭头和复合箭头均为弱等价，故第二箭头为弱等价。于是 $G$ 在任意映射空间上为弱等价。
+
+若 $G$ 和 $GF$ 是 Dwyer-Kan equivalences，则 $\pi_0G$ 和 $\pi_0(GF)$ 是范畴等价，故 $\pi_0F$ 是范畴等价。对任意 $x,y\in\mathcal A$，映射空间三角
+
+$$
+\operatorname{Map}_{\mathcal A}(x,y)\to
+\operatorname{Map}_{\mathcal B}(Fx,Fy)\to
+\operatorname{Map}_{\mathcal C}(GFx,GFy)
+$$
+
+中第二箭头和复合箭头均为弱等价，故第一箭头为弱等价。于是 $F$ 也是 Dwyer-Kan equivalence。三种情形合并即得 $2$-out-of-$3$。$\square$
+
+## 29.8 本章小结
 
 相对范畴提供最小输入：一个范畴和一类将被倒置的态射。Dwyer-Kan 局部化把它变成映射空间丰富的 simplicial category。Coherent nerve、quasi-category、complete Segal space 和 simplicial category 模型通过 Quillen 等价比较。模型范畴只是产生 $\infty$-范畴的一种方式；真正不变量是由泛性质确定的 $\infty$-categorical localization。
 
@@ -196,3 +286,9 @@ $$
 **练习 29.14.** 解释 Rezk nerve 的用途。
 
 **练习 29.15.** 说明为什么由 localization 泛性质刻画的构造与模型选择无关。
+
+**练习 29.16.** 证明 relative functor 诱导 localizations 之间的本质唯一函子。
+
+**练习 29.17.** 证明若只倒置普通同构，则 $\infty$-localization 等价于普通 nerve。
+
+**练习 29.18.** 证明 Dwyer-Kan equivalences 满足 $2$-out-of-$3$。

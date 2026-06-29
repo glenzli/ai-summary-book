@@ -158,7 +158,45 @@ $$
 
 因此有限谱层面的 thick subcategories 与大稳定范畴的 Bousfield localization 相互约束。$\square$
 
-## 32.6 本章小结
+## 32.6 Bousfield 类决定的局部化
+
+**定义 32.18.** 态射 $f:X\to Y$ 称为 $E$-equivalence，若其余纤维满足
+
+$$
+E\wedge\operatorname{cofib}(f)\simeq0.
+$$
+
+换言之，$f$ 的误差对象为 $E$-acyclic。
+
+**命题 32.19.** 若 $\langle E\rangle=\langle F\rangle$，则 $E$-equivalences 与 $F$-equivalences 相同。特别地，若相应 Bousfield localizations 存在，则它们有相同的局部等价类和相同的 acyclic objects，因而表示同一个局部化问题。
+
+**证明.** 对任意态射 $f$，
+
+$$
+f\text{ 是 }E\text{-equivalence}
+\iff
+\operatorname{cofib}(f)\in\langle E\rangle.
+$$
+
+若 $\langle E\rangle=\langle F\rangle$，右侧条件等价于 $\operatorname{cofib}(f)\in\langle F\rangle$，即 $f$ 是 $F$-equivalence。Bousfield localization 的核和局部等价类由这些 acyclic cofibers 决定，因此两者表示同一局部化问题。$\square$
+
+**命题 32.20.** 若 $\langle E\rangle\le\langle F\rangle$，则每个 $F$-equivalence 都是 $E$-equivalence。
+
+**证明.** 设 $f:X\to Y$ 是 $F$-equivalence，则
+
+$$
+F\wedge\operatorname{cofib}(f)\simeq0.
+$$
+
+由 $\langle E\rangle\le\langle F\rangle$ 的定义，每个 $F$-acyclic 对象都是 $E$-acyclic，故
+
+$$
+E\wedge\operatorname{cofib}(f)\simeq0.
+$$
+
+因此 $f$ 是 $E$-equivalence。$\square$
+
+## 32.7 本章小结
 
 Chromatic homotopy theory 把谱按 Morava $K(n)$ 的高度分层。Bousfield lattice 记录不同同调理论的检测能力；厚子范畴定理说明有限 $p$-local spectra 的 thick subcategories 由高度分类；telescope conjecture 询问有限局部化能否由显式周期 telescope 谱给出；fracture square 则把高度 $n$ 信息由低高度和 $K(n)$-local 部分粘合。所有这些都是稳定 presentable $\infty$-范畴中 Bousfield localization、compact generation 和 recollement 思想的深层例子。
 
@@ -189,3 +227,7 @@ Chromatic homotopy theory 把谱按 Morava $K(n)$ 的高度分层。Bousfield la
 **练习 32.12.** 说明 chromatic localization 是 Bousfield localization 的特例。
 
 **练习 32.13.** 解释 smashing localization 与 compact objects 商定理的关系。
+
+**练习 32.14.** 定义 $E$-equivalence，并证明 Bousfield equivalent 的谱给出相同的局部等价类。
+
+**练习 32.15.** 证明若 $\langle E\rangle\le\langle F\rangle$，则每个 $F$-equivalence 都是 $E$-equivalence。

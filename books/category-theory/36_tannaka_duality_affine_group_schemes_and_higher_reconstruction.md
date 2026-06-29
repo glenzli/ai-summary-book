@@ -153,7 +153,59 @@ $$
 
 若带 fiber functor 的对称幺半范畴等价识别 $\operatorname{QCoh}(BG)$ 与 $\operatorname{QCoh}(BH)$，则两者的张量自同构群函子等价，故 $G\simeq H$。这是 Tannaka 重构在 classifying stacks 上的特例。$\square$
 
-## 36.6 本章小结
+## 36.6 Tannaka 映射的形式后果
+
+**命题 36.17（由 $\operatorname{QCoh}$ 判别栈等价）.** 设 $X,Y$ 属于定理 36.10 适用的 derived stacks，且
+
+$$
+\Phi:\operatorname{QCoh}(X)\simeq\operatorname{QCoh}(Y)
+$$
+
+是保持所需 good 条件的保小余极限对称幺半等价。则 $\Phi$ 诱导 functor of points 的等价
+
+$$
+X(A)\simeq Y(A)
+$$
+
+对所有 connective $E_\infty$-ring $A$ 成立，因而 $X\simeq Y$。
+
+**证明.** 对每个 $A$，预合成 $\Phi$ 给出等价
+
+$$
+\operatorname{Fun}^{L,\otimes}_{\operatorname{good}}(\operatorname{QCoh}(Y),\operatorname{Mod}_A)
+\simeq
+\operatorname{Fun}^{L,\otimes}_{\operatorname{good}}(\operatorname{QCoh}(X),\operatorname{Mod}_A).
+$$
+
+由定理 36.10，这两侧分别等价于 $Y(A)$ 与 $X(A)$。因此 $X$ 与 $Y$ 的 functor of points 等价。由 Yoneda 判别，$X\simeq Y$。$\square$
+
+**命题 36.18（态射的重构）.** 在定理 36.10 的假设下，态射 $f:X\to Y$ 由对称幺半函子
+
+$$
+f^*:\operatorname{QCoh}(Y)\to\operatorname{QCoh}(X)
+$$
+
+决定。
+
+**证明.** 对任意 $A$ 与点 $x:\operatorname{Spec}A\to X$，复合
+
+$$
+\operatorname{QCoh}(Y)\xrightarrow{f^*}\operatorname{QCoh}(X)\xrightarrow{x^*}\operatorname{Mod}_A
+$$
+
+是对应点 $f\circ x:\operatorname{Spec}A\to Y$ 的张量 pullback。由高阶 Tannaka，所有这样的张量函子确定 $Y(A)$ 中的点；随 $A$ 自然变化后，$f$ 作为 functor of points 的自然变换被 $f^*$ 确定。$\square$
+
+**命题 36.19.** 若 $G$ 为 affine group stack，则基点 $*\to BG$ 的环路对象由带 fiber functor 的 $\operatorname{QCoh}(BG)$ 的张量自同构群表示。
+
+**证明.** 基点给出 fiber functor
+
+$$
+\omega:\operatorname{QCoh}(BG)\to\operatorname{QCoh}(*) .
+$$
+
+张量自同构 $\operatorname{Aut}^{\otimes}(\omega)$ 按定义记录保持所有准凝聚表示张量结构的基点自同构。Classifying stack 的基点自同构空间正是 loop group $\Omega_*BG$，而 $\Omega_*BG\simeq G$。因此该张量自同构群表示 $G$。$\square$
+
+## 36.7 本章小结
 
 Tannaka duality 是“由表示范畴重构对称对象”的范畴论机制。经典理论从刚性阿贝尔张量范畴和 fiber functor 重构仿射群概形；coend 公式给出坐标 Hopf algebra；高阶理论从 $\operatorname{QCoh}(X)$ 的对称幺半 presentable $\infty$-范畴结构重构 derived stack $X$。Barr-Beck-Lurie descent 保证重构与覆盖粘合相容。
 
@@ -180,3 +232,7 @@ Tannaka duality 是“由表示范畴重构对称对象”的范畴论机制。�
 **练习 36.10.** 说明 $\operatorname{QCoh}(BG)$ 与 $\operatorname{Rep}(G)$ 的关系。
 
 **练习 36.11.** 证明带 fiber functor 的 $\operatorname{QCoh}(BG)$ 可恢复 $G$。
+
+**练习 36.12.** 证明在高阶 Tannaka 假设下，$\operatorname{QCoh}(X)\simeq\operatorname{QCoh}(Y)$ 的合适张量等价推出 $X\simeq Y$。
+
+**练习 36.13.** 说明态射 $f:X\to Y$ 如何由 $f^*:\operatorname{QCoh}(Y)\to\operatorname{QCoh}(X)$ 重构。

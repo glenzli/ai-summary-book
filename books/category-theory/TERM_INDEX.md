@@ -215,6 +215,7 @@
 | vanishing cycles | vanishing cycles | [第三十一章](31_perverse_sheaves_recollement_and_t_structures.md) | 记录退化时消失同调的函子 |
 | Bousfield class | Bousfield class | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | 由 $E$-acyclic spectra 组成的等价类 $\langle E\rangle$ |
 | Bousfield lattice | Bousfield lattice | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | Bousfield classes 按可见性形成的偏序结构 |
+| $E$-equivalence | $E$-equivalence | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | 余纤维为 $E$-acyclic 的谱态射 |
 | Morava $K$-theory | Morava $K$-theory | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | 检测 chromatic height 的谱 $K(n)$ |
 | chromatic type | chromatic type | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | 有限 $p$-local 谱第一个非零 Morava $K$ 高度 |
 | telescope | telescope | [第三十二章](32_chromatic_homotopy_bousfield_lattices_and_telescope_conjecture.md) | $v_n$-self map 迭代余极限得到的周期谱 |
@@ -231,6 +232,7 @@
 | derived stack | derived stack | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | 满足超下降的 derived affine 上 space 值 functor |
 | $\operatorname{QCoh}$ | $\operatorname{QCoh}$ | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | derived stack 上的 quasi-coherent complexes 稳定 $\infty$-范畴 |
 | cotangent complex | cotangent complex | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | 表示导子空间的模对象 |
+| 派生仿射拉回 | derived affine fiber product | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | $\operatorname{Spec}A\times_{\operatorname{Spec}B}\operatorname{Spec}C\simeq\operatorname{Spec}(A\otimes_BC)$ |
 | formal moduli problem | formal moduli problem | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | Artinian derived algebras 上满足 Schlessinger 型拉回条件的 functor |
 | $\operatorname{IndCoh}$ | $\operatorname{IndCoh}$ | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | coherent sheaves 的 Ind 型增强，适合 Grothendieck duality |
 | singular support | singular support | [第三十四章](34_derived_algebraic_geometry_cotangent_complexes_and_spectral_stacks.md) | IndCoh 对象在奇异空间中的微局部支撑条件 |
@@ -248,11 +250,13 @@
 | thick tensor ideal | thick tensor ideal | [第三十七章](37_tensor_triangular_geometry_balmer_spectra_and_support.md) | 对张量任意对象封闭的厚子范畴 |
 | prime tensor ideal | prime tensor ideal | [第三十七章](37_tensor_triangular_geometry_balmer_spectra_and_support.md) | 满足 $x\otimes y\in\mathfrak p$ 蕴含 $x\in\mathfrak p$ 或 $y\in\mathfrak p$ 的 thick tensor ideal |
 | Balmer spectrum | Balmer spectrum | [第三十七章](37_tensor_triangular_geometry_balmer_spectra_and_support.md) | prime thick tensor ideals 的拓扑空间 $\operatorname{Spc}(T)$ |
+| Balmer spectrum 函子性 | functoriality of Balmer spectrum | [第三十七章](37_tensor_triangular_geometry_balmer_spectra_and_support.md) | tt-functor $T\to T'$ 诱导反向连续映射 $\operatorname{Spc}(T')\to\operatorname{Spc}(T)$ |
 | Thomason subset | Thomason subset | [第三十七章](37_tensor_triangular_geometry_balmer_spectra_and_support.md) | quasi-compact opens 的补的并 |
 | $THH$ | topological Hochschild homology | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 稳定范畴或环谱的谱值 Hochschild trace |
 | cyclotomic spectrum | cyclotomic spectrum | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 带圆作用和 Frobenius/Tate 结构的谱 |
 | $TC$ | topological cyclic homology | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 从 cyclotomic spectrum 取出的固定点型不变量 |
 | cyclotomic trace | cyclotomic trace | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 自然变换 $K\to TC$ |
+| 相对 trace | relative trace | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 由 $K\to TC$ 在纤维上诱导的 $K(C,D)\to TC(C,D)$ |
 | trace methods | trace methods | [第三十八章](38_topological_hochschild_homology_cyclotomic_trace_and_tc.md) | 用 $THH/TC$ 和 cyclotomic trace 研究 $K$-理论的方法 |
 | Goodwillie calculus | Goodwillie calculus | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 用 excisive functors 和 Taylor tower 近似同伦函子的理论 |
 | $n$-excisive functor | $n$-excisive functor | [第三十九章](39_goodwillie_calculus_excisive_functors_and_derivatives.md) | 把 strongly cocartesian $(n+1)$-cubes 送到 cartesian cubes 的函子 |

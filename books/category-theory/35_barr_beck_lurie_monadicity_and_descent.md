@@ -180,7 +180,37 @@ $$
 
 右侧对象就是 $B$-模 $M$ 连同两个拉回到 $B\otimes_AB$ 后的同构，以及在三重张量上的 cocycle condition。$\square$
 
-## 35.6 本章小结
+## 35.6 单子性与下降的形式稳定性
+
+**命题 35.17.** 伴随 $F:C\rightleftarrows D:G$ 的 comparison functor $K:D\to\operatorname{Alg}_{GF}(C)$ 满足
+
+$$
+U\circ K\simeq G,
+$$
+
+其中 $U:\operatorname{Alg}_{GF}(C)\to C$ 是遗忘函子。
+
+**证明.** 按定义 35.4，$K(Y)$ 的底层对象就是 $GY$，其代数作用由 $G\varepsilon_Y$ 给出。因此遗忘代数结构后得到 $GY$。这对 $Y$ 自然，故 $U\circ K\simeq G$。$\square$
+
+**命题 35.18（单子性在等价下不变）.** 设 $E:D'\simeq D$ 为 $\infty$-范畴等价。若 $G:D\to C$ monadic，则 $G\circ E:D'\to C$ monadic。
+
+**证明.** 取 $G$ 的左伴随 $F$。则 $G\circ E$ 的左伴随为 $E^{-1}\circ F$。二者产生的 monad 都等价于 $GF$。Comparison functor
+
+$$
+D'\to\operatorname{Alg}_{GF}(C)
+$$
+
+等于 $E$ 后接 $D\simeq\operatorname{Alg}_{GF}(C)$ 的 comparison equivalence，因此是等价。故 $G\circ E$ monadic。$\square$
+
+**命题 35.19.** 恒等覆盖的 Cech descent 是恒等命题：若 $f=\operatorname{id}_X$，则
+
+$$
+\mathcal D(X)\simeq\operatorname{Tot}\bigl(\mathcal D(X)\rightrightarrows\mathcal D(X)\triplearrows\cdots\bigr).
+$$
+
+**证明.** 恒等态射的 Cech nerve 是常值单纯对象 $X_\bullet=X$。因此 $\mathcal D(X_\bullet)$ 是常值 cosimplicial $\infty$-范畴。常值 cosimplicial 对象的 totalization 等于其常值项，因为终锥由恒等相容数据给出。故得到所需等价。$\square$
+
+## 35.7 本章小结
 
 Barr-Beck-Lurie 定理把“范畴是否由单子代数恢复”的问题化为保守性和几何实现保持性。其对偶形式给出 comonadic descent：对象可以从覆盖上的对象及其 Cech 相容数据恢复。现代代数几何、Tannaka duality、QCoh 下降、模范畴和高阶代数中的许多重构定理都依赖这一范畴论机制。
 
@@ -209,3 +239,9 @@ Barr-Beck-Lurie 定理把“范畴是否由单子代数恢复”的问题化为�
 **练习 35.11.** 证明 comonadicity 蕴含 Cech descent。
 
 **练习 35.12.** 写出 faithfully flat descent 中的 cocycle data。
+
+**练习 35.13.** 证明 comparison functor 与遗忘函子复合后等于右伴随。
+
+**练习 35.14.** 证明 monadicity 在源范畴等价替换下保持。
+
+**练习 35.15.** 证明恒等覆盖的 Cech descent 退化为恒等。

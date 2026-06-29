@@ -44,9 +44,19 @@ $$
 D_nF=\operatorname{fib}(P_nF\to P_{n-1}F).
 $$
 
-**命题 39.8.** $D_nF$ 是 reduced，并且 $P_{n-1}(D_nF)\simeq0$。
+**外部输入定理 39.8（Goodwillie 层的齐次性）.** 在 Goodwillie tower 存在且满足标准稳定性假设时，第 $n$ 层
 
-**证明.** $D_nF$ 是两个 $n$-excisive 近似之间的纤维，因此仍为 $n$-excisive。映到 $P_{n-1}$ 后，$P_nF\to P_{n-1}F$ 的纤维在 $(n-1)$-excisive 近似中消失；形式上，$P_{n-1}$ 保持该纤维序列并使 $P_{n-1}P_nF\simeq P_{n-1}F$，故 $P_{n-1}D_nF\simeq0$。Reduced 性来自 $P_nF(0)\to P_{n-1}F(0)$ 的同一常值部分，其纤维为零。$\square$
+$$
+D_nF=\operatorname{fib}(P_nF\to P_{n-1}F)
+$$
+
+是 $n$-homogeneous；特别地它是 $n$-excisive，并满足
+
+$$
+P_{n-1}(D_nF)\simeq0.
+$$
+
+此结论依赖 Goodwillie 近似函子与纤维、迭代近似和齐次层理论的相容性，本书把它作为外部输入。
 
 **定义 39.9.** 函子 $H$ 称为 $n$-homogeneous，若它 $n$-excisive 且 $P_{n-1}H\simeq0$。
 

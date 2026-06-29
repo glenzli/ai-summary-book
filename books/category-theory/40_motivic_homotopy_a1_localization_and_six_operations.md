@@ -72,15 +72,13 @@ $$
 
 **外部输入定理 40.9.** $\mathbf{SH}(S)$ 是稳定 presentable 对称幺半 $\infty$-范畴。其同伦范畴恢复 Morel-Voevodsky stable motivic homotopy category。
 
-**命题 40.10.** 若 $S=\operatorname{Spec}\mathbb C$，复 realization 给出对称幺半函子
+**外部输入定理 40.10（复 realization）.** 若 $S=\operatorname{Spec}\mathbb C$，复点构造与 Nisnevich descent、$\mathbb A^1$-局部化和 $T$-稳定化相容，并给出对称幺半函子
 
 $$
 \mathbf{SH}(S)\to\mathbf{Sp}
 $$
 
 把 motivic suspension coordinates 送到拓扑 suspension coordinates 的相应组合。
-
-**证明.** 复点 functor 把光滑 $\mathbb C$-概形送到复解析空间，保持有限乘积并把 Nisnevich 局部等价和 $\mathbb A^1$-同伦等价送到拓扑弱等价。它因此通过 motivic localization 因子化。稳定化的泛性质再把它延拓为 $\mathbf{SH}(S)\to\mathbf{Sp}$。$\square$
 
 ## 40.4 Motivic 六操作
 
@@ -140,9 +138,36 @@ $$
 
 **外部输入定理 40.18.** 在常见有限性假设下，$\mathbf{SH}(S)$ compactly generated，其紧生成子由 smooth schemes 的悬挂谱及 Tate twists 给出。
 
-**命题 40.19.** 若 realization functor 保持小余极限且在紧生成子上检测某类等价，则它在这些生成子生成的 localizing subcategory 上检测等价。
+**命题 40.19（紧生成子检测）.** 设 $C$ 是 compactly generated stable $\infty$-category，$\mathcal G\subseteq C^\omega$ 是一组紧生成子。则对象 $X\in C$ 为零当且仅当
 
-**证明.** 设 $F:\mathbf{SH}(S)\to D$ 保持小余极限且正合。若 $F$ 在一组紧生成子 $\mathcal G$ 上检测零对象，则任意 $X$ 若 $F(X)=0$，则对所有 $G\in\mathcal G$ 和整数平移，映射群在 $F$ 下为零。由 $\mathcal G$ 生成性，$X=0$。对态射的等价检测化为其纤维的零对象检测。$\square$
+$$
+\operatorname{Map}_C(\Sigma^mG,X)\simeq *
+$$
+
+对所有 $G\in\mathcal G$ 与 $m\in\mathbb Z$ 成立。因此态射 $u:X\to Y$ 是等价，当且仅当
+
+$$
+\operatorname{Map}_C(\Sigma^mG,u)
+$$
+
+对所有 $G,m$ 为等价。
+
+**证明.** 令
+
+$$
+\mathcal L_X=\{A\in C\mid \operatorname{Map}_C(A,X)\simeq *\}.
+$$
+
+对固定的 $X$，$\mathcal L_X$ 对平移、余纤维和小余极限封闭，因为
+
+$$
+\operatorname{Map}_C(\operatorname*{colim} A_i,X)\simeq
+\lim\operatorname{Map}_C(A_i,X).
+$$
+
+所以 $\mathcal L_X$ 是 localizing subcategory。若 $\operatorname{Map}_C(\Sigma^mG,X)\simeq *$ 对所有 $G,m$ 成立，则 $\mathcal L_X$ 含所有生成子及其平移，因而由生成性知 $\mathcal L_X=C$。特别地 $X\in\mathcal L_X$，于是 $\operatorname{Map}_C(X,X)$ 可缩，恒等态射同伦于零，故 $X\simeq0$。反向显然。对态射 $u$，令 $F=\operatorname{fib}(u)$；$u$ 为等价当且仅当 $F\simeq0$，再应用对象判别即可。$\square$
+
+**注 40.20.** 某个 realization functor 是否保守并不能仅由 compact generation 推出；它要求其核中没有非零对象，是额外的几何或同伦论信息。
 
 ## 40.8 本章小结
 

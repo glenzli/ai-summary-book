@@ -125,7 +125,64 @@ $$
 
 **证明.** Sheaf 侧闭嵌入 $i$ 的 $i_*$ 把 $D(Z)$ 全忠实嵌入到支撑在 $Z$ 的对象。$D$-module 侧 Kashiwara 等价也把 $D_Z$-modules 识别为 $X$ 上支撑在 $Z$ 的 $D_X$-modules。Riemann-Hilbert 相容性把两种描述对应起来，因此它是 recollement 闭部分的代数模型。$\square$
 
-## 33.6 本章小结
+## 33.6 等价下的结构运输
+
+**命题 33.16（t-结构运输）.** 设 $\Phi:\mathcal C\simeq\mathcal D$ 是稳定 $\infty$-范畴等价，且 $\mathcal D$ 带 t-结构 $(\mathcal D_{\le0},\mathcal D_{\ge0})$。定义
+
+$$
+\mathcal C_{\le0}=\{X\in\mathcal C\mid \Phi X\in\mathcal D_{\le0}\},
+\qquad
+\mathcal C_{\ge0}=\{X\in\mathcal C\mid \Phi X\in\mathcal D_{\ge0}\}.
+$$
+
+则这给出 $\mathcal C$ 上的 t-结构，且 $\Phi$ 限制为 heart 的等价
+
+$$
+\mathcal C^\heartsuit\simeq\mathcal D^\heartsuit.
+$$
+
+**证明.** t-结构的三个公理逐项由 $\Phi$ 反映。平移闭合来自 $\Phi(X[1])\simeq(\Phi X)[1]$。正交性来自映射空间等价
+
+$$
+\operatorname{Map}_{\mathcal C}(X,Y)\simeq
+\operatorname{Map}_{\mathcal D}(\Phi X,\Phi Y).
+$$
+
+对任意 $X\in\mathcal C$，取 $\Phi X$ 在 $\mathcal D$ 中的截断三角
+
+$$
+\tau_{\le0}\Phi X\to \Phi X\to \tau_{\ge1}\Phi X.
+$$
+
+用准逆 $\Psi$ 拉回得到 $\mathcal C$ 中的截断三角。故 $\mathcal C$ 上确有 t-结构。Heart 是两半的交，按定义被 $\Phi$ 送到 $\mathcal D^\heartsuit$，且准逆给出反向等价。$\square$
+
+**命题 33.17（伴随运输）.** 设 $\Phi_X:\mathcal C_X\simeq\mathcal D_X$ 与 $\Phi_Y:\mathcal C_Y\simeq\mathcal D_Y$ 为等价。若 $F:\mathcal C_X\to\mathcal C_Y$ 有右伴随 $G$，则
+
+$$
+\widetilde F=\Phi_YF\Phi_X^{-1}:\mathcal D_X\to\mathcal D_Y
+$$
+
+有右伴随
+
+$$
+\widetilde G=\Phi_XG\Phi_Y^{-1}.
+$$
+
+**证明.** 对 $A\in\mathcal D_X$、$B\in\mathcal D_Y$，令 $A'=\Phi_X^{-1}A$，$B'=\Phi_Y^{-1}B$。映射空间有自然等价
+
+$$
+\operatorname{Map}_{\mathcal D_Y}(\widetilde F A,B)
+\simeq
+\operatorname{Map}_{\mathcal C_Y}(FA',B')
+\simeq
+\operatorname{Map}_{\mathcal C_X}(A',GB')
+\simeq
+\operatorname{Map}_{\mathcal D_X}(A,\widetilde G B).
+$$
+
+这正是 $\widetilde F\dashv\widetilde G$ 的定义。该命题只说明结构在等价下如何运输；$D$-module 六操作的存在性仍是定理 33.12 的外部输入。$\square$
+
+## 33.7 本章小结
 
 $D_X$-modules 把微分方程编码为微分算子层的模。Holonomic 条件是有限性条件；regular holonomic 条件控制奇点。de Rham 和 solution functors 把 $D$-modules 送到可构造 sheaves，Riemann-Hilbert correspondence 则给出 regular holonomic $D$-modules 与 perverse sheaves 的等价。Kashiwara 等价和六操作相容性说明 $D$-modules 是 sheaf 六操作理论的代数模型。
 
@@ -154,3 +211,7 @@ $D_X$-modules 把微分方程编码为微分算子层的模。Holonomic 条件�
 **练习 33.11.** 陈述 Kashiwara equivalence。
 
 **练习 33.12.** 解释 Kashiwara equivalence 与 recollement 闭支撑部分的关系。
+
+**练习 33.13.** 证明稳定 $\infty$-范畴等价可以把 t-结构和 heart 从一侧运输到另一侧。
+
+**练习 33.14.** 证明等价共轭保持伴随关系，并说明它如何解释 Riemann-Hilbert 下六操作的相容性。
