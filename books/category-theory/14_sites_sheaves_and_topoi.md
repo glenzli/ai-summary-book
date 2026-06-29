@@ -84,7 +84,7 @@ $$
 
 其中 $J(U)$ 是 $U$ 上覆盖筛按包含排序所得范畴。元素可理解为某个覆盖上的匹配族，两个匹配族在共同细化后相等则被识别。
 
-**外部输入命题 14.8.** plus 构造把预层送到 separated 预层；若 $F$ 已 separated，则 $F^+$ 是 sheaf。在许多标准站点口径下，sheaf 化可由
+**外部输入定理 14.8.** plus 构造把预层送到 separated 预层；若 $F$ 已 separated，则 $F^+$ 是 sheaf。在许多标准站点口径下，sheaf 化可由
 
 $$
 aF\simeq F^{++}
@@ -207,7 +207,7 @@ $$
 
 **命题 14.17.** Grothendieck topoi 与几何态射组成范畴。
 
-**证明.** 恒等几何态射由恒等伴随给出，其 inverse image 是恒等函子，显然保持有限极限。若
+**证明.** 恒等几何态射由恒等伴随给出，其 inverse image 是恒等函子；恒等函子保持所有极限，特别保持有限极限。若
 
 $$
 f:\mathcal E\to\mathcal F,\qquad g:\mathcal F\to\mathcal G

@@ -42,7 +42,7 @@ $$
 h(\mathcal C[W^{-1}])\to A
 $$
 
-等价于把 $W$ 送到同构的函子 $\mathcal C\to A$。因此 $h(\mathcal C[W^{-1}])$ 满足 ordinary localization 的泛性质。若 $f$ 在 ordinary localization 中成为同构，则它在 $h(\mathcal C[W^{-1}])$ 中成为同构；而 $\infty$-范畴中态射成为等价当且仅当其在同伦范畴中成为同构，故 $f\in W'$。反向显然。因此 $W'$ saturated。$\square$
+等价于把 $W$ 送到同构的函子 $\mathcal C\to A$。因此 $h(\mathcal C[W^{-1}])$ 满足 ordinary localization 的泛性质。若 $f$ 在 ordinary localization 中成为同构，则它在 $h(\mathcal C[W^{-1}])$ 中成为同构；而 $\infty$-范畴中态射成为等价当且仅当其在同伦范畴中成为同构，故 $f\in W'$。反向由局部化函子 $h\mathcal C\to h(\mathcal C[W^{-1}])$ 分解经过 ordinary localization 得到。因此 $W'$ saturated。$\square$
 
 ## 29.2 单纯范畴与 Dwyer-Kan 等价
 
@@ -215,7 +215,7 @@ $$
 
 **命题 29.26.** 在映射空间为 Kan 复形的 simplicial categories 之间，Dwyer-Kan equivalences 满足 $2$-out-of-$3$。
 
-**证明.** 设 $\mathcal A\xrightarrow{F}\mathcal B\xrightarrow{G}\mathcal C$ 为 simplicial functors。若 $F$ 和 $G$ 都是 Dwyer-Kan equivalences，则 $GF$ 显然也是，因为映射空间弱等价和同伦范畴等价都对复合封闭。
+**证明.** 设 $\mathcal A\xrightarrow{F}\mathcal B\xrightarrow{G}\mathcal C$ 为 simplicial functors。若 $F$ 和 $G$ 都是 Dwyer-Kan equivalences，则 $GF$ 也是 Dwyer-Kan equivalence，因为映射空间弱等价和同伦范畴等价都对复合封闭。
 
 若 $F$ 和 $GF$ 是 Dwyer-Kan equivalences，则 $\pi_0F$ 和 $\pi_0(GF)$ 是范畴等价，故 $\pi_0G$ 也是范畴等价。需证 $G$ 在所有映射空间上为弱等价。任取 $b,b'\in\mathcal B$。由 $\pi_0F$ 本质满，存在 $x,x'\in\mathcal A$ 以及 $\pi_0\mathcal B$ 中的同构 $Fx\simeq b$、$Fx'\simeq b'$。在映射空间为 Kan 复形的 simplicial category 中，与等价对象前后复合诱导映射空间弱等价，因此有弱等价
 

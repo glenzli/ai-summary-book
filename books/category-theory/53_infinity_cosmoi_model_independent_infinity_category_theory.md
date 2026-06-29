@@ -86,6 +86,10 @@ $$
 
 **证明.** $\infty$-cosmos 等价保持对象、映射 quasi-categories、equivalences、isofibrations 以及由这些结构定义的 comma、slice、adjunction 和 limit。若某定理的陈述和证明只使用这些保持结构，则沿等价运输后仍成立。$\square$
 
+**命题 53.16.** $\infty$-cosmos 中的 equivalences 满足 $2$-out-of-$3$。
+
+**证明.** 按定义，$f$ 是 equivalence 当且仅当它在 homotopy 2-category $\mathcal K_2$ 中为等价。任意 2-category 中的等价 1-态射满足 $2$-out-of-$3$：若 $f,g$ 为等价，则 $gf$ 的拟逆由拟逆反向复合给出；若 $gf$ 与 $f$ 为等价，则 $g\simeq (gf)f^{-1}$ 为等价；另一种情形同理。因此 $\mathcal K$ 中 equivalences 也满足 $2$-out-of-$3$。$\square$
+
 ## 53.7 本章小结
 
 $\infty$-cosmos 是高阶范畴论的模型无关操作系统。它保留足以讨论伴随、极限、isofibrations、modules 和 weighted limits 的结构，同时避免在每个定理中重新选择 quasi-category、Segal space 或 simplicial category 模型。它为严格教材提供一个统一的技术顶层语言。
@@ -115,3 +119,5 @@ $\infty$-cosmos 是高阶范畴论的模型无关操作系统。它保留足以�
 **练习 53.11.** 说明态射如何诱导 representable module。
 
 **练习 53.12.** 解释 $\infty$-cosmos 的模型无关意义。
+
+**练习 53.13.** 证明 $\infty$-cosmos 中 equivalences 满足 $2$-out-of-$3$。

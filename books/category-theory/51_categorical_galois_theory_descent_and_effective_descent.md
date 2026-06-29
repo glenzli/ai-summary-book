@@ -100,6 +100,22 @@ $$
 
 其中 $G=\operatorname{Gal}(L/K)$。因此在 $L\otimes_KL$ 上给 descent 同构等价于给每个 $\sigma$ 的半线性自同构；三重张量积上的 cocycle 条件正是群作用条件。$\square$
 
+**命题 51.15.** Effective descent morphism 在同构替换下不变：若 $e:E'\xrightarrow{\sim}E$ 为 $\mathcal C_{/B}$ 中同构，则 $p:E\to B$ effective descent 当且仅当 $pe:E'\to B$ effective descent。
+
+**证明.** 同构 $e$ 诱导 slice 范畴等价
+
+$$
+e^*:\mathcal C_{/E}\simeq\mathcal C_{/E'}
+$$
+
+并且由 pullback 与同构的相容性诱导 descent categories 的等价
+
+$$
+\operatorname{Desc}(p)\simeq\operatorname{Desc}(pe).
+$$
+
+在这些等价下，两个比较函子 $p^*$ 与 $(pe)^*$ 相互对应。因此其中一个为等价当且仅当另一个为等价。$\square$
+
 ## 51.7 本章小结
 
 Descent 把对象的局部数据和 cocycle 条件组织成 descent category；effective descent 要求这些数据真正来自全局对象。Barr-Beck 把有效下降与单子性联系起来。范畴 Galois 理论进一步把 covering、normal extension 和 automorphism groupoid 抽象化，统一了经典 Galois 理论、torsor 理论和 topos 中的覆盖下降。
@@ -133,3 +149,5 @@ Descent 把对象的局部数据和 cocycle 条件组织成 descent category；e
 **练习 51.13.** 陈述 normal extensions 与 groupoid actions 的关系。
 
 **练习 51.14.** 解释有限 Galois 扩张中的 descent datum 与群作用。
+
+**练习 51.15.** 证明 effective descent morphism 在覆盖对象同构替换下不变。

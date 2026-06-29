@@ -83,6 +83,14 @@ $$
 
 **证明.** 模型是满足额外条件的函子 $\mathcal S\to\mathcal C$，态射是自然变换。任意两个模型之间的态射没有额外结构，因为指定锥的保持是对象条件。因此模型范畴嵌入 $\operatorname{Fun}(\mathcal S,\mathcal C)$ 为 full subcategory。$\square$
 
+**命题 55.14.** 若 $F:\mathcal C\to\mathcal D$ 保持 sketch $\mathcal S$ 所指定的极限与余极限类型，则后合成给出模型范畴上的函子
+
+$$
+F_*:\operatorname{Mod}_{\mathcal C}(\mathcal S)\to\operatorname{Mod}_{\mathcal D}(\mathcal S).
+$$
+
+**证明.** 设 $M:\mathcal S\to\mathcal C$ 是模型。对任一指定锥，$M$ 将其送为 $\mathcal C$ 中的极限锥；因 $F$ 保持这种极限，$FM$ 将其送为 $\mathcal D$ 中的极限锥。指定余锥同理。自然变换经 $F$ 后仍为自然变换，因此后合成确实给出模型范畴之间的函子。$\square$
+
 ## 55.6 本章小结
 
 Sketches 把理论表示为“图形加指定极限/余极限”；doctrines 指定允许的结构和保持结构的函子。有限积理论描述普通代数理论，有限极限 sketch 描述 essentially algebraic theories，geometric doctrine 连接分类 topos。由此，理论与模型本身也成为范畴论对象。
@@ -112,3 +120,5 @@ Sketches 把理论表示为“图形加指定极限/余极限”；doctrines 指
 **练习 55.11.** 陈述 sketch 模型范畴的可表现性定理。
 
 **练习 55.12.** 证明模型范畴是函子范畴的 full subcategory。
+
+**练习 55.13.** 证明保持指定极限与余极限的目标函子把 sketch 模型送到 sketch 模型。

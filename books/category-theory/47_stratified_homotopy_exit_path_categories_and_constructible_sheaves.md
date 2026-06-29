@@ -50,11 +50,15 @@ $$
 
 **证明.** 若路径从 $Z$ 到 $U$，则层标号从 $Z$ 增大到 $U$，满足 $Z\le U$。若路径从 $U$ 到 $Z$，则存在 $t<t'$ 使标号从 $U$ 变为 $Z$，这要求 $U\le Z$，与偏序 $Z<U$ 矛盾。因此后者不是 exit path。$\square$
 
+**命题 47.9.** 把 $\operatorname{Exit}(X)$ 限制到某个单独 stratum $X_p$ 内的 exit simplices，得到的 simplicial set 等于 $X_p$ 的 singular complex，因此表示 $\Pi_\infty(X_p)$。
+
+**证明.** 若 simplex $\Delta^n\to X$ 的像落在 $X_p$，则层标号恒为 $p$，exit 条件自动满足。因此这些 exit simplices 正是 $X_p$ 的 ordinary singular simplices。由 singular complex 对 fundamental $\infty$-groupoid 的表示，所得对象为 $\Pi_\infty(X_p)$。$\square$
+
 ## 47.4 可构造 Sheaves
 
-**定义 47.9.** 设 $X$ 层化。空间值 sheaf $F$ 称为 constructible，若对每个 stratum $X_p$，限制 $F|_{X_p}$ 是 locally constant sheaf。
+**定义 47.10.** 设 $X$ 层化。空间值 sheaf $F$ 称为 constructible，若对每个 stratum $X_p$，限制 $F|_{X_p}$ 是 locally constant sheaf。
 
-**外部输入定理 47.10（Exit-path 分类）.** 若 $X$ 是足够好的 conically stratified space，则有自然等价
+**外部输入定理 47.11（Exit-path 分类）.** 若 $X$ 是足够好的 conically stratified space，则有自然等价
 
 $$
 \operatorname{Shv}_{cbl}(X;\mathcal S)\simeq
@@ -63,9 +67,9 @@ $$
 
 更一般地，对合适目标 $\infty$-category $C$，$C$-值 constructible sheaves 由 $\operatorname{Exit}(X)$ 上的 $C$-值函子分类。
 
-**命题 47.11.** 单层情形中，该定理退化为 locally constant sheaves 与 fundamental $\infty$-groupoid 表示的等价。
+**命题 47.12.** 单层情形中，该定理退化为 locally constant sheaves 与 fundamental $\infty$-groupoid 表示的等价。
 
-**证明.** 由命题 47.7，$\operatorname{Exit}(X)\simeq\Pi_\infty(X)$。Constructible 条件在单层情形正是 locally constant。因此定理 47.10 给出
+**证明.** 由命题 47.7，$\operatorname{Exit}(X)\simeq\Pi_\infty(X)$。Constructible 条件在单层情形正是 locally constant。因此定理 47.11 给出
 
 $$
 \operatorname{Loc}(X;\mathcal S)\simeq\operatorname{Fun}(\Pi_\infty(X),\mathcal S),
@@ -75,7 +79,7 @@ $$
 
 ## 47.5 Recollement 与 Exit 分类
 
-**命题 47.12.** 对开闭分解 $j:U\hookrightarrow X$、$i:Z\hookrightarrow X$，constructible sheaf 由 $U$ 上对象、$Z$ 上对象和从 $Z$ 的 exit-link 到 $U$ 的相容传输数据粘合。
+**命题 47.13.** 对开闭分解 $j:U\hookrightarrow X$、$i:Z\hookrightarrow X$，constructible sheaf 由 $U$ 上对象、$Z$ 上对象和从 $Z$ 的 exit-link 到 $U$ 的相容传输数据粘合。
 
 **证明.** Exit-path 分类把 constructible sheaf 化为函子
 
@@ -87,17 +91,17 @@ $$
 
 ## 47.6 Perverse Sheaves 的范畴论影子
 
-**定义 47.13.** 层化空间上的 perverse sheaf 可视为 constructible derived sheaf，在支撑和余支撑条件下落入 perverse t-结构的 heart。
+**定义 47.14.** 层化空间上的 perverse sheaf 可视为 constructible derived sheaf，在支撑和余支撑条件下落入 perverse t-结构的 heart。
 
-**命题 47.14.** Exit-path 分类说明 perverse sheaf 的底层可构造信息由有向高阶范畴控制。
+**命题 47.15.** Exit-path 分类说明 perverse sheaf 的底层可构造信息由有向高阶范畴控制。
 
 **证明.** Perverse sheaf 首先是 constructible derived sheaf。因此遗忘 t-结构条件后，它的可构造局部系统和跨层 monodromy 数据由 $\operatorname{Exit}(X)$ 上的函子编码。Perverse 条件再对这些数据施加同调维数和 exactness 限制。故 exit-path 范畴给出底层有向高阶组合骨架。$\square$
 
 ## 47.7 层化因子化同调
 
-**外部输入定理 47.15.** 对 conically stratified manifolds，有层化版本的 $\operatorname{Disk}$-范畴和因子化同调。其系数由适合各层和链接的代数数据给出，并满足层化 excision。
+**外部输入定理 47.16.** 对 conically stratified manifolds，有层化版本的 $\operatorname{Disk}$-范畴和因子化同调。其系数由适合各层和链接的代数数据给出，并满足层化 excision。
 
-**命题 47.16.** 单层流形上的层化因子化同调恢复普通因子化同调。
+**命题 47.17.** 单层流形上的层化因子化同调恢复普通因子化同调。
 
 **证明.** 单层情形中允许的局部模型只有普通 $\mathbb R^n$，层化 $\operatorname{Disk}$-范畴退化为 $\operatorname{Disk}_n$，层化 open embeddings 退化为普通 open embeddings。于是左 Kan 延拓定义与第四十二章的定义相同。$\square$
 
@@ -134,3 +138,5 @@ Exit-path $\infty$-category 把层化空间中的方向性和高阶同伦合为�
 **练习 47.13.** 陈述层化因子化同调。
 
 **练习 47.14.** 证明单层情形恢复普通因子化同调。
+
+**练习 47.15.** 证明单个 stratum 上的 exit simplices 正是该 stratum 的 singular simplices。

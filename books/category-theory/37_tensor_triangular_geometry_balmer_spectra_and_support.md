@@ -27,7 +27,7 @@ $$
 
 **命题 37.3.** 任意对象族 $S\subseteq T$ 生成最小 thick tensor ideal，记作 $\langle S\rangle_\otimes$。
 
-**证明.** 取所有包含 $S$ 的 thick tensor ideals 的交。交仍对平移、锥、有限直和、直和项和与任意对象张量封闭，因此是 thick tensor ideal，并显然是最小者。$\square$
+**证明.** 取所有包含 $S$ 的 thick tensor ideals 的交。交仍对平移、锥、有限直和、直和项和与任意对象张量封闭，因此是 thick tensor ideal。按交的定义，它包含于任意一个包含 $S$ 的 thick tensor ideal，所以是最小者。$\square$
 
 ## 37.2 Prime ideals 与 Balmer spectrum
 

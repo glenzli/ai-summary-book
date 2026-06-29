@@ -115,6 +115,20 @@ $$
 
 $\square$
 
+**命题 49.16.** Derivator 的 coproduct-product 公理推出
+
+$$
+\mathbb D(\varnothing)\simeq *
+$$
+
+且对小范畴 $I,J$ 有
+
+$$
+\mathbb D(I\amalg J)\simeq\mathbb D(I)\times\mathbb D(J).
+$$
+
+**证明.** Derivator 公理要求 $\mathbb D$ 把图形范畴的小 coproduct 送为范畴的 product。空 coproduct 是初始小范畴 $\varnothing$，其像是空 product，即终范畴。二元 coproduct $I\amalg J$ 的像即二元 product，得到第二个等价。$\square$
+
 ## 49.7 本章小结
 
 Derivator 把同伦论从单个同伦范畴扩展为所有图形的同伦范畴系统。限制函子、同伦 Kan 延拓、点态公式和稳定性公理让三角范畴中的许多非函子性构造重新变得可控。它与 $\infty$-范畴互补：$\infty$-范畴保留全部高阶映射空间，derivator 保留足够多的图形同伦范畴以支撑同伦代数计算。
@@ -144,3 +158,5 @@ Derivator 把同伦论从单个同伦范畴扩展为所有图形的同伦范畴�
 **练习 49.11.** 从 $\infty$-category $C$ 定义 $\mathbb D_C$。
 
 **练习 49.12.** 证明 $\mathbb D_C(*)\simeq hC$。
+
+**练习 49.13.** 证明 derivator 的 coproduct-product 公理推出 $\mathbb D(\varnothing)\simeq *$ 与 $\mathbb D(I\amalg J)\simeq\mathbb D(I)\times\mathbb D(J)$。

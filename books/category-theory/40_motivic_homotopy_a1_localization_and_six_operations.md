@@ -165,7 +165,7 @@ $$
 \lim\operatorname{Map}_C(A_i,X).
 $$
 
-所以 $\mathcal L_X$ 是 localizing subcategory。若 $\operatorname{Map}_C(\Sigma^mG,X)\simeq *$ 对所有 $G,m$ 成立，则 $\mathcal L_X$ 含所有生成子及其平移，因而由生成性知 $\mathcal L_X=C$。特别地 $X\in\mathcal L_X$，于是 $\operatorname{Map}_C(X,X)$ 可缩，恒等态射同伦于零，故 $X\simeq0$。反向显然。对态射 $u$，令 $F=\operatorname{fib}(u)$；$u$ 为等价当且仅当 $F\simeq0$，再应用对象判别即可。$\square$
+所以 $\mathcal L_X$ 是 localizing subcategory。若 $\operatorname{Map}_C(\Sigma^mG,X)\simeq *$ 对所有 $G,m$ 成立，则 $\mathcal L_X$ 含所有生成子及其平移，因而由生成性知 $\mathcal L_X=C$。特别地 $X\in\mathcal L_X$，于是 $\operatorname{Map}_C(X,X)$ 可缩，恒等态射同伦于零，故 $X\simeq0$。反向由零对象的映射空间可缩性给出。对态射 $u$，令 $F=\operatorname{fib}(u)$；$u$ 为等价当且仅当 $F\simeq0$，再应用对象判别即可。$\square$
 
 **注 40.20.** 某个 realization functor 是否保守并不能仅由 compact generation 推出；它要求其核中没有非零对象，是额外的几何或同伦论信息。
 

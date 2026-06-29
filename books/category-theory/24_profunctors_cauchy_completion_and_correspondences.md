@@ -177,7 +177,7 @@ $$
 \xrightarrow{e}(X,\operatorname{id})
 $$
 
-分裂。一般幂等态射的分裂可通过同样的 Karoubi envelope 构造完成。若 $\mathcal D$ 幂等完备，任意函子 $F:\mathcal C\to\mathcal D$ 把幂等 $e$ 送到 $\mathcal D$ 中可分裂幂等 $F(e)$，于是可把 $(X,e)$ 送到 $F(e)$ 的像对象。态射条件 $u=fu=ue$ 保证该赋值在分裂像之间良定义。反向限制到 $\mathcal C$ 显然。两者互逆到自然同构。$\square$
+分裂。一般幂等态射的分裂可通过同样的 Karoubi envelope 构造完成。若 $\mathcal D$ 幂等完备，任意函子 $F:\mathcal C\to\mathcal D$ 把幂等 $e$ 送到 $\mathcal D$ 中可分裂幂等 $F(e)$，于是可把 $(X,e)$ 送到 $F(e)$ 的像对象。态射条件 $u=fu=ue$ 保证该赋值在分裂像之间良定义。反向由沿嵌入 $\mathcal C\to\operatorname{Kar}(\mathcal C)$ 限制得到。两者互逆到自然同构。$\square$
 
 **注 24.12.** Cauchy completion 也可由可表预层在小余极限中的绝对闭包刻画：它加入所有由幂等分裂产生的 retract。该观点连接到富范畴中的 Cauchy modules 和 Morita 理论。
 

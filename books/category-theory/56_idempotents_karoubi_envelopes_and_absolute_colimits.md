@@ -101,6 +101,14 @@ $$
 
 **证明.** 命题 56.5 说明 $\operatorname{Kar}(\mathcal C)$ 幂等完备，命题 56.6 给出全忠实嵌入。若 $F:\mathcal C\to\mathcal D$ 且 $\mathcal D$ 幂等完备，则对每个 $(X,e)$，$F(e)$ 在 $\mathcal D$ 中分裂，取其分裂对象作为扩张值，可把 $F$ 延拓到 $\operatorname{Kar}(\mathcal C)$。分裂对象唯一到唯一同构保证延拓在等价意义下唯一。$\square$
 
+**命题 56.14.** Karoubi 包络是幂等的：
+
+$$
+\operatorname{Kar}(\operatorname{Kar}(\mathcal C))\simeq\operatorname{Kar}(\mathcal C).
+$$
+
+**证明.** 由命题 56.5，$\operatorname{Kar}(\mathcal C)$ 已幂等完备。再由命题 56.8，把幂等完备范畴嵌入其 Karoubi 包络是等价。取该范畴为 $\operatorname{Kar}(\mathcal C)$ 即得结论。$\square$
+
 ## 56.6 本章小结
 
 幂等分裂是范畴中 retract 存在性的最小完备性要求。Karoubi 包络自由加入所有幂等的分裂。绝对余极限是不依赖目标函子的余极限，普通范畴中与幂等分裂紧密相关；富范畴中则导向 Cauchy completion 和 Morita 理论。
@@ -130,3 +138,5 @@ $$
 **练习 56.11.** 定义 Cauchy complete。
 
 **练习 56.12.** 说明 Karoubi 包络的泛性质。
+
+**练习 56.13.** 证明 $\operatorname{Kar}(\operatorname{Kar}(\mathcal C))\simeq\operatorname{Kar}(\mathcal C)$。

@@ -256,7 +256,7 @@ $$
 
 **命题 28.18.** 若 recollement 序列成立，则 $K\simeq0$ 当且仅当 $j^*K\simeq0$ 且 $i^*K\simeq0$。
 
-**证明.** 若 $K\simeq0$，结论显然。反过来，若 $j^*K\simeq0$ 且 $i^*K\simeq0$，则余纤维序列
+**证明.** 若 $K\simeq0$，则 $j^*K\simeq0$ 且 $i^*K\simeq0$，因为函子保持零对象。反过来，若 $j^*K\simeq0$ 且 $i^*K\simeq0$，则余纤维序列
 
 $$
 j_!j^*K\to K\to i_*i^*K

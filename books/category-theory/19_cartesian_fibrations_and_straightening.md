@@ -38,7 +38,7 @@ $$
 
 Cartesian 边对应普通 fibration 中的 Cartesian lift。
 
-**外部输入命题 19.6.** 若普通 Grothendieck fibration $p:E\to B$ 的 Cartesian arrows 被标记，则
+**外部输入定理 19.6.** 若普通 Grothendieck fibration $p:E\to B$ 的 Cartesian arrows 被标记，则
 
 $$
 N(E)^\natural\to N(B)
@@ -282,7 +282,7 @@ $$
 
 因此，Cartesian section 是“对每个 $s$ 选 $F(s)$ 中对象，并且对每条边给出与 restriction 相容的等价”的同伦相干系统。
 
-**外部输入命题 19.I.** 在 straightening/unstraightening 等价下，$S$ 上 Cartesian fibrations 之间保持 Cartesian edges 的函子对应自然变换
+**外部输入定理 19.I.** 在 straightening/unstraightening 等价下，$S$ 上 Cartesian fibrations 之间保持 Cartesian edges 的函子对应自然变换
 
 $$
 F\to G
@@ -294,7 +294,7 @@ $$
 
 **命题 19.11（基为点）.** 映射 $p:X\to\Delta^0$ 是 Cartesian fibration，当且仅当 $X$ 是 quasi-category。此时每个对象上方的退化边给出所需的 Cartesian lift。
 
-**证明.** 到 $\Delta^0$ 的映射唯一。若 $p$ 是 Cartesian fibration，则按定义它是内纤维，故 $X$ 是 quasi-category。反过来，若 $X$ 是 quasi-category，则 $X\to\Delta^0$ 是内纤维。基底只有恒等边；任意对象 $y\in X$ 上方的 Cartesian lift 可取退化边 $\operatorname{id}_y:y\to y$。对恒等基底和退化边，Cartesian 条件化为由恒等态射诱导的映射空间同伦拉回，显然成立。因此 Cartesian lift 存在，$p$ 是 Cartesian fibration。注意这里不需要断言所有非退化边都是 Cartesian；在点基情形，该判别与边是否为等价边相关。$\square$
+**证明.** 到 $\Delta^0$ 的映射唯一。若 $p$ 是 Cartesian fibration，则按定义它是内纤维，故 $X$ 是 quasi-category。反过来，若 $X$ 是 quasi-category，则 $X\to\Delta^0$ 是内纤维。基底只有恒等边；任意对象 $y\in X$ 上方的 Cartesian lift 可取退化边 $\operatorname{id}_y:y\to y$。对恒等基底和退化边，Cartesian 条件化为由恒等态射诱导的映射空间同伦拉回；该方块的四条边均由恒等限制给出，所以是同伦拉回。因此 Cartesian lift 存在，$p$ 是 Cartesian fibration。注意这里不需要断言所有非退化边都是 Cartesian；在点基情形，该判别与边是否为等价边相关。$\square$
 
 **命题 19.12.** 在普通 Grothendieck construction $\int_BF$ 中，覆盖 $\operatorname{id}_b$ 的态射
 

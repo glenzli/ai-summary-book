@@ -206,7 +206,7 @@ $$
 D(j)(u)\lambda_{j,A}=\lambda_{j,B}M(u),
 $$
 
-其中用到 $\lambda_j$ 的自然性。故 $\lambda_A$ 组成自然变换 $\lambda:M\Rightarrow L$。它显然满足 $\pi_j\lambda=\lambda_j$；唯一性也逐对象由 $L(A)$ 的极限唯一性给出。所以 $L$ 是函子范畴中的极限。$\square$
+其中用到 $\lambda_j$ 的自然性。故 $\lambda_A$ 组成自然变换 $\lambda:M\Rightarrow L$。按 $\lambda_A$ 的定义有 $\pi_j\lambda=\lambda_j$；唯一性也逐对象由 $L(A)$ 的极限唯一性给出。所以 $L$ 是函子范畴中的极限。$\square$
 
 ## 3.6 表示性刻画与保存极限
 

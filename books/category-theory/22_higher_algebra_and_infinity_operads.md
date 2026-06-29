@@ -54,7 +54,7 @@ $$
 \alpha:\langle k\rangle\to\langle n\rangle
 $$
 
-把对应于 $i\in T$ 的非基点送到 $f(i)$，把 $*$ 送到 $*$。由于 $i\in T$ 时 $f(i)\ne *$，故 $\alpha^{-1}(*)=\{*\}$，所以 $\alpha$ 是 active。显然 $f=\alpha\rho$。$\square$
+把对应于 $i\in T$ 的非基点送到 $f(i)$，把 $*$ 送到 $*$。由于 $i\in T$ 时 $f(i)\ne *$，故 $\alpha^{-1}(*)=\{*\}$，所以 $\alpha$ 是 active。逐点检查基点与非基点可得 $f=\alpha\rho$。$\square$
 
 **注 22.6.** 在 $\infty$-operad 中，inert 态射控制投影到各输入槽，active 态射控制真正的多输入运算。Segal 条件正是说总纤维由这些输入槽恢复。
 

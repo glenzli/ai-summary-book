@@ -301,6 +301,7 @@
 | shape modality | shape modality | [第四十六章](46_cohesive_toposes_modalities_and_differential_cohesion.md) | $\int=\operatorname{Disc}\Pi$，提取对象同伦形状的模态 |
 | flat modality | flat modality | [第四十六章](46_cohesive_toposes_modalities_and_differential_cohesion.md) | $\flat=\operatorname{Disc}\Gamma$，离散化全局截面的模态 |
 | sharp modality | sharp modality | [第四十六章](46_cohesive_toposes_modalities_and_differential_cohesion.md) | $\sharp=\operatorname{Codisc}\Gamma$，余离散化全局截面的模态 |
+| 左正合模态 | left exact modality | [第四十六章](46_cohesive_toposes_modalities_and_differential_cohesion.md) | 保持有限极限的反射性局部化，保证局部对象对有限极限封闭 |
 | differential cohesion | differential cohesion | [第四十六章](46_cohesive_toposes_modalities_and_differential_cohesion.md) | 含 de Rham 或 infinitesimal shape 模态的 cohesive 结构 |
 | exit path | exit path | [第四十七章](47_stratified_homotopy_exit_path_categories_and_constructible_sheaves.md) | 层标号只能沿偏序增大的层化路径 |
 | exit-path $\infty$-category | exit-path $\infty$-category | [第四十七章](47_stratified_homotopy_exit_path_categories_and_constructible_sheaves.md) | 由点和 exit simplices 组成的层化空间高阶范畴 |

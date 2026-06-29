@@ -112,6 +112,30 @@ $$
 
 **证明.** 单位 $\eta_X:X\to\sum_nX^n$ 把 $x$ 送到长度 1 的列表 $[x]$。乘法 $\mu_X$ 把列表的列表拼接为单个列表。空列表是幺元，拼接结合，因此满足单子单位律和结合律。$\square$
 
+**命题 52.15.** Set 中一元多项式函子
+
+$$
+P(X)=\sum_{b\in B}X^{E_b}
+$$
+
+保持 pullbacks。
+
+**证明.** 对 pullback $X\times_ZY$，有自然双射
+
+$$
+(X\times_ZY)^{E_b}\cong X^{E_b}\times_{Z^{E_b}}Y^{E_b}
+$$
+
+对每个 $b\in B$ 成立。于是
+
+$$
+P(X\times_ZY)
+\cong
+\sum_{b\in B}\bigl(X^{E_b}\times_{Z^{E_b}}Y^{E_b}\bigr).
+$$
+
+另一方面，$P(X)\times_{P(Z)}P(Y)$ 中元素必须有相同的 shape $b$，因为 $P(Z)$ 是按 $b\in B$ 的不交并；在固定 $b$ 上正是 $X^{E_b}\times_{Z^{E_b}}Y^{E_b}$。故两者自然同构。$\square$
+
 ## 52.7 本章小结
 
 多项式函子以 $\Sigma\Pi\Delta$ 形式编码依赖和、依赖积与替换；containers 是 Set 中的同一思想；species 与解析函子把有限对称性纳入组合结构；W-types 给多项式函子的初代数；多项式单子则把 operad 和树形代数结构统一为范畴论对象。
@@ -141,3 +165,5 @@ $$
 **练习 52.11.** 定义多项式单子。
 
 **练习 52.12.** 证明 list functor 带单子结构。
+
+**练习 52.13.** 证明 Set 中一元多项式函子保持 pullbacks。

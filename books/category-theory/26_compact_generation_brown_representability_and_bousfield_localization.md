@@ -36,7 +36,7 @@ $$
 
 **命题 26.4.** 若 $C$ 由 compact objects 集合 $\mathcal G$ 生成，且 $F:C\to D$ 是保持小余积的正合函子，则 $F$ 保守当且仅当 $F$ 在 $\mathcal G$ 生成的检测族上检测零对象。
 
-**证明.** 若 $F$ 保守，则显然检测零对象。反过来设 $F(X)\simeq0$。对所有 $G\in\mathcal G$ 和 $n\in\mathbb Z$，若 $F$ 在生成检测族上反映零，则由 $F(X)=0$ 推出所有
+**证明.** 若 $F$ 保守且 $F(X)\simeq0$，则 $F(X)\simeq F(0)$，保守性推出 $X\simeq0$，所以 $F$ 检测零对象。反过来设 $F(X)\simeq0$。对所有 $G\in\mathcal G$ 和 $n\in\mathbb Z$，若 $F$ 在生成检测族上反映零，则由 $F(X)=0$ 推出所有
 
 $$
 \pi_0\operatorname{Map}_C(\Sigma^nG,X)

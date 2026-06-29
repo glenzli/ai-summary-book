@@ -76,7 +76,7 @@ $$
 
 第三条可用映射空间同伦拉回条件等价表达，正是第十九章定义 19.1 使用的版本。
 
-**外部输入命题 E.13.** 对普通 Grothendieck fibration $p:E\to B$，若把普通 Cartesian arrows 标记，则 nerve
+**外部输入定理 E.13.** 对普通 Grothendieck fibration $p:E\to B$，若把普通 Cartesian arrows 标记，则 nerve
 
 $$
 N(E)^\natural\to N(B)

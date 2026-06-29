@@ -80,9 +80,25 @@ $$
 
 若 $W$ 也局部，则右侧为 $Y\times_WZ=X$。更一般地，在局部对象形成的反射子 $\infty$-topos 内，有限极限由原范畴中有限极限再局部化给出。$\square$
 
+**命题 46.9.** 若 $L$ 是 left exact localization，则 $L$-局部对象构成的全子范畴对有限极限封闭。
+
+**证明.** 设 $D:K\to\mathcal H$ 是有限图形，且每个 $D(k)$ 都是 $L$-局部对象。令 $X=\lim_KD$。由 left exactness，
+
+$$
+LX\simeq L(\lim_KD)\simeq \lim_KLD.
+$$
+
+因为每个 $D(k)$ 局部，$LD(k)\simeq D(k)$，故
+
+$$
+LX\simeq\lim_KD=X.
+$$
+
+于是局部化单位 $X\to LX$ 为等价，$X$ 仍为局部对象。$\square$
+
 ## 46.4 Modal type theory
 
-**定义 46.9.** Modal type theory 是在依赖类型论中加入模态算子 $\bigcirc$ 及其单位
+**定义 46.10.** Modal type theory 是在依赖类型论中加入模态算子 $\bigcirc$ 及其单位
 
 $$
 \eta_A:A\to\bigcirc A
@@ -90,13 +106,13 @@ $$
 
 并使 $\bigcirc$ 满足反射性、幂等性和与替换相容的规则。
 
-**命题 46.10.** Left exact modality 保持恒等类型。
+**命题 46.11.** Left exact modality 保持恒等类型。
 
 **证明.** 恒等类型语义由对角线 $A\to A\times A$ 的路径对象或相应 pullback 结构解释。若模态 $L$ left exact，则它保持有限极限，特别保持对角线、pullback 和路径对象构造中的有限极限部分。因此 $L(\operatorname{Id}_A(x,y))$ 与 $\operatorname{Id}_{LA}(Lx,Ly)$ 相容。完整的类型论消去规则还需外部模型条件，但范畴层面的有限极限保持性正是关键。$\square$
 
 ## 46.5 Differential cohesion
 
-**定义 46.11.** Differential cohesive $\infty$-topos 是 cohesive $\infty$-topos，另配 infinitesimal shape 或 de Rham 模态
+**定义 46.12.** Differential cohesive $\infty$-topos 是 cohesive $\infty$-topos，另配 infinitesimal shape 或 de Rham 模态
 
 $$
 \Im:\mathcal H\to\mathcal H
@@ -104,17 +120,17 @@ $$
 
 用于把对象的无穷小邻域信息压缩为 de Rham 型对象。
 
-**外部输入定理 46.12.** 光滑高阶 stacks 的合适 $\infty$-topos 支持 de Rham stack、infinitesimal shape 和 differential cohomology 的 cohesive 语义。
+**外部输入定理 46.13.** 光滑高阶 stacks 的合适 $\infty$-topos 支持 de Rham stack、infinitesimal shape 和 differential cohomology 的 cohesive 语义。
 
-**定义 46.13.** 对光滑对象 $X$，其 de Rham shape $X_{\mathrm{dR}}$ 可抽象为把 nilpotent 或 infinitesimal thickening 方向局部化后的对象。
+**定义 46.14.** 对光滑对象 $X$，其 de Rham shape $X_{\mathrm{dR}}$ 可抽象为把 nilpotent 或 infinitesimal thickening 方向局部化后的对象。
 
-**命题 46.14.** 若 $X$ 已无非平凡无穷小方向，则自然映射 $X\to X_{\mathrm{dR}}$ 为等价。
+**命题 46.15.** 若 $X$ 已无非平凡无穷小方向，则自然映射 $X\to X_{\mathrm{dR}}$ 为等价。
 
 **证明.** $X_{\mathrm{dR}}$ 是关于无穷小加厚的局部化。若 $X$ 对所有此类加厚已经满足映射空间不变，即 $X$ 是该局部化的局部对象，则局部化单位 $X\to X_{\mathrm{dR}}$ 按局部对象定义为等价。$\square$
 
 ## 46.6 Cohomology 的模态解释
 
-**定义 46.15.** 在 cohesive $\infty$-topos 中，系数对象 $A$ 的 cohomology 可写为映射空间
+**定义 46.16.** 在 cohesive $\infty$-topos 中，系数对象 $A$ 的 cohomology 可写为映射空间
 
 $$
 H^n(X;A)=\pi_0\operatorname{Map}_{\mathcal H}(X,B^nA)
@@ -122,7 +138,7 @@ $$
 
 在适当截断和群对象假设下成立。
 
-**命题 46.16.** Shape modality 使 cohesive cohomology 退化为同伦型上的 cohomology。
+**命题 46.17.** Shape modality 使 cohesive cohomology 退化为同伦型上的 cohomology。
 
 **证明.** 若 $B^nA$ 是离散或来自 spaces 的系数对象，则由 $\Pi\dashv\operatorname{Disc}$ 有
 
@@ -167,3 +183,5 @@ Cohesive topos 把空间对象的形状、离散化、余离散化和无穷小�
 **练习 46.13.** 写出 cohomology 的映射空间表达。
 
 **练习 46.14.** 证明 shape modality 给出同伦型上的 cohomology。
+
+**练习 46.15.** 证明 left exact localization 的局部对象对有限极限封闭。

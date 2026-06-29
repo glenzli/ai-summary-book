@@ -34,31 +34,31 @@
 - 第四十一章已补子对象纤维化、regular existential、Heyting implication、locally Cartesian closed categories、$\Sigma_f\dashv f^*\dashv\Pi_f$、comprehension categories、groupoid 恒等类型、univalence 和几何逻辑；elementary topos 内部语言、weak factorization 语义、univalent universes 和 HoTT 的 $\infty$-topos 模型仍为外部输入。
 - 第四十二章已补 $\operatorname{Disk}_n$、$E_n$-代数、因子化同调 Kan 延拓定义、圆盘计算、不交并公式、excision、圆周 Hochschild homology、非阿贝尔 Poincare 对偶和 factorization algebras；excision、$\int_{S^1}A\simeq HH(A)$、非阿贝尔 Poincare 对偶和局部常值 factorization algebra 分类仍为外部输入。
 - 第四十三章已补 profinite 站点、condensed sets、离散嵌入全忠实、拓扑空间凝聚化、condensed abelian groups、solidification、solid tensor product、solid modules、solid derived categories 和 analytic rings；condensed topos 结构、投射生成元、solidification 存在性和 analytic rings 理论仍为外部输入。
-- 第四十四章已补语法范畴、有限极限理论、coherent 逻辑、分类 topos、泛模型、tripos、generic predicate 和 tripos-to-topos；语法范畴泛性质、分类 topos 存在性、tripos-to-topos 和 PER 表示仍为外部输入。
-- 第四十五章已补关系复合、函数图像关系、regular/exact completion、effective equivalence relations、allegory 和 regular 公式的关系解释；regular completion、exact completion、allegory 与 exact category 表征仍为外部输入。
-- 第四十六章已补 cohesive 伴随串、shape/flat/sharp 模态、left exact modality、modal type theory、differential cohesion、de Rham shape 和 cohesive cohomology；cohesive $\infty$-topos 实例、differential cohesion 和 modal HoTT 完整语义仍为外部输入。
-- 第四十七章已补 conically stratified spaces、exit paths、exit-path $\infty$-category、constructible sheaves、exit 分类、recollement 粘合、perverse sheaf 组合骨架和层化因子化同调；exit simplicial set 的 quasi-category 性、constructible sheaves 分类和层化 excision 仍为外部输入。
-- 第四十八章已补 higher Morita $(\infty,n)$-categories、smooth/proper、Morita trace、HH 与因子化同调、higher traces、增广 $E_n$-代数、Koszul dual 和 factorization/Koszul 对偶；higher Morita 构造、fully dualizable 判别、higher trace 定理和 $E_n$-Koszul duality 仍为外部输入。
-- 第四十九章已补 derivator、同伦 Kan 延拓、点态公式、stable derivator、与 $\infty$-范畴的比较；derivator 来源、点态公式完整定理、稳定 derivator 三角结构仍为外部输入。
-- 第五十章已补 stacks、descent datum、torsors、classifying stacks、gerbes、Cech cocycles 和 higher stacks；$BG$ stack 性、$H^1$ torsor 分类、$H^2$ gerbe 分类和 higher hyperdescent 仍为外部输入。
-- 第五十一章已补 descent category、effective descent、monadicity 判别、categorical Galois structure、covering、normal extension、Galois groupoid 和有限 Galois descent；topos/regular effective descent、Galois structures 和 normal extensions/groupoid actions 对应仍为外部输入。
-- 第五十二章已补 polynomial functors、containers、species、analytic functors、W-types、多项式单子和 list monad；W-types 存在性、多项式单子与 operads 的一般等价仍为外部输入。
-- 第五十三章已补 $\infty$-cosmos、homotopy 2-category、equivalences、isofibrations、adjunctions、modules 和模型无关性；$\infty$-cosmos 例子、伴随定义等价、modules/weighted limits 理论仍为外部输入。
-- 第五十四章已补正交性、正交因子化系统、Set 中 epi-mono 分解、局部对象、弱因子化系统和 retract 闭包；小对象论证和 cofibrantly generated weak factorization systems 仍为外部输入。
-- 第五十五章已补 sketches、有限积理论、doctrines、essentially algebraic theories、小范畴的有限极限 sketch 和模型 full subcategory；sketch 模型范畴可表现性仍为外部输入。
-- 第五十六章已补幂等分裂、Karoubi 包络、幂等完备、绝对余极限、分裂 coequalizer 和 Cauchy completion；富 Cauchy completion 的一般绝对权重理论仍为外部输入。
+- 第四十四章已补语法范畴、有限极限理论、coherent 逻辑、分类 topos、泛模型、泛模型中几何 sequent 的保持方向、tripos、generic predicate 和 tripos-to-topos；语法范畴泛性质、分类 topos 存在性、tripos-to-topos 和 PER 表示仍为外部输入。
+- 第四十五章已补关系复合、函数图像关系、对角关系单位、反向 involution、关系复合结合律与单调性、regular/exact completion、effective equivalence relations、allegory 和 regular 公式的关系解释；regular completion、exact completion、allegory 与 exact category 表征仍为外部输入。
+- 第四十六章已补 cohesive 伴随串、shape/flat/sharp 模态、left exact modality、局部对象有限极限闭性、modal type theory、differential cohesion、de Rham shape 和 cohesive cohomology；cohesive $\infty$-topos 实例、differential cohesion 和 modal HoTT 完整语义仍为外部输入。
+- 第四十七章已补 conically stratified spaces、exit paths、exit-path $\infty$-category、单 stratum exit/singular 比较、constructible sheaves、exit 分类、recollement 粘合、perverse sheaf 组合骨架和层化因子化同调；exit simplicial set 的 quasi-category 性、constructible sheaves 分类和层化 excision 仍为外部输入。
+- 第四十八章已补 higher Morita $(\infty,n)$-categories、Morita 等价的等价关系性、smooth/proper、Morita trace、HH 与因子化同调、higher traces、增广 $E_n$-代数、Koszul dual 和 factorization/Koszul 对偶；higher Morita 构造、fully dualizable 判别、higher trace 定理和 $E_n$-Koszul duality 仍为外部输入。
+- 第四十九章已补 derivator、coproduct-product 后果、同伦 Kan 延拓、点态公式、stable derivator、与 $\infty$-范畴的比较；derivator 来源、点态公式完整定理、稳定 derivator 三角结构仍为外部输入。
+- 第五十章已补 stacks、descent datum、isomorphism presheaf 的 sheaf 性、torsors、classifying stacks、gerbes、Cech cocycles 和 higher stacks；$BG$ stack 性、$H^1$ torsor 分类、$H^2$ gerbe 分类和 higher hyperdescent 仍为外部输入。
+- 第五十一章已补 descent category、effective descent、effective descent 的同构不变性、monadicity 判别、categorical Galois structure、covering、normal extension、Galois groupoid 和有限 Galois descent；topos/regular effective descent、Galois structures 和 normal extensions/groupoid actions 对应仍为外部输入。
+- 第五十二章已补 polynomial functors、containers、species、analytic functors、W-types、多项式单子、list monad 和 Set 一元多项式函子保 pullback；W-types 存在性、多项式单子与 operads 的一般等价仍为外部输入。
+- 第五十三章已补 $\infty$-cosmos、homotopy 2-category、equivalences、equivalence 的 $2$-out-of-$3$、isofibrations、adjunctions、modules 和模型无关性；$\infty$-cosmos 例子、伴随定义等价、modules/weighted limits 理论仍为外部输入。
+- 第五十四章已补正交性、正交因子化系统、Set 中 epi-mono 分解、局部对象、弱因子化系统、retract 闭包和 OFS 中同构与复合闭包；小对象论证和 cofibrantly generated weak factorization systems 仍为外部输入。
+- 第五十五章已补 sketches、有限积理论、doctrines、essentially algebraic theories、小范畴的有限极限 sketch、模型 full subcategory 和模型对目标函子后合成稳定；sketch 模型范畴可表现性仍为外部输入。
+- 第五十六章已补幂等分裂、Karoubi 包络、幂等完备、绝对余极限、分裂 coequalizer、Cauchy completion 和 Karoubi 包络幂等性；富 Cauchy completion 的一般绝对权重理论仍为外部输入。
+- 全书统一审查已执行：编号引用解析无缺失、无重复编号，外部输入标签已统一为“外部输入定理”，综合答案中过期的第 12 章伴随函子定理引用已修为 12.16，正文和答案中的跳步表述已改为具体理由。
 - 术语索引、章节来源注释和外部输入依赖图已经建立；后续新增章节必须同步维护这些文件。
 - 范围边界已在附录 F 固定：后续扩写控制在范畴论本体；外部领域深定理只登记为外部输入，不在本书内部闭合。
 - 附录 G 已固定终稿化标准；后续校订应按该附录逐章执行。
 
 ## 下一轮建议
 
-1. 继续终稿化第三十九至第四十三章：Goodwillie calculus、motivic homotopy、范畴逻辑/类型论、因子化同调和 condensed/solid 的范畴论骨架与外部输入边界。
-2. 把第三至第二十八章的部分答案继续从要点升级为逐步证明，尤其是 Beck 定理、Day 相干性、Fubini、局部可表现伴随函子定理、Giraud 定理、模型局部化、straightening、稳定 exactness、presentable 伴随函子定理、profunctor Fubini 和 dg Morita 周边保持外部输入边界的练习。
-3. 扩写可达、可表现、sketch、doctrine 和局部化之间的内部依赖链。
-4. 扩写正交/弱因子化系统、小对象论证的范畴论证明口径。
-5. 扩写 Karoubi、Cauchy、Ind/Pro、exact/regular completion 的泛性质与例子。
-6. 扩写 2-范畴、双范畴、profunctor、equipment 和 indexed category 的纯范畴论比较。
-7. 扩写 quasi-category、Cartesian fibration、$\infty$-cosmos 的模型无关接口，避免外部同伦论计算。
-8. 为核心章节继续增加“例子/反例/边界条件”小节。
-9. 把 `SOLUTIONS.md` 中核心章节答案从要点升级为逐步证明。
+1. 把第三至第二十八章的部分答案继续从要点升级为逐步证明，尤其是 Beck 定理、Day 相干性、Fubini、局部可表现伴随函子定理、Giraud 定理、模型局部化、straightening、稳定 exactness、presentable 伴随函子定理、profunctor Fubini 和 dg Morita 周边保持外部输入边界的练习。
+2. 扩写可达、可表现、sketch、doctrine 和局部化之间的内部依赖链。
+3. 扩写正交/弱因子化系统、小对象论证的范畴论证明口径。
+4. 扩写 Karoubi、Cauchy、Ind/Pro、exact/regular completion 的泛性质与例子。
+5. 扩写 2-范畴、双范畴、profunctor、equipment 和 indexed category 的纯范畴论比较。
+6. 扩写 quasi-category、Cartesian fibration、$\infty$-cosmos 的模型无关接口，避免外部同伦论计算。
+7. 为核心章节继续增加“例子/反例/边界条件”小节。
+8. 把 `SOLUTIONS.md` 中核心章节答案从要点升级为逐步证明。

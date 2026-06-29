@@ -110,6 +110,22 @@ $$
 
 **证明.** Groupoid 的 nerve 是 1-truncated space。把 groupoid-valued stack $F$ 逐点取 nerve，得到 space-valued presheaf $NF$。Groupoid descent 等价在 nerve 后变为 1-truncated spaces 的 descent 等价，因此 $NF$ 是 higher stack。$\square$
 
+**命题 50.16.** 若 $F$ 是 groupoid-valued stack，则任意两个对象 $x,y\in F(U)$ 的 isomorphism presheaf
+
+$$
+V\longmapsto \operatorname{Iso}_{F(V)}(x|_V,y|_V)
+$$
+
+是 $U$ 上的 sheaf。
+
+**证明.** Stack 条件中函子
+
+$$
+F(U)\to\operatorname{Desc}(F,U_\bullet)
+$$
+
+是 groupoids 的等价，特别是完全忠实。对覆盖 $\{U_i\to U\}$，一族局部同构 $\alpha_i:x|_{U_i}\to y|_{U_i}$ 若在重叠上相容，就给出 descent groupoid 中从 $x$ 的 descent datum 到 $y$ 的 descent datum 的态射。完全忠实性给出唯一全局同构 $\alpha:x\to y$ 粘合这些 $\alpha_i$。这正是 isomorphism presheaf 的 sheaf 条件。$\square$
+
 ## 50.7 本章小结
 
 Stacks 把 sheaf 条件从元素提升到对象和同构；torsors 由 classifying stacks 表示；gerbes 是高一阶的局部对象粘合结构；非阿贝尔上同调用 cocycles、torsors、gerbes 和 higher stacks 统一描述局部到整体的 obstruction。它是 descent、几何栈和高阶 topos 的核心桥梁。
@@ -143,3 +159,5 @@ Stacks 把 sheaf 条件从元素提升到对象和同构；torsors 由 classifyi
 **练习 50.13.** 定义 higher stack。
 
 **练习 50.14.** 说明 1-stack 如何嵌入 higher stack。
+
+**练习 50.15.** 证明 stack 中两个对象之间的 isomorphism presheaf 是 sheaf。

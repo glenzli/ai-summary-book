@@ -130,6 +130,16 @@ Topos 有有限极限，pullback 给出重索引。子对象分类子 $\Omega$ �
 
 **证明.** 来自 topos 的 tripos 已经由对象、子对象、逻辑运算和子对象分类子完整编码其内部逻辑。Tripos-to-topos 把该逻辑中的 partial equivalence relations 作为对象。Topos 中每个对象由其相等关系给出一个 PER；反向地，每个有效 PER 的商在 topos 中存在并给出对象。外部输入中的有效性与商存在性给出两构造互逆，故恢复原 topos。$\square$
 
+**命题 44.18.** 若几何 sequents 在泛模型 $U_T$ 中成立，则它们在任意 Grothendieck topos 值 $T$-模型中成立。
+
+**证明.** 设 $M$ 是 $\mathcal F$ 中的 $T$-模型。由命题 44.12，存在对应的几何态射
+
+$$
+f:\mathcal F\to\mathcal E_T
+$$
+
+使 $M\simeq f^*U_T$。几何态射的逆像函子 $f^*$ 保持有限极限，并且作为左伴随保持余极限；在 topos 中这正是保持几何公式解释所需的有限合取、任意析取与存在量词的范畴结构。故泛模型中成立的几何 sequent 沿 $f^*$ 拉回后仍成立，于是在 $M$ 中成立。$\square$
+
 ## 44.7 本章小结
 
 语法范畴把形式理论变成范畴对象；分类 topos 把模型问题表示为几何态射；泛模型统一所有模型；tripos 把谓词纤维化抽象为逻辑机器，再通过 tripos-to-topos 生成 topos。由此，逻辑与范畴论之间的对应不只是解释关系，而是表示性和分类性关系。
@@ -163,3 +173,5 @@ Topos 有有限极限，pullback 给出重索引。子对象分类子 $\Omega$ �
 **练习 44.13.** 陈述 tripos-to-topos 构造。
 
 **练习 44.14.** 解释 tripos-to-topos 如何恢复来自 topos 的 tripos。
+
+**练习 44.15.** 证明泛模型中成立的几何 sequent 在所有 topos 值模型中成立。

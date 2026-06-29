@@ -24,13 +24,23 @@ $$
 
 这与通常 Morita bicategory 定义一致。$\square$
 
+**命题 48.4.** 由可逆双模定义的 Morita 等价是代数对象上的等价关系。
+
+**证明.** 自反性由恒等 $A$-$A$ 双模 $A$ 给出。若 $M:{}_AM_B$ 有逆双模 $N:{}_BN_A$，满足
+
+$$
+M\otimes_BN\simeq A,\qquad N\otimes_AM\simeq B,
+$$
+
+则同一数据也说明 $N$ 是从 $B$ 到 $A$ 的 Morita 逆，所以对称性成立。若 $A$ 经 $M$ 与 $B$ 等价，$B$ 经 $P$ 与 $C$ 等价，则复合双模 $M\otimes_BP$ 从 $A$ 到 $C$，其逆为相应逆双模的反向复合；相对张量积的结合律给出两侧评价同构。因此传递性成立。$\square$
+
 ## 48.2 可对偶性与光滑真性
 
-**定义 48.4.** $E_1$-代数 $A$ 称为 proper，若其底层对象作为 $C$ 中对象可对偶或紧有限；称为 smooth，若 $A$ 作为 $A^{op}\otimes A$-module 是 perfect。
+**定义 48.5.** $E_1$-代数 $A$ 称为 proper，若其底层对象作为 $C$ 中对象可对偶或紧有限；称为 smooth，若 $A$ 作为 $A^{op}\otimes A$-module 是 perfect。
 
-**外部输入定理 48.5.** 在稳定线性 Morita 语境中，$E_1$-代数或小稳定范畴为 fully dualizable 的核心有限性条件由 smooth 和 proper 控制。
+**外部输入定理 48.6.** 在稳定线性 Morita 语境中，$E_1$-代数或小稳定范畴为 fully dualizable 的核心有限性条件由 smooth 和 proper 控制。
 
-**命题 48.6.** 矩阵代数 $M_n(k)$ 与 $k$ Morita 等价，因此二者有相同的 Morita 不变量。
+**命题 48.7.** 矩阵代数 $M_n(k)$ 与 $k$ Morita 等价，因此二者有相同的 Morita 不变量。
 
 **证明.** 令 $P=k^n$ 为 $k$-$M_n(k)$ 双模，$Q=(k^n)^*$ 为 $M_n(k)$-$k$ 双模。评价和余评价给出
 
@@ -43,25 +53,25 @@ $$
 
 ## 48.3 Trace 与 Hochschild homology
 
-**定义 48.7.** 在 Morita $(\infty,2)$-范畴中，代数 $A$ 的 trace 是恒等 $A$-$A$ 双模 $A$ 的 trace，记作
+**定义 48.8.** 在 Morita $(\infty,2)$-范畴中，代数 $A$ 的 trace 是恒等 $A$-$A$ 双模 $A$ 的 trace，记作
 
 $$
 \operatorname{Tr}(\operatorname{id}_A).
 $$
 
-**外部输入定理 48.8.** 对合适 $E_1$-代数，
+**外部输入定理 48.9.** 对合适 $E_1$-代数，
 
 $$
 \operatorname{Tr}(\operatorname{id}_A)\simeq HH(A)\simeq\int_{S^1}A.
 $$
 
-**命题 48.9.** Morita 等价的代数有等价的 Hochschild homology。
+**命题 48.10.** Morita 等价的代数有等价的 Hochschild homology。
 
-**证明.** Morita 等价是在 Morita $(\infty,2)$-范畴中的对象等价。Trace 是 Morita $(\infty,2)$-范畴中的等价不变量：等价对象的恒等 1-态射在共轭下对应，其 traces 等价。由定理 48.8，trace 即 Hochschild homology，故 $HH$ Morita 不变。$\square$
+**证明.** Morita 等价是在 Morita $(\infty,2)$-范畴中的对象等价。Trace 是 Morita $(\infty,2)$-范畴中的等价不变量：等价对象的恒等 1-态射在共轭下对应，其 traces 等价。由定理 48.9，trace 即 Hochschild homology，故 $HH$ Morita 不变。$\square$
 
 ## 48.4 Higher traces 与环形因子化同调
 
-**定义 48.10.** 对 $E_n$-代数 $A$，其 higher Hochschild object 可由 $n$-维几何对象上的因子化同调表达，例如
+**定义 48.11.** 对 $E_n$-代数 $A$，其 higher Hochschild object 可由 $n$-维几何对象上的因子化同调表达，例如
 
 $$
 \int_{S^k\times\mathbb R^{n-k}}A
@@ -69,11 +79,11 @@ $$
 
 在合适范围中给出 $k$-重 trace。
 
-**外部输入定理 48.11.** Higher Morita traces 与 factorization homology 相容：可对偶 $E_n$-代数的 higher traces 可由相应带环形或球面方向的因子化同调计算。
+**外部输入定理 48.12.** Higher Morita traces 与 factorization homology 相容：可对偶 $E_n$-代数的 higher traces 可由相应带环形或球面方向的因子化同调计算。
 
-**命题 48.12.** 当 $k=1,n=1$ 时 higher trace 公式恢复 $HH(A)$。
+**命题 48.13.** 当 $k=1,n=1$ 时 higher trace 公式恢复 $HH(A)$。
 
-**证明.** 此时 $S^k\times\mathbb R^{n-k}=S^1$。定义 48.10 给出 $\int_{S^1}A$。由第四十二章和定理 48.8，
+**证明.** 此时 $S^k\times\mathbb R^{n-k}=S^1$。定义 48.11 给出 $\int_{S^1}A$。由第四十二章和定理 48.9，
 
 $$
 \int_{S^1}A\simeq HH(A).
@@ -83,7 +93,7 @@ $\square$
 
 ## 48.5 增广代数与 Koszul 对偶
 
-**定义 48.13.** 增广 $E_n$-代数是 $E_n$-代数 $A$ 配 $E_n$-代数态射
+**定义 48.14.** 增广 $E_n$-代数是 $E_n$-代数 $A$ 配 $E_n$-代数态射
 
 $$
 \epsilon:A\to\mathbb 1.
@@ -91,7 +101,7 @@ $$
 
 其 bar construction 记作 $\operatorname{Bar}^n(A)$。
 
-**定义 48.14.** $E_n$-Koszul dual 可形式地写为
+**定义 48.15.** $E_n$-Koszul dual 可形式地写为
 
 $$
 A^! = \operatorname{End}_A(\mathbb 1)
@@ -99,9 +109,9 @@ $$
 
 或等价地由 $n$-重 bar/cobar 构造在合适完备性条件下给出。
 
-**外部输入定理 48.15.** 对满足连通性、完备性或 nilpotence 条件的增广 $E_n$-代数，$E_n$-Koszul duality 给出代数与余代数或对偶代数之间的反等价，并满足双重对偶恢复。
+**外部输入定理 48.16.** 对满足连通性、完备性或 nilpotence 条件的增广 $E_n$-代数，$E_n$-Koszul duality 给出代数与余代数或对偶代数之间的反等价，并满足双重对偶恢复。
 
-**命题 48.16.** 若 $A=\mathbb 1$ 带恒等增广，则 $A^!\simeq\mathbb 1$。
+**命题 48.17.** 若 $A=\mathbb 1$ 带恒等增广，则 $A^!\simeq\mathbb 1$。
 
 **证明.** 由定义
 
@@ -119,9 +129,9 @@ $\square$
 
 ## 48.6 Koszul 对偶与因子化同调
 
-**外部输入定理 48.17.** 在合适有边界或带框架流形上，增广 $E_n$-代数的因子化同调与 Koszul dual coalgebra 的 factorization cohomology 之间存在 Poincare/Koszul 型对偶。
+**外部输入定理 48.18.** 在合适有边界或带框架流形上，增广 $E_n$-代数的因子化同调与 Koszul dual coalgebra 的 factorization cohomology 之间存在 Poincare/Koszul 型对偶。
 
-**命题 48.18.** Koszul 对偶把“局部代数数据”转化为“余代数型全局函数数据”。
+**命题 48.19.** Koszul 对偶把“局部代数数据”转化为“余代数型全局函数数据”。
 
 **证明.** $A^!=\operatorname{End}_A(\mathbb 1)$ 把 $A$-作用下的单位对象自同态作为对偶对象。Bar 构造把乘法的迭代合成转化为余乘法型结构；cobar 构造反向恢复乘法。因此在满足收敛条件时，局部乘法数据可由对偶余代数控制，因子化同调/上同调的对偶定理正是这种转换的全局形式。$\square$
 
@@ -158,3 +168,5 @@ $\square$
 **练习 48.13.** 证明 $\mathbb 1^!\simeq\mathbb 1$。
 
 **练习 48.14.** 解释 Koszul 对偶如何把代数数据转化为余代数数据。
+
+**练习 48.15.** 证明由可逆双模定义的 Morita 等价满足自反、对称和传递。

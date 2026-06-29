@@ -58,6 +58,8 @@
 
 ## G.5 当前终稿化状态
 
-当前版本已达到“完整草稿并可系统校订”的状态。第一轮终稿化已经处理序章、第一章和第二章的入口问题：严格相等/同构/等价、选择原则、骨架、等价边界、可表性边界和 Yoneda 计算原则。
+当前版本已达到“完整草稿并进入基本终稿化收口”的状态。全书 0--56 章和附录 A--G 均已有稳定结构、练习与答案；外部输入边界已由 `THEOREM_DEPENDENCIES.md`、`CHAPTER_SOURCE_NOTES.md` 和 `MATH_REVIEW.md` 共同维护。
 
-下一轮终稿化应继续处理第三至第七章的例子和答案证明密度，随后进入幺半、富范畴和 end/coend 的计算型例题。
+最近一轮终稿化已处理第四十四至第五十六章的内部闭合点：语法范畴与分类 topos、正合完成与关系演算、cohesive modalities、exit-path 范畴、高阶 Morita、derivator、stacks/gerbes、范畴 Galois、polynomial functors、$\infty$-cosmoi、正交/因子化系统、sketches/doctrines 与 Karoubi/Cauchy completion。新增命题均配证明，新增练习均已同步答案。
+
+下一轮应进行全书级编辑统一：压缩重复术语、检查 `README.md` 的当前范围摘要、把早期章节答案中仍偏“要点式”的条目升级为可独立核查的证明，并继续抽查外部输入定理的来源和用途说明。

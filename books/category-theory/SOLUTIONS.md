@@ -403,7 +403,7 @@ $$
 $$
 (a\cdot b)\cdot c=a\cdot(b\cdot c),\qquad e\cdot a=a=a\cdot e.
 $$
-反向构造显然给出乘法和单位映射。保持代数结构的态射正是幺半群同态。
+反向构造直接给出乘法和单位映射。保持代数结构的态射正是幺半群同态。
 
 **答案 8.8.** 单位映射 $\varnothing\to A$ 唯一。左单位律要求 $m:A\sqcup A\to A$ 在右副本上为恒等，右单位律要求它在左副本上为恒等，因此 $m$ 只能是折叠映射 $\nabla=[\operatorname{id},\operatorname{id}]$。该乘法与余积交换同构复合后仍是 $\nabla$，故它是交换代数对象。
 
@@ -2604,6 +2604,8 @@ $$
 
 **答案 44.14.** 来自 topos 的 tripos 已编码子对象、逻辑和分类子；PER 在 topos 中有有效商，因此 tripos-to-topos 恢复原 topos。
 
+**答案 44.15.** 任一模型 $M$ 由某几何态射 $f:\mathcal F\to\mathcal E_T$ 满足 $M\simeq f^*U_T$ 得到。几何态射的逆像 $f^*$ 保持有限极限和余极限，因此保持几何公式的解释。故泛模型中成立的几何 sequent 拉回后在 $M$ 中成立。
+
 ## 第四十五章
 
 **答案 45.1.** 关系 $R:X\nrightarrow Y$ 是子对象 $R\hookrightarrow X\times Y$。
@@ -2639,6 +2641,18 @@ $$
 **答案 45.13.** 若 $R\hookrightarrow X\times Y$，则 $R^\circ\hookrightarrow Y\times X$ 由乘积交换 $X\times Y\cong Y\times X$ 得到。
 
 **答案 45.14.** 拉回后取交解释 $R(x,y)\wedge S(y,z)$，沿 $X\times Y\times Z\to X\times Z$ 取 image 解释 $\exists y$，所以得到关系复合。
+
+**答案 45.15.** 左单位为
+$$
+\exists x'\,(x=x'\wedge R(x',y))\Longleftrightarrow R(x,y),
+$$
+右单位同理。范畴上，对角线给出的等式关系经 pullback 后不改变原关系，沿投影取 image 仍回到 $R$。
+
+**答案 45.16.** $(T\circ S)\circ R$ 与 $T\circ(S\circ R)$ 都解释
+$$
+\exists y\,\exists z\,(R(x,y)\wedge S(y,z)\wedge T(z,w)).
+$$
+Regular category 中有限积、pullback、有限交和 image 运算满足 regular 逻辑的替换与存在量词规则，因此两侧给出同一子对象。
 
 ## 第四十六章
 
@@ -2685,6 +2699,12 @@ $$
 $$
 取 $\pi_0$ 得到 shape 上的 cohomology。
 
+**答案 46.15.** 若 $D:K\to\mathcal H$ 是有限图形且各 $D(k)$ 局部，则 left exactness 给出
+$$
+L(\lim_KD)\simeq\lim_KLD\simeq\lim_KD.
+$$
+因此 $\lim_KD$ 的局部化单位为等价，局部对象对有限极限封闭。
+
 ## 第四十七章
 
 **答案 47.1.** 层化空间是拓扑空间 $X$ 配连续映射 $X\to P$ 到偏序集的 Alexandrov 拓扑，纤维为 strata。
@@ -2717,6 +2737,8 @@ $$
 **答案 47.13.** 层化因子化同调使用层化 $\operatorname{Disk}$-范畴和各层代数系数，并满足层化 excision。
 
 **答案 47.14.** 单层时层化 $\operatorname{Disk}$-范畴就是普通 $\operatorname{Disk}_n$，左 Kan 延拓定义相同，因此恢复普通因子化同调。
+
+**答案 47.15.** 若 exit-simplex 的像落在单个 stratum $X_p$，层标号恒为 $p$，exit 条件自动满足；反过来 $X_p$ 的任意 singular simplex 作为 $X$ 中 simplex 也满足 exit 条件。因此二者 simplices 相同，得到 $X_p$ 的 singular complex。
 
 ## 第四十八章
 
@@ -2762,6 +2784,8 @@ $$
 
 **答案 48.14.** Bar 构造把乘法迭代转成余乘法型结构，cobar 反向恢复乘法；在收敛条件下，局部代数数据由对偶余代数控制。
 
+**答案 48.15.** 自反性由恒等双模 $A:{}_AA_A$ 给出；若 $M:{}_AM_B$ 与 $N:{}_BN_A$ 互逆，则同一数据反向给出对称性；若 $A\sim B$ 与 $B\sim C$ 分别由可逆双模给出，则复合双模的相对张量积给出 $A\sim C$，结合律保证逆双模复合后的评价仍为恒等双模。
+
 ## 第四十九章
 
 **答案 49.1.** 预 derivator 是严格 2-函子 $\mathbb D:\mathbf{Cat}^{op}\to\mathbf{CAT}$。
@@ -2797,6 +2821,8 @@ $$
 
 **答案 49.12.** $N(*)=\Delta^0$，$\operatorname{Fun}(\Delta^0,C)\simeq C$，故 $\mathbb D_C(*)\simeq hC$。
 
+**答案 49.13.** Derivator 公理把图形范畴的 coproduct 送为范畴的 product。空图形是空 coproduct，故其像为空 product 即终范畴；二元 coproduct $I\amalg J$ 的像为二元 product，故 $\mathbb D(I\amalg J)\simeq\mathbb D(I)\times\mathbb D(J)$。
+
 ## 第五十章
 
 **答案 50.1.** Groupoid-valued prestack 是伪函子 $F:\mathcal C^{op}\to\mathbf{Grpd}$。
@@ -2826,6 +2852,8 @@ $$
 **答案 50.13.** Higher stack 是满足超下降的 space-valued 或 $\infty$-groupoid-valued sheaf。
 
 **答案 50.14.** Groupoid 逐点取 nerve 得到 1-truncated spaces；groupoid descent 变为 1-truncated space descent。
+
+**答案 50.15.** Stack 条件给 $F(U)\to\operatorname{Desc}(F,U_\bullet)$ 的完全忠实性。相容的局部同构族正是 descent groupoid 中两个 descent data 之间的态射，因此唯一来自全局同构，说明 isomorphism presheaf 满足 sheaf 条件。
 
 ## 第五十一章
 
@@ -2857,6 +2885,8 @@ $$
 
 **答案 51.14.** 对有限 Galois 扩张 $L/K$，$L\otimes_KL\cong\prod_{\sigma\in G}L$；descent datum 等价于每个 $\sigma$ 的半线性作用，cocycle 即群作用律。
 
+**答案 51.15.** 同构 $e:E'\simeq E$ 诱导 slice 范畴等价 $\mathcal C_{/E}\simeq\mathcal C_{/E'}$，并把 $p$ 的 descent data 等价地运输为 $pe$ 的 descent data。因此两个比较函子在这些等价下对应，一个为等价当且仅当另一个为等价。
+
 ## 第五十二章
 
 **答案 52.1.** 由 $I\xleftarrow{s}E\xrightarrow pB\xrightarrow tJ$ 定义 $P=\Sigma_t\Pi_ps^*:\mathcal C_{/I}\to\mathcal C_{/J}$。
@@ -2885,6 +2915,12 @@ $$
 **答案 52.11.** 多项式单子是多项式函子配单位 $\eta:\operatorname{id}\to P$ 和乘法 $\mu:P^2\to P$，且二者为多项式自然变换。
 
 **答案 52.12.** List functor 的单位给长度 1 列表，乘法拼接列表的列表；空列表和拼接结合律给单子律。
+
+**答案 52.13.** 对 pullback $X\times_ZY$，逐个 shape 有
+$$
+(X\times_ZY)^{E_b}\cong X^{E_b}\times_{Z^{E_b}}Y^{E_b}.
+$$
+而 $P(X)\times_{P(Z)}P(Y)$ 中两边元素必须有同一 shape $b$，故它分解为上述 pullback 的不交并，等于 $P(X\times_ZY)$。
 
 ## 第五十三章
 
@@ -2915,6 +2951,8 @@ $$
 
 **答案 53.12.** $\infty$-cosmos 抽取不同 $\infty$-category 模型共有结构，使伴随、极限、Kan 延拓等定理可跨模型转移。
 
+**答案 53.13.** Equivalence 按定义是在 homotopy 2-category 中为等价。2-category 中等价 1-态射由拟逆和单位余单位给出；拟逆可反向复合，且若两个复合因子中任意两个为等价，第三个也由拟逆复合得到。因此满足 $2$-out-of-$3$。
+
 ## 第五十四章
 
 **答案 54.1.** $f\perp g$ 指任意以 $f$ 为左边、$g$ 为右边的交换方块存在唯一对角填充。
@@ -2936,6 +2974,8 @@ $$
 **答案 54.9.** 正交提升给唯一填充，特别给存在填充；遗忘唯一性即得弱因子化系统。
 
 **答案 54.10.** 若 $f$ 是 $g\in\mathcal L$ 的 retract，则任意 $f$ 对 $r\in\mathcal R$ 的方块可扩张为 $g$ 的方块，取填充后沿 retract 投回得到填充；故 $f\in\mathcal L$。右类对偶。
+
+**答案 54.11.** 同构与任意态射正交，所以属于两类。若 $e_1,e_2\in\mathcal E$，则对任意 $m\in\mathcal M$ 的提升问题可先用 $e_1\perp m$ 再用 $e_2\perp m$ 逐步唯一填充，故 $e_2e_1\in\mathcal E$；$\mathcal M$ 的复合封闭对偶。
 
 ## 第五十五章
 
@@ -2963,6 +3003,8 @@ $$
 
 **答案 55.12.** 模型是满足保持指定锥/余锥条件的函子；模型间态射仍是普通自然变换，所以模型范畴是函子范畴的 full subcategory。
 
+**答案 55.13.** 若 $M:\mathcal S\to\mathcal C$ 把指定锥送为极限锥，且 $F:\mathcal C\to\mathcal D$ 保持这些极限，则 $FM$ 也把它们送为极限锥；指定余锥同理。自然变换后合成仍为自然变换，故得到模型范畴间函子。
+
 ## 第五十六章
 
 **答案 56.1.** 幂等态射是满足 $e^2=e$ 的自态射 $e:X\to X$。
@@ -2988,6 +3030,11 @@ $$
 **答案 56.11.** 普通范畴 Cauchy complete，若所有绝对余极限存在；普通小范畴中等价于幂等完备。
 
 **答案 56.12.** Karoubi 包络自由加入所有幂等分裂：到任意幂等完备范畴的函子都唯一延拓到 $\operatorname{Kar}(\mathcal C)$。
+
+**答案 56.13.** $\operatorname{Kar}(\mathcal C)$ 已幂等完备，因此由幂等完备范畴嵌入其 Karoubi 包络为等价，得到
+$$
+\operatorname{Kar}(\operatorname{Kar}(\mathcal C))\simeq\operatorname{Kar}(\mathcal C).
+$$
 
 ## 附录 A
 

@@ -146,7 +146,7 @@ $$
 
 **定义 21.9.** 在 $\infty$-topos $X$ 中，对象称为 $0$-截断，若其任意映射对象是离散 space。$0$-截断对象组成普通范畴 $X_{\le0}$。
 
-**外部输入命题 21.10.** 若 $X$ 是 $\infty$-topos，则 $X_{\le0}$ 是 Grothendieck topos。对 $X=\operatorname{Sh}_\infty(\mathcal C,J)$，$0$-截断部分恢复集合值 sheaf topos。
+**外部输入定理 21.10.** 若 $X$ 是 $\infty$-topos，则 $X_{\le0}$ 是 Grothendieck topos。对 $X=\operatorname{Sh}_\infty(\mathcal C,J)$，$0$-截断部分恢复集合值 sheaf topos。
 
 **定义 21.H.** 对整数 $n\ge -2$，对象 $A\in\mathcal X$ 称为 $n$-截断，若对任意 $T\in\mathcal X$，映射空间
 
@@ -232,7 +232,7 @@ $$
 
 stalk 保持有限极限，因为它由邻域系统上的滤过余极限计算，而 spaces 中滤过余极限与有限极限在此标准情形下相容。
 
-**外部输入命题 21.O.** 连续映射 $f:X\to Y$ 诱导几何态射
+**外部输入定理 21.O.** 连续映射 $f:X\to Y$ 诱导几何态射
 
 $$
 \operatorname{Sh}_\infty(X)\to\operatorname{Sh}_\infty(Y),
