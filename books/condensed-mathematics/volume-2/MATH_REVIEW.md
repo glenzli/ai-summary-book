@@ -16,6 +16,15 @@
 8. 复几何应用的范畴语言。
 9. 输入定理的证明路线。
 10. 例子与类型检查。
+11. Bousfield localization 的形式骨架和输入定理登记表。
+12. 局部化技术引理：局部等价、局部化核、张量理想、幺半下降和相对张量积。
+13. 伴随函子、投影公式和 $f^!$ 内部 Hom 公式的形式骨架。
+14. Cech nerve、totalization、稳定范畴值 descent 和 rational Cech 下降的形式推论。
+15. 紧生成、localizing subcategory、自然变换和全忠实的生成元检验。
+16. analytic ring 公理检查表、Dirac cone 判别、有限测试对象空洞性和常见失败模式。
+17. liquid 与 Banach/Fréchet 的边界、Banach 非闭像风险、Dolbeault Fréchet 空间的类型检查。
+18. 幺半 Bousfield 局部化、张量理想判别、交换代数对象和相对张量积的下降公式。
+19. 闭幺半局部化、内部 Hom、dualizable 对象和右伴随内部 Hom 比较的类型边界。
 
 ## 外部输入定理
 
@@ -42,4 +51,4 @@
 
 ## 当前数学口径
 
-当前版本可作为第二卷完整草稿使用。solid/analytic/liquid 的核心结构定理以输入定理标注；附录 A 给出证明路线，附录 B 给出类型检查和例子。本卷不声称替代 Scholze 讲义中的长证明，而是提供定义、范畴语言、基本推论和后续几何应用的接口。
+当前版本可作为第二卷结构草稿使用。solid/analytic/liquid 的核心结构定理以输入定理标注；附录 A 给出证明路线，附录 B 给出类型检查和例子，附录 C-D 进一步补充 Bousfield localization 的形式骨架和输入定理登记表，附录 E-L 把接受输入定理后的范畴论推论、幺半局部化判别、闭结构与内部 Hom、投影公式形式层、Cech descent 形式层、生成元检验、analytic ring 失败模式和 liquid 分析边界写成完整证明或检查表。本卷不声称替代 Scholze 讲义中的长证明，而是提供定义、范畴语言、基本推论和后续几何应用的接口。

@@ -20,7 +20,7 @@ $$
 
 **命题 11.1.** 函子 $-\otimes_R N$ 是右正合函子。
 
-**证明说明.** 相对张量积 $M\otimes_R N$ 可由余等化子定义：
+**证明.** 相对张量积 $M\otimes_R N$ 可由余等化子定义：
 
 $$
 M\otimes R\otimes N
@@ -30,7 +30,15 @@ M\otimes N
 M\otimes_R N.
 $$
 
-在 sheaf of modules 的标准构造中，张量积由表示 $R$-平衡双线性映射的泛性质刻画，并可视为左伴随构造；因此它保持余极限，特别保持余核。右正合性正是保持余核与有限余极限的结果。完整证明可放在 sheaf 模范畴的一般理论中。证毕。
+更结构化地说，附录 E 定义了内部 Hom，并给出伴随
+
+$$
+\operatorname{Hom}_R(M\otimes_R N,P)
+\cong
+\operatorname{Hom}_R(M,\mathcal Hom_R(N,P)).
+$$
+
+因此 $-\otimes_RN$ 是左伴随。左伴随保持所有余极限，特别保持 cokernel。在阿贝尔范畴中，加性函子保持 cokernel 等价于右正合。故 $-\otimes_RN$ 右正合。证毕。
 
 **注 11.2.** 本章只需要右正合性来定义左导出函子。内部 Hom 与闭幺半结构会在后续附录中系统处理。
 
@@ -64,7 +72,7 @@ $$
 \operatorname{Tor}^R_0(M,N)\cong M\otimes_R N.
 $$
 
-标准同调代数表明，该定义与投射分解选择无关。
+投射分解的选择无关性由附录 I 的比较定理和附录 H 的 K-flat 形式给出。
 
 ## 11.3 对称性
 
@@ -84,13 +92,45 @@ $$
 \operatorname{Tor}^R_i(N,M).
 $$
 
-**证明说明.** 这是交换环上 Tor 的标准对称性。严格证明可取 $M,N$ 的双投射分解，形成双复形
+**证明.** 取 $M,N$ 的 K-flat 替换
 
 $$
-P_\bullet\otimes_R Q_\bullet,
+P^\bullet\to M,\qquad Q^\bullet\to N.
 $$
 
-并比较先沿一个方向取同调和先沿另一个方向取同调。由于 $\mathbf{CondMod}_R$ 有足够多投射对象，且 $\otimes_R$ 是对称张量积，该标准证明适用。完整双复形细节属于同调代数附录。证毕。
+由附录 H 的 K-flat 比较定理，
+
+$$
+M\otimes_R^LN\simeq P^\bullet\otimes_RQ^\bullet,
+\qquad
+N\otimes_R^LM\simeq Q^\bullet\otimes_RP^\bullet.
+$$
+
+交换凝聚环上的张量积有链级对称同构
+
+$$
+P^\bullet\otimes_RQ^\bullet
+\to
+Q^\bullet\otimes_RP^\bullet,
+\qquad
+p\otimes q\mapsto (-1)^{|p||q|}q\otimes p.
+$$
+
+Koszul 符号保证该映射与总微分相容。它是复形同构，故在导出范畴中给出自然同构
+
+$$
+M\otimes_R^LN\simeq N\otimes_R^LM.
+$$
+
+取同调即得
+
+$$
+\operatorname{Tor}^R_i(M,N)
+\simeq
+\operatorname{Tor}^R_i(N,M).
+$$
+
+证毕。
 
 ## 11.4 自由模的 Tor 消失
 
@@ -148,7 +188,52 @@ $$
 \operatorname{Tor}^R_{i-1}(M',N).
 $$
 
-**证明说明.** 这是左导出函子的标准长正合列。取短正合列的投射分解，使用 horseshoe lemma 构造短正合复形，再对 $-\otimes_R N$ 取同调。由于 $\mathbf{CondMod}_R$ 是有足够多投射对象的阿贝尔范畴，该证明适用。证毕。
+**证明.** 短正合列在导出范畴中给出 distinguished triangle
+
+$$
+M'\to M\to M''\to M'[1].
+$$
+
+由附录 H，$-\otimes_R^LN$ 是导出范畴上的三角函子；等价地，也可使用附录 I 定理 I.9。于是得到三角
+
+$$
+M'\otimes_R^LN
+\to
+M\otimes_R^LN
+\to
+M''\otimes_R^LN
+\to
+(M'\otimes_R^LN)[1].
+$$
+
+对该三角取同调，得到长正合列
+
+$$
+\cdots\to
+H_i(M'\otimes_R^LN)
+\to
+H_i(M\otimes_R^LN)
+\to
+H_i(M''\otimes_R^LN)
+\to
+H_{i-1}(M'\otimes_R^LN)
+\to\cdots.
+$$
+
+按定义 $H_i(-\otimes_R^LN)=\operatorname{Tor}_i^R(-,N)$。当 $i=0$ 时，$\operatorname{Tor}_0^R(-,N)\cong -\otimes_RN$，于是得到题中列出的尾部
+
+$$
+\operatorname{Tor}^R_1(M'',N)
+\to
+M'\otimes_RN
+\to
+M\otimes_RN
+\to
+M''\otimes_RN
+\to0.
+$$
+
+最后的 $0$ 来自右正合性，即命题 11.1。证毕。
 
 ## 11.6 ED 测试对象与 Tor 的关系
 

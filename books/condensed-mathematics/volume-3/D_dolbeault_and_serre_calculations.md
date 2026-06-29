@@ -99,7 +99,7 @@ $$
 \int_X\langle\alpha,\bar\partial\beta\rangle.
 $$
 
-**证明说明.** 由 Leibniz 规则，
+**证明.** 由 Leibniz 规则，
 
 $$
 \bar\partial\langle\alpha,\beta\rangle
@@ -115,6 +115,8 @@ $$
 $$
 
 移项即得公式。
+
+证毕。
 
 ## D.4 Riemann surface 例子
 

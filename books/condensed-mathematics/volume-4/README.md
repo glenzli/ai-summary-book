@@ -21,12 +21,13 @@
 11. [附录 B：练习解答与计算样板](B_worked_solutions_and_computations.md)
 12. [附录 C：solid、analytic、liquid 的类型检查](C_solid_analytic_liquid_type_checks.md)
 13. [附录 D：pro-etale 与凝聚数学的比较细节](D_pro_etale_comparison_details.md)
+14. [附录 E：当代方向、pyknotic 对象与凝聚同伦](E_current_directions_pyknotic_and_homotopy.md)
 
 ## 当前范围
 
 本卷是前三卷的计算和形式化补充。它不引入新的主线理论，而是把站点、sheaf、Ext/Tor、solid tensor、analytic rings、liquid spaces 和 pro-etale 背景整理成可查阅、可练习、可形式化的材料。
 
-本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查和 pro-etale 边界说明。
+本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查、pro-etale 边界说明和 pyknotic/凝聚同伦方向。
 
 ## 资料
 

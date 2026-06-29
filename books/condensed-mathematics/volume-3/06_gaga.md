@@ -37,6 +37,18 @@ $$
 3. 用 properness 保证上同调有限性和下降。
 4. 用 Cech 下降或 derived descent 粘合局部比较。
 
+接受 classical 或 Clausen-Scholze 的 GAGA 输入后，附录 K 证明 exact coherent equivalence 如何诱导
+
+$$
+D^b_{\operatorname{coh}}(X)
+\simeq
+D^b_{\operatorname{coh}}(X^{an})
+$$
+
+以及 $R\Gamma$ 比较、Euler characteristic 比较等形式推论。
+
+附录 Q 补充 properness 不可省略的 $\mathbb A^1$ 反例，并展开 exact equivalence 到 bounded derived equivalence、上同调比较到 $R\Gamma$ 比较的证明细节。
+
 ## 6.5 本章小结
 
 GAGA 说明 algebraic 和 analytic 两种几何在 proper 条件下给出同一套相干理论。condensed/analytic 语言提供了统一的比较范畴。

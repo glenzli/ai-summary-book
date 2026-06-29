@@ -14,6 +14,9 @@
 4. Bhargav Bhatt and Peter Scholze, *The pro-etale topology for schemes*, arXiv:1309.1198.  
    链接：<https://arxiv.org/abs/1309.1198>
 
+5. Clark Barwick and Peter Haine, *Pyknotic objects, I. Basic notions*.
+   用途：pyknotic 对象和凝聚同伦方向的背景。
+
 ## 章节依赖映射
 
 - 第 1 章依赖形式化基础论文。
@@ -25,3 +28,4 @@
 - 附录 B 依赖第二、三章的证明与第四至七章的例子。
 - 附录 C 依赖第二卷 solid/analytic/liquid 资料。
 - 附录 D 依赖 Bhatt-Scholze pro-etale 论文和第一卷站点语言。
+- 附录 E 依赖 pyknotic objects 的基本定义、第一卷 sheaf 理论和第四卷形式化语言。

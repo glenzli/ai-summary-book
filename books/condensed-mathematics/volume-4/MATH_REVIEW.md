@@ -15,7 +15,7 @@
 9. analytic ring 例子的有限/无限 profinite 类型检查。
 10. liquid 函数分析例子的凝聚化证明。
 11. pro-etale 与 condensed site 的边界说明。
-12. 四个附录：形式化蓝图、练习解答、类型检查和 pro-etale 对照。
+12. 五个附录：形式化蓝图、练习解答、类型检查、pro-etale 对照和 pyknotic/凝聚同伦方向。
 
 ## 数学口径
 
@@ -29,6 +29,7 @@
 - analytic rings 的局部化、完备性和相干性定理。
 - liquid 向量空间的深层判别定理。
 - pro-etale 理论中的 w-contractible 局部对象和同调消失结论。
+- pyknotic objects 与凝聚同伦类型的完整 $\infty$-范畴理论。
 
 这些内容不适合在第四卷重证；若继续扩展，应写成专题小册，而不是第五卷主线。
 

@@ -46,6 +46,13 @@
 - 第 6-8 章依赖 Gleason 的极不连通空间定理、Stone 对偶和 Scholze 讲义中的投射生成元思想。
 - 第 9-11 章使用 sheaf of modules 的标准闭对称幺半结构和导出张量理论。
 - 附录 G 使用标准同调代数，计算投射对象上的 Ext 消失、平坦对象上的 Tor 消失和长正合列。
+- 附录 H 使用 sheafification 的 plus 构造、Grothendieck 阿贝尔范畴和 Spaltenstein 型 K-flat/K-injective 替换理论；plus 构造给出书内证明，K-flat/K-injective 存在性作为一般同调代数输入。
+- 附录 I 使用阿贝尔范畴中的标准同调代数：投射分解比较定理、horseshoe lemma、短正合复形的长正合列和维数平移；这些证明在书内给出。
+- 附录 J 使用 regular open algebra、Stone 空间和紧 Hausdorff 正规性，补齐 Gleason cover 的连续满射构造；Gleason 投射性定理仍作为外部输入。
+- 附录 K 使用 Gleason cover 存在性、ED 投射性和 sheaf separated/local lifting 条件，证明 ED 测试对象检测单射、满射、同构和正合性；不新增外部来源。
+- 附录 L 使用基础 sheaf 理论、拓扑空间上的连续函数 sheaf、普通张量积和拓扑阿贝尔群的标准边界例子；不新增 condensed 数学输入。
+- 附录 M 使用第一卷附录 G-I 的同调代数规则，给出有限离散对象、两项投射分解、$\mathbb Z/n$ 型对象和 Tor 的工作例题；不新增外部来源。
+- 附录 N 使用 Boolean 代数、超滤子、Stone 对偶和 profinite 逆极限表示；Boolean prime ideal theorem 作为集合论输入，Stone 空间背景参考 Johnstone。
 - 第 12-13 章主要依赖 Scholze 讲义第五、六讲和 Nöbeling 定理。
 - 第 14-15 章主要依赖 Scholze 讲义第七、八讲；当前只写第一卷所需定义、结构定理和纲要。
 

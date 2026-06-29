@@ -2,7 +2,7 @@
 
 ## D.0 目标
 
-正文中多次使用 profinite 空间、极不连通紧 Hausdorff 空间和 Gleason cover。本附录给出这些事实在本书所需范围内的证明路线。Gleason 投射性定理本身作为经典拓扑输入使用；本附录把它与 Stone 对偶、regular open 代数和正文中的 sheaf 计算连接起来。
+正文中多次使用 profinite 空间、极不连通紧 Hausdorff 空间和 Gleason cover。本附录给出这些事实在本书所需范围内的证明路线。Gleason 投射性定理本身作为经典拓扑输入使用；本附录把它与 Stone 对偶、regular open 代数和正文中的 sheaf 计算连接起来。Stone 对偶的完整证明链见附录 N，Gleason cover 的 regular open 构造细节见附录 J。
 
 ## D.1 Boolean 代数
 
@@ -171,37 +171,7 @@ $$
 E_X=\operatorname{Stone}(\operatorname{RO}(X)).
 $$
 
-**证明.** 由命题 D.8，$E_X$ 极不连通。若 $\mathfrak u$ 是 $\operatorname{RO}(X)$ 上的超滤子，则闭集族
-
-$$
-\{\overline U\mid U\in\mathfrak u\}
-$$
-
-有有限交性质，因此交非空。Hausdorff 正则性和 regular open 集分离点可证明该交恰有一个点，记为 $p(\mathfrak u)$。这定义了映射 $p:E_X\to X$。
-
-连续性可在开集基上检查：若 $V\subset X$ 是 regular open，则
-
-$$
-p^{-1}(V)\subset U_V
-$$
-
-并且对适当缩小的 regular open 子集可得到邻域控制。满射由每个 $x\in X$ 处的邻域滤子扩张为超滤子得到。完整证明还说明 $p$ 是 irreducible map，即任意真闭子集都不能满射到 $X$。
-
-本书正文只需要满射存在性与 $E_X$ 的极不连通性。
-
-这里补充满射性的验证。给定 $x\in X$，令
-
-$$
-\mathcal F_x=\{U\in\operatorname{RO}(X)\mid x\in U\}
-$$
-
-并把它扩张为 $\operatorname{RO}(X)$ 上的超滤子 $\mathfrak u_x$。则对任意 $U\in\mathfrak u_x$，闭包 $\overline U$ 含有 $x$；因此
-
-$$
-x\in\bigcap_{U\in\mathfrak u_x}\overline U.
-$$
-
-按照上面构造的 $p$，得到 $p(\mathfrak u_x)=x$。所以 $p$ 是满射。
+**证明.** 见附录 J 定理 J.9。该定理证明 $\operatorname{RO}(X)$ 是完备 Boolean 代数，$E_X$ 极不连通，并且由超滤子闭包交定义的映射 $p:E_X\to X$ 连续且满射。证毕。
 
 ## D.6 极不连通对象的投射性
 
@@ -229,6 +199,7 @@ $$
 2. 第六章使用定理 D.9，使任意紧 Hausdorff 空间可由极不连通空间覆盖。
 3. 第七章使用定理 D.10，把极不连通空间作为投射测试对象。
 4. 第十二章以后使用极不连通/profinite 对象计算 solid 与 analytic 结构。
+5. 附录 J 细化定理 D.9 的 regular open 构造。
 
 ## 练习
 

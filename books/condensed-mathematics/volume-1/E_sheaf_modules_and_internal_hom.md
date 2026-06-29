@@ -209,7 +209,13 @@ $$
 
 当 $M,N$ 置于次数 $0$ 且没有高 Tor 贡献时。
 
-**证明说明.** $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴；在 sheaf of modules 的标准理论中，每个复形有 K-flat 替换。取 K-flat 替换后逐项张量，得到良定义的双函子。若选择两个 K-flat 替换，它们之间由同伦范畴中的 quasi-isomorphism 比较，而与 K-flat 复形张量保持 quasi-isomorphism，因此结果与选择无关。
+**证明.** 附录 H 命题 H.11 说明 $R\text{-}\mathbf{Mod}(\mathcal E)$ 是 Grothendieck 阿贝尔范畴。由附录 H 输入定理 H.13，每个复形有 K-flat 替换。对 $M^\bullet,N^\bullet$，取 K-flat 替换 $P^\bullet\to M^\bullet$，定义
+
+$$
+M^\bullet\otimes_R^LN^\bullet=P^\bullet\otimes_RN^\bullet.
+$$
+
+附录 H 命题 H.15 证明该定义与替换选择无关。因此得到导出范畴上的双函子 $-\otimes_R^L-$。若 $M,N$ 集中在次数 $0$，则第零同调是右正合函子 $-\otimes_RN$ 的第零左导出，等于普通张量积；高同调正是相应 Tor 项。证毕。
 
 ## E.6 Tor 群
 

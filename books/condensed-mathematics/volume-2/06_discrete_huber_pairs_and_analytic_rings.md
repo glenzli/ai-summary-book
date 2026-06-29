@@ -86,15 +86,18 @@ D((A,A^+)^\square)
 \to
 \operatorname{Tot}\left(
 \prod_iD(U_i)\rightrightarrows
-\prod_{i,j}D(U_i\cap U_j)\triplearrows\cdots
+\prod_{i,j}D(U_i\cap U_j)
+\rightrightarrows\cdots
 \right)
 $$
 
 的下降描述。
 
-**输入定理 6.5（Scholze）.** 在适当假设下，解析模满足 rational Cech 下降。
+**输入定理 6.5（Scholze）.** 对第二卷附录 D.6 所登记的离散 Huber pair 解析化，在 rational covering 上，解析模范畴满足 rational Cech 下降。
 
 这个定理使解析环从仿射局部对象走向几何空间。
+
+形式层面的 Cech nerve、totalization 和局部等价检测见附录 G。特别要注意：这里的 totalization 是稳定范畴或范畴值 descent 的 totalization，不只是阿贝尔群的等化子。
 
 ## 6.6 例子：$\mathbb Z[T]$
 

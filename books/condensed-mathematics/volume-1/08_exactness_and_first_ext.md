@@ -114,7 +114,7 @@ $$
 H^n(\operatorname{Hom}(P_\bullet,B)).
 $$
 
-标准同调代数表明，该定义与投射分解选择无关。
+附录 I 推论 I.3 证明，该定义与投射分解选择无关。
 
 **例 8.4.** 若 $E$ 极不连通，则
 
@@ -169,7 +169,7 @@ $$
 \operatorname{Ext}^1(P,B)=0.
 $$
 
-**证明.** 对短正合列应用左正合函子 $\operatorname{Hom}(-,B)$ 的右导出长正合列。由于 $P$ 投射，$\operatorname{Ext}^1(P,B)=0$。证毕。
+**证明.** 对短正合列应用附录 I 定理 I.7 的第一变量 Ext 长正合列。由于 $P$ 投射，$\operatorname{Ext}^1(P,B)=0$。证毕。
 
 这给出计算 $\operatorname{Ext}^1$ 的标准方法：先找一个投射表示 $P\to A$，再研究核 $K$。
 

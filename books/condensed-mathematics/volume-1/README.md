@@ -43,6 +43,13 @@
 21. [附录 E：sheaf 模、内部 Hom 与派生张量](E_sheaf_modules_and_internal_hom.md)
 22. [附录 F：Nöbeling 定理与 solid 计算](F_nobeling_and_solid_calculations.md)
 23. [附录 G：基本 Ext 与 Tor 计算](G_basic_ext_and_tor_calculations.md)
+24. [附录 H：正合 sheafification 与派生工具](H_exact_sheafification_and_derived_tools.md)
+25. [附录 I：Horseshoe 引理与导出函子形式](I_horseshoe_and_derived_functor_formalism.md)
+26. [附录 J：Regular open 代数与 Gleason cover 细节](J_regular_open_and_gleason_cover_details.md)
+27. [附录 K：ED 覆盖检测与有效满射](K_ed_cover_detection_and_effective_epimorphisms.md)
+28. [附录 L：边界例子与反例](L_boundary_examples_and_counterexamples.md)
+29. [附录 M：Ext 与 Tor 工作例题](M_worked_ext_tor_examples.md)
+30. [附录 N：Stone 对偶的完整证明链](N_stone_duality_full_proof.md)
 
 ## 第一卷计划
 
@@ -69,9 +76,16 @@
 - 附录 E：sheaf 模、内部 Hom 与派生张量。
 - 附录 F：Nöbeling 定理与 solid 计算。
 - 附录 G：基本 Ext 与 Tor 计算。
+- 附录 H：正合 sheafification、Grothendieck 阿贝尔范畴和 K-flat 派生工具。
+- 附录 I：Horseshoe 引理、投射分解比较、长正合列和维数平移。
+- 附录 J：regular open 代数、Stone 空间到紧 Hausdorff 空间的 Gleason cover 映射。
+- 附录 K：ED 覆盖检测 sheaf 单射、满射、同构和阿贝尔 sheaf 正合性。
+- 附录 L：sheaf 满射、separated presheaf、站点比较、无限乘积张量和拓扑阿贝尔群的边界例子。
+- 附录 M：有限离散自由对象、两项投射分解、乘以 $n$ 的 Ext/Tor 工作例题。
+- 附录 N：滤子、超滤子、Stone 空间紧性、开闭代数同构和 profinite 逆极限表示。
 
 ## 当前范围
 
-当前版本完成第一卷：基础部分给出书内证明，solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。Gleason、Nöbeling 和 Scholze 的 solid/analytic 结构定理作为外部输入定理使用；第二卷继续展开这些高阶结构。
+当前版本完成第一卷：基础部分给出书内证明，新增附录 H 将 sheafification 正合性和派生张量的同调代数基础补齐，附录 I-K 补投射分解、Gleason cover 形式细节和 ED 覆盖检测正合性的证明链，附录 L 补关键假设的边界例子，附录 M 补 Ext/Tor 工作例题，附录 N 补 Stone 对偶的完整证明链；solid、analytic rings 和相干对偶部分给出严格定义、核心定理、证明说明和引用边界。Gleason 投射性、Nöbeling 和 Scholze 的 solid/analytic 结构定理作为外部输入定理使用；第二卷继续展开这些高阶结构。
 
 总目录见 [凝聚数学讲义](../)。续卷见 [凝聚数学讲义：第二卷](../volume-2/)。

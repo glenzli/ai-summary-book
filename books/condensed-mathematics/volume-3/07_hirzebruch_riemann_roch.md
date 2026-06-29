@@ -43,6 +43,14 @@ $$
 3. 用 trace map 表达 Euler characteristic。
 4. 证明 trace 与 characteristic classes 相容。
 
+附录 K 证明 Riemann-Roch 输入定理接受之后的形式推论：Euler characteristic 是 $K$-理论上的群同态，GAGA 比较保持 Euler characteristic，并且 $\mathbb P^1$ 上 $\mathcal O(d)$ 的 characteristic class 计算给出 $d+1$。
+
+附录 P 进一步展开 Chern character、Todd class、splitting principle 和 $K$-理论同态的形式代数，说明 HRR 右侧为什么是 $K^0(X)\to\mathbb Q$ 的群同态。
+
+附录 S 计算 $\mathbb P^n$ 上 $\mathcal O(d)$ 的上同调和 Euler characteristic，给出 Riemann-Roch 在线丛基础情形下的可复核检验。
+
+附录 U 进一步直接计算 $\operatorname{ch}(\mathcal O(d))\operatorname{td}(T_{\mathbb P^n})$ 的积分，证明 $\mathbb P^n$ 线丛情形的 HRR 公式。
+
 ## 7.5 本章小结
 
 Riemann-Roch 是前面有限性、对偶性和 GAGA 的综合应用。condensed/analytic 方法给出统一范畴背景，但 characteristic class 的完整构造需要更多几何输入。

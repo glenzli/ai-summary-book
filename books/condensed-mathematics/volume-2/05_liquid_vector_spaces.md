@@ -97,6 +97,8 @@ $$
 
 liquid 理论是 analytic rings 在实分析方向的主要例子。它用测度理论替代单纯的范数完备化，使实向量空间可以进入凝聚同调代数。
 
+附录 J 补充说明 Banach/Fréchet 空间与 liquid 对象之间的边界，以及为什么“拓扑向量空间”本身不足以给出适合导出范畴的同调代数环境。
+
 ## 练习
 
 **练习 5.1.** 说明 solidification 与 Banach completion 的定义差异。

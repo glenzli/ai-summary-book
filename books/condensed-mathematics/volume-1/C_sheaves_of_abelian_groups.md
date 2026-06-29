@@ -58,7 +58,7 @@ $$
 
 **定理 C.1.** 阿贝尔群值 sheafification 是正合函子。
 
-**证明说明.** 可通过加法 sheafification 的加号构造证明：先把预层局部化成 separated presheaf，再粘合局部截面。该过程保持有限极限，并作为左伴随保持余极限；在阿贝尔群值情形中可推出正合性。完整证明见标准 sheaf theory 教材或 Stacks Project。证毕。
+**证明.** 见附录 H 定理 H.6。该证明使用 plus 构造、局部零判据和预层短正合列的逐对象正合性。证毕。
 
 ## C.3 Sheaf 范畴是阿贝尔范畴
 

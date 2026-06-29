@@ -108,9 +108,19 @@ $$
 f^!.
 $$
 
-**命题 7.2.** 假设 $f_!$ 保持所有小余极限，且源和目标是紧生成稳定范畴，则在适当可表性假设下 $f_!$ 有右伴随。
+**命题 7.2.** 假设 $f_!$ 是可展示稳定范畴之间的可访问余极限保持函子，则 $f_!$ 有右伴随。
 
-**证明说明.** 这是稳定范畴中的伴随函子定理。Scholze 的具体情形通过 compact generation 与 $f_!$ 对紧对象的控制来验证假设。
+**证明.** 这是 presentable adjoint functor theorem 的直接应用；见附录 F 推论 F.3。若只使用三角范畴语言，可用附录 F 定理 F.5 的 Brown representability 版本。证毕。
+
+附录 F 还证明：一旦投影公式成立，右伴随 $f^!$ 与内部 Hom 满足
+
+$$
+f^!\mathcal Hom(M,Y)
+\simeq
+\mathcal Hom(f^*M,f^!Y).
+$$
+
+该公式的闭幺半背景、dualizable/perfect 假设和失败边界见附录 L。
 
 ## 7.6 相干对偶图景
 

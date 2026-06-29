@@ -49,14 +49,17 @@ $$
 
 ## 5.4 证明路线
 
-1. 用 Dolbeault 复形表示两侧。
+1. 用 Dolbeault 复形表示两侧；见附录 D 与附录 I。
 2. 构造积分配对
    $$
    \int_X \alpha\wedge\beta.
    $$
-3. 证明配对与 $\bar\partial$ 相容。
-4. 使用有限性定理得到完美性。
-5. 把该配对识别为 $f_!\dashv f^!$ 的 counit/trace。
+3. 证明配对与 $\bar\partial$ 相容；见附录 J 命题 J.4。
+4. 使用有限性定理和 Serre perfectness 输入得到完美性；见附录 J 命题 J.3 与推论 J.6。
+5. 把该配对识别为 $f_!\dashv f^!$ 的 counit/trace；见附录 J 定义 J.7 至推论 J.9。
+6. 若相干层有有限局部自由 resolution，则向量丛形式推出 Ext 形式；见附录 O。
+
+$\mathbb P^n$ 上线丛情形的可计算模型见附录 T；它用 Čech 单项式和 residue trace 直接证明完美配对。
 
 ## 5.5 本章小结
 

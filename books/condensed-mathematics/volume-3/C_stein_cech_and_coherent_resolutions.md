@@ -74,7 +74,7 @@ H^n(C^\bullet(\mathfrak U,\mathcal F))
 H^n(X,\mathcal F).
 $$
 
-**证明说明.** 使用 Cech-to-derived spectral sequence
+**证明.** 附录 I 定理 I.2 给出有限覆盖情形的 Cech-to-derived spectral sequence
 
 $$
 E_1^{p,q}=
@@ -83,11 +83,39 @@ E_1^{p,q}=
 H^{p+q}(X,\mathcal F).
 $$
 
-acyclic 条件使 $q>0$ 行消失，因此谱序列在 $E_2$ 退化，得到结论。
+acyclic 条件使 $q>0$ 行消失。$q=0$ 行正是 Cech 复形 $C^\bullet(\mathfrak U,\mathcal F)$，而 $d_1$ 是 Cech 微分。于是
+
+$$
+E_2^{p,0}=H^p(C^\bullet(\mathfrak U,\mathcal F)),
+\qquad
+E_2^{p,q}=0\ (q>0).
+$$
+
+第一象限中没有非零高阶微分能离开或进入唯一非零行，故 $E_2=E_\infty$。总次数 $n$ 的过滤只有一个非零分级片，因此
+
+$$
+H^n(C^\bullet(\mathfrak U,\mathcal F))
+\cong
+H^n(X,\mathcal F).
+$$
+
+证毕。
 
 ## C.4 Stein 覆盖的作用
 
-紧复流形可取有限 Stein 覆盖，且适当细化后有限交仍可由 Stein 开集控制。对相干层 $\mathcal F$，Cartan B 给出这些交上的高上同调消失，因此 Cech 复形可用于计算 $R\Gamma(X,\mathcal F)$。
+**输入定理 C.8（Stein Leray 覆盖）.** 对紧复流形 $X$ 和相干解析层 $\mathcal F$，可取有限开覆盖 $\mathfrak U=\{U_i\}$，使每个有限交
+
+$$
+U_{i_0\cdots i_p}
+$$
+
+是 Stein，或者至少对 $\mathcal F$ 是 acyclic：
+
+$$
+H^q(U_{i_0\cdots i_p},\mathcal F)=0,\qquad q>0.
+$$
+
+在该输入下，Cartan B 给出有限交上的高上同调消失，因此 Cech 复形可用于计算 $R\Gamma(X,\mathcal F)$。
 
 condensed/analytic 版本中，每个
 
@@ -96,6 +124,8 @@ $$
 $$
 
 不仅是向量空间，还带有自然拓扑或 liquid 结构。
+
+**警告 C.9.** Cech 复形能计算 $R\Gamma(X,\mathcal F)$，但不自动证明 $H^i(X,\mathcal F)$ 有限维。即使 $U$ 是 Stein，$\mathcal O(U)$ 也可能是无限维复向量空间；单位圆盘就是基本例子。有限性需要 Grauert、Fredholm-Hodge 或 Clausen-Scholze 的有限性输入；形式传播机制见附录 M。
 
 ## C.5 相干层的局部分解
 
@@ -107,7 +137,7 @@ $$
 
 因此很多证明可先对 $\mathcal O_U$ 或有限自由层处理，再通过 exact sequence 推广到一般相干层。
 
-**命题 C.7.** 若某性质 $P(\mathcal F)$ 对短正合列满足 two-out-of-three，并且对 $\mathcal O_U$ 成立，则在局部有限分解允许的范围内，$P$ 可推广到相干层。
+**命题 C.10.** 若某性质 $P(\mathcal F)$ 对短正合列满足 two-out-of-three，并且对 $\mathcal O_U$ 成立，则在局部有限分解允许的范围内，$P$ 可推广到相干层。
 
 **证明.** 使用有限表示给出的 exact sequence。若 $P$ 对 $\mathcal O_U^m$ 和 $\mathcal O_U^n$ 成立，则由 two-out-of-three 推得对 cokernel $\mathcal F$ 成立。对更长分解用归纳。证毕。
 

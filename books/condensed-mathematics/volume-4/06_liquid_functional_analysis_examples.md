@@ -35,14 +35,14 @@ $$
 V=\varprojlim_nV_n
 $$
 
-是 Banach 空间的可数逆极限表示。对紧 Hausdorff $S$，自然映射
+是 Banach 空间的可数逆极限表示，并赋予逆极限拓扑。对紧 Hausdorff $S$，自然映射
 
 $$
 \operatorname{Cont}(S,V)\to
 \varprojlim_n\operatorname{Cont}(S,V_n)
 $$
 
-通常是同构。
+是同构。
 
 **证明。** 映射 $f:S\to V$ 与坐标映射 $f_n:S\to V_n$ 相容，且每个 $f_n$ 连续。反过来，给定相容连续族 $(f_n)$，由逆极限的集合性质得到唯一映射 $f:S\to V$。逆极限拓扑的定义说明 $f$ 连续当且仅当所有坐标 $f_n$ 连续。证毕。
 

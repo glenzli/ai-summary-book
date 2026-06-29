@@ -34,6 +34,27 @@
 9.  已补第一卷 Ext/Tor 计算  
     当前已新增附录 G，系统整理投射对象上的 Ext 消失、极不连通自由对象的 Ext 消失、Cech 型投射分解、平坦对象的 Tor 消失、长正合列和维数平移。
 
+10. 已补正合 sheafification 与派生工具
+    当前已新增附录 H，给出 plus 构造、sheafification 正合性的书内证明、sheaf 模范畴的 Grothendieck 阿贝尔结构，以及 K-flat 派生张量的定义独立性。K-flat/K-injective 替换存在性仍作为一般同调代数输入定理。
+
+11. 已补基础同调代数形式证明
+    当前已新增附录 I，给出投射分解比较定理、horseshoe lemma、短正合复形长正合列、Ext 长正合列、Tor 长正合列和维数平移的书内证明。
+
+12. 已补 Gleason cover 的 regular open 构造细节
+    当前已新增附录 J，证明 $\operatorname{RO}(X)$、$E_X=\operatorname{Stone}(\operatorname{RO}(X))$、以及 $E_X\to X$ 的连续满射构造。Gleason 投射性定理本身仍作为外部输入。
+
+13. 已补 ED 覆盖检测正合性的形式证明
+    当前已新增附录 K，证明 ED 空间检测 sheaf 截面相等、零 sheaf、满射、单射、同构和阿贝尔 sheaf 正合性。第七、八章使用 ED 自由投射对象时，检测正合性的逻辑边界现在有完整书内参照。
+
+14. 已补边界例子与反例
+    当前已新增附录 L，说明 sheaf 满射不等于逐对象满射、separated presheaf 不一定是 sheaf、基子站点缺少交叠会破坏 sheaf 条件、普通张量积不保持无限乘积，以及拓扑阿贝尔群不能替代凝聚阿贝尔群。
+
+15. 已补 Ext/Tor 工作例题
+    当前已新增附录 M，计算有限离散自由对象、两项投射分解、$\mathbb Z_{\operatorname{cond}}/n$ 的 Ext，以及乘以 $n$ 的 Tor 模板，补足“规则到手算”的中间层。
+
+16. 已补 Stone 对偶完整证明链
+    当前已新增附录 N，证明超滤子判别、Stone 空间紧 Hausdorff 性、$B\simeq\operatorname{Clop}(\operatorname{Stone}(B))$、profinite 空间的 Stone 恢复和有限离散商逆极限表示。Boolean prime ideal theorem 仍作为集合论输入。
+
 ## 第一卷外部输入定理
 
 以下结果作为第一卷外部输入定理使用。第一卷不再把它们列为正文缺口；第二卷会继续依赖其中的 solid/analytic 结构定理。
@@ -42,16 +63,16 @@
     极不连通紧 Hausdorff 空间等价于 compact Hausdorff 范畴中关于满射的投射对象。
 
 2.  Gleason cover  
-    任意紧 Hausdorff 空间存在极不连通紧 Hausdorff 空间满射覆盖。
+    任意紧 Hausdorff 空间存在极不连通紧 Hausdorff 空间满射覆盖。附录 J 构造 regular open Stone cover 的连续满射，投射性仍引用 Gleason。
 
-3.  Profinite/Stone 覆盖  
-    任意紧 Hausdorff 空间可由 profinite 空间满射覆盖。
+3.  Profinite/Stone 基础
+    Stone 对偶、profinite 逆极限表示已由附录 N 证明；任意紧 Hausdorff 空间的特定覆盖构造仍按正文引用拓扑输入。
 
 4.  站点比较定理  
     基子站点诱导的 sheaf 范畴等价。附录 B 已给出本书所需版本的证明细节。
 
 5.  Sheaf of modules 的一般代数  
-    包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 E 已给出本书所需版本；出版级细节仍需引用 ringed topos 或 Grothendieck 范畴的标准 K-flat 理论。
+    包括张量积右正合性、相对张量积、内部 Hom、导出张量的标准构造。附录 E 给出本书所需版本，附录 H 补充正合 sheafification 和派生张量的比较证明；K-flat/K-injective 替换存在性仍引用 ringed topos 或 Grothendieck 范畴的标准理论。
 
 6.  Nöbeling 定理  
     任意 profinite $S$ 上 $C(S,\mathbb Z)$ 自由。附录 F 给出 metrizable 情形证明和一般情形说明，但一般定理仍作为外部引用。

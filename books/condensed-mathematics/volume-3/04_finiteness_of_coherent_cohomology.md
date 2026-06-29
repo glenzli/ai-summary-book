@@ -30,8 +30,9 @@ $$
 
 1. 用 Dolbeault 复形计算 $R\Gamma(X,\mathcal F)$。
 2. 将相关函数空间放入 liquid 范畴。
-3. 使用 elliptic regularity 或 Fredholm 性质证明同调有限维。
-4. 将分析有限性翻译为 condensed/analytic 范畴中的紧性。
+3. 使用 elliptic regularity 或 Fredholm 性质证明同调有限维；形式证明层见附录 L。
+4. 用有限过滤、谱序列和有限分解传播有限性；形式边界见附录 M。
+5. 将分析有限性翻译为 condensed/analytic 范畴中的紧性。
 
 ## 4.4 本章小结
 

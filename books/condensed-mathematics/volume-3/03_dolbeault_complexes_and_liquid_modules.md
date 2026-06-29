@@ -54,6 +54,8 @@ $$
 
 第三步是 condensed 方法的核心，因为它把分析拓扑放入范畴结构，而不是事后处理。
 
+前两步的 sheaf-theoretic 形式证明见附录 N：fine sheaf 的 acyclicity、acyclic resolution 定理，以及 Dolbeault lemma 推出 sheaf cohomology 计算的过程都在那里展开。Dolbeault lemma 的局部解析骨架见附录 R。
+
 ## 3.5 本章小结
 
 Dolbeault 复形是从经典复几何进入 liquid 范畴的桥梁。后续有限性和对偶性都依赖它提供的计算模型。
