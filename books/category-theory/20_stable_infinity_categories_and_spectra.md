@@ -492,7 +492,46 @@ $$
 
 **证明.** 固定 $n$。微分 $d_r$ 改变 bidegree，其源或靶位于同一总次数附近的有限集合中。按假设，可能非零的 $E_1^{p,n-p}$ 只有有限多个 $p$。随着 $r$ 增大，任何给定项可能接收或发出的微分只能来自这些有限位置；超过最大距离后不存在源或靶。因此在该总次数上页数稳定，不会有无限长微分链。$\square$
 
-## 20.7 本章小结
+## 20.7 正合函子的稳定判别
+
+**命题 20.AA.** 设 $F:C\to D$ 为稳定 $\infty$-范畴之间的函子。若 $F$ 保持零对象和有限余极限，则 $F$ 正合。
+
+**证明.** 按定义只需再证明 $F$ 保持有限极限。稳定 $\infty$-范畴中，有限极限由零对象和纤维生成；而纤维可由余纤维和环路表达。具体地，任意态射 $f:X\to Y$ 的纤维满足
+
+$$
+\operatorname{fib}(f)\simeq\Omega\operatorname{cofib}(f)
+$$
+
+在由 $f$ 生成的纤维-余纤维序列中成立。由于 $F$ 保持零对象和有限余极限，它保持余纤维，并且保持悬挂：
+
+$$
+F\Sigma W\simeq \Sigma FW.
+$$
+
+令 $W=\Omega Z$，由 $\Sigma\Omega Z\simeq Z$ 得
+
+$$
+\Sigma F\Omega Z\simeq FZ.
+$$
+
+在 $D$ 中 $\Omega$ 是 $\Sigma$ 的逆等价，故 $F\Omega Z\simeq\Omega FZ$。于是
+
+$$
+F\operatorname{fib}(f)
+\simeq F\Omega\operatorname{cofib}(f)
+\simeq \Omega\operatorname{cofib}(Ff)
+\simeq\operatorname{fib}(Ff).
+$$
+
+于是 $F$ 保持纤维和由纤维构造的有限拉回，故保持有限极限。$\square$
+
+**推论 20.AB.** 稳定 $\infty$-范畴之间保持有限余极限的函子，只要保持零对象，就与悬挂、环路、纤维序列和余纤维序列相容。
+
+**证明.** 由命题 20.AA，$F$ 正合。再用命题 20.11。$\square$
+
+**例子 20.AC（同伦范畴边界）.** 若只给出三角范畴 $hC\to hD$ 上的 exact triangle functor，并不能自动得到稳定 $\infty$-范畴之间的正合函子。提升问题还需要控制映射空间、映射谱和高阶相干；因此本章把三角结构作为外部输入的影子，而不把它当作稳定 $\infty$-范畴的定义。
+
+## 20.8 本章小结
 
 稳定 $\infty$-范畴把三角范畴提升到保留高阶映射空间的环境。谱是 pointed spaces 的稳定化，是稳定同伦论的基本对象。t-结构把稳定高阶范畴与阿贝尔范畴和同调代数连接起来；有限滤过和完备滤过对象进一步给出可计算的谱序列。
 
@@ -557,3 +596,9 @@ $$
 **练习 20.29.** 对 Postnikov tower，指出其 graded pieces 与 cohomology objects 的关系。
 
 **练习 20.30.** 证明命题 20.Z 中“有限多个非零项”如何排除无限微分链。
+
+**练习 20.31.** 证明稳定 $\infty$-范畴中 $\operatorname{fib}(f)\simeq\Omega\operatorname{cofib}(f)$ 的来源。
+
+**练习 20.32.** 设 $F:C\to D$ 保持零对象和有限余极限。证明 $F$ 与环路函子相容。
+
+**练习 20.33.** 解释为什么三角范畴上的 exact functor 不一定包含映射谱层面的信息。

@@ -420,7 +420,43 @@ $$
 
 因此这些线性映射满足二维 bordism 范畴的生成关系，给出普通二维 oriented TFT 的代数数据。完整分类定理还需证明这些生成关系给出全部曲面关系；这属于低维 cobordism category 的外部拓扑输入。$\square$
 
-## 22.10 本章小结
+## 22.10 普通幺半范畴的低维恢复
+
+**命题 22.Y.** 设 $\mathcal C$ 是普通幺半范畴，并把它视为带离散映射空间的幺半 $\infty$-范畴 $N(\mathcal C)^\otimes$。则 $N(\mathcal C)^\otimes$ 中的 $E_1$-代数对象正是 $\mathcal C$ 中的普通代数对象。
+
+**证明.** $E_1$-代数给出对象 $A$、乘法
+
+$$
+\mu:A\otimes A\to A
+$$
+
+和单位
+
+$$
+\eta:\mathbb 1\to A,
+$$
+
+并由 $E_1$-operad 的二维和三维相干单纯形给出结合律与单位律。由于 $N(\mathcal C)^\otimes$ 的映射空间离散，所有同伦相干等式只能是普通等式。因此这些数据正是普通幺半范畴中的 monoid object。反过来，普通代数对象的结合律和单位律给出相应 operad 映射。$\square$
+
+**命题 22.Z.** 强幺半 $\infty$-函子把 $\mathcal O$-代数送到 $\mathcal O$-代数。
+
+**证明.** 设 $F:C^\otimes\to D^\otimes$ 是保持 inert/coCartesian 结构的幺半 $\infty$-函子。若
+
+$$
+A:\mathcal O^\otimes\to C^\otimes
+$$
+
+是 $\mathcal O$-代数，则复合
+
+$$
+\mathcal O^\otimes\xrightarrow{A}C^\otimes\xrightarrow{F}D^\otimes
+$$
+
+仍是 $\infty$-operad 映射，因而定义 $D$ 中的 $\mathcal O$-代数。相干性不需重新证明，因为它已经包含在 operad 映射的复合中。$\square$
+
+**例子 22.AA.** 对强对称幺半函子 $\Sigma^\infty_+:\mathcal S\to\mathbf{Sp}$，$E_\infty$-space 被送到 $E_\infty$-ring spectrum。这是“代数结构可沿幺半函子传递”的高阶版本；具体构造依赖该函子的对称幺半性。
+
+## 22.11 本章小结
 
 高阶代数把普通代数对象放入 $\infty$-范畴和 operad 控制的相干体系中。$E_n$-代数记录不同层级的同伦交换性，幺半 $\infty$-范畴为谱、导出几何和拓扑场论提供统一语言。Morita 理论把代数按模范畴和双模组织起来，fully dualizable 条件则是 extended TFT 中的有限性核心。
 
@@ -477,3 +513,9 @@ $$
 **练习 22.25.** 在二维 TFT 的 Frobenius 代数数据中，说明圆柱对应恒等算子。
 
 **练习 22.26.** 比较普通二维 TFT 中“圆周取值”与 fully extended TFT 中“点取值”的差异。
+
+**练习 22.27.** 在普通幺半范畴中写出代数对象的结合律和单位律图。
+
+**练习 22.28.** 解释为什么映射空间离散时，“同伦相干结合律”退化为普通结合律。
+
+**练习 22.29.** 设 $F:C^\otimes\to D^\otimes$ 为强幺半函子，说明它如何把普通代数对象 $A$ 的乘法送到 $FA$ 的乘法。

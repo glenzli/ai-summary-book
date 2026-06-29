@@ -212,7 +212,65 @@ $$
 
 **例子 23.25.** 若 $C$ 是 presentable 幺半 $\infty$-category 且张量积分别保持余极限，则对 $E_1$-代数 $A\in C$，模范畴 $\operatorname{LMod}_A(C)$ 仍是 presentable。该结论是第二十二章模 $\infty$-范畴存在性定理的环境。
 
-## 23.7 本章小结
+## 23.7 局部等价与反射子范畴
+
+**定义 23.26.** 设 $L:C\to C$ 为局部化。态射 $f:X\to Y$ 称为 $L$-等价，若
+
+$$
+Lf:LX\to LY
+$$
+
+是等价。
+
+**命题 23.27（局部等价的映射空间判别）.** 态射 $f:X\to Y$ 是 $L$-等价，当且仅当对每个 $L$-局部对象 $Z$，预复合诱导
+
+$$
+\operatorname{Map}_C(Y,Z)\to\operatorname{Map}_C(X,Z)
+$$
+
+是等价。
+
+**证明.** 因为 $Z$ 局部，反射伴随给出自然等价
+
+$$
+\operatorname{Map}_C(Y,Z)\simeq\operatorname{Map}_C(LY,Z),
+\qquad
+\operatorname{Map}_C(X,Z)\simeq\operatorname{Map}_C(LX,Z).
+$$
+
+在这些等价下，预复合 $f$ 对应预复合 $Lf$。若 $Lf$ 是等价，则所有映射空间上的预复合都是等价。反过来，取 $Z=LY$ 与 $Z=LX$，上述条件说明 $Lf$ 在局部对象全子范畴中由 Yoneda 判别为等价。$\square$
+
+**命题 23.28.** 若 $C$ 有小极限，则局部对象全子范畴 $C_L$ 的小极限由 $C$ 中的小极限计算。
+
+**证明.** 设 $D:K\to C_L$ 为图形，令 $M=\lim_K D$ 在 $C$ 中计算。对任意对象 $X\in C$，
+
+$$
+\operatorname{Map}_C(X,M)
+\simeq
+\lim_{k\in K}\operatorname{Map}_C(X,D_k).
+$$
+
+由于每个 $D_k$ 局部，
+
+$$
+\operatorname{Map}_C(X,D_k)\simeq\operatorname{Map}_C(LX,D_k).
+$$
+
+因此
+
+$$
+\operatorname{Map}_C(X,M)
+\simeq
+\operatorname{Map}_C(LX,M),
+$$
+
+这正是命题 23.14 中反射伴随给出的局部对象判别，因此 $M$ 局部。于是 $M$ 是 $C_L$ 中的极限。$\square$
+
+**推论 23.29.** Accessible localization 的包含函子 $C_L\hookrightarrow C$ 保持并创建小极限；局部化函子 $L:C\to C_L$ 作为左伴随保持小余极限。
+
+**证明.** 前半由命题 23.28；后半是左伴随保持余极限。$\square$
+
+## 23.8 本章小结
 
 Presentable $\infty$-categories 是现代高阶范畴论中处理“大”同伦范畴的标准框架。预层 $\infty$-范畴是自由生成对象；accessible localization 把预层范畴裁剪成 sheaves、local objects、稳定局部化和模范畴；$\operatorname{Pr}^L$ 则把这些大范畴及其左伴随组织成高阶代数可操作的环境。
 
@@ -249,3 +307,9 @@ Presentable $\infty$-categories 是现代高阶范畴论中处理“大”同伦
 **练习 23.15.** 说明 $\operatorname{Pr}^L$ 的张量积泛性质。
 
 **练习 23.16.** 解释为什么第二十二章中要求张量积分别保持余极限。
+
+**练习 23.17.** 证明若 $f$ 是等价，则它是任意局部化 $L$ 的 $L$-等价。
+
+**练习 23.18.** 用命题 23.27 说明 $S$-局部化中的局部等价可由所有 $S$-局部对象检测。
+
+**练习 23.19.** 证明两个局部对象的乘积仍是局部对象。

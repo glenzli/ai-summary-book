@@ -300,9 +300,45 @@ $$
 
 **注 17.20.** Kan-Quillen 模型结构把 Kan 复形作为 fibrant objects，用来建模 spaces 或 $\infty$-群胚；Joyal 模型结构把 quasi-categories 作为 fibrant objects，用来建模 $\infty$-范畴。二者的差别正是“所有态射可逆”与“一般态射不必可逆”的差别。
 
-## 17.9 本章小结
+## 17.9 Nerve 的全忠实与边界例子
 
-单纯集是 $\Delta$ 上的预层。标准单纯形由 Yoneda 表示，角是标准单纯形的特定子单纯集。quasi-category 是满足所有内角填充条件的单纯集。普通范畴通过 nerve 嵌入 quasi-category 世界；区别在于普通范畴的内角填充唯一，而一般 quasi-category 只要求存在。Kan 复形是所有 horn 可填的 quasi-category，因而建模 $\infty$-群胚；Joyal 模型结构则把 quasi-category 组织成同伦理论。
+**命题 17.21.** Nerve 函子
+
+$$
+N:\mathbf{Cat}\to\mathbf{sSet}
+$$
+
+是全忠实的。
+
+**证明.** 给定单纯集映射 $\Phi:N(\mathcal C)\to N(\mathcal D)$。在 $0$-单纯形上，$\Phi$ 给出对象函数；在 $1$-单纯形上，给出态射函数。由于 $\Phi$ 与面映射相容，态射的源和目标被保持。由于 $\Phi$ 与 $2$-单纯形相容，对任意可复合态射 $X\xrightarrow fY\xrightarrow gZ$，$N(\mathcal C)$ 中对应的 $2$-单纯形被送到 $N(\mathcal D)$ 中的 $2$-单纯形，因此长边满足
+
+$$
+\Phi(gf)=\Phi(g)\Phi(f).
+$$
+
+退化 $1$-单纯形给出恒等态射，因此 $\Phi$ 保持恒等态射。于是 $\Phi$ 唯一来自函子 $\mathcal C\to\mathcal D$。反过来，任意函子逐维预复合给出 nerve 映射。两构造互逆，故全忠实。$\square$
+
+**命题 17.22.** 对普通范畴 $\mathcal C$，$N(\mathcal C)$ 是 Kan 复形，当且仅当 $\mathcal C$ 是群胚。
+
+**证明.** 若 $N(\mathcal C)$ 是 Kan 复形，取任意态射 $f:x\to y$。外角
+
+$$
+\Lambda_0^2\to N(\mathcal C)
+$$
+
+可指定边 $x\xrightarrow f y$ 与退化边 $x\xrightarrow{\operatorname{id}_x}x$；填充给出一条边 $g:y\to x$，并使 $g f=\operatorname{id}_x$。另一个外角 $\Lambda_2^2$ 的填充给出一条边 $h:y\to x$，并使 $f h=\operatorname{id}_y$。于是
+
+$$
+g=g\operatorname{id}_y=g(fh)=(gf)h=\operatorname{id}_x h=h,
+$$
+
+故 $g$ 同时是 $f$ 的左右逆。每个态射可逆，$\mathcal C$ 是群胚。反过来，若 $\mathcal C$ 是群胚，则外角填充可由逆态射构造，内角填充由普通复合唯一给出；所有 horn 均可填。因此 $N(\mathcal C)$ 是 Kan 复形。$\square$
+
+**例子 17.23.** $\Delta^1\cong N([1])$ 是 quasi-category，但不是 Kan 复形。因为 $[1]$ 中唯一非恒等态射 $0\to1$ 不可逆，命题 17.22 排除了 Kan 性。这个例子是“范畴”不同于“空间”的最小单纯集模型。
+
+## 17.10 本章小结
+
+单纯集是 $\Delta$ 上的预层。标准单纯形由 Yoneda 表示，角是标准单纯形的特定子单纯集。quasi-category 是满足所有内角填充条件的单纯集。普通范畴通过全忠实 nerve 嵌入 quasi-category 世界；区别在于普通范畴的内角填充唯一，而一般 quasi-category 只要求存在。Kan 复形是所有 horn 可填的 quasi-category，因而建模 $\infty$-群胚；Joyal 模型结构则把 quasi-category 组织成同伦理论。
 
 ## 练习
 
@@ -327,3 +363,9 @@ $$
 **练习 17.10.** 证明 $N([n])\cong\Delta^n$。
 
 **练习 17.11.** 对普通范畴 $\mathcal C$，证明由三条可复合边 $X_0\to X_1\to X_2\to X_3$ 给出的 $\Lambda_2^3\to N(\mathcal C)$ 有唯一填充，并写出缺失面。
+
+**练习 17.12.** 证明 nerve 映射 $N(\mathcal C)\to N(\mathcal D)$ 由其在 $0$-和 $1$-单纯形上的作用唯一决定。
+
+**练习 17.13.** 证明若 $\mathcal C$ 是群胚，则 $N(\mathcal C)$ 满足外角填充。
+
+**练习 17.14.** 用命题 17.22 说明 $\Delta^0$ 是 Kan 复形，而 $\Delta^1$ 不是 Kan 复形。

@@ -240,7 +240,51 @@ $$
 
 其 inverse image 是 sheafified pullback，direct image 是沿开集反像限制后的截面函子。这是 ordinary sheaf 几何态射的 space 值版本。
 
-## 21.7 本章小结
+## 21.7 Sheaf 范畴中的极限与截断边界
+
+**命题 21.P.** 若 $F_\alpha$ 是 $\operatorname{Sh}_\infty(\mathcal C,J)$ 中的小图形，则其极限由预层范畴中的逐点极限计算。
+
+**证明.** 设
+
+$$
+G(U)=\lim_\alpha F_\alpha(U).
+$$
+
+需要证明 $G$ 仍满足 sheaf 条件。对覆盖的 Čech nerve $U_\bullet\to U$，每个 $F_\alpha$ 都满足
+
+$$
+F_\alpha(U)\simeq\lim_{[n]\in\Delta}F_\alpha(U_n).
+$$
+
+于是
+
+$$
+G(U)
+\simeq
+\lim_\alpha\lim_{[n]\in\Delta}F_\alpha(U_n)
+\simeq
+\lim_{[n]\in\Delta}\lim_\alpha F_\alpha(U_n)
+\simeq
+\lim_{[n]\in\Delta}G(U_n),
+$$
+
+其中第二个等价是极限的 Fubini 交换律。因此 $G$ 是 sheaf。由于包含
+
+$$
+\operatorname{Sh}_\infty(\mathcal C,J)\hookrightarrow\operatorname{Fun}(\mathcal C^{op},\mathcal S)
+$$
+
+全忠实，预层极限满足 sheaf 范畴中的同一泛性质。$\square$
+
+**推论 21.Q.** $\operatorname{Sh}_\infty(\mathcal C,J)$ 的终对象和有限积逐点计算。
+
+**证明.** 终对象和有限积都是极限，故由命题 21.P 得到。$\square$
+
+**命题 21.R.** 若 $F$ 是 $\infty$-sheaf 且每个 $F(U)$ 都是 $0$-截断 space，则 $F$ 可视为 ordinary 集合值 sheaf。
+
+**证明.** $0$-截断 space 等价于离散集合。于是 $F$ 给出集合值预层。由 $\infty$-sheaf 条件，对每个覆盖族，离散 space 的 Čech 极限取 $\pi_0$ 后正是 ordinary sheaf 的等化子条件；这与命题 21.5 的证明相同。因此该集合值预层是 ordinary sheaf。$\square$
+
+## 21.8 本章小结
 
 $\infty$-topos 是 homotopy type 取值的 sheaf 理论。它保留 ordinary topos 的逻辑和几何结构，同时允许对象有高阶同伦。Čech descent 被替换为同伦极限条件，高阶 Giraud 定理给出内在刻画。截断和 Postnikov 塔连接高阶对象与普通 topos；hypercompletion 则控制是否所有对象都能由截断层恢复。
 
@@ -281,3 +325,9 @@ $\infty$-topos 是 homotopy type 取值的 sheaf 理论。它保留 ordinary top
 **练习 21.17.** 对拓扑空间的点 $x\in X$，解释 stalk 为什么可看作几何态射的 inverse image。
 
 **练习 21.18.** 比较 ordinary topos 的几何态射和 $\infty$-topos 的几何态射：有限极限保持条件是否相同？
+
+**练习 21.19.** 证明 $\infty$-sheaf 的任意两个对象的积逐点计算。
+
+**练习 21.20.** 解释命题 21.P 中为什么需要极限的 Fubini 交换律。
+
+**练习 21.21.** 若 $F$ 是 objectwise 离散的 $\infty$-sheaf，写出它对应的 ordinary sheaf 等化子图。

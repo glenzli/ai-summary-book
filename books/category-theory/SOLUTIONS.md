@@ -740,6 +740,22 @@ $$
 
 **答案 15.5.** bicategory coherence theorem 说明任意双范畴双等价于严格 2-范畴在适当意义下的表示，或至少典范相干图交换；它是 Mac Lane 幺半相干性的高阶推广。
 
+**答案 15.6.** 设 $\mathcal K$ 只有一个对象 $*$。Hom 范畴 $\mathcal K(*,*)$ 的对象是 $1$-态射，态射是 $2$-态射。水平复合给出函子
+$$
+\mathcal K(*,*)\times\mathcal K(*,*)\to\mathcal K(*,*),
+$$
+单位 $1$-态射给出幺半单位。严格 $2$-范畴公理给出张量严格结合和严格单位律，因此得到严格幺半范畴。
+
+**答案 15.7.** 普通范畴等价给出函子 $F:\mathcal C\to\mathcal D$、拟逆 $G:\mathcal D\to\mathcal C$ 和自然同构 $GF\cong\operatorname{id}_{\mathcal C}$、$FG\cong\operatorname{id}_{\mathcal D}$。在 $\mathbf{Cat}$ 中自然同构就是可逆 $2$-态射，所以 $F$ 是 $2$-范畴意义下的等价。
+
+**答案 15.8.** 若 $M$ 是 $(S,R)$-双模，$N$ 是 $(T,S)$-双模，$P$ 是 $(U,T)$-双模，则结合同构为
+$$
+(P\otimes_TN)\otimes_SM\cong P\otimes_T(N\otimes_SM),
+$$
+具体方向取决于双模复合的书写约定。它来自张量积的泛性质和平衡关系。
+
+**答案 15.9.** 只给出 $F(g)F(f)\cong F(gf)$ 还不足以保证三重复合的两种比较一致。四个可复合 $1$-态射会产生五边形中的两条典范比较路径；相干五边形要求它们相等，从而使伪函子的复合不依赖括号移动路径。
+
 ## 第十六章
 
 **答案 16.1.** 若 $f,g,gf$ 中任意两个是弱等价，则第三个也是弱等价。
@@ -751,6 +767,16 @@ $$
 **答案 16.4.** 同伦范畴只保留 $\pi_0$ 层面的态射类，丢失映射空间的高阶同伦群和相干复合信息。
 
 **答案 16.5.** Kan fibration 要求对所有 horn $\Lambda_i^n\to\Delta^n$ 有提升；quasi-category 只要求对象本身对内 horn 填充，且不要求外 horn。
+
+**答案 16.6.** 若弱等价就是同构，则局部化没有新增需要反演的态射；所有已被要求可逆的态射在原范畴中已经可逆。因此局部化泛性质由恒等函子 $\mathcal C\to\mathcal C$ 满足。
+
+**答案 16.7.** 在离散模型结构中，平凡纤维化和平凡余纤维化都是同构。若方块中 $i$ 是同构，对角线可取上边复合 $i^{-1}$；若 $p$ 是同构，对角线可取 $p^{-1}$ 复合右边。交换性由原方块交换和同构逆的唯一性给出。
+
+**答案 16.8.** 若 $X$ cofibrant，则 $\varnothing\to X$ 是余纤维化。左 Quillen 函子保持初对象和余纤维化，所以 $F\varnothing\to FX$ 是余纤维化，而 $F\varnothing\cong\varnothing$，故 $FX$ cofibrant。
+
+**答案 16.9.** 相对范畴只指定哪些态射是弱等价；它没有余纤维化、纤维化、提升和分解数据。因此不能从中选择“初对象到 cofibrant 对象的平凡纤维化”这种 cofibrant replacement 结构。
+
+**答案 16.10.** 同伦范畴等价只比较反演弱等价后的 $1$-范畴。Quillen 等价还要求模型结构相容，并诱导底层同伦理论或 $\infty$-范畴等价；它保留映射空间和导出函子层面的信息。
 
 ## 第十七章
 
@@ -783,6 +809,12 @@ $$
 对 $\Delta$ 中态射的作用都是预复合，所以这些逐级双射组成单纯集同构。
 
 **答案 17.11.** $\Lambda_2^3$ 缺少第 $2$ 个面，即漏掉顶点 $2$ 的面 $(0,1,3)$。给定 $X_0\to X_1\to X_2\to X_3$ 后，所有长边由复合确定：$X_0\to X_2$、$X_1\to X_3$、$X_0\to X_3$。缺失面 $(0,1,3)$ 的三角关系要求 $X_0\to X_3$ 等于 $(X_1\to X_3)(X_0\to X_1)$，这由结合律唯一成立。
+
+**答案 17.12.** $0$-单纯形给出对象函数，$1$-单纯形给出态射函数。源、目标由 $d_1,d_0$ 保持确定；恒等由退化 $s_0$ 确定；复合由 $2$-单纯形的长边确定。因此 nerve 映射一旦在 $0$、$1$ 维给定并与这些结构相容，高维单纯形都由可复合态射串唯一决定。
+
+**答案 17.13.** 外角填充表达求逆或解方程。若 $\mathcal C$ 是群胚，缺失的外边可用已有边的逆和复合构造；所有二维相容关系由范畴复合和逆律满足。高维 horn 的填充由相邻边串及其复合唯一决定。
+
+**答案 17.14.** $\Delta^0=N(*)$，其中 $*$ 是群胚，故由命题 17.22 它是 Kan 复形。$\Delta^1=N([1])$，而 $[1]$ 中 $0\to1$ 不可逆，不是群胚，故 $\Delta^1$ 不是 Kan 复形。
 
 ## 第十八章
 
@@ -852,6 +884,16 @@ $$
 
 **答案 18.22.** correspondence 定义强调 Hom 或 mapping space 的表示性等价；walking adjunction 定义强调由单位、余单位和三角相干生成的代数型结构。二者等价，但突出的是伴随的不同面向。
 
+**答案 18.23.** 若 $f:x\to y$ 是普通范畴 $\mathcal C$ 中的同构，取逆 $g:y\to x$。在 $hN(\mathcal C)\cong\mathcal C$ 中，$[g][f]=[\operatorname{id}_x]$ 且 $[f][g]=[\operatorname{id}_y]$。因此 $f$ 在 $hN(\mathcal C)$ 中是同构，按定义是 $N(\mathcal C)$ 中的等价边。
+
+**答案 18.24.** 同伦范畴的 Hom 集定义为边按 $2$-单纯形生成的同伦关系取商。映射空间 $\operatorname{Map}_C(x,y)$ 的连通分支正是这些同伦类，因此
+$$
+hC(x,y)\cong\pi_0\operatorname{Map}_C(x,y).
+$$
+更高同伦群和高阶路径不进入 Hom 集。
+
+**答案 18.25.** 若 $C$ 是 Kan 复形，则任意边都有外 horn 填充给出的左右逆，故在 $hC$ 中可逆。于是作为 $\infty$-范畴时，它的所有 $1$-态射都是等价，没有非可逆 $1$-态射。
+
 ## 第十九章
 
 **答案 19.1.** 普通 fibration 中，覆盖 $\alpha:b\to p(e)$ 的箭头 $\tilde\alpha:e'\to e$ Cartesian，若任意 $g:x\to e$ 及分解 $p(g)=\alpha\beta$ 唯一提升为 $x\to e'$。
@@ -896,6 +938,16 @@ $$
 **答案 19.15.** 当 $S=[1]$ 且限制函子为 $u:\mathcal B\to\mathcal A$ 时，Cartesian section 由 $a\in\mathcal A$、$b\in\mathcal B$ 和等价 $a\simeq u(b)$ 组成；在普通严格模型中就是选择 $b$ 并令 $a=u(b)$。
 
 **答案 19.16.** Descent data 要求在各局部对象上选择数据，并在交叠和高重交叠上给出相容等价。把这些局部范畴组织为覆盖单纯形上的 Cartesian fibration 后，Cartesian sections 正是这种同伦相干的相容选择；定理 19.H 把它识别为相应图形的极限。
+
+**答案 19.17.** 给定 $F(b)$ 中态射 $\varphi:x\to y$，令 Grothendieck construction 中的态射为
+$$
+(\operatorname{id}_b,\varphi):(b,x)\to(b,y).
+$$
+它覆盖 $B$ 中的 $\operatorname{id}_b$。由于 $F(\operatorname{id}_b)=\operatorname{id}_{F(b)}$，这正是定义 19.A 的态射数据。
+
+**答案 19.18.** 对象映射为 $(b,a)\mapsto(b,a)\in B\times\mathcal A$。态射 $(\alpha:b\to c,\varphi:a\to a')$ 在常值函子的 Grothendieck construction 中对应 $(\alpha,\varphi):(b,a)\to(c,a')$，因为限制函子为恒等。复合公式化为 $(\beta,\psi)(\alpha,\varphi)=(\beta\alpha,\psi\varphi)$，与乘积范畴复合一致。
+
+**答案 19.19.** 当 $S=\Delta^0$ 时，straightening 对应常值为总纤维 $X$ 的图形。Cartesian section 只是选择 $X$ 中一个对象；section 之间的态射就是 $X$ 中的态射。因此 $\operatorname{Sect}^{Cart}_{\Delta^0}(X)\simeq X$，与定理 19.H 的点状极限一致。
 
 ## 第二十章
 
@@ -1005,6 +1057,27 @@ $$
 
 **答案 20.30.** 固定总次数后，只有有限多个 $p$ 上的 $E_1^{p,n-p}$ 非零。微分若要进入或离开这些项，只能连接有限集合中的位置；当页数足够大时已无可能的源或靶，因此不存在无限微分链。
 
+**答案 20.31.** 在稳定 $\infty$-范畴中，态射 $f:X\to Y$ 产生纤维-余纤维序列
+$$
+\operatorname{fib}(f)\to X\to Y\to\operatorname{cofib}(f).
+$$
+稳定性把该序列延长为
+$$
+\Omega\operatorname{cofib}(f)\to X\to Y\to\operatorname{cofib}(f).
+$$
+前两项正是 $f$ 的纤维序列，因此
+$$
+\operatorname{fib}(f)\simeq\Omega\operatorname{cofib}(f).
+$$
+
+**答案 20.32.** 若 $F$ 保持零对象和有限余极限，则保持悬挂：
+$$
+F\Sigma X\simeq F\operatorname{cofib}(X\to0)\simeq\operatorname{cofib}(FX\to0)=\Sigma FX.
+$$
+由于在稳定范畴中 $\Omega$ 是 $\Sigma$ 的逆等价，对 $X=\Sigma\Omega X$ 应用上式得 $\Sigma F\Omega X\simeq FX$，再取 $\Omega$ 得 $F\Omega X\simeq\Omega FX$。
+
+**答案 20.33.** 三角范畴上的 exact functor 只给出 Hom 集层面和 distinguished triangles 的相容性。映射谱还包含所有悬挂次数上的态射、路径之间的高阶同伦和复合相干；这些信息在同伦范畴中被压缩到 $\pi_0$，所以不能由 exact triangle functor 自动恢复。
+
 ## 第二十一章
 
 **答案 21.1.** 集合值 sheaf 的下降是等化子条件；space 值 sheaf 的下降是同伦极限条件，包含高阶相容同伦。
@@ -1050,6 +1123,36 @@ $$
 **答案 21.17.** 点 $x$ 的 stalk $F_x$ 把 sheaf $F$ 送到其在 $x$ 附近的局部截面余极限。这个函子从 $\operatorname{Sh}_\infty(X)$ 到 $\mathcal S$，保持有限极限，并作为几何态射 $\mathcal S\to\operatorname{Sh}_\infty(X)$ 的 inverse image。
 
 **答案 21.18.** 条件形式相同：都有伴随 $f^*\dashv f_*$，并要求 inverse image $f^*$ 保持有限极限。差别在于 $\infty$-topos 中这些范畴、函子和极限都在 $\infty$-范畴意义下理解，保留高阶同伦相干。
+
+**答案 21.19.** 若 $F,G$ 是 $\infty$-sheaves，则定义
+$$
+(F\times G)(U)=F(U)\times G(U).
+$$
+对覆盖 Čech nerve $U_\bullet$，因为 $F$ 与 $G$ 分别满足下降，
+$$
+F(U)\times G(U)\simeq
+\left(\lim_\Delta F(U_\bullet)\right)\times
+\left(\lim_\Delta G(U_\bullet)\right)
+\simeq
+\lim_\Delta(F(U_\bullet)\times G(U_\bullet)).
+$$
+故逐点积仍是 sheaf，并满足积的泛性质。
+
+**答案 21.20.** 命题 21.P 要把
+$$
+\lim_\alpha\lim_\Delta F_\alpha(U_\bullet)
+$$
+改写为
+$$
+\lim_\Delta\lim_\alpha F_\alpha(U_\bullet).
+$$
+这正是极限的 Fubini 交换律；没有它，就不能把“每个 $F_\alpha$ 满足下降”传递给逐点极限。
+
+**答案 21.21.** 若 $F$ objectwise 离散，则对应集合值预层满足
+$$
+F(U)\to\prod_iF(U_i)\rightrightarrows\prod_{i,j}F(U_i\times_UU_j)
+$$
+为等化子。这里第一箭头是限制到覆盖，两个平行箭头是在双交上从两个覆盖分量限制得到。
 
 ## 第二十二章
 
@@ -1137,6 +1240,32 @@ $$
 
 **答案 22.26.** 普通二维 TFT 只给闭一维流形赋值，因此基本对象是圆周，其值为 Frobenius 代数。Fully extended TFT 还给点、区间和带角 bordism 赋值；cobordism hypothesis 说最高层数据由点上的 fully dualizable object 控制。
 
+**答案 22.27.** 普通幺半范畴中代数对象 $A$ 有乘法 $\mu:A\otimes A\to A$ 和单位 $\eta:\mathbb 1\to A$。结合律图要求
+$$
+\mu(\mu\otimes1)=\mu(1\otimes\mu):A\otimes A\otimes A\to A,
+$$
+单位律要求
+$$
+\mu(\eta\otimes1)=\operatorname{id}_A=\mu(1\otimes\eta)
+$$
+在单位约束识别后成立。
+
+**答案 22.28.** 同伦相干结合律本来是某些比较路径或高阶单纯形的可缩选择。若映射空间离散，则两个平行态射之间存在同伦当且仅当它们相等，且高阶同伦没有额外自由度。因此相干条件退化为普通交换图严格交换。
+
+**答案 22.29.** 强幺半函子给出结构等价
+$$
+F(A)\otimes F(A)\simeq F(A\otimes A),\qquad \mathbb 1_D\simeq F(\mathbb 1_C).
+$$
+于是 $FA$ 的乘法为
+$$
+FA\otimes FA\simeq F(A\otimes A)\xrightarrow{F\mu}FA,
+$$
+单位为
+$$
+\mathbb 1_D\simeq F\mathbb 1_C\xrightarrow{F\eta}FA.
+$$
+幺半函子的相干性把 $A$ 的结合律和单位律传递给 $FA$。
+
 ## 第二十三章
 
 **答案 23.1.** 由 $\infty$-Yoneda，
@@ -1197,6 +1326,24 @@ $$
 右侧是分别保持余极限的双变量函子。
 
 **答案 23.16.** 若张量积分别保持余极限，则自由代数、模对象和 bar 几何实现能在 presentable 环境中构造，并且相对张量积与余极限相容。这是第二十二章模 $\infty$-范畴和相对张量积存在性的基本假设。
+
+**答案 23.17.** 若 $f$ 是等价，则任何函子都保持等价，故 $Lf$ 是等价。因此 $f$ 是 $L$-等价。
+
+**答案 23.18.** 在由 $S$ 生成的局部化中，局部对象正是 $S$-局部对象。命题 23.27 说明 $f:X\to Y$ 被 $L$ 送成等价，当且仅当对每个 $S$-局部对象 $Z$，
+$$
+\operatorname{Map}(Y,Z)\to\operatorname{Map}(X,Z)
+$$
+是等价。因此局部等价可由所有局部对象共同检测。
+
+**答案 23.19.** 若 $A,B$ 局部，则对任意 $X$，
+$$
+\operatorname{Map}(X,A\times B)\simeq\operatorname{Map}(X,A)\times\operatorname{Map}(X,B).
+$$
+把 $X$ 换成 $LX$，并用 $A,B$ 局部得到
+$$
+\operatorname{Map}(X,A\times B)\simeq\operatorname{Map}(LX,A\times B),
+$$
+故 $A\times B$ 局部。
 
 ## 第二十四章
 

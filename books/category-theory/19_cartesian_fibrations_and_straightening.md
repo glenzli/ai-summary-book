@@ -290,9 +290,45 @@ $$
 
 其中 $F,G:S^{op}\to\mathcal{Cat}_\infty$ 是对应的 straightened functors。
 
-## 19.7 本章小结
+## 19.7 低维边界与纤维内态射
 
-Cartesian fibration 是“随基点变化的 $\infty$-范畴”的几何化表示。straightening/unstraightening 说明这种几何对象等价于从基 $\infty$-范畴到 $\mathcal{Cat}_\infty$ 的函子。Cartesian sections 进一步把相容选择解释为一个高阶极限。它是高阶 sheaf、层化、参数化同伦论和高阶代数的基础。
+**命题 19.11（基为点）.** 映射 $p:X\to\Delta^0$ 是 Cartesian fibration，当且仅当 $X$ 是 quasi-category。此时每个对象上方的退化边给出所需的 Cartesian lift。
+
+**证明.** 到 $\Delta^0$ 的映射唯一。若 $p$ 是 Cartesian fibration，则按定义它是内纤维，故 $X$ 是 quasi-category。反过来，若 $X$ 是 quasi-category，则 $X\to\Delta^0$ 是内纤维。基底只有恒等边；任意对象 $y\in X$ 上方的 Cartesian lift 可取退化边 $\operatorname{id}_y:y\to y$。对恒等基底和退化边，Cartesian 条件化为由恒等态射诱导的映射空间同伦拉回，显然成立。因此 Cartesian lift 存在，$p$ 是 Cartesian fibration。注意这里不需要断言所有非退化边都是 Cartesian；在点基情形，该判别与边是否为等价边相关。$\square$
+
+**命题 19.12.** 在普通 Grothendieck construction $\int_BF$ 中，覆盖 $\operatorname{id}_b$ 的态射
+
+$$
+(b,x)\to(b,y)
+$$
+
+正是纤维范畴 $F(b)$ 中的态射 $x\to y$。
+
+**证明.** 按定义 19.A，一个态射由
+
+$$
+(\alpha:b\to c,\ \varphi:x\to F(\alpha)(y))
+$$
+
+给出。若它覆盖 $\operatorname{id}_b$，则 $c=b$ 且 $\alpha=\operatorname{id}_b$。由函子性 $F(\operatorname{id}_b)=\operatorname{id}_{F(b)}$，所以第二分量就是 $F(b)$ 中的态射
+
+$$
+\varphi:x\to y.
+$$
+
+反向任意 $\varphi:x\to y$ 给出 $(\operatorname{id}_b,\varphi)$。$\square$
+
+**例子 19.13（常值普通族）.** 若 $F:B^{op}\to\mathbf{Cat}$ 为常值函子，取值为范畴 $\mathcal A$ 且所有限制函子为恒等，则 $\int_BF$ 同构于 $B\times\mathcal A$。投影到 $B$ 的 Cartesian lift 沿 $\alpha:b\to c$、以 $(c,a)$ 为终点时为
+
+$$
+(b,a)\xrightarrow{(\alpha,\operatorname{id}_a)}(c,a).
+$$
+
+因此常值族的 Cartesian section 正是选择一个对象 $a\in\mathcal A$，并在基范畴方向保持该对象不变。
+
+## 19.8 本章小结
+
+Cartesian fibration 是“随基点变化的 $\infty$-范畴”的几何化表示。基为点时它退化为一个普通 quasi-category；普通 Grothendieck construction 则说明纤维内态射和跨纤维限制态射如何同时编码。Straightening/unstraightening 说明这种几何对象等价于从基 $\infty$-范畴到 $\mathcal{Cat}_\infty$ 的函子。Cartesian sections 进一步把相容选择解释为一个高阶极限。
 
 ## 练习
 
@@ -327,3 +363,9 @@ Cartesian fibration 是“随基点变化的 $\infty$-范畴”的几何化表�
 **练习 19.15.** 若 $S=[1]$，用定义 19.G 描述 Cartesian section 的数据。
 
 **练习 19.16.** 用外部输入定理 19.H 解释 descent data 为什么可看成某个 Cartesian fibration 的 Cartesian sections。
+
+**练习 19.17.** 证明命题 19.12 的反向：纤维范畴中的态射给出覆盖恒等态射的 Grothendieck construction 态射。
+
+**练习 19.18.** 对常值函子 $F:B^{op}\to\mathbf{Cat}$，构造 $\int_BF\cong B\times\mathcal A$ 的对象和态射映射。
+
+**练习 19.19.** 当 $S=\Delta^0$ 时，用定理 19.H 解释 Cartesian sections 与总空间本身的关系。

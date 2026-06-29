@@ -24,11 +24,8 @@
 - 序章至第二章已进入终稿化第一轮：补入终稿阅读约定、骨架、等价边界例子、可表性边界、Yoneda 计算原则和对应答案。第三至第七章已进入终稿化第二轮：补入 Set 余等化子、创造极限、有限极限反例、偏序伴随、对角函子伴随、伴随保持性反例、生成族忠实判别、稠密与本质满边界、有伴随时 Kan 点态公式退化、Kan 延拓存在性边界、幂等单子和反射单子；相关练习答案已同步。第八至第十一章已进入终稿化第三轮：补入辫/对称幺半范畴、松幺半函子传代数对象、单子作为代数对象、非辫性例子、闭结构单位和指数律、非闭反例、Day 单位计算、富 Yoneda 全忠实、张量/余张量、集合值 coend 商公式、end/coend 形式 Yoneda 和存在性边界。第五章预层密度定理和第十一章 co-Yoneda 已补为正文证明。
 - 第八章 Mac Lane 相干性、第十二章局部可表现范畴伴随函子定理、第十四章 sheaf 化/Giraud、第十六章模型范畴局部化、第十九章 straightening、第二十章稳定同伦范畴三角结构、第二十一章高阶 Giraud、第二十二章高阶代数存在性定理均为外部输入。
 - 第十二至第十四章已进入终稿化第四轮：补入预层范畴局部可表现性、强生成子、紧生成对象检测自然同构、Set 有限生成与基数边界、image/coimage、核/余核判别单满、正合函子保持 image/coimage、模范畴 Grothendieck 性、阿贝尔非 Grothendieck 边界、separated 预层、plus 构造、sheaf 极限创建、sheaf 化反射泛性质和几何态射复合；plus 构造完整证明与 Giraud 定理仍作为外部输入。
-- 第十七至第十九章已补入标准单纯形计算、左右映射空间模型、correspondence 表示性口径、adjunction data 低维展开、walking adjunction、scaled nerve 低维口径、ordinary pullback 恢复、普通 Grothendieck construction、基为 $[1]$ 和 $[2]$ 的 straightening 低维模型、Cartesian 传输函子与 Cartesian sections；完整 scaled model structure 仍作为外部输入。
-- 第二十章已补 sequential prespectrum、$\Omega$-谱、映射谱、smash product、悬挂-环路互逆、正合函子、t-结构 heart 核余核、heart 加性、cohomology 长正合列、exact couple、有限滤过谱序列收敛、完备滤过和条件收敛入口；heart 阿贝尔性和一般收敛理论仍作为外部输入。
-- 第二十一章已补超覆盖、超下降、effective epimorphism、groupoid object、Postnikov tower、hypercompletion、$\infty$-几何态射和点；hyperdescent 与不同 sheaf 条件的等价、groupoid objects 有效性和 hypercompletion 理论仍作为外部输入。
-- 第二十二章已补 Segal 条件、多重映射空间、模 $\infty$-范畴、bar 构造、相对张量积、Morita、单位双模、矩阵代数 Morita 等价、smooth/proper 可对偶性判别、Frobenius 代数二维 TFT 影子、中心、因子化同调、fully dualizable objects 和 cobordism hypothesis 入口；更高维 fully extended TFT 的具体计算仍未展开。
-- 第二十三章已补 presentable $\infty$-category、$\operatorname{Ind}_\kappa$、accessible localization、Bousfield localization、left exact/exact localization 与 $\operatorname{Pr}^L$；Ind 刻画、伴随函子定理和 $\operatorname{Pr}^L$ 幺半结构仍为外部输入。
+- 第十五至第十九章已进入终稿化第五轮：补入 2-函子、伪函子、单对象 2-范畴/幺半范畴比较、$\mathbf{Cat}$ 中等价判别、相对范畴、离散模型结构、Quillen 伴随保持 cofibrant/fibrant 对象、nerve 全忠实、ordinary nerve 为 Kan 的群胚判别、标准单纯形计算、左右映射空间模型、ordinary nerve 中等价边判别、correspondence 表示性口径、adjunction data 低维展开、walking adjunction、scaled nerve 低维口径、ordinary pullback 恢复、普通 Grothendieck construction、基为点/$[1]$/$[2]$ 的 straightening 低维模型、Cartesian 传输函子、纤维内态射判别和 Cartesian sections；完整 scaled model structure 与 straightening 仍作为外部输入。
+- 第二十至第二十三章已进入终稿化第六轮：第二十章补入有限余极限保持推出 exactness 判别和三角同伦范畴边界；第二十一章补入 sheaf 极限逐点计算、objectwise 离散 sheaf 恢复 ordinary sheaf；第二十二章补入普通幺半范畴中 $E_1$-代数恢复和幺半函子传递代数结构；第二十三章补入局部等价映射空间判别和局部对象极限创建。heart 阿贝尔性、一般谱序列收敛、hyperdescent 等价、高阶 Giraud、代数范畴 presentability、Ind 刻画、presentable 伴随函子定理和 $\operatorname{Pr}^L$ 幺半结构仍作为外部输入。
 - 第二十四章已补 profunctor、coend 复合、Cauchy completion、加权余极限和 $\infty$-correspondence；$\mathbf{Prof}$ 双范畴相干性和高阶 correspondence 的 $(\infty,2)$-结构仍为外部输入。
 - 第二十五章已补富 profunctor、equipment、companion/conjoint、Beck-Chevalley 条件、indexed category 与 fibration 比较；高阶 equipment/framed bicategory 模型仍为外部输入。
 - 第二十六章已补 compact generation、Brown representability、localizing subcategory、Verdier quotient、Bousfield localization、smashing localization 和 Neeman-Thomason 型定理；Brown 表示性和紧对象商定理仍为外部输入。
@@ -68,8 +65,8 @@
 
 ## 下一轮建议
 
-1. 继续终稿化第十五至第十九章：2-范畴/双范畴、模型范畴、单纯集、$\infty$-极限与 Cartesian fibration 的内部证明、低维计算和边界条件。
-2. 把第三至第十四章的部分答案继续从要点升级为逐步证明，尤其是 Beck 定理、Day 相干性、Fubini、局部可表现伴随函子定理和 Giraud 定理周边保持外部输入边界的练习。
+1. 继续终稿化第二十四至第二十八章：profunctor、equipment、紧生成稳定范畴、dg 增强和六操作形式主义的内部泛性质、低维计算和外部输入边界。
+2. 把第三至第二十三章的部分答案继续从要点升级为逐步证明，尤其是 Beck 定理、Day 相干性、Fubini、局部可表现伴随函子定理、Giraud 定理、模型局部化、straightening、稳定 exactness 和 presentable 伴随函子定理周边保持外部输入边界的练习。
 3. 扩写可达、可表现、sketch、doctrine 和局部化之间的内部依赖链。
 4. 扩写正交/弱因子化系统、小对象论证的范畴论证明口径。
 5. 扩写 Karoubi、Cauchy、Ind/Pro、exact/regular completion 的泛性质与例子。

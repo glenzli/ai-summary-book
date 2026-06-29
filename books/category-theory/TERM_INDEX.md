@@ -55,7 +55,7 @@
 | 辫幺半范畴 | braided monoidal category | [第八章](08_monoidal_categories.md) | 带相干交换约束的幺半范畴 |
 | 对称幺半范畴 | symmetric monoidal category | [第八章](08_monoidal_categories.md) | 辫子平方为恒等的幺半范畴 |
 | 松幺半函子 | lax monoidal functor | [第八章](08_monoidal_categories.md) | 保持张量到指定结构态射的函子 |
-| 代数对象 | algebra object | [第八章](08_monoidal_categories.md) | 幺半范畴内部的含幺结合乘法对象 |
+| 代数对象 | algebra object | [第八章](08_monoidal_categories.md), [第二十二章](22_higher_algebra_and_infinity_operads.md) | 幺半范畴或幺半 $\infty$-范畴内部的含幺结合乘法对象 |
 | 闭幺半范畴 | closed monoidal category | [第九章](09_closed_categories_and_day_convolution.md) | 张量-Hom 伴随 |
 | 笛卡尔闭范畴 | cartesian closed category | [第九章](09_closed_categories_and_day_convolution.md) | 有有限积且积函子有指数右伴随的范畴 |
 | 评价态射 | evaluation morphism | [第九章](09_closed_categories_and_day_convolution.md) | 内部 Hom 的伴随余单位型态射 |
@@ -99,8 +99,13 @@
 |---|---|---|---|
 | 2-范畴 | 2-category | [第十五章](15_two_categories_and_bicategories.md) | 对象、1-态射、2-态射 |
 | 双范畴 | bicategory | [第十五章](15_two_categories_and_bicategories.md) | 复合在相干同构下结合 |
+| 2-函子 | 2-functor | [第十五章](15_two_categories_and_bicategories.md) | 严格保持 1-复合和 2-复合的高阶函子 |
+| 伪函子 | pseudofunctor | [第十五章](15_two_categories_and_bicategories.md) | 在相干同构下保持复合的双范畴函子 |
 | 模型范畴 | model category | [第十六章](16_model_categories_and_homotopy_categories.md) | 弱等价、纤维化、余纤维化 |
+| 相对范畴 | relative category | [第十六章](16_model_categories_and_homotopy_categories.md), [第二十九章](29_relative_categories_simplicial_localization_and_model_comparisons.md) | 范畴 $\mathcal C$ 加指定 weak equivalences 子范畴 $W$ |
+| 离散模型结构 | discrete model structure | [第十六章](16_model_categories_and_homotopy_categories.md) | 弱等价为同构、所有态射同时为纤维化和余纤维化 |
 | 单纯集 | simplicial set | [第十七章](17_simplicial_sets_and_quasicategories.md) | $\Delta$ 上的预层 |
+| nerve | nerve | [第十七章](17_simplicial_sets_and_quasicategories.md) | 把普通范畴嵌入单纯集的全忠实构造 |
 | 标准单纯形 | standard simplex | [第十七章](17_simplicial_sets_and_quasicategories.md) | 可表单纯集 $\Delta^n=\Delta(-,[n])$ |
 | 内角 | inner horn | [第十七章](17_simplicial_sets_and_quasicategories.md) | quasi-category 中表达可复合性的 horn |
 | quasi-category | quasi-category | [第十七章](17_simplicial_sets_and_quasicategories.md) | 满足 inner horn 填充的单纯集 |
@@ -147,6 +152,7 @@
 | presentable $\infty$-category | presentable $\infty$-category | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | 可达且余完备的 $\infty$-范畴 |
 | accessible localization | accessible localization | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | 由可达局部化函子给出的反射子范畴 |
 | Bousfield localization | Bousfield localization | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | 由一族态射指定局部对象的局部化 |
+| 局部等价 | local equivalence | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | 被局部化函子送为等价的态射 |
 | $\operatorname{Pr}^L$ | $\operatorname{Pr}^L$ | [第二十三章](23_presentable_infinity_categories_and_localizations.md) | presentable $\infty$-categories 与左伴随组成的 $\infty$-范畴 |
 | profunctor | profunctor | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 从 $\mathcal C$ 到 $\mathcal D$ 的广义态射 $\mathcal C^{op}\times\mathcal D\to\mathbf{Set}$ |
 | Cauchy completion | Cauchy completion | [第二十四章](24_profunctors_cauchy_completion_and_correspondences.md) | 通过分裂幂等得到的 Karoubi 完备化 |
@@ -182,7 +188,6 @@
 | dualizing object | dualizing object | [第二十八章](28_six_functor_formalism_base_change_and_projection_formula.md) | $\omega_X=p_X^!\mathbb 1$ |
 | Verdier 对偶 | Verdier duality | [第二十八章](28_six_functor_formalism_base_change_and_projection_formula.md) | $\mathbb D_X(K)=\underline{\operatorname{Hom}}_X(K,\omega_X)$ |
 | purity | purity | [第二十八章](28_six_functor_formalism_base_change_and_projection_formula.md) | 把 $f^!$ 与 $f^*$、相对 dualizing object 和平移联系的定理 |
-| 相对范畴 | relative category | [第二十九章](29_relative_categories_simplicial_localization_and_model_comparisons.md) | 范畴 $\mathcal C$ 加指定 weak equivalences 子范畴 $W$ |
 | $\infty$-局部化 | $\infty$-categorical localization | [第二十九章](29_relative_categories_simplicial_localization_and_model_comparisons.md) | 把 $W$ 变为等价且满足 $\infty$-范畴泛性质的局部化 |
 | saturated weak equivalences | saturated weak equivalences | [第二十九章](29_relative_categories_simplicial_localization_and_model_comparisons.md) | 正是在局部化后成为同构或等价的弱等价类 |
 | 单纯范畴 | simplicial category | [第二十九章](29_relative_categories_simplicial_localization_and_model_comparisons.md) | $\mathbf{sSet}$-富范畴 |
@@ -315,7 +320,7 @@
 | 正交性 | orthogonality | [第五十四章](54_orthogonality_factorization_systems_and_weak_factorization.md) | 交换方块存在唯一对角填充的态射关系 $f\perp g$ |
 | 正交因子化系统 | orthogonal factorization system | [第五十四章](54_orthogonality_factorization_systems_and_weak_factorization.md) | 每个态射按两类相互正交态射分解的系统 |
 | 弱因子化系统 | weak factorization system | [第五十四章](54_orthogonality_factorization_systems_and_weak_factorization.md) | 只要求提升存在、不要求唯一的因子化系统 |
-| 局部对象 | local object | [第五十四章](54_orthogonality_factorization_systems_and_weak_factorization.md) | 对指定态射类取 Hom 后为双射的对象 |
+| 局部对象 | local object | [第二十三章](23_presentable_infinity_categories_and_localizations.md), [第五十四章](54_orthogonality_factorization_systems_and_weak_factorization.md) | 对指定态射类取 Hom 后为等价或双射的对象 |
 | sketch | sketch | [第五十五章](55_sketches_doctrines_and_categorical_theories.md) | 小范畴配指定极限锥和余极限余锥的数据 |
 | doctrine | doctrine | [第五十五章](55_sketches_doctrines_and_categorical_theories.md) | 指定结构和保持结构函子的理论口径 |
 | essentially algebraic theory | essentially algebraic theory | [第五十五章](55_sketches_doctrines_and_categorical_theories.md) | 允许由有限极限定义域控制的部分运算理论 |
