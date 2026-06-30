@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="1180" height="620" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="590.0" y="46" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">Attention vs Selective State Space</text>
+<text x="590.0" y="76" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#475569" text-anchor="middle">Explicit token-token lookup versus compressed recurrent state</text>
+<rect x="60" y="120" width="500" height="390" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="310" y="155" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">Transformer attention</text>
+<text x="310" y="184" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#64748b" text-anchor="middle">query reads a visible set of historical keys</text>
+<rect x="120" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="139" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x1</text>
+<rect x="176" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="195" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x2</text>
+<rect x="232" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="251" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x3</text>
+<rect x="288" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="307" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x4</text>
+<rect x="344" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="363" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x5</text>
+<rect x="400" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="419" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x6</text>
+<rect x="456" y="315" width="38" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="475" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">x7</text>
+<rect x="395" y="245" width="62" height="50" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="426" y="275" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#991b1b" text-anchor="middle">q_t</text>
+<line x1="426" y1="295" x2="139" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="426" y1="295" x2="195" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="426" y1="295" x2="251" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="426" y1="295" x2="307" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="426" y1="295" x2="363" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="426" y1="295" x2="419" y2="315" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="310" y="405" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#334155" text-anchor="middle">Cost: explicit attention scores over visible tokens</text>
+<text x="310" y="433" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#334155" text-anchor="middle">Strength: content-addressed retrieval</text>
+<rect x="620" y="120" width="500" height="390" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="870" y="155" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">Mamba / selective SSM</text>
+<text x="870" y="184" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#64748b" text-anchor="middle">each token updates a compressed state</text>
+<rect x="685" y="310" width="48" height="48" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="709" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">h0</text>
+<line x1="733" y1="334" x2="767" y2="334" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="767" y="310" width="48" height="48" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="791" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">h1</text>
+<line x1="815" y1="334" x2="849" y2="334" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="849" y="310" width="48" height="48" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="873" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">h2</text>
+<line x1="897" y1="334" x2="931" y2="334" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="931" y="310" width="48" height="48" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="955" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">h3</text>
+<line x1="979" y1="334" x2="1013" y2="334" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1013" y="310" width="48" height="48" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="1037" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">h4</text>
+<rect x="685" y="235" width="48" height="32" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.4"/>
+<text x="709" y="256" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">x1</text>
+<line x1="709" y1="267" x2="709" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="709" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#92400e" text-anchor="middle">gate</text>
+<rect x="767" y="235" width="48" height="32" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.4"/>
+<text x="791" y="256" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">x2</text>
+<line x1="791" y1="267" x2="791" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="791" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#92400e" text-anchor="middle">gate</text>
+<rect x="849" y="235" width="48" height="32" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.4"/>
+<text x="873" y="256" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">x3</text>
+<line x1="873" y1="267" x2="873" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="873" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#92400e" text-anchor="middle">gate</text>
+<rect x="931" y="235" width="48" height="32" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.4"/>
+<text x="955" y="256" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">x4</text>
+<line x1="955" y1="267" x2="955" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="955" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#92400e" text-anchor="middle">gate</text>
+<rect x="1013" y="235" width="48" height="32" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.4"/>
+<text x="1037" y="256" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">x5</text>
+<line x1="1037" y1="267" x2="1037" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1037" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#92400e" text-anchor="middle">gate</text>
+<rect x="1015" y="310" width="48" height="48" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="1039" y="340" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#991b1b" text-anchor="middle">y_t</text>
+<line x1="1013" y1="334" x2="1015" y2="334" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="870" y="405" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#334155" text-anchor="middle">Cost: linear scan plus hardware-aware kernels</text>
+<text x="870" y="433" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#334155" text-anchor="middle">Strength: streaming memory and long sequences</text>
+</svg>

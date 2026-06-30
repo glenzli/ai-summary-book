@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#444"/></marker></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif;fill:#222}.title{font-size:20px;font-weight:700}.small{font-size:14px}.tiny{font-size:12px;fill:#555}</style>
+<text x="490" y="32" text-anchor="middle" class="title">Agent as a controlled loop: plan, act, observe, verify, revise</text>
+<rect x="58" y="88" width="168" height="82" rx="10" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="142.0" y="126.0" text-anchor="middle" class="small">User goal</text>
+<text x="142.0" y="142.0" text-anchor="middle" class="small">constraints</text>
+<rect x="326" y="88" width="190" height="82" rx="10" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="2"/>
+<text x="421.0" y="126.0" text-anchor="middle" class="small">Planner / LLM</text>
+<text x="421.0" y="142.0" text-anchor="middle" class="small">reasoning state</text>
+<rect x="686" y="88" width="190" height="82" rx="10" fill="#FFF2CC" stroke="#D6B656" stroke-width="2"/>
+<text x="781.0" y="126.0" text-anchor="middle" class="small">Tool call</text>
+<text x="781.0" y="142.0" text-anchor="middle" class="small">code / search / API</text>
+<rect x="326" y="245" width="190" height="74" rx="10" fill="#E1D5E7" stroke="#9673A6" stroke-width="2"/>
+<text x="421.0" y="279.0" text-anchor="middle" class="small">Memory</text>
+<text x="421.0" y="295.0" text-anchor="middle" class="small">context + retrieval</text>
+<rect x="686" y="245" width="190" height="74" rx="10" fill="#D5E8D4" stroke="#82B366" stroke-width="2"/>
+<text x="781.0" y="279.0" text-anchor="middle" class="small">Environment</text>
+<text x="781.0" y="295.0" text-anchor="middle" class="small">observation</text>
+<rect x="326" y="385" width="190" height="74" rx="10" fill="#F8CECC" stroke="#B85450" stroke-width="2"/>
+<text x="421.0" y="419.0" text-anchor="middle" class="small">Verifier</text>
+<text x="421.0" y="435.0" text-anchor="middle" class="small">tests / citations / policy</text>
+<rect x="686" y="385" width="190" height="74" rx="10" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="781.0" y="419.0" text-anchor="middle" class="small">Final answer</text>
+<text x="781.0" y="435.0" text-anchor="middle" class="small">or action</text>
+<line x1="226" y1="129" x2="326" y2="129" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="276.0" y="122.0" text-anchor="middle" class="tiny">task</text>
+<line x1="516" y1="129" x2="686" y2="129" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="601.0" y="122.0" text-anchor="middle" class="tiny">action</text>
+<line x1="781" y1="170" x2="781" y2="245" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="781.0" y="200.5" text-anchor="middle" class="tiny">result</text>
+<line x1="686" y1="282" x2="516" y2="282" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="601.0" y="275.0" text-anchor="middle" class="tiny">observation</text>
+<line x1="421" y1="170" x2="421" y2="245" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="421.0" y="200.5" text-anchor="middle" class="tiny">read / write</text>
+<line x1="421" y1="319" x2="421" y2="385" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="421.0" y="345.0" text-anchor="middle" class="tiny">check</text>
+<line x1="516" y1="422" x2="686" y2="422" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="601.0" y="415.0" text-anchor="middle" class="tiny">approved</text>
+<path d="M686 405 C590 360 550 225 516 144" fill="none" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="610" y="315" text-anchor="middle" class="tiny">revise</text>
+<text x="490" y="492" text-anchor="middle" class="small" fill="#555">Reliable agents need permission boundaries and verification, not only longer reasoning traces.</text>
+</svg>

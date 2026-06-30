@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#444"/></marker></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif;fill:#222}.title{font-size:21px;font-weight:700}.small{font-size:14px}.tiny{font-size:12px;fill:#555}.label{font-size:13px;font-weight:700}</style>
+<text x="520" y="34" text-anchor="middle" class="title">Agent trust boundaries: untrusted content must not become authority</text>
+<rect x="60" y="76" width="410" height="392" rx="12" fill="#F7FBFF" stroke="#6C8EBF" stroke-width="2"/>
+<text x="265" y="102" text-anchor="middle" class="label">Trusted control plane</text>
+<rect x="570" y="76" width="410" height="392" rx="12" fill="#FFF9F0" stroke="#D6B656" stroke-width="2"/>
+<text x="775" y="102" text-anchor="middle" class="label">Untrusted data and external effects</text>
+<rect x="110" y="130" width="145" height="62" rx="8" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1.8"/>
+<text x="182.5" y="158.0" text-anchor="middle" class="small">System policy</text>
+<text x="182.5" y="174.0" text-anchor="middle" class="small">permissions</text>
+<rect x="285" y="130" width="145" height="62" rx="8" fill="#F5F5F5" stroke="#666666" stroke-width="1.8"/>
+<text x="357.5" y="158.0" text-anchor="middle" class="small">User goal</text>
+<text x="357.5" y="174.0" text-anchor="middle" class="small">approvals</text>
+<rect x="110" y="250" width="145" height="62" rx="8" fill="#D5E8D4" stroke="#82B366" stroke-width="1.8"/>
+<text x="182.5" y="278.0" text-anchor="middle" class="small">Agent runtime</text>
+<text x="182.5" y="294.0" text-anchor="middle" class="small">state machine</text>
+<rect x="285" y="250" width="145" height="62" rx="8" fill="#F8CECC" stroke="#B85450" stroke-width="1.8"/>
+<text x="357.5" y="278.0" text-anchor="middle" class="small">Guardrails</text>
+<text x="357.5" y="294.0" text-anchor="middle" class="small">policy checks</text>
+<rect x="198" y="370" width="145" height="62" rx="8" fill="#E1D5E7" stroke="#9673A6" stroke-width="1.8"/>
+<text x="270.5" y="398.0" text-anchor="middle" class="small">Audit log</text>
+<text x="270.5" y="414.0" text-anchor="middle" class="small">trace</text>
+<rect x="610" y="130" width="145" height="62" rx="8" fill="#FFF2CC" stroke="#D6B656" stroke-width="1.8"/>
+<text x="682.5" y="158.0" text-anchor="middle" class="small">Web pages</text>
+<text x="682.5" y="174.0" text-anchor="middle" class="small">documents</text>
+<rect x="790" y="130" width="145" height="62" rx="8" fill="#FFF2CC" stroke="#D6B656" stroke-width="1.8"/>
+<text x="862.5" y="158.0" text-anchor="middle" class="small">Tool outputs</text>
+<text x="862.5" y="174.0" text-anchor="middle" class="small">API results</text>
+<rect x="610" y="250" width="145" height="62" rx="8" fill="#F8CECC" stroke="#B85450" stroke-width="1.8"/>
+<text x="682.5" y="278.0" text-anchor="middle" class="small">Secrets</text>
+<text x="682.5" y="294.0" text-anchor="middle" class="small">private data</text>
+<rect x="790" y="250" width="145" height="62" rx="8" fill="#F8CECC" stroke="#B85450" stroke-width="1.8"/>
+<text x="862.5" y="278.0" text-anchor="middle" class="small">Side effects</text>
+<text x="862.5" y="294.0" text-anchor="middle" class="small">write / send / pay</text>
+<rect x="700" y="370" width="145" height="62" rx="8" fill="#F5F5F5" stroke="#666666" stroke-width="1.8"/>
+<text x="772.5" y="398.0" text-anchor="middle" class="small">Artifacts</text>
+<text x="772.5" y="414.0" text-anchor="middle" class="small">files / tickets</text>
+<line x1="255" y1="161" x2="285" y2="161" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="270.0" y="153.0" text-anchor="middle" class="tiny">policy</text>
+<line x1="182" y1="192" x2="182" y2="250" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="182.0" y="213.0" text-anchor="middle" class="tiny">constraints</text>
+<line x1="357" y1="192" x2="357" y2="250" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="357.0" y="213.0" text-anchor="middle" class="tiny">approval</text>
+<line x1="255" y1="281" x2="285" y2="281" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="270.0" y="273.0" text-anchor="middle" class="tiny">check</text>
+<line x1="357" y1="312" x2="270" y2="370" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="313.5" y="333.0" text-anchor="middle" class="tiny">record</text>
+<line x1="682" y1="192" x2="255" y2="250" stroke="#444" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="468.5" y="213.0" text-anchor="middle" class="tiny">read as data</text>
+<line x1="862" y1="192" x2="255" y2="250" stroke="#444" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="558.5" y="213.0" text-anchor="middle" class="tiny">observe</text>
+<line x1="755" y1="281" x2="430" y2="281" stroke="#B85450" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="592.5" y="273.0" text-anchor="middle" class="tiny">never expose directly</text>
+<line x1="430" y1="281" x2="790" y2="281" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="610.0" y="273.0" text-anchor="middle" class="tiny">approval required</text>
+<line x1="862" y1="312" x2="772" y2="370" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="817.0" y="333.0" text-anchor="middle" class="tiny">result</text>
+<line x1="520" y1="86" x2="520" y2="458" stroke="#B85450" stroke-width="2.2" stroke-dasharray="8 6"/>
+<text x="520" y="486" text-anchor="middle" class="label" fill="#B85450">trust boundary</text>
+<text x="520" y="524" text-anchor="middle" class="tiny">External content can provide evidence, but only trusted policy and user approval can authorize actions.</text>
+</svg>

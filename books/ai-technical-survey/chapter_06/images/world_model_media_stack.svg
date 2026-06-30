@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="1180" height="700" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="590.0" y="46" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">World Models and Generative Media</text>
+<text x="590.0" y="76" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#475569" text-anchor="middle">Generation quality, state prediction, and action feedback are related but not identical</text>
+<rect x="75" y="150" width="300" height="430" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="225" y="185" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">Generative media</text>
+<rect x="125" y="235" width="200" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="225" y="264" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d97706" text-anchor="middle">Text prompt</text>
+<line x1="225" y1="281" x2="225" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="125" y="310" width="200" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="225" y="339" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb" text-anchor="middle">Image / video encoder</text>
+<line x1="225" y1="356" x2="225" y2="385" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="125" y="385" width="200" height="46" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="225" y="414" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#7c3aed" text-anchor="middle">Diffusion / Flow / DiT</text>
+<line x1="225" y1="431" x2="225" y2="460" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="125" y="460" width="200" height="46" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="225" y="489" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#dc2626" text-anchor="middle">Pixels / frames</text>
+<rect x="440" y="150" width="300" height="430" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="590" y="185" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">World model</text>
+<rect x="490" y="235" width="200" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="590" y="264" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb" text-anchor="middle">Observation o_t</text>
+<line x1="590" y1="281" x2="590" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="490" y="310" width="200" height="46" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+<text x="590" y="339" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0891b2" text-anchor="middle">Latent state z_t</text>
+<line x1="590" y1="356" x2="590" y2="385" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="490" y="385" width="200" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="590" y="414" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d97706" text-anchor="middle">Dynamics F(z,a)</text>
+<line x1="590" y1="431" x2="590" y2="460" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="490" y="460" width="200" height="46" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="590" y="489" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#dc2626" text-anchor="middle">Predicted future</text>
+<rect x="805" y="150" width="300" height="430" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="955" y="185" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">Agent loop</text>
+<rect x="855" y="235" width="200" height="46" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="955" y="264" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#7c3aed" text-anchor="middle">Plan</text>
+<line x1="955" y1="281" x2="955" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="855" y="310" width="200" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="955" y="339" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d97706" text-anchor="middle">Act</text>
+<line x1="955" y1="356" x2="955" y2="385" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="855" y="385" width="200" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="955" y="414" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb" text-anchor="middle">Observe</text>
+<line x1="955" y1="431" x2="955" y2="460" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="855" y="460" width="200" height="46" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+<text x="955" y="489" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0891b2" text-anchor="middle">Update belief</text>
+<line x1="375" y1="365" x2="440" y2="365" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="740" y1="365" x2="805" y2="365" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="407" y="345" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#64748b" text-anchor="middle">state</text>
+<text x="772" y="345" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#64748b" text-anchor="middle">action</text>
+<rect x="245" y="620" width="690" height="42" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="590" y="647" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#334155" text-anchor="middle">Video realism can help world modeling, but it is not sufficient evidence of physical understanding.</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="650" viewBox="0 0 1180 650">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="1180" height="650" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="590.0" y="46" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">Modern Post-Training Stack</text>
+<text x="590.0" y="76" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#475569" text-anchor="middle">Instruction, preference, reasoning, tool use, and safety form a closed loop</text>
+<rect x="70" y="180" width="175" height="95" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+<text x="157.5" y="218" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#2563eb" text-anchor="middle">Base model</text>
+<text x="157.5" y="245" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#334155" text-anchor="middle">pretrained next-token model</text>
+<line x1="245" y1="228" x2="285" y2="228" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="285" y="180" width="175" height="95" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8"/>
+<text x="372.5" y="218" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0891b2" text-anchor="middle">SFT</text>
+<text x="372.5" y="245" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#334155" text-anchor="middle">instruction following</text>
+<line x1="460" y1="228" x2="500" y2="228" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="500" y="180" width="175" height="95" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="587.5" y="218" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#d97706" text-anchor="middle">Preference</text>
+<text x="587.5" y="245" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#334155" text-anchor="middle">RLHF / DPO / IPO</text>
+<line x1="675" y1="228" x2="715" y2="228" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="715" y="180" width="175" height="95" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="802.5" y="218" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#dc2626" text-anchor="middle">Reasoning RL</text>
+<text x="802.5" y="245" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#334155" text-anchor="middle">verifiable rewards</text>
+<line x1="890" y1="228" x2="930" y2="228" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="930" y="180" width="175" height="95" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1017.5" y="218" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#7c3aed" text-anchor="middle">Tool and safety</text>
+<text x="1017.5" y="245" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#334155" text-anchor="middle">formats, refusal, red team</text>
+<rect x="135" y="385" width="910" height="145" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="590" y="420" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a" text-anchor="middle">Evaluation and data iteration</text>
+<text x="290" y="465" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="middle">math / code</text>
+<text x="450" y="465" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#155e75" text-anchor="middle">facts / citation</text>
+<text x="610" y="465" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#92400e" text-anchor="middle">format / tools</text>
+<text x="770" y="465" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#991b1b" text-anchor="middle">safety / refusal</text>
+<text x="930" y="465" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#5b21b6" text-anchor="middle">latency / cost</text>
+<text x="590" y="505" font-family="Arial, sans-serif" font-size="15" font-weight="500" fill="#334155" text-anchor="middle">Failures generate new data; new data updates SFT, preferences, rewards, and policies.</text>
+<line x1="590" y1="385" x2="590" y2="290" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="930" y1="275" x2="930" y2="385" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
