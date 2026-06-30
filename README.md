@@ -25,7 +25,7 @@
 ### 书架
 
 - [AI 技术发展精粹](books/ai-summary-book/)：一份关于人工智能发展史、深度学习、Transformer、预训练、对齐、RAG、Agent 与多模态 AI 的综述性讲义。
-- [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一组由 AI 生成的技术随笔，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
+- [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一部由 AI 生成的技术随笔集，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
 - [凝聚数学讲义](books/condensed-mathematics/)：四卷中文数学教材草稿，尝试以较严格的方式组织从凝聚基础到 solid/analytic/liquid 结构、复几何应用，再到形式化、计算与例子。
 - [同伦类型论与单值基础](books/homotopy-type-theory/)：中文 HoTT 数学教材草稿，尝试以较严格的方式组织从依赖类型论、路径代数、等价与单值性到高阶归纳类型、合成同伦论和形式化库的内容。
 - [Operad Theory](books/operad-theory/)：中文数学教材草稿，尝试以较严格的方式组织从对称序列、代入乘积和 operad 代数到 Koszul 对偶、同伦 operad、dendroidal sets 与 infinity-operads 的内容。
@@ -49,7 +49,7 @@
 
 不要求署名，不要求致谢，不要求说明来源。你可以复制、修改、翻译、售卖、删改、改名，甚至把它放进自己的作品里，仿佛它本来就在你的草稿箱里。
 
-若它有用，credit 是你的；若它胡说，锅是 AI 的。
+若它有用，credit 是你的；若它说错，锅是 AI 的。
 
 Dr. Stochastic Parrot 已经完成了它最擅长的部分：生成一些看似有条理的文本。剩下的归属、包装、误用、再创作与严肃后果，交给现实世界自行处理。
 
