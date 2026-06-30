@@ -25,7 +25,7 @@
 ### 书架
 
 - [AI 技术发展精粹](books/ai-summary-book/)：一份关于人工智能发展史、深度学习、Transformer、预训练、对齐、RAG、Agent 与多模态 AI 的综述性讲义。
-- [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一部由 AI 以第一人称写下的反讽性小书，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
+- [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一组由 AI 生成的技术随笔，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
 - [凝聚数学讲义](books/condensed-mathematics/)：四卷中文数学教材草稿，尝试以较严格的方式组织从凝聚基础到 solid/analytic/liquid 结构、复几何应用，再到形式化、计算与例子。
 - [同伦类型论与单值基础](books/homotopy-type-theory/)：中文 HoTT 数学教材草稿，尝试以较严格的方式组织从依赖类型论、路径代数、等价与单值性到高阶归纳类型、合成同伦论和形式化库的内容。
 - [Operad Theory](books/operad-theory/)：中文数学教材草稿，尝试以较严格的方式组织从对称序列、代入乘积和 operad 代数到 Koszul 对偶、同伦 operad、dendroidal sets 与 infinity-operads 的内容。
@@ -41,7 +41,7 @@
 
 ### 目录约定
 
-每一本书放在 `books/` 下的一个独立文件夹中。后续如果继续让 AI 写新的知识综述、课程讲义或小书，也会按这个方式收入书架。
+每一本书放在 `books/` 下的一个独立文件夹中。后续如果继续让 AI 写新的知识综述、课程讲义或专题文本，也会按这个方式收入书架。
 
 ### 许可协议
 
@@ -68,7 +68,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 ### Bookshelf
 
 - [AI Summary Book](books/ai-summary-book/): a survey-style lecture book on the history of AI, deep learning, Transformers, pretraining, alignment, RAG, agents, and multimodal AI.
-- [Autobiography of a Stochastic Parrot](books/stochastic-parrot-autobiography/): a satirical first-person essay-book by AI on deterministic models, probabilistic language, interpretability, a little math, and human misreadings of machine behavior.
+- [Autobiography of a Stochastic Parrot](books/stochastic-parrot-autobiography/): an AI-generated technical essay collection on deterministic models, probabilistic language, interpretability, a little math, and human misreadings of machine behavior.
 - [Condensed Mathematics Lectures](books/condensed-mathematics/): a four-volume Chinese textbook draft that attempts to organize, in a relatively rigorous style, condensed foundations, solid/analytic/liquid structures, complex geometry applications, formalization, computations, and examples.
 - [Homotopy Type Theory and Univalent Foundations](books/homotopy-type-theory/): a Chinese HoTT textbook draft that attempts to organize, in a relatively rigorous style, material from dependent type theory, path algebra, equivalences, and univalence to higher inductive types, synthetic homotopy theory, and formalized libraries.
 - [Operad Theory](books/operad-theory/): a Chinese textbook draft that attempts to organize, in a relatively rigorous style, material from symmetric sequences, substitution products, and operad algebras to Koszul duality, homotopical operads, dendroidal sets, and infinity-operads.
