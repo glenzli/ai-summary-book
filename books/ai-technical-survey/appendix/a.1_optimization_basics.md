@@ -51,7 +51,7 @@ $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \frac{1}{N} \sum_{i=1}^N \n
 
 #### 2. 随机梯度下降 (Stochastic Gradient Descent, SGD)
 每次更新只随机抽取 **一个** 样本 $(\mathbf{x}_i, y_i)$ 计算梯度：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \nabla \ell_i $$
+$$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \nabla \ell_i $$
 
 *   **数学合理性（无偏估计）**：
     虽然单个样本的梯度 $\nabla \ell_i$ 可能与总梯度 $\nabla L$ 方向不同（甚至相反），但其**数学期望**等于总梯度：

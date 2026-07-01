@@ -26,7 +26,6 @@ $$ \hat{R}(f) = \frac{1}{N} \sum_{i=1}^N L(y_i, f(x_i)) $$
 ##### 2. 偏差-方差分解 (Bias-Variance Decomposition)
 泛化误差可以数学分解为三部分（详细推导见 [附录 A.3](appendix/a.3_statistical_learning_theory.md)）：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \text{Error} = \text{Bias}^2 + \text{Variance} + \text{Noise} $$
 
 *   **偏差 (Bias)**：模型的**拟合能力**。偏差高意味着模型太简单（欠拟合），连训练集都学不会（如用直线拟合正弦曲线）。
@@ -1182,7 +1181,7 @@ graph LR
     $$ \mathbf{i}_t = \sigma(\mathbf{W}_i \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i) $$
     $$ \tilde{\mathbf{C}}_t = \tanh(\mathbf{W}_C \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_C) $$
 3.  **细胞状态更新 (Cell Update) —— 核心公式**：
-    <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \mathbf{C}_t = \mathbf{f}_t \odot \mathbf{C}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{C}}_t $$
+    $$ \mathbf{C}_t = \mathbf{f}_t \odot \mathbf{C}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{C}}_t $$
     *   **加法更新**：这是 LSTM 避免梯度消失的关键。相比于 RNN 的矩阵乘法更新，加法运算的导数性质更优。
 4.  **输出门 (Output Gate)**：
     $$ \mathbf{o}_t = \sigma(\mathbf{W}_o \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o) $$

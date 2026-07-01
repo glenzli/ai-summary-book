@@ -44,7 +44,6 @@ graph LR
 
 指令微调在训练形式上仍然是“预测下一个 token”，只是我们把输入组织成了更接近人类指令的格式。把指令与输入拼接为 $\mathbf{x}$，把模型回答拼接为 $\mathbf{y} = (y_1, \dots, y_T)$，SFT 的目标函数就是标准的负对数似然：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{SFT}} = - \sum_{t=1}^{T} \log P(y_t \mid \mathbf{x}, y_{<t}) $$
 
 这一点解释了为什么“模板/格式”会显著影响结果：它直接改变了条件分布 $P(\mathbf{y}\mid\mathbf{x})$ 的建模方式。
@@ -167,7 +166,6 @@ RLHF 很有效，但 PPO 训练对超参数、奖励模型质量和 KL 约束较
 
 **训练目标（最小数学形式）**：给定偏好三元组 $(x, y_w, y_l)$（同一 Prompt 下胜者/败者），DPO 直接让“胜者相对败者”的对数概率优势变大，同时用参考策略 $\pi_{ref}$ 做锚定：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{DPO}} = -\log \sigma\Big(\beta\big[(\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)) - (\log \pi_{ref}(y_w|x) - \log \pi_{ref}(y_l|x))\big]\Big) $$
 
 其中 $\beta$ 控制“偏好强度”（可视作温度/权衡系数）。它的直觉和 RLHF 一致：**既要贴近人类偏好，又不能偏离原本的语言能力太远**。（更完整的推导与它与 KL 约束的关系，请见 **[附录 A.11](appendix/a.11_rl_and_ppo.md)**）
@@ -292,7 +290,6 @@ graph TD
 
 **技术本质（最小数学形式）**：最常见的是仿射量化 (Affine Quantization)。对某个权重（或一组权重）$w$，选择缩放 $s$ 与零点 $z$，把浮点映射到整数区间：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ q = \text{clip}\big(\text{round}(w/s) + z\big), \quad \hat{w} = s\,(q-z) $$
 
 其中 $q$ 是 INT8/INT4 的离散值，$\hat{w}$ 是反量化后的近似权重。工程上常用 **按通道量化 (Per-channel Quantization)** 来降低误差（不同输出通道用不同的 $s,z$）。
@@ -369,7 +366,6 @@ $$ q = \text{clip}\big(\text{round}(w/s) + z\big), \quad \hat{w} = s\,(q-z) $$
 
 给定输入 $x$ 和目标回答 $y$，SFT 直接最大化参考回答概率：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 \mathcal{L}_{\text{SFT}} = -\log \pi_\theta(y\mid x).
 $$
@@ -457,7 +453,6 @@ $$
 
 数学上，问题可以写成代理目标和真实目标的错位：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 \max_\theta \mathbb{E}[R_{\text{proxy}}(x,y)]
 \quad \not\Rightarrow \quad
@@ -570,7 +565,6 @@ $$
 
 分类任务中，经典蒸馏会让学生匹配教师的概率分布：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 \mathcal{L}_{\text{KD}}
 = T^2 \cdot \mathrm{KL}\left(

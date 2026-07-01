@@ -213,7 +213,6 @@ BERT 的成功归功于两个精心设计的自监督任务：**掩码语言模�
 
 **训练目标（最小数学形式）**：令 $\mathcal{M}$ 为被选中 mask 的位置集合，MLM 的损失可以写为：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid x_{\setminus \mathcal{M}}) $$
 
 其中 $x_{\setminus \mathcal{M}}$ 表示把被 mask 的位置替换为 `[MASK]` / 随机词 / 原词后的输入序列。
@@ -226,7 +225,6 @@ $$ \mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid x_{\set
 
 **训练目标（最小数学形式）**：令标签 $y\in\{0,1\}$ 表示 IsNext（1 为真），模型给出 $P_\theta(y=1\mid A,B)$，则二分类交叉熵为
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{NSP}} = -\left[y\log P_\theta + (1-y)\log(1-P_\theta)\right] $$
 
 （实践中，后续工作如 RoBERTa 发现 NSP 并非必需；但把它作为一个“句子级别”的对齐信号来理解，仍然很有帮助。）
@@ -270,7 +268,6 @@ BERT 推动了 NLP 从任务特定模型走向“预训练 + 微调”的主流�
 
 **训练目标（最小数学形式）**：GPT 采用 **自回归语言建模 (Causal Language Modeling, CLM)**。给定序列 $x_{1:T}$，最大化似然等价于最小化负对数似然：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{CLM}} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $$
 
 它之所以能被并行训练，是因为训练时我们一次性喂入整段文本，并用 **因果掩码 (Causal Mask)** 在注意力层里严格禁止“偷看未来”。
@@ -413,7 +410,6 @@ T5 使用了一种类似 BERT MLM 但更适合生成任务的目标：**Span Cor
 
 **训练目标（最小数学形式）**：把被破坏后的输入记为 $\tilde{x}$，目标序列（需要模型生成出来的 spans）记为 $y_{1:T}$，则 T5 的生成式去噪目标就是标准序列到序列的负对数似然：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{span}} = -\sum_{t=1}^{T} \log P(y_t \mid y_{<t}, \tilde{x}) $$
 
 它与 BERT-MLM 的差别在于：BERT 预测的是“被 mask 的离散位置上的 token”，而 T5 预测的是“一个连续的文本片段”，因此更自然地对齐生成任务。

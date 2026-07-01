@@ -29,7 +29,7 @@ Bahdanau 等人 (2014) 提出的核心思想是：**上下文向量 $\mathbf{c}$
     这被称为 **加性注意力 (Additive Attention)**。
 
 2.  **注意力权重 (Attention Weights)**：使用 Softmax 将分数归一化为概率分布：
-    <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \alpha_{tj} = \frac{\exp(e_{tj})}{\sum_{k=1}^T \exp(e_{tk})} $$
+    $$ \alpha_{tj} = \frac{\exp(e_{tj})}{\sum_{k=1}^T \exp(e_{tk})} $$
 
 3.  **动态上下文向量 (Dynamic Context Vector)**：加权求和：
     $$ \mathbf{c}_t = \sum_{j=1}^T \alpha_{tj} \mathbf{h}_j $$
@@ -107,7 +107,6 @@ graph TD
 **技术本质（统一形式）**：无论是加性还是乘性注意力，最终都会得到一个归一化的权重向量，并对 Value 做加权平均。
 
 设打分函数为 $e_{tj} = \text{score}(\mathbf{s}_{t-1}, \mathbf{h}_j)$，则
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \alpha_{tj} = \text{softmax}_j(e_{tj}), \quad \mathbf{c}_t = \sum_{j=1}^{T} \alpha_{tj} \mathbf{h}_j $$
 
 这也是后续 Transformer 把它“矩阵化”的原因：只要把 $\text{score}(\cdot)$ 写成矩阵乘法，就能充分利用 GPU 的并行算力。
@@ -178,7 +177,6 @@ graph TB
 *   **值 (Value, V)**: $\in \mathbb{R}^{m \times d_v}$
 
 **计算公式**：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
 
 1.  **$QK^T$**: 计算 Query 和 Key 的相似度矩阵（Gram Matrix）。
@@ -225,11 +223,9 @@ RNN 看句子像管中窥豹，一次看一个词；Transformer 是一目十行�
 如果只堆叠注意力和前馈网络，深层网络会很难训练。Transformer 之所以能“越堆越深”，依赖两个工程-数学都很重要的结构：**残差连接 (Residual Connection)** 与 **层归一化 (Layer Normalization, LN)**。
 
 在原始 Transformer（Post-Norm）里，一个子层的标准写法是：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ x_{out} = \text{LN}(x + \text{Sublayer}(x)) $$
 
 而现代大模型更常见的是 Pre-Norm（更稳定）：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ x_{out} = x + \text{Sublayer}(\text{LN}(x)) $$
 
 这两种写法的差别，以及正弦位置编码为何能表达相对位移，我们会在 3.3 节进一步展开。
@@ -247,7 +243,6 @@ Transformer 的 Self-Attention 机制本身具有 **置换等变性 (Permutation
 Google 团队选择了一种基于三角函数的编码方式，而不是学习 **位置嵌入 (Position Embedding)**。
 
 **公式**：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 \begin{aligned}
 PE_{(pos, 2i)} &= \sin(pos / 10000^{2i/d_{model}}) \\
@@ -315,7 +310,6 @@ Transformer 的训练和推理过程有着显著的差异，特别是在 Decoder
 
 从损失函数角度看，这对应于“并行地”计算每个位置的负对数似然（以 Decoder-only 为例）：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{CLM}} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $$
 
 **问题**：Decoder 是自回归的。如果在预测第 $t$ 个词时，它能“偷看”到第 $t+1$ 个词，那它就不用学了，直接照抄就行。这会导致测试时（没有答案可抄）性能崩塌。
@@ -326,7 +320,7 @@ $$ \mathcal{L}_{\text{CLM}} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $$
 $$ \text{Mask}(i, j) = \begin{cases} 0 & \text{if } i \ge j \\ -\infty & \text{if } i < j \end{cases} $$
 
 在 Softmax 之前加上 Mask：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M \right)V $$
+$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M \right)V $$
 
 这样，位置 $i$ 的 Query 就只能关注到位置 $j \le i$ 的 Key，无法关注未来的信息。
 
@@ -408,7 +402,6 @@ KV Cache 是典型的 **空间换时间**。
 
 第一类是训练成本。对长度为 $n$ 的序列，标准自注意力需要构造 $n \times n$ 的分数矩阵：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 S = \frac{QK^T}{\sqrt{d_k}}, \qquad S \in \mathbb{R}^{n \times n}.
 $$
@@ -542,7 +535,6 @@ Transformer 的成功来自注意力机制：每个 token 都可以直接访问�
 
 离散时间下，一个线性状态空间模型可以写成：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 h_t = A h_{t-1} + B x_t,\qquad
 y_t = C h_t + D x_t.

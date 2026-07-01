@@ -67,7 +67,6 @@ graph TD
 
 **最小数学形式（对比学习 / InfoNCE）**：在一个 batch 内，令图像向量为 $\{\mathbf{u}_i\}_{i=1}^N$，文本向量为 $\{\mathbf{v}_i\}_{i=1}^N$，相似度为 $s_{ij} = \frac{\mathbf{u}_i^T \mathbf{v}_j}{\tau}$（$\tau$ 为温度系数），则 CLIP 的对比损失可写为双向交叉熵：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ \mathcal{L}_{\text{CLIP}} = \frac{1}{2}\left( -\frac{1}{N}\sum_{i=1}^N \log \frac{\exp(s_{ii})}{\sum_{j=1}^N \exp(s_{ij})} - \frac{1}{N}\sum_{i=1}^N \log \frac{\exp(s_{ii})}{\sum_{j=1}^N \exp(s_{ji})} \right) $$
 
 直觉上，它强迫“正确配对”的相似度 $s_{ii}$ 在每行/每列都是最大的。（更完整的 InfoNCE/对比学习推导，请见 **[附录 A.12](appendix/a.12_contrastive_learning.md)**）
@@ -270,7 +269,6 @@ RAG 的核心是 **嵌入 (Embedding)**。我们将文档切块（Chunks），�
 
 **技术本质（最小数学形式）**：令查询向量 $\mathbf{q}=f(q)$，第 $i$ 个文档块向量 $\mathbf{d}_i=f(d_i)$，相似度（常用余弦/点积）为
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ s_i = \text{sim}(\mathbf{q},\mathbf{d}_i) $$
 
 检索就是取 Top-$k$：
@@ -315,7 +313,6 @@ graph LR
 
 **生成建模视角（最小数学形式）**：把检索到的证据块记为 $d$，RAG 可以被理解为对“先检索、后生成”的分解：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ P(y\mid x) \approx \sum_{d\in \text{TopK}(x)} P(y\mid x, d)\,P(d\mid x) $$
 
 工程实现里通常用 Top-$k$ 的拼接近似这个求和：把 $d$ 直接塞进 Prompt，再让 LLM 生成 $y$。
@@ -775,7 +772,6 @@ Agent 评测也应从“单轮问答准确率”扩展为轨迹评测：
 
 一个最小形式可以写成：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 z_t = E(o_t), \qquad
 \hat{z}_{t+1} = F(z_t, a_t), \qquad

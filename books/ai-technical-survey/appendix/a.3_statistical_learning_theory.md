@@ -18,7 +18,6 @@ $$ \text{Error}(\mathbf{x}) = \mathbb{E}_{\mathcal{D}} \left[ (y - \hat{f}(\math
 为了简化符号，简写 $\hat{f}(\mathbf{x}; \mathcal{D})$ 为 $\hat{f}$。
 利用 $y = f + \epsilon$，展开平方项：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$
 \begin{aligned}
 \text{Error}(\mathbf{x}) &= \mathbb{E}_{\mathcal{D}} \left[ (f + \epsilon - \hat{f})^2 \right] \\
@@ -133,7 +132,6 @@ $$ P(\sup |E_{in} - E_{out}| > \epsilon) \le 4 (2N)^{d_{VC}} \exp\left( -\frac{1
 $$ \delta = 4 (2N)^{d_{VC}} \exp\left( -\frac{1}{8} N \epsilon^2 \right) $$
 反解出 $\epsilon$，即得到我们熟悉的 **VC 泛化界**：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span>
 $$ E_{out}(h) \le E_{in}(h) + \underbrace{\sqrt{\frac{8}{N} \left( d_{VC} \ln (2N) + \ln \frac{4}{\delta} \right)}}_{\text{Complexity Penalty } \Omega} $$
 *(注：为简化展示，此处使用了 $m_{\mathcal{H}}(N) \approx N^{d_{VC}}$ 的近似形式，严谨形式略有差异但不影响结论)*
 

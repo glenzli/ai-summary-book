@@ -136,7 +136,7 @@ Transformer 抛弃了递归，完全基于注意力（详见 **[Chapter 3.2](cha
     在翻译"苹果"这个词时，模型会同时关注句子里的其他词。如果是"吃了一个苹果"，它会关注"吃"；如果是"苹果电脑"，它会关注"电脑"。这种"关注"是通过计算词与词之间的相似度（内积）来实现的。
 
 *   **核心算子**：
-    <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+    $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 *   **流程示意图**：
 

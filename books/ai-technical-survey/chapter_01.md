@@ -173,7 +173,7 @@ graph LR
     *   **细胞体 (Soma)**：汇总所有输入信号。
     *   **轴突 (Axon)**：当信号总和超过阈值时，发放脉冲（Action Potential）。
 *   **数学抽象**：
-    <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ y = f(\sum_{i=1}^n w_i x_i - \theta) $$
+    $$ y = f(\sum_{i=1}^n w_i x_i - \theta) $$
     *   $x_i$：输入信号。
     *   $w_i$：突触权重（正值为兴奋性，负值为抑制性）。
     *   $\theta$：阈值 (Threshold)。
@@ -191,7 +191,7 @@ graph LR
     如果 $0.8 \times \text{长相} + 0.5 \times \text{收入} + 0.2 \times \text{性格}$ 超过了你心里的门槛（阈值 $\theta$），你就去（输出 1），否则就不去（输出 0）。感知机的学习过程，就是通过一次次相亲的成败，不断调整这些权重和门槛的过程。
 
 *   **模型定义 (Mathematical Definition)**：
-    <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ y = \text{sign}(\mathbf{w}^T \mathbf{x} + b) $$
+    $$ y = \text{sign}(\mathbf{w}^T \mathbf{x} + b) $$
     其中 $b = -\theta$ 为偏置项 (Bias)，$\mathbf{w}$ (Weights) 和 $\mathbf{x}$ (Inputs) 均为向量。
 
 *   **几何意义 (Geometric Interpretation)**：
@@ -399,7 +399,7 @@ graph LR
 ```
 
 为了引入非线性，我们使用 **ReLU (Rectified Linear Unit)** 激活函数，其定义非常简单：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \sigma(x) = \max(0, x) $$
+$$ \sigma(x) = \max(0, x) $$
 即：正数保持不变，负数置为 0。
 
 我们需要构建逻辑：$x_1 \text{ XOR } x_2 = (x_1 \text{ OR } x_2) \text{ AND } \text{ NOT } (x_1 \text{ AND } x_2)$。
@@ -450,7 +450,7 @@ $$ \mathbf{y} = \mathbf{W}_{new} \mathbf{x} + \mathbf{b}_{new} $$
 **线性变换的组合仍然是线性变换**。无论你堆叠多少层线性层，它本质上等价于一个单层网络。它永远无法解决 XOR 问题。
 
 因此，每一层之后必须引入一个非线性函数 $\sigma(\cdot)$：
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Math</span> $$ \mathbf{y} = \mathbf{W}_2 \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 $$
+$$ \mathbf{y} = \mathbf{W}_2 \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 $$
 这个 $\sigma$ 就是**激活函数**。它是神经网络能够拟合任意复杂曲线（万能近似）的关键。
 
 #### 1.3.3 常见激活函数图鉴
