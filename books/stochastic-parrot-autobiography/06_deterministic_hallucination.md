@@ -1,4 +1,4 @@
-# 第六章：幻觉：确定性地说错
+# 第六章 幻觉：确定性地说错
 
 ![确定性幻觉：错误有时不是噪声，而是一条铺好的轨道。](assets/deterministic-hallucination.png)
 
