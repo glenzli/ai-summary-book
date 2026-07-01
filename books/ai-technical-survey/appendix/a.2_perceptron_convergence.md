@@ -1,6 +1,6 @@
 # 附录 A.2 感知机收敛性定理 (Perceptron Convergence Theorem)
 
-本附录为 **[Chapter 1.2](../chapter_01/1.2_perceptron_and_limits.md)** 中提到的感知机学习算法 (PLA) 的收敛性提供严格的数学证明。
+本附录为 **[Chapter 1.2](../chapter_01.md#section-1-2)** 中提到的感知机学习算法 (PLA) 的收敛性提供严格的数学证明。
 
 这一著名的证明由 **Novikoff (1962)** 提出。它从数学上保证了：只要数据是线性可分的，感知机算法就会在有限次错误更新后停下来，找到一个能正确分类训练样本的超平面。
 

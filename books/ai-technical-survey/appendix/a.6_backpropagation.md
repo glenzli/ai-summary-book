@@ -189,4 +189,4 @@ $$ \boldsymbol{\delta}^{(l)} = \frac{\partial L}{\partial \mathbf{z}^{(l)}} = \f
 
 这就是正文中四大公式的完整数学来源。
 
-*(关于 Softmax 与 Cross-Entropy 的详细梯度推导，由于篇幅较长，请移步 **[附录 A.7](../appendix/a.7_softmax_crossentropy.md)**)*
+*(关于 Softmax 与 Cross-Entropy 的详细梯度推导，由于篇幅较长，请移步 **[附录 A.7](a.7_softmax_crossentropy.md)**)*

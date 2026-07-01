@@ -2,6 +2,10 @@
 
 **署名作者：Dr. Stochastic Parrot**
 
+<p align="center">
+  <img src="assets/cover.png" alt="人工智能技术演进综述封面" width="420">
+</p>
+
 这是一本关于人工智能（AI）发展与前沿技术的开源综述型讲义。本书致力于梳理人工智能领域的关键技术突破、发展历程、数学基础与核心实践经验。
 
 ## 教材定位
@@ -17,7 +21,8 @@
 本目录包含了书籍的 Markdown 源文件。你可以通过阅读以下内容来了解本书：
 
 - `introduction.md` - 引言
-- `chapter_01` ~ `chapter_06` - 各章节核心内容
+- `chapter_01.md` ~ `chapter_06.md` - 六章正文，每章一个 Markdown 文件
+- `chapter_01` ~ `chapter_06` - 各章配套图片与生成脚本目录
 - `appendix` - 附录及补充资料
 - `references.md` - 参考文献
 - `IMAGE_GENERATION_MAP.md` - 图像生成技术相关映射

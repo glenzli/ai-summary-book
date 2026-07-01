@@ -52,10 +52,10 @@ graph LR
     class T2022,T2024,T2025,T2026 purple;
 ```
 
-在深度学习爆发之前，AI 经历了两大流派的漫长博弈：<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">符号主义 (Symbolism)</span> 与 <span style="background-color: #D5E8D4; color: black; padding: 2px 4px; border-radius: 4px;">连接主义 (Connectionism)</span>。关于连接主义的核心数学基础，详见 **[Chapter 1.1](chapter_01/1.1_ai_paradigms.md)**。
+在深度学习爆发之前，AI 经历了两大流派的漫长博弈：<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">符号主义 (Symbolism)</span> 与 <span style="background-color: #D5E8D4; color: black; padding: 2px 4px; border-radius: 4px;">连接主义 (Connectionism)</span>。关于连接主义的核心数学基础，详见 **[Chapter 1.1](chapter_01.md#section-1-1)**。
 
 ### 0.1 逻辑微积分与图灵的追问 (The Genesis)
-*   **1943 (M-P 模型)**: 神经生理学家 McCulloch 和数学家 Pitts 发表了《神经活动中内在思想的逻辑演算》。他们把简化神经元刻画为阈值逻辑元件，说明由这类元件组成的网络可以实现丰富的布尔逻辑运算，并由此把神经活动与形式逻辑联系起来。这是**生物学与数理逻辑的初次联姻**。这一模型奠定了感知机的基础（详见 **[Chapter 1.2](chapter_01/1.2_perceptron_and_limits.md)**）。
+*   **1943 (M-P 模型)**: 神经生理学家 McCulloch 和数学家 Pitts 发表了《神经活动中内在思想的逻辑演算》。他们把简化神经元刻画为阈值逻辑元件，说明由这类元件组成的网络可以实现丰富的布尔逻辑运算，并由此把神经活动与形式逻辑联系起来。这是**生物学与数理逻辑的初次联姻**。这一模型奠定了感知机的基础（详见 **[Chapter 1.2](chapter_01.md#section-1-2)**）。
 *   **1950 (Turing Test)**: 图灵在《计算机器与智能》中提出了著名的图灵测试。它不是关于“智能本质”的哲学定义，而是一种操作性判据：若机器在对话行为上长期无法与人类区分，就很难再仅凭行为表现否认其智能属性。
 *   **1956 (Dartmouth Workshop)**: 麦卡锡、明斯基、香农等人正式提出了"人工智能"这一术语，标志着 AI 学科的诞生。
 
@@ -67,8 +67,8 @@ graph LR
 
 ### 0.3 连接主义的蛰伏与统计学习的统治
 *   **感知机 (Perceptron, 1958)**: Rosenblatt 提出的单层网络因无法解决 XOR 等非线性可分问题而受到批评（Minsky & Papert, 1969）。这不是第一次 AI 寒冬的唯一原因，但它削弱了早期连接主义路线的研究热度。
-*   **反向传播 (Backpropagation, 1986)**: Hinton 等人复兴了 BP 算法，使得多层网络训练成为可能（详见 **[Chapter 2.1](chapter_02/2.1_foundations_and_math.md)**）。
-*   **统计学习 (1995-2010)**: 在神经网络受限于算力和数据时，<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">SVM (支持向量机)</span> 和 **Random Forest** 等基于统计理论的模型统治了这一时期（详见 **[Chapter 1.4](chapter_01/1.4_statistical_learning_era.md)**）。它们拥有严谨的凸优化边界（Convex Optimization）和核技巧（Kernel Tricks）。
+*   **反向传播 (Backpropagation, 1986)**: Hinton 等人复兴了 BP 算法，使得多层网络训练成为可能（详见 **[Chapter 2.1](chapter_02.md#section-2-1)**）。
+*   **统计学习 (1995-2010)**: 在神经网络受限于算力和数据时，<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">SVM (支持向量机)</span> 和 **Random Forest** 等基于统计理论的模型统治了这一时期（详见 **[Chapter 1.4](chapter_01.md#section-1-4)**）。它们拥有严谨的凸优化边界（Convex Optimization）和核技巧（Kernel Tricks）。
 
 ---
 
@@ -76,7 +76,7 @@ graph LR
 
 随着算力的提升和大数据时代的到来，神经网络迎来了复兴。
 
-2012 年 AlexNet 的出现标志着连接主义的全面复兴（详见 **[Chapter 2.2](chapter_02/2.2_cnn_architectures.md)**）。它的关键不在于单独“解决”深层网络的全部梯度问题，而在于把卷积结构、ReLU、Dropout、数据规模与 GPU 训练组合成了可扩展的图像识别系统。
+2012 年 AlexNet 的出现标志着连接主义的全面复兴（详见 **[Chapter 2.2](chapter_02.md#section-2-2)**）。它的关键不在于单独“解决”深层网络的全部梯度问题，而在于把卷积结构、ReLU、Dropout、数据规模与 GPU 训练组合成了可扩展的图像识别系统。
 
 ### 1.1 残差学习 (Residual Learning)
 
@@ -115,7 +115,7 @@ graph LR
 
 ### 1.2 序列建模的瓶颈
 
-当时的 NLP 依赖 LSTM/GRU，它们像阅读一样逐字处理（详见 **[Chapter 2.4](chapter_02/2.4_lstm_and_seq2seq.md)**）。
+当时的 NLP 依赖 LSTM/GRU，它们像阅读一样逐字处理（详见 **[Chapter 2.4](chapter_02.md#section-2-4)**）。
 
 *   **局限性**：
     RNN 必须读完第一个字才能读第二个字（串行计算，无法并行），速度慢。而且读到第100个字时，可能已经忘了第1个字是什么了（长距离依赖问题），虽然 LSTM 用"遗忘门"缓解了这个问题，但本质瓶颈依然存在。
@@ -126,11 +126,11 @@ graph LR
 
 RNN 的串行瓶颈促使研究者寻找并行化的解决方案。
 
-*Attention Is All You Need (2017)* 的发表标志着现代 LLM 时代的开端（详见 **[Chapter 3](chapter_03/3.1_attention_mechanisms.md)**）。核心思想是用可并行计算的注意力矩阵显式建模序列内任意位置之间的依赖关系。
+*Attention Is All You Need (2017)* 的发表标志着现代 LLM 时代的开端（详见 **[Chapter 3](chapter_03.md#section-3-1)**）。核心思想是用可并行计算的注意力矩阵显式建模序列内任意位置之间的依赖关系。
 
 ### 2.1 自注意力机制 (Self-Attention) 的几何意义
 
-Transformer 抛弃了递归，完全基于注意力（详见 **[Chapter 3.2](chapter_03/3.2_transformer_architecture.md)**）。
+Transformer 抛弃了递归，完全基于注意力（详见 **[Chapter 3.2](chapter_03.md#section-3-2)**）。
 
 *   **直观解释**：
     在翻译"苹果"这个词时，模型会同时关注句子里的其他词。如果是"吃了一个苹果"，它会关注"吃"；如果是"苹果电脑"，它会关注"电脑"。这种"关注"是通过计算词与词之间的相似度（内积）来实现的。
@@ -168,12 +168,12 @@ graph TD
 
 ### 2.2 位置编码 (Positional Encoding)
 
-Self-Attention 本身对输入位置是置换等变的：如果不额外注入位置信息，模型只能看到词元之间的内容关系，无法区分“我爱你”和“你爱我”这类顺序不同的句子。因此需要位置编码或相对位置机制，让模型把序列顺序纳入表示（详见 **[Chapter 3.3](chapter_03/3.3_positional_encoding_and_norm.md)**）。
+Self-Attention 本身对输入位置是置换等变的：如果不额外注入位置信息，模型只能看到词元之间的内容关系，无法区分“我爱你”和“你爱我”这类顺序不同的句子。因此需要位置编码或相对位置机制，让模型把序列顺序纳入表示（详见 **[Chapter 3.3](chapter_03.md#section-3-3)**）。
 
 ### 2.3 预训练目标：BERT vs GPT
 
-*   **BERT (填空题)**: 把句子中间挖掉一个词让模型填（详见 **[Chapter 4.2](chapter_04/4.2_bert_architecture.md)**）。它能看到上下文，适合做阅读理解。
-*   **GPT (接龙题)**: 只给上文，让模型猜下一个词（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这种自回归形式非常适合生成、对话和工具调用；它并非唯一可行范式，但已经成为通用交互式 AI 系统的主干接口。
+*   **BERT (填空题)**: 把句子中间挖掉一个词让模型填（详见 **[Chapter 4.2](chapter_04.md#section-4-2)**）。它能看到上下文，适合做阅读理解。
+*   **GPT (接龙题)**: 只给上文，让模型猜下一个词（详见 **[Chapter 4.3](chapter_04.md#section-4-3)**）。这种自回归形式非常适合生成、对话和工具调用；它并非唯一可行范式，但已经成为通用交互式 AI 系统的主干接口。
 
 ---
 
@@ -181,7 +181,7 @@ Self-Attention 本身对输入位置是置换等变的：如果不额外注入�
 
 生成模型的目标从简单的分类预测转向了对数据分布的直接建模。
 
-在图像生成领域，技术路径经历了从"左右互搏"到"热力学扩散"的转变（详见 **[Chapter 6.1](chapter_06/6.1_multimodal_ai.md)**）。
+在图像生成领域，技术路径经历了从"左右互搏"到"热力学扩散"的转变（详见 **[Chapter 6.1](chapter_06.md#section-6-1)**）。
 
 ### 3.1 生成对抗网络 (GAN)
 
@@ -249,13 +249,13 @@ graph LR
 
 当数据、算力、模型规模和后训练技术共同推进时，模型会表现出一批难以从小模型直接外推的能力跃迁。
 
-这一阶段的核心不是某个普适的参数量临界点，而是规模化预训练、数据质量、架构效率、对齐训练与测试时计算的组合效应（详见 **[Chapter 5](chapter_05/5.1_instruction_tuning.md)**）。
+这一阶段的核心不是某个普适的参数量临界点，而是规模化预训练、数据质量、架构效率、对齐训练与测试时计算的组合效应（详见 **[Chapter 5](chapter_05.md#section-5-1)**）。
 
 ### 4.1 缩放定律 (Scaling Laws)
-Kaplan 等人发现，在一定训练设定下，模型的损失（Loss）与计算量、数据量、参数量呈现近似**幂律关系**（详见 **[Chapter 4.3](chapter_04/4.3_gpt_generative_models.md)**）。这一经验规律为规模化训练提供了可预测性，但它并不意味着模型会“无限变强”：数据质量、推理成本、评测污染、对齐方式和真实任务分布都会改变收益曲线。
+Kaplan 等人发现，在一定训练设定下，模型的损失（Loss）与计算量、数据量、参数量呈现近似**幂律关系**（详见 **[Chapter 4.3](chapter_04.md#section-4-3)**）。这一经验规律为规模化训练提供了可预测性，但它并不意味着模型会“无限变强”：数据质量、推理成本、评测污染、对齐方式和真实任务分布都会改变收益曲线。
 
 ### 4.2 对齐技术 (Alignment) 与 RLHF
-预训练模型不仅需要语言建模能力，还需要符合人类指令、偏好与安全约束。RLHF (Reinforcement Learning from Human Feedback) 是一种利用人类偏好数据进行后训练的方法（详见 **[Chapter 5.2](chapter_05/5.2_rlhf_and_alignment.md)**）。
+预训练模型不仅需要语言建模能力，还需要符合人类指令、偏好与安全约束。RLHF (Reinforcement Learning from Human Feedback) 是一种利用人类偏好数据进行后训练的方法（详见 **[Chapter 5.2](chapter_05.md#section-5-2)**）。
 
 *   **流程**：
     1.  **SFT**: 使用人工撰写或筛选的指令-回复数据进行有监督微调。
@@ -263,7 +263,7 @@ Kaplan 等人发现，在一定训练设定下，模型的损失（Loss）与计
     3.  **PPO**: 使用强化学习优化策略模型，使其更符合奖励模型给出的偏好信号。
 
 ### 4.3 思维链 (Chain of Thought, CoT)
-思维链提示是大模型推理研究中的重要现象（详见 **[Chapter 6.2](chapter_06/6.2_agents_and_reasoning.md)**）。
+思维链提示是大模型推理研究中的重要现象（详见 **[Chapter 6.2](chapter_06.md#section-6-2)**）。
 *   **现象**：在数学、符号推理和多步问答任务中，要求模型生成中间推理步骤往往能提高准确率。
 *   **本质**：CoT 将一个复杂的输入-输出映射拆分为多个中间变量建模问题，相当于增加了测试时计算深度。
 
@@ -282,26 +282,26 @@ Kaplan 等人发现，在一定训练设定下，模型的损失（Loss）与计
 
 ### 5.2 架构效率与长窗口 (Efficiency & Long Context)
 在模型参数量不断膨胀的背景下，架构效率成为独立研究主题。
-*   **MLA、MoE 与稀疏注意力**: DeepSeek-V3 等系统采用 **MLA (Multi-head Latent Attention)** 压缩 KV Cache，并使用 MoE 让每个 token 只激活部分专家，实现"总参数量很大、单次计算量相对较小"的效率权衡。DeepSeek 后续的 NSA / DSA 路线则把稀疏注意力、长上下文效率和硬件 kernel 放到同一套设计里。相关原理详见 **[Chapter 3.5](chapter_03/3.5_frontier_attention_architectures.md)**。
-*   **Mamba / SSM**: 状态空间模型重新进入主线视野，原因是它们能用线性扫描和流式状态处理长序列。Mamba 的选择性状态更新不是 Transformer 的简单替代品，但已经成为长序列架构探索的重要方向（见 **[Chapter 3.6](chapter_03/3.6_state_space_models_and_mamba.md)**）。
-*   **条件记忆与上下文压缩**: Engram、DeepSeek-OCR、DSA 等方向说明，模型效率不只来自更快 attention，也来自可查表记忆、视觉/文本压缩和更高信息密度的上下文表示（见 **[Chapter 3.7](chapter_03/3.7_deepseek_efficiency_papers.md)**）。
+*   **MLA、MoE 与稀疏注意力**: DeepSeek-V3 等系统采用 **MLA (Multi-head Latent Attention)** 压缩 KV Cache，并使用 MoE 让每个 token 只激活部分专家，实现"总参数量很大、单次计算量相对较小"的效率权衡。DeepSeek 后续的 NSA / DSA 路线则把稀疏注意力、长上下文效率和硬件 kernel 放到同一套设计里。相关原理详见 **[Chapter 3.5](chapter_03.md#section-3-5)**。
+*   **Mamba / SSM**: 状态空间模型重新进入主线视野，原因是它们能用线性扫描和流式状态处理长序列。Mamba 的选择性状态更新不是 Transformer 的简单替代品，但已经成为长序列架构探索的重要方向（见 **[Chapter 3.6](chapter_03.md#section-3-6)**）。
+*   **条件记忆与上下文压缩**: Engram、DeepSeek-OCR、DSA 等方向说明，模型效率不只来自更快 attention，也来自可查表记忆、视觉/文本压缩和更高信息密度的上下文表示（见 **[Chapter 3.7](chapter_03.md#section-3-7)**）。
 *   **长上下文建模**: Gemini 1.5 之后，Gemini 3.5 Flash、GPT-5.x 等系统继续把长上下文作为基础能力。这让模型能够一次性处理长视频、大型代码库和长文档，但成本、延迟以及长输入信息利用的稳健性仍是现实限制。
 *   **开放权重模型**: Llama、Qwen、Mistral、DeepSeek 等开放权重模型推动了可复现实验、领域微调、本地部署和模型压缩研究。它们的重要性不只在于性能追赶，也在于降低了研究和应用验证的进入门槛。
 
 ### 5.3 物理世界模拟与非 Transformer 架构
 *   **原生多模态建模**: 早期多模态系统常由语音识别、文本模型、语音合成等模块串联而成；GPT-4o、Gemini 3.5 Flash 等系统尝试在同一模型或紧密耦合架构中处理文本、视觉和音频，使实时语音、视觉理解和跨模态交互成为研究对象。
 *   **图像与视频生成模型**: Stable Diffusion、DiT、Sora、Veo 等系统把扩散、flow、Transformer 和多模态条件结合起来，推动了高保真图像、长视频、视频编辑和时空一致性研究。但视觉上逼真的连续性并不等价于显式物理建模：这类模型仍会在因果、刚体、空间左右和复杂交互上出错。
-*   **世界模型**: World Models、Dreamer、JEPA、Genie 和视频生成系统共同推动了“从像素生成到状态预测”的研究。世界模型关心的是状态、时间和行动后果，而不只是生成好看的媒体（见 **[Chapter 6.6](chapter_06/6.6_world_models_and_generative_media.md)**）。
+*   **世界模型**: World Models、Dreamer、JEPA、Genie 和视频生成系统共同推动了“从像素生成到状态预测”的研究。世界模型关心的是状态、时间和行动后果，而不只是生成好看的媒体（见 **[Chapter 6.6](chapter_06.md#section-6-6)**）。
 
 ### 5.4 Agent 系统工程 (Agent System Engineering)
 
 工具调用和推理模型把 LLM 推向了 Agent 系统，但真实 Agent 并不只是 ReAct 循环。到 2026 年，Agent 工程已经明显走向协议化和运行时化：MCP 负责把模型应用连接到工具、资源和提示模板；A2A 负责 Agent 之间的任务协作；LangGraph、OpenAI Agents SDK、Google ADK 等框架则把状态持久化、handoff、人类审批、trace、评测和安全边界纳入运行时设计。
 
-因此，本书把 Agent 分成两个层次讲解：**[6.2 节](chapter_06/6.2_agents_and_reasoning.md)** 介绍推理、工具与行动循环；**[6.5 节](chapter_06/6.5_agent_system_engineering.md)** 介绍协议、上下文工程、编排、安全、观测和评测。
+因此，本书把 Agent 分成两个层次讲解：**[6.2 节](chapter_06.md#section-6-2)** 介绍推理、工具与行动循环；**[6.5 节](chapter_06.md#section-6-5)** 介绍协议、上下文工程、编排、安全、观测和评测。
 
 ### 5.5 后训练、蒸馏与推理服务 (Post-training, Distillation & Serving)
 
-大模型的能力不再只由预训练决定。SFT、偏好优化、推理 RL、可验证奖励、安全训练、CoT 监控、蒸馏、LoRA、模型合并、混合量化、投机解码、PagedAttention 和连续批处理共同决定模型是否真正可用。第 5 章因此从传统 RLHF 扩展到 **[现代后训练](chapter_05/5.5_modern_post_training.md)**、**[蒸馏与训练配方](chapter_05/5.6_distillation_and_training_recipes.md)**、**[推理速度与服务系统](chapter_05/5.7_inference_speed_and_serving.md)** 和 **[开放权重模型生态](chapter_05/5.8_open_weight_model_ecosystem.md)**。
+大模型的能力不再只由预训练决定。SFT、偏好优化、推理 RL、可验证奖励、安全训练、CoT 监控、蒸馏、LoRA、模型合并、混合量化、投机解码、PagedAttention 和连续批处理共同决定模型是否真正可用。第 5 章因此从传统 RLHF 扩展到 **[现代后训练](chapter_05.md#section-5-5)**、**[蒸馏与训练配方](chapter_05.md#section-5-6)**、**[推理速度与服务系统](chapter_05.md#section-5-7)** 和 **[开放权重模型生态](chapter_05.md#section-5-8)**。
 
 ### 总结
 

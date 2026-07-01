@@ -144,7 +144,7 @@ $$ w_{t+1} = w_t - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} $$
 
 **1) 问题来源：L2 正则化在自适应算法下的变形**
 
-我们在 **[附录 A.4.3](../appendix/a.4_regularization.md#a43-优化视角权重衰减与梯度更新-weight-decay-in-optimization)** 中已经证明：在 SGD 优化器下，**L2 正则化**（Loss 中加罚项）与**权重衰减**（更新公式中减权重）在数学上是完全等价的。
+我们在 **[附录 A.4.3](a.4_regularization.md#a43-优化视角权重衰减与梯度更新-weight-decay-in-optimization)** 中已经证明：在 SGD 优化器下，**L2 正则化**（Loss 中加罚项）与**权重衰减**（更新公式中减权重）在数学上是完全等价的。
 
 **然而，在 Adam 中，这种等价性破灭了**。
 在 Adam 中，梯度 $g_t$ 会被除以 $\sqrt{v_t}$（自适应缩放）。如果我们把 L2 正则化的梯度 $\lambda w$ 加进 $g_t$ 里：
