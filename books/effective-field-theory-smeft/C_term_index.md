@@ -1,0 +1,23 @@
+# 附录 C：术语索引
+
+- **basis（算符基）**：局域算符在冗余关系商空间中的坐标选择。
+- **basis conversion（基变换）**：不同 Wilson 坐标系之间的转换，见附录 E。
+- **decoupling（退耦）**：重自由度效应随重质量增大而按幂次减小的情形。
+- **EFT（有效场论）**：在给定尺度和自由度下按局域算符展开的场论。
+- **EOM redundancy（运动方程冗余）**：可由场重定义吸收的算符冗余。
+- **flavor assumption（味假设）**：对 Wilson flavor 张量的简化假设。
+- **global fit（全局拟合）**：多观测量联合限制 Wilson 系数的统计分析，见第 17、19 章。
+- **heat-kernel / determinant matching**：用泛函行列式做一圈匹配的展开方法，见第 18 章。
+- **HEFT**：非线性电弱有效理论，Higgs 不必作为 $SU(2)_L$ 双重态线性实现。
+- **LEFT**：低于电弱尺度、积掉 $W,Z,h,t$ 后的低能有效理论。
+- **matching（匹配）**：令 UV 与 EFT 的低能振幅或 Green 函数相等以确定 Wilson 系数。
+- **input scheme（输入方案）**：用一组选定实验输入反解拉氏量参数的规则，见第 21 章。
+- **one-loop matching（一圈匹配）**：在一圈阶计算重自由度阈值贡献并投影为局域算符，见第 18 章。
+- **operator mixing（算符混合）**：重整化下一个算符插入产生另一个算符结构的发散。
+- **parameter counting（参数计数）**：固定 flavor、CP 与 Hermiticity 假设后的 Wilson 实维数，见第 20 章。
+- **response matrix（响应矩阵）**：Wilson 参数到归一化观测量位移的线性映射，见第 8、23 章。
+- **power counting（幂计数）**：按小参数排列算符和振幅贡献的规则。
+- **SMEFT**：以 SM 场和线性电弱对称性为低能自由度的有效理论。
+- **Warsaw basis**：SMEFT 维数六最常用的完整算符基之一。
+- **Wilson coefficient（Wilson 系数）**：乘在有效算符前、编码短程物理的系数。
+- **Z-pole**：$Z$ 共振附近的精密电弱观测量集合，见第 19 章。
