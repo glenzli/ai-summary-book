@@ -13,10 +13,10 @@
 **定义 16.1.** 对合适态射 `f:X\to Y`，特别是 local complete intersection morphism，motivic fundamental class 是六操作中连接 Thom twist 与 exceptional pullback 的自然变换，形式上可写作
 
 $$
-\eta_f:\Sigma^{L_f}\mathbb 1_X\longrightarrow f^!\mathbb 1_Y,
+\eta_f:\Sigma^{T_f}\mathbb 1_X\longrightarrow f^!\mathbb 1_Y,
 $$
 
-其中 `L_f` 是 cotangent complex 或其对应的虚向量丛类。不同文献可能采用对偶符号 `T_f=-L_f`。
+其中 `T_f=-L_f` 是由 cotangent complex 的负类给出的虚切丛类。本文采用第六章 smooth purity 的同一符号约定：smooth 情形有 `f^!\simeq\Sigma^{T_f}f^*`。
 
 **外部输入定理 16.2.** 对大类态射存在 motivic fundamental classes，且满足复合、base change、excess intersection、self-intersection 和 blow-up formulas。
 
@@ -29,7 +29,7 @@ $$
 **定义 16.4.** 设 `E` 为 motivic ring spectrum。若 `f:X\to Y` 有 fundamental class，则它诱导 `E`-cohomology 或 Borel-Moore theory 上的 Gysin maps。典型形式由合成
 
 $$
-f^*E\longrightarrow \Sigma^{-L_f}f^!E
+f^*E\longrightarrow \Sigma^{-T_f}f^!E
 $$
 
 及伴随得到。

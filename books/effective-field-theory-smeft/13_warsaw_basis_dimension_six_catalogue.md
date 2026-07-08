@@ -24,6 +24,8 @@ H^\dagger i\overleftrightarrow D_\mu^I H
 iH^\dagger\tau^I D_\mu H-i(D_\mu H)^\dagger\tau^I H.
 $$
 
+**约定 13.3（Hermitian conjugates）.** 本章列表对非 Hermitian 算符只列一个 chirality/flavor 方向；拉氏量中应加入 Hermitian conjugate，Wilson 系数与其共轭按 flavor 指标相应配对。Hermitian 算符的 Wilson 系数矩阵另满足自身的 Hermiticity 条件。
+
 ## 13.2 纯玻色算符：15 个
 
 **列表 13.3（$X^3$ 类）.**

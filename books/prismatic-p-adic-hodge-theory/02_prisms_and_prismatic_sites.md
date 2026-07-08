@@ -104,7 +104,7 @@ $$
 \overline{\mathcal O}_\Delta(B,J)=B/J.
 $$
 
-**定义 2.16.** 覆盖由 $(p,I)$-completely faithfully flat prism maps 给出。也就是说，对象族 $\{(B,J)\to(B_\lambda,J_\lambda)\}$ 是覆盖，如果相应环映射 $B\to\prod_\lambda B_\lambda$ 在 derived $(p,I)$-complete 意义下 faithfully flat，并与 prism 结构相容。
+**定义 2.16.** 覆盖由对象自身 ideal 决定的 completely faithfully flat prism maps 给出。也就是说，对象族 $\{(B,J)\to(B_\lambda,J_\lambda)\}$ 是覆盖，如果相应环映射 $B\to\prod_\lambda B_\lambda$ 在 derived $(p,J)$-complete 意义下 faithfully flat，并与 prism 结构相容；目标侧 completion 则使用对应的 $(p,J_\lambda)$。底 prism $(A,I)$ 只提供结构映射，不应把所有对象的 complete flatness 统一写成 $(p,I)$。
 
 **警告 2.17.** “Flat” 在 prismatic site 中不是普通离散 flatness 的无条件替代。若底层环非 noetherian 或存在 derived completion 现象，必须使用 completed flatness 或相应 derived flatness 口径。
 

@@ -33,7 +33,7 @@ $$
 \widehat{\Prism}_A\{i\}/p
 \right),
 $$
-见 `eq:TateTwist`。这说明本书附录 F 的 syntomic convention form 使用 $\varphi_i-1$ 是可追溯的；但最终章节公式仍必须决定是否使用 $p$-complete、mod $p^r$、truncate 或 nearby cycle 版本。
+见 `eq:TateTwist`。这说明源码中 $\varphi_i-1$ 的简写是可追溯的；本书附录 F 在类型敏感处写作 $\varphi_i-\operatorname{can}_i$，把这个 “$1$” 解释为进入同一 Tate-twisted target 的规范映射。最终章节公式仍必须决定是否使用 $p$-complete、mod $p^r$、truncate 或 nearby cycle 版本。
 
 `thm:main6` 给出两个重要出口：在 characteristic $p$ smooth 情形与 logarithmic de Rham-Witt sheaves 对应；在 mixed characteristic smooth formal $\mathcal O_C$ 情形与截断 nearby cycles 对应。第十一章和第十四章若使用 syntomic-etale comparison，应引用 `BMS2-SYN`，而不是只引用 BMS1。
 

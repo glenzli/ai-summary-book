@@ -19,10 +19,10 @@ D_\mu
 =
 \partial_\mu
 -ig_s T^A G_\mu^A
--ig \tau^I W_\mu^I
+-ig t^I W_\mu^I
 -ig'Y B_\mu,
 $$
-其中只保留该场所在表示中非平凡的生成元。
+其中只保留该场所在表示中非平凡的生成元。对 $SU(2)_L$ 基本表示，$t^I=\tau^I/2$；本书在算符表中出现的 $\tau^I$ 指 Pauli 矩阵本身。
 
 ## A.3 场强
 

@@ -23,7 +23,7 @@ $$
 在 $(-,+,+,+)$ 约定下，可取
 
 $$
-F^{0i}=E^i,\qquad F^{ij}=-\epsilon^{ijk}B_k.
+F^{0i}=E^i,\qquad F^{ij}=+\epsilon^{ijk}B_k.
 $$
 
 ## 4.2 Maxwell 方程
@@ -37,7 +37,7 @@ $$
 Maxwell 方程的协变形式为
 
 $$
-\partial_\mu F^{\mu\nu}=j^\nu,
+\partial_\mu F^{\nu\mu}=j^\nu,
 $$
 
 以及
@@ -70,7 +70,7 @@ $$
 
 $$
 \partial_\nu j^\nu
-=\partial_\nu\partial_\mu F^{\mu\nu}.
+=\partial_\nu\partial_\mu F^{\nu\mu}.
 $$
 
 因为 $\partial_\mu\partial_\nu$ 对称而 $F^{\mu\nu}$ 反对称，右侧为零。故
@@ -187,7 +187,7 @@ $$
 ## 习题
 
 1. 写出 $F_{\mu\nu}$ 的矩阵形式。
-2. 从 $\partial_\mu F^{\mu\nu}=j^\nu$ 推导电荷守恒。
+2. 从 $\partial_\mu F^{\nu\mu}=j^\nu$ 推导电荷守恒。
 3. 证明 $F_{\mu\nu}F^{\mu\nu}$ 是 Lorentz 标量。
 4. 验证 Lorentz 力四矢量与四速度正交。
 5. 在 Lorenz 规范下推导 $\Box A^\nu=j^\nu$。

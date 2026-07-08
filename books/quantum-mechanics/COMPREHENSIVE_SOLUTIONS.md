@@ -93,7 +93,7 @@ $$
 
 波算子为
 $$
-\Omega_\pm=\operatorname{s-lim}_{t\to\mp\infty}e^{itH}e^{-itH_0}.
+\Omega_\pm=\operatorname{s-lim}_{t\to\pm\infty}e^{itH}e^{-itH_0}.
 $$
 $S$ 矩阵为 $S=\Omega_+^*\Omega_-$。一阶 Born 振幅为
 $$

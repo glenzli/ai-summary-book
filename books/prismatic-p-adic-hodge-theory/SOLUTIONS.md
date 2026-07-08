@@ -135,7 +135,7 @@ $$
 
 **练习 7.1 解答.** 若 $x\in N^{\ge i+1}_{\mathrm{naive}}M$，则 $\varphi(x)\in d^{i+1}M\subset d^iM$，所以 $x\in N^{\ge i}_{\mathrm{naive}}M$。
 
-**练习 7.2 解答.** 原始 Frobenius 通常把 $N^{\ge i}$ 的元素送入 $I^i$ 倍的目标。Divided Frobenius $\varphi_i$ 是在第 $i$ 层上除去这部分 $I^i$ 可除性后得到的 normalized map。若忽略这一点，syntomic fibre 中的 $\varphi_i-1$ 就会落在错误目标中。
+**练习 7.2 解答.** 原始 Frobenius 通常把 $N^{\ge i}$ 的元素送入 $I^i$ 倍的目标。Divided Frobenius $\varphi_i$ 是在第 $i$ 层上除去这部分 $I^i$ 可除性后得到的 normalized map。若忽略这一点，syntomic fibre 中的第二个箭头就会落在错误目标中；本书在类型敏感写法中记为 $\varphi_i-\operatorname{can}_i$，其中 $\operatorname{can}_i$ 把源映到同一个 Tate-twisted target。
 
 **练习 7.3 解答.** 第一个错误位置是 twist 的正负号：$\{i\}$ 与 $\{-i\}$ 可能因 convention 反转。第二个错误位置是 divided Frobenius 的目标：可能是 $C$、$C\{i\}$ 或经过 mod $p^r$/truncation 的版本。附录 F 固定本书使用的核查口径。
 

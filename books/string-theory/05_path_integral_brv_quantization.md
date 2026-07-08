@@ -73,7 +73,7 @@ $$
 加上 antiholomorphic 部分。Mode 形式为
 $$
 Q_B=\sum_n c_{-n}L_n^{m}
-+\frac12\sum_{m,n}(m-n):c_{-m}c_{-n}b_{m+n}:
+-\frac12\sum_{m,n}(m-n):c_{-m}c_{-n}b_{m+n}:
 -a c_0.
 $$
 
@@ -170,4 +170,3 @@ Gauge fixing 不是无害步骤：它引入 ghost CFT、zero mode selection rule
 **练习 5.3.** 解释 sphere tree amplitude 为什么需要三个未积分闭弦顶点。
 
 **练习 5.4.** 从 $Z_X$ 和 $Z_{bc}$ 推导临界玻色弦 torus integrand 中的 $|\eta|^{-48}$。
-

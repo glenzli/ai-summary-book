@@ -220,9 +220,9 @@
 
 ## 第十六章
 
-**解答 16.1.** 对 lci morphism `f:X\to Y`，fundamental class 可看作从单位到相应 Thom-twisted extraordinary pullback 的类，例如 `\mathbb 1_X\to f^!\mathbb 1_Y` 加上由 `L_f` 决定的 twist 约定。
+**解答 16.1.** 对 lci morphism `f:X\to Y`，fundamental class 可看作从 Thom-twisted 单位到 extraordinary pullback 的类，例如 `\Sigma^{T_f}\mathbb 1_X\to f^!\mathbb 1_Y`。这里 `T_f=-L_f`，与 smooth purity `f^!\simeq\Sigma^{T_f}f^*` 的符号约定一致。
 
-**解答 16.2.** `L_f` 是 cotangent complex，`T_f` 是其对偶或虚切丛类。Smooth 情形 `L_f\simeq\Omega_{X/Y}`，`T_f` 为相对切丛；lci 情形给出 K-theory 中的虚向量丛。
+**解答 16.2.** `L_f` 是 cotangent complex，`T_f=-L_f` 是其对偶或虚切丛类。Smooth 情形 `L_f\simeq\Omega_{X/Y}`，`T_f` 为相对切丛；lci 情形给出 K-theory 中的虚向量丛。
 
 **解答 16.3.** 恒等态射 `id_X` 的 bivariant group 按定义由 `id_X^!` 或等价的单位 twist 表示。因为 `id^!\simeq id^*`，该 group 退化为 `X` 上的普通 cohomology。
 

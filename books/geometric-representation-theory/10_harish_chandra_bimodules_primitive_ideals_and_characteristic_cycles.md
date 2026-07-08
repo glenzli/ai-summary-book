@@ -22,7 +22,12 @@ $$
 
 **例 10.2.** $U(\mathfrak g)$ 本身在左右乘法下是 bimodule。其 adjoint action 局部有限性可由 PBW filtration 和 $\mathfrak g$ 在 tensor powers 上的有限维性推出。
 
-**命题 10.3.** 若 $V$ 是有限维 $\mathfrak g$-module，则 $U(\mathfrak g)\otimes V$ 带自然 Harish-Chandra bimodule 结构，其中左右 $U(\mathfrak g)$ 作用在第一因子上，adjoint action 对第二因子取给定作用。
+**命题 10.3.** 若 $V$ 是有限维 $\mathfrak g$-module，则 $U(\mathfrak g)\otimes V$ 带自然 Harish-Chandra bimodule 结构。右作用在 $U(\mathfrak g)$ 因子上；左作用由 coproduct 给出，在 Lie algebra 生成元上为
+$$
+x\cdot(u\otimes v)=xu\otimes v+u\otimes xv,\qquad
+(u\otimes v)\cdot x=ux\otimes v.
+$$
+于是 commutator adjoint action 同时看见 $U(\mathfrak g)$ 的 adjoint action 和 $V$ 的给定作用。
 
 **证明.** 左右有限生成来自 $U(\mathfrak g)$ 因子。对 $u\otimes v$，adjoint action 落在由 PBW degree 不超过 $\deg u$ 的有限维 $\mathfrak g$-submodules 与有限维 $V$ 张成的空间中；这是因为 $\mathfrak g$ 对 $U(\mathfrak g)$ 的 adjoint action 保持 PBW filtration，且每个 filtered piece 是有限维 $\mathfrak g$-module 的商。中心条件在自由 bimodule 情形中由 $U(\mathfrak g)$ 的中心作用给出。$\square$
 

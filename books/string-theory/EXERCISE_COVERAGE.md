@@ -14,7 +14,7 @@
 | T-duality 与 D-branes | 7.1, 7.2, 7.3, 7.4 | 7.1, 7.2, 7.3, 7.4 | 增加 Chan-Paton trace 计算 |
 | RNS 超弦 | 8.1, 8.2, 8.3, 8.4 | 8.1, 8.2, 8.3, 8.4 | 增加 superconformal ghost central charge |
 | Type II 与 GS | 9.1, 9.2, 9.3 | 9.1, 9.2, 9.3 | 增加 BPS bound 例题 |
-| Heterotic 与异常 | 10.1, 10.2, 10.3 | 10.1, 10.2, 10.3 | 增加 $SO(32)$ 与 $E_8\times E_8$ lattice theta function 对照 |
+| Heterotic 与异常 | 10.1, 10.2, 10.3 | 10.1, 10.2, 10.3 | 增加 $\operatorname{Spin}(32)/\mathbb Z_2$（物理文献常简写为 $SO(32)$）与 $E_8\times E_8$ lattice theta function 对照 |
 | 低能有效作用 | 11.1, 11.2, 11.3 | 11.1, 11.2, 11.3 | 增加 Weyl rescaling 详细计算 |
 | D-brane 有效理论 | 12.1, 12.2, 12.3 | 12.1, 12.2, 12.3 | 增加 D3-brane gauge coupling convention 对照 |
 | Calabi-Yau 紧化 | 13.1, 13.2, 13.3 | 13.1, 13.2, 13.3 | 增加更多具体 Hodge diamond 例子 |

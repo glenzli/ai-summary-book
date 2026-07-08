@@ -59,7 +59,7 @@ $$
 $$
 \sum_{d\ge0}\mu^d(b,\ldots,b)=0.
 $$
-更一般地，若右边等于 $W(b)e$，其中 $e$ 是单位，则称 $b$ 是 weak bounding cochain，$W(b)$ 称为 disk potential 或 obstruction value。
+更一般地，若右边等于 $W(b)e$，其中 $e$ 是单位，则称 $b$ 是 weak bounding cochain，$W(b)$ 称为 disk potential 或 obstruction value。这里采用 Fukaya 范畴常用的 $\mathbb Z/2$ 分次或等价地把 Novikov/势参数赋予补偿次数的约定；若坚持纯 $\mathbb Z$ 分次，则必须同时声明 $W(b)$ 的次数使 $W(b)e$ 与 $\mu_b^0$ 同次。
 
 **定义 5.8.** 给定 bounding cochain $b$，定义变形后的运算
 $$

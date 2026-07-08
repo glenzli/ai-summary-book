@@ -934,7 +934,7 @@ $$
 
 **解答.** 当 Riemann surface 出现长细管时，可用 plumbing parameter $q$ 描述连接区域。CFT 在细管上传播的贡献为
 $$
-\sum_\alpha q^{L_0^\alpha}\bar q^{\tilde L_0^\alpha}
+\sum_\alpha q^{L_0^\alpha-a}\bar q^{\tilde L_0^\alpha-a}
 |\alpha\rangle\langle\alpha|.
 $$
 这等价于在两侧曲面之间插入一组完备中间态。对 $q$ 积分后，在中间态 on-shell 处产生 pole，residue 等于左右两个低阶振幅的乘积。因此 moduli space 边界编码 perturbative unitarity 的因子化。$\square$
@@ -1038,9 +1038,10 @@ $\square$
 **解答.** AdS/CFT 字典中
 $$
 \lambda=g_{\mathrm{YM}}^2N,\qquad
-\frac{R^4}{\alpha'^2}\sim\lambda.
+\frac{R^4}{\alpha'^2}\sim\lambda,\qquad
+g_s\sim\frac{\lambda}{N}.
 $$
-因此 $\lambda\gg1$ 意味着 $R\gg \ell_s$，string-scale curvature corrections 被抑制。固定 $\lambda$ 时，$g_s\sim \lambda/N$，所以 $N\gg1$ 抑制 string loop corrections。两者同时成立时，bulk theory 可由 classical supergravity 近似。$\square$
+因此 $\lambda\gg1$ 意味着 $R\gg \ell_s$，string-scale curvature corrections 被抑制；同时需要 $g_s\sim\lambda/N\ll1$，即在给定大 $\lambda$ 后仍取足够大的 $N$，以抑制 string loop corrections。两者同时成立时，bulk theory 可由 classical supergravity 近似。$\square$
 
 ## 练习 18.2
 

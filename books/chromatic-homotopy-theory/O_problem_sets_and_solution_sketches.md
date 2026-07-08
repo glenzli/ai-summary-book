@@ -25,7 +25,7 @@ $$
 
 **提示.** 使用
 $$
-1+\operatorname{series}_m^{F_m}(X)=(1+X)^m.
+1+[m]_{F_m}(X)=(1+X)^m.
 $$
 所以三重级数为 $3X+3X^2+X^3$。
 
@@ -60,11 +60,11 @@ $$
 
 **提示.** 写出 square：
 $$
-\begin{CD}
-L_1X @>>> L_{K(1)}X\\
-@VVV @VVV\\
-0 @>>> L_0L_{K(1)}X.
-\end{CD}
+\begin{array}{ccc}
+L_1X & \longrightarrow & L_{K(1)}X\\
+\downarrow & & \downarrow\\
+0 & \longrightarrow & L_0L_{K(1)}X
+\end{array}
 $$
 左上角是右上角到右下角的 fiber。
 
@@ -74,7 +74,7 @@ $$
 
 **提示.** $\mathbb G_n$ 是 profinite group，Morava module 带拓扑和连续 semilinear action。普通离散 cochains 忘记拓扑。
 
-**习题 O.10.** 从
+**习题 O.10.** 在第六章定理 6.8 的有限性和连续作用假设下，从
 $$
 L_{K(n)}X\simeq(E_n\otimes X)^{h\mathbb G_n}
 $$
@@ -113,7 +113,7 @@ $$
 
 **习题 O.16.** 在 0-semiadditive 范畴中计算三点集合的 cardinality。
 
-**提示.** 常值图的 colimit 和 limit 都是三重 biproduct；comparison 给出 $3\cdot\operatorname{id}_{\mathbbm 1}$。
+**提示.** 常值图的 colimit 和 limit 都是三重 biproduct；comparison 给出 $3\cdot\operatorname{id}_{\mathbb 1}$。
 
 ## O.9 Picard 和 Gross-Hopkins
 

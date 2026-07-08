@@ -75,11 +75,11 @@ $$
 
 **外部输入定理 5.11 (chromatic fracture square).** 对适当谱 $X$，存在 pullback square
 $$
-\begin{CD}
-L_nX @>>> L_{K(n)}X\\
-@VVV @VVV\\
-L_{n-1}X @>>> L_{n-1}L_{K(n)}X.
-\end{CD}
+\begin{array}{ccc}
+L_nX & \longrightarrow & L_{K(n)}X\\
+\downarrow & & \downarrow\\
+L_{n-1}X & \longrightarrow & L_{n-1}L_{K(n)}X
+\end{array}
 $$
 精确适用范围和模型假设必须按资料源定位。
 

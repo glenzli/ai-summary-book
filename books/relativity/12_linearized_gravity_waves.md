@@ -130,7 +130,7 @@ $h_+$ 和 $h_\times$ 是两种偏振。
 
 $$
 \frac{d^2\xi^i}{dt^2}
-=-\frac12\ddot{h}^{TT}_{ij}\xi^j.
+=+\frac12\ddot{h}^{TT}_{ij}\xi^j.
 $$
 
 这正是激光干涉仪测量臂长差的理论基础。

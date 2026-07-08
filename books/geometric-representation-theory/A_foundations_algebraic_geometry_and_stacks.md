@@ -109,11 +109,11 @@ $$
 $$
 由 Cartesian square
 $$
-\begin{CD}
-Z\times_Y Z' @>{\operatorname{pr}_2}>> Z'\\
-@V{\operatorname{pr}_1}VV @VV{r}V\\
-Z @>{q}>> Y
-\end{CD}
+\begin{array}{ccc}
+Z\times_Y Z' & \xrightarrow{\operatorname{pr}_2} & Z'\\
+\downarrow{\scriptstyle \operatorname{pr}_1} & & \downarrow{\scriptstyle r}\\
+Z & \xrightarrow{q} & Y
+\end{array}
 $$
 的 base change，将 $r^\ast q_!$ 替换为 $\operatorname{pr}_{2!}\operatorname{pr}_1^\ast$，得到
 $$
@@ -133,4 +133,3 @@ $$
 **练习 A.2.** 令 $K\subset H$ 为 closed subgroup。写出 $H$-equivariant vector bundles on $H/K$ 与 $K$-representations 的等价，并比较它与命题 A.8。
 
 **练习 A.3.** 对三个可复合 correspondence 写出两种加括号方式，并指出 associativity 需要哪一个 base change 同构。
-

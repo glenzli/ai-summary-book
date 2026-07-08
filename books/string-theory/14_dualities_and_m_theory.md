@@ -40,7 +40,7 @@ $$
 
 **证明草图.** 低能 type IIB supergravity 的 equations of motion 可写成 $SL(2,\mathbb R)$ covariant form，量子 charge quantization 将其限制为 $SL(2,\mathbb Z)$。$B_2,C_2$ 与其电荷源 F1/D1 因而按 doublet 变换。完整量子等价是物理猜想 14.4 的一部分。$\square$
 
-**物理猜想 14.6（type I/heterotic $SO(32)$ duality）.** Type I string theory 与 $SO(32)$ heterotic string 由 S-duality 相关，耦合满足
+**物理猜想 14.6（type I/heterotic $\operatorname{Spin}(32)/\mathbb Z_2$ duality）.** Type I string theory 与 $\operatorname{Spin}(32)/\mathbb Z_2$ heterotic string（物理文献常简写为 $SO(32)$ heterotic string）由 S-duality 相关，耦合满足
 $$
 g_{\mathrm I}\sim \frac1{g_{\mathrm{het}}}.
 $$
@@ -123,4 +123,3 @@ Duality 是 string theory 从多个微扰展开走向非微扰结构的核心机
 **练习 14.2.** 用 D0-brane 质量推导 $R_{11}=g_s\ell_s$。
 
 **练习 14.3.** 用 M2-brane 张力推导 fundamental string tension。
-

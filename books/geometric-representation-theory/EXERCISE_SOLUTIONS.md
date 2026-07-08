@@ -135,7 +135,7 @@ $$
 
 **13.3.** 五项为：perversity、convolution t-exactness、commutativity constraint、global cohomology fiber functor、dual root datum 识别。
 
-**13.4.** 在 $GL_1$ 中 Verdier duality 把点 $n$ 的对象送到 dual character，对应 $n\mapsto -n$。
+**13.4.** 在 $GL_1$ 的 affine Grassmannian 中，Verdier duality 本身固定第 $n$ 个点支撑上的 skyscraper 对象。表示范畴中的 dual character 对应 $n\mapsto -n$，来自 Tannakian rigid dual 或群反演，而不是单独由 Verdier duality 产生。
 
 **13.5.** $SL_2$ 的 $\operatorname{Gr}$ 不只是离散分支；orbit closures 有非平凡几何，表示的 weight spaces 由 MV cycles/weight functors 给出。
 

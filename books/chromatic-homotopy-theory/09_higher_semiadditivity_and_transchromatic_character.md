@@ -53,7 +53,7 @@ $$
 
 **定义 9.11.** 在 $\infty$-semiadditive chromatic 范畴中，可定义 $\pi$-finite spaces 的 semiadditive cardinality。对 $m$-finite 空间 $A$，记
 $$
-|A|_{\mathcal C}\in \pi_0\operatorname{End}_{\mathcal C}(\mathbbm 1)
+|A|_{\mathcal C}\in \pi_0\operatorname{End}_{\mathcal C}(\mathbb 1)
 $$
 为常值图的 colimit-limit comparison 给出的标量。
 
@@ -61,7 +61,7 @@ $$
 
 **命题 9.13.** 若 $\mathcal C$ 是 0-semiadditive，则有限集合 $I$ 的 cardinality 作用在单位对象上等于 $|I|$ 次单位自同态之和。
 
-**证明.** 常值图 $I\to\mathcal C$ 取值 $\mathbbm 1$。其 colimit 和 limit 都是 $|I|$ 个 $\mathbbm 1$ 的 biproduct。comparison map 在矩阵表示下是所有分量为 identity 的对角求和，诱导的单位端标量是 $|I|\cdot \operatorname{id}_{\mathbbm 1}$。证毕。
+**证明.** 常值图 $I\to\mathcal C$ 取值 $\mathbb 1$。其 colimit 和 limit 都是 $|I|$ 个 $\mathbb 1$ 的 biproduct。comparison map 在矩阵表示下是所有分量为 identity 的对角求和，诱导的单位端标量是 $|I|\cdot \operatorname{id}_{\mathbb 1}$。证毕。
 
 ## 9.4 Transchromatic character
 
@@ -98,7 +98,7 @@ $$
 
 **例 9.23.** 在 0-semiadditive 范畴中，有限集合 $I$ 的 cardinality 是整数 $|I|$ 作用在单位对象上。
 
-**证明.** 见命题 9.13。若 $I=\{1,\ldots,r\}$，常值图的 colimit-limit comparison 是 $r$ 个单位对象 biproduct 上的求和-对角复合，得到 $r\cdot\operatorname{id}_{\mathbbm 1}$。证毕。
+**证明.** 见命题 9.13。若 $I=\{1,\ldots,r\}$，常值图的 colimit-limit comparison 是 $r$ 个单位对象 biproduct 上的求和-对角复合，得到 $r\cdot\operatorname{id}_{\mathbb 1}$。证毕。
 
 **边界 9.24.** 对 $A=BG$，semiadditive cardinality 与 $|G|^{-1}$ 型现象相关，但在 chromatic local categories 中不能按普通有理数解释。需要 higher semiadditive cardinality 的正式理论。
 

@@ -40,7 +40,7 @@ $$
 $$
 N\gg1,\qquad \lambda\gg1,
 $$
-并且 string loop corrections 与 $\alpha'$ corrections 均可忽略。
+并且还需 $g_s\sim\lambda/N\ll1$，使 string loop corrections 与 $\alpha'$ corrections 均可忽略。
 
 **证明草图.** String loop expansion 由 $g_s$ 控制，而在固定 $\lambda=g_{\mathrm{YM}}^2N$ 时 $g_s\sim \lambda/N$，故 large $N$ 抑制 loops。曲率半径满足 $R^2/\alpha'\sim \sqrt\lambda$，故 $\lambda\gg1$ 使 AdS 曲率远小于 string scale，从而抑制 $\alpha'$ corrections。$\square$
 
@@ -145,4 +145,3 @@ AdS/CFT 是 string theory 最精确的非微扰定义候选之一。标准例子
 **练习 18.2.** 推导 $\operatorname{AdS}_{d+1}$ 中标量质量和 CFT scaling dimension 的关系。
 
 **练习 18.3.** 用 conformal invariance 固定 scalar primary two-point function 的幂次。
-

@@ -146,7 +146,7 @@ $$
 $$
 F^{0i}=E_i,
 \qquad
-F^{ij}=-\epsilon^{ijk}B_k.
+F^{ij}=+\epsilon^{ijk}B_k.
 $$
 
 降指标时 $F_{0i}=-E_i$，$F_{ij}=F^{ij}$。于是
@@ -356,19 +356,19 @@ $$
 
 $$
 \frac{d^2\xi^i}{dt^2}
-=-\frac12\ddot h^{TT}_{ij}\xi^j.
+=+\frac12\ddot h^{TT}_{ij}\xi^j.
 $$
 
 因此
 
 $$
 \frac{d^2\xi^x}{dt^2}
-=-\frac12\ddot h_+\xi^x,
+=+\frac12\ddot h_+\xi^x,
 $$
 
 $$
 \frac{d^2\xi^y}{dt^2}
-=+\frac12\ddot h_+\xi^y.
+=-\frac12\ddot h_+\xi^y.
 $$
 
 若 $h_+>0$ 从零增长，则 $x$ 方向和 $y$ 方向加速度符号相反，圆环被拉成椭圆；半个周期后反向。这就是干涉仪两臂差分响应的几何基础。

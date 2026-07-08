@@ -109,7 +109,7 @@
 | 13.18 | S | harmonic forms 与 massless fields | Kaluza-Klein reduction |
 | 14.4 | C | Type IIB $SL(2,\mathbb Z)$ S-duality | nonperturbative duality |
 | 14.5 | S | IIB field doublets | low-energy supergravity |
-| 14.6 | C | type I/heterotic $SO(32)$ duality | nonperturbative duality |
+| 14.6 | C | type I/heterotic $\operatorname{Spin}(32)/\mathbb Z_2$ duality | nonperturbative duality |
 | 14.7 | C | Type IIA 强耦合极限为 M-theory | duality web |
 | 14.8 | P | D0-branes as KK modes | mass matching |
 | 14.9 | S | M-branes 的约化 | brane tension matching |

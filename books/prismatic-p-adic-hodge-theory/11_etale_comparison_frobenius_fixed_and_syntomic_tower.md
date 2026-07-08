@@ -45,10 +45,11 @@ R\Gamma_{\mathrm{syn}}(X,\mathbf Z_p(i))
 =
 \operatorname{fib}\left(
 N^{\ge i}R\Gamma_\Delta(X/A)
-\xrightarrow{\varphi_i-1}
+\xrightarrow{\varphi_i-\operatorname{can}_i}
 R\Gamma_\Delta(X/A)\{i\}
 \right).
 $$
+其中 $\operatorname{can}_i$ 是把源映到同一 Tate-twisted target 的规范映射；写成 “$-1$” 只是常见简写，本书在类型敏感处采用 $\operatorname{can}_i$ 记号。
 Modulo $p^n$ version 记作
 $$
 R\Gamma_{\mathrm{syn}}(X,\mathbf Z/p^n(i)).

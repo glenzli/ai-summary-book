@@ -24,13 +24,13 @@
 
 **定义 21.4.** 在特征 `p>0` 中，perfect scheme 是 Frobenius morphism 为同构的 scheme。Perfectization 把 scheme 沿 Frobenius 迭代极限化。
 
-**外部输入定理 21.5.** 存在 positive characteristic perfect base schemes 上的 perfect motivic homotopy theory，并可通过 coefficient system 公理建立六操作形式主义；其与 universal homeomorphism localization 和 `\mathbf{SH}[1/p]` 有联系。
+**研究边界 21.5.** 存在 positive characteristic perfect base schemes 上的 perfect motivic homotopy theory，并可通过 coefficient system 公理建立六操作形式主义；其与 universal homeomorphism localization 和 `\mathbf{SH}[1/p]` 有联系。
 
 **依赖源.** Dahlhausen-Hekking-Wolters, "Motivic homotopy theory for perfect schemes"。截至 2026-07-08 作为研究边界处理。
 
 **命题 21.6.** Perfect motivic homotopy theory 不能未经说明替代普通 positive characteristic motivic homotopy theory。
 
-**证明.** Perfectization 反演或忽略了 purely inseparable/Frobenius 方向的信息。普通 motivic homotopy theory 保留原 scheme 的结构；perfect theory 则在 universal homeomorphism 或 `p` 反演语境中工作。二者比较需要定理 21.5 中的 localization statement，不能由定义自动推出。`\square`
+**证明.** Perfectization 反演或忽略了 purely inseparable/Frobenius 方向的信息。普通 motivic homotopy theory 保留原 scheme 的结构；perfect theory 则在 universal homeomorphism 或 `p` 反演语境中工作。二者比较需要研究边界 21.5 中的 localization statement，并且不能在本书中作为未加条件的基础输入使用。`\square`
 
 ## 21.3 Universal homeomorphisms
 

@@ -113,7 +113,7 @@ $$
 
 **命题 14.21.** 若定理 14.20 适用，则 finite correspondences 诱导 motivic cohomology 的 transfers。
 
-**证明.** Motivic cohomology 由 `\mathbb Z(q)` 的 Nisnevich hypercohomology 表示。`\mathbb Z(q)` 是带 transfers 的复形，因此 correspondence `\alpha\in\operatorname{Cor}_k(X,Y)` 诱导复形映射，从而诱导 hypercohomology 群上的映射。与 `H\mathbb Z` 表示性的相容由定理 14.15 保证。`\square`
+**证明.** Motivic cohomology 由 `\mathbb Z(q)` 的 Nisnevich hypercohomology 表示。`\mathbb Z(q)` 是带 transfers 的复形，因此 correspondence `\alpha\in\operatorname{Cor}_k(X,Y)` 诱导复形映射，从而诱导 hypercohomology 群上的映射。与 `H\mathbb Z` 表示性的相容由定理 14.20 保证。`\square`
 
 ## 14.6 边界
 

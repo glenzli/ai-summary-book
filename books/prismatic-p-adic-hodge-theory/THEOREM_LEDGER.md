@@ -9,7 +9,6 @@
 - 第一章：distinguished element 生成的 oriented prism 的 $p\in(d,\phi(d))$ 检查。
 - 第二章：prism morphism 与 Frobenius lift 相容。
 - 第二章：relative prismatic site 上 $\mathcal O_\Delta$ 和 $\overline{\mathcal O}_\Delta$ 的对象值定义。
-- 第四章：$B$-admissibility 的 dimension inequality 推论作为定义层线性代数命题处理。
 - 第九章：Hodge-Tate associated graded 推出 perfectness 和 finite generation 的形式推论。
 - 第十章：crystalline prism 的 boundedness。
 - 第十一章：derived Frobenius fixed complex 在 degree zero 情形的 kernel/cokernel 计算。
@@ -34,6 +33,7 @@
 - BMS $A_{\inf}$ integral comparison theorem。
 - BMS/THH Breuil-Kisin cohomology comparison。
 - Fontaine/Faltings/Tsuji classical $p$-adic comparison theorem。
+- Fontaine theory 中 $B$-admissibility 的 dimension criterion 和 weak admissibility 相关线性代数判据。
 - Bhatt-Scholze prismatic $F$-crystals 与 crystalline $G_K$-lattices 的范畴等价。
 - Bhatt-Lurie prismatization 中 prismatic crystals 的 quasicoherent sheaf 解释。
 - Hodge-Tate/de Rham refined filtration comparison。

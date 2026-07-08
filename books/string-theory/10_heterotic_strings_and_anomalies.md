@@ -111,9 +111,9 @@ Modular invariance 要求 $Z_\Lambda$ 与右移动 RNS spin-structure sum 组合
 $$
 I_{12}=X_4X_8.
 $$
-在 string theory 中满足条件的十维 gauge groups 包括
+在 string theory 中满足条件的十维 gauge algebra 为 $\mathfrak{so}(32)$ 或 $\mathfrak e_8\oplus\mathfrak e_8$；对应 heterotic 全局群通常写作
 $$
-SO(32),\qquad E_8\times E_8.
+\operatorname{Spin}(32)/\mathbb Z_2,\qquad E_8\times E_8.
 $$
 
 在标准规范下，因式分解的低阶因子含有
@@ -152,4 +152,3 @@ Heterotic string 的严密主线是 central charge matching、even unimodular la
 **练习 10.2.** 验证 $P^2=2$ 的内部 lattice vertex 具有 left conformal weight $1$。
 
 **练习 10.3.** 说明 $\Theta_\Lambda(\tau)/\eta(\tau)^{16}$ 中 theta function 和 eta function 分别来自哪些自由度。
-

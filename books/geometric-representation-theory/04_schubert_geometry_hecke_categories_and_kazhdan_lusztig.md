@@ -104,9 +104,9 @@ $$
 $$
 其中 $X_s\simeq\mathbb A^1$。
 
-**命题 4.11.** 在 Grothendieck group 中，$\Delta_s\star\Delta_s$ 对应 Hecke algebra 中标准基元素 $T_s^2$。
+**命题 4.11.** 在 mixed 或 graded Hecke category 的 Grothendieck group 中，$\Delta_s\star\Delta_s$ 对应 Hecke algebra 中标准基元素 $T_s^2$。若只在未分级 constructible category 中工作，则这里应理解为把 $v$ 专门化后的影子。
 
-**证明.** 标准对象 $\Delta_w$ 的类对应标准基 $T_w$ 是 Hecke categorification 的 normalization 之一。卷积 functor 在 Grothendieck group 上给出乘法，因为 distinguished triangles 的类满足 additivity，且卷积是三角函子。因此
+**证明.** 标准对象 $\Delta_w$ 的类对应标准基 $T_w$ 是 graded/mixed Hecke categorification 的 normalization 之一，其中 Tate twist 或 grading shift 记录参数 $v$。卷积 functor 在 Grothendieck group 上给出乘法，因为 distinguished triangles 的类满足 additivity，且卷积是三角函子。因此
 $$
 [\Delta_s\star\Delta_s]=[\Delta_s]\,[\Delta_s]=T_s^2.
 $$

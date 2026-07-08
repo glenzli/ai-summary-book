@@ -87,7 +87,7 @@ $$
 
 **证明草图.** Plumbing fixture parameter $q$ 描述细管。CFT 在细管上的传播给出
 $$
-\sum_\alpha q^{L_0^\alpha}\bar q^{\tilde L_0^\alpha}
+\sum_\alpha q^{L_0^\alpha-a}\bar q^{\tilde L_0^\alpha-a}
 |\alpha\rangle\langle\alpha|.
 $$
 对 $q$ 积分在 on-shell 条件处产生 pole，其 residue 为两侧低阶振幅的乘积。$\square$
@@ -145,4 +145,3 @@ $$
 **练习 15.2.** 用 degeneration 图像解释为什么高 genus 振幅边界应出现低阶振幅的因子化。
 
 **练习 15.3.** 说明 compact boson torus partition function 中 momentum/winding lattice sum 如何体现 T-duality。
-

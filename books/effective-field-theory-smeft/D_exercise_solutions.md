@@ -102,7 +102,7 @@ $$
 
 ## 第 10 章
 
-**10.1.** 得到 $(\bar q\gamma_\mu q)(\bar q\gamma^\mu q)$，还需指定颜色 singlet 或 octet 收缩。
+**10.1.** 得到 $(\bar q\gamma_\mu q)(\bar q\gamma^\mu q)$，还需指定颜色收缩。若来自颜色八重态流，需用 $T^A_{ij}T^A_{kl}=\frac12(\delta_{il}\delta_{kj}-\delta_{ij}\delta_{kl}/N_c)$ 投影回 Warsaw 的 $O_{qq}^{(1,3)}$ 及 flavor 置换组合，而不是引入独立的 $O_{qq}^{(8)}$。
 
 **10.2.** $(H^\dagger H)^2$ 维数为四，可吸收到 SM quartic 的重整化中。
 

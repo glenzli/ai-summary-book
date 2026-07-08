@@ -54,12 +54,12 @@
    F^{\mu\nu}=
    \begin{pmatrix}
    0&E_x&E_y&E_z\\
-   -E_x&0&-B_z&B_y\\
-   -E_y&B_z&0&-B_x\\
-   -E_z&-B_y&B_x&0
+   -E_x&0&B_z&-B_y\\
+   -E_y&-B_z&0&B_x\\
+   -E_z&B_y&-B_x&0
    \end{pmatrix}.
    $$
-2. 对 $\partial_\mu F^{\mu\nu}=j^\nu$ 取 $\partial_\nu$，利用偏导交换和 $F^{\mu\nu}$ 反对称，得到 $\partial_\nu j^\nu=0$。
+2. 对 $\partial_\mu F^{\nu\mu}=j^\nu$ 取 $\partial_\nu$，利用偏导交换和 $F^{\nu\mu}$ 反对称，得到 $\partial_\nu j^\nu=0$。
 3. $F_{\mu\nu}$ 是二阶张量，完全缩并 $F_{\mu\nu}F^{\mu\nu}$ 是标量。
 4. $u_\mu F^\mu{}_\nu u^\nu=F_{\mu\nu}u^\mu u^\nu=0$，因为 $F_{\mu\nu}$ 反对称而 $u^\mu u^\nu$ 对称。
 5. 写 $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$，代入 Maxwell 方程得

@@ -33,7 +33,7 @@ $$
 $$
 X_{\mathrm{zero}}(\tau,\sigma)
 =x+\frac{\alpha'}2(p_L+p_R)\tau
-\frac{\alpha'}2(p_L-p_R)\sigma.
++\frac{\alpha'}2(p_L-p_R)\sigma.
 $$
 
 **命题 7.3（左右动量公式）.** 定义 7.2 满足 momentum quantization 与 winding boundary condition，并且由二者唯一确定。
@@ -223,4 +223,3 @@ $$
 **练习 7.3.** 用 dual coordinate 的定义证明 Neumann 条件变为 Dirichlet 条件。
 
 **练习 7.4.** 说明为什么 orbifold 闭弦理论需要 twisted sectors。
-

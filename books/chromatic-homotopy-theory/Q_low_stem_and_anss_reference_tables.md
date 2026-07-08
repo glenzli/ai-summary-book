@@ -13,7 +13,7 @@
 
 **使用限制 Q.2.** 表 Q.1 是 classical stable stems 的低阶事实。若要在 Adams-Novikov spectral sequence 中使用，必须另外说明这些元素在 ANSS filtration 中的代表、differentials 和 extensions。
 
-## Q.2 Prime-local decomposition
+## Q.2 Prime-complete primary decomposition
 
 | stem | $p=2$ primary | $p=3$ primary | $p\ge5$ |
 | --- | --- | --- | --- |

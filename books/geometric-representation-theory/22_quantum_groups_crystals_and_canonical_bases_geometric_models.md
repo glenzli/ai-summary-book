@@ -21,7 +21,7 @@ $$
 E_i^{(n)}=\frac{E_i^n}{[n]_{q_i}!},\qquad
 F_i^{(n)}=\frac{F_i^n}{[n]_{q_i}!}
 $$
-生成的 $\mathbb Z[q,q^{-1}]$-子代数。
+以及 Cartan integral part（$K_i^{\pm1}$ 和 quantum binomial coefficients）生成的 $\mathbb Z[q,q^{-1}]$-子代数。若只讨论正半部或负半部，则相应 integral form 只需对应的 divided powers。
 
 **外部输入定理 22.3.** Lusztig canonical basis 和 Kashiwara global crystal basis 给出 $U_q^-(\mathfrak g)$ 及 integrable highest weight modules 的特殊基，并满足 positivity、bar-invariance 和 crystal limit 性质。
 

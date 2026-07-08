@@ -67,13 +67,13 @@ R\Gamma_{\mathrm{syn}}(X,\mathbf Z_p(i))
 =
 \operatorname{fib}\left(
 N^{\ge i}R\Gamma_\Delta(X/A)
-\xrightarrow{\varphi_i-1}
+\xrightarrow{\varphi_i-\operatorname{can}_i}
 R\Gamma_\Delta(X/A)\{i\}
 \right)
 $$
 作为 convention form。
 
-**警告 F.8.** 公式 F.7 仍是本书内部 convention form。由于 Bhatt-Scholze 的 Nygaard 定理对 Frobenius twist、$\tau^{\le i}$ 和 $L\eta_I$ 有明确结构，最终 syntomic 公式必须根据所选来源决定是否使用 $p^i-\varphi$、$\varphi_i-1$、truncate 后 fibre 或 modulo $p^n$ 的版本。
+**警告 F.8.** 公式 F.7 仍是本书内部 convention form。这里 $\operatorname{can}_i$ 只是把源送入同一 Tate-twisted target 的规范映射；不同来源会把它简写为 $1$ 或吸收到 twist 记号中。由于 Bhatt-Scholze 的 Nygaard 定理对 Frobenius twist、$\tau^{\le i}$ 和 $L\eta_I$ 有明确结构，最终 syntomic 公式必须根据所选来源决定是否使用 $p^i-\varphi$、$\varphi_i-\operatorname{can}_i$、truncate 后 fibre 或 modulo $p^n$ 的版本。
 
 **源码入口 F.9.** BMS2, arXiv:1802.03261 v2, `eq:TateTwist` 给出模 $p$ 的入口：
 $$

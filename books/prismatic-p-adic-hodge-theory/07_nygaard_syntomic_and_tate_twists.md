@@ -36,10 +36,12 @@ R\Gamma_{\mathrm{syn}}(X,\mathbf Z_p(i))
 =
 \operatorname{fib}\left(
 N^{\ge i}R\Gamma_\Delta(X/A)
-\xrightarrow{\ \varphi_i-1\ }
+\xrightarrow{\ \varphi_i-\operatorname{can}_i\ }
 R\Gamma_\Delta(X/A)\{i\}
 \right).
 $$
+这里 $\operatorname{can}_i$ 表示从 Nygaard piece 到同一个 Tate-twisted target 的 convention-dependent canonical map；它不是未扭曲对象上的字面恒等映射。
+
 在 BMS2 的 quasisyntomic formulation 中，令 $\widehat{\Prism}_A$ 表示由 $\pi_0TC^-(-;\mathbf Z_p)$ 经 quasisyntomic descent 得到的对象，则模 $p$ 的源码入口为
 $$
 \mathbf Z/p\mathbf Z(i)(A)

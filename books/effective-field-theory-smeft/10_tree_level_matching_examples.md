@@ -67,7 +67,12 @@ $$
 J_\mu J^\mu
 =(\bar q\gamma_\mu q)(\bar q\gamma^\mu q),
 $$
-投影到 Warsaw basis 中的 $O_{qq}^{(1)}$ 或含颜色八重态的组合，取决于 $X_\mu$ 的颜色表示。
+投影到 Warsaw basis 中的 $O_{qq}^{(1)}$、$O_{qq}^{(3)}$ 及其 flavor 置换组合，取决于 $X_\mu$ 的颜色和弱同位旋表示。若中间态携带颜色八重态流，需先用
+$$
+T^A_{ij}T^A_{kl}
+=\frac12\left(\delta_{il}\delta_{kj}-\frac1{N_c}\delta_{ij}\delta_{kl}\right)
+$$
+把颜色八重态收缩投影回 Warsaw basis；Warsaw 的 $LLqq$ 表中不另列独立的 $O_{qq}^{(8)}$。
 
 若
 $$
@@ -85,16 +90,24 @@ $$
 
 取
 $$
-J^\mu=\bar\ell_p\gamma^\mu\ell_r+\bar q_s\gamma^\mu q_t.
+J^\mu
+= (\lambda_\ell)_{pr}\bar\ell_p\gamma^\mu\ell_r
++(\lambda_q)_{st}\bar q_s\gamma^\mu q_t,
 $$
+其中 $\lambda_\ell,\lambda_q$ 为 Hermitian flavor 矩阵，使实重向量耦合到 Hermitian current。若只写单个 off-diagonal flavor 分量，应同时包含 Hermitian conjugate。
 由命题 10.3 得
 $$
 \Delta{\cal L}_{\rm EFT}
 =-{g_X^2\over2M_X^2}
 \left[
-(\bar\ell_p\gamma_\mu\ell_r)(\bar\ell_p\gamma^\mu\ell_r)
-+2(\bar\ell_p\gamma_\mu\ell_r)(\bar q_s\gamma^\mu q_t)
-+(\bar q_s\gamma_\mu q_t)(\bar q_s\gamma^\mu q_t)
+\begin{aligned}
+&(\lambda_\ell)_{pr}(\lambda_\ell)_{uv}
+(\bar\ell_p\gamma_\mu\ell_r)(\bar\ell_u\gamma^\mu\ell_v)\\
+&+2(\lambda_\ell)_{pr}(\lambda_q)_{st}
+(\bar\ell_p\gamma_\mu\ell_r)(\bar q_s\gamma^\mu q_t)\\
+&+(\lambda_q)_{st}(\lambda_q)_{uv}
+(\bar q_s\gamma_\mu q_t)(\bar q_u\gamma^\mu q_v)
+\end{aligned}
 \right].
 $$
 交叉项对应 Warsaw 结构
@@ -106,8 +119,9 @@ $$
 $$
 C_{\ell q}^{(1)prst}(\Lambda)
 =-{g_X^2\over M_X^2}
+(\lambda_\ell)_{pr}(\lambda_q)_{st}
 $$
-在本章的归一化下成立。若把 SMEFT 写成 $C_i{\cal O}_i/\Lambda^2$ 且取 $\Lambda=M_X$，则无量纲 $C_{\ell q}^{(1)}=-g_X^2$。
+在本章的归一化下成立。若把 SMEFT 写成 $C_i{\cal O}_i/\Lambda^2$ 且取 $\Lambda=M_X$，并取单位 flavor coupling，则无量纲 $C_{\ell q}^{(1)}=-g_X^2$。
 
 **警告 10.5.** 这里假设 $X_\mu$ 是规范一致 UV 理论中的重向量，且只保留代数质量项。完整规范理论还需处理 Goldstone、ghost、kinetic mixing 和规范固定。
 

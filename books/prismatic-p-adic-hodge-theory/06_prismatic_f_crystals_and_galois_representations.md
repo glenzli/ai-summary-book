@@ -47,9 +47,9 @@ $$
 
 ## 6.4 Bhatt-Scholze 分类定理
 
-**外部输入定理 6.9（prismatic $F$-crystal classification）.** 令 $K$ 为 complete discretely valued field of mixed characteristic $(0,p)$，剩余域完美。则 $\mathcal O_K$ 上的 prismatic $F$-crystals 范畴等价于 crystalline $G_K$-representations 中的 $\mathbf Z_p$-lattices 范畴。
+**外部输入定理 6.9（prismatic $F$-crystal classification）.** 令 $K$ 为 complete discretely valued field of mixed characteristic $(0,p)$，剩余域完美。则 $\mathcal O_K$ 上有限局部自由的 prismatic $F$-crystals（即 vector-bundle-valued crystals with Frobenius）范畴等价于 crystalline $G_K$-representations 中的 $\mathbf Z_p$-lattices 范畴。
 
-**说明 6.10.** 定理 6.9 的左侧是 prismatic site 上的几何线性对象，右侧是 Galois representation 的积分 lattice。它不是单个 cohomology group 的比较，而是范畴等价。
+**说明 6.10.** 定理 6.9 的左侧是 prismatic site 上的有限局部自由几何线性对象，右侧是 Galois representation 的积分 lattice。它不是单个 cohomology group 的比较，也不是任意 quasi-coherent $F$-crystal 的分类，而是有限秩向量丛型对象的范畴等价。
 
 **形式推论 6.11.** 若 $\mathcal E$ 为 prismatic $F$-crystal，则其 generic fibre 对应的 $p$-adic representation 是 crystalline。
 

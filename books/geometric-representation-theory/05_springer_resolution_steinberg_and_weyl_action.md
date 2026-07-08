@@ -12,20 +12,21 @@
 
 **约定 5.1.** 本章取 $k=\mathbb C$，$G$ 为连通复 reductive group。为避免中心造成的无关技术问题，若涉及 Killing form 识别，则默认先在 semisimple derived Lie algebra 上工作；一般 reductive 情形通过中心因子分离处理。
 
-**定义 5.2.** nilpotent cone 定义为
+**定义 5.2.** 本章的 nilpotent cone 指 derived semisimple part 中的 nilpotent cone，并嵌入到 $\mathfrak g$ 中；等价地，先把中心方向分离，只保留 $\mathfrak g_{\mathrm{der}}=[\mathfrak g,\mathfrak g]$ 中的 nilpotent 元。写作
 $$
-\mathcal N=\{x\in\mathfrak g\mid \operatorname{ad}(x)\text{ 是 nilpotent endomorphism of }\mathfrak g\}.
+\mathcal N=\{x\in\mathfrak g_{\mathrm{der}}\mid
+\operatorname{ad}(x)\text{ 是 nilpotent endomorphism of }\mathfrak g_{\mathrm{der}}\}.
 $$
-它是 $\mathfrak g$ 的 closed $G$-stable subvariety，其中 $G$ 通过 adjoint action 作用。
+它是 $\mathfrak g$ 的 closed $G$-stable subvariety，其中 $G$ 通过 adjoint action 作用。若直接用全 $\mathfrak g$ 上的条件 `ad(x)` nilpotent，则中心元素会被误纳入；本书不采用该约定。
 
 **命题 5.3.** $\mathcal N$ 是 $G$-stable。
 
-**证明.** 对 $g\in G$ 和 $x\in\mathfrak g$，
+**证明.** 对 $g\in G$ 和 $x\in\mathfrak g_{\mathrm{der}}$，
 $$
 \operatorname{ad}(\operatorname{Ad}_g x)
 =\operatorname{Ad}_g\circ\operatorname{ad}(x)\circ\operatorname{Ad}_{g^{-1}}
 $$
-作为 $\mathfrak g$ 上的线性算子。若 $\operatorname{ad}(x)^N=0$，则上式的 $N$ 次幂也为零。因此 $\operatorname{Ad}_g x$ 仍 nilpotent。$\square$
+作为 $\mathfrak g_{\mathrm{der}}$ 上的线性算子。因为 $\mathfrak g_{\mathrm{der}}$ 是 adjoint action 下稳定的 ideal，$\operatorname{Ad}_g x$ 仍在 $\mathfrak g_{\mathrm{der}}$ 中。若 $\operatorname{ad}(x)^N=0$，则上式的 $N$ 次幂也为零。因此 $\operatorname{Ad}_g x$ 仍 nilpotent。$\square$
 
 **外部输入定理 5.4.** $\mathcal N$ 有有限多个 $G$-orbits；这些 orbits 称为 nilpotent orbits。  
 来源：Borel、Springer 或 Collingwood-McGovern。后续第六章会系统使用。
@@ -165,4 +166,3 @@ $$
 **练习 5.2.** 对 $G=SL_2$，显式写出 $\widetilde{\mathcal N}\to\mathcal N$ 并计算两个 Springer fibers 的 cohomology。
 
 **练习 5.3.** 写出 Steinberg variety $Z$ 到 $\mathcal B\times\mathcal B$ 的投影，并说明其像与 $G$ 在 $\mathcal B\times\mathcal B$ 上的 orbits 的关系。
-

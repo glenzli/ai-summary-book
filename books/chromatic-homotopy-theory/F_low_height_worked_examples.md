@@ -54,11 +54,11 @@ $$
 
 **例 F.11.** $n=1$ 时 fracture square 形如
 $$
-\begin{CD}
-L_1X @>>> L_{K(1)}X\\
-@VVV @VVV\\
-L_0X @>>> L_0L_{K(1)}X.
-\end{CD}
+\begin{array}{ccc}
+L_1X & \longrightarrow & L_{K(1)}X\\
+\downarrow & & \downarrow\\
+L_0X & \longrightarrow & L_0L_{K(1)}X
+\end{array}
 $$
 它把 rational part 和 $K(1)$-local part 粘合。
 

@@ -76,12 +76,12 @@ $$
 **定义 3.9.** 假设 $X$ 为复代数簇或具有合适维数函数的 $k$-簇。middle perversity 的 aisle 和 co-aisle 由条件
 $$
 {}^pD^{\le0}(X)=
-\{\mathcal F\mid \dim \operatorname{supp} H^i(i_x^\ast\mathcal F)\le -i,\ \forall i\}
+\{\mathcal F\mid \dim\{x\in X\mid H^i(i_x^\ast\mathcal F)\ne0\}\le -i,\ \forall i\}
 $$
 和
 $$
 {}^pD^{\ge0}(X)=
-\{\mathcal F\mid \dim \operatorname{supp} H^i(i_x^!\mathcal F)\le i,\ \forall i\}
+\{\mathcal F\mid \dim\{x\in X\mid H^i(i_x^!\mathcal F)\ne0\}\le i,\ \forall i\}
 $$
 刻画。其心记为
 $$

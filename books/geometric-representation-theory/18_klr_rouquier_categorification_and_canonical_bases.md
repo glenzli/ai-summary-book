@@ -37,21 +37,24 @@ braid relation 在相邻颜色相互作用时带有修正项。
 
 **定义 18.5.** induction product 定义为
 $$
-M\circ N=R(\nu+\nu')\otimes_{R(\nu)\otimes R(\nu')}(M\otimes N).
+M\circ N=R(\nu+\nu')e_{\nu,\nu'}
+\otimes_{R(\nu)\otimes R(\nu')}(M\otimes N).
 $$
-restriction functor 由相应 idempotent 截取给出。
+这里 $e_{\nu,\nu'}$ 是选择前一段权重为 $\nu$、后一段权重为 $\nu'$ 的 words 的 idempotent，restriction functor 由同一 idempotent 截取给出。
 
 **命题 18.6.** induction product 在 Grothendieck group 上给出结合乘法。
 
-**证明.** 三个权重 $\nu,\nu',\nu''$ 的 induction 可通过嵌入
+**证明.** 三个权重 $\nu,\nu',\nu''$ 的 induction 通过相应 corner idempotent $e_{\nu,\nu',\nu''}$ 控制。代数上使用嵌入
 $$
 R(\nu)\otimes R(\nu')\otimes R(\nu'')\subset R(\nu+\nu'+\nu'')
 $$
-一次完成。两种加括号方式都是张量到同一个大代数：
+以及选择三段 words 的 idempotent。两种加括号方式都自然同构于
 $$
-R(\nu+\nu'+\nu'')\otimes_{R(\nu)\otimes R(\nu')\otimes R(\nu'')}(M\otimes N\otimes P).
+R(\nu+\nu'+\nu'')e_{\nu,\nu',\nu''}
+\otimes_{R(\nu)\otimes R(\nu')\otimes R(\nu'')}
+(M\otimes N\otimes P).
 $$
-张量积的结合约束给出自然同构，因此 Grothendieck group 上乘法结合。$\square$
+张量积的结合约束和 idempotent 截取的传递性给出自然同构，因此 Grothendieck group 上乘法结合。$\square$
 
 ## 18.2 $\mathfrak{sl}_2$ 情形
 

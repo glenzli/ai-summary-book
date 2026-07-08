@@ -16,11 +16,11 @@
 
 **例 N.3.** 对有限 $p$-局部谱 $X$，高度 $1$ fracture square 写作
 $$
-\begin{CD}
-L_1X @>>> L_{K(1)}X\\
-@VVV @VVV\\
-L_0X @>>> L_0L_{K(1)}X.
-\end{CD}
+\begin{array}{ccc}
+L_1X & \longrightarrow & L_{K(1)}X\\
+\downarrow & & \downarrow\\
+L_0X & \longrightarrow & L_0L_{K(1)}X
+\end{array}
 $$
 若 $L_0X\simeq0$，则该 square 退化为
 $$

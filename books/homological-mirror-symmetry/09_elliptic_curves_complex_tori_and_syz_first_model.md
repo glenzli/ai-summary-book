@@ -20,7 +20,7 @@ $$
 $$
 T^2=\mathbb R^2/\mathbb Z^2
 $$
-带面积形式 $\omega=\tau\,dx\wedge dy$，对象为带 grading、spin structure 和局部系统的有向直线斜率 Lagrangian circles。
+带面积形式 $\omega=A\,dx\wedge dy$（$A>0$），对象为带 grading、spin structure 和局部系统的有向直线斜率 Lagrangian circles。这里用 $A$ 表示实辛面积，避免与 B-side 椭圆曲线复模参数 $\tau$ 混淆。
 
 **HMS 数据包 9.3.** 椭圆曲线 HMS 的标准形态为
 $$

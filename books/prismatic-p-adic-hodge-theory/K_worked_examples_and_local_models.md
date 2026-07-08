@@ -88,6 +88,7 @@ H^1=\operatorname{coker}(\varphi_i-1).
 $$
 
 **警告 K.11.** 例 K.10 只适用于 degree $0$ 模型。实际 prismatic syntomic complex 处在 derived category 中，且 $N^{\ge i}$、twist、mod $p^r$ 和 truncation 需要按第七章、十一章和附录 F 的 convention 解释。
+在带 Tate twist 的正式公式中，本书写作 $\varphi_i-\operatorname{can}_i$；例 K.10 的 $-1$ 只表示无 twist、源目标已相同的玩具情形。
 
 ## K.7 二维 Hodge-Tate graded 模型
 

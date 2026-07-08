@@ -36,7 +36,7 @@ Heterotic string 中 level-one simply-laced current algebras 与 even unimodular
 2. $\operatorname{Tr}$：adjoint representation 的 trace；
 3. 不同群之间的换算必须在使用处声明。
 
-例如 $SO(32)$ 与 $E_8\times E_8$ 的十维 anomaly cancellation 使用特定 trace identities。正文只使用其因式分解结论，不把完整 group-theoretic verification 展开为主线证明。
+例如 $\mathfrak{so}(32)$ 与 $\mathfrak e_8\oplus\mathfrak e_8$ 的十维 anomaly cancellation 使用特定 trace identities；对应 heterotic 全局群通常写为 $\operatorname{Spin}(32)/\mathbb Z_2$ 与 $E_8\times E_8$。正文只使用其因式分解结论，不把完整 group-theoretic verification 展开为主线证明。
 
 ## C.2 Anomaly polynomial
 

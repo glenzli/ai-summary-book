@@ -12,7 +12,7 @@
 
 **定义 14.1.** 设 $H_0$ 为自由 Hamiltonian，$H=H_0+V$ 为相互作用 Hamiltonian。若强极限存在，定义 Moller 波算子
 $$
-\Omega_\pm=\operatorname{s-lim}_{t\to\mp\infty}e^{itH}e^{-itH_0}.
+\Omega_\pm=\operatorname{s-lim}_{t\to\pm\infty}e^{itH}e^{-itH_0}.
 $$
 
 **外部输入定理 14.2（散射存在性边界，QM-EXT-8）.** 对短程势，在适当假设下 $\Omega_\pm$ 存在并在连续谱子空间上具有等距性；渐近完备性需要更深的散射理论。
