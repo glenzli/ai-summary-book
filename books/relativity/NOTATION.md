@@ -74,7 +74,12 @@ $$
 ## 物理量
 
 - 四动量：$p^\mu=m u^\mu$。
-- 能动张量：$T^{\mu\nu}$。
+- Hilbert 能动张量：
+  $T_{\mu\nu}=-(2/\sqrt{-g})\,\delta S_{\mathrm{matter}}/\delta g^{\mu\nu}$。
+- 第五章规范能动张量：$\Theta^\mu{}_\nu$；其整体号差由
+  $\delta_\epsilon\phi^a=-\epsilon^\nu\partial_\nu\phi^a$ 与
+  $j^\mu(\epsilon)=\epsilon^\nu\Theta^\mu{}_\nu$ 固定。最小耦合实标量场
+  在平直背景上满足 $\Theta^\mu{}_\nu=T^\mu{}_\nu$。
 - 电磁势：$A_\mu$。
 - 电磁场强：
 
@@ -108,6 +113,13 @@ $$
 
 在这一配对下，无 $\Lambda$ 的动量约束为
 $D_j(K^{ij}-\gamma^{ij}K)=8\pi G j^i$。
+
+- $E_{\mathrm{ADM}}$：选定渐近平直端和渐近时间方向后的 ADM 能量。
+- $P_i=P_i^{\mathrm{ADM}}$：同一渐近 Lorentz 系中的 ADM 空间动量。
+- $m_{\mathrm{ADM}}=\sqrt{E_{\mathrm{ADM}}^2-\delta^{ij}P_iP_j}$：
+  当 ADM 四动量未来非类空时的 Lorentz 不变质量。只有四动量类时时
+  存在 $P_i'=0$ 的静止系，并在该系中
+  $E_{\mathrm{ADM}}'=m_{\mathrm{ADM}}$。
 
 ## 常见缩写
 

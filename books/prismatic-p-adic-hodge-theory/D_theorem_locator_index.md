@@ -22,7 +22,7 @@
 | BS-COMP-HT | Hodge--Tate comparison | Bhatt-Scholze, Theorems 4.11, 6.3 | L3 | 已核查 twists 与 cohomological grading |
 | BS-COMP-CRYS | crystalline comparison | Bhatt-Scholze, Theorem 5.2 | L3 | 已核查 derived $p$-completion |
 | BS-COMP-DR | general de Rham comparison | Bhatt-Scholze, Corollary 15.4 | L3 | 已核查 Frobenius-twisted、completed tensor product |
-| BS-COMP-ETALE | finite-level etale comparison | Bhatt-Scholze, Theorem 9.1 | L3 | 已核查 mod $p^n$ 与 $I^{-1}$ 层级 |
+| BS-COMP-ETALE | finite-level etale comparison：任意 $X$ 为 sheaf-level，global formula 仅作 affine corollary | Bhatt-Scholze, Theorem 9.1 | L3 | 已核查 mod $p^n$、$I^{-1}$ 与 sheaf/global 层级 |
 | BS-COMP-BC | bounded-prism base change | Bhatt-Scholze, Corollary 4.12 | L3 | 已核查 $(p,IB)$-completed base change |
 | BS-COMP-PHI | Frobenius image/isogeny | Bhatt-Scholze, Corollary 15.5 | L3 | 已核查只在 $I$ 反演后同构 |
 | BS-COMP-AINF | $A_{\inf}$-cohomology 与 prismatic cohomology | Bhatt-Scholze, Theorem 17.2 and global descent | L3 | 已核查 Frobenius pullback |

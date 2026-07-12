@@ -31,9 +31,9 @@
 | 观测量族 | 领先算符族 | 有效性问题 |
 | --- | --- | --- |
 | $t\bar t$ inclusive | ${\cal O}_{uG}$、四夸克算符 | PDF、scale、quadratic terms |
-| $t\bar t$ differential high-$p_T$ | 四夸克、dipole、current 算符 | $E/\Lambda$ 增强，必须切 bin |
+| $t\bar t$ differential high-$p_T$ | 四夸克、dipole、current 算符 | 插入随 $|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 增强；按 $Q/M_{\rm gap}$ 切 bin |
 | single top | ${\cal O}_{Hq}^{(3)}$、${\cal O}_{Hud}$、dipoles | charged-current flavor 假设 |
-| high-mass dilepton | semileptonic 四费米子 | contact term 随 $s/\Lambda^2$ 增长 |
+| high-mass dilepton | semileptonic 四费米子 | contact term 随 $|C_{\ell q}^{(6)}(\mu)|s/\Lambda_{\rm ref}^2$ 增长，局域性另查 $\sqrt s/M_{\rm gap}$ |
 | VBS/diboson tails | gauge-Higgs、$X^3$、dimension-eight | 维数六平方和维数八竞争 |
 
 ## 22.4 Flavor、EDM 与低能
@@ -57,28 +57,31 @@ $$
 
 **规则 22.1（图谱到拟合）.** 任何一行 observables-to-operators 图谱进入拟合前，必须补齐：
 
-1.  Wilson 系数定义尺度；
+1.  $\Lambda_{\rm ref}$、Wilson 系数定义尺度 $\mu$ 与条件化的 $M_{\rm gap}$；
 2.  RGE 是否使用；
 3.  输入参数方案；
 4.  flavor 和 CP 口径；
 5.  covariance matrix；
-6.  EFT validity cut；
-7.  是否保留 $Q_{aij}$。
+6.  构造 $Q$ 的方式及基于 $Q/M_{\rm gap}$ 的 EFT validity cut；
+7.  $|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 的逐 bin 插入层级；
+8.  是否保留 $Q_{aij}$。
 
 ## 22.6 Worked map：high-mass dilepton
 
 考虑 $pp\to\ell^+\ell^-$ 的高质量尾部。在 parton 层面，semileptonic contact operator 给出
 $$
-{\cal A}_{\rm EFT}\sim {C_{\ell q}\over\Lambda^2}s,
+{\cal A}_{\rm EFT}\sim
+{C_{\ell q}^{(6)}(\mu)\over\Lambda_{\rm ref}^2}s,
 $$
 而 SM Drell-Yan 振幅由 $\gamma/Z$ 交换给出。线性干涉对截面的贡献尺度为
 $$
 {\Delta\sigma\over\sigma_{\rm SM}}
 \sim
-{C_{\ell q}s\over\Lambda^2}
+{C_{\ell q}^{(6)}(\mu)s\over\Lambda_{\rm ref}^2}
 \times(\hbox{chirality and PDF weights}).
 $$
-因此高 $m_{\ell\ell}$ bin 灵敏度强，但 EFT validity 风险也强。
+因此高 $m_{\ell\ell}$ bin 的 Wilson 插入灵敏度增强；该数值增长本身不等于
+EFT validity 条件，后者取决于该 bin 的硬尺度相对物理谱隙的位置。
 
 正式使用该图谱时必须指定：
 
@@ -86,9 +89,22 @@ $$
 2.  quark flavor 和 chirality；
 3.  invariant-mass bin；
 4.  PDF 和 QCD order；
-5.  $\Lambda$ 与最大 partonic energy 的关系；
-6.  是否保留 quadratic term；
-7.  是否与 LEP 或 low-energy 数据联合。
+5.  条件化的 $M_{\rm gap}$ 与 $Q_{\max}/M_{\rm gap}$；
+6.  $\Lambda_{\rm ref}$、$C_{\ell q}^{(6)}(\mu)$ 与逐 bin 的 $\epsilon_{\ell q}$；
+7.  是否保留 quadratic term；
+8.  是否与 LEP 或 low-energy 数据联合。
+
+**规则 22.1A（dilepton 的两个无量纲量）.** 取该 partonic channel 的
+$Q=\sqrt{\hat s}$。Dimension-six contact insertion 的大小为
+$$
+\epsilon_{\ell q}
+=|C_{\ell q}^{(6)}(\mu)|\frac{Q^2}{\Lambda_{\rm ref}^2},
+$$
+而局域展开要求在每个保留 bin 中有 $Q/M_{\rm gap}\le\rho<1$。前者在 Wilson
+坐标重标度下不变，后者定位最近遗漏的物理 pole/threshold；两者必须分别检查。
+只有在明确 UV matching 的模型中先声明单一物理重尺度 $M$、验证
+$M_{\rm gap}=M$，再选择 $\Lambda_{\rm ref}=M$ 时，二者才会使用同一个数值尺度，
+但仍承担不同的检查职责。
 
 **结论 22.2.** 该例展示了本章表格的用法：表格只给起点，正式分析还必须把算符族投影到外态、flavor、能区和 likelihood。
 
@@ -100,8 +116,11 @@ SMEFT 现象学的核心不是把一个可观测量对应到一个算符，而�
 
 **练习 22.1.** 说明为什么 $h\to\gamma\gamma$ 不能只约束一个 Wilson 系数。
 
-**练习 22.2.** 对 high-mass dilepton 约束，写出需要报告的 EFT validity 信息。
+**练习 22.2.** 对 high-mass dilepton 约束，写出需要报告的 $Q/M_{\rm gap}$
+有效性信息，并与 Wilson 插入大小分开。
 
 **练习 22.3.** 选一个 flavor 观测量，说明 SMEFT 到 LEFT 匹配为何不可省略。
 
-**练习 22.4.** 对 high-mass dilepton worked map，解释为什么灵敏度和有效性风险都随 $s$ 增大。
+**练习 22.4.** 对 high-mass dilepton worked map，分别说明灵敏度为何随
+$|C_{\ell q}^{(6)}(\mu)|s/\Lambda_{\rm ref}^2$ 增大，以及局域性为何由
+$\sqrt s/M_{\rm gap}$ 控制；解释二者一般不能用任意 $\Lambda_{\rm ref}$ 合并。

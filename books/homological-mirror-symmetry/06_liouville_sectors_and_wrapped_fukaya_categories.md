@@ -149,17 +149,48 @@ continuation/functoriality/generation theorem，不能由本定理自动推出�
 
 ## 6.4 Liouville sectors
 
-**定义 6.12.** Liouville sector 是带边界 Liouville manifold，边界附近带有使 wrapped Floer theory 可控的凸性结构。直观上，它允许把 Liouville manifold 切成有边界的局部 pieces，并在这些 pieces 上定义协变的 wrapped categories。
+**定义 6.12（Liouville sector）.** 设 $(X,\lambda)$ 是 exact、在无穷远
+cylindrical 的 Liouville manifold-with-boundary，$\omega=d\lambda$，$Z$ 为
+Liouville vector field。在每个 $x\in\partial X$，令
+$$
+\mathcal C_x=\ker\bigl(\omega|_{T_x\partial X}\bigr)
+$$
+为一维 characteristic subspace，并规定其正方向如下：若 $N$ 是指向 $X$
+内部的横截向量，正向 $c\in\mathcal C_x\setminus\{0\}$ 满足
+$\omega(N,c)>0$。称 $X$ 为 Liouville sector，若存在光滑边界函数
+$$
+I:\partial X\longrightarrow\mathbb R
+$$
+使得：
 
-**外部输入定理 6.13（Liouville sector functoriality）.** 对合适的 Liouville sector inclusion
+1. $I$ 在无穷远线性，即在 $\partial X$ 的某个 compact subset 外
+   $ZI=I$；
+2. 对每个正向 $c\in\mathcal C_x\setminus\{0\}$，有
+   $$
+   dI_x(c)>0.
+   $$
+
+第二项等价于 $I$ 的 Hamiltonian vector field 沿 $\partial X$ 指向外部。
+函数 $I$ 是 sector 条件的 witness；其选择空间非空时可缩，故本书不把某个
+特定 $I$ 作为 wrapped category 的额外对象数据。
+
+**外部输入定理 6.13（Liouville sector functoriality）.** 设
 $$
-X\hookrightarrow Y
+i:(X,\lambda_X)\hookrightarrow(Y,\lambda_Y)
 $$
-存在协变 $A_\infty$ functor
+是 proper、cylindrical-at-infinity inclusion of Liouville sectors：$i$ 是到其
+像的微分同胚，在 cylindrical ends 上尊重 Liouville 坐标，并满足
 $$
-\mathcal W(X)\to\mathcal W(Y),
+i^*\lambda_Y=\lambda_X+df
 $$
-且与 sectorial gluing 操作相容。  
+其中 $f$ compactly supported。则存在由 continuation data 定义的协变
+$A_\infty$ functor
+$$
+ i_*:\mathcal W(X)\longrightarrow\mathcal W(Y),
+$$
+其 quasi-isomorphism class 与允许的辅助选择无关，并与此类 inclusions 的复合
+相容。本定理不对任意 nonproper open embedding 或不保持 cylindrical ends 的
+嵌入断言 functoriality。
 来源：Ganatra-Pardon-Shende, *Covariantly functorial wrapped Floer theory on Liouville sectors*。
 
 **解释 6.14.** 这个协变性与普通开子集上的层限制方向相反，更接近 cosheaf 行为。这正是 sectorial descent 的基础。

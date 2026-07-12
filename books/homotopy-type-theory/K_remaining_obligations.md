@@ -14,7 +14,7 @@
 **K.1.2 外延性、单值性与 SIP。**
 范围：第 6-8 章，附录 F、H、I、J、AG、T。
 状态：书内证明核 / 外部输入保留。
-说明：第 6 章已按 $\mathcal U_i$ 区分 universe path 与小等价类型，明确不使用 resizing，并书内推出沿 $\mathsf{ua}_i$ 的 transport 公式。函数外延性、单值性、命题外延性和结构等同性原则均有明确引入位置。单值性推出函数外延性按 HoTT Book Theorems 4.9.4-4.9.5 保留为精确外部输入；附录 T 记录 fiber universe 层级，不再把压缩路线当作书内证明。
+说明：第 6 章已按 $\mathcal U_i$ 区分 universe path 与小等价类型，明确不使用 resizing，并书内推出沿 $\mathsf{ua}_i$ 的 transport 公式。函数外延性、单值性、命题外延性和结构等同性原则均有明确引入位置。单值性推出函数外延性按 HoTT Book Theorems 4.9.4-4.9.5 保留为精确外部输入；附录 T 把该输入限制到基底与 fibers 同属一个单值 universe 的情形，并禁止非累积口径下的隐式 lift，不再把压缩路线当作书内证明。
 
 **K.1.3 HIT、截断、圆与基本群。**
 范围：第 8-11 章，附录 L、M、N、V、W、AD、AI。

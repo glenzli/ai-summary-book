@@ -18,40 +18,53 @@ $$
 $$
 \mathsf{basedJ}_{a,C}(c):\prod_{y:A}\prod_{p:a=y}C(y,p)
 $$
-并满足
+并严格满足 J 的 $\beta$-计算
 $$
 \mathsf{basedJ}_{a,C}(c,a,\mathsf{refl}_a)\equiv c
 $$
-或在只采用严格 J 的呈现中满足与 $c$ 的规范路径相等。
+作为 judgmental equality。
 
-**证明.** 用完整 J 构造。令
+**证明.** 按 HoTT Book §1.12.2，从完整 J 先构造一个量化所有固定端点族的通用 motive。令
 $$
 D(x,y,p)\coloneqq
-\prod_{q:a=x}C(y,q\cdot p).
+\prod_{E:\prod_{z:A}\bigl((x=z)\to\mathcal U_j\bigr)}
+\bigl(E(x,\mathsf{refl}_x)\to E(y,p)\bigr).
 $$
-若 $p\equiv\mathsf{refl}_x$，则需给出
+这里必须显式提高 motive 的宇宙层级。因为 $\mathcal U_j:\mathcal U_{j+1}$，族空间
 $$
-D(x,x,\mathsf{refl}_x)\equiv
-\prod_{q:a=x}C(x,q\cdot\mathsf{refl}_x).
+\prod_{z:A}\bigl((x=z)\to\mathcal U_j\bigr)
 $$
-由于路径复合按第二变量定义，$q\cdot\mathsf{refl}_x\equiv q$，于是目标化为 $\prod_{q:a=x}C(x,q)$。对 $q:a=x$ 作路径归纳；反身情形中 $x\equiv a$ 且 $q\equiv\mathsf{refl}_a$，目标正是 $C(a,\mathsf{refl}_a)$，由 $c$ 给出。
+位于 $\mathcal U_{\max(i,j+1)}$，从而 $D(x,y,p):\mathcal U_{\max(i,j+1)}$。这是 J 向更高 universe 的一次消去，不是累积性，也没有把 $E(y,p):\mathcal U_j$ 隐式提升到该 universe。
 
-现在对 $p:x=y$ 使用 J，得到
+反身分支定义为
 $$
-J_D(d,a,y,p):D(a,y,p)
-=\prod_{q:a=a}C(y,q\cdot p).
+d(x)\coloneqq\lambda E.\,\lambda e.\,e:
+D(x,x,\mathsf{refl}_x).
 $$
-把它作用于 $\mathsf{refl}_a$ 得
+完整 J 给出
 $$
-C(y,\mathsf{refl}_a\cdot p).
+\mathsf J_D(d,x,y,p):D(x,y,p)
 $$
-最后由左单位律
+并有严格计算
 $$
-\lambda_p:\mathsf{refl}_a\cdot p=p
+\mathsf J_D(d,x,x,\mathsf{refl}_x)\equiv d(x).
 $$
-沿族 $r\mapsto C(y,r)$ transport，即得 $C(y,p)$ 的项。
-
-当 $p\equiv\mathsf{refl}_a$ 时，所有构造按 J 的计算规则和单位律收缩到 $c$；若基础呈现中左单位律不是 judgmental，则得到与 $c$ 的路径相等。$\square$
+现在才固定题设的 $a$、$C$ 与 $c$，定义
+$$
+\mathsf{basedJ}_{a,C}(c,y,p)
+\coloneqq
+\mathsf J_D(d,a,y,p)(C)(c).
+$$
+在反身构造子上，逐次按 J 与函数应用的 judgmental $\beta$-规则计算：
+$$
+\begin{aligned}
+\mathsf{basedJ}_{a,C}(c,a,\mathsf{refl}_a)
+&\equiv \mathsf J_D(d,a,a,\mathsf{refl}_a)(C)(c)\\
+&\equiv d(a)(C)(c)\\
+&\equiv c.
+\end{aligned}
+$$
+因此所需固定端点原则连同严格 $\beta$ 一并由完整 J 导出；证明不经过路径复合、单位律或 transport。$\square$
 
 **说明 D.2.** 许多证明助手把固定端点路径归纳作为库引理提供。正文使用它时，应把它视为本定理的派生规则，而不是新的公理。
 

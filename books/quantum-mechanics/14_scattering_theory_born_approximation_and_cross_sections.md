@@ -10,25 +10,100 @@
 
 ## 14.1 波算子
 
-**定义 14.1.** 设 $H_0$ 为自由 Hamiltonian，$H=H_0+V$ 为相互作用 Hamiltonian。若强极限存在，定义 Møller 波算子
+**定义 14.1.** 设 $H_0,H$ 是同一 Hilbert 空间 $\mathcal H$ 上的
+自伴算子。记 $\mathcal H_{\mathrm{ac}}(H_0)$ 为 $H_0$ 的绝对连续
+谱子空间，$P_{\mathrm{ac}}(H_0)$ 为到该子空间的正交投影。若强极限
+存在，定义 Møller 波算子
 $$
-\Omega_\pm=\operatorname{s-lim}_{t\to\pm\infty}e^{itH}e^{-itH_0}.
+\Omega_\pm
+=\operatorname{s-lim}_{t\to\pm\infty}
+e^{itH}e^{-itH_0}P_{\mathrm{ac}}(H_0).
+$$
+该极限作为 $\mathcal H$ 上的算子理解，在
+$\mathcal H_{\mathrm{ac}}(H_0)^\perp$ 上为零。若进一步
+$$
+\operatorname{Ran}\Omega_\pm=\mathcal H_{\mathrm{ac}}(H),
+$$
+则称相应波算子完备（本书也沿用物理文献中的“渐近完备”一词）。
+这里必须使用绝对连续谱子空间；仅由“谱值不是本征值”定义的集合并不能
+替代它。
+
+**命题 14.1A（波算子的初始空间与值域）.** 定义 14.1 的强极限存在时
+$$
+\Omega_\pm^*\Omega_\pm=P_{\mathrm{ac}}(H_0),
+$$
+且
+$$
+\Omega_\pm e^{-isH_0}=e^{-isH}\Omega_\pm,
+\qquad s\in\mathbb R.
+$$
+因此 $\Omega_\pm$ 在 $\mathcal H_{\mathrm{ac}}(H_0)$ 上等距，并且
+$\operatorname{Ran}\Omega_\pm\subseteq\mathcal H_{\mathrm{ac}}(H)$。
+
+**证明.** 对任意 $\psi\in\mathcal H$，极限中每个算子都保持
+$P_{\mathrm{ac}}(H_0)\psi$ 的范数，故
+$\|\Omega_\pm\psi\|=\|P_{\mathrm{ac}}(H_0)\psi\|$；极化恒等式给出
+第一式。把极限参数平移 $s$ 得到酉群交织式。由谱定理，该式蕴含
+$$
+\Omega_\pm E_{H_0}(\Delta)=E_H(\Delta)\Omega_\pm
+$$
+对每个 Borel 集 $\Delta$ 成立。若
+$\psi\in\mathcal H_{\mathrm{ac}}(H_0)$，再用
+$\Omega_\pm^*\Omega_\pm\psi=\psi$ 可知，
+$\Omega_\pm\psi$ 关于 $H$ 的谱测度等于 $\psi$ 关于 $H_0$ 的谱测度。
+后者对 Lebesgue 测度绝对连续，从而值域包含关系成立。$\square$
+
+**外部输入定理 14.2（一个可判定的短程势版本，QM-EXT-8）.** 取
+$\mathcal H=L^2(\mathbb R^3)$、$m>0$，并令
+$$
+H_0=-\frac{\Delta}{2m},\qquad \mathcal D(H_0)=H^2(\mathbb R^3).
+$$
+若 $V\in L^\infty(\mathbb R^3;\mathbb R)$，且存在
+$C,\varepsilon>0$ 使
+$$
+|V(x)|\le C\langle x\rangle^{-1-\varepsilon},
+\qquad \langle x\rangle=(1+|x|^2)^{1/2},
+$$
+则 $H=H_0+V$ 在 $H^2(\mathbb R^3)$ 上自伴，定义 14.1 的
+$\Omega_\pm$ 存在并渐近完备：
+$$
+\operatorname{Ran}\Omega_\pm=\mathcal H_{\mathrm{ac}}(H).
+$$
+自由 Laplacian 只有绝对连续谱，故本定理中
+$P_{\mathrm{ac}}(H_0)=I$。证明需要短程散射的传播估计或平稳方法，
+不在本书内部重证；束缚态属于
+$\mathcal H_{\mathrm{ac}}(H)^\perp$，不会出现在波算子的值域中。
+来源定位为 Teschl, *Mathematical Methods in Quantum Mechanics*,
+2nd ed., §12.3 的短程定义及 Theorems 12.11--12.12。事实上上述点态
+衰减给出
+$$
+\|\mathbf 1_{\{|x|\ge r\}}V(H_0-z)^{-1}\|
+\le C_z\langle r\rangle^{-1-\varepsilon},
+\qquad z\notin[0,\infty),
+$$
+所以该书短程条件中的径向范数函数可积；这说明本定理的假设可直接
+检查，而不是未展开的“适当短程条件”。
+
+**定义 14.3.** 若两个波算子存在，散射算子定义为
+$$
+S=\Omega_+^*\Omega_-:
+\mathcal H_{\mathrm{ac}}(H_0)\longrightarrow
+\mathcal H_{\mathrm{ac}}(H_0).
 $$
 
-**外部输入定理 14.2（散射存在性边界，QM-EXT-8）.** 对短程势，在适当假设下 $\Omega_\pm$ 存在并在连续谱子空间上具有等距性；渐近完备性需要更深的散射理论。
+**命题 14.4.** 若 $\Omega_\pm$ 都渐近完备，则 $S$ 是
+$\mathcal H_{\mathrm{ac}}(H_0)$ 上的酉算子。
 
-**定义 14.3.** 散射算子定义为
+**证明.** 在 $\mathcal H_{\mathrm{ac}}(H_0)$ 上有
+$\Omega_\pm^*\Omega_\pm=I$。渐近完备性又给出
+$\Omega_\pm\Omega_\pm^*=P_{\mathrm{ac}}(H)$。因此
 $$
-S=\Omega_+^*\Omega_-.
+S^*S
+=\Omega_-^*\Omega_+\Omega_+^*\Omega_-
+=\Omega_-^*P_{\mathrm{ac}}(H)\Omega_-=I,
 $$
-
-**命题 14.4.** 若 $\Omega_\pm$ 为酉算子，则 $S$ 为酉算子。
-
-**证明.** 若 $\Omega_\pm^*\Omega_\pm=I=\Omega_\pm\Omega_\pm^*$，则
-$$
-S^*S=\Omega_-^*\Omega_+\Omega_+^*\Omega_-=I,
-$$
-同理 $SS^*=I$。$\square$
+因为 $\operatorname{Ran}\Omega_-\subseteq\mathcal H_{\mathrm{ac}}(H)$。
+交换 $+$ 与 $-$ 同理得到 $SS^*=I$。$\square$
 
 ## 14.2 Born 近似
 
@@ -125,7 +200,11 @@ $$
 
 ## 本章小结
 
-散射理论比较真实演化和自由演化在无穷远过去与未来的差异。波算子和 $S$ 矩阵是严格对象；Born 近似是 Lippmann--Schwinger 方程的首阶迭代，而“势很弱”还必须排除阈值、共振或长程效应破坏该迭代。完整存在性和完备性属于外部输入。
+散射理论比较真实演化和自由演化在无穷远过去与未来的差异。波算子
+从 $\mathcal H_{\mathrm{ac}}(H_0)$ 映入相互作用动力学；渐近完备性
+精确地断言其值域等于 $\mathcal H_{\mathrm{ac}}(H)$。Born 近似是
+Lippmann--Schwinger 方程的首阶迭代，而“势很弱”还必须排除阈值、
+共振或长程效应破坏该迭代。完整存在性和完备性属于外部输入。
 
 ## 练习
 

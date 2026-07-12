@@ -36,6 +36,11 @@ $$
 $$
 \mathbf{Tree}_S.
 $$
+固定一个 $\mathcal U$-小 full skeleton
+$$
+\mathbf{Tree}^{\mathrm{sk}}_S\subset\mathbf{Tree}_S.
+$$
+它每个树同构类只取一个代表，但保留该代表的全部自同构。这样的骨架可由有限序数上的边、顶点和 incidence data 编码得到；以下所有树指标 colimit 均在这个固定骨架上取。
 
 **定义 H.5.** 若 $T\in\mathbf{Tree}_S$，则一个 $E$-装饰是对每个顶点 $v\in V(T)$ 选取元素
 $$
@@ -54,29 +59,31 @@ $$
 $$
 \operatorname{Dec}_E(T)\to\operatorname{Dec}_E(T').
 $$
-因此 $\operatorname{Dec}_E$ 是 $\mathbf{Tree}_S$ 上的函子。
+因此 $\operatorname{Dec}_E$ 是 $\mathbf{Tree}_S$ 上的函子，并可限制为 $\mathcal U$-小群胚 $\mathbf{Tree}^{\mathrm{sk}}_S$ 上的 $\mathbf{Set}_{\mathcal U}$-值函子。
 
 **定义 H.6.** 自由对称 operad 的树群胚公式定义为
 $$
 \mathbb F(E)(S)
 =
-\int^{T\in\mathbf{Tree}_S}\operatorname{Dec}_E(T).
+\operatorname*{colim}_{T\in\mathbf{Tree}^{\mathrm{sk}}_S}
+\operatorname{Dec}_E(T).
 $$
-等价地，
+该 colimit 由一个 $\mathcal U$-小指标范畴和 $\mathcal U$-小集合值函子给出，因而在 $\mathbf{Set}_{\mathcal U}$ 中存在。等价地，
 $$
 \mathbb F(E)(S)
 \cong
-\coprod_{[T]\in\pi_0\mathbf{Tree}_S}
+\coprod_{T\in\operatorname{Ob}(\mathbf{Tree}^{\mathrm{sk}}_S)}
 \operatorname{Dec}_E(T)_{\operatorname{Aut}_{\mathbf{Tree}_S}(T)}.
 $$
+也就是说，这是先对骨架中所有对象取不交并，再按其 automorphisms 作用取商。
 
 **命题 H.7.** 公式 H.6 与第四章的装饰树自由 operad 公式一致。
 
-**证明.** 第四章的公式把同构的叶标号装饰树相识别。群胚 coend 正是执行这件事：先对每个 $S$-叶标号树取装饰集合，再对树同构生成的关系取商。选择每个同构类代表 $T$ 后，同一同构类内部的商就是自同构群的 coinvariants
+**证明.** 第四章的公式把同构的叶标号装饰树相识别。群胚 colimit 正是执行这件事：先对骨架中的每个 $S$-叶标号树取装饰集合，再对树自同构生成的关系取商。骨架每个同构类只含一个代表 $T$，该连通分量的 colimit 就是自同构群的 coinvariants
 $$
 \operatorname{Dec}_E(T)_{\operatorname{Aut}(T)}.
 $$
-因此 H.6 是第四章装饰树商公式的无坐标表达。$\square$
+骨架包含是群胚等价，所以改换 $\mathcal U$-小骨架只给出典范同构的 colimit。因此 H.6 是第四章装饰树商公式的无坐标表达。$\square$
 
 ## H.3 自由 operad 复合
 
@@ -99,7 +106,7 @@ $$
 \mathbb F(E)\left(\coprod_{s\in S}S_s\right).
 $$
 
-**证明.** 在代表元层面，一个元素由 $E$-装饰树 $T$ 和 $E$-装饰树族 $T_s$ 给出。Grafting 后的树顶点集合是不交并，因此装饰也按原样合并。若改变任一代表元，即沿树同构替换装饰树，则 grafting 后得到的总树也由诱导同构相连。故该构造通过 coend 商。$\square$
+**证明.** 在代表元层面，一个元素由 $E$-装饰树 $T$ 和 $E$-装饰树族 $T_s$ 给出。Grafting 后的树顶点集合是不交并，因此装饰也按原样合并。若 grafting 后的树不在所选骨架中，就把它沿任一树同构换成骨架代表；不同同构的差是该代表的 automorphism，因而在 colimit 中给出同一元素。若改变任一初始代表元，grafting 后的总树也由诱导同构相连。故该构造通过群胚 colimit 商。$\square$
 
 **命题 H.10.** 命题 H.9 的复合满足 operad 结合律和单位律。
 
@@ -134,7 +141,7 @@ $$
 $$
 \prod_{v\in V(T)}\operatorname{Lin}(\operatorname{In}(v)),
 $$
-其上 $\prod_v\Sigma_{\operatorname{In}(v)}$ 自由传递作用。对称序列 $E$ 的函子性正好记录改变这些局部输入顺序时装饰如何重标号。故“先选择所有平面顺序再取局部对称群商”与直接使用非平面输入边集合 $E(\operatorname{In}(v))$ 给出同一个 coend。$\square$
+其上 $\prod_v\Sigma_{\operatorname{In}(v)}$ 自由传递作用。对称序列 $E$ 的函子性正好记录改变这些局部输入顺序时装饰如何重标号。故“先选择所有平面顺序再取局部对称群商”与直接使用非平面输入边集合 $E(\operatorname{In}(v))$ 给出同一个群胚 colimit。$\square$
 
 **警告 H.13.** 平面树公式适合非对称 operad；自由对称 operad 必须保留叶标号和顶点输入边的对称群作用。若把平面树公式直接用于对称 operad 而不取重标号商，会得到过大的对象。
 
@@ -154,8 +161,11 @@ $$
 
 ## H.7 本附录小结
 
-平面树控制非对称代入；叶标号非平面树控制自由对称 operad；Moerdijk-Weiss 树控制 dendroidal nerve。自由 operad 的严格公式应写成树群胚 coend
+平面树控制非对称代入；叶标号非平面树控制自由对称 operad；Moerdijk-Weiss 树控制 dendroidal nerve。自由 operad 的严格公式应写成 $\mathcal U$-小树群胚骨架上的 colimit
 $$
-\mathbb F(E)(S)=\int^{T\in\mathbf{Tree}_S}\prod_{v\in V(T)}E(\operatorname{In}(v)),
+\mathbb F(E)(S)
+=
+\operatorname*{colim}_{T\in\mathbf{Tree}^{\mathrm{sk}}_S}
+\prod_{v\in V(T)}E(\operatorname{In}(v)),
 $$
 而不是未说明自同构群和叶标号的“树的集合”。

@@ -2,6 +2,8 @@
 
 Simplicial set 是定义在 simplex category $\Delta$ 上的 presheaf。Dendroidal set 是定义在树范畴 $\Omega$ 上的 presheaf。若 $\Delta$ 编码 composable strings of unary arrows，则 $\Omega$ 编码 rooted trees of many-input operations。本章只建立组合定义与严格 operad nerve；模型结构和 inner Kan 条件留到下一章。
 
+本章沿用约定 A.1 的 $\mathcal U\in\mathcal V\in\mathcal W$。所有树的边集和顶点集都是 $\mathcal U$-小有限集；从一开始固定一个 $\mathcal U$-小代表集 $\mathbf{Tree}^{\mathrm{sk}}_{\mathcal U}$，它在有限 rooted trees 的每个同构类中恰取一个代表。除非特别说明，字母 $S,T$ 只遍历这些固定代表。
+
 ## 16.1 Rooted trees
 
 **定义 16.1.** 一个有限 rooted tree $T$ 由以下数据组成：
@@ -60,11 +62,13 @@ $$
 
 **证明.** $\Omega(T)$ 按定义是由颜色 $E(T)$ 和顶点生成运算 $\theta_v$ 自由生成的 colored operad。自由 colored operad 的泛性质说明：从 $\Omega(T)$ 到 $\mathcal P$ 的 operad morphism 唯一地由颜色函数和生成运算的像决定，条件仅是每个生成运算的输入输出颜色匹配。反向地，任何满足颜色匹配的数据由泛性质唯一延拓为 operad morphism。$\square$
 
-**定义 16.8.** 树范畴 $\Omega$ 的对象是有限 rooted trees。态射定义为
+**定义 16.8.** 树范畴 $\Omega$ 的对象是固定集合 $\mathbf{Tree}^{\mathrm{sk}}_{\mathcal U}$ 中的有限 rooted trees。态射定义为
 $$
 \Omega(S,T)=\operatorname{Operad}_{\mathrm{col}}\big(\Omega(S),\Omega(T)\big),
 $$
 即相应自由 colored operads 之间的 morphisms。
+
+对象集按选择属于 $\mathcal U$，每个 Hom 集也属于 $\mathcal U$，所以这里的 $\Omega$ 是一个 $\mathcal U$-小范畴。换用另一个 $\mathcal U$-小树骨架会得到等价的树范畴，并诱导等价的 presheaf 范畴；本书固定一次后不再更换。
 
 **说明 16.9.** 这个定义避免把 $\Omega$ 的态射误解为朴素图嵌入。一个态射可把源树的顶点送到目标树中的复合运算，即送到目标树的一个子树所表示的运算。
 
@@ -78,6 +82,7 @@ Dendroidal sets 的范畴记为
 $$
 \mathbf{dSet}=\operatorname{Fun}(\Omega^{\operatorname{op}},\mathbf{Set}_{\mathcal U}).
 $$
+由命题 A.4，它是 locally $\mathcal V$-small；这里不把全部 dendroidal sets 的集合误当作 $\mathcal U$-小集合。
 
 若 $T$ 是树，$X_T$ 表示 $X(T)$，称为 $T$-dendrexes 集合。
 
@@ -91,9 +96,9 @@ $$
 \mathbf{dSet}(\Omega[T],X)\cong X_T.
 $$
 
-**命题 16.12.** $\mathbf{dSet}$ 有所有小极限和小余极限，并且它们逐树计算。
+**命题 16.12.** $\mathbf{dSet}$ 有所有 $\mathcal U$-小极限和 $\mathcal U$-小余极限，并且它们逐树计算。
 
-**证明.** $\mathbf{dSet}$ 是小范畴 $\Omega$ 上的 presheaf 范畴。集合值 presheaf 范畴的极限和余极限逐对象计算。因此对任意 diagram $D:I\to\mathbf{dSet}$，
+**证明.** $\mathbf{dSet}$ 是 $\mathcal U$-小范畴 $\Omega$ 上的 $\mathbf{Set}_{\mathcal U}$-值 presheaf 范畴。$\mathcal U$-小集合值 presheaf 的 $\mathcal U$-小极限和余极限逐对象计算。因此对任意 $\mathcal U$-小范畴 $I$ 和 diagram $D:I\to\mathbf{dSet}$，
 $$
 (\lim_I D)_T=\lim_I(D_i(T)),\qquad
 (\operatorname{colim}_I D)_T=\operatorname{colim}_I(D_i(T)).
@@ -105,7 +110,7 @@ $$
 X\cong \operatorname{colim}_{(\Omega[T]\to X)}\Omega[T].
 $$
 
-**证明.** 这是 presheaf 范畴的 category of elements 表示。由 Yoneda 引理，$\Omega[T]\to X$ 等价于元素 $x\in X_T$。把所有这样的元素组成 category of elements $\int_\Omega X$，其投影到 $\Omega$ 给出 representables diagram。对每个树 $S$，该 colimit 在 $S$ 上的值为所有三元组 $(T,x\in X_T,\alpha:S\to T)$ 对 Yoneda 关系取商。映射到 $X_S$ 定义为 $(T,x,\alpha)\mapsto X(\alpha)(x)$。Yoneda 关系正是保证该映射双射的关系。$\square$
+**证明.** 这是 presheaf 范畴的 category of elements 表示。由 Yoneda 引理，$\Omega[T]\to X$ 等价于元素 $x\in X_T$。把所有这样的元素组成 category of elements $\int_\Omega X$；因为 $\Omega$ 及每个 $X_T$ 都是 $\mathcal U$-小的，该 category of elements 也是 $\mathcal U$-小范畴。其投影到 $\Omega$ 给出 representables diagram。对每个树 $S$，该 colimit 在 $S$ 上的值为所有三元组 $(T,x\in X_T,\alpha:S\to T)$ 对 Yoneda 关系取商。映射到 $X_S$ 定义为 $(T,x,\alpha)\mapsto X(\alpha)(x)$。Yoneda 关系正是保证该映射双射的关系。$\square$
 
 ## 16.4 Dendroidal nerve
 
@@ -260,7 +265,7 @@ $$
 
 ## 16.7 本章小结
 
-Dendroidal set 是树范畴 $\Omega$ 上的 presheaf。树 $T$ 通过自由 colored operad $\Omega(T)$ 嵌入 operad 理论，dendroidal nerve 由
+Dendroidal set 是固定 $\mathcal U$-小树骨架 $\Omega$ 上的 $\mathbf{Set}_{\mathcal U}$-值 presheaf。树 $T$ 通过自由 colored operad $\Omega(T)$ 嵌入 operad 理论，dendroidal nerve 由
 $$
 N_d(\mathcal P)_T=\operatorname{Operad}_{\mathrm{col}}(\Omega(T),\mathcal P)
 $$

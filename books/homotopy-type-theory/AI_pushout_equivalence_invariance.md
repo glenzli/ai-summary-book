@@ -41,24 +41,34 @@ $$
 $$
 \Phi:P\to P'
 $$
-由 pushout 递归：
+所用的点数据为
 $$
-\Phi(\mathsf{inl}(b))\coloneqq\mathsf{inl}'(\beta(b)),
+u_\Phi(b)\coloneqq\mathsf{inl}'(\beta(b)),
+\qquad
+v_\Phi(c)\coloneqq\mathsf{inr}'(\gamma(c)).
 $$
+对 glue 构造子，定义路径数据
 $$
-\Phi(\mathsf{inr}(c))\coloneqq\mathsf{inr}'(\gamma(c)).
-$$
-对 glue 构造子，需给出路径
-$$
-\mathsf{inl}'(\beta(f(a)))=\mathsf{inr}'(\gamma(g(a))).
-$$
-取
-$$
+h_\Phi(a)\coloneqq
 \mathsf{ap}_{\mathsf{inl}'}(H_f(a))
 \cdot
 \mathsf{glue}'(\alpha(a))
 \cdot
 \mathsf{ap}_{\mathsf{inr}'}(H_g(a))^{-1}.
+$$
+它具有所需类型
+$$
+\mathsf{inl}'(\beta(f(a)))=\mathsf{inr}'(\gamma(g(a))).
+$$
+令
+$$
+\Phi\coloneqq\mathsf{pushRec}(u_\Phi,v_\Phi,h_\Phi).
+$$
+于是点计算为 judgmental，而 glue 计算是命名路径
+$$
+\beta^\Phi_{\mathsf{glue}}(a)\coloneqq
+\beta^{\mathsf{pushRec}}_{\mathsf{glue}}(a):
+\mathsf{ap}_{\Phi}(\mathsf{glue}(a))=h_\Phi(a).
 $$
 
 ## AI.3 反向映射
@@ -75,20 +85,30 @@ $$
 $$
 \Psi:P'\to P
 $$
-由 pushout 递归：
+的点数据为
 $$
-\Psi(\mathsf{inl}'(b'))\coloneqq\mathsf{inl}(\beta^{-1}(b')),
+u_\Psi(b')\coloneqq\mathsf{inl}(\beta^{-1}(b')),
+\qquad
+v_\Psi(c')\coloneqq\mathsf{inr}(\gamma^{-1}(c')).
 $$
+glue 数据取
 $$
-\Psi(\mathsf{inr}'(c'))\coloneqq\mathsf{inr}(\gamma^{-1}(c')).
-$$
-对 glue 构造子取路径
-$$
+h_\Psi(a')\coloneqq
 \mathsf{ap}_{\mathsf{inl}}(H_f'(a'))
 \cdot
 \mathsf{glue}(\alpha^{-1}(a'))
 \cdot
 \mathsf{ap}_{\mathsf{inr}}(H_g'(a'))^{-1}.
+$$
+令
+$$
+\Psi\coloneqq\mathsf{pushRec}(u_\Psi,v_\Psi,h_\Psi).
+$$
+它在点上 judgmentally 计算，并有命名的 propositional glue 计算
+$$
+\beta^\Psi_{\mathsf{glue}}(a')\coloneqq
+\beta^{\mathsf{pushRec}}_{\mathsf{glue}}(a'):
+\mathsf{ap}_{\Psi}(\mathsf{glue}'(a'))=h_\Psi(a').
 $$
 
 ## AI.4 两个复合
@@ -98,35 +118,73 @@ $$
 \Psi\circ\Phi\sim\mathsf{id}_P.
 $$
 
-**证明核.** 对 $P$ 作 pushout 依赖消去。
+**证明核.** 令
+$$
+Q(z)\coloneqq\Psi(\Phi(z))=z.
+$$
+对 $P$ 作 pushout 依赖消去。
 
-在左点构造子上，目标为
+在左点构造子上，取 $\beta$ 的逆律经 $\mathsf{ap}_{\mathsf{inl}}$ 的像作为
 $$
-\mathsf{inl}(\beta^{-1}(\beta(b)))=\mathsf{inl}(b),
+k_{\mathsf{inl}}(b):
+\mathsf{inl}(\beta^{-1}(\beta(b)))=\mathsf{inl}(b).
 $$
-由 $\mathsf{ap}_{\mathsf{inl}}$ 作用于 $\beta$ 的逆律得到。
 
-在右点构造子上，目标为
+在右点构造子上，同理由 $\gamma$ 的逆律得到
 $$
-\mathsf{inr}(\gamma^{-1}(\gamma(c)))=\mathsf{inr}(c),
+k_{\mathsf{inr}}(c):
+\mathsf{inr}(\gamma^{-1}(\gamma(c)))=\mathsf{inr}(c).
 $$
-由 $\gamma$ 的逆律得到。
 
-在 glue 构造子上，需要验证一个路径代数相容方块。展开 $\Phi$ 与 $\Psi$ 对 glue 的定义后，目标由以下事实组成：
+在 glue 构造子上，依赖消去要求一个明确的相容项
+$$
+m_K(a):
+\mathsf{transport}^{Q}
+(\mathsf{glue}(a),k_{\mathsf{inl}}(f(a)))
+=k_{\mathsf{inr}}(g(a)).
+$$
+用路径族 $Q$ 的 transport 公式把它改写为路径代数方块。展开 $\mathsf{ap}_{\Psi\circ\Phi}(\mathsf{glue}(a))$ 时，先沿 $\beta^\Phi_{\mathsf{glue}}(a)$ 把内层像改写为 $h_\Phi(a)$；再用 $\mathsf{ap}_{\Psi}$ 保持复合，并沿 $\beta^\Psi_{\mathsf{glue}}(\alpha(a))$ 改写其中的 $\mathsf{glue}'(\alpha(a))$。剩余目标由以下事实组成：
 
 1.  $\alpha,\beta,\gamma$ 的左右逆同伦；
 2.  $H_f,H_g$ 与反向相干 $H_f',H_g'$ 的定义相容；
-3.  pushout 的 $\mathsf{glue}$ 计算规则；
+3.  命名计算路径 $\beta^\Phi_{\mathsf{glue}}$ 与 $\beta^\Psi_{\mathsf{glue}}$；
 4.  路径复合的结合律、单位律和逆律。
 
-对等价 $\alpha,\beta,\gamma$ 作等价归纳，可把该相容性化到三者均为恒等等价、$H_f,H_g$ 为反身同伦的情形；此时 $\Phi,\Psi$ 对点和 glue 都 judgmentally/propositionally 化为恒等，目标为反身路径。$\square$
+对等价 $\alpha,\beta,\gamma$ 作等价归纳，可把该相容性化到三者均为恒等等价、$H_f,H_g$ 为反身同伦的情形；点数据 judgmentally 化为恒等，glue 数据经上述两个命名 $\beta$ 路径 propositionally 化为原 glue，目标为反身路径。这给出 $m_K$。
+
+令
+$$
+K\coloneqq\mathsf{pushInd}_{Q}
+(k_{\mathsf{inl}},k_{\mathsf{inr}},m_K).
+$$
+L.20 给出 judgmental 点计算和命名的 glue 计算路径
+$$
+\beta^K_{\mathsf{glue}}(a)\coloneqq
+\beta^{\mathsf{pushInd}}_{\mathsf{glue}}(a):
+\mathsf{apd}_{K}(\mathsf{glue}(a))=m_K(a).
+$$
+故 $K$ 是所需同伦。$\square$
 
 **命题 AI.5.** 有同伦
 $$
 \Phi\circ\Psi\sim\mathsf{id}_{P'}.
 $$
 
-**证明核.** 与 AI.4 对称，对 $P'$ 作 pushout 依赖消去，并使用 $\alpha,\beta,\gamma$ 的另一侧逆律。$\square$
+**证明核.** 与 AI.4 对称。对族 $Q'(z')\coloneqq\Phi(\Psi(z'))=z'$ 作 pushout 依赖消去。把 $\beta$、$\gamma$ 的另一侧逆律分别经 $\mathsf{ap}_{\mathsf{inl}'}$、$\mathsf{ap}_{\mathsf{inr}'}$ 后得到的点数据记为
+$$
+\ell_{\mathsf{inl}}(b'):
+\mathsf{inl}'(\beta(\beta^{-1}(b')))=\mathsf{inl}'(b'),
+$$
+$$
+\ell_{\mathsf{inr}}(c'):
+\mathsf{inr}'(\gamma(\gamma^{-1}(c')))=\mathsf{inr}'(c').
+$$
+使用 $\alpha,\beta,\gamma$ 的另一侧逆律，并沿 $\beta^\Psi_{\mathsf{glue}}(a')$、$\beta^\Phi_{\mathsf{glue}}(\alpha^{-1}(a'))$ 改写两个递归子的 glue 像，得到相容项 $m_L(a')$。定义 $L\coloneqq\mathsf{pushInd}_{Q'}(\ell_{\mathsf{inl}},\ell_{\mathsf{inr}},m_L)$，并保留命名计算路径
+$$
+\beta^L_{\mathsf{glue}}(a'):
+\mathsf{apd}_{L}(\mathsf{glue}'(a'))=m_L(a').
+$$
+于是 $L$ 给出所需同伦。$\square$
 
 ## AI.5 等价不变性
 

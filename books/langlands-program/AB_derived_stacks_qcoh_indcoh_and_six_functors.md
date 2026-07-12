@@ -105,11 +105,34 @@ $$
 $$
 或相应符号。
 
-**外部输入定理 AB.16（renormalized D-modules on Bun）.** 对 $\operatorname{Bun}_G$，存在适合几何 Langlands 的 renormalized half-twisted D-module category $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，支持 Hecke functors、Eisenstein functors、constant term functors 和 Verdier duality 的相容形式；下标 $1/2$ 指 determinant line 平方根 gerbe 的 twist，见 21.5。
+**外部输入定理 AB.16（Bun 上普通与 renormalized D-modules 的分离）.** 对 $\operatorname{Bun}_G$，普通 half-twisted D-module category 记为
+$$
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G),
+$$
+而改变 compact generators 所得的 renormalized category 另记为
+$$
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}.
+$$
+两者配备伴随对
+$$
+\operatorname{ren}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\rightleftarrows
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+:\operatorname{un\text{-}ren}.
+$$
+主 Langlands functor 使用普通范畴并以 $\operatorname{IndCoh}_{\mathcal N}$ 为目标；renormalized companion 则为
+$$
+\mathbb L_{G,\operatorname{ren}}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+\longrightarrow
+\operatorname{IndCoh}(\operatorname{LocSys}_{\widehat G}(X)).
+$$
+下标 $1/2$ 指 determinant line 平方根 gerbe 的 twist，见 21.5；下标 $\operatorname{ren}$ 指另一次范畴性 renormalization，二者不可互相代替。
 
-**命题 AB.17.** $\operatorname{Bun}_G$ 的非紧性迫使 renormalization 进入范畴化几何 Langlands。
+**命题 AB.17.** $\operatorname{Bun}_G$ 的非紧性使普通范畴的构造与 renormalized companion 同时出现，但不把两者识别。
 
-**证明.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan strata 分解，通常非 quasi-compact。Naive D-module category 的 compact objects 和 !-pushforward 行为不足以使 Eisenstein/constant term adjunctions 同时良好。Renormalization 通过改变生成对象或连续性条件修正这些 functorial properties。因此范畴化几何 Langlands 的自动侧不能只写成未修正、未注明 half-twist 的 naive category。$\square$
+**证明.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan strata 分解，通常非 quasi-compact。普通 D-module category 因而需要 truncatable/co-truncative 理论来建立 compact generation 和 $!$-extension；这些定理并不把它改名为 renormalized category。AB.16 另外改变 compact generators 得到带下标 $\operatorname{ren}$ 的范畴，并用 $\operatorname{ren}$ 与 $\operatorname{un\text{-}ren}$ 和普通范畴比较。主函子的目标是 $\operatorname{IndCoh}_{\mathcal N}$，companion 函子的目标是全部 $\operatorname{IndCoh}$，故对象类型不同，不得识别。$\square$
 
 ## AB.6 Spectral action
 

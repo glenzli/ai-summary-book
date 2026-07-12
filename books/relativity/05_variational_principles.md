@@ -119,30 +119,32 @@ $$
 
 ## 5.5 Noether 定理的最小形式
 
-若场论作用量在连续变换下不变，则在场方程成立时存在守恒流。对无显式坐标依赖的平移不变 Lagrangian，得到规范能动张量。
-
-设 Lagrangian 密度为 $\mathcal{L}(\phi,\partial_\mu\phi)$。平移 $x^\mu\mapsto x^\mu+\epsilon^\mu$ 导致规范能动张量
-
+若场论作用量在连续变换下不变，则在场方程成立时存在守恒流。为固定
+整体号差，本书把常参数平移写成
 $$
-T^\mu{}_\nu
-=
-\frac{\partial\mathcal{L}}
-{\partial(\partial_\mu\phi)}
-\partial_\nu\phi
--\delta^\mu{}_\nu\mathcal{L}.
+x^\mu\longmapsto x^\mu+\epsilon^\mu,
+\qquad
+\delta_\epsilon\phi^a(x)=-\epsilon^\nu\partial_\nu\phi^a(x),
 $$
-
-**命题 5.1（平移 Noether 恒等式）.** 设 $\mathcal L(\phi^a,\partial_\mu\phi^a)$ 光滑且无显式 $x$ 依赖，并定义
+并约定相应 Noether 流为
+$j^\mu(\epsilon)=\epsilon^\nu\Theta^\mu{}_\nu$。对无显式坐标依赖的
+Lagrangian 密度，规范能动张量（canonical stress-energy tensor）定义为
 $$
-T^\mu{}_\nu
-=\sum_a\frac{\partial\mathcal L}
+\Theta^\mu{}_\nu
+=-\sum_a\frac{\partial\mathcal L}
 {\partial(\partial_\mu\phi^a)}\partial_\nu\phi^a
--\delta^\mu{}_\nu\mathcal L.
++\delta^\mu{}_\nu\mathcal L.
 $$
-则恒等式
+这个号差使 $\Theta^\mu{}_\nu$ 与本书采用的 Hilbert 能动张量约定相容。
+若把主动场变分改写成相反号，则 Noether 流也整体变号，不能只翻转上式
+的一部分。
+
+**命题 5.1（平移 Noether 恒等式）.** 设
+$\mathcal L(\phi^a,\partial_\mu\phi^a)$ 光滑且无显式 $x$ 依赖，并按
+上式定义 $\Theta^\mu{}_\nu$。则恒等式
 $$
-\partial_\mu T^\mu{}_\nu
-=-\sum_a\mathcal E_a(\phi)\,\partial_\nu\phi^a
+\partial_\mu \Theta^\mu{}_\nu
+=\sum_a\mathcal E_a(\phi)\,\partial_\nu\phi^a
 $$
 成立，其中
 $$
@@ -152,20 +154,21 @@ $$
 \frac{\partial\mathcal L}{\partial(\partial_\mu\phi^a)}.
 $$
 因此场方程 $\mathcal E_a=0$ 成立时
-
 $$
-\partial_\mu T^\mu{}_\nu=0.
+\partial_\mu \Theta^\mu{}_\nu=0.
 $$
 
 **证明.** 对定义逐项求导：
 $$
-\partial_\mu T^\mu{}_\nu
-=\sum_a\partial_\mu
+\begin{aligned}
+\partial_\mu \Theta^\mu{}_\nu
+={}&-\sum_a\partial_\mu
 \left(\frac{\partial\mathcal L}
-{\partial(\partial_\mu\phi^a)}\right)\partial_\nu\phi^a
-+\sum_a\frac{\partial\mathcal L}
+{\partial(\partial_\mu\phi^a)}\right)\partial_\nu\phi^a\\
+&-\sum_a\frac{\partial\mathcal L}
 {\partial(\partial_\mu\phi^a)}\partial_\mu\partial_\nu\phi^a
--\partial_\nu\mathcal L.
++\partial_\nu\mathcal L.
+\end{aligned}
 $$
 由于 $\mathcal L$ 无显式坐标依赖，链式法则给出
 $$
@@ -174,9 +177,36 @@ $$
 +\sum_a\frac{\partial\mathcal L}
 {\partial(\partial_\mu\phi^a)}\partial_\nu\partial_\mu\phi^a.
 $$
-后二阶导数项相消，余下正是 $-\sum_a\mathcal E_a\partial_\nu\phi^a$。$\square$
+后二阶导数项相消，余下正是
+$\sum_a\mathcal E_a\partial_\nu\phi^a$。$\square$
 
-这说明能量和动量守恒来自时空平移对称性，而不只是经验事实。规范能动张量一般不自动对称，也不自动规范不变；与引力耦合时使用的 Hilbert 能动张量需要另行比较，二者可相差改进项。
+对本章实标量场，
+$\partial\mathcal L/\partial(\partial_\mu\phi)=-\partial^\mu\phi$，故
+$$
+\Theta^\mu{}_\nu
+=\partial^\mu\phi\,\partial_\nu\phi
++\delta^\mu{}_\nu\mathcal L.
+$$
+另一方面，把作用量最小耦合到度规，
+$$
+S_{\mathrm{matter}}[g,\phi]
+=\int\left(-\frac12g^{\rho\sigma}\partial_\rho\phi\partial_\sigma\phi
+-\frac12m^2\phi^2\right)\sqrt{-g}\,d^4x,
+$$
+则第 5.6 节采用的 Hilbert 定义给出
+$$
+T_{\mu\nu}
+=\partial_\mu\phi\,\partial_\nu\phi+g_{\mu\nu}\mathcal L.
+$$
+回到 $g=\eta$ 并升起第一个指标，得到
+$T^\mu{}_\nu=\Theta^\mu{}_\nu$。特别地，
+$$
+T^{00}
+=\frac12(\partial_t\phi)^2+\frac12|\nabla\phi|^2+\frac12m^2\phi^2,
+$$
+这也交叉检查了整体号差。一般场论的规范能动张量不自动对称或规范
+不变；它与 Hilbert 张量的比较可能需要 Belinfante--Rosenfeld 改进项，
+不能从这个标量场例子无条件推广。
 
 ## 5.6 从平直到弯曲
 

@@ -53,7 +53,7 @@ $$
 
 在本章的公理化口径中，这两式是 propositional computation，不是新增的 judgmental 规则。整个层级多态公理族位于 $\mathcal U_{\max(i,j)+1}$；这来自对 $A:\mathcal U_i$ 和宇宙值族 $B:A\to\mathcal U_j$ 的量化，而不是 resizing。
 
-**验证状态。** 公理化 HoTT 可把函数外延性单列为上述公理；定理 6.11 记录 universe univalence 推出它的外部输入。CCHM cubical type theory 中，函数路径由区间方向逐点给出，函数外延性可在该对象语言内部证明；这是第十六章所述另一套基础规则，不能回填为第一至五章的 judgmental equality。
+**验证状态。** 公理化 HoTT 可把函数外延性单列为上述公理；定理 6.11 只记录 universe univalence 推出同一 universe 内实例的外部输入。CCHM cubical type theory 中，函数路径由区间方向逐点给出，函数外延性可在该对象语言内部证明；这是第十六章所述另一套基础规则，不能回填为第一至五章的 judgmental equality。
 
 **命题 6.3（命题值函数类型是命题）.** 设 $A:\mathcal U_i$、$B:A\to\mathcal U_j$。若
 
@@ -210,11 +210,11 @@ $$
 
 ## 6.5 单值性推出函数外延性
 
-**定理 6.11（universe univalence 推出依赖函数外延性）.** 设 $A:\mathcal U_i$、$B:A\to\mathcal U_j$。若分类各 fiber $B(x)$ 的宇宙 $\mathcal U_j$ 满足 $\mathsf{UA}_j$，则定义 6.1 的每个 $\mathsf{happly}_{f,g}$ 都是等价。基底 $A$ 不必与 fibers 位于同一宇宙。
+**定理 6.11（同一 universe 内，univalence 推出依赖函数外延性）.** 设 $A:\mathcal U_i$、$B:A\to\mathcal U_i$，并假设这个同时容纳基底与所有 fibers 的宇宙 $\mathcal U_i$ 满足 $\mathsf{UA}_i$。则定义 6.1 的每个 $\mathsf{happly}_{f,g}$ 都是等价。
 
-**验证状态：精确外部输入。** 本书不重证完整长证明。HoTT Book 第 4.9 节先在定理 4.9.4 中由 universe univalence 推出弱函数外延性，再在定理 4.9.5 中推出强依赖函数外延性；本书使用的精确版本和层级边界见附录 T。该外部输入只适用于公理 6.8 的 universe univalence，不能由 categorical、directed 或其他弱单值原则替代。
+**验证状态：精确外部输入。** 本书不重证完整长证明。HoTT Book 第 4.9 节先在定理 4.9.4 中由同一个 universe 的 univalence 推出该 universe 内的弱函数外延性，再在定理 4.9.5 中推出强依赖函数外延性；本书使用的精确版本和层级边界见附录 T。该外部输入只适用于公理 6.8 的 universe univalence，不能由 categorical、directed 或其他弱单值原则替代。
 
-本书正文允许两种一致口径：可把函数外延性与单值性都显式列为第六章后的原则；也可只列单值性，并把定理 6.11 加入每个函数外延性结论的依赖链。
+本书正文允许两种一致口径：可把层级多态函数外延性与单值性都显式列为第六章后的原则；也可只列单值性，并用定理 6.11 得到基底与 fibers 同属 $\mathcal U_i$ 的函数外延性实例。若 $A:\mathcal U_k$、$B:A\to\mathcal U_i$ 且 $k\ne i$，本书的非累积宇宙中不得隐式把二者放入共同 universe；这种混合层级实例仍须使用公理 6.2 的层级 $(k,i)$ 实例，或另行给出显式 lift 及其保持 $\Pi$、恒等类型与单值性的定理。
 
 ## 本章小结
 

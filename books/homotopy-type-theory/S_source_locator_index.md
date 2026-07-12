@@ -10,7 +10,7 @@
 |---|---|---|
 | 第 1-2 章 | HoTT Book §§1.3、1.12、2.3、Appendix A；Rijke 2025 Part I | 判断与 conversion、非累积宇宙、恒等类型、J、transport、$\mathsf{apd}$ |
 | 第 3-4 章 | HoTT Book Chapters 1、3；Rijke 2025 Part I-II | 归纳类型、可收缩性、命题、集合、h-level |
-| 附录 A-D | HoTT Book §§2.1-2.3；Rijke 教材 | 路径代数参考、固定端点归纳、$\Sigma$ 路径、fiber 收缩 |
+| 附录 A-D | HoTT Book §1.12.2、§§2.1-2.3；Rijke 教材 | 路径代数参考；由通用高 universe motive 严格导出固定端点 J；$\Sigma$ 路径、fiber 收缩 |
 | 第 5 章、附录 E/G | HoTT Book；Rijke 教材 | 等价定义、准逆、半伴随等价、fiber 可收缩 |
 
 ## S.2 单值性、外延性与结构等同性
@@ -19,14 +19,14 @@
 |---|---|---|
 | 第 6-7 章 | HoTT Book §§2.9-2.10、4.9；Rijke 2025 Part II | 分层函数外延性、universe univalence、命题外延性、沿 $\mathsf{ua}$ 的 transport |
 | 附录 F/H/I/J/AG | HoTT Book；结构等同性原则文献 | 子类型外延性、universe 非集合性、SIP、代数结构 transport |
-| 附录 T | HoTT Book Definition 4.9.1、Theorems 4.9.4-4.9.5 | 精确外部输入：fiber universe 的 univalence 推出强依赖函数外延性 |
+| 附录 T | HoTT Book Definition 4.9.1、Theorems 4.9.4-4.9.5 | 精确外部输入：同一个单值 universe 中的基底与 fibers 得到强依赖函数外延性；不含隐式 lift |
 
 ## S.3 HIT、圆与基础合成同伦论
 
 | 范围 | 主要来源 | 用途 |
 |---|---|---|
 | 第 8-11 章 | HoTT Book Chapter 6；Rijke 教材 | 分层截断与商、圆、悬挂、pushout、基本群 |
-| 第 9 章、附录 L | HoTT Book Chapter 6；CHM 2018 §3.3 | 公理化 HIT 输入的计算强度；列举型 cubical HIT 语义及其一般 schema 边界 |
+| 第 9 章、附录 L | HoTT Book Chapter 6；CHM 2018 §3.3 | 公理化 HIT 输入的计算强度；悬挂/pushout 的点 judgmental $\beta$ 与 merid/glue propositional $\mathsf{ap}/\mathsf{apd}$-$\beta$；一般 schema 边界 |
 | 附录 M/N/V/W | HoTT Book | 整数、encode-decode、基本群同构 |
 | 附录 AD/AI/AY | HoTT Book；合成同伦论文献 | 悬挂、pushout 等价不变性、pushout 路径空间 |
 
@@ -52,7 +52,8 @@
 |---|---|---|
 | 附录 AK/AR/AW/BA/BO | HoTT Book；构造性分析文献 | Cauchy/Dedekind 实数、连续性、紧致性、积分接口 |
 | 第 15-16 章 | Kapulkin--Lumsdaine arXiv:1211.2851；CCHM DOI 10.4230/LIPIcs.TYPES.2015.5；Huber DOI 10.1007/s10817-018-9469-1；Sterling--Angiuli arXiv:2101.11479 | 相对一致性、对象/元语言边界、CCHM univalence、canonicity、Cartesian cubical normalization |
-| 附录 Z/AO/BC/BG | CHM 2018；cubical model、2LTT、QIIT 文献 | HIT/QIIT 元理论、cubical 变体边界、strict equality；不得回流为基础规则 |
+| 附录 Z/BC/BG | CHM 2018；cubical model、2LTT、QIIT 文献 | HIT/QIIT 元理论、cubical 变体边界、strict equality；不得回流为基础规则 |
+| 附录 AO | Cavallo--Höfer arXiv:2605.00812v1, Definitions 1.1--1.4、Theorem 1.5/4.17、Proposition 5.3、Theorem 1.6/5.6；Bocquet arXiv:2311.05849v2, Definitions 5.1--5.2、Theorems 5.18、6.1；Cavallo--Sattler arXiv:2605.15080v1, Definition 23、Theorems 42、65、71；Rasekh arXiv:2508.07736v2, Definition 2.7、Theorems 2.13--2.14、Example 2.18、Corollaries 2.21--2.22 | categorical univalence 分离、strict Rezk completion、reversal 保守性、filter quotient；AO 逐项列出采用与未采用假设 |
 | 附录 AN/AS/AX/AT/BD | directed/simplicial type theory、cohesive HoTT、SDG/SAG 文献 | 扩展对象语言和几何模型边界 |
 
 ## S.7 使用纪律

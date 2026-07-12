@@ -10,7 +10,11 @@ $$
 
 ## A.2 系数
 
-**约定 A.2.** 基域为 $k$。exact 或 purely algebraic 章节默认 $k$-线性。非 exact Floer theory 默认使用 Novikov field $\Lambda$ 或 Novikov ring $\Lambda_{\ge0}$。
+**约定 A.2.** 基域为 $k$。固定一个带继承全序的加法子群
+$\Gamma\subset\mathbb R$。Exact 或 purely algebraic 章节默认 $k$-线性；
+非 exact Floer theory 默认使用定义 5.1 的
+$\Lambda=\Lambda_{k,\Gamma}$ 或其 valuation ring $\Lambda_{\ge0}$。
+“Universal Novikov field” 专指 $\Gamma=\mathbb R$ 的情形。
 
 **定义 A.3.** 若 $A$ 为 $k$-线性 category，base change 到 $\Lambda$ 记为
 $$

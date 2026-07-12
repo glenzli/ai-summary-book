@@ -74,20 +74,48 @@ $\square$
 
 **练习 2.2.** Dirichlet 特征如何给出 $\mathbb Q$ 上有限阶 Hecke 特征。
 
-**解答.** 设 $\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$ 为 Dirichlet 特征。定义有限 adele 单位上的特征
+**解答.** 先设 $\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$ 的精确导子为 $N$；若原特征 imprimitive，则先换成其 primitive associate。令
 $$
-\chi_f:\widehat{\mathbb Z}^\times\to\mathbb C^\times,\qquad
-u=(u_p)_p\mapsto \chi(u\bmod N).
+\widehat\chi:\widehat{\mathbb Z}^\times\to\mathbb C^\times,
+\qquad
+u=(u_p)_p\longmapsto\chi(u\bmod N).
 $$
-由中国剩余定理，$u\bmod N$ 是良定义的。把任意 $x\in\mathbb A_{\mathbb Q,f}^\times$ 写成
+由中国剩余定理，$u\bmod N$ 良定义。每个 idèle $x\in\mathbb A_\mathbb Q^\times$ 可唯一写成
 $$
-x=q\cdot u\cdot r_\infty
+x=qru,
+\qquad
+q\in\mathbb Q^\times,\qquad
+r\in\mathbb R_{>0},\qquad
+u\in\widehat{\mathbb Z}^\times.
 $$
-的等价类时，更标准的定义是在
+定义
 $$
-C_\mathbb Q=\mathbb Q^\times\backslash\mathbb A_\mathbb Q^\times
+\omega_\chi(x):=\widehat\chi(u)^{-1}.
 $$
-上令无穷处分量平凡、有限单位部分按上式作用。局部地，若 $p\nmid N$，则 $\chi_p$ 在 $\mathbb Z_p^\times$ 上平凡；若 $p\mid N$，则 $\chi_p$ 由 $(\mathbb Z_p/N\mathbb Z_p)^\times$ 上的相应因子给出。该 Hecke 特征有限阶，因为其像包含在有限群 $\chi((\mathbb Z/N\mathbb Z)^\times)$ 中。$\square$
+该式忽略 $q$ 与 $r$，故对对角 $\mathbb Q^\times$ 平凡并下降为
+$$
+\omega_\chi:C_\mathbb Q
+=\mathbb Q^\times\backslash\mathbb A_\mathbb Q^\times
+\longrightarrow\mathbb C^\times.
+$$
+其像包含于 $\chi$ 的有限像，所以 $\omega_\chi$ 有限阶。
+
+令 $a_\chi\in\{0,1\}$ 由 $\chi(-1)=(-1)^{a_\chi}$ 定义。对只在无穷处取值 $x_\infty<0$ 的 idèle，上述分解中必须取 $q=-1$，因而
+$$
+\omega_{\chi,\infty}(x_\infty)
+=\operatorname{sgn}(x_\infty)^{a_\chi}.
+$$
+所以除非 $\chi(-1)=1$，无穷分量不能声明为平凡。对 $p\nmid N$，局部 character 非分歧，而把 $p$ 放在第 $p$ 个 idèle 坐标的分解给出
+$$
+\omega_{\chi,p}(p)=\chi(p).
+$$
+因此
+$$
+L(s,\omega_\chi)
+=\prod_{p\nmid N}(1-\chi(p)p^{-s})^{-1}
+=L(s,\chi).
+$$
+这解释了为什么 finite-unit restriction 要取 $\widehat\chi^{-1}$；若取 $\widehat\chi$，则一致化元取值变为 $\chi(p)^{-1}$，Euler 乘积对应 $L(s,\overline\chi)$。若原特征模 $M$ 但由导子 $N\mid M$ 的 $\chi$ 诱导，则该 Hecke L 函数是 primitive $L(s,\chi)$；模 $M$ 的 imprimitive Dirichlet L 函数还要删去 $p\mid M, p\nmid N$ 的 Euler factors。$\square$
 
 **练习 2.3.** 平凡 Hecke 特征的完成 L 函数为何允许在 $s=0,1$ 出现极点。
 
@@ -1130,7 +1158,9 @@ Steinberg twist $\operatorname{St}\otimes\chi$ 对应同一个 character 上的 
 $$
 \chi|\cdot|^{1/2}\oplus\chi|\cdot|^{-1/2}
 $$
-并带非零 nilpotent operator $N$。Supercuspidal 表示对应不可约二维 Weil 表示，通常不由 proper Levi 的 character 诱导而来。精确归一化依赖本书的 Frobenius 和 $|\cdot|$ convention。$\square$
+并带非零 nilpotent operator $N$。按本书的几何 Frobenius convention，其两个特征值为
+$\chi(\varpi)q^{-1/2}$ 与 $\chi(\varpi)q^{1/2}$，且 $\ker N$ 取前一个特征线，故非分歧 $\chi$ 给出
+$L(s,\operatorname{St}\otimes\chi)=(1-\chi(\varpi)q^{-s-1/2})^{-1}$。Supercuspidal 表示对应不可约二维 Weil 表示，因惯性不变量为零而有标准局部 L 因子 $1$。$\square$
 
 **练习 Q.3.** 对 segment $[\rho,\rho\nu]$，说明它的 degree 是 $2\deg\rho$。
 
@@ -1279,15 +1309,30 @@ $\square$
 
 **练习 V.3.** 对 $K=\mathbb Q$，把 Dirichlet characters 写成 finite idele class characters。
 
-**解答.** Dirichlet character $\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$ 给出
+**解答.** 取精确导子为 $N$ 的 primitive Dirichlet character
+$\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$，并记其在 finite units 上的提升为
 $$
-\widehat{\mathbb Z}^\times\to(\mathbb Z/N\mathbb Z)^\times\xrightarrow{\chi}\mathbb C^\times.
+\widehat\chi:
+\widehat{\mathbb Z}^\times\to
+(\mathbb Z/N\mathbb Z)^\times
+\xrightarrow{\chi}\mathbb C^\times.
 $$
-在 $\mathbb A_\mathbb Q^\times$ 上令无穷正实方向和平凡有理数对角作用按乘积公式抵消，得到
+用唯一分解
+$\mathbb A_\mathbb Q^\times=\mathbb Q^\times\mathbb R_{>0}\widehat{\mathbb Z}^\times$
+定义
 $$
-\mathbb Q^\times\backslash\mathbb A_\mathbb Q^\times\to\mathbb C^\times.
+\omega_\chi(qru)=\widehat\chi(u)^{-1}.
 $$
-局部地，$p\nmid N$ 时该 character 在 $\mathbb Z_p^\times$ 上平凡；$p\mid N$ 时由模 $p^{v_p(N)}$ 的分量给出。$\square$
+它对 $\mathbb Q^\times$ 平凡且有限阶，因而给出
+$$
+\omega_\chi:
+\mathbb Q^\times\backslash\mathbb A_\mathbb Q^\times
+\longrightarrow\mathbb C^\times.
+$$
+若 $\chi(-1)=(-1)^{a_\chi}$，则
+$\omega_{\chi,\infty}=\operatorname{sgn}^{a_\chi}$；对 $p\nmid N$，
+$\omega_{\chi,p}$ 非分歧且 $\omega_{\chi,p}(p)=\chi(p)$。因此本书的 Euler convention 给出
+$L(s,\omega_\chi)=L(s,\chi)$。若在 finite units 上不取逆，则所得是 $L(s,\overline\chi)$ 的 convention；imprimitive modulus 的额外删因子与相应 primitive Hecke L 函数也必须分开。$\square$
 
 **练习 V.5.** 说明为什么一般 Hecke quasi-character 不应写成 profinite Galois character。
 
@@ -1480,7 +1525,9 @@ $$
 
 **练习 AB.4.** 说明 $\operatorname{Bun}_G$ 非 quasi-compact 对 D-module category 的影响。
 
-**解答.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan type 分层，通常含有无限多个 quasi-compact substacks。因此 naive D-module category 的 compact generation、连续 functor 的定义以及 $!$-extension 的存在性不能直接由 finite type stack 的定理推出。Eisenstein series 和 constant term 又需要沿非 proper correspondence 做推拉操作。Renormalized D-module category 通过改变生成对象或用 co-truncative substacks 控制无限边界，使这些函子具有所需连续性和伴随性。$\square$
+**解答.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan type 分层，通常含有无限多个 quasi-compact substacks。因此普通 D-module category 的 compact generation、连续 functor 的定义以及 $!$-extension 的存在性不能直接由 finite type stack 的定理推出，而需要 truncatable/co-truncative 理论。Eisenstein series 和 constant term 又需要沿非 proper correspondence 做推拉操作。与此同时，改变 compact generators 可定义另一个
+$\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}$，并与普通范畴由
+$\operatorname{ren}\dashv\operatorname{un\text{-}ren}$ 比较。主几何 Langlands 公式使用普通范畴指向 $\operatorname{IndCoh}_{\mathcal N}$；renormalized companion 指向全部 $\operatorname{IndCoh}$。非 quasi-compact 性说明两类构造为何出现，但不给出两范畴的识别。$\square$
 
 **练习 AB.5.** 解释 nilpotent singular support 在谱侧的作用。
 
@@ -1508,13 +1555,18 @@ b\in B(G)\longmapsto \mathcal E_b.
 $$
 Newton point 给出 $\mathcal E_b$ 的 Harder-Narasimhan type，Kottwitz invariant 给出连通分量数据。Basic 元素对应 semistable $G$-bundles，其 automorphism group 是内形式 $J_b(F)$。对一般 perfectoid 基底，$\operatorname{Bun}_G(S)$ 还记录 families 与 v-descent 数据，不能直接等同于集合 $B(G)$。$\square$
 
-**练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_F$ 作用。
+**练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_{E_\mu}$ 作用，并解释 $E_\mu$ 为什么由 $\mu$ 而不是由 $b$ 定义。
 
-**解答.** Local Shimura variety 或 diamond $\operatorname{Sht}_{G,b,\mu}$ 参数化从平凡 $G$-bundle 到 $\mathcal E_b$ 的 modifications。改变源端 trivialization 给出 $G(F)$ 作用，改变目标端 $\mathcal E_b$ 的 self-quasi-isogeny 给出 $J_b(F)$ 作用，定义域的 descent datum 和 Frobenius 结构给出 Weil group $W_F$ 作用。于是
+**解答.** 按 AC.10 的归一化，$b\in B(G,\mu)$ 且 local Shimura diamond
+$\operatorname{Sht}_{G,b,\mu}/\operatorname{Spd}\breve E_\mu$ 参数化
 $$
-R\Gamma_c(\operatorname{Sht}_{G,b,\mu},\mathcal L_\xi)
+\mathcal E_b\dashrightarrow\mathcal E_1
 $$
-自然成为 $G(F)\times J_b(F)\times W_F$ 的表示对象。$\square$
+的 $\mu$-有界 modifications。改变平凡目标丛的 level trivialization 给出 $G(F)$ 作用，改变源丛 $\mathcal E_b$ 的 self-quasi-isogeny 给出 $J_b(F)$ 作用。$\mu$ 的共轭类的定义域是 reflex field $E_\mu$，因而相对 $E_\mu$ 的 Weil descent datum，而非 $b$ 本身，在几何纤维上给出 $W_{E_\mu}$ 作用。三个作用两两交换，于是对含 $\breve E_\mu$ 的完备代数闭扩张 $C$ 有
+$$
+R\Gamma_c(\operatorname{Sht}_{G,b,\mu,C},\mathcal L_\xi)
+$$
+自然成为 $G(F)\times J_b(F)\times W_{E_\mu}$ 的表示对象。$\square$
 
 **练习 AC.4.** 解释 Fargues-Scholze 结果为什么主要给出 semisimple 参数化。
 

@@ -66,6 +66,22 @@ X(1)\times Y(2)\;\amalg\;X(2)\times Y(1)^2.
 $$
 输出的 $\Sigma_2$-作用在第一项作用于 $Y(2)$，在第二项交换两个带源标号的单点纤维并同步使用 $X(2)$ 的作用。该例是左右作用和空槽约定最早同时出现的位置。
 
+### 自由 operad 权重的二槽检查
+
+设 $E(2)$ 含二元生成元 $x,y_1,y_2$，三者在自由 operad 中均有权重 $1$。完整代入
+$$
+\gamma(x;y_1,y_2)
+$$
+由一个外层顶点和两个内层顶点组成，故权重为 $1+1+1=3$。相反，偏复合
+$$
+x\circ_1y_1=\gamma(x;y_1,\mathbf 1)
+$$
+的第二个内层因子是权重 $0$ 的单位树，所以权重为 $1+1+0=2$。一般地，外层权重为 $r$、第 $t$ 个内层权重为 $s_t$ 时，grafting 后的顶点不交并给出权重
+$$
+r+\sum_t s_t;
+$$
+若外层 arity 为 $n$ 且所有 $s_t=s$，该值就是 $r+ns$。这也直接解答练习 8.1。
+
 ## P.2 Endomorphism operad 的结合律检查
 
 设 $A$ 是集合。Endomorphism operad 定义为
@@ -386,13 +402,14 @@ $$
 本附录验证了以下低阶事实：
 
 1. arity $0$ 项来自外层 nullary operation；
-2. endomorphism operad 的结合律是函数复合的逐项相等；
-3. $\operatorname{Ass}$ 的 operad 复合是多层字典序拉平；
-4. $\operatorname{Com}$ 的 arity $0$ 元素给出单位；
-5. Lie 代数结构由生成元关系的泛性质给出；
-6. $A_\infty$ 低阶关系应先在 suspended convention 中写出；
-7. Hochschild bracket 的低阶计算把结合律写成 $m\circ m=0$；
-8. dendroidal inner horn 的最小例子区分唯一填充和存在填充；
-9. $\int_{S^1}A$ 的链级模型经过 cyclic bar construction 表示。
+2. 自由 operad 的完整代入把权重相加为 $r+\sum_t s_t$；
+3. endomorphism operad 的结合律是函数复合的逐项相等；
+4. $\operatorname{Ass}$ 的 operad 复合是多层字典序拉平；
+5. $\operatorname{Com}$ 的 arity $0$ 元素给出单位；
+6. Lie 代数结构由生成元关系的泛性质给出；
+7. $A_\infty$ 低阶关系应先在 suspended convention 中写出；
+8. Hochschild bracket 的低阶计算把结合律写成 $m\circ m=0$；
+9. dendroidal inner horn 的最小例子区分唯一填充和存在填充；
+10. $\int_{S^1}A$ 的链级模型经过 cyclic bar construction 表示。
 
 这些计算是后续严格化中检查符号、单位和跨模型比较的基准。

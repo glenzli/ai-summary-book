@@ -94,9 +94,15 @@ $V(M)\subseteq M$ 时才能把它写成 $V|_M$。
 
 波算子为
 $$
-\Omega_\pm=\operatorname{s-lim}_{t\to\pm\infty}e^{itH}e^{-itH_0}.
+\Omega_\pm
+=\operatorname{s-lim}_{t\to\pm\infty}
+e^{itH}e^{-itH_0}P_{\mathrm{ac}}(H_0).
 $$
-$S$ 矩阵为 $S=\Omega_+^*\Omega_-$。一阶 Born 振幅为
+它们渐近完备是指
+$\operatorname{Ran}\Omega_\pm=\mathcal H_{\mathrm{ac}}(H)$。
+$S$ 矩阵为
+$S=\Omega_+^*\Omega_-$，作用在
+$\mathcal H_{\mathrm{ac}}(H_0)$ 上。一阶 Born 振幅为
 $$
 f(\mathbf k',\mathbf k)
 =-\frac{m}{2\pi}\int e^{-i(\mathbf k'-\mathbf k)\cdot x}V(x)\,dx,
@@ -217,9 +223,10 @@ $$
 
 ## 综合题 16
 
-设 $H_\lambda=H_0+\lambda V$，定义
-$\psi_I=e^{itH_0}\psi_S$ 与 $V_I=e^{itH_0}Ve^{-itH_0}$。代入
-Schrodinger 方程得
+设 $H_\lambda(t)=H_0+\lambda V(t)$，并假设 $V_I(t)$ 在所考察的有限
+时间区间上按算子范数连续。定义
+$\psi_I=e^{itH_0}\psi_S$ 与
+$V_I(t)=e^{itH_0}V(t)e^{-itH_0}$。代入 Schrodinger 方程得
 $$
 i\dot\psi_I=\lambda V_I\psi_I.
 $$
@@ -227,7 +234,7 @@ $$
 $$
 U_I(t,t_0)=I-i\lambda\int_{t_0}^tV_I(s)U_I(s,t_0)\,ds,
 $$
-迭代得时间有序 Dyson 级数
+由命题 25.4，算子范数 Bochner 积分的迭代给出时间有序 Dyson 级数
 $$
 I+\sum_{n\ge1}(-i\lambda)^n\int_{t_0\le s_n\le\cdots\le s_1\le t}V_I(s_1)\cdots V_I(s_n)\,ds_1\cdots ds_n.
 $$

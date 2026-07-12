@@ -100,7 +100,7 @@ $$
 
 ## O.5 Categorical Geometric Langlands
 
-**外部输入定理 O.15（几何 Langlands，IndCoh 形式；特征零 preprint theorem）.** 设 $X/\mathbb C$ 为 smooth projective connected curve，$G/\mathbb C$ 为 connected reductive group。按 Gaitsgory-Raskin proof series 固定第二十一章 21.5 的 half-twisting gerbe、中心、renormalized automorphic category 和 global nilpotent cone 后，来源构造从自动侧到谱侧的函子并证明范畴等价
+**外部输入定理 O.15（几何 Langlands，IndCoh 形式；特征零 preprint theorem）.** 设 $X/\mathbb C$ 为 smooth projective connected curve，$G/\mathbb C$ 为 connected reductive group。按 Gaitsgory-Raskin proof series 固定第二十一章 21.5 的 half-twisting gerbe、中心、ordinary automorphic D-module category 和 global nilpotent cone 后，来源构造从自动侧到谱侧的函子并证明范畴等价
 $$
 \mathbb L_G:
 \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
@@ -109,12 +109,21 @@ $$
 (\operatorname{LocSys}_{\widehat G}(X))
 $$
 并有相应 Betti 版本；等价与来源中构造的 spectral action、Hecke action 和 parabolic induction 相容。
+左端是普通 $\operatorname{DMod}_{1/2}$，不是
+$\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}$。后者带 companion functor
+$$
+\mathbb L_{G,\operatorname{ren}}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+\longrightarrow
+\operatorname{IndCoh}(\operatorname{LocSys}_{\widehat G}(X)),
+$$
+其类型和目标都与 O.15 不同。
 
 **外部输入定理 O.16（技术来源与定理边界）.** O.15 依赖的外部技术链包括：
 
 1. $G$ 为 torus 的几何类域论；
 2. Beilinson-Drinfeld 的 opers 和 Hecke eigensheaves 构造；
-3. Gaitsgory-Rozenblyum 关于 derived stacks、D-modules on $\operatorname{Bun}_G$ 和 renormalization 的理论；half-twist 另按 21.5 与 Gaitsgory-Raskin proof series 固定；
+3. Gaitsgory-Rozenblyum 关于 derived stacks 及 $\operatorname{Bun}_G$ 上普通 D-modules 的 truncatable/compact-generation 理论；renormalized companion 按 21.6.1 另行记号，half-twist 按 21.5 与 Gaitsgory-Raskin proof series 固定；
 4. Arinkin-Gaitsgory 的 singular support 和 $\operatorname{IndCoh}_{\mathcal N}$ 框架；
 5. Gaitsgory-Raskin 合作项目五篇 2024 proof-series preprints 中 Langlands functor、fundamental local equivalence、parabolic induction、ambidexterity 和 multiplicity one 的组合。
 
@@ -158,7 +167,7 @@ $$
 3. 谱侧 local systems stack 是 derived 且 singular。
 4. IndCoh 比 QCoh 更适合 singular spectral side。
 5. Nilpotent singular support 条件定义正确大小的谱侧范畴。
-6. 特征零 unramified categorical geometric Langlands 按 O.15 登记为外部 preprint theorem；其 $\mathbb L_G$ 为 half-twisted automorphic $\to$ spectral，反向调用写 $\mathbb L_G^{-1}$。正特征只按 O.16.1 调用某些参数连通分支之并上的部分结果，其他分支、系数、ramification 与 local variants 仍是独立边界。
+6. 特征零 unramified categorical geometric Langlands 按 O.15 登记为外部 preprint theorem；其 $\mathbb L_G$ 使用普通 half-twisted $\operatorname{DMod}_{1/2}$ 作为 automorphic 端并指向 $\operatorname{IndCoh}_{\mathcal N}$，反向调用写 $\mathbb L_G^{-1}$。Renormalized companion 指向全部 $\operatorname{IndCoh}$，不用同一公式。正特征只按 O.16.1 调用某些参数连通分支之并上的部分结果，其他分支、系数、ramification 与 local variants 仍是独立边界。
 
 ## 练习
 

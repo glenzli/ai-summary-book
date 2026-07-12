@@ -33,7 +33,7 @@ $r_s=2GM$ 称为 Schwarzschild 半径；恢复单位为
 $r_s=2GM/c^2$。$r=2GM$ 处的坐标表达奇异，但曲率不发散；
 $r=0$ 才是真曲率奇点。
 
-**外部输入定理 9.1（Birkhoff--Schwarzschild 定理）.** 设四维 Lorentz 流形的一个连通开区域球对称、满足 $R_{\mu\nu}=0$，且面积半径 $r$ 在该区域不是常数。则该区域局部等距于某个质量参数 $M$ 的 Schwarzschild 解。若再选择渐近平直的静态外部区域，并以无穷远处的时间归一化 Killing 场，则得到上式；参数 $M$ 是 ADM 质量。
+**外部输入定理 9.1（Birkhoff--Schwarzschild 定理）.** 设四维 Lorentz 流形的一个连通开区域球对称、满足 $R_{\mu\nu}=0$，且面积半径 $r$ 在该区域不是常数。则该区域局部等距于某个质量参数 $M$ 的 Schwarzschild 解。若再选择渐近平直的静态外部区域，并以无穷远处的时间归一化 Killing 场，则得到上式；在该静止渐近系中 $P_i=0$，且参数 $M=E_{\mathrm{ADM}}=m_{\mathrm{ADM}}$。
 
 该定理的全局版本、常面积半径退化情形和带 $\Lambda$ 的推广不在本书内部证明。本章把 Schwarzschild 度规作为外部已知精确解使用，并在其中推导轨道和经典检验。
 

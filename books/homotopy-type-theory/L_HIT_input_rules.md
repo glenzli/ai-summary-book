@@ -154,7 +154,56 @@ $$
 \mathsf{merid}:A\to(\mathsf{north}=\mathsf{south}).
 $$
 
-**输入规则 L.18（悬挂递归/消去）.** 对 $B:\mathcal U_j$，定义 $\mathsf{susp}(A)\to B$ 需要给出 $n:B$、$s:B$ 和 $\prod_{a:A}(n=s)$；依赖消去版本把最后一项替换为相应 dependent path 条件。点与路径计算的强度必须按具体使用点声明。
+**输入规则 L.18（悬挂递归与依赖消去）.** 对 $B:\mathcal U_j$，给定
+$$
+n:B,\qquad s:B,\qquad m:\prod_{a:A}(n=s),
+$$
+有递归子
+$$
+\mathsf{suspRec}(n,s,m):\mathsf{susp}(A)\to B.
+$$
+它在点构造子上 judgmentally 计算：
+$$
+\mathsf{suspRec}(n,s,m)(\mathsf{north})\equiv n,
+\qquad
+\mathsf{suspRec}(n,s,m)(\mathsf{south})\equiv s.
+$$
+在路径构造子上只输入命题计算路径
+$$
+\beta^{\mathsf{suspRec}}_{\mathsf{merid}}(a):
+\mathsf{ap}_{\mathsf{suspRec}(n,s,m)}(\mathsf{merid}(a))=m(a).
+$$
+
+依赖地，给定 $P:\mathsf{susp}(A)\to\mathcal U_j$ 以及
+$$
+n:P(\mathsf{north}),\qquad
+s:P(\mathsf{south}),
+$$
+$$
+m:\prod_{a:A}
+\mathsf{transport}^{P}(\mathsf{merid}(a),n)=s,
+$$
+有
+$$
+\mathsf{suspInd}_{P}(n,s,m):
+\prod_{z:\mathsf{susp}(A)}P(z).
+$$
+点计算仍为 judgmental：
+$$
+\mathsf{suspInd}_{P}(n,s,m)(\mathsf{north})\equiv n,
+\qquad
+\mathsf{suspInd}_{P}(n,s,m)(\mathsf{south})\equiv s.
+$$
+meridian 上的 dependent computation 是命名的 propositional $\mathsf{apd}$-$\beta$ 路径
+$$
+\beta^{\mathsf{suspInd}}_{\mathsf{merid}}(a):
+\mathsf{apd}_{\mathsf{suspInd}_{P}(n,s,m)}(\mathsf{merid}(a))=m(a).
+$$
+两边借助点上的 judgmental 计算具有同一类型
+$$
+\mathsf{transport}^{P}(\mathsf{merid}(a),n)=s.
+$$
+本书的公理化悬挂输入不把上述两个 meridian 计算路径升级为 judgmental equality。
 
 ## L.6 Pushout
 
@@ -175,11 +224,55 @@ $$
 \mathsf{glue}:\prod_{a:A}\mathsf{inl}(f(a))=\mathsf{inr}(g(a)).
 $$
 
-**输入规则 L.20（Pushout 递归）.** 对 $X:\mathcal U_\ell$，要定义 $\mathsf{pushout}(f,g)\to X$，给出 $u:B\to X$、$v:C\to X$ 和同伦
+**输入规则 L.20（Pushout 递归与依赖消去）.** 记 $P\coloneqq\mathsf{pushout}(f,g)$。对 $X:\mathcal U_\ell$，给定 $u:B\to X$、$v:C\to X$ 和
 $$
-\prod_{a:A}u(f(a))=v(g(a)).
+h:\prod_{a:A}u(f(a))=v(g(a)),
 $$
-依赖消去版本要求在路径构造子上给出 dependent path 相容性。
+有递归子
+$$
+\mathsf{pushRec}(u,v,h):P\to X.
+$$
+两个点族上的计算是 judgmental：
+$$
+\mathsf{pushRec}(u,v,h)(\mathsf{inl}(b))\equiv u(b),
+$$
+$$
+\mathsf{pushRec}(u,v,h)(\mathsf{inr}(c))\equiv v(c).
+$$
+glue 上的计算只由命名的 propositional $\mathsf{ap}$-$\beta$ 路径给出：
+$$
+\beta^{\mathsf{pushRec}}_{\mathsf{glue}}(a):
+\mathsf{ap}_{\mathsf{pushRec}(u,v,h)}(\mathsf{glue}(a))=h(a).
+$$
+
+依赖地，给定 $Q:P\to\mathcal U_\ell$、
+$$
+u:\prod_{b:B}Q(\mathsf{inl}(b)),
+\qquad
+v:\prod_{c:C}Q(\mathsf{inr}(c)),
+$$
+以及
+$$
+h:\prod_{a:A}
+\mathsf{transport}^{Q}(\mathsf{glue}(a),u(f(a)))=v(g(a)),
+$$
+有
+$$
+\mathsf{pushInd}_{Q}(u,v,h):\prod_{z:P}Q(z).
+$$
+点计算为
+$$
+\mathsf{pushInd}_{Q}(u,v,h)(\mathsf{inl}(b))\equiv u(b),
+$$
+$$
+\mathsf{pushInd}_{Q}(u,v,h)(\mathsf{inr}(c))\equiv v(c),
+$$
+而 glue 上只有 propositional $\mathsf{apd}$-$\beta$ 路径
+$$
+\beta^{\mathsf{pushInd}}_{\mathsf{glue}}(a):
+\mathsf{apd}_{\mathsf{pushInd}_{Q}(u,v,h)}(\mathsf{glue}(a))=h(a).
+$$
+点上的 judgmental 计算保证最后两项类型一致。本书不假设 pushout 的 judgmental glue 计算或额外的 judgmental $\eta$-规则。
 
 ## L.7 当前依赖边界
 

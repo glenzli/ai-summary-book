@@ -241,15 +241,53 @@ $$
 $$
 \epsilon:\Omega B\mathcal P\to\mathcal P
 $$
-在 generators 上由
+的底层 graded operad 是
 $$
-s^{-1}s\overline{\mathcal P}\to\overline{\mathcal P}
+\mathbb F\bigl(s^{-1}\overline{B\mathcal P}\bigr),
+\qquad
+\overline{B\mathcal P}
+=
+\bigoplus_{q\ge1}\mathbb T^{c,(q)}(s\overline{\mathcal P}).
 $$
-给出，在多顶点生成树上由 operad composition 递归给出。
+因此每棵正 bar 权重的树本身都是一个 cobar 生成元。Counit 在这些生成元上的定义是
+$$
+\epsilon(s^{-1}b)
+=
+\begin{cases}
+p,& b=sp\in\mathbb T^{c,(1)}(s\overline{\mathcal P}),\\
+0,& b\in\mathbb T^{c,(q)}(s\overline{\mathcal P}),\ q>1.
+\end{cases}
+$$
+然后由自由 operad 的泛性质唯一延拓为 graded operad morphism。特别地，“bar 权重 $q>1$ 的单个 cobar 生成元映到 $0$”与“若干 bar 权重 $1$ 的 cobar 生成元在外层自由 operad 中复合后映到 $\mathcal P$ 的相应复合”是两个不同陈述。
 
-**命题 Q.18.** $\epsilon$ 是 dg-operad morphism 的低权重检查归结为 bar differential 与 $\mathcal P$ 的 composition 相容。
+**命题 Q.18.** 上述 $\epsilon$ 的链映射检查可在自由 operad 生成元上完成。关键的 bar 权重 $2$ 情形中，bar 收缩项与 cobar 分解项在施加 $\epsilon$ 后给出同一个 partial composition，且符号相反，因而抵消。
 
-**证明.** 在权重 $1$ 上，$\epsilon$ 是 desuspension-suspension 的抵消，与内部微分相容。权重 $2$ 上，$\Omega B\mathcal P$ 的 differential 包含把 bar 中二顶点树收缩为一顶点的项；$\epsilon$ 作用后得到 $\mathcal P$ 中的 partial composition。另一方面，先用 $\epsilon$ 把两个生成元送入 $\mathcal P$ 再在 $\mathcal P$ 中复合，得到同一元素。更高权重由 derivation 性和 operad 结合律递归推出。$\square$
+**证明.** 权重 $1$ 的生成元为 $s^{-1}sp$。其 differential 只有由 $p$ 的内部微分诱导的线性项，desuspension-suspension 的符号约定给出
+$$
+\epsilon d(s^{-1}sp)=d_{\mathcal P}p
+=d_{\mathcal P}\epsilon(s^{-1}sp).
+$$
+
+现取 bar 权重 $2$ 的单个 cobar 生成元
+$$
+z=s^{-1}(sp\circ_i sq),
+$$
+其中括号内表示一棵二顶点 bar 树。按定义 $\epsilon(z)=0$。忽略仍保持 bar 权重 $2$、因而被 $\epsilon$ 杀掉的内部微分项，$d(z)$ 的两个结构项具有形状
+$$
+(-1)^\chi s^{-1}s(p\circ_i q)
+-
+(-1)^\chi
+\bigl(s^{-1}sp\bigr)\circ_i\bigl(s^{-1}sq\bigr).
+$$
+第一项来自 bar differential 收缩二顶点树的唯一内部边；第二项来自 cobar differential 沿该边作 reduced infinitesimal decomposition。两项的相对负号正是 bar 与 cobar 在总微分中的 suspension/desuspension 约定，$\chi$ 是两处共同的 Koszul 符号。施加 $\epsilon$ 后，两项分别成为
+$$
+(-1)^\chi(p\circ_i q),
+\qquad
+-(-1)^\chi(p\circ_i q),
+$$
+所以和为 $0=d_{\mathcal P}\epsilon(z)$。
+
+若单个 cobar 生成元的 bar 权重 $q>2$，bar 收缩项仍有权重 $q-1>1$，故映到 $0$；reduced cobar 分解把 $q$ 写成两个正权重之和，其中至少一个大于 $1$，故对应外层自由 operad 复合也含一个映到 $0$ 的因子。于是链映射等式在所有生成元上成立。Cobar differential 是导子，而 $\epsilon$ 按自由 operad 泛性质作复合延拓，所以等式推广到整个 $\Omega B\mathcal P$。$\square$
 
 **外部输入定理 Q.19（modern bar-cobar counit；FRE-4）.** 采用 Fresse, arXiv:0902.0177 的模型：$\mathcal P$ 是 $C$-cofibrant augmented operad，并且其增广理想满足
 $$
@@ -305,7 +343,7 @@ Connected 情形下，命题 I.21 的树计数使这些滤过逐 arity 有限。
 4. Koszul differential 通过 infinitesimal decomposition 检测关系；
 5. bar differential 是收缩内部边；
 6. cobar differential 是展开 cooperad 分解；
-7. bar-cobar counit 的低权重检查是 composition 相容性；
+7. bar-cobar counit 杀掉 bar 权重 $>1$ 的单个 cobar 生成元，并在权重 $2$ 上由 bar 收缩项与 cobar 分解项抵消保证链映射性；
 8. 完整 exactness、Koszul 性和 resolution 结论仍是外部输入。
 
 这些计算应作为定义 8.16、定理 9.20 和定义 10.5--定义 10.10 中同伦代数构造的局部校验模板。

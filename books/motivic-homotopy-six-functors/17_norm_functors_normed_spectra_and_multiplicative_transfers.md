@@ -2,7 +2,10 @@
 
 ## 本章目标
 
-本章介绍 motivic norm functors。Norms 是 finite etale 或 finite locally free morphisms 上的乘法转移，是 motivic `E_\infty`-ring spectra 的增强结构。它们与 additive transfers、framed transfers 和 Galois theory 相互作用，但不能混同。
+本章介绍 motivic norm functors。Finite locally free morphisms 在 pointed
+unstable motivic homotopy 中有 norm；本章使用的 stable norm 则限于 finite
+etale morphisms。Normed structures 是 motivic `E_\infty`-ring spectra 的增强，
+并与 additive transfers、framed transfers 和 Galois theory 相互作用，但不能混同。
 
 ## 依赖前置知识
 
@@ -18,6 +21,19 @@ $$
 f_\otimes:\mathbf H_*(S')\to\mathbf H_*(S).
 $$
 
+若 `X\in\mathcal P_\Sigma(\operatorname{Sm}_{S'})`（即把有限不交并送到有限
+乘积的 presheaf），`Y\subset X` 是 open subpresheaf，并对
+`U\in\operatorname{Sm}_S` 记
+`f_*^{\mathrm{pre}}X(U)=X(U\times_SS')`。再令
+`f_*^{\mathrm{pre}}(X|Y)(U)` 为其中满足
+`s^{-1}(Y)\to U` surjective 的 sections `s`。则在 pointed Nisnevich sheaves
+中有
+
+$$
+f_\otimes(X/Y)\simeq
+f_*^{\mathrm{pre}}X/f_*^{\mathrm{pre}}(X|Y).
+$$
+
 若 `f` finite etale，则该 functor 稳定化为
 
 $$
@@ -25,10 +41,15 @@ f_\otimes:\mathbf{SH}(S')\to\mathbf{SH}(S).
 $$
 
 **精确来源与边界.** Bachmann--Hoyois, *Norms in motivic homotopy theory*,
-Section 3 and Proposition 3.13（unstable finite-locally-free construction and
-quotient compatibility），Proposition 4.5（finite-etale stable extension），
-`https://arxiv.org/abs/1711.03061`。Proposition 4.5 的稳定结论只对 finite
-etale morphisms；finite locally free 的 unstable norm 不能自动稳定化。
+Theorem 3.3 及其后的 motivic localization 段落构造 finite-locally-free
+unstable norm；Corollary 3.11 给出上述 open-subpresheaf quotient 公式。
+Proposition 3.13 的范围更窄：`f` 必须 finite etale，`X\in\operatorname{Sm}_{S'}`，
+`Z\subset X` closed，且 Weil restriction `R_fX` 存在（例如 `X` 在 `S'` 上
+quasi-projective）；只有在这些假设下它才把公式加强为
+`f_\otimes(X/(X\setminus Z))\simeq R_fX/(R_fX\setminus R_fZ)`。Example 3.14
+明确说明该加强不能只假设 finite locally free。Stable extension 是 Proposition
+4.5，`https://arxiv.org/abs/1711.03061`；它只对 finite etale morphisms，
+finite locally free 的 unstable norm 不能自动稳定化。
 
 **定义 17.2.** 对 finite etale `f`，`f_\otimes` 称为 motivic norm functor。
 

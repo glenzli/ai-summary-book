@@ -74,13 +74,25 @@ $$
 \mathcal M_\infty=L(\mathcal M,\mathcal W_\mathcal M).
 $$
 
-若 $\mathcal M$ 不是小范畴，则在固定 universe 中取一个小的 full subcategory of representatives，或在更大 universe 中工作。
+这里的 localization 必须连同 universe 一起解释。若 $\mathcal M$ 是 $\mathcal U$-小范畴，就在 $\mathcal U$ 层使用定义 19.3。通常的模型范畴并不 $\mathcal U$-小；此时默认把 $(\mathcal M,\mathcal W_\mathcal M)$ 视为 $\mathcal V$-小 relative category，并在更大的 universe 中构造 localization；若它连 $\mathcal V$-小也不是，则继续进入 $\mathcal W$ 或另行指定更大的 universe。本书仍用同一符号 $\mathcal M_\infty$，但不声称它属于原来的小性层级。
+
+不能仅因 $\mathcal M$ 很大就任取一个 $\mathcal U$-小 full subcategory 并称其为“representatives”。只有以下两类额外输入允许小化：
+
+1. $\mathcal M$ 本质 $\mathcal U$-小，此时可取与 $\mathcal M$ 等价的 $\mathcal U$-小 full subcategory；
+2. 已给出 $\mathcal U$-小 relative category $(\mathcal C,\mathcal V_\mathcal C)$ 及 relative functor
+   $$
+   (\mathcal C,\mathcal V_\mathcal C)\longrightarrow
+   (\mathcal M,\mathcal W_\mathcal M)
+   $$
+   并证明它是 DK-equivalence，此时称 $(\mathcal C,\mathcal V_\mathcal C)$ 为一个小 DK presentation，且可用 $L(\mathcal C,\mathcal V_\mathcal C)$ 呈现 $\mathcal M_\infty$。
 
 **外部输入定理 19.8（fibrant-cofibrant presentation；DKR-5--DKR-6）.** 若 $\mathcal M$ 是 simplicial model category，并且 $\mathcal M^{cf}$ 是 cofibrant-fibrant objects 的 full simplicial subcategory，则
 $$
 N_\Delta(\mathcal M^{cf})\to \mathcal M_\infty
 $$
 是 equivalence of infinity-categories，其中 $N_\Delta$ 为 homotopy coherent nerve。来源为 Hinich Propositions 1.3.4--1.3.5 对 fibrant/cofibrant subcategories 与 simplicial presentation 的比较。
+
+本定理中的 $\mathcal M^{cf}$ 在一般情形仍是大 simplicial category；只取 cofibrant-fibrant objects 给出 DK-equivalent presentation，但不会自动给出小 presentation。其 nerve 与上式 localization 按定义 19.7 在同一个扩大的 universe 中解释。
 
 **命题 19.9.** Quillen adjunction
 $$
@@ -227,6 +239,7 @@ $$
 =L\big(\operatorname{Alg}_{\mathcal O}(\mathcal M),\mathcal W_{\operatorname{Alg}}\big),
 $$
 其中 $\mathcal W_{\operatorname{Alg}}$ 是底层 $\mathcal M$ 中逐颜色 weak equivalences。
+该式沿用定义 19.7 的大小约定：代数模型范畴若不是 $\mathcal U$-小，localization 默认进入更大 universe；只有本质小性或一个已验证的 small DK presentation 才允许把它小化。
 
 若 $\mathcal O$ 同时给出 $\mathcal M_\infty$ 中的 infinity-operad $\mathcal O^{\operatorname{loc}}$，则可比较
 $$
@@ -301,7 +314,7 @@ $$
 
 **练习 19.2.** 设 $\mathcal M$ 是模型范畴。解释为什么 homotopy category $\operatorname{Ho}(\mathcal M)$ 只记录 $\mathcal M_\infty$ 的 $1$-categorical truncation。
 
-**练习 19.3.** 对 simplicial model category $\mathcal M$，说明为何只取 cofibrant-fibrant objects 仍能呈现 $\mathcal M_\infty$。
+**练习 19.3.** 对 simplicial model category $\mathcal M$，说明为何只取 cofibrant-fibrant objects 仍能呈现 $\mathcal M_\infty$，并解释该替换为什么不会自动把一个大模型范畴小化。
 
 **练习 19.4.** 写出 derived tensor product $X\otimes^{\mathbf L}Y$ 的计算步骤。
 

@@ -20,7 +20,19 @@ $$
 
 **外部输入定理 D.2（Stone 定理，QM-EXT-2）.** 强连续一参数酉群 $U(t)$ 唯一写成 $U(t)=e^{-itH}$，其中 $H$ 为自伴算子。
 
-**外部输入定理 D.3（Kato-Rellich 定理，QM-EXT-3）.** 若 $A$ 自伴，$B$ 对 $A$ 相对有界且相对界小于 $1$，则 $A+B$ 在 $\mathcal D(A)$ 上自伴。
+**外部输入定理 D.3（Kato-Rellich 定理，QM-EXT-3）.** 设 $A$ 自伴，
+$B$ 对称，且 $\mathcal D(A)\subseteq\mathcal D(B)$。若存在
+$0\le a<1$、$b\ge0$ 使
+$$
+\|B\psi\|\le a\|A\psi\|+b\|\psi\|,
+\qquad \psi\in\mathcal D(A),
+$$
+则 $A+B$ 在 $\mathcal D(A)$ 上自伴；对 $A$ 的任意算子核心
+$\mathscr C$，限制 $(A+B)|_{\mathscr C}$ 本质自伴。对 Schrodinger
+算子取 $A=-\Delta/(2m)$、$B=V$ 时，
+还须明确 $V$ 是实值乘法势、
+$\mathcal D(A)\subseteq\mathcal D(V)$，并验证上述相对界；实值性保证
+$V$ 对称，不能从相对有界估计单独推出。
 
 **外部输入定理 D.4（Wigner 定理，QM-EXT-5）.** 保持射线转移概率的射线变换由酉或反酉算子实现，且实现算子在相位意义下唯一。
 
@@ -59,7 +71,13 @@ $$
 
 **外部输入定理 D.10（Wigner-Eckart 定理，QM-EXT-13）.** 球张量算子的角动量矩阵元分解为 Clebsch-Gordan 系数和与磁量子数无关的约化矩阵元。
 
-**外部输入定理 D.11（Sturm-Liouville 与 Fourier-Hermite 完备性，QM-EXT-14）.** 正则 Sturm-Liouville 问题的本征函数在相应 $L^2$ 空间中完备；特别地，区间 Dirichlet Laplacian 的 sine 函数族完备，谐振子的 Hermite 函数族在 $L^2(\mathbb R)$ 中完备。
+**外部输入定理 D.11（Sturm-Liouville 与 Fourier-Hermite 完备性，QM-EXT-14）.**
+正则 Sturm-Liouville 问题的本征函数在相应 $L^2$ 空间中完备；特别
+地，区间 Dirichlet Laplacian 的 sine 函数族完备。对一维谐振子，
+归一化 Hermite 函数 $\{h_n\}_{n\ge0}$ 构成 $L^2(\mathbb R)$ 的
+正交归一基。第 7 章由此完备性及闭算子的加权移位计算，在书内推出
+$a,a^*,N,H$ 的定义域和 Hermite 有限线性包共同核心；这些后果不再
+作为本条外部输入的一部分。
 
 **外部输入定理 D.12（WKB 转折点连接公式，QM-EXT-15）.** 取
 $m>0$。对光滑一维势阱的紧正则能区，若每条束缚轨道恰有两个简单
@@ -86,7 +104,26 @@ $$
 
 **外部输入定理 D.19（绝热定理，QM-EXT-7）.** 对具有谱隙和足够光滑参数依赖的 Hamiltonian，慢变演化近似保持瞬时谱子空间，并产生动力学相位和 Berry 相位；无隙或交叉情形需额外假设。
 
-**外部输入定理 D.20（散射波算子存在与渐近完备性，QM-EXT-8）.** 对短程势和适当谱假设，Møller 波算子存在并在连续谱子空间上给出散射算子；渐近完备性是更深的散射理论输入。
+**外部输入定理 D.20（散射波算子存在与渐近完备性，QM-EXT-8）.**
+对自伴 $H_0,H$，波算子使用绝对连续谱投影定义为
+$$
+\Omega_\pm
+=\operatorname{s-lim}_{t\to\pm\infty}
+e^{itH}e^{-itH_0}P_{\mathrm{ac}}(H_0),
+$$
+渐近完备性的结论是
+$\operatorname{Ran}\Omega_\pm=\mathcal H_{\mathrm{ac}}(H)$。一个本书
+使用的可判定版本如下：在 $L^2(\mathbb R^3)$ 上取
+$H_0=-\Delta/(2m)$、$m>0$；若
+$V\in L^\infty(\mathbb R^3;\mathbb R)$ 且
+$$
+|V(x)|\le C(1+|x|^2)^{-(1+\varepsilon)/2}
+$$
+对某些 $C,\varepsilon>0$ 成立，则 $H=H_0+V$ 在 $H^2(\mathbb R^3)$
+上自伴，$\Omega_\pm$ 存在且渐近完备。该结论依赖短程散射的传播估计
+或平稳方法，本书不重证。来源定位为 Teschl,
+*Mathematical Methods in Quantum Mechanics*, 2nd ed., §12.3,
+Theorems 12.11--12.12；上述点态衰减蕴含该节的算子范数短程条件。
 
 **外部输入定理 D.21（Lie--Trotter 乘积公式，QM-EXT-9）.** 设 $T,V$ 自伴，$\mathcal D(T)\cap\mathcal D(V)$ 稠密，且 $T+V$ 在该交定义域上本质自伴。则对每个 $t\in\mathbb R$，
 $$

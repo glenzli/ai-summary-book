@@ -5,9 +5,13 @@
 ## 数学基础
 
 - John von Neumann, *Mathematical Foundations of Quantum Mechanics*.
-- Michael Reed and Barry Simon, *Methods of Modern Mathematical Physics*, Vol. I--IV.
+- Michael Reed and Barry Simon, *Methods of Modern Mathematical Physics*,
+  Vol. II, Theorem X.12（Kato-Rellich），以及 Vol. III, Chapter XI
+  （散射理论）。
 - Brian C. Hall, *Quantum Theory for Mathematicians*.
-- Gerald Teschl, *Mathematical Methods in Quantum Mechanics*.
+- Gerald Teschl, *Mathematical Methods in Quantum Mechanics*, 2nd ed.,
+  §8.3, Theorem 8.5（谐振子与 Hermite 完备性），以及 §12.3,
+  Theorems 12.11--12.12（短程势谱性质与渐近完备性）。
 - Walter Rudin, *Functional Analysis*.
 - Michael Taylor, *Partial Differential Equations*.
 

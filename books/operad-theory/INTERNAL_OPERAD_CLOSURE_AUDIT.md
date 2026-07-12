@@ -38,7 +38,7 @@
 | 非对称代入 | 第三章 | 通过 | $\circ_{\mathrm{ns}}$、整体代入和偏复合互译已证明 |
 | 平面树 | 第三章、附录 H | 通过 | 树收缩次序无关由偏复合公理证明 |
 | 自由非对称 operad | 第四章 | 通过 | 装饰平面树与 grafting 给出自由性 |
-| 自由对称 operad | 第四章、附录 H | 通过 | 叶标号非平面树和群胚 coend 已闭合 |
+| 自由对称 operad | 第四章、附录 H | 通过 | 叶标号非平面树及 $\mathcal U$-小树群胚骨架上的 colimit 已闭合；不使用缺少反变因子的伪 coend |
 | 生成元与关系 | 第四章 | 通过 | operadic congruence、商 operad 和泛性质已闭合 |
 | Ass/Com 表示 | 第一、四、六、附录 F/P/X | 通过 | arity $0$ 单位已保留，不采用非含单位默认 |
 
@@ -76,8 +76,8 @@ $$
 
 | 链条 | 文件 | 内部闭合状态 | 备注 |
 | --- | --- | --- | --- |
-| 二次数据与生成元关系 | 第八章 | 定义闭合 | Koszul 性判别为外部输入 |
-| Bar-cobar 与 twisting | 第九章、附录 I/Q | 定义闭合 | bar-cobar weak equivalence 为外部输入 |
+| 二次数据与生成元关系 | 第八章 | 定义闭合 | 完整代入权重为 $r+\sum_t s_t$；Koszul 性判别为外部输入 |
+| Bar-cobar 与 twisting | 第九章、附录 I/Q | 定义闭合 | $\circ_{(1)}$、$\Delta_{(1)}$、convolution/MC 类型和 counit 低权重链映射已闭合；bar-cobar weak equivalence 为外部输入 |
 | $A_\infty/L_\infty/C_\infty$ | 第十章、附录 L/S/W | 定义闭合 | suspended coderivation 口径作为主定义 |
 | Hochschild/brace | 第十一、十二章、附录 E/W/P | 基础公式闭合 | brace 与 $E_2$ 链模型比较为外部输入 |
 | Homotopy transfer | 第十三章、附录 J/S | 低阶闭合 | 完整 HPT 和 minimal uniqueness 为外部输入 |
@@ -89,8 +89,8 @@ $$
 | 范围 | 内部可闭合部分 | 外部边界 |
 | --- | --- | --- |
 | 模型范畴中的 operad | admissible、rectification、cofibrant resolution 的语言 | transferred model structure 和 rectification theorem |
-| Dendroidal sets | $\Omega$、representables、horns、Segal core、strict nerve 样例 | operadic model structure、fully faithfulness、模型比较 |
-| Lurie-style infinity-operad | active/inert、operadic fibration、algebra over operad 的定义接口 | dendroidal-Lurie comparison、operadic straightening |
+| Dendroidal sets | 固定 $\mathcal U$-小骨架 $\Omega$、representables、horns、Segal core、strict nerve 与 $L_1\to\eta$ degeneracy 样例 | operadic model structure、fully faithfulness、模型比较 |
+| Lurie-style infinity-operad | active/inert、operadic fibration、algebra over operad 的定义接口；大模型范畴 localization 默认进入更大 universe | dendroidal-Lurie comparison、operadic straightening；小化另需本质小性或 small DK presentation |
 | Factorization/Fukaya | Disk category、factorization homology 记号、Fukaya category 结构性接口 | excision、locally constant factorization algebra、Fukaya gluing |
 | 2026 前沿 | 研究边界和进入正文流程 | 新定理不进入基础证明链 |
 

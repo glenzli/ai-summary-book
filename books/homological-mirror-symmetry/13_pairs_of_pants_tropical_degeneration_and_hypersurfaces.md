@@ -32,11 +32,18 @@ $$
 
 **解释 13.4.** Tropical hypersurface 编码 degeneration 的组合骨架。Pair-of-pants decomposition 可理解为 tropical hypersurface 的局部顶点模型。
 
-**命题 13.5.** 若一个 degeneration 的 tropical hypersurface 可由标准局部模型覆盖，且 Fukaya category 满足相应 descent，则全局 category 可由局部 pair-of-pants categories 胶合。
+**命题 13.5.** 若一个 degeneration 的 tropical hypersurface 可由标准局部
+模型覆盖，该覆盖在 A-side 提升为定义 15.1 的 Weinstein sectorial cover，
+且局部 Fukaya models 与这些 inclusions 相容，则全局 category 可由局部
+pair-of-pants categories 胶合。
 
-**证明.** 这是 descent 的形式结论。把全局空间写成 sectorial cover，若 wrapped Fukaya category 对该 cover 满足 cosheaf descent，则全局 category 是局部 categories 沿交叠的 homotopy colimit。每个局部 piece 为 pair-of-pants 模型，故全局由它们胶合。证毕。
+**证明.** 这是定理 15.3 的形式结论。Weinstein sectorial descent 把全局
+wrapped Fukaya category 识别为局部 categories 沿交叠的 homotopy colimit。
+每个局部 piece 为 pair-of-pants 模型，故全局由它们胶合。证毕。
 
-**警告 13.6.** 命题 13.5 的关键假设是 sectorial descent，这是外部输入；tropical cover 也必须与 Liouville sector 结构兼容。
+**警告 13.6.** 命题 13.5 的关键假设是 Weinstein sectorial descent，这是
+外部输入；只有有限交存在或 tropical cover 与 Liouville sector 结构兼容，
+都还不足以替代定义 15.1 的 Weinstein hypotheses。
 
 ## 13.3 Hypersurfaces in $(\mathbb C^\ast)^n$
 

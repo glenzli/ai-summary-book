@@ -71,16 +71,23 @@ mechanics 等标准引力论证支持，本书不把它定义成任意高导数�
 $$
 S^1\times X_4,
 $$
-其中 $X_4=T^4$ 或 $K3$。取
+其中 $X_4=T^4$ 或 $K3$。以下 $Q_1,Q_5$ 是固定 convention 中的量子化 charge
+坐标，不默认等于 source brane 数或另一 convention 的 Page charges；特别地，D5
+包裹 $K3$ 时 curvature coupling 会
+诱导 D1 charge。取
 
-1. $Q_1$ 个 D1-branes 包裹 $S^1$；
-2. $Q_5$ 个 D5-branes 包裹 $S^1\times X_4$；
+1. D1 charge $Q_1$ 沿 $S^1$；
+2. D5 charge $Q_5$ 沿 $S^1\times X_4$；
 3. 沿 $S^1$ 的 momentum number $n$。
 
-**外部输入定理 17.7（D1-D5 CFT central charge）.** D1-D5 bound state 的低能二维 CFT 在适当模空间点具有 central charge
+**外部输入定理 17.7（D1-D5 CFT central charge）.** D1-D5 bound state 的 internal
+低能二维 CFT 在适当模空间点具有
 $$
-c=6Q_1Q_5.
+c=\bar c=6N,
 $$
+其中正整数 $N$ 是 exact SCFT/Jacobi index。本章选择满足 $N=Q_1Q_5$ 的 charge
+coordinate convention；使用 source-brane numbers 或其他 induced-charge convention
+时，必须先给出它们到 $N$ 的精确换算。
 
 **外部输入定理 17.8（Cardy asymptotics）.** 设二维 CFT unitary、modular
 invariant，圆柱谱离散、真空唯一，并固定 central charge $c$。若 $n$ 是相对基态的
@@ -93,22 +100,120 @@ $$
 其中在上述 unitary vacuum 假设下 $c_{\mathrm{eff}}=c$。本书不重证由 modular
 $S$ transformation 与 inverse-Laplace saddle 得到的 Cardy theorem。
 
-**推论 17.8A（D1--D5--P 的严格 Cardy 区）.** 使用外部输入 17.7。对固定
-$Q_1,Q_5$ 令 $n\to\infty$；若同时放大 charges，则另假设 Cardy saddle 的误差在
-$n/(Q_1Q_5)\to\infty$ 区域一致。弱耦合 D1--D5 CFT 的 degeneracy 满足
+**边界 17.8A（普通 Cardy 不选择 BPS 扇区）.** 定理 17.8 约束完整 modular-invariant
+torus partition function 的总态数。D1--D5--P 的 BPS 条件则把右动量固定在
+Ramond ground sector，$\bar L_0-c/24=0$。这个投影后的 generating function 不由
+普通 partition function 的 Cardy 定理自动控制；尤其不能从 $c=6N$ 直接推出
+固定右动基态扇区的绝对 degeneracy。为得到受保护的计数，必须另给 supersymmetric
+index 及其 modular/Jacobi 性质。
+
+**外部输入定理 17.8B（K3 D1--D5 elliptic genus，SW99/DMVV97）.** 现把
+$X_4$ 限定为 $K3$，分离 universal center-of-mass multiplet，并在本章 charge
+convention 中把 internal compact $(4,4)$ SCFT 的 symmetric-product point 写成
+$\operatorname{Sym}^N(K3)$，其 Jacobi index 为
 $$
-\log d(Q_1,Q_5,n)
+N=\frac c6=Q_1Q_5.
+$$
+该等号最后一步只属于上一段选定的 charge coordinates；若使用含 induced-charge
+shift 的其他 convention，以下精确公式保留 $N=c/6$，不得直接代入 source-brane
+numbers。
+取 $c=\bar c=6N$，其受保护的 orbifold Ramond--Ramond elliptic genus 为
+$$
+\Phi_N(\tau,z)
+:=\operatorname{Ell}_{\rm orb}(\operatorname{Sym}^N(K3);\tau,z)
+=\operatorname{Tr}_{\mathcal H_{RR}}
+(-1)^{F_L+F_R}
+q^{L_0-c/24}\bar q^{\bar L_0-c/24}y^{J_0}
+=\sum_{n,\ell}\Omega_N(n,\ell)q^ny^\ell,
+\qquad q=e^{2\pi i\tau},\quad y=e^{2\pi iz}.
+$$
+右动 supersymmetry 使 $\bar L_0>c/24$ 的成对态相消，所以 $\Phi_N$ 与 $\bar q$
+无关；$\Omega_N(n,\ell)$ 是右动 Ramond ground sector 的带符号 BPS index，而不是
+绝对态数。在 symmetric-product point，若 seed $K3$ elliptic genus 写为
+$\Phi_{K3}(\tau,z)=\sum_{s,\ell}c(s,\ell)q^sy^\ell$，则精确生成函数为
+$$
+\sum_{N\ge0}p^N\Phi_N(\tau,z)
+=\prod_{r=1}^{\infty}\prod_{s=0}^{\infty}\prod_{\ell\in\mathbb Z}
+\left(1-p^rq^sy^\ell\right)^{-c(rs,\ell)}.
+$$
+由于 $\Phi_{K3}=2y+20+2y^{-1}+O(q)$，该乘积还给出固定 $N\ge1$ 的最大
+polar coefficients
+$$
+[q^0y^{\pm N}]\Phi_N=N+1\ne0,
+\qquad \Delta_{\rm p}=4N\cdot0-(\pm N)^2=-N^2.
+$$
+对每个固定 $N$，$\Phi_N$ 是 weight $0$、index $N$ 的 weak Jacobi form；特别地，
+$$
+\Phi_N\!\left(\frac{a\tau+b}{c\tau+d},\frac{z}{c\tau+d}\right)
+=\exp\!\left(\frac{2\pi iNc z^2}{c\tau+d}\right)\Phi_N(\tau,z),
+$$
+以及对 $\lambda,\mu\in\mathbb Z$，
+$$
+\Phi_N(\tau,z+\lambda\tau+\mu)
+=e^{-2\pi iN(\lambda^2\tau+2\lambda z)}\Phi_N(\tau,z).
+$$
+这些是 D1--D5 BPS index 的额外外部输入，不是定理 17.8 的推论。普通 $T^4$
+elliptic genus 因额外 fermion zero modes 为零；$T^4$ 情形必须改用明确归一化的
+modified index/helicity supertrace，本章不把 K3 公式直接套用于 $T^4$。DMVV 乘积
+本身是在 symmetric-product point 的精确陈述；沿模空间使用同一 index 还要求变形
+路径保持 compact/discrete BPS trace，不穿过 SW99 所讨论的 continuum/singular locus。
+
+**外部输入定理 17.8C（固定-index Jacobi--Rademacher 渐近，EZ85/DMZ12）.** 令
+$$
+\Delta=4Nn-\ell^2>0.
+$$
+固定 $N\ge1$ 和 residue class $\ell\bmod 2N$。Jacobi theta decomposition 与
+Rademacher expansion 表明：沿 $\Delta\to\infty$ 且 leading $c=1$ term 与最大
+polar coefficient 的耦合非零的 Fourier sequence，有
+$$
+\log|\Omega_N(n,\ell)|
+=\frac{\pi}{N}\sqrt{|\Delta_{\rm p}|\Delta}+o(\sqrt\Delta)
+=\pi\sqrt{\Delta}+o(\sqrt\Delta).
+$$
+这里使用了 17.8B 的 $\Delta_{\rm p}=-N^2$；对本章所需的 $\ell=0$ sequence，
+maximal-polar component 到 residue $0$ 的 modular $S$ coupling 非零。上述 $o$ 项只在
+固定 $N$ 的意义下成立。
+
+若 $N$ 也随 charges 放大，固定-index 定理本身不给关于 $N$ 的一致误差界。本章只有
+在另加“leading coefficient 与 Rademacher 余项沿所选 charge sequence 一致受控”的
+uniform-saddle 假设，并取
+$$
+\frac{\Delta}{N^2}\longrightarrow\infty
+$$
+时，才使用同一 leading exponent。对 $\ell=0$，该条件正是
+$n/N\to\infty$。特别地，$n\sim N$ 的 simultaneous large-charge limit 不在本条
+已声明的 Cardy 区内，必须直接分析 17.8B 的 large-index generating function；
+EZ85/DMZ12 的 fixed-index 输入不承担该分析。
+
+**推论 17.8D（D1--D5--P 的 protected-index leading term）.** 在 17.8B--C 的
+K3、非旋转 $\ell=0$ 和 Cardy 区假设下，
+$$
+S_{\mathrm{index}}
+:=\log|\Omega_{Q_1Q_5}(n,0)|
 =2\pi\sqrt{Q_1Q_5n}
 +o\!\left(\sqrt{Q_1Q_5n}\right).
 $$
 
-**证明.** 把 $c=6Q_1Q_5$ 代入定理 17.8 的 leading term：
+**证明.** 把 $N=Q_1Q_5$、$\ell=0$ 代入 17.8C：
 $$
-2\pi\sqrt{\frac{(6Q_1Q_5)n}{6}}
+\pi\sqrt{4(Q_1Q_5)n}
 =2\pi\sqrt{Q_1Q_5n}.
 $$
-余项随同保留。这个有限代入没有证明 Cardy theorem，也没有证明 index cancellation
-不改变 leading exponent。$\square$
+余项随同保留。这里使用的是 K3 BPS index 的 Jacobi 渐近，不是把普通 Cardy 定理
+直接施加于固定右动基态。$\square$
+
+**边界 17.8E（index 与绝对 degeneracy）.** 令 $d_{\mathrm{BPS}}(N,n,\ell)$
+为同一右动基态扇区的绝对态数。逐项三角不等式只给出
+$$
+|\Omega_N(n,\ell)|\le d_{\mathrm{BPS}}(N,n,\ell).
+$$
+因此 17.8C 给出绝对 BPS entropy 的同指数下界，却不给 matching upper bound。
+只有另行验证或明确假设不存在指数级 boson/fermion cancellation，即
+$$
+\log d_{\mathrm{BPS}}-\log|\Omega_N|=o(\sqrt\Delta),
+$$
+才可把 17.8C--D 的 leading exponent 同时称为绝对 degeneracy 的 leading exponent。
+Modular/Jacobi covariance 与 BPS protection 单独都不推出这个条件。
 
 **外部输入定理 17.9（D1--D5--P supergravity area calculation）.** 对
 D1--D5--P 五维 supersymmetric black hole，在 charges 取大并使 horizon curvature
@@ -119,13 +224,14 @@ S_{\mathrm{BH}}
 =2\pi\sqrt{Q_1Q_5 n}
 +o\!\left(\sqrt{Q_1Q_5 n}\right).
 $$
-因此其 leading term 与推论 17.8A 的 microscopic growth 匹配。
+因此其 leading term 与推论 17.8D 的 protected-index growth 匹配。
 
 **使用边界.** 本书不推导相应 supergravity black-hole metric 的 horizon area。
 该匹配是受控参数区中的 leading asymptotic，不是有限 charges 上
-$S_{\mathrm{BH}}=\log d$ 的精确等式。跨越弱、强耦合还需选取受保护 index、排除
-wall crossing，并验证其 leading growth 不被符号 cancellation 改变；这些是
-Strominger--Vafa argument 的物理输入边界。
+$S_{\mathrm{BH}}=\log d$ 的精确等式。在 17.8C 的重叠 Cardy 区，几何 leading term
+与 17.8D 的 protected-index exponent 匹配；把它升级为绝对 degeneracy 的匹配还需
+17.8E 的非指数 cancellation 条件。跨越弱、强耦合还须保持同一 index、排除 wall
+crossing；这些是 Strominger--Vafa argument 的物理输入边界。
 
 ## 17.4 Attractor mechanism 的接口
 
@@ -175,6 +281,9 @@ Black brane entropy 是 string theory 非微扰结构的关键检验。D-brane �
 
 **练习 17.1.** 说明 BPS 条件为什么有助于跨耦合常数比较态数。
 
-**练习 17.2.** 用 Cardy formula 推导 D1-D5-P 系统的 leading entropy。
+**练习 17.2.** 取 17.8B 的 K3 D1--D5 elliptic genus 为外部输入，用 17.8C 的
+fixed-index Jacobi--Rademacher 渐近推导 $\ell=0$ BPS index 的 leading exponent；
+写出 Cardy 区，并说明何时可把该指数增长解释为绝对 BPS degeneracy 的 leading
+entropy。
 
 **练习 17.3.** 说明为什么 BPS index 可能在 wall of marginal stability 上跳变。

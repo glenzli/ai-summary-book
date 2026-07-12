@@ -210,10 +210,12 @@
 
 - Tom Bachmann, Marc Hoyois, "Norms in motivic homotopy theory", arXiv:1711.03061.
   - 用途：finite locally free/finite etale norm functors、normed motivic spectra、`H\mathbb Z`、`KGL`、`MGL` 的 normed structures。
-  - 精确定位：Proposition 3.13（unstable quotient compatibility）；
-    Proposition 4.5（finite-etale stable norm）；Definition 7.1（normed
-    spectrum）；Theorems 14.5、14.14、15.22、16.19（`H\mathbb Z`/Chow、
-    `KGL`、`MGL`）。
+  - 精确定位：Theorem 3.3 及其后的 localization（finite-locally-free
+    unstable norm）；Corollary 3.11（open-subpresheaf quotient）；Proposition
+    3.13（仅 finite etale、且相关 Weil restriction 存在时的
+    closed-complement quotient）；Proposition 4.5（finite-etale stable norm）；
+    Definition 7.1（normed spectrum）；Theorems 14.5、14.14、15.22、16.19
+    （`H\mathbb Z`/Chow、`KGL`、`MGL`）。
   - 稳定链接：`https://arxiv.org/abs/1711.03061`。
   - 定位状态：located；finite locally free/finite etale 层级分开，见
     batches 1, 3。

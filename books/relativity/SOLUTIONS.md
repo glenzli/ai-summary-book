@@ -71,9 +71,22 @@
 1. 见第三章：$L=-m\sqrt{1-v^2}$，$\partial L/\partial v^i=\gamma mv^i$。
 2. 对 $q\int A_\mu dx^\mu$ 变分，积分分部后得到 $q(\partial_\mu A_\nu-\partial_\nu A_\mu)u^\nu=qF_{\mu\nu}u^\nu$。
 3. 对标量场作用量分部积分，任意 $\delta\phi$ 的系数为 $(\Box-m^2)\phi$。
-4. 代入 Noether 公式：
-   $$T^\mu{}_\nu=-\partial^\mu\phi\,\partial_\nu\phi-\delta^\mu{}_\nu\mathcal L$$
-   按 Lagrangian 号差可等价调整整体写法，关键是与守恒律一致。
+4. 正文固定主动平移
+   $\delta_\epsilon\phi=-\epsilon^\nu\partial_\nu\phi$，故规范张量为
+   $$
+   \Theta^\mu{}_\nu
+   =-\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
+   \partial_\nu\phi+\delta^\mu{}_\nu\mathcal L
+   =\partial^\mu\phi\,\partial_\nu\phi
+   +\delta^\mu{}_\nu\mathcal L.
+   $$
+   最小耦合后的 Hilbert 张量为
+   $T_{\mu\nu}=\partial_\mu\phi\partial_\nu\phi+g_{\mu\nu}\mathcal L$；
+   在 $g=\eta$ 时升起第一个指标即有
+   $T^\mu{}_\nu=\Theta^\mu{}_\nu$，且
+   $$
+   T^{00}=\frac12\dot\phi^2+\frac12|\nabla\phi|^2+\frac12m^2\phi^2.
+   $$
 5. 规范变换改变作用量端点项 $q[\chi(B)-\chi(A)]$，端点固定时不改变 Euler-Lagrange 方程。
 
 ## 第六章
@@ -142,7 +155,16 @@
 
 1. Einstein 方程含约束分量，不包含二阶时间导数，限制初始切片上的 $\gamma_{ij},K_{ij}$。
 2. 真空时间对称 $K_{ij}=0$，约束化为 ${}^{(3)}R=0$。
-3. ADM 质量使用空间无穷远的渐近平直结构定义，对一般宇宙学时空没有该无穷远。
+3. $E_{\mathrm{ADM}}$ 与 $P_i$ 都是指定渐近平直端和渐近 Lorentz 系后
+   的边界积分；一般宇宙学时空没有这种空间无穷远。二者组成
+   $P_{\mathrm{ADM}}^\mu=(E_{\mathrm{ADM}},P^i)$，而在该四动量未来
+   非类空时
+   $$
+   m_{\mathrm{ADM}}
+   =\sqrt{E_{\mathrm{ADM}}^2-\delta^{ij}P_iP_j}
+   $$
+   才是 Lorentz 不变量。只有四动量类时时存在 $P_i'=0$ 的静止系，
+   并在该系中 $E_{\mathrm{ADM}}'=m_{\mathrm{ADM}}$。
 4. WEC 要求所有类时观察者测得能量密度非负；NEC 只要求所有类光方向收缩非负。
 5. 测地线不完备表示自由落体观察者或光线在有限仿射参数内无法延拓；曲率发散是常见但更强的现象。
 

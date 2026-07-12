@@ -25,7 +25,7 @@ Weinberg 的 phenomenological-Lagrangian 思想和 EFT-BURGESS 仍作为定义�
 | SMEFT-EOM-RG | 在上述线性维数六方案中扩大到 EOM operators；EOM 子空间在 operator RGE 下不变 | 外部输入 4.9B、命题 4.9A 的 SMEFT 实例 | SMEFT-JMT-I，Sec. 3、Eqs. (3.8)-(3.11) | $p=4$ 非线性 mixing、dimension eight、任意 gauge/renormalization scheme |
 | SMEFT-BROKEN | Warsaw conventions、$R_\xi$ gauges、给定输入与场重归一化 | 破缺相 Feynman-rule 外部边界 | SMEFT-BROKEN | 本书不把规则表当作 basis-independent 定义 |
 | SMEFT-D8 | SM field content 下的 dimension-eight 分类 | 第 12 章研究边界与 $p=4$ 遗漏项 | SMEFT-D8 | 本书不逐项重建全基、双插入 RGE 或全局拟合 |
-| SMEFT-MODERN | 各来源明确声明的 EFT/basis/flavor/scale/truncation 口径 | 第 19、22 章应用地图 | SMEFT-WORKFLOW、SMEFT-ATLAS、SMEFT-SNOWMASS | 任何随版本变化的数值拟合都须另给数据与访问日期 |
+| SMEFT-MODERN | 各来源明确声明的 EFT/basis/flavor/scale/truncation 口径 | 第 17、19、22 章报告标准与应用地图 | SMEFT-WORKFLOW、SMEFT-ATLAS、SMEFT-SNOWMASS | 任何随版本变化的数值拟合都须另给数据与访问日期；未知 $M_{\rm gap}$ 时 validity 只能条件化 |
 
 ## B.3 工具边界
 

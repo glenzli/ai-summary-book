@@ -32,7 +32,7 @@ labels/line neighborhoods，但不依赖临时解压路径。
 | BS-COMP-CRYS | crystalline comparison | `CrysComp`; Theorem 5.2 | line 1507 附近 | L3 |
 | BS-COMP-HT | Hodge-Tate comparison | `HTCompPrismatic`; Theorems 4.11, 6.3 | line 1687 附近 | L3 |
 | BS-COMP-DR | general de Rham comparison | `generaldeRham`; Corollary 15.4 | line 3292 附近 | L3 |
-| BS-COMP-ETALE | finite-level etale comparison | `EtaleCompThm`; Theorem 9.1 | line 2187 附近 | L3 |
+| BS-COMP-ETALE | finite-level etale comparison；任意 $X$ 为 sheaf-level，global formula 为 affine corollary | `EtaleCompThm`; Theorem 9.1 | line 2187 附近 | L3 |
 | BS-COMP-BC | bounded prism base change | `BaseChangePrismCoh`; Corollary 4.12 | line 1374 附近 | L3 |
 | BS-COMP-PHI | Frobenius image/isogeny | `ImageofPhi`; Corollary 15.5 | line 3303 附近 | L3 |
 | BS-COMP-AINF | $A_{\inf}$-cohomology equals Frobenius pullback of prismatic cohomology | Theorem 17.2 and global descent | §17 | L3 |

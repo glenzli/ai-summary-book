@@ -12,7 +12,7 @@ $$
 
 需要第十一章的对偶群和根资料，第十八章的 affine Grassmannian 与 Schubert varieties。需要 perverse sheaves、intersection cohomology、卷积、Tannakian category 和 equivariant derived category 的基础。本章把几何 Satake 等价作为外部输入定理，只证明若干形式后果。附录 Y 给出 Ran space、Beilinson-Drinfeld Grassmannian、factorization 和 fusion 对本章张量结构的技术支撑。
 
-收口归一化回指：本章比较几何 Satake 与经典 Satake 时必须追踪 $q^{\langle\rho,\lambda\rangle}$、Tate twist 和 sheaf-function convention；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、9 节。
+收口归一化回指：本章比较几何 Satake 与经典 Satake 时必须分开追踪 IC half-Tate trace 的 $q^{-\langle\rho,\lambda\rangle}$、cohomological parity 与经典 Satake transform 的 $q^{\langle\rho,\lambda\rangle}$；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、9 节。
 
 ## 19.1 Affine Grassmannian 的 Schubert 分层
 
@@ -100,7 +100,12 @@ $$
 \mathsf H^\bullet(\mathcal F)=H^\bullet(\operatorname{Gr}_G,\mathcal F).
 $$
 
-**外部输入定理 19.10（Tannakian 性）.** 范畴 $\operatorname{Sat}_G$ 配备卷积、由 Beilinson-Drinfeld fusion 给出并含标准 parity/sign correction 的 commutativity constraint，以及全上同调纤维函子后，是 neutral Tannakian category。只用单点 convolution 得到的是 monoidal structure；对称约束及其 parity 修正需要 fusion，不能形式省略，否则可能得到带错误 Koszul 符号的 super 对称结构。
+**外部输入定理 19.10（Tannakian 性）.** 范畴 $\operatorname{Sat}_G$ 配备卷积、由 Beilinson-Drinfeld fusion 给出并含标准 parity/sign correction 的 commutativity constraint，以及全上同调纤维函子后，是 neutral Tannakian category。对 $\lambda\in X_*(T)^+$，令
+$$
+d_\lambda:=\dim\operatorname{Gr}_G^\lambda
+=\langle2\rho,\lambda\rangle.
+$$
+相应 parity 是 $d_\lambda\bmod2$。只用单点 convolution 得到的是 monoidal structure；对称约束及其 parity 修正需要 fusion，不能形式省略，否则可能得到带错误 Koszul 符号的 super 对称结构。
 
 ## 19.4 几何 Satake 定理
 
@@ -162,11 +167,32 @@ $G_0(\mathbb F_q[[t]])$-双不变的紧支撑函数
 $$
 G_0(\mathbb F_q((t)))\longrightarrow E.
 $$
-选择 $q^{1/2}\in E$ 并作 IC half-Tate normalization 后，Grothendieck ring 的 convolution 同构恢复
-$\delta_B^{1/2}$-normalized classical Satake isomorphism。
+令 $j_\lambda:\operatorname{Gr}_G^\lambda\hookrightarrow
+\overline{\operatorname{Gr}}_G^\lambda$ 且
+$d_\lambda=\langle2\rho,\lambda\rangle$。选择 $q^{1/2}\in E$ 后，权零 IC normalization 为
+$$
+\operatorname{IC}_\lambda^0
+:=j_{\lambda,!*}E[d_\lambda](d_\lambda/2).
+$$
+在开 Schubert cell 上，本书的几何 Frobenius trace convention 给出
+$$
+t_{\operatorname{IC}_\lambda^0}(t^\lambda)
+=(-1)^{d_\lambda}q^{-d_\lambda/2}
+=(-1)^{d_\lambda}q^{-\langle\rho,\lambda\rangle}.
+$$
+因此用于普通对称 Satake 范畴的 parity-corrected trace 函数
+$$
+f_\lambda:=(-1)^{d_\lambda}t_{\operatorname{IC}_\lambda^0}
+$$
+的 leading term 是 $q^{-\langle\rho,\lambda\rangle}T_\lambda$。在这个归一化下，Grothendieck ring 的 convolution 同构恢复附录 P 的 normalized classical Satake isomorphism。
 
-**证明路线（外部输入）.** Grothendieck sheaf-function dictionary 把 convolution 送到函数卷积。几何 Satake 把 Grothendieck ring 识别为 $\operatorname{Rep}(\widehat G_E)$；IC shift 与 half-Tate twist 产生
-$q^{\langle\rho,\lambda\rangle}$，与附录 P 的 normalized Satake basis 对齐。Purity、decomposition theorem 和 sheaf-function compatibility 均为外部输入，本段不承担证明。
+**证明路线（外部输入）.** Grothendieck sheaf-function dictionary 把 convolution 送到函数卷积。Shift $[d_\lambda]$ 在交错迹中产生 $(-1)^{d_\lambda}$，half-Tate twist $(d_\lambda/2)$ 对几何 Frobenius 产生 $q^{-d_\lambda/2}$；两者都不能改写为正次幂。另一方面，附录 P 的经典 Satake transform 满足
+$$
+\mathcal S(T_\lambda)
+=q^{\langle\rho,\lambda\rangle}e^\lambda+
+\text{lower terms}.
+$$
+故 $f_\lambda$ 的负次幂与 $\mathcal S(T_\lambda)$ 的正次幂相消，leading term 为 $e^\lambda$，与 $\widehat G_E$-表示的 character basis 对齐。Purity、decomposition theorem 和 sheaf-function compatibility 均为外部输入，本段不承担证明。
 
 **注 19.17.** 代数闭域上的裸 sheaf 没有 Frobenius trace；必须先有有限域下降和 Weil structure。几何 Satake 因而在上述附加数据下范畴化经典 Satake，而不是无条件把任意 sheaf 变成函数。
 

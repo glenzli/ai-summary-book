@@ -96,7 +96,7 @@ $$
 \mathcal F_{\mathcal E}\boxtimes V_{\mathcal E}.
 $$
 
-**注 20.8.** 猜想 20.7 是朴素形式。完整几何 Langlands 不是简单地给每个 local system 一个 sheaf；在第二十一章的特征零 de Rham 口径下，它是 spectral side 上 $\operatorname{IndCoh}_{\mathcal N}$ 与 automorphic side 上 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ 的范畴等价。来源构造的 $\mathbb L_G$ 方向为 automorphic $\to$ spectral，所以 Hecke eigensheaf 是 spectral skyscraper 或 residual-gerbe 点对象在 $\mathbb L_G^{-1}$ 下的像。
+**注 20.8.** 猜想 20.7 是朴素形式。完整几何 Langlands 不是简单地给每个 local system 一个 sheaf；在第二十一章的特征零 de Rham 口径下，主等价的两端是 spectral side 上 $\operatorname{IndCoh}_{\mathcal N}$ 与 automorphic side 上的普通 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，不是其带下标 $\operatorname{ren}$ 的 companion。来源构造的 $\mathbb L_G$ 方向为 automorphic $\to$ spectral，所以 Hecke eigensheaf 是 spectral skyscraper 或 residual-gerbe 点对象在 $\mathbb L_G^{-1}$ 下的像。
 
 **注 20.8.1.** 本章的 Hecke functor 应理解为 correspondence kernel functor。若
 $$

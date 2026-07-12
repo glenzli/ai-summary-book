@@ -1,6 +1,6 @@
 # 附录 AC：Fargues-Fontaine 曲线、Diamonds、Local Shtukas 和几何局部 Langlands
 
-**收口归一化回指。** 本附录涉及 Weil group、Frobenius、局部 shtukas、cohomological shifts 和局部 Langlands 参数；与 Galois/Satake/几何归一化比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 1、4、5、7、9 节。
+**收口归一化回指。** 本附录涉及 Weil group、Frobenius、局部 shtukas、cohomological shifts 和局部 Langlands 参数；与 Galois/Satake/几何归一化比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 1、2、4、5、7、9 节。
 
 ## AC.1 Perfectoid fields and diamonds
 
@@ -68,13 +68,34 @@ $$
 $$
 (G,b,\mu)
 $$
-其中 $b\in B(G)$，$\mu$ 为 conjugacy class of cocharacters，满足 acceptability conditions。
+其中：
 
-**外部输入定理 AC.11（local Shimura varieties as diamonds）.** 对 local Shimura datum $(G,b,\mu)$，存在 diamond
+1. $G/F$ 是 connected reductive group；
+2. $\mu$ 是 $G(\overline F)$-共轭类 of minuscule cocharacters $\mathbb G_m\to G_{\overline F}$，即对任一代表及任一 root $\alpha$ 有 $\langle\alpha,\mu\rangle\in\{-1,0,1\}$；
+3. $b$ 表示 Kottwitz 集合的 acceptable 子集中的一个 $\sigma$-共轭类
+   $$
+   b\in B(G,\mu)\subset B(G).
+   $$
+
+记 $E_\mu/F$ 为 $\mu$ 的 reflex field，即该共轭类的定义域；记 $\breve E_\mu$ 为其最大非分歧扩张的完备化。本附录把 $B(G,\mu)$ 的正负号固定为：相应的 $\mu$-有界修改方向是
+$$
+\mathcal E_b\dashrightarrow\mathcal E_1.
+$$
+若来源取反向修改，其 $B(G,\mu^{-1})$ 口径必须同时把 $\mu$ 取逆后才能与本书比较。
+
+**外部输入定理 AC.11（local Shimura varieties as diamonds）.** 对定义 AC.10 的 local Shimura datum $(G,b,\mu)$，存在定义在 $\operatorname{Spd}\breve E_\mu$ 上的 infinite-level diamond
 $$
 \operatorname{Sht}_{G,b,\mu}
 $$
-参数化相对 Fargues-Fontaine 曲线的 untilt divisor 处从 $\mathcal E_1$ 到 $\mathcal E_b$、相对位置由 $\mu$ 控制的 modifications；拉回任一 AC.4 型完备代数闭几何点后，$\mathcal E_b$ 由 AC.7 的 $b$ 唯一确定到同构。该 diamond 带有 $G(F)$ 与 $J_b(F)$ 的作用，并有 Weil group action。
+参数化相对 Fargues-Fontaine 曲线的 untilt divisor 处从
+$$
+\mathcal E_b\dashrightarrow\mathcal E_1
+$$
+的 modifications，其相对位置由 $\mu$ 控制；拉回任一 AC.4 型完备代数闭几何点后，$\mathcal E_b$ 由 AC.7 的 $b$ 唯一确定到同构。该 diamond 带有交换的 $G(F)$ 与 $J_b(F)$ 作用，并带相对 $E_\mu$ 的 Weil descent datum；拉回到完备代数闭扩张后，该 descent datum 在几何对象及其上同调上给出
+$$
+W_{E_\mu}
+$$
+的作用，而不是未加限定的 $W_F$ 作用。
 
 **命题 AC.12.** Rapoport-Zink spaces 是 local Shimura varieties 的特殊情形。
 
@@ -82,15 +103,19 @@ $$
 
 ## AC.5 Cohomology and local Langlands
 
-**外部输入定理 AC.13（cohomology actions on local Shimura varieties）.** 取辅助素数 $\ell\ne p$。Compactly supported $\ell$-adic etale cohomology
+**外部输入定理 AC.13（cohomology actions on local Shimura varieties）.** 取辅助素数 $\ell\ne p$，并取含 $\breve E_\mu$ 的完备代数闭扩张 $C$。几何纤维的 compactly supported $\ell$-adic etale cohomology
 $$
-R\Gamma_c(\operatorname{Sht}_{G,b,\mu},\mathcal L_\xi)
+R\Gamma_c(\operatorname{Sht}_{G,b,\mu,C},\mathcal L_\xi)
 $$
-携带 commuting $G(F)\times J_b(F)\times W_F$ actions。在 EL/PEL 与若干 local Shimura data 中，其表示分解与已知 local Langlands/Jacquet-Langlands correspondences 有定理性相容；对一般 $G,b,\mu$ 的完整 packet realization 仍是研究问题。
+携带 commuting
+$$
+G(F)\times J_b(F)\times W_{E_\mu}
+$$
+actions。在 EL/PEL 与若干 local Shimura data 中，其表示分解与已知 local Langlands/Jacquet-Langlands correspondences 有定理性相容；对一般 $G,b,\mu$ 的完整 packet realization 仍是研究问题。
 
 **命题 AC.14.** 定理 AC.13 的 cohomology object 同时携带表示侧和 Weil 侧的作用；这只推出可定义 joint isotypic data，不单独推出完整 LLC。
 
-**证明.** 定理 AC.11 给出 $G(F)$ 和 $J_b(F)$ 的几何作用，Weil descent datum 给出 $W_F$ 作用；函子性使三者在 cohomology 上交换。因此可对一个群的 isotypic component 保留另两个群的作用。把这些作用进一步识别为 expected packets 或完整参数需要 AC.13 所列的额外外部定理，不能由“同时作用”这一形式事实推出。$\square$
+**证明.** 定理 AC.11 给出 $G(F)$ 和 $J_b(F)$ 的几何作用，相对 reflex field $E_\mu$ 的 Weil descent datum 给出 $W_{E_\mu}$ 作用；函子性使三者在 cohomology 上交换。因此可对一个群的 isotypic component 保留另两个群的作用。把这些作用进一步识别为 expected packets 或完整参数需要 AC.13 所列的额外外部定理，不能由“同时作用”这一形式事实推出。$\square$
 
 ## AC.6 Fargues-Scholze geometrization
 
@@ -128,7 +153,7 @@ $\varphi_\pi^{\mathrm{ss}}$ 的非分歧 Frobenius 类与归一化 spherical Sat
 
 **练习 AC.2.** 在 AC.4 的完备代数闭设定下，解释 $B(G)$ 与 $G$-bundles 同构类的关系，并说明一般 perfectoid 基底为何还需要 descent 数据。
 
-**练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_F$ 作用。
+**练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_{E_\mu}$ 作用，并解释 $E_\mu$ 为什么由 $\mu$ 而不是由 $b$ 定义。
 
 **练习 AC.4.** 解释 Fargues-Scholze 结果为什么主要给出 semisimple 参数化。
 

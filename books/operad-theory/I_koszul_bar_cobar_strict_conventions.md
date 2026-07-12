@@ -44,6 +44,13 @@ Reduced 语境中，twisting morphism 总是指在单位与余单位上为零的
 $$
 \overline{\mathcal C}\to\overline{\mathcal P}.
 $$
+单位/增广与 coaugmentation/余单位分别给出分裂
+$$
+\mathcal P\cong I_k\oplus\overline{\mathcal P},
+\qquad
+\mathcal C\cong I_k\oplus\overline{\mathcal C}.
+$$
+本附录使用定义 9.11 由这些分裂得到的 $\Delta_{(1)}$ 和 $\overline\Delta_{(1)}$。
 
 **警告 I.3.** 第六章含单位的 $\operatorname{Ass}$、$\operatorname{Com}$ 与第八章 reduced 二次理论中的 $\operatorname{Ass}$、$\operatorname{Com}$ 不是同一个对象。Bar-cobar 和 Koszul 对偶默认处理 augmented/reduced 部分；含 arity $0$ 单位的非齐次关系需要额外 curved 或 unital 理论。
 
@@ -132,8 +139,19 @@ $$
 $$
 其 pre-Lie product 为
 $$
-f\star g=\gamma_{(1)}(f\circ_{(1)}g)\Delta_{(1)}.
+f\star g
+=
+\pi_{\mathcal P}\gamma_{(1)}
+(\widetilde f\circ_{(1)}\widetilde g)
+\Delta_{(1)}\iota_{\mathcal C},
 $$
+其中 $\widetilde f=\iota_{\mathcal P}f\pi_{\mathcal C}$、$\widetilde g=\iota_{\mathcal P}g\pi_{\mathcal C}$ 是在 coaugmentation 因子上取零的延拓。等价地，可把中间的 $\Delta_{(1)}$ 换成
+$$
+\overline\Delta_{(1)}:
+\overline{\mathcal C}\to
+\overline{\mathcal C}\circ_{(1)}\overline{\mathcal C}
+$$
+并省略显式包含与投影。这样公式的定义域和值域均为 $\operatorname{Hom}_{\mathbb S}(\overline{\mathcal C},\overline{\mathcal P})$。
 Bracket 定义为
 $$
 [f,g]=f\star g-(-1)^{|f||g|}g\star f.

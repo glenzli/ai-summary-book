@@ -14,13 +14,13 @@
 - Serge Lang, *Algebraic Number Theory*, Springer.
 - Jurgen Neukirch, *Algebraic Number Theory*, Springer.
 - J. S. Milne, *Class Field Theory*, online notes. 用于类域论陈述和 Artin reciprocity 归一化。
-- Andre Weil, *Basic Number Theory*, Springer, especially Chapter IV. 用于 adeles、ideles、$C_K^1$ 紧性、Hecke quasi-character 的 unitary twist 分解和 Tate thesis 背景；函数域中 degree/norm 的离散像必须单独保留。
+- Andre Weil, *Basic Number Theory*, Springer, especially Chapter IV. 用于 adeles、ideles、$C_K^1$ 紧性、Hecke quasi-character 的 unitary twist 分解和 Tate thesis 背景；也用于核对 $\mathbb Q$ 上 Dirichlet character 的 idelic 分解、无穷符号分量与 Euler convention。函数域中 degree/norm 的离散像必须单独保留。
 - John Tate, class field theory articles in Cassels-Frohlich. 用于 class formations、Tate cohomology 和 reciprocity maps。
 - John Tate, *Number Theoretic Background*, in *Automorphic Forms, Representations and L-functions*, Proc. Symp. Pure Math. 33, Part 2, AMS, 1979, pp. 3-26. 用于局部/全局 Weil 群和类域论归一化接口。
 
 ## Tate thesis 与 `GL(1)`
 
-- John Tate, *Fourier Analysis in Number Fields and Hecke's Zeta-Functions*, thesis, 1950; reprinted in Cassels-Frohlich.
+- John Tate, *Fourier Analysis in Number Fields and Hecke's Zeta-Functions*, thesis, 1950; reprinted in Cassels-Frohlich. 用于 Hecke character 的 idelic 定义和局部 Euler factors；练习 2.2/V.3 的 convention 特别固定 finite-unit restriction $\widehat\chi^{-1}$、由 $\chi(-1)$ 决定的无穷分量，以及 $\omega_{\chi,p}(p)=\chi(p)$。
 - Dinakar Ramakrishnan and Robert J. Valenza, *Fourier Analysis on Number Fields*, Springer.
 - Pierre Deligne, *Les constantes des equations fonctionnelles des fonctions L*, in *Modular Functions of One Variable II*, Lecture Notes in Mathematics 349, Springer, 1973, pp. 501-597. 用于 Weil-Deligne 表示、局部常数和加法特征/测度依赖。
 
@@ -67,7 +67,7 @@
 
 ## 局部 Langlands 和表示论
 
-- Colin J. Bushnell and Guy Henniart, *The Local Langlands Conjecture for GL(2)*, Springer.
+- Colin J. Bushnell and Guy Henniart, *The Local Langlands Conjecture for GL(2)*, Springer. 用于附录 AE 的 normalized principal series、Steinberg special parameter、supercuspidal 不可约 Weil 参数和标准局部因子；与本书 $|\operatorname{Fr}_F|=q^{-1}$ 合用时，非分歧 Steinberg twist 给出 $q^{-s-1/2}$。
 - Michael Harris and Richard Taylor, *The Geometry and Cohomology of Some Simple Shimura Varieties*, Princeton University Press.
 - Guy Henniart, works on local Langlands for `GL(n)`.
 - Guy Henniart, *Une preuve simple des conjectures de Langlands pour GL(n) sur un corps p-adique*, Inventiones Mathematicae. 用于 `GL(n)` 局部 Langlands 的定理性依据。
@@ -134,11 +134,11 @@
 
 - Edward Frenkel, *Langlands Correspondence for Loop Groups*, Cambridge University Press.
 - Edward Frenkel and Dennis Gaitsgory, works and surveys on geometric Langlands. 用于 Hecke eigensheaves 和几何 Langlands 基本形式。
-- Ivan Mirkovic and Kari Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, Annals of Mathematics 166 (2007), pp. 95-143. 用于几何 Satake；有限域函数迹比较还需另行固定 Weil structure、几何 Frobenius 和半 Tate twist。
+- Ivan Mirkovic and Kari Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, Annals of Mathematics 166 (2007), pp. 95-143; arXiv:math/0401222v5. 用于几何 Satake；`GSAT-1` 定位为主等价 (1.1) 和 Theorem 12.1，承担 Tannaka 群的还原性与 dual root datum identification；§§5--6 定位 fusion 与 parity modification。有限域函数迹比较还需固定 Weil structure、几何 Frobenius 和半 Tate twist；权零 IC 的开胞腔 trace 按本书约定为 $(-1)^{d_\lambda}q^{-d_\lambda/2}$。
 - Victor Ginzburg, works on perverse sheaves on affine Grassmannian and Langlands duality. 用于几何 Satake 背景。
 - Alexander Beilinson and Vladimir Drinfeld, works on geometric Langlands and chiral algebras.
 - Alexander Beilinson and Vladimir Drinfeld, works on Beilinson-Drinfeld Grassmannians and factorization. 用于 BD Grassmannian、fusion 和 Hecke factorization。
-- Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture I: construction of the functor*, arXiv:2405.03599；D. Arinkin et al., *Proof of the geometric Langlands conjecture II: Kac-Moody localization and the FLE*, arXiv:2405.03648；Justin Campbell et al., *Proof of the geometric Langlands conjecture III: compatibility with parabolic induction*, arXiv:2409.07051；D. Arinkin et al., *Proof of the geometric Langlands conjecture IV: ambidexterity*, arXiv:2409.08670；Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture V: the multiplicity one theorem*, arXiv:2409.09856. 作为第二十一章和附录 O 的特征零外部 preprint theorem 来源。Paper I §0.1.1--0.1.2、§1.1 明确把自动侧定义为 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，并构造 automorphic $\to$ spectral 的 $\mathbb L_G$；从谱侧返回自动侧时使用证明所得逆等价 $\mathbb L_G^{-1}$。调用整个系列时保留其 half-twist、renormalized 和 derived category conventions。
+- Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture I: construction of the functor*, arXiv:2405.03599；D. Arinkin et al., *Proof of the geometric Langlands conjecture II: Kac-Moody localization and the FLE*, arXiv:2405.03648；Justin Campbell et al., *Proof of the geometric Langlands conjecture III: compatibility with parabolic induction*, arXiv:2409.07051；D. Arinkin et al., *Proof of the geometric Langlands conjecture IV: ambidexterity*, arXiv:2409.08670；Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture V: the multiplicity one theorem*, arXiv:2409.09856. 作为第二十一章和附录 O 的特征零外部 preprint theorem 来源。Paper I §0.1.1--0.1.2、§1.1 明确把自动侧定义为普通 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，并构造 automorphic $\to$ $\operatorname{IndCoh}_{\mathcal N}$ 的 $\mathbb L_G$；从谱侧返回自动侧时使用证明所得逆等价 $\mathbb L_G^{-1}$。Paper I §1.6 另行定义 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}$、$\operatorname{ren}\dashv\operatorname{un\text{-}ren}$ 及指向全部 $\operatorname{IndCoh}$ 的 $\mathbb L_{G,\operatorname{ren}}$；这个 companion 不取代主定理的普通自动端。
 - Dennis Gaitsgory and Sam Raskin, *Geometric Langlands in positive characteristic from characteristic zero*, arXiv:2508.02237. 只用于正特征 $\ell$-adic 情形中 automorphic nilpotent category 与参数栈某些连通分支之并上的 $\operatorname{IndCoh}$ 范畴之部分 preprint theorem，不作为 unrestricted 正特征等价引用。
 - Masaki Kashiwara, works on D-modules and Riemann-Hilbert correspondence. 用于 D-modules、constructible sheaves 和正则 holonomic 口径。
 - Ryoshi Hotta, Kiyoshi Takeuchi, and Toshiyuki Tanisaki, *D-Modules, Perverse Sheaves, and Representation Theory*. 用于 D-module 六运算、Riemann-Hilbert 和表示论接口。
@@ -149,8 +149,9 @@
 - Peter Scholze, works on perfectoid spaces and diamonds. 用于 diamonds、pro-etale geometry 和 local Shimura varieties。
 - Laurent Fargues and Jean-Marc Fontaine, *Courbes et fibrés vectoriels en théorie de Hodge $p$-adique*, Astérisque 406 (2018), especially Théorème 8.2.10. 用于完备代数闭 perfectoid field 上 FF 曲线的 vector bundle 分类；一般基底只经相对曲线和 descent 使用。
 - Laurent Fargues, *G-torseurs en théorie de Hodge $p$-adique*, Compositio Mathematica 156 (2020), no. 10, pp. 2076--2110. 用于完备代数闭 perfectoid field 上 $G$-bundles 与 $B(G)$ 的分类。
-- Peter Scholze and Jared Weinstein, works on local Shimura varieties and moduli of p-divisible groups. 用于 local shtuka diamonds。
-- Laurent Fargues and Peter Scholze, *Geometrization of the local Langlands correspondence*, arXiv:2102.13459v4 (accepted version), especially Theorem II.2.14、Theorem III.2.2、I.9、IX.4、IX.6 and X. II.2.14 与 III.2.2 分别用于完备代数闭非 Archimedean 几何点上的 vector bundles 和 $G$-bundles 同构类分类；相对 $\operatorname{Bun}_G$ 只按 v-stack/descent 口径使用。后四处用于 spectral action 和 semisimple LLC map；该来源不给出正文未声明的 monodromy operator 或完整 enhanced packet 分类。
+- Peter Scholze and Jared Weinstein, *Berkeley Lectures on $p$-adic Geometry*, Annals of Mathematics Studies 207, Princeton University Press, 2020, especially Lectures 23--24. 用于 local shtuka diamonds、local Shimura varieties 及 Weil descent。Lecture 24 采用的 $B(G,\mu^{-1})$/relative-position convention 与本书比较时必须同时反转 $\mu$ 和 modification 方向。
+- Michael Rapoport and Eva Viehmann, *Towards a theory of local Shimura varieties*, Münster Journal of Mathematics 7 (2014), pp. 273--326, especially Definition 5.1. 用于 local Shimura datum 的 minuscule 条件、acceptable Kottwitz 类和 reflex field。
+- Laurent Fargues and Peter Scholze, *Geometrization of the local Langlands correspondence*, arXiv:2102.13459v4 (accepted version), especially Theorem II.2.14、Theorem III.2.2、I.9、IX.3、IX.4、IX.6 and X. II.2.14 与 III.2.2 分别用于完备代数闭非 Archimedean 几何点上的 vector bundles 和 $G$-bundles 同构类分类；相对 $\operatorname{Bun}_G$ 只按 v-stack/descent 口径使用。IX.3 用于核对 $b\in B(G,\mu)$、reflex field $E_\mu$ 与 $W_{E_\mu}$ 作用；后三处用于 spectral action 和 semisimple LLC map。该来源不给出正文未声明的 monodromy operator 或完整 enhanced packet 分类。
 - Vladimir Drinfeld, works on shtukas and `GL(2)` function field Langlands.
 - Laurent Lafforgue, works on shtukas and `GL(n)` function field Langlands.
 - Vincent Lafforgue, works on excursion operators and the global Langlands parameterization over function fields. 用于一般还原群的函数域参数化接口。

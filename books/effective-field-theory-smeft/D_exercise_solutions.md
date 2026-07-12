@@ -95,7 +95,10 @@ $$
 
 ## 第 8 章
 
-**8.1.** 缺少尺度和能区时不能判断 $E/\Lambda$ 展开是否可信。
+**8.1.** $c_i=C_i/\Lambda_{\rm ref}^2$ 的限制只固定低能有量纲系数组合；例如树级
+matching 可能给 $c_i\sim g_*^2/M^2$，不另给 $g_*$ 就不能反推出 $M$。还须报告
+条件化的物理谱隙 $M_{\rm gap}$、数据硬尺度 $Q$ 与 $Q/M_{\rm gap}$ cut。
+$\Lambda_{\rm ref}$ 只是 Wilson 坐标归一化，不能替代这个物理质量信息。
 
 **8.2.** 对二维 Gaussian likelihood，协方差矩阵的本征向量给出误差椭圆主轴。
 
@@ -143,7 +146,53 @@ $$
 
 ## 第 12 章
 
-**12.1.** 直接展开并保留到 $\Lambda^{-4}$，得到 $|A_6|^2+2\mathrm{Re}(A_{\mathrm{SM}}A_8^\ast)$。
+**12.1.** 在题设的固定 sesquilinear form 下，按正文的总逆尺度次数 $p$ 展开：
+$$
+\begin{aligned}
+\langle A,A\rangle_0
+&=\langle A_0,A_0\rangle_0
++{2\over\Lambda_{\rm ref}^2}\operatorname{Re}\langle A_0,A_2\rangle_0\\
+&\quad+{1\over\Lambda_{\rm ref}^4}
+\left[
+\langle A_2,A_2\rangle_0
++2\operatorname{Re}\langle A_0,A_4\rangle_0
+\right]
++O(\Lambda_{\rm ref}^{-6}).
+\end{aligned}
+$$
+这里下标 $2,4$ 是 $p$-grading，不是单个算符的 canonical dimension。只列高维
+顶点插入部分，$p=\sum_v n_v(d_v-4)$ 给出
+$$
+\begin{aligned}
+A_2^{\rm ins}
+&=A_2^{[6]}+A_2^{[5,5]},\\
+A_4^{\rm ins}
+&=A_4^{[8]}+A_4^{[6,6]}+A_4^{[5,7]}
++A_4^{[5,5,6]}+A_4^{[5,5,5,5]}.
+\end{aligned}
+$$
+因此插入部分对 $p=4$ 可观测量系数的贡献完整展开为
+$$
+\begin{aligned}
+\langle A_2^{\rm ins},A_2^{\rm ins}\rangle_0
+&=\langle A_2^{[6]},A_2^{[6]}\rangle_0
++2\operatorname{Re}\langle A_2^{[6]},A_2^{[5,5]}\rangle_0
++\langle A_2^{[5,5]},A_2^{[5,5]}\rangle_0,\\
+2\operatorname{Re}\langle A_0,A_4^{\rm ins}\rangle_0
+&=2\operatorname{Re}\left\langle A_0,
+A_4^{[8]}+A_4^{[6,6]}+A_4^{[5,7]}
++A_4^{[5,5,6]}+A_4^{[5,5,5,5]}\right\rangle_0.
+\end{aligned}
+$$
+若 exact lepton number 或其他选择定则禁止 dimension-five/seven vertices，才可删除
+相应项；输入参数重展开还可对 $A_2,A_4$ 增加同阶项。所谓 dimension-six square 是
+$$
+\langle A_2^{[6]},A_2^{[6]}\rangle_0,
+$$
+它来自一次 dimension-six 插入振幅的平方。两次 dimension-six 插入振幅则是
+$A_4^{[6,6]}$，属于振幅本身，并通过
+$2\operatorname{Re}\langle A_0,A_4^{[6,6]}\rangle_0$ 与 SM 干涉；二者不是同一个
+对象。$\square$
 
 **12.2.** 粗略要求 $C s/(16\pi\Lambda^2)\lesssim 1$，具体系数依 partial wave 归一化。
 
@@ -183,11 +232,21 @@ $$
 
 ## 第 17 章
 
-**17.1.** 表格至少含基、尺度、flavor、CP、输入方案、截断、平方项、能区、误差。
+**17.1.** 表格至少含 EFT、基、$\Lambda_{\rm ref}$、Wilson 定义尺度 $\mu$、flavor、
+CP、输入方案、截断、平方项、数据硬尺度 $Q$、条件化的 $M_{\rm gap}$、协方差与
+误差。有效性栏应报告 $Q_{\max}/M_{\rm gap}$；插入层级另报
+$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$，不能把两栏合成
+$Q/\Lambda_{\rm ref}$。
 
-**17.2.** 常见隐含假设包括只开一个系数、固定 flavor、忽略 RG、线性截断和固定输入方案。
+**17.2.** 常见隐含假设包括只开一个系数、固定 flavor、忽略 RG、线性截断和固定
+输入方案；还应检查图是否把任意 Wilson normalization $\Lambda_{\rm ref}$ 当成物理
+阈值。只有在 UV matching 中先声明单一物理重尺度 $M$、验证 $M_{\rm gap}=M$，
+才可再选择 $\Lambda_{\rm ref}=M$；这是模型假设加坐标选择，不是一般 validity
+判据。
 
-**17.3.** 模板应至少含 EFT、基、Wilson 尺度、flavor、CP、输入方案、截断、数据、协方差、有效性切割、工具版本和输出格式。
+**17.3.** 模板应至少含 EFT、基、$\Lambda_{\rm ref}$、$\mu_{\rm match}$、$\mu_{\rm obs}$、
+条件化的 $M_{\rm gap}$、flavor、CP、输入方案、截断、数据、协方差、基于
+$Q/M_{\rm gap}$ 的有效性切割、Wilson 插入层级、工具版本和输出格式。
 
 ## 第 18 章
 
@@ -209,7 +268,10 @@ $$
 
 **19.1.** 需要报告生产模式、衰变道、输入方案、相关 Wilson 系数、定义尺度、是否保留平方项、SM 高阶修正和实验协方差。
 
-**19.2.** 高 $p_T$ bin 中 partonic energy 可能接近 $\Lambda$，此时 $E/\Lambda$ 展开失控；不报告有效性切割就无法判断 EFT 截断是否可信。
+**19.2.** 高 $p_T$ dilepton bin 的硬尺度 $Q$ 可能接近最近遗漏物理奇点
+$M_{\rm gap}$；此时局域展开不受控。因此必须报告 $Q$ 的构造、条件化的
+$M_{\rm gap}$ 与逐 bin 的 $Q/M_{\rm gap}$ cut。Wilson 插入大小
+$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 是另一项检查。
 
 **19.3.** 例如 $b\to s\ell^+\ell^-$：高尺度使用 SMEFT，在电弱尺度匹配到 LEFT/WET，再运行到 $b$ 物理尺度并使用 hadronic matrix elements。
 
@@ -250,11 +312,20 @@ $$
 
 **22.1.** $h\to\gamma\gamma$ 同时受 $hF_{\mu\nu}F^{\mu\nu}$ contact、SM loop 归一化、top/W coupling shift、输入方案和总宽度影响，因此不是单系数观测量。
 
-**22.2.** 至少报告 bin 能区、partonic energy proxy、是否剔除 $E>\Lambda$ 区域、是否保留维数六平方项、以及维数八误差估计。
+**22.2.** 至少报告 bin 能区、构造 $Q$ 的 partonic proxy、条件化的
+$M_{\rm gap}$、逐 bin 的 $Q/M_{\rm gap}$ 及 cut、$\Lambda_{\rm ref}$ 与 Wilson 定义
+尺度 $\mu$。另报 $|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 的插入层级、是否保留
+维数六平方项及维数八误差估计；$Q/\Lambda_{\rm ref}$ 单独不是有效性判据。
 
 **22.3.** Flavor 观测量通常在低于电弱尺度测量；$W,Z,h,t$ 已被积掉。若不做 SMEFT 到 LEFT/WET 匹配，高尺度 Wilson 系数无法与低能 hadronic matrix elements 相连。
 
-**22.4.** Contact 振幅随 $s/\Lambda^2$ 增大，因此高 $s$ 提升灵敏度；同一个增长也使 $s/\Lambda^2$ 展开接近失控，因此有效性风险同步增加。
+**22.4.** Contact insertion 随
+$|C_{\ell q}^{(6)}(\mu)|s/\Lambda_{\rm ref}^2$ 增大，所以高 $s$ 提升 Wilson
+灵敏度；局域展开是否接近边界则由 $\sqrt s/M_{\rm gap}$ 判断。二者是独立检查：
+改变 $\Lambda_{\rm ref}$ 并相应重标度 $C_{\ell q}^{(6)}$ 不改变前者，也不改变物理
+$M_{\rm gap}$。只有在 UV matching 中先声明单一物理重尺度 $M$、验证
+$M_{\rm gap}=M$，再选择 $\Lambda_{\rm ref}=M$ 时，两种尺度才会数值相同；两项检查
+仍不能合并。
 
 ## 第 23 章
 

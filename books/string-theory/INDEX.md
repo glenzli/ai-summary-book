@@ -71,5 +71,5 @@
 | Exact compact-boson T-duality、Buscher input、几何 D-brane 模型 | [第 7 章](07_compactification_t_duality_and_dbranes.md) | [资料源](SOURCES.md) `BUS87/88`、`NAR86` |
 | $g_s$ loop、$\alpha'$ derivative 与低能 truncation | [第 11 章](11_low_energy_effective_actions.md) | [归一化表](NORMALIZATION_TABLE.md) 第 9 节 |
 | Calabi--Yau 定义、holonomy、moduli、KK truncation | [第 13 章](13_calabi_yau_compactification.md) | [资料源映射](REFERENCE_MAP.md) |
-| Cardy/large-charge asymptotic 与 quantum-entropy 研究边界 | [第 17 章](17_black_branes_and_entropy.md) | [定理索引](THEOREM_INDEX.md) 17.8--17.12A |
+| D1-D5 charge convention、普通 Cardy、K3 elliptic genus/fixed-index Jacobi 渐近、index/绝对简并边界与 quantum entropy | [第 17 章](17_black_branes_and_entropy.md) | [定理索引](THEOREM_INDEX.md) 17.7--17.12A、[资料源](SOURCES.md) `SW99`、`DMVV97`、`EZ85/DMZ12` |
 | D3 supergravity input、AdS PDE calculation、GKPW conjecture | [第 18 章](18_ads_cft.md) | [定理索引](THEOREM_INDEX.md) 18.1--18.12 |

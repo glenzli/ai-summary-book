@@ -8,6 +8,10 @@
   $$
   未特别说明时，“集合”指 $\mathcal U$-小集合，“范畴”指对象类属于 $\mathcal V$ 的范畴。
 - 固定基域 $k$。未特别说明时，线性范畴、复形、dg category 和 $A_\infty$-category 均为 $k$-线性。
+- 非 exact Floer 章节另固定带继承全序的加法子群
+  $\Gamma\subset\mathbb R$，并记
+  $\Lambda=\Lambda_{k,\Gamma}$；只有 $\Gamma=\mathbb R$ 时称其为 universal
+  Novikov field。乘法与 valuation 采用定义 5.1。
 - `Ch_k` 表示 cohomological grading 的链复形范畴；微分次数为 $+1$。
 - 对分次向量空间 $V$，平移 $V[1]$ 采用 $V[1]^i=V^{i+1}$。Suspension
   记为 $sV=V[1]$，故 $|sa|=|a|-1$。$A_\infty$ 张量按

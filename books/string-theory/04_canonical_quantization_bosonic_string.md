@@ -252,11 +252,60 @@ A(n)=\frac{D-26}{12}(n^3-n)+2(a-1)n.
 $$
 $Q_B^2=0$ 等价于所有正整数 $n$ 的 $A(n)$ 消失。比较三次项得 $D=26$，再比较一次项得 $a=1$；反之代入这两个值，所有 $A(n)$ 均为零。$\square$
 
-**外部输入定理 4.10（no-ghost theorem）.** 对 covariant quantized bosonic string，当 $D=26$ 且 $a=1$ 时，物理态空间在商去 null states 后具有非负范数，并与 light-cone quantization 的 transverse Fock space 同构。
+**外部输入定理 4.10（非零动量 no-ghost theorem）.** 固定平直临界玻色弦
+$D=26$、$a=1$ 和非零 on-shell target momentum $p^\mu\ne0$（在所选 light-cone
+frame 中取 $p^+\ne0$）。结论必须按下列物理商空间理解。
 
-**注 4.11.** 本书不证明 no-ghost theorem。其作用是保证 covariant 约束没有留下负范数物理激发。BRST 章节会给出更系统的 cohomological 表述。条件
-$D=26,a=1$ 保证局部正规序 BRST 代数一致，但单独并不构成所有 genus 的
-Polyakov measure、unitarity 与背景稳定性的充分条件。
+1. 对开弦，令 $\mathcal P_{\mathrm{op}}(p)$ 为满足
+   $(L_0-1)|\psi\rangle=0$ 与 $L_n|\psi\rangle=0$（$n>0$）的 fixed-momentum
+   old-covariant states，并令 $\mathcal N_{\mathrm{op}}(p)$ 为其中的 null/spurious
+   subspace。诱导 pairing 在
+   $\mathcal P_{\mathrm{op}}(p)/\mathcal N_{\mathrm{op}}(p)$ 上正定，且该商与同一
+   mass level 的 transverse light-cone Fock space 同构。
+2. 对闭弦，必须同时施加左右 Virasoro constraints、两个 intercept conditions 与
+   level matching，再商去左右 null subspaces。所得物理商与 level-matched 左右
+   transverse Fock spaces 的张量积同构；这不是把开弦陈述在未施加 level matching
+   的完整张量积上直接重复一次。
+
+在第五章的 ghost-number convention 中，相应 BRST 同构只针对指定的 cohomology
+商。开弦传播外态使用
+$$
+H^1_{\rm rel}(Q_B;p),
+\qquad
+\mathcal C_{\rm rel}(p)
+=\ker b_0\cap\ker L_0^{\rm tot},
+$$
+其中 cohomology 的分母是在同一 relative subcomplex 内的 $Q_B$-exact states。闭弦
+未积分传播外态使用总 ghost number $2$ 的 semi-relative cohomology
+$$
+H^2_{\rm sr}(Q_B^{\rm cl};p),
+\qquad
+\mathcal C_{\rm sr}(p)
+=\ker b_0^-\cap\ker L_0^-;
+$$
+更强的 relative complex 还分别施加 $b_0=\widetilde b_0=0$，不能不加说明地与
+semi-relative complex 互换。这里 $L_0^-=0$ 正是 level matching。定理不声称
+unrestricted absolute BRST cohomology、其他 ghost numbers 或不同 zero-mode 商都等于
+transverse spectrum。
+
+**边界 4.10A（零动量 cohomology 另列）.** $p^\mu=0$ 不在定理 4.10 的假设内。
+标准 filtration/contracting-homotopy 证明需要除以非零 light-cone momentum；在
+$p=0$ 时该步骤失效。开弦一级已给出直接反例：
+$$
+|\psi\rangle=\epsilon_\mu\alpha_{-1}^\mu|0;p=0\rangle
+$$
+满足 $N=1$ 的质量壳与全部正模约束，但通常生成 gauge/null 方向的
+$L_{-1}|0;p\rangle\propto p\!\cdot\!\alpha_{-1}|0;p\rangle$ 在 $p=0$ 时消失，故
+$\epsilon_\mu$ 的 timelike 负范数方向没有被该商去掉。BRST 语言中，relative、
+semi-relative 与 absolute cohomology 也可出现不属于传播 transverse oscillator
+spectrum 的额外 classes，gauge parameters 与 global/zero-mode states 须单独分析。
+因此定理 4.10 不能用来宣称零动量 cohomology 已被分类。
+
+**注 4.11.** 本书不证明 no-ghost theorem，也不计算零动量 exceptional cohomology。
+定理 4.10 的作用是保证指定 physical quotient 没有留下负范数传播激发；第五章给出
+BRST complex 和 nilpotency，但 $Q_B^2=0$ 本身不等于上述 cohomology theorem。
+同样，条件 $D=26,a=1$ 单独并不构成所有 genus 的 Polyakov measure、unitarity 与
+背景稳定性的充分条件。
 
 ## 4.6 低能谱
 

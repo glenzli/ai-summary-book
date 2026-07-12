@@ -115,19 +115,27 @@ $$
 
 令 $L_1$ 是一个 unary 顶点的线性树。Degeneracy map
 $$
-\eta\to L_1
+\sigma:L_1\to\eta
 $$
 在 presheaf 方向给出
 $$
-X_{L_1}\to X_\eta
+X(\sigma):X_\eta\to X_{L_1}
 $$
-的 identity restriction。
+并把一个 $\eta$-dendrex 送到相应的 degenerate unary dendrex。
 
-**说明 T.12.** 对 category nerve，这正是把 identity arrow 退化为对象的 simplicial degeneracy。对 operad nerve，unary identity operation 是 degeneracy 的来源。
+**说明 T.12.** 对 category nerve，这正是 simplicial degeneracy $s_0:X_0\to X_1$，即把对象送到它的 identity arrow。对 operad nerve，unary identity operation 是 degeneracy 的来源。
 
 **命题 T.13.** 在 strict operad nerve $N_d(\mathcal P)$ 中，degenerate unary dendrex 对应 identity unary operation。
 
-**证明.** $\eta$ 只记录颜色 $c$。沿 degeneracy 把 $\eta$ 视为 $L_1$ 中的 unary identity 顶点，得到 $\Omega(L_1)\to\mathcal P$，其唯一 unary 生成运算必须送到 $\mathcal P$ 中颜色 $c$ 的单位运算。$\square$
+**证明.** $\eta$-dendrex 只记录一个颜色，即 colored operad morphism $\Omega(\eta)\to\mathcal P$。树箭头 $\sigma:L_1\to\eta$ 按定义对应 operad morphism
+$$
+\Omega(L_1)\longrightarrow\Omega(\eta),
+$$
+它把 $L_1$ 的 unary 生成运算送到 $\Omega(\eta)$ 唯一颜色上的 identity operation。预复合给出
+$$
+\Omega(L_1)\to\Omega(\eta)\to\mathcal P,
+$$
+所以所得 $L_1$-dendrex 的 unary 运算正是颜色 $c$ 上的单位运算。$\square$
 
 ## T.7 使用检查表
 

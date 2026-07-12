@@ -65,4 +65,48 @@
   练习与答案闭合。
 - `git diff --check -- books`：无尾随空白或补丁格式错误。
 
-本记录将在第一次提交后的独立复审完成后追加最终审计结论。
+## 第一次提交后的独立复审
+
+第一次提交 `09b9837` 后，六个只读审校 agent 按互不重叠的学科组重新检查
+全部 14 本教材。审校只接受可定位的数学/物理错误、假设缺失、类型错配、
+归一化冲突和外部输入越界，不把可选扩写或排版偏好计为 finding。
+
+复审共确认 36 项高/中等级问题，已全部修正：
+
+- **Operad 与 HoTT**：修正自由 operad 权重、infinitesimal composition 的
+  类型、bar-cobar counit、树骨架与 dendroidal degeneracy；消除固定端点 J
+  的循环证明，收紧 univalence-to-funext 的宇宙范围并补齐 HIT 计算规则。
+- **Motivic 与 condensed**：把 norm quotient 公式限制到来源实际覆盖的
+  finite-etale 情形，补全 deformation-to-normal-cone 的开 blow-up 定义，
+  并移除未定义的复 liquid 派生范畴记号。
+- **Langlands**：修正 geometric Satake 的 Frobenius/Tate 次幂，
+  分离普通与 renormalized half-twisted D-modules，统一局部 `GL(2)`
+  induction/WD/L-factor 约定，收紧 local Shimura datum、卷积图、
+  dual-root-datum 外部输入和 Dirichlet idele character。
+- **HMS 与 prismatic**：补全 Novikov 值群、Liouville sector 和 sectorial
+  descent 假设；把 etale comparison 的全局公式限制到 affine 情形，并为
+  Hodge-Tate 有限生成性加入 Noetherian 假设。
+- **量子力学与相对论**：补齐 Kato-Rellich 对称性、升降算符定义域、
+  Dyson 连续性、绝对连续谱散射边界；统一 Noether/Hilbert 张量号差，并
+  区分 ADM 能量、空间动量与不变质量。
+- **弦论与 EFT**：把固定右动基态的 BPS 计数从普通 Cardy 定理中分离，
+  加入 no-ghost 的非零动量边界；同步 EFT 的双插入振幅答案，并把物理
+  有效性尺度 (M_{mathrm{gap}}) 与 Wilson 参考尺度
+  (Lambda_{mathrm{ref}}) 分开。
+
+范畴论组未发现新的高/中等级问题；其余组的 findings 均经过正文、答案、
+索引和来源账本同步，而非只修改审计记录。
+
+## 最终验证
+
+- `python3 books/audit_oet_rigor.py --strict`：
+  `errors=0 warnings=0`。
+- `python3 books/category-theory/validate.py`：
+  `validation=ok`，855 道章末/附录练习与 52 道综合题通过结构检查。
+- `python3 books/quantum-mechanics/validate.py`：
+  `validation=ok`，68 道章末/附录练习及答案、18 道综合题及提示闭合。
+- 未闭合占位符定向扫描：无命中。
+- `git diff --check -- books`：通过。
+
+因此，本轮达到 OET 标准所指的教材本体闭合；仍不把它表述为逐页排版完成的
+camera-ready 出版终稿。

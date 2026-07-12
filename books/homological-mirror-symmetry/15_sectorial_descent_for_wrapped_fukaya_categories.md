@@ -10,13 +10,39 @@
 
 ## 15.1 Sectorial cover
 
-**定义 15.1.** Liouville sector $X$ 的 sectorial cover 是有限族 Liouville subsectors
+**定义 15.1（Weinstein sectorial cover）.** 设 $X$ 是 Liouville sector。
+有限族 Liouville subsectors
 $$
-\{X_i\}_{i\in I}
+\{X_i\}_{i\in\mathcal I}
 $$
-使得任意有限交 $X_{i_0}\cap\cdots\cap X_{i_p}$ 仍带有兼容 Liouville sector 结构，并且这些 pieces 覆盖 $X$。
+称为 sectorial cover，若它们覆盖 $X$，并且由 $\partial X$ 与各 $X_i$ 的
+internal cylindrical boundary faces 构成的 hypersurface family 是 GPS 意义下
+sectorial：这些 hypersurfaces 的 characteristic foliations 在交处
+$\omega$-orthogonal，并可在各 face $H_a$ 的邻域选择无穷远线性的函数
+$I_a$，使
+$$
+dI_a|_{\operatorname{char}(H_a)}\ne0,\qquad
+dI_a|_{\operatorname{char}(H_b)}=0\ (a\ne b),\qquad
+\{I_a,I_b\}=0.
+\tag{15.1}
+$$
+于是适当 smoothing corners 后，每个非空有限交
+$X_J=\bigcap_{j\in J}X_j$ 都继承 Liouville sector 结构。
 
-**定义 15.2.** 对 sectorial cover，写
+对有序分拆 $P\sqcup Q\sqcup R=\mathcal I$，考虑 strata
+$$
+X_{P,Q,R}
+=\left(\bigcap_{p\in P}X_p\right)
+ \cap\left(\bigcap_{q\in Q}\partial X_q\right)
+ \setminus\left(\bigcup_{r\in R}X_r\right).
+\tag{15.2}
+$$
+若每个非空 stratum closure 的 characteristic foliation symplectic reduction
+在 convexification 后均可经 Liouville deformation 变为 Weinstein sector，
+则称该 cover 为 **Weinstein sectorial cover**。仅要求有限交是 Liouville
+sectors，并不足以满足这里的 Weinstein 条件。
+
+**定义 15.2.** 对定义 15.1 的 cover，写
 $$
 \mathcal W(X_\bullet)
 $$
@@ -24,14 +50,20 @@ $$
 
 ## 15.2 Descent 陈述
 
-**外部输入定理 15.3（sectorial descent）.** 对合适 sectorial cover $\{X_i\}$，自然 functor
+**外部输入定理 15.3（Weinstein sectorial descent）.** 对定义 15.1 的
+Weinstein sectorial cover $\{X_i\}_{i\in\mathcal I}$，由定理 6.13 的 proper
+cylindrical inclusions 诱导的自然 functor
 $$
-\operatorname*{hocolim}_{\varnothing\ne J\subset I}\mathcal W(X_J)\to\mathcal W(X)
+\operatorname*{hocolim}_{\varnothing\ne J\subset\mathcal I}\mathcal W(X_J)
+\longrightarrow\mathcal W(X)
 $$
-是 Morita equivalence，其中 $X_J=\bigcap_{j\in J}X_j$。  
+在 pretriangulated envelopes 上是 equivalence，因而特别是 Morita
+equivalence。该结论不在任意 sectorial cover 上无条件陈述。
 来源：Ganatra-Pardon-Shende, *Sectorial descent for wrapped Fukaya categories*。
 
-**解释 15.4.** “cosheaf”意味着局部 pieces 的 categories 通过 homotopy colimit 胶合成全局 category。方向是协变的：inclusion of sectors 诱导 $\mathcal W(X_i)\to\mathcal W(X)$。
+**解释 15.4.** “cosheaf”意味着 Weinstein sectorial pieces 的 categories
+通过 homotopy colimit 胶合成全局 category。方向是协变的：定理 6.13
+允许的 inclusion of sectors 诱导 $\mathcal W(X_i)\to\mathcal W(X)$。
 
 **命题 15.5.** 假设定理 15.3。若每个 $X_J$ 的 wrapped category 由对象集合 $\mathcal G_J$ split-generate，则 $\mathcal W(X)$ 由所有 $\mathcal G_J$ 在 inclusion functors 下的像 split-generate。
 
@@ -68,7 +100,10 @@ $$
 
 ## 本章小结
 
-Sectorial descent 是 wrapped Fukaya categories 的局部到整体定理。它允许用 Liouville sector cover 把全局 wrapped category 表成局部 categories 的 homotopy colimit，从而把 HMS 证明分解为局部 HMS 与 gluing 相容性。
+Sectorial descent 是 wrapped Fukaya categories 的局部到整体定理。这里使用的
+精确外部输入以 Weinstein sectorial cover 为假设；在该范围内，它把全局
+wrapped category 表成局部 categories 的 homotopy colimit，从而把 HMS 证明
+分解为局部 HMS 与 gluing 相容性。
 
 ## 练习
 

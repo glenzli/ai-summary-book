@@ -24,7 +24,7 @@
 - 命题 2.3：共线 boost 的快速度参数相加。
 - 命题 2.4：固定 future timelike 端点之间的惯性直线极大化固有时。
 - 命题 4.1：在固定指标与取向约定下，协变 Maxwell 方程等价于三维 Maxwell 方程。
-- 命题 5.1：平移 Noether 恒等式及 on-shell 规范能动张量守恒。
+- 命题 5.1：固定主动平移号差的 Noether 恒等式及 on-shell 规范能动张量守恒；实标量场的规范张量与 Hilbert 张量一致。
 - 定义 6.1：时空。
 - 定义 6.2：联络。
 - 定义 6.2A：挠率与度规相容性。
@@ -76,7 +76,7 @@
 - 第 10 章：Kretschmann 标量、Eddington-Finkelstein 坐标、Kruskal 坐标、径向类光曲线、困陷面、表面引力和 Hawking 温度入口。
 - 第 11 章：Friedmann 方程、连续性方程、曲率依赖的红移距离、Etherington 外部输入、显式 $\Lambda$ 下的 $\ddot a>0$ 条件及膨胀支边界、粒子视界存在判据。
 - 第 12 章：线性化 Christoffel/Ricci/Einstein 张量、Lorenz 与剩余规范、TT 两偏振、测试粒子响应、四极矩外部输入、Isaacson 有效能流。
-- 第 13 章：固定 $K_{ij},j_i$ 号差的 ADM 约束及 $\Lambda$ 项、约束传播机制、ADM 质量、Riemannian 正质量定理边界、Penrose 类光不完备结论、时间对称初值数据。
+- 第 13 章：固定 $K_{ij},j_i$ 号差的 ADM 约束及 $\Lambda$ 项、约束传播机制、ADM 能量与空间动量、ADM 不变质量和静止系、Riemannian 正质量定理边界、Penrose 类光不完备结论、时间对称初值数据。
 - 第 14 章：弱场钟速估算、引力透镜方程、后 Newton 入口、数值相对论流程、红移/光偏折/引力波观测量模板。
 - 第 15 章：Kerr 度规、视界、静止极限面、框架拖曳、Carter 常数入口、Penrose 过程、不可逆质量。
 - 第 16 章：标量-矢量-张量分解、标量规范变换、Bardeen 势、Newton 规范、亚视界增长方程、CMB 声学振荡入口、FLRW 张量扰动。

@@ -106,13 +106,29 @@ pushforward 来自六操作，而非 fundamental class 单独产生；Propositio
 
 ## 16.4 Deformation to the normal cone
 
-**定义 16.10.** 对闭嵌入 `i:Z\hookrightarrow X`，deformation to the normal cone 是一个族
+**定义 16.10.** 对闭嵌入 `i:Z\hookrightarrow X`，令 `\mathcal I\subset\mathcal O_X`
+为其理想层，并记 `\widetilde{X\times\{0\}}` 为 `X\times\{0\}` 在相应 blow-up
+中的严格变换。定义 deformation to the normal cone 为
 
 $$
-D_ZX\to\mathbb A^1
+D_ZX:=
+\operatorname{Bl}_{Z\times\{0\}}(X\times\mathbb A^1)
+\setminus\widetilde{X\times\{0\}}
+\longrightarrow\mathbb A^1.
 $$
 
-其一般纤维为 `X`，特殊纤维为 normal cone `C_ZX`。若 `i` regular，则 `C_ZX` 为法丛 `N_{Z/X}`。
+在 `\mathbb G_m\subset\mathbb A^1` 上，该族规范同构于
+`X\times\mathbb G_m`；其 `0`-纤维规范同构于 normal cone
+
+$$
+C_ZX:=\operatorname{Spec}_Z
+\left(\bigoplus_{n\geq0}\mathcal I^n/\mathcal I^{n+1}\right).
+$$
+
+若 `i` regular，则 `\mathcal I/\mathcal I^2` locally free，且规范映射
+`\operatorname{Sym}_{\mathcal O_Z}(\mathcal I/\mathcal I^2)\to
+\bigoplus_{n\geq0}\mathcal I^n/\mathcal I^{n+1}` 是同构；因此在 regular
+情形，特殊纤维识别为法丛 `N_{Z/X}` 的总空间。
 
 **外部输入定理 16.11.** Regular closed immersion 的 motivic fundamental
 class 由 deformation to the normal cone、specialization 和 Thom

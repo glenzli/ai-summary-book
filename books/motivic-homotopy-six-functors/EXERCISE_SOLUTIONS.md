@@ -271,7 +271,21 @@ Paragraph 3.3.3 的法丛单射有 locally free cokernel `\xi`；此时才以
 
 **解答 16.5.** Todd class 衡量两个 orientation 或两个 cohomology theories 下 Gysin/Riemann-Roch 变换之间的差异。它是从一种 orientation 转换到另一种 orientation 的校正因子。
 
-**解答 16.6.** Deformation to the normal cone 是把闭嵌入 `Z\hookrightarrow X` 的几何从 `X` 连续退化到 normal cone `C_ZX` 的构造，通常通过 blow-up `X\times\mathbb A^1` 沿 `Z\times0` 实现。
+**解答 16.6.** 设 `\mathcal I` 是 `Z\hookrightarrow X` 的理想层，并记
+`\widetilde{X\times\{0\}}` 为 `X\times\{0\}` 的严格变换。定义
+
+$$
+D_ZX=
+\operatorname{Bl}_{Z\times\{0\}}(X\times\mathbb A^1)
+\setminus\widetilde{X\times\{0\}}
+\longrightarrow\mathbb A^1.
+$$
+
+它在 `\mathbb G_m` 上是 `X\times\mathbb G_m`，而特殊纤维为
+`C_ZX=\operatorname{Spec}_Z(\bigoplus_{n\geq0}\mathcal I^n/
+\mathcal I^{n+1})`。若闭嵌入 regular，则 associated graded algebra 规范同构于
+`\operatorname{Sym}_{\mathcal O_Z}(\mathcal I/\mathcal I^2)`，故该特殊纤维
+规范识别为法丛 `N_{Z/X}` 的总空间。
 
 **解答 16.7.** 在定理 16.13 的适用范围内，`\xi=0` 时 excess Euler class
 是单位，公式退化为无修正 base-change compatibility。Tor-independence 保证

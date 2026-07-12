@@ -24,6 +24,46 @@
 
 所有整体 L 函数的 Euler 乘积变量均与该绝对值归一化相容。
 
+### 1.1 Dirichlet character 的 idelic 与 Euler 约定
+
+设 $\chi:(\mathbb Z/N\mathbb Z)^\times\to\mathbb C^\times$ 是导子恰为 $N$ 的 primitive Dirichlet character，并令
+$$
+\widehat\chi:\widehat{\mathbb Z}^{\times}\longrightarrow\mathbb C^\times
+$$
+为模 $N$ 约化后得到的 character。每个 $x\in\mathbb A_\mathbb Q^\times$ 可唯一写成
+$$
+x=qru,
+\qquad
+q\in\mathbb Q^\times,\qquad
+r\in\mathbb R_{>0},\qquad
+u\in\widehat{\mathbb Z}^{\times}.
+$$
+本书把与 classical Euler factors 相容的 finite-order idèle class character 固定为
+$$
+\omega_\chi(x):=\widehat\chi(u)^{-1}.
+$$
+它对对角嵌入的 $\mathbb Q^\times$ 平凡。若
+$$
+\chi(-1)=(-1)^{a_\chi},
+\qquad a_\chi\in\{0,1\},
+$$
+则局部分量满足
+$$
+\omega_{\chi,\infty}(x)=\operatorname{sgn}(x)^{a_\chi},
+\qquad
+\omega_{\chi,p}(p)=\chi(p)\qquad(p\nmid N).
+$$
+因而本书的 Euler convention 给出
+$$
+L(s,\omega_\chi)
+=\prod_{p\nmid N}(1-\chi(p)p^{-s})^{-1}
+=L(s,\chi).
+$$
+如果反而令 finite-unit restriction 为 $\widehat\chi$ 而不是
+$\widehat\chi^{-1}$，则非分歧一致化元取值为 $\chi(p)^{-1}$，对有限阶 $\chi$ 所得 Euler 乘积是 $L(s,\overline\chi)$。
+
+若给定的 Dirichlet character 模 $M$ 但不 primitive，本书先取其 primitive associate $\chi^*$ 及精确导子 $N\mid M$。对应 idèle class character 的 Hecke L 函数是 $L(s,\chi^*)$；模 $M$ 的 imprimitive Dirichlet 级数还要删去 $p\mid M$、$p\nmid N$ 的 Euler factors，两者不默认识别。
+
 ## 2. Frobenius 和 reciprocity
 
 非 Archimedean 局部域 $F$ 的剩余域基数记为 $q$。
@@ -270,15 +310,55 @@ sheaf 才有该 trace function；代数闭域上的裸 sheaf 不能直接取 Fro
 $$
 \operatorname{Sat}_G:\operatorname{Perv}_{G(\mathcal O)}(\operatorname{Gr}_G)\simeq\operatorname{Rep}(\widehat G)
 $$
-成为 tensor equivalence 的归一化。若需要比较函数迹和球 Hecke 代数，则必须同时追踪 $q^{\langle\rho,\lambda\rangle}$ 因子。
+成为 tensor equivalence 的归一化。令
+$$
+d_\lambda=\dim\operatorname{Gr}_G^\lambda
+=\langle2\rho,\lambda\rangle.
+$$
+权零 IC sheaf
+$$
+\operatorname{IC}_\lambda^0
+=j_{\lambda,!*}E[d_\lambda](d_\lambda/2)
+$$
+在开胞腔上的几何 Frobenius 交错迹为
+$$
+(-1)^{d_\lambda}q^{-d_\lambda/2}
+=(-1)^{d_\lambda}q^{-\langle\rho,\lambda\rangle}.
+$$
+其中 $(-1)^{d_\lambda}$ 来自 cohomological shift，负次幂来自 Tate twist 对几何 Frobenius 的作用。经 parity correction 后 trace 函数的 leading term 是
+$q^{-\langle\rho,\lambda\rangle}T_\lambda$；再应用第 4 节的 classical Satake transform，其
+$\mathcal S(T_\lambda)$ 的 leading coefficient 是
+$q^{\langle\rho,\lambda\rangle}$。两个幂在经典 Satake 像中相消，不得把前一步的 half-Tate trace 本身写成正次幂。
 
-特征零 categorical geometric Langlands 的自动侧固定为 determinant line 平方根 $\mu_2$-gerbe 上的 half-twisted category
+局部 Shimura 部分固定与附录 AC 相同的方向：$\mu$ 为 minuscule，
+$$
+b\in B(G,\mu),
+\qquad
+\mathcal E_b\dashrightarrow\mathcal E_1
+$$
+为 $\mu$-有界修改。$E_\mu$ 始终表示 $\mu$ 的 reflex field，Weil descent 在几何纤维与上同调上给出 $W_{E_\mu}$ 作用。如果来源写反向修改或 $B(G,\mu^{-1})$，必须同时反转 $\mu$；不得只改箭头或只改 Kottwitz 子集。
+
+特征零 categorical geometric Langlands 中，determinant line 平方根 $\mu_2$-gerbe 上的普通 half-twisted category 记为
 $$
 \operatorname{DMod}_{1/2}(\operatorname{Bun}_G).
 $$
 选择 $\omega_X^{1/2}$ 可给出它与 $\operatorname{DMod}(\operatorname{Bun}_G)$ 的识别，但 Hecke normalization 中不得省略下标 $1/2$，否则通常的 $\operatorname{Rep}(\widehat G)$ action 会出现 canonical central-gerbe twist。
 
-Gaitsgory-Raskin proof series 的函子方向固定为
+非 quasi-compact 几何还导出一个不同的 renormalized category
+$$
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}},
+$$
+并有
+$$
+\operatorname{ren}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\rightleftarrows
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+:\operatorname{un\text{-}ren}.
+$$
+这个下标不是装饰；两个范畴在本书中不使用同一符号。
+
+Gaitsgory-Raskin proof series 的主函子方向与对象类型固定为
 $$
 \mathbb L_G:
 \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
@@ -286,6 +366,15 @@ $$
 \operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X)),
 $$
 即 automorphic $\to$ spectral。只有在调用已证明的等价后，谱侧对象到自动侧对象才写作 $\mathbb L_G^{-1}$；不得把反向函子仍标成 $\mathbb L_G$。
+与之分开的 companion 版本是
+$$
+\mathbb L_{G,\operatorname{ren}}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+\longrightarrow
+\operatorname{IndCoh}(\operatorname{LocSys}_{\widehat G}(X)).
+$$
+它的目标是全部 $\operatorname{IndCoh}$，不是
+$\operatorname{IndCoh}_{\mathcal N}$；本书主定理与 Hecke 本征层推论均使用前一个普通版本。
 
 ## 10. 快速检查表
 
@@ -299,6 +388,8 @@ $$
 6. L 函数是 classical normalization 还是 unitary automorphic normalization。
 7. Tate twist 是否改变了 Frobenius eigenvalues。
 8. 外部输入定理采用的 convention 是否与本书相同。
-9. Categorical geometric Langlands 是否保留 $\operatorname{DMod}_{1/2}$，并按所用方向区分 $\mathbb L_G$ 与 $\mathbb L_G^{-1}$。
+9. Categorical geometric Langlands 是否保留 half-twist，区分普通 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ 与 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}$，并按所用方向区分 $\mathbb L_G$、$\mathbb L_G^{-1}$ 与 $\mathbb L_{G,\operatorname{ren}}$。
+10. Dirichlet character 的 finite-unit restriction 是否取逆、是否保留 $\chi(-1)$ 的无穷符号分量，以及 Euler 乘积指 primitive 还是 imprimitive 版本。
+11. Local Shimura datum 是否同时固定 $b\in B(G,\mu)$、$\mathcal E_b\dashrightarrow\mathcal E_1$、reflex field $E_\mu$ 和 $W_{E_\mu}$。
 
 若任一项不同，正文必须写出转换，而不是只引用同名定理。

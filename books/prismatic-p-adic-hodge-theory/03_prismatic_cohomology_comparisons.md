@@ -139,19 +139,45 @@ $\varphi^{\mathrm{lin}}$ 一般不是同构；invert $I$ 也不等于 invert $p$
 
 **外部输入定理 3.11（etale comparison, finite level）.** 令
 $(A,(d))$ 为 oriented perfect prism，令 $R=A/(d)$ 为对应 perfectoid ring，
-令 $X$ 为 $p$-adic formal scheme over $R$，$X_\eta$ 为其 adic generic
-fibre。则对每个 $n\ge1$ 有 $D(\mathbf Z/p^n)$ 中的自然拟同构
+令 $X$ 为任意 $p$-adic formal scheme over $R$。记
+$\Delta_{X/A}\in D(X_{\mathrm{et}},A)$ 为 prismatic sheaf，记
 $$
-R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z/p^n)
+\mu:X_{\eta,\mathrm{et}}\longrightarrow X_{\mathrm{et}}
+$$
+为 nearby-cycles map。则对每个 $n\ge1$，在
+$D(X_{\mathrm{et}},\mathbf Z/p^n)$ 中有自然拟同构
+$$
+R\mu_*\mathbf Z/p^n
 \simeq
-\left((R\Gamma_\Delta(X/A)/p^n)[1/d]\right)^{\varphi=1},
+\left(\Delta_{X/A}[1/d]/p^n\right)^{\varphi=1}.
+\tag{3.1}
 $$
-其中右侧是 $\operatorname{fib}(\varphi-1)$，不是 cohomology groups 的
-ordinary invariants。这里 $\varphi$ 虽对 $A$ semilinear，却固定
-$\mathbf Z_p$；restriction of scalars 后 $\varphi-1$ 是
-$\mathbf Z/p^n$-linear。无 orientation 时写 $[1/I]$。来源为 Bhatt-Scholze,
-Theorem 9.1（locator `BS-COMP-ETALE`）；该 theorem 在 sheaf level 表述，
-上述公式由 derived global sections 得到。
+右侧的 fixed points 是 sheaf complexes 中的
+$\operatorname{fib}(\varphi-1)$，不是 cohomology sheaves 的 ordinary
+invariants。这里 $\varphi$ 虽对 $A$ semilinear，却固定 $\mathbf Z_p$；
+restriction of scalars 后 $\varphi-1$ 是 $\mathbf Z/p^n$-linear。无
+orientation 时写 $[1/I]$。
+
+若 $X=\operatorname{Spf}(S)$ 是 affine，Theorem 9.1 进一步给出全局推论
+$$
+R\Gamma_{\mathrm{et}}(\operatorname{Spec}(S[1/p]),\mathbf Z/p^n)
+\simeq
+\left(\Delta_{S/A}[1/d]/p^n\right)^{\varphi=1},
+\qquad
+\Delta_{S/A}=R\Gamma_\Delta(X/A).
+\tag{3.2}
+$$
+来源为 Bhatt-Scholze, Theorem 9.1（locator `BS-COMP-ETALE`）。对非 affine
+$X$，由 (3.1) 取 derived global sections 只直接得到右侧 sheaf fixed
+complex 的 hypercohomology。若要把它改写成 (3.2) 型的
+$R\Gamma_\Delta(X/A)$ 公式，至少还须验证 canonical exchange map
+$$
+R\Gamma(X_{\mathrm{et}},\Delta_{X/A}/p^n)[1/d]
+\longrightarrow
+R\Gamma\left(X_{\mathrm{et}},(\Delta_{X/A}/p^n)[1/d]\right)
+\tag{3.3}
+$$
+为拟同构；本定理不对一般 $X$ 自动断言该交换条件。
 
 **警告 3.12.** 定理 3.11 不能简写为
 $$

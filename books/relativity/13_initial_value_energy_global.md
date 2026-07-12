@@ -105,47 +105,83 @@ $$
 
 ## 13.4 ADM 能量
 
-对渐近平直时空，可以定义 ADM 质量。固定一个渐近平直端及该端的
-渐近 Cartesian 坐标，并至少要求
+固定一个渐近平直端，并在该端选择一个渐近 Lorentz 系：空间切片上的
+渐近 Cartesian 坐标固定其空间轴，切片法向固定渐近时间方向。至少要求
 
 $$
 \gamma_{ij}=\delta_{ij}+O(r^{-1}),
 \qquad
 \partial_k\gamma_{ij}=O(r^{-2}),
+\qquad
+K_{ij}=O(r^{-2}),
 $$
 
-连同使极限存在且在容许渐近坐标变换下不变的标准可积性与奇偶条件。
-在这些假设下，ADM 质量为
+连同使极限存在并在容许渐近坐标变换下具有正确变换律的标准可积性与
+奇偶条件。在这一选定渐近系中，ADM 能量定义为
 
 $$
-M_{\mathrm{ADM}}
+E_{\mathrm{ADM}}
 =\frac{1}{16\pi G}
 \lim_{r\to\infty}
 \int_{S_r}
 (\partial_j\gamma_{ij}-\partial_i\gamma_{jj})n^i\,dS.
 $$
 
-在 $c=1$ 单位中，它测量该渐近平直端的总质量，也等同于静止系总能量。
-仅写 $\gamma_{ij}=\delta_{ij}+O(r^{-1})$ 而不控制导数、坐标类和可积性，
-不足以保证该积分定义良好。
+同一渐近系中的 ADM 空间动量为
+$$
+P_i=P_i^{\mathrm{ADM}}
+=\frac{1}{8\pi G}
+\lim_{r\to\infty}
+\int_{S_r}(K_{ij}-K\gamma_{ij})n^j\,dS.
+$$
+这里 $n^i$ 是 $S_r\subset\Sigma$ 在三维度规中的向外单位法向；上式的
+号差与本章
+$K_{ij}=-\tfrac12\mathcal L_n\gamma_{ij}$ 的约定配套。仅写
+$\gamma_{ij}=\delta_{ij}+O(r^{-1})$ 而不控制导数、$K_{ij}$、渐近坐标
+类和可积性，不足以保证这些积分定义良好。
 
-在 Minkowski 初始数据中 $\gamma_{ij}=\delta_{ij}$，积分中被积函数为零，所以 $M_{\mathrm{ADM}}=0$。对 Schwarzschild 初始数据，在合适渐近平直坐标下该积分给出参数 $M$。因此 ADM 质量把度规在无穷远的一阶偏离转化为总能量。
+在容许的渐近 Lorentz 变换下，
+$$
+P_{\mathrm{ADM}}^\mu=(E_{\mathrm{ADM}},P^i)
+$$
+作为四向量变换；因此 $E_{\mathrm{ADM}}$ 是依赖渐近观察者的能量，
+不是 Lorentz 标量。若该四动量未来非类空，则定义 ADM 不变质量
+$$
+m_{\mathrm{ADM}}
+=\sqrt{-\eta_{\mu\nu}P_{\mathrm{ADM}}^\mu P_{\mathrm{ADM}}^\nu}
+=\sqrt{E_{\mathrm{ADM}}^2-\delta^{ij}P_iP_j}.
+$$
+若四动量类时，存在渐近静止系使 $P_i'=0$，并且只在该系中有
+$E_{\mathrm{ADM}}'=m_{\mathrm{ADM}}$。非零类光四动量没有静止系；零
+四动量则不选出唯一静止系。一般初值数据中把上述能量积分直接称为
+“ADM 质量”会混淆这三个对象。
+
+在 Minkowski 标准初始数据中
+$\gamma_{ij}=\delta_{ij}$、$K_{ij}=0$，所以
+$E_{\mathrm{ADM}}=0$、$P_i=0$ 与 $m_{\mathrm{ADM}}=0$。对
+Schwarzschild 的标准时间对称静止切片，$P_i=0$，能量积分给出参数
+$M$，故 $E_{\mathrm{ADM}}=m_{\mathrm{ADM}}=M$。这两个例子都处在
+零空间动量的渐近系中，不能用来把一般系中的能量与不变质量混同。
 
 **外部输入 B（三维 Riemannian 正质量定理）.** 设
 $(\Sigma,\gamma)$ 是完备、连通、无边界的光滑三维 Riemannian 流形，
 具有满足上述标准衰减条件的渐近平直端，并且
-${}^{(3)}R(\gamma)\ge0$。则每个渐近平直端的 ADM 质量满足
+${}^{(3)}R(\gamma)\ge0$。把这些 Riemannian 数据视为时间对称初始
+数据 $K_{ij}=0$ 时，每个渐近平直端满足 $P_i=0$，且
 
 $$
-M_{\mathrm{ADM}}\ge0,
+E_{\mathrm{ADM}}=m_{\mathrm{ADM}}\ge0,
 $$
 
 若某端等号成立，则 $(\Sigma,\gamma)$ 等距于 Euclidean
 $(\mathbb R^3,\delta)$。在 $\Lambda=0$ 的时间对称数据
 $K_{ij}=0$ 中，Hamiltonian constraint 与非负能量密度给出
 ${}^{(3)}R=16\pi G\rho\ge0$，故该版本可直接使用。一般
-$K_{ij}\ne0$ 的正能量定理比较完整 ADM 四动量并采用 dominant energy
-condition；本书不把该更强版本压缩进上面的 Riemannian 陈述。
+$K_{ij}\ne0$ 的正能量定理比较完整 ADM 四动量，并在 dominant energy
+condition 及标准完备性、衰减与约束假设下给出
+$E_{\mathrm{ADM}}\ge(\delta^{ij}P_iP_j)^{1/2}$；本书把该更强版本作为
+外部边界，不把它压缩进上面的 Riemannian 陈述。没有这样的因果性结论
+时，根号公式不应被无条件宣称为实数质量。
 
 ## 13.5 能量条件
 
@@ -245,6 +281,7 @@ $$
 
 1. 解释为什么 Einstein 方程初始数据必须满足约束。
 2. 写出真空时间对称初始数据的 Hamiltonian constraint。
-3. 说明 ADM 质量为什么只适合渐近平直时空。
+3. 说明 ADM 四动量为什么只适合渐近平直时空，并区分
+   $E_{\mathrm{ADM}}$、$P_i$ 与 $m_{\mathrm{ADM}}$。
 4. 比较 weak energy condition 和 null energy condition。
 5. 说明奇点定理的结论为什么是测地线不完备，而不直接是曲率发散。

@@ -42,16 +42,38 @@ $$
 **定义 Y.7.** 单点 affine Grassmannian 上的 convolution diagram 为
 $$
 \operatorname{Gr}_G\times\operatorname{Gr}_G
-\xleftarrow{p}
+\xleftarrow{\ p\ }
+G((t))\times\operatorname{Gr}_G
+\xrightarrow{\ q\ }
 G((t))\times^{G[[t]]}\operatorname{Gr}_G
 \xrightarrow{m}
 \operatorname{Gr}_G.
 $$
-对 sheaves $\mathcal A,\mathcal B$，定义
+这里 $G[[t]]$ 右作用为
 $$
-\mathcal A*\mathcal B=m_!p^!(\mathcal A\boxtimes\mathcal B)
+(g,x)\cdot h=(gh^{-1},hx),
 $$
-或按 sheaf theory 选择相应 $*$、$!$ 版本。
+且
+$$
+p(g,x)=(gG[[t]],x),\qquad
+q(g,x)=[g,x],\qquad
+m([g,x])=gx.
+$$
+映射 $q$ 是 $G[[t]]$-torsor，而 $p$ **不**沿 $q$ factor；因此 contracted product 上没有这个公式诱导的映射到
+$\operatorname{Gr}_G\times\operatorname{Gr}_G$。对 $G[[t]]$-等变 sheaves
+$\mathcal A,\mathcal B$，定义
+$\mathcal A\widetilde\boxtimes\mathcal B$ 为满足 torsor descent characterization
+$$
+q^*(\mathcal A\widetilde\boxtimes\mathcal B)
+\simeq
+p^*(\mathcal A\boxtimes\mathcal B)
+$$
+的对象，再定义
+$$
+\mathcal A*\mathcal B
+=m_!(\mathcal A\widetilde\boxtimes\mathcal B).
+$$
+在有限 Schubert support 上 $m$ proper，故 $m_!\simeq m_*$。上式是 equivariant descent，不是从 contracted product 到普通 Cartesian product 的 pullback 公式。
 
 **外部输入定理 Y.8（fusion equals convolution）.** BD Grassmannian 上当两个点相碰时的 nearby cycles 或 specialization 给出单点 affine Grassmannian 上的 convolution product。该结构使 Satake category 成为 symmetric monoidal category。
 
@@ -69,9 +91,17 @@ $$
 $$
 并且 factorization/fusion 结构给出右侧张量范畴的对称结构。Schubert variety $\overline{\operatorname{Gr}}^\lambda$ 的 IC sheaf 对应 $\widehat G$ 的最高权 $\lambda$ 不可约表示。
 
-**命题 Y.11.** 几何 Satake 恢复对偶群的 root datum。
+**外部输入定理 Y.11（Tannaka 群的还原性与对偶根资料；`GSAT-1`）.** 在第十九章的 characteristic-zero 系数域 $E$、有限 Schubert support 及 parity-corrected fusion 设定下，令
+$$
+H:=\operatorname{Aut}^{\otimes}(\mathsf H^\bullet)
+$$
+为 Satake 范畴由全上同调纤维函子重构的 Tannaka 群。则 $H/E$ 是 split connected reductive group，且其 based root datum 是 $G$ 的 based root datum 的对偶；因而有与最大环面识别相容的同构
+$$
+H\simeq\widehat G_E.
+$$
+在此同构下，$\operatorname{IC}_\lambda$ 对应最高权 $\lambda\in X_*(T)^+$ 的不可约表示。
 
-**证明路线（外部输入）.** Affine Grassmannian 的 $G[[t]]$-orbits 由 dominant coweights $\lambda\in X_*(T)^+$ 参数化。IC sheaves 的 simple objects 因而由这些 $\lambda$ 标号。Convolution 的最高项规则与表示张量积的最高权规则一致。Tannakian formalism 从该 symmetric tensor category 恢复一个 reductive group，其 dominant weights 为 $X_*(T)^+$，故该群的 root datum 为 $G$ 的 dual root datum。$\square$
+**外部输入边界.** Neutral Tannakian reconstruction 本身只产生 affine group scheme $H$；orbit 由 dominant coweights 标号也只给出候选 dominant monoid。$H$ 的还原性、splitness 与完整 dual root datum identification 统一作为 `GSAT-1` 外部输入，定位到 Mirkovic--Vilonen 主等价 (1.1) 和 Theorem 12.1；本段不以最高权启发式替代该证明。
 
 ## Y.5 Hecke action 的 factorization
 

@@ -55,7 +55,7 @@
 | FR-15.x | Framed recognition | Elmanto-Hoyois-Khan-Sosnilo-Yakerson | 第十五章 | located: Theorems 1.2.3, 3.5.14; perfect field |
 | FC-16.2 | Fundamental classes and Gysin maps | Deglise-Jin-Khan | 第十六章 | located: Definition 3.2.5; Proposition 2.5.4; Theorems 3.3.2, 4.1.4, 4.2.1 |
 | FC-16.13 | Excess intersection formula | Deglise-Jin-Khan | 第十六章 | located: §3.3.3; Propositions 3.3.4, 4.2.2; both `f,g` smoothable lci; coefficient/properness hypotheses retained |
-| NM-17.x | Norm functors and normed examples | Bachmann-Hoyois | 第十七章 | located: Propositions 3.13, 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19 |
+| NM-17.x | Norm functors and normed examples | Bachmann-Hoyois | 第十七章 | located: Theorem 3.3/localization and Corollary 3.11 for finite-locally-free unstable norms; Proposition 3.13 only for finite etale with Weil restriction; Proposition 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19 |
 | MW-18.5 | Stable-range sphere maps and `K_*^{MW}` | Morel | 第十八章 | located: Corollary 6.43 |
 | MW-18.7 | Chow-Witt/Milnor-Witt refinements | Fasel, Deglise-Fasel | 第十八章 | P1 boundary; not used by P0 mainline |
 

@@ -61,7 +61,7 @@
 | FR-15.x | 外部输入 | framed motivic spaces recognition principle | perfect field；very effective/effective 层级分开 | Elmanto-Hoyois-Khan-Sosnilo-Yakerson Theorems 1.2.3, 3.5.14 | located |
 | FC-16.2 | 外部输入 | motivic fundamental classes 与 Gysin maps | smoothable lci separated finite type；transverse BC 需 Tor-independent | Deglise-Jin-Khan Definition 3.2.5; Proposition 2.5.4; Theorems 3.3.2, 4.1.4, 4.2.1 | located |
 | FC-16.13 | 外部输入 | fundamental-class/coefficient Gysin excess formula | Cartesian square 中 `f,g` 均 smoothable lci s-morphisms；§3.3.3 的 excess bundle `\xi` 存在；系数版要求 unital associative commutative multiplication；push-pull 另要求两竖边 proper | Deglise-Jin-Khan §3.3.3, Propositions 3.3.4, 4.2.2 | located |
-| NM-17.x | 外部输入 | unstable finite-locally-free norms；stable finite-etale norms；normed `HZ/KGL/MGL` | 各定理基假设分别保留 | Bachmann-Hoyois Propositions 3.13, 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19 | located |
+| NM-17.x | 外部输入 | unstable finite-locally-free norms；stable finite-etale norms；normed `HZ/KGL/MGL` | unstable construction 用 Theorem 3.3/localization 与 Corollary 3.11；Proposition 3.13 另要求 finite etale 且 Weil restriction 存在；其余定理基假设分别保留 | Bachmann-Hoyois Theorem 3.3; Corollary 3.11; Propositions 3.13, 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19 | located |
 | MW-18.2 | 外部输入 | `End(1_k)\cong GW(k)` | perfect field | Morel Corollary 6.43 + Lemma 3.10 | located |
 | MW-18.5 | 外部输入 | stable-range sphere maps are `K_*^{MW}` | perfect field；`n\ge2`, target weight positive | Morel Corollary 6.43 | located |
 | MW-18.7 | 高级外部输入 | Chow-Witt/Milnor-Witt motives、枚举与 Gauss-Bonnet refinements | 模型/field/regularity/orientation 逐项指定 | Fasel, Deglise-Fasel 等 | P1 boundary；不参与 P0 主线 |

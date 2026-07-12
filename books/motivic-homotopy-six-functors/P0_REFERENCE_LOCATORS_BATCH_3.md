@@ -159,8 +159,12 @@ norms 与 Milnor--Witt 输入。每条都区分原文定理的语境；三角同
 
 - Tom Bachmann, Marc Hoyois, *Norms in motivic homotopy theory*,
   arXiv:1711.03061v5，`https://arxiv.org/abs/1711.03061`。
-  - Section 3：finite locally free morphisms 上 pointed unstable norms；
-    Proposition 3.13 给出它们与 closed-complement quotients 的相容。
+  - Theorem 3.3 及紧随其后的 motivic localization：finite locally free
+    morphisms 上的 pointed unstable norms；Corollary 3.11 给出与 open-subpresheaf
+    quotients 的相容。
+  - Proposition 3.13：仅当 `p:T\to S` finite etale、`X\in\operatorname{Sm}_T`、
+    `Z\subset X` closed 且 Weil restriction `R_pX` 存在时，才把上述商写成
+    `R_pX/(R_pX\setminus R_pZ)`；Example 3.14 排除一般 finite locally free 推广。
   - Proposition 4.5：finite etale `p:T -> S` 的 norm 唯一稳定化为保持相关
     余极限的 symmetric monoidal functor `SH(T) -> SH(S)`。
   - Definition 7.1：normed spectrum 是 finite-etale span category 上满足

@@ -83,12 +83,14 @@
 ### `08_quadratic_operads_and_koszul_duality.md`
 
 - 已明确本章采用 reduced 非含单位口径，避免 arity $0$ 单位混入二次齐次理论。
+- 已把自由 operad 完整代入的权重改为 $r+\sum_t s_t$；外层 arity 为 $n$ 且内层同权 $s$ 时为 $r+ns$，并用二槽例子区分完整代入与一次偏复合。
 - 已定义二次数据、二次对偶和 Koszul 性；Ass/Com/Lie 的 Koszul 性只作为外部输入定理。
 - 第九章已补充 dg cooperad、twisting morphism 和基本符号规则；附录 E 已给出 operadic suspension 和 suspended brace 的基础算法，完整 $L_\infty$ 展开符号仍需最终版逐项核对。
 
 ### `09_bar_cobar_constructions_and_twisting_morphisms.md`
 
 - 已固定同调分次和 Koszul sign rule，并定义 dg-operad、dg-cooperad、cofree conilpotent cooperad、twisting morphism、bar/cobar 构造。
+- 已把 $M\circ_{(1)}N$ 定义为 $M\circ(I_k\oplus N)$ 对 $N$ 的一次齐次分量，并由 $\mathcal C\cong I_k\oplus\overline{\mathcal C}$ 构造 $\Delta_{(1)}$；convolution pre-Lie 与 Maurer--Cartan 方程现统一在 $\operatorname{Hom}_{\mathbb S}(\overline{\mathcal C},\overline{\mathcal P})$ 中作类型检查。
 - 已证明 bar-cobar 泛性质；Koszul twisting morphism 的 quasi-isomorphism 判别标为外部输入定理。
 - 已接入附录 I 的 convolution Lie algebra、twisted composite product、Koszul complex 和权重滤过约定；进入具体 $A_\infty/L_\infty$ 章节时仍需与定义 E.18--定义 E.23 和定义 J.1--外部输入定理 J.19 的 signs 对齐。
 
@@ -135,6 +137,7 @@
 
 ### `16_dendroidal_sets_and_tree_category.md`
 
+- 已从本章开头固定 $\mathcal U$-小 rooted-tree 代表集，并把 $\Omega$ 定义为该固定骨架上的 $\mathcal U$-小树范畴；dendroidal presheaf、representable 和 category-of-elements colimit 的 universe 层级已逐项写明。
 - 已定义 rooted tree、inner/outer edges、单位树、corolla、线性树、自由 colored operad $\Omega(T)$、树范畴 $\Omega$、dendroidal set、representable、dendroidal nerve、Segal core、faces、degeneracies、boundaries 和 inner horns。
 - 已证明 dendroidal nerve 在 $\eta$ 和 corollas 上读取颜色与运算，并证明 strict Segal 性。
 - Dendroidal nerve fully faithfulness 和 $\Delta\hookrightarrow\Omega$ fully faithfulness 已由 MW-1--MW-2 定位；树范畴 generalized Reedy 分解仍标为外部输入或说明性背景。
@@ -157,6 +160,7 @@
 ### `19_model_comparison_straightening_and_operadic_localization.md`
 
 - 已定义 relative category、relative functor、Dwyer-Kan localization、DK-equivalence、underlying infinity-category、straightening/unstraightening、operadic straightening、monoidal localization 和 operadic localization。
+- 已删除“大模型范畴任取小代表全子范畴”的过强说法：默认在更大 universe 中取 localization；只有本质小性或一个已验证的 small DK presentation 才允许小化，且 cofibrant-fibrant replacement 本身不提供小性。
 - 已证明 relative functor 诱导 localization 后的函子、derived tensor product 的 cofibrant replacement 计算、rectification 后 localization 等价。
 - Dwyer-Kan localization 存在性、simplicial model category 的 coherent nerve 比较、Quillen equivalence 到 infinity-equivalence 和 operadic straightening 均标为外部输入；ordinary straightening 已由 HTT-1 定位，monoidal Bousfield localization preserves operad/colored-operad algebras 的模型范畴版本已由 WHT-1--WHT-4 与 WY-1--WY-3 定位，完整 infinity-categorical algebra localization comparison 仍为外部输入。
 - 已明确“先取代数再 localization”与“先 localization 再取代数”不自动交换。
@@ -197,17 +201,21 @@
 ### `H_tree_conventions_and_free_operad_quotients.md`
 
 - 已区分平面有根树、$S$-叶标号非平面树和 Moerdijk-Weiss 树范畴中的 rooted trees。
-- 已给出自由对称 operad 的树群胚 coend 公式
+- 已给出自由对称 operad 的 $\mathcal U$-小树群胚骨架 colimit 公式
   $$
-  \mathbb F(E)(S)=\int^{T\in\mathbf{Tree}_S}\prod_{v\in V(T)}E(\operatorname{In}(v))
+  \mathbb F(E)(S)
+  =
+  \operatorname*{colim}_{T\in\mathbf{Tree}^{\mathrm{sk}}_S}
+  \prod_{v\in V(T)}E(\operatorname{In}(v))
   $$
-  及其自由性证明。
+  及其自由性证明；原先只有协变因子的伪 coend 已移除。
 - 已说明 $\Omega(T)$ 是由单棵树生成的 colored operad，不是自由单色 operad $\mathbb F(E)$ 的 arity 值。
 
 ### `I_koszul_bar_cobar_strict_conventions.md`
 
 - 已固定 reduced/augmented/coaugmented/conilpotent 约定。
 - 已定义 free operad 上的 derivation、cofree cooperad 上的 coderivation、quasi-free/quasi-cofree 对象、convolution dg Lie algebra、twisted composite products 和 Koszul complexes。
+- 已同步定义 9.11 的 coaugmentation splitting，并用在单位因子上取零的延拓写出 typed convolution pre-Lie 公式。
 - 已证明 derivation/coderivation 的泛性质、Maurer-Cartan 方程与 twisted differential square-zero 的关系、以及 bar/cobar 权重行为。
 - Koszul 判别等价、$\Omega\mathcal P^¡\to\mathcal P$ quasi-isomorphism criterion 仍标为外部输入。
 
@@ -250,13 +258,13 @@
 
 ### `P_low_arity_checks_and_worked_computations.md`
 
-- 已给出代入乘积 arity $0,1,2$、endomorphism operad 结合律、$\operatorname{Ass}$ 字典序复合、$\operatorname{Com}$ arity $0$ 单位、Lie 生成元关系、suspended $A_\infty$ 低阶关系、Hochschild bracket 低阶计算、dendroidal inner horn 最小例子和 cyclic bar levels。
+- 已给出代入乘积 arity $0,1,2$、自由 operad 二槽权重 $r+\sum_t s_t$、endomorphism operad 结合律、$\operatorname{Ass}$ 字典序复合、$\operatorname{Com}$ arity $0$ 单位、Lie 生成元关系、suspended $A_\infty$ 低阶关系、Hochschild bracket 低阶计算、dendroidal inner horn 最小例子和 cyclic bar levels。
 - 该附录用于检查符号、单位、左右作用、唯一填充/存在填充和 derived relative tensor product 的低阶表现。
 - 涉及 factorization homology 与 dendroidal inner Kan 的模型比较仍按附录 D 标为外部输入。
 
 ### `Q_koszul_complexes_and_bar_cobar_examples.md`
 
-- 已补充二元二次 operad 的权重-arity 关系、非对称 Ass 的关系、二次对偶低阶形状、Koszul twisting morphism 的权重行为、bar/cobar differential 低权重公式和 bar-cobar counit 的低权重检查。
+- 已补充二元二次 operad 的权重-arity 关系、非对称 Ass 的关系、二次对偶低阶形状、Koszul twisting morphism 的权重行为、bar/cobar differential 低权重公式和 bar-cobar counit 的低权重检查；counit 现明确杀掉 bar 权重 $>1$ 的单个 cobar 生成元，并由权重 $2$ 的 bar 收缩项与 cobar 分解项相消验证链映射性。
 - 附录 Q 已内部证明 $\operatorname{Ass}_{ns}$ 定向结合律终止且唯一临界对合流；由 LV-3 承担“合流二次 rewriting 推出 Koszul”这一步。Koszul 四项判别仍由 LV-1--LV-2、bar-cobar model-context/cofibrancy 由 Fresse 包分别控制；谱序列收敛只在正文写明的逐 arity 有界条件下使用。
 - 该附录修复了第八、九章只有抽象定义、缺少可手算局部模型的问题。
 
@@ -275,6 +283,7 @@
 ### `T_dendroidal_horns_segal_and_normality_examples.md`
 
 - 已给出两顶点树 inner horn、三顶点线性树、Segal core、boundary 与 horn 差异、corolla automorphism 和 degeneracy 的低阶样例。
+- Unary degeneracy 已按树箭头 $L_1\to\eta$、预层箭头 $X_\eta\to X_{L_1}$ 修正，并与 simplicial $s_0:X_0\to X_1$ 对齐。
 - 已明确 strict nerve 中 filler 唯一，一般 inner Kan dendroidal set 只要求 filler 存在。
 - Normal monomorphism 和 fully faithfulness 仍作为外部输入，不在附录中伪证。
 

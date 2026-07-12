@@ -14,15 +14,15 @@
 | Wilson coefficient | 第 2 章 | 定义已闭合 | 无 |
 | 树级匹配 | 第 2、10 章 | 三个 worked examples 已闭合；重实 singlet 的完整二次逆核已展开到 $M^{-4}$，同时保留 $X\Box X$ 与 $\kappa X^3$ 并声明 $|\Box|/M^2$、$|\kappa X|/M^2$ 条件 | 无；singlet 系数为书内完成平方推导 |
 | 圈级 matching 与 IR 消去 | 第 2、18 章 | 共同 soft 部分消去由命题 2.7B 证明；标量行列式例子已闭合 | 区域分解方法使用 EFT-REGIONS；具体 SMEFT 模型匹配仍依赖专门文献 |
-| 幂计数与截断 | 第 1、3、6、8 章 | $(p,L)$ bidegree、多次插入与可观测量展开已闭合；误差模型与严格余项已区分 | NDA/强耦合数值层级依赖 UV 假设 |
+| 幂计数与截断 | 第 1、3、6、8、12 章及附录 D 12.1 | $(p,L)$ bidegree、多次插入与可观测量展开已闭合；$A_2^{[5,5]}$、$A_4^{[6,6]}$ 和允许的 $d=5$ 组合已显式；误差模型与严格余项已区分 | NDA/强耦合数值层级依赖 UV 假设 |
 | RGE 与 leading log | 第 3、15 章 | 裸作用量固定逆转置约定、路径有序解、换基协变和尺度抵消已闭合 | 线性维数六完整矩阵使用 SMEFT-RGE6；$p=4$ 非线性 mixing 未外推 |
 | EOM、基商与 RG descent | 第 2、4 章 | 一/二阶场重定义、typed quotient、命题 4.9A 不变子空间判据已闭合 | 量子等价使用 EFT-EQ/EFT-EQ-HO；SMEFT quotient 闭合使用 SMEFT-EOM-RG |
 | Gauge/BRST 与 evanescent 投影 | 第 2-4 章 | 计算顺序与四维/DR 边界已声明 | 一般 algebraic renormalization 使用 EFT-REN |
-| SMEFT 有效性 | 第 6、8 章 | 参考尺度反例、$Q/M_{\rm gap}$、插入与 loop/log 独立检查已闭合 | 未知 $M_{\rm gap}$ 与 UV coupling 只能条件化 |
+| SMEFT 有效性 | 第 6、8、17、22 章及附录 D | 参考尺度反例、$Q/M_{\rm gap}$ 局域性、$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 插入层级与 loop/log 独立检查已同步到发布标准和图谱 | 未知 $M_{\rm gap}$ 与 UV coupling 只能条件化；须先有 $M_{\rm gap}=M$ 的单物理尺度 matching，才可另选 $\Lambda_{\rm ref}=M$ |
 | 破缺相输入方案 | 第 16 章 | 线性例子已闭合 | 完整 Feynman 规则为外部输入 |
 | Flavor 参数计数 | 第 20 章 | 通用张量计数已闭合 | Warsaw exact 2499 计数的逐项 Fierz 审计为外部输入 |
 | 电弱输入方案 | 第 21 章 | $\{\alpha,G_F,m_Z\}$ 线性系统已闭合 | 具体 Wilson-to-epsilon 映射依规范化 |
-| Observables-to-operators 图谱 | 第 22 章 | 结构级图谱已闭合 | 数值响应矩阵依数据集和工具 |
+| Observables-to-operators 图谱 | 第 22 章 | 结构级图谱已闭合；dilepton map 已分开 Wilson 插入大小与 $Q/M_{\rm gap}$ validity cut | 数值响应矩阵依数据集和工具 |
 
 ## 2. Warsaw basis 结构台账
 
@@ -67,7 +67,7 @@ $$
 | 完整 dimension-eight basis | 第 12 章给边界 | 结构规模大，作为高级研究边界 |
 | 完整 SMEFT 维数六线性 RGE 矩阵 | 第 3、15 章给接口与最小例子 | 数值矩阵由 SMEFT-RGE6 外部承载 |
 | $p=4$ 双插入/维数八 RGE | 第 3 章只给一般非线性类型 | 完整 counterterm basis 与 anomalous tensors 超出第一版 |
-| 全局拟合数值复现 | 第 17、19 章给元数据标准 | 依赖数据集、协方差和工具版本 |
+| 全局拟合数值复现 | 第 17、19、22 章给元数据标准 | 依赖数据集、协方差、条件化的 $M_{\rm gap}$ 和工具版本 |
 | Basis conversion 全表 | 附录 E 给接口和例子 | 完整逐项表依目标基规范化 |
 
 ## 4. 使用规则

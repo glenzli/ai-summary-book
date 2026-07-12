@@ -67,8 +67,10 @@
 
 - $\mathbb S^1_i:\mathcal U_i$：第 $i$ 层的 universe-polymorphic 圆实例；固定层级后写 $\mathbb S^1$，点与路径构造子写 $\mathsf{base}$、$\mathsf{loop}:\mathsf{base}=\mathsf{base}$。
 - $\beta_{\mathsf{loop}}$、$\beta^P_{\mathsf{loop}}$：本书公理化圆中递归与依赖消去在 $\mathsf{loop}$ 上的 propositional computation 路径；点计算为 judgmental。
-- $\mathsf{susp}(A)$：$A$ 的悬挂。
-- $\mathsf{pushout}(f,g)$：两个映射 $f:A\to B$、$g:A\to C$ 的 pushout 高阶归纳类型。
+- $\mathsf{susp}(A)$：$A$ 的悬挂；$\mathsf{suspRec}$、$\mathsf{suspInd}$ 分别为递归子和依赖消去子。
+- $\beta^{\mathsf{suspRec}}_{\mathsf{merid}}$、$\beta^{\mathsf{suspInd}}_{\mathsf{merid}}$：悬挂在 meridian 上的 propositional $\mathsf{ap}/\mathsf{apd}$-$\beta$ 路径；north/south 点计算为 judgmental。
+- $\mathsf{pushout}(f,g)$：两个映射 $f:A\to B$、$g:A\to C$ 的 pushout 高阶归纳类型；$\mathsf{pushRec}$、$\mathsf{pushInd}$ 分别为递归子和依赖消去子。
+- $\beta^{\mathsf{pushRec}}_{\mathsf{glue}}$、$\beta^{\mathsf{pushInd}}_{\mathsf{glue}}$：pushout 在 glue 上的 propositional $\mathsf{ap}/\mathsf{apd}$-$\beta$ 路径；inl/inr 点计算为 judgmental。
 - $\mathsf{cofib}(f)$：映射 $f:A\to B$ 的 cofiber，即 $B\leftarrow A\to\mathbf 1$ 的 pushout。
 - $\mathsf{Code}_{LR}(b,c)$：pushout 中从左侧点 $\mathsf{inl}(b)$ 到右侧点 $\mathsf{inr}(c)$ 的路径 code family。
 - $\mathsf{gap}$：pushout 方块的 gap map，通常从输入交点类型到路径空间或其 code fiber。
@@ -135,6 +137,7 @@
 - $\mathcal C^{\mathsf{op}}$：$\mathcal C$ 的反范畴。
 - $\mathcal C(x,y)$：对象 $x,y$ 之间的 Hom 类型。
 - $x\cong y$：范畴中的同构。
+- $A\cong_{\mathrm w}B$：universe 的 wild category 中 $A$ 与 $B$ 的同构；逆律位于函数类型的 identity type，不预设函数外延性。
 - $\mathsf{idtoiso}_{x,y}:(x=y)\to(x\cong y)$：对象相等诱导同构。
 - $\mathsf{isUnivalentCat}(\mathcal C)$：范畴 $\mathcal C$ 是单值范畴，即 $\mathsf{idtoiso}$ 是等价。
 - $F:\mathcal C\to\mathcal D$：预范畴之间的函子。

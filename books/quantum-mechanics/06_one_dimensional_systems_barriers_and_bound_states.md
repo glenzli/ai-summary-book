@@ -10,13 +10,45 @@
 
 ## 6.1 一维 Hamiltonian
 
-**定义 6.1.** 一维粒子的形式 Hamiltonian 为
+**定义 6.1.** 取 $m>0$。在 $\mathcal H=L^2(\mathbb R)$ 上，自由
+Hamiltonian 为
+$$
+H_0=-\frac{1}{2m}\frac{d^2}{dx^2},
+\qquad \mathcal D(H_0)=H^2(\mathbb R).
+$$
+对几乎处处有限的可测实函数 $V:\mathbb R\to\mathbb R$，记同名乘法
+算子
+$$
+(V\psi)(x)=V(x)\psi(x),
+\qquad
+\mathcal D(V)=\{\psi\in L^2(\mathbb R):V\psi\in L^2(\mathbb R)\}.
+$$
+一维粒子的形式 Hamiltonian 为
 $$
 H=-\frac{1}{2m}\frac{d^2}{dx^2}+V(x).
 $$
-严格地，$H$ 是 $L^2(\mathbb R)$ 中某个稠密定义域上的自伴算子；自伴性通常由外部输入定理保证。
+实值条件保证该最大乘法算子自伴；它在任意稠密线性子定义域上的限制
+都是对称算子。复值势一般不满足这一点。下面的外部输入给出一类严格的
+自伴实现。
 
-**外部输入定理 6.2（Kato-Rellich，QM-EXT-3）.** 若势能 $V$ 相对于自由 Hamiltonian $H_0=-\frac1{2m}d^2/dx^2$ 的相对界小于 $1$，则 $H_0+V$ 在 $\mathcal D(H_0)$ 上自伴。
+**外部输入定理 6.2（Kato-Rellich，QM-EXT-3）.** 设 $A$ 自伴，
+$B$ 对称，并且 $\mathcal D(A)\subseteq\mathcal D(B)$。若存在
+$0\le a<1$ 与 $b\ge0$，使每个 $\psi\in\mathcal D(A)$ 都满足
+$$
+\|B\psi\|\le a\|A\psi\|+b\|\psi\|,
+$$
+则 $A+B$ 在 $\mathcal D(A)$ 上自伴；若 $\mathscr C$ 是 $A$ 的算子
+核心，则限制 $(A+B)|_{\mathscr C}$ 本质自伴。
+
+应用到定义 6.1 时，还须假设
+$H^2(\mathbb R)\subseteq\mathcal D(V)$，并对某个 $a<1,b\ge0$ 有
+$$
+\|V\psi\|_2\le a\|H_0\psi\|_2+b\|\psi\|_2,
+\qquad \psi\in H^2(\mathbb R).
+$$
+由于 $V$ 实值，$B=V$ 是对称乘法算子，故
+$H=H_0+V$ 在 $\mathcal D(H)=H^2(\mathbb R)$ 上自伴。特别地，
+有界实势满足 $a=0$；本章的有限实值分段常数势属于这一情形。
 
 ## 6.2 无限深方势阱
 

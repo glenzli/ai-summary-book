@@ -29,7 +29,7 @@
 - Schwarzschild 视界、Kruskal 坐标、Penrose 图的基本解释。
 - FLRW 度量、Friedmann 方程、连续性方程和标准宇宙学参数。
 - 线性化 Einstein 方程、调和规范、TT 规范、引力波自由度。
-- ADM 初值约束、能量条件、正质量定理、奇点定理和整体结构的边界。
+- ADM 初值约束、ADM 四动量与不变质量、能量条件、正质量定理、奇点定理和整体结构的边界。
 - Kerr 度规、视界、能层、Killing 守恒量、Carter 常数入口和 Penrose 过程。
 - FLRW 扰动、规范问题、线性密度增长、CMB 声学振荡入口和张量扰动。
 - 后 Newton、PPN、双星辐射、EOB、3+1 分解、BSSN 和波形提取入口。

@@ -37,7 +37,8 @@
 | 4.7 | P | open/closed string mass formula and level matching | Virasoro constraint |
 | 4.7C | P | exponential cutoff 的截距有限部 | regulated mode sum |
 | 4.9 | S | 玻色弦临界条件 | BRST consistency |
-| 4.10 | E | no-ghost theorem | Goddard-Thorn/Brower |
+| 4.10 | E | 非零动量 open/closed no-ghost physical quotient | $D=26$、$a=1$、$p\ne0$、open $H^1_{\rm rel}$/closed $H^2_{\rm sr}$ |
+| 4.10A | E | 零动量 no-ghost/BRST cohomology 的例外边界 | open level-one 反例、relative/semi-relative/absolute zero modes、AB97 |
 | 4.15 | P | light-cone physical oscillators | Virasoro constraints |
 | 4.16 | E | light-cone Lorentz algebra closure | normal-ordered Poincare generators |
 | 5.5 | P | Faddeev-Popov ghosts 的 central charge | ghost CFT |
@@ -150,9 +151,13 @@
 | 17.2 | S | BPS multiplet shortening | supersymmetry algebra |
 | 17.4B | S | wall crossing 的必要性 | BPS stability |
 | 17.5 | S | Bekenstein-Hawking 领先半经典公式 | two-derivative gravity |
-| 17.7 | E | D1-D5 CFT central charge | brane CFT |
+| 17.7 | E | D1-D5 internal CFT central charge $c=6N$ 与 charge-coordinate 边界 | SW99；本章 convention $N=Q_1Q_5$ |
 | 17.8 | E | Cardy asymptotics | modular-invariant unitary CFT |
-| 17.8A | P | D1-D5-P Cardy leading term 的有限代入 | 17.7、17.8 |
+| 17.8A | P | 普通 Cardy 不选择固定右动 BPS 扇区 | 17.8 的适用对象 |
+| 17.8B | E | K3 D1-D5 orbifold elliptic genus、DMVV 生成函数、weak Jacobi 性与 maximal polar term | supersymmetric index、SW99/DMVV97 |
+| 17.8C | E | 固定-index Jacobi--Rademacher 渐近及 simultaneous-charge 边界 | EZ85/DMZ12、非零 leading coupling；不含 uniform large-index theorem |
+| 17.8D | P | 非旋转 D1-D5-P protected-index leading exponent | 17.8B--C、$N=Q_1Q_5$ |
+| 17.8E | P | index 对绝对 BPS degeneracy 只给下界 | 三角不等式、非指数 cancellation 假设 |
 | 17.9 | E | D1-D5-P supergravity area asymptotics | extremal black-hole solution |
 | 17.11 | E | 两导数 BPS attractor 接口 | BPS flow、regularity |
 | 17.12 | E | Wald Noether-charge entropy | diffeomorphism-invariant Lagrangian |

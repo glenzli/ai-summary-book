@@ -27,7 +27,13 @@ rings 的态射及其测度相容性，不存在由“solid”自动通向“liq
 1. \(\mathbf{CondAb}\) 和 \(D(\mathbf{CondAb})\)；
 2. \(D_\square(\mathbb Z)\) 及其 solid 环、solid 模；
 3. \(D(A,\mathcal M)\) 形式的 analytic 模范畴；
-4. \(D_{\mathrm{liq},p}(\mathbb R)\) 或 \(D_{\mathrm{liq},p}(\mathbb C)\) 形式的 liquid 范畴。
+4. 固定 \(0<p\le1\) 后，已在定理 5.3 与 S.1 定义的
+   \(D(\mathbf{Liquid}_p)\)。
+
+需要复结构时不另引入未定义的“复 liquid 派生范畴”：复 liquid 对象指一对
+\((K,J)\)，其中 \(K\in D(\mathbf{Liquid}_p)\)、
+\(J\in\operatorname{End}(K)\) 且 \(J^2=-\operatorname{id}_K\)；复线性态射按定义
+与相应的 \(J\) 交换。这正是 P.10 中“乘以 \(i\)”的内自同态口径。
 
 **原则 T.2（接口关系）.** 各环境之间只使用下列有类型的关系：
 
@@ -35,7 +41,8 @@ rings 的态射及其测度相容性，不存在由“solid”自动通向“liq
 2. analytic 是 \(D(A)\) 对 analytic measure cone 的局部化；
 3. solid theory 是 analytic ring \((\mathbb Z,\mathbb Z^\square)\) 的特例；
 4. \(p\)-liquid theory 是另一 analytic ring
-   \((\underline{\mathbb R},\mathcal M_{<p})\) 的解析模理论；
+   \((\underline{\mathbb R},\mathcal M_{<p})\) 的解析模理论，其派生范畴按 S.1
+   记为 \(D(\mathbf{Liquid}_p)\)；
 5. 对经典完备拓扑向量空间 \(E\)，记号
    \(\mathcal L_p(E)=\underline E\) 只记录其 liquid membership；它不是从 solid
    范畴出发的局部化。
@@ -67,7 +74,9 @@ rings 的态射及其测度相容性，不存在由“solid”自动通向“liq
 3. analytic ring \((A,\mathcal M)\) 给出反射局部子范畴 \(D(A,\mathcal M)\)；
 4. analyticization 满足泛性质，并与张量积相容；
 5. Huber pair 的 rational localization 满足 Čech descent；
-6. \(p\)-liquid 向量空间形成 analytic/liquid 范畴；
+6. \(p\)-liquid 向量空间形成 \(\mathbf{Liquid}_p\)，其派生环境为
+   \(D(\mathbf{Liquid}_p)\)；复结构在需要时由满足
+   \(J^2=-\operatorname{id}\) 的内自同态记录；
 7. 逐项 liquid 且相关 quotient 映射满足 profinite 参数族局部提升的 Fréchet 复形，
    其拓扑 cohomology 与 liquid cohomology 相容；连续 Hodge splitting 是充分条件；
 8. Dolbeault 型对象进入第三卷时，类型、finite-dimensionality 和 perfect 性已由第二卷给出检查表。
@@ -86,7 +95,9 @@ T.1-T.2 及第二卷命题 5.9 分开控制。证毕。
 2. 若出现 analytic module，必须说明 analytic ring \((A,\mathcal M)\) 和 localization；
 3. 若出现 rational cover，必须引用 rational Čech descent；
 4. 若出现 Fréchet、Banach、Dolbeault 对象，必须说明逐项凝聚化的 liquid membership；
-   若还比较 cohomology，必须验证 quotient 的局部提升或给出连续 splitting；
+   若还比较 cohomology，必须验证 quotient 的局部提升或给出连续 splitting；若对象带
+   复结构，则在 \(D(\mathbf{Liquid}_p)\) 中记录满足
+   \(J^2=-\operatorname{id}\) 的内自同态；
 5. 若声称 cohomology finite-dimensional 或 perfect，必须说明使用 Fredholm/Hodge、Grauert 或其他输入。
 
 **命题 T.4（应用卷不重建主线）。** 第三卷中的 Dolbeault、Serre duality、GAGA 和 HRR/GRR 不能替代第二卷的 solid/analytic/liquid 主线证明；它们只能在 T.3 的框架内使用这些结构。

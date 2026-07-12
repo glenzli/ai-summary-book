@@ -29,16 +29,19 @@
 1. README 中旧章节状态已统一为“严格草稿”。
 2. 第六章 Schur functor 的右-左作用约定已编号为约定 6.2.1，并同步到 `NOTATION.md`。
 3. 第七章 7.15 已统一为“说明 7.15”，避免最终索引中出现孤立 statement type。
-4. 第四章自由对称 operad 的树群胚公式已转入内部闭合处理；附录 H 已给出群胚 coend 公式和自由性证明。
+4. 第四章自由对称 operad 的树群胚公式已转入内部闭合处理；附录 H 已给出 $\mathcal U$-小树群胚骨架上的 colimit 公式和自由性证明。
 
 ## 3. 自由对称 operad 状态修正
 
 此前部分元文档把“自由对称 operad 的完整树群胚公式”列为引用阻断项。经过内部审计，应改为：
 
 - 第四章给出叶标号树定义、树代入和自由性证明；
-- 附录 H 给出群胚 coend 公式
+- 附录 H 给出 $\mathcal U$-小树群胚骨架 colimit 公式
   $$
-  \mathbb F(E)(S)=\int^{T\in\mathbf{Tree}_S}\prod_{v\in V(T)}E(\operatorname{In}(v));
+  \mathbb F(E)(S)
+  =
+  \operatorname*{colim}_{T\in\mathbf{Tree}^{\mathrm{sk}}_S}
+  \prod_{v\in V(T)}E(\operatorname{In}(v));
   $$
 - 文献仍应在 `SOURCES.md` 中作为对照来源，但该公式不再阻断 operad theory 主体闭合。
 

@@ -73,3 +73,17 @@
 上述数学缺口已经在正文、定理账本、来源索引和 label 表中同步关闭。后续仍可做 bibliography、符号模型与排版终校，但不得再以“仅剩 production work”为理由跳过假设和 arity $0$ 检查。
 
 Koszul 四项判别的书本 locator 已在本轮进一步精确到 Loday--Vallette Theorems 6.6.2（LV-1）和 7.4.6（LV-2）；Theorem 8.1.1 及其后 $\operatorname{As}$ 例子登记为 LV-3，支撑附录 Q 的 nonsymmetric rewriting/Koszul 步骤。这些结论不替代 FRE/HIN 的模型范畴 cofibrancy 输入。
+
+## 7. 2026-07-12 OET 类型与小性复核
+
+本轮按 OET 对象层、方差和证明责任要求关闭七个局部错误，并同步 `NOTATION.md`、`THEOREM_LEDGER.md`、`MATH_REVIEW.md`、`INTERNAL_OPERAD_CLOSURE_AUDIT.md` 及低阶计算附录 P/Q/T：
+
+1. 第八章把自由 operad 完整代入的权重修正为 $r+\sum_t s_t$；外层 arity 为 $n$ 且所有内层同权 $s$ 时为 $r+ns$。证明、练习 8.1 和附录 P 的二槽验算已同步。
+2. 第九章把 $M\circ_{(1)}N$ 定义为 $M\circ(I_k\oplus N)$ 对 $N$ 的一次齐次分量；$\Delta_{(1)}$ 由 coaugmentation 分裂构造，convolution pre-Lie 与 Maurer--Cartan 方程统一在 $\operatorname{Hom}_{\mathbb S}(\overline{\mathcal C},\overline{\mathcal P})$ 中。附录 I 已同步 zero-extension 类型。
+3. 附录 Q 明确 bar 权重 $>1$ 的单个 cobar 生成元在 bar-cobar counit 下映到 $0$，而外层自由 operad 复合按泛性质延拓；权重 $2$ 链映射检查改写为 bar 收缩项与 cobar 分解项的相反符号抵消。
+4. 附录 H 把只有协变因子的伪 coend 改为固定 $\mathcal U$-小树群胚骨架上的 colimit，并在 grafting 与自由性证明中补出换骨架代表的独立性。
+5. 第十六章从开头固定有限 rooted trees 的 $\mathcal U$-小代表集，并据此定义小树范畴 $\Omega$；dendroidal presheaf、逐树余极限和 category of elements 的 universe 层级已写明。
+6. 附录 T 的 unary degeneracy 已修正为树箭头 $L_1\to\eta$ 和预层箭头 $X_\eta\to X_{L_1}$，并与 simplicial degeneracy $s_0:X_0\to X_1$ 对齐。
+7. 第十九章删除“大模型范畴任取小代表全子范畴”的过强小化；默认在更大 universe 中取 underlying infinity-category，只有本质小性或已验证的 small DK presentation 才允许小化。Cofibrant-fibrant presentation 本身不蕴含小性。
+
+本轮未新增或重编号正式定义、命题、定理和练习标签，因此四个 label ledger 的编号清单不变。

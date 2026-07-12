@@ -115,6 +115,11 @@
 - Wheeled contraction 写作 $\operatorname{tr}_i^j$。
 - 二次数据写作 $(E,R)$，二次 operad 写作 $\mathcal P(E,R)$。
 - 自由 operad 的权重 $r$ 部分写作 $\mathbb F^{(r)}(E)$。
+- 若 $x\in\mathbb F^{(r)}(E)(n)$ 且 $y_t\in\mathbb F^{(s_t)}(E)(m_t)$，则完整 operad 代入的权重为
+  $$
+  r+\sum_{t=1}^n s_t;
+  $$
+  当所有 $s_t=s$ 时为 $r+ns$。只有恰有一个非单位内层因子时才简化为 $r+s$。
 - Ginzburg--Kapranov 有限型线性对偶 operad 写作 $\mathcal P^!=\mathcal P(E^\vee,R^\perp)$。
 - 二次对偶 cooperad 写作 $\mathcal P^¡=\mathcal C(sE,s^2R)\subseteq\mathbb T^c(sE)$；这里 $s$ 是链悬挂，不是 operadic suspension $\Lambda$。
 
@@ -128,13 +133,14 @@
 - connected：除单位外 arity $0,1$ 均为零；与仅仅 augmented/reduced 分开。
 - conilpotent：每个元素的迭代 reduced decomposition 在足够大树权重后为零；不表示逐 arity 有统一界。
 - $\mathbb T^c(M)$：由 dg 对称序列 $M$ 生成的 cofree conilpotent cooperad。
-- $\circ_{(1)}$：infinitesimal composition product。
-- $\Delta_{(1)}$：cooperad 的 infinitesimal decomposition。
+- $M\circ_{(1)}N:=\bigl(M\circ(I_k\oplus N)\bigr)_{[1]}$：对 $N$ 的一次齐次分量，即恰有一个内层槽使用 $N$、其余槽使用 $I_k$ 的 infinitesimal composition product。
+- $\Delta_{(1)}$：先用 coaugmentation 分裂 $\mathcal C\cong I_k\oplus\overline{\mathcal C}$ 展开 $\Delta:\mathcal C\to\mathcal C\circ\mathcal C$，再投影到恰有一个内层 $\overline{\mathcal C}$ 因子的分量；$\overline\Delta_{(1)}:\overline{\mathcal C}\to\overline{\mathcal C}\circ_{(1)}\overline{\mathcal C}$ 表示进一步去掉外层单位项的 reduced 版本。
 - $\operatorname{Tw}(\mathcal C,\mathcal P)$：从 $\mathcal C$ 到 $\mathcal P$ 的 twisting morphism 集合。
 - $\Omega\mathcal C$：cobar construction。
 - $B\mathcal P$：bar construction。
 - $\operatorname{Conv}(\mathcal C,\mathcal P)$：convolution dg Lie algebra $\operatorname{Hom}_{\mathbb S}(\overline{\mathcal C},\overline{\mathcal P})$。
 - $\star$：convolution pre-Lie product。
+- Bar-cobar counit $\epsilon:\Omega B\mathcal P\to\mathcal P$ 在单个 cobar 生成元 $s^{-1}b$ 上只于 $b=sp$ 的 bar 权重 $1$ 情形取值 $p$；bar 权重 $>1$ 时取 $0$，再由自由 operad 泛性质作复合延拓。
 - $\mathcal C\circ_\alpha\mathcal P$、$\mathcal P\circ_\alpha\mathcal C$：由 twisting morphism $\alpha$ 定义的 twisted composite products。
 - $K_r(\mathcal P)=\mathcal P^¡\circ_\kappa\mathcal P$：右 Koszul complex。
 - $K_l(\mathcal P)=\mathcal P\circ_\kappa\mathcal P^¡$：左 Koszul complex。
@@ -215,7 +221,8 @@
 
 ## Dendroidal sets
 
-- $\Omega$：Moerdijk-Weiss 树范畴。
+- $\mathbf{Tree}^{\mathrm{sk}}_S$：$S$-叶标号有限 rooted trees 群胚的固定 $\mathcal U$-小 full skeleton；自由 operad 的树群胚公式在它上面取 colimit。
+- $\Omega$：对象取自固定 $\mathcal U$-小有限 rooted-tree 骨架的 Moerdijk-Weiss 树范畴。
 - $E(T)$：树 $T$ 的边集。
 - $V(T)$：树 $T$ 的顶点集。
 - $r_T$：树 $T$ 的根边。
@@ -223,7 +230,7 @@
 - $\eta$：只有一条边且无顶点的单位树。
 - $C_n$：$n$-corolla。
 - $L_n$：有 $n$ 个 unary 顶点的线性树。
-- $\mathbf{dSet}$：dendroidal sets，即 $\operatorname{Fun}(\Omega^{\operatorname{op}},\mathbf{Set})$。
+- $\mathbf{dSet}$：dendroidal sets，即 $\operatorname{Fun}(\Omega^{\operatorname{op}},\mathbf{Set}_{\mathcal U})$；它是 locally $\mathcal V$-small。
 - $\Omega[T]$：由树 $T$ 表示的 representable dendroidal set。
 - $N_d(\mathcal P)$：colored operad $\mathcal P$ 的 dendroidal nerve。
 - $\operatorname{Sc}[T]$：树 $T$ 的 Segal core。
@@ -231,6 +238,7 @@
 - $\Lambda^e[T]$：inner edge $e$ 对应的 dendroidal inner horn。
 - $\operatorname{Aut}_\Omega(T)$：树 $T$ 在 $\Omega$ 中的自同构群。
 - $i:\Delta\to\Omega$：把 ordinal 送到线性树的嵌入函子。
+- Unary degeneracy 的树箭头写作 $\sigma:L_1\to\eta$；对 presheaf $X$，其方差给出 $X(\sigma):X_\eta\to X_{L_1}$。
 - Inner Kan dendroidal set：每个 $\Lambda^e[T]\to X$ 均可延拓到 $\Omega[T]\to X$ 的 dendroidal set。
 - Normal monomorphism：新增 nondegenerate dendrexes 上树自同构群自由作用的 monomorphism。
 - Inner anodyne map：由 inner horn inclusions 生成的弱饱和类中的态射。
@@ -254,7 +262,7 @@
 - $(\mathcal C,\mathcal W)$：relative category。
 - $L(\mathcal C,\mathcal W)$：Dwyer-Kan localization。
 - $L^H(\mathcal C,\mathcal W)$：hammock localization。
-- $\mathcal M_\infty$：模型范畴 $\mathcal M$ 的 underlying infinity-category。
+- $\mathcal M_\infty$：模型范畴 $\mathcal M$ 的 underlying infinity-category；若 $\mathcal M$ 不是当前 universe 中的小范畴，默认在更大 universe 中取 localization。只有 $\mathcal M$ 本质小或已给出 small DK presentation 时才作小化。
 - $N_\Delta$：simplicial category 的 homotopy coherent nerve。
 - $\mathbf L F$、$\mathbf R G$：Quillen adjunction 的左/右导出 infinity-functors。
 - $\operatorname{St}_S$：straightening functor over $S$。

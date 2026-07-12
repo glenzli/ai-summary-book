@@ -55,14 +55,18 @@ $$
 
 **证明.** 由定理 9.4，conjugate filtration 的各 associated graded 是 perfect complex 的 shift 和 invertible twist，因此仍为 perfect。Smooth relative dimension 有限，故 filtration 有有限非零 graded pieces。Perfect complexes 在有限 extension 下封闭，所以 $\overline\Delta_{X/A}$ perfect。证毕。
 
-**命题 9.7.** 在命题 9.6 的假设下，若每个 $H^j(X,\Omega^i)$ 为有限生成 $A/I$-module，则每个 $H^n(\overline\Delta_{X/A})$ 为有限生成 $A/I$-module。
+**命题 9.7.** 在命题 9.6 的假设下，再假设 $A/I$ 是 Noetherian，且每个
+$H^j(X,\Omega^i)$ 为有限生成 $A/I$-module。则每个
+$H^n(\overline\Delta_{X/A})$ 为有限生成 $A/I$-module。
 
 **证明.** 有限 filtration 给出 spectral sequence
 $$
 E_1^{i,j}=H^{i+j}\left(R\Gamma(X,\Omega^i)[-i]\{-i\}\right)
 \Rightarrow H^{i+j}(\overline\Delta_{X/A}).
 $$
-$E_1$ 页由有限生成模组成，且只有有限多列非零。每个 $E_\infty$ 项为有限生成模的 subquotient，目标 cohomology 有有限 filtration，因此有限生成。证毕。
+$E_1$ 页由有限生成模组成，且只有有限多列非零。因 $A/I$ Noetherian，
+有限生成模的子模以及其 quotient 都有限生成，故每个 $E_\infty$ 项有限生成。
+目标 cohomology 有有限 filtration，因此有限生成。证毕。
 
 ## 9.3 De Rham specialization
 

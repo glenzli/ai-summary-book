@@ -14,27 +14,28 @@
 
 1.  EFT 类型：SMEFT、HEFT、LEFT 或其他；
 2.  算符基；
-3.  Wilson 系数定义尺度；
+3.  Wilson 坐标归一化 $\Lambda_{\rm ref}$ 与重整化定义尺度 $\mu$；
 4.  flavor 假设；
 5.  CP 假设；
 6.  输入参数方案；
 7.  截断阶数；
 8.  是否保留维数六平方项；
-9.  数据能区或有效性切割；
-10. 理论误差和协方差处理。
+9.  数据硬尺度 $Q$、条件化的物理谱隙 $M_{\rm gap}$ 与有效性切割；
+10. Wilson 插入层级；
+11. 理论误差和协方差处理。
 
 ## 17.2 可复核计算链
 
 **流程 17.2（计算链）.**
 
-1.  写出 UV 或高尺度 Wilson 系数。
-2.  在匹配尺度给出 $C_i(\Lambda)$。
+1.  写出 UV 或高尺度 Wilson 系数，并区分 $M_{\rm gap}$ 与 $\Lambda_{\rm ref}$。
+2.  在匹配尺度 $\mu_{\rm match}$ 给出 $C_i^{(d)}(\mu_{\rm match})$。
 3.  用 RGE 运行到实验尺度。
 4.  转到破缺相并选择输入参数方案。
 5.  计算振幅或截面。
 6.  线性化或保留平方项。
 7.  与数据协方差比较。
-8.  报告有效性检查。
+8.  分别报告 $Q/M_{\rm gap}$ 局域性、Wilson 插入层级与 loop/log 检查。
 
 **原则 17.3.** 如果中间任一步省略，则最终结论应降级为“估计”或“投影”，不得称为完整 SMEFT 约束。
 
@@ -46,13 +47,15 @@
 | --- | --- | --- |
 | EFT | SMEFT dimension-six | 不知道自由度和对称性 |
 | 基 | Warsaw | Wilson 坐标不可解释 |
-| 尺度 | $1\ {\rm TeV}$ | 无法比较 RGE 后结果 |
+| Wilson 坐标/运行尺度 | $\Lambda_{\rm ref}=1\ {\rm TeV}$，$\mu=1\ {\rm TeV}$ | 归一化与 RGE 位置不明确 |
+| 物理谱隙 | 条件假设 $M_{\rm gap}>Q_{\max}/\rho$ | 无法判断局域展开域 |
 | flavor | diagonal nonuniversal | 参数数不明确 |
 | CP | CP-even | 是否含 EDM 方向不明确 |
 | 输入方案 | $\{\alpha,G_F,m_Z\}$ | 电弱预测不可复现 |
 | 截断 | linear dim-6 | 维数六平方和维数八边界不清 |
 | 数据 | bins and covariance | likelihood 不可复现 |
-| 有效性 | $m_{\ell\ell}<\Lambda$ | 高能 bin 可能越界 |
+| 有效性 | $Q_{\max}/M_{\rm gap}\le\rho<1$，并逐 bin 报告 $Q$ | 高能 bin 可能越过遗漏 pole/threshold |
+| Wilson 插入 | 逐 bin 报告 $|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ | 无法检查所声明的插入截断层级 |
 | 工具 | version/hash | 数值结果不可追踪 |
 
 ## 17.4 常见错误
@@ -61,9 +64,26 @@
 
 **错误 17.5（隐含 flavor 假设）。** 报告“$C_{\ell q}$ 的限制”而不说明 flavor 指标组合。
 
-**错误 17.6（过度使用高能 bin）。** 使用 $E\sim\Lambda$ 或 $E>\Lambda$ 的数据，却仍宣称截断 EFT 结果模型无关。
+**错误 17.6（过度使用高能 bin）。** 使用 $Q\sim M_{\rm gap}$ 或
+$Q>M_{\rm gap}$ 的数据，却仍宣称局域截断 EFT 结果模型无关。若 $M_{\rm gap}$
+未知，必须把 cut 和结论写成对 $M_{\rm gap}$ 的条件陈述。
 
-**错误 17.7（维数六平方项误读）。** 保留 $C_iC_j/\Lambda^4$ 项，却声称结果是完整到 $1/\Lambda^4$。
+**原则 17.6A（局域性与插入大小分开报告）.** 对 dimension-$d$ 算符，略去过程特有
+耦合、helicity 和群论因子后，Wilson 插入大小写为
+$$
+\epsilon_i^{(d)}(Q)
+=|C_i^{(d)}(\mu)|
+\left(\frac{Q}{\Lambda_{\rm ref}}\right)^{d-4}.
+$$
+在 $\Lambda_{\rm ref}\mapsto a\Lambda_{\rm ref}$、
+$C_i^{(d)}\mapsto a^{d-4}C_i^{(d)}$ 下，$\epsilon_i^{(d)}$ 不变；它检查 Wilson
+插入层级。局域性则由 $Q/M_{\rm gap}$ 检查。只有在明确 UV matching 的模型中先
+声明单一物理重尺度 $M$，并验证最近遗漏奇点满足 $M_{\rm gap}=M$，才可再选择
+$\Lambda_{\rm ref}=M$。这项坐标选择不是一般 SMEFT 有效性条件。
+
+**错误 17.7（维数六平方项误读）。** 保留
+$C_i^{(6)}C_j^{(6)}/\Lambda_{\rm ref}^4$ 项，却声称结果在所声明假设下完整到
+$p=4$。
 
 **错误 17.8（把单系数图当作模型无关结论）。** 单系数限制是在其他 Wilson 系数固定为零的切片上得到的结果。若 UV 模型同时产生多个系数，该限制不能直接套用。
 
@@ -87,8 +107,11 @@ SMEFT 的严谨性不只在公式，还在报告元数据。没有基、尺度�
 
 ## 练习
 
-**练习 17.1.** 设计一页 SMEFT 拟合结果表，包含规则 17.1 的全部元数据。
+**练习 17.1.** 设计一页 SMEFT 拟合结果表，包含规则 17.1 的全部元数据，并把
+$Q/M_{\rm gap}$ 有效性与
+$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 插入层级分列。
 
-**练习 17.2.** 找一个“单系数限制”图，列出它隐含的假设。
+**练习 17.2.** 找一个“单系数限制”图，列出它隐含的假设，包括是否先声明
+$M_{\rm gap}=M$ 的模型依赖单尺度 UV matching，再选择 $\Lambda_{\rm ref}=M$。
 
 **练习 17.3.** 把第 17.3 节表格改写成你自己的 SMEFT 分析记录模板。

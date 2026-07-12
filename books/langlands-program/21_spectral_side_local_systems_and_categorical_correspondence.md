@@ -40,7 +40,7 @@ $$
 
 ## 21.2 自动侧范畴
 
-**定义 21.5.** 令 $\det_{\operatorname{Bun}_G}$ 为 Gaitsgory-Raskin proof series 按伴随丛上同调归一化的 determinant line bundle，并令 $\det_{\operatorname{Bun}_G}^{1/2}$ 表示其平方根的 $\mu_2$-gerbe。特征零 de Rham 自动侧定义为相应的 half-twisted D-module category
+**定义 21.5.** 令 $\det_{\operatorname{Bun}_G}$ 为 Gaitsgory-Raskin proof series 按伴随丛上同调归一化的 determinant line bundle，并令 $\det_{\operatorname{Bun}_G}^{1/2}$ 表示其平方根的 $\mu_2$-gerbe。特征零 de Rham 普通自动侧定义为相应的 ordinary half-twisted D-module category
 $$
 \operatorname{DMod}_{1/2}(\operatorname{Bun}_G).
 $$
@@ -54,13 +54,33 @@ $$
 $$
 的识别，但这不允许在 Hecke 公式中删除下标 $1/2$：未扭曲写法会把通常的 $\operatorname{Rep}(\widehat G)$ Hecke action 改成带 canonical central gerbe 的版本。因而本章定理性陈述始终保留 half-twist。
 
-**注 21.6.** $\operatorname{Bun}_G$ 非紧且不是有限型，因此 naive D-module category 往往不足以支撑所有 functorial operations。现代处理使用 renormalized categories、compact generation 和 !-extension 的精细版本。
+**注 21.6.** $\operatorname{Bun}_G$ 非 quasi-compact，因此普通 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ 的 compact generation、$!$-extension 和沿非 proper correspondence 的函子需要 truncatable/co-truncative 理论。这是普通范畴自身的构造问题，不意味着定义 21.5 已把它替换为 renormalized category。
 
-**注 21.6.1.** 自动侧的 renormalization 与谱侧的 singular support 是同一范畴等价两端的大小控制条件。附录 AB.5 说明 $\operatorname{Bun}_G$ 的非 quasi-compact 性如何迫使 renormalized D-modules 进入陈述；附录 AB.6 说明 spectral action 如何把 Hecke 本征层提升为谱侧范畴作用。
+**定义 21.6.1.** 普通自动侧的 renormalized companion 另记为
+$$
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}},
+$$
+并配备伴随对
+$$
+\operatorname{ren}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\rightleftarrows
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+:\operatorname{un\text{-}ren}.
+$$
+来源还构造 companion functor
+$$
+\mathbb L_{G,\operatorname{ren}}:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+\longrightarrow
+\operatorname{IndCoh}(\operatorname{LocSys}_{\widehat G}(X)).
+$$
+注意其目标为全部 $\operatorname{IndCoh}$。它与下文普通自动侧到
+$\operatorname{IndCoh}_{\mathcal N}$ 的主函子是两个可比较但不同型的版本。
 
 ## 21.3 范畴化几何 Langlands
 
-**外部输入定理 21.7（unramified categorical geometric Langlands，特征零 preprint theorem）.** 在本章固定的 $X/\mathbb C$ 与 $G/\mathbb C$ 设定下，并按来源固定 half-twisting gerbe、中心、automorphic renormalization、nilpotent singular support 及 de Rham stack conventions，Gaitsgory-Raskin 合作项目构造从自动侧到谱侧的 Langlands functor，并证明它是范畴等价：
+**外部输入定理 21.7（unramified categorical geometric Langlands，特征零 preprint theorem）.** 在本章固定的 $X/\mathbb C$ 与 $G/\mathbb C$ 设定下，并按来源固定 half-twisting gerbe、中心、普通 D-module category、nilpotent singular support 及 de Rham stack conventions，Gaitsgory-Raskin 合作项目构造从自动侧到谱侧的 Langlands functor，并证明它是范畴等价：
 $$
 \mathbb L_G:
 \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
@@ -69,7 +89,7 @@ $$
 $$
 以及相应 Betti 版本；该等价与项目中精确定义的 spectral/Hecke action 和 parabolic induction 兼容。
 
-**注 21.8（来源状态与函子方向）.** 定理 21.7 的来源是 2024 年起发布的五篇 proof-series preprints，而非本书证明；本书把它登记为“外部 preprint theorem”，且不让任何算术主线证明依赖其出版或审稿状态。Proof I 构造的 $\mathbb L_G$ 的方向是 automorphic $\to$ spectral；正文若从谱侧对象构造自动侧对象，一律写逆等价 $\mathbb L_G^{-1}$。公式中的两端是来源定义的 twisted/renormalized/derived categories，不能替换为 naive bounded derived categories。
+**注 21.8（来源状态与函子方向）.** 定理 21.7 的来源是 2024 年起发布的五篇 proof-series preprints，而非本书证明；本书把它登记为“外部 preprint theorem”，且不让任何算术主线证明依赖其出版或审稿状态。Proof I 构造的 $\mathbb L_G$ 的方向是 automorphic $\to$ spectral；正文若从谱侧对象构造自动侧对象，一律写逆等价 $\mathbb L_G^{-1}$。公式左端是定义 21.5 的 ordinary half-twisted category，不是定义 21.6.1 的 renormalized companion；右端是 derived 且带 nilpotent singular support 的范畴，不能替换为 naive bounded derived category。
 
 **外部输入定理 21.8.1（正特征中的部分 $\ell$-adic 几何 Langlands；preprint theorem）.** 在 Gaitsgory-Raskin 2025 预印本精确定义的正特征 unramified $\ell$-adic 设定中，带 nilpotent singular support 的 automorphic sheaves 范畴与 Langlands 参数栈的**某些连通分支之并**上的适当 $\operatorname{IndCoh}$ 范畴等价。这里“某些连通分支之并”和“适当定义的范畴”都是定理的一部分；本书不把该结果扩张为整个参数栈上的 unrestricted 等价。
 
@@ -137,7 +157,7 @@ $$
 \operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X)).
 $$
 正特征 $\ell$-adic 情形只按 21.8.1 记录某些参数连通分支之并上的部分 preprint theorem；它不改变 21.8.2 的 unrestricted 边界。
-Hecke eigensheaves 是谱侧点对象在逆等价 $\mathbb L_G^{-1}$ 下的像。Half-twist、nilpotent singular support、Eisenstein functors 和 constant term functors 是完整理论不可省略的结构。
+Hecke eigensheaves 是谱侧点对象在逆等价 $\mathbb L_G^{-1}$ 下的像。该等价使用普通 $\operatorname{DMod}_{1/2}$ 与 $\operatorname{IndCoh}_{\mathcal N}$；renormalized companion 与全部 $\operatorname{IndCoh}$ 的公式另行记录，不与它混同。Half-twist、nilpotent singular support、Eisenstein functors 和 constant term functors 是完整理论不可省略的结构。
 
 ## 练习
 

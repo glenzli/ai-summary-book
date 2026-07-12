@@ -17,17 +17,23 @@ triangle 的基本性质。
 
 **约定 11.1.** 令 $(A,(d))$ 为 oriented perfect prism，
 $R=A/(d)$ 为对应 perfectoid ring。令 $X$ 为 $p$-adic formal scheme over
-$R$，并记其 adic generic fibre 为 $X_\eta$。Orientation 只用于把
-$[1/I]$ 写成 $[1/d]$。
+$R$，记 $\Delta_{X/A}\in D(X_{\mathrm{et}},A)$ 为 prismatic sheaf，并记
+其 adic generic fibre 为 $X_\eta$。令
+$$
+\mu:X_{\eta,\mathrm{et}}\longrightarrow X_{\mathrm{et}}
+$$
+为 nearby-cycles map。Orientation 只用于把 $[1/I]$ 写成 $[1/d]$。
 
 **外部输入定理 11.2（Bhatt-Scholze finite-level comparison）.** 对每个
-$r\ge1$ 有 $D(\mathbf Z/p^r)$ 中的自然拟同构
+$r\ge1$ 有 $D(X_{\mathrm{et}},\mathbf Z/p^r)$ 中的自然拟同构
 $$
-R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z/p^r)
+R\mu_*\mathbf Z/p^r
 \simeq
-\left((R\Gamma_\Delta(X/A)/p^r)[1/d]\right)^{\varphi=1}.
+\left(\Delta_{X/A}[1/d]/p^r\right)^{\varphi=1}.
+\tag{11.1}
 $$
-右侧的 $/p^r$ 是 derived cofiber，$[1/d]$ 是 localization，且
+右侧的 $/p^r$ 是 sheaf complexes 中的 derived cofiber，$[1/d]$ 是
+localization，且
 $$
 C^{\varphi=1}=\operatorname{fib}(\varphi-1:C\to C).
 $$
@@ -36,18 +42,35 @@ $$
 确实位于 $D(\mathbf Z/p^r)$。来源为 Bhatt-Scholze, Theorem 9.1（locator
 `BS-COMP-ETALE`）。
 
-若连续 étale cohomology 定义为
+若 $X=\operatorname{Spf}(S)$ 是 affine，则同一定理的全局推论是
 $$
-R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z_p)
-:=R\varprojlim_rR\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z/p^r),
+R\Gamma_{\mathrm{et}}(\operatorname{Spec}(S[1/p]),\mathbf Z/p^r)
+\simeq
+\left(\Delta_{S/A}[1/d]/p^r\right)^{\varphi=1},
+\qquad
+\Delta_{S/A}=R\Gamma_\Delta(X/A).
+\tag{11.2}
 $$
-则对定理 11.2 的 compatible system 取 $R\varprojlim_r$ 得到
-$\mathbf Z_p$-level comparison。该结论是 derived inverse limit，不是先在
-cohomology groups 上取 ordinary inverse limit。
+对 (11.1) 的 compatible system 取 $R\varprojlim_r$ 可得 sheaf-level 的
+$\mathbf Z_p$ comparison；对 affine 公式 (11.2) 取 $R\varprojlim_r$ 可得
+相应全局 comparison。这些都是 derived inverse limits，不是在 cohomology
+groups 上先取 ordinary inverse limit。
+
+对非 affine $X$，本书只使用 sheaf-level 公式 (11.1)。若要另行导出以
+$R\Gamma_\Delta(X/A)$ 表示的全局公式，必须至少证明 canonical map
+$$
+R\Gamma(X_{\mathrm{et}},\Delta_{X/A}/p^r)[1/d]
+\longrightarrow
+R\Gamma\left(X_{\mathrm{et}},(\Delta_{X/A}/p^r)[1/d]\right)
+\tag{11.3}
+$$
+为拟同构；定理 11.2 对一般 $X$ 不包含该 exchange condition。
 
 **警告 11.3.** 定理 11.2 的 $[1/d]$ 不等于 $[1/p]$，而 $/p^r$ 也不是
 rationalization。省略其中任一操作，或把 derived fixed complex 换成
-$H^n$ 上的 pointwise invariants，都会改变 theorem。
+$H^n$ 上的 pointwise invariants，都会改变 theorem。对非 affine $X$ 再把
+sheaf-level localization 移到 $R\Gamma_\Delta(X/A)$ 之外，也需要上述交换
+条件。
 
 ## 11.2 Frobenius fixed points
 

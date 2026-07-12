@@ -102,6 +102,14 @@ $$
 \overline{\mathcal C}=\operatorname{coker}(\eta).
 $$
 
+Operad 单位 $u:I_k\to\mathcal P$ 满足 $\epsilon u=\operatorname{id}_{I_k}$，cooperad 余单位满足 $\epsilon_{\mathcal C}\eta=\operatorname{id}_{I_k}$。因此有典范分裂
+$$
+\mathcal P\cong I_k\oplus\overline{\mathcal P},
+\qquad
+\mathcal C\cong I_k\oplus\overline{\mathcal C},
+$$
+其中 $\overline{\mathcal C}$ 通过 $\operatorname{coker}(\eta)\cong\ker(\epsilon_{\mathcal C})$ 识别为 $\mathcal C$ 的直和因子。以下分别用 $\iota_{\mathcal P},\iota_{\mathcal C}$ 表示非单位因子的包含，用 $\pi_{\mathcal P},\pi_{\mathcal C}$ 表示相应投影。
+
 本章默认 augmented operad 与 coaugmented cooperad 都是 reduced：
 $$
 \mathcal P(0)=0,\quad \mathcal P(1)\cong k\oplus\overline{\mathcal P}(1),
@@ -159,7 +167,17 @@ $$
 
 ## 9.4 Infinitesimal composition 与 convolution pre-Lie 结构
 
-**定义 9.11.** 对 dg 对称序列 $M,N$，定义 infinitesimal composition product $M\circ_{(1)}N$ 为 $M\circ N$ 中只允许恰有一个块被 $N$ 装饰、其他块由单位 $I_k$ 装饰的直和部分。直观上，$M\circ_{(1)}N$ 只记录“把一个 $N$-运算代入一个 $M$-运算的一个输入槽”。
+**定义 9.11.** 对 dg 对称序列 $M,N$，把
+$$
+M\circ(I_k\oplus N)
+$$
+按内层使用 $N$-因子的次数分次。展开每个有限张量积后，记恰好一次使用 $N$、其余内层因子均使用 $I_k$ 的一次齐次分量为
+$$
+M\circ_{(1)}N
+:=
+\bigl(M\circ(I_k\oplus N)\bigr)_{[1]}.
+$$
+这一定义不是从 $M\circ N$ 取子对象；在 $M\circ N$ 中，每个外层输入槽都由 $N$ 装饰。直观上，$M\circ_{(1)}N$ 只记录“把一个 $N$-运算代入一个 $M$-运算的一个输入槽”。
 
 若 $\mathcal P$ 是 dg-operad，其 infinitesimal composition 写作
 $$
@@ -169,50 +187,91 @@ $$
 $$
 \Delta_{(1)}:\mathcal C\to\mathcal C\circ_{(1)}\mathcal C,
 $$
-即把完整分解投影到恰有一个非单位内层部分的直和。
+并由 coaugmentation 分裂定义为复合
+$$
+\mathcal C
+\xrightarrow{\Delta}
+\mathcal C\circ\mathcal C
+\cong
+\mathcal C\circ(I_k\oplus\overline{\mathcal C})
+\xrightarrow{\operatorname{pr}_{[1]}}
+\mathcal C\circ_{(1)}\overline{\mathcal C}
+\xrightarrow{\operatorname{id}\circ_{(1)}\iota_{\mathcal C}}
+\mathcal C\circ_{(1)}\mathcal C.
+$$
+也就是说，先把每个内层 $\mathcal C$ 因子分成 coaugmentation 与 coaugmentation coideal，再只保留恰有一个内层 $\overline{\mathcal C}$ 因子的项。限制到 $\overline{\mathcal C}$ 并同时投影外层与该 distinguished 内层因子，得到 reduced infinitesimal decomposition
+$$
+\overline\Delta_{(1)}
+=
+(\pi_{\mathcal C}\circ_{(1)}\pi_{\mathcal C})
+\Delta_{(1)}\iota_{\mathcal C}:
+\overline{\mathcal C}
+\longrightarrow
+\overline{\mathcal C}\circ_{(1)}\overline{\mathcal C}.
+$$
 
-**定义 9.12.** 设 $\mathcal C$ 是 dg-cooperad，$\mathcal P$ 是 dg-operad。对齐次映射
+**定义 9.12.** 设 $\mathcal C$ 是 coaugmented dg-cooperad，$\mathcal P$ 是 augmented dg-operad。定义 convolution complex
 $$
-f,g\in\operatorname{Hom}_{\mathbb S}(\mathcal C,\mathcal P)
+\operatorname{Conv}(\mathcal C,\mathcal P)
+=
+\operatorname{Hom}_{\mathbb S}(\overline{\mathcal C},\overline{\mathcal P}).
 $$
-定义 convolution pre-Lie product
+其 Hom differential 对次数 $|f|$ 的映射定义为
+$$
+\partial f
+=
+d_{\mathcal P}f-(-1)^{|f|}fd_{\mathcal C}.
+$$
+对齐次 $f,g\in\operatorname{Conv}(\mathcal C,\mathcal P)$，令
+$$
+\widetilde f=\iota_{\mathcal P}f\pi_{\mathcal C},
+\qquad
+\widetilde g=\iota_{\mathcal P}g\pi_{\mathcal C}:
+\mathcal C\to\mathcal P
+$$
+为它们在 coaugmentation 因子上取零的延拓，并定义 convolution pre-Lie product
 $$
 f\star g
 =
+\pi_{\mathcal P}\,
 \gamma_{(1)}
-\circ
-(f\circ_{(1)}g)
-\circ
-\Delta_{(1)}.
+(\widetilde f\circ_{(1)}\widetilde g)
+\Delta_{(1)}
+\iota_{\mathcal C}.
 $$
-这里 $(f\circ_{(1)}g)$ 的符号由链复形张量积中的 Koszul rule 决定。
+于是复合的类型依次为
+$$
+\overline{\mathcal C}\to
+\mathcal C\circ_{(1)}\mathcal C\to
+\mathcal P\circ_{(1)}\mathcal P\to
+\mathcal P\to
+\overline{\mathcal P}.
+$$
+由于 $\widetilde f,\widetilde g$ 在单位因子上为零，等价地可在公式中使用 $\overline\Delta_{(1)}$。张量因子重排的符号由链复形的 Koszul rule 决定。
 
 **命题 9.13.** graded commutator
 $$
 [f,g]=f\star g-(-1)^{|f||g|}g\star f
 $$
-使 $\operatorname{Hom}_{\mathbb S}(\mathcal C,\mathcal P)$ 成为 dg Lie algebra。
+使 $\operatorname{Conv}(\mathcal C,\mathcal P)$ 成为 dg Lie algebra。
 
 **证明.** 微分与 $\star$ 的相容性来自 $\gamma_{(1)}$ 与 $\Delta_{(1)}$ 是链映射。pre-Lie 恒等式来自两次 infinitesimal 代入的两类相对位置：嵌套和分离。嵌套项由 operad 结合律与 cooperad 余结合律匹配；分离项在交换两次代入后相同，并由 Koszul braiding 给出符号。pre-Lie algebra 的 graded commutator 满足 Jacobi 恒等式，因此得到 dg Lie algebra。$\square$
 
 ## 9.5 Twisting morphism
 
-**定义 9.14.** 设 $\mathcal C$ 是 coaugmented dg-cooperad，$\mathcal P$ 是 augmented dg-operad。一个 twisting morphism 是次数 $-1$ 的 $\mathbb S$-模映射
+**定义 9.14.** 设 $\mathcal C$ 是 coaugmented dg-cooperad，$\mathcal P$ 是 augmented dg-operad。一个 twisting morphism 是次数 $-1$ 的元素
 $$
-\alpha:\mathcal C\to\mathcal P
+\alpha\in\operatorname{Conv}(\mathcal C,\mathcal P)_{-1}
 $$
-满足：
-
-1. $\alpha$ 在 coaugmentation 和 augmentation 上为零，即 $\alpha\eta=0$ 且 $\epsilon\alpha=0$；
-2. Maurer-Cartan 方程
-   $$
-   \partial(\alpha)+\alpha\star\alpha=0,
-   $$
-   其中
-   $$
-   \partial(\alpha)=d_{\mathcal P}\alpha+ \alpha d_{\mathcal C}
-   $$
-   因为 $|\alpha|=-1$。
+满足 Maurer-Cartan 方程
+$$
+\partial(\alpha)+\alpha\star\alpha=0,
+$$
+其中
+$$
+\partial(\alpha)=d_{\mathcal P}\alpha+\alpha d_{\mathcal C}
+$$
+因为 $|\alpha|=-1$。等价地，$\alpha$ 可视为 $\mathcal C\to\mathcal P$ 的次数 $-1$ 映射，满足 $\alpha\eta=0$、$\epsilon\alpha=0$ 以及同一 Maurer-Cartan 方程。
 
 twisting morphism 集合记为
 $$
@@ -236,9 +295,11 @@ $$
 其中：
 
 - $d_1$ 是由 $\overline{\mathcal C}$ 的内部微分诱导到自由 operad 上的导子；
-- $d_2$ 是由 infinitesimal decomposition
+- $d_2$ 是由 reduced infinitesimal decomposition
   $$
-  \overline{\mathcal C}\xrightarrow{\Delta_{(1)}}\mathcal C\circ_{(1)}\mathcal C
+  \overline{\mathcal C}
+  \xrightarrow{\overline\Delta_{(1)}}
+  \overline{\mathcal C}\circ_{(1)}\overline{\mathcal C}
   $$
   经去悬挂后得到的二次导子。
 
@@ -248,7 +309,7 @@ d_2(s^{-1}c)=
 \sum \pm
 (s^{-1}c')\circ_i(s^{-1}c''),
 $$
-其中 $\Delta_{(1)}(c)$ 的相应项把 $c$ 分解为 $c'$ 与 $c''$。符号由把去悬挂符号穿过张量因子的 Koszul rule 决定。
+其中 $\overline\Delta_{(1)}(c)$ 的相应项把 $c$ 分解为 $c'$ 与 $c''$。符号由把去悬挂符号穿过张量因子的 Koszul rule 决定。
 
 Cooperad 分解本身落在直接和中，所以每次 $d_2(c)$ 是有限和；定义 9.7.1 进一步保证对固定 $c$ 迭代 reduced decomposition 最终停止。本章的 $\Omega\mathcal C$ 是树权重直接和，不包含形式无穷树。若改用完成 cobar 构造，必须另写 $\widehat\Omega$ 并采用定义 I.20--反例 I.22.1 的完成滤过。
 
@@ -365,7 +426,7 @@ $$
 
 **练习 9.2.** 对一个有三个顶点的装饰树，写出 cofree cooperad 分解中切割一条内部边和切割两条内部边分别得到的项。
 
-**练习 9.3.** 展开 convolution product $f\star g$ 在一个两层树分解上的符号来源。
+**练习 9.3.** 从 $\mathcal C\cong I_k\oplus\overline{\mathcal C}$ 构造 $\Delta_{(1)}$，再展开 convolution product $f\star g$ 在一个两层树分解上的类型与符号来源。
 
 **练习 9.4.** 证明若 $\alpha=0$，Maurer-Cartan 方程退化为 $\partial(\alpha)=0$，并解释这为什么对应平凡 twisting。
 

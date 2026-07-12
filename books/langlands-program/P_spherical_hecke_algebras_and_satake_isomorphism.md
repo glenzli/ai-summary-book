@@ -165,8 +165,19 @@ $\square$
 $G[[t]]$-equivariant $\overline{\mathbb Q}_\ell$-perverse sheaves，$\ell\ne\operatorname{char}\mathbb F_q$，并选择 $q^{1/2}\in\overline{\mathbb Q}_\ell$ 以固定 half-Tate twist。Stalk 上几何 Frobenius 的交错迹把几何 Satake 的卷积 Grothendieck ring 送到
 $\mathcal H(G(\mathbb F_q((t))),G(\mathbb F_q[[t])))$，并恢复本附录 $\delta_B^{1/2}$-归一化的 classical Satake 同构。
 
-**证明路线（外部输入）.** Sheaf-function dictionary 把卷积送到函数卷积；几何 Satake 把 IC sheaves 的卷积规则送到 $\operatorname{Rep}(\widehat G)$ 的张量规则。IC normalization 的 cohomological shift 与 half-Tate twist 产生
-$q^{\langle\rho,\lambda\rangle}$，恰与 P.7 的归一化吻合。完整证明依赖 decomposition theorem、purity 和几何 Satake，本段不重证。
+**证明路线（外部输入）.** 令
+$d_\lambda=\dim\operatorname{Gr}_G^\lambda
+=\langle2\rho,\lambda\rangle$。权零归一化
+$\operatorname{IC}_\lambda^0=j_{\lambda,!*}\overline{\mathbb Q}_\ell[d_\lambda](d_\lambda/2)$
+在开胞腔上的交错迹是
+$$
+(-1)^{d_\lambda}q^{-d_\lambda/2}
+=(-1)^{d_\lambda}q^{-\langle\rho,\lambda\rangle}.
+$$
+其中负次幂来自本书对几何 Frobenius 的 Tate twist convention，符号来自 shift $[d_\lambda]$。用标准 parity correction 去掉 $(-1)^{d_\lambda}$ 后，函数的 leading term 为
+$q^{-\langle\rho,\lambda\rangle}T_\lambda$；再用 P.7 的
+$\mathcal S(T_\lambda)=q^{\langle\rho,\lambda\rangle}e^\lambda+
+\text{lower terms}$，两个 $q$-幂相消。Sheaf-function dictionary 把卷积送到函数卷积，几何 Satake 把 IC sheaves 的卷积规则送到 $\operatorname{Rep}(\widehat G)$ 的张量规则。完整证明依赖 decomposition theorem、purity 和几何 Satake，本段不重证。
 
 ## 练习
 

@@ -48,6 +48,12 @@
   $$
   C_K^1=\ker\bigl(|\cdot|_{\mathbb A}:C_K\to\mathbb R_{>0}\bigr).
   $$
+- 对导子恰为 $N$ 的 primitive Dirichlet character $\chi$，其 Euler-compatible finite-order idèle class character 写作
+  $$
+  \omega_\chi:C_\mathbb Q\to\mathbb C^\times.
+  $$
+  其 finite-unit restriction 为 $\widehat\chi^{-1}$，无穷分量为
+  $\operatorname{sgn}^{a_\chi}$，其中 $\chi(-1)=(-1)^{a_\chi}$；见归一化总表 1.1。
 - Adele norm 写作
   $$
   |x|_{\mathbb A}=\prod_v |x_v|_v,\qquad x=(x_v)_v\in\mathbb A_K^\times.
@@ -274,19 +280,48 @@
   $$
   \operatorname{LocSys}_{\widehat G}(X).
   $$
-- 特征零 de Rham categorical geometric Langlands 的自动侧写作
+- 特征零 de Rham categorical geometric Langlands 的普通 half-twisted 自动侧写作
   $$
   \operatorname{DMod}_{1/2}(\operatorname{Bun}_G),
   $$
-  表示 determinant line 平方根 gerbe 上的 half-twisted D-modules。来源构造的 Langlands functor 写作
+  表示 determinant line 平方根 gerbe 上的 ordinary half-twisted D-modules。其 renormalized companion 始终另记为
+  $$
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}};
+  $$
+  不得省略下标 $\operatorname{ren}$ 后与普通范畴混同。来源构造的主 Langlands functor 写作
   $$
   \mathbb L_G:
   \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
   \longrightarrow
   \operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X));
   $$
-  方向固定为 automorphic $\to$ spectral，反向等价写作 $\mathbb L_G^{-1}$。
+  方向固定为 automorphic $\to$ spectral，反向等价写作 $\mathbb L_G^{-1}$。另有比较函子
+  $$
+  \operatorname{ren}:
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+  \rightleftarrows
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+  :\operatorname{un\text{-}ren}
+  $$
+  及 companion functor
+  $$
+  \mathbb L_{G,\operatorname{ren}}:
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}
+  \longrightarrow
+  \operatorname{IndCoh}(\operatorname{LocSys}_{\widehat G}(X)).
+  $$
+  本书不用该 companion 公式改写主等价的两端。
 - Hecke eigensheaf 的本征值 $\widehat G$-local system 写作 $\mathcal E$，关联局部系统写作 $V_{\mathcal E}$。
+- 对 local Shimura datum $(G,b,\mu)$，本书固定
+  $$
+  b\in B(G,\mu),
+  \qquad
+  \mathcal E_b\dashrightarrow\mathcal E_1.
+  $$
+  $E_\mu$ 表示 $\mu$ 的 reflex field，$\breve E_\mu$ 表示其最大非分歧扩张的完备化，相应 Weil group 写作 $W_{E_\mu}$。Local shtuka diamond 写作
+  $$
+  \operatorname{Sht}_{G,b,\mu}/\operatorname{Spd}\breve E_\mu.
+  $$
 
 ## 模形式、椭圆曲线和费马应用
 

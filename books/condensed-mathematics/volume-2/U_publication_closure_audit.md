@@ -90,7 +90,8 @@
 2. \(\otimes^{L,\square}\)：只表示 solid 派生张量。
 3. \(D(A,\mathcal M)\)：表示 analytic ring 的 analytic 模范畴。
 4. \(L_{(A,\mathcal M)}\)：表示 analyticization。
-5. \(D_{\mathrm{liq},p}\)：表示固定 \(p\) 后的 liquid analytic 范畴。
+5. \(D(\mathbf{Liquid}_p)\)：表示固定 \(p\) 后的 liquid 派生范畴；复结构由
+   满足 \(J^2=-\operatorname{id}\) 的内自同态记录。
 6. \(\mathcal L_p(E)=\underline E\)：只表示凝聚化已满足 liquid membership，不能用来
    隐藏 cokernel 的局部提升义务。
 

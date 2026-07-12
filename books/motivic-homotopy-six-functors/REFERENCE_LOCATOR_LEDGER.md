@@ -46,7 +46,7 @@
 | FR-15.x | framed recognition | Elmanto-Hoyois-Khan-Sosnilo-Yakerson | located | Theorems 1.2.3, 3.5.14；perfect field；见 batches 1, 3 |
 | FC-16.2 | fundamental classes and Gysin maps | Deglise-Jin-Khan | located | Definition 3.2.5; Proposition 2.5.4; Theorems 3.3.2, 4.1.4, 4.2.1；见 batches 1, 3 |
 | FC-16.13 | excess intersection formula | Deglise-Jin-Khan | located | §3.3.3；Propositions 3.3.4, 4.2.2；`f,g` 均 smoothable lci s-morphisms；系数乘法与 proper push-pull 条件分别保留；见 batches 1, 3 |
-| NM-17.x | norm functors and normed examples | Bachmann-Hoyois | located | Propositions 3.13, 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19；见 batches 1, 3 |
+| NM-17.x | norm functors and normed examples | Bachmann-Hoyois | located | Theorem 3.3/localization、Corollary 3.11（finite-locally-free unstable）；Proposition 3.13（finite etale 且 Weil restriction 存在）；Proposition 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19；见 batches 1, 3 |
 | MW-18.2 | `End(1_k)\cong GW(k)` | Morel | located | Corollary 6.43 + Lemma 3.10；perfect field；见 batch 3 |
 | MW-18.5 | stable-range sphere maps and `K_*^{MW}` | Morel | located | Corollary 6.43；perfect field；见 batch 3 |
 | EQ-19.3 | equivariant six operations | Hoyois | source-verified | 补 linearly reductive 假设 |

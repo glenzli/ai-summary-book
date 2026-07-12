@@ -206,13 +206,13 @@
 | 19.11 | E | 几何 Satake 等价 | Mirkovic-Vilonen 等 |
 | 19.13 | P | 卷积对应张量积 | 19.11 |
 | 19.15 | P | Hecke 函子的张量相容 | 卷积定义 |
-| 19.16 | E | 有限域下降、Weil structure 与半 Tate 归一化下恢复经典 Satake | sheaf-function dictionary |
+| 19.16 | E | 权零 IC trace 为 $(-1)^{d_\lambda}q^{-d_\lambda/2}$，parity correction 后恢复经典 Satake | sheaf-function dictionary、P.7 |
 | 20.3 | P | local system 给出表示范畴上的张量函子 | 关联丛构造 |
 | 20.6 | P | eigensheaf 对直和与张量积的相容 | Hecke 本征定义 |
 | 20.7 | C | 几何 Langlands 朴素本征层形式 | 几何 Langlands |
 | 20.9 | E | 几何类域论接口 | Abel-Jacobi、Fourier-Mukai |
 | 20.11 | S | eigensheaf 的 trace 给出 Hecke eigenfunction | sheaf-function dictionary |
-| 21.7 | E | $\mathbb L_G:\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)\to\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G})$ 为等价 | Gaitsgory-Raskin proof-series preprints |
+| 21.7 | E | 普通 $\mathbb L_G:\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)\to\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G})$ 为等价 | Gaitsgory-Raskin proof-series preprints |
 | 21.8.1 | E | 正特征中某些参数连通分支上的部分 $\ell$-adic categorical equivalence | Gaitsgory-Raskin arXiv:2508.02237 |
 | 21.9 | P | $\mathbb L_G^{-1}$ 把 spectral residual-gerbe 点对象送到 Hecke eigensheaf | 21.7、Hecke/spectral compatibility |
 | 22.2 | S | $\operatorname{Bun}_G(\mathbb F_q)$ 与 adelic 双商 | Weil uniformization |
@@ -398,8 +398,8 @@
 | O.7 | P | Hecke functor 是 kernel transform | correspondence formalism |
 | O.9 | E | QCoh/IndCoh comparison | Gaitsgory-Rozenblyum |
 | O.12 | E | Singular support theory | Arinkin-Gaitsgory |
-| O.15 | E | half-twisted automorphic $\xrightarrow{\mathbb L_G}$ spectral 的 IndCoh 等价 | Gaitsgory-Raskin proof-series preprints |
-| O.16 | E | O.15 的 derived/renormalized/singular-support 技术链 | Gaitsgory-Raskin、Arinkin-Gaitsgory |
+| O.15 | E | 普通 half-twisted automorphic $\xrightarrow{\mathbb L_G}\operatorname{IndCoh}_{\mathcal N}$ 的等价 | Gaitsgory-Raskin proof-series preprints |
+| O.16 | E | O.15 的 derived/singular-support 链及另记的 renormalized companion | Gaitsgory-Raskin、Arinkin-Gaitsgory |
 | O.16.1 | E | 正特征中某些参数连通分支上的部分 $\ell$-adic 结果 | Gaitsgory-Raskin arXiv:2508.02237 |
 | O.17 | P | $\mathbb L_G^{-1}$ 下 residual-gerbe 点对象满足 Hecke 本征条件 | O.15 的 spectral/Hecke compatibility |
 | O.19 | E | Riemann-Hilbert correspondence | Kashiwara、regular holonomic D-modules |
@@ -411,7 +411,7 @@
 | P.12 | S | 非分歧主级数 Satake 参数公式 | Iwasawa 分解、Satake 变换 |
 | P.13 | P | `GL(n)` Satake 参数为无序 $n$ 元组 | 对偶 torus/Weyl 群 |
 | P.14 | P | `GL(n)` 非分歧标准 L 因子公式 | Satake 参数定义 |
-| P.15 | E | 有限域 Weil sheaf 的 trace 恢复 classical Satake | Grothendieck-Lefschetz、geometric Satake |
+| P.15 | E | IC trace 的 $(-1)^{d_\lambda}q^{-d_\lambda/2}$ 与 Satake transform 的正次幂相消 | Grothendieck-Lefschetz、geometric Satake |
 | Q.2 | E | Cuspidal support 唯一性 | Bernstein-Zelevinsky |
 | Q.4 | E | Segment representations | Zelevinsky |
 | Q.7 | E | Zelevinsky multisegment classification | Zelevinsky |
@@ -510,7 +510,7 @@
 | Y.8 | E | fusion equals convolution | BD Grassmannian theory |
 | Y.9 | S | factorization 解释 convolution 交换性 | nearby cycles |
 | Y.10 | E | 几何 Satake factorization form | Mirkovic-Vilonen、Ginzburg |
-| Y.11 | S | 几何 Satake 恢复对偶根资料 | Tannakian formalism |
+| Y.11 | E | Satake Tannaka 群为 split connected reductive 且具对偶根资料 | `GSAT-1`；Mirkovic-Vilonen (1.1), Theorem 12.1 |
 | Y.13 | S | Hecke functors 张量相容 | geometric Satake |
 | Y.14 | P | Hecke eigensheaf 条件与 factorization 相容 | tensor functor |
 | Y.15 | E | factorization 在 categorical GL 中的作用 | Gaitsgory |
@@ -551,8 +551,8 @@
 | AB.11 | P | 几何 Langlands 谱侧使用 $\operatorname{IndCoh}_{\mathcal N}$ 的原因 | singular support |
 | AB.12 | E | six functor formalism | sheaf theory |
 | AB.14 | P | Hecke functor 是 kernel functor 特例 | correspondence |
-| AB.16 | E | renormalized half-twisted D-modules on $\operatorname{Bun}_G$ | Gaitsgory；Gaitsgory-Raskin |
-| AB.17 | P | $\operatorname{Bun}_G$ 非紧性迫使 renormalization | Harder-Narasimhan strata |
+| AB.16 | E | 普通 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)\to\operatorname{IndCoh}_{\mathcal N}$ 与 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)_{\operatorname{ren}}\to\operatorname{IndCoh}$ 分离 | Gaitsgory；Gaitsgory-Raskin Paper I §1.6 |
+| AB.17 | P | $\operatorname{Bun}_G$ 非紧性不给出普通与 renormalized 范畴的识别 | AB.16、Harder-Narasimhan strata |
 | AB.18 | E | spectral action on $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ | categorical geometric Langlands |
 | AB.19 | S | Hecke eigensheaf 是 spectral action 点支撑特例 | spectral action |
 | AC.1 | E | perfectoid spaces and diamonds | Scholze |
@@ -561,10 +561,10 @@
 | AC.6 | P | 在 AC.4 假设下 Newton slope 几何化为 bundle slope | AC.5、Dieudonne-Manin |
 | AC.7 | E | 完备代数闭几何点上的 $G$-bundle 同构类由 $B(G)$ 分类 | Fargues；Fargues-Scholze III.2.2 |
 | AC.9 | P | basic elements 给出 inner forms | automorphism group |
-| AC.11 | E | local Shimura varieties as diamonds | Scholze-Weinstein |
+| AC.11 | E | $\mu$ minuscule、$b\in B(G,\mu)$ 时 $\mathcal E_b\dashrightarrow\mathcal E_1$ 的 local Shimura diamond over $\breve E_\mu$ | Rapoport-Viehmann、Scholze-Weinstein |
 | AC.12 | S | Rapoport-Zink spaces 是 local Shimura 特例 | p-divisible groups |
-| AC.13 | E | local Shimura cohomology | local Langlands geometry |
-| AC.14 | P | local Shimura cohomology 同时有表示侧和 Weil 侧作用 | group actions |
+| AC.13 | E | local Shimura cohomology 携带 $G(F)\times J_b(F)\times W_{E_\mu}$ 作用 | local Langlands geometry |
+| AC.14 | P | local Shimura cohomology 的三群作用不单独推出完整 LLC | AC.11、AC.13 |
 | AC.15 | E | Fargues-Scholze semisimple LLC | Fargues-Scholze |
 | AC.17 | P | Fargues-Scholze 是局部 Langlands 几何化 | 曲线比较 |
 | AC.18 | P | AC.4 几何纤维上的 FF $G$-bundles 统一 inner forms 和 $B(G)$ | AC.7、v-descent |
@@ -588,11 +588,11 @@
 | AE.3 | S | principal series 的 LLC 参数为两个 character 直和 | parabolic induction compatibility |
 | AE.4 | P | 非分歧 principal series 的标准 L 因子 | WD 参数计算 |
 | AE.6 | S | Steinberg twist 的 WD 参数含非零 monodromy | Langlands classification |
-| AE.7 | P | 非分歧 Steinberg twist 的 L 因子 | $(\ker N)^{I_F}$ |
+| AE.7 | P | $L(s,\operatorname{St}\otimes\chi)=(1-\chi(\varpi)q^{-s-1/2})^{-1}$ | $|\operatorname{Fr}_F|=q^{-1}$、$(\ker N)^{I_F}$ |
 | AE.8 | S | Steinberg twist conductor formula | newvector theory |
 | AE.10 | E | `GL(2)` supercuspidals via admissible pairs | Bushnell-Henniart |
 | AE.11 | S | supercuspidal 对应不可约二维 Weil 参数 | LLC compatibility |
-| AE.12 | P | supercuspidal L 因子由惯性不变量决定 | WD L 因子定义 |
+| AE.12 | P | `GL(2)` supercuspidal 的标准局部 L 因子恒为 $1$ | $V_\pi^{I_F}=0$、WD L 因子定义 |
 | AE.13 | S | `GL(2)` 三分法与参数形状 | Langlands classification |
 | AE.14 | S | 椭圆曲线局部约化类型与 `GL(2)` 表示类型接口 | local-global compatibility |
 
@@ -624,4 +624,5 @@ $$
 $$
 19.11,\ 21.7 \Longrightarrow 21.9.
 $$
-当工作在有限域上时，$19.16$ 的有限域下降、Weil structure 和 half-Tate normalization 先恢复经典 Satake，$22.3$ 再把 sheaf 侧结果投影到函数侧。正特征 categorical 对应只按 21.8.1 的部分连通分支结果使用，不从 21.7 形式延拓。
+当工作在有限域上时，$19.16$ 的有限域下降与 Weil structure 先给出
+$(-1)^{d_\lambda}q^{-d_\lambda/2}$ 的权零 IC trace，再经 parity correction 与 P.7 的 classical Satake transform 恢复表示 character；$22.3$ 只负责一般 sheaf-function 投影，不改变这些归一化。正特征 categorical 对应只按 21.8.1 的部分连通分支结果使用，不从 21.7 形式延拓。

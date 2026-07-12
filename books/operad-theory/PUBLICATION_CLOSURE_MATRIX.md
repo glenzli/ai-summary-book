@@ -45,7 +45,7 @@
 | 第一章 | 对称序列、代入乘积、operad | 已由全体有限集映射的纤维群胚证明；非空分块仅为 nullary 项消失时的特例 | 无大型外部输入 | 通过 |
 | 第二章 | 代数、自由代数、monad | coend 公式和伴随已证明 | 基础 coend/filtered colimit | 通过 |
 | 第三章 | 非对称 operad 与树 | 偏复合和树收缩已证明 | 无大型外部输入 | 通过 |
-| 第四章 | 自由 operad | 非对称自由构造和对称叶标号树构造已证明 | 附录 H 已给出树群胚 coend 口径；文献对照仍需最终 bibliography | 通过 |
+| 第四章 | 自由 operad | 非对称自由构造和对称叶标号树构造已证明 | 附录 H 已给出 $\mathcal U$-小树群胚骨架 colimit 口径；文献对照仍需最终 bibliography | 通过 |
 | 第五章 | colored operad/multicategory | colored substitution 和 endomorphism 已证明 | enriched/admissible 版本外部 | 基本通过 |
 | 第六章 | 线性 operad 与经典例子 | Schur functor 和基础例子已给 | Lie/Pois 深层识别外部 | 基本通过 |
 | 第七章 | PROP/properad/wheeled | 基础 PROP 和 endomorphism 已闭合 | 自由 properad/图群胚外部 | 基本通过 |

@@ -25,10 +25,10 @@
 | 第一章 | 左作用数据重建有限集函子；全映射代入乘积；operad 作为幺半对象；End、Ass、Com 的 nullary 检查 | 无大型外部输入 | 集合值结果不能自动推广到链复形；空纤维不可无条件删除 |
 | 第二章 | 自由代数 coend 公式；空纤维兼容的无坐标自由代数动作；自由-遗忘伴随；monad 识别；finitary 性 | 基础 coend/filtered colimit 事实 | $T_s=\varnothing$ 仍占据外层槽，不能形成所谓“空块” |
 | 第三章 | 非对称偏复合公理；树收缩顺序无关 | 无大型外部输入 | 平面树不等于 Moerdijk-Weiss 树 |
-| 第四章 | 自由非对称 operad 的树递归；全映射树 grafting；自由对称 operad 的叶标号树公式；全映射 operadic congruence | 无大型外部输入 | 零叶子树实现 nullary substitution；自同构群商必须记录，附录 H 给出 coend 口径 |
+| 第四章 | 自由非对称 operad 的树递归；全映射树 grafting；自由对称 operad 的叶标号树公式；全映射 operadic congruence | 无大型外部输入 | 零叶子树实现 nullary substitution；自同构群商必须记录，附录 H 给出 $\mathcal U$-小树群胚骨架上的 colimit 口径 |
 | 第五章 | colored symmetric sequence；colored substitution；endomorphism colored operad；multicategory 对照 | enriched/admissible colored 版本 | enriched 版本不能只换 Hom 集合 |
 | 第七章 | PROP 定义等价；End PROP；从 operad 到 PROP；双代数 PROP；PROP 给 properad | properad 到自由 PROP；完整 directed graph groupoid 构造 | wheeled trace 需有限性/dualizability |
-| 附录 H | planar、leaf-labelled、Moerdijk-Weiss 树对照；自由 operad 群胚 coend 泛性质 | dendroidal nerve fully faithful 已定位到 MW-2 | $\Omega(T)$ 不是单色自由 operad 的 arity 值 |
+| 附录 H | planar、leaf-labelled、Moerdijk-Weiss 树对照；自由 operad 的 $\mathcal U$-小树群胚 colimit 与自由性 | dendroidal nerve fully faithful 已定位到 MW-2 | 单变量 $\operatorname{Dec}_E$ 取 colimit，不使用缺少反变因子的伪 coend；$\Omega(T)$ 不是单色自由 operad 的 arity 值 |
 | 附录 K | colored tree 公式；自由 colored operad 泛性质；模/双模编码 | enriched colored operad admissibility | enriched 模型结构需另行检查 |
 | 附录 U | PROP interchange、双代数兼容、properad 连通图复合、wheeled trace 和图替换结合律 | 自由 properad/PROP、Frobenius PROP 完整构造、wheeled graph complex | properad 不含任意水平张量 |
 | 附录 P | arity $0,1,2$ 代入计算；End 结合律；Ass/Com/Lie 低阶检查 | Lie 组合模型深层结果不在本附录证明 | 特征 $2$ Lie 约定需分开 |
@@ -39,10 +39,10 @@
 | --- | --- | --- | --- |
 | 第六章 | $R$-模值 Schur functor；Ass/Com/Lie/Pois 定义；End 线性复合 | Lie/Pois 经典识别细节 | 一般底环反对称风险 |
 | 附录 F | Ass、Com、End、Lie、Poisson 的逐项验算；自由 Ass/Com 代数 | PBW、自由 Lie 模型、little cubes 同调识别 | Poisson 与 $E_n$ 同调需系数条件 |
-| 第八章 | reduced 二次数据；二次对偶定义；Koszul 性定义 | Ass/Com/Lie Koszul 性已定位到 GK-5；对偶 Koszul 性和生成函数已定位到 GK-2 | 含单位与 reduced 口径不可混用 |
-| 第九章 | dg-operad/cooperad；twisting morphism；bar-cobar 泛性质；直和 cofree 口径下 conilpotence | Quadratic Koszul criterion 精确定位到 LV-2；GK-3/GK-7 与 FRE-1--FRE-4 分别作 classical/model-category 交叉包 | conilpotence、完成化选择与 filtration 不可省略 |
-| 附录 I | derivation/coderivation 泛性质；Maurer--Cartan 与 twisted differential；bar 递增与 cobar 递减权重滤过及逐 arity 有界性 | Connected weight-graded 四项等价定位到 LV-1，quadratic specialization 定位到 LV-2 | unary 顶点可破坏逐 arity 有界性；反例 I.22.1 区分直和与完成化 |
-| 附录 Q | 二元二次 operad 权重-arity 关系；$\operatorname{Ass}_{ns}$ rewriting 的终止性与唯一临界对合流；Koszul twisting 低权重行为；bar/cobar differential 低权重公式 | 合流二次 rewriting 推出 $\operatorname{Ass}_{ns}$ Koszul 性已定位到 LV-3；bar-cobar counit entry 已定位到 FRE-4；algebra cofibrant replacement 已定位到 FRE-5；谱序列收敛 | 低阶形状不推出 exactness；LV-3 只覆盖 reduced nonsymmetric quadratic 版本 |
+| 第八章 | reduced 二次数据；自由 operad 代入权重 $r+\sum_t s_t$；二次对偶定义；Koszul 性定义 | Ass/Com/Lie Koszul 性已定位到 GK-5；对偶 Koszul 性和生成函数已定位到 GK-2 | 同权内层因子给 $r+ns$，$r+s$ 只适用于一次非单位插入；含单位与 reduced 口径不可混用 |
+| 第九章 | dg-operad/cooperad；$M\circ_{(1)}N=(M\circ(I_k\oplus N))_{[1]}$；由 coaugmentation 分裂构造 $\Delta_{(1)}$；typed convolution/Maurer--Cartan；bar-cobar 泛性质；直和 cofree 口径下 conilpotence | Quadratic Koszul criterion 精确定位到 LV-2；GK-3/GK-7 与 FRE-1--FRE-4 分别作 classical/model-category 交叉包 | conilpotence、完成化选择与 filtration 不可省略 |
+| 附录 I | derivation/coderivation 泛性质；zero-extension 口径下的 convolution pre-Lie；Maurer--Cartan 与 twisted differential；bar 递增与 cobar 递减权重滤过及逐 arity 有界性 | Connected weight-graded 四项等价定位到 LV-1，quadratic specialization 定位到 LV-2 | unary 顶点可破坏逐 arity 有界性；反例 I.22.1 区分直和与完成化 |
+| 附录 Q | 二元二次 operad 权重-arity 关系；$\operatorname{Ass}_{ns}$ rewriting 的终止性与唯一临界对合流；Koszul twisting 低权重行为；bar/cobar differential 低权重公式；bar-cobar counit 的生成元公式与权重 $2$ 抵消 | 合流二次 rewriting 推出 $\operatorname{Ass}_{ns}$ Koszul 性已定位到 LV-3；bar-cobar counit entry 已定位到 FRE-4；algebra cofibrant replacement 已定位到 FRE-5；谱序列收敛 | bar 权重 $>1$ 的单个 cobar 生成元映 $0$；低阶链映射检查不推出 exactness；LV-3 只覆盖 reduced nonsymmetric quadratic 版本 |
 | 第十章 | $A_\infty/L_\infty/C_\infty$ 的 bar-cobar 定义；$E_n$ 基本边界 | May recognition；$H_\*(E_n)$；形式性 | $E_n$ 与 infinity-operad 不同 |
 | 附录 L | suspended coderivation 定义；$\mathcal P_\infty$ 记号边界；additivity/rectification 边界 | Poisson 同调、形式性、Dunn additivity 已定位到 DUNN-1 | 任意 cofibrant replacement 不叫 $\mathcal P_\infty$ |
 | 第十一章 | Gerstenhaber/BV 定义和基本结构说明 | Deligne 猜想已定位到 MS-1--MS-3 与 BF-1--BF-4；framed $E_2$ 同调为 BV | BV 符号需与模型匹配 |
@@ -62,11 +62,11 @@
 | 附录 G | T0--T3 的逐项假设包；admissibility/rectification 检查表；正特征对称幂内部反例 | Pavlov--Scholbach PSAR-1--PSAR-6、PSP-1--PSP-2 与 Berger--Moerdijk schemas | checklist 不是定理；正特征下反例 G.16/X.15--X.16 阻止无假设转移 |
 | 附录 R | $\mathbf{sSet}$、Top、$\mathbf{Ch}_k$、一般 $\mathbf{Ch}_R$、spectra、colored/enriched 案例判定；rectification 正反例格式 | 逐底范畴 transferred/admissibility/rectification 定理已定位到 BM/HIN/FRE/PSAR；需假设翻译 | 案例不是全称定理，不能跨底范畴迁移 |
 | 第十五章 | 全映射 simplicial/topological operad 定义；Sing/realization 的 operad-level functor 构造；well-pointed/$\Sigma$-free 条件 | Kan--Quillen；底范畴 Top--sSet Quillen equivalence；BM-1 的两类 operad model structures | Operad-level realization--Sing Quillen equivalence 仅为边界 15.18；chains on spaces 需 monoidal 相干性 |
-| 第十六章 | $\Omega$、dendroidal set、nerve、Segal core、horns 定义；strict Segal 性 | dendroidal nerve fully faithful 已定位到 MW-2；$\Delta\hookrightarrow\Omega$ fully faithful 已定位到 MW-1 | 树方向 convention 需固定 |
+| 第十六章 | 固定 $\mathcal U$-小树骨架 $\Omega$；dendroidal set、nerve、Segal core、horns 定义；strict Segal 性 | dendroidal nerve fully faithful 已定位到 MW-2；$\Delta\hookrightarrow\Omega$ fully faithful 已定位到 MW-1 | presheaf 与 category-of-elements colimit 的 universe 层级已固定；树方向 convention 需保持 |
 | 第十七章 | inner horn fillers 的类型检查；strict nerve 唯一 filler；线性限制为 quasi-category | MW-4 的 homotopy coherent nerve inner Kan；CM-3 的 operadic model structure；HHM 比较仅限 open/no-constants 模型 | inner Kan 存在填充不等于 strict；Segal core map 不等于单个完整 inner horn |
-| 附录 T | 两顶点 horn、Segal core、boundary/horn 差异、corolla automorphism、degeneracy 样例 | inner horn inclusion normality；strict Segal 本质像；operadic model structure | 低阶 horn 样例不等于模型结构证明 |
+| 附录 T | 两顶点 horn、Segal core、boundary/horn 差异、corolla automorphism、degeneracy 样例；$L_1\to\eta$ 与 $X_\eta\to X_{L_1}$ 方差检查 | inner horn inclusion normality；strict Segal 本质像；operadic model structure | 低阶 horn 样例不等于模型结构证明 |
 | 第十八章 | $\mathbf{Fin}_*$ active/inert；Lurie-style infinity-operad；algebras over infinity-operads | coCartesian fibration 技术；category-of-operators 已定位到 HA-OP-1--HA-OP-3；dendroidal-Lurie comparison 已定位到 HHM-1--HHM-5 | active/inert 方向不可混用 |
-| 第十九章 | relative functor induces localization functor；derived tensor replacement；rectification 后 localization 等价说明 | DK localization = DKR-1--DKR-7；ordinary straightening = HTT-1；underlying monoidal infinity-category = HA-MON-1--HA-MON-2；spaces-valued operadic straightening = PRA-4；strict-to-infinity = PSAR/HA-ALG | Bousfield localization preservation 与原模型范畴的 monoidal localization 是不同问题；先代数后 localization 不自动交换 |
+| 第十九章 | relative functor induces localization functor；大模型范畴在更大 universe 中 localization；derived tensor replacement；rectification 后 localization 等价说明 | DK localization = DKR-1--DKR-7；ordinary straightening = HTT-1；underlying monoidal infinity-category = HA-MON-1--HA-MON-2；spaces-valued operadic straightening = PRA-4；strict-to-infinity = PSAR/HA-ALG | 只有本质小或给定 small DK presentation 时才能小化；Bousfield localization preservation 与原模型范畴的 monoidal localization 是不同问题；先代数后 localization 不自动交换 |
 | 附录 M | 四类模型比较图；允许路径、禁止捷径和 arity $0$ 检查 | Moerdijk-Weiss strict nerve core；White/White--Yau localization preservation；HA-OP category-of-operators；HHM 的 open/no-constants zig-zag；PSAR-5 的 strict-to-infinity algebra comparison | HHM 不能覆盖本书默认 constants；模型比较不是定义同一性 |
 | 附录 Y | strict operad 的树指标线性化；Segal-linear 接口；ordinary algebra 的 dendroidal 特化；Koszul extension strict specialization test | Hoffbeck-Moerdijk infinity-operadic homology/Koszul 结果保持研究边界；若升级为定理输入需新增 locator | linear infinity-operad 结果不得替代 classical Koszul theorem |
 | 附录 O | 模型混用失败模式 | 无新增定理 | 仅作边界检查 |

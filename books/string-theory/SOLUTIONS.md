@@ -1009,21 +1009,54 @@ $$
 
 ## 练习 17.2
 
-**题目.** 用 Cardy formula 推导 D1-D5-P 系统的 leading entropy。
+**题目.** 取 17.8B 的 K3 D1--D5 elliptic genus 为外部输入，用 17.8C 的
+fixed-index Jacobi--Rademacher 渐近推导 $\ell=0$ BPS index 的 leading exponent；
+写出 Cardy 区，并说明何时可把该指数增长解释为绝对 BPS degeneracy 的 leading
+entropy。
 
-**解答.** D1-D5 CFT 的 central charge 为
+**解答.** 记 $N=Q_1Q_5$。K3 D1--D5 elliptic genus
 $$
-c=6Q_1Q_5.
+\Phi_N(\tau,z)=\sum_{n,\ell}\Omega_N(n,\ell)q^ny^\ell
 $$
-若 momentum number 为 $n$，Cardy formula 给出
+是 weight $0$、index $N$ 的 weak Jacobi form；其 trace 中右动非基态成对抵消，故
+$\Omega_N(n,\ell)$ 计数的是固定右动 Ramond ground sector 的带符号 index，而不是
+完整 CFT 总态数。DMVV 精确乘积及 $K3$ 的
+$q^0$ 项给出
 $$
-S=2\pi\sqrt{\frac{cn}{6}}.
+[q^0y^{\pm N}]\Phi_N=N+1,
+\qquad \Delta_{\rm p}=-N^2.
 $$
-代入 $c$ 得
+对判别式
 $$
-S=2\pi\sqrt{Q_1Q_5n}.
+\Delta=4Nn-\ell^2
 $$
-$\square$
+固定 $N$ 并取 $\Delta\to\infty$。EZ85/DMZ12 的外部 Jacobi/Rademacher 输入在
+leading modular coupling 非零的 residue sector 给出
+$$
+\log|\Omega_N(n,\ell)|
+=\frac{\pi}{N}\sqrt{|\Delta_{\rm p}|\Delta}+o(\sqrt\Delta)
+=\pi\sqrt\Delta+o(\sqrt\Delta).
+$$
+最大 polar component 到 $\ell=0$ residue 的 $S$ coupling 非零，故取 $\ell=0$ 得
+$$
+S_{\mathrm{index}}
+=\log|\Omega_{Q_1Q_5}(n,0)|
+=2\pi\sqrt{Q_1Q_5n}
++o\!\left(\sqrt{Q_1Q_5n}\right).
+$$
+严格的 fixed-index Cardy 区是固定 $N$、$n\to\infty$；若 $N$ 同时放大，还须另加
+leading coefficient 和余项一致受控的 uniform-saddle 假设，并取
+$\Delta/N^2\to\infty$，对 $\ell=0$ 即
+$n/(Q_1Q_5)\to\infty$。普通 Cardy 定理只控制完整 modular-invariant partition
+function，不能替代这个 BPS-index 输入。
+
+若 $d_{\mathrm{BPS}}$ 是同一扇区的绝对态数，则只有
+$|\Omega_N|\le d_{\mathrm{BPS}}$。要把上式升级为绝对简并的 leading entropy，必须
+另行验证或假设
+$$
+\log d_{\mathrm{BPS}}-\log|\Omega_N|=o(\sqrt\Delta),
+$$
+即不存在指数级符号 cancellation。$\square$
 
 ## 练习 17.3
 

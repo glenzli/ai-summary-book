@@ -38,7 +38,7 @@
 - J. M. Bardeen, [*Gauge-invariant Cosmological Perturbations*](https://doi.org/10.1103/PhysRevD.22.1882), *Phys. Rev. D* 22 (1980), 1882--1905；与 Mukhanov、Dodelson 的教材版本共同定位第 16 章的一阶规范不变量和 FLRW 张量模。正文同时写出本书的坐标变换号差，避免跨文献直接混用公式。
 - Will、Blanchet、Baumgarte-Shapiro、Alcubierre 等关于 PPN、后 Newton、EOB 和数值相对论的标准资料。
 - F. Pretorius, [*Evolution of Binary Black-Hole Spacetimes*](https://doi.org/10.1103/PhysRevLett.95.121101), *Phys. Rev. Lett.* 95 (2005)，以及 M. Campanelli et al., [*Accurate Evolutions of Orbiting Black-Hole Binaries Without Excision*](https://doi.org/10.1103/PhysRevLett.96.111101), *Phys. Rev. Lett.* 96 (2006)；用于第 14 章“具体 formulation、规范和算法下经收敛测试的数值结果”，不支持无条件数值稳定性定理。
-- E. Gourgoulhon, [*3+1 Formalism and Bases of Numerical Relativity*](https://arxiv.org/abs/gr-qc/0703035)，用于 ADM 投影、渐近平直量与数值相对论的 3+1 约定。本书采用 $K_{ij}=-\tfrac12\mathcal L_n\gamma_{ij}$ 与 $j_i=-T_{\mu\nu}n^\mu\gamma^\nu{}_i$ 的配对；第 13、17 章不得单独翻转其中一个定义。
+- E. Gourgoulhon, [*3+1 Formalism and Bases of Numerical Relativity*](https://arxiv.org/abs/gr-qc/0703035)，用于 ADM 投影、渐近平直量与数值相对论的 3+1 约定；ADM 能量、动量与四动量的定位见 §7.4，特别是动量边界积分 (7.56)。本书采用 $K_{ij}=-\tfrac12\mathcal L_n\gamma_{ij}$ 与 $j_i=-T_{\mu\nu}n^\mu\gamma^\nu{}_i$ 的配对；第 13、17 章不得单独翻转其中一个定义。
 
 ## 外部输入定理原则
 

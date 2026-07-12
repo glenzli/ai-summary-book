@@ -41,14 +41,26 @@
 - 核查信息：arXiv 页面标明 v5 日期 2020-05-28，final version to appear in Asterisque。
 - 精确 locator：
   - Abstract，PDF p.0：finite locally free unstable norm `f_\otimes:\mathcal H_*(S')\to\mathcal H_*(S)` and finite etale stable norm `f_\otimes:\mathcal{SH}(S')\to\mathcal{SH}(S)`.
-  - Proposition 3.13，PDF p.18：finite etale norm and quotients by closed complements commute via Weil restriction; used for compatibility with Thom/purity-style quotients.
+  - Theorem 3.3，PDF pp.15--16，及其后的 localization 段落：universally
+    clopen 的 presheaf-level pointed norm；对 integral universally open maps
+    通过 Nisnevich/`\mathbb A^1` localization。Finite locally free maps 满足这些
+    条件，故得到 unstable norm。
+  - Corollary 3.11，PDF p.17：对 integral universally open `p`、presheaf `X`
+    与 open subpresheaf `Y\subset X`，有
+    `p_\otimes(X/Y)\simeq p_*X/p_*(X|Y)`。
+  - Proposition 3.13，PDF p.18：`p` finite etale、`X\in\operatorname{Sm}_T`、
+    `Z\subset X` closed 且 Weil restriction `R_pX` 存在（例如 `X/T`
+    quasi-projective）时，norm 与 closed-complement quotient 的 Weil-restriction
+    表达相容；Example 3.14 说明只假设 finite locally free 时该表达失败。
   - Proposition 4.5，PDF p.19：for finite etale `p:T\to S`, `\Sigma^\infty p_\otimes` has a unique symmetric monoidal extension `p_\otimes:\mathbf{SH}(T)\to\mathbf{SH}(S)` preserving filtered colimits and sifted colimits.
   - Definition 7.1，PDF p.35：definition of normed spectrum as a section of `SH^\otimes` over `Span(C, all, fet)` cocartesian over `C^{op}`.
 - 本书使用：
   - 第十七章 norm functors、normed spectra、Tambara-like compatibility。
   - 第十七章 failure mode: finite locally free unstable norm does not automatically stabilize; stable statement is finite etale.
 - 限制：
-  - Stable norm functor locator is finite etale. Finite locally free appears at unstable level; stable extension requires extra conditions and is not used as unconditional stable theorem.
+  - Stable norm functor locator is finite etale. Finite locally free appears at
+    unstable level through Theorem 3.3/localization and Corollary 3.11；不得把
+    Proposition 3.13 的 finite-etale、Weil-restriction-existence 结论扩大到该层级。
 
 ## FC-16.2/FC-16.13 / Deglise-Jin-Khan fundamental classes, Gysin and excess
 

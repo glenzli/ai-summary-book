@@ -10,7 +10,7 @@
 | 1 | Polchinski Vol. 1, Zwiebach, Becker-Becker-Schwarz |
 | 2 | Polchinski Vol. 1, Zwiebach, Green-Schwarz-Witten Vol. 1 |
 | 3 | Di Francesco-Mathieu-Senechal, Ginsparg, Polchinski Vol. 1 |
-| 4 | Polchinski Vol. 1, Green-Schwarz-Witten Vol. 1, Zwiebach；`GT72` |
+| 4 | Polchinski Vol. 1, Green-Schwarz-Witten Vol. 1, Zwiebach；`GT72`、`KO83/FGZ86`、`AB97` |
 | 5 | Polchinski Vol. 1, Green-Schwarz-Witten Vol. 1, Ginsparg；`POLY81` |
 
 ## 6-8：振幅、D-branes 和 RNS
@@ -43,7 +43,7 @@
 
 | 章节 | 主要资料源 |
 |---|---|
-| 17 | Polchinski Vol. 2, Becker-Becker-Schwarz, Johnson；`CARDY86`、`SV96`、`FKS95`、`WALD93/94` |
+| 17 | Polchinski Vol. 2, Becker-Becker-Schwarz, Johnson；`CARDY86`、`SW99`、`DMVV97`、`EZ85/DMZ12`、`SV96`、`FKS95`、`WALD93/94` |
 | 18 | Maldacena, Gubser-Klebanov-Polyakov, Witten, Polchinski Vol. 2；`BF82`、`HREN00`、`MAL-W98` |
 | 19 | Becker-Becker-Schwarz, Blumenhagen-Lust-Theisen, Polchinski Vol. 2 |
 | 20 | Hori et al., Maldacena, Witten, Di Francesco-Mathieu-Senechal |
@@ -68,7 +68,7 @@
 
 | 正文编号 | 状态 | 来源定位 | 本书不承担的部分 |
 |---|---|---|---|
-| 4.10 | `E` | `GT72` | no-ghost theorem 的完整表示论证明 |
+| 4.10、4.10A | `E` | `GT72`、`KO83/FGZ86`、`AB97` | 非零动量 no-ghost/relative BRST 的完整证明；零动量 relative/semi-relative/absolute exceptional cohomology 的逐类计算 |
 | 5.12、6.16 | `E` | `POLY81`；Polchinski Vol. 1 | determinant line、moduli measure 与 sewing/factorization theorem |
 | 7.8、7.18 | `E` | `BUS87/88`、`NAR86`；Polchinski Vol. 1 | cocycle/mutual-locality 与完整 Narain CFT 构造 |
 | 8.16A | `E` | `GSO77`；Green-Schwarz-Witten Vol. 1 | spin-structure modular sum 与 higher-genus supermoduli |
@@ -76,6 +76,6 @@
 | 11.2、11.6B、11.13 | `E` | `CFMP85`、`KOS61`、`GW86` | sigma-model renormalization、equivalence theorem、RNS 四-graviton correlator |
 | 13.2、13.7、13.12 | `E` | `YAU78`、`BTT`、`DUY` | Monge-Ampere、unobstructedness、Hermitian-Yang-Mills existence |
 | 13.4、13.16、13.18 | `E` | `LM89`；Huybrechts；Becker-Becker-Schwarz；附录 A/E | holonomy principle、quintic deformation theory、compact Hodge theorem |
-| 17.7--17.12 | `E/C` | `CARDY86`、`SV96`、`FKS95`、`WALD93/94` | Cardy theorem、black-hole solution、attractor flow、Noether-charge theorem 与 quantum match |
+| 17.7--17.12 | `E/C` | `CARDY86`、`SW99`、`DMVV97`、`EZ85/DMZ12`、`SV96`、`FKS95`、`WALD93/94` | D1-D5 CFT/charge convention、普通 Cardy theorem、K3 elliptic genus、fixed-index Jacobi asymptotics、large-index uniformity boundary、black-hole solution、attractor flow、Noether-charge theorem 与 absolute-degeneracy/quantum match |
 | 18.1、18.6 | `C` | `MAL97`、`GKP98/WIT98` | 完整非微扰 bulk/boundary 等价 |
 | 18.4、18.11、18.12 | `E/S` | Polchinski Vol. 2；`HREN00`、`MAL-W98` | D3 solution、holographic counterterms、Wilson-loop dictionary |

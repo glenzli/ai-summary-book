@@ -65,7 +65,7 @@ $$
 
 **事实 16.8（weak/categorical univalence 的分离）.** 某些弱形式的单值性，例如 universe wild category 的 categorical univalence，并不推出函数外延性。Cavallo-Höfer 2026 给出模型分离结果；见附录 AO.1。
 
-**教材后果。** 第六章使用的仍是 universe univalence，不得用 categorical univalence 替代；附录 T 中单值性推出函数外延性的链条只适用于相应强口径。
+**教材后果。** 第六章使用的仍是 universe univalence，不得用 categorical univalence 替代；附录 T 中单值性推出函数外延性的链条只适用于相应强口径，且本书非累积宇宙下只采用基底与 fibers 同属该单值 universe 的实例。
 
 **事实 16.9（interval reversal）.** Cubical interval 是否带 reversal、connections、composition 和 Glue 结构会改变语法与模型。Cavallo-Sattler 2026 证明了若干 self-dual interval theories 中加入 reversal 的保守性，并给出 strict cubical type theory 模型；见附录 AO.3。
 

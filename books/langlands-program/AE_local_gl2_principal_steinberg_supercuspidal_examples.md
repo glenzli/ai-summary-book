@@ -11,11 +11,18 @@
 **定义 AE.1.** 设 $\chi_1,\chi_2:F^\times\to\mathbb C^\times$ 为 smooth characters。归一化主级数表示定义为
 $$
 I(\chi_1,\chi_2)
-=
-\operatorname{Ind}_{B(F)}^{\operatorname{GL}_2(F)}
-(\chi_1\boxtimes\chi_2)\delta_B^{1/2},
+:=i_{B(F)}^{\operatorname{GL}_2(F)}
+(\chi_1\boxtimes\chi_2)
+:=
+\operatorname{Ind}_{B(F)}^{\operatorname{GL}_2(F),\operatorname{unn}}
+\left(\delta_B^{1/2}(\chi_1\boxtimes\chi_2)\right),
 $$
-其中 induction 为 smooth normalized parabolic induction，$\delta_B$ 为 $B(F)$ 的 modular character。
+其中最右端的 $\operatorname{Ind}^{\operatorname{unn}}$ 是 smooth unnormalized induction，
+$$
+\delta_B(\operatorname{diag}(a,d))=|a/d|.
+$$
+因而 $i_B^G$ 已包含一次且仅一次 $\delta_B^{1/2}$。本附录后文若写
+$\operatorname{Ind}_{B(F)}^{\operatorname{GL}_2(F)}$ 而不带上标，均指第四章的 normalized induction，不再额外乘 $\delta_B^{1/2}$。
 
 **外部输入定理 AE.2（`GL(2)` principal series irreducibility）.** 若
 $$
@@ -57,7 +64,12 @@ $\square$
 $$
 I(|\cdot|^{1/2},|\cdot|^{-1/2})
 $$
-中的本质平方可积 Jordan-Hölder factor。对 character $\chi:F^\times\to\mathbb C^\times$，$\operatorname{St}\otimes\chi$ 称为 Steinberg twist。
+中的本质平方可积 Jordan-Hölder factor。对 character $\chi:F^\times\to\mathbb C^\times$，简记
+$$
+\operatorname{St}\otimes\chi
+:=\operatorname{St}\otimes(\chi\circ\det),
+$$
+并称之为 Steinberg twist。
 
 **命题 AE.6（Steinberg 的 Weil-Deligne 参数）.** $\operatorname{St}\otimes\chi$ 对应二维 Weil-Deligne 表示
 $$
@@ -74,6 +86,16 @@ r(w)=\varphi_\chi(w)
 N(e_2)=e_1,\quad N(e_1)=0.
 $$
 等价地，它是一个 indecomposable special parameter。
+特别地，本书取几何 Frobenius，故
+$$
+|\operatorname{Fr}_F|=q^{-1},
+$$
+而 $r(\operatorname{Fr}_F)$ 在 $e_1,e_2$ 上的特征值分别为
+$$
+\chi(\varpi)q^{-1/2},
+\qquad
+\chi(\varpi)q^{1/2}.
+$$
 
 **证明路线（外部输入）.** Steinberg 表示是 reducible principal series 临界点的 square-integrable factor。LLC 与 Langlands classification 相容：临界点的两个 character 差一个 $|\cdot|$，在参数侧合并为带非零 nilpotent monodromy 的 Jordan block。关系
 $$
@@ -83,16 +105,21 @@ $$
 
 **命题 AE.7.** 若 $\chi$ 非分歧，则
 $$
-L(s,\operatorname{St}\otimes\chi)=(1-\chi(\varpi)q^{-s})^{-1}.
+L(s,\operatorname{St}\otimes\chi)
+=\left(1-\chi(\varpi)q^{-s-1/2}\right)^{-1}.
 $$
 
 **证明.** 对 Steinberg 参数，局部 L 因子取
 $$
 (\ker N)^{I_F}.
 $$
-这里 $\ker N=\mathbb C e_1$。按归一化，Frobenius 在该一维空间上给出 $\chi(\varpi)$ 对应的特征值，因此 L 因子为
+这里 $\ker N=\mathbb C e_1$，且非分歧的 $\chi$ 使该空间由 $I_F$ 逐点固定。由命题 AE.6 及
+$|\operatorname{Fr}_F|=q^{-1}$，$r(\operatorname{Fr}_F)$ 在 $e_1$ 上的特征值是
+$\chi(\varpi)q^{-1/2}$。代入第五章的 Weil-Deligne L 因子定义得
 $$
-(1-\chi(\varpi)q^{-s})^{-1}.
+\det\left(1-q^{-s}r(\operatorname{Fr}_F)\mid
+(\ker N)^{I_F}\right)^{-1}
+=\left(1-\chi(\varpi)q^{-s-1/2}\right)^{-1}.
 $$
 $\square$
 
@@ -122,13 +149,27 @@ wild 情形，尤其 residue characteristic 为 $2$ 时，需要 Bushnell-Hennia
 
 **证明路线（外部输入）.** `GL(2)` LLC 与 parabolic induction 相容。若参数可约为两个一维参数直和，则表示侧属于 principal series 或其极限情形，不可能 supercuspidal。Steinberg 类型对应可约 Weil 表示加非零 monodromy。故 supercuspidal 对应不可约二维 Weil 表示；不可约 Weil 表示没有非零 $N$ 与其相容，因为 $N$ 的 kernel 会给出非零稳定子空间。$\square$
 
-**命题 AE.12.** 若 $\pi$ 为 supercuspidal，则标准局部 L 因子通常为 $1$；更精确地，
+**命题 AE.12.** 若 $\pi$ 为 $\operatorname{GL}_2(F)$ 的 supercuspidal representation，则其标准局部 L 因子恒为
 $$
-L(s,\pi)=\det(1-q^{-s}\operatorname{Fr}\mid V_\pi^{I_F})^{-1},
+L(s,\pi)=1.
 $$
-而 supercuspidal 参数常满足 $V_\pi^{I_F}=0$。
 
-**证明.** 标准 L 因子按 Weil-Deligne 定义取惯性不变量。若不可约二维参数在惯性上无不变量，则 determinant 在零维空间上为 $1$。存在不变量的特殊低分歧情形按同一公式处理。$\square$
+**证明.** 由命题 AE.11，$V_\pi$ 是不可约二维 Weil 表示且 $N=0$。因 $I_F\triangleleft W_F$，子空间 $V_\pi^{I_F}$ 被 $W_F$ 保持。不可约性迫使
+$$
+V_\pi^{I_F}=0
+\quad\text{or}\quad
+V_\pi^{I_F}=V_\pi.
+$$
+若第二种情形成立，则 $r_\pi$ 经过 Abel 商
+$W_F/I_F\simeq\mathbb Z$ 分解。一个 Abel 群的有限维复不可约表示为一维，与 $\dim V_\pi=2$ 矛盾。故
+$V_\pi^{I_F}=0$。由 $N=0$ 及第五章的定义，
+$$
+L(s,\pi)
+=\det\left(1-q^{-s}r_\pi(\operatorname{Fr}_F)\mid
+(\ker N)^{I_F}\right)^{-1}
+=\det(1\mid0)^{-1}=1.
+$$
+$\square$
 
 ## AE.4 三分法与椭圆曲线局部表示
 

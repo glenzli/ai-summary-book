@@ -54,7 +54,18 @@
 
 **5.1.** 固定 valuation 截断只含有限多项；乘积中低于任意能量界的指数来自有限组合，因此仍趋向无穷。
 
-**5.2.** 零输入给 $\mu^1(\mu^0)+\cdots=0$；一个输入给 $\mu^1{}^2$ 被 curvature 左右乘项修正。
+**5.2.** 采用附录 B 的 suspended convention。零输入时，对每个对象 $X$
+只有
+$$
+b_1(b_0(X))=0.
+$$
+对齐次 $x\in s\operatorname{hom}(X_0,X_1)$，一个输入时恰有
+$$
+b_1b_1(x)+b_2(b_0(X_1),x)
++(-1)^{|x|}b_2(x,b_0(X_0))=0.
+$$
+这是全部三项，不存在省略的 higher-curvature insertion；特别地，$b_0=0$
+时得到 $b_1^2=0$。Desuspension 的符号由 (B.7a) 固定。
 
 **5.3.** 见附录 I：$\mu_b^0=0$ 后，变形低阶方程只剩 $\mu_b^1\mu_b^1=0$。
 
@@ -142,13 +153,43 @@
 
 ## 第十四章
 
-**14.1.** 厚子范畴按定义在 direct summands 下闭合。
+**14.1.** 记 $L=-\otimes^{\mathbf L}_{\mathcal A_{\mathcal G}}\mathcal A$
+为 extension，$R=i^*$ 为 restriction。令 $\mathcal T\subset
+\operatorname{Perf}(\mathcal A)$ 由 counit $LR(M)\to M$ 为
+quasi-isomorphism 的对象组成。因 $L,R$ exact 且保持有限直和与 retracts，
+$\mathcal T$ 是厚子范畴；Yoneda fully faithfulness 表明它包含所有 $Y_G$。
+由 (14.1)，$\mathcal T=\operatorname{Perf}(\mathcal A)$。同理，unit
+$N\to RL(N)$ 为 quasi-isomorphism 的对象在
+$\operatorname{Perf}(\mathcal A_{\mathcal G})$ 中构成厚子范畴，并包含该
+category 的全部 representables；故它也是全范畴。于是 unit 与 counit 处处
+为 quasi-isomorphisms，$L,R$ 互为 quasi-inverse。
 
-**14.2.** Interior marked point 表示 closed-string insertion，边界 punctures 表示 open-string Hochschild 输入。
+**14.2.** (14.3) 把 Hochschild degree $q$ 送到
+$SH^{q+n}(M)$。要命中 $SH^0(M)$，必须有 $q+n=0$，故所需 class 位于
+$HH_{-n}(\mathcal B)$。
 
-**14.3.** 先用 open-closed 命中单位证明 A-side 生成，再比较 endomorphism algebra。
+**14.3.** 取 full subcategory
+$\mathcal W_{\mathcal G}\subset\mathcal W(M)$、小严格含单位 B-side category
+$\mathcal C$ 及 full subcategory $\mathcal C_{\mathcal H}$。依次验证：存在
+$\alpha\in HH_{-n}(\mathcal W_{\mathcal G})$ 使
+$\mathcal{OC}(\alpha)=1_{SH}$；$\mathcal H$ split-generates $\mathcal C$；
+存在保持 units 与对象标号的 strictly unital quasi-equivalence
+$$
+\mathcal W_{\mathcal G}\simeq_{\mathrm{qe}}\mathcal C_{\mathcal H}.
+$$
+定理 14.7 给出 $\mathcal G$ 对 $\mathcal W(M)$ 的 split-generation，第二项
+给出 B-side split-generation，第三项比较两个 generating full
+subcategories。命题 14.9 因而给出
+$\mathcal W(M)\simeq_{\mathrm{Morita}}\mathcal C$；结论不是 raw categories
+的 quasi-equivalence。
 
-**14.4.** Curvature/potential value 给出分块；不同分块之间不形成同一个非弯曲 Fukaya fiber category，在 curved 总模型中由可逆曲率差导致 morphism object contractible。
+**14.4.** 写 $e_1=(1,0)$、$e_2=(0,1)$，则
+$k\times k=ke_1\oplus ke_2$，global unit 是 $1=e_1+e_2$。子空间（也是理想）
+$ke_1$ 非零并含 $e_1$，但不含 $e_1+e_2$。因此 open-closed image 若为
+$ke_1$，最多在另行引用 summand generation theorem 后推出第一个
+idempotent summand 的生成；它不能满足定理 14.7 的 global-unit hypothesis。
+若 image 含 $(1,1)$，则 exact wrapped generation criterion 才推出两个
+summands 组成的全范畴被 split-generate。
 
 ## 第十五章
 

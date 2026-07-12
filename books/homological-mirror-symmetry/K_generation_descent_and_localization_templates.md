@@ -57,8 +57,10 @@ projector 定义该 summand。
 
 **模板 K.5.** 要用 sectorial descent：
 
-1. 给出 sectorial cover $\{X_i\}$；
-2. 检查所有有限交仍为 Liouville sectors；
+1. 给出定义 15.1 意义下的 Weinstein sectorial cover $\{X_i\}$；
+2. 检查 sectorial hypersurface 条件，并验证所有 strata 的 symplectic
+   reductions 在 convexification 后 Weinstein；这同时保证有限交仍为
+   Liouville sectors；
 3. 写出 Cech diagram $J\mapsto\mathcal W(X_J)$；
 4. 证明局部 categories 的生成或局部 HMS；
 5. 引用 GPS descent 得到

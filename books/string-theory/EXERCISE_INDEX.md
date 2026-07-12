@@ -61,7 +61,7 @@
 | 16.2 | [第十六章：topological strings、A/B model 和 mirror symmetry](16_topological_strings_and_mirror_symmetry.md) | 解释 mirror symmetry 如何把 curve counting 转化为 period 计算。 |
 | 16.3 | [第十六章：topological strings、A/B model 和 mirror symmetry](16_topological_strings_and_mirror_symmetry.md) | 写出 quintic mirror Picard-Fuchs operator，并说明 holomorphic period 与 logarithmic period 在 mirror map 中的作用。 |
 | 17.1 | [第十七章：black branes、BPS states 和黑洞熵](17_black_branes_and_entropy.md) | 说明 BPS 条件为什么有助于跨耦合常数比较态数。 |
-| 17.2 | [第十七章：black branes、BPS states 和黑洞熵](17_black_branes_and_entropy.md) | 用 Cardy formula 推导 D1-D5-P 系统的 leading entropy。 |
+| 17.2 | [第十七章：black branes、BPS states 和黑洞熵](17_black_branes_and_entropy.md) | 用 K3 D1--D5 elliptic genus 的 fixed-index Jacobi--Rademacher 渐近推导 BPS-index exponent，并区分 Cardy 区、index 与绝对简并。 |
 | 17.3 | [第十七章：black branes、BPS states 和黑洞熵](17_black_branes_and_entropy.md) | 说明为什么 BPS index 可能在 wall of marginal stability 上跳变。 |
 | 18.1 | [第十八章：AdS/CFT 的精确定式和基本检验](18_ads_cft.md) | 解释大 $N$ 和大 't Hooft coupling 极限为何对应 classical supergravity。 |
 | 18.2 | [第十八章：AdS/CFT 的精确定式和基本检验](18_ads_cft.md) | 推导 $\operatorname{AdS}_{d+1}$ 中标量质量和 CFT scaling dimension 的关系。 |

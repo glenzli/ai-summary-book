@@ -10,28 +10,45 @@
 
 ## 5.1 Novikov 系数
 
-**定义 5.1.** 设 $k$ 是域。Universal Novikov field $\Lambda$ 的非零元素
-是形式和
+**定义 5.1.** 设 $k$ 是域，并固定加法子群
+$\Gamma\subset\mathbb R$，赋予从 $\mathbb R$ 继承的全序。$\Gamma$-Novikov
+field $\Lambda_{k,\Gamma}$ 的非零元素是形式和
 $$
 a=\sum_{i=0}^{N}a_iT^{\lambda_i},\qquad
 a_i\in k^\times,\quad
+\lambda_i\in\Gamma,\quad
 \lambda_0<\lambda_1<\cdots,
 $$
 其中 $N\in\mathbb Z_{\ge0}\cup\{\infty\}$；若 $N=\infty$，要求
 $\lambda_i\to+\infty$。等价地，指数 support 有下界，并且在每个
-$(-\infty,C]$ 中只有有限多个点。把零元另行加入，并定义
+$(-\infty,C]$ 中只有有限多个点。把零元另行加入。若约定 support 外
+$a_\lambda=0$，则加法与乘法定义为
 $$
-v(a)=\lambda_0\quad(a\ne0),\qquad v(0)=+\infty.
+\begin{aligned}
+a+b&=\sum_{\nu\in\Gamma}(a_\nu+b_\nu)T^\nu,\\
+ab&=\sum_{\nu\in\Gamma}
+\left(\sum_{\substack{\lambda,\mu\in\Gamma\\\lambda+\mu=\nu}}
+a_\lambda b_\mu\right)T^\nu.
+\end{aligned}
+\tag{5.0}
 $$
-逐项加法时先合并相同指数并删去零系数；Cauchy 乘积在每个能量阈值以下
-只有有限项。Novikov valuation ring 与其极大理想分别是
+Support 的局部有限性保证 (5.0) 的每个内和有限，并保证结果仍满足同一
+support 条件。定义 valuation
+$$
+v(a)=\min\{\lambda\in\Gamma:a_\lambda\ne0\}\quad(a\ne0),
+\qquad v(0)=+\infty.
+$$
+当 $\Gamma=\mathbb R$ 时，$\Lambda_{k,\mathbb R}$ 称为 universal Novikov
+field。本章固定 $\Gamma$ 并简写 $\Lambda=\Lambda_{k,\Gamma}$。Novikov
+valuation ring 与其极大理想分别是
 $$
 \Lambda_{\ge0}=\{a\mid v(a)\ge0\},\qquad
 \Lambda_{>0}=\{a\mid v(a)>0\};
 $$
 按 $v(0)=+\infty$ 的约定，两者都含零元。
 
-**命题 5.1A.** 定义 5.1 的集合在所述加法与 Cauchy 乘法下是域，并且
+**命题 5.1A.** $\Lambda_{k,\Gamma}$ 在 (5.0) 的加法与 Cauchy 乘法下是域，
+并且
 $$
 v(ab)=v(a)+v(b),\qquad
 v(a+b)\ge\min\{v(a),v(b)\}.

@@ -6,12 +6,12 @@
 |---|---|---|
 | QM-EXT-1 | Hilbert 空间上的谱定理 | 第 3、4、5 章定义一般可观测量和函数演算 |
 | QM-EXT-2 | Stone 定理 | 第 5 章从强连续酉群得到自伴 Hamiltonian |
-| QM-EXT-3 | Kato-Rellich 定理 | 第 6、12 章判断 $-\Delta+V$ 自伴 |
+| QM-EXT-3 | Kato-Rellich 定理 | 第 6 章在实值乘法势的相对界假设下判断 $-\Delta+V$ 自伴 |
 | QM-EXT-4 | Stone-von Neumann 定理 | 第 11 章正则对易关系的唯一性 |
 | QM-EXT-5 | Wigner 定理 | 第 10 章对称性由酉或反酉算子实现 |
 | QM-EXT-6 | Stinespring/Kraus 表示 | 第 18、19 章完全正映射和量子信道 |
 | QM-EXT-7 | 绝热定理 | 第 16 章慢变 Hamiltonian 的近似演化 |
-| QM-EXT-8 | 散射理论渐近完备性 | 第 14 章波算子和 $S$ 矩阵的存在边界 |
+| QM-EXT-8 | 短程势波算子与渐近完备性 | 第 14 章以 $P_{\mathrm{ac}}(H_0)$ 定义波算子并识别值域 $\mathcal H_{\mathrm{ac}}(H)$ |
 | QM-EXT-9 | Lie--Trotter 乘积公式 | 第 20 章路径积分的离散化入口 |
 | QM-EXT-10 | 球谐函数完备性与 Coulomb 谱理论 | 第 22 章中心势分离变量和氢原子能级 |
 | QM-EXT-11 | 磁 Schrodinger 算子自伴性 | 第 23 章最小耦合 Hamiltonian 的严格定义 |
@@ -29,7 +29,7 @@
 
 - 第 1--2 章主要内部闭合，有限维谱分解给出证明。
 - 第 3--5 章依赖 QM-EXT-1 与 QM-EXT-2。
-- 第 6--7 章使用 QM-EXT-3 说明常见 Hamiltonian 的自伴性，并使用 QM-EXT-14 说明本征函数完备性。
+- 第 6 章使用 QM-EXT-3 处理满足相对界条件的实值乘法势；第 6--7 章使用 QM-EXT-14 说明本征函数完备性，第 7 章再由 Hermite 加权移位在书内推出算子定义域与共同核心。
 - 第 10--11 章分别依赖 QM-EXT-5 与 QM-EXT-4。
 - 第 12--14、16、18、20 章各自依赖解析扰动、WKB 连接、散射、绝热、完全正映射和 Trotter 相关外部输入。
 - 第 22--23 章依赖球谐完备性、Coulomb Hamiltonian 谱理论、磁 Schrodinger 算子的自伴性和 Landau 纤维中的 Hermite 完备性。

@@ -11,14 +11,14 @@
 | 4 | von Neumann, Ballentine | Born 规则、Luders 更新、相容可观测量 | 一般测量理论 |
 | 5 | Hall, Reed-Simon | 有界 Hamiltonian 演化、Heisenberg 方程 | Stone 定理 |
 | 6 | Teschl, Shankar | 方势阱、匹配条件 | Kato-Rellich、Fourier 完备性 |
-| 7 | Shankar, Sakurai | 谐振子代数、基态 | Hermite 基完备性 |
+| 7 | Shankar, Sakurai, Hall, Teschl §8.3 | 谐振子闭算子、定义域、共同核心、基态 | Hermite 基完备性；核心与加权定义域由正文推出 |
 | 8 | Nielsen-Chuang | Schmidt 分解、偏迹 | 无限维张量积技术 |
 | 9 | Sakurai | 角动量代数、自旋 $1/2$ | $\mathrm{SU}(2)$ 完整分类 |
 | 10 | Wigner, Hall | 酉对称、守恒律 | Wigner 定理 |
 | 11 | Reed-Simon | Schrodinger 表示、Weyl 关系 | Stone-von Neumann |
 | 12 | Sakurai, Shankar | 有限维扰动公式 | Kato 解析扰动理论 |
 | 13 | Landau-Lifshitz | Rayleigh 原理、WKB 首阶 | 转折点连接公式 |
-| 14 | Reed-Simon, Taylor | $S$ 矩阵形式、Born 近似 | 散射存在性与完备性 |
+| 14 | Reed-Simon, Teschl §12.3, Taylor | $P_{\mathrm{ac}}$ 波算子、$S$ 矩阵、Born 近似 | Teschl Theorems 12.11--12.12 的短程势散射存在性与渐近完备性 |
 | 15 | Fock, Reed-Simon | 对称化投影、Pauli 原理 | 场算子域问题 |
 | 16 | Berry, Kato | Berry 连接规范变换 | 绝热定理误差估计 |
 | 17 | Davies | 密度算子、偏迹、开放系统 | Lindblad 生成元定理 |

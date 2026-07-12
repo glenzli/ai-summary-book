@@ -12,7 +12,8 @@
 | dR | $\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I$ | bounded prism, $X$ smooth | derived $p$-completed de Rham complex | $E_\infty$/cdga；filtered refinement 需另引 Nygaard | BS Corollary 15.4 |
 | crys | $R\Gamma_\Delta(X/A)\widehat\otimes_{A,\phi_A}^LA$ | crystalline prism $(A,(p))$, $X$ smooth | $R\Gamma_{\mathrm{crys}}(X/A)$ | integral Frobenius | BS Theorem 5.2 |
 | $\varphi$-isogeny | $C^{(1)}=C\widehat\otimes_{A,\phi_A}^LA\to C$ | bounded prism, $X$ smooth | isomorphism only after $[1/I]$ | semilinear/linearized typing；completed Frobenius twist | BS Corollary 15.5 |
-| etale | $((R\Gamma_\Delta/p^r)[1/I])^{\varphi=1}$ | perfect prism, $X$ any $p$-adic formal scheme | $R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z/p^r)$ | derived fixed fibre in $D(\mathbf Z/p^r)$ | BS Theorem 9.1 |
+| etale sheaf | $(\Delta_{X/A}[1/I]/p^r)^{\varphi=1}$ | perfect prism, $X$ any $p$-adic formal scheme | $R\mu_*\mathbf Z/p^r$ on $X_{\mathrm{et}}$ | sheaf-level derived fixed fibre | BS Theorem 9.1 |
+| etale global | $(\Delta_{S/A}[1/I]/p^r)^{\varphi=1}$ | perfect prism, $X=\operatorname{Spf}(S)$ affine | $R\Gamma_{\mathrm{et}}(\operatorname{Spec}(S[1/p]),\mathbf Z/p^r)$ | derived fixed fibre in $D(\mathbf Z/p^r)$；nonaffine 需另证 $R\Gamma$ 与 $I^{-1}$ 交换 | BS Theorem 9.1, affine corollary |
 | base change | $R\Gamma_\Delta(X/A)\widehat\otimes_A^LB$ | map $(A,I)\to(B,IB)$ bounded, $X$ smooth | $R\Gamma_\Delta(X_B/B)$ | derived $(p,IB)$-completion | BS Corollary 4.12 |
 | syntomic | $\operatorname{fib}(\varphi-\operatorname{can})$ on $\mathcal N^{\ge i}\widehat\Delta\{i\}$ | quasisyntomic model, $i\ge0$ | $\mathbf Z_p(i)$；mixed characteristic is first $\mathbf Z/p^r(i)$ with $\tau^{\le i}$, then derived-limited | cup product, Tate twist | BMS2 Theorems 1.12 (5), 1.15, 10.1 |
 
