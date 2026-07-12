@@ -17,19 +17,27 @@ $$
 [G]=G(K)\backslash G(\mathbb A_K).
 $$
 
+本章写 $C_c^\infty(G(\mathbb A_K))$ 时，指有限线性组合的 restricted pure tensors：有限处局部常值紧支撑，无穷处 $C^\infty$ 紧支撑。逐处固定 Haar 测度 $dg_v$，在几乎所有 unramified 位置声明
+$\operatorname{vol}(K_v)=1$，并取 restricted product $dg=\prod_vdg_v$。对 centralizer
+$G_\gamma$ 另行固定 $dg_\gamma$，商测度由 Weil integral formula 唯一确定。若改用 Tamagawa measures，几何侧体积系数和 orbital integrals 必须同时转换。
+
 **定义 16.1.** 设 $f\in C_c^\infty(G(\mathbb A_K))$。右卷积算子 $R(f)$ 在自守函数 $\phi$ 上定义为
 $$
 (R(f)\phi)(x)=\int_{G(\mathbb A_K)}f(g)\phi(xg)\,dg.
 $$
 这里 $dg$ 是 $G(\mathbb A_K)$ 上固定的 Haar 测度。
 
-**命题 16.2.** 若 $\phi$ 右 $K_f$-有限且 $f$ 紧支撑光滑，则 $R(f)\phi$ 仍为右有限的自守函数。
+**命题 16.2.** 若 $\phi$ 为 smooth automorphic function 且 $f\in C_c^\infty(G(\mathbb A_K))$，则 $R(f)\phi$ 仍为 smooth automorphic function，并在有限 adele 方向右开紧有限。若再假设 $f_\infty$ 的左 $K_\infty$-平移张成有限维空间，则 $R(f)\phi$ 也为右 $K_\infty$-finite。
 
 **证明.** 左 $G(K)$-不变性由
 $$
 (R(f)\phi)(\gamma x)=\int f(g)\phi(\gamma xg)\,dg=\int f(g)\phi(xg)\,dg
 $$
-得到。右有限性来自 $f$ 在有限 adele 方向局部常值且紧支撑，因此存在开紧子群 $J$ 使 $f(j_1gj_2)=f(g)$；若 $\phi$ 对某个开紧子群不变，则 $R(f)\phi$ 对交子群不变。Archimedean 光滑性由卷积保持。$\square$
+得到。在有限 adele 方向，存在开紧子群 $J$ 使 $f(j^{-1}g)=f(g)$。对 $j\in J$，左 Haar 换元 $h=jg$ 给出
+$$
+(R(f)\phi)(xj)=\int f(j^{-1}h)\phi(xh)\,dh=(R(f)\phi)(x),
+$$
+故卷积结果右 $J$-不变。无穷处对右平移微分可移入紧支撑积分，因而保持 smoothness。再设 $f_\infty$ 左 $K_\infty$-finite；由同一换元，$R(k)R(f)\phi$ 只涉及 $f_\infty$ 的左 $K_\infty$-平移，因此这些右平移张成有限维空间。若没有这一附加假设，卷积仍给 smooth vector，但不应断言 $K_\infty$-finite。$\square$
 
 **定义 16.3.** 若 $R(f)$ 在某个离散自守空间上为 trace class，则记其 trace 为
 $$
@@ -39,7 +47,8 @@ Trace formula 的任务是用两种方式计算该 trace。
 
 ## 16.2 紧商情形的 Selberg trace formula
 
-先考虑 $G(K)\backslash G(\mathbb A_K)$ modulo center 紧的情形。此时没有连续谱，公式形式最清楚。
+先考虑 $[G]=G(K)\backslash G(\mathbb A_K)$ 本身紧的简化情形。若只在 modulo center 意义下紧，则必须固定 unitary central character，并在
+$Z_G(\mathbb A_K)$ 的相应商上积分；以下公式不能把这一步静默省略。
 
 **定义 16.4.** 对 $\gamma\in G(K)$，其 orbital integral 定义为
 $$
@@ -48,7 +57,7 @@ f(x^{-1}\gamma x)\,dx,
 $$
 其中 $G_\gamma$ 为 $\gamma$ 的 centralizer。测度由 $G_\gamma(\mathbb A_K)$ 和 $G(\mathbb A_K)$ 的 Haar 测度诱导。
 
-**外部输入定理 16.5（紧商 trace formula，接口形式）.** 若 $[G]$ modulo center 紧，且 $f$ 为紧支撑模中心的光滑测试函数，使右正则卷积算子为 trace class，则
+**外部输入定理 16.5（紧商 trace formula，接口形式）.** 若 $[G]$ 紧，采用本节固定的 quotient measures，且 $f\in C_c^\infty(G(\mathbb A_K))$ 使右正则卷积算子为 trace class，则
 $$
 \sum_{\pi}m(\pi)\operatorname{tr}\pi(f)
 =
@@ -62,7 +71,9 @@ $$
 
 一般 reductive group 的自守商非紧，$L^2([G])$ 含有连续谱。
 
-**外部输入定理 16.7（Arthur trace formula，结构接口）.** 对 Arthur trace formula 测试函数空间中的 $f$，有恒等式
+**外部输入定理 16.7（Arthur trace formula，结构接口）.** 设 $K$ 为数域，$G/K$ 为 connected reductive group；固定 minimal Levi、parabolic data、compatible Haar measures 和 split central direction。对
+$C_c^\infty(G(\mathbb A_K)^1)$ 中 Arthur trace formula 允许的测试函数 $f$，truncated kernel
+$J^T(f)$ 对 sufficiently regular $T$ 有 geometric 与 spectral 两种展开；取其规范常数项得到分布恒等式
 $$
 J_{\operatorname{spec}}^G(f)=J_{\operatorname{geom}}^G(f),
 $$
@@ -70,7 +81,8 @@ $$
 
 1. 谱侧 $J_{\operatorname{spec}}^G(f)$ 由离散谱、连续谱、Eisenstein series、intertwining operators 和 Levi subgroups 的诱导数据组成。
 2. 几何侧 $J_{\operatorname{geom}}^G(f)$ 由 semisimple conjugacy classes、unipotent contributions 和 weighted orbital integrals 组成。
-3. 两侧都依赖截断参数，但完整公式中依赖被组织为规范分布。
+3. 截断展开依赖 $T$；这里的 $J_{\operatorname{spec}}^G$ 与
+$J_{\operatorname{geom}}^G$ 指 exponential-polynomial 中按同一 convention 取得的规范常数项。
 
 **注 16.8.** 定理 16.7 是接口陈述。完整 Arthur trace formula 的陈述需要大量关于截断、加权 characters、加权 orbital integrals 和 $(G,M)$-families 的技术。本书只使用它作为比较不同群自守谱的工具。
 
@@ -88,13 +100,13 @@ $$
 
 设 $F$ 为局部域，$G/F$ 为 connected reductive group。
 
-**定义 16.10.** 两个 semisimple 元素 $\gamma,\gamma'\in G(F)$ 称为稳定共轭，若它们在 $G(\overline F)$ 中共轭。
+**定义 16.10.** 本章只在 strongly regular semisimple locus 上使用稳定共轭。两个 strongly regular semisimple 元素 $\gamma,\gamma'\in G(F)$ 称为稳定共轭，若它们在 $G(\overline F)$ 中共轭。此时 centralizer 是 torus，故若 $g\gamma g^{-1}=\gamma'$，则 cocycle $g^{-1}\sigma(g)$ 自动落在连通 centralizer 中；这与通常的 stable-conjugacy 定义一致。对一般 semisimple 元素，必须把连通 centralizer/cocycle 条件写入定义，不能只说几何共轭。
 
-**定义 16.11.** 设 $\gamma$ 为 strongly regular semisimple element。固定轨道积分的 Haar 测度和 Kottwitz sign 后，稳定轨道积分定义为
+**定义 16.11.** 设 $\gamma$ 为 strongly regular semisimple element。给稳定共轭类内各 centralizer 选择由同一 inner twisting/transfer convention 兼容的 Haar 测度后，稳定轨道积分定义为
 $$
-SO_\gamma(f)=\sum_{\gamma'}e(G_{\gamma'})O_{\gamma'}(f),
+SO_\gamma(f)=\sum_{\gamma'}O_{\gamma'}(f),
 $$
-其中 $\gamma'$ 遍历 $\gamma$ 的稳定共轭类中的 $G(F)$-共轭类，$e(G_{\gamma'})$ 为固定 Kottwitz sign convention 后的符号。
+其中 $\gamma'$ 遍历 $\gamma$ 的稳定共轭类中的 $G(F)$-共轭类。Kottwitz signs 会出现在某些全局或非 strongly-regular 加权分布中，但不是本定义中任意附加的系数；若文献使用不同 signed convention，必须连同 transfer factor 一起声明。
 
 **注 16.12.** 稳定轨道积分不是单个轨道积分。它把同一稳定共轭类中的多个 rational conjugacy classes 组合起来。Endoscopy 正是研究这些组合如何从另一个群的稳定轨道积分转移而来。
 
@@ -137,7 +149,7 @@ SO_{\gamma_H}(f^H)
 $$
 其中 $\gamma_G$ 遍历与 $\gamma_H$ 匹配的 $G(F)$-共轭类。
 
-**外部输入定理 16.18（transfer 的存在，接口形式）.** 固定 endoscopic datum、transfer factor normalization 和 trace formula 使用的 Hecke/Schwartz 测试函数空间后，对 $G$ 上的测试函数 $f^G$ 存在 $H$ 上的匹配函数 $f^H$，反之在稳定分布意义下也有相应转移。
+**外部输入定理 16.18（transfer 的存在，接口形式）.** 固定 endoscopic datum、Whittaker 或等价 transfer-factor normalization、compatible Haar measures 和允许的 Hecke/Schwartz 测试函数空间后，对 $G$ 上的测试函数 $f^G$ 存在 $H$ 上的匹配函数 $f^H$。匹配函数只在 stable orbital-integral quotient 中唯一；本书不使用未经额外 surjectivity theorem 保证的反向 transfer。
 
 **注 16.19.** Transfer factor 的归一化是 endoscopy 中最精细的部分之一。不同归一化会改变局部字符恒等式中的符号和 packet 参数化。
 
@@ -145,15 +157,16 @@ $$
 
 ## 16.7 Fundamental Lemma
 
-**外部输入定理 16.20（Fundamental lemma，Ngô）.** 对非 Archimedean 局部域上的非分歧 endoscopic datum，单位元测试函数
+**外部输入定理 16.20（Fundamental lemma，Ngô）.** 设 $F$ 为非 Archimedean 局部域，$G/F$ 与其 endoscopic datum 均 unramified，选定相容 hyperspecial subgroups
+$K_G,K_H$、体积 $1$ Haar measures 和 unramified normalization 的 transfer factor。则单位元测试函数
 $$
-\mathbf 1_{G(\mathcal O_F)}
+\mathbf 1_{K_G}
 $$
 与相应的
 $$
-\mathbf 1_{H(\mathcal O_F)}
+\mathbf 1_{K_H}
 $$
-在所固定的 Kottwitz-Shelstad transfer factor 归一化下匹配。更一般的 weighted fundamental lemma 也在稳定 trace formula 中使用。
+匹配。更一般的 weighted fundamental lemma 是独立的深输入；不能从单位元情形形式推出。
 
 **注 16.21.** Fundamental lemma 是稳定 trace formula 可用的关键局部输入。没有它，无法在几乎所有非分歧位置把几何侧的 Euler product 型比较拼接成全局恒等式。
 
@@ -161,7 +174,7 @@ $$
 
 ## 16.8 稳定 Trace Formula 与谱转移
 
-**外部输入定理 16.22（稳定 trace formula，接口形式）.** 对 invariant trace formula 的测试函数空间中且已选择 endoscopic matching 的测试函数，Arthur trace formula 可稳定化为
+**外部输入定理 16.22（稳定 trace formula，限定接口）.** 对已经建立 stabilization 的群与版本，固定 z-extensions、global endoscopic data、transfer factors、compatible measures 和 matching functions 后，invariant trace formula 可写成
 $$
 I^G(f)
 =
@@ -175,11 +188,18 @@ $$
 3. $f^H$ 是 $f$ 的 transfer。
 4. $\iota(G,H)$ 是由 Tamagawa 数、中心和 component groups 给出的系数。
 
-**注 16.23.** 公式的精确形式依赖是否使用 invariant trace formula、stable trace formula、twisted trace formula 或 simple trace formula。本书当前只使用它解释 endoscopic classification 的结构。
+**注 16.23.** 这不是“任意 connected reductive group、任意测试函数”的无条件统一公式。求和指标、ellipticity、outer automorphism 商、中心角色和系数
+$\iota(G,H)$ 均随 invariant、stable、twisted 或 simple trace formula 版本改变。本书只在 Arthur classical groups、Mok unitary groups 和 Arthur-Clozel base change 等已登记来源的范围内调用。
 
-**命题 16.24（trace formula 比较的函子性含义）.** 若 $H$ 与 $G$ 的稳定 trace formula 可通过 transfer factors 匹配，并且谱侧稳定分布可分解为 L-packets 的 stable characters，则可从几何侧恒等式推出 $H$ 与 $G$ 之间的自守表示转移。
+**条件性推论 16.24（trace formula 比较的函子性含义）.** 假设：
 
-**证明草图.** 几何侧匹配给出对所有匹配测试函数的分布恒等式。由 trace formula，几何侧等于谱侧，因此得到稳定谱分布恒等式。若 stable characters 在线性无关性意义下可分离不同 packets，则分布恒等式迫使谱侧 packets 按 L embedding 对应。该过程给出 endoscopic transfer 或其 multiplicity formula。完整证明依赖稳定 trace formula、局部字符恒等式和 packet 参数化。$\square$
+1. $H$ 与 $G$ 的相关稳定 trace formula 和 matching theorem 已成立；
+2. 两侧谱分布已展开为带已知 multiplicities 的 stable packet characters；
+3. 这些 characters 在所用测试函数商上能够线性分离。
+
+则几何侧 matching identity 推出相应 packet coefficients 相等，因而给出该谱展开所编码的 $H$ 到 $G$ 转移。
+
+**证明.** 对任意匹配测试函数对，假设 1 把几何侧恒等式分别换成谱侧恒等式。代入假设 2 的 packet character 展开，得到两组 stable characters 的线性组合恒等。假设 3 允许逐项比较系数，所以对应 packet 的 multiplicities 相等；该对应正是谱展开中由 L embedding 标记的转移。结论完全依赖三项外部假设，本推论只承担从分布恒等式到系数相等的线性逻辑。$\square$
 
 ## 16.9 Twisted Endoscopy 与 Base Change
 

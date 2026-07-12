@@ -69,7 +69,7 @@ Z(s,\Phi,\varphi,\varphi^\vee)
 $$
 其中 $\xi_v$ 为局部 matrix coefficient。
 
-**证明草图.** 自守表示的 restricted tensor product 分解给出 matrix coefficient 的张量分解。Schwartz-Bruhat 函数也为 restricted tensor product。绝对收敛保证可应用 Fubini；附录 B 的 restricted product 积分公式把整体积分写成局部积分乘积。$\square$
+**证明路线（外部输入）.** 自守表示的 restricted tensor product 分解给出 matrix coefficient 的张量分解。Schwartz-Bruhat 函数也为 restricted tensor product。绝对收敛保证可应用 Fubini；附录 B 的 restricted product 积分公式把整体积分写成局部积分乘积。$\square$
 
 **外部输入定理 I.7（Godement-Jacquet 全局定理）.** 取几乎所有非分歧位置的 spherical vector 与标准 Schwartz 函数，并在有限多个 ramified 或 Archimedean 位置固定局部测试数据，则 $Z(s,\Phi,\varphi,\varphi^\vee)$ 表示 $L(s,\pi,\operatorname{Std})$ 乘以有限多个局部修正因子。Fourier 变换 $\Phi\mapsto\widehat\Phi$ 和 Poisson summation on $M_n(K)\subset M_n(\mathbb A_K)$ 给出 $L(s,\pi,\operatorname{Std})$ 的 meromorphic continuation 和函数方程。
 

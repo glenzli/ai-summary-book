@@ -12,7 +12,8 @@
 
 本附录使用以下输入：
 
-1. Dolbeault resolution 和 liquid realization；
+1. Dolbeault resolution、Fréchet 项的 liquid membership，以及 cohomology quotient
+   的局部提升或连续 Hodge splitting；
 2. Grauert 或 Hodge-Fredholm 有限性；
 3. Serre duality 或 Grothendieck-Serre duality；
 4. 若 \(X=Y^{an}\) 来自 proper algebraic variety，则使用 GAGA；
@@ -53,9 +54,14 @@ $$
 
 Hodge-Fredholm 路线：若 \(\mathcal F\) 有有限局部自由 resolution，则附录 X 把向量丛情形有限性传播到 \(\mathcal F\)。一般相干层使用 Grauert 或 dualizing/Grauert 输入。有限维上同调只在有限多个 \(q\) 中非零，因此 \(R\Gamma\) 是有限维有界复形。证毕。
 
-**推论 AQ.2（analytic/liquid 紧性口径）。** 若 liquid realization 与有限维复向量空间相容，则 \(R\Gamma(X,\mathcal F)\) 在 analytic/liquid 派生范畴中对应 compact/perfect 对象。
+**推论 AQ.2（analytic/liquid 紧性口径）。** 固定 \(0<p\le1\)。在第二卷输入
+D.5-D.6 的 \(p\)-liquid 范畴中，有限维复向量空间 \(W\) 的凝聚化
+\(\underline W\) 是有限自由 \(\underline{\mathbb C}\)-模。因此
+\(R\Gamma(X,\mathcal F)\) 对应 compact/perfect liquid 对象。
 
-**证明.** 有限维复向量空间是单位对象的有限直和。有限有界复形由有限次 shift、cone 和有限直和构成。compact/perfect 性对这些操作封闭。证毕。
+**证明.** 选一组有限基得 \(\underline W\cong\underline{\mathbb C}^{\oplus n}\)；
+第二卷输入 D.5 保证单位对象是 liquid 范畴的紧投射生成元之一。有限有界复形由有限次
+shift、cone 和有限直和构成，compact/perfect 性对这些操作封闭。证毕。
 
 ## AQ.3 Serre 对偶闭包
 
@@ -198,7 +204,12 @@ $$
 4. HRR/GRR 的 Euler characteristic 与 characteristic class 公式；
 5. liquid Dolbeault 模型与经典 Dolbeault cohomology 的比较。
 
-**证明.** Clausen-Scholze 建模把复解析对象、相干层和相关函数空间送入 condensed/analytic 框架。第二卷附录 P 给 Fréchet/liquid realization 的类型检查，第三卷附录 N、R 给 Dolbeault resolution 的 sheaf cohomology 计算形式层。AQ.1-AQ.8 分别证明有限性、对偶、GAGA 和 RR 在接受输入后的闭包。各定理使用同一 \(R\Gamma\)、trace、derived Hom、pushforward 和 \(K\)-理论类，因此在依赖图中相容。证毕。
+**证明.** Clausen-Scholze 建模把复解析对象、相干层和相关函数空间送入
+condensed/analytic 框架。第二卷附录 P 分开检查 Fréchet 项的 liquid membership 与
+quotient 的凝聚严格性，第三卷附录 N、R 给 Dolbeault resolution 的 sheaf cohomology
+计算形式层。AQ.1-AQ.8 分别证明有限性、对偶、GAGA 和 RR 在接受输入后的闭包。各定理
+使用同一 \(R\Gamma\)、trace、derived Hom、pushforward 和 \(K\)-理论类，因此在依赖图中
+相容。证毕。
 
 ## AQ.7 基本完本意义
 

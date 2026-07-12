@@ -10,7 +10,8 @@
 
 ## 2.1 A1-局部化
 
-**约定 2.1.** 本章仍固定有限维 Noetherian 基概形 `S`。对 `X\in\operatorname{Sm}_S`，记
+**约定 2.1.** 本章仍固定 `\mathbb U`-小有限维 Noetherian 基概形 `S`。
+对 `X\in\operatorname{Sm}_S`，记
 
 $$
 p_X:X\times_S\mathbb A^1_S\longrightarrow X
@@ -32,7 +33,11 @@ $$
 
 **命题 2.4.** `\mathbf H(S)` 是 presentable infinity-范畴。
 
-**证明.** 第一章命题 1.9 给出 `\operatorname{Shv}_{Nis}(\operatorname{Sm}_S)` presentable。集合 `W_{\mathbb A^1}` 由小范畴 `\operatorname{Sm}_S` 的对象索引，因此是一个集合。presentable infinity-范畴关于一集合态射的 accessible localization 仍为 presentable。`\square`
+**证明.** 第一章命题 1.9 给出 sheaf 范畴 presentable。
+`\operatorname{Sm}_S` 是 `\mathbb U`-小骨架，所以
+`W_{\mathbb A^1}` 是 `\mathbb U`-小态射集。对它应用外部输入定理 A.10
+（HTT Proposition 5.5.4.15），得到局部对象组成的 presentable reflective
+subcategory，即 `\mathbf H(S)`。`\square`
 
 **注 2.5.** 本章不声称 `L_{\mathbb A^1}` 是 left exact localization。`A1`-局部化保留的结构需要逐项验证；不能把 `\mathbf H(S)` 自动当作 infinity-topos 使用。
 

@@ -64,17 +64,28 @@ $$
 
 **警告 3.13.** “谱是 $\mathcal M_{fg}$ 上的 sheaf”是现代导出代数几何中的强表述。基础章节只使用复定向诱导的形式群律和 Landweber exactness；sheaf-theoretic 解释进入后续几何章节。
 
-**命题 3.14.** 高度 $0$、高度 $1$ 和一般高度的第一近似分别对应有理同调、$p$-adic K-theory 型信息和 Morava theories。
+**解释 3.14（结构图像，非定理）.** 高度 $0$、高度 $1$ 和一般高度的
+第一近似分别对应有理同调、$p$-adic K-theory 型信息和 Morava
+theories。
 
-**证明草图.** 高度 $0$ 对应特征 $0$ 情形，局部化由 $H\mathbb Q$ 检测。高度 $1$ 的典型形式群是乘法形式群，其周期性反映在复 K-theory 的 Bott 元素中。一般高度由 Morava K-theory $K(n)$ 检测，并由 Lubin-Tate/Morava E-theory $E_n$ 描述形式邻域。这个命题是结构性识别，严格版本依赖 Quillen、Landweber exactness 和 Morava theory。证毕。
+高度 $0$ 对应特征 $0$ 情形，局部化由 $H\mathbb Q$ 检测；高度 $1$
+的典型形式群是乘法形式群，其周期性反映在复 K-theory 的 Bott 元素
+中；高度 $n$ 的残差信息由 $K(n)$ 检测，形式邻域由 Lubin--Tate/Morava
+$E_n$ 描述。这里没有一个单独、无附加数据的“对应定理”：严格使用时
+必须分别调用 Quillen、Landweber、Lubin--Tate 和 Morava theory 输入，
+本段不进入后续证明链。
 
 ## 3.5 Morava Kunneth 性质
 
-**外部输入 3.15.** 对谱 $X,Y$，Morava K-theory 满足 Kunneth 型公式
+**外部输入定理 3.15（Morava Künneth，CHT-P1-18）.** 对每个
+$n\ge1$ 及任意 $X,Y\in\mathbf{Sp}_{(p)}$，自然外积给出同构
 $$
 K(n)_*(X\otimes Y)\cong K(n)_*X\otimes_{K(n)_*}K(n)_*Y
 $$
-在标准假设下成立。由于 $K(n)_*$ 是 graded field，右侧的代数行为特别简单。
+；没有有限性、connectivity 或 dualizability 假设。来源定位为
+Hopkins--Smith II, Proposition 1.5；其 Proposition 1.4 给出
+$K(n)\otimes X$ 分解为若干悬挂 $K(n)$ 的 field-spectrum 版本。高度
+$0$ 的对应式是普通有理 Künneth 同构。
 
 **命题 3.16.** 若 $K(n)_*X=0$，则对任意谱 $Y$ 有 $K(n)_*(X\otimes Y)=0$。
 

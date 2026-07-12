@@ -42,11 +42,17 @@
 
 ## 章节依赖映射
 
-- 第 1-5 章依赖 S26 Lecture I-II 的 condensed/profinite 站点入口，以及 ABKMT24 的 coherent topology、regular/extensive topology 和 ProFin/CHaus/Stonean 比较；出版 locator 见总台账 1.1。
+- 第 1-5 章依赖 S26 Remarks 1.4-1.5、Proposition 1.7、Definition 2.1、
+  Proposition 2.9 与 Definition 2.11 的 universe、拓扑空间凝聚化、截断与大凝聚范畴
+  口径，以及 ABKMT24 的 coherent topology、regular/extensive topology 和
+  ProFin/CHaus/Stonean 比较；出版 locator 见总台账 1.1。
 - 第 6-8 章依赖输入 A.1-A.3：Boolean prime ideal theorem、Sikorski/Gleason 背景和极不连通紧 Hausdorff 空间的投射性；书内只证明 Stone/Gleason cover 的形式模块。
 - 第 9-11 章使用 sheaf of modules 的标准闭对称幺半结构和导出张量理论。
 - 附录 G 使用标准同调代数，计算投射对象上的 Ext 消失、平坦对象上的 Tor 消失和长正合列。
-- 附录 H 使用 sheafification 的 plus 构造、Grothendieck 阿贝尔范畴和 Spaltenstein 型 K-flat/K-injective 替换理论；plus 构造给出书内证明，K-flat/K-injective 存在性作为一般同调代数输入。
+- 附录 H 使用 sheafification 的 plus 构造、Grothendieck 阿贝尔范畴和无界替换理论；
+  plus 构造给出书内证明，K-injective 精确引用 Stacks Tag `079P` Theorem 19.12.6，
+  ringed-site 上 termwise-surjective flat K-flat 替换引用 Tag `06YL` Lemma 21.17.11。
+  本书不把后一结论推广到任意闭幺半 Grothendieck 阿贝尔范畴。
 - 附录 I 使用阿贝尔范畴中的标准同调代数：投射分解比较定理、horseshoe lemma、短正合复形的长正合列和维数平移；这些证明在书内给出。
 - 附录 J 使用 regular open algebra、Stone 空间和紧 Hausdorff 正规性，补齐 Gleason cover 的连续满射构造；Gleason 投射性定理仍作为外部输入。
 - 附录 K 使用 Gleason cover 存在性、ED 投射性和 sheaf separated/local lifting 条件，证明 ED 测试对象检测单射、满射、同构和正合性；不新增外部来源。

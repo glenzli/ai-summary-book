@@ -20,7 +20,7 @@
 | 分卷 | 主线职责 | 当前处理方式 | 后续增强方向 |
 | --- | --- | --- | --- |
 | 卷一：凝聚数学基础 | 建立 condensed 层：站点、sheaf、profinite/ED、凝聚集合、凝聚阿贝尔群、凝聚模和基础 Ext/Tor | 已基本闭合；第十二至十五章只作为 solid/analytic 入口 | 不再把 solid/analytic 主证明塞入卷一，只保留动机、定义入口和前置对象 |
-| 卷二：Solid、Analytic 与 Liquid 结构 | 承担 solid/analytic/liquid 主线 | 已给出定义、输入定理、类型检查、形式推论和证明义务 | 这是后续扩写的核心卷，应继续补 solidification、analytic localization、liquid realization 的细节 |
+| 卷二：Solid、Analytic 与 Liquid 结构 | 承担 solid/analytic/liquid 主线 | 已给出定义、输入定理、类型检查、形式推论和证明义务 | 应继续补 solidification、analytic localization、liquid measure/membership 的细节 |
 | 卷三：复几何与相干对偶 | 应用卷：把卷二主线用于 Dolbeault、有限性、Serre duality、GAGA、HRR/GRR | 已作为输入定理型应用闭包 | 不应把 liquid 主线证明放在卷三；卷三只验证应用中需要的类型和形式后果 |
 | 卷四：形式化、计算与例子 | 工具卷：形式化义务、计算样板、反例、pro-etale/pyknotic 接口 | 已作为工具卷基本闭合 | 补 Lean 代码、更多 solid/analytic/liquid 计算和谱值接口 |
 
@@ -92,7 +92,7 @@ liquid 也应放在第二卷，而不是只在第三卷 Dolbeault 应用里出�
 3. liquid 模的 Hom 判别；
 4. Banach、Fréchet、核 Fréchet 空间与 liquid 的边界；
 5. 连续线性算子、闭值域、Fredholm 复形的 liquid 类型检查；
-6. Dolbeault 复形、分布、核函数的 liquid realization；
+6. Dolbeault 复形、分布、核函数的凝聚化、liquid membership 与严格性；
 7. liquid 与 analytic tensor/derived Hom 的相容性。
 
 当前对应位置：
@@ -100,7 +100,8 @@ liquid 也应放在第二卷，而不是只在第三卷 Dolbeault 应用里出�
 - 第二卷第五章；
 - 第二卷附录 J、P；
 - 附录 S 给出 liquid 主定理包；
-- 附录 Z 把拓扑向量空间凝聚化、liquid realization 输入和 Dolbeault cohomology 比较拆成证明模块；
+- 附录 Z 把拓扑向量空间凝聚化、liquid membership、局部提升和 Dolbeault
+  cohomology 比较拆成证明模块；
 - 第三卷第三至五章使用这些对象；
 - 第四卷第六章作为函数分析例子库。
 
@@ -108,7 +109,7 @@ liquid 也应放在第二卷，而不是只在第三卷 Dolbeault 应用里出�
 
 - \(p\)-liquid 测度理论；
 - \((\mathbb R,\mathcal M_{<p})\) 满足 analytic ring 条件；
-- liquid realization 与经典连续线性算子的相容性；
+- 经典完备空间的 liquid membership，以及连续线性 quotient 的局部提升；
 - Dolbeault/Fréchet 对象进入 liquid 范畴的完整构造。
 
 ## 3. 是否需要拆卷

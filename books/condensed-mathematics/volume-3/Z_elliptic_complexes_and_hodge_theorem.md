@@ -155,7 +155,7 @@ $$
 
 Z.5 是经典有限维向量空间结论。进入 condensed/analytic 语境时，还需验证：
 
-1. Sobolev/Fréchet 空间的凝聚化或 liquid realization。
+1. Sobolev/Fréchet 空间的凝聚化及其 liquid membership。
 2. $\bar\partial$、$\bar\partial^\ast$、Green operator 的连续性。
 3. harmonic projection 在目标范畴中对应有限维离散对象。
 4. Hodge decomposition 与导出全局截面比较相容。

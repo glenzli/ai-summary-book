@@ -8,6 +8,7 @@
 - $\Gamma\vdash A:\mathcal U_i$：在语境 $\Gamma$ 中，$A$ 是第 $i$ 层宇宙中的类型。
 - $\Gamma\vdash a:A$：在语境 $\Gamma$ 中，$a$ 是类型 $A$ 的项。
 - $\Gamma\vdash a\equiv b:A$：$a$ 与 $b$ 在类型 $A$ 中 judgmentally equal，也称 definitional equality。
+- $\Gamma\vdash A\equiv B:\mathcal U_i$：类型 $A,B$ 作为宇宙中的项 judgmentally equal；类型转换可把 $a:A$ 视为 $a:B$，不产生路径证明项。
 - $a\equiv_s b$：two-level type theory 外部层中的 strict equality；不同于 HoTT identity path。
 - $\Gamma,x:A$：语境扩张。若 $A$ 依赖于 $\Gamma$，则 $x$ 可在后续类型和项中出现。
 - $B[a/x]$：把 $a$ 替换到 $B$ 中的自由变量 $x$。
@@ -31,12 +32,14 @@
 ## 恒等类型与路径
 
 - $\mathsf{Id}_A(a,b)$ 或 $a=_A b$：$a$ 与 $b$ 的恒等类型，也称路径类型。
+- $A=_{\mathcal U_i}B$：$A,B:\mathcal U_i$ 作为宇宙元素的恒等类型；该类型位于 $\mathcal U_{i+1}$，不同于 $A\equiv B:\mathcal U_i$。
 - $\mathsf{refl}_a:a=_A a$：反身路径。
 - 若 $p:a=b$，则 $p^{-1}:b=a$ 表示逆路径。
 - 若 $p:a=b$ 且 $q:b=c$，则 $p\cdot q:a=c$ 表示路径复合。
 - 若 $f:A\to B$ 且 $p:x=y$，则 $\mathsf{ap}_f(p):f(x)=f(y)$。
-- 若 $f:\prod_{x:A}P(x)$ 且 $p:x=y$，则 $\mathsf{apd}_f(p):\mathsf{transport}^{P}(p,f(x))=f(y)$。
-- 若 $P:A\to\mathcal U$ 且 $p:x=y$，则 $\mathsf{transport}^P(p):P(x)\to P(y)$。
+- 若 $P:A\to\mathcal U_j$、$f:\prod_{x:A}P(x)$ 且 $p:x=y$，则 $\mathsf{apd}_f(p):\mathsf{transport}^{P}(p,f(x))=f(y)$。
+- 若 $P:A\to\mathcal U_j$ 且 $p:x=y$，则 $\mathsf{transport}^P(p):P(x)\to P(y)$。
+- $\kappa_{p,u}:\mathsf{transport}^{\lambda\_.\,B}(p,u)=u$：常值族 transport 的逐点路径；函数级等式仍需函数外延性。
 
 ## 等价与同伦层级
 
@@ -46,8 +49,12 @@
 - $\mathsf{isSet}(A)\coloneqq \prod_{x,y:A}\mathsf{isProp}(x=y)$：$A$ 是集合。
 - $A\simeq B$：$A$ 与 $B$ 等价；具体定义以后续等价章节为准。
 - $\mathsf{isEquiv}(f)$：函数 $f$ 是等价；本书以 fiber 可收缩定义为基准。
-- $\mathsf{idtoequiv}_{A,B}:(A=B)\to(A\simeq B)$：从类型相等得到等价的映射。
-- $\mathsf{ua}$：单值性给出的 $(A\simeq B)\to(A=B)$ 的方向或等价的逆方向，具体符号随章节说明。
+- $\mathsf{idtoequiv}_{i,A,B}:(A=_{\mathcal U_i}B)\to(A\simeq B)$：从第 $i$ 层 universe path 得到小类型等价的映射；其定义域位于 $\mathcal U_{i+1}$，值域位于 $\mathcal U_i$。
+- $\mathsf{idtofun}(p)\coloneqq\mathsf{transport}^{\lambda X:\mathcal U_i.\,X}(p)$：宇宙路径 $p:A=_{\mathcal U_i}B$ 的底层运输函数 $A\to B$。
+- $\mathsf{idEquiv}_A:A\simeq A$：$A$ 的恒等等价。
+- $\mathsf{UA}_i$：第 $i$ 层 universe univalence，即 $\mathsf{idtoequiv}_{i,A,B}$ 对所有 $A,B:\mathcal U_i$ 为等价。
+- $\mathsf{ua}_i$：$\mathsf{UA}_i$ 选出的 $(A\simeq B)\to(A=_{\mathcal U_i}B)$ 方向；其两个逆律在公理化 HoTT 中是路径，不是 judgmental equality。
+- $\beta_e$、$\eta_p$：公理化单值性中 $\mathsf{idtoequiv}$ 与 $\mathsf{ua}_i$ 的两个 propositional 逆律。
 - $\|A\|_n$：$n$-截断；$\|A\|$ 表示命题截断。
 - $\tau_{n,m}:\|A\|_n\to\|A\|_m$：Postnikov 截断塔中的规范比较映射。
 - $\mathsf{isOfHLevel}_n(A)$：$A$ 具有同伦层级 $n$。本书采用 HoTT Book 常见编号：$0$ 表示可收缩，$1$ 表示命题，$2$ 表示集合。
@@ -58,7 +65,8 @@
 
 ## 高阶归纳类型与合成同伦
 
-- $\mathbb S^1$：圆类型，点构造子为 $\mathsf{base}$，路径构造子为 $\mathsf{loop}:\mathsf{base}=\mathsf{base}$。
+- $\mathbb S^1_i:\mathcal U_i$：第 $i$ 层的 universe-polymorphic 圆实例；固定层级后写 $\mathbb S^1$，点与路径构造子写 $\mathsf{base}$、$\mathsf{loop}:\mathsf{base}=\mathsf{base}$。
+- $\beta_{\mathsf{loop}}$、$\beta^P_{\mathsf{loop}}$：本书公理化圆中递归与依赖消去在 $\mathsf{loop}$ 上的 propositional computation 路径；点计算为 judgmental。
 - $\mathsf{susp}(A)$：$A$ 的悬挂。
 - $\mathsf{pushout}(f,g)$：两个映射 $f:A\to B$、$g:A\to C$ 的 pushout 高阶归纳类型。
 - $\mathsf{cofib}(f)$：映射 $f:A\to B$ 的 cofiber，即 $B\leftarrow A\to\mathbf 1$ 的 pushout。
@@ -153,6 +161,13 @@
 - $\mathbb N_s$：two-level type theory 外部层自然数，用于索引 strict/元理论递归。
 - $\mathcal U_{\mathsf{fib}}$：2LTT 中 fibrant types 的 universe 口径。
 
+## Cubical 与元理论符号
+
+- $\mathbb I$、$\mathbb F$：CCHM cubical type theory 的区间与面格。
+- $\mathsf{Path}_A(a,b)$：CCHM 对象语言中带端点约束的区间路径；不是第 2 章归纳 $\mathsf{Id}_A(a,b)$ 的同一个语法构造子。
+- $\mathsf{pathToEq}:\mathsf{Path}_{\mathcal U}(A,B)\to(A\simeq B)$：CCHM 中从 universe path 到等价的规范映射。
+- $\mathsf{Con}(T)$：元语言中“理论 $T$ 一致”的断言；不是本书对象语言中的类型缩写。
+
 ## Cohesive 符号
 
 - $\Pi\dashv\mathsf{Disc}\dashv\Gamma\dashv\mathsf{Codisc}$：cohesive HoTT 中的 shape、discrete、global sections、codiscrete 伴随串。
@@ -161,6 +176,7 @@
 ## 集合层代数与大小
 
 - $\mathsf{Str}(A)$：集合 $A$ 上的代数结构类型。
+- $\mathsf{Group}_i:\mathcal U_{i+1}$：carrier 位于 $\mathcal U_i$ 的小群之类型；对小类型宇宙的量化使结构类型高一层。
 - $G/N$：群 $G$ 关于正规子群 $N$ 的商群。
 - $R/I$：环 $R$ 关于 ideal $I$ 的商环。
 - $S^{-1}R$：交换环 $R$ 关于乘法闭子集 $S$ 的局部化。
@@ -181,4 +197,6 @@
 
 - 本书默认使用层级宇宙 $\mathcal U_0,\mathcal U_1,\ldots$。
 - 除非章节明确声明，不假设 resizing。
-- 若需要 cumulativity，将在相关章节中明确说明；默认规则只使用已声明的宇宙提升。
+- 默认不假设 cumulativity；$A:\mathcal U_i$ 不自动给出 $A:\mathcal U_j$（$i<j$），也没有隐式 universe lift。
+- 若 $A:\mathcal U_i$ 且 fibers $B(x):\mathcal U_j$，则 $B$ 称为 $j$-小族，$\Pi_xB(x)$、$\Sigma_xB(x):\mathcal U_{\max(i,j)}$；但宇宙值函数项 $B:A\to\mathcal U_j$ 自身位于 $\mathcal U_{\max(i,j+1)}$。
+- 多层参数的 $\mathcal U_{\max(i,j,\ldots)}$ 是相关形成规则直接声明的层级，不暗示先使用累积性。

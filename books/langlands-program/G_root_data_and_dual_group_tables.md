@@ -143,7 +143,19 @@ $$
 \alpha_i=e_i-e_{i+1}\quad(1\le i<n),\qquad \alpha_n=2e_n.
 $$
 
-**证明草图.** 将 $\mathfrak{sp}_{2n}$ 写成保持交替型的矩阵 Lie algebra。Diagonal torus 对矩阵块的 adjoint weights 分别给出 $\pm e_i\pm e_j$ 和 $\pm2e_i$。上三角 Borel 选出正根，simple roots 为上述集合。$\square$
+**证明.** 把 $X\in\mathfrak{sp}_{2n}$ 写成块矩阵
+$$
+X=\begin{pmatrix}A&B\\ C&-A^t\end{pmatrix},
+\qquad B=B^t,\quad C=C^t.
+$$
+对 $t=\operatorname{diag}(t_1,\ldots,t_n,t_1^{-1},\ldots,t_n^{-1})$，
+共轭作用在 $A_{ij}$ 上的权为 $e_i-e_j$，在 $B_{ij}$ 上的权为
+$e_i+e_j$，在 $C_{ij}$ 上的权为 $-e_i-e_j$。当 $i=j$ 时后两类权分别
+为 $2e_i$ 与 $-2e_i$。去掉 $A$ 的对角零权部分，恰得到显示的根集。
+选择使 $A$ 上三角、$B$ 取相应正根空间的 Borel 后，正根为
+$e_i-e_j$（$i<j$）、$e_i+e_j$（$i<j$）和 $2e_i$。逐次相减可知不可再
+分解为正根和的正根恰为
+$e_i-e_{i+1}$（$i<n$）与 $2e_n$，故它们构成 simple roots。$\square$
 
 **外部输入定理 G.12（classical groups 的对偶）.** Split classical groups 的对偶群满足
 $$
@@ -198,11 +210,20 @@ X^*(T)\simeq\mathbb Z[\operatorname{Gal}(E/F)]
 $$
 作为 $\Gamma_F$-module，其中 $\Gamma_F$ 通过商 $\operatorname{Gal}(E/F)$ 左平移作用。
 
-**证明草图.** 基变换到 $\overline F$ 后，
+**证明.** 基变换到 $\overline F$ 后，有限可分扩张的所有 $F$-嵌入给出
 $$
 T_{\overline F}\simeq\prod_{\sigma:E\hookrightarrow\overline F}\mathbb G_m.
 $$
-character lattice 是这些嵌入对应的自由 Abel 群。若 $E/F$ 为 Galois，这些嵌入由 $\operatorname{Gal}(E/F)$ 标号，$\Gamma_F$ 作用通过对嵌入的复合给出左平移。$\square$
+乘积 torus 的 character lattice 是各坐标 character 的自由 Abel 群，故
+$$
+X^*(T_{\overline F})\cong
+\mathbb Z[\operatorname{Hom}_F(E,\overline F)].
+$$
+若 $E/F$ Galois，选定一个嵌入后，所有嵌入由
+$\operatorname{Gal}(E/F)$ 唯一标号。$\Gamma_F$ 在嵌入上的复合作用通过
+商 $\operatorname{Gal}(E/F)$，并在该基上给出正则置换作用；按本书的
+character 方差约定，这写成左平移。故得到所述 $\Gamma_F$-module 同构。
+$\square$
 
 **推论 G.18.** 对 $T=\operatorname{Res}_{E/F}\mathbb G_m$，
 $$

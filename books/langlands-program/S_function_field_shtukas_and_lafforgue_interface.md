@@ -20,7 +20,7 @@ G(K)\backslash G(\mathbb A_K)/K_N
 $$
 可解释为带 level structure 的 $G$-bundles 模栈 $\operatorname{Bun}_{G,N}$ 的 $\mathbb F_q$-点集合。
 
-**证明草图.** 一个 adelic double coset 给出在 $X$ 的泛点平凡化的 $G$-bundle，并在各闭点由 $G(K_x)$ 与 $G(\mathcal O_x)$ 的相对位置粘合。商去 $G(K)$ 改变泛点平凡化，商去 $K_N$ 改变局部 level 平凡化。反向由 Beauville-Laszlo 型粘合恢复 adelic 数据。完整证明需要 $G$-bundles 的代数栈理论。$\square$
+**证明路线（外部输入）.** 一个 adelic double coset 给出在 $X$ 的泛点平凡化的 $G$-bundle，并在各闭点由 $G(K_x)$ 与 $G(\mathcal O_x)$ 的相对位置粘合。商去 $G(K)$ 改变泛点平凡化，商去 $K_N$ 改变局部 level 平凡化。反向由 Beauville-Laszlo 型粘合恢复 adelic 数据。完整证明需要 $G$-bundles 的代数栈理论。$\square$
 
 ## S.2 Hecke correspondences 和 Frobenius
 
@@ -32,7 +32,7 @@ $$
 
 **命题 S.3.** Hecke correspondence 在函数迹下给出自守函数上的 Hecke 算子。
 
-**证明草图.** Hecke correspondence 的两个投影给出拉回-推出算子。对定义在有限域上的 sheaf 取 Frobenius trace，Grothendieck-Lefschetz 公式把 cohomological correspondence 的 trace 变成有限集合上的求和。这正是 Hecke 算子按修改点计数的公式。$\square$
+**证明路线（外部输入）.** Hecke correspondence 的两个投影给出拉回-推出算子。对定义在有限域上的 sheaf 取 Frobenius trace，Grothendieck-Lefschetz 公式把 cohomological correspondence 的 trace 变成有限集合上的求和。这正是 Hecke 算子按修改点计数的公式。$\square$
 
 ## S.3 Shtukas
 
@@ -95,7 +95,7 @@ $$
 
 **命题 S.13.** Sheaf-function dictionary 把几何 Hecke eigensheaf 的 Frobenius trace 变成函数域自守 Hecke eigenfunction。
 
-**证明草图.** 若 $\mathcal F$ 是 $\operatorname{Bun}_G$ 上的 Hecke eigensheaf，且本征值为 $\widehat G$-local system $\mathcal E$，则 Hecke correspondence 上的同构给出 sheaf 层面的本征关系。对 $\mathbb F_q$-点取 Frobenius trace，Grothendieck-Lefschetz 公式把 sheaf 关系变成函数等式。右侧本征值变为 $\mathcal E$ 在闭点 Frobenius 上的 trace。$\square$
+**证明路线（外部输入）.** 若 $\mathcal F$ 是 $\operatorname{Bun}_G$ 上的 Hecke eigensheaf，且本征值为 $\widehat G$-local system $\mathcal E$，则 Hecke correspondence 上的同构给出 sheaf 层面的本征关系。对 $\mathbb F_q$-点取 Frobenius trace，Grothendieck-Lefschetz 公式把 sheaf 关系变成函数等式。右侧本征值变为 $\mathcal E$ 在闭点 Frobenius 上的 trace。$\square$
 
 **注 S.14.** 这说明几何 Langlands 不是数域 Langlands 的直接证明，而是函数域上“sheaf 级别结构”的增强。Shtukas 和 excursion operators 则把这种几何结构投影回 Galois 参数。
 

@@ -11,7 +11,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“对称 operad（symmetric operad）”。
 - 定义必须先于直觉；例子必须逐条验证定义中的结构和公理。
-- 非平凡命题必须给出证明、证明草图，或明确标注为“外部输入定理”，并在 `SOURCES.md` 中记录来源。
+- 非平凡命题必须给出完整书内证明，或明确标注为“外部输入定理”并在 `SOURCES.md` 中记录来源；证明路线只能解释外部输入，不计作书内证明。
 - 不使用“显然”“容易看出”等词跳过关键步骤；短证明也要写出使用的定义、泛性质、结合律或等变性。
 - 所有对象、态射、张量积、商、coinvariants、链复形、模型结构、同伦范畴和 infinity-对象必须标明所在范畴或模型。
 - 区分 set-operad、topological operad、dg-operad、colored operad、PROP/properad、dendroidal set、Lurie-style infinity-operad；不得把不同模型中的等式、同构、弱等价和等价混用。
@@ -55,4 +55,3 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 - 模型范畴章节是否区分 cofibrancy、fibrancy、weak equivalence、Quillen equivalence 和派生映射空间。
 - infinity-operad 章节是否说明采用 dendroidal set、simplicial operad nerve、Lurie operadic fibration 或其他模型。
 - 外部输入定理是否在 `SOURCES.md` 中可追溯。
-

@@ -90,6 +90,8 @@ V(T)\coprod\coprod_s V(T_s).
 $$
 叶标号由所有 $T_s$ 的叶标号给出。
 
+这里允许 $S_s=\varnothing$；此时 $T_s$ 是零叶树，grafting 删除外层的该叶而不产生新叶。于是投影 $\coprod_sS_s\to S$ 的空纤维正对应定义 4.8 的 nullary substitution。
+
 **命题 H.9.** 树 grafting 诱导 operad 复合
 $$
 \mathbb F(E)(S)\times\prod_{s\in S}\mathbb F(E)(S_s)

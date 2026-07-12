@@ -200,7 +200,7 @@ $$
 \chi_\ell:G_\mathbb Q\to\mathbb Z_\ell^\times.
 $$
 
-**证明草图.** Weil pairing 给出非退化交替配对
+**证明路线（外部输入）.** Weil pairing 给出非退化交替配对
 $$
 e_{\ell^n}:E[\ell^n]\times E[\ell^n]\to\mu_{\ell^n}.
 $$

@@ -11,7 +11,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 
 - 使用中文叙述；标准英文术语第一次出现时可给中文解释，例如“geometric Satake equivalence（geometric Satake 等价）”。
 - 定义先于直觉。所有对象必须说明所在范畴、底域、拓扑或 Grothendieck site、系数环、群作用和商的含义。
-- 非平凡命题必须给出证明、证明草图，或标注为“外部输入定理”。外部输入必须在 `SOURCES.md` 和 `THEOREM_LEDGER.md` 中可追踪。
+- 非平凡命题必须给出完整书内证明，或标注为“外部输入定理”。证明路线只解释外部输入，不计作证明；外部输入必须在 `SOURCES.md` 和 `THEOREM_LEDGER.md` 中可追踪。
 - 不使用“显然”“易知”等词跳过关键步骤。短证明也要写明使用的定义、泛性质、伴随性、基变换、滤过或三角恒等式。
 - 区分代数表示、Lie 代数模、Harish-Chandra 模、constructible sheaf、perverse sheaf、D-module、l-adic sheaf、ind-coherent sheaf 和 dg/infinity category。不得把等式、同构、准同构、等价、Morita 等价和 t-exact 等价混用。
 - 不复制资料原文；所有正文使用本书自己的中文重写。

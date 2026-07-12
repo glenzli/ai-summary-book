@@ -16,16 +16,28 @@ $$
 $$
 (\iota_df)(z)=d^{k/2}f(dz)
 $$
-或等价地 $f|_k\begin{pmatrix}d&0\\0&1\end{pmatrix}$，具体标量归一化依 Petersson 内积 convention 而定。
+即按第六章 slash convention 有
+$\iota_df=f|_k\begin{pmatrix}d&0\\0&1\end{pmatrix}$。本附录固定这个标量；若另行把 degeneracy map 定义为 $f(dz)$，只改变像的非零标量，不改变 old subspace。
 
 **命题 J.2.** $\iota_d f$ 属于 $S_k(\Gamma_0(N),\varepsilon)$。
 
-**证明草图.** 若 $\gamma\in\Gamma_0(N)$，则
+**证明.** 令 $\alpha_d=\operatorname{diag}(d,1)$。若
+$\gamma=\begin{pmatrix}a&b\\c&e\end{pmatrix}\in\Gamma_0(N)$，则
 $$
-\begin{pmatrix}d&0\\0&1\end{pmatrix}\gamma
-\begin{pmatrix}d^{-1}&0\\0&1\end{pmatrix}
+\alpha_d\gamma\alpha_d^{-1}
+=\begin{pmatrix}a&db\\c/d&e\end{pmatrix}.
 $$
-在乘以公共分母后落入 $\Gamma_0(M)$ 对应的 commensurator，且 $M\mid N$ 保证下左项满足模 $M$ 条件。尖点消失性由有限映射 $X_0(N)\to X_0(M)$ 下 holomorphic differentials 的 pullback 保持。完整证明通常用模曲线 degeneracy maps 表述。$\square$
+因为 $d\mid N/M$，有 $c/d\in M\mathbb Z$，故该矩阵属于 $\Gamma_0(M)$；其右下角仍为 $e$。由 slash 右作用和 $\varepsilon$ 从模 $M$ 到模 $N$ 的提升，
+$$
+(\iota_df)|_k\gamma
+=f|_k(\alpha_d\gamma\alpha_d^{-1})|_k\alpha_d
+=\varepsilon(e)\iota_df.
+$$
+所以 $\iota_df$ 具有所需变换律。它全纯，因为 $z\mapsto dz$ 保持上半平面且 $f$ 全纯。
+
+最后取任一 $\Gamma_0(N)$-cusp $c$。矩阵 $\alpha_d$ 把 $c\in\mathbb P^1(\mathbb Q)$ 送到一个
+$\Gamma_0(M)$-cusp；在相应 cusp parameters 中，$\iota_d$ 只把局部参数替换为某个正整数次幂并乘非零常数。$f$ 的展开没有常数项，作这种替换后仍没有常数项。因此 $\iota_df$ 在每个 cusp 消失，属于
+$S_k(\Gamma_0(N),\varepsilon)$。$\square$
 
 **定义 J.3.** Old subspace 定义为
 $$
@@ -69,7 +81,7 @@ $$
 
 **命题 J.8.** 若 $f$ 为权 $k$、级 $N$ newform，则第六章完成 L 函数函数方程中的常数 $\eta_f$ 可由全局 Atkin-Lehner involution 和 nebentypus 归一化表达。
 
-**证明草图.** Mellin 变换把 $f(iy)$ 与 $L(f,s)$ 联系起来。Fricke/Atkin-Lehner 变换 $W_N$ 把 $y$ 替换为 $1/(Ny)$，从而在 Mellin 积分中产生 $s\leftrightarrow k-s$。若 $f$ 是 $W_N$ 的本征向量，所得本征值与 nebentypus 标量共同给出 root number。完整常数依赖 slash operator 与完成因子 convention。$\square$
+**证明路线（外部输入）.** Mellin 变换把 $f(iy)$ 与 $L(f,s)$ 联系起来。Fricke/Atkin-Lehner 变换 $W_N$ 把 $y$ 替换为 $1/(Ny)$，从而在 Mellin 积分中产生 $s\leftrightarrow k-s$。若 $f$ 是 $W_N$ 的本征向量，所得本征值与 nebentypus 标量共同给出 root number。完整常数依赖 slash operator、nebentypus 与完成因子 convention；本段不给出这些外部输入的完整证明。
 
 ## J.3 局部导子和 Newvector
 
@@ -94,7 +106,7 @@ $$
 $$
 \pi^{K_1(\mathfrak p^m)}\ne0
 $$
-在中心特征约束下成立。非零向量
+成立。Casselman 定理保证该最小值存在；定义之前不预设它。非零向量
 $$
 v_{\operatorname{new}}\in\pi^{K_1(\mathfrak p^{a(\pi)})}
 $$
@@ -105,18 +117,33 @@ $$
 1. 最小整数 $a(\pi)$ 存在。
 2. Newvector line $\pi^{K_1(\mathfrak p^{a(\pi)})}$ 一维。
 3. 若 $m<a(\pi)$，则 $\pi^{K_1(\mathfrak p^m)}=0$。
-4. 局部 Whittaker newvector 的 zeta integral 给出局部标准 L 因子。
+4. 对 $m\ge a(\pi)$，
+   $$
+   \dim\pi^{K_1(\mathfrak p^m)}=m-a(\pi)+1.
+   $$
+5. 固定 conductor 为 $\mathcal O$ 的非平凡加法特征 $\psi$，取
+   $\operatorname{vol}(\mathcal O^\times,d^\times a)=1$。在 $\psi$-Whittaker model 中存在唯一满足
+   $W_{\operatorname{new}}(1)=1$ 的 newvector，且
+   $$
+   \int_{F^\times}
+   W_{\operatorname{new}}\!\begin{pmatrix}a&0\\0&1\end{pmatrix}
+   |a|^{s-1/2}\,d^\times a
+   =L(s,\pi)
+   $$
+   先在绝对收敛半平面成立，随后作为 $q^{-s}$ 的有理函数恒等。
+
+第 5 项中的 $s-1/2$ 与 normalized induction/unitary L-variable 配套；改用 $|a|^s$ 的资料会把变量平移 $1/2$。
 
 **命题 J.12.** 若全局 cuspidal automorphic representation
 $$
 \pi=\otimes_v'\pi_v
 $$
-在每个有限位置 $v$ 的局部导子指数为 $a(\pi_v)$，则其全局导子为
+在每个有限位置 $v$ 的局部导子指数为 $a(\pi_v)$，则只有有限多个指数非零，并定义其全局导子为
 $$
 N(\pi)=\prod_{v<\infty}\mathfrak p_v^{a(\pi_v)}.
 $$
 
-**证明草图.** 几乎所有 $\pi_v$ 非分歧，故 $a(\pi_v)=0$。张量积 newvector
+**证明.** 几乎所有 $\pi_v$ spherical；由 J.11，此时 $a(\pi_v)=0$，故乘积有限。张量积 newvector
 $$
 \otimes_{v<\infty}v_{\operatorname{new},v}
 $$
@@ -124,17 +151,18 @@ $$
 $$
 \prod_vK_1(\mathfrak p_v^{a(\pi_v)})
 $$
-下不变。若降低任何一个指数，J.11 给出相应局部不变量消失，因此全局最小级正是上述乘积。$\square$
+下不变。若把任一局部指数降到 $a(\pi_v)$ 以下，J.11(3) 使该局部不变量空间消失，restricted tensor product 的相应全局不变量也为零。因此该 ideal 同时记录逐处最小 $K_1$-level。$\square$
 
 **推论 J.13.** 若 $f$ 是级 $N$ 的 classical newform，且对应 $\pi_f$，则 $N$ 等于 $\pi_f$ 的全局导子。
 
-**证明草图.** Atkin-Lehner-Li 理论说明 classical newform 是不来自低级 degeneracy maps 的 primitive vector。Casselman newvector theorem 说明 adelic 表示中的 primitive vector 的级由局部导子精确控制。经典-adelic 对应把二者识别，故级等于导子。$\square$
+**证明路线（外部输入）.** Atkin-Lehner-Li 理论把 classical primitive line 与 adelic 表示中的 primitive tensor line 识别；Casselman 定理逐处把该线的最小 $K_1$-level 识别为 $a(\pi_v)$。因此级等于 J.12 的导子。经典-adelic 识别与 Atkin-Lehner-Li 分解均为外部输入，本段不重证。
 
 ## J.4 Oldforms 是同一表示的高层向量
 
-**命题 J.14.** 若 $f$ 是级 $M$ 的 newform，$M\mid N$，则其 degeneracy images $\iota_df$ 在级 $N$ 空间中通常对应同一全局表示 $\pi_f$ 的不同有限处 level vectors，而不是新的全局自守表示。
+**命题 J.14.** 若 $f$ 是级 $M$ 的 newform，$M\mid N$，则每个非零 degeneracy image $\iota_df$ 位于 $\pi_f$ 的 automorphic isotypic component；它改变的是 $v\mid N/M$ 处的 level vector，不改变全局不可约表示同构类。
 
-**证明草图.** Adelic 表示 $\pi_f=\otimes_v'\pi_{f,v}$ 由几乎所有 Hecke 本征值和强重数一确定。Degeneracy maps 不改变几乎所有好素数处的 Hecke eigenvalues；它们只改变 $v\mid N/M$ 处选择的 $K_0(N)$-不变量向量。强重数一排除它们给出不同 cuspidal representation 的可能。$\square$
+**证明.** 经典-adelic 对应把 $\iota_d$ 解释为在 $v\mid d$ 处平移局部向量，其他位置保持不变，所以所得向量属于 $\pi_f$ 的 restricted tensor product。反过来，即使只使用 Hecke 数据，$\iota_df$ 在所有
+$r\nmid N$ 处仍有与 $f$ 相同的本征值；任何含它的 cuspidal irreducible constituent 因而在几乎所有位置与 $\pi_f$ 同构。`GL(2)` 强重数一定理推出该 constituent 就是 $\pi_f$。这里经典-adelic 对应和强重数一是已登记的外部输入，逻辑推导至此完整。$\square$
 
 **注 J.15.** 这就是第七章注 7.17 的精确含义。Newform 是表示的导子级别新向量；oldforms 是同一表示在更高 level 的向量。
 

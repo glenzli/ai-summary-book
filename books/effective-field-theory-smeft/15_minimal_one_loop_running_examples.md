@@ -19,15 +19,18 @@ $$
 C(\mu)=C(\Lambda)
 \left[
 1+\frac{\gamma}{16\pi^2}\ln\frac{\mu}{\Lambda}
-+O\!\left(\frac{1}{(16\pi^2)^2}\right)
++O\!\left(
+{\gamma^2\over(16\pi^2)^2}
+\ln^2{\mu\over\Lambda}
+\right)
 \right].
 $$
 
-**证明（书内推导）.** 将方程写为 $dC/C=(\gamma/16\pi^2)d\ln\mu$，积分并展开指数函数。$\square$
+**证明（书内推导）.** 将方程写为 $dC/C=(\gamma/16\pi^2)d\ln\mu$，积分得 $C(\mu)=C(\Lambda)e^{\gamma L/(16\pi^2)}$，其中 $L=\ln(\mu/\Lambda)$；在固定 $L$ 下展开指数函数即得。该截断受控还要求 $|\gamma L|/(16\pi^2)\ll1$。若该组合不小，应使用指数解重求和，不能把显示的余项视为小量。$\square$
 
 ## 15.2 两算符混合
 
-**命题 15.2（上三角混合）.** 若
+**命题 15.2（上三角混合）.** 若积分区间内的反常维数矩阵近似为常数，且
 $$
 \mu\frac{d}{d\mu}
 \begin{pmatrix}C_1\\ C_2\end{pmatrix}
@@ -44,10 +47,15 @@ $$
 C_1(\mu)
 =
 \frac{\gamma_{12}}{16\pi^2}C_2(\Lambda)\ln\frac{\mu}{\Lambda}
-+O((16\pi^2)^{-2}).
++C_2(\Lambda)
+O\!\left(
+{\|\Gamma\|^2\over(16\pi^2)^2}
+\ln^2{\mu\over\Lambda}
+\right),
 $$
+其中 $\Gamma$ 是上式的 $2\times2$ 反常维数矩阵，$\|\cdot\|$ 可取任一 submultiplicative matrix norm。
 
-**证明（书内推导）.** 在 $C_1$ 方程右侧用零阶 $C_2(\mu)=C_2(\Lambda)$ 代入，积分即可。$\square$
+**证明（书内推导）.** 记 $L=\ln(\mu/\Lambda)$。对积分方程作一次 Picard 迭代，在 $C_1$ 方程右侧代入零阶向量 $(0,C_2(\Lambda))^T$，得到显示的 leading-log 项；第二次迭代由 $\|\Gamma\|^2L^2/[2(16\pi^2)^2]$ 控制，更高次依次增加 $\|\Gamma\||L|/(16\pi^2)$。因此该式是固定 $L$ 的展开，并要求 $\|\Gamma\||L|/(16\pi^2)\ll1$；大对数情形应使用第 15.3 节的矩阵指数。$\square$
 
 **物理含义 15.3.** 即使 UV 匹配只产生一个 Wilson 系数，低能也会因 RG 产生其他算符。单系数拟合不是 RG 稳定概念。
 

@@ -8,7 +8,7 @@
 
 1. 主线目录固定：正文只保留 `GL(1)`、`GL(2)` 与费马应用、一般算术 Langlands、几何 Langlands 四条主线，不再新增第五条同级主线。
 2. 对象链闭合：每条主线中的域、局部群、表示、参数、Hecke 作用、L 因子、导子、谱对象和几何对象均已有定义或明确外部输入来源。
-3. 定理状态闭合：每个非平凡命题被标为已证、证明草图、外部输入或猜想，并能在定理索引或外部输入索引中追踪。
+3. 定理状态闭合：每个非平凡命题被标为已证、外部输入的证明路线、外部输入或猜想，并能在定理索引或外部输入索引中追踪。
 4. 外部输入闭合：每个外部输入被分为核心结构、支撑接口或卫星理论；正文只使用精确定理陈述、假设、归一化和使用位置。
 5. 归一化闭合：Frobenius、Haar 测度、Fourier 变换、Satake 参数、局部类域论、classical normalization 与 unitary normalization 的转换点均有交叉引用。
 6. 应用链闭合：费马大定理应用章只使用“外部输入定理 + 本书已证引理 + 逻辑推出”的形式，不把 Taylor-Wiles、Ribet 或 Neron 模型理论重写为正文证明目标。
@@ -52,7 +52,7 @@
 1. 维护 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 的总约定地位；新增或修订涉及 Frobenius、Artin reciprocity、Satake、Haar、Fourier、L 函数变量和 Tate twist 的段落时必须回指该表。
 2. 维持 `MATH_REVIEW.md` 和 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md) 的收口清单，避免把背景专著项目重新提升为正文目标。
 3. 维护 `THEOREM_INDEX.md` 和 `E_external_input_theorem_index.md`，保证每个主章外部输入都有来源、使用章节和状态。
-4. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每条阅读路径都应标明本书证明、证明草图、外部输入或猜想。
+4. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每条阅读路径都应标明本书证明、外部输入的证明路线、外部输入或猜想。
 5. 维护主线核心接口例子：rank-one Satake、`GL(2)` 非分歧参数、Frey 曲线导子、`SL_2` packet、几何 Satake 的最小 Hecke 作用。
 6. 维护 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)，确保四条主线都有已解闭环练习。
 

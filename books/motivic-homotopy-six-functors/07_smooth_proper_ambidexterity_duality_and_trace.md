@@ -24,23 +24,40 @@ $$
 
 **定义 7.2.** `f_\sharp` 称为 smooth pushforward 或 smooth left adjoint。它不同于 `f_!`；二者通过相对切丛的 Thom twist 联系。
 
-**外部输入定理 7.3（Smooth ambidexterity）.** 若 `f:X\to Y` smooth，相对切丛为 `T_f`，则有自然等价
+**命题 7.3（Smooth ambidexterity）.** 若 `f:X\to Y` smooth 且
+separated，相对切丛为 `T_f`，则有自然等价
 
 $$
 f_!\simeq f_\sharp\Sigma^{-T_f},
 $$
 
-等价地，由 smooth purity
+它由 smooth purity
 
 $$
 f^!\simeq\Sigma^{T_f}f^*
 $$
 
-通过伴随转置得到。
+通过伴随唯一性得到。
 
-**命题 7.4.** 若 `f` etale，则 `f_!\simeq f_\sharp`。
+**证明.** 对 `A\in\mathbf{SH}(X)`、`B\in\mathbf{SH}(Y)`，Thom twist
+可逆性、`f_\sharp\dashv f^*` 与 smooth purity 依次给出
 
-**证明.** etale morphism 的相对切丛为零。由定理 7.3，
+$$
+\begin{aligned}
+\operatorname{Map}_Y(f_\sharp\Sigma^{-T_f}A,B)
+&\simeq\operatorname{Map}_X(\Sigma^{-T_f}A,f^*B)\\
+&\simeq\operatorname{Map}_X(A,\Sigma^{T_f}f^*B)\\
+&\simeq\operatorname{Map}_X(A,f^!B).
+\end{aligned}
+$$
+
+故 `f_\sharp\Sigma^{-T_f}` 是 `f^!` 的左伴随。Separatedness 保证本书的
+`f_!\dashv f^!` 已定义；左伴随的唯一性于是给出
+`f_!\simeq f_\sharp\Sigma^{-T_f}`，且等价与伴随数据相容。`\square`
+
+**命题 7.4.** 若 `f` etale 且 separated，则 `f_!\simeq f_\sharp`。
+
+**证明.** etale morphism 的相对切丛为零。由命题 7.3，
 
 $$
 f_!\simeq f_\sharp\Sigma^{-0}\simeq f_\sharp,
@@ -93,16 +110,20 @@ $$
 **外部输入定理 7.10.** 若 `f:X\to S` smooth proper，则
 
 $$
-\Sigma_T^\infty X_+=f_\sharp\mathbb 1_X
+\Sigma_T^\infty X_+\simeq f_\sharp\mathbb 1_X
 $$
 
 在 `\mathbf{SH}(S)` 中 dualizable，其对偶可由
 
 $$
-f_*\Sigma^{-T_f}\mathbb 1_X
+f_\sharp\Sigma^{-T_f}\mathbb 1_X
 $$
 
-或等价 Thom twist 表达。
+表达；由命题 7.5，它也等价于 `f_*\mathbb 1_X`。
+
+**依赖源与边界.** Hoyois, Corollary 6.13（取平凡群）。原定理明确给出
+`f_\sharp\Sigma^{-T_f}\mathbb 1_X`；不能把它误写成
+`f_*\Sigma^{-T_f}\mathbb 1_X`，后者会多引入一次负 Thom twist。
 
 **注 7.11.** 定理 7.10 是 Atiyah duality 的 motivic 形式。具体公式的正负号取决于 `T_f` 的 Thom twist 约定；本书采用第六章 `f^!\simeq\Sigma^{T_f}f^*` 的约定。
 
@@ -159,11 +180,16 @@ $$
 
 ## 7.6 本章小结
 
-Smoothness 给出 `f_\sharp` 与 purity，properness 给出 `f_!\simeq f_*`。smooth proper 情形把二者合并，得到 duality 和 trace。Finite etale 情形进一步连接 additive transfers 与 multiplicative norms，但 norms 是额外结构，必须由独立定理构造。
+Smoothness 给出 `f_\sharp`；smooth separated 情形由 purity 推出
+`f_!\simeq f_\sharp\Sigma^{-T_f}`。Properness 给出
+`f_!\simeq f_*`。Smooth proper 情形把二者合并，得到 duality 和 trace。
+Finite etale 情形进一步连接 additive transfers 与 multiplicative norms，
+但 norms 是额外结构，必须由独立定理构造。
 
 ## 练习
 
-**练习 7.1.** 证明 etale morphism 的相对切丛为零时，smooth ambidexterity 化为 `f_!\simeq f_\sharp`。
+**练习 7.1.** 对 separated etale morphism，证明相对切丛为零时 smooth
+ambidexterity 化为 `f_!\simeq f_\sharp`。
 
 **练习 7.2.** 从 proper compatibility 和 smooth ambidexterity 推导命题 7.5。
 

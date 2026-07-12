@@ -1,7 +1,78 @@
 # 数学审查记录
 
-核查日期：2026-07-08
-当前状态：第一至第二十四章与附录 A-H 严格草稿完成；已达到完整教材可读版和学术教学闭合状态。统一编号/排版规范、主题索引和习题解答要点已完成一版；出版级 theorem locator、自动化交叉引用和长篇详解仍是增强项，不再阻塞教材可读性。
+核查日期：2026-07-12
+当前状态：第一至第二十四章与附录 A-H 形成完整教材草稿。2026-07-11 已对
+基础主链及第 09-18 章 cohomology/motives/transfers 主线做 OET 复核并完成
+正文修订；剩余 extensions/realization P0 locator、自动化交叉引用和长篇
+详解仍未达到出版闭合。
+
+## 2026-07-12 purity/excess 交叉审计
+
+- 核对 Deglise--Jin--Khan Proposition 2.5.4、Remark 2.5.5 与 Paragraph
+  4.3.1 后，定理 6.12 的复合相容性降为
+  `\operatorname{Ho}(\mathbf{SH})` 值逆变伪函子层，transverse base change
+  降为 homotopy-category 中的自然变换交换方块；该来源明确没有完成
+  infinity-category 层的自然变换增强，故正文不再声称 higher coherence。
+- Smooth purity 由 Hoyois Theorem 6.18(2) 单独保留为 stable
+  infinity-categorical natural equivalence，其三角影子与 DJK smooth class
+  相符。
+- 核对 DJK Paragraph 3.3.3、Propositions 3.3.4、4.2.2 后，excess formula
+  明确要求 Cartesian square 中 `f,g` 均为 smoothable lci s-morphisms，并由
+  法丛单射取得 locally free quotient `\xi`。系数版本与 proper push-pull 的
+  额外假设已分别写入正文和 `FC-16.13` 账本条目；任意非 Tor-independent
+  方块不再被概括为自动存在 excess 修正。
+
+## 2026-07-11 OET 主链修订
+
+- 宇宙口径改为 `\mathbb U\in\mathbb V` 的相对 presentability；固定
+  finite-type-over-`B` 的 base-change-closed 默认基范畴，并区分普通 sheaf
+  与 hypercompletion。
+- 把 presheaf presentability、higher sheafification 和 small-generated
+  localization 改为带 HTT locator 的外部基础输入，保留书内应用证明。
+- 修正错误命题：在 symmetric monoidal category 中，`A\otimes B` 可逆
+  确实推出 `A`、`B` 分别可逆；据此从 `T`-反演推出 ordinary suspension
+  可逆与稳定性。
+- 对象反演、3-symmetry、sequential/symmetric spectra 模型不再混写；
+  Robalo 4.10、4.24、4.29 与 Hoyois 6.3、6.4、6.7 已定位。
+- 六操作按方差和态射类重写：`f^*\dashv f_*` 对所有默认态射，
+  `f_!\dashv f^!` 只对 separated morphisms，`f_\sharp` 只对 smooth。
+- Base change 分为 exceptional、proper ordinary、smooth ordinary 三类；
+  projection formula 分为 exceptional、proper ordinary、dualizable-coefficient
+  ordinary 三类，并修正 ordinary projection map 的方向。
+- Purity 分为 unstable homotopy purity、smoothable-lci purity
+  transformation、smooth purity equivalence、coefficientwise `f`-purity 与
+  absolute purity；删除 regular closed immersion 的无条件 functor equivalence。
+- 按 exceptional 态射类把 smooth purity/ambidexterity 收紧到 smooth
+  separated maps；补出 ambidexterity 的伴随证明，并修正 proper-smooth
+  trace 的 `\Sigma^{T_f}` 扭曲及 Atiyah dual
+  `f_\sharp\Sigma^{-T_f}\mathbb 1_X\simeq f_*\mathbb 1_X`。
+- 第十六章统一使用 `\tau_f=\langle L_f\rangle` 的 virtual-tangent
+  convention，删除把 dualization 错当作 K-theory additive inverse 的
+  `T_f=-L_f` 写法，并把 fundamental-class 输入收紧到 smoothable lci。
+- 定义并区分 compact 与 geometrically constructible objects，补六操作保持
+  compactness 的伴随判据和精确 continuity 输入。
+- 附录 F 补 stable infinity-natural transformation 与 bare triangulated
+  isomorphism 的差别，并完整证明两种 compactness 口径在已有 enhancement
+  下等价。
+- 新增 `P0_REFERENCE_LOCATORS_BATCH_2.md`，同步更新 sources、theorem/
+  locator ledgers、notation、index 和习题解答。
+
+## 2026-07-11 第 09--18 章 P0 locator 闭合
+
+- `H\mathbb Z` 构造、higher Chow/Milnor `K` 比较、`DM`-module 比较、
+  `KGL/KH/cdh`、`MGL` universality/Hopkins--Morel 和 zero slice 均补到
+  原始资料的定理号、基与系数假设。
+- `DM` 比较明确分成 characteristic zero 的 monoidal triangulated
+  equivalence 和反演 exponential characteristic 后的 presentably symmetric
+  monoidal stable infinity-category equivalence。
+- Finite correspondence 复合、Nisnevich sheafification、framed
+  recognition、smoothable-lci Gysin、finite-etale stable norms、normed
+  `HZ/KGL/MGL` 与 Morel `End(1)=GW` 均完成 locator 对账。
+- 修正 finite syntomic 的 cotangent Tor-amplitude 为 `[-1,0]`；区分
+  very-effective infinity-category 与 stable/triangulated category；修正
+  `H^{0,0}` 的 multiplicative norm 示例为 split degree `d` 时 `n\mapsto n^d`。
+- 新增 `P0_REFERENCE_LOCATORS_BATCH_3.md`，并同步正文、`SOURCES.md`、
+  三份 theorem/locator 索引和内部闭合矩阵。
 
 ## 已达成
 
@@ -16,6 +87,8 @@
 - `INDEX.md` 已补全书主题索引。
 - `EXERCISE_SOLUTIONS.md` 已给出 201 道练习的一版解答要点。
 - `P0_REFERENCE_LOCATORS_BATCH_1.md` 已定位 Drew-Gallauer universal formalism、framed recognition、norms、fundamental classes/Gysin maps。
+- `P0_REFERENCE_LOCATORS_BATCH_2.md` 已定位基础范畴论、稳定化、六操作、purity 与 triangulated shadow。
+- `P0_REFERENCE_LOCATORS_BATCH_3.md` 已定位第 09-18 章教学主线，并把不参与主线的高级比较降为 P1。
 - 内部可证明结论已经与外部深定理区分。
 - 2025-2026 近期资料已单独放入研究边界，不作为无条件正文基础。
 
@@ -23,15 +96,24 @@
 
 - 按“可作为完整教材阅读和教学使用”的标准，本书已经收口：读者可以从站点和局部化一路读到六操作、谱、转移、范数、framed recognition、基本类和现代扩展。
 - 各章均有定义、命题、证明或外部输入标记、边界说明和练习；不再是目录或导览态。
-- 深定理没有伪装成书内证明：六操作存在性、homotopy purity、ambidexterity、`H\mathbb Z`/`DM` 比较、`KGL`/`MGL` 表示性、framed recognition、norms、fundamental classes、stack/equivariant/log/analytic 扩展都标为外部输入或研究边界。
-- `P0_REFERENCE_LOCATORS_BATCH_1.md` 已经覆盖一批最容易引发误用的现代输入；其余 locator 可以在出版校订时继续补，不影响教学闭合。
+- 深定理没有伪装成书内证明：六操作存在性、homotopy/smooth purity、
+  Atiyah duality、`H\mathbb Z`/`DM` 比较、`KGL`/`MGL` 表示性、framed
+  recognition、norms、fundamental classes、stack/equivariant/log/analytic
+  扩展都标为外部输入或研究边界；smooth ambidexterity 则明确由 purity
+  和伴随唯一性书内推出。
+- 三批 P0 locator 已覆盖基础、六操作和第 09-18 章主线；剩余 P0 集中于
+  equivariant/stacky/realization 扩展，不影响已声明范围的教学闭合。
 
 ## 剩余增强项
 
 - `\mathbf{SH}(S)` 的构造采用 infinity-categorical 教材口径；若面向模型范畴读者，可另加 Morel-Voevodsky/Jardine 模型比较补章。
 - `T`、`\mathbb P^1/\infty` 与 `S^{1,1}` 的坐标级等价可增加更多计算例子。
-- 第五至第八章的六操作、pure/base-change/projection formula 可继续补 Ayoub、Cisinski-Deglise、Drew-Gallauer 的精确 theorem locator。
-- `H\mathbb Z`、`DM`、`KGL`、`MGL`、slice filtration、finite correspondences、Milnor-Witt refinements 的 locator 还可继续增强。
+- 第五至第八章采用的 Hoyois trivial-group package 已补精确 locator；若要
+  并列采用 Ayoub/Cisinski-Deglise 的更广或不同 coefficient-system 版本，仍需
+  逐项补 locator，不能直接互换假设。
+- 第 09-18 章已降为 P1 的 etale/Adams/Chern-character/Hilbert/Tambara/
+  quadratic-enumerative 结果若升级为正文主线，须按具体模型另补 locator；
+  当前不得反向调用。
 - 习题已有一版解答要点；若面向出版，可把 Nisnevich square、Thom space、localization triangle、finite correspondence 复合、Gysin excess 和 slice spectral sequence 等题扩展为长篇详解。
 
 ## 当前结论

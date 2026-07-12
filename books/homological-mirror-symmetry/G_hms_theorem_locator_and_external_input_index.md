@@ -5,23 +5,38 @@
 ## G.1 增强范畴
 
 - Keller, *On differential graded categories*：dg categories、dg modules、derived Morita theory、Hochschild invariants。
+- Toen, *The homotopy theory of dg-categories and derived Morita theory*：dg
+  quasi-functors、bimodules 与 kernel enhancements。
 - Lefevre-Hasegawa, *Sur les A-infini catégories*：$A_\infty$ categories、modules、Yoneda、pretriangulated envelopes。
+- Spaltenstein, *Resolutions of unbounded complexes*：h-injective models；Stacks
+  Project Tag 0FDC：regular schemes 上 perfect/coherent comparison。
 - Drinfeld, *DG quotients of DG categories*：dg quotient 与 Verdier quotient 的增强模型。
 
 ## G.2 B-side
 
 - Huybrechts, *Fourier-Mukai Transforms in Algebraic Geometry*：Fourier-Mukai kernels、adjoints、examples。
-- Orlov representability/singularity category papers：Fourier-Mukai 型定理、matrix factorizations 与 singularity categories。
+- Orlov representability：smooth projective varieties 间 fully faithful exact
+  functors；Orlov arXiv:math/0302304：affine regular hypersurface 的 matrix
+  factorizations/singularity comparison。
 - Bondal-Orlov reconstruction：derived category 与几何重构。
 
 ## G.3 A-side compact/exact
 
-- Seidel, *Fukaya Categories and Picard-Lefschetz Theory*：exact Fukaya categories、directed categories、Fukaya-Seidel category、Dehn twists。
-- FOOO, *Lagrangian Intersection Floer Theory*：Kuranishi structures、filtered $A_\infty$ structures、bounding cochains、obstruction theory。
+- Seidel, *Fukaya Categories and Picard-Lefschetz Theory*：第 8--12 章给出
+  compact exact Floer/Fukaya、indices、determinant lines 与 complete category；
+  后续章节处理 directed/Fukaya--Seidel/Dehn twists。
+- FOOO, *Lagrangian Intersection Floer Theory*：closed symplectic/compact
+  relatively-spin、characteristic-zero completed-Novikov 口径下的 Kuranishi
+  structures、one-object filtered curved $A_\infty$ algebra、bounding cochains
+  与 obstruction theory；多对象 category 需要 coherent polygon perturbations。
 - Auroux introductory notes：教学路线与例子入口；不作为最终技术定理来源。
 
 ## G.4 Wrapped/stopped/microlocal
 
+- Abouzaid, *A geometric criterion for generating the Fukaya category*：
+  Theorem 1.1 / equation (1.2) 的 exact wrapped unit-image generation criterion。
+- Ganatra, *Symplectic cohomology and duality for the wrapped Fukaya category*：
+  wrapped open-closed/closed-open 与 duality。
 - Ganatra-Pardon-Shende, *Covariantly functorial wrapped Floer theory on Liouville sectors*：Liouville sectors、wrapped functoriality。
 - Ganatra-Pardon-Shende, *Sectorial descent for wrapped Fukaya categories*：descent、stop removal、generation、Kunneth。
 - Ganatra-Pardon-Shende, *Microlocal Morse theory of wrapped Fukaya categories*：microlocal sheaf 模型。

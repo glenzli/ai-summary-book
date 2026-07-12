@@ -48,11 +48,11 @@ $$
 在 smooth 情形下与 AP.1、AP.2 的局部化边界相容，即交换图
 
 $$
-\begin{CD}
-K_1(U) @>{\partial_K}>> K_0(Z)\\
-@V{\operatorname{ch}}VV @VV{\tau_Z}V\\
-A_{\ast+1}(U)_\mathbb Q @>{\partial_A}>> A_\ast(Z)_\mathbb Q
-\end{CD}
+\begin{array}{ccc}
+K_1(U) & \xrightarrow{\partial_K} & K_0(Z)\\
+{\scriptstyle \operatorname{ch}}\downarrow & & \downarrow{\scriptstyle \tau_Z}\\
+A_{\ast+1}(U)_\mathbb Q & \xrightarrow{\partial_A} & A_\ast(Z)_\mathbb Q
+\end{array}
 $$
 
 成立。一般 lci 情形需用 virtual tangent bundle。

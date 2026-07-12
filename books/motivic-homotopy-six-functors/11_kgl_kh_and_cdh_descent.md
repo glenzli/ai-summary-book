@@ -10,15 +10,26 @@
 
 ## 11.1 KGL
 
-**外部输入定理 11.1.** 对合适基概形 `S`，存在 motivic ring spectrum
+**外部输入定理 11.1（KG-11.1）.** 设 `S` 为 Noetherian finite-Krull-
+dimensional scheme。Röndigs--Spitzweck--Ostvaer 构造了 Bott-periodized
+严格交换 motivic ring model `KGL^\beta_S`；经对称幺半模型到
+infinity-范畴的比较，其像给出
 
 $$
 KGL_S\in\operatorname{CAlg}(\mathbf{SH}(S))
 $$
 
-表示 homotopy invariant algebraic K-theory，并有 strict motivic ring models。
+并具有标准 Bott-periodic homotopy type。Cisinski 在同一 Noetherian
+finite-dimensional 口径中证明该 homotopy type 表示 homotopy invariant
+algebraic K-theory `KH`。
 
-**依赖源.** Voevodsky、Jardine 及后续 motivic spectra 表示性传统，Röndigs-Spitzweck-Ostvær 的 strict ring models，Cisinski-Deglise 的一般基口径。
+**精确来源.** Röndigs--Spitzweck--Ostvaer, *Motivic strict ring models for
+K-theory*, Lemma 2.5、Theorems 3.6 and 4.1，
+`https://arxiv.org/abs/0907.4121`；Cisinski, *Descente par eclatements en
+K-theorie invariante par homotopie*, Theorem 2.20，
+`https://doi.org/10.4007/annals.2013.177.2.2`。第一篇给出严格交换模型；
+`“\operatorname{CAlg}”` 的表述还使用对称幺半模型与其呈现的 stable
+infinity-category 之间的比较。
 
 **定义 11.2.** 定义
 
@@ -28,7 +39,8 @@ KGL^{p,q}(X)=
 (\Sigma_T^\infty X_+,\Sigma^{p,q}KGL_S).
 $$
 
-**外部输入定理 11.3（Bott periodicity）.** `KGL` 满足 `(2,1)`-周期性，即有等价
+**外部输入定理 11.3（Bott periodicity）.** 在定理 11.1 的基假设下，
+`KGL` 满足 `(2,1)`-周期性，即有等价
 
 $$
 KGL\simeq\Sigma^{2,1}KGL.
@@ -44,21 +56,30 @@ $$
 
 **定义 11.5.** `KH(X)` 表示 Weibel homotopy K-theory，它可视为普通 algebraic K-theory 沿 cosimplicial affine simplices做 `\mathbb A^1`-不变化得到的理论。
 
-**外部输入定理 11.6.** 对合适的 `X`，`KGL` 表示 `KH`：
+**外部输入定理 11.6（KG-11.6）.** 设 `S` Noetherian 且有限 Krull 维，
+`X\in\operatorname{Sm}_S`。Cisinski Theorem 2.20 把 `KGL_S` 的表示群与
+`KH_*(X)` 自然识别；特别
 
 $$
 KGL^{0,0}(X)\simeq KH_0(X)
 $$
 
-并更一般恢复 `KH` 的分次群。
+并且 suspension 次数恢复 `KH` 的全部分次群。这里等号是群同构；谱级对象
+仍位于 `\mathbf{SH}(S)`。
 
-**外部输入定理 11.7.** 若 `X` 正则，则自然映射
+**外部输入定理 11.7（KG-11.7）.** 下列两个有限性版本中，自然映射
 
 $$
 K(X)\longrightarrow KH(X)
 $$
 
-为等价。
+为谱等价：`X=\operatorname{Spec}(R)` 且 `R` regular Noetherian；或 `X`
+为 quasi-projective regular Noetherian scheme。
+
+**精确来源与边界.** Charles Weibel, *The K-book*, Chapter IV,
+Corollary 12.3.1 与 Lemma 12.8(3)，
+`https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf`。本章因此不再把
+该比较无条件表述为“任意正则概形”上的定理。
 
 **命题 11.8.** 不能在奇异概形上无条件把 `KGL` 表示的理论称为普通 K-theory。
 
@@ -92,9 +113,13 @@ $$
 
 ## 11.4 Localization 与 cdh descent
 
-**外部输入定理 11.12.** Homotopy K-theory 满足 cdh descent；在 stacky 或 equivariant 扩展中，类似结论需要额外假设。
+**外部输入定理 11.12（KG-11.12）.** 在 Noetherian finite-Krull-
+dimensional schemes 上，homotopy K-theory 的 presheaf of spectra `KH`
+满足 cdh descent。
 
-**依赖源.** Cisinski、Haesemeyer、Weibel、Hoyois/Khan-Ravi 等相关结果；具体版本后续 locator。
+**精确来源与边界.** Cisinski, 同上，Theorem 3.9；作者 PDF：
+`https://www.math.univ-toulouse.fr/~dcisinsk/KHdescente.pdf`。本条不涵盖
+stacky 或 equivariant 输入；这些扩展必须另行定位。
 
 **命题 11.13.** 对 closed-open pair `Z\overset{i}\hookrightarrow X\overset{j}\hookleftarrow U`，`KGL`-cohomology 有 localization 长正合列。
 
@@ -112,13 +137,29 @@ $$
 
 其中 `Z\hookrightarrow X` 闭嵌入，`X'\to X` proper，且 `X'\setminus E\to X\setminus Z` 为同构。
 
-**外部输入定理 11.15.** `KH` 对抽象 blow-up squares 满足 descent，即相应方块被送为 homotopy pullback 或 fiber square。
+**推论 11.15.** 在定理 11.12 的假设下，`KH` 把定义 11.14 的抽象
+blow-up square 送到 spectra 的 Cartesian square。
+
+**证明.** Cisinski Theorem 3.9 的 cdh-descent 结论特别断言：对每个抽象
+blow-up distinguished square，canonical descent map
+
+$$
+KH(X)\longrightarrow KH(X')\times_{KH(E)}KH(Z)
+$$
+
+是谱等价，其中 `E=X'\times_XZ`。在任意 infinity-category 中，一个方块
+Cartesian 当且仅当其左上对象到其余三项的 pullback 的 canonical map 为
+等价；将上一等价代入，正得 `KH` 像方块 Cartesian。此推论使用定理 11.12，
+不是 closed--open localization 的形式后果。`\square`
 
 **注 11.16.** cdh descent 比 closed-open localization 更强，涉及抽象 blow-up squares。它不是第五章 localization 的直接形式后果，必须作为 K-theory 的额外 descent 定理处理。
 
 ## 11.5 Chern character 与 rational comparison
 
-**外部输入定理 11.17.** 在适当有理化和有限性假设下，存在 motivic Chern character，把 `KGL_\mathbb Q` 与 motivic cohomology 的 Tate 分量联系起来。
+**高级外部输入 11.17（P1）.** 在另外指定的有理化、基概形和有限性假设
+下，motivic Chern character 把 `KGL_\mathbb Q` 与 motivic cohomology 的
+Tate 分量联系起来。本节的条件命题不调用某个无条件分解；实际计算前须
+另补所采用版本的 locator。
 
 **命题 11.18.** 若有 ring spectrum map
 
@@ -140,7 +181,10 @@ $$
 
 ## 11.6 本章小结
 
-`KGL` 是 stable motivic homotopy 中表示 homotopy invariant K-theory 的 ring spectrum。正则对象上 `K` 与 `KH` 可比较；奇异对象上必须区分二者。Localization 来自六操作形式主义，cdh descent 是 K-theory 的额外深性质。
+`KGL` 在 Noetherian finite-dimensional 基上由严格交换 Bott 模型给出并表示
+`KH`。`K\simeq KH` 的本章版本限于 regular Noetherian rings 或
+quasi-projective regular Noetherian schemes。Localization 来自六操作，
+而抽象 blow-up excision 来自 Cisinski 的 cdh descent；二者逻辑上独立。
 
 ## 练习
 

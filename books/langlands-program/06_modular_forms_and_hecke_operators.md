@@ -6,7 +6,7 @@
 
 ## 依赖前置知识
 
-需要复分析、Riemann 曲面、群作用和线性代数。模曲线紧化、有限维性、Hecke 算子保持模形式空间等事实在本章作为外部输入或证明草图处理。附录 W 给出模曲线代数化、Hecke correspondences、old/new 分解和 Atkin-Lehner-Li 理论的接口。
+需要复分析、Riemann 曲面、群作用和线性代数。模曲线紧化、有限维性、Hecke 算子保持模形式空间等事实在本章作为外部输入或外部输入的证明路线处理。附录 W 给出模曲线代数化、Hecke correspondences、old/new 分解和 Atkin-Lehner-Li 理论的接口。
 
 收口归一化回指：本章采用 classical modular form normalization；与第七、九、十四章比较时，Hecke roots、Galois Frobenius 和自守 L 函数变量按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 5、6、8 节转换。
 
@@ -188,7 +188,7 @@ $$
 U_\ell f=\sum_{n\ge0}a_{\ell n}q^n.
 $$
 
-**证明草图.** 对 $\ell\nmid N$，双陪集有代表
+**证明路线（外部输入）.** 对 $\ell\nmid N$，双陪集有代表
 $$
 \begin{pmatrix}1&b\\0&\ell\end{pmatrix}\quad(0\le b<\ell),
 \qquad
@@ -227,7 +227,7 @@ L(f,s)=
 $$
 在绝对收敛半平面中成立。坏素数 $\ell\mid N$ 的局部因子 $L_\ell(f,s)$ 由 $U_\ell$ 本征值和 newform 理论确定。
 
-**证明草图.** Hecke 代数关系给出 Fourier 系数的乘法关系
+**证明路线（外部输入）.** Hecke 代数关系给出 Fourier 系数的乘法关系
 $$
 a_m a_n=
 \sum_{d\mid(m,n)}

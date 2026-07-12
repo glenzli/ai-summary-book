@@ -105,19 +105,19 @@ $$
 $$
 或相应符号。
 
-**外部输入定理 AB.16（renormalized D-modules on Bun）.** 对 $\operatorname{Bun}_G$，存在适合几何 Langlands 的 renormalized D-module category，支持 Hecke functors、Eisenstein functors、constant term functors 和 Verdier duality 的相容形式。
+**外部输入定理 AB.16（renormalized D-modules on Bun）.** 对 $\operatorname{Bun}_G$，存在适合几何 Langlands 的 renormalized half-twisted D-module category $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，支持 Hecke functors、Eisenstein functors、constant term functors 和 Verdier duality 的相容形式；下标 $1/2$ 指 determinant line 平方根 gerbe 的 twist，见 21.5。
 
 **命题 AB.17.** $\operatorname{Bun}_G$ 的非紧性迫使 renormalization 进入范畴化几何 Langlands。
 
-**证明.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan strata 分解，通常非 quasi-compact。Naive D-module category 的 compact objects 和 !-pushforward 行为不足以使 Eisenstein/constant term adjunctions 同时良好。Renormalization 通过改变生成对象或连续性条件修正这些 functorial properties。因此范畴化几何 Langlands 的自动侧不能只写成未修正的 naive category。$\square$
+**证明.** $\operatorname{Bun}_G$ 按 Harder-Narasimhan strata 分解，通常非 quasi-compact。Naive D-module category 的 compact objects 和 !-pushforward 行为不足以使 Eisenstein/constant term adjunctions 同时良好。Renormalization 通过改变生成对象或连续性条件修正这些 functorial properties。因此范畴化几何 Langlands 的自动侧不能只写成未修正、未注明 half-twist 的 naive category。$\square$
 
 ## AB.6 Spectral action
 
-**外部输入定理 AB.18（spectral action）.** 在几何 Langlands 中，谱侧 quasi-coherent 或 ind-coherent categories 作用于自动侧 $\operatorname{DMod}(\operatorname{Bun}_G)$，并与 Hecke action、Eisenstein functors 和 singular support 条件相容。
+**外部输入定理 AB.18（spectral action）.** 在本书特征零 de Rham 几何 Langlands 口径中，谱侧 quasi-coherent 或 ind-coherent categories 作用于自动侧 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，并与 Hecke action、Eisenstein functors 和 singular support 条件相容。
 
 **命题 AB.19.** Hecke eigensheaf 是 spectral action 的点支撑特例。
 
-**证明草图.** 谱侧点 $\mathcal E\in\operatorname{LocSys}_{\widehat G}$ 给出 skyscraper 或 residual gerbe 上的对象。若谱侧作用与 Hecke action 相容，则该点对象作用在自动侧对象上产生 Hecke eigenvalue 为 $\mathcal E$ 的对象。一般 spectral action 允许谱侧 sheaves 不只支撑在单点，因此是 Hecke eigensheaf 概念的范畴化扩展。$\square$
+**证明路线（外部输入）.** 谱侧点 $\mathcal E\in\operatorname{LocSys}_{\widehat G}$ 给出 skyscraper 或 residual gerbe 上的对象。若谱侧作用与 Hecke action 相容，则该点对象作用在自动侧对象上产生 Hecke eigenvalue 为 $\mathcal E$ 的对象。一般 spectral action 允许谱侧 sheaves 不只支撑在单点，因此是 Hecke eigensheaf 概念的范畴化扩展。$\square$
 
 ## 练习
 

@@ -25,7 +25,7 @@ $$
 $$
 G_F\longrightarrow \operatorname{Gal}(\overline k_F/k_F)\cong\widehat{\mathbb Z}.
 $$
-几何 Frobenius 元 $\operatorname{Fr}_F$ 是在剩余域上诱导 $x\mapsto x^{1/q}$ 的元素；算术 Frobenius 则诱导 $x\mapsto x^q$。本书在局部 L 因子中默认使用几何 Frobenius。
+商 $G_F/I_F$ 中的几何 Frobenius 类 $\operatorname{Fr}_F$ 诱导 $x\mapsto x^{1/q}$；算术 Frobenius 类则诱导 $x\mapsto x^q$。在 $G_F$ 中选择 Frobenius lift 并不典范，但其在非分歧表示中的共轭作用与特征多项式不依赖 lift。本书在局部 L 因子中默认使用几何 Frobenius。
 
 **外部输入定理 3.2（局部类域论）.** 存在唯一满足下列条件的拓扑群同构，称为局部 reciprocity map：
 $$
@@ -48,6 +48,15 @@ $$
 3. 在有限扩张中，reciprocity map 与 norm 和 restriction 相容。
 
 这里 $N_{L/F}:L^\times\to F^\times$ 是域范数。
+
+**注 3.2.1（Weil 目标与 Galois 目标）.** 定理 3.2 的拓扑同构目标必须是
+$W_F^{\operatorname{ab}}$。复合
+$$
+F^\times\xrightarrow{\operatorname{rec}_F}W_F^{\operatorname{ab}}
+\longrightarrow G_F^{\operatorname{ab}}
+$$
+有稠密像，并在 profinite 完备化后给出
+$\widehat{F^\times}\simeq G_F^{\operatorname{ab}}$。因此一般复 quasi-character 应放在 Weil 群上；只有有限像特征才无歧义地通过某个有限 Galois 商分解。
 
 **注 3.3.** 有些资料采用算术 Frobenius 归一化。若采用该归一化，本书中的 $\operatorname{rec}_F$ 要取逆。后续所有 L 因子相容性都依赖当前选择：一致化元对应几何 Frobenius。
 
@@ -155,7 +164,13 @@ $$
    $$
 3. 若 $v$ 在 $L/K$ 中非分歧且 $\varpi_v$ 是 $K_v$ 的一致化元，则把 $\varpi_v$ 放入第 $v$ 个 idele 坐标所得元素映到 $v$ 处的几何 Frobenius。
 
-**注 3.12.** 映射 $\operatorname{rec}_K$ 到 profinite 群 $G_K^{\operatorname{ab}}$。完整拓扑陈述需要处理 $C_K$ 的连通分量和 profinite 完备化。本书在使用有限阶 Hecke 特征和有限 Abel 扩张时，只需要定理 3.11 的有限商形式。
+4. $\operatorname{rec}_K$ 的像在 $G_K^{\operatorname{ab}}$ 中稠密，并诱导 profinite 群同构
+   $$
+   \widehat{C_K}\xrightarrow{\sim}G_K^{\operatorname{ab}}.
+   $$
+   等价地，$C_K$ 的有限连续商与 $K$ 的有限 Abel 扩张按 inclusion-reversing 方式对应。
+
+**注 3.12.** 映射 $\operatorname{rec}_K$ 到 profinite 群 $G_K^{\operatorname{ab}}$，但通常不是 $C_K$ 本身到该群的拓扑同构。数域情形的连通分量在所有有限商中消失；函数域的 degree 方向映到常数域 Frobenius 生成的稠密循环子群。后文使用有限阶 Hecke 特征时，只调用定理 3.11 的 profinite 完备化或有限商形式。
 
 ## 3.5 有限阶 Hecke 特征和一维 Galois 表示
 
@@ -183,9 +198,11 @@ $$
 $$
 给出。
 
-**证明.** 若 $\rho$ 有有限像，则它通过某个有限 Abel 扩张 $L/K$ 的 Galois 群分解。由全局类域论，$\operatorname{Gal}(L/K)$ 是 $C_K/N_{L/K}(C_L)$ 的商，所以 $\rho\circ\operatorname{rec}_K$ 是有限阶 Hecke 特征。
+**证明.** 一维表示的像交换。若 $\rho$ 连续且像有限，则其核为 $G_K$ 的开正规子群；固定域给出有限 Galois 扩张，交换像进一步说明 $\rho$ 通过某个有限 Abel 商 $A$ of $G_K^{\operatorname{ab}}$ 分解。复合 $\rho\circ\operatorname{rec}_K$ 因而是有限阶连续 Hecke 特征。
 
-反过来，若 $\chi$ 为有限阶 Hecke 特征，则 $\ker(\chi)$ 是 $C_K$ 的开子群，且商 $C_K/\ker(\chi)$ 有限。全局类域论的存在定理给出有限 Abel 扩张 $L/K$，使得相应 norm 子群落在 $\ker(\chi)$ 中；于是 $\chi$ 通过 $\operatorname{Gal}(L/K)$ 分解，得到一维 Galois 表示。两个构造互逆由 reciprocity map 在所有有限 Abel 商上的同构性给出。$\square$
+反过来，若 $\chi$ 为有限阶连续 Hecke 特征，则 $\ker(\chi)$ 开且
+$C_K/\ker(\chi)$ 有限，所以 $\chi$ 唯一延拓到 profinite 完备化 $\widehat{C_K}$。由定理 3.11(4)，把该延拓沿
+$\widehat{C_K}\simeq G_K^{\operatorname{ab}}$ 拉回，得到有限像一维 Galois 表示 $\rho$。两个操作都只是同一个有限商特征沿互逆同构拉回，故互逆。$\square$
 
 **命题 3.15（全局 L 函数相容，有限阶情形）.** 设 $\rho:G_K\to\mathbb C^\times$ 为有限像连续表示，$\chi=\rho\circ\operatorname{rec}_K$ 为对应的 Hecke 特征。则除有限多个分歧位置外，局部 L 因子满足
 $$

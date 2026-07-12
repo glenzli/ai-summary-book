@@ -40,6 +40,10 @@
 
 **HA-ALG-3.** Lurie, *Higher Algebra*, Theorems 4.1.8.4 and 4.5.4.7 are special algebra comparison theorems, not universal colored-operad rectification theorems. For arbitrary colored operads in model categories, this book should use PSAR-2--PSAR-6 or Hinich/Fresse/White--Yau as appropriate.
 
+**HA-MON-1.** Lurie, *Higher Algebra*, Proposition 4.1.7.4 and Example 4.1.7.6. For a symmetric monoidal model category in the convention of Section 4.1.7, the weak equivalences between cofibrant objects are stable under tensoring by cofibrant objects, and the localization of the cofibrant subcategory inherits the underlying symmetric monoidal infinity-category. 本书外部输入定理 19.21 使用此版本；它不需要把“足够良好”作为未展开假设。
+
+**HA-MON-2.** Lurie, *Higher Algebra*, Corollary 4.1.7.16. For a simplicial symmetric monoidal model category with compatible simplicial and monoidal structures, the operadic nerve of the fibrant-cofibrant subcategory presents the underlying symmetric monoidal infinity-category. 本书只在需要显式 operadic-nerve 模型时使用这一加强。
+
 ## 4. 本书使用边界
 
 **可用于以下位置.**
@@ -48,6 +52,7 @@
 2. 附录 G：T1--T3 假设包的文献锚点。
 3. 附录 R/X：正例和失败例子的边界检查。
 4. 第十九章和附录 M：strict algebra model 与 infinity-categorical algebra objects 的比较。
+5. 第十九章：模型范畴的 underlying symmetric monoidal infinity-category（HA-MON-1--HA-MON-2）。
 
 **禁止用法.**
 

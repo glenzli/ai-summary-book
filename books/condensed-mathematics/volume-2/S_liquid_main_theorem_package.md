@@ -2,105 +2,132 @@
 
 ## S.0 目标
 
-liquid theory 是第二卷主线的一部分，不只是第三卷 Dolbeault 应用的技术脚注。本附录把 liquid 向量空间、Fréchet/Banach 边界、闭值域复形和 Dolbeault 类型检查收束为一个主定理包。
+本附录把 liquid 主线收束为一个不依赖虚构 realization functor 的定理包：经典空间先凝聚化，
+外部定理判断其 \(p\)-liquid membership，书内再用显式局部提升或连续 splitting 验证
+exactness。
 
-本附录采取输入定理型写法：\(p\)-liquid 测度理论和 liquid realization 是 Scholze/Clausen-Scholze 的深层输入；本书证明接受这些输入后的范畴论、同调代数和函数分析形式后果。
+## S.1 Liquid 输入与对象
 
-## S.1 Liquid 输入数据
+固定 \(0<p\le1\)。
 
-固定 \(0<p\le 1\) 的允许范围，并令
-
-$$
-(\mathbb R,\mathcal M_{<p})
-$$
-
-表示 \(p\)-liquid analytic ring。
-
-**输入定理 S.1（\(p\)-liquid analytic ring）.** \((\mathbb R,\mathcal M_{<p})\) 是 analytic ring。相应 analytic 模范畴记为
+**外部输入定理 S.1（\(p\)-liquid analytic ring）.** 测度理论
+\((\underline{\mathbb R},\mathcal M_{<p})\) 是 analytic ring。其解析模范畴等价于
+\(\mathbf{Liquid}_p\)，且有全忠实嵌入
 
 $$
-D_{\mathrm{liq},p}(\mathbb R)=D(\mathbb R,\mathcal M_{<p}).
+D(\mathbf{Liquid}_p)\hookrightarrow D(\mathbf{CondAb}).
 $$
 
-**输入定理 S.2（liquid realization）.** 对文献中规定的 realization 适用子范畴 \(\mathcal T_p\)，存在从 \(\mathcal T_p\) 到 \(D_{\mathrm{liq},p}(\mathbb R)\) 或其心脏的 realization 过程
+本质像由 cohomology objects 检测，liquidification 与 liquid tensor 存在。
+
+**来源与边界.** S26 Theorem 7.11 与 CS26 Theorem 3.11。本书不构造
+\(\mathcal M_{<p}\)，也不重证 analytic 公理。
+
+**定义 S.2.** 凝聚阿贝尔群 \(V\) 是 \(p\)-liquid，如果每个
+\(f:\underline S\to V\)、\(S\in\mathbf{ProFin}_\kappa\)，唯一延拓为
 
 $$
-\mathcal L_p:E\mapsto E_{\mathrm{liq}},
+\mathcal M_{<p}[S]\longrightarrow V.
 $$
 
-在核 Fréchet 空间、满足该输入定理假设的 Banach 空间子类、有限维向量空间和允许的连续线性映射上与经典结构相容。
+由 S.1，此条件自动给 \(V\) 唯一的凝聚 \(\mathbb R\)-模结构，并等价于 analytic
+module Hom 判别。
 
-**输入定理 S.3（exactness 范围）.** \(\mathcal L_p\) 保持有限直和、有限极限、闭嵌入的 kernel、有限维 quotient，并把满足闭值域条件的短正合列送到 liquid 范畴中的 fiber/cofiber sequence。
+## S.2 经典空间的凝聚化
 
-这些输入的精确范围依赖所选 \(p\) 和文献中的 liquid convention。正文使用时必须说明对象是否在 S.2-S.3 的范围内。
+**外部输入定理 S.3（Banach/Fréchet membership）.** 每个 \(p\)-Banach 空间的
+凝聚化 \(\underline E\) 都 \(p\)-liquid；逆极限保持 \(p\)-liquid。因此每个实
+Fréchet 空间的凝聚化对所有 \(0<p\le1\) 都 \(p\)-liquid。
 
-## S.2 Liquid 对象与 Hom 判别
+**来源与边界.** CS26 Theorem 2.14、Lemma 2.16 及其后的逆极限推论。该定理只判断
+对象属于 \(\mathbf{Liquid}_p\)，不判断拓扑 cokernel 与 liquid cokernel 相同。
 
-**定义 S.4（liquid 对象）.** 在本书中，\(p\)-liquid 实向量空间是 \(D_{\mathrm{liq},p}(\mathbb R)\) 心脏中的对象，或由 S.2 realization 得到的对象。若不指定 \(p\)，默认存在一个固定允许的 \(p\) 使所有相关对象处于同一范畴。
-
-**边界 S.5（Banach/Fréchet 不等于 liquid）.** 拓扑向量空间 \(E\) 本身不是 liquid 对象。必须给出 realization \(E_{\mathrm{liq}}\)，并说明 \(E\) 位于 S.2-S.3 的适用范围内。
-
-**命题 S.6（有限维对象闭合）.** 有限维实向量空间 \(V\) 的 realization 是单位对象的有限直和：
+**定义 S.4（本书的 realization 记号）.** 对上述经典空间定义
 
 $$
-\mathcal L_p(V)\simeq \mathbb R_{\mathrm{liq}}^{\oplus \dim V}.
+\mathcal L_p(E):=\underline E,
+\qquad
+\underline E(S)=\operatorname{Cont}(S,E).
 $$
 
-因此它 compact、dualizable，并且 perfect。
+这是凝聚化，不是第二个完成化。连续线性映射逐测试对象给出 liquid 态射。
 
-**证明.** 有限维 \(V\cong\mathbb R^n\)。由 S.2-S.3，realization 保持有限直和并把 \(\mathbb R\) 送到单位对象。compact、dualizable 和 perfect 性对有限直和封闭。证毕。
+**边界 S.5（四种对象不能混同）.** 对同一底层向量空间必须区分：
 
-## S.3 Fréchet 复形与闭值域
+1. 抽象向量空间；
+2. 带拓扑的 Banach/Fréchet 空间 \(E\)；
+3. 凝聚模 \(\underline E\)；
+4. 断言 \(\underline E\in\mathbf{Liquid}_p\) 的额外性质。
+
+S.3 在 Banach/Fréchet 情形证明第 4 项，但并不把这四个类型定义为相等。
+
+## S.3 有限维对象
+
+**命题 S.6.** 若 \(V\) 是 \(n\) 维实向量空间，则
+
+$$
+\mathcal L_p(V)\cong\underline{\mathbb R}^{\oplus n}.
+$$
+
+因而它 compact、dualizable 且 perfect。
+
+**证明.** 任取线性同构 \(V\cong\mathbb R^n\)。有限维 Hausdorff 向量空间的线性
+同构自动为同胚，凝聚化逐测试对象保持有限乘积；在阿贝尔范畴中有限乘积等于有限直和。
+S.1 说明 \(\underline{\mathbb R}\) 是 liquid 单位和紧投射生成元，所列性质对有限直和
+封闭。证毕。
+
+## S.4 Fréchet 复形与严格性
 
 设
 
 $$
-E^\bullet:\cdots\to E^{q-1}\xrightarrow{d^{q-1}}E^q\xrightarrow{d^q}E^{q+1}\to\cdots
+E^\bullet:\cdots\to E^{q-1}\xrightarrow{d^{q-1}}E^q
+\xrightarrow{d^q}E^{q+1}\to\cdots
 $$
 
-是 Fréchet 空间和连续线性映射组成的复形。
-
-**定义 S.7（闭值域条件）.** \(E^\bullet\) 在次数 \(q\) 满足闭值域条件，若
+是 Fréchet 复形，并记
 
 $$
-\operatorname{im}d^{q-1}\subset\ker d^q
+B^q=\operatorname{im}d^{q-1},\quad
+Z^q=\ker d^q,\quad
+H^q_{\mathrm{top}}=Z^q/B^q.
 $$
 
-为闭子空间。
-
-**命题 S.8（闭值域给 Hausdorff cohomology）.** 若 \(E^\bullet\) 在次数 \(q\) 满足闭值域条件，则
-
-$$
-H^q_{\mathrm{top}}(E^\bullet)
-=
-\ker d^q/\operatorname{im}d^{q-1}
-$$
-
-是 Hausdorff Fréchet 空间。
-
-**证明.** \(\ker d^q\) 是 Fréchet 空间的闭子空间，故为 Fréchet。闭子空间的 quotient 是 Hausdorff Fréchet 空间。证毕。
-
-**命题 S.9（realization 与 cohomology 比较）.** 假设 \(E^\bullet\) 在次数 \(q\) 满足闭值域条件，且短正合列
+**定义 S.7.** 称复形在次数 \(q\) **closed-range**，如果 \(B^q\) 在 \(Z^q\)
+中闭；称它在次数 \(q\) **凝聚严格**，如果此外两张满射
 
 $$
-0\to\operatorname{im}d^{q-1}\to\ker d^q\to H^q_{\mathrm{top}}(E^\bullet)\to0
+E^{q-1}\twoheadrightarrow B^q,
+\qquad
+Z^q\twoheadrightarrow H^q_{\mathrm{top}}
 $$
 
-处于 S.3 的 exactness 范围内。则
+都满足第五章定义 5.8 的 profinite 局部提升条件。
+
+**命题 S.8.** Closed-range 条件使 \(H^q_{\mathrm{top}}\) 成为 Hausdorff Fréchet
+空间；若再凝聚严格，则
 
 $$
 H^q(\mathcal L_p(E^\bullet))
-\simeq
+\cong
 \mathcal L_p(H^q_{\mathrm{top}}(E^\bullet)).
 $$
 
-**证明.** 闭值域给出 Fréchet 短正合列。S.3 把它送到 liquid 范畴中的 fiber/cofiber sequence。cohomology 对象由同一 quotient 表示，故得到等价。证毕。
+**证明.** 第一项由闭子空间的 Fréchet quotient 定理。对第二项，凝聚化保持 kernel，
+而两张局部有效满射分别识别 liquid image 为 \(\underline{B^q}\)、liquid cokernel 为
+\(\underline{H^q_{\mathrm{top}}}\)。因此 kernel modulo image 给出所示同构；详细逐步
+证明见附录 P.9。证毕。
 
-## S.4 Fredholm 与 perfect 性
+**反例边界 S.9.** Closed-range 与凝聚严格是不同条件。前者只控制 quotient 的
+Hausdorff/complete 拓扑，后者控制从 profinite 参数族的局部提升。若没有后者，S.8 的
+cohomology 同构没有证明。连续 splitting 同时给全局提升，因而是凝聚严格的充分条件。
 
-**定义 S.10（Fredholm Fréchet 复形）.** \(E^\bullet\) 称为 Fredholm，若每个次数满足闭值域条件，且每个 \(H^q_{\mathrm{top}}(E^\bullet)\) 有限维。
+## S.5 Fredholm 与 Dolbeault
 
-**推论 S.11（Fredholm 复形的 liquid perfect cohomology）.** 若 \(E^\bullet\) 是 Fredholm，且每个相关短正合列处于 S.3 的范围内，则
+**定义 S.10.** Fréchet 复形称为 Fredholm，如果每次 closed-range 且所有
+\(H^q_{\mathrm{top}}\) 有限维。这个定义本身不包含凝聚严格性。
+
+**推论 S.11.** 若 \(E^\bullet\) Fredholm 且每次凝聚严格，则
 
 $$
 H^q(\mathcal L_p(E^\bullet))
@@ -108,57 +135,56 @@ $$
 
 是 perfect liquid 对象。
 
-**证明.** 由 S.9，
+**证明.** S.8 把它识别为有限维拓扑向量空间的凝聚化，再用 S.6。证毕。
+
+**外部输入定理 S.12（Dolbeault--Hodge 输入）.** 设 \(X\) 是 compact complex
+manifold，\(E\) 是 holomorphic vector bundle。Dolbeault Fréchet 复形
 
 $$
-H^q(\mathcal L_p(E^\bullet))\simeq\mathcal L_p(H^q_{\mathrm{top}}(E^\bullet)).
+\Gamma(X,\mathcal A^{0,\bullet}(E)),\bar\partial
 $$
 
-右侧由 S.6 perfect。证毕。
+有连续 Green operators 和 Hodge projections；每个像闭，harmonic spaces 有限维，
+并与 sheaf cohomology \(H^q(X,E)\) 同构。相应 exact/coexact/harmonic 分解在光滑
+Fréchet 拓扑中连续分裂。
 
-## S.5 Dolbeault 类型检查
+**来源与边界.** 这是经典 elliptic Hodge/Fredholm 与 Dolbeault theorem 输入 D.8；
+本书不重证 parametrix 和正则性估计。
 
-令 \(X\) 是 compact complex manifold，\(E\) 是 holomorphic vector bundle。Dolbeault 复形的全局截面为
-
-$$
-\Gamma(X,\mathcal A^{0,\bullet}(E)),\bar\partial.
-$$
-
-**输入定理 S.12（Dolbeault Fréchet-Fredholm 输入）.** 上述 Fréchet 复形是 Fredholm，并且其 cohomology 与 \(H^\bullet(X,E)\) 同构。
-
-**命题 S.13（Dolbeault 的 liquid 类型闭合）.** 在 S.1-S.3 和 S.12 下，Dolbeault 复形可实现为 \(D_{\mathrm{liq},p}(\mathbb C)\) 中的对象，且
+**定理 S.13（Dolbeault 的 liquid cohomology）.** 在 S.12 假设下，Dolbeault
+复形每项 \(p\)-liquid、每次凝聚严格，并有
 
 $$
-H^q(\mathcal L_p\Gamma(X,\mathcal A^{0,\bullet}(E)))
+H^q\!\left(\mathcal L_p
+\Gamma(X,\mathcal A^{0,\bullet}(E))\right)
+\cong
+\mathcal L_p(H^q(X,E)).
 $$
 
-是有限维 liquid 对象，并与经典 \(H^q(X,E)\) 的 realization 相容。
+两侧是 perfect liquid 对象。
 
-**证明.** S.12 给出 Fredholm 条件和经典 Dolbeault 同构。由 S.11，realization 后的 cohomology 是 perfect liquid 对象；由 S.9，它等于经典有限维 cohomology 的 realization。证毕。
+**证明.** 每项是 Fréchet，故由 S.3 为 \(p\)-liquid。S.12 的连续 splittings 使定义
+S.7 中两张满射都有连续线性截面，因而凝聚严格。S.8 给比较同构，S.12 给
+\(H^q_{\mathrm{top}}\cong H^q(X,E)\)，最后 S.6 给 perfect 性。证毕。
 
-## S.6 Liquid 主闭包定理
+## S.6 Liquid 主闭包
 
-**定理 S.14（Liquid 主闭包）。** 接受 S.1-S.3 与 S.12 后，第二卷关于 liquid theory 的以下结构在书内闭合：
+**定理 S.14（Liquid 主闭包）.** 接受 S.1、S.3 与 S.12 后，第二卷已闭合：
 
-1. \(p\)-liquid analytic ring 的范畴位置；
-2. 拓扑向量空间进入 liquid 范畴所需的 realization 输入；
-3. Banach/Fréchet 与 liquid 的边界；
-4. 闭值域 Fréchet 复形的 cohomology 比较；
-5. Fredholm 复形有限维 cohomology 的 perfect 性；
-6. Dolbeault 复形的 liquid 类型检查。
+1. \(p\)-liquid 的定义、analytic 范畴位置和派生 Hom；
+2. Banach/Fréchet 对象的 liquid membership；
+3. realization 记号的真实定义 \(\mathcal L_p(E)=\underline E\)；
+4. exactness 的 profinite 局部提升判别；
+5. 凝聚严格 Fréchet 复形的 cohomology 比较；
+6. Dolbeault--Hodge 情形的 perfect liquid cohomology。
 
-**证明.** S.1-S.4 给出范畴位置和对象定义。S.5 阻止把拓扑向量空间直接等同于 liquid 对象。S.8-S.11 证明闭值域、cohomology 比较和 perfect 性。S.12-S.13 处理 Dolbeault 应用。证毕。
-
-## S.7 不能省略的假设
-
-1. 不闭值域时，Fréchet cohomology 可能非 Hausdorff，不能直接进入 S.3。
-2. Banach 或 Fréchet 空间不自动 liquid；必须给出 realization。
-3. finite-dimensional cohomology 的 perfect 性依赖 realization 保持有限直和。
-4. Dolbeault 复形的 analytic/liquid 使用依赖 Fredholm-Hodge 输入，不是纯形式结论。
+**证明.** S.1--S.6 处理对象和范畴；S.7--S.9 隔离 exactness；S.10--S.13 将
+Hodge splitting 代入该判别。每个非形式步骤都已列为 S.1、S.3 或 S.12 的外部输入。
+证毕。
 
 ## 练习
 
-1. 证明 S.8。
-2. 在 S.9 中写出 exact triangle 的 cohomology 长正合列。
-3. 给出像不闭的连续线性映射例子，并说明 S.9 为什么不能用。
-4. 对 compact Riemann surface 的 \(\mathcal O\) 写出 S.13 的对象和 cohomology。
+1. 证明 S.6，并指出 compact 性使用 S.1 的哪一项。
+2. 展开附录 P.9，证明 S.8 的 cohomology 同构。
+3. 给出非闭像算子，并说明它先在哪一步破坏 S.8。
+4. 说明连续 splitting 为什么同时验证定义 S.7 中的两张局部提升。

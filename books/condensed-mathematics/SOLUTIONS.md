@@ -351,12 +351,16 @@
 - P.1：闭子空间 \(F\subset E\) 的商 \(E/F\) 完备，因为商中 Cauchy 列可提升为 \(E\) 中逐步修正的 Cauchy 列；Hausdorff 性来自 \(F\) 闭。
 - P.2：若 \(u=d a+h+d^\ast b\) 且 \(du=0\)，则 \(0=\langle du,b\rangle=\langle d d^\ast b,b\rangle=\|d^\ast b\|^2\)，所以 \(d^\ast b=0\)。
 - P.3：附录 J 的紧算子 \(T:\ell^2\to\ell^2\)、\(T(x_n)=(x_n/n)\) 像非闭；其 cokernel 商拓扑非 Hausdorff。
-- P.4：需记录 \(\Gamma(X,\mathcal A^{0,q})\) 的 Fréchet 拓扑、\(\bar\partial\) 连续性、椭圆闭值域和有限维 Hodge 输入、liquid realization 的 exactness 范围、有限维上同调对应 perfect 对象。
+- P.4：需记录 \(\Gamma(X,\mathcal A^{0,q})\) 的 Fréchet 拓扑、\(\bar\partial\)
+  连续性、椭圆闭值域、连续 Hodge splitting、quotient 的局部提升，以及有限维上同调
+  对应 perfect 对象。
 
 ### 附录 Q-AA
 
 - Q-T：solid、analytic、liquid 主定理包和统一闭包的答案要点见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 6-9 节。
-- V-Z：solidification 反射存在性、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 证明模块的逐题答案见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 10-14 节。
+- V-Z：solidification 反射存在性、solid 核张量理想性、analytic localization、
+  rational descent 和经典空间 liquid 接口证明模块的逐题答案见
+  [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 10-14 节。
 - AA：Scholze 与 Clausen-Scholze 核心定理图谱的答案见 [volume-2/SOLUTIONS.md](volume-2/SOLUTIONS.md) 第 15 节。
 
 ## 卷三答案要点

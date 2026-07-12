@@ -5,33 +5,36 @@
 本章正式定义凝聚集合（condensed set），并验证几个基本例子：可表凝聚集合、拓扑空间关联的凝聚集合、离散集合关联的凝聚集合。本章的核心公式是
 
 $$
-\mathbf{CondSet}
+\mathbf{CondSet}_\kappa
 =
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{CHaus}_\kappa,J_{\operatorname{surj}}).
 $$
 
 ## 依赖前置知识
 
 需要第一章的 sheaf 条件，以及第二章中有限联合满射覆盖和子典范性定理。
 
+本章始终在附录 A 固定的 \(\kappa\)-层级工作，并把
+\(\mathbf{CHaus}_\kappa\)、\(\mathbf{CondSet}_\kappa\) 简写为无下标符号。
+
 ## 3.1 定义
 
 **定义 3.1.** 凝聚集合是站点
 
 $$
-(\mathbf{CHaus},J_{\operatorname{surj}})
+(\mathbf{CHaus}_\kappa,J_{\operatorname{surj}})
 $$
 
 上的集合值 sheaf。也就是说，它是一个反变函子
 
 $$
-X:\mathbf{CHaus}^{\operatorname{op}}\to \mathbf{Set}
+X:\mathbf{CHaus}_\kappa^{\operatorname{op}}\to \mathbf{Set}_{\mathcal U}
 $$
 
 满足：对每个有限联合满射覆盖
 
 $$
-\{S_i\to S\}_{i=1}^n,
+\{S_i\to S\}_{i=1}^n,\qquad n\ge0,
 $$
 
 序列
@@ -49,6 +52,9 @@ $$
 $$
 \mathbf{CondSet}.
 $$
+
+当 \(n=0\) 时必有 \(S=\varnothing\)，上式给出不可省略的条件
+\(X(\varnothing)=*\)。
 
 **注 3.2.** 这个定义有两个层次。第一，$X$ 是预层，因此每个紧 Hausdorff 空间 $S$ 都给出一个集合 $X(S)$。第二，$X$ 满足 sheaf 条件，因此 $X(S)$ 中的元素可以由覆盖 $S$ 的测试对象上的相容局部元素唯一粘合。
 
@@ -94,7 +100,7 @@ $$
 
 紧 Hausdorff 空间不是唯一能进入凝聚世界的拓扑对象。
 
-**定义 3.6.** 设 $T$ 是拓扑空间。定义预层
+**定义 3.6.** 设 $T$ 是一个 \(\mathcal U\)-小拓扑空间。定义预层
 
 $$
 \underline T:\mathbf{CHaus}^{\operatorname{op}}\to \mathbf{Set}
@@ -254,14 +260,63 @@ $$
 
 因此自然性成立，得到凝聚集合态射。证毕。
 
-## 3.7 本章小结
+## 3.7 拓扑空间接口的精确边界
+
+**定义 3.15.** 对拓扑空间 \(T\)，令 \(T_{\kappa\text{-cg}}\) 与 \(T\) 有相同
+底层集合，并赋予相对于所有连续映射
+
+$$
+S\longrightarrow T,\qquad S\in\mathbf{CHaus}_\kappa,
+$$
+
+的终拓扑。也就是说，\(U\subseteq T\) 在 \(T_{\kappa\text{-cg}}\) 中开，当且仅当
+每个上述映射下的原像在 \(S\) 中开。若自然连续双射
+\(T_{\kappa\text{-cg}}\to T\) 是同胚，则称 \(T\) 为
+\(\kappa\)-紧生成空间。
+
+**外部输入定理 3.16（拓扑空间的凝聚化；Scholze）.** 函子
+
+$$
+\mathbf{Top}_{\mathcal U}\longrightarrow\mathbf{CondSet}_\kappa,
+\qquad T\longmapsto\underline T,
+$$
+
+是忠实的；限制到 \(\kappa\)-紧生成空间后全忠实。对任意 \(T\)，自然态射还给出
+
+$$
+\underline{T_{\kappa\text{-cg}}}\xrightarrow{\sim}\underline T.
+$$
+
+**来源与边界.** 这是 S26 Proposition 1.7 的固定层级版本。本书不把任意拓扑空间与其
+凝聚化等同；只有在 \(\kappa\)-紧生成子范畴内，凝聚态射才恰好来自连续映射。
+
+**反例 3.17（凝聚化不恢复任意拓扑）.** 令 \(\lambda=\kappa^+\)，并给序数区间
+\(T=[0,\lambda]\) 赋序拓扑。单点集 \(\{\lambda\}\) 在 \(T\) 中不开，但在
+\(T_{\kappa\text{-cg}}\) 中开；因此两拓扑不同，而
+\(\underline{T_{\kappa\text{-cg}}}\cong\underline T\)。
+
+**证明.** 任取 \(S\in\mathbf{CHaus}_\kappa\) 与连续映射 \(f:S\to T\)。集合
+\(f(S)\setminus\{\lambda\}\) 的基数小于 \(\kappa\)，而
+\(\operatorname{cf}(\lambda)=\lambda>\kappa\)，故存在 \(\beta<\lambda\) 使该集合
+包含于 \([0,\beta]\)。于是
+
+$$
+f^{-1}(\{\lambda\})=f^{-1}((\beta,\lambda])
+$$
+
+在 \(S\) 中开。这对所有 \(f\) 成立，所以 \(\{\lambda\}\) 在终拓扑中开。另一方面，
+\(\lambda\) 是极限序数，序拓扑中每个包含 \(\lambda\) 的基本邻域也含有小于
+\(\lambda\) 的点，故 \(\{\lambda\}\) 在 \(T\) 中不开。最后的凝聚同构由定理
+3.16 给出。证毕。
+
+## 3.8 本章小结
 
 本章完成了凝聚集合的正式定义：
 
 $$
-\mathbf{CondSet}
+\mathbf{CondSet}_\kappa
 =
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{CHaus}_\kappa,J_{\operatorname{surj}}).
 $$
 
 我们证明了三类基本对象：
@@ -269,6 +324,8 @@ $$
 1. 每个紧 Hausdorff 空间 $K$ 给出可表凝聚集合 $\underline K$。
 2. 每个拓扑空间 $T$ 给出凝聚集合 $\underline T$。
 3. 每个离散集合 $A$ 给出凝聚集合 $\underline A$，其值记录测试空间的 clopen 分解。
+4. 拓扑空间凝聚化只在 \(\kappa\)-紧生成子范畴上全忠实；反例 3.17 给出删除该假设
+   后的失败。
 
 下一章将把集合值 sheaf 替换为阿贝尔群值 sheaf，定义凝聚阿贝尔群。
 
@@ -291,3 +348,6 @@ $$
 $$
 
 **练习 3.4.** 给出两个底层集合相同但拓扑不同的空间 $T,U$，并说明为什么 $\underline T$ 与 $\underline U$ 可能不同。
+
+**练习 3.5.** 检查反例 3.17 中 \(\lambda\) 为极限序数以及
+\(\operatorname{cf}(\lambda)>\kappa\) 的两个用途。

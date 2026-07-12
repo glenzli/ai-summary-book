@@ -17,7 +17,7 @@
 3. $M$ 是 $\mathcal U$-小 atlas 表示的光滑 $n$-manifold；
 4. 除非额外说明，$M$ 带 framing，并使用 framed disk category。
 
-第 4 条不是装饰性假设。Framed $n$-disks 的自同构同伦类型与 $O(n)$-数据有关；若只写 $\mathbf{Disk}_n$ 而不说明切结构，就无法判定系数对象应为 framed $E_n$-algebra、oriented $E_n$-algebra 还是带一般 tangential structure 的代数。
+第 4 条不是装饰性假设。不同 tangential structures 改变 disk embeddings 中允许的结构群数据：framing 将切丛平凡化，unoriented 版本则保留 $O(n)$-相干作用。若只写 $\mathbf{Disk}_n$ 而不说明切结构，就无法判定系数对象应为 framed $E_n$-algebra、oriented $E_n$-algebra 还是带一般 tangential structure 的代数。
 
 **定义 N.2（framed disk category）.** 令 $\mathbf{Disk}^{fr}_n$ 为 symmetric monoidal infinity-category：
 
@@ -140,6 +140,11 @@ $$
 \int_\varnothing A\simeq\mathbb 1_{\mathcal C}.
 $$
 
+**证明.** 对 $r$ 作归纳。$r=0$ 是 N.10 的空流形情形，$r=1$ 为
+恒等等价；归纳步把 $\coprod_{i=1}^{r+1}M_i$ 写成
+$(\coprod_{i=1}^{r}M_i)\amalg M_{r+1}$，依次使用 N.10 和归纳假设。
+张量积的结合约束给出显示的无括号表达式。$\square$
+
 ## N.4 欧氏空间与点的计算
 
 **命题 N.12（disk 归一化）.** 对标准 framed disk $\mathbb R^n$，
@@ -147,15 +152,17 @@ $$
 \int_{\mathbb R^n}A\simeq A.
 $$
 
-**证明.** 在 $\mathbf{Disk}^{fr}_{n/\mathbb R^n}$ 中，恒等嵌入
+**证明.** 因为标准 framed $\mathbb R^n$ 本身属于 $\mathbf{Disk}^{fr}_n$，定义 N.2 的 overcategory 是 slice
 $$
-\mathbb R^n\hookrightarrow\mathbb R^n
+\mathbf{Disk}^{fr}_{n/\mathbb R^n}
+\simeq
+(\mathbf{Disk}^{fr}_n)_{/\mathbb R^n}.
 $$
-是 final object up to contractible choice：对任一 $U\hookrightarrow\mathbb R^n$，到恒等对象的 over-morphism 正是该嵌入，且相干自同伦空间由 framed isotopy contractibility 控制。Colimit over a category with final object 等于 final object 上的值，因此
+任意 infinity-category 的 slice $\mathcal D_{/d}$ 都以 $\operatorname{id}_d$ 为 final object。故恒等嵌入是 final object，取 colimit 得
 $$
 \int_{\mathbb R^n}A\simeq A(\mathbb R^n)\simeq A.
 $$
-其中 finality 的空间级陈述属于 embeddings 的标准同伦事实。$\square$
+这里不需要另加 embedding space 可缩性假设。$\square$
 
 **例 N.13（零维情形）.** 当 $n=0$ 时，$\mathbb R^0=*$，一个 $0$-manifold 是离散有限集 $S$。若 $A$ 是 $E_0$-algebra，则
 $$
@@ -218,7 +225,7 @@ A\otimes^{\mathbf L}_{A\otimes A^{op}}A.
 $$
 定位来源为 AF-2，即 Ayala--Francis, arXiv:1206.5522v6, Theorem 3.19；Hochschild chain model 的符号仍需与定义 E.18--定义 E.23 和检查 W.1--检查 W.11 分开核对。
 
-**证明边界.** 把 $S^1$ 沿两个区间 glue，可把计算化为一维 excision。端点形成的 $0$-manifold 的 collar algebra 对应 $A\otimes A^{op}$，两个区间给出相应双模，derived tensor product 得到 cyclic bar construction。严格证明需要带边界或 stratified 版本的 factorization homology 以及 cyclic bar 与 gluing 模型的识别，因此作为外部输入。$\square$
+**证明路线（外部输入）.** 把 $S^1$ 作一维 collar gluing，可把计算化为 excision；切口两侧给出 $A$ 的左右作用，two-sided bar realization 产生 cyclic bar object。把该几何 gluing 与 Hochschild chain model 识别的步骤属于 AF-2，本书不由形式 colimit 定义重证。
 
 **说明 N.19.** 公式
 $$
@@ -226,42 +233,48 @@ $$
 $$
 不表示 $\int_{S^1}A$ 是普通 singular homology $H_\*(S^1;A)$。当 $A$ 非交换时，乘法顺序和双模结构参与计算。
 
-**命题 N.20（交换系数的退化）.** 若 $B$ 是 $E_\infty$-algebra，并且其 $E_1$-结构由交换结构限制而来，则 $HH_\*(B)$ 可识别为 $B$ 上的 higher Hochschild chains over $S^1$。在适当线性情形中，这常写作
+**命题 N.20（交换系数的圆周特化）.** 设 $\mathcal C^\otimes$ 满足约定 N.1，并且 $\operatorname{CAlg}(\mathcal C)$ 可由 spaces tensor。若 $B\in\operatorname{CAlg}(\mathcal C)$，将其限制为 $E_1$-algebra，则有自然等价
 $$
-B\otimes S^1.
+HH(B)\simeq S^1\otimes B.
 $$
 
-**证明边界.** 该识别依赖 $\mathcal C$ 是否 tensored over spaces 以及 $E_\infty$-algebra 的具体模型。不能在一般 $\mathcal C^\otimes$ 中把 $B\otimes S^1$ 当作已定义对象。$\square$
+**证明.** 外部输入定理 N.18 给出 $HH(B)\simeq\int_{S^1}B$。外部输入定理 N.28（AF Proposition 5.1）在当前假设下给出 $\int_{S^1}B\simeq S^1\otimes B$。复合两等价即得。$\square$
 
 ## N.7 高维圆柱与 Hochschild 对象
 
-**外部输入定理 N.21.** 若 $A$ 是 $E_n$-algebra，则
+**外部边界 N.21（圆柱/Fubini）.** 设 $n\ge1$，$A$ 是约定 N.1 中的 framed $E_n$-algebra，并且所用 factorization-homology 理论满足 product/Fubini comparison。则
 $$
 \int_{S^1\times\mathbb R^{n-1}}A
 $$
 携带自然 $E_{n-1}$-algebra 结构，并可解释为 $E_{n-1}$-Hochschild object of $A$。
 
-**说明 N.22.** 该结论把 Dunn additivity 与一维圆周计算结合起来。直观上，$\mathbb R^{n-1}$ 方向留下 $E_{n-1}$-结构，$S^1$ 方向执行 trace 或 Hochschild 型循环化。严格陈述需要指定 $E_n$-operad 模型和 additivity equivalence。
+**说明 N.22.** 该结论使用 DUNN-1 的 additivity 以及 factorization-homology Fubini/product theorem；AF-2 的一维圆周计算本身不足以推出它。由于本书尚未给 Fubini theorem 单独 locator，N.21 只作外部接口，不进入后续证明链。
 
-## N.8 球面的 excision 表达式
+## N.8 球面的 open-collar excision 表达式
 
-设 $S^n$ 写成两个半球沿赤道 collar 的 gluing：
+先选择 $S^n$ 上实际存在的 tangential structure $\xi$，并令 $A$ 为相应 $\mathbf{Disk}^{\xi}_n$-algebra。取两个开集 $U_-,U_+\subset S^n$，使
 $$
-S^n\simeq D^n_-\cup_{S^{n-1}\times\mathbb R}D^n_+.
+U_-\cong\mathbb R^n,\qquad
+U_+\cong\mathbb R^n,\qquad
+U_-\cap U_+\cong S^{n-1}\times\mathbb R,
 $$
+且这些同构与 $\xi$-structure 相容。这里 $U_\pm$ 是开半球的加厚，不是闭圆盘。
 
-**命题 N.23.** 在带边界版本可用且半球系数对象已定义的情形下，
+**命题 N.23.** 在上述 tangential structure 和 open collar gluing 下，
 $$
 \int_{S^n}A
 \simeq
-\left(\int_{D^n_-}A\right)
+\left(\int_{U_-}A\right)
 \otimes_{\int_{S^{n-1}\times\mathbb R}A}
-\left(\int_{D^n_+}A\right).
+\left(\int_{U_+}A\right)
+\simeq
+A\otimes_{\int_{S^{n-1}\times\mathbb R}A}A,
 $$
+其中两个 $A$ 带有由两侧 collar embeddings 诱导的右、左 module structures。
 
-**证明.** 这是外部输入定理 N.15 应用于本节给出的赤道 collar gluing 的直接实例。$\square$
+**证明.** 第一式是外部输入定理 N.15 应用于 $S^n=U_-\cup U_+$。两个 $U_\pm$ 是结构相容的 open disks，所以命题 N.12 分别给出 $\int_{U_\pm}A\simeq A$；把这两个等价连同 collar 诱导的模块结构代入第一式，得到第二式。$\square$
 
-**警告 N.24.** 不应把 $\int_{D^n_\pm}A$ 自动替换成 $A$，除非已经固定带边界版本中半球的边界条件，并证明该半球对象与所需 module object 的识别。无边界开 disk $\mathbb R^n$ 的归一化命题 N.12 不能直接替代带边界半球计算。
+**警告 N.24.** 该证明没有把闭半球 $D^n_\pm$ 当作无边界 disks。若改用真正的闭半球、区间或半空间，则必须进入 AF-4 的 manifold-with-boundary disk category 并指定 boundary/module 数据。另需注意：一般 $S^n$ 未必 framed；没有所选 $\xi$-structure 时，$\int_{S^n}A$ 对给定 framed $E_n$-algebra 甚至尚未定义。
 
 ## N.9 Locally constant factorization algebra 的重建
 
@@ -280,22 +293,27 @@ $$
 \mathcal F_A(V).
 $$
 
-**外部输入定理 N.26.** $\mathcal F_A$ 是 locally constant factorization algebra，并且在 $\mathbb R^n$ 上该构造给出 equivalence
+**外部边界 N.26（locally constant comparison）.** 在选定的 Costello--Gwilliam/Lurie 型模型中，$\mathcal F_A$ 是 locally constant factorization algebra，并且在 $\mathbb R^n$ 上该构造给出 equivalence
 $$
 \operatorname{Alg}_{E_n}(\mathcal C)
 \simeq
 \operatorname{Fact}^{lc}_{\mathbb R^n}(\mathcal C).
 $$
 
-**说明 N.27.** 该定理不是形式 Kan extension 的普通范畴论推论。关键点是 Weiss descent、isotopy invariance 和 disk embeddings 的同伦性质。Ayala--Francis, arXiv:1206.5522v6, Theorem 3.24 已定位 homology theories for manifolds 与 Disk$_n$-algebras 的刻画；Costello--Gwilliam/Lurie 语境中的 locally constant factorization algebra 完整等价仍按 REFERENCE_LOCATOR_LEDGER 另行定位。
+**说明 N.27.** 该比较不是形式 Kan extension 的普通范畴论推论。关键点是 Weiss descent、isotopy invariance 和 disk embeddings 的同伦性质。Ayala--Francis, arXiv:1206.5522v6, Theorem 3.24 已定位 homology theories for manifolds 与 Disk$_n$-algebras 的刻画，但不等于 Costello--Gwilliam/Lurie 语境中的 locally constant factorization algebra 完整等价。后者尚无本书精确 locator，因此 N.26 不进入证明链。
 
 ## N.10 Factorization homology 与普通同调的关系
 
-**外部输入定理 N.28（交换系数）.** 若 $B$ 是 sufficiently commutative 的 $E_\infty$-algebra，且 $\mathcal C$ 支持 tensoring over spaces，则
+**外部输入定理 N.28（交换系数；AF-5）.** 设 $\mathcal C^\otimes$ 是 tensor-presentable symmetric monoidal infinity-category，$B\in\operatorname{CAlg}(\mathcal C)$，并将 $B$ 沿
 $$
-\int_M B\simeq B\otimes M
+\operatorname{CAlg}(\mathcal C)\longrightarrow
+\operatorname{Alg}_{\mathbf{Disk}^{\xi}_n}(\mathcal C)
 $$
-其中 $B\otimes M$ 表示由空间 $M$ 对 $B$ 的 tensor。
+遗忘为任意 tangential structure $\xi$ 的 disk algebra。则对每个 $\xi$-structured $n$-manifold $M$，有自然等价
+$$
+\int_M B\simeq M\otimes B
+$$
+其中右侧是 underlying space of $M$ 对 commutative algebra $B$ 的 tensor。来源为 Ayala--Francis, arXiv:1206.5522v6, Proposition 5.1，本书记为 AF-5。
 
 在 $\mathbf{Ch}_k$ 的良好情形中，右侧可视为 higher Hochschild chains。
 
@@ -314,9 +332,9 @@ Fukaya theory 中出现 factorization homology 的方式通常不是“给任意
 3. gluing theorem：用 sectorial descent、skeletal descent 或 stratified factorization homology 重构全局 Fukaya category；
 4. trace/center：用 Hochschild invariants、centers 或 factorization homology 计算全局不变量。
 
-**外部输入定理 N.30（Fukaya 型 gluing 模式）.** 在 exact、wrapped、Liouville sector 或其他指定几何设置中，若已经建立 transversality、compactness、orientation、brane data 和 sectorial descent，则相应 Fukaya 型范畴可由局部模型通过 cosheaf 或 factorization-homology 型 gluing 得到。
+**研究边界 N.30（Fukaya 型 gluing 模式）.** 在 exact、wrapped、Liouville sector 或其他指定几何设置中，若已经建立 transversality、compactness、orientation、brane data 和 sectorial descent，则相应 Fukaya 型范畴可由局部模型通过 cosheaf 或 factorization-homology 型 gluing 得到。
 
-**证明边界.** 该命题是模式陈述，不是单一数学定理。每个具体版本必须指定：
+这不是单一数学定理，也不进入本书证明链。每个拟使用的具体版本必须先指定：
 
 1. 几何对象类别；
 2. Lagrangian 对象和 morphism complexes；
@@ -325,7 +343,7 @@ Fukaya theory 中出现 factorization homology 的方式通常不是“给任意
 5. gluing 的覆盖类型；
 6. 对应的解析紧性与横截性定理。
 
-缺少任一项时，只能把结论作为研究动机，不能纳入证明链。$\square$
+缺少任一项时，只能把结论作为研究动机，不能纳入证明链。
 
 ## N.12 使用检查表
 

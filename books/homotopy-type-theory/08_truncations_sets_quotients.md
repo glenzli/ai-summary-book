@@ -54,14 +54,26 @@ $$
 
 ## 8.3 等价关系与商类型
 
-**定义 8.6.** 在类型 $A$ 上，等价关系由族 $R:A\to A\to\mathcal U$ 给出，并满足：
+**定义 8.6.** 设 $A:\mathcal U_i$。$A$ 上一个 $j$-小等价关系由 fiberwise 类型族
+
+$$
+R:A\to A\to\mathcal U_j
+$$
+
+给出，并满足：
 
 1.  每个 $R(x,y)$ 是命题；
 2.  反身性 $\prod_x R(x,x)$；
 3.  对称性 $\prod_{x,y}R(x,y)\to R(y,x)$；
 4.  传递性 $\prod_{x,y,z}R(x,y)\to R(y,z)\to R(x,z)$。
 
-**规则 8.7（集合商）.** 对等价关系 $R$，商类型 $A/R$ 按附录 L.9-L.13 作为 HIT 输入规则使用，配备
+**规则 8.7（集合商）.** 对定义 8.6 的等价关系 $R$，商类型按附录 L.9-L.13 作为 HIT 输入规则形成于
+
+$$
+A/R:\mathcal U_{\max(i,j)},
+$$
+
+并配备
 $$
 [-]:A\to A/R
 $$
@@ -77,14 +89,21 @@ $$
 
 **定义 8.9.** 本书称一个数学对象位于集合层，若它的底层类型是集合，且结构公理是命题。
 
-**例 8.10.** 群可以定义为
+**例 8.10（小群与结构类型的层级）.** 第 $i$ 层小群的类型可以定义为
 $$
-\sum_{G:\mathcal U}\mathsf{isSet}(G)\times
+\mathsf{Group}_i\coloneqq
+\sum_{G:\mathcal U_i}\mathsf{isSet}(G)\times
 (G\to G\to G)\times G\times(G\to G)\times\mathsf{GroupLaws}(G),
 $$
-其中 $\mathsf{GroupLaws}(G)$ 是命题值类型，表达结合律、单位律和逆元律。
+其中 $\mathsf{GroupLaws}(G):\mathcal U_i$ 是命题值类型，表达结合律、单位律和逆元律。由于底类型变量量化于 $\mathcal U_i:\mathcal U_{i+1}$，整个结构类型满足
 
-**命题 8.11（群同构与相等）.** 在单值性下，若群按命题性公理组织，则群对象的相等等价于群同构。
+$$
+\mathsf{Group}_i:\mathcal U_{i+1},
+$$
+
+而不是 $\mathsf{Group}_i:\mathcal U_i$。单个群的 carrier 和运算仍是 $i$-小；“所有 $i$-小群的类型”高一层。这不是 resizing 可以省略的差别。
+
+**命题 8.11（群同构与相等）.** 假设第 $i$ 层单值性。若群按例 8.10 的命题性公理组织，则对 $G,H:\mathsf{Group}_i$，路径 $G=H$ 的类型等价于群同构类型 $G\cong H$。
 
 **证明（书内证明）.** 见附录 J.11。群结构是一元代数签名加命题性公理；一元代数 SIP 给出对象路径与底层等价加运算保持性的等价，展开后正是通常的群同构条件。$\square$
 

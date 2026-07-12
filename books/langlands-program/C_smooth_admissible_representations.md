@@ -30,7 +30,16 @@ $$
 $$
 良定义。
 
-**证明草图.** 因 $f$ 紧支撑且局部常值，支撑可分解为有限多个开紧陪集；对 smooth vector，积分化为有限和。$\square$
+**证明.** 取 $v\in V$。Smoothness 给出固定 $v$ 的开子群 $J_v$；局部
+常值性给出每个 $g$ 的开邻域，使 $f$ 在其上常值。函数
+$g\mapsto f(g)\pi(g)v$ 因而局部常值。它的支撑包含于紧集
+$\operatorname{supp}(f)$，可由有限多个两两不交的开紧子集 $U_i$ 分割，
+使被积函数在每个 $U_i$ 上取常值 $w_i\in V$。于是
+$$
+\int_G f(g)\pi(g)v\,dg=\sum_i\operatorname{vol}(U_i)w_i,
+$$
+是 $V$ 中有限线性组合，并且对进一步加细分割不变。因此积分良定义。
+$\square$
 
 **命题 C.5.** 若 $v\in V^J$ 且 $f\in\mathcal H(G,J)$，则 $\pi(f)v\in V^J$。
 
@@ -125,17 +134,25 @@ $$
 $$
 V^J\times (V^\vee_{\operatorname{sm}})^J\to\mathbb C.
 $$
-若 $V$ admissible，则 $(V^\vee_{\operatorname{sm}})^J$ 可识别为 $(V^J)^\vee$。
+限制映射给出自然同构
+$$
+(V^\vee_{\operatorname{sm}})^J\xrightarrow{\sim}(V^J)^\vee.
+$$
+特别地，若 $V$ admissible，则这两个空间均有限维。
 
-**证明草图.** 限制泛函给出映射
+**证明.** 限制泛函给出映射
 $$
 (V^\vee_{\operatorname{sm}})^J\to(V^J)^\vee.
 $$
-反向构造可用平均幂等元 $e_J$：给定 $\ell\in(V^J)^\vee$，定义
+取 Haar measure 使 $\operatorname{vol}(J)=1$，并记平均幂等元为 $e_J$。给定 $\ell\in(V^J)^\vee$，定义
 $$
 \widetilde\ell(v)=\ell(\pi(e_J)v).
 $$
-命题 B.11 给出 $\pi(e_J)v\in V^J$，且 $\widetilde\ell$ 为 $J$-不变 smooth functional。admissibility 保证有限维对偶操作不引入拓扑完备化问题。$\square$
+命题 B.11 给出 $\pi(e_J)v\in V^J$。又因 $e_J\pi(j)=e_J$（$j\in J$），$\widetilde\ell$ 为 $J$-不变泛函，故其 stabilizer 包含开子群 $J$，于是 $\widetilde\ell\in V^\vee_{\operatorname{sm}}$。若 $v\in V^J$，则 $\pi(e_J)v=v$，所以该构造是限制映射的右逆。反过来，若 $\lambda$ 为 $J$-不变，则
+$$
+\lambda(\pi(e_J)v)=\int_J\lambda(\pi(j)v)\,dj=\lambda(v),
+$$
+故它也是左逆。此同构本身不需要 admissibility；admissibility 只保证 $V^J$ 有限维。$\square$
 
 ## C.8 有限长度和可容许性
 

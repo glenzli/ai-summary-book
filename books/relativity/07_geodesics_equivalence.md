@@ -9,7 +9,24 @@ S=-m\int d\tau
 =-m\int\sqrt{-g_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}\,d\lambda.
 $$
 
-取仿射参数 $\lambda=\tau$，Euler-Lagrange 方程给出
+平方根作用量重参数化不变。先对它变分，再沿所得类时驻定曲线选固有时
+$\tau$；等价地，可在仿射参数下使用能量 Lagrangian
+
+$$
+L_{\mathrm{aff}}
+=\frac12g_{\mu\nu}\dot x^\mu\dot x^\nu.
+$$
+
+其 Euler-Lagrange 方程为
+
+$$
+\frac{d}{d\tau}(g_{\alpha\nu}\dot x^\nu)
+-\frac12\partial_\alpha g_{\rho\sigma}
+\dot x^\rho\dot x^\sigma=0.
+$$
+
+展开第一项、利用 $\dot x^\rho\dot x^\sigma$ 的对称性，再乘以
+$g^{\mu\alpha}$，得到
 
 $$
 \frac{d^2x^\mu}{d\tau^2}
@@ -18,11 +35,15 @@ $$
 \frac{dx^\sigma}{d\tau}=0.
 $$
 
-这就是测地线方程。
+这就是测地线方程。这里不能在变分前把平方根作用量中的参数机械地
+固定为依赖待求曲线的固有时；上面的等价仿射 Lagrangian 避开了这一
+循环。
 
 ## 7.2 测地线作为极值曲线
 
-类时测地线在局部极大化固有时。类空测地线极值化弧长。类光测地线满足
+测地线首先是长度泛函的驻定曲线。位于凸正规邻域内的类时测地线段
+局部极大化固有时；更长的测地线越过共轭点后一般不再具有这一极大性。
+类空测地线局部驻定弧长，但不具有无条件的极小或极大结论。类光测地线满足
 
 $$
 g_{\mu\nu}\dot{x}^\mu\dot{x}^\nu=0

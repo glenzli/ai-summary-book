@@ -17,7 +17,7 @@
 
 **命题 12.1（重合 branes 上的 gauge field）.** 一叠 $N$ 个重合 D$p$-branes 的低能开弦谱包含 $U(N)$ gauge field $A_a$，以及 $9-p$ 个 adjoint scalar fields $\Phi^i$，描述 brane 的 transverse fluctuations。
 
-**证明草图.** 开弦 massless vector 沿 Neumann 方向的极化给出 worldvolume gauge field。沿 Dirichlet 方向的极化不对应 gauge field，而对应端点位置的波动，即 transverse scalar。Chan-Paton labels 使这些 fields 取值于 $N\times N$ 矩阵；重合时开弦 stretched mass 为零，矩阵自由度完整恢复为 $U(N)$ adjoint。$\square$
+**推导说明（标准物理口径）.** 开弦 massless vector 沿 Neumann 方向的极化给出 worldvolume gauge field。沿 Dirichlet 方向的极化不对应 gauge field，而对应端点位置的波动，即 transverse scalar。Chan-Paton labels 使这些 fields 取值于 $N\times N$ 矩阵；重合时开弦 stretched mass 为零，矩阵自由度完整恢复为 $U(N)$ adjoint。$\square$
 
 **定义 12.2（pullback）.** 若 D-brane embedding 为
 $$
@@ -44,6 +44,11 @@ S_{\mathrm{DBI}}
 e^{-(\Phi-\Phi_0)}
 \sqrt{-\det\left(P[g+B]_{ab}+2\pi\alpha'F_{ab}\right)}.
 $$
+
+**输入边界.** 该公式是 disk/tree level、单个 Abelian brane 且 fields 缓慢变化时的
+标准有效作用。Determinant 重求和无导数的 $\alpha'F$ 幂与 embedding 的一阶导数，
+但不包含 $\nabla F$、高 target curvature、massive open strings 或 string loops；
+所以它不是完整 open-string effective action 的非微扰定义。
 
 **命题 12.4（Yang-Mills kinetic term）.** 在平坦背景、常 dilaton、static gauge、$B=0$ 和小场强近似下，DBI action 展开为
 $$
@@ -111,13 +116,16 @@ $$
 
 ## 12.4 Open-string effective theory
 
-**定理 12.9（D3-brane 低能极限）.** Type IIB 中 $N$ 个重合 D3-branes 的低能 worldvolume theory 为四维 $\mathcal N=4$ $U(N)$ super Yang-Mills theory，且
+**命题 12.9（D3-brane 低能极限）.** 在 decoupling/low-energy limit 中忽略
+massive open strings、closed-string interactions 与 higher-derivative terms 后，
+type IIB 中 $N$ 个重合 D3-branes 的 worldvolume theory 为四维 $\mathcal N=4$
+$U(N)$ super Yang--Mills theory，且
 $$
 g_{\mathrm{YM}}^2=2\pi g_s
 $$
 在本书 DBI 规范下成立。
 
-**证明草图.** 对 $p=3$ 代入命题 12.4 得 gauge coupling。D3-brane 有 $6$ 个 transverse scalars，open superstring massless fermions 与 gauge field 一起组成十维 $N=1$ super Yang-Mills 约化到四维后的 multiplet，即四维 $\mathcal N=4$。$\square$
+**推导说明（标准物理口径）.** 对 $p=3$ 代入命题 12.4 得 gauge coupling。D3-brane 有 $6$ 个 transverse scalars，open superstring massless fermions 与 gauge field 一起组成十维 $N=1$ super Yang-Mills 约化到四维后的 multiplet，即四维 $\mathcal N=4$。$\square$
 
 **注 12.10（规范差异）.** 文献中常见 $g_{\mathrm{YM}}^2=4\pi g_s$，差异来自 gauge kinetic term 写作 $-\frac1{4g^2}\operatorname{Tr}F^2$ 或 generator trace 规范的选择。后续使用 AdS/CFT 时必须同时固定 't Hooft coupling convention。
 
@@ -135,7 +143,7 @@ S_{\mathrm{YM}}
 \right).
 $$
 
-**证明草图.** 开弦 massless modes 给出 $A_a$、transverse scalars $\Phi^i$ 和 fermions，Chan-Paton factors 使其取值于 $\mathfrak u(N)$。Disk amplitudes 的三点和四点低能极限匹配 Yang-Mills cubic/quartic interactions；T-duality 把高维 gauge field 的内部 components 映为 transverse scalars，从而得到 dimensional reduction 形式。$\square$
+**推导说明（标准物理口径）.** 开弦 massless modes 给出 $A_a$、transverse scalars $\Phi^i$ 和 fermions，Chan-Paton factors 使其取值于 $\mathfrak u(N)$。Disk amplitudes 的三点和四点低能极限匹配 Yang-Mills cubic/quartic interactions；T-duality 把高维 gauge field 的内部 components 映为 transverse scalars，从而得到 dimensional reduction 形式。$\square$
 
 **命题 12.12（scalar vev 与 brane separation）.** 对角化的 scalar expectation values 表示 brane 在 transverse directions 的位置。若
 $$
@@ -147,7 +155,7 @@ Y^i_r-Y^i_s=2\pi\alpha'(\phi^i_r-\phi^i_s).
 $$
 off-diagonal open strings 的质量与该分离成正比。
 
-**证明草图.** T-duality 下 Wilson line eigenvalues 变为 dual circle 上的 brane positions。DBI action 中 static gauge 的 transverse fluctuation 归一化为 $Y^i=2\pi\alpha'\Phi^i$。off-diagonal modes 是连接不同 branes 的开弦，其 classical stretching energy 给出质量项。$\square$
+**推导说明（标准物理口径）.** T-duality 下 Wilson line eigenvalues 变为 dual circle 上的 brane positions。DBI action 中 static gauge 的 transverse fluctuation 归一化为 $Y^i=2\pi\alpha'\Phi^i$。off-diagonal modes 是连接不同 branes 的开弦，其 classical stretching energy 给出质量项。$\square$
 
 ## 12.6 Anomaly inflow 接口
 
@@ -170,4 +178,3 @@ D-branes 的低能理论由 open-string massless modes 控制。DBI action 给�
 **练习 12.2.** 由 WZ coupling 说明 worldvolume flux 如何诱导 lower-dimensional D-brane charge。
 
 **练习 12.3.** 解释为什么重合 D-branes 的 transverse scalars 取 adjoint 表示，并说明对角 vev 的几何意义。
-

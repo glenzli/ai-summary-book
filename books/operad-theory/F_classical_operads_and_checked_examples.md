@@ -17,15 +17,15 @@
 $$
 R[\mathcal O](S)=R[\mathcal O(S)],
 $$
-其中右边是由集合 $\mathcal O(S)$ 生成的自由 $R$-模。若
+其中右边是由集合 $\mathcal O(S)$ 生成的自由 $R$-模。对有限集映射 $f:S\to T$，若
 $$
-\gamma_\pi:\mathcal O(\operatorname{Bl}(\pi))\times\prod_{B\in\operatorname{Bl}(\pi)}\mathcal O(B)\to\mathcal O(S)
+\gamma_f:\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to\mathcal O(S)
 $$
-是 $\mathcal O$ 沿分块 $\pi$ 的复合，则 $R[\mathcal O]$ 的复合定义为 $\gamma_\pi$ 的 $R$-多线性延拓：
+是 $\mathcal O$ 沿 $f$ 的复合，则 $R[\mathcal O]$ 的复合定义为 $\gamma_f$ 的 $R$-多线性延拓：
 $$
-R[\mathcal O(\operatorname{Bl}(\pi))]
+R[\mathcal O(T)]
 \otimes
-\bigotimes_B R[\mathcal O(B)]
+\bigotimes_{t\in T}R[\mathcal O(f^{-1}(t))]
 \longrightarrow
 R[\mathcal O(S)].
 $$
@@ -36,15 +36,15 @@ $$
 
 第一，双射作用是函子性的。若 $S\xrightarrow{\varphi}T\xrightarrow{\psi}U$ 是双射，则 $\mathcal O(\psi\varphi)=\mathcal O(\psi)\mathcal O(\varphi)$。自由 $R$-模函子把等式送为线性映射等式，所以 $R[\mathcal O]$ 是 $R$-模值对称序列。
 
-第二，复合与重标号相容。该相容性在 $\mathcal O$ 中对基元素成立。由于 $R[\mathcal O(\operatorname{Bl}(\pi))]\otimes\bigotimes_B R[\mathcal O(B)]$ 由纯张量基生成，多线性延拓后仍成立。
+第二，复合与重标号相容。该相容性在 $\mathcal O$ 中对基元素成立。由于 $R[\mathcal O(T)]\otimes\bigotimes_tR[\mathcal O(f^{-1}(t))]$ 由纯张量基生成，多线性延拓后仍成立。
 
-第三，结合律和单位律成立。任取三层分块和每个顶点的基元素，两种复合结果在 $\mathcal O$ 中相等；线性化后，纯张量基上的等式推出整个张量积上的等式。单位律同理由 $\mathcal O$ 的单位律在线性化后得到。$\square$
+第三，结合律和单位律成立。任取可复合映射 $S\to U\to T$ 和每个槽的基元素，两种复合结果在 $\mathcal O$ 中相等；线性化后，纯张量基上的等式推出整个张量积上的等式。单位律同理由 $\mathcal O$ 的单位律在线性化后得到。$\square$
 
 **命题 F.3.** 设 $A$ 是 $R$-模。给出 $R[\mathcal O]$-代数结构等价于给出一族映射
 $$
 \theta_S:\mathcal O(S)\to \operatorname{Hom}_R(A^{\otimes S},A)
 $$
-使其关于双射、单位和分块复合相容。
+使其关于双射、单位和所有有限集映射的复合相容。
 
 **证明.** 一个 $R$-线性 operad morphism
 $$
@@ -62,25 +62,25 @@ $$
 $$
 \operatorname{Ass}(S)=\operatorname{Lin}(S).
 $$
-若 $\pi$ 是 $S$ 的分块，$\alpha$ 是块集合 $\operatorname{Bl}(\pi)$ 上的全序，且每个块 $B$ 带全序 $\beta_B$，则复合
+若 $f:S\to T$ 是有限集映射，$\alpha$ 是 $T$ 上的全序，且每个纤维 $f^{-1}(t)$ 带全序 $\beta_t$，则复合
 $$
-\alpha\big(\beta_B\big)_{B\in\operatorname{Bl}(\pi)}
+\alpha\big(\beta_t\big)_{t\in T}
 $$
-定义为 $S$ 上的字典序：先比较元素所在块在 $\alpha$ 中的顺序；若在同一块，再用该块中的 $\beta_B$ 比较。
+定义为 $S$ 上的字典序：先比较元素的 $T$-像在 $\alpha$ 中的顺序；若在同一纤维，再用该纤维中的 $\beta_t$ 比较。空纤维有唯一全序且不贡献元素。
 
 **命题 F.5.** $\operatorname{Ass}$ 是含 arity $0$ 的集合值 operad。
 
 **证明.** 双射把全序推前，因此 $S\mapsto\operatorname{Lin}(S)$ 是对称序列。单位是单点集上的唯一全序。
 
-检查结合律。设 $S$ 带三层分块：最外层块集合为 $P$，每个 $p\in P$ 内有中层块集合 $Q_p$，每个 $q\in Q_p$ 内有底层集合 $S_q$。给定 $P$ 的全序、每个 $Q_p$ 的全序和每个 $S_q$ 的全序。无论先把 $Q_p$ 与 $S_q$ 合成，还是先把 $P$ 与 $Q_p$ 合成，最终在 $S$ 上得到的比较规则都是：
+检查结合律。设有可复合映射 $S\to U\to T$，并在 $T$、各 $T$-纤维中的 $U$-子集及各 $U$-纤维上给定全序。无论先复合内两层还是外两层，最终在 $S$ 上得到的比较规则都是：
 $$
 x<y
 $$
 当且仅当下列第一条可判定差异成立：
 
-1. $x$ 和 $y$ 所在的最外层块在 $P$ 中有序；
-2. 它们在同一个最外层块内，但所在中层块在对应 $Q_p$ 中有序；
-3. 它们在同一个中层块内，并由 $S_q$ 上的全序比较。
+1. 先比较 $x,y$ 在 $T$ 中的像；
+2. $T$-像相同则比较其 $U$-像；
+3. $U$-像也相同则在共同纤维内比较。
 
 因此两种复合得到同一全序。单位律来自单点全序在字典序比较中不改变原有顺序。$\square$
 
@@ -166,7 +166,7 @@ $$
 $$
 m(m(a,b),c)=m(a,m(b,c)).
 $$
-把 arity $0$ 元素代入二元运算的左输入或右输入，operad 单位关系给出
+把 arity $0$ 元素代入二元运算的左输入或右输入，$\operatorname{Com}$ 的复合公式给出
 $$
 m(1_A,a)=a,\qquad m(a,1_A)=a.
 $$
@@ -176,7 +176,7 @@ $$
 $$
 \mu_S:A^{\otimes S}\to A
 $$
-为所有输入的乘积；当 $S=\varnothing$ 时取 $1_A$。交换律保证 $\mu_S$ 不依赖于对 $S$ 的排序，结合律保证分块代入相容，单位律保证 operad 单位相容。于是得到唯一的 $R[\operatorname{Com}]$-代数结构。$\square$
+为所有输入的乘积；当 $S=\varnothing$ 时取 $1_A$。交换律保证 $\mu_S$ 不依赖于对 $S$ 的排序。对任意 $f:S\to T$，先在每个纤维相乘再对 $T$ 相乘等于直接对 $S$ 相乘，空纤维贡献 $1_A$；故全部 operad 代入和单位都相容。于是得到唯一的 $R[\operatorname{Com}]$-代数结构。$\square$
 
 ## F.4 Endomorphism operad 的复合公式
 
@@ -186,26 +186,27 @@ $$
 $$
 这里 $V^{\otimes S}$ 表示按有限集 $S$ 张量得到的对象；选择 $S$ 的一个全序可把它识别为 $V^{\otimes |S|}$，不同选择之间由对称幺半结构给出置换同构。
 
-若 $\pi$ 是 $S$ 的分块，$f\in\operatorname{End}_V(\operatorname{Bl}(\pi))$，且 $g_B\in\operatorname{End}_V(B)$，定义复合
+若 $q:S\to T$ 是有限集映射，$F\in\operatorname{End}_V(T)$，且 $G_t\in\operatorname{End}_V(q^{-1}(t))$，定义复合
 $$
-f\circ_\pi(g_B)_B\in\operatorname{End}_V(S)
+F\circ_q(G_t)_{t\in T}\in\operatorname{End}_V(S)
 $$
 为以下映射：
 $$
 V^{\otimes S}
 \cong
-\bigotimes_{B\in\operatorname{Bl}(\pi)}V^{\otimes B}
-\xrightarrow{\otimes_B g_B}
-V^{\otimes\operatorname{Bl}(\pi)}
-\xrightarrow{f}
+\bigotimes_{t\in T}V^{\otimes q^{-1}(t)}
+\xrightarrow{\otimes_t G_t}
+V^{\otimes T}
+\xrightarrow{F}
 V.
 $$
+空纤维处 $V^{\otimes\varnothing}=R$，所以 $G_t:R\to V$ 是 nullary operation。
 
 **命题 F.13.** $\operatorname{End}_V$ 是 $R$-线性 operad。
 
 **证明.** 双射 $S\to T$ 的作用由 $V^{\otimes T}\cong V^{\otimes S}$ 的重标号同构前合成得到。单位是 $\operatorname{id}_V\in\operatorname{Hom}_R(V,V)$。
 
-检查结合律。给定三层分块，复合映射总是按如下顺序作用在 $V^{\otimes S}$ 上：先在最小块内应用最内层运算，再把每个中层块的输出张量起来应用中层运算，最后应用最外层运算。两种加括号方式只改变中间张量积同构的括号和重排。$\mathbf{Mod}_R$ 的对称幺半相干性保证这些重排同构相同，所以两种复合得到同一 $R$-线性映射。单位律由 $\operatorname{id}_V$ 的复合单位性质给出。$\square$
+检查结合律。对可复合映射 $S\to U\to T$，复合映射总是先在最小纤维内应用最内层运算，再把每个 $T$-纤维中的输出张量起来应用中层运算，最后应用最外层运算。两种加括号方式只改变中间张量积同构的括号和重排。$\mathbf{Mod}_R$ 的对称幺半相干性保证这些重排同构相同，所以两种复合得到同一 $R$-线性映射，包括空纤维情形。单位律由 $\operatorname{id}_V$ 的复合单位性质给出。$\square$
 
 **命题 F.14.** 若 $\mathcal P$ 是 $R$-线性 operad，则 $\mathcal P$-代数等价于 operad morphism $\mathcal P\to\operatorname{End}_V$。
 
@@ -325,11 +326,11 @@ $$
 
 **证明.** 设 $A$ 是 $\operatorname{Ass}$-代数。空集上的唯一全序给出元素 $e\in A$。二元标准全序给出乘法 $m$。
 
-考虑集合 $\{1\}$ 的分块，其中外层块集合有两个块，一个块为空集，一个块为 $\{1\}$。在 $\operatorname{Ass}$ 中，把空全序和单点全序代入二元全序，得到单点全序。代数结构保持复合，所以
+取函数 $q:[1]\to[2]$，先令唯一元素落入第二槽。第一纤维为空、第二纤维为单点；在 $\operatorname{Ass}$ 中，把空全序和单点全序代入二元标准全序，得到单点全序。代数结构保持复合，所以
 $$
 m(e,a)=a.
 $$
-把空块放在右侧同理得到
+再令唯一元素落入第一槽，使第二纤维为空，同理得到
 $$
 m(a,e)=a.
 $$
@@ -337,7 +338,7 @@ $$
 
 **命题 F.24.** 在含 arity $0$ 的 $\operatorname{Com}$-代数中，arity $0$ 的唯一运算给出交换乘法的单位。
 
-**证明.** 与命题 F.23 相同，但不需要区分空块在左或右，因为 $\operatorname{Com}(2)$ 的 $\Sigma_2$ 作用平凡，二者由等变性相同。operad 单位关系给出 $ea=a$，交换性给出 $ae=a$。$\square$
+**证明.** 与命题 F.23 相同，但不需要区分空纤维位于哪个输入槽，因为 $\operatorname{Com}(2)$ 的 $\Sigma_2$ 作用平凡，两个函数 $[1]\to[2]$ 由等变性互换。Operad 复合关系给出 $ea=a$，交换性给出 $ae=a$。$\square$
 
 **警告 F.25.** 若删去 arity $0$，则 $\operatorname{Ass}_{>0}$-代数编码非必含单位的结合代数，$\operatorname{Com}_{>0}$-代数编码非必含单位的交换代数。把含单位和非含单位版本混用，会导致自由代数、bar construction 和 reduced Koszul duality 中的增广理想定义不一致。
 
@@ -384,4 +385,3 @@ $$
 | $\operatorname{End}_V$ | $\operatorname{Hom}_R(V^{\otimes S},V)$ | 作为分类对象 | 不适用 |
 
 本附录的作用是把经典例子从“名称列表”升级为可验证对象。后续正文若引用这些例子，应优先引用本附录中已经证明的部分；若引用 PBW、Cohen-May 或 $E_n$ 同调结论，应继续标为外部输入定理。
-

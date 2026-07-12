@@ -67,11 +67,57 @@ $$
 [\alpha_m^\mu,\alpha_n^\nu]=m\delta_{m+n,0}\eta^{\mu\nu}.
 $$
 
-**证明草图.** 与闭弦相同，但使用区间 $[0,\pi]$ 上的 cosine basis 和开弦正则动量。零模系数 $2\alpha'p^\mu\tau$ 正是为了使总动量为 $p^\mu$。$\square$
+**证明.** Neumann 边界条件对应区间上的 delta kernel
+$$
+\delta_N(\sigma,\sigma')=\frac1\pi+\frac2\pi
+\sum_{n=1}^\infty\cos(n\sigma)\cos(n\sigma').
+$$
+将模展开及
+$$
+P_\mu=\frac1{2\pi\alpha'}\partial_\tau X_\mu
+$$
+代入 $[X^\mu(\sigma),P_\nu(\sigma')]=i\delta^\mu{}_\nu\delta_N(\sigma,\sigma')$。常数项比较给出 $[x^\mu,p^\nu]=i\eta^{\mu\nu}$；逐个比较 cosine Fourier coefficient 给出
+$$
+[\alpha_m^\mu,\alpha_n^\nu]
+=m\delta_{m+n,0}\eta^{\mu\nu}.
+$$
+此外，积分 $\int_0^\pi P^\mu d\sigma=p^\mu$ 验证了零模系数 $2\alpha'p^\mu\tau$。$\square$
+
+**定义 4.4B（公共代数定义域）.** 对固定动量 $p$，令
+$$
+\mathcal F_{\mathrm{fin}}(p)
+=\operatorname{span}\left\{
+\alpha_{-n_1}^{\mu_1}\cdots\alpha_{-n_r}^{\mu_r}|p\rangle:
+r<\infty,\ n_i>0
+\right\}.
+$$
+闭弦再与一份有限激发的 tilde Fock module 作代数张量积。若不固定动量，取
+Schwartz wave packets
+$$
+\mathcal D_{\mathrm{mat}}
+=\mathcal S(\mathbb R^D)\otimes_{\mathrm{alg}}\mathcal F_{\mathrm{fin}}
+$$
+（闭弦含左右两份）作为下文全部振子多项式与 Virasoro modes 的共同不变定义域。
+由于 target metric 为 Lorentzian，协变 Fock pairing 是不定的；在应用 no-ghost
+theorem 前，$\mathcal D_{\mathrm{mat}}$ 不是已经完成的物理 Hilbert space。
+
+**引理 4.4C（Virasoro 和的局部有限性）.** 对每个固定 $m\in\mathbb Z$，
+正规序二次和
+$$
+\frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:
+$$
+在 $\mathcal D_{\mathrm{mat}}$ 的每个向量上只有有限多个非零项，并把
+$\mathcal D_{\mathrm{mat}}$ 映到自身。
+
+**证明.** 给定有限激发态，含 annihilation operator 的项只有当其 mode 出现在该态中
+时才非零，故这类项有限。两个因子均为 creation operators 时，$n<0$ 且
+$m-n<0$；对固定 $m$，满足这两个不等式的整数 $n$ 也只有有限多个。零模只在
+Schwartz 动量变量上作乘法。因此该和逐向量有限且保持定义域。$\square$
 
 ## 4.3 Virasoro generators 和 number operators
 
-**定义 4.6（matter Virasoro generators）.** 闭弦 matter Virasoro generators 为
+**定义 4.6（matter Virasoro generators）.** 在定义 4.4B 的共同定义域上，闭弦
+matter Virasoro generators 为
 $$
 L_m=\frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:,
 \qquad
@@ -79,13 +125,34 @@ L_m=\frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:,
 $$
 开弦只有一份同样形式的 $L_m$。
 
-**命题 4.5（Virasoro algebra）.** $L_m$ 满足 central charge $c=D$ 的 Virasoro algebra：
+**命题 4.5（Virasoro algebra）.** 作为 $\mathcal D_{\mathrm{mat}}$ 上的算符恒等式，
+$L_m$ 满足 central charge $c=D$ 的 Virasoro algebra：
 $$
 [L_m,L_n]=(m-n)L_{m+n}
 +\frac{D}{12}m(m^2-1)\delta_{m+n,0}.
 $$
 
-**证明草图.** 使用 oscillator commutators 和 normal ordering。中心项来自移动 annihilation operators 穿过 creation operators 时产生的 c-number；结果等价于第三章 free boson $T(z)T(w)$ 的 central charge $D$。$\square$
+**证明.** 首先由振子交换关系直接得到
+$$
+[L_m,\alpha_n^\mu]=-n\alpha_{m+n}^\mu.
+$$
+因此 $[L_m,L_n]-(m-n)L_{m+n}$ 与所有振子对易，只能是中心元；由 mode number 可知它仅在 $m+n=0$ 时非零。取零动量 Fock vacuum，并令 $m>0$。由于 $L_m|0\rangle=0$，中心项可由
+$$
+\langle0|L_mL_{-m}|0\rangle
+$$
+计算。只有 $L_{-m}$ 中两个 creation operators 的部分有贡献，Wick 配对给出
+$$
+\langle0|L_mL_{-m}|0\rangle
+=\frac D2\sum_{r=1}^{m-1}r(m-r)
+=\frac D{12}m(m^2-1).
+$$
+这里使用了
+$$
+\sum_{r=1}^{m-1}r(m-r)=\frac{m(m^2-1)}6.
+$$
+所有中间和在引理 4.4C 的意义下逐向量有限。故中心元为命题所示；对负 $m$ 的
+公式由交换子的反对称性得到。该等式尚未声称 $L_m$ 在某个 Hilbert completion 上
+自伴或其闭包唯一。$\square$
 
 **定义 4.7A（number operators）.** 闭弦 number operators 定义为
 $$
@@ -106,9 +173,26 @@ $$
 
 **注 4.7B（intercept）.** 物理态条件实际使用 $L_0-a$。玻色弦临界量子化中 $a=1$。该常数可由 light-cone zero-point energy 或 BRST nilpotency 固定。
 
+**计算 4.7C（截距的正规化边界）.** Light-cone gauge 中每个横向 boson 的真空能
+形式上为 $(1/2)\sum_{n\ge1}n$。采用 exponential cutoff，
+$$
+\sum_{n=1}^{\infty}ne^{-\varepsilon n}
+=\frac{e^{-\varepsilon}}{(1-e^{-\varepsilon})^2}
+=\frac1{\varepsilon^2}-\frac1{12}+O(\varepsilon^2).
+$$
+减去局部发散项 $\varepsilon^{-2}$ 后，有限部分与 $\zeta(-1)=-1/12$ 相同。因此
+$$
+E_0^{\perp}=-\frac{D-2}{24},
+\qquad a=-E_0^{\perp}=\frac{D-2}{24}.
+$$
+这是保持世界面平移与 mode grading 的正规序方案；有限 counterterm 会移动 $a$，
+但 Lorentz algebra closure 或 BRST nilpotency 随后固定临界方案中的 $a=1$，所以
+$a$ 不是可任意调节的物理参数。
+
 ## 4.4 物理态条件和质量公式
 
-**定义 4.8（old covariant physical states）.** Old covariant quantization 中闭弦物理态满足
+**定义 4.8（old covariant physical states）.** Old covariant quantization 中，先在
+$\mathcal D_{\mathrm{mat}}$ 内取满足下列条件的向量：
 $$
 (L_0-a)|\psi\rangle=0,\quad
 (\tilde L_0-a)|\psi\rangle=0,
@@ -117,7 +201,9 @@ $$
 $$
 L_n|\psi\rangle=\tilde L_n|\psi\rangle=0\quad(n>0).
 $$
-开弦相应地只有一份 Virasoro constraints。
+开弦相应地只有一份 Virasoro constraints；最后还要商去其中的 null states。这里
+只施加 $n>0$ 的正频约束，负频 modes 是其形式伴随，并非零算符。物理 Hilbert
+completion 的正定性依赖外部输入定理 4.10。
 
 **命题 4.7（质量公式）.** 开弦质量公式为
 $$
@@ -154,16 +240,23 @@ $\square$
 
 ## 4.5 临界维数和 no-ghost theorem
 
-**命题 4.9（玻色弦临界条件）.** Covariant bosonic string 的 BRST 一致性要求
+**命题 4.9（正规序 BRST 代数的临界条件）.** 在第五章定义的标准 ghost module
+与正规序方案中，$Q_B^2=0$ 当且仅当
 $$
 D=26,\qquad a=1.
 $$
 
-**证明草图.** 第五章将从 ghost CFT 和 BRST charge 证明：matter central charge $D$ 与 ghost central charge $-26$ 相加必须为零，且 $Q_B^2=0$ 同时固定 intercept。$\square$
+**证明.** 第五章命题 5.9 对 BRST charge 作逐模计算，得到异常多项式
+$$
+A(n)=\frac{D-26}{12}(n^3-n)+2(a-1)n.
+$$
+$Q_B^2=0$ 等价于所有正整数 $n$ 的 $A(n)$ 消失。比较三次项得 $D=26$，再比较一次项得 $a=1$；反之代入这两个值，所有 $A(n)$ 均为零。$\square$
 
 **外部输入定理 4.10（no-ghost theorem）.** 对 covariant quantized bosonic string，当 $D=26$ 且 $a=1$ 时，物理态空间在商去 null states 后具有非负范数，并与 light-cone quantization 的 transverse Fock space 同构。
 
-**注 4.11.** 本书不证明 no-ghost theorem。其作用是保证 covariant 约束没有留下负范数物理激发。BRST 章节会给出更系统的 cohomological 表述。
+**注 4.11.** 本书不证明 no-ghost theorem。其作用是保证 covariant 约束没有留下负范数物理激发。BRST 章节会给出更系统的 cohomological 表述。条件
+$D=26,a=1$ 保证局部正规序 BRST 代数一致，但单独并不构成所有 genus 的
+Polyakov measure、unitarity 与背景稳定性的充分条件。
 
 ## 4.6 低能谱
 
@@ -212,14 +305,45 @@ $$
 $$
 因此 physical Fock space 无负范数振子。
 
-**证明草图.** 约束 $T_{++}=T_{--}=0$ 在 $p^+\ne0$ 时可逐模解出 $\alpha_n^-$ 和 $\tilde\alpha_n^-$，其右端由 transverse oscillators 的二次组合给出。$X^+$ 被 gauge 固定，$X^-$ 被约束解出，故只剩 $D-2$ 个横向方向。$\square$
+**证明.** Gauge 条件使 $\alpha_n^+=\tilde\alpha_n^+=0$（$n\ne0$），并固定 $\alpha_0^+=\tilde\alpha_0^+=\sqrt{\alpha'/2}\,p^+\ne0$。以
+$$
+\alpha_m\cdot\alpha_n
+=-\alpha_m^+\alpha_n^- -\alpha_m^-\alpha_n^+
++\alpha_m^i\alpha_n^i
+$$
+代入 $L_n=0$，可逐模唯一解得
+$$
+\alpha_n^-
+=\frac1{\sqrt{2\alpha'}p^+}
+\sum_{m\in\mathbb Z}:\alpha_{n-m}^i\alpha_m^i:
+$$
+（$n=0$ 时另含正规序常数）；闭弦的 tilde 部分同理。因此 $X^+$ 已由 gauge 固定，$X^-$ 由约束决定，独立振子恰为 $D-2$ 个横向方向。$\square$
 
-**命题 4.16（Lorentz algebra closure）.** 玻色弦 light-cone quantization 中，量子 Lorentz algebra 无 anomaly 当且仅当
+**外部输入定理 4.16（Lorentz algebra closure）.** 玻色弦 light-cone
+quantization 的标准正规序 Poincare generators 在共同有限激发域上闭合且无 anomaly
+当且仅当
 $$
 D=26,\qquad a=1.
 $$
 
-**证明草图.** 需要检查含有 $J^{-i}$ 的 Lorentz generators commutators。Normal ordering 产生 anomalous terms；它们同时消失要求 $D=26$ 与 intercept $a=1$。这是 light-cone 量子化给出的临界条件，与 BRST nilpotency 条件一致。$\square$
+**证明路线（外部输入）.** 不含 $J^{-i}$ 的交换关系在横向 Fock space 上直接闭合；潜在异常只出现在 $[J^{-i},J^{-j}]$。把约束解出的 $\alpha_n^-$ 代入 Lorentz generators 并作 creation-annihilation normal ordering 后，异常部分在一个公共非零 prefactor 之外为
+$$
+\sum_{n=1}^{\infty}
+\left[
+\left(\frac{D-2}{24}-1\right)n
++\frac1n\left(a-\frac{D-2}{24}\right)
+\right]
+\left(\alpha_{-n}^i\alpha_n^j-\alpha_{-n}^j\alpha_n^i\right).
+$$
+不同 $n$ 的双线性振子算子线性独立，故异常消失要求方括号对每个 $n$ 都为零。其 $n$ 与 $n^{-1}$ 系数分别给出
+$$
+\frac{D-2}{24}=1,
+\qquad
+a=\frac{D-2}{24},
+$$
+即 $D=26$、$a=1$。反之这两个值使显示的异常和逐项消失。完整 calculation 还需
+展开 $J^{-i}$ 的零模项并验证其余 Poincare 交换关系；本书引用该标准 calculation，
+本段只展示决定临界条件的唯一异常项，不以路线代替完整证明。
 
 ## 本章小结
 
@@ -234,4 +358,3 @@ $$
 **练习 4.3.** 对闭弦第一激发层推导横向条件和 gauge equivalence。
 
 **练习 4.4.** 在 light-cone gauge 中计数玻色弦的横向 oscillator 数，并解释为什么没有负范数振子。
-

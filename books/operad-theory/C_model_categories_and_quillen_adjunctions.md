@@ -10,11 +10,11 @@ i\pitchfork p,
 $$
 若任意交换方块
 $$
-\begin{CD}
-A @>>> X\\
-@V i VV @VV p V\\
-B @>>> Y
-\end{CD}
+\begin{array}{ccc}
+A & \longrightarrow & X\\
+{\scriptstyle i}\downarrow & & \downarrow{\scriptstyle p}\\
+B & \longrightarrow & Y
+\end{array}
 $$
 存在 lift $B\to X$ 使两个三角形交换。
 
@@ -178,4 +178,3 @@ $$
 ## C.7 本附录小结
 
 模型范畴提供三层信息：weak equivalences 定义同伦理论，cofibrations/fibrations 提供计算工具，Quillen adjunctions 描述模型之间的结构保持函子。Quillen equivalence 在 homotopy category 层面给出等价，在第十九章中进一步提升为 underlying infinity-categories 的等价。
-

@@ -48,7 +48,7 @@ $$
 
 **命题 F.6.** 若 $H\subset G$ 离散且 $G/H$ 紧，则 $H^\perp\subset\widehat G$ 离散且 $\widehat G/H^\perp$ 紧。
 
-**证明草图.** 由 F.5，
+**证明.** 由外部输入 F.5，
 $$
 H^\perp\simeq\widehat{G/H}.
 $$
@@ -56,7 +56,9 @@ $$
 $$
 \widehat G/H^\perp\simeq\widehat H.
 $$
-离散 Abel 群的对偶是紧群，故商紧。$\square$
+离散 Abel 群的对偶是紧群，故商紧。这里“紧群的对偶离散、离散群的
+对偶紧”是 Pontryagin 对偶定理包的直接部分；除此之外没有额外输入。
+$\square$
 
 ## F.2 Fourier 变换和自对偶测度
 
@@ -182,7 +184,13 @@ $$
 
 **命题 F.13.** Fourier 变换保持 $\mathcal S(F)$。
 
-**证明草图.** Archimedean 情形是经典 Schwartz 空间 Fourier 理论。非 Archimedean 情形中，任意 $f\in C_c^\infty(F)$ 可写成有限个紧开陪集特征函数的线性组合；命题 F.10 和缩放换元说明这些特征函数的 Fourier 变换仍为紧支撑局部常值函数。$\square$
+**证明.** Archimedean 情形调用外部输入 F.8 的 Schwartz 版本：分部积分
+把多项式乘权转化为导数，故 Fourier 变换保持快速衰减及光滑性。
+非 Archimedean 情形中，$f$ 的局部常值性和紧支撑性给出一个开紧子群
+$L\subset F$，使 $f$ 在有限多个 $L$-陪集上常值并在其余陪集上为零。
+因此 $f$ 是有限个 $\mathbf1_{a+L}$ 的线性组合。命题 F.10 的公式说明
+每个此类特征函数的 Fourier 变换支撑在开紧子群 $L^\perp$ 上，并在其
+陪集上局部常值。有限线性组合仍属于 $C_c^\infty(F)$。$\square$
 
 **定义 F.14.** 对整体域 $K$，定义
 $$

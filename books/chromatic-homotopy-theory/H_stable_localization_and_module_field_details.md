@@ -63,17 +63,30 @@ $$
 
 ## H.4 $K(n)$-modules 的 field-like 性质
 
-**外部输入 H.9.** Morava K-theory $K(n)$ 的 module category 具有 graded field behavior：任意 $K(n)$-module spectrum 由其 graded homotopy groups 控制，特别地可分解为若干悬挂的 $K(n)$ 的 wedge。该结论依赖 $K(n)_*$ 为 graded field 以及 $K(n)$-module category 的标准结构。
+**外部输入 H.9（CHT-P1-18）.** Morava K-theory $K(n)$ 的 module
+category 具有 graded field behavior：任意 $K(n)$-module spectrum 由其
+graded homotopy groups 控制，特别地可分解为若干悬挂的 $K(n)$ 的
+wedge。Hopkins--Smith II, Proposition 1.4 对任意谱 $X$ 证明
+$K(n)\otimes X$ 的这种分解；Proposition 1.5 给出相应 Künneth 同构。
 
-**证明草图 H.10.** 设 $M$ 是 $K(n)$-module。对每个 homogeneous basis element $x\in\pi_dM$，由 $K(n)$-module 结构得到映射
+**命题 H.10（由齐次基分解 Morava 模）.** 接受 H.9 的 module-category
+实现输入，并使用 $K(n)_*$ 为 graded field 与 module spectra 的稳定
+Whitehead 判别，则任意
+$K(n)$-module $M$ 等价于若干悬挂 $K(n)$ 的 wedge。
+
+**证明.** 取 graded $K(n)_*$-module $\pi_*M$ 的一组齐次基
+$\{x_\alpha\}$，记 $|x_\alpha|=d_\alpha$。由自由 $K(n)$-module 的伴随性，
+每个 $x_\alpha$ 唯一对应一个 $K(n)$-线性映射
 $$
-\Sigma^dK(n)\to M.
+\Sigma^{d_\alpha}K(n)\to M.
 $$
 取所有 basis elements 的 wedge，得到
 $$
 \bigvee_{\alpha}\Sigma^{d_\alpha}K(n)\to M.
 $$
-该映射在 $\pi_*$ 上是 $K(n)_*$-模同构。若采用 $K(n)$-modules 中弱等价由同伦群检测的模型，则该映射为等价。最后一句是 module category 的模型输入，不是普通代数自动推出。
+按基的定义，该映射在 $\pi_*$ 上是 graded $K(n)_*$-模同构。其 cofiber
+仍是 $K(n)$-module 且同伦群为零；稳定 Whitehead 判别给出 cofiber 为零，
+故原映射为等价。证毕。
 
 **推论 H.11.** 对 $K(n)$-module $M$，若 $\pi_*M=0$，则 $M\simeq0$。
 

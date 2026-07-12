@@ -35,7 +35,7 @@ G(K)\backslash G(\mathbb A_K)/G(\mathcal O_{\mathbb A})
 $$
 之间的标准对应。
 
-**证明草图.** 第十八章的 Weil uniformization 给出该双商描述。一个 $G$-bundle 在 generic point 上平凡化后，由各闭点处的相对位置给出 adele 数据；改变 generic trivialization 对应左乘 $G(K)$，改变局部平凡化对应右乘 $G(\mathcal O_{\mathbb A})$。$\square$
+**证明路线（外部输入）.** 第十八章的 Weil uniformization 给出该双商描述。一个 $G$-bundle 在 generic point 上平凡化后，由各闭点处的相对位置给出 adele 数据；改变 generic trivialization 对应左乘 $G(K)$，改变局部平凡化对应右乘 $G(\mathcal O_{\mathbb A})$。$\square$
 
 ## 22.2 Sheaf-Function Dictionary
 

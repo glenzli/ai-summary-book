@@ -62,9 +62,9 @@
 2. 对 $\partial_\mu F^{\nu\mu}=j^\nu$ 取 $\partial_\nu$，利用偏导交换和 $F^{\nu\mu}$ 反对称，得到 $\partial_\nu j^\nu=0$。
 3. $F_{\mu\nu}$ 是二阶张量，完全缩并 $F_{\mu\nu}F^{\mu\nu}$ 是标量。
 4. $u_\mu F^\mu{}_\nu u^\nu=F_{\mu\nu}u^\mu u^\nu=0$，因为 $F_{\mu\nu}$ 反对称而 $u^\mu u^\nu$ 对称。
-5. 写 $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$，代入 Maxwell 方程得
-   $$\Box A^\nu-\partial^\nu(\partial_\mu A^\mu)=j^\nu.$$
-   Lorenz 规范下第二项为零。
+5. 写 $F^{\nu\mu}=\partial^\nu A^\mu-\partial^\mu A^\nu$，代入本书约定的 Maxwell 方程 $\partial_\mu F^{\nu\mu}=j^\nu$ 得
+   $$\partial^\nu(\partial_\mu A^\mu)-\Box A^\nu=j^\nu.$$
+   Lorenz 规范下第一项为零，因此 $\Box A^\nu=-j^\nu$。
 
 ## 第五章
 
@@ -124,7 +124,11 @@
 2. 尘埃平直无 $\Lambda$：$H^2\propto a^{-3}$，故 $a(t)\propto t^{2/3}$。
 3. 辐射平直无 $\Lambda$：$H^2\propto a^{-4}$，故 $a(t)\propto t^{1/2}$。
 4. 相邻波峰沿 null geodesic 传播，共动距离相同，得 $\Delta t_0/a(t_0)=\Delta t_e/a(t_e)$，故 $1+z=a_0/a_e$。
-5. $\rho+3p=\rho-3\rho=-2\rho<0$，所以 $\ddot a>0$。
+5. 若把正宇宙学常数吸收到流体，
+   $\rho_\Lambda=\Lambda/(8\pi G)$、$p_\Lambda=-\rho_\Lambda$，故
+   $\rho_\Lambda+3p_\Lambda=-2\rho_\Lambda<0$。等价地，在显式保留
+   $\Lambda$ 且无其他物质时 $\ddot a/a=\Lambda/3>0$；再取 $H>0$
+   才称为加速膨胀支。
 
 ## 第十二章
 
@@ -153,7 +157,11 @@
 ## 第十五章
 
 1. 令 $a=0$，则 $\Sigma=r^2$、$\Delta=r^2-2Mr$，交叉项 $dt\,d\phi$ 消失，角向部分为 $r^2d\Omega^2$，径向项变为 $(1-2M/r)^{-1}dr^2$。
-2. $\Delta=r^2-2Mr+a^2=0$，解为 $r_\pm=M\pm\sqrt{M^2-a^2}$。$|a|<M$ 有两个实根，$|a|=M$ 重根，$|a|>M$ 无实根。
+2. $\Delta=r^2-2Mr+a^2=0$，解为
+   $r_\pm=M\pm\sqrt{M^2-a^2}$。当 $0<|a|<M$ 时两个不同正根分别
+   对应外 Killing/事件视界和内 Cauchy 视界；$|a|=M$ 时是单个退化
+   重根；$|a|>M$ 无实根。$a=0$ 时虽有代数根 $0,2M$，但 $r=0$
+   是 Schwarzschild 曲率奇点，只有 $r=2M$ 是视界。
 3. 静止极限面由 $g_{tt}=0$ 给出，即 $\Sigma=2Mr$。代入 $\Sigma=r^2+a^2\cos^2\theta$，解得 $r=M+\sqrt{M^2-a^2\cos^2\theta}$。
 4. 对 Killing 向量 $K^\mu$，沿测地线有 $d(K_\mu p^\mu)/d\lambda=p^\mu p^\nu\nabla_\mu K_\nu=0$，因为 $p^\mu p^\nu$ 对称而 $\nabla_{(\mu}K_{\nu)}=0$。
 5. 在能层内 $\partial_t$ 不再是类时向量，Killing 能量 $E=-p_t$ 对未来类时动量不必正定，因此可有负能量轨道。

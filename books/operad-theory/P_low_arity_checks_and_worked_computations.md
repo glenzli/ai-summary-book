@@ -1,6 +1,6 @@
 # 附录 P：低阶计算、逐项验算与小模型
 
-本附录把前文若干抽象定义压缩到低阶可手算情形。它的目标是检验符号和公理，而不是提供新的理论。每个计算都只使用已定义的结构：有限集分块、树代入、operad 乘法、bar construction、inner horn 或 derived tensor product。
+本附录把前文若干抽象定义压缩到低阶可手算情形。它的目标是检验符号和公理，而不是提供新的理论。每个计算都只使用已定义的结构：有限集映射及纤维、树代入、operad 乘法、bar construction、inner horn 或 derived tensor product。
 
 ## P.1 代入乘积的 arity $0,1,2$
 
@@ -8,55 +8,63 @@
 $$
 (X\circ Y)(S)
 =
-\coprod_{\pi\in\operatorname{Part}(S)}
-X(\operatorname{Bl}(\pi))\times
-\prod_{B\in\operatorname{Bl}(\pi)}Y(B).
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+X(T)\times\prod_{t\in T}Y(f^{-1}(t)).
 $$
 
 ### Arity $0$
 
-当 $S=\varnothing$ 时，$\varnothing$ 只有一个分块，其块集合为空集。因此
+对每个 $k\ge0$，存在唯一函数 $\varnothing\to[k]$，其 $k$ 个纤维全为空。因此
 $$
 (X\circ Y)(\varnothing)
 \cong
-X(\varnothing)\times\prod_{B\in\varnothing}Y(B)
-\cong
-X(0).
+\coprod_{k\ge0}X(k)\times_{\Sigma_k}Y(0)^k.
 $$
-这里空乘积为 singleton。结论说明：在一次代入中，arity $0$ 输出只来自外层 $X$ 的 arity $0$ 运算，而不是来自某个内层输入。
+这里 $Y(0)^0$ 是 singleton。故 arity $0$ 不只来自 $X(0)$：一个 $k$-ary 外层运算可在全部 $k$ 个输入槽中代入 nullary $Y$-运算。
+
+**反例 P.0（非空分块公式的左单位失败）.** 取 $X=I$ 且 $Y(0)\ne\varnothing$。上式只有 $k=1$ 项有贡献，给出
+$$
+(I\circ Y)(0)\cong Y(0),
+$$
+与左单位一致。若误用非空分块公式，则会得到 $I(0)=\varnothing$。因此省略空纤维会直接破坏幺半单位。
 
 ### Arity $1$
 
-设 $S=\{s\}$。分块只有
+对函数 $f:[1]\to[k]$，必须有 $k\ge1$；恰有一个纤维是单点，其余 $k-1$ 个纤维为空。固定单点纤维为第一个槽后，其稳定子为置换其余槽的 $\Sigma_{k-1}$。因此
 $$
-\pi=\{\{s\}\}.
+(X\circ Y)(1)
+\cong
+\coprod_{k\ge1}
+\bigl(X(k)\times Y(1)\times Y(0)^{k-1}\bigr)_{\Sigma_{k-1}}.
 $$
-因此
-$$
-(X\circ Y)(1)\cong X(1)\times Y(1).
-$$
-在 operad $\mathcal O$ 中，乘法
+若 $Y(0)=\varnothing$，只有 $k=1$ 项保留，才得到 $X(1)\times Y(1)$。在 operad $\mathcal O$ 中，乘法
 $$
 \mu:\mathcal O\circ\mathcal O\to\mathcal O
 $$
-在 arity $1$ 上给出 unary operation 的复合。
+在 arity $1$ 上既包含 unary operation 的复合，也包含在高 arity 运算的其余槽中代入 nullary operations。
 
 ### Arity $2$
 
-设 $S=\{s_1,s_2\}$。有两类分块：
+设 $S=[2]$。函数 $f:[2]\to[k]$ 在目标双射下有两类：
 
-1. 单块分块 $\{\{s_1,s_2\}\}$；
-2. 双块分块 $\{\{s_1\},\{s_2\}\}$。
+1. 两个元素落入同一目标点；此时有一个二元纤维和 $k-1$ 个空纤维；
+2. 两个元素落入不同目标点；此时有两个带源标号的单点纤维和 $k-2$ 个空纤维。
 
 故
 $$
-(X\circ Y)(S)
+(X\circ Y)(2)
 \cong
-X(1)\times Y(S)
+\coprod_{k\ge1}
+\bigl(X(k)\times Y(2)\times Y(0)^{k-1}\bigr)_{\Sigma_{k-1}}
 \;\amalg\;
-X(\{B_1,B_2\})\times Y(B_1)\times Y(B_2),
+\coprod_{k\ge2}
+\bigl(X(k)\times Y(1)^2\times Y(0)^{k-2}\bigr)_{\Sigma_{k-2}},
 $$
-其中第二项还携带块集合双射导致的 $\Sigma_2$-自然性。若改用骨架 arity 公式，第二项要写成对 $\Sigma_2$ 作用的 coinvariants。该例是左右作用约定最早出现风险的位置。
+其中稳定子固定非空纤维对应的目标点，并置换空槽。若 $Y(0)=\varnothing$，该式才缩成
+$$
+X(1)\times Y(2)\;\amalg\;X(2)\times Y(1)^2.
+$$
+输出的 $\Sigma_2$-作用在第一项作用于 $Y(2)$，在第二项交换两个带源标号的单点纤维并同步使用 $X(2)$ 的作用。该例是左右作用和空槽约定最早同时出现的位置。
 
 ## P.2 Endomorphism operad 的结合律检查
 
@@ -64,42 +72,43 @@ $$
 $$
 \operatorname{End}_A(S)=\mathbf{Set}(A^S,A).
 $$
-给定分块 $\pi$ of $S$、外层函数
+给定有限集映射 $q:S\to T$、外层函数
 $$
-f:A^{\operatorname{Bl}(\pi)}\to A
+F:A^T\to A
 $$
 以及内层函数
 $$
-g_B:A^B\to A\qquad(B\in\operatorname{Bl}(\pi)),
+G_t:A^{q^{-1}(t)}\to A\qquad(t\in T),
 $$
 复合为
 $$
-\mu(f;(g_B)_{B})
+\mu_q(F;(G_t)_{t\in T})
 :A^S\to A,\qquad
 (a_s)_{s\in S}\mapsto
-f\big((g_B((a_s)_{s\in B}))_{B\in\operatorname{Bl}(\pi)}\big).
+F\big((G_t((a_s)_{s\in q^{-1}(t)}))_{t\in T}\big).
 $$
+空纤维给出 $A^\varnothing\to A$，即常量函数。
 
 **命题 P.1.** 第 P.2 节定义的复合满足 operad 结合律。
 
-**证明.** 设 $\rho$ 是 $S$ 的 refinement，$\rho$ 先按小块 $C$ 分组，再按大块 $B$ 分组，最后按 $\pi$ 的块集合分组。取
+**证明.** 取可复合映射 $S\xrightarrow{g}U\xrightarrow{p}T$ 以及函数
 $$
-h_C:A^C\to A,\qquad
-g_B:A^{\operatorname{Bl}(\rho|_B)}\to A,\qquad
-f:A^{\operatorname{Bl}(\pi)}\to A.
+h_u:A^{g^{-1}(u)}\to A,\qquad
+G_t:A^{p^{-1}(t)}\to A,\qquad
+F:A^T\to A.
 $$
 先复合内两层再复合外层，得到
 $$
 (a_s)\mapsto
-f\left(
+F\left(
 \left(
-g_B\left(
-\left(h_C((a_s)_{s\in C})\right)_{C\subset B}
+G_t\left(
+\left(h_u((a_s)_{s\in g^{-1}(u)})\right)_{u\in p^{-1}(t)}
 \right)
-\right)_{B}
+\right)_{t\in T}
 \right).
 $$
-先复合外两层再代入 $h_C$，得到同一个函数表达式。两个括号方案在 $\mathbf{Set}$ 中给出相等函数，因此 endomorphism operad 的结合律成立。单位函数来自恒等映射 $\operatorname{id}_A:A\to A$；代入恒等映射不改变该函数表达式。$\square$
+先复合外两层再代入 $h_u$，得到同一个函数表达式，包括 $g$ 或 $p$ 有空纤维的情形。两个括号方案在 $\mathbf{Set}$ 中给出相等函数，因此 endomorphism operad 的结合律成立。单位函数来自恒等映射 $\operatorname{id}_A:A\to A$；插入双射层或单点目标层不改变该表达式。$\square$
 
 ## P.3 $\operatorname{Ass}$ 的低阶运算
 
@@ -112,27 +121,28 @@ $$
 \operatorname{Ass}(S)=\{a<b,\; b<a\}.
 $$
 
-给定分块 $\pi$，外层全序 $<$ on $\operatorname{Bl}(\pi)$，以及每个块 $B$ 上的内层全序 $<_B$，复合全序定义为 lexicographic block order：
+给定函数 $q:S\to T$，$T$ 上的外层全序 $<$，以及每个纤维 $q^{-1}(t)$ 上的内层全序 $<_t$，复合全序定义为 lexicographic fiber order：
 $$
 s<t
 $$
 当且仅当
 
-1. $s,t$ 在同一块 $B$ 且 $s<_B t$；或
-2. $s\in B_s,t\in B_t,B_s\ne B_t$ 且 $B_s<B_t$。
+1. $q(s)=q(t)$ 且 $s<_{q(s)}t$；或
+2. $q(s)\ne q(t)$ 且 $q(s)<q(t)$。
+
+空纤维有唯一全序，并且不向最终的 $S$-次序贡献元素。
 
 **命题 P.2.** 该复合定义 $\operatorname{Ass}$ 的 operad 结构。
 
 **证明.** 需要检查两件事。
 
-第一，lexicographic block order 是全序。任取 $s,t$。若二者在同一块，使用该块上的全序比较；若在不同块，使用块集合上的全序比较。反对称性、传递性分别由内层全序和外层全序的反对称性、传递性给出。
+第一，lexicographic fiber order 是全序。任取 $s,t$。若二者在同一纤维，使用该纤维上的全序比较；若在不同纤维，使用目标集上的全序比较。反对称性、传递性分别由内层全序和外层全序的反对称性、传递性给出。
 
-第二，结合律来自多层 lexicographic order 的拉平。若 $S$ 先分为小块 $C$，小块再聚成中块 $B$，中块再聚成大块，则比较两个元素 $s,t$ 时，两个复合顺序都按如下优先级决定：
+第二，对可复合映射 $S\to U\to T$，结合律来自多层 lexicographic order 的拉平。比较两个元素 $s,t$ 时，两个复合顺序都按如下优先级决定：
 
-1. 先比较包含二者的大块；
-2. 大块相同则比较中块；
-3. 中块相同则比较小块；
-4. 小块相同则使用最内层全序。
+1. 先比较二者在 $T$ 中的像；
+2. $T$-像相同则比较其 $U$-像；
+3. $U$-像相同则使用最内层纤维全序。
 
 因此两个复合顺序产生相同全序。单位是一元素集上的唯一全序。$\square$
 
@@ -169,7 +179,7 @@ $$
 $$
 e=\mu_\varnothing(*)\in A.
 $$
-当 $S=\{1,2\}$ 时，得到二元乘法 $a\cdot b=\mu_{\{1,2\}}(a,b)$。对称群等变性给出 $a\cdot b=b\cdot a$。分块结合律应用于三元素集的分块
+当 $S=\{1,2\}$ 时，得到二元乘法 $a\cdot b=\mu_{\{1,2\}}(a,b)$。对称群等变性给出 $a\cdot b=b\cdot a$。比较无空纤维的三元代入所对应的两个分组
 $$
 \{\{1,2\},\{3\}\}
 $$
@@ -177,7 +187,7 @@ $$
 $$
 \{\{1\},\{2,3\}\}
 $$
-给出 $(a\cdot b)\cdot c=a\cdot(b\cdot c)$。arity $0$ 与 arity $1$ 的分块组合给出 $e\cdot a=a=a\cdot e$。反向地，含单位交换幺半群用有限乘积定义 $\mu_S$，交换性保证对枚举选择无依赖。$\square$
+可得 $(a\cdot b)\cdot c=a\cdot(b\cdot c)$。为检查单位，取两个函数 $[1]\to[2]$，分别把唯一元素送入第一槽和第二槽；另一槽是空纤维。把 nullary 运算 $e$ 代入该空槽，并把一元单位代入非空槽，operad 代数相容性分别给出 $a\cdot e=a$ 与 $e\cdot a=a$。非空分块无法表达这一步。反向地，含单位交换幺半群用有限乘积定义 $\mu_S$；交换性保证对枚举选择无依赖，空纤维的空乘积取 $e$，所以与全部有限集映射的代入相容。$\square$
 
 ## P.5 Lie operad 的 arity $2,3$ 检查
 

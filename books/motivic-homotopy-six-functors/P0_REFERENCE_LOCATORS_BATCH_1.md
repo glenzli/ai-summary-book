@@ -50,7 +50,7 @@
 - 限制：
   - Stable norm functor locator is finite etale. Finite locally free appears at unstable level; stable extension requires extra conditions and is not used as unconditional stable theorem.
 
-## FC-16.2 / Deglise-Jin-Khan fundamental classes and Gysin maps
+## FC-16.2/FC-16.13 / Deglise-Jin-Khan fundamental classes, Gysin and excess
 
 - 资料源：Frederic Deglise, Fangzhou Jin, Adeel A. Khan, "Fundamental classes in motivic homotopy theory", arXiv:1805.05920v3；JEMS DOI linked on arXiv page.
 - arXiv 页面：`https://arxiv.org/abs/1805.05920`
@@ -60,16 +60,26 @@
   - Theorem 3.3.2，PDF pp.29-30：system of fundamental classes on smoothable lci morphisms, compatible with smooth morphisms, regular closed immersions and transverse base change.
   - Theorem 4.1.4，PDF pp.31-32：fundamental classes with coefficients in a motivic ring spectrum.
   - Theorem 4.2.1，PDF p.32：Gysin maps with coefficients for smoothable lci morphisms and their functoriality/transverse base change.
+  - Paragraph 3.3.3 and Proposition 3.3.4：当 Cartesian square 中 `f` 与拉回
+    `g` 都是 smoothable lci s-morphisms 时，由法丛商 `\xi` 得到球谱基本类的
+    excess formula。
+  - Proposition 4.2.2：带 unital associative commutative multiplication
+    系数的 excess formula；proper push-pull 结论另要求两条竖边 proper。
   - Paragraph 4.3.3，PDF p.34：purity transformation induces Gysin maps for bivariant theory, cohomology with proper support, cohomology for proper maps, and bivariant theory with proper support.
 - 本书使用：
   - 第十六章 fundamental classes、Gysin maps、bivariant theory、excess intersection、Riemann-Roch boundary。
   - 第十五章 framed transfers 与 fundamental classes 的相容边界。
 - 限制：
   - Main class is for smoothable lci morphisms in the cited theorem. 本书不得把该结果写成任意 morphism 的 fundamental class。
+  - Excess formula 不是任意 non-Tor-independent square 的形式结论；必须保留
+    两条对应边 smoothable lci、excess bundle 存在、系数乘法和 properness 的
+    分层假设。
 
 ## 本批对账本的影响
 
 - `UF-23.2` 可标为 `located`。
 - `FR-15.x` 可标为 `located`。
 - `NM-17.x` 可标为 `located`，但需保留 finite locally free/finite etale 分界。
-- `FC-16.2` 可标为 `located`，但需保留 smoothable lci 假设。
+- `FC-16.2` 与 `FC-16.13` 可标为 `located`；前者保留 smoothable lci
+  假设，后者还须保留双 lci、excess bundle、系数乘法与 properness 的分层
+  假设。

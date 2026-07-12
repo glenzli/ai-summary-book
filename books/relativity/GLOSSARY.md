@@ -49,7 +49,9 @@ $$
 
 ## G
 
-**geodesic**：测地线。对 Levi-Civita 联络而言，它满足 $\nabla_{\dot\gamma}\dot\gamma=0$，也等价于局部极值化固有时或弧长的曲线。
+**geodesic**：测地线。对 Levi-Civita 联络而言，它在仿射参数下满足
+$\nabla_{\dot\gamma}\dot\gamma=0$。它是长度泛函的驻定曲线；只有足够
+短、未越过共轭点的类时段才有局部固有时极大性。
 
 **global hyperbolicity**：全局双曲性。它保证因果结构良好，并是 Einstein 方程初值问题中常用的时空条件。
 
@@ -57,11 +59,16 @@ $$
 
 **harmonic gauge**：调和规范，也称 de Donder 规范。在线性化引力中常写作 $\partial^\mu \bar h_{\mu\nu}=0$。
 
-**horizon**：视界。Schwarzschild 时空中 $r=2GM$ 是事件视界；它不是曲率奇点，而是坐标系或因果结构上的边界。
+**horizon**：视界。对最大延拓的正质量 Schwarzschild 时空和选定的
+渐近平直端，未来事件视界的面积半径为 $r=2GM$；它不是曲率奇点。
+事件视界由全局因果结构定义，不是“坐标系的边界”。
 
 ## K
 
-**Kerr 度规**：描述四维真空、定常、轴对称旋转黑洞的精确解，由质量 $M$ 和角动量参数 $a=J/M$ 决定。
+**Kerr 度规**：描述四维真空、定常、轴对称旋转黑洞的精确解。第十五章
+取 $G=c=1$，用几何化质量 $M=GM_{\rm phys}/c^2$ 和
+$a=J_{\rm phys}/(M_{\rm phys}c)$ 参数化；此时几何化角动量满足
+$J=Ma$。
 
 **Killing 向量场**：满足 $\mathcal L_X g=0$ 的向量场。它表示时空对称性，并沿测地线给出守恒量。
 
@@ -106,7 +113,10 @@ $$
 
 ## S
 
-**Schwarzschild 半径**：$r_s=2GM$。对 Schwarzschild 解，它对应事件视界位置。
+**Schwarzschild 半径**：在 $c=1$ 且保留 $G$ 时
+$r_s=2GM$，恢复单位为 $r_s=2GM/c^2$。在最大延拓的正质量
+Schwarzschild 时空中，它是相对于所选渐近平直端的未来事件视界面积
+半径。
 
 **stress-energy tensor**：应力能量张量 $T_{\mu\nu}$。它描述能量密度、动量密度、能流与应力，并作为 Einstein 方程的源。
 

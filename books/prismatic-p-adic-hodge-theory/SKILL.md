@@ -11,7 +11,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“棱柱（prism）”“有界棱柱（bounded prism）”。
 - 定义必须先于直觉；例子必须验证定义中的结构映射、拓扑完备性、Cartier divisor 条件和 Frobenius 条件。
-- 非平凡命题必须给出证明、证明草图，或明确标注为“外部输入定理”，并在 `SOURCES.md` 中记录来源。
+- 非平凡命题必须给出完整书内证明，或明确标注为“外部输入定理”并在 `SOURCES.md` 中记录来源；证明路线只解释外部输入，不计作书内证明。
 - 不使用“显然”“容易看出”等词跳过关键步骤；短证明也要写出使用的定义、完备性、正合性、基变换或滤过论证。
 - 所有环、拓扑环、导出完备化、张量积、site、sheaf、derived category、filtered object 和 Frobenius-semilinear map 必须标明所在范畴或模型。
 - 区分经典 Fontaine 周期环理论、Faltings/Tsuji 比较定理、BMS 的 $A_{\inf}$-上同调、Bhatt-Scholze 的 prismatic cohomology、prismatic $F$-crystals 和 2025-2026 研究边界；不得把不同层级的等式、同构、拟同构、filtered isomorphism 和范畴等价混用。
@@ -56,4 +56,3 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 - $A_{\inf}$、$\theta$、$\xi$、$\mu$、Nygaard filtration 和 Breuil-Kisin prism 的符号是否与 `NOTATION.md` 一致。
 - Galois 表示章节是否区分 lattice、$\mathbf Q_p$-representation、crystalline representation、Breuil-Kisin module、prismatic $F$-crystal 和 filtered $\varphi$-module。
 - 前沿章节是否把 2025-2026 结果标为“研究边界/外部输入”，并给出版本日期。
-

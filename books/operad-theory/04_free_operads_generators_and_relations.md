@@ -75,23 +75,23 @@ $$
 S'\xrightarrow{\varphi^{-1}}S\xrightarrow{\lambda}\operatorname{Leaf}(T).
 $$
 
-**定义 4.8.** 设 $\pi$ 是 $S$ 的分块。给定
+**定义 4.8.** 设 $f:S\to U$ 是有限集映射。给定
 $$
-T\in\mathbb F(E)(\operatorname{Bl}(\pi)),
+T\in\mathbb F(E)(U),
 \qquad
-T_B\in\mathbb F(E)(B)\quad(B\in\operatorname{Bl}(\pi)),
+T_u\in\mathbb F(E)(f^{-1}(u))\quad(u\in U),
 $$
 定义代入树
 $$
-T\big((T_B)_{B\in\operatorname{Bl}(\pi)}\big)
+T\big((T_u)_{u\in U}\big)
 $$
-为把 $T$ 中标号为 $B$ 的叶替换为树 $T_B$；新叶集合由各 $B$ 的叶标号给出，所以总叶标号为 $S$。装饰由所有树的原装饰继承。
+为把 $T$ 中标号为 $u$ 的叶替换为树 $T_u$；新叶集合是各纤维 $f^{-1}(u)$ 的不交并，所以总叶标号为 $S$。若 $f^{-1}(u)=\varnothing$，则 $T_u$ 是零叶树，代入后该外层叶不留下新叶；这正是 nullary substitution。装饰由所有树的原装饰继承。
 
 **命题 4.9.** $\mathbb F(E)$ 连同定义 4.8 的树代入是对称 operad。
 
-**证明.** 重标号函子性来自叶标号双射的复合。单位是单边无顶点树，叶集合为单点集。把单位树代入任一叶不改变树，任一树代入单位树也不改变树，因此单位律成立。
+**证明.** 重标号函子性来自叶标号双射的复合。单位是单边无顶点树，叶集合为单点集。右单位对应双射 $S\to U$ 并在每个叶代入单位树；左单位对应唯一映射 $S\to\{*\}$ 并把整棵树代入单位树的唯一叶。因此单位律成立，包括 $S=\varnothing$。
 
-结合律比较两种三层代入：先把 $T_{B,C}$ 代入 $T_B$ 再代入 $T$，或者先把 $T_B$ 代入 $T$ 后再一次性代入所有 $T_{B,C}$。两边得到的有根树有同一顶点集合、同一边粘合关系、同一根、同一 $S$-叶标号和同一顶点装饰。因此它们代表同一个同构类。双射重标号只改变叶标号，不改变粘合；所以代入与对称序列结构自然相容。$\square$
+对可复合映射 $S\xrightarrow{g}U\xrightarrow{p}V$，结合律比较两种三层 grafting：先在各 $p$-纤维内代入再代入外树，或先代入中层树再一次性代入所有 $g$-纤维树。两边得到的有根树有同一顶点集合、同一边粘合关系、同一根、同一 $S$-叶标号和同一顶点装饰；空纤维只产生零叶子树，不改变该比较。因此两者代表同一同构类。双射重标号只改变叶标号，不改变粘合，所以代入自然。$\square$
 
 **定理 4.10.** $\mathbb F$ 是从对称序列到对称 operad 的自由函子。对任意对称 operad $\mathcal O$，自然双射
 $$
@@ -103,7 +103,7 @@ $$
 
 **证明.** operad morphism 限制到单顶点树给出对称序列态射 $E\to U\mathcal O$。
 
-反过来，设 $f:E\to U\mathcal O$ 是对称序列态射。对一个 $E$-装饰 $S$-标号树 $T$，先把每个顶点装饰 $\xi_v$ 替换为 $f(\xi_v)\in\mathcal O(\operatorname{In}(v))$。然后从叶向根逐步收缩内部边：当顶点 $v$ 的输出边接入顶点 $w$ 的某个输入边时，用 $\mathcal O$ 的有限集分块代入把 $v$ 的值代入 $w$ 的相应输入。对称 operad 结合律保证不同可收缩边的选择给出同一元素
+反过来，设 $f:E\to U\mathcal O$ 是对称序列态射。对一个 $E$-装饰 $S$-标号树 $T$，先把每个顶点装饰 $\xi_v$ 替换为 $f(\xi_v)\in\mathcal O(\operatorname{In}(v))$。然后从叶向根逐层求值。对一个顶点 $w$，其各输入子树的叶集合给出从这些叶的不交并到 $\operatorname{In}(w)$ 的函数；无叶输入子树给出空纤维。沿该函数作 $\mathcal O$-代入，就把所有子树的值代入 $w$ 的输入槽。对称 operad 结合律保证不同求值层次的选择给出同一元素
 $$
 \widehat f(T)\in\mathcal O(S).
 $$
@@ -118,9 +118,9 @@ $$
 满足：
 
 1. 对任意双射 $\varphi:S\to T$，若 $x\sim_S y$，则 $\mathcal O(\varphi)(x)\sim_T\mathcal O(\varphi)(y)$。
-2. 对任意分块 $\pi$，若外层 $x\sim_{\operatorname{Bl}(\pi)}y$ 且每个块上 $x_B\sim_B y_B$，则
+2. 对任意有限集映射 $f:S\to T$，若外层 $x\sim_Ty$ 且每个纤维上 $x_t\sim_{f^{-1}(t)}y_t$，则
    $$
-   \mu(x;(x_B))\sim_S\mu(y;(y_B)).
+   \mu_f(x;(x_t)_{t\in T})\sim_S\mu_f(y;(y_t)_{t\in T}).
    $$
 
 **命题 4.12.** 若 $\sim$ 是 $\mathcal O$ 上的 operadic congruence，则逐 arity 商
@@ -137,9 +137,9 @@ $$
 $$
 [x]\mapsto[\mathcal O(\varphi)(x)]
 $$
-定义，条件 1 保证良定义。代入由
+定义，条件 1 保证良定义。对 $f:S\to T$，代入由
 $$
-[x];([x_B])\mapsto[\mu(x;(x_B))]
+[x];([x_t])_{t\in T}\mapsto[\mu_f(x;(x_t)_{t\in T})]
 $$
 定义，条件 2 保证良定义。单位是 $[\mathbf 1]$。operad 公理在商中成立，因为它们在 $\mathcal O$ 中成立并且商映射保持等式。唯一性来自 $q$ 逐 arity 满射。$\square$
 
@@ -216,4 +216,3 @@ $$
 **练习 4.4.** 证明 operadic congruence 的任意交仍是 operadic congruence。
 
 **练习 4.5.** 用生成元与关系写出没有单位的结合 operad，并说明它与本书默认的 $\operatorname{Ass}$ 有何不同。
-

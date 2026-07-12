@@ -105,9 +105,9 @@ $$
 本批次不解决：
 
 1. Cisinski--Moerdijk operadic model structure 的 erratum 影响核查；
-2. Heuts--Hinich--Moerdijk dendroidal-Lurie model comparison，见 HHM-1--HHM-5；
+2. Heuts--Hinich--Moerdijk dendroidal-Lurie model comparison，见 HHM-1--HHM-5，并保留其 open/no-constants 限制；
 3. Moerdijk--Weiss/Cisinski--Moerdijk 树范畴 generalized Reedy 分解的完整 bibliography/page 核查；
 4. Operadic weak equivalence 的现代等价刻画；
-5. Lurie-style infinity-operad、category-of-operators nerve 与 dendroidal nerve 的比较，见 HA-OP-1--HA-OP-3 与 HHM-1--HHM-5。
+5. Lurie-style infinity-operad、category-of-operators nerve 与 dendroidal nerve 的比较，见 HA-OP-1--HA-OP-3 与 HHM-1--HHM-5；前一入口允许 constants，并不意味着后一 open zig-zag 也允许 constants。
 
 这些不由 MW-1--MW-6 单独推出；后续使用时必须引用对应 model-structure 或 model-comparison locator。

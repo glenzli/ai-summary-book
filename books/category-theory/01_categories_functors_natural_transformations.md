@@ -8,12 +8,14 @@
 
 需要熟悉集合、函数、二元运算、群、偏序集和基本代数结构。不预设读者已经学过范畴论。
 
+本章采用附录 A 的默认大小轮廓：对象与总态射在 $\mathcal V$ 层小，每个 Hom 在 $\mathcal U$ 层小。若称一个范畴“小”，则特指 $\mathcal U$-小。
+
 ## 1.1 范畴的定义
 
 **定义 1.1.** 一个范畴（category）$\mathcal C$ 由以下数据组成：
 
-1. 一个对象集合 $\operatorname{Ob}(\mathcal C)$。
-2. 对任意对象 $X,Y\in\operatorname{Ob}(\mathcal C)$，一个集合
+1. 一个 $\mathcal V$-小对象集 $\operatorname{Ob}(\mathcal C)$。
+2. 对任意对象 $X,Y\in\operatorname{Ob}(\mathcal C)$，一个 $\mathcal U$-小集合
    $$
    \mathcal C(X,Y),
    $$
@@ -40,11 +42,14 @@
   \operatorname{id}_Y\circ f=f.
   $$
 
-**约定 1.2.** 若 $f\in\mathcal C(X,Y)$，写作 $f:X\to Y$。若不特别说明，本章所有范畴均为相对于固定 universe 的局部小范畴，即 $\mathcal C(X,Y)$ 是集合。
+**约定 1.2.** 若 $f\in\mathcal C(X,Y)$，写作 $f:X\to Y$。定义 1.1 给出的是本书默认的“$\mathcal V$-小且局部 $\mathcal U$-小”范畴。若对象集和总态射集也为 $\mathcal U$-小，才称 $\mathcal C$ 为 $\mathcal U$-小范畴。改变这一大小轮廓时必须重新声明。
 
 **例子 1.3.** 集合范畴 $\mathbf{Set}_{\mathcal U}$ 的对象是 $\mathcal U$-小集合，态射是函数，复合是函数复合，恒等态射是恒等函数。函数复合满足结合律，恒等函数满足单位律，因此这确实是范畴。
 
-**例子 1.4.** 群范畴 $\mathbf{Grp}$ 的对象是群，态射是群同态。若 $f:G\to H$ 与 $g:H\to K$ 是群同态，则 $g\circ f:G\to K$ 仍是群同态，因为
+**例子 1.4.** 群范畴 $\mathbf{Grp}$ 的对象是底层集合
+$\mathcal U$-小的群，态射是群同态。所有这类群的编码组成
+$\mathcal V$-小集合，而两个固定群之间的群同态集为 $\mathcal U$-小。若
+$f:G\to H$ 与 $g:H\to K$ 是群同态，则 $g\circ f:G\to K$ 仍是群同态，因为
 
 $$
 (g\circ f)(xy)=g(f(xy))=g(f(x)f(y))=g(f(x))g(f(y)).
@@ -216,7 +221,20 @@ G(X)&\xrightarrow{G(f)}&G(Y).
 \end{matrix}
 $$
 
-**例子 1.15.** 设 $\mathbf{Vect}_k$ 为域 $k$ 上向量空间范畴。双对偶给出函子
+若 $F,G:\mathcal C^{\operatorname{op}}\to\mathcal D$ 是反变函子，同一个定义必须在 $\mathcal C^{\operatorname{op}}$ 中读取。因而对原范畴中的 $f:X\to Y$，分量类型和自然性等式是
+
+$$
+F(f):F(Y)\to F(X),\qquad G(f):G(Y)\to G(X),
+$$
+
+$$
+G(f)\circ\alpha_Y=\alpha_X\circ F(f).
+$$
+
+协变式 $G(f)\alpha_X=\alpha_YF(f)$ 与反变式不能互换；每次写自然性方块前应先检查 $f$ 在源范畴中的方向。
+
+**例子 1.15.** 固定 $\mathcal U$-小域 $k$，设
+$\mathbf{Vect}_k$ 为底层集合 $\mathcal U$-小的 $k$-向量空间范畴。双对偶给出函子
 
 $$
 (-)^{**}:\mathbf{Vect}_k\to\mathbf{Vect}_k.
@@ -288,13 +306,15 @@ $$
 \operatorname{Nat}(F,G).
 $$
 
-若 $\mathcal C$ 小且 $\mathcal D$ 局部小，则函子和自然变换组成函子范畴
+若 $\mathcal C$ 为 $\mathcal U$-小且 $\mathcal D$ 局部 $\mathcal U$-小，则命题 A.6 保证 $\operatorname{Nat}(F,G)$ 为 $\mathcal U$-小，函子和自然变换组成函子范畴
 
 $$
 \operatorname{Fun}(\mathcal C,\mathcal D).
 $$
 
 其对象是函子 $\mathcal C\to\mathcal D$，态射是自然变换，复合为纵向复合。
+
+若 $\mathcal C$ 仅在 $\mathcal V$ 层小，则 $\operatorname{Nat}(F,G)$ 一般只保证为 $\mathcal V$-小；此时 $\operatorname{Fun}(\mathcal C,\mathcal D)$ 只能自动视为局部 $\mathcal V$-小。符号 $\operatorname{Nat}$ 本身不隐藏这一层级变化。
 
 ## 1.5 同构、忠实、完全与本质满
 
@@ -346,34 +366,25 @@ $$
 
 此定义把“同一个数学结构的不同呈现”拆成两个可检查条件：完全忠实说明 $F$ 不改变任意两个对象之间的态射集合；本质满说明 $\mathcal D$ 中每个对象都与某个 $F(C)$ 同构。
 
-**定理 1.24.** 假设允许对每个同构类选择代表和同构。若 $F:\mathcal C\to\mathcal D$ 完全忠实且本质满，则存在函子
+**定理 1.24（等价的拟逆判别）.** 设 $F:\mathcal C\to\mathcal D$。考虑以下条件：
 
-$$
-G:\mathcal D\to\mathcal C
-$$
+1. $F$ 完全忠实且本质满；
+2. 存在函子 $G:\mathcal D\to\mathcal C$ 以及自然同构
+   $$
+   \varepsilon:FG\xRightarrow{\cong}\operatorname{id}_{\mathcal D},
+   \qquad
+   \eta:\operatorname{id}_{\mathcal C}\xRightarrow{\cong}GF.
+   $$
 
-以及自然同构
+条件 2 总推出条件 1，不需要选择公理。反过来，在附录 A 的默认大小口径和 $\mathcal V$-小选择公理下，条件 1 推出条件 2。因此两种范畴等价的表述在本书的元理论中等价。
 
-$$
-FG\cong\operatorname{id}_{\mathcal D},\qquad
-\operatorname{id}_{\mathcal C}\cong GF.
-$$
-
-因此，本章的定义推出许多教材中使用的“存在拟逆函子”的表述。
-
-**证明.** 设 $F$ 完全忠实且本质满。对每个 $D\in\mathcal D$，选择对象 $G(D)\in\mathcal C$ 和同构
+**证明.** 先设条件 1 成立。对 $\mathcal V$-小集合 $\operatorname{Ob}(\mathcal D)$ 使用选择：为每个 $D\in\mathcal D$ 选择对象 $G(D)\in\mathcal C$ 和同构
 
 $$
 \varepsilon_D:F(GD)\xrightarrow{\cong}D.
 $$
 
-对态射 $u:D\to D'$，考虑复合
-
-$$
-F(GD)\xrightarrow{\varepsilon_D}D\xrightarrow{u}D'\xrightarrow{\varepsilon_{D'}^{-1}}F(GD').
-$$
-
-由于 $F$ 完全忠实，存在唯一态射
+对态射 $u:D\to D'$，完全忠实性给出唯一态射
 
 $$
 G(u):G(D)\to G(D')
@@ -385,70 +396,102 @@ $$
 F(G(u))=\varepsilon_{D'}^{-1}\circ u\circ\varepsilon_D.
 $$
 
-唯一性直接推出 $G(\operatorname{id}_D)=\operatorname{id}_{G(D)}$ 和 $G(v\circ u)=G(v)\circ G(u)$，所以 $G:\mathcal D\to\mathcal C$ 是函子。族 $\varepsilon_D$ 按构造满足自然性，因此给出自然同构
+由定义，
 
 $$
-\varepsilon:FG\Rightarrow\operatorname{id}_{\mathcal D}.
+F(G(\operatorname{id}_D))
+=\varepsilon_D^{-1}\varepsilon_D
+=\operatorname{id}_{F(GD)};
 $$
 
-还需构造 $\eta:\operatorname{id}_{\mathcal C}\Rightarrow GF$。对 $C\in\mathcal C$，对象 $F(GF C)$ 与 $F(C)$ 之间有同构
+$F$ 忠实，故 $G(\operatorname{id}_D)=\operatorname{id}_{G(D)}$。若 $D\xrightarrow{u}D'\xrightarrow{v}D''$，则
 
 $$
-\varepsilon_{FC}:F(GF C)\to F(C).
+\begin{aligned}
+F(G(v)G(u))
+&=\varepsilon_{D''}^{-1}v\varepsilon_{D'}
+  \varepsilon_{D'}^{-1}u\varepsilon_D\\
+&=\varepsilon_{D''}^{-1}vu\varepsilon_D
+=F(G(vu)).
+\end{aligned}
 $$
 
-由完全性，存在态射
+再次由忠实性，$G(v)G(u)=G(vu)$，所以 $G$ 是函子。定义等式重排为
 
 $$
-\eta_C:C\to GF C
+u\varepsilon_D=\varepsilon_{D'}F(G(u)),
 $$
 
-使得
+这正是 $\varepsilon:FG\Rightarrow\operatorname{id}_{\mathcal D}$ 的自然性。
+
+对 $C\in\mathcal C$，完全性给出唯一态射
 
 $$
+\eta_C:C\to GF C,\qquad
 F(\eta_C)=\varepsilon_{FC}^{-1}.
 $$
 
-再由完全性，存在态射 $\xi_C:GF C\to C$ 使得
+同理存在 $\xi_C:GF C\to C$ 满足 $F(\xi_C)=\varepsilon_{FC}$。于是
 
 $$
-F(\xi_C)=\varepsilon_{FC}.
+F(\xi_C\eta_C)=\operatorname{id}_{FC},
+\qquad
+F(\eta_C\xi_C)=\operatorname{id}_{FGFC}.
 $$
 
-于是
+$F$ 忠实，故 $\xi_C\eta_C=\operatorname{id}_C$ 且
+$\eta_C\xi_C=\operatorname{id}_{GFC}$；所以 $\eta_C$ 可逆。若
+$f:C\to C'$，则
 
 $$
-F(\xi_C\circ\eta_C)=\varepsilon_{FC}\circ\varepsilon_{FC}^{-1}
-=\operatorname{id}_{F C}
-=F(\operatorname{id}_C),
+\begin{aligned}
+F(GF(f)\eta_C)
+&=F(GF(f))\varepsilon_{FC}^{-1}\\
+&=\varepsilon_{FC'}^{-1}F(f)\varepsilon_{FC}\varepsilon_{FC}^{-1}\\
+&=\varepsilon_{FC'}^{-1}F(f)
+=F(\eta_{C'}f).
+\end{aligned}
 $$
 
-且
+由 $F$ 忠实，$GF(f)\eta_C=\eta_{C'}f$。故
+$\eta:\operatorname{id}_{\mathcal C}\Rightarrow GF$ 是自然同构，条件 1 推出条件 2。
+
+现在设条件 2 成立。对每个 $D\in\mathcal D$，同构
+$\varepsilon_D:F(GD)\to D$ 说明 $F$ 本质满。若
+$f,g:X\rightrightarrows Y$ 且 $F(f)=F(g)$，则由 $\eta$ 的自然性，
 
 $$
-F(\eta_C\circ\xi_C)=\varepsilon_{FC}^{-1}\circ\varepsilon_{FC}
-=\operatorname{id}_{F G F C}
-=F(\operatorname{id}_{G F C}).
+\eta_Yf=GF(f)\eta_X=GF(g)\eta_X=\eta_Yg.
 $$
 
-由于 $F$ 忠实，得到
+消去可逆的 $\eta_Y$ 得 $f=g$，所以 $F$ 忠实。
+
+还需证明完全性。先证 $G$ 忠实：若
+$a,b:D\rightrightarrows D'$ 且 $G(a)=G(b)$，则由 $\varepsilon$ 的自然性，
 
 $$
-\xi_C\circ\eta_C=\operatorname{id}_C,\qquad
-\eta_C\circ\xi_C=\operatorname{id}_{G F C}.
+a\varepsilon_D=\varepsilon_{D'}FG(a)
+=\varepsilon_{D'}FG(b)=b\varepsilon_D.
 $$
 
-所以 $\eta_C$ 是同构。
-
-用完全忠实性再次检验自然性：对 $f:C\to C'$，自然性等式
+消去可逆的 $\varepsilon_D$ 得 $a=b$。给定
+$h:FX\to FY$，定义
 
 $$
-GF(f)\circ\eta_C=\eta_{C'}\circ f
+f=\eta_Y^{-1}\circ G(h)\circ\eta_X:X\to Y.
 $$
 
-在施加 $F$ 后化为由 $\varepsilon$ 自然性给出的同一等式；因 $F$ 忠实，原等式成立。因此 $\eta$ 是自然同构，$F$ 与 $G$ 给出范畴等价。$\square$
+$\eta$ 对 $f$ 的自然性给出
 
-**注 1.25.** 反方向，即存在拟逆函子和自然同构推出完全忠实且本质满，也是标准事实。本书将在伴随函子章节用伴随等价的三角恒等式给出更结构化的证明，避免在第一章提前引入尚未定义的伴随语言。
+$$
+GF(f)\eta_X=\eta_Yf=G(h)\eta_X.
+$$
+
+消去 $\eta_X$ 后有 $G(F(f))=G(h)$；由 $G$ 忠实，
+$F(f)=h$。所以 $F$ 完全，条件 2 推出条件 1。$\square$
+
+**注 1.25.** 选择只用于从条件 1 构造 $G$ 的对象值与同构
+$\varepsilon_D$；从拟逆数据验证完全忠实和本质满不使用选择。不同选择得到的拟逆通常不严格相等。当拟逆数据进一步组织成伴随结构时，第四章命题 4.8 给出相容自然同构的唯一性；把任意等价数据相干化为伴随等价则属于第十五章外部输入定理 15.9 的边界。
 
 ## 1.7 骨架与边界例子
 

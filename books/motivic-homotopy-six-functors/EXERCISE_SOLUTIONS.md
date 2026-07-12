@@ -10,7 +10,10 @@
 
 **解答 0.3.** `f_*` 是 `f^*` 的右伴随，可由 presentability 和保持余极限得到。`f_!` 与 `f^!` 是非常推前和非常拉回，需要 proper、localization、purity、base change 等额外相干结构，不能从 `f^*` 的定义推出。
 
-**解答 0.4.** 例如 “accessible localization 存在”在本书中作为一般范畴论内部命题使用；Morel-Voevodsky homotopy purity 或 motivic 六操作存在性则是外部输入定理，因为其证明依赖专门文献。
+**解答 0.4.** 例如 “一小集合 maps 生成的 accessible localization 存在”是
+外部基础输入（HTT Proposition 5.5.4.15）；命题 2.4 则是把该输入应用到
+`W_{\mathbb A^1}` 的书内推论。Morel--Voevodsky homotopy purity 和
+motivic 六操作同样是外部输入，但属于专门几何定理。
 
 ## 第一章
 
@@ -44,7 +47,12 @@
 
 **解答 3.3.** 命题 3.5 给出 `T\simeq S^{1,0}\wedge\mathbb G_m=S^{1,1}`。按双指标约定，`S^{2,1}=S^{1,0}\wedge S^{1,1}\simeq S^{1,0}\wedge T`。
 
-**解答 3.4.** 反演张量积 `T=S^{1,0}\wedge\mathbb G_m` 只强制这个整体可逆。一般幺半范畴中张量积可逆不推出两个因子分别可逆；若要分别反演，需要额外稳定化或证明。
+**解答 3.4.** 若 `(A\otimes B)\otimes C\simeq\mathbb 1`，则在 symmetric
+monoidal category 中 `B\otimes C` 是 `A` 的双边逆，`C\otimes A` 是 `B`
+的双边逆；双边性使用 braiding。故 `T` 可逆确实推出 `S^{1,0}` 与
+`\mathbb G_m` 分别可逆。在仅 monoidal、非 braided 的 category 中，
+`AB` 可逆一般只给 one-sided inverse 数据；需假设 `A,B` commute 或另证
+双边逆。
 
 **解答 3.5.** 若 `\mathcal L` 是被一族生成子检测为零的对象构成的 full subcategory，给定 cofiber sequence `A\to B\to C`，对任一生成子取 mapping spectrum 得 fiber sequence。若其中两个映射谱为零，则第三个也为零，所以 `\mathcal L` 对 cofiber 封闭。
 
@@ -54,7 +62,13 @@
 
 **解答 4.2.** 对 Cartesian 方块，ordinary base-change transformation 在 derived category 中写为 `g^*Rf_* \to Rf'_*g'^*`，由单位 `\operatorname{id}\to Rf'_*f'^*` 和交换同构 `f'^*g^*\simeq g'^*f^*` 组合得到。
 
-**解答 4.3.** 普通推前版本的投影公式是 `f_*(A\otimes f^*B)\simeq f_*A\otimes B`。证明用 `f_*` 的 `\mathcal D(Y)`-模线性：推前把源上的张量外部标量移到目标上。
+**解答 4.3.** Ordinary canonical map 的方向是
+`f_*A\otimes B\to f_*(A\otimes f^*B)`：先用强幺半性把其 pullback 写成
+`f^*f_*A\otimes f^*B`，再对第一因子用 counit
+`f^*f_*A\to A`，最后伴随转置。若 `B` dualizable，命题 4.15 对任意测试
+对象连续使用 `B^\vee` 的 duality 和 `f^*\dashv f_*`，证明该 map 为等价。
+没有 dualizability 或 properness 时不能无条件断言 ordinary projection
+formula。
 
 **解答 4.4.** 对非 proper 态射，ordinary pushforward 和 compact-support pushforward 表示不同几何行为。开嵌入时 `j_!` 是 extension by zero，而 `j_*` 允许边界附近的截面延拓，二者通常不同。
 
@@ -66,11 +80,18 @@
 
 **解答 5.2.** `j_!` fully faithful 等价于伴随单位 `\operatorname{id}\to j^*j_!` 为等价。对开嵌入有 `j^!\simeq j^*`，所以由 fully faithful 得 `j^*j_!\simeq\operatorname{id}`。
 
-**解答 5.3.** 命题 5.16 使用 localization cofiber sequence `j_!j^*E\to E\to i_*i^*E`。若 `E` 支撑在 `Z` 上，则 `j^*E\simeq0`，第一项消失，故 `E\simeq i_*i^*E`。
+**解答 5.3.** 命题 5.16 使用 localization cofiber sequence
+`j_!j^*E\to E\to i_*i^*E`。若 `i^*E\simeq0`，第三项为零；stable
+infinity-category 中一条 map 的 cofiber 为零当且仅当该 map 为等价，故
+`j_!j^*E\to E` 为等价。
 
 **解答 5.4.** `j^*E\simeq0` 表示 `E` 在开补 `U` 上消失，因此支撑在闭子集 `Z`。`i^*E\simeq0` 表示 `E` 限制到闭子集消失，描述的是远离 `Z` 的条件，二者不是同一支撑。
 
 **解答 5.5.** 对 `E=\Sigma_T^\infty X_+`，命题 5.15 给出 `j_!\mathbb 1_U\to\mathbb 1_X\to i_*\mathbb 1_Z` 的形式。若加入 `X` 的结构态射，可把它理解为开部分、全体和闭补在稳定 motivic homotopy 中的分解。
+
+**解答 5.6.** 定理 5.21 说明 proper `f` 的 `f^!` 保持 filtered colimits，
+所以命题 5.20 应用于 `f_!\dashv f^!`，得 `f_!` 保持紧致对象。Properness
+只用于 proper comparison `f_*\simeq f_!`；代入后得到 `f_*` 保持紧致对象。
 
 ## 第六章
 
@@ -80,13 +101,17 @@
 
 **解答 6.3.** Homotopy purity 比较 `X/(X-Z)` 与 `Z` 的法方向。法丛记录 `Z` 在 `X` 中一阶邻域的横向几何；没有法丛就无法描述闭嵌入附近被压缩后的 Thom twist。
 
-**解答 6.4.** Etale morphism 的相对切丛为零，所以 smooth purity `f^!\simeq\Sigma^{T_f}f^*` 化为 `f^!\simeq f^*`。
+**解答 6.4.** Separated etale morphism 的相对切丛为零，且本书的
+exceptional pullback 已定义，所以 smooth purity
+`f^!\simeq\Sigma^{T_f}f^*` 化为 `f^!\simeq f^*`。
 
 **解答 6.5.** Thom space 是向量丛的几何商对象，不需要 orientation 才能定义。Orientation 是对 Thom class 或 Thom isomorphism 的选择，使 cohomology 中可把 Thom twist 解开。
 
 ## 第七章
 
-**解答 7.1.** Etale morphism smooth 且 `T_f=0`。代入 smooth ambidexterity `f_!\simeq f_\sharp\Sigma^{-T_f}`，得到 `f_!\simeq f_\sharp`。
+**解答 7.1.** Separated etale morphism smooth 且 `T_f=0`，并且 `f_!`
+已定义。代入 smooth ambidexterity
+`f_!\simeq f_\sharp\Sigma^{-T_f}`，得到 `f_!\simeq f_\sharp`。
 
 **解答 7.2.** 若 `f` smooth proper，则 proper compatibility 给出 `f_!\simeq f_*`，smooth ambidexterity 给出 `f_!\simeq f_\sharp\Sigma^{-T_f}`。合并即得到命题 7.5 的 `f_*\simeq f_\sharp\Sigma^{-T_f}` 型识别。
 
@@ -106,7 +131,11 @@
 
 **解答 8.4.** 对 closed-open pair 的 cofiber sequence 作用 `g^*`。由开嵌入和闭嵌入的 base change 等价，把 `g^*j_!` 和 `g^*i_*` 分别识别为拉回方块中的 `j_{Y!}g_U^*` 和 `i_{Y*}g_Z^*`，得到拉回后的 localization sequence。
 
-**解答 8.5.** Dualizable 假设用于把 internal Hom 改写为张量：`\underline{Hom}(f^*A,B)\simeq f^*(A^\vee)\otimes B`。没有该识别，projection formula 不能直接推出 internal Hom 公式。
+**解答 8.5.** 命题 8.16 依次使用 closed adjunction、
+`f^*\dashv f_*` 和 `f^*` 强对称幺半，对任意 `A` 直接得到 internal-Hom
+等价，所以不需 dualizability。只有进一步写
+`\underline{Hom}(A,-)\simeq A^\vee\otimes-` 时，才需要 `A` dualizable；
+此后可与命题 8.7 的 ordinary projection formula 比较。
 
 ## 第九章
 
@@ -220,19 +249,33 @@
 
 ## 第十六章
 
-**解答 16.1.** 对 lci morphism `f:X\to Y`，fundamental class 可看作从 Thom-twisted 单位到 extraordinary pullback 的类，例如 `\Sigma^{T_f}\mathbb 1_X\to f^!\mathbb 1_Y`。这里 `T_f=-L_f`，与 smooth purity `f^!\simeq\Sigma^{T_f}f^*` 的符号约定一致。
+**解答 16.1.** 对 smoothable lci separated morphism `f:X\to Y`，
+fundamental class 在单位对象上的类型是
+`\Sigma^{\tau_f}\mathbb 1_X\to f^!\mathbb 1_Y`。其中
+`\tau_f=\langle L_f\rangle` 采用 virtual-tangent convention；smooth 时它
+等于 `[T_f]`，所以恢复 `f^!\simeq\Sigma^{T_f}f^*`。
 
-**解答 16.2.** `L_f` 是 cotangent complex，`T_f=-L_f` 是其对偶或虚切丛类。Smooth 情形 `L_f\simeq\Omega_{X/Y}`，`T_f` 为相对切丛；lci 情形给出 K-theory 中的虚向量丛。
+**解答 16.2.** `L_f` 是 perfect cotangent complex，但记号
+`\langle L_f\rangle` 按资料源表示 associated virtual tangent class。
+Smooth 时 `\tau_f=[T_f]`；regular closed immersion 时
+`\tau_f=-[N_f]`；若 `f=p\circ i`，则
+`\tau_f=i^*[T_p]-[N_i]`。把 dualization 与 K-theory 的 additive inverse
+混为一谈会得到错误的 `-[L_f]` 公式。
 
 **解答 16.3.** 恒等态射 `id_X` 的 bivariant group 按定义由 `id_X^!` 或等价的单位 twist 表示。因为 `id^!\simeq id^*`，该 group 退化为 `X` 上的普通 cohomology。
 
-**解答 16.4.** 普通 base change 只比较拉回和推前。Excess formula 还要记录方块非横截时产生的 excess bundle，并以 Euler/Thom class 修正 Gysin map。
+**解答 16.4.** 普通 base change 只比较拉回和推前。DJK 的 excess formula
+还要求原 morphism 与拉回 morphism 都是 smoothable lci，并要求
+Paragraph 3.3.3 的法丛单射有 locally free cokernel `\xi`；此时才以
+`e(\xi)` 修正 Gysin map。任意非 Tor-independent 方块不自动满足这些条件。
 
 **解答 16.5.** Todd class 衡量两个 orientation 或两个 cohomology theories 下 Gysin/Riemann-Roch 变换之间的差异。它是从一种 orientation 转换到另一种 orientation 的校正因子。
 
 **解答 16.6.** Deformation to the normal cone 是把闭嵌入 `Z\hookrightarrow X` 的几何从 `X` 连续退化到 normal cone `C_ZX` 的构造，通常通过 blow-up `X\times\mathbb A^1` 沿 `Z\times0` 实现。
 
-**解答 16.7.** Excess bundle 为零表示方块横截。此时 excess Euler class 是单位，excess formula 退化为普通 transverse base change compatibility。
+**解答 16.7.** 在定理 16.13 的适用范围内，`\xi=0` 时 excess Euler class
+是单位，公式退化为无修正 base-change compatibility。Tor-independence 保证
+`\xi=0`；这里不把反向蕴含当作任意 Cartesian square 上的判据。
 
 ## 第十七章
 
@@ -414,11 +457,26 @@
 
 **解答 C.2.** 对 pointed objects `X,Y`，smash product 是 pushout `X\times * \leftarrow *\times * \to *\times Y` 从 `X\times Y` 中压掉楔和 `X\vee Y`，即 `X\wedge Y=(X\times Y)/(X\vee Y)`。
 
-**解答 C.3.** `\operatorname{cofib}(Y\to *)` 是 pushout `*\amalg_Y*`，这正是 suspension `\Sigma Y` 的定义。
+**解答 C.3.** `\operatorname{cofib}(Y\to *)` 是 pushout
+`*\amalg_Y*`，这正是 suspension `\Sigma Y` 的定义。又因
+`S^1\simeq\operatorname{cofib}(S^0\to*)` 且 `-\wedge Y` 保持余极限，
 
-**解答 C.4.** Betti realization 反演 Nisnevich descent、`\mathbb A^1`-equivalences，并把 `T` 送到可逆的拓扑 sphere。由稳定化泛性质，它从 `\mathbf{SH}` 因子化。
+$$
+S^1\wedge Y\simeq
+\operatorname{cofib}(S^0\wedge Y\to *\wedge Y)
+\simeq\operatorname{cofib}(Y\to*)\simeq\Sigma Y.
+$$
 
-**解答 C.5.** Ring spectra 是 symmetric monoidal stable category 中的 algebra objects。若稳定化没有 symmetric monoidal refinement，就无法稳定地谈论乘法、module 和 commutative algebra structures。
+**解答 C.4.** 若 `A\otimes B` 的逆为 `C`，则 `B\otimes C` 是 `A` 的逆，
+因为 `A\otimes(B\otimes C)\simeq\mathbb 1`，并由 symmetry 得另一侧；
+`C\otimes A` 同理是 `B` 的逆。所有重排由 symmetric monoidal coherence
+给出。
+
+**解答 C.5.** Betti realization 满足 Nisnevich descent 与
+`\mathbb A^1`-invariance，并把 `T` 送到可逆拓扑 sphere；由
+`\operatorname{Fun}^{L,\otimes}` 中的反演泛性质，它从 `\mathbf{SH}`
+因子化。要搬运 commutative ring spectra，该因子化必须 symmetric
+monoidal；裸函子只搬运对象和 maps，不能自动搬运 coherent multiplication。
 
 ## 附录 D
 
@@ -455,6 +513,13 @@
 **解答 F.4.** Homotopy category 只记录 `\pi_0` 层面的 morphisms。Higher coherence 涉及 higher homotopies 和 mapping spaces，仅有同构无法恢复这些数据。
 
 **解答 F.5.** 例如 base change theorem 在 triangulated category 中给出 `g^*f_*\cong f'_*g'^*` 的同构；infinity-categorical 版本还要求这些同构在复合、pasting 和 higher homotopies 下相干。
+
+**解答 F.6.** 对 sequence `X_0\to X_1\to\cdots`，令 `s` 为
+`\bigoplus_nX_n` 上由结构 maps 移到后一 summand 的 shift，则
+`\operatorname*{colim}_nX_n\simeq\operatorname{cofib}(1-s)`。Exact functor
+保持该 cofiber；若它还保持 coproducts，就保持公式两端，因而保持 sequential
+colimit。Simplicial replacement 的 skeletal filtration 再把一般小 colimit
+归约到 coproduct、有限 cofiber 和这种 sequential colimit。
 
 ## 附录 H
 

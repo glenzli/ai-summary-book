@@ -18,7 +18,7 @@ $$
 
 **命题 8.2.** 若 $R$ 是特征 $p$ 的域，椭圆曲线 $C/R$ 的形式群高度只能是 $1$ 或 $2$。
 
-**证明草图.** 椭圆曲线的形式群是一维形式群，其高度受曲线维数和 $p$-divisible group 的高度限制。ordinary 椭圆曲线给出高度 $1$ 的形式群，supersingular 椭圆曲线给出高度 $2$ 的形式群。完整证明依赖椭圆曲线和 $p$-divisible group 理论，作为外部输入。证毕。
+**证明路线（外部输入）.** 椭圆曲线的形式群是一维形式群，其高度受曲线维数和 $p$-divisible group 的高度限制。ordinary 椭圆曲线给出高度 $1$ 的形式群，supersingular 椭圆曲线给出高度 $2$ 的形式群。完整证明依赖椭圆曲线和 $p$-divisible group 理论，作为外部输入。证毕。
 
 **定义 8.3.** 在特征 $p$ 的模空间中，高度 $1$ locus 称为 ordinary locus，高度 $2$ locus 称为 supersingular locus。
 
@@ -34,7 +34,7 @@ $$
 
 **命题 8.6.** 若椭圆曲线在点处 ordinary，则关联 elliptic cohomology 的局部 chromatic 信息主要落在高度 $1$；若 supersingular，则出现高度 $2$ 的 Morava E-theory 局部模型。
 
-**证明草图.** 由椭圆曲线形式群高度与关联复定向理论的形式群高度相同得到。ordinary/supersingular 分别对应高度 $1/2$。谱层面的严格陈述需要 elliptic cohomology 的构造和局部模型定理。证毕。
+**证明路线（外部输入）.** 由椭圆曲线形式群高度与关联复定向理论的形式群高度相同得到。ordinary/supersingular 分别对应高度 $1/2$。谱层面的严格陈述需要 elliptic cohomology 的构造和局部模型定理。证毕。
 
 ## 8.3 Topological modular forms
 
@@ -72,9 +72,9 @@ $$
 \mathcal M_{ell,\mathbb F_p}=\mathcal M_{ell}^{ord}\cup \mathcal M_{ell}^{ss}.
 $$
 
-**命题 8.12.** Ordinary locus 只贡献高度 $1$ 的形式群信息，supersingular locus 贡献高度 $2$ 的形式群信息。
+**命题 8.12.** 对 $\mathcal M_{ell,\mathbb F_p}$ 的任意几何点 $x$，若 $x$ 位于 ordinary locus，则形式完备群 $\widehat C_x$ 的高度为 $1$；若 $x$ 位于 supersingular locus，则其高度为 $2$。因此这两个 locus 分别是椭圆曲线模栈的高度 $1$ 与高度 $2$ 分层。
 
-**证明草图.** 对特征 $p$ 域上的椭圆曲线，其形式群高度为 $1$ 或 $2$。ordinary 按高度 $1$ 定义，supersingular 按高度 $2$ 定义。模栈上分层由 Hasse invariant 检测。完整证明属于椭圆曲线和模形式理论。证毕。
+**证明.** 命题 8.2（其证明依赖椭圆曲线与 $p$-divisible group 理论）说明椭圆曲线形式群的高度只能为 $1$ 或 $2$。Ordinary 的定义等价于 Hasse invariant 非零，也等价于形式群高度为 $1$；supersingular 的定义等价于 Hasse invariant 为零，在仅有的另一种可能下即高度为 $2$。逐个几何点应用此判别即得所述分层。证毕。
 
 **解释 8.13.** 因此 $TMF$ 的 chromatic 分析在高度 $2$ 处集中于 supersingular 点的形式邻域，而这些形式邻域由 Lubin-Tate/Morava E-theory 控制。
 

@@ -4,14 +4,6 @@
 
 ## 17.1 弱场慢速展开
 
-**命题 17.1（Newton 极限）.** 在弱场慢速极限下，测试粒子的测地线方程恢复 Newton 方程
-
-$$
-\frac{d^2x^i}{dt^2}=-\partial_i\Phi.
-$$
-
-**证明.**
-
 设典型速度满足
 
 $$
@@ -24,7 +16,9 @@ $$
 \frac{|\Phi|}{c^2}\sim\epsilon.
 $$
 
-取 $c=1$ 后，后 Newton 展开按 $\epsilon$ 的阶数组织。最低阶度规为
+取 $c=1$ 后，后 Newton 展开按 $\epsilon$ 的阶数组织。固定一个
+渐近惯性坐标系，假设场在 Newton 阶静态，测试粒子满足
+$v^i=O(\epsilon^{1/2})$，且无标量各向异性应力时最低阶度规为
 
 $$
 g_{00}=-(1+2\Phi)+O(\epsilon^2),
@@ -38,21 +32,41 @@ $$
 g_{ij}=(1-2\Phi)\delta_{ij}+O(\epsilon^2).
 $$
 
-测地线方程最低阶给出
+**命题 17.1（Newton 极限）.** 在上述坐标、阶数、静态性和慢速假设
+下，测试粒子的坐标时间测地线方程在 Newton 阶为
 
 $$
 \frac{d^2x^i}{dt^2}=-\partial_i\Phi.
 $$
 
-Poisson 方程由 Einstein 方程的 $00$ 分量给出：
+**证明.** 设典型空间变化尺度为 $L$。由 $g_{00}=-(1+2\Phi)$、
+$g^{ij}=\delta^{ij}+O(\epsilon)$ 和静态性，
+
+$$
+\Gamma^i{}_{00}
+=-\frac12g^{ij}\partial_jg_{00}
+=\partial_i\Phi+O(\epsilon^2/L).
+$$
+
+坐标时间形式的测地线方程中，$g_{0i}=O(\epsilon^{3/2})$ 的项还要
+乘一个 $v^i=O(\epsilon^{1/2})$；含两个空间速度或非仿射参数修正的项
+也至少再多一个 $O(\epsilon)$ 因子。因此其余项均为
+$O(\epsilon^2/L)$，高于 Newton 阶，并有
+
+$$
+\frac{d^2x^i}{dt^2}
+=-\Gamma^i{}_{00}+O(\epsilon^2/L)
+=-\partial_i\Phi+O(\epsilon^2/L).
+$$
+
+保留最低阶即得结论。若再令 $\Lambda=0$，假设物质非相对论且
+$T_{00}=\rho+O(\epsilon\rho)$，Einstein 方程的 $00$ 分量给出
 
 $$
 \nabla^2\Phi=4\pi G\rho.
 $$
 
-这就是 Newton 极限。
-
-证明完毕。$\square$
+因此粒子方程与场方程一起恢复 Newton 引力。$\square$
 
 ## 17.2 1PN 形式的物理含义
 
@@ -84,7 +98,7 @@ $$
 \frac{4r_Er_R}{b^2}.
 $$
 
-其中 $a,e$ 是轨道半长轴和偏心率，$b$ 是光线冲量参数。
+其中 $a,e$ 是轨道半长轴和偏心率，$b$ 是光线冲击参数。
 
 ## 17.3 参数化后 Newton 形式
 
@@ -97,6 +111,11 @@ $$
 $$
 g_{ij}=(1+2\gamma U)\delta_{ij}+O(\epsilon^2).
 $$
+
+上述 PPN 度规仍取 $c=1$，并采用点质量外部 $U=GM/r>0$ 的约定，
+因此与前两节取负值的 Newton 势满足 $U=-\Phi$。恢复单位后，度规中
+出现的是无量纲组合 $U/c^2=GM/(rc^2)$；两套公式的空间度规号差并不
+矛盾。
 
 广义相对论预言
 
@@ -204,6 +223,16 @@ K_{ij}
 \right).
 $$
 
+对应的未来单位法向量为
+
+$$
+n^\mu\partial_\mu
+=\frac1N(\partial_t-N^i\partial_i),
+$$
+
+所以上式正是 $K_{ij}=-\tfrac12\mathcal L_n\gamma_{ij}$；它与第十三章
+的动量密度号差必须成对使用。
+
 Einstein 方程分为约束方程和演化方程。约束已在第十三章给出；演化方程可写为
 
 $$
@@ -215,7 +244,8 @@ $K_{ij}$ 的演化方程包含三维 Ricci 张量、$K_{ij}$ 的二次项、laps
 
 ## 17.7 BSSN 变量
 
-原始 ADM 形式数值稳定性不理想。BSSN 形式引入共形分解：
+原始 ADM 形式数值稳定性不理想。BSSN 形式在选定的空间坐标中引入
+共形分解：
 
 $$
 \gamma_{ij}=e^{4\varphi}\tilde\gamma_{ij},
@@ -243,11 +273,23 @@ $$
 \tilde\Gamma^i=-\partial_j\tilde\gamma^{ij}.
 $$
 
+$\det\tilde\gamma=1$ 与上述偏导表达式依赖所选坐标密度约定；
+$\tilde\Gamma^i$ 不是任意空间坐标变换下的普通向量。
+
 BSSN 的目的不是改变 Einstein 方程，而是选择更适合数值演化的变量，使约束控制和强双曲性质更好。
 
 ## 17.8 波形提取
 
-数值模拟得到的是有限半径处的时空数据。常用 Newman-Penrose 标量 $\Psi_4$ 提取引力波：
+数值模拟得到的是有限半径处的时空数据。取 null tetrad
+$(\ell,n,m,\bar m)$ 满足 $\ell\cdot n=-1$、
+$m\cdot\bar m=1$，并在本书曲率约定下定义
+
+$$
+\Psi_4=-C_{\alpha\beta\gamma\delta}
+n^\alpha\bar m^\beta n^\gamma\bar m^\delta.
+$$
+
+再选择与外向波传播方向及 $(+,\times)$ 偏振基相配的 tetrad，则远区有
 
 $$
 \Psi_4
@@ -255,7 +297,10 @@ $$
 \ddot h_+-i\ddot h_\times
 $$
 
-在远区成立。实际波形还需外推到无穷远或使用 Cauchy-characteristic extraction。然后把波形分解成自旋权球谐模式
+这里同时选定了 Newman--Penrose 标量定义、外向 null tetrad 的取向和
+偏振复组合；改变曲率或 tetrad 约定可能使右侧整体变号或复共轭，故该式
+不是脱离这些选择的裸符号恒等式。实际波形还需外推到
+无穷远或使用 Cauchy-characteristic extraction。然后把波形分解成自旋权球谐模式
 
 $$
 h(t,\theta,\phi)

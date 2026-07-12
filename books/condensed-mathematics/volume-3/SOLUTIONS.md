@@ -135,7 +135,12 @@ $$
 
 **AR.3.** Dolbeault-liquid theorem 的三段式。
 
-**答案。** classical theorem：Dolbeault resolution 计算 \(H^\bullet(X,E)\)，且紧情形 Dolbeault Fréchet 复形满足 Fredholm/Hodge 有限性。realization theorem：liquid realization 对相关 Fréchet 复形和闭值域短正合列 exact。formal consequence：realization 后的 cohomology 与 \(\mathcal L_p(H^\bullet(X,E))\) 同构，有限维时为 perfect liquid object。
+**答案。** Classical input：Dolbeault resolution 计算 \(H^\bullet(X,E)\)，且紧情形的
+Fredholm-Hodge theorem 给连续 Green/Hodge splitting。Liquid membership input：
+Dolbeault Fréchet 复形各项的凝聚化是 \(p\)-liquid。书内形式推论：连续 splitting
+验证相关 quotient 的局部提升，所以凝聚 cohomology 与
+\(\mathcal L_p(H^\bullet(X,E))=\underline{H^\bullet(X,E)}\) 同构；有限维时为 perfect
+liquid object。
 
 **AR.4.** six functor 在本卷只能作为接口。
 

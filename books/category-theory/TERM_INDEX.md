@@ -7,8 +7,10 @@
 | 中文术语 | English | 位置 | 用途 |
 |---|---|---|---|
 | Grothendieck 宇宙 | Grothendieck universe | [附录 A](A_universes_and_size.md) | 控制集合、范畴和范畴的范畴的大小层级 |
-| 小范畴 | small category | [第一章](01_categories_functors_natural_transformations.md), [附录 A](A_universes_and_size.md) | 对象和态射集合属于固定 universe 的范畴 |
-| 局部小范畴 | locally small category | [附录 A](A_universes_and_size.md) | Hom 为集合但对象类可大的范畴 |
+| 小范畴 | small category | [第一章](01_categories_functors_natural_transformations.md), [附录 A](A_universes_and_size.md) | 对象集和总态射集在指定 universe 中小 |
+| 局部小范畴 | locally small category | [附录 A](A_universes_and_size.md) | 每个 Hom 在指定 universe 中小 |
+| 本质小范畴 | essentially small category | [附录 A](A_universes_and_size.md) | 等价于指定 universe 中的小范畴 |
+| 换 universe | change of universe | [附录 A](A_universes_and_size.md) | 提升对象层级；不自动提升极限或余极限的索引大小 |
 
 ## 普通范畴论
 
@@ -16,7 +18,7 @@
 |---|---|---|---|
 | 范畴 | category | [第一章](01_categories_functors_natural_transformations.md) | 对象、态射、复合、恒等态射 |
 | 函子 | functor | [第一章](01_categories_functors_natural_transformations.md) | 保持对象、态射、复合和恒等态射的映射 |
-| 自然变换 | natural transformation | [第一章](01_categories_functors_natural_transformations.md) | 比较两个函子 |
+| 自然变换 | natural transformation | [第一章](01_categories_functors_natural_transformations.md) | 比较同一源、目标的两个函子；自然性方向由方差决定 |
 | 反范畴 | opposite category | [第一章](01_categories_functors_natural_transformations.md) | 反转态射方向 |
 | 完全忠实 | fully faithful | [第一章](01_categories_functors_natural_transformations.md) | Hom 映射为双射 |
 | 本质满 | essentially surjective | [第一章](01_categories_functors_natural_transformations.md) | 目标对象均同构于像中对象 |
@@ -30,8 +32,9 @@
 | 终对象 | terminal object | [第二章](02_universal_properties_and_yoneda.md) | 到其态射唯一的对象 |
 | 始对象 | initial object | [第二章](02_universal_properties_and_yoneda.md) | 从其出发态射唯一的对象 |
 | 可表函子 | representable functor | [第二章](02_universal_properties_and_yoneda.md) | 由 Hom 函子表示的集合值函子 |
-| 泛元素 | universal element | [第二章](02_universal_properties_and_yoneda.md) | 表示性对应的元素形式 |
+| 泛元素 | universal element | [第二章](02_universal_properties_and_yoneda.md) | 协变时为元素范畴始对象，反变时为终对象 |
 | Yoneda 引理 | Yoneda lemma | [第二章](02_universal_properties_and_yoneda.md) | 元素与自然变换的自然双射 |
+| 结构化唯一同构 | unique structure-preserving isomorphism | [第二章](02_universal_properties_and_yoneda.md), [附录 C](C_universal_property_templates.md) | 泛对象之间保持投影、泛元素、单位或结构映射的唯一同构 |
 | 极限 | limit | [第三章](03_limits_and_colimits.md) | 锥范畴的终对象 |
 | 余极限 | colimit | [第三章](03_limits_and_colimits.md) | 余锥范畴的始对象 |
 | 创造极限 | creates limits | [第三章](03_limits_and_colimits.md) | 底层极限唯一提升为源范畴极限的性质 |

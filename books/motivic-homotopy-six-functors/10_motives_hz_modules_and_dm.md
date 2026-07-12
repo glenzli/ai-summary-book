@@ -77,21 +77,62 @@ $$
 
 ## 10.3 与 Voevodsky motives 的比较
 
-**外部输入定理 10.8.** 在 perfect field 等标准假设下，Voevodsky 的 derived category of motives 与 `H\mathbb Z`-modules 的同伦范畴等价；更高范畴版本把 motives 识别为 `H\mathbb Z`-module category 的模型。
+**外部输入定理 10.8（DM-10.8，分层陈述）.** 下列两项处在不同的范畴
+层级，不能互相替换。
 
-**依赖源.** Röndigs-Ostvær 的比较定理，Cisinski-Deglise 的一般基扩展，Elmanto-Kolderup 的 monadic/axiomatic 说明。
+1. 若 `k` 为 characteristic zero field，Röndigs--Ostvær 的 Theorem 1.1
+   给出 monoidal triangulated equivalence
 
-**注 10.9.** 定理 10.8 的假设很重要：系数、基域完美性、是否反演指数特征、是否使用有效 motives、是否使用 transfers，都会改变结论。
+   $$
+   \mathbf{DM}(k)\simeq
+   \operatorname{Ho}\!\left(
+   \operatorname{Mod}_{H\mathbb Z_k}(\mathbf{SH}(k))
+   \right).
+   $$
+
+   这里左边和右边都是同伦范畴；该结论本身不包含高映射空间或
+   presentability 数据。
+2. 设 `k` 为域，`e` 为其 exponential characteristic。Elmanto--Kolderup
+   Theorem 5.2 及其 finite-correspondence 特例 Corollary 5.3 在反演 `e`
+   后给出 presentably symmetric monoidal stable infinity-categories 的等价
+
+   $$
+   \mathbf{DM}(k,\mathbb Z[1/e])
+   \simeq
+   \operatorname{Mod}_{H\mathbb Z_k[1/e]}
+   (\mathbf{SH}(k)).
+   $$
+
+**精确来源.** Oliver Röndigs, Paul Arne Ostvaer, *Modules over motivic
+cohomology*, Theorem 1.1，
+`https://doi.org/10.1016/j.aim.2008.05.013`；Elden Elmanto, Hakon
+Kolderup, *On Modules over Motivic Ring Spectra*, Theorem 5.2 and
+Corollary 5.3，`https://arxiv.org/abs/1708.05651`。
+
+**注 10.9.** 第一项不能仅凭“取 enhancement”升级为第二项；第二项也不能
+去掉 `1/e`。有效 motives、一般基、其他 transfers 或整系数正特征版本均需
+新的比较定理。
 
 **命题 10.10.** 若定理 10.8 适用，则 Voevodsky motivic cohomology 的 Hom 公式与定义 9.2 相容。
 
-**证明.** 定理 10.8 给出 motives 与 `H\mathbb Z`-modules 的等价，并把 smooth scheme 的 motive 对应到 `M_S(X)`，把 Tate object 对应到 `\mathbb Z(q)`。由命题 10.6，`H\mathbb Z`-module 中的 Hom 恢复定义 9.2 的 motivic cohomology。因此两个 Hom 公式相容。`\square`
+**证明.** 在定理 10.8(1) 中取三角同伦范畴的 `Hom`，或在 10.8(2) 中先取
+稳定 infinity-范畴的 mapping spectrum 再取 `\pi_0`。两种情形下，比较函子
+都把 smooth scheme 的 motive 送到 `M_k(X)`，把 Tate object 送到
+`\mathbb Z(q)`。命题 10.6 的自由 module 伴随遂把相应 `Hom` 识别为定义
+9.2 的 motivic cohomology。证明只使用所选层级中的比较，不把三角 `Hom`
+提升为未给出的 mapping-space 等价。`\square`
 
 ## 10.4 Cisinski-Deglise motivic categories
 
-**外部输入定理 10.11.** Cisinski-Deglise 构造的 triangulated categories of mixed motives `\mathbf{DM}(S)` 支持六操作、Tate twists、localization、purity 和与 motivic cohomology 的比较。
+**高级外部输入 10.11（P1）.** Cisinski--Deglise 在其规定的基概形、系数和
+motivic category 上构造 triangulated six operations、Tate twists、
+localization 与 purity。这个一般基 package 不参与定理 10.8 的域上 P0
+比较；使用时必须指定是 Beilinson motives、cdh motives 还是其他模型。
 
-**定义 10.12.** 本书中 `\mathbf{DM}(S)` 表示与 `H\mathbb Z_S`-modules 相容的 motives 范畴；若使用特定模型如 Beilinson motives、cdh motives、effective motives 或 constructible motives，必须另行标注。
+**约定 10.12.** 在本章 P0 主线中，`\mathbf{DM}(k)` 只表示定理 10.8 所用的
+Voevodsky big motives，并始终附带相应系数。对一般 `S`，符号
+`\mathbf{DM}(S)` 只有在先指定 Beilinson、cdh、effective 或 constructible
+模型及其比较定理后才使用；本书不把这些模型按定义识别。
 
 **命题 10.13.** 若 `\mathbf{DM}(S)\simeq\operatorname{Mod}_{H\mathbb Z_S}(\mathbf{SH}(S))`，则 `\mathbf{DM}(S)` 继承 stable presentable structure 和 `H\mathbb Z`-linear six operations。
 
@@ -147,7 +188,11 @@ $$
 
 ## 10.7 Six operations on modules
 
-**外部输入定理 10.19.** 在适当假设下，`\operatorname{Mod}_{H\mathbb Z}(\mathbf{SH}(-))` 继承六操作，并与 `\mathbf{DM}(-)` 的六操作相容。
+**高级外部输入 10.19（P1）.** 对一个已选定且满足基变换、投影公式和
+exceptional-functor 假设的 premotivic `H\mathbb Z`，其 module coefficient
+system 可继承六操作；与某个一般基 `\mathbf{DM}(-)` 的六操作相容还需要
+premotivic comparison theorem。该 package 不由定理 10.8 的单纤维范畴等价
+推出，也不作为本章 P0 证明的输入。
 
 **命题 10.20.** 若 `f^*H\mathbb Z_Y\simeq H\mathbb Z_X`，则 `f^*` 把 `H\mathbb Z_Y`-modules 送到 `H\mathbb Z_X`-modules。
 
@@ -175,7 +220,10 @@ $$
 
 ## 10.9 本章小结
 
-`H\mathbb Z`-modules 为 motives 提供稳定同伦中的线性模型。Motivic cohomology 在 modules 中由 `M_S(X)` 到 Tate motives 的 Hom 表示。Voevodsky motives、Cisinski-Deglise motives 和 `H\mathbb Z`-modules 的比较是深外部输入，不能忽略基、系数和 transfers 假设。
+`H\mathbb Z`-modules 为 motives 提供稳定同伦中的线性模型。域上比较分成
+characteristic zero 的 monoidal triangulated equivalence，和反演指数特征后
+的 presentably symmetric monoidal stable infinity-categorical equivalence。
+一般基六操作比较属于 P1；它不能由单纤维的三角等价形式推出。
 
 ## 练习
 

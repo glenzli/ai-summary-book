@@ -2,7 +2,7 @@
 
 本文档记录《Prismatic / p-adic Hodge Theory》教材的主要资料源。正文不得复制原文；所有内容均应重写并标明依赖边界。
 
-核查日期：2026-07-08。
+初次核查日期：2026-07-08。核心 PDF 定理号复核：2026-07-11。
 
 ## Classical $p$-adic Hodge theory
 
@@ -21,10 +21,10 @@
 
 ## Integral and prismatic theory
 
-- Bhargav Bhatt, Matthew Morrow, Peter Scholze, “Integral $p$-adic Hodge theory,” arXiv:1602.03148, v3 2019-01-15, final version. 用途：$A_{\inf}$-cohomology、$L\eta$、integral comparison theorems。链接：<https://arxiv.org/abs/1602.03148>。
-- Bhargav Bhatt, Matthew Morrow, Peter Scholze, “Topological Hochschild homology and integral $p$-adic Hodge theory,” arXiv:1802.03261 v2 final 2019-04-09; *Publ. Math. IHES* 129, 2019. 用途：Breuil-Kisin cohomology、THH/TC 接口、syntomic sheaves 和 BMS2。链接：<https://arxiv.org/abs/1802.03261>。
-- Bhargav Bhatt and Peter Scholze, “Prisms and Prismatic Cohomology,” arXiv:1905.08229, v4 2022-01-12. 用途：$\delta$-rings、prisms、prismatic site、comparison theorems、perfect prism equivalence、$q$-de Rham。链接：<https://arxiv.org/abs/1905.08229>。
-- Bhargav Bhatt and Peter Scholze, “Prismatic $F$-crystals and crystalline Galois representations,” arXiv:2106.14735, v2 2023-09-12. 用途：prismatic $F$-crystals 与 crystalline $G_K$-lattices 的范畴等价。链接：<https://arxiv.org/abs/2106.14735>。
+- Bhargav Bhatt, Matthew Morrow, Peter Scholze, “Integral $p$-adic Hodge theory,” arXiv:1602.03148, v3 2019-01-15, final version. 用途：Theorems 1.8, 14.3 的 $A_{\inf}$ 四个 derived comparisons；Definition 1.5 的 BKF modules；Theorems 4.28, 14.5 (iii) 的 finite-free classification 与 cohomological torsion thresholds；Corollary 6.5, Propositions 6.7, 6.12, Lemmas 6.19--6.20 的 $L\eta$ package。链接：<https://arxiv.org/abs/1602.03148>。
+- Bhargav Bhatt, Matthew Morrow, Peter Scholze, “Topological Hochschild homology and integral $p$-adic Hodge theory,” arXiv:1802.03261 v2 final 2019-04-09; *Publ. Math. IHES* 129, 2019. 用途：Theorem 1.2 的 Breuil--Kisin cohomology；Theorem 11.2 的 local construction；Theorem 1.12 (5), Theorem 1.15 与 Theorem 10.1 的 syntomic fibre/products 和 nearby cycles。链接：<https://arxiv.org/abs/1802.03261>。
+- Bhargav Bhatt and Peter Scholze, “Prisms and Prismatic Cohomology,” arXiv:1905.08229, v4 2022-01-12. 用途：§1.2 的 derived completion；Definition 3.2, Proposition 3.5, Lemma 3.7 与 Corollary 3.12/Definition 4.1 的 prism/site；Theorems 4.11, 5.2, 6.3, 9.1 与 Corollaries 4.12, 15.4, 15.5 的基础 comparisons；Theorem 17.2 的 $A_{\inf}$ identification。链接：<https://arxiv.org/abs/1905.08229>。
+- Bhargav Bhatt and Peter Scholze, “Prismatic $F$-crystals and crystalline Galois representations,” arXiv:2106.14735, v2 2023-09-12. 用途：Definition 4.1 的 localized Frobenius/effective convention；Theorem 5.6 的 crystalline lattice equivalence；Examples 2.6, 4.3 与 Theorem 7.9 的 Breuil--Kisin evaluation 和 Kisin full faithfulness。链接：<https://arxiv.org/abs/2106.14735>。
 - Bhargav Bhatt and Jacob Lurie, “The prismatization of $p$-adic formal schemes,” arXiv:2201.06124, v1 2022-01-16. 用途：Cartier-Witt stack、prismatic crystals 的 quasicoherent sheaf 解释；作为前沿接口使用。链接：<https://arxiv.org/abs/2201.06124>。
 - Dmitry Kubrak and Artem Prikhodko, “$p$-adic Hodge theory for Artin stacks,” arXiv:2105.05319, 2021-05-11. 用途：Artin stacks 中 integral $p$-adic Hodge theory、prismatic cohomology and Breuil-Kisin modules 的应用边界。链接：<https://arxiv.org/abs/2105.05319>。
 
@@ -60,7 +60,7 @@
 - 第四章的 Fontaine period rings 与 $B$-admissibility 主要依赖 Fontaine、Brinon-Conrad 和 Berger。
 - 第五章的 $A_{\inf}$、Breuil-Kisin 和 BMS 积分理论主要依赖 BMS1/BMS2。
 - 第六章的 prismatic $F$-crystals 与 crystalline Galois representations 主要依赖 Bhatt-Scholze 2021/2023。
-- 第七章的 Nygaard、syntomic 和 Tate twists 主要依赖 BMS 与 Bhatt-Scholze；当前版本给出结构口径和附录 F 的 convention crosswalk。
+- 第七章的 Nygaard、syntomic 和 Tate twists 主要依赖 Bhatt--Scholze Theorem 1.16 / 15.3 与 BMS2 Theorems 1.12 (5), 1.15, 10.1；附录 F 记录 convention crosswalk。
 - 第八章的 prismatization、$F$-gauges 和最新方向主要依赖 Bhatt-Lurie 与已核查 2023-2026 预印本，只作为研究边界。
 - 第九章的 Hodge-Tate/de Rham specialization 主要依赖 Bhatt-Scholze 的 conjugate filtration 和 de Rham comparison；符号 indexing 由附录 F 单独审查。
 - 第十章的 crystalline、de Rham-Witt 和 $q$-de Rham specialization 主要依赖 Bhatt-Scholze、BMS 和 de Rham-Witt/q-de Rham 文献；第一版中把深层 comparison 标为外部输入。

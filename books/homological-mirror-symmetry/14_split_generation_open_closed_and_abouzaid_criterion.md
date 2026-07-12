@@ -2,87 +2,217 @@
 
 ## 本章目标
 
-本章建立 HMS 证明中最常用的生成工具：split-generation、Hochschild homology、open-closed map、closed-open map 和 Abouzaid criterion。核心结论多为外部输入，但其范畴逻辑可以内部证明。
+本章建立 HMS 证明中最常用的生成工具：Morita 口径的 split-generation、
+Hochschild homology、open-closed/closed-open maps，以及 Abouzaid 的 exact
+wrapped generation criterion。范畴形式推论在书内证明；holomorphic-curve
+operations、Cardy relation 与 generation theorem 明确作为外部输入。
 
 ## 依赖前置知识
 
-需要第一章 Morita 理论、第四章 Fukaya category、第八章不变量检查。
+需要第一章 Morita 理论、第四与第六章 Fukaya categories、第八章的等价
+层级，以及附录 B 的 $A_\infty$ 约定。
 
-## 14.1 Split-generation
+## 14.1 Split-generation 的类型
 
-**定义 14.1.** 设 $\mathcal A$ 是 pretriangulated idempotent-complete $A_\infty$ category。对象集合 $\mathcal G$ split-generates $\mathcal A$，若包含 $\mathcal G$ 的最小厚子范畴等于 $H^0(\mathcal A)$。
-
-**命题 14.2.** 若 $\mathcal G$ split-generates $\mathcal A$，则 restriction functor
+**定义 14.1.** 设 $\mathcal A$ 是小、严格含单位 $A_\infty$ category，
+$\mathcal G\subset\operatorname{Ob}\mathcal A$，并记
+$\mathcal A_{\mathcal G}$ 为它们张成的 full subcategory。称
+$\mathcal G$ split-generates $\mathcal A$，若
 $$
-\operatorname{Perf}(\mathcal A)\to\operatorname{Perf}(\mathcal A_{\mathcal G})
+\operatorname{thick}\{Y_G:G\in\mathcal G\}
+=H^0\operatorname{Perf}(\mathcal A).
+\tag{14.1}
 $$
-在 Morita 意义下由 $\mathcal G$ 的 endomorphism category 决定。
+这里 $\operatorname{thick}$ 表示对 shifts、cones、有限直和、同构和
+retracts 闭合。定义的目标是 perfect-module category；只有
+$\mathcal A$ 已 Morita-complete 时才可把右端换成 $H^0(\mathcal A)$。
 
-**证明.** $\operatorname{Perf}(\mathcal A)$ 由 representables 生成。每个 representable 属于 $\mathcal G$ 的厚闭包，所以 perfect module category 由 $\mathcal G$ 对应的 representables 生成。Morita 类型只依赖这些生成对象的 endomorphism $A_\infty$ category。证毕。
-
-## 14.2 Hochschild homology 与 open-closed map
-
-**定义 14.3.** 对 $A_\infty$ category $\mathcal A$，Hochschild chain complex $CC_\ast(\mathcal A)$ 由循环 composable morphism tensors 组成，微分由内部 $\mu^d$ 和循环插入运算给出。其 homology 记为 $HH_\ast(\mathcal A)$。
-
-**定义 14.4.** 对 Fukaya category $\mathcal F(M)$，open-closed map 是映射
+**命题 14.2.** 若 $\mathcal G$ split-generates $\mathcal A$，则 inclusion
+$i:\mathcal A_{\mathcal G}\hookrightarrow\mathcal A$ 是 Morita equivalence。
+更具体地，derived restriction 与 extension
 $$
-\mathcal{OC}:HH_\ast(\mathcal F(M))\to QH^{\ast+n}(M)
+i^\ast:\operatorname{Perf}(\mathcal A)
+\rightleftarrows
+\operatorname{Perf}(\mathcal A_{\mathcal G}):
+-\otimes^{\mathbf L}_{\mathcal A_{\mathcal G}}\mathcal A
+\tag{14.2}
 $$
-或在 exact/noncompact 情况下到 symplectic cohomology
+互为 quasi-inverse。
+
+**证明.** 对 $G\in\mathcal G$，restriction 把 $\mathcal A$-Yoneda module
+$Y_G$ 送到 $\mathcal A_{\mathcal G}$-Yoneda module，extension 再把后者送回
+$Y_G$；Yoneda fully-faithfulness 使 adjunction unit/counit 在这些 generators
+上为 quasi-isomorphisms。两个 functors 都保持 shifts、cones、有限直和与
+retracts。左边由 (14.1) 中的 $Y_G$ 厚生成，右边按 perfect module 的定义
+由其全部 representables 厚生成，而这些 representables 正是
+$G\in\mathcal G$ 的 Yoneda modules。因此 unit/counit 在两边所有 perfect
+objects 上均为 quasi-isomorphisms，(14.2) 为 quasi-equivalence。证毕。
+
+## 14.2 Hochschild chains 与 string maps
+
+**定义 14.3.** 对小 $A_\infty$ category $\mathcal A$，Hochschild chain
+complex $CC_\bullet(\mathcal A)$ 是 composable cyclic tensors 的直和，
+differential 由各 $\mu^d$ 的内部与 cyclic insertions 给出，符号由附录 B
+的 suspension convention 决定。其 homology 记为 $HH_\bullet(\mathcal A)$。
+Full inclusion $\mathcal B\hookrightarrow\mathcal A$ 诱导
+$HH_\bullet(\mathcal B)\to HH_\bullet(\mathcal A)$。
+
+**定义 14.4.** 设 $M^{2n}$ 是 Liouville manifold，$\mathcal W(M)$ 是已构造
+的 wrapped Fukaya category。本书采用 degree-$n$ 的 open-closed map 约定
 $$
-\mathcal{OC}:HH_\ast(\mathcal W(M))\to SH^{\ast+n}(M).
+\mathcal{OC}_{\mathcal W}:
+HH_\bullet(\mathcal W(M))\longrightarrow SH^{\bullet+n}(M).
+\tag{14.3}
 $$
-它由带一个 interior marked point 的 holomorphic disks 计数定义。
-
-**定义 14.5.** closed-open map 是反向方向的环映射
+若 $\mathcal B\subset\mathcal W(M)$ 为 full subcategory，记限制映射为复合
 $$
-\mathcal{CO}:QH^\ast(M)\to HH^\ast(\mathcal F(M))
+\mathcal{OC}_{\mathcal B}:
+HH_\bullet(\mathcal B)\longrightarrow HH_\bullet(\mathcal W(M))
+\xrightarrow{\mathcal{OC}_{\mathcal W}}SH^{\bullet+n}(M).
+\tag{14.4}
 $$
-或 $SH^\ast(M)\to HH^\ast(\mathcal W(M))$。
+于是“命中单位”准确地指存在
+$\alpha\in HH_{-n}(\mathcal B)$ 使
+$\mathcal{OC}_{\mathcal B}(\alpha)=1_{SH}\in SH^0(M)$。若文献整体移动
+Hochschild grading，必须连同 (14.3) 一起移动，不能只删去 $+n$。
 
-**外部输入定理 14.6（open-closed/closed-open 构造）.** 在适当 compactness、transversality、orientation 和 monotone/exact/Novikov 假设下，open-closed 与 closed-open maps 可构造，并与 product、module structures 和 Cardy-type relations 相容。
-
-## 14.3 Abouzaid criterion
-
-**外部输入定理 14.7（Abouzaid generation criterion）.** 设 $\mathcal G\subset\mathcal W(M)$ 是对象集合。若 open-closed map restricted to $HH_\ast(\mathcal G)$ 命中 symplectic cohomology $SH^\ast(M)$ 的单位，则 $\mathcal G$ split-generates $\mathcal W(M)$。compact/monotone 版本中，目标替换为 quantum cohomology 的相应单位或幂等分量。
-
-**解释 14.8.** 这个准则把一个范畴生成问题转化为 closed-string invariant 中单位是否被 open-string Hochschild class 命中的问题。它是 wrapped HMS 中证明生成性的主要工具。
-
-**命题 14.9.** 假设定理 14.7。若 $\mathcal G$ 命中单位且 $\mathcal H$ 为 B-side 生成对象，并且
+**定义 14.5.** Closed-open map 的方向为
 $$
-\operatorname{End}_{\mathcal W(M)}(\mathcal G)\simeq
-\operatorname{End}_{\mathcal B}(\mathcal H)
+\mathcal{CO}:SH^\bullet(M)\longrightarrow
+HH^\bullet(\mathcal W(M)).
+\tag{14.5}
 $$
-为 $A_\infty$ quasi-isomorphism，则得到 wrapped HMS 的 Morita 等价。
+在 compact monotone 口径中，闭弦端通常改为 quantum cohomology；该版本
+需要另行指定 Novikov coefficients、$c_1$-eigensummand、curvature 与 virtual
+perturbation package。
 
-**证明.** 定理 14.7 给出 $\mathcal G$ split-generates $\mathcal W(M)$。假设 $\mathcal H$ split-generates $\mathcal B$。endomorphism quasi-isomorphism 给出 full subcategories quasi-equivalent。由命题 8.9 得到 Morita equivalence。证毕。
+**外部输入定理 14.6（exact wrapped string-map package）.** 设 $M$ 为
+Liouville manifold，并固定使 $\mathcal W(M)$、$SH^\ast(M)$ 及其单位良定义
+的 coefficient、grading、brane、orientation、Hamiltonian cofinality 和
+compactness/transversality data。则 (14.3)、(14.5) 可由带 interior marked
+points 的 punctured disks 构造，并与 products、module structures 及
+Abouzaid generation proof 所需的 Cardy relation 相容。
 
-## 14.4 幂等分解
+来源：Abouzaid 的 exact wrapped construction 与 Cardy argument；Ganatra
+关于 wrapped duality/string maps 的工作；Liouville sectors 口径见 GPS。
+本书不重建这些非紧模空间的分析或 chain-level Cardy homotopy。
 
-**定义 14.10.** 若 quantum cohomology 或 symplectic cohomology 分解为幂等分量
+## 14.3 Exact wrapped generation theorem
+
+**外部输入定理 14.7（Abouzaid generation criterion，精确使用版）.** 在
+定理 14.6 的假设下，令 $\mathcal B\subset\mathcal W(M)$ 是 full
+$A_\infty$ subcategory。若
 $$
-QH^\ast(M)=\bigoplus_\lambda QH^\ast(M)_\lambda,
+1_{SH}\in\operatorname{im}\left(
+HH_\bullet(\mathcal B)\longrightarrow
+HH_\bullet(\mathcal W(M))\xrightarrow{\mathcal{OC}_{\mathcal W}}
+SH^{\bullet+n}(M)
+\right),
+\tag{14.6}
 $$
-则 Fukaya category 常相应分解为
-$$
-\mathcal F(M)=\bigoplus_\lambda \mathcal F(M)_\lambda,
-$$
-其中 $\lambda$ 通常由 curvature/potential value 标记。
+则 $\mathcal B$ 的对象 split-generate $\mathcal W(M)$；等价地，inclusion
+$\mathcal B\hookrightarrow\mathcal W(M)$ 是 Morita equivalence。
 
-**命题 14.11.** 若对象 $(L,b)$ 的 curvature value 为 $\lambda$，则它只可能属于 $\lambda$ 对应的 Fukaya summand；不同 $\lambda$ 的 summands 之间 morphism cohomology 消失。
+**证明路线（外部输入）.** Cardy relation 把 (14.6) 中代表单位的
+Hochschild cycle 与 diagonal bimodule 的一个 resolution 联系起来，从而
+证明每个 representable $\mathcal W(M)$-module 属于 $\mathcal B$-
+representables 的厚闭包。构造 two-output disk operations、证明 Cardy
+homotopy 并控制 wrapped ends 是该定理的主体，未在本书内部建立。精确来源
+为 Abouzaid, *A geometric criterion for generating the Fukaya category*,
+Theorem 1.1 与公式 (1.2)。
 
-**证明草图.** 由命题 5.14，两个不同 potential value 的对象不属于同一个非弯曲 Fukaya fiber category；若放入 curved 或 matrix-factorization 型总模型，则可逆曲率差使相应 morphism object contractible。幂等分解把这种正交性组织为范畴直和分解。证毕。
+**解释 14.8.** 定理 14.7 的结论是 split-generation/Morita equivalence，
+不是 raw categories 的 quasi-equivalence。它也要求 (14.6) 的 composite
+命中 global unit；只验证 open-closed map 非零不够。
+
+**反例 14.8A（非零不等于命中单位）.** 若 closed-string degree-zero
+algebra 为 $k\times k$，某 subcategory 的 open-closed image 可能只含
+$k(1,0)$。该 image 非零且命中 idempotent $(1,0)$，却不含 global unit
+$(1,1)$；最多能支持第一个 summand 的生成结论，不能推出全范畴生成。
+
+**命题 14.9（generation 加 enhanced comparison 推出 wrapped HMS）.** 设
+$\mathcal C$ 是小、严格含单位 B-side dg/$A_\infty$ category。假设：
+
+1. $\mathcal G\subset\mathcal W(M)$ 张成 full subcategory
+   $\mathcal W_{\mathcal G}$，并满足定理 14.7 的 unit-image 条件；
+2. $\mathcal H\subset\mathcal C$ split-generates $\mathcal C$；
+3. 存在 strictly unital quasi-equivalence
+   $$
+   F:\mathcal W_{\mathcal G}
+   \xrightarrow{\simeq_{\mathrm{qe}}}\mathcal C_{\mathcal H}.
+   $$
+
+则
+$$
+\mathcal W(M)\simeq_{\mathrm{Morita}}\mathcal C.
+$$
+
+**证明.** 由定理 14.7，$\mathcal G$ split-generates $\mathcal W(M)$；第 2
+项给出 B-side split-generation；第 3 项比较两边的 full generating
+subcategories。命题 8.9 立即给出所示 Morita equivalence。证毕。
+
+**边界 14.9A.** 若两组 generators 有限且两边已添加 finite direct sums，
+可把第 3 项改写为
+$\operatorname{End}(\bigoplus G_i)$ 与
+$\operatorname{End}(\bigoplus H_i)$ 的 strictly unital $A_\infty$
+quasi-isomorphism，但必须保持标记各对象的 orthogonal idempotents。仅有
+cohomology endomorphism algebras 同构，或只比较 $\mu^2$，不满足第 3 项。
+
+## 14.4 Idempotent summands 与 curvature values
+
+**定义 14.10.** 设外部输入 (14.5) 已构造，且
+$e\in SH^0(M)$ 是 central idempotent。其像
+$\mathcal{CO}(e)\in HH^0(\mathcal W(M))$ 给出 identity functor 的
+idempotent natural endomorphism。对
+$H^0\operatorname{Perf}(\mathcal W(M))$ 中每个对象 $X$，记相应 projector
+的 image 为 $X_e$；由所有 $X_e$ 厚生成的 full subcategory 记为
+$\operatorname{Perf}(\mathcal W(M))_e$。
+
+**命题 14.11（idempotent 分块的形式正交性）.** 在定义 14.10 的假设下，
+$$
+H^0\operatorname{Perf}(\mathcal W(M))
+\simeq
+H^0\operatorname{Perf}(\mathcal W(M))_e
+\oplus
+H^0\operatorname{Perf}(\mathcal W(M))_{1-e},
+$$
+且两个 summands 之间所有 morphisms 为零。
+
+**证明.** Perfect category idempotent-complete，所以每个 projector 分裂为
+$X\simeq X_e\oplus X_{1-e}$。若
+$f:X_e\to Y_{1-e}$，naturality 给出
+$$
+f=f\,\mathcal{CO}(e)_{X_e}
+=\mathcal{CO}(e)_{Y_{1-e}}f=0;
+$$
+反方向相同。每个对象均按两 projector 分解，得到所示直和。证毕。
+
+**警告 14.12.** 若 $\mathcal{OC}_{\mathcal B}$ 命中 $e$ 而非
+$1_{SH}$，要推出 $\mathcal B$ split-generates $e$-summand，仍需引用相应
+summand version of the generation theorem；命题 14.11 本身只给形式分块。
+在 compact monotone Fukaya theory 中，weak curvature value
+$\mu_b^0=\lambda e_L$ 通常先标记 quantum multiplication by $c_1$ 的
+$\lambda$-eigensummand；一个 eigensummand 还可能含多个 central
+idempotents。故“potential value $\lambda$”与“primitive idempotent $e$”
+不是同一种索引。不同 curvature values 的 morphism 类型由命题 5.14
+处理，不能代替 closed-open projector 的分块定理。
 
 ## 本章小结
 
-Split-generation 是 HMS 证明的核心瓶颈。Open-closed map 和 Abouzaid criterion 提供了可操作的生成性判据：若生成对象的 Hochschild classes 命中 closed-string 单位，则它们生成 Fukaya category。结合 endomorphism algebra 比较即可得到 Morita 版本 HMS。
+Abouzaid criterion 的 exact wrapped 版本要求 full subcategory 的
+Hochschild homology 经完整 open-closed composite 命中 $SH^0(M)$ 的 global
+unit，结论是 split-generation/Morita equivalence。HMS 还需 B-side
+split-generation 与生成 full subcategories 的 quasi-equivalence。
+Idempotent summands 和 curvature eigenvalues 必须分别声明。
 
 ## 练习
 
-**练习 14.1.** 证明厚子范畴在 direct summands 下闭合。
+**练习 14.1.** 补全命题 14.2 中 unit/counit 的厚闭包论证。
 
-**练习 14.2.** 解释 open-closed map 中 interior marked point 的几何含义。
+**练习 14.2.** 在 degree convention (14.3) 下说明命中 $SH^0$ 的
+Hochschild class 位于哪个次数。
 
-**练习 14.3.** 用命题 14.9 写出一个完整 HMS 证明的形式骨架。
+**练习 14.3.** 用命题 14.9 写出一个 wrapped HMS 证明的完整类型骨架。
 
-**练习 14.4.** 说明 quantum cohomology 幂等分解为什么会对应 Fukaya category 的分块。
+**练习 14.4.** 对 algebra $k\times k$ 验证反例 14.8A，并说明命中
+$(1,0)$ 与命中 $(1,1)$ 的生成结论为何不同。

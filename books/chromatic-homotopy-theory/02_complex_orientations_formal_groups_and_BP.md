@@ -10,28 +10,53 @@
 
 ## 2.1 复定向
 
-**定义 2.1.** 设 $E$ 是乘法谱。一个复定向（complex orientation）是元素
+**定义 2.1.** 设 $E$ 是带单位的 homotopy-commutative ring spectrum，
+并用
 $$
-x\in E^2(\mathbb CP^\infty)
+E^q(X)=\pi_{-q}F(\Sigma^\infty_+X,E)
 $$
-使得在包含 $i:\mathbb CP^1\hookrightarrow \mathbb CP^\infty$ 下，$i^*x$ 是 $\widetilde E^2(\mathbb CP^1)$ 中由单位决定的标准生成元。
+作为未约化 cohomological grading；约化版本用 based suspension
+spectrum $\Sigma^\infty X$。一个复定向（complex orientation）是元素
+$$
+x\in \widetilde E^2(\mathbb CP^\infty)
+$$
+使得在包含 $i:\mathbb CP^1\hookrightarrow \mathbb CP^\infty$ 下，
+$i^*x$ 经 suspension isomorphism
+$$
+\widetilde E^2(\mathbb CP^1)\cong
+\widetilde E^2(S^2)\cong E^0(*)=\pi_0E
+$$
+对应于单位 $1\in\pi_0E$。若只给 $mathbb E_1$-乘法而无交换性，后文
+的交换形式群律结论不在本定义的适用范围内。
 
-**命题 2.2.** 若 $E$ 复定向，则有自然同构
+**外部基础定理 2.2（projective bundle theorem）.** 若 $E$ 满足定义
+2.1 且选定复定向 $x$，则有 complete graded $E^*$-algebra 的自然同构
 $$
 E^*(\mathbb CP^\infty)\cong E^*[[x]].
 $$
 
-**证明草图.** 对有限射影空间 $\mathbb CP^m$，复定向给出 Thom class 和 projective bundle formula，得到
+**证明路线与边界（外部输入）.** Projective bundle theorem 对每个
+有限射影空间给出
 $$
 E^*(\mathbb CP^m)\cong E^*[x]/(x^{m+1}).
 $$
-取逆极限并使用 $\mathbb CP^\infty=\operatorname*{colim}_m\mathbb CP^m$ 的 CW-filtration，得到 $x$-adic 完备幂级数环。完整证明依赖 generalized cohomology 的 Milnor exact sequence 和 projective bundle theorem，作为基础外部输入。证毕。
+这些 quotient 的限制映射满射，所以 Milnor exact sequence 的
+$\lim^1 E^{*-1}(\mathbb CP^m)$ 项消失；取逆极限得到 $x$-adic 完备
+幂级数环。Projective bundle theorem 与 Thom isomorphism 的证明不在
+本书重建；上述逆极限步骤只说明外部定理如何产生所示 complete ring，
+不冒充完整书内证明。
 
 **定义 2.3.** 复定向 $x$ 对应的形式群律定义为
 $$
-F_E(x_1,x_2)=\mu^*x\in E^*[[x_1,x_2]],
+F_E(x_1,x_2)=\mu^*x
+\in E^2(\mathbb CP^\infty\times\mathbb CP^\infty)
+\cong E^*[[x_1,x_2]],
 $$
 其中 $\mu:\mathbb CP^\infty\times \mathbb CP^\infty\to\mathbb CP^\infty$ classifies 两个 universal line bundles 的张量积。
+
+这里 $x_1,x_2$ 的 cohomological degree 均为 $2$，系数按总次数 $2$
+分次；因此严格说这是 $E^*$ 上的 graded formal group law。只有在指定
+偶周期元并重分次后，才可把坐标无说明地视作 degree $0$。
 
 ## 2.2 形式群律和高度
 
@@ -100,17 +125,27 @@ $$
 
 **外部输入 2.10.** $BP$ 的存在、$MU_{(p)}$ 的 $p$-typical splitting 和上式系数计算作为 Brown-Peterson-Quillen-Hazewinkel 体系外部输入。
 
-**定义 2.11.** Johnson-Wilson theory $E(n)$ 的系数为
+**定义 2.11.** 对 $n\ge1$，Johnson--Wilson theory $E(n)$ 指表示下列
+Landweber-exact 同调理论的一个选定 ring-spectrum 模型：
 $$
 E(n)_*\cong \mathbb Z_{(p)}[v_1,\ldots,v_n,v_n^{-1}].
 $$
-在本书中 $L_n$ 表示 $L_{E(n)}$。
+高度零单独约定
+$$
+E(0)=H\mathbb Q,
+\qquad E(0)_*=\mathbb Q.
+$$
+在本书中 $L_n$ 表示 $L_{E(n)}$。Landweber exact functor theorem 先
+给同调理论；representing spectrum 及所需乘法结构属于 Johnson--Wilson
+理论的标准外部构造，不能只从显示的系数环推出。
 
-**定义 2.12.** Morava K-theory $K(n)$ 的系数为
+**定义 2.12.** 对 $n\ge1$，Morava K-theory $K(n)$ 指一个选定的、有
+单位且 homotopy-associative 的 ring-spectrum 模型，其系数为
 $$
 K(n)_*\cong \mathbb F_p[v_n^{\pm1}],\qquad |v_n|=2(p^n-1),
 $$
-并令 $K(0)=H\mathbb Q$。
+并令 $K(0)=H\mathbb Q$。本书只在需要 module category 时使用上述
+结合乘法；更强的交换或 $\mathbb E_k$ 结构必须另行声明。
 
 **命题 2.13.** $K(n)_*$ 是 graded field，即每个非零 homogeneous 元素可逆。
 
@@ -145,9 +180,21 @@ X\longmapsto BP_*X\otimes_{BP_*}R
 $$
 定义一个同调理论。在合适条件下该同调理论由谱表示。
 
-**例 2.19.** $E(n)_*=\mathbb Z_{(p)}[v_1,\ldots,v_n,v_n^{-1}]$ 满足 Landweber exactness。
+**例 2.19.** 对 $n\ge1$，
+$E(n)_*=\mathbb Z_{(p)}[v_1,\ldots,v_n,v_n^{-1}]$ 满足 Landweber
+exactness。高度零的 $E(0)_*=\mathbb Q$ 另由 $p$ 已可逆直接检查。
 
-**证明草图.** 对 $k\le n$，在依次模去 $p,v_1,\ldots,v_{k-1}$ 后，$v_k$ 仍是多项式或 Laurent 多项式环中的非零因子。对 $k=n$，$v_n$ 已可逆。对 $k>n$，相应 quotient 在 $v_n$ 已可逆同时又处于 ideal 中时退化为零，单射条件自动满足。完整证明需处理 $BP_*$-代数结构和 regular sequence，作为 Landweber theorem 的标准例子。证毕。
+**证明.** 记 $R=E(n)_*$。当 $k=0$ 时，$v_0=p$ 在
+$R=\mathbb Z_{(p)}[v_1,\ldots,v_n,v_n^{-1}]$ 上是非零因子。对
+$1\le k\le n$，有
+$$
+R/I_kR\cong
+\mathbb F_p[v_k,v_{k+1},\ldots,v_n,v_n^{-1}],
+$$
+这是整环；故乘以 $v_k$ 单射。当 $k=n$ 时，$v_n$ 甚至可逆。若
+$k\ge n+1$，则 $I_k$ 含 $v_n$，而 $v_n$ 在 $R$ 中可逆，所以
+$I_kR=R$ 且 $R/I_kR=0$；零模上的乘法映射自动单射。所有 $k$ 均满足
+定义 2.17，故 $E(n)_*$ Landweber exact。证毕。
 
 **警告 2.20.** Landweber exactness 产生同调理论，不产生唯一的 $\mathbb E_\infty$-ring spectrum。tmf 的构造需要 sheaf of structured ring spectra，而不仅是 Landweber exact local charts。
 

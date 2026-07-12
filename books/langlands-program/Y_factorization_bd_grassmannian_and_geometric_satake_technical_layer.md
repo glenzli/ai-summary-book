@@ -35,7 +35,7 @@ $$
 
 **命题 Y.6.** 点互异时 BD Grassmannian 分解为单点 Grassmannian 的乘积。
 
-**证明草图.** 若点 $(x_i)$ 两两不同，则在每个 $x_i$ 的形式邻域上的修改互不干涉。一个在所有 $x_i$ 处的 $G$-bundle 修改等价于分别在每个 $x_i$ 处给出修改。Beauville-Laszlo 粘合把这些局部修改拼成全局对象，得到乘积分解。$\square$
+**证明路线（外部输入）.** 若点 $(x_i)$ 两两不同，则在每个 $x_i$ 的形式邻域上的修改互不干涉。一个在所有 $x_i$ 处的 $G$-bundle 修改等价于分别在每个 $x_i$ 处给出修改。Beauville-Laszlo 粘合把这些局部修改拼成全局对象，得到乘积分解。$\square$
 
 ## Y.3 Convolution 和 fusion
 
@@ -57,7 +57,7 @@ $$
 
 **命题 Y.9.** Factorization 解释了 convolution 的交换性。
 
-**证明草图.** 两个 Hecke 修改在不同点时可交换，因为它们作用在 disjoint formal discs 上。沿 $X^2$ 中去掉对角线的开集交换两个点，得到自然对称同构。将该同构延拓到对角线的 specialization，就是 convolution product 的 commutativity constraint。完整证明依赖 nearby cycles 和 perversity 保持。$\square$
+**证明路线（外部输入）.** 两个 Hecke 修改在不同点时可交换，因为它们作用在 disjoint formal discs 上。沿 $X^2$ 中去掉对角线的开集交换两个点，得到自然对称同构。将该同构延拓到对角线的 specialization，就是 convolution product 的 commutativity constraint。完整证明依赖 nearby cycles 和 perversity 保持。$\square$
 
 ## Y.4 几何 Satake 的精确接口
 
@@ -71,7 +71,7 @@ $$
 
 **命题 Y.11.** 几何 Satake 恢复对偶群的 root datum。
 
-**证明草图.** Affine Grassmannian 的 $G[[t]]$-orbits 由 dominant coweights $\lambda\in X_*(T)^+$ 参数化。IC sheaves 的 simple objects 因而由这些 $\lambda$ 标号。Convolution 的最高项规则与表示张量积的最高权规则一致。Tannakian formalism 从该 symmetric tensor category 恢复一个 reductive group，其 dominant weights 为 $X_*(T)^+$，故该群的 root datum 为 $G$ 的 dual root datum。$\square$
+**证明路线（外部输入）.** Affine Grassmannian 的 $G[[t]]$-orbits 由 dominant coweights $\lambda\in X_*(T)^+$ 参数化。IC sheaves 的 simple objects 因而由这些 $\lambda$ 标号。Convolution 的最高项规则与表示张量积的最高权规则一致。Tannakian formalism 从该 symmetric tensor category 恢复一个 reductive group，其 dominant weights 为 $X_*(T)^+$，故该群的 root datum 为 $G$ 的 dual root datum。$\square$
 
 ## Y.5 Hecke action 的 factorization
 
@@ -87,7 +87,7 @@ $$
 $$
 在 factorization 意义下成立。
 
-**证明草图.** 两次 Hecke 修改对应 convolution diagram；几何 Satake 把 convolution $\mathcal S_V*\mathcal S_W$ 识别为 $\mathcal S_{V\otimes W}$。BD Grassmannian 的 factorization 保证当修改点分离时为外积，当点碰撞时为 convolution。由此得到 Hecke functor 的张量相容。$\square$
+**证明路线（外部输入）.** 两次 Hecke 修改对应 convolution diagram；几何 Satake 把 convolution $\mathcal S_V*\mathcal S_W$ 识别为 $\mathcal S_{V\otimes W}$。BD Grassmannian 的 factorization 保证当修改点分离时为外积，当点碰撞时为 convolution。由此得到 Hecke functor 的张量相容。$\square$
 
 ## Y.6 Beilinson-Drinfeld Grassmannian 与 Hecke eigensheaves
 

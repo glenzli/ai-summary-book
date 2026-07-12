@@ -66,26 +66,30 @@ $$
 
 ## Q.3 二次对偶的低阶形状
 
-设 $E^\vee$ 表示线性对偶并包含 operadic suspension 所要求的符号扭转。二次对偶 cooperad $\mathcal P^¡$ 的 cogenerators 来自 $sE^\vee$，corelations 来自 $s^2R^\perp$。
+本节采用定义 8.15 的 cooperad 口径：二次对偶 cooperad
+$$
+\mathcal P^¡=\mathcal C(sE,s^2R)\subseteq\mathbb T^c(sE)
+$$
+的 cogenerators 是 $sE$，weight-$2$ corelations 是 $s^2R$。线性对偶 $E^\vee$ 与正交补 $R^\perp$ 用于定义 8.12 的对偶 operad $\mathcal P^!$，不是本节 $\mathcal P^¡$ 的 cogenerators。
 
 **命题 Q.6.** 在二元二次情形，$\mathcal P^¡$ 的权重 $0,1,2$ 部分满足：
 $$
 (\mathcal P^¡)^{(0)}=I,\qquad
-(\mathcal P^¡)^{(1)}=sE^\vee,
+(\mathcal P^¡)^{(1)}=sE,
 $$
-而权重 $2$ 部分是 $\mathbb T^c(sE^\vee)^{(2)}$ 中由 $R^\perp$ 选出的子商，具体方向依赖采用 cooperad 还是 cooperad 子对象模型。
+而权重 $2$ 部分是嵌入 $\mathbb T^c(sE)^{(2)}$ 的子对象 $s^2R$。
 
-**证明.** 二次对偶 cooperad 按定义由 cogenerators $sE^\vee$ 与 corelations $s^2R^\perp$ 生成。权重 $0$ 是 coaugmentation 单位，权重 $1$ 是 cogenerators。权重 $2$ 正是第一次出现 corelations 的层。$\square$
+**证明.** 定义 8.15 把 $\mathcal P^¡$ 定义为 $\mathbb T^c(sE)$ 中由 $s^2R$ 决定的最大子cooperad。权重 $0$ 是 coaugmentation 单位，权重 $1$ 尚无 corelation，故为 $sE$；在 weight $2$，定义要求且只要求该部分落入 $s^2R$，所以恰为显示的子对象。$\square$
 
-**警告 Q.7.** 文献中 $\mathcal P^!$、$\mathcal P^¡$、$\mathcal P^{\ash}$ 的 suspension 和 dual convention 不同。本书把 operad 对偶写作 $\mathcal P^!$，cooperad 对偶写作 $\mathcal P^¡$；进入具体符号时必须回到定义 E.11 和定义 I.11--定义 I.18。
+**警告 Q.7.** 文献中 $\mathcal P^!$、$\mathcal P^¡$、$\mathcal P^{\ash}$ 的 suspension 和 dual convention 不同。本书把有限型线性对偶 operad 写作 $\mathcal P^!$，把 $\mathcal C(sE,s^2R)$ 写作 $\mathcal P^¡$；后者的 $s$ 是定义 9.2 的链悬挂。把 $\mathcal P^¡$ 与 $\mathcal P^!$ 作有限型比较时才另外出现线性对偶、sign representation 和 operadic suspension，不能把定义 E.11 的 $\Lambda$ 直接代入 $sE$。
 
 ## Q.4 Koszul twisting morphism 的低权重行为
 
 设 $\kappa:\mathcal P^¡\to\mathcal P$ 为 Koszul twisting morphism。
 
-**定义 Q.8.** $\kappa$ 在权重 $1$ 上由 cogenerator 与 generator 的配对给出：
+**定义 Q.8.** $\kappa$ 在权重 $1$ 上由 desuspension 给出：
 $$
-sE^\vee\longrightarrow E.
+sE\longrightarrow E.
 $$
 在权重 $0$ 和权重 $\ge2$ 上为零。
 
@@ -109,15 +113,49 @@ $$
 
 **推论 Q.10.** $K_r(\mathcal P)$ 的 differential 降低 cooperad 权重 $1$，并把该权重转移为右侧 operad 的一个复合操作。
 
+**证明.** Q.9 的证明写出 twisting differential 为
+$\Delta_{(1)}$ 后接 $\operatorname{id}\circ_{(1)}\kappa$。前者抽出一个
+内层 cooperad 因子，后者只在该因子权重为 $1$ 时非零，并用 twisting
+morphism 把它替换成 $\mathcal P$ 中的操作。因此左侧 cooperad 总权重
+恰降 $1$，右侧增加一次 operadic composition。$\square$
+
 ## Q.5 非对称 Ass 的 Koszul complex 形状
 
-本节只讨论形状，不证明完整 exactness。令 $\operatorname{Ass}_{ns}$ 为定义 Q.3 的非对称 associative operad。它的 Koszul dual cooperad 在非对称 reduced convention 下与 coassociative cooperad 对应，记为 $\operatorname{coAss}_{ns}$。
+本节内部检查定向结合律的终止性与唯一临界对，但“合流二次 rewriting 推出 Koszul”以及完整 exactness 仍使用 LV-3/LV-2。令 $\operatorname{Ass}_{ns}$ 为定义 Q.3 的非对称 associative operad。它的 Koszul dual cooperad 在非对称 reduced convention 下与 coassociative cooperad 对应，记为 $\operatorname{coAss}_{ns}$。
 
-**外部输入定理 Q.11.** $\operatorname{Ass}_{ns}$ 是 Koszul；等价地，
+**外部输入定理 Q.11（非对称结合 operad 的 Koszul 性；LV-3）.**
+$\operatorname{Ass}_{ns}$ 是 Koszul；等价地，
 $$
 \operatorname{coAss}_{ns}\circ_\kappa\operatorname{Ass}_{ns}\to I
 $$
 是 quasi-isomorphism。
+
+**证明路线（内部 rewriting 检查 + 外部 Koszul 判据）.** 把唯一关系定向为
+$$
+\mu\circ_1\mu\longrightarrow\mu\circ_2\mu,
+\qquad (xy)z\longrightarrow x(yz).
+$$
+对一棵平面二元树 $T$，令
+$$
+L(T)=\sum_{v\in V(T)}\#\{\text{$v$ 的左输入子树中的内部顶点}\}.
+$$
+一次改写 $\mu(\mu(A,B),C)\to\mu(A,\mu(B,C))$ 使 $L$ 减少
+$1+|V(A)|$，所以改写终止。唯一的重叠临界单项式是三顶点左梳
+$((ab)c)d$。先改写顶层得到
+$$
+((ab)c)d\longrightarrow (ab)(cd)\longrightarrow a(b(cd));
+$$
+先改写左下层则得到
+$$
+((ab)c)d\longrightarrow (a(bc))d
+\longrightarrow a((bc)d)
+\longrightarrow a(b(cd)).
+$$
+故唯一临界对合流。Loday--Vallette Theorem 8.1.1 及其紧随的
+$\operatorname{As}$ 例子（LV-3）把这个 terminating/confluent quadratic
+rewriting system 升级为 Koszul 性，进而由 LV-2 得到上式的
+quasi-isomorphism。这里的外部输入恰是“合流二次 rewriting system
+推出 Koszul”；终止性和临界对检查已在上面完成。
 
 **低阶形状 Q.12.** 在 arity $1$，
 $$
@@ -213,11 +251,17 @@ $$
 
 **证明.** 在权重 $1$ 上，$\epsilon$ 是 desuspension-suspension 的抵消，与内部微分相容。权重 $2$ 上，$\Omega B\mathcal P$ 的 differential 包含把 bar 中二顶点树收缩为一顶点的项；$\epsilon$ 作用后得到 $\mathcal P$ 中的 partial composition。另一方面，先用 $\epsilon$ 把两个生成元送入 $\mathcal P$ 再在 $\mathcal P$ 中复合，得到同一元素。更高权重由 derivation 性和 operad 结合律递归推出。$\square$
 
-**外部输入定理 Q.19.** 在适当 conilpotent/reduced 假设下，bar-cobar counit
+**外部输入定理 Q.19（modern bar-cobar counit；FRE-4）.** 采用 Fresse, arXiv:0902.0177 的模型：$\mathcal P$ 是 $C$-cofibrant augmented operad，并且其增广理想满足
+$$
+\overline{\mathcal P}(0)=\overline{\mathcal P}(1)=0.
+$$
+在该假设下，来源第 3.14 节给出 bar-cobar counit
 $$
 \Omega B\mathcal P\to\mathcal P
 $$
-是 quasi-isomorphism 或 cofibrant resolution。Fresse 的 modern entry 已定位为 FRE-4；代数层 quasi-free/cofibrant replacement 已定位为 FRE-5。若最终排版要求 Loday--Vallette/Fresse 书本中 $\Omega B\mathcal P\to\mathcal P$ 的单一定理编号，则属于书目 convention translation，不是正文证明缺口。
+为 weak equivalence。若还要称其为 operad 的 cofibrant resolution，必须另外验证 $\Omega B\mathcal P$ 在所用 dg-operad 模型结构中 cofibrant；FRE-5 是 algebra-level replacement theorem，不能用来填补这个 operad-level 条件。
+
+**证明路线（外部输入）.** 来源使用 connected tree filtration 和 twisted-composite acyclicity。命题 Q.14--命题 Q.18 只核对低权重 differential 与 counit 的链映射性质，不证明全权重 weak equivalence。
 
 ## Q.9 谱序列页面的使用边界
 
@@ -227,14 +271,20 @@ d(F_pC)\subseteq F_pC.
 $$
 可形成谱序列 $E^r_{p,q}$。
 
-**说明 Q.20.** 在 bar-cobar 证明中，常用权重滤过：
+**说明 Q.20.** 在 bar-cobar 证明中，必须使用两个方向不同的权重滤过：
 
 1. $d_{\mathrm{int}}$ 保持权重；
-2. bar differential 降低权重；
-3. cobar differential 增加权重；
-4. twisted differential 改变 cooperad/operad 权重分配但保持总 arity。
+2. bar differential 降低权重，所以 $B\mathcal P$ 使用
+   $$
+   F_pB\mathcal P=\bigoplus_{q\le p}B^{(q)}\mathcal P;
+   $$
+3. cobar differential 增加权重，所以 $\Omega\mathcal C$ 使用
+   $$
+   F^p\Omega\mathcal C=\bigoplus_{q\ge p}\Omega^{(q)}\mathcal C;
+   $$
+4. twisted differential 改变 cooperad/operad 权重分配，必须另选总权重并证明它被 differential 保持。
 
-因此引用谱序列时必须说明是递增还是递减滤过，以及 differential 在第几页出现。
+Connected 情形下，命题 I.21 的树计数使这些滤过逐 arity 有限。非 connected 情形不能只把上标改成下标；反例 I.22.1 表明完成化会把直和改成乘积。
 
 **警告 Q.21.** “谱序列退化”不是一个无条件短语。必须说明：
 
@@ -242,6 +292,8 @@ $$
 2. 是否强收敛；
 3. 是否有 boundedness 或 complete/exhaustive 条件；
 4. 页码 $E^r$ 的 convention。
+
+对本书的 connected quadratic Koszul 应用，逐 arity 有限性给出强收敛。对含 unary cogenerators、completed cobar 或无界总权重的应用，本书不作收敛声明，除非另附完整 filtration theorem。
 
 ## Q.10 小结
 

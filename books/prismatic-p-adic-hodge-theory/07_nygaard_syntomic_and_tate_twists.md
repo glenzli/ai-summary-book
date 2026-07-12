@@ -2,7 +2,11 @@
 
 ## 本章目标
 
-本章固定 Nygaard filtration、syntomic complex 和 $p$-adic Tate twists 的 prismatic 口径。该部分是 prismatic cohomology 与 motivic/etale 信息交汇的技术核心，也是 indexing convention 最容易出错的地方。当前版本给出定义框架、外部输入边界和附录 F 的 convention crosswalk；Bhatt-Scholze 的 Hodge-Tate/Nygaard convention 与 BMS2 的 syntomic/Tate twist 入口已完成源码级 locator，出版前仍需转换为 L3。
+本章固定 Nygaard filtration、syntomic complex 和 $p$-adic Tate twists 的
+prismatic 口径。该部分是 prismatic cohomology 与 motivic/etale 信息交汇
+的技术核心，也是 indexing convention 最容易出错的地方。Bhatt--Scholze
+的 relative Nygaard theorem 与 BMS2 的 syntomic/products/nearby-cycles
+theorems 均按 numbered statements 引用；oriented module 公式只作玩具模型。
 
 ## 依赖前置知识
 
@@ -17,46 +21,94 @@ $$
 
 **警告 7.2.** 定义 7.1 只是离散、无高阶导出问题时的模型公式。对 prismatic cohomology complex，Nygaard filtration 必须在 filtered derived category 中定义，不能逐项套用 naive 子模公式。
 
-**外部输入定义 7.3.** 对合适的 prismatic cohomology complex $R\Gamma_\Delta(X/A)$，存在 Nygaard filtration
+**外部输入定理 7.3（relative Nygaard theorem）.** 令 $(A,I)$ 为 bounded
+prism，$X=\operatorname{Spf}(R)$ affine smooth over $A/I$，并记
 $$
-N^{\ge i}R\Gamma_\Delta(X/A),
+C=R\Gamma_\Delta(X/A),\qquad
+C^{(1)}=C\widehat\otimes_{A,\phi_A}^LA.
 $$
-并且 Frobenius 在第 $i$ 级上可除以 $I^i$，得到 normalized Frobenius 或 divided Frobenius
+Bhatt--Scholze 在 Frobenius twist $C^{(1)}$ 上构造递减 Nygaard filtration
+$\operatorname{Fil}_N^iC^{(1)}$，满足
 $$
-\varphi_i:N^{\ge i}R\Gamma_\Delta(X/A)\to R\Gamma_\Delta(X/A)\{i\}.
+\operatorname{gr}_N^iC^{(1)}
+\simeq \tau^{\le i}\overline\Delta_{R/A}\{i\},
 $$
+并给出 Frobenius factorization
+$$
+C^{(1)}\xrightarrow{\widetilde\varphi}
+L\eta_I C\longrightarrow C,
+$$
+其中 $\widetilde\varphi$ 是同构。来源为 Bhatt--Scholze, Theorem 1.16
+（正文 Theorem 15.3；locator `BS-NYG`）。
 
-**说明 7.4.** $\{i\}$ twist 和 $\varphi_i$ 的目标 convention 是后续严格化重点。不同文献可能把 $I^i$、$(I/I^2)^i$ 或其 dual 写入不同侧。
+**说明 7.4.** Filtration 位于 completed Frobenius twist $C^{(1)}$，graded
+piece 带 $\tau^{\le i}$ 与 $\{i\}$。把它写在未扭曲的 $C$ 上、删除
+truncation，或把 $\{i\}$ 改成 $\{-i\}$，都会改变 theorem。
 
 ## 7.2 Syntomic complexes
 
-**定义 7.5（syntomic fibre, convention form）.** 在存在 Nygaard filtration 和 divided Frobenius 的情形，weight $i$ syntomic complex 的基本形式为 homotopy fibre
+**定义 7.5（BMS2 quasisyntomic syntomic fibre）.** 令 $S$ 为
+quasisyntomic $\mathbf Z_p$-algebra，$\widehat\Delta_S$ 为 BMS2 的
+Nygaard-complete object，$\widehat\Delta_S\{i\}$ 为其 Breuil--Kisin
+twist。对 $i\ge0$，定义
 $$
-R\Gamma_{\mathrm{syn}}(X,\mathbf Z_p(i))
+\mathbf Z_p(i)(S)
 =
 \operatorname{fib}\left(
-N^{\ge i}R\Gamma_\Delta(X/A)
-\xrightarrow{\ \varphi_i-\operatorname{can}_i\ }
-R\Gamma_\Delta(X/A)\{i\}
+\varphi-\operatorname{can}:
+\mathcal N^{\ge i}\widehat\Delta_S\{i\}
+\longrightarrow
+\widehat\Delta_S\{i\}
 \right).
 $$
-这里 $\operatorname{can}_i$ 表示从 Nygaard piece 到同一个 Tate-twisted target 的 convention-dependent canonical map；它不是未扭曲对象上的字面恒等映射。
-
-在 BMS2 的 quasisyntomic formulation 中，令 $\widehat{\Prism}_A$ 表示由 $\pi_0TC^-(-;\mathbf Z_p)$ 经 quasisyntomic descent 得到的对象，则模 $p$ 的源码入口为
+这里两张 map 都落在同一个 twisted target；文献中的 $\varphi-1$ 把
+$\operatorname{can}$ 简写为 $1$。Modulo $p$ 后得到
 $$
-\mathbf Z/p\mathbf Z(i)(A)
+\mathbf Z/p(i)(S)
 =
 \operatorname{hofib}\left(
-\varphi_i-1:
-\mathcal N^{\ge i}\widehat{\Prism}_A\{i\}/p
+\varphi-\operatorname{can}:
+\mathcal N^{\ge i}\widehat\Delta_S\{i\}/p
 \to
-\widehat{\Prism}_A\{i\}/p
+\widehat\Delta_S\{i\}/p
 \right).
 $$
+一般地记
+$$
+\mathbf Z/p^r(i)=\mathbf Z_p(i)\otimes_{\mathbf Z_p}^L\mathbf Z/p^r.
+$$
+这是 BMS2, Theorem 1.12 (5) 的 graded $TC$ construction（locator
+`BMS2-SYN`）。在 formal scheme 上须先 sheafify，再取 derived global
+sections。
 
-**警告 7.6.** 公式 7.5 是本书正文中的 convention form；BMS2 的源码入口已定位到 `eq:TateTwist`，但实际使用时仍必须说明处在 $p$-complete、modulo $p^n$、truncated、quasisyntomic site 或 absolute prismatic site 的哪一种版本中。
+**警告 7.6.** 定义 7.5 是 quasisyntomic/Nygaard-complete construction，
+不是把任意 relative complex $R\Gamma_\Delta(X/A)$ 代入 fibre 的许可。
+$\mathbf Z_p(i)$、其 derived mod-$p^r$ reduction，以及 nearby cycles 的
+$\tau^{\le i}$ comparison 是三个不同层级。
 
-**外部输入定理 7.7（syntomic-etale comparison）.** 在适当光滑性、properness、boundedness 和 torsion 假设下，syntomic complex 与 $p$-adic etale Tate twist $\mathbf Z_p(i)$ 比较。BMS2 的 `thm:main6` 给出两个基本出口：在 characteristic $p$ smooth 情形，$\mathbf Z_p(n)$ 与 logarithmic de Rham-Witt sheaves 比较；在 mixed characteristic smooth formal $\mathcal O_C$ 情形，$\mathbf Z_p(n)$ 与截断 nearby cycles $\tau^{\le n}R\psi\mathbf Z_p(n)$ 比较。
+**外部输入定理 7.7（BMS2 syntomic comparisons）.** 设 $i\ge0$。
+
+1. 若 $S$ smooth over a perfect field $k$ of characteristic $p$，则在
+   pro-etale site 上
+   $$
+   \mathbf Z_p(i)\simeq W\Omega^i_{S,\log}[-i].
+   $$
+2. 若 $S$ 是 smooth $\mathcal O_C$-algebra 的 $p$-adic completion，其中
+   $C/\mathbf Q_p$ algebraically closed and complete，则对每个 $r\ge1$，
+   在 pro-etale site 上有 compatible in $r$ 的拟同构
+   $$
+   \mathbf Z/p^r(i)
+   \simeq\tau^{\le i}R\psi_*\mathbf Z/p^r(i).
+   $$
+
+若把 continuous $\mathbf Z_p(i)$ 定义为 finite-level tower 的 derived
+inverse limit，则对这些 compatible maps 取 $R\varprojlim_r$ 得到相应
+$\mathbf Z_p$-level statement；这里不是在 sheaf cohomology groups 上取
+ordinary inverse limit。
+
+来源为 BMS2, Theorem 1.15（mixed-characteristic proof 为 Theorem 10.1；
+locator `BMS2-SYN`）。这里没有 properness 假设，也没有未说明的 torsion
+假设；mixed-characteristic target 必须保留 $\tau^{\le i}$。
 
 ## 7.3 Tate twists 的积分问题
 
@@ -73,9 +125,19 @@ $$
 
 ## 7.4 与 BMS 的关系
 
-**外部输入定理 7.10.** BMS2 构造的 $p$-adic Tate twists 和 syntomic complexes 可由 THH/TC filtration、Nygaard filtration 与 prismatic cohomology 重新解释，并与 prismatic comparison theorem 相容。源码级 locator 为 `BMS2-SYN`，见附录 D 和 [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)。
+**外部输入定理 7.10（multiplicativity）.** BMS2 的 THH/$TC^-$/TP
+filtrations 是 complete、exhaustive、decreasing 且 multiplicative；其
+$TC$ graded pieces 是定义 7.5 的 $\mathbf Z_p(i)$。因此有 products
+$$
+\mathbf Z_p(i)\otimes_{\mathbf Z_p}^L\mathbf Z_p(j)
+\longrightarrow\mathbf Z_p(i+j).
+$$
+来源为 BMS2, Theorem 1.12 (2), (5)（locator `BMS2-SYN`）。
 
-**说明 7.11.** BMS2 源码已确认 $\varphi_i-1$ fibre convention 的入口；Bhatt-Scholze 源码已确认 $\{i\}$ 和 Nygaard graded convention。剩余工作不再是寻找核心源，而是把 $p$-complete、mod $p^r$、truncation 和 nearby cycles 的不同版本逐一分派到正文命题。
+**说明 7.11.** Bhatt--Scholze 的 $C^{(1)}$、$\tau^{\le i}$、$\{i\}$
+Nygaard formula 与 BMS2 的 fibre/products/nearby-cycles formulas 已分别绑定
+numbered statements。两套 Nygaard-complete constructions 的比较是深输入，
+不能仅由相似记号视为定义相等。
 
 ## 7.5 前沿接口
 
@@ -109,12 +171,21 @@ $$
 
 ## 本章小结
 
-Nygaard filtration 是 prismatic cohomology 中控制 Frobenius 可除性和 syntomic information 的结构。Syntomic complex 通常是 divided Frobenius 与 identity 的 homotopy fibre。Bhatt-Scholze 与 BMS2 的核心 convention 已完成源码级核查；正式版仍需把各个 $p$-complete、mod $p^r$ 和 truncation 版本写成带 locator 的最终陈述。
+Nygaard filtration 是 prismatic cohomology 中控制 Frobenius 可除性和
+syntomic information 的结构。Relative Nygaard filtration 位于 completed
+Frobenius twist；BMS2 syntomic complex 是 twisted divided Frobenius 与
+canonical map 的 homotopy fibre。Characteristic-$p$ 和 mixed-characteristic
+comparisons 的 hypotheses、shift、finite-level coefficient 与 derived-limit
+边界已分别写明。
 
 ## 练习
 
 **练习 7.1.** 在 oriented prism $(A,d)$ 的 naive 模型中，证明 $N^{\ge i+1}_{\mathrm{naive}}M\subseteq N^{\ge i}_{\mathrm{naive}}M$。
 
-**练习 7.2.** 解释为什么 $\varphi_i$ 不是原始 Frobenius，而是除以 $I^i$ 后的 normalized Frobenius。
+**练习 7.2.** 解释定理 7.3 为什么把 Nygaard filtration 放在
+$C^{(1)}$ 而不是 $C$ 上，并说明
+$C^{(1)}\simeq L\eta_I C\to C$ 如何记录 Frobenius 的 $I$-divisibility。
 
-**练习 7.3.** 写出公式 7.5 中每个对象的系数环，并指出 twist convention 可能出现的两个错误位置。
+**练习 7.3.** 写出定义 7.5 中两张 maps 的共同 target 与 coefficient
+category，并指出为什么不能把 $\widehat\Delta_S$ 无条件替换成 relative
+$R\Gamma_\Delta(X/A)$。

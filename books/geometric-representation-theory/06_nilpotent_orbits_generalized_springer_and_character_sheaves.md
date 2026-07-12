@@ -36,7 +36,16 @@ $$
 
 **命题 6.3.** Irreducible $G$-equivariant local systems on $\mathcal O_x$ 与 irreducible representations of $A_G(x)$ 对应。
 
-**证明.** 由 $\mathcal O_x\simeq G/G_x$ 和命题 A.8，$[\mathcal O_x/G]\simeq BG_x$。在通常 constructible sheaf theory 中，$G_x$-equivariant local systems 由 $G_x$ 的有限维表示给出。若只考虑 algebraic connected component 的单值部分，则 irreducible local systems 由 component group $A_G(x)$ 的不可约表示参数化。这里使用了局部系统与有限 component group 表示的标准识别。$\square$
+**证明.** 由 $\mathcal O_x\simeq G/G_x$ 和命题 A.8，
+$$
+[\mathcal O_x/G]\simeq BG_x.
+$$
+在第三章的 Betti 模型中，推论 A.9 给出
+$$
+\pi_1(BG_x)\simeq\pi_0(G_x(\mathbb C))
+=A_G(x)(\mathbb C).
+$$
+因此 $BG_x$ 上的 finite-rank local systems 等价于有限群 $A_G(x)$ 的 finite-dimensional $E$-representations，irreducible objects 恰对应 irreducible representations。注意这里没有使用正维代数群 $G_x$ 的 algebraic representation category；connected component 在 Betti local-system monodromy 中被消去。$\square$
 
 **例 6.4.** 对 $G=GL_n$，nilpotent orbits 由 partitions $\lambda\vdash n$ 标号，component groups 平凡。因此 Springer correspondence 在 $GL_n$ 情形中只涉及 nilpotent orbit，不涉及非平凡 equivariant local system。该分类来自 Jordan normal form。
 
@@ -71,7 +80,8 @@ $$
 
 **命题 6.8.** Springer sheaf 的 simple perverse summands 都形如 $\operatorname{IC}(\overline{\mathcal O},\mathcal L)$。
 
-**证明.** $\mathsf{Spr}$ 是 $G$-equivariant constructible complex。由 decomposition theorem，$\mathsf{Spr}$ 分解为 shifted simple $G$-equivariant perverse sheaves 的直和。$\mathcal N$ 的 $G$-orbits 有限，因此第三章的 simple perverse sheaf 分类给出每个 simple summand 形如某个 orbit 上 irreducible equivariant local system 的 IC extension。该结论依赖外部输入：有限 orbit 分解、decomposition theorem 和 simple perverse sheaf 分类。$\square$
+**证明.** 外部输入定理 5.15.1 已给出
+$\mathsf{Spr}\in\operatorname{Perv}_G(\mathcal N,E)$ 且 semisimple，所以它在 perverse heart 中分解为有限个 simple objects 的直和，不出现额外 cohomological shifts。$\mathcal N$ 的 $G$-orbits 有限；由定理 3.15 的 equivariant 版本，每个 simple $G$-equivariant perverse sheaf 都是某个 orbit 上 irreducible equivariant local system 的 IC extension。因此每个 simple summand 具有所述形式。该证明链的外部输入是 Springer semismallness、semismall decomposition 和 equivariant simple-perverse classification。$\square$
 
 ## 6.3 Generalized Springer correspondence
 

@@ -8,6 +8,12 @@
 
 需要函子范畴、伴随函子、逗号范畴的基本语言和极限/余极限。
 
+本章默认 $\mathcal C$ 为 $\mathcal U$-小范畴，$\mathcal D,\mathcal E$
+在 $\mathcal V$ 层小且局部 $\mathcal U$-小。于是 $K/d,d/K$ 为
+$\mathcal U$-小，点态公式中的（余）极限有明确索引层级。若
+$\mathcal D$ 只在 $\mathcal V$ 层小，则以它为源的自然变换集合可能只在
+$\mathcal V$ 层小；Kan 泛性质中的双射相应在 $\mathbf{Set}_{\mathcal V}$ 中读取。
+
 ## 6.1 逗号范畴
 
 **定义 6.1.** 设 $K:\mathcal C\to\mathcal D$ 为函子，$d\in\mathcal D$。逗号范畴 $K/d$ 定义如下：
@@ -18,7 +24,24 @@
   \alpha'\circ K(u)=\alpha.
   $$
 
-对偶地，$d/K$ 的对象是 $(c,\beta:d\to Kc)$。
+忘掉结构箭头给出投影函子
+
+$$
+\pi_d:K/d\to\mathcal C,\qquad(c,\alpha)\mapsto c.
+$$
+
+对偶地，$d/K$ 的对象是 $(c,\beta:d\to Kc)$；从
+$(c,\beta)$ 到 $(c',\beta')$ 的态射是 $u:c\to c'$，满足
+
+$$
+K(u)\circ\beta=\beta'.
+$$
+
+相应投影记为
+
+$$
+\rho_d:d/K\to\mathcal C.
+$$
 
 ## 6.2 Kan 延拓的泛性质
 
@@ -34,56 +57,194 @@ $$
 \eta:F\Rightarrow(\operatorname{Lan}_K F)\circ K
 $$
 
-使得对任意 $H:\mathcal D\to\mathcal E$，预复合给出自然双射
+使得对任意 $H:\mathcal D\to\mathcal E$，映射
 
 $$
+\Lambda_H:
 \operatorname{Nat}(\operatorname{Lan}_K F,H)
-\cong
-\operatorname{Nat}(F,H K).
+\longrightarrow
+\operatorname{Nat}(F,H K),
+\qquad
+\theta\longmapsto(\theta K)\circ\eta
 $$
 
-**定义 6.3.** 右 Kan 延拓（right Kan extension）$\operatorname{Ran}_K F$ 是函子 $\mathcal D\to\mathcal E$ 和自然变换
+是双射，并且对 $H$ 自然。特别地，$\eta$ 是
+$\operatorname{id}_{\operatorname{Lan}_K F}$ 在该双射下的像。
+
+**定义 6.3.** 右 Kan 延拓（right Kan extension）
+$\operatorname{Ran}_K F$ 是函子 $\mathcal D\to\mathcal E$ 和自然变换
 
 $$
-\epsilon:(\operatorname{Ran}_K F)K\Rightarrow F
+\varepsilon:(\operatorname{Ran}_K F)K\Rightarrow F
 $$
 
-使得对任意 $H:\mathcal D\to\mathcal E$ 有自然双射
+使得对任意 $H:\mathcal D\to\mathcal E$，映射
 
 $$
+\mathrm{P}_H:
 \operatorname{Nat}(H,\operatorname{Ran}_K F)
-\cong
-\operatorname{Nat}(HK,F).
+\longrightarrow
+\operatorname{Nat}(HK,F),
+\qquad
+\theta\longmapsto\varepsilon\circ(\theta K)
 $$
 
-**命题 6.4.** 若存在，则 $\operatorname{Lan}_K$ 是预复合函子
+是双射，并且对 $H$ 自然。
+
+**命题 6.4（结构化唯一性与函子性）.**
+
+1. 固定 $F$ 后，任意两个左 Kan 延拓之间存在唯一与结构映射
+   $\eta$ 相容的自然同构；任意两个右 Kan 延拓之间存在唯一与
+   $\varepsilon$ 相容的自然同构。
+2. 若为每个 $F:\mathcal C\to\mathcal E$ 选择一个左、右 Kan 延拓，则
+   各自的泛性质唯一决定它们在自然变换上的作用，使
+   $\operatorname{Lan}_K$ 成为预复合函子
 
 $$
 K^*:\operatorname{Fun}(\mathcal D,\mathcal E)\to\operatorname{Fun}(\mathcal C,\mathcal E)
 $$
 
-的左伴随；$\operatorname{Ran}_K$ 是 $K^*$ 的右伴随。
+   的左伴随，并使 $\operatorname{Ran}_K$ 成为 $K^*$ 的右伴随。
 
-**证明.** 这只是定义 6.2 和 6.3 的重写。左 Kan 延拓的泛双射正是
+**证明.** 先证左延拓唯一性。设 $(L,\eta)$ 与 $(L',\eta')$ 都是
+$F$ 的左 Kan 延拓。把 $H=L'$ 代入 $(L,\eta)$ 的泛性质，存在唯一
+$\alpha:L\Rightarrow L'$ 满足
 
 $$
-\operatorname{Fun}(\mathcal D,\mathcal E)(\operatorname{Lan}_K F,H)
-\cong
-\operatorname{Fun}(\mathcal C,\mathcal E)(F,K^*H).
+(\alpha K)\eta=\eta'.
 $$
 
-右 Kan 延拓同理。$\square$
+交换二者得到唯一 $\beta:L'\Rightarrow L$ 满足
+$(\beta K)\eta'=\eta$。于是
+
+$$
+((\beta\alpha)K)\eta
+=(\beta K)(\alpha K)\eta
+=(\beta K)\eta'
+=\eta.
+$$
+
+$\operatorname{id}_L$ 也满足同一等式，故唯一性给出
+$\beta\alpha=\operatorname{id}_L$；交换二者得
+$\alpha\beta=\operatorname{id}_{L'}$。所以 $\alpha$ 是唯一相容自然同构。
+
+对右延拓，若 $(R,\varepsilon)$ 与 $(R',\varepsilon')$ 都表示同一右
+Kan 泛性质，则存在唯一 $\alpha:R\Rightarrow R'$ 满足
+
+$$
+\varepsilon'\circ(\alpha K)=\varepsilon.
+$$
+
+同理存在唯一 $\beta:R'\Rightarrow R$ 满足
+$\varepsilon(\beta K)=\varepsilon'$。于是
+
+$$
+\varepsilon((\beta\alpha)K)
+=\varepsilon(\beta K)(\alpha K)
+=\varepsilon'(\alpha K)
+=\varepsilon.
+$$
+
+右 Kan 泛性质的单射性给出
+$\beta\alpha=\operatorname{id}_R$。交换二者，
+
+$$
+\varepsilon'((\alpha\beta)K)
+=\varepsilon(\beta K)
+=\varepsilon',
+$$
+
+故 $\alpha\beta=\operatorname{id}_{R'}$。这也证明了相容态射的唯一性。
+
+现在选择每个 $F$ 的左延拓 $(L_F,\eta_F)$。对自然变换
+$\sigma:F\Rightarrow F'$，定义
+
+$$
+\operatorname{Lan}_K(\sigma):L_F\Rightarrow L_{F'}
+$$
+
+为唯一满足
+
+$$
+\bigl(\operatorname{Lan}_K(\sigma)K\bigr)\eta_F
+=\eta_{F'}\sigma
+$$
+
+的自然变换。$\sigma=\operatorname{id}_F$ 时恒等变换满足该式，故由唯一性
+$\operatorname{Lan}_K(\operatorname{id}_F)=\operatorname{id}_{L_F}$。
+若 $F\xRightarrow{\sigma}F'\xRightarrow{\tau}F''$，则
+$\operatorname{Lan}_K(\tau)\operatorname{Lan}_K(\sigma)$ 与
+$\operatorname{Lan}_K(\tau\sigma)$ 预合 $\eta_F$ 后都等于
+$\eta_{F''}\tau\sigma$，故二者相等。因此 $\operatorname{Lan}_K$ 是函子。
+
+定义 6.2 的双射已经对 $H$ 自然。它也对 $F$ 自然：若
+$\theta:L_{F'}\Rightarrow H$，则
+
+$$
+\begin{aligned}
+\Lambda_H(\theta\operatorname{Lan}_K(\sigma))
+&=(\theta K)(\operatorname{Lan}_K(\sigma)K)\eta_F\\
+&=(\theta K)\eta_{F'}\sigma
+=\Lambda_H(\theta)\sigma.
+\end{aligned}
+$$
+
+故这些双射正是伴随
+$\operatorname{Lan}_K\dashv K^*$ 的 Hom 双射。
+
+对选择的右延拓 $(R_F,\varepsilon_F)$，定义
+$\operatorname{Ran}_K(\sigma):R_F\Rightarrow R_{F'}$ 为唯一满足
+
+$$
+\varepsilon_{F'}\bigl(\operatorname{Ran}_K(\sigma)K\bigr)
+=\sigma\varepsilon_F
+$$
+
+的自然变换。具体地，$\operatorname{id}_{R_F}$ 满足
+$\sigma=\operatorname{id}_F$ 时的定义式，故
+$\operatorname{Ran}_K(\operatorname{id}_F)=\operatorname{id}_{R_F}$。若
+$F\xRightarrow{\sigma}F'\xRightarrow{\tau}F''$，则
+
+$$
+\begin{aligned}
+\varepsilon_{F''}
+\bigl((\operatorname{Ran}_K(\tau)\operatorname{Ran}_K(\sigma))K\bigr)
+&=\tau\varepsilon_{F'}
+  (\operatorname{Ran}_K(\sigma)K)\\
+&=\tau\sigma\varepsilon_F,
+\end{aligned}
+$$
+
+所以唯一性给出
+$\operatorname{Ran}_K(\tau)\operatorname{Ran}_K(\sigma)
+=\operatorname{Ran}_K(\tau\sigma)$。因此 $\operatorname{Ran}_K$ 是函子。此外，
+
+$$
+\mathrm{P}_H(\operatorname{Ran}_K(\sigma)\theta)
+=\varepsilon_{F'}(\operatorname{Ran}_K(\sigma)K)(\theta K)
+=\sigma\varepsilon_F(\theta K)
+=\sigma\mathrm{P}_H(\theta)
+$$
+
+给出对 $F$ 的自然性。因此 $K^*\dashv\operatorname{Ran}_K$。$\square$
 
 ## 6.3 点态公式
 
-**定理 6.5.** 若 $\mathcal E$ 有所有形状 $K/d$ 的余极限，则左 Kan 延拓逐点由公式
+**定理 6.5（左 Kan 延拓的点态公式）.** 若对每个
+$d\in\mathcal D$，$\mathcal U$-小图形
+
+$$
+F\pi_d:K/d\to\mathcal E
+$$
+
+的余极限存在，则左 Kan 延拓存在，并逐点由公式
 
 $$
 (\operatorname{Lan}_K F)(d)\cong
-\operatorname{colim}_{(c,Kc\to d)\in K/d}F(c)
+\operatorname{colim}_{K/d}(F\pi_d)
 $$
 
-给出。
+给出。要求 $\mathcal E$ 有所有形状 $K/d$ 的余极限是一个常用充分条件，但定理实际只需要上述特定图形的余极限。
 
 **证明.** 定义 $L:\mathcal D\to\mathcal E$ 如下。对 $d\in\mathcal D$，令
 
@@ -91,13 +252,32 @@ $$
 L(d)=\operatorname{colim}_{(c,\alpha:Kc\to d)\in K/d}F(c).
 $$
 
+记余极限结构映射为
+
+$$
+\iota^d_{(c,\alpha)}:F(c)\to L(d).
+$$
+
 若 $v:d\to d'$，则后复合给出函子
 
 $$
-K/d\to K/d',\qquad (c,\alpha)\mapsto(c,v\alpha).
+v_*:K/d\to K/d',\qquad (c,\alpha)\mapsto(c,v\alpha).
 $$
 
-由余极限泛性质，图形 $F:K/d\to\mathcal E$ 的余锥到 $L(d')$ 诱导唯一态射 $L(v):L(d)\to L(d')$。恒等和复合由余极限诱导态射的唯一性验证，因此 $L$ 是函子。
+族 $\iota^{d'}_{(c,v\alpha)}:F(c)\to L(d')$ 是图形
+$F\pi_d$ 的余锥，故余极限泛性质诱导唯一态射
+$L(v):L(d)\to L(d')$ 满足
+
+$$
+L(v)\iota^d_{(c,\alpha)}
+=\iota^{d'}_{(c,v\alpha)}.
+$$
+
+当 $v=\operatorname{id}_d$ 时，$L(v)$ 与
+$\operatorname{id}_{L(d)}$ 在每个 $\iota^d_{(c,\alpha)}$ 上复合相同，故相等。若
+$d\xrightarrow{v}d'\xrightarrow{w}d''$，则
+$L(w)L(v)$ 与 $L(wv)$ 在每个结构映射上都给出
+$\iota^{d''}_{(c,wv\alpha)}$，故也相等。因此 $L$ 是函子。
 
 对每个 $c\in\mathcal C$，对象 $(c,\operatorname{id}_{Kc})\in K/Kc$ 的余极限结构映射给出
 
@@ -146,16 +326,54 @@ $$
 H(v\alpha)\beta_c,
 $$
 
-故相等。于是 $\bar\beta:L\Rightarrow H$。两个构造互逆，且对 $H$ 自然，所以 $L$ 满足左 Kan 延拓的泛性质。$\square$
+故相等。于是 $\bar\beta:L\Rightarrow H$。
 
-**定理 6.6.** 若 $\mathcal E$ 有所有形状 $d/K$ 的极限，则右 Kan 延拓逐点由公式
+还需验证两个方向互逆。若从 $\beta:F\Rightarrow HK$ 构造
+$\bar\beta$，则在 $c\in\mathcal C$ 上，
+
+$$
+\bigl((\bar\beta K)\eta\bigr)_c
+=\bar\beta_{Kc}\iota^{Kc}_{(c,\operatorname{id}_{Kc})}
+=H(\operatorname{id}_{Kc})\beta_c
+=\beta_c.
+$$
+
+反过来，从 $\theta:L\Rightarrow H$ 得到
+$\beta=(\theta K)\eta$，再构造 $\bar\beta$。对每个
+$(c,\alpha:Kc\to d)$，有
+
+$$
+\begin{aligned}
+\bar\beta_d\iota^d_{(c,\alpha)}
+&=H(\alpha)\beta_c\\
+&=H(\alpha)\theta_{Kc}\eta_c\\
+&=\theta_dL(\alpha)\eta_c\\
+&=\theta_d\iota^d_{(c,\alpha)}.
+\end{aligned}
+$$
+
+第三行用 $\theta$ 对 $\alpha$ 的自然性，第四行用 $L(\alpha)$ 的定义。
+余极限结构映射联合检测从 $L(d)$ 出发的态射，所以
+$\bar\beta_d=\theta_d$。两种构造互逆。若
+$\gamma:H\Rightarrow H'$，上述分量公式表明由 $\gamma K\circ\beta$
+构造的态射是 $\gamma\circ\bar\beta$，故双射对 $H$ 自然。于是
+$(L,\eta)$ 满足定义 6.2。$\square$
+
+**定理 6.6（右 Kan 延拓的点态公式）.** 若对每个
+$d\in\mathcal D$，$\mathcal U$-小图形
+
+$$
+F\rho_d:d/K\to\mathcal E
+$$
+
+的极限存在，则右 Kan 延拓存在，并逐点由公式
 
 $$
 (\operatorname{Ran}_K F)(d)\cong
-\lim_{(c,d\to Kc)\in d/K}F(c)
+\lim_{d/K}(F\rho_d)
 $$
 
-给出。
+给出。要求 $\mathcal E$ 有所有形状 $d/K$ 的极限只是一个常用充分条件。
 
 **证明.** 定义 $R:\mathcal D\to\mathcal E$ 如下。对 $d\in\mathcal D$，令
 
@@ -172,7 +390,8 @@ $$
 若 $v:d\to d'$ 是 $\mathcal D$ 中态射，则预复合给出函子
 
 $$
-d'/K\to d/K,\qquad (c,\beta:d'\to Kc)\mapsto(c,\beta v:d\to Kc).
+v^*:d'/K\to d/K,\qquad
+(c,\beta:d'\to Kc)\mapsto(c,\beta v:d\to Kc).
 $$
 
 于是族
@@ -181,7 +400,7 @@ $$
 p_{(c,\beta v)}:R(d)\to F(c)
 $$
 
-是到图形 $d'/K\to\mathcal E$ 的锥。由 $R(d')$ 的极限泛性质，存在唯一态射
+是到图形 $F\rho_{d'}:d'/K\to\mathcal E$ 的锥。由 $R(d')$ 的极限泛性质，存在唯一态射
 
 $$
 R(v):R(d)\to R(d')
@@ -193,12 +412,17 @@ $$
 p_{(c,\beta)}R(v)=p_{(c,\beta v)}
 $$
 
-对所有 $(c,\beta)\in d'/K$ 成立。恒等与复合由这些投影共同检测，所以 $R$ 是函子。
+对所有 $(c,\beta)\in d'/K$ 成立。当 $v=\operatorname{id}_d$ 时，
+$R(v)$ 与 $\operatorname{id}_{R(d)}$ 在所有极限投影下相同，故相等。若
+$d\xrightarrow{v}d'\xrightarrow{w}d''$，则
+$R(w)R(v)$ 与 $R(wv)$ 经任意
+$p_{(c,\gamma:d''\to Kc)}$ 后都等于
+$p_{(c,\gamma wv)}$，故也相等。所以 $R$ 是函子。
 
 对每个 $c\in\mathcal C$，令
 
 $$
-\epsilon_c:R(Kc)\to F(c)
+\varepsilon_c:R(Kc)\to F(c)
 $$
 
 为对象 $(c,\operatorname{id}_{Kc})\in Kc/K$ 对应的投影。若 $u:c\to c'$，则在 $Kc/K$ 中有态射
@@ -222,10 +446,10 @@ $$
 因此
 
 $$
-\epsilon_{c'}R(Ku)=F(u)\epsilon_c,
+\varepsilon_{c'}R(Ku)=F(u)\varepsilon_c,
 $$
 
-故 $\epsilon:RK\Rightarrow F$ 是自然变换。
+故 $\varepsilon:RK\Rightarrow F$ 是自然变换。
 
 现在设 $H:\mathcal D\to\mathcal E$，并给定自然变换 $\alpha:HK\Rightarrow F$。对每个 $d$ 和每个 $(c,\beta:d\to Kc)\in d/K$，取复合
 
@@ -270,10 +494,10 @@ $$
 
 由极限投影共同检测，$R(v)\bar\alpha_d=\bar\alpha_{d'}H(v)$。故 $\bar\alpha:H\Rightarrow R$ 自然。
 
-把 $\bar\alpha$ 与 $\epsilon$ 复合得到
+把 $\bar\alpha$ 与 $\varepsilon$ 复合得到
 
 $$
-HK\xrightarrow{\bar\alpha K}RK\xrightarrow{\epsilon}F.
+HK\xrightarrow{\bar\alpha K}RK\xrightarrow{\varepsilon}F.
 $$
 
 在 $c$ 处分量为
@@ -283,7 +507,23 @@ p_{(c,\operatorname{id})}\bar\alpha_{Kc}
 =\alpha_c,
 $$
 
-故恢复 $\alpha$。反过来，从 $\theta:H\Rightarrow R$ 出发得到 $\epsilon\theta K:HK\Rightarrow F$；再按上述构造恢复的自然变换与 $\theta$ 在每个投影 $p_{(c,\beta)}$ 下相同，因此相等。于是
+故恢复 $\alpha$。反过来，从 $\theta:H\Rightarrow R$ 出发得到
+$\varepsilon(\theta K):HK\Rightarrow F$；再按上述构造恢复的自然变换
+$\bar\alpha$ 满足
+
+$$
+p_{(c,\beta)}\bar\alpha_d
+=\varepsilon_c\theta_{Kc}H(\beta)
+=p_{(c,\operatorname{id})}\theta_{Kc}H(\beta)
+=p_{(c,\beta)}\theta_d.
+$$
+
+最后一步依次使用 $\theta$ 对 $\beta:d\to Kc$ 的自然性
+$\theta_{Kc}H(\beta)=R(\beta)\theta_d$，以及 $R(\beta)$ 的定义式
+$p_{(c,\operatorname{id})}R(\beta)=p_{(c,\beta)}$。极限投影联合检测态射，
+故 $\bar\alpha_d=\theta_d$。两种构造互逆。若
+$\gamma:H'\Rightarrow H$，则预复合 $\bar\alpha\gamma$ 对应于
+$\alpha(\gamma K)$，所以该双射对 $H$ 自然。于是
 
 $$
 \operatorname{Nat}(H,R)\cong\operatorname{Nat}(HK,F)

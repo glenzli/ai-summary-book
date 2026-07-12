@@ -1,6 +1,8 @@
 # 正式教材扩展审计
 
-审计日期：2026-07-08。
+初次审计日期：2026-07-08。严格化复核：2026-07-11。
+
+前半部分保留 2026-07-08 扩展动作的历史记录；文末复核段给出当前状态。
 
 ## 本轮扩展动作
 
@@ -42,11 +44,11 @@
 | applications | 应用边界 |
 | closure/failure modes | 已成章 |
 
-## 剩余风险
+## 2026-07-08 时点的剩余风险
 
 - Fontaine period rings 的 construction 仍未重建，只作为 classical interface。
-- Derived complete flatness 仍为工作定义。
-- Nygaard/Tate twist indexing 需要最终源文献核对。
+- Derived complete flatness 当时尚未按 source definition 收口。
+- Nygaard/Tate twist indexing 当时尚未完成 numbered-statement 核对。
 - 章节内交叉引用尚未全部替换为稳定 label。
 
 ## 审计结论
@@ -62,3 +64,15 @@
 - 闭包矩阵状态升级为 `Textbook-Internal`。
 
 补强后，本书不再只是章节和账本成体系，而是具备内部技术基础和章末练习解答；剩余瓶颈转为外部 locator 与出版校对。
+
+## 2026-07-11 严格化复核
+
+- 附录 A 已按 Bhatt--Scholze §1.2 给出 Koszul derived completion、complete
+  flatness 与 complete Tor-amplitude 的精确定义，并完成 principal
+  bounded-torsion 与 flat reduction 的初等证明。
+- 第二、三、五至七、九、十一、十二章已分别收口 prism/site、completed
+  Frobenius twist、BMS comparisons、relative Nygaard、syntomic truncation
+  与 BK/BKF lattice boundaries。
+- 正文使用的 Bhatt--Scholze/BMS numbered statements 已升级为 `L3`；当前
+  数学来源风险集中在 classical Fontaine/Faltings/Tsuji source selection
+  与未进入主线的配套结果。

@@ -55,7 +55,7 @@ N_L+\frac{P^2}{2}-1=N_R-a_R,
 $$
 其中 right-moving NS sector 中 $a_R=1/2$，R sector 中 $a_R=0$。
 
-**证明草图.** 左移动 bosonic sector 的 normal ordering constant 为 $1$，右移动 RNS sector 的 normal ordering constant 为 $a_R$。闭弦物理条件要求左右 $L_0$ 约束给出同一个 spacetime mass，并且 $L_0-\tilde L_0=0$；消去共同的非紧动量项即得。$\square$
+**推导说明（标准物理口径）.** 左移动 bosonic sector 的 normal ordering constant 为 $1$，右移动 RNS sector 的 normal ordering constant 为 $a_R$。闭弦物理条件要求左右 $L_0$ 约束给出同一个 spacetime mass，并且 $L_0-\tilde L_0=0$；消去共同的非紧动量项即得。$\square$
 
 **命题 10.7（gauge bosons）.** 十维 heterotic gauge bosons 来自形如
 $$
@@ -63,7 +63,7 @@ J^a(z)\,\tilde\psi^\mu(\bar z)e^{ik\cdot X(z,\bar z)}
 $$
 的顶点算子，其中 $J^a$ 是左移动 current，$\tilde\psi^\mu$ 是右移动 NS fermion。
 
-**证明草图.** 右移动部分 $\tilde\psi^\mu e^{ikX}$ 是 massless vector 的 NS 顶点。左移动 current $J^a$ 具有 weight $1$，取代开弦 Chan-Paton matrix，给出 gauge algebra index。整体 conformal weights 为 $(1,1)$，并且 $k^2=0$。$\square$
+**推导说明（标准物理口径）.** 右移动部分 $\tilde\psi^\mu e^{ikX}$ 是 massless vector 的 NS 顶点。左移动 current $J^a$ 具有 weight $1$，取代开弦 Chan-Paton matrix，给出 gauge algebra index。整体 conformal weights 为 $(1,1)$，并且 $k^2=0$。$\square$
 
 **例 10.7A（root states）.** 若 $P\in\Lambda$ 满足 $P^2=2$，则内部 vertex
 $$
@@ -87,31 +87,61 @@ $$
 
 **命题 10.9（level-one simply-laced current algebra）.** Lattice realization 中，长度平方为 $2$ 的 lattice vectors 给出 roots，并生成 level-one simply-laced current algebra。
 
-**证明草图.** 内部 compact boson 的 vertex $e^{iP\cdot Y}$ 在 $P^2=2$ 时具有 left conformal weight $1$，可作为 current。其 OPE 的 singular terms 由 lattice inner product 控制，并复现对应 root system 的 Lie bracket。$\square$
+**推导说明（标准物理口径）.** 内部 compact boson 的 vertex $e^{iP\cdot Y}$ 在 $P^2=2$ 时具有 left conformal weight $1$，可作为 current。其 OPE 的 singular terms 由 lattice inner product 控制，并复现对应 root system 的 Lie bracket。$\square$
 
 ## 10.4 Modular invariance 与 gauge group 限制
 
-**命题 10.10（even unimodular 条件的物理含义）.** Heterotic one-loop partition function 的 modular invariance 要求内部 lattice 为 even unimodular。
+**命题 10.10（lattice realization 的 modular 条件）.** 在定义 10.3 的
+$16$ 个纯左移 compact bosons realization 中，若内部 lattice character 要与右移
+RNS spin-structure sum 组合成 modular-invariant torus integrand，则积分 lattice
+$\Lambda$ 必须为 even 且 self-dual，亦即 unimodular。
 
-**证明草图.** $T:\tau\mapsto\tau+1$ invariance 要求所有 lattice vectors 有偶平方，从而 conformal spin 为整数。$S:\tau\mapsto-1/\tau$ invariance 要求 lattice theta function 在 Fourier transform 下闭合，这对应 unimodularity。完整证明属于 theta function 与 lattice modular form 理论。$\square$
+**推导说明（标准物理口径）.** 先把有限维 Poisson summation 应用于 rank $r$
+lattice Gaussian。若 $\Lambda^*$ 是 dual lattice，$\operatorname{vol}(\Lambda)$ 是
+covolume，则
+$$
+\Theta_\Lambda(-1/\tau)
+=\frac{(-i\tau)^{r/2}}{\operatorname{vol}(\Lambda)}
+\Theta_{\Lambda^*}(\tau).
+$$
+因此 $S$ 变换若不引入新的 momentum cosets，就要求
+$\Lambda=\Lambda^*$，等价于 $\operatorname{vol}(\Lambda)=1$。另一方面
+$$
+\Theta_\Lambda(\tau+1)
+=\sum_{P\in\Lambda}e^{\pi iP^2}q^{P^2/2};
+$$
+要使相位不依赖 $P$，必须有 $P^2\in2\mathbb Z$。$\eta^{16}$ 在 $T$ 下仍有由
+chiral central charge 决定的统一 multiplier；该 multiplier 与右移 RNS/ghost
+因子一起抵消，不能要求内部 character 单独 invariant。Poisson summation 与
+theta 变换是精确数学步骤，把 chiral characters 组合为 string measure 则是
+one-loop CFT 输入。$\square$
 
-**命题 10.10A（partition function 的 lattice 因子）.** 左移动内部 lattice 对 torus partition function 的贡献形如
+**命题 10.10A（partition function 的 lattice 因子）.** 左移动内部 lattice 对
+torus chiral character 的贡献形如
 $$
 Z_\Lambda(\tau)=\frac{\Theta_\Lambda(\tau)}{\eta(\tau)^{16}}.
 $$
-Modular invariance 要求 $Z_\Lambda$ 与右移动 RNS spin-structure sum 组合后在 $SL(2,\mathbb Z)$ 下不变。
+Modular invariance 要求 $Z_\Lambda$ 与非紧坐标、ghosts 及右移动 RNS
+spin-structure sum 组合后在 $SL(2,\mathbb Z)$ 下不变；$Z_\Lambda$ 本身可带
+central-charge multiplier。
 
-**证明草图.** $16$ 个 compact chiral bosons 的 oscillator 部分给出 $\eta(\tau)^{-16}$，零模动量求和给出 $\Theta_\Lambda$。$\eta$ 与 theta function 的 modular transformation 决定 even unimodular 条件。$\square$
+**推导说明（标准物理口径）.** $16$ 个 compact chiral bosons 的 oscillator 部分给出 $\eta(\tau)^{-16}$，零模动量求和给出 $\Theta_\Lambda$。$\eta$ 与 theta function 的 modular transformation 决定 even unimodular 条件。$\square$
 
 ## 10.5 Anomaly cancellation
 
 十维 $N=1$ supergravity coupled to super Yang-Mills 是 chiral theory，存在 gauge 与 gravitational anomalies。String consistency 要求这些 anomalies 被抵消。
 
-**外部输入定理 10.11（Green-Schwarz factorization）.** 十维 $N=1$ supergravity coupled to super Yang-Mills 的 anomaly polynomial $I_{12}$ 可由 Green-Schwarz mechanism 抵消，当且仅当 gauge algebra trace identities 使其因式分解为
+**外部输入定理 10.11（heterotic Green--Schwarz factorization）.** 对十维
+$N=1$ supergravity coupled to super Yang--Mills 的标准手征场内容，one-loop
+局部 anomaly 由十二形式 $I_{12}$ 的 descent 给出。消去不可约 gravitational
+$\operatorname{tr}R^6$ 项先要求 $\dim\mathfrak g=496$；若只用同一个 NS--NS
+two-form 作 Green--Schwarz cancellation，还要求剩余 polynomial 因式分解为
 $$
 I_{12}=X_4X_8.
 $$
-在 string theory 中满足条件的十维 gauge algebra 为 $\mathfrak{so}(32)$ 或 $\mathfrak e_8\oplus\mathfrak e_8$；对应 heterotic 全局群通常写作
+对定义 10.3 的两种 heterotic lattice 所产生的 gauge algebra
+$\mathfrak{so}(32)$ 与 $\mathfrak e_8\oplus\mathfrak e_8$，所需 trace identities
+成立；对应 heterotic 全局群通常写作
 $$
 \operatorname{Spin}(32)/\mathbb Z_2,\qquad E_8\times E_8.
 $$
@@ -121,6 +151,12 @@ $$
 X_4=\operatorname{tr}R^2-\operatorname{Tr}F^2
 $$
 的形式；$X_8$ 是由 $\operatorname{tr}R^4$、$(\operatorname{tr}R^2)^2$、gauge traces 及混合项组成的八形式。
+
+**使用边界.** 本书不重做 chiral determinant 的 index/descent 计算，也不把
+factorization 误写成所有十维低能 gauge algebra 的完整分类。这里的结论是：前文
+lattice 构造选出的两个 heterotic 理论通过局部 perturbative anomaly 检验。局部
+$I_{12}$ factorization 单独不证明 global anomaly 消失，也不替代 worldsheet
+modular invariance、factorization 或 tadpole 条件。
 
 **定义 10.12（modified field strength）.** Green-Schwarz mechanism 中，NS-NS two-form $B$ 的 field strength 被修正为
 $$
@@ -137,9 +173,14 @@ S_{\mathrm{GS}}\supset \int B\wedge X_8
 $$
 可通过 $B$ 的 gauge/Lorentz transformation 抵消 one-loop anomaly。
 
-**证明草图.** Gauge 或 Lorentz transformation 下 Chern-Simons forms 的 variation 为 exact form，使 $H$ invariant 需要 $B$ 同时变换。于是 $\int B\wedge X_8$ 的 variation 给出 descent formalism 中与 anomaly polynomial $X_4X_8$ 对应的 anomaly，符号和规范化由 string one-loop amplitude 固定。$\square$
+**推导说明（标准物理口径）.** Gauge 或 Lorentz transformation 下 Chern-Simons forms 的 variation 为 exact form，使 $H$ invariant 需要 $B$ 同时变换。于是 $\int B\wedge X_8$ 的 variation 给出 descent formalism 中与 anomaly polynomial $X_4X_8$ 对应的 anomaly，符号和规范化由 string one-loop amplitude 固定。$\square$
 
 **注 10.14（trace convention）.** $\operatorname{tr}$ 与 $\operatorname{Tr}$ 的区别是 anomaly cancellation 中最容易出错的 convention 之一。本书把 $\operatorname{tr}$ 用于 Lorentz fundamental trace，把 $\operatorname{Tr}$ 用于 gauge trace 的规范化形式；具体群表示的换算放入附录 C。
+
+**注 10.15（必要条件与充分条件）.** Central-charge cancellation 是世界面局部条件，
+even self-dual lattice 给出本章 realization 的 genus-one modular 条件，
+$I_{12}=X_4X_8$ 是十维低能局部 anomaly 条件。三者相互支持但逻辑上不同；任意一条
+都不能单独推出完整 perturbative heterotic string 的存在与一致性。
 
 ## 本章小结
 

@@ -74,7 +74,12 @@ $$
 $$
 C_K/N_{L/K}C_L\simeq\operatorname{Gal}(L/K),
 $$
-并与所有局部 reciprocity maps 相容。
+并与所有局部 reciprocity maps 相容。其像在 $G_K^{\operatorname{ab}}$ 中稠密，且诱导
+$$
+\widehat{C_K}\xrightarrow{\sim}G_K^{\operatorname{ab}}.
+$$
+因此本定理给出的是所有有限 Abel 商及 profinite completion 上的同构，不是
+$C_K\xrightarrow{\sim}G_K^{\operatorname{ab}}$。
 
 **外部输入定理 V.7（global product formula for local symbols）.** 对 $a\in K^\times$，所有局部 Artin 符号的乘积为 $1$：
 $$
@@ -153,11 +158,13 @@ $$
 $$
 \chi_\rho=\rho\circ\operatorname{rec}_K:C_K\to\mathbb C^\times.
 $$
-反向由任意有限阶 Hecke character 与 $\operatorname{rec}_K^{-1}$ 在有限 Abel 商上复合得到 Galois character。局部相容性来自定理 V.6 与局部 reciprocity 的相容性。$\square$
+反过来，有限阶 Hecke character $\chi$ 通过有限商
+$C_K/\ker\chi$ 分解，因而唯一延拓到 $\widehat{C_K}$；再用定理 V.6 的同构
+$\widehat{C_K}\simeq G_K^{\operatorname{ab}}$ 得到有限像 Galois character。两个方向在同一有限 Abel 商上互逆。局部相容性来自定理 V.6 与局部 reciprocity 的相容性。$\square$
 
 **命题 V.16.** 非有限阶 Hecke quasi-character 属于 Weil 侧而非 profinite Galois 侧。
 
-**证明.** Profinite group $G_K$ 到 $\mathbb C^\times$ 的连续 character 具有紧像；若还要求代数或有限 ramification 条件，有限阶情形给出 Artin characters。一般 Hecke quasi-character 可含 $|\cdot|^s$ 这样的非有限阶连续因子，其在 ideles 上自然存在，但不能作为普通 profinite Galois group 的连续复表示解释。Weil group 允许这类非紧实参数，因此 `GL(1)` 的一般 quasi-character 应放在 Weil 参数侧。$\square$
+**证明.** Profinite group $G_K$ 的连续像仍为 profinite；其在 $\mathbb C^\times$ 中又是紧子群，故落在 $S^1$。$S^1$ 的闭子群只有有限循环群或 $S^1$，而 profinite image 是 totally disconnected，不能等于 $S^1$，所以该像必有限。一般 Hecke quasi-character 可含 $|\cdot|^s$ 这样的非有限阶连续因子，其在 ideles 上自然存在，但不能作为普通 profinite Galois group 的连续复表示解释。Weil group 允许这类非紧实参数，因此 `GL(1)` 的一般 quasi-character 应放在 Weil 参数侧。$\square$
 
 ## 练习
 

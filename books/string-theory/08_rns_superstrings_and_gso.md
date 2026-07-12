@@ -72,7 +72,7 @@ G_m(z)G_m(w)
 +\frac{2T_m(w)}{z-w}.
 $$
 
-**证明草图.** 用定义 8.1 的 free-field OPE 和 Wick theorem 逐项收缩。$G_mG_m$ 的三阶极点来自 $\psi^\mu\psi^\nu$ 与 $\partial X_\mu\partial X_\nu$ 的双收缩；一阶极点给出 $2T_m$。$\square$
+**推导说明（标准物理口径）.** 用定义 8.1 的 free-field OPE 和 Wick theorem 逐项收缩。$G_mG_m$ 的三阶极点来自 $\psi^\mu\psi^\nu$ 与 $\partial X_\mu\partial X_\nu$ 的双收缩；一阶极点给出 $2T_m$。$\square$
 
 ## 8.2 NS/R sectors 和 super-Virasoro algebra
 
@@ -119,7 +119,7 @@ $$
 +\frac c3\left(r^2-\frac14\right)\delta_{r+s,0}.
 $$
 
-**证明草图.** 对命题 8.4 的 OPE 分别取 Laurent coefficients。$\square$
+**推导说明（标准物理口径）.** 对命题 8.4 的 OPE 分别取 Laurent coefficients。$\square$
 
 ## 8.3 Superconformal ghosts 和临界维数
 
@@ -133,9 +133,30 @@ $$
 c_{\mathrm{gh}}=-15.
 $$
 
-**证明草图.** $bc$ 系统是权重 $(2,-1)$ 的反交换 ghost，第三章已给出 $c_{bc}=-26$。$\beta\gamma$ 是权重 $(3/2,-1/2)$ 的交换 ghost；代入一阶系统 central charge 公式得到 $c_{\beta\gamma}=11$。$\square$
+**证明.** $bc$ 系统是权重 $(2,-1)$ 的反交换一阶系统，第三章已在
+point-splitting normal ordering 下给出
+$$
+c_{bc}=1-3(2\cdot2-1)^2=-26.
+$$
+对权重 $(\lambda,1-\lambda)$ 的交换 $\beta\gamma$ 一阶 operator system，取与
+第三章相同的二次 stress tensor。四种双收缩的绝对系数相同，但不再出现交换
+fermionic fields 的负号，故四阶极点反号，
+$$
+c_{\beta\gamma}
+=2(6\lambda^2-6\lambda+1)
+=-1+3(2\lambda-1)^2.
+$$
+代入 $\lambda=3/2$ 得
+$$
+c_{\beta\gamma}
+=2\left(6\cdot\frac94-6\cdot\frac32+1\right)=11,
+$$
+所以总 ghost central charge 为 $-15$。这是局部正规序 operator algebra 的精确
+中心项；$\beta\gamma$ functional determinant、zero modes 与 picture vacua 仍属于
+gauge-fixed path-integral/representation 输入。$\square$
 
-**定理 8.10（RNS 临界维数）.** 平坦背景 RNS string 的 superconformal anomaly cancellation 要求
+**推论 8.10（RNS 局部临界条件）.** 平坦 free-field RNS string 的局部
+superconformal anomaly cancellation 与正规序 BRST nilpotency 要求
 $$
 c_m+c_{\mathrm{gh}}=0,
 $$
@@ -148,7 +169,11 @@ $$
 D=10.
 $$
 
-**证明.** 由命题 8.3 和命题 8.9 直接计算。$\square$
+**推导说明（标准物理口径）.** 命题 8.3 与命题 8.9 的 operator OPE 给出
+$c_m+c_{\mathrm{gh}}=3D/2-15$；正规化 Ward identity/BRST calculation 把其消失
+作为局部 gauge anomaly cancellation 条件。因此 $D=10$。这只是局部必要条件；
+GSO projection、spin-structure modular invariance、factorization 与 target-space
+anomaly cancellation 是后续独立条件。$\square$
 
 ## 8.4 RNS 质量公式与零模
 
@@ -178,7 +203,33 @@ a=
 \end{cases}
 $$
 
-**证明草图.** 与第四章开弦推导相同，但 $L_0$ 中加入 fermion oscillator number 和相应 normal ordering constant。NS 与 R 的 $a$ 值由半整数或整数 fermion 零点能给出。$\square$
+**推导说明（标准物理口径）.** 在 light-cone gauge 中有 $D-2$ 组横向 boson-fermion。每个实 boson 的零点能为
+$$
+E_0^{B}=\frac12\sum_{n=1}^{\infty}n
+=\frac12\zeta(-1)=-\frac1{24}.
+$$
+NS fermion 为半整数模；反对易振子的真空常数带相反符号，故
+$$
+E_{0,\mathrm{NS}}^{F}
+=-\frac12\sum_{r\in\mathbb Z_{>0}+1/2}r
+=-\frac12\zeta\!\left(-1,\frac12\right)
+=-\frac1{48}.
+$$
+所以
+$$
+E_{0,\mathrm{NS}}=-\frac{D-2}{16},
+\qquad a_{\mathrm{NS}}=-E_{0,\mathrm{NS}}.
+$$
+临界维数 $D=10$ 时得到 $a_{\mathrm{NS}}=1/2$。R fermion 为整数模，并有
+$$
+E_{0,\mathrm R}^{F}=-\frac12\sum_{n=1}^{\infty}n=+\frac1{24},
+$$
+逐方向抵消 bosonic $-1/24$，故 $a_{\mathrm R}=0$。这里
+$\zeta(-1)$ 与 $\zeta(-1,1/2)$ 可等价地由
+$e^{-\varepsilon n}$、$e^{-\varepsilon(n+1/2)}$ cutoff 展开后减去幂发散项取得有限部；
+它们不是原发散级数的通常意义求和。保持 super-Virasoro grading 的该方案与协变量子化
+给出相同截距，而不保持该对称性的任意 finite subtraction 不定义同一个 RNS CFT。
+$\square$
 
 **例 8.13（NS sector）.** NS ground state 有
 $$
@@ -204,15 +255,44 @@ P_{\mathrm{GSO}}=\frac12(1\pm(-1)^F),
 $$
 并在闭弦中分别对 left-moving 与 right-moving sectors 选择投影。
 
-**定理 8.16（GSO projection 的作用）.** 适当选择 GSO projection 后：
+NS vacuum 的 $(-1)^F$ 本征值含一个 convention-dependent 整体符号，本书固定投影
+保留奇数个 $\psi_{-r}$ 激发。R sector 中，非零 modes 的 parity 与零模 Clifford
+module 上的十维 chirality 共同定义 $(-1)^F$。这个离散选择不是由
+$c_m+c_{\mathrm{gh}}=0$ 自动推出的。
+
+**命题 8.16（单弦谱层面的 GSO 投影）.** 按定义 8.15 的约定逐手征 sector
+投影后：
 
 1. NS tachyon 被移除；
-2. NS massless vector 或 NS-NS massless tensor 被保留；
-3. R sector ground states 具有确定 chirality；
-4. 闭弦谱可组织为 spacetime supersymmetry multiplets；
-5. genus-one partition function 的 spin-structure 求和满足 modular invariance。
+2. NS massless vector 被保留；
+3. R ground-state Clifford module 只保留一个 chirality；
+4. 十维横向 massless bosonic 与 fermionic 表示分别为 $8_v$ 与 $8_s$ 或 $8_c$，
+   因而自由度均为 $8$。
 
-**证明草图.** 前三点由 $(-1)^F$ 对 NS ground state、NS 第一激发和 R ground state 的作用直接判定。第四点由 NS 与 R sectors 的剩余自由度匹配给出。第五点需要 theta functions 与 spin structures 的 modular transformation，属于附录 D 和第十五章的外部输入。$\square$
+**证明.** NS 无激发态含偶数个 fermion oscillators，故被删去；
+$\psi_{-1/2}^\mu|0;k\rangle_{\mathrm{NS}}$ 含一个，故被保留。R 零模满足十维
+Clifford algebra，而 parity 在其不可约 module 上等同于 chirality operator（差定义
+8.15 已固定的整体符号），所以 projector 选出一个 Majorana--Weyl module。施加
+light-cone constraints 后，NS vector 只剩 $SO(8)$ 的 $8_v$，R spinor 只剩
+$8_s$ 或 $8_c$；三者维数均为 $8$。这些是有限维表示与 oscillator parity 的计算，
+没有使用 modular integral。$\square$
+
+**外部输入定理 8.16A（spin-structure sum 与 modular invariance）.** 对十维
+free RNS matter、$bc$ 与 $\beta\gamma$ ghost CFT，存在两种有向闭弦左右 GSO
+相位选择，使 genus-one 的四种 spin structures 在 $SL(2,\mathbb Z)$ 下闭合并给出
+modular-invariant type IIA 与 type IIB integrand。证明使用 theta characteristics 的
+$S,T$ 变换、Jacobi identity、ghost zero-mode/picture prescription 与左右 level
+matching。
+
+**使用边界.** 本书使用该 genus-one 结论和由 BRST spin-field supercharges 得到的
+spacetime supersymmetry，但不把命题 8.16 的有限谱计算冒充 modular-invariance
+证明。Higher-genus GSO measure 还涉及 supermoduli 与 degeneration 边界，不由
+genus one 自动推出。
+
+**注 8.16B（一致性条件不可合并）.** $D=10$ 消除局部 superconformal anomaly；
+GSO 投影选择单弦态空间；spin-structure sum 处理全局 modular consistency；低能
+chiral spectrum 还必须通过 target-space gauge/gravitational anomaly 检验。它们分别
+必要，在未加入 factorization、tadpole 与全局 anomaly 条件前不能合称充分条件。
 
 **定义 8.17（type IIA 与 type IIB）.** Type II closed superstrings 由左右两个 RNS sectors 组合而成：
 
@@ -226,7 +306,7 @@ $$
 $$
 NS-NS 部分包含 graviton、$B$-field 和 dilaton；NS-R 与 R-NS 部分包含 gravitini 与 dilatini；R-R 部分给出 differential form gauge potentials，其 chirality pattern 区分 IIA 与 IIB。
 
-**证明草图.** 左右 sectors 的 massless states 张量相乘。NS-NS 与玻色闭弦第一激发的张量分解相同。R sector ground states 是十维 spinors；spinor bilinear 按 Clifford algebra 分解为 antisymmetric form representations。IIA/IIB 的 chirality 决定允许的 form degree。$\square$
+**推导说明（标准物理口径）.** 左右 sectors 的 massless states 张量相乘。NS-NS 与玻色闭弦第一激发的张量分解相同。R sector ground states 是十维 spinors；spinor bilinear 按 Clifford algebra 分解为 antisymmetric form representations。IIA/IIB 的 chirality 决定允许的 form degree。$\square$
 
 ## 8.6 Picture number 的接口
 
@@ -280,7 +360,7 @@ e^{-\varphi/2}S_\alpha e^{ik\cdot X}
 $$
 在 $k^2=0$ 时具有 weight $1$。
 
-**证明草图.** 两个 real fermions 可 bosonize 为一个 free boson $H_I$，spin field 是
+**推导说明（标准物理口径）.** 两个 real fermions 可 bosonize 为一个 free boson $H_I$，spin field 是
 $$
 \exp\left(\frac i2\sum_{I=1}^5 s_IH_I\right),
 \qquad s_I=\pm1.
@@ -304,4 +384,3 @@ RNS formalism 把 string worldsheet theory 扩展为 $N=1$ superconformal field 
 **练习 8.3.** 说明为什么 R sector ground states 构成 spacetime Clifford algebra 表示。
 
 **练习 8.4.** 用 bosonization 计算十维 RNS spin field 的 conformal weight。
-

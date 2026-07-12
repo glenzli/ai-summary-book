@@ -36,7 +36,12 @@
 6. 练习有答案要点；
 7. 不把外部输入写成已证定理。
 
-**当前判断。** 已达到本项目合理的“主线输入定理型最终收口版”标准。solid、analytic 和 liquid 已纳入主线卷；第二卷附录 Q-Z 已将三条主线收束为主定理包、完成出版级闭包审查，并把 solidification、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 拆成证明模块；第二卷附录 AA 和第三卷附录 AR 又把 Scholze/Clausen-Scholze 的核心定理集中列为主线图谱。其深层核心结构定理仍作为精确输入定理登记，接受输入后的形式推论、类型检查、例子和依赖链已经闭合。
+**当前判断。** 已达到本项目合理的“主线输入定理型最终收口版”标准。solid、analytic 和
+liquid 已纳入主线卷；第二卷附录 Q-Z 已将三条主线收束为主定理包、完成出版级闭包审查，
+并把 solidification、solid 核张量理想性、analytic localization、rational descent
+以及经典空间的 liquid membership/strictness 接口拆成证明模块；第二卷附录 AA 和第三卷
+附录 AR 又把 Scholze/Clausen-Scholze 的核心定理集中列为主线图谱。其深层核心结构定理
+仍作为精确输入定理登记，接受输入后的形式推论、类型检查、例子和依赖链已经闭合。
 
 ### 标准 C：研究导读完本
 
@@ -56,7 +61,7 @@
 | Nöbeling | 中 | 一般 profinite 超限过滤 | 输入边界清楚 |
 | solid | 中高 | Scholze solidification 识别、profinite 测度张量公式 | 结构闭合，证明模块已拆，深层计算依赖外部 |
 | analytic rings | 中高 | analytic localization 与 rational descent | 结构闭合，证明模块已拆，深层 descent 依赖外部 |
-| liquid | 中高 | liquid realization exactness | 类型边界清楚，证明模块已拆 |
+| liquid | 中高 | \(p\)-liquid 测度与经典空间 membership | exactness 已还原为局部提升条件 |
 | Dolbeault | 中高 | 局部估计与正则性 | 形式闭合，分析输入外部 |
 | Cartan/Grauert | 中 | Oka/Runge/Cousin/Grauert | 输入拆分充分 |
 | Serre duality | 中高 | 完美性、dualizing complex | 形式闭合，深层输入外部 |
@@ -72,7 +77,9 @@
 2. **引用定位提升。** [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md) 已建立 L0-L3 状态；凝聚主线输入已经提升到 L2/L3，经典输入已经从 L0 清到 L1/L2/L3 分层状态。后续重点是给 Boolean/Sikorski 补 edition locator，并给 Cartan、Grauert、Dolbeault、Hodge-Fredholm 和 GRR 补 theorem/page。
 3. **教师手册级答案。** 分卷答案已经建立；出版级版本应把所有证明题扩成逐行解答。
 4. **反例密度继续提高。** 重要技术假设已有边界例子；后续可为每个关键假设配置一个删除失败例子。
-5. **主线核心输入自足化。** 若要重证 solidification、analytic localization、liquid realization 等主线核心定理，需要把 Scholze/Clausen-Scholze 的长证明展开为独立章节。
+5. **主线核心输入自足化。** 若要重证 solidification、analytic localization、
+   \(p\)-liquid 测度理论与经典空间 membership，需要把 Scholze/Clausen-Scholze 的
+   长证明展开为独立章节。
 6. **深层应用输入自足化。** 若要重证 Cartan/Grauert、Hodge-Fredholm、GAGA 和 GRR，需要另写复几何、代数几何和泛函分析预备教材。
 
 这些项目不影响最终收口判断；它们只会把本书从“输入定理型最终收口版”继续推向“完全自足证明版”或“逐题教师手册版”。
@@ -94,7 +101,8 @@
 6. 卷三主定理闭包章；
 7. 统一答案与分卷答案入口；
 8. 第二卷 solid/analytic/liquid 主定理包与统一闭包；
-9. 第二卷 solidification、solid 核张量理想性、analytic localization、rational descent 和 liquid realization 证明模块；
+9. 第二卷 solidification、solid 核张量理想性、analytic localization、rational
+   descent 和经典空间 liquid 接口证明模块；
 10. Scholze/Clausen-Scholze 核心定理图谱；
 11. 基本完本判据、定理索引和依赖图。
 

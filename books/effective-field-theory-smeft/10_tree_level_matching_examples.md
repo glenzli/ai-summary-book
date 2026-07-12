@@ -10,35 +10,76 @@
 
 ## 10.1 重实 singlet 标量
 
-考虑重实标量 $S$，取
+考虑重实标量 $S$，并令 $X\equiv H^\dagger H$。本例只保留下列含 $S$ 的项：
 $$
 \mathcal L
 \supset
 \frac12(\partial S)^2-\frac12M^2S^2
--aS(H^\dagger H)
--\frac{\kappa}{2}S^2(H^\dagger H).
+-aSX
+-\frac{\kappa}{2}S^2X.
 $$
 
-**命题 10.1（树级诱导 Higgs 势修正）.** 在 $E\ll M$ 时，$S$ 的树级交换诱导
+**命题 10.1（树级诱导 Higgs 局域算符）.** 若在所考察的低能场构型和运动学域内同时满足
+$$
+\frac{|\Box|}{M^2}\ll1,
+\qquad
+\frac{|\kappa X|}{M^2}\ll1,
+$$
+则把 $S$ 在树级积掉并保留到显式 $M^{-4}$ 给出
 $$
 \Delta\mathcal L_{\mathrm{EFT}}
 \supset
-\frac{a^2}{2M^2}(H^\dagger H)^2
--\frac{a^2}{2M^4}(H^\dagger H)\Box(H^\dagger H)+\cdots.
+\frac{a^2}{2M^2}X^2
+-\frac{a^2}{2M^4}X\Box X
+-\frac{a^2\kappa}{2M^4}X^3.
 $$
 
-**证明（书内推导）.** 领先阶忽略 $\kappa$，重场方程为
+**证明（书内推导）.** 丢弃边界项后，含 $S$ 的拉氏量可写成
 $$
-(\Box+M^2)S=-aH^\dagger H.
+\mathcal L_S
+=-\frac12S K S-aSX,
+\qquad
+K=M^2+\Box+\kappa X.
 $$
-形式求解并展开：
+这里 $X$ 在 $K$ 中表示乘法算符。重场方程为 $KS=-aX$。完成平方得到
 $$
-S=-\frac{a}{M^2+\Box}(H^\dagger H)
-=-\frac{a}{M^2}\left(1-\frac{\Box}{M^2}+\cdots\right)(H^\dagger H).
+\mathcal L_S
+=-\frac12\left(S+aK^{-1}X\right)
+K\left(S+aK^{-1}X\right)
++\frac{a^2}{2}XK^{-1}X,
 $$
-代回 $S$ 的二次部分得到所列项。$\square$
+所以树级非局域贡献为
+$$
+\Delta\mathcal L_{\mathrm{EFT}}^{\mathrm{tree}}
+=\frac{a^2}{2}X(M^2+\Box+\kappa X)^{-1}X.
+$$
+在上述两个小参数条件下，逆核的 Neumann 展开为
+$$
+K^{-1}
+=\frac1{M^2}
+-\frac{\Box+\kappa X}{M^4}
++\frac{(\Box+\kappa X)^2}{M^6}
++\cdots.
+$$
+代入后，$M^{-4}$ 阶的两个贡献分别是 $-a^2X\Box X/(2M^4)$ 与 $-a^2\kappa X^3/(2M^4)$，符号都来自逆核展开的一阶负号；首个未列项为 $a^2X(\Box+\kappa X)^2X/(2M^6)$。$\square$
 
-**说明 10.2.** 第一项修正 SM Higgs quartic，第二项可通过分部积分和场重定义映射到 Warsaw basis 中的 Higgs-derivative 类算符组合。
+**号差核验.** 对常背景取 $\Box X=0$，经典解为 $S_{\rm cl}=-aX/(M^2+\kappa X)$。直接代回给出
+$$
+\Delta\mathcal L_{\rm EFT}^{\rm tree}
+=\frac{a^2X^2}{2(M^2+\kappa X)}
+=\frac{a^2}{2M^2}X^2
+-\frac{a^2\kappa}{2M^4}X^3
++O(M^{-6}),
+$$
+独立确认了 $\kappa X^3$ 项的负号。
+
+**说明 10.2（算符投影与展开域）.** $X^2$ 的场单项式维数为四，只修正 SM Higgs quartic。按第十三章约定，$X\Box X={\cal O}_{H\Box}$ 且 $X^3={\cal O}_H$，故本例在匹配尺度给出
+$$
+c_{H\Box}=-\frac{a^2}{2M^4},
+\qquad
+c_H=-\frac{a^2\kappa}{2M^4},
+$$
+其中 $\Delta\mathcal L_{\rm EFT}\supset c_i\mathcal O_i$。分部积分还给出 $X\Box X\simeq-(\partial_\mu X)(\partial^\mu X)$，等号只在作用量中模边界项成立。$|\Box|/M^2\ll1$ 是 $Q^2/M^2\ll1$ 的算符简写，而 $|\kappa X|/M^2\ll1$ 是独立的背景场展开条件；仅有 $Q\ll M$ 不能无条件删除 $\kappa$ 项。
 
 ## 10.2 重 $Z'$ 向量
 
@@ -117,11 +158,23 @@ $$
 $$
 因此
 $$
-C_{\ell q}^{(1)prst}(\Lambda)
+c_{\ell q}^{(1)prst}(\mu_{\rm match})
 =-{g_X^2\over M_X^2}
 (\lambda_\ell)_{pr}(\lambda_q)_{st}
 $$
-在本章的归一化下成立。若把 SMEFT 写成 $C_i{\cal O}_i/\Lambda^2$ 且取 $\Lambda=M_X$，并取单位 flavor coupling，则无量纲 $C_{\ell q}^{(1)}=-g_X^2$。
+在树级匹配尺度 $\mu_{\rm match}\simeq M_X$ 成立；这里 $\Delta{\cal L}_{\rm EFT}\supset c_i{\cal O}_i$，故 $[c_{\ell q}^{(1)}]=-2$。等价地，若按本书约定写成
+$$
+\Delta{\cal L}_{\rm EFT}
+\supset {C_{\ell q}^{(1)prst}\over\Lambda_{\rm ref}^2}
+{\cal O}_{\ell q}^{(1)prst},
+$$
+则无量纲坐标为
+$$
+C_{\ell q}^{(1)prst}(\mu_{\rm match})
+=-{g_X^2\Lambda_{\rm ref}^2\over M_X^2}
+(\lambda_\ell)_{pr}(\lambda_q)_{st}.
+$$
+取 $\Lambda_{\rm ref}=M_X$ 和单位 flavor coupling 时，才简化为 $C_{\ell q}^{(1)}=-g_X^2$。
 
 **警告 10.5.** 这里假设 $X_\mu$ 是规范一致 UV 理论中的重向量，且只保留代数质量项。完整规范理论还需处理 Goldstone、ghost、kinetic mixing 和规范固定。
 
@@ -133,6 +186,6 @@ $$
 
 **练习 10.1.** 对重 $Z'$ 若取 $J^\mu=\bar q\gamma^\mu q$，写出产生的四夸克算符结构。
 
-**练习 10.2.** 说明为什么重 singlet 标量的 $(H^\dagger H)^2$ 项不是维数六算符。
+**练习 10.2.** 令 $X=H^\dagger H$，从 $a^2X(M^2+\Box+\kappa X)^{-1}X/2$ 展开到 $M^{-4}$。说明 $X^2$ 为什么不是维数六算符，识别两个维数六项，并写出展开所需的两个独立条件。
 
 **练习 10.3.** 对第 10.3 节的 semileptonic 例子，解释为什么交叉项前有因子 $2$。

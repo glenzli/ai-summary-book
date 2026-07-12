@@ -92,9 +92,18 @@ $$
 
 **例子 15.12（一对象情形）.** 一对象严格 $2$-范畴等价于严格幺半范畴：唯一对象 $*$ 的 Hom 范畴 $\mathcal K(*,*)$ 带有由 $1$-态射复合给出的严格幺半结构。类似地，一对象双范畴等价于一般幺半范畴，结合律和单位律由双范畴的相干同构给出。
 
-**命题 15.13.** 在严格 $2$-范畴 $\mathbf{Cat}$ 中，$1$-态射 $F:\mathcal C\to\mathcal D$ 是定义 15.7 意义下的等价，当且仅当 $F$ 是普通范畴等价。
+**命题 15.13.** 在附录 A 的默认大小与选择口径下，严格
+$2$-范畴 $\mathbf{Cat}$ 中的 $1$-态射
+$F:\mathcal C\to\mathcal D$ 是定义 15.7 意义下的等价，当且仅当
+$F$ 完全忠实且本质满，即为第一章定义的普通范畴等价。
 
-**证明.** 若 $F$ 是 $\mathbf{Cat}$ 中的 $2$-范畴等价，则存在函子 $G:\mathcal D\to\mathcal C$ 和自然同构 $GF\cong\operatorname{id}_{\mathcal C}$、$FG\cong\operatorname{id}_{\mathcal D}$，这正是普通范畴等价的拟逆定义。反过来，普通范畴等价按定义给出这样的 $G$ 与自然同构，因此给出 $\mathbf{Cat}$ 中的等价。$\square$
+**证明.** 若 $F$ 是 $\mathbf{Cat}$ 中的 $2$-范畴等价，则存在函子
+$G:\mathcal D\to\mathcal C$ 和自然同构
+$GF\cong\operatorname{id}_{\mathcal C}$、
+$FG\cong\operatorname{id}_{\mathcal D}$。由定理 1.24 中不使用选择的方向，
+$F$ 完全忠实且本质满。反过来，若 $F$ 完全忠实且本质满，则定理 1.24
+在 $\mathcal V$-小选择公理下构造这样的 $G$ 与两个自然同构，故 $F$ 是
+$\mathbf{Cat}$ 中的等价。$\square$
 
 **例子 15.14（严格化边界）.** 并非每个双范畴本身都是严格 $2$-范畴。例如双模双范畴中，三重张量积
 

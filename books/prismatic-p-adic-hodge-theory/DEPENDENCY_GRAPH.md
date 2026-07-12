@@ -4,14 +4,14 @@
 
 ## 核心定义链
 
-1. 固定素数 $p$、derived completion、$D(A)$。
+1. 固定素数 $p$、Koszul-model derived completion、$D(A)$；区分 ordinary、derived 与 completed tensor。
 2. $\delta$-环 $\Rightarrow$ Frobenius lift $\phi_A(x)=x^p+p\delta_A(x)$。
 3. Cartier divisor ideal 与 derived $(p,I)$-completion。
 4. Prism $(A,I)$：$\delta$-环 + Cartier divisor + derived completeness + $p\in I+\phi(I)A$。
 5. Bounded prism：$A/I$ 的 $p^\infty$-torsion 有界。
-6. Relative prismatic site $(X/A)_\Delta$。
-7. $R\Gamma_\Delta(X/A)$ 与 Frobenius-semilinear endomorphism。
-8. Hodge-Tate/de Rham/crystalline/etale specializations。
+6. Prism-map rigidity $J=IB$ 与 relative prismatic site $(X/A)_\Delta$；covers 使用 $(p,IB)$-complete faithful flatness。
+7. $R\Gamma_\Delta(X/A)$、Frobenius-semilinear map、ordinary linearization 与 completed twist $C^{(1)}$。
+8. Hodge--Tate plain derived reduction、completed Frobenius-twisted de Rham/crystalline base change、finite-level etale fixed points。
 9. $A_{\inf}$ and Breuil-Kisin specializations。
 10. Prismatic $F$-crystals and crystalline Galois lattices。
 
@@ -32,11 +32,11 @@
   - 依赖：固定素数、环论、Witt vectors 背景。
   - 输出：$\delta$-环、Frobenius lift、distinguished element、perfectoid interface。
 - `02_prisms_and_prismatic_sites.md`
-  - 依赖：第一章全部定义。
-  - 输出：prism、bounded prism、oriented prism、relative prismatic site。
+  - 依赖：第一章全部定义及附录 A 的 Koszul completion/complete flatness。
+  - 输出：prism、bounded prism、ideal rigidity、relative prismatic site 与 semilinear Frobenius typing。
 - `03_prismatic_cohomology_comparisons.md`
   - 依赖：第二章 prismatic site。
-  - 输出：$R\Gamma_\Delta$、comparison theorem interface。
+  - 输出：$R\Gamma_\Delta$、completed/twisted comparison interface、base-change Tor boundary。
 - `04_fontaine_period_rings_and_classical_p_adic_hodge.md`
   - 依赖：classical Galois representations。
   - 输出：$B$-admissibility and comparison interface。
@@ -62,8 +62,8 @@
   - 依赖：第三、七章和附录 F。
   - 输出：derived Frobenius fixed points、syntomic tower、cup product 要求。
 - `12_breuil_kisin_bkf_modules_and_lattices.md`
-  - 依赖：第四至六章。
-  - 输出：BK/BKF modules 与 lattices 的范畴边界。
+  - 依赖：第四至六章及命题 5.16 的 ordinary Tor boundary。
+  - 输出：BK/BKF exact finiteness classes、torsion thresholds 与 evaluation/descent lattice boundary。
 - `13_coefficients_hodge_tate_crystals_and_nonabelian_boundary.md`
   - 依赖：第六、七、九章。
   - 输出：coefficients and non-abelian Hodge boundary。

@@ -220,7 +220,14 @@ $$
 \mathbb A_K\longrightarrow\widehat{\mathbb A_K},\qquad
 a\longmapsto (x\mapsto \psi(ax))
 $$
-是拓扑群同构。取由 $\psi$ 唯一确定的 self-dual Haar 测度后，Fourier 反演和 Poisson summation 对 $\mathcal S(\mathbb A_K)$ 成立。
+是拓扑群同构。写 $\psi=\prod_v\psi_v$，逐处取 $\psi_v$-self-dual Haar measure $dx_v$；几乎所有有限位置的 additive conductor 为 $\mathcal O_v$，故
+$dx=\prod_vdx_v$ 是良定义的 restricted product measure。该测度满足
+$$
+\operatorname{vol}(K\backslash\mathbb A_K,dx)=1,
+$$
+且 Fourier inversion 和 Poisson summation 对 $\mathcal S(\mathbb A_K)$ 成立。若某个
+$\psi_v$ 的 conductor 不是 $\mathcal O_v$，则不能同时把 $dx_v$ 自对偶并任意规定
+$\operatorname{vol}(\mathcal O_v)=1$；精确体积关系见归一化总表第 3 节。
 
 本定理是第二章 Tate thesis 的分析基础。
 

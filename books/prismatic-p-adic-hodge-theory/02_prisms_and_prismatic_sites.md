@@ -29,7 +29,21 @@ $$
 $$
 则称 $(A,I)$ 为 bounded prism。
 
+这里的 derived $(p,I)$-complete 使用定义 A.2 的 Koszul tower，理想为
+$(p)+I$。Bhatt-Scholze 的术语先区分 prism 与 bounded prism；依照本书
+全局约定，后文未加修饰而进入 site 或 comparison theorem 的 prism 均为
+bounded prism。
+
 **定义 2.4.** Prism 态射 $(A,I)\to(B,J)$ 是保持 $\delta$-结构的环同态 $A\to B$，并满足 $I$ 的像落在 $J$ 中。
+
+**外部输入引理 2.4A（prism ideal rigidity）.** 若
+$(A,I)\to(B,J)$ 是 prisms 的态射，则事实上
+$$
+J=IB.
+$$
+这是 Bhatt-Scholze, Proposition 3.5（locator `BS-PRISM-DEF`）。证明使用
+prism 条件和 Cartier divisor 结构，本书不重证。特别地，固定 base prism
+后，probe ideal 不是独立变化的数据。
 
 **命题 2.5.** Prism 态射与 Frobenius lift 相容：若 $f:(A,I)\to(B,J)$ 是 prism 态射，则
 $$
@@ -52,12 +66,16 @@ $$
 
 ## 2.3 基本例子
 
-**例 2.8（crystalline prism）.** 令 $A$ 为 $p$-torsionfree、$p$-complete 的 $\delta$-环，并假设 $p$ 是 nonzerodivisor。则 $(A,(p))$ 是 prism，且它自动是 bounded prism：因为 $p$ 在 $A/p$ 上为零，故
+**例 2.8（crystalline prism）.** 令 $A$ 为 $p$-torsionfree、classically
+$p$-adically complete 的 $\delta$-环。则 $(A,(p))$ 是 prism，且它自动是
+bounded prism：因为 $p$ 在 $A/p$ 上为零，故
 $$
 (A/p)[p^\infty]=(A/p)[p].
 $$
 
-验证如下：$(p)$ 由 nonzerodivisor 生成；$A$ 是 $(p)$-complete；且 $p\in(p)$。最后一项不需要使用 $\phi(p)$。
+验证如下：$p$-torsionfreeness 说明 $(p)$ 由 nonzerodivisor 生成；命题
+A.4 说明经典 $p$-完备性蕴含此处所需的 derived $p$-完备性；且
+$p\in(p)$。最后一项不需要使用 $\phi(p)$。
 
 **例 2.9（perfect prism）.** 若 $R$ 为 perfectoid ring，则
 $$
@@ -69,7 +87,9 @@ $$
 $$
 (\mathfrak S,(E(u)))
 $$
-是 prism，且 $\mathfrak S/(E(u))\cong\mathcal O_K$。这是外部输入定理 1.17 与命题 1.16 的组合。
+是 bounded prism，且 $\mathfrak S/(E(u))\cong\mathcal O_K$。Prism 条件来自
+外部输入定理 1.17 与命题 1.16；boundedness 来自
+$\mathcal O_K$ 无 $p$-torsion 及命题 A.8。
 
 **例 2.11（$q$-crystalline prism）.** 令
 $$
@@ -81,32 +101,67 @@ $$
 
 ## 2.4 Relative prismatic site
 
-**定义 2.13.** 令 $(A,I)$ 为 bounded prism，令 $X$ 为 $p$-adic formal scheme over $\operatorname{Spf}(A/I)$。Relative prismatic site $(X/A)_\Delta$ 的对象是三元组
+**定义 2.13（relative prismatic probe category）.** 令 $(A,I)$ 为
+bounded prism，令 $X$ 为 $p$-adic formal scheme over
+$\operatorname{Spf}(A/I)$。定义 algebraic probe category
+$\mathcal P_{X/A}$。它的对象是三元组
 $$
-((B,J),\alpha,\eta),
+((B,IB),\alpha,\eta),
 $$
-其中 $(B,J)$ 是 prism，$\alpha:(A,I)\to(B,J)$ 是 prism 态射，且
+其中 $(B,IB)$ 是 bounded prism，
+$\alpha:(A,I)\to(B,IB)$ 是 prism 态射，且
 $$
-\eta:\operatorname{Spf}(B/J)\to X
+\eta:\operatorname{Spf}(B/IB)\to X
 $$
 是 over $\operatorname{Spf}(A/I)$ 的态射。
 
-态射 $((B,J),\alpha,\eta)\to((B',J'),\alpha',\eta')$ 是 prism 态射 $(B,J)\to(B',J')$，与 $A$-结构和到 $X$ 的态射相容。
+在 $\mathcal P_{X/A}$ 中，从 $B$-probe 到 $C$-probe 的态射是 prism 态射
+$(B,IB)\to(C,IC)$，并与 $A$-结构和到 $X$ 的态射相容。引理 2.4A 保证
+目标 ideal 必为 $IC=(IB)C$。
 
-**约定 2.14.** 本书采用 Bhatt-Scholze 的方向约定：prismatic site 的 underlying category 通常取上述 prism-probes category 的 opposite。为避免方向混乱，本书在定义 sheaf 时总是直接写出对象值。
+**约定 2.14（site 的方向）.** Relative prismatic site 的 underlying
+category 定义为
+$$
+(X/A)_\Delta=\mathcal P_{X/A}^{\mathrm{op}}.
+$$
+因此 site 中从 $C$-probe 到 $B$-probe 的箭头对应环方向的
+$\delta$-$A$-algebra map $B\to C$。下文说 “$B\to C$ 给出 cover” 时，
+指的是 site 中反方向的覆盖箭头。
 
-**定义 2.15.** 在 $(X/A)_\Delta$ 上，结构层 $\mathcal O_\Delta$ 在对象 $((B,J),\alpha,\eta)$ 上的值为
+**定义 2.15（结构预层）.** 在 $(X/A)_\Delta$ 上定义
 $$
-\mathcal O_\Delta(B,J)=B.
+\mathcal O_\Delta(B,IB)=B.
 $$
-Hodge-Tate specialization 层 $\overline{\mathcal O}_\Delta$ 的对象值为
+Hodge-Tate specialization 预层的对象值为
 $$
-\overline{\mathcal O}_\Delta(B,J)=B/J.
+\overline{\mathcal O}_\Delta(B,IB)=B/IB.
+$$
+限制映射由环映射 $B\to C$ 给出。它们分别是 commutative
+$\delta$-$A$-algebra-valued 与 commutative $A/I$-algebra-valued
+presheaves。
+
+**定义 2.16（flat topology）.** Flat topology 由下列单覆盖生成：site
+中的箭头从 $C$-probe 到 $B$-probe 是 cover，当且仅当对应的 prism map
+$$
+(B,IB)\longrightarrow(C,IC)
+$$
+使 $C$ 作为 $B$-complex 是 $(p,IB)$-completely faithfully flat，含义见
+定义 A.13。特别地，模 $(p,IB)$ 后的映射必须 faithfully flat；这不是只
+要求 ordinary $B\to C$ flat。
+
+Bhatt-Scholze, Corollary 3.12 与 Definition 4.1（locator
+`BS-PRISM-SITE`）是此处的外部输入：它们证明上述 covers 确实定义
+Grothendieck topology，并证明定义 2.15 的两个 presheaves 都是 sheaves。
+此外有自然同构
+$$
+\mathcal O_\Delta\otimes_A^LA/I\simeq
+\overline{\mathcal O}_\Delta.
 $$
 
-**定义 2.16.** 覆盖由对象自身 ideal 决定的 completely faithfully flat prism maps 给出。也就是说，对象族 $\{(B,J)\to(B_\lambda,J_\lambda)\}$ 是覆盖，如果相应环映射 $B\to\prod_\lambda B_\lambda$ 在 derived $(p,J)$-complete 意义下 faithfully flat，并与 prism 结构相容；目标侧 completion 则使用对应的 $(p,J_\lambda)$。底 prism $(A,I)$ 只提供结构映射，不应把所有对象的 complete flatness 统一写成 $(p,I)$。
-
-**警告 2.17.** “Flat” 在 prismatic site 中不是普通离散 flatness 的无条件替代。若底层环非 noetherian 或存在 derived completion 现象，必须使用 completed flatness 或相应 derived flatness 口径。
+**警告 2.17.** Cover 的 complete ideal 是 source probe ring $B$ 中的
+$(p,IB)$；底 prism 上写作 $(p,I)$，经 $A\to B$ 延拓后才得到它。把 probe
+ideal 当作任意 $J$，或只检查 $B/IB\to C/IC$ faithfully flat 而不检查
+complete flatness，都会改变 site。
 
 ## 2.5 Prismatic cohomology 的定义
 
@@ -121,27 +176,55 @@ R\Gamma_{\mathrm{HT},\Delta}(X/A)
 =R\Gamma((X/A)_\Delta,\overline{\mathcal O}_\Delta).
 $$
 
-**命题 2.19.** $R\Gamma_\Delta(X/A)$ 带有自然的 $\phi_A$-semilinear Frobenius endomorphism。
+**命题 2.19（Frobenius 的类型）.** 令
+$C=R\Gamma_\Delta(X/A)$。它带有自然的 $\phi_A$-semilinear map
+$\varphi_C:C\to C$。等价地，它带有 $D(A)$ 中的 $A$-linear map
+$$
+\varphi_C^{\mathrm{lin}}:
+\phi_A^\ast C=A\otimes_{A,\phi_A}^LC\longrightarrow C.
+$$
 
-**证明草图.** 每个 prism object $(B,J)$ 的结构层值 $B$ 带 Frobenius lift $\phi_B$。命题 2.5 保证这些 Frobenius 与态射相容，因此给出 sheaf $\mathcal O_\Delta$ 到其 Frobenius pullback 的 semilinear endomorphism。对 derived global sections 取 $R\Gamma$ 得到结论。完整证明需要处理 sheafification 和 derived functor，与 Bhatt-Scholze 的 site-theoretic 构造一致。证毕。
+**证明.** 每个 prism object $(B,IB)$ 的结构层值 $B$ 带 Frobenius lift
+$\phi_B$。若 $f:(B,IB)\to(B',IB')$ 是 prism 态射，则它是 $\delta$-环态射，
+故 $f\circ\phi_B=\phi_{B'}\circ f$。因此对象值上的 $\phi_B$ 组成结构预层
+$\mathcal O_\Delta$ 的自然、乘法且 $\phi_A$-semilinear 变换。它与限制
+映射相容，故在定义 2.16 的 sheaf 上仍有定义。对 underlying complexes of
+abelian groups 取 derived global sections 得到 $\varphi_C$；等式
+$\varphi_C(ac)=\phi_A(a)\varphi_C(c)$ 来自对象值上的同一等式。由
+semilinear map 与 linearization 的自然对应，得到所述 $D(A)$-morphism。
+证毕。
+
+**警告 2.19A.** 命题 2.19 不断言
+$\varphi_C^{\mathrm{lin}}$ 在积分层为同构。若 $X$ smooth，Bhatt-Scholze,
+Corollary 15.5 才给出它在 invert $I$ 后成为同构；第三章把这一深结果标为
+外部输入定理 3.10。
 
 ## 2.6 Affine probes 的逐项读法
 
 **说明 2.20.** 在 affine 情形 $X=\operatorname{Spf}(R)$，一个 prismatic probe 可写成
 $$
-(B,J,\alpha,\eta),
+(B,IB,\alpha,\eta),
 $$
-其中 $\alpha:(A,I)\to(B,J)$ 是 prism morphism，而
+其中 $\alpha:(A,I)\to(B,IB)$ 是 bounded prism morphism，而
 $$
-\eta:R\to B/J
+\eta:R\to B/IB
 $$
-是 $p$-complete $A/I$-algebra map。于是 prismatic site 同时记录两类信息：$B$ 是 prism thickening，$R\to B/J$ 是该 thickening 在 special fibre 上落到 $X$ 的方式。
+是 $p$-complete $A/I$-algebra map。于是 prismatic site 同时记录两类信息：
+$B$ 是 prism thickening，$R\to B/IB$ 是该 thickening 在 special fibre 上
+落到 $X$ 的方式。
 
-**命题 2.21.** 若 $X=\operatorname{Spf}(R)$，则对象 $((B,J),\alpha,\eta)$ 给出的结构层值与 $R$ 没有直接相等关系；只有 quotient $B/J$ 接收来自 $R$ 的映射。
+**命题 2.21.** 若 $X=\operatorname{Spf}(R)$，则对象
+$((B,IB),\alpha,\eta)$ 给出的结构层值与 $R$ 没有直接相等关系；只有
+quotient $B/IB$ 接收来自 $R$ 的映射。
 
-**证明.** 定义 2.13 要求的是 $\operatorname{Spf}(B/J)\to X$，在 affine 情形反向给出 $R\to B/J$。结构层 $\mathcal O_\Delta(B,J)=B$ 是 thickening ring。除非另有 lift $R\to B$，否则 $R$ 不映入 $B$。证毕。
+**证明.** 定义 2.13 要求的是 $\operatorname{Spf}(B/IB)\to X$，在
+affine 情形反向给出 $R\to B/IB$。结构层
+$\mathcal O_\Delta(B,IB)=B$ 是 thickening ring。除非另有 lift
+$R\to B$，否则 $R$ 不映入 $B$。证毕。
 
-**警告 2.22.** 这正是 prismatic cohomology 非平凡的原因：site 中对象不是 $R$-algebras，而是其 modulo $J$ 后才映到 $R$ 的 prism thickenings。
+**警告 2.22.** 这正是 prismatic cohomology 非平凡的原因：site 中对象
+不是 $R$-algebras，而是 modulo $IB$ 后才接收 $R$-algebra structure 的
+prism thickenings。
 
 ## 本章小结
 

@@ -25,7 +25,7 @@
 | 宇宙、小性、有限集骨架 | `A_set_theory_universes_finite_sets_and_symmetric_groups.md` | 通过 | $\mathcal U\in\mathcal V\in\mathcal W$、$\mathbf B_{\mathcal U}$、$[n]$ 和 $\Sigma_n$ 已统一 |
 | 左右作用转换 | 附录 A、`NOTATION.md` | 通过 | 有限集口径用左作用；arity 右作用由 $x\cdot\sigma=X(\sigma^{-1})(x)$ 转换 |
 | 对称序列 | 第一章、附录 B | 通过 | 定义为 $\mathbf B_{\mathcal U}\to\mathbf{Set}_{\mathcal U}$ 的函子 |
-| 代入乘积 | 第一章、附录 B | 通过 | 分块拉平给结合约束，单点/单块分块给单位约束 |
+| 代入乘积 | 第一章、附录 B | 通过 | 可复合有限集映射给结合约束；双射层与单点目标层给左右单位，均覆盖空纤维与 $S=\varnothing$ |
 | Operad | 第一章 | 通过 | 定义为 $(\operatorname{SymSeq},\circ,I)$ 中的幺半对象 |
 | Endomorphism operad | 第一章 | 通过 | 代入为函数复合，单位为恒等函数 |
 | Operad algebra | 第一、二章 | 通过 | operad morphism 到 End 与动作映射等价 |

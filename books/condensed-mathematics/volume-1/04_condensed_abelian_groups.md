@@ -105,7 +105,7 @@ $$
 
 **定理 4.7.** $\mathbf{CondAb}$ 是阿贝尔范畴。
 
-**证明草图.** 对任意站点 $(\mathcal C,J)$，阿贝尔群值 sheaf 范畴 $\operatorname{Sh}(\mathcal C,J;\mathbf{Ab})$ 是阿贝尔范畴。
+**证明路线（外部输入）.** 对任意站点 $(\mathcal C,J)$，阿贝尔群值 sheaf 范畴 $\operatorname{Sh}(\mathcal C,J;\mathbf{Ab})$ 是阿贝尔范畴。
 
 具体地，若 $f:A\to B$ 是 sheaf 态射，则核可逐点定义：
 

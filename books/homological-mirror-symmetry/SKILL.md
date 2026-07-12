@@ -11,7 +11,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“同调镜像对称（homological mirror symmetry）”。
 - 定义必须先于直觉。若某个对象来自物理或几何直觉，正文仍必须先给出可检查的数学数据。
-- 非平凡命题必须给出证明、证明草图，或明确标注为“外部输入定理”，并在 `SOURCES.md` 中记录来源。
+- 非平凡命题必须给出完整书内证明，或明确标注为“外部输入定理”并在 `SOURCES.md` 中记录来源；证明路线只能解释外部输入，不计作书内证明。
 - 不使用“显然”“容易看出”等词跳过关键步骤；短证明也要写出使用的定义、交换图、同伦方程、泛性质或紧致化边界分解。
 - 严格区分 dg category、$A_\infty$-category、pretriangulated envelope、triangulated homotopy category、stable infinity-category、Morita equivalence、quasi-equivalence 和 ordinary equivalence。
 - 严格区分 A-side 的 Fukaya category、wrapped Fukaya category、partially wrapped Fukaya category、Fukaya-Seidel category、Rabinowitz Fukaya category，以及 B-side 的 $\operatorname{Perf}$、$\mathrm D^b\operatorname{Coh}$、matrix factorizations 和 singularity categories。

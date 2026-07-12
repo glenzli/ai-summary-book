@@ -96,7 +96,7 @@ $$
 \mathcal F_{\mathcal E}\boxtimes V_{\mathcal E}.
 $$
 
-**注 20.8.** 猜想 20.7 是朴素形式。完整几何 Langlands 不是简单地给每个 local system 一个 sheaf；它应是 spectral side 上 quasi-coherent 或 ind-coherent sheaves 与 automorphic side 上 D-modules 的范畴等价。Hecke eigensheaf 是该范畴等价在 skyscraper sheaf 或点对象上的影子。
+**注 20.8.** 猜想 20.7 是朴素形式。完整几何 Langlands 不是简单地给每个 local system 一个 sheaf；在第二十一章的特征零 de Rham 口径下，它是 spectral side 上 $\operatorname{IndCoh}_{\mathcal N}$ 与 automorphic side 上 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ 的范畴等价。来源构造的 $\mathbb L_G$ 方向为 automorphic $\to$ spectral，所以 Hecke eigensheaf 是 spectral skyscraper 或 residual-gerbe 点对象在 $\mathbb L_G^{-1}$ 下的像。
 
 **注 20.8.1.** 本章的 Hecke functor 应理解为 correspondence kernel functor。若
 $$
@@ -121,7 +121,7 @@ $$
 
 **命题 20.11.** 若 $\mathcal F$ 是 eigenvalue 为 $\mathcal E$ 的 Hecke eigensheaf，则 $f_{\mathcal F}$ 是函数域自守意义下的 Hecke eigenfunction，其 Hecke eigenvalues 由 $\mathcal E$ 的 Frobenius conjugacy classes 给出。
 
-**证明草图.** Hecke 函子经 sheaf-function dictionary 对应 Hecke 算子。等式
+**证明路线（外部输入）.** Hecke 函子经 sheaf-function dictionary 对应 Hecke 算子。等式
 $$
 \mathsf H_V(\mathcal F)\cong\mathcal F\boxtimes V_{\mathcal E}
 $$

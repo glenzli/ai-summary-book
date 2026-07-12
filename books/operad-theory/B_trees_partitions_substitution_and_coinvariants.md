@@ -49,73 +49,61 @@ $$
 $$
 (X\circ Y)(S)
 =
-\coprod_{\pi\in\operatorname{Part}(S)}
-X(\operatorname{Bl}(\pi))\times
-\prod_{B\in\operatorname{Bl}(\pi)}Y(B).
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+X(T)\times\prod_{t\in T}Y(f^{-1}(t)),
 $$
+其中 $\operatorname{Fib}(S)$ 是定义 1.4.1 的纤维分解群胚，并且 $f$ 不要求满射。
 
 一个元素写作
 $$
-(\pi;x;(y_B)_{B\in\operatorname{Bl}(\pi)}).
+(T,f;x;(y_t)_{t\in T}),
 $$
+并对目标双射 $u:T\to T'$ 施加
+$$
+(T,f;x;(y_t))
+\sim
+(T',uf;X(u)x;(y'_{u(t)}=y_t)).
+$$
+
+若 $Y(\varnothing)=\varnothing$，只有满射项有贡献，定义 B.5 才退化为 B.1 的非空分块公式。
 
 **命题 B.6.** 若 $\sigma:S\to S'$ 是双射，则它诱导函数
 $$
 (X\circ Y)(S)\to(X\circ Y)(S').
 $$
 
-**证明.** 双射 $\sigma$ 把 $S$ 的分块 $\pi$ 送到 $S'$ 的分块 $\sigma\pi$，其块为 $\sigma(B)$。它还诱导块集合双射
+**证明.** 把代表元 $(T,f;x;(y_t))$ 送到
 $$
-\operatorname{Bl}(\pi)\to\operatorname{Bl}(\sigma\pi).
+(T,f\sigma^{-1};x;
+(Y(\sigma|_{f^{-1}(t)})(y_t))_{t\in T}).
 $$
-因此 $X$ 的函子性给出
-$$
-X(\operatorname{Bl}(\pi))\to X(\operatorname{Bl}(\sigma\pi)),
-$$
-而每个限制双射 $B\to\sigma(B)$ 给出
-$$
-Y(B)\to Y(\sigma(B)).
-$$
-把这些映射相乘并送入对应的 coproduct summand，即得所需函数。$\square$
+目标双射关系在重标号前后使用同一个 $u:T\to T'$，故该规则通过 colimit 商。恒等双射与复合双射的结论分别来自恒等限制和
+$(\tau\sigma)|_{f^{-1}(t)}=\tau|_{\sigma(f^{-1}(t))}\sigma|_{f^{-1}(t)}$。$\square$
 
 **定理 B.7.** 代入乘积 $\circ$ 在对称序列范畴上满足结合律 up to natural isomorphism：
 $$
 (X\circ Y)\circ Z\cong X\circ(Y\circ Z).
 $$
 
-**证明.** 两边都等价于同一个“三层分块”数据。
+**证明.** 两边都等价于同一个二层映射数据。具体地，该数据是
+$$
+S\xrightarrow{g}U\xrightarrow{p}T,
+$$
+连同
+$$
+x\in X(T),\qquad
+y_t\in Y(p^{-1}(t)),\qquad
+z_u\in Z(g^{-1}(u)),
+$$
+并对与 $g,p$ 交换的 $U,T$ 双射取商。
 
-首先计算 $X\circ(Y\circ Z)$ 在 $S$ 上的元素。它由如下数据组成：
+对 $(X\circ Y)\circ Z$，$g$ 与 $z_u$ 来自最外一次定义 B.5，而 $p,x,y_t$ 表示 $(X\circ Y)(U)$。对 $X\circ(Y\circ Z)$，外层映射是 $pg:S\to T$；在其 $t$-纤维上，限制
+$$
+g_t:(pg)^{-1}(t)\to p^{-1}(t)
+$$
+与 $y_t,(z_u)_{u\in p^{-1}(t)}$ 表示一个 $(Y\circ Z)$-元素。反向把各 $g_t$ 的目标作不交并即可恢复 $U$ 与 $p$。两构造互逆且尊重全部目标双射关系。
 
-1. $S$ 的外层分块 $\pi$；
-2. 元素 $x\in X(\operatorname{Bl}(\pi))$；
-3. 对每个 $B\in\operatorname{Bl}(\pi)$，一个元素 of $(Y\circ Z)(B)$。
-
-第 3 项等价于为每个 $B$ 选择 $B$ 的分块 $\rho_B$，元素
-$$
-y_B\in Y(\operatorname{Bl}(\rho_B)),
-$$
-以及每个 $C\in\operatorname{Bl}(\rho_B)$ 上的元素 $z_C\in Z(C)$。因此右端数据就是 $S$ 的外层分块 $\pi$、每个外块内部的分块 $\rho_B$，以及 $x,y_B,z_C$。
-
-再计算 $(X\circ Y)\circ Z$。它由 $S$ 的分块 $\rho$、每个 $C\in\operatorname{Bl}(\rho)$ 上的元素 $z_C\in Z(C)$，以及
-$$
-(X\circ Y)(\operatorname{Bl}(\rho))
-$$
-中的一个元素组成。后一元素等价于块集合 $\operatorname{Bl}(\rho)$ 的分块 $\bar\pi$，元素
-$$
-x\in X(\operatorname{Bl}(\bar\pi)),
-$$
-以及对每个 $D\in\operatorname{Bl}(\bar\pi)$ 的元素
-$$
-y_D\in Y(D).
-$$
-由于 $D$ 是若干 $\rho$-块组成的集合，它对应 $S$ 的子集
-$$
-B_D=\coprod_{C\in D}C.
-$$
-这些 $B_D$ 构成 $S$ 的分块 $\pi$，而 $\rho$ 在每个 $B_D$ 上的限制给出分块 $\rho_{B_D}$。于是得到与上一段相同的三层数据。
-
-两个构造互逆：从 $\pi$ 与各 $\rho_B$ 出发，用命题 B.3 拉平得到 $\rho$，并用每个 $\rho_B$ 的块集合形成 $\operatorname{Bl}(\rho)$ 的分块 $\bar\pi$；从 $\rho$ 与 $\bar\pi$ 出发，把 $\bar\pi$ 的每个块对应回 $S$ 的子集得到 $\pi$ 和 $\rho_B$。三层及更多层的相干性由命题 B.4 的分块拉平结合律给出。$\square$
+四重代入的任一加括号方式同样展开成三层映射 $S\to U_1\to U_2\to U_3$。五边形两条路径在该共同数据上都是恒等映射，故结合约束满足 Mac Lane 五边形。$\square$
 
 ## B.3 单位对称序列
 
@@ -133,46 +121,47 @@ $$
 I\circ X\cong X,\qquad X\circ I\cong X.
 $$
 
-**证明.** 对 $I\circ X$，一个 summand 非空当且仅当外层 $I(\operatorname{Bl}(\pi))$ 非空，即 $\operatorname{Bl}(\pi)$ 只有一个元素。这等价于 $\pi=\{S\}$。此时 summand 为
-$$
-I(\{S\})\times X(S)\cong X(S).
-$$
+**证明.** 对 $I\circ X$，外层项 $I(T)$ 非空当且仅当 $T$ 是单点集。函数 $S\to T$ 唯一，其唯一纤维是 $S$，故 colimit 自然同构于 $X(S)$。
 
-对 $X\circ I$，一个 summand 非空当且仅当每个块 $B$ 满足 $|B|=1$。这等价于 $\pi$ 是离散分块。此时 $\operatorname{Bl}(\pi)$ 由 singleton blocks 组成，并与 $S$ 有 canonical bijection；由 $X$ 的函子性得到 summand $X(S)$。两构造与双射 $S\to S'$ 相容，故自然。$\square$
+对 $X\circ I$，乘积 $\prod_{t\in T}I(f^{-1}(t))$ 非空当且仅当每个纤维恰有一个元素，即 $f:S\to T$ 是双射。对应类由 $x\in X(T)$ 给出，并通过 $X(f^{-1})(x)$ 自然识别为 $X(S)$。当 $S=\varnothing$ 时，第一段使用 $\varnothing\to\{*\}$，第二段使用 $\varnothing\to\varnothing$；故两个单位约束都覆盖 arity $0$。三角形相干性由二层映射表示中插入、删除上述唯一单位层直接得到。$\square$
 
 ## B.4 Arity 公式
 
-设使用骨架 $[n]$，并把对称序列写成右 $\Sigma_n$-对象 $X(n),Y(n)$。
+设使用骨架 $[n]$，并把 $X(n)$ 的函子性左作用按命题 A.9 转为右 $\Sigma_n$-作用。定义
+$$
+Y^{\langle k\rangle}(n)
+=
+\coprod_{f:[n]\to[k]}\prod_{i=1}^kY(f^{-1}(i)).
+$$
+$\Sigma_k$ 的左作用把 $(f,(y_i))$ 送到
+$(\sigma f,(y'_{\sigma(i)}=y_i))$。
 
 **命题 B.10.** 代入乘积的 arity 公式为
 $$
 (X\circ Y)(n)
 \cong
 \coprod_{k\ge0}
-X(k)\times_{\Sigma_k}
-\left(
-\coprod_{n_1+\cdots+n_k=n}
-\operatorname{Bij}\big([n],[n_1]\sqcup\cdots\sqcup[n_k]\big)
+X(k)\times_{\Sigma_k}Y^{\langle k\rangle}(n).
+$$
+按纤维基数分组后，$Y^{\langle k\rangle}(n)$ 也可写成
+$$
+\coprod_{\substack{n_1+\cdots+n_k=n\\ n_i\ge0}}
+\operatorname{Bij}\left(\coprod_{i=1}^k[n_i],[n]\right)
 \times_{\Sigma_{n_1}\times\cdots\times\Sigma_{n_k}}
-\prod_{i=1}^kY(n_i)
-\right).
+\prod_{i=1}^kY(n_i),
 $$
+其中 $\prod_iY(n_i)$ 的左作用由本书的右作用取逆得到。外层 $\Sigma_k$ 同时置换 $n_i$、双射的各源分量和 $Y(n_i)$ 因子。
 
-**证明.** 一个 $[n]$ 的分块 $\pi$ 有 $k$ 个块。选择块集合与 $[k]$ 的双射会把块编号为 $1,\ldots,k$；选择每个块与 $[n_i]$ 的双射会把该分块编码为一个双射
-$$
-[n]\cong[n_1]\sqcup\cdots\sqcup[n_k].
-$$
-改变块编号由 $\Sigma_k$ 作用；改变每个块内部编号由 $\Sigma_{n_i}$ 作用。有限集公式中的
-$$
-X(\operatorname{Bl}(\pi))\times\prod_BY(B)
-$$
-经这些选择变成
-$$
-X(k)\times\prod_iY(n_i),
-$$
-而不同选择正由命题 B.10 中的对称群作用取 coinvariants 识别。对所有 $k$ 和 $n_1+\cdots+n_k=n$ 求 coproduct，得到公式。$\square$
+**证明.** 在定义 B.5 中选择目标 $T=[k]$，每个目标双射正是一个 $\Sigma_k$-元素；colimit 关系因此恰给出第一式的 balanced product。对固定 $f:[n]\to[k]$，令 $n_i=|f^{-1}(i)|$，并选择双射 $[n_i]\to f^{-1}(i)$。这些选择合成
+$\coprod_i[n_i]\to[n]$；改变第 $i$ 个选择由 $\Sigma_{n_i}$ 作用，反向由显示的双射恢复 $f$ 及各纤维坐标。故得到第二式。这里允许 $n_i=0$，正对应 $f$ 的空纤维。$\square$
 
-**警告 B.11.** 公式 B.10 的左右作用取决于命题 A.9 和约定 A.10 的转换约定。若采用不同文献的右作用约定，$\Sigma_k$ 与 $\Sigma_{n_i}$ 的作用方向可能需要整体取逆。
+**反例 B.10.1（非空分块会丢失 nullary substitution）.** 取 $X=I$，并取满足 $Y(\varnothing)=\{a\}$ 的对称序列。正确的左单位给出
+$$
+(I\circ Y)(\varnothing)\cong Y(\varnothing)=\{a\}.
+$$
+若误用非空分块公式，$\varnothing$ 的唯一分块具有空块集合，外层因子变成 $I(\varnothing)=\varnothing$，从而错误地得到空集。失败的假设正是 $Y(\varnothing)=\varnothing$。
+
+**警告 B.11.** 公式 B.10 的左右作用取决于命题 A.9 和约定 A.10 的转换约定。若采用不同文献的右作用约定，$\Sigma_k$ 与 $\Sigma_{n_i}$ 的作用方向可能需要整体取逆。非空分块公式还额外要求内层序列在 arity $0$ 为初对象。
 
 ## B.5 树代入
 
@@ -180,6 +169,7 @@ $$
 $$
 T\{T_v\}_{v\in V(T)}.
 $$
+若 $v$ 是 nullary 顶点，则 $T_v$ 允许为零叶树；下述结合律仍使用同一个顶点与 incidence-relation 论证。
 
 **命题 B.13.** 树代入满足结合律：若还对每个 $T_v$ 的顶点 $w$ 指定树 $T_{v,w}$，则
 $$
@@ -195,4 +185,4 @@ $$
 
 ## B.6 本附录小结
 
-有限集分块给出对称序列代入乘积的无坐标定义；arity 公式是选择骨架和块编号后的 coinvariants 表达；树代入给出自由 operad 和非对称 operad 的组合模型。使用公式时应先判断当前语境是有限集、arity 右作用，还是树代入。
+任意有限集映射的纤维给出允许 arity $0$ 的代入乘积；非空分块只是内层 arity $0$ 消失时的简化。Arity 公式是选择目标骨架和纤维坐标后的 coinvariants 表达；树代入给出自由 operad 和非对称 operad 的组合模型。使用公式时应先判断当前语境是有限集左作用、arity 右作用，还是树代入。

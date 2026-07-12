@@ -33,6 +33,13 @@ $$
 $$
 其中 $dx$ 是与 $\psi$ 相容的自对偶 Haar 测度。
 
+对非 Archimedean $v$，记
+$$
+\mathfrak c(\psi_v)=\{a\in K_v:\psi_v(a\mathcal O_v)=1\}.
+$$
+只有当 $\mathfrak c(\psi_v)=\mathcal O_v$ 时，自对偶测度才满足
+$\operatorname{vol}(\mathcal O_v,dx_v)=1$。一般体积关系和整体乘积测度见归一化总表第 3 节。
+
 ## 2.2 Hecke 特征
 
 **定义 2.4.** 一个 Hecke 特征（Hecke character, Grossencharacter）是连续同态
@@ -46,6 +53,20 @@ $$
 并满足 $\chi(a)=1$ 对所有 $a\in K^\times$ 成立。
 
 Hecke 特征称为酉的，若其像落在单位圆 $S^1$ 中。
+
+**外部输入引理 2.4.1（quasi-character 的酉化）.** 令
+$$
+C_K^1=\ker(|\cdot|_{\mathbb A}:C_K\to\mathbb R_{>0}).
+$$
+$C_K^1$ 是紧群；因而每个 Hecke quasi-character 唯一写成
+$$
+\chi=\chi_0|\cdot|_{\mathbb A}^{\sigma(\chi)},
+\qquad \sigma(\chi)\in\mathbb R,
+$$
+其中 $\chi_0$ 酉。这里把纯虚 norm 次幂吸收到 $\chi_0$ 中。故
+$L(s,\chi)=L(s+\sigma(\chi),\chi_0)$，所有收敛域和极点陈述都应作同一平移。
+
+本引理使用 idele class group 的 norm-one 部分紧性；该紧性属于 idelic 结构定理，本书作为外部输入，不在本章重证。
 
 **命题 2.5.** 每个 Hecke 特征 $\chi$ 可写成局部特征的 restricted product
 $$
@@ -69,13 +90,13 @@ $$
 
 ## 2.3 局部 zeta 积分和局部 L 因子
 
-**定义 2.6.** 设 $F$ 为局部域，$\chi:F^\times\to\mathbb C^\times$ 为连续特征，$\phi\in\mathcal S(F)$。局部 zeta 积分定义为
+**定义 2.6.** 设 $F$ 为局部域，$\chi:F^\times\to\mathbb C^\times$ 为连续 quasi-character，$\phi\in\mathcal S(F)$，并固定乘法 Haar 测度 $d^\times x$。局部 zeta 积分定义为
 $$
 Z(\phi,\chi,s)
 =
 \int_{F^\times}\phi(x)\chi(x)|x|^s\,d^\times x
 $$
-在绝对收敛的半平面中成立，并通过解析延拓理解为 $s$ 的亚纯函数。
+在绝对收敛的半平面中成立。其亚纯延拓不是定义的一部分，而由外部输入定理 2.9 给出。
 
 **例 2.7（非分歧非 Archimedean 情形）.** 设 $F$ 是非 Archimedean 局部域，$\chi$ 在 $\mathcal O_F^\times$ 上平凡，取 $\phi=\mathbf 1_{\mathcal O_F}$，并归一化 $d^\times x$ 使 $\operatorname{vol}(\mathcal O_F^\times)=1$。若 $\varpi$ 为一致化元，则
 $$
@@ -99,7 +120,7 @@ L(s,\chi)=\frac{1}{1-\chi(\varpi)q^{-s}}.
 $$
 在分歧非 Archimedean 情形中，定义 $L(s,\chi)=1$。Archimedean 情形的局部 L 因子由相应 Gamma 因子给出，具体公式依 $\mathbb R$ 或 $\mathbb C$ 以及特征类型而定。
 
-**外部输入定理 2.9（Tate 局部理论）.** 对任意局部域 $F$、非平凡加法特征 $\psi$ 和连续乘法特征 $\chi$，存在局部因子 $L(s,\chi)$、$\varepsilon(s,\chi,\psi)$，使得归一化 zeta 积分满足局部函数方程
+**外部输入定理 2.9（Tate 局部理论）.** 设 $F$ 为局部域，$\psi:F\to\mathbb C^\times$ 为非平凡连续加法特征，$dx$ 为对应自对偶测度，$\chi:F^\times\to\mathbb C^\times$ 为连续 quasi-character。对每个 $\phi\in\mathcal S(F)$，$Z(\phi,\chi,s)$ 从其绝对收敛半平面亚纯延拓；存在局部因子 $L(s,\chi)$ 和非零局部因子 $\varepsilon(s,\chi,\psi)$，使
 $$
 \frac{Z(\widehat\phi,\chi^{-1},1-s)}{L(1-s,\chi^{-1})}
 =
@@ -112,7 +133,9 @@ $$
 
 ## 2.4 整体 zeta 积分
 
-**定义 2.10.** 设 $\Phi\in\mathcal S(\mathbb A_K)$，$\chi$ 为 Hecke 特征。整体 zeta 积分定义为
+**定义 2.10.** 设 $\Phi\in\mathcal S(\mathbb A_K)$，$\chi$ 为 Hecke quasi-character。对每个有限位置取
+$\operatorname{vol}(\mathcal O_v^\times,d^\times x_v)=1$，在 Archimedean 位置固定 Haar 测度，并令
+$d^\times x=\prod_vd^\times x_v$。整体 zeta 积分定义为
 $$
 Z(\Phi,\chi,s)
 =
@@ -120,7 +143,7 @@ Z(\Phi,\chi,s)
 $$
 在绝对收敛的半平面中成立。
 
-**命题 2.11（Euler 分解）.** 若 $\Phi=\otimes_v\Phi_v$ 且 $\chi=\prod_v\chi_v$，并且乘法 Haar 测度分解为 $d^\times x=\prod_vd^\times x_v$，则在绝对收敛半平面中
+**命题 2.11（Euler 分解）.** 若 $\Phi=\otimes_v\Phi_v$ 且 $\chi=\prod_v\chi_v$，乘法 Haar 测度按定义 2.10 分解，则在绝对收敛半平面中
 $$
 Z(\Phi,\chi,s)
 =
@@ -137,25 +160,38 @@ $$
 $$
 在绝对收敛半平面中，Fubini 定理适用。对 $v\notin S$，局部积分为例 2.7 的几何级数。于是整体积分等于局部积分的无穷乘积。$\square$
 
-**定义 2.12.** Hecke L 函数定义为 Euler 乘积
+**定义 2.12.** Hecke L 函数首先定义为 Euler 乘积
 $$
 L(s,\chi)=\prod_vL(s,\chi_v)
 $$
-在其绝对收敛半平面中成立，并通过 Tate thesis 延拓为亚纯函数。
+若 $\chi=\chi_0|\cdot|_{\mathbb A}^{\sigma(\chi)}$ 且 $\chi_0$ 酉，则该乘积在
+$\operatorname{Re}(s)+\sigma(\chi)>1$ 绝对收敛。其余区域中的函数由 Tate thesis 的亚纯延拓给出，而不是由 Euler 乘积定义。
 
 ## 2.5 Tate 整体函数方程
 
-**外部输入定理 2.13（Tate thesis，整体形式）.** 设 $K$ 为整体域，$\chi$ 为酉 Hecke 特征。完成 L 函数 $\Lambda(s,\chi)$ 有亚纯延拓到整个复平面，并满足函数方程
+**外部输入定理 2.13（Tate thesis，整体形式）.** 设 $K$ 为整体域，$\psi:\mathbb A_K/K\to\mathbb C^\times$ 为非平凡连续加法特征，局部加法测度均取 $\psi_v$-自对偶测度，$\chi$ 为酉 Hecke 特征。完成 L 函数 $\Lambda(s,\chi)$ 有亚纯延拓到整个复平面，并满足函数方程
 $$
 \Lambda(s,\chi)=\varepsilon(s,\chi)\Lambda(1-s,\chi^{-1})
 $$
-其中 $\varepsilon(s,\chi)$ 是由局部 epsilon 因子乘积给出的显式函数。若 $\chi$ 非平凡，则 $\Lambda(s,\chi)$ 整；若 $\chi$ 平凡，则只可能在 $s=0,1$ 有单极点。非酉 quasi-character 的情形可化为酉特征乘以 idele norm 的复幂，因此相当于把变量 $s$ 平移。
+其中 $\varepsilon(s,\chi)$ 是由上述 $\psi_v$ 和测度归一化下的局部 epsilon 因子乘积给出的非零显式函数。若
+$\chi|_{C_K^1}\ne1$，则 $\Lambda(s,\chi)$ 整；若
+$\chi=|\cdot|_{\mathbb A}^{it}$，$t\in\mathbb R$，则在数域情形只可能在
+$s=-it$ 与 $s=1-it$ 有单极点，且两处确有极点。若 $K$ 是常数域为
+$\mathbb F_q$ 的函数域，则 $\Lambda(s,\chi)$ 是 $q^{-s}$ 的有理函数，上述两组极点应按周期
+$2\pi i/\log q$ 理解，即
+$$
+s=-it+\frac{2\pi i n}{\log q},\qquad
+s=1-it+\frac{2\pi i n}{\log q},qquad n\in\mathbb Z.
+$$
+一般
+$\chi=\chi_0|\cdot|_{\mathbb A}^{\sigma}$ 的陈述由
+$\Lambda(s,\chi)=\Lambda(s+\sigma,\chi_0)$ 平移得到。特别地，“$\chi$ 非平凡”不足以推出整性，因为非平凡纯虚 norm 特征仍给出 Dedekind zeta 函数的平移。
 
-**证明草图.** 取 $\Phi\in\mathcal S(\mathbb A_K)$，把整体 zeta 积分改写为 $C_K$ 上的积分。附录 F 的命题 F.21.1 给出 theta 恒等式
+**证明路线（外部输入）.** 取 $\Phi\in\mathcal S(\mathbb A_K)$，把整体 zeta 积分改写为 $C_K$ 上的积分。附录 F 的命题 F.21.1 给出 theta 恒等式
 $$
 \Theta_\Phi(t)=|t|_{\mathbb A}^{-1}\Theta_{\widehat\Phi}(t^{-1}),
 $$
-它来自 $\mathbb A_K/K$ 上的 Poisson summation 和 idele 缩放公式。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系；平凡特征的可能极点来自 $\Phi(0)$ 与 $\widehat\Phi(0)$ 的常数项。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明还依赖局部 Tate 理论、Archimedean gamma 因子估计和整体积分截断。$\square$
+它来自 $\mathbb A_K/K$ 上的 Poisson summation 和 idele 缩放公式。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系；$\chi$ 在 $C_K^1$ 上平凡时，$\Phi(0)$ 与 $\widehat\Phi(0)$ 的常数项产生上述平移后的两个极点。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明还依赖局部 Tate 理论、Archimedean gamma 因子估计和整体积分截断；本段只记录证明路线，不宣称完成这些解析步骤。
 
 **收口精修 2.A（Tate thesis 使用边界）.** 本书后续只使用 Tate thesis 的以下接口：
 

@@ -16,7 +16,9 @@ $$
 
 ## 19.1 Affine Grassmannian 的 Schubert 分层
 
-设 $k$ 为代数闭域，$G/k$ 为 split connected reductive group。取 split maximal torus $T\subset G$ 和 Borel subgroup $B$，dominant coweights 集合记为
+设 $k$ 为代数闭域，$G/k$ 为 split connected reductive group。固定素数
+$\ell\ne\operatorname{char}(k)$ 和系数域 $E=\overline{\mathbb Q}_\ell$；若
+$k=\mathbb C$，也可改用解析拓扑上的 $E=\mathbb C$ constructible sheaves，但两种 sheaf theories 不在同一公式中混用。取 split maximal torus $T\subset B\subset G$，dominant coweights 集合记为
 $$
 X_*(T)^+.
 $$
@@ -62,13 +64,14 @@ m:\operatorname{Gr}_G\tilde\times\operatorname{Gr}_G\to\operatorname{Gr}_G
 $$
 由 loop 乘法诱导。
 
-**定义 19.5.** 对 $G[[t]]$-等变 perverse sheaves $\mathcal F,\mathcal G$，卷积定义为
+**定义 19.5.** 对具有有限维 Schubert support 的 $G[[t]]$-equivariant perverse $E$-sheaves
+$\mathcal F,\mathcal G$，令 $\mathcal F\widetilde\boxtimes\mathcal G$ 表示按 equivariance 下降且作过 perverse shift 的 twisted external product。卷积定义为
 $$
 \mathcal F*\mathcal G
 =
 m_!(\mathcal F\tilde\boxtimes\mathcal G).
 $$
-其中 $\mathcal F\tilde\boxtimes\mathcal G$ 是卷积 Grassmannian 上由等变性下降得到的外积 sheaf。
+在每个有限 Schubert support 上卷积映射 $m$ proper，故这里 $m_!=m_*$。省略 perverse shift 或把无限支撑对象直接代入会改变范畴，均不属于本定义。
 
 **外部输入定理 19.6（卷积的 perversity）.** 若 $\mathcal F,\mathcal G$ 为 $G[[t]]$-等变 perverse sheaves，则
 $$
@@ -84,7 +87,7 @@ $$
 $$
 \operatorname{Sat}_G=\operatorname{Perv}_{G[[t]]}(\operatorname{Gr}_G)
 $$
-即 affine Grassmannian 上的 $G[[t]]$-等变 perverse sheaves 范畴，系数取 $\overline{\mathbb Q}_\ell$ 或 $\mathbb C$，依 sheaf theory 而定。
+即 affine Grassmannian 上具有有限维 Schubert support 的 $G[[t]]$-equivariant perverse $E$-sheaves 范畴。
 
 卷积 $*$ 使 $\operatorname{Sat}_G$ 成为 monoidal category。
 
@@ -97,7 +100,7 @@ $$
 \mathsf H^\bullet(\mathcal F)=H^\bullet(\operatorname{Gr}_G,\mathcal F).
 $$
 
-**外部输入定理 19.10（Tannakian 性）.** 范畴 $\operatorname{Sat}_G$ 配备卷积和全上同调纤维函子后，是 neutral Tannakian category。
+**外部输入定理 19.10（Tannakian 性）.** 范畴 $\operatorname{Sat}_G$ 配备卷积、由 Beilinson-Drinfeld fusion 给出并含标准 parity/sign correction 的 commutativity constraint，以及全上同调纤维函子后，是 neutral Tannakian category。只用单点 convolution 得到的是 monoidal structure；对称约束及其 parity 修正需要 fusion，不能形式省略，否则可能得到带错误 Koszul 符号的 super 对称结构。
 
 ## 19.4 几何 Satake 定理
 
@@ -107,7 +110,8 @@ $$
 \simeq
 \operatorname{Rep}(\widehat G),
 $$
-其中 $\widehat G$ 是第十一章定义的复对偶群或相应系数域上的 Langlands dual group。在该等价下，
+其中 $\widehat G_E$ 是根资料对偶后定义在 $E$ 上的 split connected reductive group；选择
+$E\simeq\mathbb C$ 后才写成复对偶群。在该等价下，
 $$
 \operatorname{IC}_\lambda
 $$
@@ -148,15 +152,23 @@ $$
 $$
 在允许两个修改点合并并使用 factorization 结构的意义下成立。
 
-**证明草图.** 两次 Hecke 修改的局部模型是卷积 Grassmannian。几何 Satake 把卷积 sheaf $\mathcal S_V*\mathcal S_W$ 识别为 $\mathcal S_{V\otimes W}$。将该局部识别沿 Hecke correspondence 全局化，得到 Hecke 函子的张量相容性。完整证明需要 Beilinson-Drinfeld Grassmannian 的 factorization 结构。$\square$
+**证明路线（外部输入）.** 两次 Hecke 修改的局部模型是卷积 Grassmannian。几何 Satake 把卷积 sheaf $\mathcal S_V*\mathcal S_W$ 识别为 $\mathcal S_{V\otimes W}$；Beilinson-Drinfeld Grassmannian 再把该识别全局化并控制两点碰撞。本段依赖 factorization、proper base change 和定理 19.11，不重证这些输入。
 
 ## 19.6 与经典 Satake 的关系
 
-**命题 19.16.** 若 $k=\mathbb F_q$，对 $\operatorname{Sat}_G$ 中的 sheaf 取 Frobenius trace，可得到 spherical Hecke algebra 的函数；几何 Satake 的 Grothendieck ring 版本恢复经典 Satake 同构。
+**外部输入定理 19.16（有限域下降与经典 Satake）.** 另设 $G_0/\mathbb F_q$ split connected reductive，并令前述
+$G=G_0\otimes_{\mathbb F_q}\overline{\mathbb F}_q$。对定义在 $\mathbb F_q$ 上且带 Weil structure 的 Satake sheaves，取 stalk 上几何 Frobenius 的交错迹，得到
+$G_0(\mathbb F_q[[t]])$-双不变的紧支撑函数
+$$
+G_0(\mathbb F_q((t)))\longrightarrow E.
+$$
+选择 $q^{1/2}\in E$ 并作 IC half-Tate normalization 后，Grothendieck ring 的 convolution 同构恢复
+$\delta_B^{1/2}$-normalized classical Satake isomorphism。
 
-**证明草图.** Grothendieck sheaf-function dictionary 把 $G[[t]]$-等变 sheaves 送到 $G(\mathcal O)$-双不变紧支撑函数。卷积 sheaf 的 Frobenius trace 对应函数卷积。几何 Satake 把 Grothendieck ring 识别为 $\operatorname{Rep}(\widehat G)$ 的表示环；经典 Satake 同构也把球 Hecke 代数识别为该表示环的半 Tate twist，即 $q^{1/2}$ 归一化形式。$\square$
+**证明路线（外部输入）.** Grothendieck sheaf-function dictionary 把 convolution 送到函数卷积。几何 Satake 把 Grothendieck ring 识别为 $\operatorname{Rep}(\widehat G_E)$；IC shift 与 half-Tate twist 产生
+$q^{\langle\rho,\lambda\rangle}$，与附录 P 的 normalized Satake basis 对齐。Purity、decomposition theorem 和 sheaf-function compatibility 均为外部输入，本段不承担证明。
 
-**注 19.17.** 因此几何 Satake 不只是几何类比；它给出经典 Satake 同构的范畴化。
+**注 19.17.** 代数闭域上的裸 sheaf 没有 Frobenius trace；必须先有有限域下降和 Weil structure。几何 Satake 因而在上述附加数据下范畴化经典 Satake，而不是无条件把任意 sheaf 变成函数。
 
 ## 19.7 本章小结
 

@@ -8,6 +8,10 @@
 
 需要自然变换、函子范畴、极限和余极限。
 
+本章的 $\mathcal C,\mathcal D$ 默认局部 $\mathcal U$-小，故伴随双射是
+$\mathbf{Set}_{\mathcal U}$ 中的双射。保持“所有小极限或余极限”仍只涉及
+$\mathcal U$-小索引范畴。
+
 ## 4.1 伴随的定义
 
 **定义 4.1.** 设 $F:\mathcal C\to\mathcal D$ 与 $G:\mathcal D\to\mathcal C$ 为函子。称 $F$ 左伴随于 $G$，记作 $F\dashv G$，若存在对 $X\in\mathcal C$ 与 $Y\in\mathcal D$ 自然的双射
@@ -18,16 +22,33 @@ $$
 
 此时 $G$ 称为 $F$ 的右伴随。
 
+这里“对两个变量自然”不是附加口号。对
+$u:X'\to X$、$v:Y\to Y'$ 和 $f:FX\to Y$，它精确要求
+
+$$
+\Phi_{X',Y}(f\circ F(u))
+=\Phi_{X,Y}(f)\circ u,
+$$
+
+$$
+\Phi_{X,Y'}(v\circ f)
+=G(v)\circ\Phi_{X,Y}(f).
+$$
+
+第一变量反变，第二变量协变；这两个等式也固定了后文所有转置公式的方向。
+
 **例子 4.2.** 自由群函子
 
 $$
-F:\mathbf{Set}\to\mathbf{Grp}
+F:\mathbf{Set}_{\mathcal U}\to\mathbf{Grp}
 $$
 
-左伴随于忘却函子 $U:\mathbf{Grp}\to\mathbf{Set}$。伴随双射为
+左伴随于忘却函子
+$U:\mathbf{Grp}\to\mathbf{Set}_{\mathcal U}$，其中
+$\mathbf{Grp}$ 只取底层集合为 $\mathcal U$-小的群。伴随双射为
 
 $$
-\mathbf{Grp}(F(S),G)\cong\mathbf{Set}(S,U(G)),
+\mathbf{Grp}(F(S),G)\cong\mathbf{Set}_{\mathcal U}(S,U(G)),
 $$
 
 它表达自由群由集合映射 $S\to U(G)$ 唯一延拓为群同态 $F(S)\to G$。
@@ -63,35 +84,142 @@ $$
 G(\varepsilon_Y)\circ\eta_{G Y}=\operatorname{id}_{G Y}.
 $$
 
-**证明.** 从 Hom 自然同构构造 $\eta,\varepsilon$ 如定义 4.3。自然性给出任意 $f:FX\to Y$ 与 $g:X\to GY$ 的转置公式
+**证明.** 先从 Hom 自然同构 $\Phi$ 构造单位和余单位。令
 
 $$
-\Phi(f)=G(f)\circ\eta_X,
+\eta_X=\Phi_{X,FX}(\operatorname{id}_{FX}),
 \qquad
-\Phi^{-1}(g)=\varepsilon_Y\circ F(g).
+\varepsilon_Y=\Phi^{-1}_{GY,Y}(\operatorname{id}_{GY}).
 $$
 
-把 $f=\operatorname{id}_{FX}$ 与 $g=\operatorname{id}_{GY}$ 代入并要求两次转置回到原态射，得到两个三角恒等式。
-
-反过来，若有 $\eta,\varepsilon$ 满足三角恒等式，定义
+先验证它们确实自然。若 $u:X\to X'$，分别对 $\Phi$ 的第二变量和第一变量使用定义 4.1 的自然性，得到
 
 $$
-\Phi_{X,Y}(f)=G(f)\circ\eta_X,
+\begin{aligned}
+GF(u)\eta_X
+&=GF(u)\Phi_{X,FX}(\operatorname{id}_{FX})\\
+&=\Phi_{X,FX'}(F(u))\\
+&=\Phi_{X',FX'}(\operatorname{id}_{FX'})u
+=\eta_{X'}u.
+\end{aligned}
+$$
+
+故 $\eta:\operatorname{id}_{\mathcal C}\Rightarrow GF$ 自然。记
+$\Psi=\Phi^{-1}$。逆双射的自然性等式与 $\Phi$ 等价。若
+$v:Y\to Y'$，则
+
+$$
+\begin{aligned}
+v\varepsilon_Y
+&=v\Psi_{GY,Y}(\operatorname{id}_{GY})\\
+&=\Psi_{GY,Y'}(G(v))\\
+&=\Psi_{GY',Y'}(\operatorname{id}_{GY'})F(G(v))\\
+&=\varepsilon_{Y'}FG(v).
+\end{aligned}
+$$
+
+所以 $\varepsilon:FG\Rightarrow\operatorname{id}_{\mathcal D}$ 自然。
+
+同一自然性给出完整转置公式。若 $f:FX\to Y$，则
+
+$$
+\Phi_{X,Y}(f)
+=G(f)\Phi_{X,FX}(\operatorname{id}_{FX})
+=G(f)\eta_X.
+$$
+
+若 $g:X\to GY$，则
+
+$$
+\Psi_{X,Y}(g)
+=\Psi_{GY,Y}(\operatorname{id}_{GY})F(g)
+=\varepsilon_YF(g).
+$$
+
+把 $\eta_X=\Phi(\operatorname{id}_{FX})$ 代入
+$\Psi\Phi=\operatorname{id}$，得到
+
+$$
+\varepsilon_{FX}F(\eta_X)=\operatorname{id}_{FX}.
+$$
+
+把 $\varepsilon_Y=\Psi(\operatorname{id}_{GY})$ 代入
+$\Phi\Psi=\operatorname{id}$，得到
+
+$$
+G(\varepsilon_Y)\eta_{GY}=\operatorname{id}_{GY}.
+$$
+
+这就是两个三角恒等式。
+
+反过来，给定自然变换 $\eta,\varepsilon$ 满足三角恒等式，定义
+
+$$
+\Phi_{X,Y}(f)=G(f)\eta_X,
 \qquad
-\Psi_{X,Y}(g)=\varepsilon_Y\circ F(g).
+\Psi_{X,Y}(g)=\varepsilon_YF(g).
 $$
 
-计算得
+若 $f:FX\to Y$，则
 
 $$
-\Psi(\Phi(f))
-=\varepsilon_Y\circ F(G(f)\circ\eta_X)
-=\varepsilon_Y\circ FG(f)\circ F(\eta_X)
-=f\circ\varepsilon_{FX}\circ F(\eta_X)
-=f,
+\begin{aligned}
+\Psi_{X,Y}(\Phi_{X,Y}(f))
+&=\varepsilon_YFG(f)F(\eta_X)\\
+&=f\varepsilon_{FX}F(\eta_X)\\
+&=f,
+\end{aligned}
 $$
 
-其中第三个等号用 $\varepsilon$ 的自然性，最后一个等号用三角恒等式。类似地 $\Phi(\Psi(g))=g$。自然性由 $\eta,\varepsilon$ 的自然性验证。$\square$
+其中第二行用 $\varepsilon$ 对 $f:FX\to Y$ 的自然性，第三行用第一三角恒等式。若 $g:X\to GY$，则
+
+$$
+\begin{aligned}
+\Phi_{X,Y}(\Psi_{X,Y}(g))
+&=G(\varepsilon_Y)GF(g)\eta_X\\
+&=G(\varepsilon_Y)\eta_{GY}g\\
+&=g,
+\end{aligned}
+$$
+
+其中第二行用 $\eta$ 对 $g:X\to GY$ 的自然性，第三行用第二三角恒等式。因此 $\Phi$ 与 $\Psi$ 逐对互逆。
+
+最后逐项验证自然性。对 $u:X'\to X$、$v:Y\to Y'$，
+
+$$
+\begin{aligned}
+\Phi_{X',Y}(fF(u))
+&=G(f)GF(u)\eta_{X'}
+=G(f)\eta_Xu
+=\Phi_{X,Y}(f)u,\\
+\Phi_{X,Y'}(vf)
+&=G(v)G(f)\eta_X
+=G(v)\Phi_{X,Y}(f).
+\end{aligned}
+$$
+
+相应地，
+
+$$
+\begin{aligned}
+\Psi_{X',Y}(gu)
+&=\varepsilon_YF(g)F(u)
+=\Psi_{X,Y}(g)F(u),\\
+\Psi_{X,Y'}(G(v)g)
+&=\varepsilon_{Y'}FG(v)F(g)
+=v\varepsilon_YF(g)
+=v\Psi_{X,Y}(g).
+\end{aligned}
+$$
+
+故这些双射对两个变量自然，确实给出伴随。由重构双射再提取单位和余单位时，
+
+$$
+\Phi_{X,FX}(\operatorname{id}_{FX})=\eta_X,\qquad
+\Psi_{GY,Y}(\operatorname{id}_{GY})=\varepsilon_Y,
+$$
+
+而从原 Hom 双射提取的 $\eta,\varepsilon$ 又由转置公式重构原双射。因此两种数据转换互逆。$\square$
 
 ## 4.3 泛箭头
 
@@ -101,7 +229,20 @@ $$
 G(\bar f)\circ\eta=f.
 $$
 
-**命题 4.6.** 函子 $G:\mathcal D\to\mathcal C$ 有左伴随，当且仅当对每个 $X\in\mathcal C$ 都存在从 $X$ 到 $G$ 的泛箭头，并且这些泛箭头可函子化。
+**命题 4.6（逐对象泛箭头的函子化）.** 若为每个
+$X\in\mathcal C$ 给定一个从 $X$ 到 $G:\mathcal D\to\mathcal C$
+的泛箭头
+
+$$
+\eta_X:X\to G(FX),
+$$
+
+则这些数据唯一决定 $F$ 在态射上的作用，使 $F$ 成为
+$G$ 的左伴随且 $\eta$ 成为其单位。反之，任何伴随的单位逐分量都是这样的泛箭头。
+
+因此，在附录 A 的 $\mathcal V$-小选择公理下，“每个 $X$ 至少存在一个
+泛箭头”等价于“$G$ 有左伴随”。若不给选择原则，正确输入必须是已经选定的
+泛箭头族，而不能把逐对象存在量词自动提升为一个族。
 
 **证明.** 若 $F\dashv G$，令 $\eta_X:X\to GFX$ 为伴随单位。给定 $Z\in\mathcal D$ 和 $f:X\to GZ$，令 $\bar f:FX\to Z$ 为 $f$ 在伴随双射
 
@@ -117,7 +258,7 @@ $$
 
 若 $h:FX\to Z$ 也满足 $G(h)\eta_X=f$，则 $h$ 与 $\bar f$ 在伴随双射下有同一像，故 $h=\bar f$。所以 $\eta_X$ 是从 $X$ 到 $G$ 的泛箭头。
 
-反过来，假设对每个 $X$ 选择泛箭头
+反过来，使用命题中给定的泛箭头族
 
 $$
 \eta_X:X\to G(FX).
@@ -162,65 +303,173 @@ $$
 
 ## 4.4 伴随保持极限
 
-**定理 4.7.** 左伴随保持所有存在的余极限；右伴随保持所有存在的极限。
+**定理 4.7.** 左伴随保持所有存在的 $\mathcal U$-小余极限；右伴随保持所有存在的 $\mathcal U$-小极限。
 
-**证明.** 证明左伴随情形。设 $F:\mathcal C\to\mathcal D$ 左伴随于 $G$，并设 $L=\operatorname{colim}_{j\in\mathcal J}D(j)$。对任意 $Y\in\mathcal D$，有自然双射
-
-$$
-\mathcal D(F L,Y)\cong\mathcal C(L,GY).
-$$
-
-由于 $L$ 是余极限，
+**证明.** 设 $F:\mathcal C\to\mathcal D$ 左伴随于 $G$，单位为
+$\eta$。取 $\mathcal U$-小范畴 $\mathcal J$、图形
+$H:\mathcal J\to\mathcal C$ 及其余极限锥
 
 $$
-\mathcal C(L,GY)\cong
-\lim_{j\in\mathcal J^{\operatorname{op}}}\mathcal C(D(j),GY).
+\iota_j:H(j)\to L.
 $$
 
-再用伴随，
+对任意 $Y\in\mathcal D$，依次使用伴随、余极限的表示性刻画和逐项伴随，得到双射
 
 $$
-\mathcal C(D(j),GY)\cong\mathcal D(FD(j),Y).
+\begin{aligned}
+\mathcal D(FL,Y)
+&\cong\mathcal C(L,GY)\\
+&\cong\lim_{j\in\mathcal J^{\operatorname{op}}}
+       \mathcal C(H(j),GY)\\
+&\cong\lim_{j\in\mathcal J^{\operatorname{op}}}
+       \mathcal D(FH(j),Y).
+\end{aligned}
 $$
 
-合并得到
+三步都对 $Y$ 自然，所以复合也是自然双射。还需核对该双射对应的是
+给定余锥 $(F\iota_j)$，而不是某个未指明的余锥。若
+$q:FL\to Y$，第一步把它送到 $G(q)\eta_L$；第二步得到族
 
 $$
-\mathcal D(F L,Y)\cong
-\lim_{j\in\mathcal J^{\operatorname{op}}}\mathcal D(FD(j),Y),
+G(q)\eta_L\iota_j.
 $$
 
-这正是 $F L$ 作为图形 $F D$ 的余极限的表示性条件。右伴随保持极限由对偶论证得到。$\square$
+由 $\eta$ 对 $\iota_j$ 的自然性，
+
+$$
+G(q)\eta_L\iota_j
+=G(q)GF(\iota_j)\eta_{H(j)}
+=G(qF(\iota_j))\eta_{H(j)}.
+$$
+
+最后一步的逆伴随恰把该分量送回
+$qF(\iota_j):FH(j)\to Y$。所以复合双射正是
+
+$$
+q\longmapsto(qF(\iota_j))_j,
+$$
+
+即余锥 $(F\iota_j)$ 的泛性质。因此 $FL$ 是 $FH$ 的余极限。
+
+对右伴随的结论，考虑反范畴中的伴随
+
+$$
+G^{\operatorname{op}}\dashv F^{\operatorname{op}}:
+\mathcal D^{\operatorname{op}}\rightleftarrows
+\mathcal C^{\operatorname{op}}.
+$$
+
+刚证的结论说明左伴随 $G^{\operatorname{op}}$ 保持余极限；把反范畴中的余极限翻回原范畴，正得到 $G$ 保持极限。索引范畴的
+$\mathcal U$-小性在取反后不变。$\square$
 
 ## 4.5 伴随的唯一性
 
-**命题 4.8.** 若 $G:\mathcal D\to\mathcal C$ 有两个左伴随 $F$ 与 $F'$，则存在唯一自然同构 $F\cong F'$ 与相应伴随结构相容。
-
-**证明.** 对每个 $X$，对象 $F X$ 与 $F'X$ 都表示函子
-
-$$
-Y\longmapsto \mathcal C(X,GY).
-$$
-
-具体地，伴随给出自然同构
+**命题 4.8（伴随结构的唯一性）.** 设
+$F\dashv G$ 与 $F'\dashv G$ 是两个伴随，单位、余单位分别记为
 
 $$
-\mathcal D(FX,Y)\cong\mathcal C(X,GY)\cong\mathcal D(F'X,Y)
+(\eta,\varepsilon),\qquad(\eta',\varepsilon').
 $$
 
-对 $Y$ 自然。由 Yoneda 引理，存在唯一同构
+则存在唯一自然同构 $\theta:F\Rightarrow F'$ 满足
 
 $$
-\theta_X:F'X\to FX
+G(\theta_X)\eta_X=\eta'_X
+\qquad(\forall X\in\mathcal C).
 $$
 
-诱导上述自然同构。若 $u:X\to X'$，则 $F(u)\theta_X$ 与 $\theta_{X'}F'(u)$ 是 $F'X\to FX'$ 的两个态射。对任意 $Y$，它们在表示函子同构下诱导同一个自然变换，因为二者都对应于预复合 $u$ 对函子 $Y\mapsto\mathcal C(X',GY)$ 的作用。由 Yoneda 的忠实性，
+同一个 $\theta$ 也满足等价的余单位相容式
 
 $$
-F(u)\theta_X=\theta_{X'}F'(u).
+\varepsilon'_Y\theta_{GY}=\varepsilon_Y
+\qquad(\forall Y\in\mathcal D).
 $$
 
-故 $\theta:F'\Rightarrow F$ 是自然同构。若另有相容自然同构，则其每个分量诱导同一个表示同构，仍由 Yoneda 唯一性相等。$\square$
+因此“两个左伴随唯一同构”指唯一的伴随结构相容自然同构，不表示
+$F$ 与 $F'$ 之间只有一个任意自然同构。
+
+**证明.** 由命题 4.6，$\eta_X:X\to G(FX)$ 是从 $X$ 到 $G$ 的泛箭头。把
+$\eta'_X:X\to G(F'X)$ 代入其泛性质，得到唯一态射
+
+$$
+\theta_X:FX\to F'X
+$$
+
+满足 $G(\theta_X)\eta_X=\eta'_X$。交换两个伴随后，同理得到唯一
+$\rho_X:F'X\to FX$ 满足 $G(\rho_X)\eta'_X=\eta_X$。于是
+
+$$
+G(\rho_X\theta_X)\eta_X
+=G(\rho_X)\eta'_X
+=\eta_X.
+$$
+
+$\operatorname{id}_{FX}$ 也满足这个等式；由泛箭头的唯一性，
+$\rho_X\theta_X=\operatorname{id}_{FX}$。交换 $F,F'$ 得
+$\theta_X\rho_X=\operatorname{id}_{F'X}$，故每个 $\theta_X$ 可逆。
+
+若 $u:X\to X'$，比较
+$\theta_{X'}F(u)$ 与 $F'(u)\theta_X:FX\to F'X'$。分别施加
+$G$ 并预复合 $\eta_X$，有
+
+$$
+\begin{aligned}
+G(\theta_{X'}F(u))\eta_X
+&=G(\theta_{X'})\eta_{X'}u
+=\eta'_{X'}u,\\
+G(F'(u)\theta_X)\eta_X
+&=GF'(u)\eta'_X
+=\eta'_{X'}u.
+\end{aligned}
+$$
+
+第一行使用 $\eta$ 的自然性和 $\theta_{X'}$ 的定义，第二行使用
+$\theta_X$ 的定义和 $\eta'$ 的自然性。由 $\eta_X$ 的泛箭头唯一性，
+
+$$
+\theta_{X'}F(u)=F'(u)\theta_X.
+$$
+
+所以 $\theta:F\Rightarrow F'$ 是自然同构。
+
+再证余单位相容。按第一个伴随的转置公式，
+$\varepsilon_Y:FGY\to Y$ 的转置是 $\operatorname{id}_{GY}$。另一方面，
+
+$$
+\begin{aligned}
+G(\varepsilon'_Y\theta_{GY})\eta_{GY}
+&=G(\varepsilon'_Y)G(\theta_{GY})\eta_{GY}\\
+&=G(\varepsilon'_Y)\eta'_{GY}\\
+&=\operatorname{id}_{GY},
+\end{aligned}
+$$
+
+最后一行是第二个伴随的三角恒等式。因此
+$\varepsilon'_Y\theta_{GY}$ 与 $\varepsilon_Y$ 在第一个伴随双射下有同一转置，故二者相等。
+
+最后，若 $\widetilde\theta:F\Rightarrow F'$ 也满足单位相容式，则每个
+$\widetilde\theta_X$ 与 $\theta_X$ 都是泛箭头 $\eta_X$ 对
+$\eta'_X$ 的唯一分解，故逐分量相等。于是 $\widetilde\theta=\theta$。
+
+余单位条件也唯一刻画同一个 $\theta$。事实上，对任意自然变换
+$\tau:F\Rightarrow F'$，令
+
+$$
+\delta_Y=\varepsilon'_Y\tau_{GY}:FGY\to Y.
+$$
+
+由 $\tau$ 对 $\eta'_X:X\to GF'X$ 的自然性和第二个伴随的三角恒等式，
+
+$$
+\delta_{F'X}F(\eta'_X)
+=\varepsilon'_{F'X}\tau_{GF'X}F(\eta'_X)
+=\varepsilon'_{F'X}F'(\eta'_X)\tau_X
+=\tau_X.
+$$
+
+所以 $\tau\mapsto\varepsilon'(\tau G)$ 是单射。满足
+$\varepsilon'(\tau G)=\varepsilon$ 的自然变换至多一个；已经构造的
+$\theta$ 满足该式，故余单位条件与单位条件确实选出同一个相容同构。$\square$
 
 ## 4.6 全忠实伴随与反射子范畴
 

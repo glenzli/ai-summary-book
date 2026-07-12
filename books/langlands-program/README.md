@@ -171,7 +171,7 @@
 
 ## 当前教材化补强层
 
-- 全书主要结果已由 [THEOREM_INDEX.md](THEOREM_INDEX.md) 标记为 `P`、`S`、`E`、`C` 四类，分别对应已证、证明草图、外部输入和猜想。
+- 全书主要结果已由 [THEOREM_INDEX.md](THEOREM_INDEX.md) 标记为 `P`、`S`、`E`、`C` 四类，分别对应已证、外部输入的证明路线、外部输入和猜想。
 - 全书阅读路径已由 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md) 分成 `GL(1)`、费马应用、一般数论 Langlands 和几何 Langlands 四条路径。
 - 核心习题解答已覆盖第 1 至 5 章、若干 `GL(2)` 计算、一般 Langlands 基础、几何 Langlands 入门和费马应用章。
 - 附录 A-D、F-AE 已从接口复习扩展为带关键证明、Fourier/Poisson 计算、积分接口、谱分解接口、局部 packet 例子、几何范畴技术层、`GL(n)` 局部分类、`GL(2)` 局部 LLC 例子、trace formula 稳定化、函数域 shtuka 接口、模曲线上同调、p-adic Hodge/Shimura 接口、class formation、Atkin-Lehner-Li、Arthur 分类、factorization/BD Grassmannian、局部调和分析、Bruhat-Tits、derived stacks、Fargues-Fontaine 和椭圆曲线局部约化接口的参考附录；这些附录已达到主体可引用接口深度，但仍不是可替代专著的完整证明卷。

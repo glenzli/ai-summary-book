@@ -4,23 +4,27 @@
 
 | 输入编号 | 使用章节 | 假设 | 输出 | 不内部证明原因 |
 | --- | --- | --- | --- | --- |
-| 1.16 / B.7 Yoneda | 1, B | strictly unital $A_\infty$ category | Yoneda embedding cohomologically fully faithful | 需要完整 $A_\infty$ module theory |
-| 1.21 pretriangulated envelope | 1 | $A_\infty$/dg category 与 twisted complexes | $H^0\operatorname{Tw}(\mathcal A)$ 带三角结构 | 属于 $A_\infty$ homological algebra 基础大定理 |
+| 1.16 / B.11 Yoneda | 1, B | small strictly unital $A_\infty$ category | Yoneda embedding 在 morphism complexes 上 quasi-isomorphic | 需要完整 $A_\infty$ module theory |
+| 1.21 finite twisted-complex envelope | 1 | field $k$；small noncurved strictly unital $k$-linear $A_\infty$ category | $\operatorname{Tw}(\mathcal A)$ pretriangulated；$H^0$ triangulated；原 category cohomologically fully faithful | 属于 $A_\infty$ homological algebra；不含 arbitrary coproduct/idempotent completion |
 | C.2 dg quotient | C, 7 | dg category 与 full dg subcategory | quotient models Verdier quotient/enhanced localization | Drinfeld quotient 构造技术性强 |
-| 2.11 B-side enhancement | 2 | scheme/variety 的 derived category | dg/Morita enhancement 可用 | 需要 derived Morita theory |
-| 2.14 Fourier-Mukai representability | 2, D | smooth proper varieties 与 exact functors | functors represented by kernels in good cases | 依赖 Orlov/Huybrechts 表示性理论 |
-| 2.18 / 19.4 Orlov singularity | 2, 19 | LG potential/hypersurface singularity | MF 与 singularity category 相关或等价 | 需要 Orlov triangulated singularity theory |
-| 3.14 Floer differential | 3 | exact/transverse/regular branes | $\mu^1{}^2=0$ | 需要 compactness、orientation、gluing |
+| 2.7 regular comparison | 2 | regular noetherian scheme | $D^b_{\mathrm{Coh}}=D_{\mathrm{perf}}$ | regular-local-ring resolution theorem；Stacks Tag 0FDC |
+| 2.11 B-side enhancement | 2 | qcqs scheme；noetherian when using coherent subcategory | h-injective dg model enhances derived category；regular case gives Perf/DbCoh quasi-equivalence | 需要 unbounded h-injective resolution theory |
+| 2.12A kernel enhancement | 2, D | smooth proper finite-type schemes；perfect kernel | Fourier--Mukai formula lifts to dg quasi-functor and convolution composes | 需要 derived Morita/h-flat/h-injective formalism |
+| 2.14 Fourier-Mukai representability | 2 | characteristic-zero algebraically closed $k$；smooth projective varieties；$k$-linear exact fully faithful functor with left and right adjoints | functor represented by an isomorphism-unique perfect kernel | Huybrechts Theorem 5.14 (Orlov)；不覆盖缺 adjoints 或一般 exact functor |
+| 2.18 Orlov affine hypersurface | 2 | finite Krull-dimensional regular noetherian $R$；$w$ non-zero-divisor | finite-rank MF 与 $D_{\mathrm{sg}}(R/(w))$ 在 idempotent completion 后等价 | 需要 Orlov/Buchweitz hypersurface theory |
+| 19.4 Orlov singularity variants | 19 | 章内另定 equivariant/nonaffine hypotheses | 相应 MF/singularity comparison | 不能由 affine 2.18 自动推出 |
+| 3.14 / 4.9 / E.6 compact exact package | 3, 4, E | Liouville completion；compact exact graded relative-Pin branes；3.14 取 transverse intersection/$H=0$ data，4.9 取 compact pair data 与 coherent regular universal perturbations | finite intersection/chord operations，$\mu^1{}^2=0$，完整 $A_\infty$ identities | 需要 Fredholm、no-escape、compactness、determinant orientations 与 gluing；Seidel Chapters 8--12 |
 | 3.18 continuation | 3 | exact Floer data homotopy | Floer complexes quasi-isomorphic | 需要 continuation moduli spaces |
-| 4.9 polygon $A_\infty$ | 4 | exact regular polygon moduli | $\mu^d$ 满足 $A_\infty$ 方程 | 需要一维模空间紧化与 gluing |
-| 4.12 Fukaya invariance | 4 | coherent perturbation choices | Fukaya categories quasi-equivalent | 需要选择空间与 continuation higher homotopies |
-| 5.13 FOOO filtered theory | 5 | compact Lagrangians, Novikov, virtual perturbations | filtered curved $A_\infty$、bounding cochains | Kuranishi/virtual 技术超出本书 |
-| 6.8 / 6.10 wrapped theory | 6 | Liouville/admissibility/cofinal Hamiltonians | wrapped complexes and $\mathcal W(M)$ well-defined | wrapped compactness 与 continuation 技术 |
+| 4.12 Fukaya invariance | 4 | 同一 compact exact geometry/brane background；两套 coherent perturbation systems | compact exact Fukaya categories quasi-equivalent | 需要 continuation higher homotopies；不比较改变 brane background 后的 categories |
+| 4.14A cohomological units | 4 | compact exact package；与 strip-like ends 相容的 unit perturbation data | continuation classes are two-sided units in $H^*\mathcal F^c_{\mathrm{ex}}$ | unit moduli spaces 不包含在无单位 $A_\infty$ identities 中；Seidel Chapters 9--12 |
+| 4.15 strictification | 4 | field $k$；small noncurved cohomologically unital $k$-linear $A_\infty$ category | quasi-equivalent small strictly unital model | 依赖 homological/strict unitality comparison；不声称在同一底层 graded category 上严格化 |
+| 5.13 FOOO filtered theory | 5 | closed symplectic $M$；compact oriented relatively spin $L$；characteristic-zero completed Novikov coefficients；gapped filtration；coherent virtual perturbations | one-object unital gapped filtered curved $A_\infty$ algebra、MC deformation 与 Floer cohomology | Kuranishi/virtual 技术超出本书；多对象 category 还需 coherent polygon package |
+| 6.8 / 6.10 wrapped analytic/categorical package | 6 | Liouville completion 或带 sectorial convexity 的 sector；exact conical graded relative-Pin branes；nondegenerate cofinal radial Hamiltonians；contact-type $J$；coherent continuation/polygon data | telescope $CW^*$、choice invariance、orientation/local-system operations 与精确 (B.3)；cohomological units | 需要 wrapped action bounds、no-escape、compactness、orientation、continuation/polygon gluing；GPS arXiv:1706.03152 |
 | 6.13 sector functoriality | 6 | Liouville sector inclusions | covariant wrapped functors | GPS sector machinery |
-| 6.17 cocore generation | 6, F | Weinstein sector / mostly Legendrian stop | cocores and linking disks generate | 依赖 GPS generation theorem |
+| 6.17 cocore/linking-disk generation | 6, F | Weinstein sector with handle presentation；optional mostly Legendrian stop | cocores plus required linking disks split-generate $H^0\operatorname{Perf}\mathcal W$；inclusion Morita | GPS sectorial descent/generation arXiv:1809.03427；不输出 raw quasi-equivalence |
 | 7.7 stop removal | 7, K | stops $\mathfrak f\subset\mathfrak g$ | removing stop equals localization by linking disks | 依赖 GPS stop removal theorem |
-| 14.6 OC/CO maps | 14, 18 | relevant compactness/transversality | open-closed and closed-open maps | 需要 marked disk moduli |
-| 14.7 Abouzaid criterion | 14, K | OC hits unit | selected objects split-generate | 需要 Cardy relation and generation theorem |
+| 14.6 wrapped OC/CO package | 14, 18 | Liouville manifold；wrapped category/SH 的 coefficients、gradings、cofinal Hamiltonians、orientations 与 compactness data | degree-$n$ OC、CO、module/product/Cardy compatibility | 需要 punctured marked-disk moduli 与 wrapped duality |
+| 14.7 Abouzaid criterion | 14, K | full $\mathcal B\subset\mathcal W(M)$；composite $HH_*(\mathcal B)\to HH_*(\mathcal W)\to SH^{*+n}$ 命中 $1_{SH}$ | $\mathcal B$ split-generates $\mathcal W(M)$，即 inclusion Morita | Abouzaid Theorem 1.1 / equation (1.2)，依赖 two-output disks 与 Cardy relation |
 | 15.3 sectorial descent | 15, K | Weinstein sectorial cover | hocolim of local wrapped categories gives global | 依赖 GPS descent theorem |
 | 15.6 Kunneth | 15 | product Liouville sectors | $\mathcal W(X\times Y)$ Morita tensor product | 需要 wrapped product analysis |
 | 16.5 Nadler-Zaslow | 16 | compact real analytic $Q$ | constructible sheaves quasi-embed/equivalent to cotangent Fukaya model | 需要 microlocal sheaf/Fukaya correspondence |

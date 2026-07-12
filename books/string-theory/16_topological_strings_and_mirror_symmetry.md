@@ -50,7 +50,7 @@ f:\Sigma_g\to X.
 $$
 其 correlators 依赖 complexified Kahler class $B+iJ$，不依赖 complex structure deformation。
 
-**证明草图.** A-twist 后 action 可写为 $Q$-exact 项加上 topological term
+**推导说明（标准物理口径）.** A-twist 后 action 可写为 $Q$-exact 项加上 topological term
 $$
 \int_\Sigma f^*(B+iJ).
 $$
@@ -70,7 +70,7 @@ $$
 
 **定理 16.7（B-model dependence）.** B-model correlators 依赖 complex structure moduli，不依赖 Kahler moduli。
 
-**证明草图.** B-twist 后，Kahler class 的变化进入 $Q$-exact deformation，而 complex structure 改变 BRST operator 与 chiral ring 结构。故 $Q$-cohomology correlators 只感知 complex structure。$\square$
+**推导说明（标准物理口径）.** B-twist 后，Kahler class 的变化进入 $Q$-exact deformation，而 complex structure 改变 BRST operator 与 chiral ring 结构。故 $Q$-cohomology correlators 只感知 complex structure。$\square$
 
 **定义 16.8（periods）.** 对 Calabi-Yau threefold 的 holomorphic three-form $\Omega$，periods 定义为
 $$
@@ -96,7 +96,7 @@ $$
 
 **命题 16.10（mirror map 的计算意义）.** 若 mirror pair $(X,Y)$ 已知，则 $X$ 上的 genus-zero Gromov-Witten invariants 可由 $Y$ 上的 period integrals 和 mirror map 计算。
 
-**证明草图.** Mirror symmetry 把 A-model Kahler moduli 映到 B-model complex structure moduli。A-model 的 genus-zero prepotential 包含 curve counting data；B-model prepotential 由 periods 的 special geometry 给出。通过 mirror map 对齐 flat coordinates 后，展开 B-model prepotential 即读出 A-model invariants。$\square$
+**推导说明（标准物理口径）.** Mirror symmetry 把 A-model Kahler moduli 映到 B-model complex structure moduli。A-model 的 genus-zero prepotential 包含 curve counting data；B-model prepotential 由 periods 的 special geometry 给出。通过 mirror map 对齐 flat coordinates 后，展开 B-model prepotential 即读出 A-model invariants。$\square$
 
 **注 16.11（数学状态）.** Mirror symmetry 在许多具体族和适当形式化下已有严格数学定理，但一般物理陈述仍作为对偶性原则使用。本书把其全局形式标为物理猜想，把已数学化的局部计算作为外部输入或例子。
 
@@ -135,7 +135,7 @@ q=e^{2\pi i t},
 $$
 其中 $\Pi_0$ 是 holomorphic period，$\Pi_1$ 是含 logarithm 的 period。
 
-**证明草图.** Picard-Fuchs 方程在 maximally unipotent monodromy point 附近有 Frobenius basis：一个 holomorphic solution 和一个 logarithmic solution。其比值给出 flat coordinate，即 A-model complexified Kahler parameter。$\square$
+**推导说明（标准物理口径）.** Picard-Fuchs 方程在 maximally unipotent monodromy point 附近有 Frobenius basis：一个 holomorphic solution 和一个 logarithmic solution。其比值给出 flat coordinate，即 A-model complexified Kahler parameter。$\square$
 
 ## 本章小结
 

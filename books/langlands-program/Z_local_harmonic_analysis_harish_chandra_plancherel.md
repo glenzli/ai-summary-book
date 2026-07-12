@@ -52,7 +52,7 @@ $$
 
 **命题 Z.9.** 若两个不可约 admissible 表示的 characters 相等，则它们同构。
 
-**证明草图.** Hecke algebra 在 admissible category 上分离不可约对象。若 $\Theta_\pi=\Theta_{\pi'}$，则所有 compactly supported bi-$J$-invariant Hecke operators 的 trace 在 $\pi^J$ 与 $(\pi')^J$ 上相同。对足够多 $J$，这些 traces 决定相应 Hecke algebra 的简单模 character。由 admissible 表示的 Bernstein 分解与 character 线性无关性，得到 $\pi\simeq\pi'$。完整证明依赖 Harish-Chandra character 线性无关性。$\square$
+**证明路线（外部输入）.** Hecke algebra 在 admissible category 上分离不可约对象。若 $\Theta_\pi=\Theta_{\pi'}$，则所有 compactly supported bi-$J$-invariant Hecke operators 的 trace 在 $\pi^J$ 与 $(\pi')^J$ 上相同。对足够多 $J$，这些 traces 决定相应 Hecke algebra 的简单模 character。由 admissible 表示的 Bernstein 分解与 character 线性无关性，得到 $\pi\simeq\pi'$。完整证明依赖 Harish-Chandra character 线性无关性。$\square$
 
 ## Z.4 Plancherel 分解
 
@@ -103,7 +103,7 @@ $$
 
 **命题 Z.17.** Local character expansion 是稳定字符和 endoscopy 的局部技术输入之一。
 
-**证明草图.** Endoscopic character identities 比较的是 packets 的稳定字符组合。要验证或归一化这些分布，需知道 characters 在 regular semisimple locus 和 singular neighborhoods 的行为。定理 Z.16 把 singular behavior 化为 nilpotent orbital integrals 的 Fourier transforms，使 transfer factors 和稳定组合可被局部计算控制。$\square$
+**证明路线（外部输入）.** Endoscopic character identities 比较的是 packets 的稳定字符组合。要验证或归一化这些分布，需知道 characters 在 regular semisimple locus 和 singular neighborhoods 的行为。定理 Z.16 把 singular behavior 化为 nilpotent orbital integrals 的 Fourier transforms，使 transfer factors 和稳定组合可被局部计算控制。$\square$
 
 ## Z.7 与 Langlands 纲领的接口
 

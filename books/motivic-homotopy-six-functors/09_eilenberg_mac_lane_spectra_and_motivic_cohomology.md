@@ -10,15 +10,24 @@
 
 ## 9.1 Motivic Eilenberg-Mac Lane spectrum
 
-**外部输入定理 9.1.** 在标准假设下，存在 motivic Eilenberg-Mac Lane spectrum
+**外部输入定理 9.1（HZ-9.1）.** 设 `S=\operatorname{Spec}(D)`，其中 `D`
+为 mixed-characteristic Dedekind domain。Spitzweck 构造了交换
+`\mathbb P^1`-谱；经对称幺半模型到 infinity-范畴的比较，其像给出
 
 $$
 H\mathbb Z_S\in\operatorname{CAlg}(\mathbf{SH}(S)),
 $$
 
-表示 motivic cohomology，并且随基变换具有相容结构。
+并对每个 `X\in\operatorname{Sm}_S` 表示 Levine/Bloch cycle complexes
+定义的整系数 motivic cohomology。对 mixed-characteristic Dedekind
+domains 之间的态射，所构造的谱与 pullback 相容。
 
-**依赖源.** Voevodsky 的 motivic Eilenberg-Mac Lane spaces 和 motivic cohomology；Spitzweck 的一般基上 commutative `\mathbb P^1`-spectrum；Cisinski-Deglise 的 motivic sheaves/motives 口径。
+**精确来源与边界.** Markus Spitzweck, *A commutative P1-spectrum
+representing motivic cohomology over Dedekind domains*, arXiv:1207.4078v3，
+Theorem 7.18、Corollary 7.19 与 base-change Theorem 8.25，
+`https://arxiv.org/abs/1207.4078`。域上与通常 `M\mathbb Z_k` 的比较见
+Theorem 6.7 and Lemma 8.23。本章不由这些定理声称任意概形上均有同一
+cycle-complex 表示性；超出上述基类时必须另选模型并核对比较定理。
 
 **定义 9.2.** 对 `X\in\operatorname{Sm}_S`，定义 bigraded motivic cohomology 为
 
@@ -98,25 +107,41 @@ $$
 
 ## 9.3 与 Chow 群和 Milnor K-theory 的比较
 
-**外部输入定理 9.9.** 若 `X` 是域 `k` 上光滑概形，则 motivic cohomology 与高 Chow 群/代数循环复形相容；特别在常见约定下有
+**外部输入定理 9.9（HZ-9.9）.** 设 `k` 为 perfect field，`X` 为 smooth
+separated `k`-scheme。则对所有整数 `p,q` 有自然同构
 
 $$
-CH^n(X)\simeq H^{2n,n}(X,\mathbb Z).
+H^{p,q}(X,\mathbb Z)\cong CH^q(X,2q-p).
 $$
 
-**依赖源.** Bloch、Voevodsky、Suslin-Voevodsky、Mazza-Voevodsky-Weibel、Cisinski-Deglise。
-
-**外部输入定理 9.10.** 对域 `k`，有 Milnor K-theory 与 diagonal motivic cohomology 的比较
+特别地，
 
 $$
-K_n^M(k)\simeq H^{n,n}(\operatorname{Spec}k,\mathbb Z).
+CH^n(X)\cong H^{2n,n}(X,\mathbb Z).
 $$
+
+**精确来源.** Mazza--Voevodsky--Weibel, *Lecture Notes on Motivic
+Cohomology*, Theorem 19.1 与 Corollary 19.2，
+`https://sites.math.rutgers.edu/~weibel/MVWnotes/xprova.pdf`。
+
+**推论的证明.** 在主同构中取 `p=2n`、`q=n`，右端为
+`CH^n(X,0)`。Bloch 高 Chow 复形在单纯形次数零的同调正是通常的余维
+`n` Chow 群，所以 `CH^n(X,0)=CH^n(X)`；代入即得所列同构。`\square`
+
+**外部输入定理 9.10（HZ-9.10）.** 对任意域 `k` 和 `n\geq 0`，有自然
+环同构的次数 `n` 分量
+
+$$
+K_n^M(k)\cong H^{n,n}(\operatorname{Spec}k,\mathbb Z).
+$$
+
+**精确来源.** Mazza--Voevodsky--Weibel, Theorem 5.1，同上稳定 URL。
 
 **注 9.11.** 定理 9.9 和 9.10 是计算接口，不是定义。定义 9.2 已经在 `\mathbf{SH}(S)` 内部给出；比较定理说明该定义恢复循环和 Milnor K-theory 的经典对象。
 
 ## 9.4 Etale cycle maps 与 Bloch-Kato 边界
 
-**外部输入定理 9.12.** 若 `m` 在基上可逆，则存在从 motivic cohomology 到 etale cohomology 的 cycle map
+**高级外部输入 9.12（P1）.** 若 `m` 在基上可逆，则存在从 motivic cohomology 到 etale cohomology 的 cycle map
 
 $$
 H^{p,q}(X,\mathbb Z/m)\longrightarrow
@@ -125,7 +150,10 @@ $$
 
 并在 Beilinson-Lichtenbaum/Voevodsky norm residue theorem 的范围内成为等价或满足截断等价。
 
-**注 9.13.** 本书不把 Bloch-Kato 定理作为 motivic homotopy 的内部结论。它是 arithmetic motivic cohomology 的深外部输入，只在相关比较章节中使用。
+**注 9.13.** 本书不把 Bloch--Kato 定理作为 motivic homotopy 的内部结论。
+它是 arithmetic motivic cohomology 的深外部输入，也不参与本章定义、乘法、
+localization 或 Chow/Milnor `K` 比较这条 P0 教学主线；实际调用前须按系数和
+截断范围另补 locator。
 
 ## 9.5 Coefficients
 
@@ -152,7 +180,11 @@ $$
 
 ## 9.6 本章小结
 
-`H\mathbb Z` 把 motivic cohomology 放入 `\mathbf{SH}(S)` 的表示性框架中。Ring spectrum 结构给出 cup product，六操作给出紧支撑、Borel-Moore、localization 长正合列和 Gysin 接口。与 Chow 群、Milnor K-theory、etale cohomology 的比较是外部深定理，必须保留假设。
+`H\mathbb Z` 把 motivic cohomology 放入 `\mathbf{SH}(S)` 的表示性框架中。
+Ring spectrum 结构给出 cup product，六操作给出紧支撑、Borel-Moore、
+localization 长正合列和 Gysin 接口。与 Chow 群、Milnor K-theory 的 P0
+比较已分别限定为 perfect-field smooth separated 情形和任意域的对角情形；
+etale/Bloch--Kato 比较属于 P1 边界。
 
 ## 练习
 

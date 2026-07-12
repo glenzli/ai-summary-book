@@ -37,7 +37,7 @@ Diamond operator $\langle d\rangle$ 来自 level structure 的自同构。
 
 **命题 T.5.** Hecke correspondences 在 cohomology 上两两交换，并与 Galois 作用交换。
 
-**证明草图.** Hecke correspondences 由模问题中的 isogeny diagrams 定义。不同素数的 cyclic isogenies 可按有限 subgroup 的直和交换次序，从而给出 correspondences 的交换关系。它们定义在 $\mathbb Q$ 或 $\mathbb Z[1/Np]$ 上，因此在 $\ell$-adic cohomology 上与绝对 Galois 作用交换。完整证明需使用 correspondences 的 proper pushforward/base-change formalism。$\square$
+**证明路线（外部输入）.** Hecke correspondences 由模问题中的 isogeny diagrams 定义。不同素数的 cyclic isogenies 可按有限 subgroup 的直和交换次序，从而给出 correspondences 的交换关系。它们定义在 $\mathbb Q$ 或 $\mathbb Z[1/Np]$ 上，因此在 $\ell$-adic cohomology 上与绝对 Galois 作用交换。完整证明需使用 correspondences 的 proper pushforward/base-change formalism。$\square$
 
 ## T.3 Eichler-Shimura 同构
 

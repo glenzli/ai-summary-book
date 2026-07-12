@@ -10,18 +10,19 @@
 
 ## 1.1 基概形与光滑站点
 
-**约定 1.1.** 本章固定有限维 Noetherian 概形 `S`。记
+**约定 1.1.** 本章固定 `\mathbb U`-小有限维 Noetherian 概形 `S`。记
 
 $$
 \operatorname{Sm}_S
 $$
 
-为 `S` 上光滑有限型概形范畴的一个小骨架。对象写作 `X\to S`，态射为 `S`-态射。
+为 `S` 上光滑有限型概形范畴的一个 `\mathbb U`-小骨架。对象写作
+`X\to S`，态射为 `S`-态射。骨架存在性和选择独立性见命题 A.3 与注 A.4。
 
 **定义 1.2.** `\operatorname{Sm}_S` 上的 presheaf of spaces 是函子
 
 $$
-F:\operatorname{Sm}_S^{op}\longrightarrow\mathcal S.
+F:\operatorname{Sm}_S^{op}\longrightarrow\mathcal S_{\mathbb U}.
 $$
 
 这些对象组成 presentable infinity-范畴
@@ -32,7 +33,9 @@ $$
 
 **命题 1.3.** `\mathcal P(\operatorname{Sm}_S)` 是 presentable infinity-范畴，且由 representables 在小余极限下生成。
 
-**证明.** `\operatorname{Sm}_S` 是小 infinity-范畴。任意小 infinity-范畴 `C` 的 presheaf 范畴 `\operatorname{Fun}(C^{op},\mathcal S)` 是自由 cocompletion，故 presentable，并由 Yoneda 嵌入的对象在小余极限下生成。取 `C=\operatorname{Sm}_S` 即得结论。`\square`
+**证明.** `\operatorname{Sm}_S` 是 `\mathbb U`-小。对它应用外部输入定理
+A.5（HTT Theorem 5.1.5.6 与 Corollary 5.1.5.8），即得 presentability、
+Yoneda 生成性和相应高阶相干。`\square`
 
 **定义 1.4.** Yoneda 嵌入记为
 
@@ -51,7 +54,7 @@ $$
 
 ## 1.2 Nisnevich topology
 
-**定义 1.6.** 一个 `\operatorname{Sm}_S` 中的族
+**定义 1.6.** 一个 `\operatorname{Sm}_S` 中的有限族
 
 $$
 \{U_i\to X\}_{i\in I}
@@ -67,9 +70,36 @@ $$
 
 **命题 1.7.** 定义 1.6 给出 `\operatorname{Sm}_S` 上的 Grothendieck topology。
 
-**证明.** 需要验证三点。恒等覆盖满足条件，因为取 `u=x`。若 `\{U_i\to X\}` 是覆盖且 `Y\to X` 是任意态射，则 `U_i\times_XY\to Y` 仍 etale；对 `y\in Y`，令 `x` 为其像，取 `u\in U_i` 使 `\kappa(x)\simeq\kappa(u)`。纤维积中存在点 `v` 位于 `u` 与 `y` 上方，并且 etale 态射的剩余域提升条件保持 Nisnevich 点提升性质，得到覆盖的稳定性。若 `\{U_i\to X\}` 是覆盖且每个 `U_i` 有覆盖 `\{V_{ij}\to U_i\}`，则对 `x\in X` 先选 `u\in U_i` 且 `\kappa(x)\simeq\kappa(u)`，再选 `v\in V_{ij}` 且 `\kappa(u)\simeq\kappa(v)`；合成给出 `\kappa(x)\simeq\kappa(v)`。故覆盖可复合。`\square`
+**证明.** 恒等覆盖满足条件，取 `u=x`。设 `\{U_i\to X\}` 为覆盖，
+`Y\to X` 任意。Etale morphisms 对 base change 稳定。给定 `y\in Y`，令
+`x` 为其像，取 `u\in U_i` 使 `\kappa(u)\simeq\kappa(x)`。纤维积在
+`(u,y)` 上的 residue algebra 为
+
+$$
+\kappa(u)\otimes_{\kappa(x)}\kappa(y)\simeq\kappa(y),
+$$
+
+故有一点 `v\in U_i\times_XY` 位于 `y` 上方且
+`\kappa(v)\simeq\kappa(y)`。这证明 base-change 稳定性。若每个 `U_i` 又有
+有限 Nisnevich cover `\{V_{ij}\to U_i\}`，则先选
+`\kappa(x)\simeq\kappa(u)`，再选 `\kappa(u)\simeq\kappa(v)`；复合给出
+所需 residue-field isomorphism，且有限族的有限复合仍有限。故三条
+Grothendieck-topology 公理成立。
+
+通常允许任意 covering families 也给出同一 topology：`X` Noetherian
+因而 quasi-compact。更精确地，对 etale map `U_i\to X`，令 `W_i\subset X`
+为存在 `u\in U_i` 且 `\kappa(u)\simeq\kappa(x)` 的点 `x` 所成的 splitting
+locus。Etale 邻域引理说明：这样的 `u` 在缩小 `x` 的开邻域后给出局部
+截面，所以 `W_i` 为开集。Nisnevich 条件说 `(W_i)` 覆盖 `X`；由
+quasi-compactness 可取有限子覆盖，相应的有限子族仍满足剩余域提升条件。
+本书使用有限族，以保证 `\coprod_iU_i` 仍在 `\operatorname{Sm}_S` 中。
+`\square`
 
 **定义 1.8.** `\operatorname{Shv}_{Nis}(\operatorname{Sm}_S)` 是满足 Nisnevich descent 的 space-valued sheaves 组成的 full subcategory。
+
+**约定.** 这里是 Cech sheaves，不默认 hypercomplete。若后文需要
+hyperdescent，将显式写
+`\operatorname{Shv}_{Nis}(\operatorname{Sm}_S)^\wedge`。
 
 **命题 1.9.** `\operatorname{Shv}_{Nis}(\operatorname{Sm}_S)` 是 presentable infinity-范畴，且包含反射局部化
 
@@ -78,7 +108,10 @@ L_{Nis}:\mathcal P(\operatorname{Sm}_S)\rightleftarrows
 \operatorname{Shv}_{Nis}(\operatorname{Sm}_S):i.
 $$
 
-**证明.** `\operatorname{Sm}_S` 是小站点。space-valued sheaves 可作为 presheaf 范畴中满足一组 covering sieve descent 条件的局部对象。对小站点，该条件由一集合态射的局部化给出，因此 sheaf subcategory 是 accessible left exact localization 的本质像。accessible localization 的本质像 presentable，左伴随即 sheafification。`\square`
+**证明.** 对 `\mathbb U`-小站点 `\operatorname{Sm}_S` 应用外部输入定理
+A.8，即 HTT Proposition 6.2.2.7。该定理同时给出反射性、accessibility、
+left exactness 和 presentability；其局部对象由覆盖筛
+`R\hookrightarrow h_X` 的一集合 maps 检测。`\square`
 
 ## 1.3 Descent 条件
 

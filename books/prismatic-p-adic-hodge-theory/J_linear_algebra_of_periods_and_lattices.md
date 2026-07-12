@@ -58,13 +58,14 @@ $$
 \alpha_{B,V}:B\otimes_E D_B(V)\to B\otimes_{\mathbf Q_p}V.
 $$
 
-**命题 J.7.** 若 $\alpha_{B,V}$ 为同构，则
+**外部输入命题 J.7（period invariants 的维数界）.** 设 $B$ 满足 Fontaine 的 regularity hypotheses，$E=B^{G_K}$ 为域。则对每个有限维 $\mathbf Q_p$-representation $V$，
 $$
 \dim_E D_B(V)\le \dim_{\mathbf Q_p}V
 $$
-在 Fontaine regularity hypotheses 下成立；本书把该维数不等式作为 period ring theory 的外部输入。
+成立。若比较映射 $\alpha_{B,V}$ 为同构，则等号成立：两侧分别是秩
+$\dim_ED_B(V)$ 与 $\dim_{\mathbf Q_p}V$ 的自由 $B$-模，而同构保持秩。
 
-**说明 J.8.** 本命题故意不在内部证明，因为它依赖 period ring 的 admissibility formalism。书内可检查的是 $\alpha_{B,V}$ 的定义和结构保真要求。
+**说明 J.8.** 不等式本身依赖 period ring 的 admissibility formalism，故作为外部输入；比较映射为同构时的等号则是上述自由 $B$-模秩比较的书内形式后果。
 
 ## J.4 Lattices
 
@@ -96,4 +97,3 @@ Classical comparison theorem 的目标不是裸向量空间，而是带 filtrati
 **练习 J.2.** 给出一个二维 filtered vector space，并计算 associated graded。
 
 **练习 J.3.** 在 $V=\mathbf Q_p^2$ 中给出两个不同 lattice。
-

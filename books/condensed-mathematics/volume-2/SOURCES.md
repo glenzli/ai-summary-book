@@ -30,8 +30,12 @@
 ## 章节依赖映射
 
 - 第 1-2 章依赖输入 B.2-B.4：solidification、solid tensor product 和 profinite measure tensor formula；locator 见总台账第 2 节。
-- 第 3-4 章依赖输入 C.1：analytic ring localization；Bousfield localization 的形式部分在本卷附录 C、E、K、O、V 中书内证明。
-- 第 5 章依赖输入 C.2-C.3：liquid realization 和 \(p\)-liquid analytic ring；允许的 \(p\) 与 realization 适用范围按输入定理陈述，不用“合适的 \(p\)”作假设。
+- 第 3-4 章依赖输入 C.1：S26 Definition 7.1、Definition 7.4、Proposition 7.5
+  与 Warning 7.6；Bousfield localization 的形式部分在本卷附录 C、E、K、O、V 中
+  书内证明，rational descent 不归入一般 analytic ring 公理。
+- 第 5 章依赖输入 C.2-C.3：S26 Theorem 7.11 和 CS26 Definition 2.13、
+  Theorems 2.14、3.11、Lemma 2.16。\(\mathcal L_p(E)\) 只记
+  \(\underline E\) 的 liquid membership；连续满射的 exactness 由局部提升另行检查。
 - 第 6-7 章依赖输入 C.4 以及本卷 D.7：离散 Huber pair、rational localization 和 rational Čech descent；相干对偶接口依赖 S26 Lecture XI locator。
 - 第 8 章依赖 CS26 复几何输入和第三卷 AR 图谱；本卷只给 analytic/liquid 类型接口和目标定理路线图。
 - 附录 A-B 主要用于把输入定理的证明路线和公式类型检查显式化，不引入新的外部来源。
@@ -42,21 +46,27 @@
 - 附录 G 使用 Cech nerve、totalization、ordinary sheaf descent 和稳定范畴值 descent 的形式理论；rational Cech descent 本身仍是附录 D.7 登记的 Scholze 输入定理。
 - 附录 H 使用紧生成三角范畴、localizing subcategory、紧对象和生成元检验的标准形式理论；具体 solid/analytic 生成元来自 Scholze 输入定理，不在本附录构造。
 - 附录 I 使用 analytic ring 的 cone 判别、Bousfield localization、张量理想和 rational descent 的形式边界；它是检查表和失败模式，不证明具体 Scholze analytic ring。
-- 附录 J 使用拓扑向量空间凝聚化、Banach 空间非闭像、Fréchet 空间和 Fredholm 条件的标准分析背景；liquid realization 仍作为 Scholze/Clausen-Scholze 输入。
+- 附录 J 使用拓扑向量空间凝聚化、Banach 空间非闭像、Fréchet 空间和 Fredholm
+  条件；Banach/Fréchet 的 liquid membership 引用 C.2，exactness 不包含在该输入中。
 - 附录 K 使用 presentable stable category、Bousfield localization、张量理想、对称幺半局部化和 bar construction 的标准形式理论；solid/analytic 核的张量理想性仍作为 Scholze 输入。
 - 附录 L 使用闭对称幺半范畴、内部 Hom、dualizable 对象和伴随函子的标准形式理论；几何中的 $f^!$ 比较仍需 properness/perfectness 等输入。
 - 附录 M 使用 solid Dirac-to-measure cone、Bousfield localization 和张量理想输入，补 solidification 的生成核和完备化口径。
 - 附录 N 使用 analytic ring cone、rational localization、Čech nerve 和 totalization，补 analytic descent 与 rational cover gluing 的证明义务。
 - 附录 O 使用可展示稳定范畴、反射局部化、正合局部化、kernel 和 local objects 的一般理论，补 Bousfield localization 的书内形式推论。
-- 附录 P 使用 Fréchet 空间、闭值域、Fredholm 复形、Hodge 分解和 liquid realization，补复几何分析对象进入 analytic/liquid 范畴前的类型检查。
+- 附录 P 使用 Fréchet 空间、闭值域、Fredholm 复形和连续 Hodge/Green splitting，
+  把对象 membership 与 quotient 的凝聚严格性分开检查。
 - 附录 Q 使用第二卷附录 C、K、M 的 Bousfield localization、张量理想和 solidification 语言，把 solid theory 收束为主定理包；solid 反射存在性、张量理想性和 profinite 测度张量公式仍是 Scholze 输入。
 - 附录 R 使用第二卷附录 I、N 的 analytic cone、analyticization、Huber pair 和 rational descent 语言，把 analytic theory 收束为主定理包；analytic ring localization 与 rational Čech descent 仍是 Scholze 输入。
-- 附录 S 使用第二卷附录 J、P 的 liquid realization、Fréchet 闭值域和 Fredholm 复形语言，把 liquid theory 收束为主定理包；\(p\)-liquid 测度理论和 realization 仍是 Scholze/Clausen-Scholze 输入。
+- 附录 S 使用第二卷附录 J、P 的经典空间 liquid membership、局部提升和 Fredholm
+  复形语言，把 liquid theory 收束为主定理包；\(p\)-liquid 测度理论与 membership
+  是 Scholze/Clausen-Scholze 输入，严格 cohomology 比较是书内条件定理。
 - 附录 T 不引入新输入；它把附录 Q、R、S 合成为 solid/analytic/liquid 主线闭包定理，并规定第三卷应用这些结构时的类型检查规则。
 - 附录 U 不引入新输入；它按出版级标准审查第二卷主线的定义、输入、证明、边界、接口和练习答案状态。
 - 附录 V 使用 presentable localization theorem 和 \(D(\mathbf{CondAb})\) 的可展示稳定性，把 solidification 反射存在性拆成集合生成局部化、Dirac-to-measure cone 正交和 Scholze 识别定理三部分；前两类形式后果书内证明，识别定理仍为 Scholze 输入。
 - 附录 W 使用 localizing subcategory 与张量理想的生成元判别，把 solid kernel 张量理想性归约为 profinite 测度张量计算；生成元判别书内证明，profinite 测度张量公式仍为 Scholze 输入。
 - 附录 X 使用附录 V、K 的局部化和幺半下降形式，把 analytic localization 分解为 analytic cone、反射局部化、analyticization 泛性质和 analytic tensor；analytic ring 公理推出张量相容仍为 Scholze 输入。
 - 附录 Y 使用 Čech nerve、mapping-space descent、compact generation descent 和 rational acyclicity 语言，把 rational Čech descent 分解为形式范畴论部分和 Huber rational acyclicity 输入。
-- 附录 Z 使用 compact Hausdorff quotient descent、Fréchet 闭值域和 Fredholm 复形语言，把 liquid realization 拆成拓扑向量空间凝聚化、realization exactness 输入和 Dolbeault cohomology 形式比较。
+- 附录 Z 使用 compact Hausdorff quotient descent、Fréchet quotient 和 Fredholm-Hodge
+  语言，把旧称“liquid realization”的接口拆成凝聚化、liquid membership、局部提升
+  exactness 和 Dolbeault cohomology 比较；不再假设未定位的全局 exactness 定理。
 - 附录 AA 使用本卷和第三卷的输入登记表、主定理包和证明模块，把 Scholze 与 Clausen-Scholze 核心定理整理成主线图谱；它不新增输入，只规定这些定理在本书中的核心地位和依赖边界。

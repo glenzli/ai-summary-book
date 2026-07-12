@@ -27,11 +27,14 @@ $$
 $$
 定义。Lorentzian signature 下 $*^2$ 的符号依赖 $p$ 与 time directions；本书在具体使用时以正文 convention 为准。
 
-**命题 A.1B（Stokes theorem）.** 若 $M$ 是 compact oriented manifold with boundary，则
+**外部输入定理 A.1B（Stokes theorem）.** 若 $M$ 是紧致、定向、光滑的 $n$ 维带边流形，且 $\omega\in\Omega^{n-1}(M)$ 光滑，则
 $$
 \int_M d\omega=\int_{\partial M}\omega.
 $$
 Worldsheet 边界条件、Wess-Zumino coupling 的 gauge invariance 和 anomaly descent 都反复使用该公式。
+
+本书把流形上的 Stokes 定理作为微分几何外部输入；非紧情形只有在
+$\omega$ 具有紧支集或边界无穷远项被单独控制时才使用同一公式。
 
 ## A.2 曲率
 

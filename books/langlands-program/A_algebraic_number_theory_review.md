@@ -17,7 +17,22 @@ $$
 \prod_{v\in V_K}|x|_v=1,\qquad x\in K^\times.
 $$
 
-**证明草图.** 数域情形由素理想分解和 Archimedean 绝对值的标准归一化得到；函数域情形由主除子的次数为零得到。$\square$
+**证明.** 先设 $K$ 为数域。对有限位置 $\mathfrak p$ 取
+$|x|_\mathfrak p=N(\mathfrak p)^{-v_\mathfrak p(x)}$；对实嵌入
+$\sigma$ 取 $|x|_\sigma=|\sigma(x)|$，对一对共轭复嵌入的代表取
+$|x|_\sigma=|\sigma(x)|^2$。主分式理想分解给出
+$$
+|N_{K/\mathbb Q}(x)|
+=\prod_{\mathfrak p}N(\mathfrak p)^{v_\mathfrak p(x)},
+$$
+而左端也等于所有 Archimedean 归一化绝对值之积。与有限位置乘积
+相乘后恰为 $1$。
+
+若 $K$ 是常数域为 $\mathbb F_q$ 的函数域，对闭点 $v$ 取
+$|x|_v=q^{-\deg(v)v(x)}$。主除子 $(x)$ 的次数为零，即
+$\sum_v\deg(v)v(x)=0$，故
+$\prod_v|x|_v=q^0=1$。每个 $x\ne0$ 只在有限多个位置有非零赋值，所以上述
+乘积均良定义。$\square$
 
 ## A.2 分解群、惯性群和 Frobenius
 
@@ -61,7 +76,17 @@ $$
 1\to I_w\to D_w\to\operatorname{Gal}(k_w/k_v)\to1.
 $$
 
-**证明草图.** 元素 $\sigma\in D_w$ 保持 $w$，故连续作用于 $L$ 在 $w$ 处的完备化 $L_w$，并固定 $K_v$，得到 $D_w\to\operatorname{Gal}(L_w/K_v)$。反向由 $L$ 在 $L_w$ 中稠密和 $K$-嵌入延拓唯一性给出。对整数环取作用，$D_w$ 保持 $\mathcal O_w$ 和 $\mathfrak p_w$，因此作用在 $k_w$ 上；核正是按定义在剩余域上平凡的元素。剩余域有限域扩张为 Galois，且局部 Galois 理论给出满射。$\square$
+**证明.** 元素 $\sigma\in D_w$ 保持赋值 $w$，故是 $w$-等距的，并唯一
+连续延拓为 $L_w$ 的 $K_v$-自同构。这给出单射
+$D_w\to\operatorname{Gal}(L_w/K_v)$；若延拓在 $L_w$ 上恒等，则它在稠密
+子域 $L$ 上恒等。反过来，$L_w/K_v$ 的每个自同构限制到 $L$ 后给出一个
+保持 $w$ 的 $K$-嵌入；有限正规性保证该嵌入是 $L/K$ 的自同构。因此上述
+单射满射。
+
+$D_w$ 保持 $\mathcal O_w$ 及其唯一极大理想 $\mathfrak p_w$，故作用在
+$k_w$ 上；核按定义正是 $I_w$。有限 Galois 局部扩张的剩余自同构提升定理
+给出 $D_w\to\operatorname{Gal}(k_w/k_v)$ 满射，这是本命题使用的标准
+局部 Galois 输入。由核定义即得所示短正合列。$\square$
 
 **推论 A.4.4.** 在有限 Galois 情形，
 $$
@@ -105,12 +130,17 @@ G=G_{-1}\supset G_0\supset G_1\supset\cdots
 $$
 且当 $i$ 足够大时 $G_i=1$。
 
-**证明草图.** 若 $\sigma(x)-x\in\mathfrak p_E^{i+2}$，则也在 $\mathfrak p_E^{i+1}$ 中，故递降。正规性来自 valuation 被 Galois 作用保持：
+**证明.** 若 $\sigma(x)-x\in\mathfrak p_E^{i+2}$，则也在 $\mathfrak p_E^{i+1}$ 中，故递降。正规性来自 valuation 被 Galois 作用保持：
 $$
 \tau\sigma\tau^{-1}(x)-x
 =\tau\left(\sigma(\tau^{-1}x)-\tau^{-1}x\right),
 $$
-右侧的 valuation 条件与 $\sigma$ 的条件相同。有限扩张中非平凡 automorphism 在某个有限 jet 上可被检测，因此高阶同余最终只剩恒等元。$\square$
+右侧的 valuation 条件与 $\sigma$ 的条件相同，所以每个 $G_i$ 正规。
+最后，Galois 群有限。对每个 $\sigma\ne1$，选取
+$x_\sigma\in\mathcal O_E$ 使 $\sigma(x_\sigma)-x_\sigma\ne0$，并令
+$m_\sigma=v_E(\sigma(x_\sigma)-x_\sigma)<\infty$。取
+$i\ge\max_{\sigma\ne1}m_\sigma$，则没有非平凡 $\sigma$ 能满足定义
+$G_i$ 所要求的全部同余，故 $G_i=1$。$\square$
 
 **外部输入 A.6.3（ramification quotient structure）.** 对有限 Galois 局部扩张，$G_0/G_1$ 是阶与 residue characteristic 互素的 cyclic group；对 $i\ge1$，$G_i/G_{i+1}$ 是 elementary Abelian $p$-group，其中 $p=\operatorname{char}k_F$。Upper numbering filtration 由 Herbrand 函数从 lower numbering 得到，并与取商相容。
 
@@ -152,7 +182,7 @@ $$
 
 **推论 A.13.** 两个连续半单 $\ell$-adic 表示若在几乎所有非分歧位置有相同 Frobenius characteristic polynomial，则它们半单同构。
 
-**证明草图.** Frobenius 共轭类在 Galois 群中稠密。Brauer-Nesbitt 定理说明半单表示由 character 决定。$\square$
+**证明路线（外部输入）.** Frobenius 共轭类在 Galois 群中稠密。Brauer-Nesbitt 定理说明半单表示由 character 决定。$\square$
 
 ## A.6 非 Archimedean 赋值和分式理想
 
@@ -222,7 +252,7 @@ $$
 
 **命题 A.19.** $\operatorname{Cl}_\mathfrak m(K)$ 是有限 Abel 群。
 
-**证明草图.** 理想类群有限。自然映射 $I_K^\mathfrak m\to\operatorname{Cl}(K)$ 的核由主理想控制。模 $\mathfrak m_f$ 的同余条件只引入有限商 $(\mathcal O_K/\mathfrak m_f)^\times$ 和有限个实符号条件。因此 ray class group 是有限群。完整证明需要 Dirichlet 单位定理和理想类群有限性。$\square$
+**证明路线（外部输入）.** 理想类群有限。自然映射 $I_K^\mathfrak m\to\operatorname{Cl}(K)$ 的核由主理想控制。模 $\mathfrak m_f$ 的同余条件只引入有限商 $(\mathcal O_K/\mathfrak m_f)^\times$ 和有限个实符号条件。因此 ray class group 是有限群。完整证明需要 Dirichlet 单位定理和理想类群有限性。$\square$
 
 **定义 A.20.** 与模数 $\mathfrak m$ 对应的开子群 $U(\mathfrak m)\subset\mathbb A_{K,f}^\times$ 定义为
 $$
@@ -241,11 +271,22 @@ K^\times\backslash\mathbb A_K^\times/
 $$
 其中 $K_\infty^{\mathfrak m,+}$ 表示满足 $\mathfrak m_\infty$ 符号条件的 Archimedean 连通部分。
 
-**证明草图.** 给 idele $x=(x_v)_v$ 关联分式理想
+**证明.** 给 idele $x=(x_v)_v$ 关联分式理想
 $$
 \mathfrak a(x)=\prod_{\mathfrak p}\mathfrak p^{v_\mathfrak p(x_\mathfrak p)}.
 $$
-有限 idele 的 restricted product 条件保证该乘积有限。右乘 $U(\mathfrak m)$ 不改变与 $\mathfrak m_f$ 互素部分的 ray class；左乘 $K^\times$ 正对应主理想和同余条件。核与像的检查给出同构。$\square$
+有限 idele 的 restricted product 条件保证只有有限多个指数非零。对每个与
+$\mathfrak m_f$ 互素的分式理想
+$\prod\mathfrak p^{n_\mathfrak p}$，取有限 idele，其
+$\mathfrak p$-分量为一致化元的 $n_\mathfrak p$ 次幂，其余分量为 $1$；
+故该映射满射到 $I_K^\mathfrak m$。
+
+右乘 $U(\mathfrak m)$ 不改变这些赋值，并精确记录有限位置的
+$1\bmod\mathfrak m_f$ 条件；右乘 $K_\infty^{\mathfrak m,+}$ 记录指定实
+位置的正号条件。左乘 $a\in K^\times$ 把理想乘以主理想 $(a)$。因此两个
+idele 给出同一双商类，当且仅当对应理想相差一个由
+$a\equiv1\pmod{\mathfrak m_f}$ 且满足实符号条件的主理想，即相差
+$P_K^\mathfrak m$。故诱导映射的核正是分母子群，得到所述同构。$\square$
 
 **注 A.22.** 全局类域论可视为当 $\mathfrak m$ 变化时，ray class groups 的逆极限与 $G_K^{\operatorname{ab}}$ 的有限 Abel 商之间的相容对应。第三章使用的是该理论的 idelic 总结形式。
 
@@ -292,4 +333,4 @@ $$
 
 **命题 A.28.** 若 $\chi:F^\times\to\mathbb C^\times$ 为一维分歧特征，且 $n$ 是使 $\chi$ 在 $1+\mathfrak p_F^n$ 上平凡的最小非负整数，则在局部类域论对应下，一维 Artin 导子指数等于该乘法导子指数。
 
-**证明草图.** 局部 reciprocity map 把单位滤过 $\mathcal O_F^\times\supset1+\mathfrak p_F^n$ 与 Weil 群 Abel 化中的惯性和高阶分歧滤过相匹配。于是 $\chi$ 在单位滤过中的首次平凡层与对应 Weil 特征在 ramification filtration 中的首次平凡层一致。一维 Artin 导子定义正记录这一层数。完整证明属于局部类域论的导子相容定理，即正文外部输入定理 3.9。$\square$
+**证明路线（外部输入）.** 局部 reciprocity map 把单位滤过 $\mathcal O_F^\times\supset1+\mathfrak p_F^n$ 与 Weil 群 Abel 化中的惯性和高阶分歧滤过相匹配。于是 $\chi$ 在单位滤过中的首次平凡层与对应 Weil 特征在 ramification filtration 中的首次平凡层一致。一维 Artin 导子定义正记录这一层数。完整证明属于局部类域论的导子相容定理，即正文外部输入定理 3.9。$\square$

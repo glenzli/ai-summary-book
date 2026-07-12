@@ -22,9 +22,11 @@ $$
 $$
 称为模函数，使得
 $$
-d(gh)=\delta_G(h)^{-1}dg
+\int_G F(gh)\,dg
+=\delta_G(h)^{-1}\int_GF(g)\,dg,
+\qquad F\in C_c(G),\ h\in G,
 $$
-描述左 Haar 测度在右平移下的变化。若 $\delta_G=1$，则称 $G$ 为 unimodular。
+描述左 Haar 测度在右平移下的变化。这里 $dg$ 是固定左 Haar 测度；不能在同一计算中无声明地改成右 Haar 测度。若 $\delta_G=1$，则称 $G$ 为 unimodular。
 
 **例 4.4.** 紧群、离散群、交换局部紧群和 reductive $p$-adic 群都是 unimodular。若 $P=MN$ 是 reductive 群的抛物子群，则 $P(F)$ 通常不是 unimodular；其模函数记为 $\delta_P$。
 
@@ -54,22 +56,24 @@ $$
 $$
 其中第二步令 $z=y^{-1}x$ 并使用左不变性 $dx=dz$。$\square$
 
-**定义 4.7.** 若 $J\subset G$ 为开紧子群，归一化 Haar 测度使 $\operatorname{vol}(J)=1$。定义
+**定义 4.7.** 保持本节已经固定的左 Haar 测度。若 $J\subset G$ 为开紧子群，定义
 $$
-e_J=\mathbf 1_J\in C_c^\infty(G).
+e_J=\operatorname{vol}(J)^{-1}\mathbf 1_J\in C_c^\infty(G).
 $$
-则 $e_J$ 称为 $J$ 的归一化幂等元。
+则 $e_J$ 称为 $J$ 的归一化幂等元。只有在另行声明
+$\operatorname{vol}(J)=1$ 时才可省略前面的体积因子。
 
-**命题 4.8.** 在 $\operatorname{vol}(J)=1$ 的归一化下，
+**命题 4.8.** 对任意固定 Haar 测度，
 $$
 e_J*e_J=e_J.
 $$
 
-**证明.** 对 $g\in G$，
+**证明.** 令 $c=\operatorname{vol}(J)^{-1}$。对 $g\in G$，
 $$
-(e_J*e_J)(g)=\int_G\mathbf 1_J(x)\mathbf 1_J(x^{-1}g)\,dx.
+(e_J*e_J)(g)=c^2\int_G\mathbf 1_J(x)\mathbf 1_J(x^{-1}g)\,dx.
 $$
-被积函数非零当且仅当 $x\in J$ 且 $x^{-1}g\in J$，即 $x\in J\cap gJ$。若 $g\in J$，则 $J\cap gJ=J$，积分为 $\operatorname{vol}(J)=1$。若 $g\notin J$，则 $J\cap gJ=\varnothing$，积分为 $0$。故卷积等于 $\mathbf 1_J$。$\square$
+被积函数非零当且仅当 $x\in J$ 且 $x^{-1}g\in J$，即 $x\in J\cap gJ$。若 $g\in J$，则 $J\cap gJ=J$，积分为
+$c^2\operatorname{vol}(J)=c$；若 $g\notin J$，则交集为空，积分为 $0$。这正是 $e_J(g)$，故 $e_J*e_J=e_J$。$\square$
 
 ## 4.3 光滑表示
 
@@ -101,11 +105,11 @@ $$
 $$
 $\square$
 
-**命题 4.12.** 若 $J\subset G$ 为开紧子群且 $\operatorname{vol}(J)=1$，则 $\pi(e_J)$ 是 $V$ 到 $V^J$ 的投影。
+**命题 4.12.** 若 $J\subset G$ 为开紧子群，$e_J$ 按定义 4.7 归一化，则 $\pi(e_J)$ 是 $V$ 到 $V^J$ 的投影。
 
 **证明.** 对 $v\in V$，
 $$
-\pi(e_J)v=\int_J\pi(j)v\,dj.
+\pi(e_J)v=\operatorname{vol}(J)^{-1}\int_J\pi(j)v\,dj.
 $$
 若 $j_0\in J$，则左不变性给出
 $$
@@ -116,7 +120,7 @@ $$
 $$
 故 $\pi(e_J)v\in V^J$。若 $v\in V^J$，则
 $$
-\pi(e_J)v=\int_Jv\,dj=\operatorname{vol}(J)v=v.
+\pi(e_J)v=\operatorname{vol}(J)^{-1}\int_Jv\,dj=v.
 $$
 所以 $\pi(e_J)$ 是投影到 $V^J$ 的算子。$\square$
 
@@ -130,24 +134,41 @@ $$
 
 若 $(\pi,V)$ 为光滑表示，则 $\mathcal H(G,J)$ 作用在 $V^J$ 上。
 
-**定义 4.14.** 设 $F$ 为非 Archimedean 局部域，$G$ 为 $F$ 上非分歧 reductive 群，$K=G(\mathcal O_F)$ 为选定 hyperspecial maximal compact subgroup。不可约光滑表示 $(\pi,V)$ 称为球表示（spherical representation）或非分歧表示，若
+**定义 4.14.** 设 $F$ 为非 Archimedean 局部域，$G/F$ 为 unramified connected reductive group，并固定一个 reductive $\mathcal O_F$-model $\mathcal G$ 及其 hyperspecial subgroup
+$K=\mathcal G(\mathcal O_F)\subset G(F)$。不可约光滑表示 $(\pi,V)$ 称为相对于 $K$ 的球表示（spherical representation）或非分歧表示，若
 $$
 V^K\ne 0.
 $$
 
-**外部输入定理 4.15（Satake 同构，接口形式）.** 对非分歧 reductive 群 $G/F$，球 Hecke 代数
+**外部输入定理 4.15（归一化 Satake 同构）.** 在定义 4.14 的设定下，取
+$\operatorname{vol}(K)=1$。球 Hecke 代数
 $$
-\mathcal H(G(F),G(\mathcal O_F))
+\mathcal H(G(F),K)
 $$
-是交换代数，并与对偶群 $\widehat G$ 的表示环或其 Weyl 不变量坐标环有典范同构。不可约球表示的 Hecke 本征值等价于 $\widehat G$ 中的半单共轭类。
+是交换代数，且每个不可约球表示满足 $\dim\pi^K=1$。若 $G$ split，选定
+$T\subset B$ 后，使用 $\delta_B^{1/2}$ 的归一化 Satake 变换给出
+$$
+\mathcal H(G(F),K)\xrightarrow{\sim}\mathbb C[X_*(T)]^W;
+$$
+其代数特征等价于 $\widehat G(\mathbb C)$ 中的半单共轭类。若 $G$ 仅 unramified，则相应参数是
+$\widehat G$ 对
+$$
+s\rtimes\operatorname{Fr}_F
+\in\widehat G\rtimes\langle\operatorname{Fr}_F\rangle
+$$
+的半单共轭类，而不是无条件地位于 $\widehat G$ 本身。
 
 本定理是“非分歧局部 Langlands 参数”的表示论入口。第五章将把该半单共轭类写成 Frobenius 参数。
 
-**注 4.15.1.** 附录 P 把本定理拆成球 Hecke 代数、Cartan 分解、Satake 变换和 `GL(n)` 非分歧公式；附录 AA 解释 hyperspecial subgroup 和 Cartan 分解的 Bruhat-Tits 来源。第四章只使用其接口；涉及具体 eigenvalue 和 Euler 因子的计算应引用附录 P/AA。
+**注 4.15.1.** 附录 P 在 split 情形拆解球 Hecke 代数、Cartan 分解、Satake 变换和 `GL(n)` 非分歧公式；附录 AA 解释 hyperspecial subgroup 的 Bruhat-Tits 来源。非 split unramified 形式需使用带 Frobenius 作用的 Satake 同构，不能由附录 P 的 split 公式直接替代。
 
 ## 4.5 抛物诱导的最小接口
 
-**定义 4.16.** 设 $G$ 为局部域 $F$ 上 reductive 群，$P=MN$ 为抛物子群，其中 $M$ 为 Levi 因子，$N$ 为 unipotent radical。若 $(\sigma,W)$ 是 $M(F)$ 的光滑表示，则归一化抛物诱导定义为满足以下条件的光滑函数空间：
+**定义 4.16.** 设 $F$ 为非 Archimedean 局部域，$G/F$ 为 connected reductive group，$P=MN$ 为 $F$-抛物子群，其中 $M$ 为 Levi 因子，$N$ 为 unipotent radical。令
+$$
+\delta_P(m)=\left|\det(\operatorname{Ad}(m)|_{\operatorname{Lie}N})\right|_F.
+$$
+若 $(\sigma,W)$ 是 $M(F)$ 的光滑表示，则归一化抛物诱导定义为满足以下条件的局部常值函数空间：
 $$
 \operatorname{Ind}_{P(F)}^{G(F)}(\sigma)
 =
@@ -175,7 +196,8 @@ $$
 \operatorname{diag}(\chi_1(\varpi),\chi_2(\varpi))
 \in\operatorname{GL}_2(\mathbb C)
 $$
-在采用 normalized parabolic induction 与几何 Frobenius convention 时的共轭类。
+在采用 normalized parabolic induction、$\operatorname{vol}(\operatorname{GL}_2(\mathcal O_F))=1$ 与
+$\operatorname{rec}_F(\varpi)=\operatorname{Fr}_F$ 时的共轭类。三个归一化缺一不可。
 
 ## 4.6 Archimedean 位置的接口
 

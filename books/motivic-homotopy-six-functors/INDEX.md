@@ -9,10 +9,15 @@
 - Beck-Chevalley condition：第四章、第八章、附录 D
 - Cofiber sequence：第二章、第四章、第五章、附录 C、附录 F、附录 H
 - Compact generation：第三章、第十三章、第十九章
+- Compact object：第三章、第五章、附录 F
+- Constructible object：第三章、第五章、附录 F
 - Dualizable object：第七章、第八章、第十八章
 - Infinity-category：序章、附录 A、附录 F
 - Mate calculus：第四章、第八章、附录 D
 - Presentable category：第一章、第二章、附录 A
+- Grothendieck universe：序章、附录 A、符号表
+- Hypercompletion：序章、第一章、附录 A
+- Small skeleton：第一章、附录 A
 - Recollement：第四章、第五章、第八章、附录 H
 - Stable infinity-category：第三章、第四章、附录 C、附录 F
 - Symmetric monoidal category：第三章、第四章、第十二章、第十七章、附录 C
@@ -32,6 +37,8 @@
 - `\mathbb P^1/\infty`：第三章、附录 H
 - Pointed motivic spaces：第二章、附录 C
 - Stabilization：第三章、附录 C
+- 3-symmetric object：第三章、附录 C
+- Symmetric monoidal object-inversion：序章、第三章、附录 C
 - Tate sphere：第三章、附录 H
 
 ## Nisnevich topology 与站点
@@ -59,6 +66,8 @@
 - Extraordinary pullback：第四章、第五章、第六章、第十六章
 - Localization：第四章、第五章、第八章、附录 H
 - Projection formula：第四章、第八章、附录 D
+- Ordinary projection map：第四章、第五章、第八章
+- Exceptional projection formula：第四章、第五章、第八章
 - Proper compatibility：第五章、第七章、第八章
 - Six-functor formalism：第四章、第五章、第二十三章
 - Support condition：第五章、第九章、第十六章
@@ -67,6 +76,9 @@
 ## 纯性、对偶与迹
 
 - Absolute purity：第六章、第十六章
+- Atiyah duality：第七章
+- `f`-pure coefficient：第六章
+- Lci purity transformation：第六章、第十六章
 - Ambidexterity：第七章、第十九章
 - Bivariant theory：第十六章
 - Deformation to the normal cone：第十六章
@@ -81,6 +93,7 @@
 - Smooth purity：第六章、第七章
 - Thom space：第六章、第十二章、附录 H
 - Trace：第七章、第十八章
+- Twisted exceptional trace：第六章、第七章
 
 ## Motivic cohomology、motives 与谱
 
@@ -175,5 +188,7 @@
 - 定理账本：[THEOREM_LEDGER.md](THEOREM_LEDGER.md)
 - Locator 账本：[REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md)
 - P0 locator 第一批：[P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)
+- P0 locator 第二批：[P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)
+- P0 locator 第三批（第 09-18 章主线）：[P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md)
 - 教材闭合审计：[TEACHING_CLOSURE_AUDIT.md](TEACHING_CLOSURE_AUDIT.md)
 - 章节密度审计：[CHAPTER_DENSITY_AUDIT.md](CHAPTER_DENSITY_AUDIT.md)

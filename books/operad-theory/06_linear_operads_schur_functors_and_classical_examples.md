@@ -38,12 +38,10 @@ $V^{\otimes n}$ 带左 $\Sigma_n$-作用，按张量因子重排。所有 $\otim
 $$
 (M\circ N)(S)
 =
-\bigoplus_{\pi\in\operatorname{Part}(S)}
-M(\operatorname{Bl}(\pi))
-\otimes
-\bigotimes_{B\in\operatorname{Bl}(\pi)}N(B).
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+M(T)\otimes\bigotimes_{t\in T}N(f^{-1}(t)),
 $$
-双射 $S\to T$ 的作用由推前分块、块集合双射和块内限制双射给出。
+其中 colimit 在 $\mathbf{Mod}_R$ 中取，并按目标双射同时作用于 $M(T)$、重排张量因子。函数 $f$ 不要求满射，所以空纤维贡献 $N(\varnothing)$。仅当 $N(\varnothing)=0$ 时，该公式才缩成按非空分块取直和的公式。双射 $S\to S'$ 的作用由定义 1.5 的纤维重标号线性化得到。
 
 **定义 6.4.** 单位对称序列 $I_R$ 定义为
 $$
@@ -56,11 +54,11 @@ $$
 
 **命题 6.5.** $R$-模值对称序列范畴连同 $\circ$ 和 $I_R$ 构成幺半范畴。
 
-**证明.** 与命题 1.8 相同，只是集合的余积和乘积替换为 $R$-模的直和与张量积。结合约束由多层分块的拉平给出，并使用张量积的结合约束
+**证明.** 与命题 1.8 相同，只是集合的 coproduct、积和群作用商替换为 $R$-模中的直和、张量积和 coinvariants。两个加括号方向都展开为可复合映射 $S\to U\to T$ 上的同一张量装饰，并使用张量积的结合约束
 $$
 (A\otimes B)\otimes C\cong A\otimes(B\otimes C).
 $$
-单位约束由单点分块给出，并使用 $R\otimes_R M\cong M$。相干性来自分块拉平相干性和 $\mathbf{Mod}_R$ 的对称幺半相干性。$\square$
+右单位强制 $S\to T$ 为双射，左单位强制 $T$ 为单点；两者均使用 $R\otimes_R M\cong M$，并在 $S=\varnothing$ 时仍成立。五边形和三角形化为同一多层映射数据上的恒等式，再由 $\mathbf{Mod}_R$ 的对称幺半相干性完成。$\square$
 
 **定义 6.6.** 一个 $R$-线性 operad 是幺半范畴
 $$
@@ -77,18 +75,19 @@ $$
 \bigoplus_{k\ge0}
 M(k)\otimes_{R[\Sigma_k]}
 \left(
-\bigoplus_{n_1+\cdots+n_k=n}
+\bigoplus_{\substack{n_1+\cdots+n_k=n\\n_i\ge0}}
 \operatorname{Ind}^{\Sigma_n}_{\Sigma_{n_1}\times\cdots\times\Sigma_{n_k}}
-N(n_1)\otimes\cdots\otimes N(n_k)
+\bigl(N(n_1)\otimes\cdots\otimes N(n_k)\bigr)
 \right).
 $$
-这里 coinvariants $-\otimes_{R[\Sigma_k]}-$ 表示把外层输入槽的重标号与内层块的重排相识别。
+令 $H=\Sigma_{n_1}\times\cdots\times\Sigma_{n_k}$，并把张量积看作右 $R[H]$-模；这里
+$$
+\operatorname{Ind}^{\Sigma_n}_{H}(W)
+:=W\otimes_{R[H]}R[\Sigma_n]
+$$
+是右 $R[\Sigma_n]$-模。括号内的 $\Sigma_k$ 左作用同时置换大小序列、$H$ 的块嵌入和 $N(n_i)$ 因子；coinvariants $-\otimes_{R[\Sigma_k]}-$ 把它与 $M(k)$ 的右作用相平衡。允许 $n_i=0$ 是 arity $0$ 代入所必需的。
 
-**证明.** $[n]$ 的分块可按块数 $k$ 和块大小序列 $n_1,\ldots,n_k$ 分类。若先给块排序，则需要选择一个从有序分块
-$$
-[n]=B_1\coprod\cdots\coprod B_k
-$$
-到大小序列的识别。改变块排序由 $\Sigma_k$ 作用；改变每个块内的识别由 $\Sigma_{n_i}$ 作用。把这些选择全部商去，正得到诱导模与 $\Sigma_k$-coinvariants 的公式。有限集口径中的直和按未排序分块求和；arity 公式按有序分块再取 coinvariants，两者是同一 groupoid-orbit 计算。$\square$
+**证明.** 在定义 6.3 中把目标有限集选成 $[k]$。函数 $f:[n]\to[k]$ 由有序纤维 $(f^{-1}(1),\ldots,f^{-1}(k))$ 给出，纤维允许为空。令 $n_i=|f^{-1}(i)|$，并选择 $[n_i]\cong f^{-1}(i)$；改变这些选择由 $\Sigma_{n_i}$ 作用，给出显示的诱导模。改变目标坐标 $[k]\cong T$ 由 $\Sigma_k$ 作用，并与 $M(k)$ 的右作用取 balanced tensor product。反向由诱导模中的有序纤维坐标恢复 $f$，故得到自然同构。$\square$
 
 **警告 6.8.** 在线性 operad 中，不能把集合值公式中的 quotient set 直接替换为集合商。正确对象通常是 coinvariants 或 coend。若底环 $R$ 的特征整除某个对称群阶数，coinvariants 与 invariants 一般不同。
 
@@ -166,17 +165,17 @@ $$
 
 **命题 6.14.** $R[\mathcal O]$ 是 $R$-线性 operad。
 
-**证明.** 自由 $R$-模函子把有限乘积上的函数诱导为张量积上的 $R$-线性映射。具体地，集合值代入
+**证明.** 自由 $R$-模函子把有限乘积上的函数诱导为张量积上的 $R$-线性映射。具体地，对任意有限集映射 $f:S\to T$，集合值代入
 $$
-\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B)\to\mathcal O(S)
+\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to\mathcal O(S)
 $$
 线性延拓为
 $$
-R[\mathcal O(\operatorname{Bl}(\pi))]
-\otimes\bigotimes_B R[\mathcal O(B)]
+R[\mathcal O(T)]
+\otimes\bigotimes_{t\in T} R[\mathcal O(f^{-1}(t))]
 \to R[\mathcal O(S)].
 $$
-集合值 operad 的单位和结合等式在线性延拓后仍成立。$\square$
+空纤维对应 $\mathcal O(\varnothing)$ 因子。集合值 operad 对可复合有限集映射的单位和结合等式在线性延拓后仍成立。$\square$
 
 **命题 6.15.** $R[\operatorname{Ass}]$-代数等价于含单位的结合 $R$-代数。
 

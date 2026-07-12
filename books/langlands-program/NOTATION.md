@@ -44,6 +44,10 @@
   $$
   C_K=K^\times\backslash\mathbb A_K^\times.
   $$
+- Norm-one idele class group 写作
+  $$
+  C_K^1=\ker\bigl(|\cdot|_{\mathbb A}:C_K\to\mathbb R_{>0}\bigr).
+  $$
 - Adele norm 写作
   $$
   |x|_{\mathbb A}=\prod_v |x_v|_v,\qquad x=(x_v)_v\in\mathbb A_K^\times.
@@ -52,7 +56,11 @@
 
 ## 特征、Fourier 变换和 L 函数
 
-- 局部加法特征写作 $\psi_v:K_v\to\mathbb C^\times$；整体加法特征写作 $\psi:\mathbb A_K/K\to\mathbb C^\times$。
+- 局部加法特征写作 $\psi_v:K_v\to\mathbb C^\times$；其 additive conductor ideal 写作
+  $$
+  \mathfrak c(\psi_v)=\{x\in K_v:\psi_v(x\mathcal O_v)=1\}.
+  $$
+  整体加法特征写作 $\psi:\mathbb A_K/K\to\mathbb C^\times$。
 - 局部 reciprocity map 写作
   $$
   \operatorname{rec}_F:F^\times\to W_F^{\operatorname{ab}}
@@ -62,11 +70,17 @@
   $$
   \operatorname{rec}_K:C_K\to G_K^{\operatorname{ab}}.
   $$
+  这里到 $G_K^{\operatorname{ab}}$ 的像一般只稠密；对有限 Abel 商使用该映射，对完整拓扑同构使用 $C_K$ 的 profinite completion。
 - Hecke 特征写作
   $$
   \chi:C_K\to\mathbb C^\times
   $$
   或等价地写作 $\chi:\mathbb A_K^\times\to\mathbb C^\times$ 且 $\chi|_{K^\times}=1$。
+- Hecke quasi-character 的唯一酉化写作
+  $$
+  \chi=\chi_0|\cdot|_{\mathbb A}^{\sigma(\chi)},
+  $$
+  其中 $\chi_0$ unitary，$\sigma(\chi)\in\mathbb R$。
 - 局部分量写作 $\chi_v:K_v^\times\to\mathbb C^\times$。
 - Schwartz-Bruhat 空间写作 $\mathcal S(K_v)$ 和 $\mathcal S(\mathbb A_K)$。
 - Fourier 变换写作
@@ -260,6 +274,18 @@
   $$
   \operatorname{LocSys}_{\widehat G}(X).
   $$
+- 特征零 de Rham categorical geometric Langlands 的自动侧写作
+  $$
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G),
+  $$
+  表示 determinant line 平方根 gerbe 上的 half-twisted D-modules。来源构造的 Langlands functor 写作
+  $$
+  \mathbb L_G:
+  \operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+  \longrightarrow
+  \operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X));
+  $$
+  方向固定为 automorphic $\to$ spectral，反向等价写作 $\mathbb L_G^{-1}$。
 - Hecke eigensheaf 的本征值 $\widehat G$-local system 写作 $\mathcal E$，关联局部系统写作 $V_{\mathcal E}$。
 
 ## 模形式、椭圆曲线和费马应用
@@ -279,7 +305,20 @@
   K_0(N),\qquad K_1(N)\subset\operatorname{GL}_2(\mathbb A_{\mathbb Q,f}).
   $$
 - 经典 eigenform $f$ 的 adelic 提升写作 $\Phi_f$，生成的自守表示写作 $\pi_f$。
-- 好素数 $p\nmid N$ 处的 Satake 参数写作 $(\alpha_p,\beta_p)$。
+- 好素数 $p\nmid N$ 处经典 Hecke 多项式
+  $$
+  X^2-a_p(f)X+\varepsilon(p)p^{k-1}
+  $$
+  的根默认写作 $(\alpha_p,\beta_p)$；需要在同一公式中强调归一化时也可写作
+  $(\alpha_p^{\mathrm{cl}},\beta_p^{\mathrm{cl}})$。Unitary automorphic normalization 的 Satake 根写作
+  $$
+  (\alpha_p^{\mathrm{u}},\beta_p^{\mathrm{u}})
+  =p^{-(k-1)/2}(\alpha_p,\beta_p).
+  $$
+- 默认 $\pi_f$ 表示 unitary automorphic normalization；algebraic normalization 写作
+  $$
+  \pi_f^{\mathrm{alg}}=\pi_f\otimes|\det|^{-(k-1)/2}.
+  $$
 - 椭圆曲线写作 $E/\mathbb Q$，导子写作 $N_E$。
 - 椭圆曲线的最小判别式写作 $\Delta_E$；局部约化 trace 写作
   $$

@@ -1,6 +1,6 @@
 # 数学审查记录
 
-核查日期：2026-07-08
+核查日期：2026-07-08；主 chromatic 链更新：2026-07-11
 状态：正式教材扩展初稿
 
 ## 1. 已完成检查
@@ -29,10 +29,11 @@
 
 | 风险 | 状态 | 处理 |
 | --- | --- | --- |
-| $E(n)$ Bousfield 类与 Morava K wedge 的等式 | 外部输入 | 已有 bibliographic locator，需精确 theorem locator |
-| $K(n)$ module category 的 field-like 性质 | 已补证明草图 | 仍需外部 theorem locator |
-| $v_n$ self-map 定义中的 nilpotence 条件 | 已精化 | 仍需 Hopkins-Smith locator |
-| chromatic fracture square 适用范围 | 外部输入 | 需要按对象类别和 localization 版本定位 |
+| $E(n)$ Bousfield 类与 Morava K wedge 的等式 | 外部输入，已定位 | Lurie Lecture 23, Proposition 2；Hovey, Corollary 1.12 |
+| $K(n)$ module category 的 field-like 性质 | 外部输入，已定位 | Hopkins--Smith II, Propositions 1.4、1.5 |
+| $v_n$ self-map 定义、存在与选择无关 | 外部输入，已定位 | Hopkins--Smith II, Theorem 9、Corollaries 3.7/3.8、Theorem 14 |
+| chromatic fracture square 适用范围 | 外部输入，已定位 | 对每个 $p$-局部谱成立；Lurie Lecture 23, Proposition 5 |
+| chromatic convergence 与截断误差 | 外部输入加书内边界 | Ravenel 7.5.7、§8.6；已显式保留 $\lim^1$ 和有限高度余项 |
 | Morava descent 谱序列收敛 | 外部输入 | 附录 B 已标检查表 |
 | tmf 构造 | 外部输入 | 当前只作接口 |
 | redshift 定理版本差异 | 前沿风险 | 需 theorem locator 和假设翻译 |
@@ -44,13 +45,17 @@
 
 ## 3. 下一轮严格化任务
 
-1. 补 `D_source_theorem_index.md`，为 P0 定理加精确 locator。
-2. 将 P0 bibliographic locator 升级为精确 theorem/section/page locator。
-3. 为第九章补 semiadditive height 的正式定义和 HKR/transchromatic character locator。
-4. 为第十章补 Gross-Hopkins duality 具体 locator 和 Picard group 低高度案例。
-5. 为第十二章补 Adams-Novikov 具体低 stem 样例。
-6. 为第十一章补 equivariant Balmer spectrum、motivic $MGL$ 和 synthetic reconstruction 的 locator。
+1. 为 Quillen、Brown--Peterson、Landweber 与 Hovey--Strickland 的剩余
+   子定理补页码级 locator；主 chromatic 链已不在此待办中。
+2. 为第九章补 semiadditive height 的正式定义和 HKR/transchromatic character locator。
+3. 为第十章补 Gross-Hopkins duality 具体 locator 和 Picard group 低高度案例。
+4. 为第十二章补 Adams-Novikov 具体低 stem 样例。
+5. 为第十一章补 equivariant Balmer spectrum、motivic $MGL$ 和 synthetic reconstruction 的 locator。
 
 ## 4. 当前收口判定
 
-本书达到“教材内容基本收口稿”：主体方向覆盖较完整，每章已具备正文细节模块，内部定义链和主要 convention 已经闭合，核心外部输入已有 content-level locator，前沿边界已纳入，低阶计算链已有最小可核查表。剩余工作主要是 camera-ready 前的 theorem/section/page locator、完整 ANSS 表和若干低高度案例加厚。
+本书达到“教材内容基本收口稿”。主 chromatic 链现在区分了书内形式
+证明与深外部输入，并为 DHS/HS、smash product、fracture、convergence
+建立 theorem/section locator；其余方向仍主要是 content-level locator。
+剩余工作是 camera-ready 前的其余页码定位、完整 ANSS 表和若干低高度
+案例加厚。

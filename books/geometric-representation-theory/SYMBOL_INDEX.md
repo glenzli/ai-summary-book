@@ -44,10 +44,12 @@
 | --- | --- | --- |
 | $[X/H]$ | quotient stack | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 A](A_foundations_algebraic_geometry_and_stacks.md) |
 | $D^b_H(X,E)$ | equivariant constructible derived category | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
+| $\operatorname{For}_H,\operatorname{Perv}_H$ | forgetful functor 与等变 perverse convention | [第三章 3.1--3.3](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | $f^\ast,f_\ast,f_!,f^!$ | 六函子 | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | $\mathbb D_X$ | Verdier duality functor | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | $\operatorname{IC}(\overline S,\mathcal L)$ | middle extension intersection complex | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [第四章](04_schubert_geometry_hecke_categories_and_kazhdan_lusztig.md) |
-| $\star$ | convolution product | [第四章](04_schubert_geometry_hecke_categories_and_kazhdan_lusztig.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
+| $\widetilde\boxtimes$ | torsor descent 的 twisted external product | [第十二章 12.3](12_affine_grassmannian_loop_groups_and_convolution.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
+| $\star_!,\star_\ast,\star$ | 两种 pushforward 的 convolution 及 proper-support 共同值 | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
 | $\mathcal H_W,\mathcal H_B$ | Hecke algebra 和 finite Hecke category | [第四章](04_schubert_geometry_hecke_categories_and_kazhdan_lusztig.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
 
 ## 5. Affine、Satake 和 Langlands 符号
@@ -55,6 +57,11 @@
 | 符号 | 含义 | 入口 |
 | --- | --- | --- |
 | $\operatorname{Gr}_G$ | affine Grassmannian | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md), [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
+| $\mathscr O,\mathscr K,LG,L^+G$ | formal disk、punctured disk、loop 和 arc group | [第十二章 12.1](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| $\operatorname{Gr}^\lambda,\overline{\operatorname{Gr}}^\lambda$ | affine Schubert orbit 与 closure | [第十二章 12.2](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| $D^b_{L^+G,\mathrm{fs}},\operatorname{Sat}_G$ | finite-support derived category 与 Satake heart | [第十二章 12.2](12_affine_grassmannian_loop_groups_and_convolution.md), [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
+| $\operatorname{IC}_\lambda$ | affine Schubert IC sheaf | [第十二章 12.2](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| $\omega,F_\mu,S_\mu,T^\vee$ | fiber functor、weight functor、semi-infinite orbit、dual torus | [第十三章 13.1--13.4](13_geometric_satake_and_tannakian_reconstruction.md), [附录 I](I_geometric_satake_tannakian_details.md) |
 | $\operatorname{Fl}_G$ | affine flag variety | [第十四章](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | $I\subset L^+G$ | Iwahori subgroup | [第十四章](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | $G^\vee$ | Langlands dual group | [第十三章](13_geometric_satake_and_tannakian_reconstruction.md), [第十六章](16_geometric_langlands_local_global_interface.md) |

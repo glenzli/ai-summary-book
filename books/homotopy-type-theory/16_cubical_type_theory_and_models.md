@@ -10,27 +10,52 @@
 
 ## 16.1 Simplicial model
 
-**定理 16.1（单值基础的 simplicial model，外部输入）.** Kapulkin、Lumsdaine、Voevodsky 构造的 simplicial set 模型证明了单值性与相应类型论规则的一致性背景。
+**外部输入定理 16.1（一个单值宇宙的 simplicial set 模型）.** Kapulkin 与 Lumsdaine 给出 Voevodsky 构造的严格化表述：在经典集合论元理论中，以 Kan simplicial sets 构造 contextual category 模型，解释相应的 Martin-Löf 类型论，并使一个 universe 满足单值性。其相对一致性推论使用带两个不可达基数的 ZFC 作为元理论假设。
 
-**使用边界。** 模型论证明说明规则不导致矛盾，并解释同伦语义。它不在对象语言中给出任意具体定理的项。
+**来源与未重证边界。** 精确来源为 Kapulkin--Lumsdaine, *The Simplicial Model of Univalent Foundations (after Voevodsky)*, arXiv:1211.2851。论文构造模型并验证 univalence；本书不重证 weakly universal Kan fibration、coherence 或模型解释的可靠性。结论是条件性的相对一致性：若所用集合论元理论一致，则被解释的对象理论一致。它不把模型中的对象变成对象理论的项，也不推出 normalization、canonicity、HIT 规则或 judgmental computation。
 
 ## 16.2 Cubical type theory
 
-**事实 16.2.** Cubical type theory 引入区间对象、面格、路径类型和 Glue 类型等结构，给出单值性的构造性解释。
+**定义 16.2（本节所指的 CCHM 对象语言）.** Cohen--Coquand--Huber--Mörtberg 的 cubical type theory 不是只向第一章添加一个常量。其语法包含区间 $\mathbb I$ 及端点、面格 $\mathbb F$、以区间项表示的 $\mathsf{Path}$、composition/filling 操作、Glue 类型和 Russell-style universe。$\mathsf{Path}_A(a,b)$ 的项是带端点约束的区间方向项；它不是第二章归纳生成的 $\mathsf{Id}_A(a,b)$ 的同一个语法构造子。
 
-**定理 16.3（计算单值性，外部输入）.** Cohen、Coquand、Huber、Mörtberg 的 cubical type theory 给出了 univalence 的计算性解释，使单值性不只是外部公理。
+**外部输入定理 16.3（CCHM 单值性）.** 在上述特定 calculus 中，函数外延性可内部证明；Glue 构造给出从等价到 universe path 的映射，并且规范映射
 
-**验证状态。** 见附录 Z.3。公理化 HoTT 中这仍是模型/元理论输入；cubical 口径中则体现为区间、Glue 和 transport 计算规则。
+$$
+\mathsf{pathToEq}_{A,B}:
+\mathsf{Path}_{\mathcal U}(A,B)\to(A\simeq B)
+$$
+
+是等价。该 calculus 还在构造性元理论中具有 cubical set 语义。
+
+**来源与未重证边界。** 精确来源为 Cohen--Coquand--Huber--Mörtberg, *Cubical Type Theory: A Constructive Interpretation of the Univalence Axiom*, LIPIcs TYPES 2015, DOI `10.4230/LIPIcs.TYPES.2015.5`：第 4 节给 composition 与 transport，第 6 节给 Glue，第 7.2 节的 Corollary 11 给 univalence，第 8 节给语义。本书不重证其语法保存、composition 算法或模型可靠性。
+
+**对象语言边界。** 第六章的 $\mathsf{ua}_i$ 是公理 6.8 所选逆，命题 6.9.1 只得到路径等式。CCHM 的 Glue 与归约规则说明另一对象语言中的计算内容；除非先给出两种语法的解释或保守性定理，不能据此把第六章的 $\beta_e$、$\eta_p$ 或 transport 等式升级为 judgmental equality。
 
 **警告 16.4.** Cubical type theory 不是“HoTT Book 加上一个实现细节”。它改变了底层类型论的规则和计算行为。把 cubical 口径下的证明翻译到公理化 HoTT 需要逐项检查所用规则。
 
 ## 16.3 Canonicity 与 normalization
 
-**定义 16.5.** Canonicity 粗略说：若闭项 $n:\mathbb N$ 可类型检查，则它计算到某个标准自然数。
+**定义 16.5（自然数 canonicity）.** 对一个带指定 judgmental equality $\equiv$ 的类型论，closed canonicity 断言：若
 
-**事实 16.6.** 对不同 cubical 系统，canonicity、normalization 和 decidability of type checking 是独立的元理论课题。
+$$
+\cdot\vdash n:\mathbb N,
+$$
 
-**验证状态：研究边界。** 见附录 Z.4。本书只记录概念和来源方向，不证明这些元定理，也不把 canonicity 当作对象语言中的消去原则。
+则存在元语言自然数 $k$，使
+
+$$
+\cdot\vdash n\equiv\overline{k}:\mathbb N.
+$$
+
+这里“存在 $k$”是元语言量词，结论使用 judgmental equality。较弱的 homotopy canonicity 只要求对象语言中存在路径 $n=_{\mathbb N}\overline{k}$；两者不可互换。
+
+**外部输入定理 16.6（CCHM canonicity 的精确范围）.** Huber 对 CCHM cubical type theory 证明：若语境只含区间 name variables，且 $I\vdash n:\mathbb N$，则存在唯一 $k$ 使 $I\vdash n\equiv\overline{k}:\mathbb N$，并可有效计算该 $k$。
+
+**来源与边界。** 精确来源为 Simon Huber, *Canonicity for Cubical Type Theory*, Journal of Automated Reasoning 63 (2019), DOI `10.1007/s10817-018-9469-1`。该定理不是第二章的 J，也不自动覆盖任意 cubical 变体、resizing 或任意 HIT 扩展。
+
+**外部输入定理 16.6.1（Cartesian cubical normalization）.** Sterling 与 Angiuli 对 univalent Cartesian cubical type theory 证明 normalization，并推出 judgmental equality 的可判定性和类型构造子的单射性。
+
+**来源与边界。** 精确来源为 *Normalization for Cubical Type Theory*, arXiv:2101.11479。它针对 Cartesian cubical syntax；不能仅凭同属“cubical”就迁移到 CCHM de Morgan calculus 或第 9 章的公理化 HIT 包。每个新增构造都需要重新验证 normalization/canonicity 保存性。附录 Z.4 记录这些元定理与对象语言的隔离原则。
 
 ## 16.4 模型比较
 
@@ -66,7 +91,9 @@ $$
 
 **事实 16.12.2（QIIT 元理论边界）.** Higher inductive-inductive types 和 quotient inductive-inductive types 可表达语法商、Cauchy 实数和复杂代数对象，但其一般存在性、初始代数语义、strict positivity 和 canonicity 需要单独元理论。接口见附录 BC。
 
-**事实 16.12.3（cubical HIT 计算语义）.** Cubical 系统可为许多 HIT 提供更强的计算行为，但不能把“有 HIT 构造子”自动升级为所有路径计算 judgmental。每个签名必须分别核查 composition/filling、universe 和 canonicity。
+**外部输入定理 16.12.3（CHM 的列举型 HIT 计算语义）.** 第 9 章定理 9.11 所引的 CHM 系统为 spheres、torus、suspensions、truncations 和 pushouts 给出语法与构造性语义；在该系统中，这些列出的签名对所有构造子有 judgmental computation，严格保持替换，并保持参数的 universe level。
+
+**边界。** CHM 2018 没有给出无条件的一般 HIT schema。因而不能把“有某个 HIT 构造子”自动升级为“其所有路径计算 judgmental”，也不能推断 arbitrary HIIT/QIIT 的 canonicity。每个签名仍须分别核查 strict positivity、composition/filling、universe closure 和元理论。
 
 **事实 16.12.3.1（逻辑公理与计算性）。** LEM、choice、resizing 等原则不由 cubical univalence 的计算解释自动提供。若加入这些原则，应按附录 BL 标注 classical mode，并重新解释 canonicity 或数据计算。
 
@@ -84,21 +111,21 @@ $$
 
 ## 16.9 对本书的影响
 
-**原则 16.13.** 本书正文分三种阅读方式：
+**原则 16.13.** 本书正文区分五种阅读方式：
 
 1.  公理化 HoTT 阅读：函数外延性、单值性、HIT 和截断作为规则或公理加入；
-2.  Cubical 阅读：单值性和部分 HIT 具有计算性实现，但需要接受 cubical primitives。
+2.  Cubical 阅读：单值性和列举出的部分 HIT 具有计算性实现，但需要接受指定 calculus 的 cubical primitives 与归约规则。
 3.  Directed/simplicial 阅读：额外引入 directed hom、Segal 条件或 simplicial primitives；规则核见附录 AS，且这些规则不回流到前文 identity type 证明。
 4.  Cohesive/geometry 阅读：额外引入 shape、cohesive modalities、infinitesimal objects 或 Zariski gluing；接口见附录 AT 和 BD。
 5.  Two-level 阅读：额外区分 strict 外部层和 fibrant HoTT 层；接口见附录 BG。
 
-后续若把某证明称为“计算性”，必须说明采用第二种阅读方式。
+后续若把某证明称为“计算性”，必须说明采用第二种阅读方式中的哪一个具体 cubical calculus；只写“cubical”不足以确定 judgmental equality。
 
 **边界原则。** 附录 Z.7 给出本书各章与 cubical/HIT 元理论的接口。后续新增 HIT 或 cubical 计算规则时，必须同步记录形成、构造、消去、计算规则和元理论假设。
 
 ## 本章小结
 
-HoTT 的严谨性来自内部类型论与外部模型论的双重控制。Simplicial model 支持一致性和同伦解释；cubical type theory 支持计算单值性；strict Rezk completion、weak univalence 分离和 interval reversal 结果约束我们如何理解模型；directed/simplicial type theory 提供高阶范畴的新对象语言；two-level type theory 提供 strict 外部层；cohesive HoTT 和 QIIT 则分别扩展几何对象与归纳语法的表达能力。
+HoTT 的严谨性要求同时控制内部推导与外部元理论。Simplicial model 给出带明确集合论假设的相对一致性解释；CCHM 通过不同的 $\mathsf{Path}$、composition 和 Glue 语法证明单值性；canonicity 与 normalization 只对其精确 calculus 成立；CHM 的强 HIT 计算只覆盖列出的签名。其余 directed、two-level、cohesive 和 QIIT 接口同样不得回流为基础 HoTT 的隐式规则。
 
 ## 练习
 

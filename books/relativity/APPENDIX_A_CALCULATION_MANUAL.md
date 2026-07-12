@@ -210,8 +210,10 @@ $$
 | --- | --- |
 | $E^2=p^2+m^2$ | $E^2=p^2c^2+m^2c^4$ |
 | $r_s=2GM$ | $r_s=2GM/c^2$ |
+| $r_{\mathrm{ph}}=3GM$ | $r_{\mathrm{ph}}=3GM/c^2$ |
 | $\alpha=4GM/b$ | $\alpha=4GM/(bc^2)$ |
 | $\Delta\phi=6\pi GM/[a(1-e^2)]$ | $\Delta\phi=6\pi GM/[a(1-e^2)c^2]$ |
+| $K=48G^2M^2/r^6$ | $K=48G^2M^2/(c^4r^6)$ |
 | $T_H=1/(8\pi GM)$ | $T_H=\hbar c^3/(8\pi GMk_B)$ |
 
 ## A.8 最小审题清单

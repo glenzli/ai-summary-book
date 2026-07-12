@@ -97,7 +97,7 @@ $$
 
 **命题 10.17.** 若 $X$ 是 $K(n)$-local invertible spectrum，则 $(E_n)_*X$ 是 invertible Morava module。
 
-**证明草图.** 若 $X$ 可逆，则存在 $Y$ 使
+**证明.** 若 $X$ 可逆，则存在 $Y$ 使
 $$
 X\otimes Y\simeq \mathbb S_{K(n)}.
 $$
@@ -105,7 +105,11 @@ $$
 $$
 (E_n)_*X\otimes_{(E_n)_*}(E_n)_*Y\cong (E_n)_*
 $$
-在适当 Kunneth 和完备性条件下成立。因此 $(E_n)_*X$ 为可逆模，并继承 $\mathbb G_n$ semilinear action。Kunneth 和完备性属于外部输入。证毕。
+这里调用本章登记的 completed Kunneth 同构；其收敛和完备性条件是本命题
+的外部输入。该同构表明 $(E_n)_*Y$ 是 $(E_n)_*X$ 的张量逆，故
+$(E_n)_*X$ 为可逆 Morava module。$E_n$ 上的 $\mathbb G_n$-作用与
+$E_n\otimes X$ 的函子性给出 semilinear action，并与张量乘法相容。
+因此它确实是定义 10.16 中的可逆对象。证毕。
 
 **警告 10.18.** 命题 10.17 给出比较映射，不给出满射或单射。kernel 正是 exotic Picard phenomena 的来源之一。
 

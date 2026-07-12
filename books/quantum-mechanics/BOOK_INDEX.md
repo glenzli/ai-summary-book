@@ -52,9 +52,10 @@
 
 | 范围 | 编号 |
 |---|---|
-| Hilbert 空间、谱和自伴性 | QM-EXT-1 -- QM-EXT-5、QM-EXT-14、QM-EXT-17 |
-| 对称性、表示与绝热理论 | QM-EXT-6 -- QM-EXT-8、QM-EXT-20 |
-| 积分、散射和路径积分 | QM-EXT-9、QM-EXT-15、QM-EXT-16 |
-| 测量、开放系统与信息 | QM-EXT-10 -- QM-EXT-13、QM-EXT-18、QM-EXT-19 |
+| 谱、自伴性与解析扰动 | QM-EXT-1 -- QM-EXT-3、QM-EXT-14、QM-EXT-17、QM-EXT-20 |
+| 对称性、表示与绝热理论 | QM-EXT-4、QM-EXT-5、QM-EXT-7、QM-EXT-12、QM-EXT-13 |
+| 散射、半经典与路径积分 | QM-EXT-8、QM-EXT-9、QM-EXT-15、QM-EXT-16 |
+| 具体 Hamiltonian 的谱与自伴性 | QM-EXT-10、QM-EXT-11 |
+| 测量、开放系统与信息 | QM-EXT-6、QM-EXT-18、QM-EXT-19 |
 
 外部输入只作为已知数学定理使用；正文必须说明用途，不能把它们当作未声明的内部证明步骤。

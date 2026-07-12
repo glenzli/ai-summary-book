@@ -68,17 +68,25 @@ $$
 
 ## 13.3 Zero slice 与 motivic cohomology
 
-**外部输入定理 13.8（Voevodsky zero slice）.** 在特定基和特征假设下，sphere spectrum 的零 slice 满足
+**外部输入定理 13.8（SL-13.8，Voevodsky zero slice）.** 设 `k` 为
+characteristic zero field。在 Voevodsky 的 effective slice filtration 中，
+sphere spectrum 的零 slice 满足
 
 $$
 s_0(\mathbb 1)\simeq H\mathbb Z.
 $$
 
-更一般版本需要额外基和系数限制。
+**精确来源与边界.** Vladimir Voevodsky, *On the zero slice of the sphere
+spectrum*, Theorem 6.6，`https://arxiv.org/abs/math/0301013`。更一般基和正
+特征版本不由该定理给出，属于 P1 推广边界。
 
-**外部输入定理 13.9.** 在相应假设下，任意谱的 slices 具有 `H\mathbb Z`-module 结构。
+**外部输入定理 13.9.** 在定理 13.8 的 characteristic-zero field 口径中，
+任意谱 `E` 的各个 `s_q(E)` 具有与 slice tower 相容的 `H\mathbb Z`-module
+结构。
 
-**依赖源.** Voevodsky "On the zero slice of the sphere spectrum"、后续推广和 Spitzweck/Hoyois/Cisinski-Deglise 相关结果。
+**精确来源.** Voevodsky，同上，Introduction, pp. 106--107；该处把
+`s_0(\mathbb 1)=H\mathbb Z` 的作用作为 Theorem 6.6 的直接推论说明。本章
+只在同一假设下调用它。
 
 **命题 13.10.** 若定理 13.8 和 13.9 适用，则 slice filtration 把 sphere spectrum 的第一层近似与 motivic cohomology 联系起来。
 
@@ -96,7 +104,7 @@ $$
 
 **命题 13.12.** 若 `E\in\mathbf{SH}(S)^{cell}`，则任意由 spheres 检测的等价可通过 bigraded homotopy groups 检测。
 
-**证明.** Cellular subcategory 由 spheres 生成。应用第三章命题 3.17，令生成子集合为所有 `S^{p,q}`。若态射在所有 spheres 映射空间上诱导等价，则其 fiber 被所有生成子检测为零；由生成性，fiber 为零，态射为等价。`\square`
+**证明.** Cellular subcategory 由 spheres 生成。应用第三章命题 3.20，令生成子集合为所有 `S^{p,q}`。若态射在所有 spheres 映射空间上诱导等价，则其 fiber 被所有生成子检测为零；由生成性，fiber 为零，态射为等价。`\square`
 
 **注 13.13.** 并非所有 motivic spectra 都 cellular。把计算限制到 cellular subcategory 是有效方法，但会丢失非 cellular 几何信息。
 
@@ -120,13 +128,19 @@ $$
 
 **定义 13.17.** 对 ring spectrum `E`，`E`-based Adams tower 由单位 `\mathbb 1\to E` 的 fiber 迭代构造。若 `E=H\mathbb Z/\ell`，得到 motivic Adams spectral sequence 的输入。
 
-**外部输入定理 13.18.** 在适当基域和完备化假设下，motivic Adams spectral sequence 由 motivic Steenrod algebra 控制，并可计算 sphere spectrum 的若干完成同伦群。
+**高级外部输入 13.18（P1）.** 在另行指定的基域、素数、完备化和收敛
+假设下，motivic Adams spectral sequence 由相应 motivic Steenrod algebra
+控制，并可计算 sphere spectrum 的若干完成同伦群。该计算 package 不参与
+本章 effective/slice 定义与 zero-slice P0 主线。
 
 **注 13.19.** Adams 方法、slice 方法和 cellular 方法相互作用复杂。它们是计算 stable motivic homotopy groups 的主要工具，但收敛、隐藏扩张和基域依赖不能省略。
 
 ## 13.7 本章小结
 
-Slice filtration 用 effective subcategories 按 Tate twist 方向过滤 motivic spectra。Zero slice 把 sphere spectrum 与 motivic cohomology 连接起来；cellular 方法把计算限制在由 bigraded spheres 生成的子范畴中。所有强计算结论都依赖额外基域、系数和收敛假设。
+Slice filtration 用 effective subcategories 按 Tate twist 方向过滤 motivic
+spectra。本章引用的 zero-slice 与 module 结论严格限于 characteristic-zero
+field 的 Voevodsky 版本；更一般基和 Adams 型强计算均属 P1，并须分别检查
+系数与收敛。
 
 ## 练习
 

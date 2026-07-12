@@ -92,11 +92,24 @@ $$
 
 **命题 A.10.** 改变复定向会对形式群律作坐标改变。
 
-**证明草图.** 两个复定向 $x$ 与 $x'$ 都生成 $E^*(\mathbb CP^\infty)\cong E^*[[x]]$ 的 augmentation ideal，因此
+**证明.** 两个复定向 $x$ 与 $x'$ 都生成 $E^*(\mathbb CP^\infty)\cong E^*[[x]]$ 的 augmentation ideal，因此存在唯一幂级数
 $$
 x'=f(x)
 $$
-其中 $f(X)=uX+\text{higher terms}$，$u\in E^0{}^\times$。若要求严格同构则需 $u=1$。张量积线丛的 classifying map 与代入 $f$ 相容，得到形式群律的坐标改变公式。证毕。
+其中 $f(X)=uX+\text{higher terms}$，$u\in E^0{}^\times$；线性项可逆
+保证 $f$ 对复合具有逆幂级数。若两个定向都按定义 2.1 限制为
+$\mathbb CP^1$ 上同一个标准生成元，则 $u=1$，故 $f$ 是严格坐标改变。
+
+记 $F_x,F_{x'}$ 为两个定向定义的形式群律，并令
+$\mu:\mathbb CP^\infty\times\mathbb CP^\infty\to\mathbb CP^\infty$
+分类 universal line bundles 的张量积。由上同调拉回与幂级数代入相容，
+$$
+F_{x'}(x_1',x_2')=\mu^*x'=\mu^*f(x)=f(\mu^*x)
+=f(F_x(x_1,x_2)).
+$$
+又 $x_i'=f(x_i)$，所以
+$F_{x'}(f(X),f(Y))=f(F_x(X,Y))$。这正是定义 A.8 的坐标改变公式。
+证毕。
 
 ## 本附录小结
 

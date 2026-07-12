@@ -24,27 +24,59 @@
 
 ## 15.2 Recognition principle
 
-**外部输入定理 15.4（Motivic infinite loop recognition）.** 在 perfect field 等假设下，grouplike framed motivic spaces 等价于由 suspension spectra 在 colimits 下生成的 motivic spectra 子范畴；换言之，framed transfers 给出 motivic `\mathbb P^1`-infinite loop spaces 的识别原则。
+**外部输入定理 15.4（FR-15.x，Motivic Recognition Principle）.** 设 `k`
+为 perfect field。Grouplike framed motivic spaces 与 very effective motivic
+spectra 之间有 infinity-categorical equivalence
 
-**依赖源.** Elmanto-Hoyois-Khan-Sosnilo-Yakerson, "Motivic infinite loop spaces"。
+$$
+\mathbf H^{fr}(k)^{gp}\simeq\mathbf{SH}(k)^{veff}.
+$$
+
+相应的 `S^1`-稳定化识别 effective framed spectra 与
+`\mathbf{SH}(k)^{eff}`。Very effective 子范畴本身不对负 suspension 封闭，
+所以第一条等价不能称为 stable-category equivalence；这里的 `gp`、
+Nisnevich localization 和 `\mathbb A^1`-localization 都是定理输入的一部分。
+
+**精确来源与边界.** Elmanto--Hoyois--Khan--Sosnilo--Yakerson, *Motivic
+infinite loop spaces*, Theorem 1.2.3 and Theorem 3.5.14，
+`https://arxiv.org/abs/1711.05248`。P0 版本限于 perfect field；本章不把它
+写成任意基上的 recognition theorem。
 
 **命题 15.5.** 定理 15.4 说明 framed transfers 是稳定化信息，而不是普通 presheaf 的附加加性结构。
 
-**证明.** 定理 15.4 的右侧是 stable motivic homotopy category 中由 suspension spectra 生成的对象，左侧是 grouplike framed motivic spaces。若 framed transfers 只是普通加性结构，则其自然目标应是 abelian group-valued presheaves 或 modules；但定理识别的是 infinite loop objects，即稳定 homotopy 信息。因此 framed transfers 编码了比 finite correspondences 更接近稳定谱的结构。`\square`
+**证明.** 定理 15.4 的右侧由 suspension spectra 经 very-effective 操作生成，
+作为 full subcategory 嵌在 `\mathbf{SH}(k)` 中；左侧则要求 framed action 与
+grouplike 条件。`S^1`-稳定化后的第二条等价进一步给出 effective spectra。
+因此这些 framed 数据编码了 delooping 所需的谱级信息。这个论证不声称
+`\mathbf{SH}(k)^{veff}` 对负 suspension 封闭，也不把它当成三角范畴。
+`\square`
 
 ## 15.3 Sphere spectrum 的几何模型
 
-**外部输入定理 15.6.** Motivic sphere spectrum 的 infinite loop space 可用 framed Hilbert schemes 或相关 framed moduli objects 表示。
+**高级外部输入 15.6（P1）.** 在域上并采用论文指定的 stabilization 与
+group-completion 口径时，motivic sphere 和 algebraic cobordism 的若干
+infinite loop spaces 可由 framed finite-syntomic moduli/Hilbert-scheme
+模型表示。
 
-**依赖源.** Elmanto-Hoyois-Khan-Sosnilo-Yakerson 及 framed Hilbert schemes 后续工作。
+**精确来源与边界.** Bachmann--Elmanto--Hoyois--Khan--Sosnilo--Yakerson,
+*On the infinite loop spaces of algebraic cobordism and the motivic sphere*,
+Theorems 1.1 and 1.4，`https://arxiv.org/abs/1911.02262`。该几何模型不参与
+定理 15.4 的 P0 教学证明。
 
 **注 15.7.** 该定理是现代 motivic homotopy 的强几何化结果。由于模型依赖精细 moduli 构造，本书在基础部分只将其作为外部输入。
 
 ## 15.4 与 fundamental classes 的联系
 
-**外部输入定理 15.8.** Framed transfers 与 motivic fundamental classes 相容；framed recognition 中出现的 transfers 可与六操作/形变到法锥产生的 Gysin transfers 比较。
+**高级外部输入 15.8（P1）.** 在文献指定的 tangentially framed
+correspondence 和 motivic coefficient-system 假设下，framed transfers 可与
+motivic fundamental classes 所产生的 finite-syntomic Gysin transfers 比较。
 
-**依赖源.** Elmanto-Hoyois-Khan-Sosnilo-Yakerson, "Framed transfers and motivic fundamental classes"；Deglise-Jin-Khan。
+**精确来源与边界.** Elmanto--Hoyois--Khan--Sosnilo--Yakerson, *Framed
+transfers and motivic fundamental classes*, Section 3，
+`https://arxiv.org/abs/1809.10666`；fundamental-class 端见
+Deglise--Jin--Khan Theorems 3.3.2 and 4.2.1，
+`https://arxiv.org/abs/1805.05920`。全相容属于 P1，不作为 recognition 的
+P0 前提。
 
 **命题 15.9.** 若一个 cohomology theory 同时来自 motivic spectrum `E` 且有 framed transfers，则其 finite syntomic Gysin maps 必须与 `E` 的 fundamental class formalism 相容，才能在 framed recognition 与六操作之间一致。
 
@@ -58,11 +90,17 @@
 
 ## 15.6 Finite syntomic 的作用
 
-**定义 15.11.** 态射 `f:Z\to X` 称为 finite syntomic，若它 finite、flat、locally of finite presentation，且 cotangent complex `L_{Z/X}` perfect of Tor-amplitude `[0,0]`，等价地在常用情形下 `f` 是 finite flat local complete intersection morphism。
+**定义 15.11.** 态射 `f:Z\to X` 称为 finite syntomic，若它 finite、flat、
+locally of finite presentation，且 cotangent complex `L_{Z/X}` perfect of
+cohomological Tor-amplitude `[-1,0]`；等价地，`f` 是 finite flat local
+complete intersection morphism。振幅 `[0,0]` 是 smooth 型条件，不能替代
+一般 lci 条件。
 
 **命题 15.12.** Finite etale morphism 是 finite syntomic，且其 cotangent complex 为零。
 
-**证明.** Finite etale 态射 finite、flat 且 locally of finite presentation。Etale 条件给出 `L_{Z/X}\simeq0`。零复形 perfect，Tor-amplitude 为 `[0,0]`。因此 finite etale 是 finite syntomic。`\square`
+**证明.** Finite etale 态射 finite、flat 且 locally of finite presentation。
+Etale 条件给出 `L_{Z/X}\simeq0`。零复形 perfect，且其 Tor-amplitude 包含于
+`[-1,0]`，故满足 lci 条件。因此 finite etale 是 finite syntomic。`\square`
 
 **注 15.13.** Framed correspondences 使用 finite syntomic 而不仅是 finite etale，是因为 motivic stable homotopy 中的 Gysin/Thom 修正自然覆盖 lci 型有限映射。Finite etale 情形 cotangent complex 为零，framing 数据退化；finite syntomic 情形则需要真实记录 `L_{Z/X}` 的平凡化。
 
@@ -94,9 +132,15 @@ $$
 
 其中右侧表示从 `Y` 到 `X` 的 framed correspondences 空间或集合。其 sheafification、`\mathbb A^1`-localization 和 group completion 是 framed recognition 的输入步骤。
 
-**外部输入定理 15.19.** 在 framed recognition 定理的假设下，`X` 的 framed correspondence presheaf 经 Nisnevich sheafification、`\mathbb A^1`-localization 和 group completion 后，表示 `\Sigma_{\mathbb P^1}^\infty X_+` 的 infinite loop space。
+**外部输入定理 15.19.** 在定理 15.4 的 perfect-field 假设下，`X` 的
+framed correspondence presheaf 经 Nisnevich sheafification、
+`\mathbb A^1`-localization 和 group completion 后，对应于
+`\Sigma_{\mathbb P^1}^\infty X_+` 在 very effective 范畴中的 infinite
+loop object。
 
-**依赖源.** Elmanto-Hoyois-Khan-Sosnilo-Yakerson 的 motivic infinite loop spaces 定理。
+**精确来源.** Elmanto--Hoyois--Khan--Sosnilo--Yakerson, Theorem 1.2.3
+and Theorem 3.5.14，同定理 15.4 的 URL。这里说的是 infinity-category 中
+对象的对应，不是同伦范畴中仅有的群同构。
 
 ## 15.8 失败模式与边界
 
@@ -110,7 +154,11 @@ $$
 
 ## 15.9 本章小结
 
-Framed correspondences 是现代 motivic stable homotopy 的关键接口：它们把几何有限 syntomic 数据与 `\mathbb P^1`-infinite loop structures 连接起来。Recognition principle、sphere spectrum 的几何模型以及与 fundamental classes 的相容性都是深外部输入，后续使用时必须保留基域和完美性假设。
+Framed correspondences 把 finite syntomic 数据及 `L_{Z/X}` 的 K-theory
+平凡化连接到 motivic infinite loop structures。P0 recognition 精确限于
+perfect field，并由 Theorems 1.2.3 and 3.5.14 定位；Hilbert-scheme 模型和
+与 fundamental classes 的全相容均明确留在 P1。Finite syntomic 的正确
+cotangent 振幅是 `[-1,0]`。
 
 ## 练习
 

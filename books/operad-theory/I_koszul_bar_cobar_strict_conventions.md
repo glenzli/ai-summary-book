@@ -14,7 +14,7 @@
 
 ## I.1 Reduced 与增广约定
 
-**约定 I.1.** 本附录固定域 $k$，链复形采用同调分次。所有 dg 对称序列默认取值于 $\mathbf{Ch}_k$。除非特别说明，operad 与 cooperad 均为 reduced：
+**约定 I.1.** 本附录固定域 $k$，链复形采用同调分次。所有 dg 对称序列默认取值于 $\mathbf{Ch}_k$。除非特别说明，operad 均 augmented 且无 nullary operations：
 $$
 \mathcal P(0)=0,\qquad \mathcal P(1)\cong k\cdot\mathbf 1\oplus\overline{\mathcal P}(1),
 $$
@@ -22,7 +22,15 @@ $$
 $$
 I_k\to\mathcal C
 $$
-及 coaugmentation coideal $\overline{\mathcal C}$。
+及 coaugmentation coideal $\overline{\mathcal C}$，同时 $\mathcal C(0)=0$。
+
+本附录称 $\mathcal P$ **connected**，若
+$$
+\overline{\mathcal P}(0)=\overline{\mathcal P}(1)=0,
+$$
+并对 cooperad 作同样约定。第八章的二次 operads 是 connected。允许 $\overline{\mathcal P}(1)\ne0$ 的一般 bar-cobar 伴随与 connected Koszul 判别必须分开；后者的逐 arity 顶点滤过有限性会用到 connectedness。
+
+**定义 I.1.1（conilpotence）.** 对 coaugmented cooperad $\mathcal C$，把分解投影到 coaugmentation coideal 得到 reduced decomposition。若对每个 $c\in\overline{\mathcal C}$，存在 $N(c)$，使所有具有多于 $N(c)$ 个顶点的迭代 reduced decompositions 在 $c$ 上为零，则称 $\mathcal C$ conilpotent。该条件是逐元素有限性，不表示 $\mathcal C$ 在每个 arity 有统一 nilpotence 次数。
 
 **定义 I.2.** Augmented dg-operad 是 dg-operad $\mathcal P$ 连同 operad morphism
 $$
@@ -45,19 +53,19 @@ $$
 $$
 D:\mathcal P\to\mathcal P
 $$
-满足对每个分块复合
+满足对每个有限集映射 $f:S\to T$ 的复合
 $$
-\gamma_\pi:\mathcal P(\operatorname{Bl}(\pi))\otimes\bigotimes_B\mathcal P(B)\to\mathcal P(S)
+\gamma_f:\mathcal P(T)\otimes\bigotimes_{t\in T}\mathcal P(f^{-1}(t))\to\mathcal P(S)
 $$
 有 Leibniz 公式：
 $$
-D\gamma_\pi(x;(y_B)_B)
+D\gamma_f(x;(y_t)_t)
 =
-\gamma_\pi(Dx;(y_B)_B)
-+\sum_B(-1)^{r(|x|+\sum_{B'<B}|y_{B'}|)}
-\gamma_\pi(x;(y_{B'}')_{B'}),
+\gamma_f(Dx;(y_t)_t)
++\sum_t(-1)^{r(|x|+\sum_{t'<t}|y_{t'}|)}
+\gamma_f(x;(y_{t'}')_{t'}),
 $$
-其中 $y_B'=Dy_B$，其他 $y_{B'}'=y_{B'}$。这里为了写符号选取了块集合的一个顺序；无坐标定义由对称幺半范畴中的 Leibniz rule 给出，任何两个顺序由 Koszul braiding 相容。
+其中第 $t$ 项取 $y_t'=Dy_t$，其他 $y_{t'}'=y_{t'}$。这里为了写符号选取了 $T$ 的一个顺序；无坐标定义由对称幺半范畴中的 Leibniz rule 给出，任何两个顺序由 Koszul braiding 相容。空纤维没有例外，其因子就是 $\mathcal P(0)$。
 
 **命题 I.5.** 自由 operad $\mathbb F(M)$ 上的 derivation 由其在生成对称序列 $M$ 上的限制唯一决定。
 
@@ -97,7 +105,14 @@ $$
 $$
 (\mathbb T^c(M),d=d_{\mathrm{int}}+\partial)
 $$
-的 dg-cooperad，其中 $\partial$ 是次数 $-1$ 的 coderivation，并且其投影到单顶点部分为零，或者等价地，$\partial$ 降低适当的顶点数滤过。
+的 dg-cooperad，其中 $\partial$ 是次数 $-1$ 的 coderivation，并且它在 cogenerators 上没有线性部分：
+$$
+M\hookrightarrow\mathbb T^c(M)
+\xrightarrow{\partial}\mathbb T^c(M)
+\twoheadrightarrow M
+=0.
+$$
+注意整个复合 $\mathbb T^c(M)\xrightarrow{\partial}\mathbb T^c(M)\twoheadrightarrow M$ 一般不为零；bar differential 在二顶点树上的 corestriction 正是 operad composition。对 bar 构造，$\partial$ 每次收缩一条内边，故将顶点数恰降低 $1$。
 
 **命题 I.10.** Cobar 构造 $\Omega\mathcal C$ 是 quasi-free dg-operad；bar 构造 $B\mathcal P$ 是 quasi-cofree dg-cooperad。
 
@@ -186,30 +201,74 @@ $$
 \mathcal P\circ_\kappa\mathcal P^¡\circ_\kappa\mathcal P.
 $$
 
-**定义 I.18.** $\mathcal P$ 称为 Koszul，若 $K_r(\mathcal P)\to I$ 是 quasi-isomorphism；在常用有限型 reduced 假设下，这与左 Koszul complex 的相应条件等价。
+**定义 I.18.** 设 $\mathcal P$ 是第八章意义下的 connected、weight-graded 二次 operad。称 $\mathcal P$ Koszul，若增广
+$$
+K_r(\mathcal P)=\mathcal P^¡\circ_\kappa\mathcal P\longrightarrow I
+$$
+是 quasi-isomorphism。左 Koszul complex、bar inclusion 和 cobar resolution 的等价性不是本定义的一部分，而是下一条外部输入。
 
-**外部输入定理 I.19.** 对有限型 reduced 二次 operad，以下条件等价：
+**外部输入定理 I.19（quadratic Koszul criterion；LV-1、LV-2）.** 采用 Loday--Vallette *Algebraic Operads* 的 characteristic-$0$ symmetric-operad 语境。设 $\mathcal P=\mathcal P(E,R)$ 是 connected、weight-graded 二次 dg-operad，微分保持权重；令 $\mathcal P^¡=\mathcal C(sE,s^2R)$，并令 $\kappa:\mathcal P^¡\to\mathcal P$ 为保持权重的典范 twisting morphism。则以下条件等价：
 
-1. $\mathcal P$ 是 Koszul；
-2. $\Omega\mathcal P^¡\to\mathcal P$ 是 quasi-isomorphism；
-3. $\mathcal P^¡\to B\mathcal P$ 是 quasi-isomorphism；
-4. 相应 bar-cobar weight spectral sequence 在期望页退化并给出单位同调。
+1. $K_r(\mathcal P)\to I$ 是 quasi-isomorphism；
+2. $K_l(\mathcal P)\to I$ 是 quasi-isomorphism；
+3. 典范 twisting morphism 诱导的 $\Omega\mathcal P^¡\to\mathcal P$ 是 quasi-isomorphism；
+4. $\mathcal P^¡\to B\mathcal P$ 是 quasi-isomorphism。
 
-该定理的 Ginzburg--Kapranov classical core 已定位为 GK-1--GK-7：Definition 4.1.3、Proposition 4.1.4、Theorem 4.1.13、Theorem 4.2.5、Corollary 4.2.7、Theorem 3.2.16 和 Section 4.2.12。Fresse modern cobar/twisted-composite/cofibrant replacement 已定位为 FRE-1--FRE-6。现代 $\Omega\mathcal P^¡\to\mathcal P$、$\Omega B\mathcal P\to\mathcal P$ 的书本 convention 写法已由附录 D 和 `FINAL_OPERAD_THEORY_CLOSURE.md` 关闭为 convention/bibliography production work。
+**证明路线（外部输入）.** LV-1，即 Loday--Vallette Theorem 6.6.2，对任意 connected weight-graded dg cooperad $\mathcal C$、operad $\mathcal P$ 和保持权重的 twisting morphism $\alpha:\mathcal C\to\mathcal P$，把左右 twisted composites 的 acyclicity、$\mathcal C\to B\mathcal P$ 与 $\Omega\mathcal C\to\mathcal P$ 的 quasi-isomorphism 证明为四个等价条件。LV-2，即 Theorem 7.4.6，把该定理特化到 $\mathcal C=\mathcal P^¡$ 和 $\alpha=\kappa$，正得到上列四项。GK-3/GK-7 是 classical cross-check；FRE-2--FRE-4 是带 $C$-cofibrancy 等模型假设的另一来源包。谱序列是证明工具，不是无条件的第五个等价命题。
 
 ## I.7 权重滤过与谱序列边界
 
-**定义 I.20.** 对由生成对称序列 $M$ 构成的自由 operad $\mathbb F(M)$，权重为树的顶点数。定义递增滤过
+**定义 I.20.** 对由生成对称序列 $M$ 构成的自由 operad 和 cofree conilpotent cooperad，记恰有 $q$ 个顶点的部分为
 $$
-F_r\mathbb F(M)=\bigoplus_{0\le q\le r}\mathbb F^{(q)}(M).
+\mathbb F^{(q)}(M),\qquad \mathbb T^{c,(q)}(M).
 $$
-对 cofree cooperad $\mathbb T^c(M)$ 也按顶点数定义滤过。
+Bar 构造使用递增滤过
+$$
+F_rB\mathcal P
+=
+\bigoplus_{0\le q\le r}\mathbb T^{c,(q)}(s\overline{\mathcal P}).
+$$
+Cobar 构造使用递减滤过
+$$
+F^r\Omega\mathcal C
+=
+\bigoplus_{q\ge r}\mathbb F^{(q)}(s^{-1}\overline{\mathcal C}).
+$$
+这两个方向不同；不能用同一个递增顶点滤过同时处理 bar 与 cobar。
 
-**命题 I.21.** Cobar differential $d=d_1+d_2$ 中，$d_1$ 保持权重，$d_2$ 增加权重 $1$。Bar differential 中，$d_1$ 保持权重，$d_2$ 降低权重 $1$。
+**命题 I.21.** Cobar differential $d=d_1+d_2$ 中，$d_1$ 保持权重，$d_2$ 增加权重 $1$，因而
+$$
+d(F^r\Omega\mathcal C)\subseteq F^r\Omega\mathcal C.
+$$
+Bar differential 中，$d_1$ 保持权重，$d_2$ 降低权重 $1$，因而
+$$
+d(F_rB\mathcal P)\subseteq F_rB\mathcal P.
+$$
+若 $\overline{\mathcal C}(0)=\overline{\mathcal C}(1)=0$，则 $F^\bullet\Omega\mathcal C(n)$ 对每个固定 $n$ 是有限递减滤过；bar 的 connected 情形同理。
 
-**证明.** Cobar 中 $d_1$ 逐生成元应用内部微分，不改变树顶点数；$d_2$ 把一个 cooperad 生成元替换为两个生成元的树形复合，所以顶点数增加 $1$。Bar 中 $d_1$ 逐顶点作用，不改变顶点数；$d_2$ 收缩一条内部边，把两个顶点复合为一个顶点，所以顶点数降低 $1$。$\square$
+**证明.** Cobar 中 $d_1$ 逐生成元应用内部微分，不改变树顶点数；$d_2$ 把一个 cooperad 生成元替换为两个生成元的树形复合，所以顶点数增加 $1$。故 $d_2(F^r)\subseteq F^{r+1}\subseteq F^r$。Bar 中 $d_1$ 逐顶点作用，不改变顶点数；$d_2$ 收缩一条内部边，把两个顶点复合为一个顶点，所以顶点数降低 $1$，故保持 $F_r$。
 
-**说明 I.22.** Koszul 判别的谱序列证明正是利用这种权重行为。第零页通常由内部微分控制，下一页由二次关系或 Koszul differential 控制。由于不同文献对 homological/cohomological grading、suspension 和权重滤过方向的约定不同，正文引用谱序列定理时必须说明采用哪一种 convention。
+若所有顶点的输入数至少为 $2$，具有 $n$ 个叶、$q$ 个顶点的有根树满足
+$$
+n-1=\sum_{v\in V(T)}(\operatorname{in}(v)-1)\ge q.
+$$
+因此固定 arity $n$ 时只有 $0\le q\le n-1$。Connectedness 排除了 nullary 与非单位 unary 顶点，故两个滤过逐 arity 有限。$\square$
+
+**说明 I.22（收敛口径）.** 在定义 I.20 的两个滤过上，associated graded differential 先由保持顶点数的 $d_1$ 给出，改变顶点数的 $d_2$ 出现在后续 differential。若对象 connected，则滤过逐 arity 有限，故相应谱序列在每个 arity 强收敛到该 filtered complex 的同调。若允许非平凡 unary 部分，逐 arity 有限性消失；此时必须另外验证 exhaustive、separated、complete 和 convergence 条件，或改用完成化构造。
+
+**反例 I.22.1（direct sum 不等于完成化）.** 令 $M(1)=k$ 集中在次数 $0$，其他 arity 为 $0$。Arity $1$ 的自由 operad包含每个长度 $q\ge0$ 的 unary 线性树，因此
+$$
+\mathbb F(M)(1)\cong\bigoplus_{q\ge0}k.
+$$
+对递减顶点滤过完成化得到
+$$
+\widehat{\mathbb F(M)(1)}
+=
+\varprojlim_r\mathbb F(M)(1)/F^r
+\cong
+\prod_{q\ge0}k.
+$$
+序列 $(1,1,1,\ldots)$ 属于右侧而不属于左侧。故在有 unary generators 时，把形式无穷树和直接和 bar-cobar 对象混用会改变对象；conilpotence 本身不能把这个乘积自动缩回直和。
 
 ## I.8 与同伦 operad 的关系
 

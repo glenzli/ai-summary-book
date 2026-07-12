@@ -82,7 +82,11 @@ $$
 
 若 $N=0$，则 Weil-Deligne 表示退化为具有有限惯性像的 Weil 表示。
 
-**定义 5.7.** Weil-Deligne 表示 $(V,r,N)$ 称为 Frobenius-semisimple，若 $r(\operatorname{Fr}_F)$ 的半单部分已被选定，或者等价地，在同构类中以 Frobenius 半单化代替 $r$。本书局部 L 因子默认对 Frobenius-semisimple 对象定义。
+**定义 5.7.** Weil-Deligne 表示 $(V,r,N)$ 称为 Frobenius-semisimple，若一个（等价地，任意一个）几何 Frobenius lift $\Phi\in W_F$ 的算子 $r(\Phi)$ 为半单算子。一般对象的 Frobenius 半单化记为
+$$
+(V,r,N)^{\mathrm{F\text{-}ss}};
+$$
+它保持惯性限制和 $N$，并把 Frobenius 作用替换为相容的半单部分，同构类与 lift 选择无关。本书比较 LLC 和局部 L 因子时默认先取该同构类；这不等于把 $N$ 置零。
 
 **定义 5.8.** 对 Weil-Deligne 表示 $(V,r,N)$，其局部 L 因子定义为
 $$
@@ -90,6 +94,40 @@ L(s,V,r,N)
 =
 \det\left(1-q^{-s}r(\operatorname{Fr}_F)\mid (\ker N)^{I_F}\right)^{-1}.
 $$
+
+这里 $\operatorname{Fr}_F$ 表示任一几何 Frobenius lift。子空间 $(\ker N)^{I_F}$ 被该算子保持，且行列式不依赖 lift；因此右侧是 $q^{-s}$ 的有理函数，进而定义 $s\in\mathbb C$ 上的亚纯函数。
+
+**命题 5.8.1（$W_F\times\operatorname{SL}_2$ 到 Weil-Deligne 数据）.** 设
+$$
+\varphi:W_F\times\operatorname{SL}_2(\mathbb C)\to\operatorname{GL}(V)
+$$
+连续于 $W_F$、代数于 $\operatorname{SL}_2$，且 $\varphi(W_F)$ 的惯性像有限。定义
+$$
+r_\varphi(w)=
+\varphi\!\left(w,
+\begin{pmatrix}|w|^{1/2}&0\\0&|w|^{-1/2}\end{pmatrix}
+\right),
+\qquad
+N_\varphi=d\varphi
+\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+$$
+其中取正实平方根。则 $(V,r_\varphi,N_\varphi)$ 是 Weil-Deligne 表示。
+
+**证明.** 因为定义域是直积，$\varphi(w,1)$ 与 $\varphi(1,g)$ 交换。两个对角矩阵相乘且
+$|w_1w_2|=|w_1||w_2|$，故 $r_\varphi(w_1w_2)=r_\varphi(w_1)r_\varphi(w_2)$；连续性和有限惯性像由假设继承。代数表示中上三角幂零元的微分作用为 nilpotent，故 $N_\varphi$ nilpotent。最后令
+$a_w=\operatorname{diag}(|w|^{1/2},|w|^{-1/2})$。在 $\mathfrak{sl}_2$ 中
+$$
+\operatorname{Ad}(a_w)
+\begin{pmatrix}0&1\\0&0\end{pmatrix}
+=|w|\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+$$
+又因 $\varphi(w,1)$ 与 $N_\varphi$ 交换，微分函子性给出
+$r_\varphi(w)N_\varphi r_\varphi(w)^{-1}=|w|N_\varphi$。四项定义条件均成立。$\square$
+
+**外部输入定理 5.8.2（两种参数的等价）.** 上述构造在 Frobenius-semisimple 同构类上给出
+$\operatorname{GL}(V)$-值 admissible $W_F\times\operatorname{SL}_2(\mathbb C)$ 参数与
+Frobenius-semisimple Weil-Deligne 表示之间的双射。逆构造使用与 $N$ 相容的
+$\mathfrak{sl}_2$-三元组；其存在性和选择无关性依赖 Jacobson-Morozov 理论，本书不重证。
 
 **例 5.9.** 若 $V=\mathbb C$，$N=0$，且 $r$ 非分歧，则
 $$
@@ -116,7 +154,9 @@ $$
 
 参数的 $\widehat G$-共轭类才是局部 Langlands 中的不变量。
 
-**注 5.11.** 也常把 $W_F\times\operatorname{SL}_2(\mathbb C)$ 记作 $W_F'$。对 $\operatorname{GL}_n$，给出这样的参数等价于给出 $n$ 维 Frobenius-semisimple Weil-Deligne 表示。非 split 群和一般 L 群的完整定义将在还原群章节给出；此处只固定后续非分歧例子所需的 split 口径。
+**注 5.11.** 也常把 $W_F\times\operatorname{SL}_2(\mathbb C)$ 记作 $W_F'$。对 $\operatorname{GL}_n$，定理 5.8.2 给出它与 $n$ 维 Frobenius-semisimple Weil-Deligne 表示的等价；命题 5.8.1 中的
+$|w|^{1/2}$ 不能省略，否则所得 $N$ 不满足
+$r(w)Nr(w)^{-1}=|w|N$。非 split 群和一般 L 群的完整定义将在还原群章节给出；此处只固定后续非分歧例子所需的 split 口径。
 
 **定义 5.12.** 非分歧参数是指 $\varphi$ 在惯性群 $I_F$ 上平凡，且在 $\operatorname{SL}_2(\mathbb C)$ 上平凡。此时参数由半单共轭类
 $$
@@ -124,9 +164,11 @@ s_\varphi=\varphi(\operatorname{Fr}_F)\in\widehat G
 $$
 决定。
 
-**命题 5.13（Satake 参数与非分歧局部参数）.** 在第四章 Satake 同构的归一化下，非分歧不可约球表示的 Hecke 本征值给出 $\widehat G$ 中的半单共轭类；该共轭类可解释为非分歧局部 Langlands 参数在几何 Frobenius 上的值。
+**命题 5.13（Satake 参数与非分歧局部参数）.** 设 $G/F$ split connected reductive，固定 hyperspecial subgroup $K$，令 $\operatorname{vol}(K)=1$，并采用归一化 Satake 变换。非分歧不可约球表示的 Hecke 本征值给出 $\widehat G$ 中的半单共轭类；该共轭类是非分歧局部参数在几何 Frobenius 上的值。若 $G$ 仅 unramified，则必须把结论改写为
+$\widehat G\rtimes\operatorname{Fr}_F$ 中的共轭类。
 
-**证明草图.** 第四章的 Satake 同构把球 Hecke 代数识别为 $\widehat G$ 的 Weyl 不变量函数代数。不可约球表示 $\pi$ 的一维空间 $\pi^{G(\mathcal O_F)}$ 给出该交换代数的特征，即 $\widehat G$ 中半单共轭类。定义非分歧参数 $\varphi_\pi$ 使 $\varphi_\pi(\operatorname{Fr}_F)$ 等于该共轭类，并令 $\varphi_\pi$ 在 $I_F$ 和 $\operatorname{SL}_2(\mathbb C)$ 上平凡，即得到所述解释。完整证明依赖 Satake 同构。$\square$
+**证明路线（外部输入）.** 第四章的 Satake 同构把球 Hecke 代数识别为 Weyl 不变量坐标环；一维球向量空间给出该代数的特征。把对应半单类指定为
+$\varphi_\pi(\operatorname{Fr}_F)$，并令参数在 $I_F$ 和 $\operatorname{SL}_2(\mathbb C)$ 上平凡。这里 Satake 同构和一维球向量定理都是外部输入，本段不构成其证明。
 
 ## 5.5 `GL(1)` 局部 Langlands
 
@@ -186,7 +228,7 @@ $$
    $$
    其中 $\operatorname{rec}_F$ 采用第三章的一致化元到几何 Frobenius 的归一化。
 2. 对 $n=1$，该对应等于定理 5.14。
-3. 局部 L 因子和 epsilon 因子相容。
+3. 固定非平凡加法特征 $\psi:F\to\mathbb C^\times$ 后，标准局部 L 因子、epsilon 因子以及与任意 $\operatorname{GL}_m(F)$ 表示配对所得的 Rankin-Selberg 因子相容。
 4. 非分歧表示对应非分歧参数，Satake 参数等于 $\varphi_\pi(\operatorname{Fr}_F)$。
 
 本定理的完整证明超出本书当前章节范围。`GL(2)` 的特殊情形可由 Bushnell-Henniart 等理论处理；一般 `GL(n)` 由 Harris-Taylor、Henniart 等工作完成。
@@ -205,7 +247,7 @@ $$
 
 ## 5.7 一般 reductive 群的局部 Langlands 猜想
 
-**猜想 5.16（局部 Langlands，L-packet 形式）.** 设 $G/F$ 为 connected reductive group。满足定义 5.15 中连续性、半单性、代数性和 bounded/admissible 条件的 Langlands 参数
+**猜想 5.16（局部 Langlands，L-packet 形式）.** 设 $F$ 为局部域，$G/F$ 为 connected reductive group。满足第十二章定义 12.6--12.9 的连续性、投影、半单性、代数性和 relevance 条件的 Langlands 参数
 $$
 \varphi:W_F'\to{}^LG
 $$

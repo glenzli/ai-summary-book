@@ -23,13 +23,13 @@ $$
 $$
 K_S^{\mathcal M}
 =
-\operatorname{Cone}(A[\underline S]\to\mathcal M[S]).
+\operatorname{cofib}(A[\underline S]\to\mathcal M[S]).
 $$
 
 **定义 4.1.** 对象 $C\in D(A)$ 称为 $\mathcal M$-局部对象，如果
 
 $$
-R\operatorname{Hom}_A(K_S^{\mathcal M},C)\simeq0
+R\underline{\operatorname{Hom}}_A(K_S^{\mathcal M},C)\simeq0
 $$
 
 对所有极不连通 $S$ 成立。
@@ -40,9 +40,14 @@ $$
 R\operatorname{Hom}_A(N,C)\simeq0.
 $$
 
+这里刻意使用普通导出 Hom：反射伴随直接控制 mapping complexes。局部对象定义 4.1
+中的 internal Hom 消失更强，并来自 analytic ring 的本质像判别；不能仅由抽象伴随把
+本定义中的 Hom 擅自加上下划线。
+
 ## 4.2 解析化函子
 
-**输入定理 4.3（Scholze）.** 对解析环 $(A,\mathcal M)$，包含函子
+**外部输入定理 4.3（Scholze）.** 对满足第三章定义 3.3 的解析环
+$(A,\mathcal M)$，包含函子
 
 $$
 D(A,\mathcal M)\hookrightarrow D(A)
@@ -56,22 +61,27 @@ $$
 
 该函子称为解析化。
 
+**来源与边界.** 这是 S26 Proposition 7.5(ii)。反射性是 analytic 公理的结构后果，
+不是任意一族 cones 自动具有的性质。
+
 **泛性质 4.4.** 对任意 $C\in D(A)$ 和任意解析对象 $N\in D(A,\mathcal M)$，有自然同构
 
 $$
-R\operatorname{Hom}_{D(A,\mathcal M)}(L_{(A,\mathcal M)}C,N)
+R\operatorname{Hom}_A(L_{(A,\mathcal M)}C,N)
 \simeq
-R\operatorname{Hom}_{D(A)}(C,N).
+R\operatorname{Hom}_A(C,N).
 $$
 
-**证明.** 这是左伴随的定义。证毕。
+**证明.** 这是稳定增强中左伴随的 mapping-spectrum 等价，转成普通导出 Hom 复形后的
+陈述。Internal Hom 版本需要额外的 enriched/closed compatibility，不是左伴随定义本身。
+证毕。
 
 ## 4.3 Bousfield localization 表述
 
-**命题 4.5.** 若解析化函子存在，则对任意 $C$，cone
+**命题 4.5.** 若解析化函子存在，则对任意 $C$，cofiber
 
 $$
-\operatorname{Cone}(C\to L_{(A,\mathcal M)}C)
+\operatorname{cofib}(C\to L_{(A,\mathcal M)}C)
 $$
 
 是 $\mathcal M$-零化对象。
@@ -79,9 +89,9 @@ $$
 **证明.** 设 $N$ 是解析对象。由泛性质 4.4，
 
 $$
-R\operatorname{Hom}(L_{(A,\mathcal M)}C,N)
+R\operatorname{Hom}_A(L_{(A,\mathcal M)}C,N)
 \to
-R\operatorname{Hom}(C,N)
+R\operatorname{Hom}_A(C,N)
 $$
 
 是同构。把它放入 $R\operatorname{Hom}(-,N)$ 作用于三角
@@ -90,10 +100,10 @@ $$
 C\to L_{(A,\mathcal M)}C\to Q\to
 $$
 
-所得的长三角，得到
+所得的 fiber sequence，得到
 
 $$
-R\operatorname{Hom}(Q,N)\simeq0.
+R\operatorname{Hom}_A(Q,N)\simeq0.
 $$
 
 证毕。
@@ -104,7 +114,13 @@ $$
 L_{(A,\mathcal M)}A[\underline S]\simeq L_{(A,\mathcal M)}\mathcal M[S].
 $$
 
-**证明.** 解析化强制 $K_S^{\mathcal M}$ 为零。由三角
+**证明.** 先证 $L_{(A,\mathcal M)}K_S^{\mathcal M}\simeq0$。对任意局部对象
+\(N\)，命题 3.7 给出 internal Hom 消失；取全局截面后得到
+\(R\operatorname{Hom}_A(K_S^{\mathcal M},N)=0\)。泛性质 4.4 将它识别为
+\(R\operatorname{Hom}_A(LK_S^{\mathcal M},N)=0\)。取局部对象
+\(N=LK_S^{\mathcal M}\)，则恒等态射为零，故 \(LK_S^{\mathcal M}=0\)。
+
+再由 cofiber sequence
 
 $$
 A[\underline S]\to\mathcal M[S]\to K_S^{\mathcal M}\to
@@ -116,7 +132,7 @@ $$
 
 若 $A$ 交换，则 $D(A)$ 有派生张量积 $\otimes_A^L$。
 
-**输入定理 4.7（Scholze）.** $D(A,\mathcal M)$ 在
+**外部输入定理 4.7（Scholze）.** 若 \(A\) 交换，则 $D(A,\mathcal M)$ 在
 
 $$
 C\otimes_{(A,\mathcal M)}^L D
@@ -126,7 +142,9 @@ $$
 
 下成为闭对称幺半范畴。
 
-这一定理要求 localization 与张量积相容。它是 analytic rings 的结构定理之一。
+这一定理要求 localization 与张量积相容，来源为 S26 Proposition 7.5(ii)。它只给出
+导出 analytic tensor 的存在；把它识别为心脏层 tensor 的总左导出还需第三章警告 3.6
+中的 degree-zero 集中性。
 
 ## 4.5 与 solidification 的比较
 
@@ -143,7 +161,7 @@ $$
 解析化是通过杀掉
 
 $$
-\operatorname{Cone}(A[\underline S]\to\mathcal M[S])
+\operatorname{cofib}(A[\underline S]\to\mathcal M[S])
 $$
 
 来实现的 localization。这个观点统一解释了 solidification、analytic modules 和后续 liquid 结构。

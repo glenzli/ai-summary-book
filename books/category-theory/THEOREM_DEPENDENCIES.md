@@ -8,6 +8,15 @@
 - **结构依赖**：用于说明理论全貌或相干性，移除后正文仍可保留定义但会弱化结构。
 - **背景依赖**：用于定位理论，不直接参与书内证明。
 
+## 元理论假设（不编号为外部定理）
+
+| 编号 | 假设 | 位置 | 来源/口径 | 下游影响 |
+|---|---|---|---|---|
+| META-01 | 存在 $\mathcal U\in\mathcal V\in\mathcal W$ 三个嵌套 Grothendieck universes | [附录 A](A_universes_and_size.md) | SGA 4, Exposé I；本书作为元理论假设 | 全书的 Hom、Nat、函子范畴、预层、逗号图形及“小极限”层级 |
+| META-02 | 对 $\mathcal V$-小族使用选择公理 | [附录 A](A_universes_and_size.md), [第一章](01_categories_functors_natural_transformations.md), [第四章](04_adjoint_functors.md) | 通常集合论选择公理；不假设全局选择 | 从完全忠实且本质满构造拟逆；从逐对象存在的泛箭头选择左伴随对象值 |
+
+这两项控制对象和选择的元语言，不作为正文中已经证明或从外部引用的数学定理。超出 $\mathcal V$ 的对象真类不在 META-02 的结论范围内。
+
 ## 普通与结构性范畴论
 
 | 编号 | 外部输入 | 位置 | 分级 | 主要来源 | 下游影响 |

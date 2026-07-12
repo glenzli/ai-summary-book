@@ -91,7 +91,11 @@ $$
 
 **练习 2.3.** 平凡 Hecke 特征的完成 L 函数为何允许在 $s=0,1$ 出现极点。
 
-**解答.** 平凡 Hecke 特征对应 Dedekind zeta 函数 $\zeta_K(s)$。Tate thesis 的整体 zeta 积分在平凡特征情形含有来自 $K^\times\backslash\mathbb A_K^\times$ 体积方向的常数项。Poisson summation 把 $s$ 与 $1-s$ 联系起来；若在 $s=1$ 有简单极点，则函数方程强制在 $s=0$ 出现对应极点或余项。非平凡酉特征没有同样的全局常数项贡献，因此完成 L 函数通常为 entire。$\square$
+**解答.** 平凡 Hecke 特征对应 Dedekind zeta 函数 $\zeta_K(s)$。Tate thesis 的整体 zeta 积分在平凡特征情形含有来自 idele norm 方向的常数项。Poisson summation 把 $s$ 与 $1-s$ 联系起来；$s=1$ 的简单极点因而与 $s=0$ 的简单极点配对。精确的整性判准不是“特征非平凡”，而是
+$$
+\chi|_{C_K^1}\ne1.
+$$
+若酉特征为非平凡纯 norm 特征 $\chi=|\cdot|_{\mathbb A}^{it}$，完成 L 函数仍是 $\zeta_K(s+it)$ 的平移，在数域情形于 $-it,1-it$ 有极点；函数域情形还要加入 $2\pi i/\log q$ 的周期。$\square$
 
 **练习 2.4.** `GL(1)` Langlands 中三侧对象。
 
@@ -136,7 +140,7 @@ L(s,\rho)=\left(1-\rho(\operatorname{Fr}_F)q^{-s}\right)^{-1}
 $$
 若改用算术 Frobenius $\operatorname{Frob}^{\operatorname{arith}}_F=\operatorname{Fr}_F^{-1}$，同一个表示在算术 Frobenius 上的值为 $\chi(\varpi)^{-1}$，公式必须相应改写。$\square$
 
-**练习 3.3.** 解释全局类域论同构为何与局部 Artin 映射相容。
+**练习 3.3.** 解释全局类域论在有限 Abel 商上的同构为何与局部 Artin 映射相容。
 
 **解答.** 全局 reciprocity map
 $$
@@ -1492,17 +1496,17 @@ $$
 
 ## 附录 AC
 
-**练习 AC.1.** 说明 Fargues-Fontaine 曲线如何把 Newton slope 几何化。
+**练习 AC.1.** 在 AC.4 的完备代数闭设定下，说明 Fargues-Fontaine 曲线如何把 Newton slope 几何化。
 
-**解答.** Isocrystal 带有 Frobenius slope decomposition，其数值由 Newton polygon 记录。Fargues-Fontaine construction 把 isocrystal 送到曲线 $X_{FF}$ 上的 vector bundle；slope 为 $\lambda$ 的 isocrystal 分量对应 semistable vector bundle $\mathcal O(\lambda)$ 型分量。因此 isocrystal 的 Newton slope 在几何侧变为 vector bundle 的 Harder-Narasimhan slope，Newton polygon 变为 Harder-Narasimhan polygon。$\square$
+**解答.** 固定 AC.4 的完备代数闭非 Archimedean 扩张 $C/F$、其 tilt $C^\flat$ 与曲线 $X_{FF}=X_{C^\flat,F}$。Isocrystal 带有 Frobenius slope decomposition，其数值由 Newton polygon 记录。Fargues-Fontaine construction 把 isocrystal 送到 $X_{FF}$ 上的 vector bundle；slope 为 $\lambda$ 的 isocrystal 分量对应 semistable vector bundle $\mathcal O(\lambda)$ 型分量。因此 isocrystal 的 Newton slope 在几何侧变为 vector bundle 的 Harder-Narasimhan slope，Newton polygon 变为 Harder-Narasimhan polygon。若基底未代数闭，这个分解须先在完备代数闭扩张上取得并附加 descent datum。$\square$
 
-**练习 AC.2.** 解释 $B(G)$ 与 $G$-bundles 的关系。
+**练习 AC.2.** 在 AC.4 的完备代数闭设定下，解释 $B(G)$ 与 $G$-bundles 同构类的关系，并说明一般 perfectoid 基底为何还需要 descent 数据。
 
-**解答.** 对局部域 $F$ 上的 connected reductive group $G$，Kottwitz 集合 $B(G)$ 分类 $G$-isocrystals up to $\sigma$-conjugacy。Fargues-Fontaine 理论把这些 $G$-isocrystals 解释为 $X_{FF}$ 上的 $G$-bundles：
+**解答.** 固定 AC.4 的完备代数闭几何点。对局部域 $F$ 上的 connected reductive group $G$，Kottwitz 集合 $B(G)$ 分类 $G$-isocrystals up to $\sigma$-conjugacy。Fargues-Fontaine 理论给出同构类的双射
 $$
 b\in B(G)\longmapsto \mathcal E_b.
 $$
-Newton point 给出 $\mathcal E_b$ 的 Harder-Narasimhan type，Kottwitz invariant 给出连通分量数据。Basic 元素对应 semistable $G$-bundles，其 automorphism group 是内形式 $J_b(F)$。$\square$
+Newton point 给出 $\mathcal E_b$ 的 Harder-Narasimhan type，Kottwitz invariant 给出连通分量数据。Basic 元素对应 semistable $G$-bundles，其 automorphism group 是内形式 $J_b(F)$。对一般 perfectoid 基底，$\operatorname{Bun}_G(S)$ 还记录 families 与 v-descent 数据，不能直接等同于集合 $B(G)$。$\square$
 
 **练习 AC.3.** 说明 local Shimura variety cohomology 为什么同时有 $G(F)$、$J_b(F)$ 和 $W_F$ 作用。
 

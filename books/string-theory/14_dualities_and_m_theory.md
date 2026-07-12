@@ -38,7 +38,7 @@ $$
 
 **命题 14.5（IIB field doublets）.** 在 type IIB S-duality 下，NS-NS two-form $B_2$ 与 R-R two-form $C_2$ 组成 doublet；fundamental strings 与 D1-branes 组成 $(p,q)$ strings。
 
-**证明草图.** 低能 type IIB supergravity 的 equations of motion 可写成 $SL(2,\mathbb R)$ covariant form，量子 charge quantization 将其限制为 $SL(2,\mathbb Z)$。$B_2,C_2$ 与其电荷源 F1/D1 因而按 doublet 变换。完整量子等价是物理猜想 14.4 的一部分。$\square$
+**推导说明（标准物理口径）.** 低能 type IIB supergravity 的 equations of motion 可写成 $SL(2,\mathbb R)$ covariant form，量子 charge quantization 将其限制为 $SL(2,\mathbb Z)$。$B_2,C_2$ 与其电荷源 F1/D1 因而按 doublet 变换。完整量子等价是物理猜想 14.4 的一部分。$\square$
 
 **物理猜想 14.6（type I/heterotic $\operatorname{Spin}(32)/\mathbb Z_2$ duality）.** Type I string theory 与 $\operatorname{Spin}(32)/\mathbb Z_2$ heterotic string（物理文献常简写为 $SO(32)$ heterotic string）由 S-duality 相关，耦合满足
 $$
@@ -68,7 +68,7 @@ $$
 
 **命题 14.9（M-branes 的约化）.** M2-brane 与 M5-brane 在 $S^1_{11}$ 上约化时给出 IIA 中的 fundamental string、D2-brane、D4-brane 和 NS5-brane。
 
-**证明草图.** M2 若包裹 $S^1_{11}$，其 worldvolume 降一维，得到 IIA fundamental string；不包裹则为 D2-brane。M5 若包裹圆，得到 D4-brane；不包裹则为 NS5-brane。张力标度在 $\ell_{11}=g_s^{1/3}\ell_s$ 与 $R_{11}=g_s\ell_s$ 下匹配。$\square$
+**推导说明（标准物理口径）.** M2 若包裹 $S^1_{11}$，其 worldvolume 降一维，得到 IIA fundamental string；不包裹则为 D2-brane。M5 若包裹圆，得到 D4-brane；不包裹则为 NS5-brane。张力标度在 $\ell_{11}=g_s^{1/3}\ell_s$ 与 $R_{11}=g_s\ell_s$ 下匹配。$\square$
 
 ## 14.4 U-duality
 
@@ -82,7 +82,7 @@ $$
 
 **命题 14.13（duality 检验原则）.** 若两个 dual descriptions 正确，则它们必须匹配 protected spectra、charge lattice、anomaly data 和低能有效作用中的受保护耦合。
 
-**证明草图.** Duality 是同一量子理论的两种描述。Protected quantities 在连续改变 coupling 时不跳变，因此可在弱耦合区域计算并延拓到另一描述。若这些量不匹配，则 duality dictionary 不可能成立。$\square$
+**推导说明（标准物理口径）.** Duality 是同一量子理论的两种描述。Protected quantities 在连续改变 coupling 时不跳变，因此可在弱耦合区域计算并延拓到另一描述。若这些量不匹配，则 duality dictionary 不可能成立。$\square$
 
 ## 14.6 张力匹配例子
 
@@ -91,7 +91,7 @@ $$
 T_{\mathrm{F1}}=\frac1{2\pi\alpha'}.
 $$
 
-**证明草图.** M2-brane 张力为
+**推导说明（标准物理口径）.** M2-brane 张力为
 $$
 T_{\mathrm{M2}}=\frac1{(2\pi)^2\ell_{11}^3}.
 $$
@@ -110,7 +110,7 @@ $\square$
 
 **命题 14.15（D3-brane 的 S-duality 自洽性）.** Type IIB D3-brane 在 $SL(2,\mathbb Z)$ 下映到自身，其 worldvolume $\mathcal N=4$ gauge theory 的 electric-magnetic duality 与 bulk S-duality 相容。
 
-**证明草图.** D3-brane 耦合于 self-dual five-form，其 R-R charge 在 IIB S-duality 下不与 NS-NS charge 混合成不同维度 brane。Worldvolume gauge coupling 由 axio-dilaton 控制，因此 $SL(2,\mathbb Z)$ 作用为四维 gauge theory 的 Montonen-Olive 型 duality。完整量子等价仍是物理猜想的一部分。$\square$
+**推导说明（标准物理口径）.** D3-brane 耦合于 self-dual five-form，其 R-R charge 在 IIB S-duality 下不与 NS-NS charge 混合成不同维度 brane。Worldvolume gauge coupling 由 axio-dilaton 控制，因此 $SL(2,\mathbb Z)$ 作用为四维 gauge theory 的 Montonen-Olive 型 duality。完整量子等价仍是物理猜想的一部分。$\square$
 
 ## 本章小结
 

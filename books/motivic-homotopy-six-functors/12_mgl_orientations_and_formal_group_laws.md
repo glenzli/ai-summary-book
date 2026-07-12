@@ -32,15 +32,25 @@ $$
 
 ## 12.2 泛性质
 
-**外部输入定理 12.4（MGL universality）.** 对域上或合适基上的 commutative motivic ring spectrum `E`，给出 ring spectrum map
+**外部输入定理 12.4（MG-12.4，MGL universality）.** 设
+`S=\operatorname{Spec}(k)`，其中 `k` 为域；设 `E` 为交换
+`\mathbb P^1`-ring spectrum。在 motivic stable homotopy category 中，赋值
+`\varphi\mapsto\varphi(th^{MGL})` 给出自然双射
 
 $$
-MGL\longrightarrow E
+\operatorname{Hom}_{\mathrm{CMon}(\operatorname{Ho}\mathbf{SH}(k))}
+(MGL,E)
+\cong
+\{E\text{ 的 orientations}\}.
 $$
 
-等价于给出 `E` 的 orientation。
+因此这是同伦范畴中 monoid-map **集合**的分类，不是任意基上
+`\operatorname{CAlg}` mapping **space** 的等价。
 
-**依赖源.** Panin-Pimenov-Röndigs；更一般基和 infinity-categorical 版本需另行定位。
+**精确来源与边界.** Panin--Pimenov--Röndigs, *A universality theorem for
+Voevodsky's algebraic cobordism spectrum*, Theorem 2.3.1，
+`https://arxiv.org/abs/0709.4116`。更一般 regular bases 的 published 版本和
+现代 infinity-categorical refinement 必须分别核对，不能从上述集合双射推出。
 
 **命题 12.5.** 若 `E` 已定向，则存在自然的 first Chern class
 
@@ -68,7 +78,9 @@ $$
 
 ## 12.3 Projective bundle formula 与 Chern classes
 
-**外部输入定理 12.7（Projective bundle formula）.** 若 `E` 是 oriented motivic ring spectrum，`V\to X` 为秩 `r` 向量丛，则
+**外部输入定理 12.7（定向理论 package）.** 在 Panin--Pimenov--Röndigs
+Section 1 的 oriented representable cohomology theory 口径中，若 `E` 已
+定向，`V\to X` 为秩 `r` 向量丛，则 projective bundle map 给出
 
 $$
 E^{*,*}(\mathbb P(V))\simeq
@@ -101,15 +113,20 @@ $$
 
 ## 12.4 HZ、KGL 与 MGL 的比较
 
-**外部输入定理 12.11（Hopkins-Morel 型定理）.** 在合适基和系数假设下，`MGL` 对 Lazard generators 的商与 `H\mathbb Z` 相比较；例如在特征指数反演后，有形如
+**外部输入定理 12.11（MG-12.11，Hopkins--Morel 型定理）.** 设 `S`
+essentially smooth over a field，且该域的 characteristic exponent 为 `c`。
+若 `a_1,a_2,\ldots` 是 Lazard ring 的正次数 generators，则 canonical map
 
 $$
-MGL/(a_1,a_2,\ldots)\simeq H\mathbb Z
+MGL/(a_1,a_2,\ldots)[1/c]
+\longrightarrow H\mathbb Z[1/c]
 $$
 
-的等价。
+是 `\mathbf{SH}(S)` 中的等价。当 `c=1` 时无需反演。
 
-**依赖源.** Hopkins-Morel theorem 的 motivic 版本；Hoyois "From algebraic cobordism to motivic cohomology"；Spitzweck 的一般基构造。
+**精确来源与边界.** Marc Hoyois, *From algebraic cobordism to motivic
+cohomology*, Theorem 7.12，`https://arxiv.org/abs/1210.7182`。本书不去掉
+正特征中的 `1/c`，也不把此定理推广到任意基概形。
 
 **命题 12.12.** 若定理 12.11 的等价成立，则 `H\mathbb Z` 继承 additive formal group law。
 
@@ -119,7 +136,8 @@ $$
 c_1(L\otimes M)=c_1(L)+c_1(M).
 $$
 
-该结论依赖定理 12.7 的具体识别。`\square`
+该结论依赖定理 12.7 的 Chern-class 坐标和定理 12.11 的具体商识别。
+`\square`
 
 **外部输入定理 12.13.** `KGL` 带有 multiplicative orientation，其 formal group law 在合适坐标下为 multiplicative formal group law。
 
@@ -147,7 +165,11 @@ $$
 
 ## 12.6 本章小结
 
-`MGL` 是 oriented motivic ring spectra 的 universal source。Orientation 给出 Chern classes 和 formal group law；`H\mathbb Z` 与 `KGL` 分别对应 additive 和 multiplicative 方向的特殊化。Hopkins-Morel 型比较和 Thom isomorphism 是强外部输入，必须保留基和系数假设。
+`MGL` 的本章泛性质是域上 motivic homotopy category 中 monoid-map 集合的
+分类，不是未加说明的 infinity-categorical mapping-space 等价。Hopkins--Morel
+比较限于 essentially smooth bases，并在正特征反演 characteristic exponent。
+Orientation 的 projective bundle、Chern class 与 Thom 后果均在所声明的
+oriented-cohomology package 内使用。
 
 ## 练习
 

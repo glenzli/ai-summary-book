@@ -10,7 +10,7 @@
 
 ## 14.1 波算子
 
-**定义 14.1.** 设 $H_0$ 为自由 Hamiltonian，$H=H_0+V$ 为相互作用 Hamiltonian。若强极限存在，定义 Moller 波算子
+**定义 14.1.** 设 $H_0$ 为自由 Hamiltonian，$H=H_0+V$ 为相互作用 Hamiltonian。若强极限存在，定义 Møller 波算子
 $$
 \Omega_\pm=\operatorname{s-lim}_{t\to\pm\infty}e^{itH}e^{-itH_0}.
 $$
@@ -32,17 +32,47 @@ $$
 
 ## 14.2 Born 近似
 
-**公式 14.5.** 在三维中，对弱势 $V$，一阶 Born 散射振幅为
+**推导 14.5（第一 Born 振幅）.** 设 $m>0$。在三维中取
+$$
+H_0=-\frac{\Delta}{2m},
+\qquad E=\frac{k^2}{2m},
+$$
+并采用散射态渐近归一化
+$$
+\psi_{\mathbf k}^{(+)}(x)
+=e^{i\mathbf k\cdot x}
++f(\mathbf k',\mathbf k)\frac{e^{ikr}}{r}+o(r^{-1}),
+\qquad
+\mathbf k'=k\frac{x}{r}.
+$$
+若 $\int_{\mathbb R^3}(1+|x|)|V(x)|\,dx<\infty$，所选能量不在阈值或共振等使出射 Lippmann--Schwinger 方程失去唯一性的例外集合中，且以自由入射波替换积分中的精确散射态是一致的一阶近似，则
 $$
 f(\mathbf k',\mathbf k)
 =-\frac{m}{2\pi}\int_{\mathbb R^3}e^{-i(\mathbf k'-\mathbf k)\cdot x}V(x)\,dx.
 $$
 这里采用 $\hbar=1$。
 
-**定义 14.6.** 微分截面定义为
+**推导.** 定态 Schrodinger 方程等价于
+$$
+(\Delta+k^2)\psi=2mV\psi.
+$$
+出射 Green 函数 $G_k^+(x)=e^{ik|x|}/(4\pi|x|)$ 满足 $(\Delta+k^2)G_k^+=-\delta$，故
+$$
+\psi(x)=e^{i\mathbf k\cdot x}
+-2m\int G_k^+(x-y)V(y)\psi(y)\,dy.
+$$
+在 $r=|x|\to\infty$ 时，先对有界的 $y$ 区域展开
+$$
+G_k^+(x-y)
+=\frac{e^{ikr}}{4\pi r}e^{-i\mathbf k'\cdot y}+o(r^{-1}).
+$$
+加权 $L^1$ 条件控制大 $|y|$ 尾部。再作第一 Born 替换 $\psi(y)\mapsto e^{i\mathbf k\cdot y}$，比较 $e^{ikr}/r$ 的系数即得公式。这里证明的是给定 Lippmann--Schwinger 方程后的首阶迭代；该积分方程的存在唯一性与 Born 级数收敛仍属于散射理论边界。$\square$
+
+**定义 14.6.** 对弹性散射 $|\mathbf k'|=|\mathbf k|$，并采用上面的单位入射平面波归一化，微分截面定义为
 $$
 \frac{d\sigma}{d\Omega}=|f(\mathbf k',\mathbf k)|^2.
 $$
+若入射与出射通道的速度不同，概率流之比还会产生 $v_f/v_i$ 因子，不能沿用这一弹性公式。
 
 **命题 14.7.** 若 $V$ 为球对称函数，则 Born 振幅只依赖动量转移大小 $q=|\mathbf k'-\mathbf k|$。
 
@@ -95,7 +125,7 @@ $$
 
 ## 本章小结
 
-散射理论比较真实演化和自由演化在无穷远过去与未来的差异。波算子和 $S$ 矩阵是严格对象；Born 近似给出弱势下的可计算振幅。完整存在性和完备性属于外部输入。
+散射理论比较真实演化和自由演化在无穷远过去与未来的差异。波算子和 $S$ 矩阵是严格对象；Born 近似是 Lippmann--Schwinger 方程的首阶迭代，而“势很弱”还必须排除阈值、共振或长程效应破坏该迭代。完整存在性和完备性属于外部输入。
 
 ## 练习
 

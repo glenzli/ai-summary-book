@@ -26,11 +26,11 @@
 
 **命题 9.2（IIA/IIB 的低能 supergravity 类型）.** Type IIA 的十维低能极限为非手征 $N=2$ supergravity；type IIB 的十维低能极限为手征 $N=2$ supergravity。
 
-**证明草图.** R sector ground states 是十维 Majorana-Weyl spinors。IIA 中左右 spinors chirality 相反，因此两个 supersymmetry generators chirality 相反，理论非手征。IIB 中左右 chirality 相同，因此两个 supersymmetry generators chirality 相同，理论手征。低能极限只保留 massless string states，正好组织为相应 $N=2$ supergravity multiplets。$\square$
+**推导说明（标准物理口径）.** R sector ground states 是十维 Majorana-Weyl spinors。IIA 中左右 spinors chirality 相反，因此两个 supersymmetry generators chirality 相反，理论非手征。IIB 中左右 chirality 相同，因此两个 supersymmetry generators chirality 相同，理论手征。低能极限只保留 massless string states，正好组织为相应 $N=2$ supergravity multiplets。$\square$
 
 **命题 9.3（R-R potentials 的次数 parity）.** 在民主形式记号中，type IIA 的 R-R field strengths 为偶次数，R-R potentials 为奇次数；type IIB 的 R-R field strengths 为奇次数，R-R potentials 为偶次数，并且五形式场强满足 self-duality condition。
 
-**证明草图.** R-R states 来自左右 Ramond spinors 的张量积。十维 Clifford algebra 给出 spinor bilinear 与 antisymmetric forms 的对应。相反 chirality 的 spinor bilinear 分解为奇次数 potentials，相同 chirality 的 spinor bilinear 分解为偶次数 potentials。IIB 的中间次数五形式由 chirality 和 field equation 共同施加 self-duality。$\square$
+**推导说明（标准物理口径）.** R-R states 来自左右 Ramond spinors 的张量积。十维 Clifford algebra 给出 spinor bilinear 与 antisymmetric forms 的对应。相反 chirality 的 spinor bilinear 分解为奇次数 potentials，相同 chirality 的 spinor bilinear 分解为偶次数 potentials。IIB 的中间次数五形式由 chirality 和 field equation 共同施加 self-duality。$\square$
 
 ## 9.2 Massless spectrum
 
@@ -51,7 +51,7 @@ R-R sector 包含 differential-form gauge potentials：
 - IIA：$C_1,C_3$，民主记号中还包括其 Hodge dual potentials；
 - IIB：$C_0,C_2,C_4$，其中 $F_5$ 受 self-duality constraint。
 
-**证明草图.** NS-NS sector 与玻色闭弦第一激发层相同，张量分解给出 symmetric traceless、antisymmetric 和 trace。R-R sector 由左右 spinor ground states 的张量积给出；用 gamma matrices 把 spinor bilinear 展开为 forms，再按 chirality projection 选择允许的次数。$\square$
+**推导说明（标准物理口径）.** NS-NS sector 与玻色闭弦第一激发层相同，张量分解给出 symmetric traceless、antisymmetric 和 trace。R-R sector 由左右 spinor ground states 的张量积给出；用 gamma matrices 把 spinor bilinear 展开为 forms，再按 chirality projection 选择允许的次数。$\square$
 
 **注 9.6（fermionic fields）.** NS-R 与 R-NS sectors 给出 gravitini 和 dilatini。它们的 chirality pattern 与 IIA/IIB 的 supersymmetry generators 一致。
 
@@ -67,7 +67,11 @@ R-R sector 包含 differential-form gauge potentials：
 
 **命题 9.6B（degrees of freedom matching）.** Type II massless bosonic 与 fermionic on-shell degrees of freedom 相等。
 
-**证明草图.** 十维 massless little group 为 $SO(8)$。NS-NS sector 给出 $8_v\otimes8_v$ 的分解；R-R sector 给出左右 spinor 表示的张量积。GSO projection 选择 chirality 后，bosonic sectors 的总维数与 NS-R/R-NS fermionic sectors 的总维数匹配。这是 spacetime supersymmetry 的谱层面检验。$\square$
+**推导说明（标准物理口径）.** 十维 massless little group 为 $SO(8)$。NS-NS sector 给出
+$$
+8_v\otimes8_v=35_v\oplus28\oplus1,
+$$
+共 $64$ 个 bosonic on-shell states，分别对应 graviton、$B_2$ 与 dilaton。R-R sector 是两个八维 chiral spinor representations 的张量积，也有 $64$ 个 states；按同手征或异手征分解为 IIB 或 IIA 的相应微分形式。因此 bosons 共 $128$ 个 states。NS-R 与 R-NS 各为 $8_v\otimes8_{s/c}$，各有 $64$ 个 fermionic states，总计同样为 $128$。$\square$
 
 ## 9.3 Green-Schwarz target superspace
 
@@ -107,15 +111,19 @@ Wess-Zumino term 的精确符号依赖 IIA/IIB chirality convention，其作用�
 
 ## 9.4 Light-cone gauge 自由度计数
 
-**命题 9.10（GS light-cone 自由度匹配）.** 在十维平坦背景中，light-cone gauge 下 GS string 的物理横向 bosonic degrees of freedom 为 $8$，fermionic degrees of freedom 也为 $8$。
+**命题 9.10（GS light-cone 自由度匹配）.** 在十维平坦背景中，light-cone gauge 下每个左右移动 sector 都有 $8$ 个 transverse bosonic oscillator polarizations 和 $8$ 个 fermionic components。对闭弦整体而言，$X^i$ 有左右两套 modes，fermions 也有左右两组各 $8$ 个分量。
 
-**证明草图.** Worldsheet diffeomorphism 和 Virasoro constraints 消去 $X^\pm$，留下 $D-2=8$ 个 transverse coordinates $X^i$。十维 Majorana-Weyl spinor 初始有 $16$ 个实分量，kappa symmetry 消去一半，light-cone condition 再给出 $8$ 个物理 fermionic components。$\square$
+**推导说明（标准物理口径）.** Worldsheet diffeomorphism 与 Virasoro constraints 解出 $X^\pm$，留下 $D-2=8$ 个 transverse coordinates $X^i$；每个 $X^i$ 含左右移动 modes。两份十维 Majorana-Weyl spinors $\theta^A$ 各有 $16$ 个实分量。Kappa gauge 可取
+$$
+\Gamma^+\theta^A=0,
+$$
+它对每个 $A$ 将 $16$ 个分量减为 $8$ 个，而不是在此后再作一次独立减半。运动方程使两组剩余 fermions 分别成为 left-moving 与 right-moving fields。因此每个手征 sector 都是 $8$ 个 bosonic oscillator polarizations 与 $8$ 个 fermionic components 匹配，闭弦整体则有两套这样的匹配。$\square$
 
 **注 9.11（RNS 与 GS 的互补性）.** RNS formalism 使 worldsheet superconformal symmetry 和 covariant quantization 更直接；GS formalism 使 spacetime supersymmetry 更直接，但 covariant quantization 较困难。Pure spinor formalism 可视为二者之间的现代桥梁，本书只在后续接口处提及。
 
 **命题 9.11A（light-cone GS spectrum 的基态）.** Light-cone GS quantization 中，横向 bosons $X^i$ 与横向 fermions $S^a$ 的 oscillator Fock space 直接生成 type II supergravity massless multiplet。
 
-**证明草图.** Light-cone gauge 中物理 fields 只带 $SO(8)$ transverse indices。Fermion zero modes 生成 $SO(8)$ Clifford algebra，其 ground-state representation 与 bosonic oscillator first levels 组合为 type II supergravity multiplet。IIA/IIB 的差异由左右 fermion zero-mode chirality 决定。$\square$
+**推导说明（标准物理口径）.** Light-cone gauge 中物理 fields 只带 $SO(8)$ transverse indices。每个手征 sector 的八个 fermion zero modes 生成 $SO(8)$ Clifford algebra；其不可约 ground-state multiplet 分解为一个八维 bosonic representation 与一个八维 fermionic representation，通常记为 $8_v\oplus8_{s/c}$。闭弦质量为零的 ground states 是左右两个该 multiplet 的张量积，直接给出 $128$ 个 bosonic 与 $128$ 个 fermionic type II supergravity states。左右 fermion zero-mode chirality 相反或相同，分别产生 IIA 或 IIB。这里不需要再施加一次 bosonic oscillator 激发。$\square$
 
 ## 9.5 Supersymmetry algebra 与 BPS bound
 
@@ -127,7 +135,7 @@ M\ge |Z|.
 $$
 饱和该界的态保持部分 supersymmetry，其质量和 charge 在连续耦合变化下受保护。
 
-**证明草图.** Supersymmetry algebra 的 anticommutator $\{Q,Q^\dagger\}$ 是正算子。把 central charge 对角化后，正性给出 $M-|Z|\ge0$。饱和时某些 supercharges 湮灭该态，故得到 shortened multiplet。$\square$
+**推导说明（标准物理口径）.** Supersymmetry algebra 的 anticommutator $\{Q,Q^\dagger\}$ 是正算子。把 central charge 对角化后，正性给出 $M-|Z|\ge0$。饱和时某些 supercharges 湮灭该态，故得到 shortened multiplet。$\square$
 
 **例 9.14（D$p$-brane 与 R-R charge）.** Type II 中 D$p$-brane 电耦合于 R-R potential $C_{p+1}$。因此 IIA 只允许偶维空间 branes $p=0,2,4,6,8$，IIB 只允许奇维空间 branes $p=-1,1,3,5,7,9$，与第 12 章 WZ coupling 的 form degree 相容。
 
@@ -144,4 +152,3 @@ Type II strings 的核心区别是左右 Ramond chirality。RNS formalism 给出
 **练习 9.2.** 用 light-cone gauge 计数十维 GS string 的 transverse bosons 与 fermions。
 
 **练习 9.3.** 根据 R-R potential 的 form degree 判断 IIA/IIB 中允许的 D-brane parity。
-

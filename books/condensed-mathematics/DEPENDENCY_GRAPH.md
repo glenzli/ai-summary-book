@@ -8,6 +8,7 @@
 
 ```mermaid
 flowchart TD
+  A0["固定 universe、κ 截断与小骨架"] --> A["站点与 sheaf 条件"]
   A["站点与 sheaf 条件"] --> B["凝聚集合"]
   A --> C["阿贝尔群值 sheaf"]
   C --> D["凝聚阿贝尔群"]
@@ -16,7 +17,9 @@ flowchart TD
   D --> G["solid 对象"]
   F --> G
   G --> H["solid 张量与 solid 模"]
-  H --> I["analytic rings"]
+  D --> I["analytic rings"]
+  F --> I
+  H -.-> I
   I --> J["liquid 向量空间"]
   I --> K["Huber pair 与 rational localization"]
   K --> L["f_! 与相干对偶"]
@@ -34,6 +37,8 @@ flowchart TD
 
 ```mermaid
 flowchart TD
+  V1_A["附录 A universe、κ 截断"] --> V1_1
+  V1_A --> V1_2
   V1_1["01 站点、覆盖、sheaf"] --> V1_3["03 凝聚集合"]
   V1_2["02 CHaus/profinite"] --> V1_3
   V1_1 --> V1_C["附录 C/H sheafification 与正合性"]
@@ -77,23 +82,23 @@ flowchart TD
 | rational Cech descent | Cech nerve、totalization、局部等价和局部零对象检测 | Scholze rational descent |
 | 生成元检验 | 自然变换、全忠实、等价可由紧生成族检测 | 具体 solid/analytic 生成元 |
 | analytic ring 检查表 | cone 判别、有限测试对象、失败模式 | 反射性、张量理想、rational descent 输入 |
-| liquid 边界 | 拓扑向量空间凝聚化、Banach 非闭像、Fréchet 类型检查 | liquid realization 输入 |
+| liquid 边界 | 拓扑向量空间凝聚化、Fréchet 逆极限、局部提升 exactness | 经典完备空间的 liquid membership |
 | 幺半 Bousfield 局部化 | 核为张量理想推出幺半下降、交换代数和相对张量积公式 | presentable localization / solid-analytic 核张量理想 |
 | 闭幺半局部化 | 局部对象内部 Hom、dualizable 对象比较、右伴随 Hom 边界 | closed monoidal structure |
 | Solid localization 生成核 | solid 对象为 $K_S$-局部对象、核由 cones 生成、solidification 泛性质 | solid 反射存在性 / 核张量理想 |
 | Analytic rational descent | analytic 张量、rational localization、对象和态射 gluing | rational Čech descent 输入 |
 | 可展示稳定局部化 | 幂等性、local/acyclic 正交、kernel localizing、局部等价判别 | 可访问反射局部化存在性 |
-| Liquid-Fréchet 闭值域 | 闭像推出 Hausdorff cohomology、Hodge 分解推出有限维、realization 比较 | 椭圆 Fredholm / liquid realization |
+| Liquid-Fréchet 严格比较 | 闭像推出 Hausdorff cohomology、局部提升推出凝聚 cohomology 比较 | 经典空间 membership / 连续 Hodge-Fredholm splitting |
 | Solid 主定理包 | solid 局部对象、solid 张量、solid 环与模、生成元检验的统一闭包 | solid 反射局部化 / 核张量理想 / profinite 测度张量 |
 | Analytic 主定理包 | analyticization 泛性质、analytic 张量、Huber pair localization、descent 后果 | analytic 反射局部化 / rational Čech descent |
-| Liquid 主定理包 | liquid realization 后的闭值域 cohomology、Fredholm perfect 性、Dolbeault 类型闭合 | \(p\)-liquid analytic ring / realization / Fredholm-Hodge |
-| 第二卷统一闭包 | solid、analytic、liquid 三条主线的层级接口和第三卷使用规则 | Solid/Analytic/Liquid 主定理包 |
+| Liquid 主定理包 | 凝聚严格复形的 cohomology、Fredholm perfect 性、Dolbeault 类型闭合 | \(p\)-liquid analytic ring / classical-space membership / Fredholm-Hodge |
+| 第二卷统一闭包 | solid 与 liquid 作为不同 analytic rings 的接口和第三卷使用规则 | Solid/Analytic/Liquid 主定理包 |
 | 第二卷出版级闭包审查 | 定义、输入、证明、边界、接口和练习答案状态矩阵 | 第二卷附录 Q-AA 与全书输入登记 |
 | Solidification 反射存在性 | 集合生成局部化、局部对象判别、kernel localizing、Dirac-to-measure 正交 | \(D(\mathbf{CondAb})\) 可展示性 / Scholze solidification 识别 |
 | Solid kernel 张量理想性 | 张量理想生成元判别、自由凝聚对象张量泛性质、归约到测度张量计算 | profinite 测度张量公式 / \(\ker L^\square=\mathcal N_\square\) |
 | Analytic localization | analytic cone 局部对象、analyticization 泛性质、张量下降的形式后果、solid 特例 | analytic ring 公理推出 localization 与 kernel 张量理想 |
 | Rational Čech descent | Čech nerve、mapping-space descent 推全忠实、对象 gluing 推本质满、生成元 descent 形式 | Huber rational acyclicity / rational localization compatibility |
-| Liquid realization | 拓扑向量空间凝聚化、闭值域 Fréchet 商、realization 后 cohomology 比较、Fredholm perfect 性 | liquid realization exactness / Dolbeault-Fredholm-Hodge |
+| 经典空间的 liquid 接口 | 拓扑向量空间凝聚化、membership/strictness 分离、cohomology 比较、Fredholm perfect 性 | classical-space membership / Dolbeault-Fredholm-Hodge |
 | Scholze/Clausen-Scholze 核心图谱 | 将 condensed、solid、analytic、liquid、\(f_!\) 与复几何建模组织为主线核心 | 本表所有 Scholze/Clausen-Scholze 输入 |
 
 ## 卷三关键依赖

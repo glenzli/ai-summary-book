@@ -5,6 +5,7 @@
 ## 普通范畴论
 
 - Saunders Mac Lane, *Categories for the Working Mathematician*, 2nd ed., Springer, 1998.
+- Alexander Grothendieck et al., *Théorie des topos et cohomologie étale des schémas (SGA 4)*, Exposé I（Grothendieck universe 与大小约定）。
 - Francis Borceux, *Handbook of Categorical Algebra*, Vols. 1-3, Cambridge University Press, 1994.
 - Steve Awodey, *Category Theory*, 2nd ed., Oxford University Press, 2010.
 - Tom Leinster, *Basic Category Theory*, Cambridge University Press, 2014; arXiv:1612.09375.
@@ -23,7 +24,6 @@
 - Brian Day, *On Closed Categories of Functors*, Reports of the Midwest Category Seminar IV, Lecture Notes in Mathematics 137, Springer, 1970.
 - Jiří Adámek and Jiří Rosický, *Locally Presentable and Accessible Categories*, Cambridge University Press, 1994.
 - Peter Johnstone, *Sketches of an Elephant: A Topos Theory Compendium*, Oxford University Press, 2002.
-- Alexander Grothendieck et al., *Théorie des topos et cohomologie étale des schémas (SGA 4)*.
 - N. Popescu, *Abelian Categories with Applications to Rings and Modules*, Academic Press, 1973.
 
 ## 模型范畴与同伦代数

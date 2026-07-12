@@ -33,7 +33,10 @@ X\to\operatorname{Spf}(A/I).
 $$
 Affine 情形写作 $X=\operatorname{Spf}(R)$，其中 $R$ 是 $p$-complete $A/I$-algebra。
 
-**警告 G.5.** $X$ over $A/I$ 并不意味着 $X$ over $A$。Prismatic site 正是通过 prisms $(B,J)$ 和 maps $\operatorname{Spf}(B/J)\to X$ 来探测 $X$ 的 prism thickenings。
+**警告 G.5.** $X$ over $A/I$ 并不意味着 $X$ over $A$。在固定 base prism
+的 relative site 中，prism-map rigidity 给出 probe $(B,IB)$；site 通过
+$\operatorname{Spf}(B/IB)\to X$ 探测 $X$ 的 prismatic thickenings。
+Absolute site 上才保留随 probe 变化的记号 $(B,J)$。
 
 ## G.3 Grothendieck site
 
@@ -90,4 +93,3 @@ d=\sum_{r=0}^{n+1}(-1)^r d_r$。
 **练习 G.2.** 证明 sheaf 条件中的 equalizer 对单覆盖同构族自动成立。
 
 **练习 G.3.** 给出一个理由，说明为什么 prismatic cohomology 必须用 derived global sections 定义。
-

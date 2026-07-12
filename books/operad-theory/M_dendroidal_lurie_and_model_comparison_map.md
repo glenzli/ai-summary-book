@@ -45,7 +45,7 @@ $$
 
 **定义 M.6.** Dendroidal infinity-operad 是 inner Kan dendroidal set。Strict operad 的 dendroidal nerve 有唯一 inner horn fillers；Moerdijk--Weiss 定位为 MW-4。
 
-**外部输入定理 M.7.** Dendroidal sets 上存在 Cisinski-Moerdijk operadic model structure，其 fibrant objects 为 inner Kan dendroidal sets，cofibrations 为 normal monomorphisms。
+**外部输入定理 M.7（Cisinski--Moerdijk operadic model structure；CM-3）.** Dendroidal sets 上存在 Cisinski-Moerdijk operadic model structure，其 fibrant objects 为 inner Kan dendroidal sets，cofibrations 为 normal monomorphisms。
 
 **说明 M.8.** 在该模型结构中，operadic weak equivalence 不是逐树集合双射，也不是逐树同伦等价。它由模型结构或等价的 local object 条件定义。
 
@@ -57,13 +57,25 @@ $$
 $$
 满足 inert coCartesian lifts、Segal product condition 和 mapping space compatibility。
 
-**外部输入定理 M.10.** Ordinary colored operad 的 category of operators nerve 给出 Lurie-style infinity-operad。
+**外部输入定理 M.10（category of operators；HA-OP-1）.** Ordinary colored operad 的 category of operators nerve 给出 Lurie-style infinity-operad。
 
 **说明 M.11.** Lurie 模型中的 active/inert 分解方向依赖 convention。本文统一使用第十八章的 $\mathbf{Fin}_*$ 约定：$\rho^i:\langle n\rangle\to\langle1\rangle$ 为 inert。
 
 ## M.5 Dendroidal-Lurie 比较
 
-**外部输入定理 M.12（Heuts-Hinich-Moerdijk 比较）.** 适当的 dendroidal model for infinity-operads 与 Lurie-style preoperad/operadic fibration model 之间存在 Quillen equivalence 或等价的 homotopy theory comparison。
+**外部输入定理 M.12（Heuts--Hinich--Moerdijk 比较；HHM-1--HHM-5）.** 在来源的 open/no-constants 限制下，存在如下类型的 Quillen-equivalence zig-zag：
+$$
+\mathbf{sOper}^{o}_{\mathrm{oper}}
+\simeq_Q
+\mathbf{dSet}^{o}_{\mathrm{oper}}
+\simeq_Q
+\mathbf{fSet}^{o}_{\mathrm{oper}}
+\simeq_Q
+\mathbf{fSet}^{+,o}_{\mathrm{op}}
+\simeq_Q
+\mathbf{PreOp}^{o}_{\mathrm{Lurie}}.
+$$
+这里上标 $o$ 表示 open/no-constants 子理论，不表示 opposite category；各下标标记 HHM 选定的模型结构，而不是底层范畴的字面等同。具体定位为 Theorem 2.4.1（HHM-1）、Theorem 2.5.1（HHM-2）、Theorem 2.5.3（HHM-3）、Corollary 2.5.4（HHM-4）和 slice 技术端点 Theorem 5.3.14（HHM-5）。本书只使用 zig-zag 诱导的 underlying infinity-categories 等价。
 
 **使用规则 M.13.** 若要把 dendroidal 结论转到 Lurie 模型，必须检查：
 
@@ -71,19 +83,26 @@ $$
 2. 比较定理适用于所用 fibrant/cofibrant replacement；
 3. 目标命题可表述为 underlying infinity-category 或 algebra infinity-category 中的等价不变性质；
 4. 所用颜色、mapping spaces 和 completeness 条件在比较中被保留。
+5. 所用 operad 是否 open/no-constants；若含 arity $0$，HHM-4 的本书 locator 不适用，必须先限制到 open 部分或另引覆盖 constants 的比较。
 
 **警告 M.14.** Dendroidal inner horn filler 条件不能直接替换为 Lurie mapping-space 条件。二者对应需要外部比较定理。
 
 ## M.6 模型范畴中 operads 到 infinity-operads
 
-**定义 M.15.** 设 $\mathcal M$ 是 symmetric monoidal model category，$\mathcal O$ 是 $\mathcal M$ 中 operad。若 $\mathcal M_\infty$ 存在 symmetric monoidal localization，则 $\mathcal O$ 可在适当条件下给出 $\mathcal M_\infty$ 中的 infinity-operad 或 algebra object，记作 $\mathcal O^{loc}$。
+**定义 M.15.** 设 $\mathcal M$ 是 symmetric monoidal model category，$\mathcal O$ 是 $\mathcal M$ 中 operad。只有在某个已注明假设的比较定理已经从 $(\mathcal M,\mathcal O)$ 构造出 $\mathcal M_\infty$ 中的 infinity-operad 或 algebra object 时，才把所得对象记作 $\mathcal O^{loc}$。本记号本身不是 localization construction；本书可直接调用的 colored-operad 版本只有下述 PSAR-5 情形，associative/commutative 特例另由 HA-ALG-1--HA-ALG-2 给出。
 
-**外部输入定理 M.16.** 在 admissibility、cofibrancy 和 monoidal localization 条件下，有比较
+**外部输入定理 M.16（一个精确 strict-to-infinity 版本；PSAR-5）.** 设 $\mathcal M$ 是 PSAR-5 所允许的 simplicial symmetric monoidal model category，$\mathcal O$ 是 simplicial colored operad，$\mathcal O$-代数 admissible，并且 projective cofibrant replacement
+$$
+Q\mathcal O\longrightarrow\mathcal O
+$$
+满足来源要求的 symmetric flatness。则 Pavlov--Scholbach Theorem 7.11 给出严格代数模型的 localization 与相应 Lurie-style algebra infinity-category 的等价，写作
 $$
 \operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty
 \simeq
 \operatorname{Alg}_{\mathcal O^{loc}}(\mathcal M_\infty).
 $$
+
+HA-ALG-1--HA-ALG-2 分别给出 associative 与 commutative 的其他精确版本；它们不是任意 colored operad 的替代定理。
 
 **说明 M.17.** 这不是形式恒等式。左边先取严格 $\mathcal O$-代数模型范畴再 localization；右边先把底范畴和 operad 数据送到 infinity-categorical 语境再取代数。二者比较正是外部输入定理 M.16 的内容。White WHT-1--WHT-4 和 White--Yau WY-1--WY-3 只定位模型范畴中 Bousfield localization preserves operad/colored-operad algebra structures；它们可作为 M.16 的模型范畴 preservation 前置，但不能单独推出 M.16。
 
@@ -101,8 +120,8 @@ $$
    \mathcal P\mapsto N(\mathcal P^\otimes).
    $$
    Category of operators nerve 是外部输入定理。
-3. Dendroidal model 到 Lurie model：
-   使用 Heuts-Hinich-Moerdijk 型比较。
+3. Open dendroidal model 到 open Lurie model：
+   使用 M.12 的 Heuts--Hinich--Moerdijk zig-zag；若有 nullary operations，本路径不可用。
 4. Model category of operad algebras 到 infinity-category：
    使用 Dwyer-Kan localization。
 5. Strict algebra model 到 infinity-operad algebra category：
@@ -123,13 +142,13 @@ $$
 本书第三部分的安全依赖图为：
 
 $$
-\begin{CD}
-\operatorname{Op}_{strict} @>{N_d}>> \mathbf{dSet}\\
-@V{(-)^\otimes}VV @VV{\text{HHM comparison}}V\\
-\operatorname{Cat}_{/\mathbf{Fin}_*} @>{N}>> \operatorname{PreOp}_{Lurie}\\
-@. @VV{\operatorname{Alg}_{(-)}(\mathcal C)}V\\
-@. \mathbf{Cat}_\infty
-\end{CD}
+\begin{array}{ccc}
+\operatorname{Op}_{strict} & \xrightarrow{N_d} & \mathbf{dSet}\\
+{\scriptstyle (-)^\otimes}\downarrow & & \downarrow{\scriptstyle \mathrm{HHM\ zigzag\ (open)}}\\
+\operatorname{Cat}_{/\mathbf{Fin}_*} & \xrightarrow{N} & \operatorname{PreOp}_{Lurie}\\
+& & \downarrow{\scriptstyle \operatorname{Alg}_{(-)}(\mathcal C)}\\
+& & \mathbf{Cat}_\infty
+\end{array}
 $$
 
 模型范畴中的严格代数进入该图的路径为：
@@ -142,6 +161,8 @@ $$
 $$
 
 每一个未标为定义的箭头都必须由外部输入定理支持。
+
+图中右侧竖箭头是 M.12 的 Quillen-equivalence zig-zag 的缩写，只在 open/no-constants 子理论中使用；它不是从一个 dendroidal set 到一个 preoperad 的逐对象公式。含 nullary operations 时，不得沿该缩写箭头推理。
 
 ## M.10 本附录小结
 

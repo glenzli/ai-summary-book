@@ -8,9 +8,10 @@
 
 - Haar 测度存在唯一性：附录 B；参考 Weil、Ramakrishnan-Valenza。
 - 商测度和 Weil 积分公式：附录 B；参考 Weil、Ramakrishnan-Valenza。
-- Pontryagin duality、Fourier inversion、Plancherel 和一般 LCA Poisson summation：第一、二章、附录 F；参考 Tate thesis、Weil、Ramakrishnan-Valenza。附录 F 已证明有限 Abel 群 Fourier 反演、非 Archimedean 紧开陪集变换、$\mathbb A_\mathbb Q/\mathbb Q$ 基本域、adele Poisson 的 idele 缩放形式和 Tate theta 恒等式。
-- Tate thesis：第二章、附录 F；参考 Tate thesis。
-- 局部和全局类域论、class formations 和 Artin reciprocity：第三章、附录 A、附录 V；参考 Milne、Neukirch、Cassels-Frohlich、Tate。
+- Pontryagin duality、Fourier inversion、Plancherel 和一般 LCA Poisson summation：第一、二章、附录 F；参考 Tate thesis、Weil、Ramakrishnan-Valenza。附录 F 已证明有限 Abel 群 Fourier 反演、非 Archimedean 紧开陪集变换、$\mathbb A_\mathbb Q/\mathbb Q$ 基本域、adele Poisson 的 idele 缩放形式和 Tate theta 恒等式。涉及 $\epsilon$ 因子时必须同时固定 $\mathfrak c(\psi_v)$ 与自对偶加法测度；乘法测度不由“自对偶”自动决定。
+- Tate thesis：第二章、附录 F；参考 Tate thesis。正文调用范围包括局部 meromorphic continuation/functional equation、全局 Poisson 求和和整体函数方程；Euler 分解及 norm-character 极点位置由正文另行核算。
+- Norm-one idele class group 紧性与 quasi-character 唯一酉化：2.4.1；参考 Weil *Basic Number Theory* 和 Tate 的 idelic treatment。数域的 norm image 为连续实方向，函数域为离散 degree 方向；两者都只在取核后使用紧性。
+- 局部和全局类域论、class formations 和 Artin reciprocity：第三章、附录 A、附录 V；参考 Milne、Neukirch、Cassels-Frohlich、Tate。局部拓扑同构是 $F^\times\simeq W_F^{\mathrm{ab}}$；到 $G_F^{\mathrm{ab}}$ 需 profinite completion。全局 $C_K\to G_K^{\mathrm{ab}}$ 一般只有稠密像，有限 Abel 商及 $\widehat C_K\simeq G_K^{\mathrm{ab}}$ 才是正文使用的精确口径。
 - Norm subgroup theorem、ray class fields 和 conductor 接口：附录 A、附录 V；参考 Milne、Neukirch、Cassels-Frohlich。
 - 素理想分解、分解群、惯性群、高阶分歧群和 Herbrand upper numbering：附录 A；参考 Neukirch、Serre Local Fields、Cassels-Frohlich。
 - Chebotarev density theorem：附录 A；参考代数数论教材。
@@ -19,6 +20,7 @@
 - Ogg conductor formula、坏约化处局部 L 因子和 Tate curve 的 split multiplicative reduction 接口：第八、十章、附录 AD；参考 Ogg、Tate、Silverman。
 - Frey-Hellegouarch 曲线构造、判别式计算和半稳定性：第十、九十章、附录 AD，尤其 AD.19 和 90.5；参考 Frey、Hellegouarch、Serre、Cornell-Silverman-Stevens。
 - Frey 曲线 residual conductor 的局部计算和级删除所需的 Serre-Ribet local computation：第十、九十章、附录 AD，尤其 AD.20、AD.21、10.11、90.5；参考 Serre、Ribet、Cornell-Silverman-Stevens。
+- Frey residual representation 的绝对不可约性：10.11(6)、90.5；参考 Mazur 的有理素数次 isogeny 定理及 Frey-Serre-Ribet 后续论证。该全局输入不由附录 AD 的局部导子计算推出。
 
 ## E.2 局部表示和 Langlands
 
@@ -26,6 +28,7 @@
 - Cartan 分解、hyperspecial subgroup 选择和非分歧群的 spherical Hecke algebra：第四、十一、十三章、附录 P、附录 AA；参考 Satake、Borel、Macdonald、Bruhat-Tits、Tits。
 - 归一化 Satake transform 和 Satake 同构：第四、五、十一、十二、十三章、附录 P，尤其 P.7；参考 Satake、Borel、Macdonald、Gelbart、Bump。归一化约定固定在 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4 节。
 - Spherical representation 的 Hecke eigencharacter 与 semisimple Satake parameter：第五、十一、十二、十三、十四章、附录 P、附录 Q；参考 Borel、Macdonald、Gelbart、Bump。
+- $W_F\times\operatorname{SL}_2$ 参数与 Frobenius-semisimple Weil-Deligne 数据的等价：第五章 5.8.2；参考 Deligne 和 Jacobson-Morozov。由 $\operatorname{SL}_2$ 参数构造 $(r,N)$ 的方向在 5.8.1 给出正文证明，逆向及唯一性保持外部输入。
 - 非分歧 LLC 中 Satake parameter 与 Weil/Frobenius parameter 的相容性：第五、十二、十四章、附录 P、附录 Q、附录 U；参考 Borel、Henniart、Harris-Taylor、Scholze。
 - Bruhat-Tits buildings、parahoric group schemes、hyperspecial subgroups、Iwahori-Hecke algebra 和 Moy-Prasad filtrations：第四、十一、十二章、附录 AA；参考 Bruhat-Tits、Tits、Moy-Prasad、Roche。
 - Harish-Chandra characters、temperedness、Plancherel formula、Bernstein decomposition 和 local Paley-Wiener：第四、十二、十六、十七章、附录 Z；参考 Harish-Chandra、Bernstein、Deligne、Kazhdan、Waldspurger。
@@ -42,32 +45,40 @@
 - 经典-adelic 对应和 newform theory：第七章、附录 D；参考 Gelbart、Jacquet-Langlands、Diamond-Shurman。
 - Hecke 双陪集、Petersson 内积、Hecke correspondences 和 Hecke 算子伴随关系：第六、七章、附录 H、附录 W；参考 Diamond-Shurman、Miyake、Gelbart。
 - Atkin-Lehner-Li old/new theory、Atkin-Lehner involutions 和 Casselman newvector theorem：第六、七、十、九十章、附录 J、附录 W；参考 Atkin-Lehner、Li、Casselman、Diamond-Shurman。
-- Eichler-Shimura、模曲线上同调、Deligne Galois representations 和 residual representations：第六、七、九、九十章、附录 T；参考 Eichler-Shimura、Deligne、Diamond-Shurman。
+- Eichler-Shimura、模曲线上同调、Deligne Galois representations 和 residual representations：第六、七、九、九十章、附录 T；参考 Eichler-Shimura、Deligne、Diamond-Shurman。正文固定几何 Frobenius，并把经典根与 unitary Satake 根相差的 $p^{(k-1)/2}$ 显式写出。
 - 椭圆曲线模性定理和模性提升：第九、九十章；参考 Wiles、Taylor-Wiles、Breuil-Conrad-Diamond-Taylor。
 - Galois deformation theory、Selmer groups、Poitou-Tate duality、$R=T$ 和 Taylor-Wiles patching：第九、九十章、附录 K；参考 Mazur、Wiles、Taylor-Wiles、Diamond、Kisin。
-- p-adic Hodge theory、Shimura varieties、regular algebraic automorphic Galois representations 和 automorphy lifting：第九、十四章、附录 U；参考 Fontaine、Faltings、Harris-Taylor、Clozel、Scholze、BLGGT。
-- Ribet level lowering、epsilon conjecture 和模 $p$ Galois 表示的级删除：第十、九十章，尤其 10.8、10.13、90.8；参考 Ribet、Serre。Frey 曲线局部导子和 residual conductor 计算已在 E.1 单独列出。
+- p-adic Hodge theory、Shimura varieties、regular algebraic automorphic Galois representations 和 automorphy lifting：第九、十四章、附录 U；参考 Fontaine、Faltings、Harris-Taylor、Clozel、Scholze、BLGGT。正文采用 $\operatorname{HT}(\chi_\ell)=\{1\}$，并把 $v\nmid\ell$ 的 Grothendieck Weil-Deligne 构造与 $v\mid\ell$ 的 de Rham/potentially semistable 比较分开。
+- Deligne-Carayol 局部-整体相容：第七、九、十章，尤其 7.20、10.1、10.2.1；参考 Deligne、Carayol。正文的 unitary automorphic 口径为
+  $$
+  \operatorname{rec}(\pi_{f,v})\simeq
+  \iota\operatorname{WD}(\rho_{f,\lambda}^{\vee}|_{G_{\mathbb Q_v}})^{F\text{-ss}}
+  \otimes|\cdot|^{(k-1)/2},\qquad v\nmid\ell,
+  $$
+  而 $v\mid\ell$ 另调用 p-adic Hodge theory，不把二者混为同一构造。
+- Ribet level lowering、epsilon conjecture 和模 $p$ Galois 表示的级删除：第十、九十章，尤其 10.8、10.10、10.13、90.8；参考 Ribet、Serre。正文只调用列明绝对不可约、局部非分歧/有限平坦、$q\parallel N$ 等假设的权二接口；Frey 曲线局部导子和 residual conductor 计算已在 E.1 单独列出。
 
 ## E.4 一般自守表示和 L 函数
 
-- 自守表示 restricted tensor product：第七、十三章；参考 Gelbart、Bump。
+- 自守表示 restricted tensor product：第七、十三章；参考 Flath、Gelbart、Bump。这里表示先作为不可约 unitary cuspidal spectrum 的子表示取得，再分解为几乎处处 spherical 的 restricted tensor product。
+- Adelic reduction theory 的紧商/抛物判准：13.8.1；数域参考 Borel-Harish-Chandra，函数域参考 Harder。调用时先除去 split central direction，不能把 $G(K)\backslash G(\mathbb A_K)$ 与 modulo-center quotient 混写。
 - Godement-Jacquet 标准 L 函数：第十三、十四章；参考 Godement-Jacquet。
 - Rankin-Selberg L 函数和强重数一：第十三、十四章、附录 I；参考 Jacquet-Piatetski-Shapiro-Shalika。
 - Godement-Jacquet 积分、Rankin-Selberg unfolding 和局部函数方程：附录 I；参考 Godement-Jacquet、Jacquet-Piatetski-Shapiro-Shalika。
 - Converse theorem：第十四、十五章、附录 I；参考 Cogdell-Piatetski-Shapiro。
 - Eisenstein series、constant term formula、intertwining operators、residual spectrum 和 Langlands spectral decomposition：第十三、十六、十七章、附录 L；参考 Langlands、Arthur、Bump、Moeglin-Waldspurger。
 - Langlands-Shahidi local coefficient、局部 $\gamma$ 因子、局部 L 因子和全局函数方程：第十三、十五章、附录 M；参考 Shahidi、Kim-Shahidi。
-- 数域 regular algebraic `GL(n)` Galois representations、局部-整体相容和 Shimura variety cohomology：第十四章、附录 U；参考 Harris-Taylor、Clozel、Taylor、Scholze、Caraiani、HLTT。
+- 数域 regular algebraic polarizable `GL(n)` Galois representations、局部-整体相容和 Shimura variety cohomology：第十四章、附录 U；参考 Harris-Taylor、Clozel、Taylor、Scholze、Caraiani、HLTT。它是一族带具体基域、极化和正则性假设的定理，不是所有 regular algebraic 表示上的无条件数域全局 Langlands。
 
 ## E.5 函子性、trace formula 和 endoscopy
 
 - Solvable base change 和 automorphic induction：第十五、十六章；参考 Arthur-Clozel。
 - Low symmetric power 和 tensor product lifts：第十五章；参考 Gelbart-Jacquet、Kim-Shahidi、Ramakrishnan。
-- Arthur-Selberg trace formula 的非紧商截断接口：第十六章、附录 R，尤其 16.7、R.4；参考 Arthur。
+- Arthur-Selberg trace formula 的非紧商截断接口：第十六章、附录 R，尤其 16.7、R.4；参考 Arthur。调用时固定数域、connected reductive group、minimal Levi/parabolic、$G(\mathbb A)^1$、Haar/商测度、足够正则的 truncation parameter 与适当测试函数空间。
 - Geometric expansion、weighted orbital integrals、spectral expansion 和 invariant trace formula：第十六、十七章、附录 R，尤其 R.7、R.10、R.12；参考 Arthur。
 - Transfer factors、matching orbital integrals、stable characters 和 endoscopic transfer：第十五、十六章、附录 N、附录 R；参考 Langlands-Shelstad、Kottwitz、Shelstad、Waldspurger、Arthur。
 - Fundamental lemma 和 weighted fundamental lemma：第十六、二十二章、附录 N、附录 R；参考 Ngô、Waldspurger、Arthur。
-- Stable trace formula 和 stabilization of the invariant trace formula：第十六、十七章、附录 R，尤其 16.22、R.15；参考 Arthur、Langlands-Shelstad、Kottwitz、Shelstad、Waldspurger、Ngô。
+- Stable trace formula 和 stabilization of the invariant trace formula：第十六、十七章、附录 R，尤其 16.22、R.15；参考 Arthur、Langlands-Shelstad、Kottwitz、Shelstad、Waldspurger、Ngô。这里只对文献中已经完成的群和版本作为外部定理调用；一般 connected reductive group 的全部稳定化不由本书断言。
 - Twisted trace formula、solvable base change 和 automorphic induction 接口：第十五、十六章、附录 R；参考 Arthur-Clozel。
 - Arthur classification for symplectic and special orthogonal groups、global Arthur packets、multiplicity formula 和 standard transfer：第十七章、附录 X，尤其 17.15、17.17、X.10、X.12；参考 Arthur。
 - Mok unitary group classification、unitary packets 和 unitary standard transfer：第十七章、附录 X；参考 Mok。
@@ -80,16 +91,17 @@
 - Perverse sheaves on affine Grassmannian、convolution exactness 和 Satake category 的 Tannakian 性：第十九章、附录 Y，尤其 19.6、19.10、Y.10；参考 Ginzburg、Mirkovic-Vilonen、Gaitsgory、Nadler。
 - Geometric Satake equivalence、dual group reconstruction 和 tensor compatibility：第十九章、附录 Y，尤其 19.11、Y.11、Y.13；参考 Mirkovic-Vilonen、Ginzburg、Beilinson-Drinfeld、Gaitsgory。
 - Beilinson-Drinfeld Grassmannian、Ran space、factorization 和 fusion：第十九、二十、二十一章、附录 Y；参考 Beilinson-Drinfeld、Gaitsgory。
-- Sheaf-function dictionary 下 geometric Satake trace 恢复 classical Satake：第十九、二十、二十二章、附录 P、附录 Y，尤其 19.16、P.15；参考 Grothendieck-Lefschetz trace formalism、Ginzburg、Mirkovic-Vilonen。
+- Sheaf-function dictionary 下 geometric Satake trace 恢复 classical Satake：第十九、二十、二十二章、附录 P、附录 Y，尤其 19.16、P.15；参考 Grothendieck-Lefschetz trace formalism、Ginzburg、Mirkovic-Vilonen。必须有有限域下降与 Weil structure，并固定几何 Frobenius、$q^{1/2}$ 和半 Tate twist；代数闭域上的裸 sheaf 没有可取的 Frobenius trace。
 - 几何类域论和 Hecke eigensheaves：第二十章；参考 Laumon、Frenkel。
 - D-modules on smooth stacks、de Rham stack 口径、six functors 和 kernel formalism：第十八至二十一章、附录 O；参考 Beilinson-Drinfeld、Gaitsgory、Kashiwara。
-- Derived stacks、cotangent complex、QCoh/IndCoh、singular support、renormalized D-modules 和 nilpotent cone 谱侧约束：第二十一章、附录 O、附录 AB；参考 Gaitsgory-Rozenblyum、Arinkin-Gaitsgory。
+- Derived stacks、cotangent complex、QCoh/IndCoh、singular support、renormalized half-twisted D-modules 和 nilpotent cone 谱侧约束：第二十一章、附录 O、附录 AB；参考 Gaitsgory-Rozenblyum、Arinkin-Gaitsgory。
 - Riemann-Hilbert correspondence 和 Betti/de Rham 比较口径：第二十、二十一章、附录 O；参考 Kashiwara、Hotta-Takeuchi-Tanisaki。
-- 范畴化几何 Langlands：第二十一章、附录 O；参考 Gaitsgory、Arinkin-Gaitsgory。
+- 特征零 unramified categorical geometric Langlands：第二十一章 21.7、附录 O.15；参考 Gaitsgory-Raskin 五篇 proof-series preprints arXiv:2405.03599、2405.03648、2409.07051、2409.08670、2409.09856。状态为外部 preprint theorem；自动侧保留 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，Paper I 构造的 $\mathbb L_G$ 为 automorphic $\to$ spectral，谱侧点对象返回自动侧使用 $\mathbb L_G^{-1}$，且两端均保留来源的 renormalized/derived conventions。
+- 正特征中的部分 $\ell$-adic categorical geometric Langlands：21.8.1、O.16.1；参考 Gaitsgory-Raskin, arXiv:2508.02237。只调用 automorphic nilpotent category 与参数栈某些连通分支之并上的适当 $\operatorname{IndCoh}$ 范畴之等价；全部分支、ramified、integral 与 quantum 版本仍是研究边界。
 - Shtukas and function field Langlands：第二十二章；参考 Drinfeld、Lafforgue。
 - Shtuka stacks、Drinfeld `GL(2)`、Laurent Lafforgue `GL(n)` 和 V. Lafforgue excursion operators：第十四、二十二章、附录 S；参考 Drinfeld、Laurent Lafforgue、Vincent Lafforgue。
 - Perfectoid spaces、pro-etale topology 和 diamonds：第十二、二十一、二十二章、附录 AC，尤其 AC.1；参考 Scholze。
-- Fargues-Fontaine curve 构造和 FF 曲线上的 vector bundle 分类：第二十一、二十二章、附录 AC，尤其 AC.4、AC.5；参考 Fargues、Fontaine。
-- $G$-bundles on the Fargues-Fontaine curve 与 Kottwitz 集合 $B(G)$ 的分类接口：第十二、二十一章、附录 AC，尤其 AC.7；参考 Fargues、Kottwitz。
+- Fargues-Fontaine curve 构造和 FF 曲线上的 vector bundle 分类：第二十一、二十二章、附录 AC，尤其 AC.4、AC.5；参考 Fargues-Fontaine, Astérisque 406, Théorème 8.2.10，以及 Fargues-Scholze, Theorem II.2.14。Slope 直和分类只在完备代数闭非 Archimedean 几何点上调用；一般基底须附相对曲线与 v-descent 数据。
+- $G$-bundles on the Fargues-Fontaine curve 与 Kottwitz 集合 $B(G)$ 的分类接口：第十二、二十一章、附录 AC，尤其 AC.7；参考 Fargues, *G-torseurs en théorie de Hodge $p$-adique*，以及 Fargues-Scholze, Theorem III.2.2。$B(G)$ 分类的是完备代数闭几何纤维上的同构类；一般 $\operatorname{Bun}_G(S)$ 不是集合 $B(G)$，还含 families 与 v-descent 数据。
 - Local Shimura varieties、local shtukas 和 diamonds 形式的 moduli 接口：第十二、二十一、二十二章、附录 AC，尤其 AC.11；参考 Scholze、Scholze-Weinstein、Weinstein。
-- Fargues-Scholze geometrization、stack of Langlands parameters、spectral action 和 semisimple LLC map：第十二、二十一、二十二章、附录 AC，尤其 AC.15、AC.17、AC.19；参考 Fargues-Scholze。该输入只作为 semisimple/geometric local Langlands 接口，不替代 enhanced packet、inner form normalization 和 endoscopic character identities。
+- Fargues-Scholze geometrization、stack of Langlands parameters、spectral action 和 semisimple LLC map：第十二、二十一、二十二章、附录 AC，尤其 AC.15、AC.17、AC.19；参考 Fargues-Scholze, arXiv:2102.13459v4，尤其 I.9、IX.4、IX.6、X。该输入只作为 semisimple/geometric local Langlands 接口，不恢复 Weil-Deligne monodromy，也不替代 enhanced packet、inner form normalization、endoscopic character identities 或 $p$-adic Banach correspondence。

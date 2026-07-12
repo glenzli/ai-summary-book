@@ -53,7 +53,9 @@ $$
 
 默认集合是 $\mathcal U$-小集合，小范畴是 $\mathcal U$-小范畴，而所有 $\mathcal U$-小范畴组成的范畴 $\mathbf{Cat}_{\mathcal U}$ 被视为 $\mathcal V$-小层级中的对象。这样做的目的不是回避大小问题，而是避免在每个定义后重复同一套 universe 声明。
 
-若某章需要改变大小层级，例如讨论 locally presentable categories 或高阶 topos，会在章首重新声明。
+未另行声明的普通范畴在 $\mathcal V$ 层小且局部 $\mathcal U$-小；“小图形”“所有小极限”中的“小”均指 $\mathcal U$-小。若源范畴只在 $\mathcal V$ 层小，自然变换集合一般也只在 $\mathcal V$ 层小，这一层级变化不能被 $\operatorname{Nat}$ 或 $\operatorname{Fun}$ 记号掩盖。若某章需要改变大小层级，例如讨论 locally presentable categories 或高阶 topos，会在章首重新声明。
+
+嵌套 universe 的存在与 $\mathcal V$-小选择公理是本书的元理论假设，不作为书内定理。附录 A 给出精确定义、常用构造的大小证明，以及 $\mathbf{Set}_{\mathcal U}$ 不具有任意 $\mathcal V$-小积的边界例子。
 
 ## 0.4 资料源口径
 

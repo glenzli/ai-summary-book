@@ -210,11 +210,16 @@ $$
 $$
 称为几乎处处非分歧，若除有限多个位置 $v$ 外，$\rho$ 在 inertia subgroup $I_v$ 上平凡。
 
-**外部输入定理 14.19（Lafforgue，全局 Langlands for `GL(n)` over function fields）.** 在有限阶中心特征和有限阶 determinant 的对应归一化下，函数域 $K$ 上 cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 与 $n$ 维不可约 $\ell$-adic Galois representations
+**外部输入定理 14.19（Lafforgue，全局 Langlands for `GL(n)` over function fields）.** 在有限阶中心特征和有限阶 determinant 的对应归一化下，函数域 $K$ 上 cuspidal automorphic representations of $\operatorname{GL}_n(\mathbb A_K)$ 与几乎处处非分歧、$n$ 维不可约 $\ell$-adic Galois representations
 $$
 \rho:G_K\to\operatorname{GL}_n(\overline{\mathbb Q}_\ell)
 $$
-之间存在对应。该对应满足：对几乎所有非分歧位置 $v$，$\pi_v$ 的 Satake 参数与 $\rho(\operatorname{Frob}_v^{\operatorname{arith}})$ 的 characteristic polynomial 相同，按固定 Frobenius convention 需要取逆或对偶调整。
+之间存在双射。采用本书 $\operatorname{rec}_{K_v}(\varpi_v)=\operatorname{Fr}_v$ 的几何 Frobenius convention 时，对每个双方非分歧的位置 $v$，有精确等式
+$$
+\det(1-\rho(\operatorname{Fr}_v)X)
+=\det(1-s_v(\pi)X).
+$$
+若来源用 arithmetic Frobenius，则其矩阵是这里的逆；不得在同一等式中只写“可能取逆”。
 
 **注 14.20.** 函数域情形的 Frobenius convention 必须谨慎。本书局部 L 因子默认几何 Frobenius，而 $\ell$-adic Galois 表示文献常用算术 Frobenius。比较 Euler 因子时必须明确采用哪一个。
 
@@ -230,17 +235,19 @@ $$
 
 **定义 14.22.** 设 $K$ 为数域。Cuspidal automorphic representation $\pi$ of $\operatorname{GL}_n(\mathbb A_K)$ 称为 algebraic，若其 Archimedean infinitesimal character 与某个代数表示的最高权相容。称为 regular algebraic，若对应权没有重复。若 $\pi^\vee$ 与 $\pi$ 的 Galois 共轭或 character twist 相容，则称为 self-dual 或 conjugate self-dual，具体形式依 $K$ 是否全实、CM 或一般数域而定。
 
-**外部输入定理 14.23（数域中的 Galois 表示构造，接口形式）.** 对许多 regular algebraic cuspidal automorphic representations $\pi$ of $\operatorname{GL}_n(\mathbb A_K)$，特别是满足 conjugate self-dual 或极化条件的情形，存在连续半单 $\ell$-adic Galois 表示
+**外部输入定理 14.23（数域中的 polarizable Galois 表示构造）.** 设 $K$ 为 CM 或 totally real field，$\pi$ 为 unitary regular algebraic cuspidal automorphic representation of $\operatorname{GL}_n(\mathbb A_K)$，并满足所选来源定理的 conjugate-self-dual/self-dual polarization、parity 与 ramification hypotheses。则存在连续半单 $\ell$-adic Galois 表示
 $$
 \rho_{\pi,\ell}:G_K\to\operatorname{GL}_n(\overline{\mathbb Q}_\ell)
 $$
-使得对几乎所有 $v\nmid\ell$ 且 $\pi_v$ 非分歧的位置，有 Euler 因子相容：
+及 purity weight $w$。令
+$\pi^{\mathrm{alg}}=\pi\otimes|\det|^{-w/2}$。对每个 $v\nmid\ell$ 且 $\pi_v,K_v$ 非分歧的位置，有
 $$
 \det\left(1-X\rho_{\pi,\ell}(\operatorname{Frob}_v^{\operatorname{arith}})\right)
 $$
-与 $\pi_v$ 的 Satake polynomial 相同，至多差由归一化 convention 决定的 Tate twist、对偶或 $|\det|$ 平移。
+等于 $\pi_v^{\mathrm{alg}}$ 的 Satake polynomial（经固定
+$\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C$ 比较系数）。换回 unitary $\pi_v$ 的局部参数时，必须按附录 U.13 取 Galois dual、改用 geometric Frobenius 并张量 $|\cdot|^{w/2}$。
 
-**注 14.24.** 定理 14.23 是接口表述，不是单一来源的完整定理。其证明来自 Shimura varieties、cohomology of locally symmetric spaces、Taylor-Wiles-Kisin patching、Harris-Taylor、Clozel、Taylor、Scholze、Caraiani、Harris-Lan-Taylor-Thorne 等一系列工作。一般数域、一般 regular algebraic $\pi$ 和非极化情形仍需额外假设或属于开放问题。
+**注 14.24.** 定理 14.23 是定理族接口，不是单一来源在同一假设下覆盖全部情形。其证明来自 Shimura varieties、locally symmetric cohomology、Harris-Taylor、Shin、Scholze、Caraiani、Harris-Lan-Taylor-Thorne 等工作。一般数域、非 regular 或非 polarizable 情形不由本条覆盖；具体调用必须在附录 U.3 的来源表中选择版本。
 
 **注 14.24.1.** 附录 U 将定理 14.23 的常用假设拆成 regular algebraic、polarizable、Shimura variety realization、p-adic Hodge condition 和 local-global compatibility。该附录用于防止把“数域 `GL(n)` 已知构造”误读为完整数域 Langlands 对应。
 

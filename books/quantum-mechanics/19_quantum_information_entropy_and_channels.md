@@ -98,7 +98,7 @@ $\square$
 $$
 F(\psi,\phi)=|\langle\psi,\phi\rangle|^2.
 $$
-混合态保真度有多种等价规范；本书在需要时采用
+文献中同时使用“平方保真度”和其平方根两种命名规范；本书固定采用平方保真度
 $$
 F(\rho,\sigma)=\left(\operatorname{tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\right)^2.
 $$

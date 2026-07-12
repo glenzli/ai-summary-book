@@ -21,7 +21,10 @@
 
 - 第 1 章依赖 ABKMT24 的 coherent topology 与 condensed set equivalence locator，并引用第一卷固定 universe 下的站点比较口径。
 - 第 2-4 章依赖第一、二卷中的站点、同调和输入 B.1-B.4 的 solid 结构；solid 计算只在 Scholze/A23 输入允许范围内使用。
-- 第 5-6 章依赖第二卷输入 C.1-C.5 的 analytic/liquid 内容，并把 Banach/Fréchet 比较限制在 realization 适用范围内。
+- 第 5-6 章依赖第二卷输入 C.1-C.5 的 analytic/liquid 内容。Banach/Fréchet 的
+  liquid membership 精确引用 CS26 Theorem 2.14、Lemma 2.16 与 Theorem 3.11；
+  连续满射和 cohomology 的 exactness 则使用第二卷命题 5.9 的局部提升判据，不归入
+  membership 输入。
 - 第 7 章依赖 Bhatt-Scholze 的 pro-etale topology，作为后续几何接口，不反向改变第一至三卷的 condensed/solid/analytic/liquid 主线。
 - 第 8 章整理计算目录和后续问题。
 - 附录 A 依赖形式化基础论文、第一卷站点比较和一般同调代数。

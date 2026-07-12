@@ -28,14 +28,16 @@
 - 有界 Hamiltonian 演化、Heisenberg 方程、有限维谱相位演化。
 - 一维匹配条件、流守恒、谐振子升降算符、相干态、Schmidt 分解、偏迹。
 - Robertson 不确定性、连续性方程、Ehrenfest 定理。
-- 相互作用图像、Dyson 级数和一阶跃迁振幅的有界有限维证明。
+- 谱测度一阶矩与算子定义域的区分、有限维非简并扰动分支的解析存在性。
+- 相互作用图像、Dyson 级数、一阶跃迁振幅和有限时间余项界的一致有界证明。
+- 自由传播子的分布核、核复合条件和 Lie--Trotter 单步核的严格边界。
 - 中心势径向方程、规范协变性、Landau 能级代数、Rabi 振荡等标准计算。
 
 外部输入闭包包括：
 
 - 谱定理、Stone、Kato-Rellich、Friedrichs、Stone-von Neumann、Wigner。
 - Sturm-Liouville/Fourier-Hermite 完备性、Coulomb 谱理论、WKB 连接公式。
-- 散射渐近完备性、光学定理、partial wave 展开、Trotter-Kato。
+- 散射渐近完备性、光学定理、partial wave 展开、Lie--Trotter 乘积公式。
 - Stinespring/Naimark 一般形式、Lindblad、Uhlmann、Kato 解析扰动、Wigner-Eckart。
 
 ## 引用完整性审查

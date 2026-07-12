@@ -5,7 +5,7 @@
 本章把单色 operad 推广到带颜色或带类型的 operad。颜色集合记录对象类型；一个运算不再只有 arity，而是有若干输入颜色和一个输出颜色。核心目标是：
 
 1. 定义 $C$-colored symmetric sequence。
-2. 用有限集分块定义 colored substitution product。
+2. 用允许空纤维的有限集映射定义 colored substitution product。
 3. 把 $C$-colored operad 定义为幺半对象。
 4. 定义 colored endomorphism operad 和 colored algebra。
 5. 说明 colored operad 与 symmetric multicategory 的等价关系。
@@ -50,20 +50,18 @@ $$
 $$
 (X\circ_CY)(S,\kappa;c)
 =
-\coprod_{\pi\in\operatorname{Part}(S)}
-\coprod_{\delta:\operatorname{Bl}(\pi)\to C}
-X(\operatorname{Bl}(\pi),\delta;c)
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+\coprod_{\delta:T\to C}
+X(T,\delta;c)
 \times
-\prod_{B\in\operatorname{Bl}(\pi)}
-Y(B,\kappa|_B;\delta(B)).
+\prod_{t\in T}
+Y(f^{-1}(t),\kappa|_{f^{-1}(t)};\delta(t)).
 $$
-这里 $\delta(B)$ 是块 $B$ 上内层运算的输出颜色，同时也是外层运算对应输入槽的颜色。
+这里 $\delta(t)$ 是纤维 $f^{-1}(t)$ 上内层运算的输出颜色，同时也是外层运算对应输入槽的颜色。函数 $f$ 不要求满射；空纤维允许把 nullary $Y$-operation 代入外层输入槽。
 
-若 $\varphi:(S,\kappa;c)\to(T,\lambda;c)$ 是 $\mathbf B_C$ 中的同构，则 $\varphi$ 推前分块，并把块 $B$ 送到 $\varphi(B)$。颜色函数 $\delta$ 被送到
-$$
-\varphi_\*\delta(\varphi(B))=\delta(B).
-$$
-结合 $X$ 和 $Y$ 的函子性，得到 $(X\circ_CY)(\varphi)$。
+若 $\varphi:(S,\kappa;c)\to(S',\lambda;c)$ 是 $\mathbf B_C$ 中的同构，则把 $f:S\to T$ 改为 $f\varphi^{-1}:S'\to T$，并在每个纤维上用 $\varphi$ 的限制作用。目标双射同时重标号 $T$ 和 $\delta$，再对该关系取 colimit。
+
+若对每个输出颜色 $d$ 都有 $Y(\varnothing,\varnothing;d)=\varnothing$，则只有满射有贡献，公式才退化为按非空 colored 分块求 coproduct。
 
 **定义 5.5.** 单位 colored symmetric sequence $I_C$ 定义为
 $$
@@ -76,26 +74,22 @@ $$
 
 **命题 5.6.** $\operatorname{SymSeq}_C$ 连同 $\circ_C$ 和 $I_C$ 构成幺半范畴。
 
-**证明.** 证明与命题 1.8 相同，但需要记录颜色。一个元素
+**证明.** 两种加括号都展开为可复合映射
 $$
-((x;(y_B));(z_D))
-\in ((X\circ_CY)\circ_CZ)(S,\kappa;c)
+S\xrightarrow{g}U\xrightarrow{p}T,
 $$
-等价于以下数据：
+颜色函数 $\epsilon:U\to C$、$\delta:T\to C$，以及装饰
+$$
+x\in X(T,\delta;c),
+$$
+$$
+y_t\in Y(p^{-1}(t),\epsilon|_{p^{-1}(t)};\delta(t)),
+\qquad
+z_u\in Z(g^{-1}(u),\kappa|_{g^{-1}(u)};\epsilon(u)).
+$$
+对 $U,T$ 的双射取商时同步重标号 $\epsilon,\delta$。从 $(X\circ_CY)\circ_CZ$ 到这组数据是直接展开；从 $X\circ_C(Y\circ_CZ)$ 到这组数据则把各外层纤维中的目标集合不交并成 $U$。两构造互逆并尊重颜色。
 
-- $S$ 的粗分块 $\pi$；
-- 每个粗块 $B$ 的细分块 $\rho_B$；
-- 粗块输出颜色函数 $\delta:\operatorname{Bl}(\pi)\to C$；
-- 细块输出颜色函数 $\epsilon_B:\operatorname{Bl}(\rho_B)\to C$；
-- 外层元素 $x\in X(\operatorname{Bl}(\pi),\delta;c)$；
-- 中层元素 $y_B\in Y(\operatorname{Bl}(\rho_B),\epsilon_B;\delta(B))$；
-- 底层元素 $z_D\in Z(D,\kappa|_D;\epsilon_B(D))$。
-
-把所有细块组成 $S$ 的分块 $\rho$，并把 $\operatorname{Bl}(\rho)$ 按粗块分块。细块颜色由各 $\epsilon_B$ 拼接得到。于是同一数据也给出
-$$
-(X\circ_C(Y\circ_CZ))(S,\kappa;c)
-$$
-的元素。该对应有反构造，且关于轮廓同构自然，所以给出结合约束。单位约束来自单点块，并且颜色条件 $\kappa(s)=c$ 保证单位只连接相同颜色的输入和输出。五边形与三角形仍然是多层分块拉平次序无关性，加上颜色函数拼接的结合律。$\square$
+对右单位 $X\circ_CI_C$，单位因子强制 $f$ 为双射且 $\delta(f(s))=\kappa(s)$；对左单位 $I_C\circ_CX$，外层单位强制 $T$ 为单点且其唯一颜色为 $c$。两者分别给出 $X(S,\kappa;c)$，包括 $S=\varnothing$。四重代入展开为同一三层映射与两层中间颜色数据，所以五边形交换；插入、删除上述单位层给出三角形。$\square$
 
 ## 5.3 Colored operad
 
@@ -113,19 +107,19 @@ $$
 $$
 组成，并满足结合律和单位律。
 
-**展开 5.8.** 给定分块 $\pi$、块输出颜色 $\delta:\operatorname{Bl}(\pi)\to C$、外层运算
+**展开 5.8.** 给定有限集映射 $f:S\to T$、中间颜色 $\delta:T\to C$、外层运算
 $$
-p\in\mathcal P(\operatorname{Bl}(\pi),\delta;c)
+p\in\mathcal P(T,\delta;c)
 $$
-和内层运算
+和各纤维上的内层运算
 $$
-p_B\in\mathcal P(B,\kappa|_B;\delta(B)),
+p_t\in\mathcal P(f^{-1}(t),\kappa|_{f^{-1}(t)};\delta(t)),
 $$
 乘法给出
 $$
-\mu_\pi(p;(p_B))\in\mathcal P(S,\kappa;c).
+\mu_f(p;(p_t)_{t\in T})\in\mathcal P(S,\kappa;c).
 $$
-operad 结合律断言多层带颜色代入的结果不依赖先代入哪一层；单位律断言每个颜色 $c$ 有一个一元恒等运算
+空纤维上的 $p_t$ 是 nullary operation，其输出颜色仍必须是 $\delta(t)$。Operad 结合律断言对可复合映射 $S\to U\to T$，多层带颜色代入的结果不依赖先代入哪一层；单位律断言每个颜色 $c$ 有一个一元恒等运算
 $$
 \mathbf 1_c\in\mathcal P(\{*\},*\mapsto c;c)
 $$
@@ -143,13 +137,13 @@ $$
 $$
 轮廓同构通过重排有限乘积输入给出作用。
 
-代入如下。设 $\pi$ 是 $S$ 的分块，$\delta:\operatorname{Bl}(\pi)\to C$。给定
+代入如下。设 $f:S\to T$ 是有限集映射，$\delta:T\to C$。给定
 $$
-f:\prod_{B\in\operatorname{Bl}(\pi)}A_{\delta(B)}\to A_c
+F:\prod_{t\in T}A_{\delta(t)}\to A_c
 $$
 和
 $$
-g_B:\prod_{s\in B}A_{\kappa(s)}\to A_{\delta(B)},
+G_t:\prod_{s\in f^{-1}(t)}A_{\kappa(s)}\to A_{\delta(t)},
 $$
 定义
 $$
@@ -159,12 +153,13 @@ $$
 $$
 h((a_s)_{s\in S})
 =
-f\big((g_B((a_s)_{s\in B}))_{B\in\operatorname{Bl}(\pi)}\big).
+F\big((G_t((a_s)_{s\in f^{-1}(t)}))_{t\in T}\big).
 $$
+若 $f^{-1}(t)=\varnothing$，则 $G_t$ 从空乘积 $1$ 出发，等价于选择 $A_{\delta(t)}$ 中的常量；所以该公式确实实现 nullary substitution。
 
 **命题 5.11.** $\operatorname{End}_A$ 是 $C$-colored operad。
 
-**证明.** 单位 $\mathbf 1_c$ 是恒等函数 $A_c\to A_c$。结合律是函数复合的结合律：三层分块时，对输入族 $(a_s)$ 的最终求值表达式相同。颜色条件保证每个中间函数的输出集合正好是外层函数所需的输入集合。重标号自然性来自有限乘积坐标重排与限制到块的相容性。$\square$
+**证明.** 单位 $\mathbf 1_c$ 是恒等函数 $A_c\to A_c$。对可复合映射 $S\xrightarrow{g}U\xrightarrow{p}T$，两种复合都把 $(a_s)$ 先送入各 $g$-纤维上的 $Z$-层函数，再把所得元素送入各 $p$-纤维上的 $Y$-层函数，最后送入 $T$-指标的外层函数；因此结合律就是函数复合的结合律。颜色函数 $U\to C$ 与 $T\to C$ 保证每个中间输出正好具有下一层所需颜色，空纤维处的空乘积不改变论证。重标号自然性来自有限乘积坐标重排与纤维限制的相容性。$\square$
 
 **定义 5.12.** 设 $\mathcal P$ 是 $C$-colored operad。一个集合值 $\mathcal P$-代数是 $C$-indexed 集合族 $A=(A_c)_{c\in C}$ 连同 colored operad morphism
 $$
@@ -202,21 +197,21 @@ $$
   \mathcal M((x_s)_{s\in S};y);
   $$
 - 对任意对象 $x$，有单位元素 $\operatorname{id}_x\in\mathcal M((x);x)$；
-- 对任意分块 $\pi$、外层多态射
+- 对任意有限集映射 $f:S\to T$、外层多态射
   $$
-  f\in\mathcal M((y_B)_{B\in\operatorname{Bl}(\pi)};z)
+  F\in\mathcal M((y_t)_{t\in T};z)
   $$
-  和内层多态射
+  和各纤维上的内层多态射
   $$
-  g_B\in\mathcal M((x_s)_{s\in B};y_B),
+  G_t\in\mathcal M((x_s)_{s\in f^{-1}(t)};y_t),
   $$
   有复合
   $$
-  f\circ(g_B)_{B\in\operatorname{Bl}(\pi)}
+  F\circ(G_t)_{t\in T}
   \in
   \mathcal M((x_s)_{s\in S};z),
   $$
-  满足重标号自然性、结合律和单位律。
+  满足重标号自然性、结合律和单位律。空纤维允许 nullary 多态射进入外层输入槽。
 
 **命题 5.16.** $C$-colored operad 与对象集合固定为 $C$ 的 symmetric multicategory 是同一类数据。
 
@@ -224,13 +219,13 @@ $$
 $$
 \mathcal M((\kappa(s))_{s\in S};c)=\mathcal P(S,\kappa;c).
 $$
-colored operad 的单位和代入就是 multicategory 的单位和复合。
+colored operad 对全部有限集映射的单位和代入就是 multicategory 的单位和复合。
 
 反过来，给定对象集合为 $C$ 的 symmetric multicategory $\mathcal M$，令
 $$
 \mathcal P(S,\kappa;c)=\mathcal M((\kappa(s))_{s\in S};c).
 $$
-重标号、单位和复合由 $\mathcal M$ 的结构给出。两种构造在定义层面互逆。$\square$
+重标号、单位和全部纤维复合由 $\mathcal M$ 的结构给出。两种构造在定义层面互逆；特别地，空输入轮廓与空纤维在两边对应同一 nullary 数据。$\square$
 
 **说明 5.16.1.** 附录 K 给出 colored 轮廓群胚的骨架（命题 K.2）、colored substitution 的 coend 口径（定义 K.4--命题 K.6）、自由 colored operad 的树公式（定义 K.7--命题 K.9），以及代数同态、模和双模的生成元关系模型（定义 K.10--命题 K.15）。使用 colored operad 编码多对象代数系统时，默认采用附录 K 的这些约定。
 
@@ -275,7 +270,7 @@ Enriched colored operad 的模型结构不由本章定义自动给出；需要�
 
 **练习 5.1.** 当 $C$ 是单点集时，逐项证明定义 5.4 退化为第一章的代入乘积。
 
-**练习 5.2.** 对定义 5.10 的 colored endomorphism operad，写出三层分块时结合律对应的函数等式。
+**练习 5.2.** 对定义 5.10 的 colored endomorphism operad，写出可复合映射 $S\to U\to T$ 时结合律对应的函数等式，并允许两层都有空纤维。
 
 **练习 5.3.** 给定小范畴 $\mathcal C$，验证例 5.17 的 $\mathcal P_{\mathcal C}$ 中没有非一元运算。
 

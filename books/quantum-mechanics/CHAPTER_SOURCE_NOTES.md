@@ -24,10 +24,10 @@
 | 17 | Davies | 密度算子、偏迹、开放系统 | Lindblad 生成元定理 |
 | 18 | Davies, Nielsen-Chuang | POVM、Kraus 表示 | Stinespring/Naimark 一般形式 |
 | 19 | Nielsen-Chuang, Wilde | Bloch 球、熵、信道 | 熵不等式体系 |
-| 20 | Feynman-Hibbs, Trotter | 传播子、自由核 | Trotter-Kato、路径测度 |
+| 20 | Feynman-Hibbs, Trotter | 传播子、自由核 | Lie--Trotter 乘积公式、路径测度 |
 | 21 | Bjorken-Drell, Thaller | KG/Dirac 形式、非相对论极限 | 量子场论 |
 | 22 | Landau-Lifshitz, Teschl | 中心势分离、径向方程 | 球谐完备性、Coulomb 完备性 |
-| 23 | Reed-Simon, Sakurai | 规范协变、Landau 代数 | 磁 Schrodinger 自伴性 |
+| 23 | Reed-Simon, Sakurai | 规范协变、Landau 代数与纤维分解 | 磁 Schrodinger 自伴性、Hermite 完备性 |
 | 24 | Hall, Shankar | Robertson 不确定性、连续性方程、Ehrenfest 定理 | 闭算子域的完整推广 |
 | 25 | Sakurai, Reed-Simon | 相互作用图像、Dyson 展开 | 黄金规则连续谱极限 |
 | 26 | Sakurai, Hall | 两自旋耦合、CG 选择条件 | $\mathfrak{su}(2)$ 分解、Wigner-Eckart |

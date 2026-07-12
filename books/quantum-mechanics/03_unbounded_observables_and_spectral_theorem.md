@@ -46,6 +46,11 @@ $$
 $$
 P=-i\frac{d}{dx}.
 $$
+其标准自伴 realization 的定义域为 Sobolev 空间
+$$
+\mathcal D(P)=H^1(\mathbb R).
+$$
+Fourier 变换把 $P$ 酉等价为动量变量的乘法算子，因此该 realization 自伴。Schwartz 空间 $\mathcal S(\mathbb R)$ 是 $X$ 与 $P$ 的共同不变稠密核，但把算子只限制在 $\mathcal S(\mathbb R)$ 上得到的是对称算子，而不是已经声明完整定义域的自伴算子。
 在 Schwartz 空间 $\mathcal S(\mathbb R)$ 上，
 $$
 [X,P]f=i f.
@@ -63,11 +68,18 @@ $$
 $$
 A=\int_{\mathbb R}\lambda\,dE_A(\lambda).
 $$
-对 Borel 函数 $f$，可定义
+对 Borel 函数 $f:\mathbb R\to\mathbb C$，定义
 $$
 f(A)=\int_{\mathbb R}f(\lambda)\,dE_A(\lambda)
 $$
-并得到自伴算子的函数演算。
+及其定义域
+$$
+\mathcal D(f(A))
+=\left\{\psi\in\mathcal H:
+\int_{\mathbb R}|f(\lambda)|^2\,d\mu_\psi^A(\lambda)<\infty
+\right\}.
+$$
+若 $f$ 有界，则 $f(A)$ 是定义在整个 $\mathcal H$ 上的有界算子；若 $f$ 实值，则 $f(A)$ 自伴；一般复值 $f$ 给出闭正规算子。等式 $A=\int\lambda\,dE_A$ 包含定义域陈述，而不只是形式积分。
 
 **定义 3.7.** 在单位态 $\psi$ 中，可观测量 $A$ 的测量结果分布是实线上的概率测度
 $$
@@ -110,6 +122,40 @@ $$
 定义域 $\mathcal D(A)$ 正由右侧有限的向量组成。$\square$
 
 **说明 3.11.** 并非每个单位向量都有某个无界可观测量的有限期望。写 $\langle\psi,A\psi\rangle$ 前必须知道 $\psi$ 至少在相应 quadratic form 或算子定义域内。
+
+**命题 3.12（一阶矩与二阶矩的区别）.** 对单位向量 $\psi$，若
+$$
+\int_{\mathbb R}|\lambda|\,d\mu_\psi^A(\lambda)<\infty,
+$$
+则谱积分
+$$
+\mathbb E_\psi[A]\coloneqq
+\int_{\mathbb R}\lambda\,d\mu_\psi^A(\lambda)
+$$
+作为有限实数有定义。该条件一般弱于 $\psi\in\mathcal D(A)$；后者等价于有限二阶矩。
+
+**证明.** 一阶绝对矩有限保证正负部分积分都有限，故期望的 Lebesgue 积分存在。命题 3.10 已给出
+$$
+\psi\in\mathcal D(A)
+\Longleftrightarrow
+\int_{\mathbb R}\lambda^2\,d\mu_\psi^A(\lambda)<\infty.
+$$
+由 Cauchy--Schwarz，二阶矩有限蕴含一阶矩有限；反向一般不成立。具体地，在 $\ell^2(\mathbb N)$ 中令
+$$
+Ae_n=ne_n,
+\qquad
+p_n=\frac{1}{\zeta(3)n^3},
+\qquad
+\psi=\sum_{n\ge1}\sqrt{p_n}\,e_n.
+$$
+这里 $\zeta(3)=\sum_{n\ge1}n^{-3}$。
+则 $\|\psi\|=1$，且
+$$
+\sum_{n\ge1}np_n<\infty,
+\qquad
+\sum_{n\ge1}n^2p_n=\infty.
+$$
+故 $\psi$ 有有限一阶矩，却不属于 $\mathcal D(A)$。$\square$
 
 ## 本章小结
 

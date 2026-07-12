@@ -6,7 +6,7 @@
 
 - [ ] 每章是否列出本章目标和依赖前置知识。
 - [ ] 每个新定义是否包含完整数据和公理。
-- [ ] 每个非平凡命题是否给出证明、证明草图或“外部输入定理”标记。
+- [ ] 每个非平凡命题是否给出证明、外部输入的证明路线或“外部输入定理”标记。
 - [ ] 每个外部输入定理是否能在 `SOURCES.md` 中追溯。
 - [ ] 是否避免把 Langlands 对应写成无条件的一一对应；是否说明已知情形、猜想情形和归一化。
 - [ ] 是否区分局部对象和整体对象。
@@ -157,7 +157,7 @@
 - 已补写第十七章，建立 Arthur 参数、A-packet、multiplicity formula、standard transfer 和非 tempered 离散谱的接口。
 - 已补写第十八至二十二章，建立几何 Langlands 主线：$\operatorname{Bun}_G$、Hecke 修改、affine Grassmannian、几何 Satake、Hecke eigensheaves、谱侧范畴和函数域桥梁。
 - 已补写附录 A-E，集中记录代数数论、Haar 测度、光滑表示、模曲线维数公式和外部输入定理索引。
-- 已新增全书定理索引 [THEOREM_INDEX.md](THEOREM_INDEX.md)，把主要结果标记为已证、证明草图、外部输入或猜想。
+- 已新增全书定理索引 [THEOREM_INDEX.md](THEOREM_INDEX.md)，把主要结果标记为已证、外部输入的证明路线、外部输入或猜想。
 - 已新增章节依赖图 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)，明确 `GL(1)`、费马应用、一般 Langlands 和几何 Langlands 四条阅读路径。
 - 已新增核心习题解答 [SOLUTIONS.md](SOLUTIONS.md)，覆盖 restricted product、局部特征、Frobenius 归一化、Hecke 关系、Satake 参数、函子性和费马应用链。
 - 已扩充附录 A：加入非 Archimedean 赋值、数域乘积公式证明、ray class groups、idele class group 商描述、norm subgroup theorem 口径和 Artin 导子基本性质。
@@ -193,6 +193,17 @@
 - 已新增附录 AD：补 Neron model、Kodaira-Neron classification、Tate curve、Ogg conductor formula、Tate algorithm 输出、坏约化局部 L 因子和 Frey 曲线 residual conductor 降到级 $2$ 的局部计算接口。
 - 已新增附录 AE：补 `GL(2)` principal series、Steinberg twists、supercuspidals、admissible pairs、Weil-Deligne 参数、局部 L 因子、conductor 和椭圆曲线局部表示类型接口。
 
+## 本轮 OET 主线精修记录
+
+- 局部/整体类域论已区分 $F^\times\simeq W_F^{\mathrm{ab}}$、到 $G_F^{\mathrm{ab}}$ 的 profinite completion，以及 $C_K\to G_K^{\mathrm{ab}}$ 的有限商/稠密像口径。
+- Tate thesis 已固定 additive conductor ideal、自对偶加法测度与独立乘法测度，并修正 pure norm character 的极点；函数域极点按 $2\pi i/\log q$ 周期记录。
+- Hecke 幂等元改为任意固定 Haar 测度下的 $e_J=\operatorname{vol}(J)^{-1}1_J$；split 与仅 unramified Satake 参数分别落在 $\widehat G$ 和 $\widehat G\rtimes\operatorname{Fr}$。
+- $W_F\times\operatorname{SL}_2$ 到 Weil-Deligne 数据的方向补入完整证明；逆向 Jacobson-Morozov、`GL(n)` LLC、Casselman newvectors、Deligne-Carayol 相容保持精确外部输入。
+- 经典 Hecke roots、unitary Satake roots、$\pi_f^{\mathrm{alg}}$ 和 L-variable shift 已统一；$v\nmid\ell$ 局部-整体相容显式包含 Galois dual、Frobenius semisimplification 与 norm twist。
+- Ribet/Frey 链补入 residual absolute irreducibility、$p$ 处 weight 条件及其独立来源；trace formula 补入测试函数、archimedean $K$-finiteness、中心/商测度、stable conjugacy 与已稳定化版本边界。
+- 几何 Satake 补入有限域下降、Weil structure、几何 Frobenius、half-Tate 与 parity correction；特征零 categorical geometric Langlands 登记为 proof-series 外部 preprint theorem，正特征只登记 arXiv:2508.02237 的部分连通分支结果。
+- Fargues-Scholze 只登记 spectral action 与 semisimple parameter map，不宣称恢复 monodromy/enhanced packets；p-adic Hodge 的 de Rham 定义已改为有限维系数口径。本轮 OET 审计为 `errors=0 warnings=0`，`git diff --check` 通过。
+
 ## 收口后维护清单
 
 以下清单取代原先的横向扩写清单。每一项都必须服务 Langlands 主线闭合；它们是审定前闭合版的维护规则，不再是基本收口前的阻塞任务。
@@ -201,7 +212,7 @@
 
 1. 维护 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)：Frobenius、Artin reciprocity、Satake、Haar、Fourier、L 函数变量、Tate twist、classical normalization 与 unitary normalization 的跨章比较必须回指该表。
 2. 维护 `THEOREM_INDEX.md` 与 `E_external_input_theorem_index.md`：每个外部输入必须有来源、使用章节、状态和分级。
-3. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每一步标注已证、证明草图、外部输入或猜想。
+3. 维护 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)：每一步标注已证、外部输入的证明路线、外部输入或猜想。
 4. 维持 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md) 的覆盖状态；新增习题必须服务四条主线闭环。
 5. 维护 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)：只保留会阻断阅读路径、外部输入状态或归一化一致性的缺口。
 

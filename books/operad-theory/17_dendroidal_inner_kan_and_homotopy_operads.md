@@ -10,11 +10,11 @@ $$
 $$
 一个 filler 是使图表交换的延拓
 $$
-\begin{CD}
-\Lambda^e[T] @>>> X\\
-@VVV @.\\
-\Omega[T] @>>> X.
-\end{CD}
+\begin{array}{ccc}
+\Lambda^e[T] & \longrightarrow & X\\
+\downarrow & & \Vert\\
+\Omega[T] & \longrightarrow & X
+\end{array}
 $$
 
 **定义 17.2.** Dendroidal set $X$ 称为 inner Kan，或称为 dendroidal infinity-operad，若对每个树 $T$ 和每条 inner edge $e$，任意 horn
@@ -35,33 +35,25 @@ $$
 $$
 \Lambda^k[n]\to i^\*X,\qquad 0<k<n,
 $$
-有 filler。在线性树嵌入 $i:\Delta\to\Omega$ 下，$\Lambda^k[n]$ 对应线性树 $L_n$ 中第 $k$ 个 inner edge 的 dendroidal inner horn。给出 $\Lambda^k[n]\to i^\*X$ 等价于给出 $\Lambda^e[L_n]\to X$。由于 $X$ inner Kan，该 dendroidal horn 有 filler $\Omega[L_n]\to X$。限制回 $\Delta$ 即得到 simplicial filler $\Delta[n]\to i^\*X$。$\square$
+有 filler。由 MW-1 的全忠实线性树嵌入和 MW-3 的 extension-by-zero 识别，
+$$
+i_!\Delta[n]=\Omega[L_n],
+\qquad
+i_!\Lambda^k[n]=\Lambda^e[L_n],
+$$
+其中 $e$ 是 $L_n$ 的第 $k$ 条 inner edge。伴随给出
+$$
+\mathbf{sSet}(\Lambda^k[n],i^*X)
+\cong
+\mathbf{dSet}(\Lambda^e[L_n],X).
+$$
+由于 $X$ inner Kan，右侧 horn map 延拓到 $\Omega[L_n]\to X$；再由伴随限制回 $\Delta[n]\to i^*X$。$\square$
 
 ## 17.2 Strict operads give unique fillers
 
-**定理 17.5.** 对任意 colored operad $\mathcal P$，其 dendroidal nerve $N_d(\mathcal P)$ 是 inner Kan，并且每个 inner horn 有唯一 filler。Moerdijk--Weiss 定位为 MW-4。
+**外部输入定理 17.5（strict nerve 的唯一 inner fillers；MW-4）.** 对任意集合值 colored operad $\mathcal P$，其 dendroidal nerve $N_d(\mathcal P)$ 是 inner Kan，并且每个 inner horn 有唯一 filler。来源为 Moerdijk--Weiss, arXiv:math/0701293v2, Example 7.1（定位 MW-4）。
 
-**证明.** 设给定 horn
-$$
-\Lambda^e[T]\to N_d(\mathcal P).
-$$
-通过 Yoneda，这等价于为除 inner face $\partial_e:T/e\to T$ 之外的所有 elementary faces 指定 compatible operations in $\mathcal P$。
-
-由命题 16.18 的严格 Segal 性，给出 $\Omega[T]\to N_d(\mathcal P)$ 等价于：
-
-1. 为每条边 $a\in E(T)$ 指定颜色 $c_a$；
-2. 为每个顶点 $v\in V(T)$ 指定运算
-   $$
-   p_v\in\mathcal P((c_a)_{a\in\operatorname{in}(v)};c_{\operatorname{out}(v)}).
-   $$
-
-Horn 中所有 outer faces 和除 $\partial_e$ 外的 inner faces 已经包含每个顶点 corolla 的信息，也包含共享边上的颜色一致性信息。因此 horn 数据确定全部 $c_a$ 与 $p_v$。由这些数据存在唯一 operad morphism
-$$
-\Omega(T)\to\mathcal P
-$$
-并给出 filler $\Omega[T]\to N_d(\mathcal P)$。
-
-唯一性同样来自严格 Segal 性：任一 filler 的限制到顶点 corollas 必须等于 horn 已给数据，而这些 corolla 数据唯一决定 $\Omega(T)\to\mathcal P$。$\square$
+**证明路线（外部输入）.** 来源用 free colored operad $\Omega(T)$ 的生成元和 face 关系证明：horn 的兼容面数据唯一确定缺失 inner edge 上的 strict composite。命题 T.1--命题 T.2 在两顶点树上完成该重建；一般树还需 elementary face/degeneracy 分解，本文不把两顶点论证冒充为全树证明。
 
 **说明 17.6.** 定理 17.5 是“strict operad 是 infinity-operad 的特殊情形”的精确表达。唯一 filler 反映 strict composition；一般 inner Kan dendroidal set 只要求 filler 存在，组合不再严格唯一。
 
@@ -81,19 +73,30 @@ $$
 
 **说明 17.7.** 上式只是集合层级的 fiber。若要得到真正的 mapping spaces，需要在 dendroidal set 的 simplicial enrichment、slice 或 derived mapping object 中构造同伦 fiber。本书后续只在需要时引入该技术。
 
-**命题 17.8.** Inner horn filler 给出 operations 的同伦相干复合。
+**命题 17.8（两顶点 horn 的复合集）.** 设 $T$ 是由两个顶点沿 inner edge $e$ 连接的树，$X$ 是 inner Kan dendroidal set，并且
+$$
+a:\Lambda^e[T]\to X
+$$
+是一个完整 horn map。令 $\operatorname{Fill}(a)$ 为其 filler 集。每个 $\bar a\in\operatorname{Fill}(a)$ 沿缺失 inner face 限制为
+$$
+(\partial_e)^*\bar a\in X_{T/e}.
+$$
+因此复合集
+$$
+\operatorname{Comp}(a)
+=
+\{(\partial_e)^*\bar a:\bar a\in\operatorname{Fill}(a)\}
+\subseteq X_{T/e}
+$$
+非空。若 $X=N_d(\mathcal P)$，则由外部输入定理 17.5，$\operatorname{Fill}(a)$ 与 $\operatorname{Comp}(a)$ 都是单点，后者是 $\mathcal P$ 中的 strict composite。
 
-**证明.** 考虑一棵有两个顶点并由 inner edge $e$ 相连的树 $T$。给定两个可复合 operations，即给定两个顶点 corollas 到 $X$ 的元素，并要求共享 inner edge 的颜色一致。这些数据给出 horn
-$$
-\Lambda^e[T]\to X
-$$
-的一部分；加上外面 faces 的兼容数据后得到完整 inner horn。Inner Kan 条件给出 filler
-$$
-\Omega[T]\to X.
-$$
-该 filler 在 inner face $T/e$ 上的限制是一个单顶点 corolla 的元素，表示两个 operations 的复合。不同 filler 可能给出不同复合，但它们被更高维树上的 horn fillers 组织成同伦相干关系。$\square$
+**证明.** Inner Kan 条件直接给出 $\operatorname{Fill}(a)\ne\varnothing$。对每个 filler 预合成 face map $\Omega[T/e]\to\Omega[T]$，得到显示的 $X_{T/e}$ 元素。Strict nerve 情形由唯一 filler 和命题 T.2 的两顶点计算给出。$\square$
 
-**警告 17.9.** Inner Kan 条件不说复合唯一，也不说所有 choices 形成可缩空间。若需要唯一 up to contractible choice，需要更强的 fibrancy、mapping space 或 completeness 条件，并必须说明所在模型。
+**警告 17.9.** 两个颜色相容的 corolla 元素首先只给出 Segal core map
+$$
+\operatorname{Sc}[T]\to X,
+$$
+不自动给出完整 horn map $\Lambda^e[T]\to X$；要应用命题 17.8，必须给出其余 outer-face 兼容数据，或引用能把 Segal core extension 成 horn 的定理。Inner Kan 定义只断言 raw filler set 非空，不断言严格唯一。若在 operadic model structure 的 simplicial derived mapping spaces 中讨论 fillers，则 horn inclusion 为 trivial cofibration、$X$ fibrant 可给出 derived filler space 的可缩性；这是模型范畴结论，不是 raw 集合层定义。
 
 ## 17.4 Normal monomorphisms
 
@@ -105,13 +108,13 @@ Monomorphism $A\to X$ 称为 normal monomorphism，若对每个树 $T$，$\opera
 
 **说明 17.12.** Simplicial sets 中 cofibrations 是 monomorphisms。Dendroidal sets 中必须用 normal monomorphisms 替代所有 monomorphisms，原因是树可能有非平凡 automorphisms，对称群稳定子会破坏等变胞腔论证。
 
-**外部输入命题 17.13.** 对每棵树 $T$ 和 inner edge $e$，horn inclusion
+**外部输入命题 17.13（inner horn 的 normality；CM-1--CM-2）.** 对每棵树 $T$ 和 inner edge $e$，horn inclusion
 $$
 \Lambda^e[T]\hookrightarrow\Omega[T]
 $$
 是 normal monomorphism。
 
-**证明边界.** 它逐树为 representable subpresheaf 的包含，因此是 monomorphism。正规性还需要检查所有未落入 horn 的 nondegenerate dendrexes 上没有非平凡树自同构稳定子；这属于 $\Omega$ 的 elementary face 与 degeneracy 分解理论。完整证明依赖 Moerdijk-Weiss/Cisinski-Moerdijk 的 normal monomorphism 引理，本书将其作为外部输入。$\square$
+**证明路线（外部输入）.** 它逐树为 representable subpresheaf 的包含，故 monomorphism 部分可直接检查。Normality 还需分析所有未落入 horn 的 nondegenerate dendrexes 的树自同构稳定子；该步骤使用 $\Omega$ 的 elementary face/degeneracy 分解和 CM-1--CM-2，本书不重证。
 
 ## 17.5 Dendroidal operadic model structure
 
@@ -121,24 +124,24 @@ $$
 $$
 通过 pushout、transfinite composition 和 retract 生成的态射类。
 
-**外部输入定理 17.15（Cisinski-Moerdijk）.** $\mathbf{dSet}$ 上存在 operadic model structure，使得：
+**外部输入定理 17.15（Cisinski--Moerdijk operadic model structure；CM-3）.** $\mathbf{dSet}$ 上存在 operadic model structure，使得：
 
 1. cofibrations 是 normal monomorphisms；
 2. fibrant objects 是 inner Kan dendroidal sets；
 3. inner horn inclusions 是 trivial cofibrations；
 4. weak equivalences 称为 operadic weak equivalences。
 
-该模型结构是 left proper、cofibrantly generated，并给出 homotopy operads 的模型。
+本书使用的存在性与 fibrant/cofibrant 描述定位为 Cisinski--Moerdijk, arXiv:0902.1954v2, Theorem 2.4（CM-3）。涉及 left properness、monoidal compatibility 或 fibrant objects 间的弱等价判别时，必须分别引用来源相应命题及 erratum；这些附加性质不从上列四项形式推出。
 
 **说明 17.16.** Operadic weak equivalence 不能简单定义为逐树双射或逐树弱等价，因为 dendroidal set 是集合值对象。其定义通过模型结构、local objects 或 derived mapping spaces 给出。本书在使用该词时总指 Cisinski-Moerdijk operadic model structure 中的 weak equivalence。
 
 **命题 17.17.** 若 $A\to X$ 是 inner anodyne map 且 $Y$ 是 inner Kan dendroidal set，则任意交换方块
 $$
-\begin{CD}
-A @>>> Y\\
-@VVV @.\\
-X @>>> *
-\end{CD}
+\begin{array}{ccc}
+A & \longrightarrow & Y\\
+\downarrow & & \downarrow\\
+X & \longrightarrow & *
+\end{array}
 $$
 有 lift $X\to Y$。
 
@@ -146,11 +149,13 @@ $$
 
 ## 17.6 Strict operads inside the model structure
 
-**外部输入定理 17.18（模型比较入口）.** 集合值 strict operads 通过 dendroidal nerve
+**外部输入定理 17.18（strict 与 simplicial nerve 入口；MW-2、MW-5）.** 集合值 strict operads 通过 dendroidal nerve
 $$
 N_d:\operatorname{Operad}_{\mathrm{col}}\to\mathbf{dSet}
 $$
-嵌入 $\mathbf{dSet}$，fully faithfulness 定位为 MW-2。对 simplicial operads、topological operads 或 Lurie-style infinity-operads，需要使用 homotopy coherent dendroidal nerve 或相应比较构造；homotopy coherent dendroidal nerve 的 inner Kan 入口定位为 MW-5，dendroidal--Lurie 比较按 P0 引用定位批次 10 中 HHM-1--HHM-5 使用，并需保留模型结构与 fibrancy 假设。
+全忠实嵌入 $\mathbf{dSet}$；来源为 MW-2。若 $\mathcal P$ 是 fibrant simplicial operad，则其 homotopy coherent dendroidal nerve 为 inner Kan 的入口定位为 MW-5。两条结论都不是 dendroidal--Lurie 模型比较。
+
+**外部输入定理 17.18.1（dendroidal--Lurie 比较边界；HHM-1--HHM-5）.** Heuts--Hinich--Moerdijk 给出经过 simplicial operads、forest sets、marked open forest sets 与 preoperads 的 Quillen-equivalence zig-zag；将该 zig-zag解释为 dendroidal--Lurie 比较时，必须保留来源的 open/no-constants 限制。因为本书默认允许 arity $0$，不得把 17.18.1 直接应用于全书默认 operad；必须先限制到 open 子理论，或另引覆盖 nullary operations 的比较定理。
 
 **说明 17.19.** 对集合值 strict operads，$N_d(\mathcal P)$ 是具有唯一 inner fillers 的 fibrant object。对 simplicial operads，不能把每个 simplicial operation space 只取 $0$-simplices 后当作完整同伦理论；这样会丢失高阶 simplex 所编码的同伦信息。
 

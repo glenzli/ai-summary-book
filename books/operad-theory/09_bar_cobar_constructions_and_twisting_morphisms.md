@@ -61,16 +61,15 @@ dg 对称序列的代入乘积仍记为 $\circ$，由命题 6.7 的 arity 公式
 $$
 (M\circ N)(S)
 =
-\bigoplus_{\pi\in\operatorname{Part}(S)}
-M(\operatorname{Bl}(\pi))
-\otimes
-\bigotimes_{B\in\operatorname{Bl}(\pi)}N(B),
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+M(T)\otimes
+\bigotimes_{t\in T}N(f^{-1}(t)),
 $$
-其中有限张量积使用约定 9.1 的微分和 braiding。
+其中 colimit 在 $\mathbf{Ch}_k$ 中取，有限张量积使用约定 9.1 的微分和 braiding。函数 $f$ 允许空纤维；只有当 $N(0)=0$ 时才可改写为非空分块直和。
 
 **命题 9.5.** dg 对称序列范畴连同 $\circ$ 与单位 $I_k$ 构成幺半范畴。
 
-**证明.** 证明与命题 6.5 相同。唯一新增点是：在重排多个链复形张量因子时使用 Koszul braiding，因此所有分块重标号映射都是链映射。$\mathbf{Ch}_k$ 的对称幺半相干性保证结合约束和单位约束满足 Mac Lane 相干图。$\square$
+**证明.** 证明与命题 6.5 相同。唯一新增点是：在目标双射重排多个链复形张量因子时使用 Koszul braiding，因此 colimit 图的所有结构映射都是链映射。可复合有限集映射给出共同的多层张量表达；$\mathbf{Ch}_k$ 的对称幺半相干性保证结合约束和单位约束满足 Mac Lane 相干图。$\square$
 
 **定义 9.6.** dg-operad 是幺半范畴
 $$
@@ -109,16 +108,26 @@ $$
 $$
 并且 cooperad 有对应的 coaugmentation 分解。
 
+本章称对象 **connected**，若还满足
+$$
+\overline{\mathcal P}(1)=0,
+\qquad
+\overline{\mathcal C}(1)=0.
+$$
+一般 bar-cobar 伴随允许非零增广 unary 部分；第 9.9 节的二次 Koszul 判别额外采用 connected、weight-graded 口径。
+
+**定义 9.7.1（conilpotence）.** 将 coaugmented cooperad 的分解投影到 $\overline{\mathcal C}$ 得到 reduced decomposition。若对每个 $c\in\overline{\mathcal C}$，所有顶点数充分大的迭代 reduced decompositions 都在 $c$ 上为零，则称 $\mathcal C$ conilpotent。界可以依赖 $c$；本定义不要求逐 arity 存在统一界。
+
 ## 9.3 Cofree conilpotent cooperad
 
 **定义 9.8.** 设 $M$ 是 dg 对称序列。cofree conilpotent cooperad $\mathbb T^c(M)$ 定义为装饰有根树的 dg 对称序列：
 $$
 \mathbb T^c(M)(S)
 =
-\bigoplus_{[T]}
+\operatorname*{colim}_{T\in\mathsf{Tree}(S)^\simeq}
 \bigotimes_{v\in V(T)}M(\operatorname{In}(v)),
 $$
-其中 $[T]$ 遍历有限 $S$-标号有根树的同构类；没有内部顶点的单位树给出 coaugmentation。若 $M(r)=0$，则含有 $r$ 输入顶点的树对直和没有贡献。树同构按输入边集合上的双射作用于装饰。
+其中 $\mathsf{Tree}(S)^\simeq$ 是有限 $S$-叶标号有根树的同构群胚；等价地，对同构类求直和并对 $S$-标号树自同构群取 coinvariants。没有内部顶点的单位树给出 coaugmentation。若 $M(r)=0$，则含有 $r$ 输入顶点的树对直和没有贡献。该群胚公式明确商去了树自同构对顶点装饰的作用。
 
 Cooperad 分解由切割内部边给出：一次切割若干内部边，把树分解为一个外层商树和若干内层子树；对应项落入
 $$
@@ -127,7 +136,9 @@ $$
 
 **命题 9.9.** $\mathbb T^c(M)$ 是 conilpotent coaugmented dg-cooperad。
 
-**证明.** 余单位取只含一个顶点或单位树的相应投影，coaugmentation 由单位树给出。余结合律断言两次切割内部边与一次性记录两层切割给出同一结果；这是有限树中边子集分层的结合律。Conilpotence 来自顶点数滤过：一个有 $r$ 个内部顶点的树最多只能被非平凡分解 $r-1$ 次。微分逐顶点作用，和切割内部边交换，因此分解映射是链映射。$\square$
+**证明.** 余单位是到零顶点单位树部分 $I_k$ 的投影，coaugmentation 是该单位树部分的包含；单顶点树属于 cogenerator $M$，不能并入余单位。余结合律断言两次切割内部边与一次性记录两层切割给出同一结果，这是有限树中边子集分层的结合律。
+
+对恰有 $r$ 个顶点的树，具有多于 $r$ 个顶点的迭代 reduced decomposition 为零。$\mathbb T^c(M)$ 使用树权重的直接和，所以每个元素只含有限多个树项；取这些树顶点数的最大值即得定义 9.7.1 的逐元素界。微分逐顶点作用，和切割内部边交换，因此分解映射是链映射。$\square$
 
 **命题 9.10.** $\mathbb T^c(M)$ 满足如下泛性质：若 $\mathcal C$ 是 conilpotent coaugmented dg-cooperad，则给出 cooperad morphism
 $$
@@ -239,6 +250,8 @@ d_2(s^{-1}c)=
 $$
 其中 $\Delta_{(1)}(c)$ 的相应项把 $c$ 分解为 $c'$ 与 $c''$。符号由把去悬挂符号穿过张量因子的 Koszul rule 决定。
 
+Cooperad 分解本身落在直接和中，所以每次 $d_2(c)$ 是有限和；定义 9.7.1 进一步保证对固定 $c$ 迭代 reduced decomposition 最终停止。本章的 $\Omega\mathcal C$ 是树权重直接和，不包含形式无穷树。若改用完成 cobar 构造，必须另写 $\widehat\Omega$ 并采用定义 I.20--反例 I.22.1 的完成滤过。
+
 **命题 9.17.** $\Omega\mathcal C$ 是 dg-operad，即 $d^2=0$。
 
 **证明.** 因为 $d$ 是自由 operad 上的导子，只需在生成元 $s^{-1}\overline{\mathcal C}$ 上检查。$d_1^2=0$ 来自 $\mathcal C$ 的微分平方为零。$d_1d_2+d_2d_1=0$ 来自 $\Delta_{(1)}$ 是链映射。$d_2^2=0$ 来自 cooperad 余结合律：对一个元素作两次 infinitesimal decomposition 的两种方式给出同一三层分解，符号相反，因此相消。$\square$
@@ -324,15 +337,15 @@ $$
 $$
 \kappa:\mathcal P^¡\to\mathcal P
 $$
-是次数 $-1$ 的映射，在由 $sE$ 或相应悬挂生成的权重 $1$ 部分上等于自然投影到 $E\subseteq\mathcal P$，在其他权重上为零。精确定义依赖定义 8.11 的符号扭曲和定义 9.2 的悬挂约定。
+是次数 $-1$ 的映射，在定义 8.15 的权重 $1$ 部分 $sE$ 上等于 desuspension 后的自然包含 $E\subseteq\mathcal P$，在其他权重上为零。精确定义依赖定义 9.2 的链悬挂和两顶点树中的 Koszul braiding；定义 E.11 的 operadic suspension $\Lambda$ 是另一构造。
 
-**外部输入定理 9.23.** 二次 operad $\mathcal P$ Koszul 当且仅当由 $\kappa$ 诱导的 morphism
+**外部输入定理 9.23（quadratic Koszul criterion；LV-2）.** 采用 Loday--Vallette *Algebraic Operads* 的 characteristic-$0$ symmetric-operad 语境。设 $\mathcal P=\mathcal P(E,R)$ 是 connected、weight-graded 二次 dg-operad，微分保持权重，并令 $\mathcal P^¡=\mathcal C(sE,s^2R)$。则 $\mathcal P$ Koszul 当且仅当由 $\kappa$ 诱导的 morphism
 $$
 \Omega\mathcal P^¡\to\mathcal P
 $$
-是 quasi-isomorphism。该定理是 operadic Koszul duality 的核心形式之一，完整证明依赖 bar-cobar 理论和 weight spectral sequence。Ginzburg--Kapranov classical core 已定位为 GK-3 与 GK-7；Fresse modern twisting weak equivalence criterion 已定位为 FRE-1--FRE-3。把本书 $\Omega\mathcal P^¡$ 记号逐字匹配到 Loday--Vallette/Fresse 书本 convention 仍需最终 locator。
+是 quasi-isomorphism。等价条件还包括左右 Koszul complexes 解析 $I$ 以及 $\mathcal P^¡\to B\mathcal P$ 为 quasi-isomorphism，精确四项见外部输入定理 I.19。来源是 Loday--Vallette Theorem 7.4.6（LV-2）；更一般的 connected weight-graded twisting-morphism 四项判别是 Theorem 6.6.2（LV-1）。GK-3/GK-7 是 classical cross-check；FRE-2--FRE-3 的模型范畴版本另有 $C$-cofibrancy 与 operad cofibrancy 假设，不能替代 LV-1/LV-2 的语境而省略条件。
 
-**说明 9.24.** 定义 I.20 和命题 I.21 采用权重滤过解释该判别定理的输入：cobar differential 的二次部分增加顶点数，bar differential 的二次部分降低顶点数。最终版引用 Koszul 判别时，必须同时说明 reduced 假设、有限型假设、conilpotence 和所用 suspension convention。
+**说明 9.24.** 定义 I.20 和命题 I.21 分别对 bar 使用递增顶点滤过、对 cobar 使用递减顶点滤过。Connectedness 使两者在固定 arity 中有限，从而避免未声明的完成化与收敛问题。引用 LV-2 的 Koszul 判别时必须说明 characteristic $0$、connected weight grading、conilpotence 和 suspension convention；只有在进一步使用 $E^\vee$、$\mathcal P^!$ 或双对偶识别时才加入有限型假设。FRE 版本所需的 $C$-cofibrancy 与 operad cofibrancy 又是另一组条件。
 
 ## 本章小结
 

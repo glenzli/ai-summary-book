@@ -1,13 +1,13 @@
 # Motivic Homotopy and Six Functors：从 A1-局部化到 Grothendieck 六操作
 
 作者：Dr. Stochastic Parrot
-状态：完整教材可读版；学术教学闭合已达成，出版级 locator 和校对为后续增强项
-核查日期：2026-07-08
-主资料源：Morel-Voevodsky, Voevodsky, Morel, Ayoub, Cisinski-Deglise, Hoyois, Drew-Gallauer, Bachmann-Hoyois, Elmanto-Hoyois-Khan-Sosnilo-Yakerson, Deglise-Jin-Khan
+状态：完整教材可读版；核心基础、六操作及第 09-18 章 P0 主线完成 OET 复核，扩展/realization locator 和终校继续推进
+核查日期：2026-07-11
+主资料源：Lurie, Morel-Voevodsky, Robalo, Ayoub, Cisinski-Deglise, Hoyois, Drew-Gallauer, Bachmann-Hoyois, Elmanto-Hoyois-Khan-Sosnilo-Yakerson, Deglise-Jin-Khan
 
 本书目标是写成一部严格的中文 Motivic Homotopy and Six Functors 教材，而不是主题导览。正文从光滑站点、Nisnevich descent、space-valued sheaves 和 `\mathbb A^1`-局部化开始，随后进入 `T`/`\mathbb P^1` 稳定化、`\mathbf{SH}(S)`、Grothendieck 六操作、纯性、基本类、转移、范数、framed correspondences、motivic cohomology、realization functors、stacky/equivariant/log/perfect/analytic 扩展及 2025-2026 研究边界。
 
-按当前标准，本书已经达到“可完整阅读和教学使用”的教材闭合：各章包含定义、主要命题、证明或外部输入标记、边界说明和练习。尚未完成的是出版级精确 locator、全书统一编号、交叉引用细化和习题详解。
+按当前标准，本书已经达到“可完整阅读和教学使用”的教材闭合：各章包含定义、主要命题、证明或外部输入标记、边界说明和练习。宇宙/局部化、`T`-稳定化、六操作方差、base change/projection formula、purity、compactness、三角翻译，以及第 09-18 章 `HZ/DM/KGL/MGL/slice/transfers/framed/Gysin/norm/MW` 主线均完成 OET 级修订和 P0 locator 闭合。尚未完成的是第 19-23 章扩展/realization 的剩余 P0 locator、全书自动交叉引用和长篇习题详解。
 
 ## 写作约束
 
@@ -16,7 +16,10 @@
 - 定义先于直觉，非平凡命题带证明或明确的外部输入标记。
 - 全书固定集合论宇宙、小骨架、基概形类别和默认有限性假设。
 - `\mathbf H(S)`、`\mathbf H_*(S)`、`\mathbf{SH}(S)`、`\mathbf{DM}(S)`、motivic sheaves 和 bivariant theories 不得混写。
-- 六操作存在性、纯性、absolute purity、ambidexterity、framed recognition、norms、stacky extension 和 analytic extension 必须作为可追溯外部输入处理。
+- 六操作存在性、smooth/absolute purity、Atiyah duality、framed
+  recognition、norms、stacky extension 和 analytic extension 必须作为
+  可追溯外部输入处理；由这些输入形式推出的 ambidexterity 仍须给出书内
+  伴随证明。
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 和 [THEOREM_LEDGER.md](THEOREM_LEDGER.md) 中追溯。
 
 符号约定见 [NOTATION.md](NOTATION.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，教材内容闭合审计见 [TEACHING_CLOSURE_AUDIT.md](TEACHING_CLOSURE_AUDIT.md)，内部闭合矩阵见 [INTERNAL_CLOSURE_MATRIX.md](INTERNAL_CLOSURE_MATRIX.md)，近期文献边界见 [FRONTIER_SOURCE_AUDIT_2026_07_08.md](FRONTIER_SOURCE_AUDIT_2026_07_08.md)。
@@ -81,6 +84,9 @@
 - [SOURCES.md](SOURCES.md)：主要资料源清单和近期研究入口。
 - [THEOREM_LEDGER.md](THEOREM_LEDGER.md)：内部证明、外部输入和研究边界账本。
 - [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md)：外部输入精确定位账本。
+- [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：framed、norm、fundamental class 与 universal formalism 定位。
+- [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)：基础范畴论、稳定化、六操作、purity 与 triangulated shadow 定位。
+- [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md)：第九至第十八章 cohomology、motives、谱、transfers、norms 与 Milnor-Witt 主线定位。
 - [MATH_REVIEW.md](MATH_REVIEW.md)：当前严格性审查与风险记录。
 - [TEACHING_CLOSURE_AUDIT.md](TEACHING_CLOSURE_AUDIT.md)：教材内容闭合审计，判断内容、证明和引用是否足以支撑完整教学使用。
 - [TYPESETTING_AND_NUMBERING.md](TYPESETTING_AND_NUMBERING.md)：统一编号、排版、交叉引用和证明格式规范。

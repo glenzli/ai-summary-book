@@ -2,17 +2,17 @@
 
 ## 本章目标
 
-本章把第二十章的 Hecke eigensheaf 形式升级为范畴化的几何 Langlands 对应。朴素表述给每个 $\widehat G$-local system 一个 Hecke eigensheaf；现代形式要求一个范畴等价：谱侧是 $\widehat G$-local systems 模栈上的 sheaves，自动侧是 $\operatorname{Bun}_G$ 上的 D-modules 或 $\ell$-adic sheaves。
+本章把第二十章的 Hecke eigensheaf 形式升级为范畴化的几何 Langlands 对应。朴素表述给每个 $\widehat G$-local system 一个 Hecke eigensheaf；现代形式要求一个范畴等价：谱侧是 $\widehat G$-local systems 模栈上的 sheaves，特征零 de Rham 自动侧是 $\operatorname{Bun}_G$ 上的 half-twisted D-modules，其他系数理论则使用来源定义的相应 automorphic sheaf category。
 
 ## 依赖前置知识
 
-需要第十八章的 $\operatorname{Bun}_G$，第十九章的几何 Satake，第二十章的 Hecke eigensheaves。需要派生代数几何、D-modules、ind-coherent sheaves、quasi-coherent sheaves、singular support 和 stack 上的范畴。完整理论采用 Gaitsgory-Lurie、Arinkin-Gaitsgory 等框架；本章只给出严格接口。附录 O 给出本章所用 D-module、IndCoh 和 singular support 的技术索引，附录 AB 给出 derived stacks、cotangent complex、six functors、renormalization 和 spectral action 的更细接口。
+需要第十八章的 $\operatorname{Bun}_G$，第十九章的几何 Satake，第二十章的 Hecke eigensheaves。需要派生代数几何、D-modules、ind-coherent sheaves、quasi-coherent sheaves、singular support 和 stack 上的范畴。特征零 unramified de Rham/Betti 版本按 Gaitsgory-Raskin 合作项目的五篇 preprint theorem 记录为外部输入；正特征 $\ell$-adic 情形只调用 21.8.1 的部分结果，unrestricted、ramified 和 quantum 版本仍列为研究边界。附录 O 给出本章所用 D-module、IndCoh 和 singular support 的技术索引，附录 AB 给出 derived stacks、cotangent complex、six functors、renormalization 和 spectral action 的更细接口。
 
 收口归一化回指：本章只固定范畴化接口；若与有限域函数迹或局部几何 Langlands 比较，必须使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
 
 ## 21.1 谱侧局部系统模栈
 
-设 $X/k$ 为光滑射影曲线，$\widehat G$ 为对偶群。
+本章定理性主口径固定 $X/\mathbb C$ 为 smooth projective connected curve，$G/\mathbb C$ 为 connected reductive group，$\widehat G$ 为复对偶群。正特征 $\ell$-adic 口径只在外部输入 21.8.1、紧随其后的研究边界或明确的 sheaf-function 比较中出现，不与特征零 D-module 公式混写。
 
 **定义 21.1.** Betti 或 de Rham 口径下，$\widehat G$-local systems 的模栈记为
 $$
@@ -40,15 +40,19 @@ $$
 
 ## 21.2 自动侧范畴
 
-**定义 21.5.** 自动侧范畴记为
+**定义 21.5.** 令 $\det_{\operatorname{Bun}_G}$ 为 Gaitsgory-Raskin proof series 按伴随丛上同调归一化的 determinant line bundle，并令 $\det_{\operatorname{Bun}_G}^{1/2}$ 表示其平方根的 $\mu_2$-gerbe。特征零 de Rham 自动侧定义为相应的 half-twisted D-module category
 $$
-\mathcal D(\operatorname{Bun}_G)
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G).
 $$
-或更精确地，在特征零 de Rham 口径下取
+本章后文的 $\mathcal D(\operatorname{Bun}_G)$ 在 de Rham 主口径下是这个范畴的简写。在 $\ell$-adic 口径下，必须取来源定理定义的 automorphic sheaf category；“相应 constructible derived category”只作对象类型提示，不能替代 21.8.1 的 nilpotent singular-support 和 renormalization 条件。
+
+**注 21.5.1（half-twist 归一化）.** 选择 $\omega_X^{1/2}$ 后，来源给出
 $$
-\operatorname{DMod}(\operatorname{Bun}_G).
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\simeq
+\operatorname{DMod}(\operatorname{Bun}_G)
 $$
-在 $\ell$-adic 口径下，取相应 constructible derived category。
+的识别，但这不允许在 Hecke 公式中删除下标 $1/2$：未扭曲写法会把通常的 $\operatorname{Rep}(\widehat G)$ Hecke action 改成带 canonical central gerbe 的版本。因而本章定理性陈述始终保留 half-twist。
 
 **注 21.6.** $\operatorname{Bun}_G$ 非紧且不是有限型，因此 naive D-module category 往往不足以支撑所有 functorial operations。现代处理使用 renormalized categories、compact generation 和 !-extension 的精细版本。
 
@@ -56,26 +60,36 @@ $$
 
 ## 21.3 范畴化几何 Langlands
 
-**猜想 21.7（几何 Langlands，范畴形式）.** 存在自然等价
+**外部输入定理 21.7（unramified categorical geometric Langlands，特征零 preprint theorem）.** 在本章固定的 $X/\mathbb C$ 与 $G/\mathbb C$ 设定下，并按来源固定 half-twisting gerbe、中心、automorphic renormalization、nilpotent singular support 及 de Rham stack conventions，Gaitsgory-Raskin 合作项目构造从自动侧到谱侧的 Langlands functor，并证明它是范畴等价：
 $$
 \mathbb L_G:
-\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X))
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
 \xrightarrow{\sim}
-\operatorname{DMod}(\operatorname{Bun}_G)
+\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X))
 $$
-或者，在分别固定 Betti 或 $\ell$-adic six-functor formalism、constructibility 与 singular-support 条件后，写成相应版本。该等价应与 Hecke 作用、Eisenstein series、constant term、Verdier duality 和 functoriality 相容。
+以及相应 Betti 版本；该等价与项目中精确定义的 spectral/Hecke action 和 parabolic induction 兼容。
 
-**注 21.8.** 已知定理版本依赖具体群、基域口径和所取子范畴；本书不列完整已知清单。完整一般形式依赖深层 derived algebraic geometry，这里将其作为现代几何 Langlands 的目标陈述。
+**注 21.8（来源状态与函子方向）.** 定理 21.7 的来源是 2024 年起发布的五篇 proof-series preprints，而非本书证明；本书把它登记为“外部 preprint theorem”，且不让任何算术主线证明依赖其出版或审稿状态。Proof I 构造的 $\mathbb L_G$ 的方向是 automorphic $\to$ spectral；正文若从谱侧对象构造自动侧对象，一律写逆等价 $\mathbb L_G^{-1}$。公式中的两端是来源定义的 twisted/renormalized/derived categories，不能替换为 naive bounded derived categories。
 
-**命题 21.9.** 若范畴等价 21.7 存在，则第二十章的 Hecke eigensheaf 形式应由谱侧 skyscraper sheaf 推出。
+**外部输入定理 21.8.1（正特征中的部分 $\ell$-adic 几何 Langlands；preprint theorem）.** 在 Gaitsgory-Raskin 2025 预印本精确定义的正特征 unramified $\ell$-adic 设定中，带 nilpotent singular support 的 automorphic sheaves 范畴与 Langlands 参数栈的**某些连通分支之并**上的适当 $\operatorname{IndCoh}$ 范畴等价。这里“某些连通分支之并”和“适当定义的范畴”都是定理的一部分；本书不把该结果扩张为整个参数栈上的 unrestricted 等价。
 
-**证明草图.** 设 $\mathcal E\in\operatorname{LocSys}_{\widehat G}(X)$。谱侧点 $\mathcal E$ 的 skyscraper 或残余 gerbe 上的对象在 $\operatorname{Rep}(\widehat G)$ 的 tautological local system 作用下取本征值 $V_{\mathcal E}$。若 $\mathbb L_G$ 与 Hecke 作用相容，则其像 $\mathcal F_{\mathcal E}$ 满足
+**研究边界 21.8.2.** 定理 21.7 与 21.8.1 合在一起仍不自动覆盖：正特征中整个参数栈所有连通分支上的 unrestricted $\ell$-adic categorical equivalence、ramified/level-structure 版本、integral coefficients、quantum geometric Langlands，或 Fargues-Fontaine 曲线上的 local geometric Langlands。需要这些版本时必须另立外部定理或猜想，不能引用 21.7 或 21.8.1 代替。
+
+**推论 21.9.** 设 $\mathcal E\in\operatorname{LocSys}_{\widehat G}(X)$，并假设其 residual gerbe 上所取点对象属于
+$\operatorname{IndCoh}_{\mathcal N}$ 且定理 21.7 的 spectral action 对该对象可取值。若把该点对象记为 $\delta_{\mathcal E}$，则自动侧对象
+$$
+\mathcal F_{\mathcal E}:=\mathbb L_G^{-1}(\delta_{\mathcal E})
+\in\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+$$
+满足第二十章的 Hecke eigencondition。
+
+**证明.** 谱侧 residual gerbe 上的点对象在 $\operatorname{Rep}(\widehat G)$ 的 tautological local system 作用下取值 $V_{\mathcal E}$。定理 21.7 的 Hecke/spectral compatibility 说明 $\mathbb L_G^{-1}$ 把这个作用送回自动侧 Hecke functor，所以 $\mathcal F_{\mathcal E}$ 满足
 $$
 \mathsf H_V(\mathcal F_{\mathcal E})
 \cong
 \mathcal F_{\mathcal E}\boxtimes V_{\mathcal E}.
 $$
-这正是 Hecke eigensheaf 条件。$\square$
+这些同构继承 tensor compatibility，正是定义 20.4 的 Hecke eigensheaf 条件。存在的深内容全部位于外部输入定理 21.7；本推论只作函子相容性的形式推导。$\square$
 
 ## 21.4 Eisenstein Series 与 Constant Term
 
@@ -115,13 +129,15 @@ $$
 
 ## 21.6 本章小结
 
-现代几何 Langlands 的核心不是“点到对象”的对应，而是范畴等价：
+特征零 unramified 几何 Langlands 的核心不是“点到对象”的对应，而是外部输入定理 21.7 的范畴等价：
 $$
-\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X))
-\simeq
-\operatorname{DMod}(\operatorname{Bun}_G).
+\mathbb L_G:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\xrightarrow{\sim}
+\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G}(X)).
 $$
-Hecke eigensheaves 是谱侧点对象的像。Nilpotent singular support、Eisenstein functors 和 constant term functors 是完整理论不可省略的结构。
+正特征 $\ell$-adic 情形只按 21.8.1 记录某些参数连通分支之并上的部分 preprint theorem；它不改变 21.8.2 的 unrestricted 边界。
+Hecke eigensheaves 是谱侧点对象在逆等价 $\mathbb L_G^{-1}$ 下的像。Half-twist、nilpotent singular support、Eisenstein functors 和 constant term functors 是完整理论不可省略的结构。
 
 ## 练习
 

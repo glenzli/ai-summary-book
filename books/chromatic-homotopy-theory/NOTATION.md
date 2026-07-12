@@ -49,7 +49,8 @@ $$
 | --- | --- |
 | $K(0)$ | $H\mathbb Q$ |
 | $K(n)$ | 第 $n$ 个 Morava K-theory，$n\ge 1$ |
-| $E(n)$ | Johnson-Wilson theory |
+| $E(0)$ | $H\mathbb Q$；因此 $L_0$ 为有理化 |
+| $E(n)$ | Johnson-Wilson theory，$n\ge1$ |
 | $BP$ | $p$-局部 Brown-Peterson spectrum |
 | $BP\langle n\rangle$ | truncated Brown-Peterson spectrum |
 | $E_n$ | 高度 $n$ 的 Morava E-theory/Lubin-Tate theory |
@@ -77,20 +78,31 @@ $$
 
 ## 4. 有限谱和 type
 
-**定义 N.8.** 有限 $p$-局部谱 $X$ 的 type 为 $n$，若
+**定义 N.8.** 非零有限 $p$-局部谱 $X$ 的 type 是首次非消失的
+Morava 高度：
 $$
-K(n-1)_*X=0,\qquad K(n)_*X\ne 0
+\operatorname{type}(X)=\min\{n\ge0\mid K(n)_*X\ne0\}.
 $$
-并且 $n\ge 0$，其中 $K(-1)$ 不使用，$K(0)=H\mathbb Q$。零谱的 type 记作 $\infty$。
+finite detection 保证该集合非空。零谱的 type 记作 $\infty$。因此
+type $n$ 按定义满足 $K(i)_*X=0$ 对所有 $i<n$，而“所有 $i\ge n$
+均非零”是外部高度单调性定理，不是定义。
 
 **约定 N.9.** $\mathcal C_n$ 表示有限 $p$-局部谱的 thick 子范畴
 $$
-\mathcal C_n=\{X\mid K(n-1)_*X=0\},\qquad n\ge 1,
+\mathcal C_n=\{X\mid K(i)_*X=0\text{ 对所有 }0\le i<n\},
+\qquad n\ge1,
 $$
-并令 $\mathcal C_0$ 为全部有限 $p$-局部谱。于是
+并令 $\mathcal C_0$ 为全部有限 $p$-局部谱、
+$\mathcal C_\infty=\{0\}$。接受有限谱高度单调性后，$n\ge1$ 时可等价
+写为 $\mathcal C_n=\{X\mid K(n-1)_*X=0\}$。于是
 $$
 \mathcal C_0\supseteq \mathcal C_1\supseteq \mathcal C_2\supseteq\cdots.
 $$
+
+**约定 N.9A.** 对 $n\ge1$，$v_n$-self-map 写作
+$v:\Sigma^dF\to F$ 且 $d>0$。高度零单独取
+$p:\mathbb S_{(p)}\to\mathbb S_{(p)}$（次数 $0$），其 telescope 为
+$T(0)\simeq H\mathbb Q$。
 
 ## 5. 群和 descent
 

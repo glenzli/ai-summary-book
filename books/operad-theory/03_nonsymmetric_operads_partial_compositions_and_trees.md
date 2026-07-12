@@ -21,10 +21,10 @@ $$
 (X\circ_{\mathrm{ns}}Y)(n)
 =
 \coprod_{k\ge0}
-\coprod_{n_1+\cdots+n_k=n}
+\coprod_{\substack{n_1+\cdots+n_k=n\\ n_i\ge0}}
 X(k)\times Y(n_1)\times\cdots\times Y(n_k).
 $$
-当 $k=0$ 时，内层和只在 $n=0$ 时有一项。
+允许 $n_i=0$，对应在第 $i$ 个槽代入 nullary operation。当 $k=0$ 时，内层和只在 $n=0$ 时有一项。
 
 单位非对称序列 $I_{\mathrm{ns}}$ 定义为
 $$
@@ -63,6 +63,8 @@ $$
 \mathcal P(n_1+\cdots+n_k)
 $$
 组成，满足单位和结合公理。
+
+这里以及下文整体代入中始终允许 $n_i=0$。
 
 ## 3.2 偏复合公理
 
@@ -133,31 +135,21 @@ $$
 $$
 (U_{\mathrm{ns}}\mathcal O)(n)=\mathcal O([n]).
 $$
-整体代入使用标准分块
+对 $n_1,\ldots,n_k\ge0$，整体代入使用唯一的非降映射
 $$
-[n_1+\cdots+n_k]=[n_1]\coprod\cdots\coprod[n_k],
+[n_1+\cdots+n_k]\longrightarrow[k]
 $$
-其中块按自然顺序排列。
+其第 $i$ 个纤维是连续的 $n_i$-元素区间；当 $n_i=0$ 时该纤维为空。各非空纤维按自然顺序排列。
 
 **定义 3.10.** 对 $p\in\mathcal O(m)$ 和 $q\in\mathcal O(n)$，对称 operad 的偏复合
 $$
 p\circ_i q\in\mathcal O(m+n-1)
 $$
-是沿分块
-$$
-[m+n-1]
-=
-\{1\}\coprod\cdots\coprod\{i-1\}
-\coprod
-\{i,\ldots,i+n-1\}
-\coprod
-\{i+n\}\coprod\cdots\coprod\{m+n-1\}
-$$
-的代入，其中块集合按顺序识别为 $[m]$，大块上放入 $q$，其余单点块上放入单位 $\mathbf 1$。
+是沿非降映射 $\rho_i:[m+n-1]\to[m]$ 的代入，其中第 $i$ 个纤维有 $n$ 个元素，其余纤维各有一个元素。第 $i$ 个纤维上放入 $q$，其余单点纤维上放入单位 $\mathbf 1$。当 $n=0$ 时，$\rho_i$ 的第 $i$ 个纤维为空；该公式仍定义把 nullary $q$ 代入第 $i$ 个槽。
 
 **命题 3.11.** 定义 3.10 的偏复合满足命题 3.6 的三类恒等式。
 
-**证明.** 这些恒等式是对称 operad 在特定有序分块上的结合律。由于所有分块均为区间块和单点块，块置换不出现；因此证明与非对称情形相同。$\square$
+**证明.** 这些恒等式是对称 operad 对上述非降有限集映射的结合律。所有非空纤维都是区间，空纤维保留其目标槽，且没有额外目标置换；因此证明与非对称情形相同。$\square$
 
 ## 3.4 平面有根树
 
@@ -214,4 +206,3 @@ $$
 **练习 3.4.** 证明一个对称 operad 的底层非对称 operad 忘掉了哪些信息。
 
 **练习 3.5.** 对 $\operatorname{Ass}$ 的底层非对称 operad，计算二元乘法 $m$ 的 $m\circ_1m$ 和 $m\circ_2m$，并解释它们在 $\operatorname{Ass}(3)$ 中为何不同、在代数上为何由结合律联系。
-

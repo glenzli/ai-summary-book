@@ -32,7 +32,10 @@ $$
 
 ## A.4 符号
 
-**约定 A.6.** 本书正文优先使用 suspension coalgebra 约定，以避免低阶公式符号膨胀。若展开低阶公式，符号必须与附录 B 对照。
+**约定 A.6.** 本书使用附录 B 的 suspension coalgebra 约定：
+$|sa|=|a|-1$，张量次序为 $sa_d\otimes\cdots\otimes sa_1$，coderivation
+延拓为 (B.1)，全部 Stasheff 恒等式为 (B.3)。低阶或 curved 公式不得再用
+未定义的“$\pm$”替代这些符号。
 
 **警告 A.7.** 不同 HMS 文献可能使用 homological grading、opposite order composition 或不同 suspension convention。引用外部公式时必须先翻译到本书约定。
 

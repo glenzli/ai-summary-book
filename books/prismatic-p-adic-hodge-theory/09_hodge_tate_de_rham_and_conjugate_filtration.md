@@ -26,17 +26,28 @@ $$
 M\{-i\}=M\otimes_{A/I}(I/I^2)^{\otimes(-i)}.
 $$
 
-**警告 9.3.** 文献中 Hodge-Tate twist 的正负号可能因 convention 变化。本书在正式收口前保留附录 F 的交叉核对表；任何含 $\{i\}$ 的公式都必须与该表一致。
+**警告 9.3.** 文献中 Hodge-Tate twist 的正负号可能因 convention 变化。
+本书固定采用定义 9.2 与附录 F 的 convention；任何外部公式进入正文前都
+必须先按该 convention 转写，不能逐章临时换号。
 
 ## 9.2 Conjugate filtration
 
-**外部输入定理 9.4（Hodge-Tate comparison refined form）.** 在定义 9.1 的假设下，$\overline\Delta_{X/A}$ 带有自然递增或递减形式的 conjugate filtration。采用本书递减写法时，其 associated graded 满足
+**外部输入定理 9.4（Hodge-Tate comparison refined form）.** 在定义 9.1
+的假设下，$X_{\mathrm{et}}$ 上的 Hodge--Tate complex 带自然 Postnikov
+filtration。本文固定递增编号
 $$
-\operatorname{gr}^i_{\mathrm{conj}}\overline\Delta_{X/A}
+\operatorname{Fil}^{\mathrm{conj}}_i
+=\tau^{\le i},
+$$
+并对该 sheaf filtration 取 derived global sections。所得 associated graded
+满足
+$$
+\operatorname{gr}^{\mathrm{conj}}_i\overline\Delta_{X/A}
 \simeq
 R\Gamma\left(X,\wedge^i\mathbb L_{X/(A/I)}\right)[-i]\{-i\}.
 $$
 若 $X$ smooth，则 $\wedge^i\mathbb L_{X/(A/I)}$ 可替换为 $\Omega^i_{X/(A/I)}$。
+来源为 Bhatt--Scholze, Theorems 4.11、6.3（locator `BS-COMP-HT`）。
 
 **说明 9.5.** 定理 9.4 是外部输入，不在本书中重证。书内使用它时只抽取两个形式后果：perfectness 和 Hodge numbers 的约束。
 
@@ -58,26 +69,44 @@ $E_1$ 页由有限生成模组成，且只有有限多列非零。每个 $E_\inf
 **定义 9.8.** De Rham specialization 定义为
 $$
 \Delta^{\mathrm{dR}}_{X/A}
-=\phi_A^\ast R\Gamma_\Delta(X/A)\otimes_A^L A/I,
+=\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I,
 $$
 其中
 $$
 \phi_A^\ast R\Gamma_\Delta(X/A)=A\otimes_{A,\phi_A}^LR\Gamma_\Delta(X/A).
 $$
+帽号表示 tensor product 之后的 derived $p$-completion，见定义 3.2。
 
-**外部输入定理 9.9（de Rham comparison refined form）.** 在 smooth bounded prism 假设下，存在自然拟同构
+**外部输入定理 9.9（de Rham comparison）.** 在 smooth bounded prism
+假设下，存在自然拟同构
 $$
 \Delta^{\mathrm{dR}}_{X/A}
 \simeq
-R\Gamma(X,\Omega^\bullet_{X/(A/I)}),
+R\Gamma_{\mathrm{dR}}(X/(A/I))^{\wedge,L}_p,
 $$
-并且该同构与乘法结构、pullback functoriality 和 Hodge filtration 相容。
+并且该同构与乘法结构及 pullback functoriality 相容。来源为
+Bhatt--Scholze, Corollary 15.4（locator `BS-COMP-DR`）。这是 unfiltered
+comparison；右侧当然带其 Hodge filtration，但把该 filtration 搬到左侧需要
+relative Nygaard theorem 等额外输入，不能从本定理自动推出。
+
+右侧的递减 Hodge filtration 是截断 forms 的 intrinsic filtration
+$$
+\operatorname{Fil}_H^jR\Gamma_{\mathrm{dR}}^{\wedge,L}_p
+=R\Gamma\left(X,\Omega^{\ge j}_{X/(A/I)}\right)^{\wedge,L}_p.
+$$
+其 associated graded 为
+$R\Gamma(X,\Omega^j_{X/(A/I)})[-j]$ 的 derived $p$-completion。这个
+定义不需要 Nygaard theory；需要额外输入的是它与 prismatic-side
+filtration 的 compatibility。
 
 **警告 9.10.** 定理 9.9 不能由定理 9.4 形式推出。Hodge-Tate specialization 与 de Rham specialization 的差异包含 Frobenius pullback，因此二者是不同 comparison theorem。
 
 ## 9.4 两个滤过的关系
 
-**说明 9.11.** Conjugate filtration 位于 Hodge-Tate specialization 上；Hodge filtration 位于 de Rham complex 上。二者通过 prismatic object 同源，但不是同一个 filtration。
+**说明 9.11.** Conjugate filtration 位于 Hodge-Tate specialization 上；
+Hodge filtration 位于 $p$-completed de Rham complex 上。二者通过 prismatic
+object 同源，但不是同一个 filtration；定理 9.9 也不声称二者之间有 filtered
+identification。
 
 **命题 9.12（不可混用判别）.** 若一个论证只知道 $\overline\Delta_{X/A}$ 的 conjugate filtration，则不能推出 $R\Gamma_{\mathrm{dR}}(X/(A/I))$ 上 Hodge filtration 的 strictness。
 

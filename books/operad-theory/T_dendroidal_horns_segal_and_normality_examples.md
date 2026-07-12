@@ -109,7 +109,7 @@ $$
 $$
 是 normal monomorphism。
 
-**证明边界.** Monomorphism 部分逐树明显，因为 horn 是 representable 的 subpresheaf。Normality 需要分析未包含 face 的非退化 dendrexes 的 automorphism stabilizers；这依赖 $\Omega$ 的 elementary face/degeneracy 分解理论，作为外部输入。$\square$
+**证明路线（外部输入）.** Monomorphism 部分逐树可由 horn 是 representable 的 subpresheaf 检查。Normality 需要分析未包含 face 的非退化 dendrexes 的 automorphism stabilizers；该步骤依赖 $\Omega$ 的 elementary face/degeneracy 分解以及 CM-1--CM-2，本书不重证。
 
 ## T.6 Degeneracy 的低阶例子
 

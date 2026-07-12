@@ -55,7 +55,7 @@ $$
 
 **答案 2.1.** 在 $\mathcal C^{\operatorname{op}}$ 中，始对象变为终对象。由终对象唯一性，始对象在唯一同构意义下唯一。
 
-**答案 2.2.** $A\times B$ 带投影 $p_A,p_B$，对任意 $X$ 有自然双射
+**答案 2.2.** 在 $\mathbf{Set}_{\mathcal U}$ 中，$A\times B$ 带投影 $p_A,p_B$，对任意 $X$ 有自然双射
 $$
 \mathbf{Set}(X,A\times B)\cong\mathbf{Set}(X,A)\times\mathbf{Set}(X,B).
 $$
@@ -81,14 +81,26 @@ $$
 $$
 这迫使 $A=\varnothing$ 不成立时左边为空；若 $A=\varnothing$，左边为单点集，也不等于双点集。故不可表。
 
-**答案 2.9.** 因 Hom 出余积为积，
+**答案 2.9.** 自然变换 $\alpha:P\Rightarrow Q$ 在每个 $X$ 上的函数可分别限制到两个不交分支，得到自然变换
+$\alpha^A:yA\Rightarrow Q$ 与 $\alpha^B:yB\Rightarrow Q$。反过来，一对这样的自然变换在两个分支上逐段定义唯一的
+$\alpha_X:P(X)\to Q(X)$，两个分支的自然性给出 $\alpha$ 的自然性。因此
 $$
-\operatorname{Nat}(yA\sqcup yB,Q)
+\operatorname{Nat}(P,Q)
 \cong\operatorname{Nat}(yA,Q)\times\operatorname{Nat}(yB,Q)
 \cong Q(A)\times Q(B).
 $$
 
-**答案 2.10.** 逐对象同构 $V\cong V^*$ 依赖选基。若存在自然同构 $\operatorname{id}\Rightarrow(-)^*$，则对每个线性自同构 $g:V\to V$ 都必须与所选同构交换；但选基得到的同构在换基下不保持。自然映射存在的是 $V\to V^{**}$，不是一般的 $V\to V^*$。
+**答案 2.10.** 对偶函子类型为
+$$
+(-)^*:(\mathbf{Vect}^{\mathrm{fd}}_k)^{\operatorname{op}}
+\to\mathbf{Vect}^{\mathrm{fd}}_k,
+$$
+而 $\operatorname{id}$ 与 $(-)^{**}$ 都是
+$\mathbf{Vect}^{\mathrm{fd}}_k\to\mathbf{Vect}^{\mathrm{fd}}_k$。因此
+$\operatorname{id}\Rightarrow(-)^*$ 的源范畴不匹配，不能写成自然变换。评价映射
+$\iota_V(v)(\lambda)=\lambda(v)$ 满足
+$f^{**}\iota_V=\iota_Wf$，故给出
+$\operatorname{id}\Rightarrow(-)^{**}$；在有限维情形它逐分量可逆。
 
 ## 第三章
 
@@ -3209,11 +3221,23 @@ $$
 
 ## 附录 A
 
-**答案 A.1.** 若 $\mathbf{Set}_{\mathcal U}$ 是 $\mathcal U$-小，则其对象集合属于 $\mathcal U$，从而包含 $\mathcal U$ 中所有集合；这与 universe 的大小闭包和 Cantor 型论证冲突。
+**答案 A.1.** $\mathbf{Set}_{\mathcal U}$ 的对象集可取为
+$\mathcal U$。若它是 $\mathcal U$-小的，则存在
+$x\in\mathcal U$ 与 $\mathcal U$ 双射。由于
+$\mathcal P(x)\in\mathcal U$ 且 $\mathcal U$ 传递，有注入
+$\mathcal P(x)\hookrightarrow\mathcal U\cong x$，与 Cantor 定理矛盾。
 
-**答案 A.2.** 函子由对象函数和态射函数组成。小范畴的对象集与态射集都是集合，因此所有可能函数的集合也是集合，满足函子性等式的子集仍是集合。
+**答案 A.2.** 若 $\mathcal C,\mathcal D$ 为 $\mathcal U$-小，函子由
+$\operatorname{Ob}(\mathcal C)\to\operatorname{Ob}(\mathcal D)$
+和
+$\operatorname{Mor}(\mathcal C)\to\operatorname{Mor}(\mathcal D)$
+两函数编码，并受源、靶、恒等和复合等式约束。两个函数集均为
+$\mathcal U$-小，满足这些等式的子集仍为 $\mathcal U$-小。
 
-**答案 A.3.** 选择原则用于对每个 $D\in\mathcal D$ 选择 $G(D)\in\mathcal C$ 和同构 $F(GD)\cong D$。
+**答案 A.3.** 选择原则用于对每个 $D\in\mathcal D$ 同时选择
+$G(D)\in\mathcal C$ 和同构 $F(GD)\cong D$。默认
+$\operatorname{Ob}(\mathcal D)$ 为 $\mathcal V$-小集合，所以这是
+$\mathcal V$-小族上的选择；后续态射作用由完全忠实性唯一决定，不再需要选择。若对象超出固定 universe 成为真类，则该论证会需要本书没有假设的全局选择。
 
 ## 附录 B
 
@@ -3225,15 +3249,33 @@ $$
 
 ## 附录 C
 
-**答案 C.1.** 若 $P,Q$ 都是 $A,B$ 的积，由 $P$ 泛性质得 $Q\to P$，由 $Q$ 泛性质得 $P\to Q$；复合保持投影，故由唯一性等于恒等。
+**答案 C.1.** 设 $(P,p_A,p_B)$ 与 $(Q,q_A,q_B)$ 都是
+$A,B$ 的积。由 $Q$ 的泛性质有唯一
+$u:P\to Q$ 满足 $q_Au=p_A,q_Bu=p_B$；由 $P$ 的泛性质有唯一
+$v:Q\to P$ 满足 $p_Av=q_A,p_Bv=q_B$。于是 $vu$ 与
+$\operatorname{id}_P$ 经 $p_A,p_B$ 后相同，故 $vu=\operatorname{id}_P$；
+同理 $uv=\operatorname{id}_Q$。任何保持两投影的 $P\to Q$ 都由
+$Q$ 的泛性质等于 $u$，所以唯一性只针对保持投影的同构。
 
-**答案 C.2.** 自由群 $F(S)$ 表示函子 $G\mapsto\mathbf{Set}(S,U G)$。表示映射把群同态 $F(S)\to G$ 限制到生成元集合 $S$。
+**答案 C.2.** 自由群 $F(S)$ 表示函子
+$G\mapsto\mathbf{Set}_{\mathcal U}(S,U G)$。表示映射
+$$
+\mathbf{Grp}(F(S),G)\to\mathbf{Set}_{\mathcal U}(S,UG)
+$$
+把群同态限制到生成元 $S$；逆映射把集合函数唯一延拓为群同态。对
+$h:G\to H$，限制 $h\bar f$ 得 $Uh\circ f$，故该双射对 $G$ 自然。
 
 **答案 C.3.** 双射由 currying 给出：
 $$
-\mathbf{Set}(X\times A,Y)\cong\mathbf{Set}(X,Y^A).
+\mathbf{Set}_{\mathcal U}(X\times A,Y)
+\cong\mathbf{Set}_{\mathcal U}(X,Y^A).
 $$
-单位为 $x\mapsto(a\mapsto(x,a))$ 的相应形式，余单位为评价映射 $Y^A\times A\to Y$。
+它把 $f$ 送到 $\widehat f(x)(a)=f(x,a)$，逆映射把 $g$ 送到
+$\check g(x,a)=g(x)(a)$。两式逐点互逆。若 $u:X'\to X$，则
+$\widehat{f(u\times\operatorname{id}_A)}=\widehat f\,u$；若
+$v:Y\to Y'$，则 $\widehat{vf}=v^A\widehat f$，所以双射对两个变量自然。
+单位是 $x\mapsto(a\mapsto(x,a))$ 的转置形式，余单位为评价映射
+$Y^A\times A\to Y$。
 
 ## 附录 E
 

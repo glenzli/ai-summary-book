@@ -14,7 +14,7 @@
 
 **本书使用.** 用作第二十章和附录 N 的总览来源：factorization homology 是 manifolds 上的 homology theory；圆周情形给 Hochschild homology；Eilenberg--Steenrod 型公理刻画 factorization homology；并包含 nonabelian Poincare duality 方向。
 
-**允许用法.** AF-0 只作为总览入口。正文证明链引用时应优先使用下列更精确的 AF-1--AF-4，而不是只写 Theorem 1.2。
+**允许用法.** AF-0 只作为总览入口。正文证明链引用时应优先使用下列更精确的 AF-1--AF-5，而不是只写 Theorem 1.2。
 
 ### 1.2 Excision
 
@@ -77,15 +77,35 @@ $$
 
 **允许用法.** 可支撑“带边界版本需要额外 boundary/module 数据”的外部输入，并解释为什么无边界 disk normalization 不能直接用于区间、半空间或带角空间。
 
+### 1.6 交换系数计算
+
+**定位 AF-5.** Ayala--Francis, arXiv:1206.5522v6, Proposition 5.1.
+
+**本书使用.** 附录 N 外部输入定理 N.28 和命题 N.20 中，若 $\mathcal V$ 是 tensor-presentable symmetric monoidal infinity-category，$A\in\operatorname{CAlg}(\mathcal V)$，则
+$$
+\int_M A\simeq M\otimes A
+$$
+自然成立；右侧使用 $M$ 的 underlying space 对 commutative algebra $A$ 的 tensor。
+
+**需要同时记录的假设.**
+
+1. 系数是严格意义上的 commutative algebra object，而不只是未指定的“足够交换” $E_n$-algebra；
+2. $\operatorname{CAlg}(\mathcal V)$ 必须可由 spaces tensor，且底层 symmetric monoidal infinity-category 满足来源的 tensor-presentability；
+3. $M$ 的 tangential structure 通过遗忘 commutative algebra 到相应 Disk algebra 使用，公式只依赖 underlying space；
+4. 结论位于 $\mathcal V$ 或 $\operatorname{CAlg}(\mathcal V)$ 的等价层，不是先取同调后的群同构。
+
+**允许用法.** 可支撑 $HH(B)\simeq S^1\otimes B$ 的交换系数特化。不得把 $M\otimes A$ 写成普通 singular homology group，除非另行选择链模型并取同调。
+
 ## 2. 与本书现有文件的替换规则
 
 | 旧表述 | 替换为 |
 | --- | --- |
-| Factorization homology 总览 | AF-0，证明链优先用 AF-1--AF-4 |
+| Factorization homology 总览 | AF-0，证明链优先用 AF-1--AF-5 |
 | Factorization homology excision | AF-1 |
 | $\int_{S^1}A\simeq HH_\*(A)$ | AF-2 |
 | Factorization homology 的 Eilenberg--Steenrod 型刻画 | AF-3 |
 | Manifolds with boundary 的 factorization homology | AF-4 |
+| Commutative coefficients $\int_MA\simeq M\otimes A$ | AF-5 |
 
 ## 3. 本批次未解决
 
@@ -98,4 +118,4 @@ $$
 5. Fukaya category 构造、sectorial descent、skeletal descent 或 wrapped Fukaya gluing，已关闭为外部几何边界；
 6. Hochschild chain model 与本书 suspended Hochschild sign convention 的逐项符号核对，属于 production-level sign convention work。
 
-因此 AF-0--AF-4 只用于 topological-manifold factorization homology，不得被读成上述几何/field-theoretic 定理的替代证明。
+因此 AF-0--AF-5 只用于 topological-manifold factorization homology 及其交换系数计算，不得被读成上述几何/field-theoretic 定理的替代证明。

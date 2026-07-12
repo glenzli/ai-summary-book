@@ -90,16 +90,23 @@ $$
 $$
 D(A,\mathcal M)
 =
-\{C\in D(A)\mid R\operatorname{Hom}_A(K_S^{\mathcal M},C)=0\ \forall S\}
+\{C\in D(A)\mid
+R\underline{\operatorname{Hom}}_A(K_S^{\mathcal M},C)=0\ \forall S\}
 $$
 
 是反射局部子范畴，且 localization 与张量积相容。
 
 **使用位置.** 第三、四章。
 
-**不可省略的假设.** $(A,\mathcal M)$ 必须满足 analytic ring 公理；任意测度赋值不够。
+**不可省略的假设.** $(A,\mathcal M)$ 必须满足第二卷定义 3.3 的复形级 analytic
+公理：对所有由 \(\mathcal M[T]\) 的直和组成的非负同调复形，internal derived Hom
+比较为等价。任意测度赋值、cone 正交类或反射存在性都不能替代该公理。
 
-**本书不证明.** analytic ring 公理推出 Bousfield localization 与张量相容。
+**本书不证明.** S26 Proposition 7.5 从 Definition 7.4 推出阿贝尔心脏、导出全嵌入、
+Bousfield localization 与张量相容的核心论证。S26 Warning 7.6 的
+underived/derived tensor 集中性不包含在本条中。
+
+**来源定位.** S26 Definition 7.4、Proposition 7.5、Warning 7.6。
 
 **证明模块位置.** 附录 X 证明 analytic cone 局部对象、analyticization 泛性质、analytic tensor 下降的形式部分，并说明 solidification 是特例。
 
@@ -109,29 +116,42 @@ $$
 
 **使用位置.** 第五章、第三卷 Dolbeault/liquid 模型。
 
-**不可省略的假设.** 必须固定 $p$ 或 $<p$；$\mathcal M_{<p}[S]$ 的增长条件参与定义。
+**不可省略的假设.** 必须固定 \(0<p\le1\)，并使用
+\(\mathcal M_{<p}[S]=\bigcup_{0<q<p}\mathcal M_q[S]\)。普通 Radon measures
+\(\mathcal M_1\) 和单个 \(\mathcal M_p\) 都不能替代 \(<p\) 构造。
 
-**本书不证明.** $\mathcal M_{<p}$ 满足 analytic ring 条件。
+**本书不证明.** $\mathcal M_{<p}$ 满足 analytic ring 条件，以及 liquid 延拓、
+cokernel presentation 和 Hom 判别的等价。
+
+**来源定位.** S26 Theorem 7.11；CS26 Definition 2.13 与 Theorem 3.11。
 
 **证明模块位置.** 附录 S、Z 证明接受该 analytic ring 输入后，finite-dimensional realization、Fredholm cohomology 和 Dolbeault 类型检查的形式后果。
 
-## D.6 liquid realization
+## D.6 经典完备空间的 liquid membership
 
-**输入定理 D.6.** 对文献中指定、并在本书作为输入范围登记的拓扑向量空间子范畴 \(\mathcal T_p\)，存在 realization 过程
+**输入定理 D.6.** 固定 \(0<p\le1\)。若 \(E\) 是 \(p\)-Banach 空间，则
 
 $$
-\mathcal L_p:E\mapsto E_{\mathrm{liq}}
+\underline E(S)=\operatorname{Cont}(S,E)
 $$
 
-进入 $p$-liquid analytic 模范畴。本文只在 \(\mathcal T_p\) 的下列性质内使用它：\(\mathcal T_p\) 包含有限维实向量空间和本文使用的核 Fréchet/Dolbeault 型对象；\(\mathcal L_p\) 与有限极限、有限直和、闭子空间 kernel、有限维 quotient 和闭值域短正合列相容。
+是 \(p\)-liquid；逆极限保持 \(p\)-liquid。因此每个实 Fréchet 空间的凝聚化对所有
+\(0<p\le1\) 都 \(p\)-liquid。
 
-**使用位置.** 第五章、附录 J、附录 P、附录 S；第三卷 Dolbeault 复形和 Hodge/Fredholm 有限性接口。
+**使用位置.** 第五章、附录 J、P、S、Z；第三卷 Dolbeault Fréchet 复形的对象类型。
 
-**不可省略的假设.** 对象必须处于 realization 的适用范围；单纯是 Banach 或 Fréchet 空间不够。
+**不可省略的假设.** 这里 \(\mathcal L_p(E)\) 只是本书对
+\(\underline E\in\mathbf{Liquid}_p\) 的记号。D.6 不断言任意拓扑向量空间 liquid，
+也不断言任意 Fréchet cokernel 在凝聚化后仍是 cokernel。
 
-**本书不证明.** liquid realization 的构造、Hom 判别、与经典连续线性算子的相容性。
+**本书不证明.** \(p\)-Banach 紧子集的 \(p\)-convex 控制及其推出的 liquid Hom
+判别。
 
-**证明模块位置.** 附录 Z 证明拓扑向量空间凝聚化和闭值域 Fréchet cohomology 的书内部分，并把 realization exactness 精确隔离为输入。
+**书内完成部分.** 第五章命题 5.9 与附录 Z.6 证明：拓扑满射凝聚化后为
+epimorphism，当且仅当 profinite 参数族可在有限覆盖后连续提升。附录 P、S、Z 的
+cohomology 比较明确假设这项凝聚严格性；连续 Hodge/Green splitting 是充分条件。
+
+**来源定位.** CS26 Theorem 2.14、Lemma 2.16 及其后关于 inverse limits 的推论。
 
 ## D.7 Huber pair 的解析化
 
@@ -147,7 +167,10 @@ $$
 
 ## D.8 Fréchet-Fredholm/Hodge 输入
 
-**输入定理 D.8.** 紧光滑流形或紧复流形上的椭圆 Fréchet 复形满足闭值域、Fredholm 有限性和 Hodge 分解；Dolbeault 复形的 Fréchet cohomology 与 sheaf cohomology 相容。
+**输入定理 D.8.** 紧光滑流形或紧复流形上的椭圆 Fréchet 复形满足闭值域、Fredholm
+有限性和 Hodge 分解；Green operators 与 Hodge projections 在光滑 Fréchet 拓扑中连续，
+给 exact/coexact/harmonic 的连续 splitting；Dolbeault 复形的 Fréchet cohomology 与
+sheaf cohomology 相容。
 
 **使用位置.** 附录 P、附录 S；第三卷第四、五章和 Hodge/Fredholm 有限性附录。
 
@@ -184,7 +207,7 @@ $$
 | T-V | D.4 | analytic kernel 张量理想性包含在 analytic ring localization 条件中 |
 | T-VI | D.7 | Huber pair rational localization 与 Čech descent |
 | T-VII | D.5 | \(p\)-liquid analytic ring |
-| T-VIII | D.6 | liquid realization |
+| T-VIII | D.6 | Banach/Fréchet 凝聚化的 liquid membership；exactness 另验局部提升 |
 | T-IX | D.8 | Fréchet Fredholm/Hodge 输入 |
 
 ## D.11 引用规则
@@ -194,6 +217,7 @@ $$
 - “由输入定理 D.1”而不是“由 Scholze 定理”。
 - “由输入定理 D.3 的 profinite 假设”而不是“由 solid 张量积公式”。
 - “由输入定理 D.4 的 analytic ring 条件”而不是“由解析化存在”。
-- “由输入定理 D.6 的 realization 范围”而不是“Fréchet 空间自然是 liquid 对象”。
+- “由输入定理 D.6 得 Fréchet 项的 membership，再由命题 5.9 验证 quotient 的局部
+  提升”而不是引用未指定的 realization exactness。
 
 这样可以强制读者看到每个结论的精确假设。

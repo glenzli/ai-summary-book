@@ -70,11 +70,20 @@ $$
 
 ## 第 6 章
 
-**6.1.** $2[\ell]+2[H]=3+2=5$。
+**6.1.** $2[\ell]+2[H]=3+2=5$。$(\mathcal O_5)_{rs}$ 携带 $\Delta L=2$，而 $(\mathcal O_5)_{rs}^\dagger$ 携带 $\Delta L=-2$，所以二者不同。对所有有序 flavor 指标求和时，Hermitian 组合为
+$$
+{1\over2\Lambda_{\rm ref}}\sum_{r,s}
+\left[C_5^{rs}(\mathcal O_5)_{rs}
++(C_5^{rs})^*(\mathcal O_5)_{rs}^\dagger\right],
+\qquad C_5^{rs}=C_5^{sr}.
+$$
+结构分类从这一非自伴对中只选一个代表，故唯一类型仍计为一；h.c. 不另增结构数，但不能从拉氏量中省略。
 
 **6.2.** EFT 展开参数不再小，局域截断不能控制误差。
 
 **6.3.** 低能核 beta decay 使用 LEFT；强耦合电弱破缺优先 HEFT；若 Higgs pair production 能区低于新物理尺度且 Higgs 为线性双重态，使用 SMEFT。
+
+**6.4.** 由 $c^{(6)}=C^{(6)}/\Lambda_{\rm ref}^2$，取 $\Lambda_{\rm ref}=1\,\mathrm{TeV}$ 时 $C^{(6)}=1$，取 $\Lambda_{\rm ref}=10\,\mathrm{TeV}$ 时 $C^{(6)}=100$。两者保持同一个有量纲系数 $c^{(6)}$，所以振幅不变；$Q/\Lambda_{\rm ref}$ 随坐标约定改变，不能单独充当物理有效性判据。
 
 ## 第 7 章
 
@@ -104,7 +113,19 @@ $$
 
 **10.1.** 得到 $(\bar q\gamma_\mu q)(\bar q\gamma^\mu q)$，还需指定颜色收缩。若来自颜色八重态流，需用 $T^A_{ij}T^A_{kl}=\frac12(\delta_{il}\delta_{kj}-\delta_{ij}\delta_{kl}/N_c)$ 投影回 Warsaw 的 $O_{qq}^{(1,3)}$ 及 flavor 置换组合，而不是引入独立的 $O_{qq}^{(8)}$。
 
-**10.2.** $(H^\dagger H)^2$ 维数为四，可吸收到 SM quartic 的重整化中。
+**10.2.** 记 $A=\Box+\kappa X$，则
+$$
+(M^2+A)^{-1}={1\over M^2}-{A\over M^4}+O(M^{-6}),
+$$
+从而
+$$
+\Delta\mathcal L_{\rm EFT}^{\rm tree}
+=\frac{a^2}{2M^2}X^2
+-\frac{a^2}{2M^4}X\Box X
+-\frac{a^2\kappa}{2M^4}X^3
++O(M^{-6}).
+$$
+$[X]=2$，故 $X^2$ 是维数四的 SM quartic 修正，而 $X\Box X$ 与 $X^3$ 都是维数六。展开同时要求 $|\Box|/M^2\ll1$ 和 $|\kappa X|/M^2\ll1$；前者是低动量条件，后者是独立的背景场条件。
 
 **10.3.** 因为
 $$

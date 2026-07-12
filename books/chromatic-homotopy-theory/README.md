@@ -71,7 +71,7 @@
 - [FRONTIER_SOURCE_AUDIT_2026_07_08.md](FRONTIER_SOURCE_AUDIT_2026_07_08.md)：近期前沿文献版本核查记录。
 - [D_source_theorem_index.md](D_source_theorem_index.md)：外部输入定理索引和 locator 待办。
 - [PUBLICATION_CLOSURE_MATRIX.md](PUBLICATION_CLOSURE_MATRIX.md)：正式教材范围、内部完整性和细节完整性闭包矩阵。
-- [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：基础 chromatic 定理包的第一批 bibliographic locator。
+- [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：基础 chromatic 定理包；DHS/HS、Bousfield 分解、smash product、fracture 与 convergence 已有 theorem/section locator。
 - [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)：Morava descent、tmf、Gross-Hopkins、Picard 与计算的第二批 bibliographic locator。
 - [P1_REFERENCE_LOCATORS_FRONTIER.md](P1_REFERENCE_LOCATORS_FRONTIER.md)：前沿、半加性、equivariant/motivic 接口定理包的 content-level locator。
 - [INTERNAL_CHAPTER_COMPLETENESS_AUDIT.md](INTERNAL_CHAPTER_COMPLETENESS_AUDIT.md)：逐章正文态、接口正文态和剩余缺口审计。

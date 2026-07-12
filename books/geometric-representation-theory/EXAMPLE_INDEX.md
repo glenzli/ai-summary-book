@@ -24,7 +24,9 @@
 | 6.4 | $GL_n$ nilpotent orbits 和 component groups | [第六章](06_nilpotent_orbits_generalized_springer_and_character_sheaves.md) |
 | G.2 | $\mathfrak{sl}_2$ nilpotent cone | [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md) |
 | G.3 | $\mathfrak{sl}_2$ 的标准基和 nilpotent cone 方程 | [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md) |
+| G.4 | $SL_2$ Springer sheaf 的 shifted stalk cohomology | [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md) |
 | G.7 | $SL_3$ nilpotent orbits 和 subregular fiber | [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md) |
+| G.8 | $SL_3$ subregular Springer fiber 的 stable-flag 直接分类 | [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md) |
 | 10.2 | $U(\mathfrak g)$ 作为 Harish-Chandra bimodule | [第十章](10_harish_chandra_bimodules_primitive_ideals_and_characteristic_cycles.md) |
 | 10.7.1 | $\mathfrak{sl}_2$ Casimir 和中心 character | [第十章](10_harish_chandra_bimodules_primitive_ideals_and_characteristic_cycles.md) |
 
@@ -33,6 +35,10 @@
 | 编号 | 内容 | 位置 |
 | --- | --- | --- |
 | 3.12 | $\mathbb A^1$ 上 shifted constant sheaf 的 perversity | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md) |
+| 3.4.1 | Sheaves on $BK$ 与 algebraic $K$-representations 的类型反例 | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md) |
+| C.8 | Proper decomposition、projective hard Lefschetz 与 modular failure 边界 | [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
+| F.10 | Open immersion 上 $Rj_!\ne Rj_\ast$ | [附录 F](F_convolution_correspondences_and_associativity.md) |
+| F.11 | $\mathbb P^1\to\mathrm{pt}$ 说明 proper pushforward 不保持 perverse | [附录 F](F_convolution_correspondences_and_associativity.md) |
 | 7.3 | $\mathbb A^1$ 的 Weyl algebra | [第七章](07_d_modules_riemann_hilbert_and_regular_holonomic.md) |
 | 7.10 | $\mathcal O_X$ 的 characteristic variety | [第七章](07_d_modules_riemann_hilbert_and_regular_holonomic.md) |
 | 7.10.1 | delta module 的 characteristic variety | [第七章](07_d_modules_riemann_hilbert_and_regular_holonomic.md) |
@@ -56,8 +62,13 @@
 | 编号 | 内容 | 位置 |
 | --- | --- | --- |
 | 12.4 | $GL_n$ affine Grassmannian 的 lattice 描述 | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| 12.5.1 | $GL_1$ affine Grassmannian 的 nonreduced dual-number family | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
 | 12.9 | $GL_n$ dominant coweights | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
-| 13.13 | $GL_1$ geometric Satake | [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
+| 12.16 | $GL_1$ convolution 的 pointwise proof | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| 12.17 | $GL_2$ minuscule convolution 的 lattice chains、fibers 与 semismall check | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| 12.18 | $\operatorname{IC}_{(1,0)}^{\star2}=\operatorname{IC}_{(2,0)}\oplus\operatorname{IC}_{(1,1)}$ | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md) |
+| 13.13--13.14 | $GL_1$ geometric Satake 的 full Hom 与 symmetric tensor proof | [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
+| 13.15 | $GL_2$ geometric decomposition 与 $V^{\otimes2}=\operatorname{Sym}^2V\oplus\det V$ | [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
 | 14.3.2 | $GL_n$ affine flag 的 periodic lattice chains | [第十四章](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | 14.7.1 | rank-one affine Weyl group | [第十四章](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | I.5 | $GL_1$ Tannakian group 识别 | [附录 I](I_geometric_satake_tannakian_details.md) |

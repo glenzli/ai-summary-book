@@ -10,16 +10,46 @@
 
 ## 5.1 Novikov 系数
 
-**定义 5.1.** Novikov field $\Lambda$ 是形式和
+**定义 5.1.** 设 $k$ 是域。Universal Novikov field $\Lambda$ 的非零元素
+是形式和
 $$
-\sum_{i=0}^\infty a_iT^{\lambda_i},\qquad a_i\in k,\quad \lambda_i\in\mathbb R,\quad
-\lambda_i\to+\infty,
+a=\sum_{i=0}^{N}a_iT^{\lambda_i},\qquad
+a_i\in k^\times,\quad
+\lambda_0<\lambda_1<\cdots,
 $$
-构成的域。其 valuation 定义为
+其中 $N\in\mathbb Z_{\ge0}\cup\{\infty\}$；若 $N=\infty$，要求
+$\lambda_i\to+\infty$。等价地，指数 support 有下界，并且在每个
+$(-\infty,C]$ 中只有有限多个点。把零元另行加入，并定义
 $$
-v\left(\sum_i a_iT^{\lambda_i}\right)=\inf\{\lambda_i\mid a_i\ne0\}.
+v(a)=\lambda_0\quad(a\ne0),\qquad v(0)=+\infty.
 $$
-Novikov ring $\Lambda_{\ge0}$ 由 valuation 非负的元素构成，$\Lambda_{>0}$ 由 valuation 正的元素构成。
+逐项加法时先合并相同指数并删去零系数；Cauchy 乘积在每个能量阈值以下
+只有有限项。Novikov valuation ring 与其极大理想分别是
+$$
+\Lambda_{\ge0}=\{a\mid v(a)\ge0\},\qquad
+\Lambda_{>0}=\{a\mid v(a)>0\};
+$$
+按 $v(0)=+\infty$ 的约定，两者都含零元。
+
+**命题 5.1A.** 定义 5.1 的集合在所述加法与 Cauchy 乘法下是域，并且
+$$
+v(ab)=v(a)+v(b),\qquad
+v(a+b)\ge\min\{v(a),v(b)\}.
+$$
+
+**证明.** Support 的局部有限性保证每个固定指数的 Cauchy 系数只收到
+有限项贡献，并在加法、乘法下保持。首项不能在乘积中消去，所以
+$v(ab)=v(a)+v(b)$；加法只能消去最低项，故得到非 Archimedean
+不等式。对 $a\ne0$，若它不只是一个 monomial，写
+$$
+a=a_0T^{\lambda_0}(1+h),\qquad v(h)=\delta>0.
+$$
+则 $v(h^m)\ge m\delta\to+\infty$，所以
+$$
+a^{-1}=a_0^{-1}T^{-\lambda_0}\sum_{m\ge0}(-h)^m
+$$
+按定义 5.1 的 support 条件收敛，并由逐个 valuation quotient 中的有限
+几何级数计算满足 $aa^{-1}=1$。Monomial 情形直接取逆。证毕。
 
 **解释 5.2.** $T^\lambda$ 记录 holomorphic curve 的 symplectic area。条件 $\lambda_i\to+\infty$ 保证按能量过滤的无穷和在 Novikov 拓扑下收敛。
 
@@ -29,56 +59,81 @@ Novikov ring $\Lambda_{\ge0}$ 由 valuation 非负的元素构成，$\Lambda_{>0
 
 ## 5.2 curved $A_\infty$ 结构
 
-**定义 5.4.** 一个 curved $A_\infty$ algebra 是分次 $\Lambda$-向量空间 $A$ 和次数 $2-d$ 的运算
+**定义 5.4.** 一个 filtered curved $A_\infty$ algebra 是完备、分离的
+filtered 分次 $\Lambda_{\ge0}$-module $A$，连同连续且保持能量过滤、次数为
+$2-d$ 的运算
 $$
 \mu^d:A^{\otimes d}\to A[2-d],\qquad d\ge0,
 $$
-满足包含 $d=0$ 项的 $A_\infty$ 方程。元素
+其 suspended Taylor family 满足定义 B.6 的过滤局部有限条件与 curved
+$A_\infty$ 方程。元素
 $$
 \mu^0\in A^2
 $$
-称为 curvature。
+称为 curvature。若去掉过滤与完备性，只能讨论每个固定 arity 的有限
+恒等式，不能自动使用后文的 Maurer--Cartan 无穷和。
 
 **解释 5.5.** 在 Fukaya theory 中，$\mu^0$ 来自边界落在同一 Lagrangian 上、带一个输出的 holomorphic disks。若 $\mu^0\ne0$，则 $\mu^1$ 一般不再平方为零。
 
-**命题 5.6.** 对 curved $A_\infty$ algebra，低阶 $A_\infty$ 方程给出
+**命题 5.6.** 令 $x=sa$。对 curved $A_\infty$ algebra，一个输入的
+suspended 恒等式准确地是
 $$
-\mu^1(\mu^1(x))+\mu^2(\mu^0,x)\pm\mu^2(x,\mu^0)=0
+b_1b_1(x)+b_2(b_0,x)+(-1)^{|x|}b_2(x,b_0)=0.
 $$
-以及含更高项的相应公式。因此若 $\mu^0=0$，则 $\mu^1{}^2=0$。
+因此若 $\mu^0=0$，则 $\mu^1{}^2=0$。
 
-**证明.** 把 curved $A_\infty$ 方程写在一个输入 $x$ 上。所有分解项包括先对空输入应用 $\mu^0$ 再与 $x$ 复合、先对 $x$ 应用 $\mu^1$ 再应用 $\mu^1$，以及符号由 suspension convention 决定的右侧 curvature 项。若 $\mu^0=0$，只剩 $\mu^1(\mu^1(x))=0$。证毕。
+**证明.** 这是推论 B.7 的单对象情形。允许内层 arity 为 $0$ 后，只有
+把 $b_0$ 插在 $x$ 左、右两处以及复合 $b_1b_1$ 三种分解；右插入的
+符号为 $(-1)^{|x|}$。若 $b_0=0$，只剩 $b_1^2=0$，desuspension 后得到
+$\mu^1{}^2=0$。证毕。
 
 ## 5.3 Maurer-Cartan 元与变形微分
 
-**定义 5.7.** 设 $A$ 是 filtered curved $A_\infty$ algebra。一个 bounding cochain 是次数 $1$ 的元素
+**定义 5.7.** 设 $A$ 是定义 5.4 的 filtered curved $A_\infty$ algebra。
+一个 bounding cochain 的 unsuspended 数据是正过滤次数的次数 $1$ 元素
 $$
-b\in A^1\widehat\otimes\Lambda_{>0}
+b\in F^{>0}A^1
 $$
-满足 Maurer-Cartan 方程
+；写 $\beta=sb\in F^{>0}(sA)^0$。Maurer--Cartan 方程定义为 suspended
+等式
 $$
-\sum_{d\ge0}\mu^d(b,\ldots,b)=0.
+\sum_{r\ge0}b_r(\beta^r)=0.
+\tag{5.1}
 $$
-更一般地，若右边等于 $W(b)e$，其中 $e$ 是单位，则称 $b$ 是 weak bounding cochain，$W(b)$ 称为 disk potential 或 obstruction value。这里采用 Fukaya 范畴常用的 $\mathbb Z/2$ 分次或等价地把 Novikov/势参数赋予补偿次数的约定；若坚持纯 $\mathbb Z$ 分次，则必须同时声明 $W(b)$ 的次数使 $W(b)e$ 与 $\mu_b^0$ 同次。
+更一般地，若左端等于 $-s(W(b)e)$，其中 $e$ 是 strict unit，则称 $b$
+是 weak bounding cochain，$W(b)$ 称为 disk potential 或 obstruction value。
+负号来自 (B.7a)。这里采用 Fukaya 范畴常用的 $\mathbb Z/2$ 分次或等价地
+把 Novikov/势参数赋予补偿次数的约定；若坚持纯 $\mathbb Z$ 分次，则必须
+同时声明 $W(b)$ 的次数使 $W(b)e$ 与 $\mu_b^0$ 同次。
 
-**定义 5.8.** 给定 bounding cochain $b$，定义变形后的运算
+**定义 5.8.** 给定 $\beta=sb$，定义变形后的 suspended Taylor components
 $$
-\mu_b^d(x_d,\ldots,x_1)
+b_d^\beta(x_d,\ldots,x_1)
 =\sum_{r_0,\ldots,r_d\ge0}
-\mu^{d+r_0+\cdots+r_d}(b^{r_d},x_d,b^{r_{d-1}},\ldots,x_1,b^{r_0}).
+b_{d+r_0+\cdots+r_d}
+(\beta^{r_d},x_d,\beta^{r_{d-1}},\ldots,x_1,\beta^{r_0}).
+\tag{5.2}
 $$
-Novikov 正 valuation 条件保证该和收敛。
+Novikov 正 valuation 条件保证该和收敛。变形后的 $\mu_b^d$ 是
+$b_d^\beta$ 按附录 B desuspend 所得的次数 $2-d$ 运算；(5.2) 而非一个
+省略 Koszul signs 的 unsuspended 展开是本书的定义。
 
-**命题 5.9.** 若 $b$ 满足 Maurer-Cartan 方程，则 $\{\mu_b^d\}_{d\ge1}$ 构成非弯曲 $A_\infty$ 结构。特别地，
+**命题 5.9.** 若 $b$ 满足 (5.1)，则
+$\{\mu_b^d\}_{d\ge1}$ 构成非弯曲 $A_\infty$ 结构。特别地，
 $$
 (\mu_b^1)^2=0.
 $$
 
-**证明.** 把 $b$ 插入 curved $A_\infty$ 方程的所有空隙并对所有插入数求和。出现的所有项正是变形后运算的 $A_\infty$ 方程；其中没有外部输入的项由 Maurer-Cartan 方程消去，即变形 curvature
+**证明.** 先模去任意固定 valuation 阈值；正过滤次数保证所有相关和
+变成有限和，所以可以把 $b$ 插入 curved $A_\infty$ 方程的所有空隙并
+重排。出现的项正是变形后运算的 $A_\infty$ 方程；其中没有外部输入的
+项是变形 suspended curvature
 $$
-\mu_b^0=\sum_{d\ge0}\mu^d(b,\ldots,b)
+b_0^\beta=\sum_{r\ge0}b_r(\beta^r)
 $$
-为零。取一个输入的低阶方程得到 $(\mu_b^1)^2=0$。证毕。
+并由 (5.1) 为零；unsuspended curvature 是
+$\mu_b^0=-s^{-1}b_0^\beta$。对所有阈值取逆极限，再取一个输入的
+方程，得到 $(\mu_b^1)^2=0$。证毕。
 
 **定义 5.10.** 两个对象 $(L_0,b_0)$、$(L_1,b_1)$ 的 deformed Floer complex 定义为
 $$
@@ -94,10 +149,29 @@ $$
 $$
 其中 $b$ 是 bounding cochain 或 weak bounding cochain。若采用 weak bounding cochains，则通常只允许 obstruction value 相同的对象之间形成同一个 fiber category。
 
-**例 5.12.** 在 toric Fano 情况中，Lagrangian torus fibers 的 disk potential $W$ 是 Laurent polynomial。critical points of $W$ 给出 unobstructed 或 weakly unobstructed branes；相应 Floer cohomology 与 Jacobian ring 的分量相关。
+**例 5.12.** 在满足标准 toric Fano Floer 构造假设时，Lagrangian torus
+fibers 配以秩一局部系统给出 weakly unobstructed 对象，其 disk potential
+$W$ 是 Laurent polynomial。Critical-point 方程是 deformed self-Floer
+cohomology 可能非零的必要计算条件，并在相应外部定理下把这些对象与
+$\operatorname{Jac}(W)$ 的局部分量联系起来。不能仅从 Laurent polynomial
+的形式推出该 Floer 或 HMS 结论。
 
-**外部输入定理 5.13（FOOO filtered Fukaya theory）.** 对一般 compact Lagrangians，在适当相对 spin、Novikov、Kuranishi/virtual perturbation 和能量过滤假设下，可以构造 filtered curved $A_\infty$ structures、bounding cochain deformation theory 和相应 Floer cohomology。  
-来源：Fukaya-Oh-Ohta-Ono 的 Lagrangian intersection Floer theory。
+**外部输入定理 5.13（FOOO filtered curved algebra，窄版本）.** 设
+$(M,\omega)$ 是 closed symplectic manifold，$L\subset M$ 是 compact、
+oriented、relatively spin Lagrangian，并在特征零系数与 completed universal
+Novikov ring 上工作。固定 tame almost-complex data、相对 spin/orientation
+data、gapped energy filtration，并假设 FOOO 的 coherent Kuranishi/virtual
+perturbation package。则可在 $L$ 的合适 completed chain model 上构造
+unital、gapped、filtered curved $A_\infty$ algebra；不同辅助选择给出
+filtered $A_\infty$ homotopy-equivalent models。对正 valuation 的
+Maurer--Cartan 解，定义 5.8--5.9 的 self-twisted 运算收敛，并给出该
+endomorphism complex 的 deformed Floer cohomology。
+
+这里的结论只陈述一个 $L$ 的 endomorphism algebra。要同时处理多个
+Lagrangians、定义对象间 morphisms 并得到 curved Fukaya category，还需
+对所有 polygon moduli spaces 选择彼此相容的 virtual perturbations；这不是
+从逐对象的 algebra 自动拼出的形式结论。来源：Fukaya--Oh--Ohta--Ono，
+*Lagrangian Intersection Floer Theory: Anomaly and Obstruction*。
 
 ## 5.5 HMS 中的用途
 
@@ -107,14 +181,24 @@ $$
 2. Toric mirror 中，disk potential $W$ 直接成为 Landau-Ginzburg B-side 的 potential。
 3. Fukaya category 常按 potential value 分解，对应 matrix factorization category 或 singular fiber 上的 B-side 分类。
 
-**命题 5.14.** 若两个 weak bounding cochains $b_0,b_1$ 的 obstruction values 不同，则它们不属于同一个非弯曲 Fukaya fiber category。在把所有 potential values 放入同一 curved 或 matrix-factorization 型模型时，对应 morphism object 在标准可逆曲率差假设下为 contractible。
+**命题 5.14（不同 potential values 的类型）.** 设两个 weakly
+unobstructed 对象满足
+$$
+\mu^0_{b_i}=W_i e_i,
+$$
+其中 $e_i$ 是严格单位，并采用附录 I 的 $\mathbb Z/2$ curved 约定。令
+$d=\mu^1_{b_0,b_1}$。则
+$$
+d^2=(W_1-W_0)\operatorname{id}.
+$$
+所以 $W_0=W_1$ 时才得到普通 morphism complex；$W_0\ne W_1$ 时该
+数据是 potential $W_1-W_0$ 的 matrix factorization，而不是 cochain
+complex。若进一步 $\operatorname{char}k\ne2$ 且 $W_1-W_0$ 可逆，则它在
+相应 matrix-factorization homotopy category 中为零。
 
-**证明草图.** 低阶 curved 方程给出
-$$
-(\mu^1_{b_0,b_1})^2(x)=
-(W(b_1)-W(b_0))\cdot x
-$$
-到符号约定下的单位作用。若只固定一个 fiber value $\lambda$，则要求 $W(b_i)=\lambda$ 才能得到平方为零的 morphism differential。若允许 curved/matrix-factorization 型 morphisms，且 $W(b_1)-W(b_0)$ 可逆，则可用该可逆曲率差构造 contracting homotopy，故对象间 morphism 在相应同伦范畴中消失。证毕。
+**证明.** 第一式是计算 I.8 的 desuspension。相同 value 时右端为零，
+故定义 5.11 的 fiber category 有良定义 morphism complexes。不同 value
+时，最后一句正是命题 I.11 应用于常数 $c=W_1-W_0$。证毕。
 
 ## 本章小结
 

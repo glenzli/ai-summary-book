@@ -10,7 +10,8 @@
 
 这些事实常被压缩成“标准理论”。本附录把第一项给出书内证明，把第二、三项拆成可核查的命题与明确输入定理。这样后续使用 $\operatorname{Ext}$、$\operatorname{Tor}$、solidification 和 analyticization 时，读者能看清哪些步骤是形式同调代数，哪些步骤仍引用一般定理。
 
-本附录固定一个小站点 $(\mathcal C,J)$。记
+本附录固定附录 A 工作层级内的小站点 $(\mathcal C,J)$。涉及模时再固定一个
+交换环 sheaf \(R\)，从而得到 ringed site \((\mathcal C,R)\)。记
 
 $$
 \operatorname{PSh}(\mathcal C;\mathbf{Ab})
@@ -22,7 +23,8 @@ $$
 \operatorname{PSh}(\mathcal C;\mathbf{Ab}).
 $$
 
-所有覆盖均指 $J$-覆盖。为避免大小问题，覆盖族默认属于固定 universe。
+所有覆盖均指 $J$-覆盖。覆盖族、复形的次数集和所有直和指标都属于固定工作
+universe；\(D(R)\) 表示无界导出范畴，不暗含有界上或有界下条件。
 
 ## H.1 匹配族与 plus 构造
 
@@ -181,13 +183,13 @@ $$
 **定义 H.12.** 复形 $P^\bullet$ 称为 K-flat，如果函子
 
 $$
-P^\bullet\otimes_R-:K(R)\to K(R)
+\operatorname{Tot}(P^\bullet\otimes_R-):K(R)\to K(R)
 $$
 
 把 quasi-isomorphism 送到 quasi-isomorphism。等价地，对任意 acyclic 复形 $A^\bullet$，复形
 
 $$
-P^\bullet\otimes_R A^\bullet
+\operatorname{Tot}(P^\bullet\otimes_R A^\bullet)
 $$
 
 仍 acyclic。复形 $I^\bullet$ 称为 K-injective，如果对任意 acyclic $A^\bullet$，
@@ -198,23 +200,38 @@ $$
 
 acyclic。
 
-**输入定理 H.13（Spaltenstein 型替换）.** 在 Grothendieck 阿贝尔范畴 $R\text{-}\mathbf{Mod}$ 中，每个复形都有 K-injective 替换；若张量积来自闭对称幺半 Grothendieck 范畴中的右正合双函子，则每个复形有 K-flat 替换。替换可以取为 quasi-isomorphism
+**外部输入定理 H.13（无界替换的精确范围）.** 设 \((\mathcal C,R)\) 是上述
+小 ringed site。
 
-$$
-P^\bullet\to M^\bullet,\qquad M^\bullet\to I^\bullet
-$$
+1. 因 \(R\text{-}\mathbf{Mod}\) 是 Grothendieck 阿贝尔范畴，每个无界复形
+   \(M^\bullet\) 有函子性 quasi-isomorphism
+   $$
+   M^\bullet\longrightarrow I^\bullet,
+   $$
+   其中 \(I^\bullet\) K-injective，且每个 \(I^n\) 都是 injective \(R\)-模。
+2. 每个无界复形 \(M^\bullet\) 有 termwise surjective quasi-isomorphism
+   $$
+   P^\bullet\longrightarrow M^\bullet,
+   $$
+   其中 \(P^\bullet\) K-flat，且每个 \(P^n\) 都是 flat \(R\)-模。
 
-其中 $P^\bullet$ K-flat，$I^\bullet$ K-injective。
+**来源定位.** 第 1 项是 Stacks Project Tag `079P`（Theorem 19.12.6）；第 2 项是
+Tag `06YL`（Lemma 21.17.11）。后者专门针对 ringed site，因此本书不再声称“任意
+右正合闭幺半 Grothendieck 范畴”都自动有 K-flat 替换。
 
-**本书使用边界.** 本定理属于一般同调代数。本书不重证 transfinite induction 构造；使用它只为保证派生函子存在。
+**本书不证明的边界.** 两个构造都使用无界复形的超限或滤过替换。本书使用它们保证
+派生 Hom 与派生张量存在，但不重做该构造。
 
-**定义 H.14.** 对 $M^\bullet,N^\bullet\in D(R)$，取 K-flat 替换 $P^\bullet\to M^\bullet$，定义
+**定义 H.14.** 对 $M^\bullet,N^\bullet\in D(R)$，取 H.13(2) 的 termwise
+surjective K-flat 替换 $P^\bullet\to M^\bullet$，定义
 
 $$
 M^\bullet\otimes_R^L N^\bullet
 =
-P^\bullet\otimes_R N^\bullet.
+\operatorname{Tot}(P^\bullet\otimes_R N^\bullet).
 $$
+
+总复形使用直和 totalization 与 Koszul 号差。
 
 **命题 H.15（定义独立性）.** 上述定义与 K-flat 替换选择无关。
 
@@ -235,21 +252,36 @@ $$
 
 都是 quasi-isomorphism。又因为 $Q_N^\bullet$ K-flat，$u\otimes\operatorname{id}_{Q_N^\bullet}$ 是 quasi-isomorphism。由二出三性质，$u\otimes\operatorname{id}_{N^\bullet}$ 是 quasi-isomorphism。
 
-现在设 $P^\bullet\to M^\bullet$ 与 $Q^\bullet\to M^\bullet$ 是两个 K-flat 替换。可取第三个 K-flat 替换
+现在设 $P^\bullet\to M^\bullet$ 与 $Q^\bullet\to M^\bullet$ 是 H.13(2)
+给出的两个 termwise surjective K-flat 替换。取复形范畴中的逐次拉回
 
 $$
-R^\bullet\to P^\bullet\times^h_{M^\bullet}Q^\bullet
+R^\bullet=P^\bullet\times_{M^\bullet}Q^\bullet.
 $$
 
-得到到 $P^\bullet$ 和 $Q^\bullet$ 的 quasi-isomorphism。由比较引理，
+投影 \(R^\bullet\to P^\bullet\) 的 kernel 等于
+\(\ker(Q^\bullet\to M^\bullet)\)，后者 acyclic；该投影又逐次满射，所以是
+quasi-isomorphism。同理 \(R^\bullet\to Q^\bullet\) 是 quasi-isomorphism。
+再取 H.13(2) 的 K-flat 替换 \(T^\bullet\to R^\bullet\)。复合给出 K-flat 复形间的
+quasi-isomorphisms
 
 $$
-R^\bullet\otimes_RN^\bullet\to P^\bullet\otimes_RN^\bullet,
+T^\bullet\longrightarrow P^\bullet,
 \qquad
-R^\bullet\otimes_RN^\bullet\to Q^\bullet\otimes_RN^\bullet
+T^\bullet\longrightarrow Q^\bullet.
 $$
 
-都是 quasi-isomorphism。故 $P^\bullet\otimes_RN^\bullet$ 与 $Q^\bullet\otimes_RN^\bullet$ 在导出范畴中同构。证毕。
+由比较引理，
+
+$$
+T^\bullet\otimes_RN^\bullet\to P^\bullet\otimes_RN^\bullet,
+\qquad
+T^\bullet\otimes_RN^\bullet\to Q^\bullet\otimes_RN^\bullet
+$$
+
+都是 quasi-isomorphism。故两个 totalized tensor complexes 在导出范畴中由 zigzag
+同构。这个论证同时说明独立性依赖 termwise surjective 替换，不需要指定一个
+homotopy pullback 模型。证毕。
 
 **推论 H.16.** 若 $F$ 是平坦 $R$-模，视为次数 $0$ 复形，则
 

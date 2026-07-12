@@ -6,26 +6,31 @@
 
 1. Banach/Fréchet 空间如何给出凝聚向量空间。
 2. 为什么 Banach 范畴不适合作为派生同调代数的主场。
-3. liquid 条件比“有拓扑向量空间结构”更强。
+3. 哪些经典完备空间确实满足 liquid 条件。
 4. 在复几何中使用 liquid 时必须检查哪些类型。
 
-本附录不构造 $\mathcal M_{<p}$，也不证明 Banach 空间都满足某个 liquid 条件；这些属于 Scholze 的 liquid 理论输入。
+本附录不构造 $\mathcal M_{<p}$；它精确引用“\(p\)-Banach 因而 Fréchet 对象
+\(p\)-liquid”的输入定理，并把 object membership 与 exactness 分开。
 
 ## J.1 拓扑向量空间的凝聚化
 
 设 $V$ 是 Hausdorff 拓扑实向量空间。定义凝聚集合
 
 $$
-\underline V(S)=\operatorname{Cont}(S,V)
+\underline V(S)=\operatorname{Cont}(S,V),
+\qquad S\in\mathbf{CHaus}_\kappa.
 $$
 
-对紧 Hausdorff $S$ 成立。若加法和数乘连续，则 $\underline V$ 是凝聚 $\mathbb R$-模。
+若加法和数乘连续，则 $\underline V$ 是通常拓扑实数凝聚环
+\(\underline{\mathbb R}\) 上的凝聚模。
 
 **命题 J.1.** 若 $V$ 是拓扑实向量空间，则 $S\mapsto\operatorname{Cont}(S,V)$ 满足有限覆盖的 sheaf 条件。
 
 **证明.** 对紧 Hausdorff 空间的有限闭满射覆盖，连续映射到 Hausdorff 空间可由覆盖上的连续映射粘合，并且唯一性由覆盖满射给出。加法和数乘逐点定义，并由 $V$ 中运算连续性保证仍为连续映射。证毕。
 
-**边界 J.2.** 这只说明拓扑向量空间可进入凝聚世界；它不说明该对象是 liquid。liquid 还要求对测度对象 $\mathcal M_{<p}[S]$ 的 Hom 判别。
+**边界 J.2.** 命题 J.1 本身只给凝聚对象；一般拓扑向量空间是否 liquid 仍需
+\(\mathcal M_{<p}[S]\) 的 Hom 判别。对 Banach/Fréchet 空间，这个缺口由下面的输入
+定理 J.7 闭合；不能把该特例推广成“任意拓扑向量空间都 liquid”。
 
 ## J.2 Banach 范畴的同调问题
 
@@ -91,9 +96,23 @@ $$
 4. 张量积、Hom 和 dual 是否在 liquid/analytic 范畴中计算。
 5. 忘记 liquid 结构后是否恢复经典 Fréchet 或 Banach 空间上的算子。
 
-**输入定理 J.7（liquid realization）.** 第三卷使用的 Dolbeault、分布、核函数等分析对象可在 Clausen-Scholze/Scholze 的 analytic-liquid 框架中实现，并与经典连续线性算子相容。
+**外部输入定理 J.7（Banach/liquid 接口）.** 固定 \(0<p\le1\)。每个
+\(p\)-Banach 空间 \(V\) 的凝聚化 \(\underline V\) 都 \(p\)-liquid；任意此类对象的
+逆极限仍 \(p\)-liquid。来源为 CS26 Theorem 2.14、Lemma 2.16 及其后的逆极限推论。
 
-**边界 J.8.** J.7 是输入定理。仅凭“这是 Fréchet 空间”不能推出它满足某个 $p$-liquid Hom 判别。
+**命题 J.8（Fréchet/liquid 接口）.** 每个实 Fréchet 空间的凝聚化对所有
+\(0<p\le1\) 都 \(p\)-liquid；每个连续线性映射给出
+\(\mathbf{Liquid}_p\) 中的态射。
+
+**证明.** Fréchet 空间是其 Banach seminorm completions 的可数逆极限。普通 Banach
+空间通过范数的 \(p\) 次方成为 \(p\)-Banach，故由 J.7 及逆极限稳定性得到第一项。
+连续线性映射与测试空间预合成，逐 \(S\) 给出凝聚模态射；因
+\(\mathbf{Liquid}_p\subset\mathbf{CondAb}\) 是满子范畴，它也是 liquid 态射。证毕。
+
+**边界 J.9（对象属于不等于序列正合）.** J.8 只判断各项对象。若
+\(E\twoheadrightarrow F\) 是 Fréchet 空间满射，要让
+\(\underline E\to\underline F\) 成为 sheaf epimorphism，仍须验证第五章定义 5.8 的
+profinite 局部提升；闭像只保证 quotient Hausdorff。连续 splitting 是充分条件。
 
 ## J.5 练习
 
@@ -104,3 +123,6 @@ $$
 **练习 J.3.** 说明闭像条件为什么不能在纯代数向量空间范畴中表达。
 
 **练习 J.4.** 对 Dolbeault 复形的一项，列出把它放入 liquid 范畴时需要检查的类型信息。
+
+**练习 J.5.** 对一个 Fréchet 复形，分别列出“每项 \(p\)-liquid”和“cohomology 与
+凝聚化交换”所需的假设。

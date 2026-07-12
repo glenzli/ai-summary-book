@@ -4,11 +4,12 @@
 
 ## R.1 紧商情形的核和 trace
 
-设 $G$ 为数域 $K$ 上 connected reductive group，$\mathbb A=\mathbb A_K$。先假设
+设 $G$ 为数域 $K$ 上 connected reductive group，$\mathbb A=\mathbb A_K$。本节先作比“modulo center compact”更强但无歧义的简化假设
 $$
 G(K)\backslash G(\mathbb A)
 $$
-在模中心后紧。令 $f\in C_c^\infty(G(\mathbb A))$。
+本身紧，并令 $f\in C_c^\infty(G(\mathbb A))$。逐处固定 $dg_v$，取 restricted product
+$dg$；对每个 centralizer $G_\gamma$ 固定 $dg_\gamma$，所有 quotient measures 由 Weil integral formula 给出。若商只在 modulo center 意义下紧，必须改为固定 unitary central character 的中心商版本，正文不把二者混写。
 
 **定义 R.1.** 积分核定义为
 $$
@@ -32,13 +33,13 @@ $$
 O_\gamma(f)=\int_{G_\gamma(\mathbb A)\backslash G(\mathbb A)}f(x^{-1}\gamma x)\,dx.
 $$
 
-**证明草图.** 将 $K_f(x,x)$ 的求和按共轭类分组。固定代表 $\gamma$ 后，$\delta^{-1}\gamma\delta$ 的和等价于 $G_\gamma(K)\backslash G(K)$ 上求和。再把 $G(K)\backslash G(\mathbb A)$ 与该离散商合并，得到 $G_\gamma(K)\backslash G(\mathbb A)$ 的积分，最后分解为 $G_\gamma(K)\backslash G_\gamma(\mathbb A)$ 的体积乘以 orbital integral。测度归一化由 Weil 积分公式控制。$\square$
+**证明路线（外部输入）.** 将 $K_f(x,x)$ 的求和按共轭类分组。固定代表 $\gamma$ 后，$\delta^{-1}\gamma\delta$ 的和等价于 $G_\gamma(K)\backslash G(K)$ 上求和。再把 $G(K)\backslash G(\mathbb A)$ 与该离散商合并，得到 $G_\gamma(K)\backslash G(\mathbb A)$ 的积分，最后由 Weil integral formula 分解为 centralizer 体积与 orbital integral。交换无穷求和和积分、各项绝对收敛及 centralizer 体积有限性属于紧商 trace formula 的外部解析输入，本段不重证。
 
 ## R.2 非紧商和 Arthur 截断
 
 实际自守商通常非紧，原因是 proper parabolic subgroups 产生 cusps。
 
-**外部输入定理 R.4（Arthur truncation）.** 存在截断算子 $\Lambda^T$，依赖足够 regular 的参数 $T$，使得截断核
+**外部输入定理 R.4（Arthur truncation）.** 固定 minimal Levi、standard parabolics、height maps 和 split central quotient 后，存在截断算子 $\Lambda^T$，依赖正 Weyl chamber 中 sufficiently regular 的参数 $T$，使得截断核
 $$
 K_f^T(x,y)=\Lambda^T K_f(x,y)
 $$
@@ -46,7 +47,7 @@ $$
 $$
 J^T(f)=\int_{G(K)\backslash G(\mathbb A)}K_f^T(x,x)\,dx
 $$
-是 $T$ 的 exponential-polynomial 函数。其常数项定义 Arthur trace formula 的分布 $J(f)$。
+是 $T$ 的 exponential-polynomial 函数。按固定 truncation origin 取得的规范常数项定义 Arthur trace formula 的分布 $J(f)$；不固定上述数据时“常数项”没有唯一含义。
 
 **注 R.5.** 截断不是技术细节，而是非紧谱中 Eisenstein series、continuous spectrum 和 proper Levi contributions 同时出现的来源。
 
@@ -89,7 +90,7 @@ $$
 
 **命题 R.11.** Cuspidal test functions 可消去许多 proper Levi contribution。
 
-**证明草图.** 若 $f$ 的某个局部分量在所有 proper parabolic 的常数项方向上为 cuspidal，则由 unfolding 和 Jacquet module 的消失，来自 proper Levi 的诱导谱项在该位置给出零贡献。几何侧相应地消去与 proper Levi 相关的退化轨道项。完整陈述需固定 strongly cuspidal 或 simple trace formula 的测试函数条件。$\square$
+**证明路线（外部输入）.** 若 $f$ 的某个局部分量满足所选 simple trace formula 中的 strongly cuspidal 条件，则其 proper constant terms/Jacquet traces 消失，许多 proper Levi 诱导谱项为零；几何侧有相应消失。不同版本保留的 singular terms 不同，故本段不把“许多”升级为统一的全消失定理。
 
 ## R.5 Invariant trace formula
 
@@ -103,12 +104,13 @@ $$
 
 ## R.6 稳定化和 Endoscopy
 
-**定义 R.14.** 稳定 orbital integral 是普通 orbital integrals 在稳定共轭类内的加权和：
+**定义 R.14.** 设 $\delta$ 为 strongly regular semisimple 元素。稳定 orbital integral 是普通 orbital integrals 在 $\delta$ 的稳定共轭类内的和：
 $$
-SO_\delta(f)=\sum_{\gamma\in\operatorname{st}(\delta)/\sim}e(G_\gamma)O_\gamma(f).
+SO_\delta(f)=\sum_{\gamma\in\operatorname{st}(\delta)/\sim}O_\gamma(f),
 $$
+其中各 centralizer measures 由同一 transfer convention 匹配。某些全局加权分布中的 Kottwitz signs 属于相应系数，不内置于本书 strongly regular stable orbital integral 的定义。
 
-**外部输入定理 R.15（稳定 trace formula）.** 对 quasi-split $G$，invariant trace formula 可写为
+**外部输入定理 R.15（稳定 trace formula，限定版本）.** 对已有 stabilization theorem 的 quasi-split $G$，并在固定 global endoscopic data、z-extensions、transfer factors、measures 和 matching functions 后，invariant trace formula 可写为
 $$
 I^G(f)
 =S^G(f)+\sum_{H\ne G}\iota(G,H)S^H(f^H),
@@ -117,7 +119,7 @@ $$
 
 **命题 R.16.** 稳定化把 endoscopic transfer 从几何侧传递到谱侧。
 
-**证明草图.** 若 $f^H$ 与 $f^G$ orbital-integral matching，则稳定几何侧满足相应等式。Trace formula 给出几何侧等于谱侧。若稳定 characters 能分离 packets，则谱侧分布恒等式推出 packets 或稳定虚表示的转移关系。完整证明依赖局部 transfer、fundamental lemma、稳定 trace formula 和 packet 字符恒等式。$\square$
+**证明路线（外部输入）.** Matching 把稳定几何侧联系起来，trace formula 再把它们换成谱侧；最后还须用 packet character identities 与线性独立性分离谱项。局部 transfer、fundamental lemma、稳定化和字符恒等式均为外部输入，本段不构成稳定化证明。
 
 ## R.7 常见应用接口
 

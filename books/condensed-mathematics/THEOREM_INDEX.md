@@ -14,6 +14,7 @@
 
 | 条目 | 位置 | 类型 | 依赖 |
 | --- | --- | --- | --- |
+| \(\kappa\)-截断、小骨架与层级改变 | `volume-1/A_universes_and_size.md` | 书内证明 + 输入定理 | 强极限基数 / S26 Proposition 2.9, Definition 2.11 |
 | sheaf 条件的等化子形式 | `volume-1/01_sites_and_sheaves.md` | 书内证明 | 覆盖和纤维积 |
 | compact Hausdorff 纤维积闭性 | `volume-1/02_compact_hausdorff_and_profinite.md` | 书内证明 | Hausdorff 对角线闭 |
 | 凝聚集合定义 | `volume-1/03_condensed_sets.md` | 定义 | compact Hausdorff 站点 |
@@ -25,7 +26,7 @@
 | ED 测试正合性 | `volume-1/08_exactness_and_first_ext.md` | 书内证明 | sheaf 满射局部提升 |
 | 凝聚张量积 | `volume-1/09_tensor_products_and_condensed_rings.md` | 形式推论 | sheaf 模张量泛性质 |
 | 凝聚模范畴 | `volume-1/10_condensed_modules.md` | 形式推论 | Grothendieck 阿贝尔范畴 |
-| 派生张量与 Tor | `volume-1/11_derived_tensor_and_tor.md`, `volume-1/H_exact_sheafification_and_derived_tools.md` | 书内证明 + 输入定理 | K-flat 替换 |
+| 派生张量与 Tor | `volume-1/11_derived_tensor_and_tor.md`, `volume-1/H_exact_sheafification_and_derived_tools.md` | 书内证明 + 输入定理 | ringed-site K-flat 替换（Stacks `06YL`） |
 | Horseshoe 与导出函子形式 | `volume-1/I_horseshoe_and_derived_functor_formalism.md` | 书内证明 | 阿贝尔范畴同调代数 |
 | ED 覆盖检测与有效满射 | `volume-1/K_ed_cover_detection_and_effective_epimorphisms.md` | 书内证明 + 输入定理 | ED 覆盖存在性与投射性 |
 | solid 阿贝尔群判别 | `volume-1/12_solid_abelian_groups.md` | 输入定理 | Scholze solid 理论 |
@@ -45,9 +46,9 @@
 | --- | --- | --- | --- |
 | solid 派生范畴 $D_\square(\mathbb Z)$ | `volume-2/01_solid_derived_categories.md`, `volume-2/C_bousfield_localization_formalism.md` | 输入定理 + 形式推论 | Bousfield localization |
 | solid 环与 solid 模 | `volume-2/02_solid_rings_and_modules.md` | 形式推论 | 幺半局部化 |
-| analytic ring cone 判别 | `volume-2/03_analytic_rings_formal_conditions.md` | 定义/输入定理 | analytic ring 条件 |
+| analytic ring 公理、结构定理与 cone 判别 | `volume-2/03_analytic_rings_formal_conditions.md` | 定义 + 输入定理 + 书内证明 | S26 Definition 7.4 / Proposition 7.5 / Warning 7.6 |
 | analyticization 泛性质 | `volume-2/04_analyticization_and_bousfield_localization.md` | 形式推论 | 反射局部化 |
-| liquid 向量空间入口 | `volume-2/05_liquid_vector_spaces.md` | 输入定理 | Scholze liquid |
+| \(p\)-liquid 定义与经典空间 membership | `volume-2/05_liquid_vector_spaces.md` | 输入定理 + 书内证明 | S26 Theorem 7.11 / CS26 Theorems 2.14, 3.11 |
 | 离散 Huber pair 解析化 | `volume-2/06_discrete_huber_pairs_and_analytic_rings.md` | 输入定理 | Scholze Huber pair 构造 |
 | $f_!$、$f^!$、投影公式 | `volume-2/07_coherent_duality_and_f_shriek.md` | 输入定理 | Scholze six functor 入口 |
 | Bousfield localization 形式定理 | `volume-2/C_bousfield_localization_formalism.md` | 形式推论 | presentable localization |
@@ -56,23 +57,23 @@
 | Cech descent 与 totalization | `volume-2/G_cech_descent_and_totalization.md` | 书内证明 + 输入定理 | ordinary sheaf descent / rational Cech descent |
 | 紧生成与生成元检验 | `volume-2/H_compact_generation_and_generator_tests.md` | 书内证明 + 输入定理 | compact generation / Brown representability 边界 |
 | Analytic ring 检查表与失败模式 | `volume-2/I_analytic_ring_axioms_and_failure_modes.md` | 书内证明 + 输入定理 | Dirac cone / 张量理想 / rational descent |
-| Liquid 与 Banach/Fréchet 边界 | `volume-2/J_liquid_banach_frechet_boundaries.md` | 书内证明 + 输入定理 | 非闭像 / liquid realization |
+| Liquid 与 Banach/Fréchet 边界 | `volume-2/J_liquid_banach_frechet_boundaries.md` | 书内证明 + 输入定理 | liquid membership / 凝聚 epimorphism 的局部提升 |
 | 幺半 Bousfield 局部化 | `volume-2/K_monoidal_bousfield_localization_details.md` | 书内证明 + 输入定理 | presentable localization / 张量理想 |
 | 闭幺半局部化与内部 Hom | `volume-2/L_closed_monoidal_localization_and_internal_hom.md` | 书内证明 | closed monoidal category / dualizable |
 | Solid localization 生成核 | `volume-2/M_solid_localization_generation_and_completion.md` | 书内证明 + 输入定理 | Dirac-to-measure cone / solidification |
 | Analytic rational descent 义务 | `volume-2/N_analytic_descent_and_rational_localization_obligations.md` | 书内证明 + 输入定理 | rational localization / Čech totalization |
 | 可展示稳定局部化正合性 | `volume-2/O_presentable_localization_and_exactness.md` | 书内证明 + 输入定理 | reflective localization / stable exactness |
-| Liquid-Fréchet 闭值域检查 | `volume-2/P_liquid_frechet_complexes_and_closed_range.md` | 书内证明 + 输入定理 | Fréchet closed range / liquid realization |
+| Liquid-Fréchet 严格 cohomology 比较 | `volume-2/P_liquid_frechet_complexes_and_closed_range.md` | 书内证明 + 输入定理 | 局部提升 / 连续 Hodge splitting |
 | Solid 主定理包 | `volume-2/Q_solid_main_theorem_package.md` | 书内证明 + 输入定理 | solid 反射局部化 / 张量理想 / profinite 测度 |
 | Analytic 主定理包 | `volume-2/R_analytic_main_theorem_package.md` | 书内证明 + 输入定理 | analyticization / Huber pair / rational descent |
-| Liquid 主定理包 | `volume-2/S_liquid_main_theorem_package.md` | 书内证明 + 输入定理 | \(p\)-liquid analytic ring / realization / Fredholm |
+| Liquid 主定理包 | `volume-2/S_liquid_main_theorem_package.md` | 书内证明 + 输入定理 | \(p\)-liquid analytic ring / classical-space membership / Fredholm-Hodge |
 | solid/analytic/liquid 统一闭包 | `volume-2/T_mainline_closure_theorem.md` | 书内证明 + 输入定理 | 附录 Q/R/S 主定理包 |
 | 第二卷出版级闭包审查 | `volume-2/U_publication_closure_audit.md` | 审查矩阵 | 附录 Q/R/S/T 与输入定理登记 |
 | Solidification 反射存在性证明模块 | `volume-2/V_solidification_reflection_proof.md` | 书内证明 + 输入定理 | presentable localization / Scholze 识别 |
 | Solid 核张量理想性证明模块 | `volume-2/W_solid_tensor_ideal_proof_modules.md` | 书内证明 + 输入定理 | localizing subcategory / profinite 测度张量公式 |
 | Analytic localization 证明模块 | `volume-2/X_analytic_localization_proof_modules.md` | 书内证明 + 输入定理 | analytic cone / analytic ring localization |
 | Rational descent 证明模块 | `volume-2/Y_rational_descent_proof_modules.md` | 书内证明 + 输入定理 | Čech nerve / compact generation / rational acyclicity |
-| Liquid realization 证明模块 | `volume-2/Z_liquid_realization_proof_modules.md` | 书内证明 + 输入定理 | 拓扑向量空间凝聚化 / realization exactness / Fredholm |
+| 经典空间的 liquid 接口证明模块 | `volume-2/Z_liquid_realization_proof_modules.md` | 书内证明 + 输入定理 | 凝聚化 / membership / 局部提升 / Fredholm-Hodge |
 | Scholze/Clausen-Scholze 核心定理图谱 | `volume-2/AA_scholze_clausen_scholze_core_theorem_atlas.md` | 输入闭包图谱 | condensed / solid / analytic / liquid / complex geometry |
 
 ## 卷三
@@ -82,6 +83,7 @@
 | 复解析空间的凝聚语言 | `volume-3/01_complex_analytic_spaces_condensed_language.md` | 输入定理 | Clausen-Scholze |
 | 相干层进入 analytic/liquid 派生范畴 | `volume-3/02_coherent_sheaves_and_derived_categories.md` | 输入定理 | Clausen-Scholze |
 | Dolbeault 复形计算 | `volume-3/03_dolbeault_complexes_and_liquid_modules.md`, `volume-3/F_classical_complex_geometry_prerequisites.md` | 输入定理 + 形式推论 | Dolbeault lemma |
+| Dolbeault 的严格 liquid cohomology 比较 | `volume-3/AQ_main_theorem_package_and_condensed_closure.md`, `volume-3/AR_clausen_scholze_complex_geometry_core_theorem_atlas.md` | 输入定理 + 书内条件推论 | Fréchet liquid membership / 局部提升 / 连续 Hodge splitting |
 | coherent cohomology finiteness | `volume-3/04_finiteness_of_coherent_cohomology.md` | 输入定理 | Grauert/Hodge-Fredholm |
 | Serre duality | `volume-3/05_serre_duality.md` | 输入定理 | Hodge theory/Clausen-Scholze |
 | GAGA | `volume-3/06_gaga.md` | 输入定理 | Serre GAGA |

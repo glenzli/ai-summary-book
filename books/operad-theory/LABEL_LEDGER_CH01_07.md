@@ -22,7 +22,9 @@
 | 例 1.2 | `ch01-ex-01-02-sigma-action` | 骨架 $[n]$ 与 $\Sigma_n$ 作用 |
 | 定义 1.3 | `ch01-def-01-03-symmetric-sequences` | 对称序列范畴 |
 | 定义 1.4 | `ch01-def-01-04-partitions` | 有限集分块 |
+| 定义 1.4.1 | `ch01-def-01-04-01-fiber-decomposition-groupoid` | 允许空纤维的有限映射群胚 $\operatorname{Fib}(S)$ |
 | 定义 1.5 | `ch01-def-01-05-substitution-product` | 代入乘积 $X\circ Y$ |
+| 说明 1.5.1 | `ch01-note-01-05-01-partition-formula-boundary` | 非空分块公式只适用于内层 arity $0$ 为空 |
 | 命题 1.6 | `ch01-prop-01-06-substitution-functor` | 代入乘积的函子性 |
 | 定义 1.7 | `ch01-def-01-07-unit-symmetric-sequence` | 单位对称序列 |
 | 命题 1.8 | `ch01-prop-01-08-monoidal-symmetric-sequences` | 对称序列的幺半范畴结构 |

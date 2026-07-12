@@ -42,7 +42,11 @@
 
 ## 章节依赖映射
 
-- 第 1-3 章依赖第三卷 AR.1-AR.2 与输入 C.2-C.5：Clausen-Scholze 对复解析对象、holomorphic functions、coherent sheaves 和 Dolbeault/liquid 接口的建模；classical Dolbeault lemma 仍是 D.1。
+- 第 1-3 章依赖第三卷 AR.1-AR.2 与输入 C.2-C.5：Fréchet 项的 liquid membership
+  精确引用 CS26 Theorem 2.14、Lemma 2.16 与 Theorem 3.11；cohomology 比较使用
+  第二卷命题 5.9 的局部提升及 classical Hodge/Green splitting。Clausen-Scholze
+  提供复解析对象、holomorphic functions 与 coherent sheaves 的建模，classical
+  Dolbeault lemma 仍是 D.1。
 - 第 4-7 章依赖第三卷 AR.3-AR.6 与输入 D.3-D.7：coherent cohomology finite-dimensionality、Serre duality、GAGA 和 HRR/GRR；CS26 locator 已登记，经典证明来源已经分层定位，部分仍需最终 theorem/page locator。
 - 第 8 章整理 six functor formalism 的位置。
 - 附录 A-B 用于说明证明路线和术语翻译，不引入新的外部来源。

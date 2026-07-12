@@ -8,7 +8,11 @@
 
 **命题 15.1.** 本书的基础定义链在内部闭合：$\delta$-环、Frobenius lift、Cartier divisor ideal、bounded prism、prismatic site、structure sheaf、prismatic cohomology、Hodge-Tate/de Rham specialization、prismatic crystal 和 prismatic $F$-crystal 均已在进入使用前定义。
 
-**证明.** 第一章定义 $\delta$-环和 Frobenius lift；第二章定义 prism、bounded prism、prismatic site 和 $R\Gamma_\Delta$；第三章定义 specialization；第六章定义 prismatic crystals 和 $F$-crystals；第七章定义 Nygaard/syntomic 的工作框架。后续章节使用这些对象时均引用前置章节。证毕。
+**证明.** 第一章定义 $\delta$-环和 Frobenius lift；第二章定义 prism、bounded
+prism、prismatic site 和 $R\Gamma_\Delta$；第三章定义 specialization；第六章
+定义 prismatic crystals 和 $F$-crystals；第七章分别按 Bhatt--Scholze 的
+relative Nygaard theorem 与 BMS2 的 quasisyntomic model 固定
+Nygaard/syntomic 对象。后续章节使用这些对象时均引用前置章节。证毕。
 
 ## 15.2 外部输入链
 
@@ -32,7 +36,10 @@
 
 **错误模式 15.5.** 把 Hodge-Tate specialization 的 conjugate filtration 当成 de Rham Hodge filtration。
 
-**修正 15.6.** 前者位于 $\overline\Delta_{X/A}$，后者位于 $\phi_A^\ast R\Gamma_\Delta(X/A)\otimes_A^L A/I\simeq R\Gamma_{\mathrm{dR}}$。
+**修正 15.6.** 前者位于 $\overline\Delta_{X/A}$，后者位于
+$\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I\simeq
+R\Gamma_{\mathrm{dR}}^{\wedge,L}_p$。这个 unfiltered comparison 本身不把
+conjugate filtration 识别为 Hodge filtration。
 
 **错误模式 15.7.** 把 Breuil-Kisin module、Breuil-Kisin-Fargues module、filtered $\varphi$-module 和 prismatic $F$-crystal 混用。
 
@@ -46,9 +53,12 @@
 
 **说明 15.11.** 本书达到正式教材扩展稿后，剩余工作分为四类：
 
-1. locator：给所有外部输入定理补 section/theorem/page；
-2. numbering：把所有正式陈述登记到稳定 label ledger；
-3. convention：核对 Nygaard、Tate twist、Frobenius pullback 和 filtration indexing；
+1. locator：为尚未进入核心主线的 classical/frontier 输入选定稳定的
+   section/theorem/page；核心 prismatic/BMS 主链已经达到 `L3`；
+2. numbering：按稳定 label ledger 维护新增声明，并把剩余散文引用改成
+   可定位编号；现有正式声明已经登记；
+3. convention：核心 Nygaard、Frobenius pullback 与 filtration indexing
+   已逐源核对；剩余工作是跨作者 Tate-twist normalization；
 4. production：统一术语、语气、公式断行、图表和参考格式。
 
 ## 15.5 开放问题目录
@@ -68,14 +78,19 @@
 
 1. 有明确目标和前置知识；
 2. 所有核心术语在使用前定义；
-3. 非平凡命题有证明、证明草图或外部输入标记；
+3. 非平凡命题有证明、外部输入的证明路线或外部输入标记；
 4. 至少有一个例子、计算、结构表或错误边界；
 5. 章末有小结和练习；
 6. 外部输入可在 locator 索引中追踪。
 
 **命题 15.14.** 按定义 15.13，本书第 0-15 章当前达到教材收口草稿标准，但未达到 camera-ready 标准。
 
-**证明.** 每章均有目标、前置知识、小结和练习。核心术语由正文或附录 G-K 定义。大型定理均标为外部输入并登记在附录 D 或资料源中。第 0-15 章均包含命题、证明、例子、结构表或错误边界。尚未达到 camera-ready 的原因是 locator 多数仍为 L1，且交叉引用和排版未做最终出版处理。证毕。
+**证明.** 每章均有目标、前置知识、小结和练习。核心术语由正文或附录 G-K
+定义。大型定理均标为外部输入并登记在附录 D 或资料源中。第 0-15 章均
+包含命题、证明、例子、结构表或错误边界。核心 prismatic comparison、
+Nygaard、BMS1/BMS2 与 $F$-crystal locators 已达到 `L3`；尚未达到
+camera-ready 的原因是 classical source selection、少数非主线 `L2S`
+technical locators、交叉引用和出版排版仍待完成。证毕。
 
 **说明 15.15.** “教材收口草稿”不同于“最终数学闭包”：前者要求内部教学链完整，后者还要求外部输入精确定位、符号 convention 全部逐源核对。
 

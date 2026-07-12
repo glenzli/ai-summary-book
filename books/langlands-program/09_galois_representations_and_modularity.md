@@ -52,7 +52,8 @@ $$
 \det\rho(c)=-1.
 $$
 
-**定义 9.6.** 表示 $\rho$ 称为 Hodge-Tate，若其限制到 $G_{\mathbb Q_\ell}$ 是 Hodge-Tate 表示。若 Hodge-Tate 权为 $\{0,k-1\}$，则说 $\rho$ 具有权 $k$ 的 Hodge-Tate 型。
+**定义 9.6.** 表示 $\rho$ 称为 Hodge-Tate，若其限制到 $G_{\mathbb Q_\ell}$ 是 Hodge-Tate 表示。本书采用
+$\operatorname{HT}(\chi_\ell)=\{1\}$ 的算术编号；若 Hodge-Tate 权为 $\{0,k-1\}$，则说 $\rho$ 具有权 $k$ 的 Hodge-Tate 型。采用 $\mathbb Q_\ell(1)$ 权为 $-1$ 的文献时，这两个权整体变号。
 
 **猜想 9.7（Fontaine-Mazur 预期，二维接口）.** 不可约、奇、几乎处处非分歧、几何的二维 $\ell$-adic 表示预期来自模形式。这里“几何”包括在 $\ell$ 处 de Rham，并在几乎所有素数处非分歧。该陈述是 Fontaine-Mazur 猜想在 `GL(2)/\mathbb Q` 方向的形式之一，只有许多重要情形已知。
 
@@ -211,7 +212,16 @@ $$
 2. 自守侧：`GL(2,\mathbb A_\mathbb Q)` 的 cuspidal automorphic representation $\pi_f$。
 3. 经典桥梁：归一化 Hecke eigenform $f$。
 4. 局部相容：几乎所有 $p$ 处，Frobenius trace 等于 Hecke eigenvalue。
-5. L 函数相容：$L(\rho,s)=L(f,s)=L(\pi_f,s)$，其中三者均使用相同坏素数 Euler 因子、同一 Frobenius 方向和 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 中的 L 函数变量约定。
+5. L 函数相容：在 classical/Galois 变量中
+   $$
+   L(\rho_{f,\lambda},s)=L(f,s),
+   $$
+   而对本书默认的 unitary automorphic representation，
+   $$
+   L(s,\pi_f,\operatorname{Std})=L(f,s+(k-1)/2).
+   $$
+   因而同一变量下应写
+   $L(\rho_{f,\lambda},s)=L(s-(k-1)/2,\pi_f,\operatorname{Std})$；坏素数处的等式依赖第十章的局部-整体相容外部输入。
 
 因此，椭圆曲线模性是二维 Galois 表示与 `GL(2)` 自守表示对应的核心实例，而模性提升定理是证明这类对应的主要机制之一。
 

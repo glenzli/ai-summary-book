@@ -102,7 +102,13 @@ $$
 **推论 18.4（局域 Wilson 系数）.** 二阶阈值作用量为
 $$
 \Delta S_E^{(2)}
-=-{1\over4}\int {d^d p\over(2\pi)^d}U(p)U(-p)I(p^2).
+=-{1\over4}\int {d^d p\over(2\pi)^d}U(p)U(-p)
+\left[
+{1\over16\pi^2}
+\left({1\over\bar\epsilon}-\log{M^2\over\mu^2}\right)
+-{p^2\over96\pi^2M^2}
++O\!\left({p^4\over16\pi^2M^4}\right)
+\right].
 $$
 因此对应的局域欧氏拉氏量包含
 $$
@@ -114,15 +120,27 @@ $$
 \right)U^2
 +{1\over384\pi^2M^2}
 (\partial_\mu U)(\partial_\mu U)
-+O(\partial^4/M^4,U^3).
++O\!\left({(\partial^2U)^2\over16\pi^2M^4}\right).
 $$
+这里余项仍为 quadratic in $U$；在动量空间它始终由 $U(p)U(-p)O(p^4/(16\pi^2M^4))$ 相乘。行列式展开的 cubic sector 不属于 $\Delta{\cal L}_E^{(2)}$。其零导数领先项另为
+$$
+\Delta{\cal L}_E^{(3)}
+={U^3\over192\pi^2M^2}
++O\!\left({U^2\partial^2U\over16\pi^2M^4}\right),
+$$
+其中导数余项只表示经分部积分等价的 cubic-in-$U$ 局域结构。
 
 **证明.** 将命题 18.3 代入二阶作用量。Fourier 变换恒等式
 $$
 \int {d^d p\over(2\pi)^d}p^2U(p)U(-p)
 =\int d^dx\,(\partial_\mu U)(\partial_\mu U)
 $$
-给出导数项系数。$\square$
+给出导数项系数，$p^4$ 余项则在分部积分后可写为 $(\partial^2U)^2$ 型。cubic sector 来自 $\frac16{\rm Tr}(G_MU)^3$；其零外动量积分为
+$$
+\int {d^4k\over(2\pi)^4}{1\over(k^2+M^2)^3}
+={1\over32\pi^2M^2},
+$$
+故得到所列 $U^3$ 系数。$\square$
 
 ## 18.3 一个低能算符
 

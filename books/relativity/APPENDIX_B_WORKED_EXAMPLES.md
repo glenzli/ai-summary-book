@@ -177,14 +177,15 @@ F_{\mu\nu}F^{\mu\nu}
 =2(\mathbf B^2-\mathbf E^2).
 $$
 
-另一个不变量为
+固定取向后，另一个 proper-Lorentz 不变量为
 
 $$
-F_{\mu\nu}{}^\star F^{\mu\nu}
+\tilde F_{\mu\nu}F^{\mu\nu}
 =-4\mathbf E\cdot\mathbf B
 $$
 
-在本书取向约定下成立。它区分电场和磁场是否相互正交。
+在本书取向约定下成立。它在反转四维取向的 improper Lorentz 变换下
+变号，严格说是赝标量。它区分电场和磁场是否相互正交。
 
 ## B.4 Schwarzschild 径向自由落体
 
@@ -195,6 +196,8 @@ ds^2=-f(r)dt^2+f(r)^{-1}dr^2+r^2d\Omega^2,
 \qquad
 f(r)=1-\frac{2GM}{r}.
 $$
+
+这里取 $c=1$、保留 $G$；恢复单位时每个 $GM$ 都替换为 $GM/c^2$。
 
 考虑径向类时测地线，$d\Omega=0$。由于 $t$ 是循环坐标，
 

@@ -223,7 +223,7 @@ $$
 
 ## 本章小结
 
-本章给出了 Warsaw basis 在维数六、守恒 baryon number 扇区的结构表。59 是无 flavor 展开时的结构计数；实际 Wilson 系数空间由 flavor 指标、Hermiticity 和 CP 假设进一步决定。
+本章给出了 Warsaw basis 在维数六、守恒 baryon number 扇区的结构表。59 是无 flavor 展开、且每个非自伴 dagger pair 只计一个代表时的结构计数；按约定 13.3，Hermitian 拉氏量仍须恢复共轭项。实际 Wilson 系数空间由 flavor 指标、Hermiticity 和 CP 假设进一步决定。
 
 ## 练习
 

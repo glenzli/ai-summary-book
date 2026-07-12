@@ -18,9 +18,16 @@ $$
 \operatorname{Cor}_k(X,Y).
 $$
 
-**外部输入定理 14.3.** Finite correspondences 可自然复合，形成加性范畴 `\operatorname{Cor}_k`，其对象为 `\operatorname{Sm}_k`，Hom 群为 `\operatorname{Cor}_k(X,Y)`。
+**外部输入定理 14.3（TR-14.3）.** 对定义 14.2 的 cycles，pullback、
+intersection product 与 proper pushforward 所定义的复合仍然 finite and
+surjective over a component of the source；该复合双线性、结合且以对角线为
+单位。因此它们形成加性范畴 `\operatorname{Cor}_k`，对象为
+`\operatorname{Sm}_k`，Hom 群为 `\operatorname{Cor}_k(X,Y)`。
 
-**依赖源.** Suslin-Voevodsky、Voevodsky motives、Mazza-Voevodsky-Weibel。复合使用 proper pushforward、pullback 和交理论，非纯形式集合论构造。
+**精确来源.** Mazza--Voevodsky--Weibel, *Lecture Notes on Motivic
+Cohomology*, Lecture 1, Lemmas 1.4 and 1.7 及 Definition 1.5，
+`https://sites.math.rutgers.edu/~weibel/MVWnotes/xprova.pdf`。两条引理承担
+finite-over-source 与结合性的交理论输入；加性范畴结论不是集合论式关系复合。
 
 **定义 14.4.** 图函子
 
@@ -62,7 +69,13 @@ $$
 
 **定义 14.9.** 若 presheaf with transfers 的底层 presheaf 是 Nisnevich sheaf，则称为 Nisnevich sheaf with transfers。其范畴记为 `\operatorname{Shv}_{Nis}^{tr}(k)`。
 
-**外部输入定理 14.10.** 在 perfect field 上，Nisnevich sheafification 与 transfers 相容：presheaf with transfers 的 Nisnevich sheafification 仍带 transfers。
+**外部输入定理 14.10（TR-14.10）.** Presheaf with transfers `F` 的底层
+Nisnevich sheafification `a_{Nis}F` 唯一带有 transfers，使
+`F\to a_{Nis}F` 成为 presheaves with transfers 的态射。
+
+**精确来源与边界.** Mazza--Voevodsky--Weibel, Theorem 13.1，同上 URL。
+该定理本身不要求 `k` perfect；本章约定 14.1 仍取 perfect field，以便后续
+motivic-complex 比较使用统一假设。
 
 **注 14.11.** 定理 14.10 是使用 Nisnevich topology 的关键原因之一。普通 sheafification 不自动保留额外 correspondence action。
 
@@ -74,7 +87,9 @@ $$
 2. 取适当交积；
 3. 沿投影 `X\times Y\times Z\to X\times Z` proper pushforward。
 
-**外部输入定理 14.13.** 上述复合良定义、结合，并保持 finite-over-source 条件。
+**外部输入定理 14.13.** 上述复合良定义、结合，并保持 finite-over-source
+条件；这就是定理 14.3 中由 MVW Lemmas 1.4 and 1.7 定位的交理论输入，
+不是另一条未定位定理。
 
 **命题 14.14.** 单位 correspondence 是对角线 `\Delta_X\subset X\times X`。
 
@@ -91,7 +106,9 @@ H^{p,q}(X,\mathbb Z)\simeq
 \mathbb H^p_{Nis}(X,\mathbb Z(q)).
 $$
 
-**依赖源.** Voevodsky、Suslin-Voevodsky、Bloch higher Chow groups、MVW。
+**精确来源.** Mazza--Voevodsky--Weibel, Lecture 3（motivic complexes 与
+hypercohomology 定义）及 Theorem 19.1（与 higher Chow complexes 的
+比较），同上稳定 URL。
 
 **例子 14.17.** 标准归一化下，`\mathbb Z(0)` 为常值 sheaf `\mathbb Z`，而 `\mathbb Z(1)` 与 `\mathbb G_m[-1]` 比较。该比较是 motivic complexes 的基本计算外部输入。
 
@@ -109,11 +126,32 @@ $$
 
 ## 14.5 Transfers 与 HZ
 
-**外部输入定理 14.20.** `H\mathbb Z` 可由带 transfers 的 motivic complexes 构造，并与第九章中作为 motivic Eilenberg-Mac Lane spectrum 的 `H\mathbb Z` 相容。
+**外部输入定理 14.20.** 设 `k` 为 characteristic zero field。由 finite
+correspondences 和 motivic complexes 构造的 Voevodsky big motives，在
+Röndigs--Ostvaer Theorem 1.1 的 monoidal triangulated equivalence 下，对应
+于 motivic Eilenberg--Mac Lane spectrum `H\mathbb Z_k` 的 modules；特别
+其 Tate complex 所表示的 cohomology 与第九章的 `H\mathbb Z` 表示群相容。
+若 `k` 的 exponential characteristic 为 `e>1`，本章只在反演 `e` 后使用
+Elmanto--Kolderup Corollary 5.3 的 stable infinity-categorical 版本。
+
+**精确来源.** `https://doi.org/10.1016/j.aim.2008.05.013`，Theorem 1.1；
+`https://arxiv.org/abs/1708.05651`，Theorem 5.2 and Corollary 5.3。前者是
+三角同伦范畴比较，后者才提供所声明的稳定 infinity-范畴比较。
 
 **命题 14.21.** 若定理 14.20 适用，则 finite correspondences 诱导 motivic cohomology 的 transfers。
 
-**证明.** Motivic cohomology 由 `\mathbb Z(q)` 的 Nisnevich hypercohomology 表示。`\mathbb Z(q)` 是带 transfers 的复形，因此 correspondence `\alpha\in\operatorname{Cor}_k(X,Y)` 诱导复形映射，从而诱导 hypercohomology 群上的映射。与 `H\mathbb Z` 表示性的相容由定理 14.20 保证。`\square`
+**证明.** Motivic cohomology 由 `\mathbb Z(q)` 的 Nisnevich
+hypercohomology 表示。`\mathbb Z(q)` 是 `\operatorname{Cor}_k` 上的反变
+复形；故 correspondence `\alpha\in\operatorname{Cor}_k(X,Y)` 给出方向为
+
+$$
+\alpha^*:\mathbb Z(q)(Y)\longrightarrow\mathbb Z(q)(X)
+$$
+
+的链映射，进而给出
+`H^{p,q}(Y,\mathbb Z)\to H^{p,q}(X,\mathbb Z)`。复合方向由反变性给出，
+加法性由 `\operatorname{Cor}_k` 的 Hom 群加法给出。定理 14.20 再把这组
+hypercohomology transfers 与 `H\mathbb Z` 表示性口径比较。`\square`
 
 ## 14.6 边界
 
@@ -123,7 +161,11 @@ $$
 
 ## 14.7 本章小结
 
-Finite correspondences 把普通几何态射扩展为循环式对应，presheaves with transfers 则允许 cohomology theory 沿这些对应反变。Motivic complexes 和 `H\mathbb Z` 的传统构造依赖 transfers；这条路线与 `\mathbf{SH}` 中的 ring spectrum 表示性相容，但比较定理是外部输入。
+Finite correspondences 的复合由明确的交--推构造和 MVW locator 控制；
+Nisnevich sheafification 继承 transfers 亦是单独定理。Motivic cohomology
+沿 `X\rightsquigarrow Y` 的 variance 是从 `Y` 到 `X`。与 `H\mathbb Z`
+modules 的比较在 characteristic zero 是三角层级，在正特征主线中需反演
+指数特征后使用稳定 infinity-范畴版本。
 
 ## 练习
 

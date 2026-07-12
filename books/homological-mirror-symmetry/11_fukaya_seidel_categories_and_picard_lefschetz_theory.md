@@ -24,7 +24,7 @@ $$
 
 **命题 11.3.** vanishing cycle $V_i$ 是 $F_b$ 中的 Lagrangian sphere。
 
-**证明草图.** Lefschetz 临界点的局部模型为复 Morse 函数。沿路径接近临界值时，fiber 中一族实中维球面收缩到临界点。平行移动保持辛形式，因此所得子流形 Lagrangian；局部模型给出其拓扑为 sphere。完整证明使用 symplectic parallel transport。证毕。
+**证明路线（外部输入）.** Lefschetz 临界点的局部模型为复 Morse 函数。沿路径接近临界值时，fiber 中一族实中维球面收缩到临界点。平行移动保持辛形式，因此所得子流形 Lagrangian；局部模型给出其拓扑为 sphere。完整证明使用 symplectic parallel transport。证毕。
 
 ## 11.2 Directed Fukaya category
 
@@ -63,14 +63,24 @@ $$
 \mathcal F\mathcal S(Y,W)\simeq\operatorname{Perf}(X).
 $$
 
-**命题 11.11.** 若 $\operatorname{Perf}(X)$ 由 exceptional collection $(E_1,\ldots,E_m)$ split-generate，且 $\mathcal F\mathcal S(W)$ 由 vanishing thimbles $(\Delta_1,\ldots,\Delta_m)$ split-generate，则证明 HMS 可归约为比较两个 directed endomorphism algebras：
+**命题 11.11.** 若 $\operatorname{Perf}_{\mathrm{dg}}(X)$ 由 exceptional
+collection $(E_1,\ldots,E_m)$ split-generate，且
+$\mathcal F\mathcal S(W)$ 由 vanishing thimbles
+$(\Delta_1,\ldots,\Delta_m)$ split-generate，则只要构造 strictly unital
+quasi-equivalence between the two directed full subcategories，并在对象上
+匹配 $\Delta_i\mapsto E_i$，即可得到 Morita HMS。Pairwise morphism
+complexes 为
 $$
 \operatorname{hom}_{\mathcal F\mathcal S}(\Delta_i,\Delta_j)
 \quad\text{与}\quad
 \mathbf R\operatorname{Hom}_X(E_i,E_j).
 $$
 
-**证明.** 两边生成对象给出 full directed subcategories。若这些 subcategories 的 $A_\infty$ endomorphism algebras quasi-isomorphic，则由生成元比较原则 8.9 得到 Morita equivalence。证毕。
+**证明.** 两边生成对象给出 full directed subcategories；所假设的
+quasi-equivalence 与两边 split-generation 满足命题 8.9，故得到 Morita
+equivalence。若把有限 collection 压缩为直和的 endomorphism algebra，
+必须保持投影到各 summand 的 orthogonal idempotents；只逐对比较上式的
+cohomology groups 或 $\mu^2$ 不足以构造该 quasi-equivalence。证毕。
 
 ## 11.5 基本例子：$\mathbb P^1$
 

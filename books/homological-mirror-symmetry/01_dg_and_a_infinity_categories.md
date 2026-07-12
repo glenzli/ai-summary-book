@@ -6,7 +6,9 @@
 
 ## 依赖前置知识
 
-需要熟悉链复形、同调、张量积、普通范畴和函子。关于 signs 的全部低阶展开将放入附录 B；本章用 suspension coalgebra 约定给出无歧义定义。
+需要熟悉链复形、同调、张量积、普通范畴和函子。关于 signs 的完整
+coderivation 公式与低阶展开见附录 B；本章的所有 $A_\infty$ 公式均按
+该处 (B.1)--(B.3) 解读。
 
 ## 1.1 复形与 dg 范畴
 
@@ -57,7 +59,8 @@ $$
 $$
 b:T^c(s\operatorname{hom}_{\mathcal A})\to T^c(s\operatorname{hom}_{\mathcal A})
 $$
-使得 $b^2=0$，其中 $T^c$ 是按对象匹配的 reduced tensor coalgebra。它的 Taylor components 记为
+使得 $b^2=0$，其中 $T^c$ 是按对象匹配的 reduced tensor coalgebra，
+coderivation 的延拓符号固定为公式 (B.1)。它的 Taylor components 记为
 $$
 b_d:
 s\operatorname{hom}_{\mathcal A}(X_{d-1},X_d)\otimes\cdots\otimes
@@ -72,14 +75,27 @@ $$
 \to \operatorname{hom}_{\mathcal A}(X_0,X_d)[2-d].
 $$
 
-**解释 1.7.** 方程 $b^2=0$ 同时编码所有 $A_\infty$ 关系。低阶关系包括：
+**解释 1.7.** 方程 $b^2=0$ 同时编码所有 $A_\infty$ 关系。其无省略符号
+版本是命题 B.3，低阶关系 (B.4)--(B.6) 包括：
 
 - $\mu^1$ 是微分；
 - $\mu^2$ 与 $\mu^1$ 相容，即 $\mu^1$ 对 $\mu^2$ 满足带 Koszul 符号的 Leibniz 规则；
 - $\mu^2$ 的结合律不要求链级严格成立，其失败由 $\mu^3$ 的边界控制；
 - 更高 $\mu^d$ 控制更高结合同伦的相容性。
 
-**定义 1.8.** 一个严格含单位 $A_\infty$ category 是带有元素 $e_X\in\operatorname{hom}_{\mathcal A}^0(X,X)$ 的 $A_\infty$ category，使得 $\mu^1(e_X)=0$，$\mu^2$ 与 $e_X$ 满足固定符号约定下的左右单位律，并且当 $d\ne 2$ 时，任何含有某个 $e_X$ 输入的 $\mu^d$ 为零。本书后续把严格单位作为默认条件；若使用同伦单位，将显式说明。
+**定义 1.8.** 一个严格含单位 $A_\infty$ category 是带有元素
+$e_X\in\operatorname{hom}_{\mathcal A}^0(X,X)$ 的 $A_\infty$ category。
+写 $\epsilon_X=se_X$。对
+$x\in s\operatorname{hom}_{\mathcal A}(X,Y)$，要求
+$$
+b_1(\epsilon_X)=0,\qquad
+b_2(\epsilon_Y,x)=x,\qquad
+b_2(x,\epsilon_X)=(-1)^{|x|+1}x,
+$$
+并且 $d\ne2$ 时，任何含 $\epsilon_X$ 输入的 $b_d$ 为零。按附录 B 的
+desuspension 约定，这给出 $\mu^2(e_Y,a)=a=\mu^2(a,e_X)$。本书后续把
+严格单位作为默认条件；若使用 cohomological 或 homotopy units，将显式
+说明。
 
 **命题 1.9.** 每个 dg category 给出一个严格含单位 $A_\infty$ category。
 
@@ -138,13 +154,16 @@ $$
 Y:\mathcal A\to \operatorname{Mod}(\mathcal A).
 $$
 
-**外部输入定理 1.16（$A_\infty$ Yoneda）.** 在严格含单位假设下，Yoneda embedding 是 cohomologically fully faithful；即
+**外部输入定理 1.16（$A_\infty$ Yoneda）.** 对小、严格含单位
+$A_\infty$ category，Yoneda embedding 是 cohomologically fully
+faithful；即
 $$
 \operatorname{hom}_{\mathcal A}(X,Y)\to
 \operatorname{hom}_{\operatorname{Mod}(\mathcal A)}(Y_X,Y_Y)
 $$
 是 quasi-isomorphism。  
-来源：Lefevre-Hasegawa 的 $A_\infty$ categories 与 modules 理论；后续 theorem locator 需要补充精确定位。
+来源：Lefevre-Hasegawa 的 $A_\infty$ categories 与 modules 理论；完整
+输入边界与定位见外部输入定理 B.11 及 theorem locator。
 
 **定义 1.17.** $\operatorname{Perf}(\mathcal A)$ 是 $\operatorname{Mod}(\mathcal A)$ 中由 representable modules 经过有限 cones、shifts、direct summands 和 quasi-isomorphism 闭包生成的 full subcategory。若函子 $F:\mathcal A\to\mathcal B$ 诱导
 $$
@@ -160,16 +179,33 @@ $$
 $$
 E=\bigoplus_i X_i[n_i]
 $$
-连同严格上三角的次数 $1$ endomorphism $\delta_E$，满足 Maurer-Cartan 方程
+连同严格上三角的次数 $1$ endomorphism $\delta_E$。写
+$\beta_E=s\delta_E$；本书的 Maurer--Cartan 方程是精确的 suspended 等式
 $$
-\sum_{d\ge 1}\mu^d(\delta_E,\ldots,\delta_E)=0.
+\sum_{d\ge1}b_d(\beta_E,\ldots,\beta_E)=0.
+\tag{1.1}
 $$
-twisted complexes 构成的 $A_\infty$ category 记为 $\operatorname{Tw}(\mathcal A)$。
+严格上三角性使该和有限。若改写成 unsuspended $\mu^d$，必须按附录 B
+的 graded tensor-map convention 移动 suspensions；不能把 (1.1) 无符号地
+替换为 $\sum_d\mu^d(\delta_E,\ldots,\delta_E)=0$。Twisted complexes
+构成的 $A_\infty$ category 记为 $\operatorname{Tw}(\mathcal A)$。
 
 **解释 1.20.** $\operatorname{Tw}(\mathcal A)$ 在 $\mathcal A$ 中形式添加 shifts 和 cones。它是把 $A_\infty$ category 变成适合三角结构的最小闭包之一。
 
-**外部输入定理 1.21（预三角化包）.** 在标准假设下，$H^0\operatorname{Tw}(\mathcal A)$ 携带自然三角结构，并且 $\mathcal A\to\operatorname{Tw}(\mathcal A)$ 对所有到 pretriangulated $A_\infty$ categories 的 functors 满足相应泛性质。  
-来源：Bondal-Kapranov、Keller、Lefevre-Hasegawa；后续 theorem locator 需要补充精确定位。
+**外部输入定理 1.21（有限 twisted-complex 预三角化包）.** 设 $k$ 是域，
+$\mathcal A$ 是小、非弯曲、严格含单位的 $k$-线性 $A_\infty$ category。
+则定义 1.19 的有限 twisted complexes 构成小、严格含单位、
+pretriangulated $A_\infty$ category $\operatorname{Tw}(\mathcal A)$；
+自然 embedding
+$$
+\mathcal A\longrightarrow\operatorname{Tw}(\mathcal A)
+$$
+在 morphism complexes 上 quasi-isomorphic。范畴
+$H^0\operatorname{Tw}(\mathcal A)$ 带三角结构，其 shift 与 mapping-cone
+triangles 由 twisted-complex 公式给出。本定理不添加任意 coproducts，也不
+自动做 idempotent completion；后者属于 $\operatorname{Perf}(\mathcal A)$
+口径。来源：Bondal--Kapranov、Keller、Lefevre-Hasegawa；在线定位见
+`ONLINE_THEOREM_LOCATOR.md`。
 
 **定义 1.22.** 若 Yoneda embedding 的像在 shifts 和 cones 下闭合，并且
 $$
@@ -187,7 +223,22 @@ HMS 中常见的几种等价强度如下。
 - split-generation 版本先在 A-side 找到对象集合 $\mathcal G$，证明其 split-generates $\mathcal A$，再识别 endomorphism algebra 与 B-side 的生成对象 endomorphism algebra。
 - Morita 版本要求 $\operatorname{Perf}(\mathcal A)\simeq\operatorname{Perf}(\mathcal B)$。
 
-**命题 1.24.** 若 $\mathcal G=\{G_i\}$ split-generates $\mathcal A$，$\mathcal H=\{H_i\}$ split-generates $\mathcal B$，且 full subcategories
+**定义 1.23A（split-generation 的 Morita 口径）.** 设 $\mathcal A$ 是小、
+严格含单位 $A_\infty$ category，$\mathcal G\subset\operatorname{Ob}\mathcal A$，
+$\mathcal A_{\mathcal G}$ 是其张成的 full subcategory。称 $\mathcal G$
+split-generates $\mathcal A$，若 representables $Y_G$（$G\in\mathcal G$）
+的最小厚子范畴等于
+$$
+H^0\operatorname{Perf}(\mathcal A),
+$$
+等价地，inclusion $\mathcal A_{\mathcal G}\hookrightarrow\mathcal A$ 是
+Morita equivalence。若 $\mathcal A$ 已 pretriangulated、idempotent-complete
+且 Yoneda 给出 $\mathcal A\simeq\operatorname{Perf}(\mathcal A)$，这才等价于
+“$\mathcal G$ 的厚闭包等于 $H^0(\mathcal A)$”。
+
+**命题 1.24.** 设 $\mathcal A,\mathcal B$ 是小、严格含单位 dg 或
+$A_\infty$ categories。若 $\mathcal G=\{G_i\}$ split-generates
+$\mathcal A$，$\mathcal H=\{H_i\}$ split-generates $\mathcal B$，且 full subcategories
 $$
 \mathcal A_{\mathcal G}\subset\mathcal A,\qquad
 \mathcal B_{\mathcal H}\subset\mathcal B

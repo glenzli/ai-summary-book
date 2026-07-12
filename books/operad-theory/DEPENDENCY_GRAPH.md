@@ -75,7 +75,7 @@ Mermaid 图中的箭头表示“证明或定义需要先读”。外部输入定
 | 层级 | 文件 | 功能 | 不得依赖 |
 | --- | --- | --- | --- |
 | 0 | `A_set_theory_universes_finite_sets_and_symmetric_groups.md` | 宇宙、小性、有限集群胚、群作用 | 任何 operad 定理 |
-| 0 | `B_trees_partitions_substitution_and_coinvariants.md` | 分块、代入乘积、arity 公式 | 模型范畴、Koszul、infinity-operad |
+| 0 | `B_trees_partitions_substitution_and_coinvariants.md` | 有限映射纤维、分块特例、代入乘积、arity 公式 | 模型范畴、Koszul、infinity-operad |
 | 0 | `H_tree_conventions_and_free_operad_quotients.md` | 树类型、自由 operad 群胚商 | dendroidal model comparison |
 | 1 | `01_symmetric_sequences_and_operads.md` | operad 的幺半对象定义 | homotopy 或 infinity 结构 |
 | 1 | `02_operad_algebras_free_algebras_and_monads.md` | 代数、自由代数、monad | 模型结构 |
@@ -146,7 +146,7 @@ Mermaid 图中的箭头表示“证明或定义需要先读”。外部输入定
 
 | 瓶颈 | 涉及文件 | 进入最终版前必须补齐 |
 | --- | --- | --- |
-| Koszul 判别 | 第八、九章，附录 I | Ginzburg-Kapranov classical core 与 Fresse modern cobar/cofibrant replacement 已定位；Loday-Vallette/Fresse 书本 convention locator、有限型/特征假设仍需最终核查 |
+| Koszul 判别 | 第八、九章，附录 I/Q | Loday--Vallette Theorems 6.6.2/7.4.6 已定位为 LV-1--LV-2；Theorem 8.1.1 + following $\operatorname{As}$ example 已定位为 LV-3。Characteristic $0$、connected weight grading、reduced nonsymmetric rewriting 等假设按对应定理分别保留；FRE/HIN 的模型 cofibrancy 结论另行使用 |
 | PROP/properad 图构造 | 第七章，附录 U | directed graph groupoid、自由 PROP/properad 定理 |
 | Deligne 猜想 | 第十一、十二章 | MS-1--MS-3 与 BF-1--BF-4 已定位；仍需使用的 $E_2$ 链模型和符号转换 |
 | Homotopy transfer | 第十三章，附录 J | Markl transfer existence 已定位；basic perturbation lemma、tree signs、minimal model uniqueness 归入附录 W 与 final closure 的 sign/convention package |
@@ -235,7 +235,7 @@ Mermaid 图中的箭头表示“证明或定义需要先读”。外部输入定
 已经达到“operad theory 数学收口态”：
 
 1. 附录 D 和 REFERENCE_LOCATOR_LEDGER 已把主要 P0/P1 外部输入收口到 locator 批次；已定位批次覆盖 Berger-Moerdijk、Cisinski-Moerdijk、HTT straightening、Ayala-Francis factorization homology 基础结论、Ginzburg-Kapranov classical Koszul core、Fresse modern cobar/cofibrant replacement、Hinich dg-operad model context、Markl homotopy transfer existence、Moerdijk-Weiss dendroidal nerve core、White/White--Yau localization preservation、Pavlov--Scholbach admissibility/rectification、Hinich DK localization、HHM dendroidal-Lurie comparison、Lurie algebra/category-of-operators comparison、Pratali operadic straightening locator、Deligne locator 和 Dunn additivity locator；
-2. [FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md) 已把 Koszul/bar-cobar 书本口径、HPT 符号、Fukaya/分层几何和 2026 前沿归类为 convention package、边界关闭或 production work；
+2. Koszul/twisting 的现代书本判别已由 LV-1--LV-3 精确定位；[FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md) 仍把 HPT 符号、Fukaya/分层几何和 2026 前沿归类为 convention package、边界关闭或 production work；
 3. 前沿章节不能直接并入主证明链，除非完成版本核查和定理定位。
 
 尚未达到“camera-ready 出版教材”：

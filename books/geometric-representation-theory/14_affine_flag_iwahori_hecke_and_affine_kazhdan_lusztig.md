@@ -79,24 +79,38 @@ $$
 
 **定义 14.4.** Iwahori-Hecke category 定义为
 $$
-\mathsf H_I=D^b_I(\operatorname{Fl}_G,E)
+\mathsf H_I=D^b_{I,\mathrm{fs}}(\operatorname{Fl}_G,E)
 $$
-或相应 mixed/monodromic 版本。其 perverse heart 中的 simple objects 为 Schubert IC sheaves
+或相应 mixed/monodromic 版本；下标 $\mathrm{fs}$ 要求支撑在有限个 affine Schubert closures 的并上。$I$-equivariance 与第十二章的 $L^+G$-equivariance 相同，在 finite stage 上通过 finite jet quotient 定义。其 perverse heart 中的 simple objects 为 Schubert IC sheaves
 $$
 \operatorname{IC}_w=\operatorname{IC}(\overline{IwI/I}).
 $$
 
-**定义 14.5.** 卷积 correspondence 为
+**定义 14.5.** 在 $LG\times\operatorname{Fl}_G$ 上令
+$$
+(g,x)\cdot h=(gh^{-1},hx)\qquad(h\in I),
+$$
+并使用 torsor diagram
 $$
 \operatorname{Fl}_G\times\operatorname{Fl}_G
 \xleftarrow{\ p\ }
+LG\times\operatorname{Fl}_G
+\xrightarrow{\ q\ }
 LG\times^I\operatorname{Fl}_G
 \xrightarrow{\ m\ }
 \operatorname{Fl}_G.
 $$
-定义
+这里 $p(g,x)=(gI,x)$、$q(g,x)=[g,x]$、$m([g,x])=gx$；$p$ 不 factor through $q$。对 $\mathcal F,\mathcal G\in\mathsf H_I$，令
+$\mathcal F\widetilde\boxtimes\mathcal G$ 为满足
 $$
-\mathcal F\star\mathcal G=m_!p^\ast(\mathcal F\boxtimes\mathcal G).
+q^\ast(\mathcal F\widetilde\boxtimes\mathcal G)
+\simeq p^\ast(\mathcal F\boxtimes\mathcal G)
+$$
+的 descent object。`AFFHECKE-1` 的 affine-Schubert geometry 给出：$m$ 在包含两个输入的 finite convolution support 上 proper。定义
+$$
+\mathcal F\star\mathcal G
+=Rm_\ast(\mathcal F\widetilde\boxtimes\mathcal G)
+\simeq Rm_!(\mathcal F\widetilde\boxtimes\mathcal G).
 $$
 
 **定义 14.5.1.** 对 $w\in\widetilde W$ 记
@@ -137,13 +151,17 @@ $$
 $$
 若长度不可加，乘法像落入较小 Bruhat stratum 的闭包并出现 lower terms，这正是 Hecke 关系的几何来源。$\square$
 
-**命题 14.6.** 在 ind-proper 和 constructibility 假设满足时，Iwahori convolution 结合。
+**命题 14.6.** 定义 14.5 的 finite-support Iwahori convolution 带有满足 pentagon 的自然 associator。
 
 **证明.** 三重 convolution space
 $$
 LG\times^I LG\times^I\operatorname{Fl}_G
 $$
-控制两种加括号方式。contracted product 的 associativity 和 loop group 乘法结合律给出 correspondence 的同构；六函子 base change 给出 functor associator。$\square$
+在包含三个输入的 finite affine-Schubert support 上控制两种加括号方式，所有目标 maps 均 proper。Coherent torsor descent 把两种 iterated twisted external products 识别为同一个三重下降对象；附录 F 命题 F.3 的两个 base-change calculations 都把迭代卷积识别为沿
+$$
+m_3([g_1,g_2,x])=g_1g_2x
+$$
+的单次 pushforward。四重 contracted product 上的比较由严格结合的 loop multiplication 诱导，故 F.3 的 coherence hypothesis 成立，associator 满足 pentagon。$\square$
 
 ## 14.3 Affine KL theory
 
@@ -168,7 +186,7 @@ $$
 
 ## 本章小结
 
-本章定义 affine flag variety、Iwahori-Hecke category、标准对象、affine simple reflection 的局部模型，并给出卷积结合性和长度可加乘法的证明。ind-projectivity、orbit decomposition、Cartan decomposition 和 affine KL basis theorem 是外部输入。
+本章定义 affine flag variety、finite-support Iwahori-Hecke category、标准对象和 affine simple reflection 的局部模型。卷积现在通过 torsor descent 而非 contracted product 上不存在的 Cartesian-product map 定义，并在 finite Schubert support 上使用 properness；结合性包含 pentagon coherence。Ind-projectivity、orbit decomposition、finite-support convolution properness、Cartan decomposition 和 affine KL basis theorem 是外部输入。
 
 ## 练习
 

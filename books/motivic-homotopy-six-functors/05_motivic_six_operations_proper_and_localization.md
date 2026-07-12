@@ -10,23 +10,42 @@
 
 ## 5.1 Motivic 系数系统
 
-**约定 5.1.** 本章的基范畴 `\mathcal B` 取为默认有限维 Noetherian 概形及允许态射组成的范畴；若使用更一般 qcqs 概形或代数栈，必须另行声明。
+**约定 5.1.** 固定附录 A 的 `\mathbb U`-小有限维 Noetherian 概形 `B`。
+本章的基范畴 `\mathcal B` 是有限型 `B`-概形的范畴；它对有限纤维积封闭，
+其对象均为 qcqs、有限维 Noetherian 概形。任意 `B`-态射记为
+`f:X\to Y`；在这个基范畴中它自动有限型。Exceptional 态射类
+`\mathcal E` 取 separated 态射；由 Nagata compactification，此类态射可
+compactify。若改用任意 qcqs 概形、非 separated exceptional 态射或代数栈，
+必须另行声明并重新核查外部输入。
 
-**外部输入定理 5.2（Motivic 六操作）.** 赋值
+**外部输入定理 5.2（Motivic 六操作的定义域与方差）.** 赋值
 
 $$
 S\longmapsto\mathbf{SH}(S)
 $$
 
-扩展为六操作形式主义。对 `f:X\to Y`，有
+扩展为如下相干系数系统：
 
-$$
-f^*,\quad f_*,\quad f_!,\quad f^!,\quad -\otimes_X-,\quad \underline{\operatorname{Hom}}_X(-,-),
-$$
+1. 对每个 `f:X\to Y`，有保持小余极限的强对称幺半正合函子
+   `f^*:\mathbf{SH}(Y)\to\mathbf{SH}(X)` 及伴随 `f^*\dashv f_*`；
+2. 若 `f` smooth，则另有 `f_\sharp\dashv f^*`；
+3. 若 `f` separated，则有 `f_!\dashv f^!`；
+4. 每个 `\mathbf{SH}(X)` 都是 closed presentably symmetric monoidal
+   stable infinity-category，内部操作为 `\otimes_X` 与
+   `\underline{\operatorname{Hom}}_X`；
+5. 上述函子具有 identity、composition 和 base-change pasting 的
+   infinity-categorical coherence。
 
-并满足复合相干、base change、projection formula、proper compatibility、localization 和 purity。
+这里 `f_!`、`f^!` 对非 separated `f` 不属于本章定理；`f_\sharp` 只在
+smooth 情形定义，且不应与 `f_!` 混记。
 
-**依赖源.** Ayoub、Cisinski-Deglise、Drew-Gallauer；equivariant 和 stacky 变体分别依赖 Hoyois 与 Khan-Ravi 等资料。具体 locator 在后续 `REFERENCE_LOCATOR_LEDGER.md` 中补全。
+**依赖源与边界.** Hoyois, *The six operations in equivariant motivic homotopy
+theory*, Theorem 1.1 和 Theorem 6.18，取平凡群；该文在平凡群情形允许 qcqs
+基，exceptional adjunction 对 compactifiable morphisms 定义，本书以
+Noetherian Nagata compactification 把 separated finite-type 态射纳入该类。
+Ayoub 给出非等变 motivic 原始构造。Drew--Gallauer Theorem 7.14 说明
+universal coefficient-system 性质，但不单独证明本定理列出的全部六操作
+相容式。
 
 **定义 5.3.** 对 `S`，记
 
@@ -56,9 +75,13 @@ $$
 f_!\simeq f_*.
 $$
 
-**外部输入定理 5.6.** Motivic 六操作满足 proper compatibility：对 proper `f`，有自然等价 `f_!\simeq f_*`，并与复合相干。
+**外部输入定理 5.6.** Motivic 六操作满足 proper compatibility：对
+proper `f`，有自然等价 `f_!\simeq f_*`，并与复合、base change 和
+projection maps 相干。
 
-**依赖源.** Ayoub、Cisinski-Deglise；在 universal six-functor formalism 中作为六操作结构的一部分出现。
+**依赖源.** Hoyois, Theorem 6.18(1)；proper base change 与 proper
+projection formula 分别见 Corollaries 6.10 与 6.11。Ayoub 给出非等变
+版本。
 
 **命题 5.7.** 若 `f:X\to Y` 与 `g:Y\to Z` 均 proper，则 `(gf)_!\simeq(gf)_*` 与 `g_!f_!\simeq g_*f_*` 相容。
 
@@ -70,13 +93,23 @@ $$
 
 对 `f` 和 `g` 使用 proper compatibility 得到 `g_!f_!\simeq g_*f_*`。定理 5.6 要求 proper compatibility 与复合相干，因此这条等价与 `(gf)` 的 proper compatibility 一致。`\square`
 
-**推论 5.8.** 若 `f` proper，则投影公式可写成普通推前形式
+**推论 5.8.** 若 `f` proper，则对任意
+`A\in\mathbf{SH}(X)`、`B\in\mathbf{SH}(Y)`，ordinary projection map
+
+$$
+f_*A\otimes_YB\longrightarrow f_*(A\otimes_X f^*B)
+$$
+
+为等价；等价地，可写成
 
 $$
 f_*(A\otimes_X f^*B)\simeq f_*A\otimes_YB.
 $$
 
-**证明.** 定理 5.2 给出 `!`-投影公式。由 proper compatibility 把 `f_!` 替换为 `f_*`，得到所述等价。`\square`
+**证明.** Motivic `!`-projection formula 是外部输入定理 4.17 的组成部分，
+给出 `f_!(A\otimes f^*B)\simeq f_!A\otimes B`。由定理 5.6 的相干
+proper comparison 把两个 `f_!` 替换为 `f_*`，得到 ordinary projection
+map 的逆为等价，故 ordinary projection map 本身为等价。`\square`
 
 ## 5.3 Open immersion 与 extension by zero
 
@@ -88,7 +121,9 @@ $$
 j^!\simeq j^*
 $$
 
-并且 `j_!` fully faithful。
+并且 `j_!` fully faithful。由于 `j` etale，`T_j=0`；该等价也与第六章的
+smooth purity 口径一致。进一步有 `j_!\simeq j_\sharp`，但这个比较依赖
+smooth ambidexterity，不是两个左伴随符号的定义相等。
 
 **命题 5.11.** 对开嵌入 `j:U\hookrightarrow X`，单位态射
 
@@ -112,7 +147,21 @@ $$
 j_!j^*E\longrightarrow E\longrightarrow i_*i^*E.
 $$
 
-**外部输入定理 5.14（Motivic localization）.** 对任意闭嵌入 `i:Z\hookrightarrow X` 及其开补 `j:U\hookrightarrow X`，`\mathbf{SH}(X)`、`\mathbf{SH}(U)` 和 `\mathbf{SH}(Z)` 组成 open-closed recollement，特别有定义 5.13 中的 cofiber sequence。
+**外部输入定理 5.14（Motivic localization）.** 对任意闭嵌入
+`i:Z\hookrightarrow X` 及其开补 `j:U\hookrightarrow X`，
+`\mathbf{SH}(X)`、`\mathbf{SH}(U)` 和 `\mathbf{SH}(Z)` 组成
+open-closed recollement。特别地，`i_*`、`j_!` fully faithful，并有自然
+cofiber sequences
+
+$$
+j_!j^*E\longrightarrow E\longrightarrow i_*i^*E,
+\qquad
+i_*i^!E\longrightarrow E\longrightarrow j_*j^*E.
+$$
+
+**依赖源.** Hoyois, Theorem 6.18(4)-(5)，取平凡群。第一条 sequence 是
+定义 5.13 使用的 localization sequence；第二条不能通过把第一条中的
+`i^*` 字面替换成 `i^!` 得到，而是 recollement 的另一半。
 
 **命题 5.15.** 对 `E=\mathbb 1_X`，有 cofiber sequence
 
@@ -158,9 +207,72 @@ $$
 
 **注 5.19.** `i^!` 与 `i^*` 对闭嵌入一般不同。二者的关系由 purity 或 absolute purity 控制，需要第六章的 Thom twist 和法丛数据。
 
-## 5.6 本章小结
+## 5.6 紧致性、构造性与六操作
 
-Motivic 六操作把 `\mathbf{SH}(-)` 组织成几何系数系统。Proper compatibility 允许对 proper 态射把 `f_!` 与 `f_*` 识别；open-closed localization 把一个对象分解为开部分和闭支撑部分。第六章将解释闭嵌入和光滑态射中 `f^!` 与 `f^*` 的差异如何由 tangent/normal bundle 的 Thom twist 衡量。
+**命题 5.20（伴随的紧致性判据）.** 设
+`L:\mathcal C\rightleftarrows\mathcal D:R` 是 presentable
+infinity-categories 间的伴随。若 `R` 保持 filtered colimits，则 `L` 把
+紧致对象送到紧致对象。
+
+**证明.** 设 `K\in\mathcal C` 紧致，`(D_i)_{i\in I}` 为 filtered diagram。
+由伴随、`R` 的假设和 `K` 的紧致性，依次有
+
+$$
+\begin{aligned}
+\operatorname{Map}_{\mathcal D}(LK,\operatorname*{colim}_iD_i)
+&\simeq \operatorname{Map}_{\mathcal C}
+   (K,R\operatorname*{colim}_iD_i)\\
+&\simeq \operatorname{Map}_{\mathcal C}
+   (K,\operatorname*{colim}_iRD_i)\\
+&\simeq \operatorname*{colim}_i
+   \operatorname{Map}_{\mathcal C}(K,RD_i)\\
+&\simeq \operatorname*{colim}_i
+   \operatorname{Map}_{\mathcal D}(LK,D_i).
+\end{aligned}
+$$
+
+故 `LK` 紧致。`\square`
+
+**外部输入定理 5.21（continuity）.** 在约定 5.1 下：
+
+1. 对任意 `f:X\to Y`，右伴随 `f_*` 保持全部小余极限；
+2. 对 separated `f`，exceptional pullback `f^!` 保持全部小余极限。
+
+**依赖源与边界.** Hoyois, Proposition 6.4(4) 给出第 1 项；Corollary 6.19
+对 compactifiable `f` 给出第 2 项。约定 5.1 的 separated 态射由 Nagata
+定理 compactifiable。这里的结论强于只保持 filtered colimits，但它不表示
+`f_*` 或 `f^!` 自动保持紧致对象。
+
+**推论 5.22.** 在约定 5.1 下：
+
+1. 任意 `f` 的 `f^*` 保持紧致对象；
+2. smooth `f` 的 `f_\sharp` 保持紧致对象；
+3. separated `f` 的 `f_!` 保持紧致对象；
+4. proper `f` 的 `f_*` 保持紧致对象。
+
+在定理 3.19 的范围内，把“紧致”换成“几何构造性”仍成立。
+
+**证明.** 第 1 项对伴随 `f^*\dashv f_*` 使用命题 5.20 和定理 5.21(1)。
+第 2 项对 `f_\sharp\dashv f^*` 使用命题 5.20；`f^*` 本来就在
+`\operatorname{Pr}^L` 中，故保持 filtered colimits。第 3 项对
+`f_!\dashv f^!` 使用定理 5.21(2)。若 `f` proper，定理 5.6 给出
+`f_*\simeq f_!`，第 4 项随之成立。最后由定理 3.19 的
+`\mathbf{SH}_c=\mathbf{SH}^\omega` 得构造性版本。`\square`
+
+**注 5.23.** 推论 5.22 没有断言任意 `f_*` 或任意 `f^!` 保持紧致对象。
+“一个函子保持小余极限”与“它把紧致对象送到紧致对象”是不同性质；后者
+通常通过其右伴随的 filtered-colimit continuity 检验。其他系数理论中的
+constructibility preservation 也可能需要 quasi-excellence、系数可逆性或
+有限 Tor-dimension 等附加假设。
+
+## 5.7 本章小结
+
+Motivic 六操作把 `\mathbf{SH}(-)` 组织成几何系数系统：`f^*\dashv f_*`
+对所有默认态射存在，`f_!\dashv f^!` 只对 separated 态射使用。
+Proper compatibility 允许对 proper 态射把 `f_!` 与 `f_*` 识别；open-closed
+localization 把对象分解为开部分和闭支撑部分。Continuity 定理与伴随判据
+精确控制若干操作何时保持紧致/构造性对象。第六章将区分 smooth purity、
+lci purity transformation 与 coefficientwise absolute purity。
 
 ## 练习
 
@@ -173,3 +285,6 @@ Motivic 六操作把 `\mathbf{SH}(-)` 组织成几何系数系统。Proper compa
 **练习 5.4.** 解释为什么 `i^*E\simeq0` 与 `j^*E\simeq0` 表示不同支撑条件。
 
 **练习 5.5.** 写出 `E=\Sigma_T^\infty X_+` 时命题 5.15 的形式。
+
+**练习 5.6.** 用命题 5.20 证明：若 `f` proper，则 `f_*` 保持紧致对象；
+指出证明中 properness 被使用的唯一位置。

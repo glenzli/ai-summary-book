@@ -133,7 +133,7 @@ $$
 | Modern cobar/twisting universal property | FRE-1 |
 | Universal cobar twisted composite is acyclic | FRE-2 |
 | Twisting weak equivalence implies twisted composite acyclicity | FRE-3 |
-| Bar-cobar counit $B^cB(P)\to P$ as weak equivalence entry | FRE-4；完整书本 wording 已由 FINAL_OPERAD_THEORY_CLOSURE 关闭为 convention/bibliography production work |
+| Bar-cobar counit $B^cB(P)\to P$ as weak equivalence entry | FRE-4；connected weight-graded 书本判别另由 LV-1 定位，FRE-4 保留其 $C$-cofibrancy/model-context 用途 |
 | Algebra quasi-free/cofibrant replacement from cobar resolution | FRE-5 |
 | Homotopy morphisms represented by quasi-cofree coalgebra morphisms | FRE-6 |
 | Dg-operad model structure in Hinich's setting | HIN-1 |

@@ -61,9 +61,12 @@ $$
 3. 找到有限生成对象，例如 immersed spheres、vanishing cycles 或 cocores。
 4. 计算这些对象的 endomorphism $A_\infty$ algebra。
 5. 在 B-side 找到 matrix factorizations、graded modules 或 coherent sheaves 的生成对象。
-6. 比较 endomorphism algebras，得到 Morita equivalence。
+6. 构造两边生成 full subcategories 的 strictly unital
+   dg/$A_\infty$ quasi-equivalence；有限直和口径下才压缩为保持对象
+   idempotents 的 endomorphism-algebra quasi-isomorphism。
 
-**命题 12.9.** 若步骤 12.8 的第 3、5、6 步成立，且两边生成性已由外部输入给出，则得到相应 HMS 的 Morita 版本。
+**命题 12.9.** 若步骤 12.8 的第 3、5、6 步成立，且第 3、5 步所列对象
+分别 split-generate 两边，则得到相应 HMS 的 Morita 版本。
 
 **证明.** 第 3、5 步给出 A/B 两边 split-generating full subcategories。第 6 步给出这些 full subcategories 的 quasi-equivalence。由生成元比较原则 8.9 得到 Morita equivalence。证毕。
 

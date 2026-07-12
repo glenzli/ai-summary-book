@@ -121,21 +121,30 @@ $$
 
 **书内部分。** 第二卷第三、四章和附录 I、N、X 给出 cone 判别、失败模式、rational descent 证明义务、analyticization 泛性质和 analytic tensor 的形式下降。
 
-**外部部分。** Scholze analytic ring 公理推出反射局部化、张量结构和 descent。
+**外部部分。** S26 Definition 7.4 的复形级 analytic 公理推出解析模心脏、导出
+全嵌入、反射局部化和张量结构。Rational descent 是 C.4 的独立几何输入，不是任意
+analytic ring 的形式后果。
 
-**来源定位。** S26 Lecture VII definition `def:analytic`, proposition `prop:analyticnice`, functoriality proposition `prop:functoriality`, examples proposition `prop:exanalytic`。
+**来源定位。** S26 Definition 7.1（theory of measures）、Definition 7.4
+（analytic ring）、Proposition 7.5（结构定理）与 Warning 7.6
+（underived/derived tensor 边界）。
 
 **依赖位置。** 第一卷第十四章；第二卷第三至六章、附录 R、X；第三卷 analytic/liquid 复几何接口。
 
-### C.2 Liquid realization
+### C.2 经典完备空间的 liquid membership
 
-**用途。** 把 Banach、Fréchet、Dolbeault、分布和核函数对象放入 analytic/liquid 范畴。
+**用途。** 把 Banach、Fréchet 及 Dolbeault 复形各项通过
+\(\underline E(S)=\operatorname{Cont}(S,E)\) 放入 analytic/liquid 范畴。
 
-**书内部分。** 第二卷附录 J、P、Z 证明拓扑向量空间凝聚化、Fréchet 复形闭值域、Fredholm cohomology 和 realization 后的类型检查。
+**书内部分。** 第二卷第五章及附录 J、P、Z 证明凝聚化、Fréchet 逆极限、
+凝聚 epimorphism 的局部提升判据，以及满足该判据时的 cohomology 比较。
 
-**外部部分。** Scholze/Clausen-Scholze 的 liquid realization 与经典连续线性算子相容。
+**外部部分。** 每个 \(p\)-Banach 空间及 complete locally \(p\)-convex 空间的
+关联凝聚模是 \(p\)-liquid；liquid 对象对逆极限封闭。该输入只判断对象 membership，
+不声称任意连续满射在凝聚化后仍为 epimorphism。
 
-**来源定位。** CS26 Lectures II-III: definition of \(p\)-liquid objects, theorem `thm:qspliquid`, theorem `thm:liquidmain`；Lecture IV 给出 tensor calculations。精确 realization 子范畴在本书中作为输入范围保留。
+**来源定位。** CS26 Definition 2.13、Theorem 2.14、Lemma 2.16 及其后的 inverse-limit
+推论；完整 liquid 范畴结构见 Theorem 3.11。
 
 **依赖位置。** 第二卷第五章、附录 S、Z；第三卷第三、四、五章；第四卷第六章。
 
@@ -147,7 +156,7 @@ $$
 
 **外部部分。** \((\mathbb R,\mathcal M_{<p})\) 满足 analytic ring 条件，以及 \(p\)-liquid 测度理论的构造。
 
-**来源定位。** S26 Lecture VII theorem asserting \((\mathbb R,\mathcal M_{<p})\) is analytic for \(0<p\le 1\)；CS26 Lectures II-III develop \(p\)-liquid vector spaces and the main theorem `thm:liquidmain`。
+**来源定位。** S26 Theorem 7.11；CS26 Definition 2.13 与 Theorem 3.11。
 
 **依赖位置。** 第二卷第五章、附录 S、附录 T；第三卷 Dolbeault/liquid 接口。
 
@@ -163,15 +172,22 @@ $$
 
 **依赖位置。** 第二卷第六章、附录 N、附录 R、附录 T、附录 Y；第三卷复几何 analytic localization 接口。
 
-### C.5 Liquid exactness for closed-range complexes
+### C.5 Fréchet 复形的凝聚严格性与 cohomology 比较
 
-**用途。** 将闭值域 Fréchet 复形的 cohomology 与 liquid realization 后的 cohomology 比较。
+**用途。** 将 Fréchet 复形的拓扑 cohomology 与逐项凝聚化所得 liquid 复形的
+cohomology 比较。
 
-**书内部分。** 第二卷附录 P、S、Z 证明闭值域给 Hausdorff Fréchet cohomology，Fredholm 有限性给 perfect liquid cohomology，并说明 Dolbeault 复形使用时必须记录的类型数据。
+**书内部分。** 第二卷第五章及附录 P、S、Z 证明：比较成立的精确书内条件是相关
+quotient 映射对 profinite 参数族局部可提升；连续 splitting 是充分条件。闭值域只负责
+使拓扑 quotient 为 Hausdorff Fréchet 空间，Fredholm 有限性再给 perfect liquid
+cohomology。
 
-**外部部分。** realization 保持相应闭值域短正合列，以及椭圆 Fréchet 复形的 Hodge/Fredholm 定理。
+**外部部分。** 椭圆 Fréchet 复形的 Hodge/Fredholm 定理，包括连续 Green operator、
+Hodge projection 和 exact/coexact/harmonic splitting。不存在另一个笼统的
+“liquid realization exactness”输入。
 
-**来源定位。** CS26 liquid realization and tensor framework in Lectures II-IV；classical Hodge/Fredholm part remains INPUT D.4 and is not a condensed-mathematics theorem.
+**来源定位.** Liquid membership 见 C.2；凝聚严格性的局部提升判据为书内命题 5.9；
+classical Hodge/Fredholm 部分仍为 INPUT D.4，不是 condensed-mathematics 定理。
 
 **依赖位置。** 第二卷附录 P、S、T、Z；第三卷 Dolbeault、有限性和 Serre duality 章节。
 

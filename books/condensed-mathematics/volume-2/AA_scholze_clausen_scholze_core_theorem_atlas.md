@@ -25,7 +25,7 @@
 - condensed 基础和 ED/profinite 测试理论；
 - solidification、solid tensor 和 profinite 测度对象；
 - analytic rings、analyticization、Huber pair rational localization 和 rational descent；
-- \(p\)-liquid analytic ring 与 liquid realization；
+- \(p\)-liquid analytic ring、经典完备空间的 liquid membership 与严格正合性；
 - \(f_!\)、投影公式和 \(f^!\) 形式；
 - Clausen-Scholze 的 condensed/analytic complex geometry 建模；
 - coherent finiteness、Serre duality、GAGA 和 HRR/GRR 的 condensed/analytic 表述。
@@ -109,7 +109,8 @@ $$
 
 ## AA.4 Analytic 核心
 
-**核心定理 AA.7（analytic ring localization）。** 若 \((A,\mathcal M)\) 是 analytic ring，则由
+**核心定理 AA.7（analytic ring localization）。** 若 \((A,\mathcal M)\) 满足
+S26 Definition 7.4 的复形级 analytic 公理，则由
 
 $$
 K_S^{\mathcal M}=\operatorname{cofib}(A[\underline S]\to\mathcal M[S])
@@ -125,7 +126,10 @@ $$
 
 **书内部分。** 第二卷附录 I、X 证明 analytic cone 判别、局部对象形式、analyticization 泛性质和张量下降的条件性证明。
 
-**外部部分。** analytic ring 公理推出正确 localization、kernel 张量理想性和测度对象 functoriality。
+**外部部分。** S26 Proposition 7.5 从该公理推出解析模心脏、导出全嵌入、
+localization 与幺半结构。S26 Warning 7.6 明确指出：一般情形下，心脏层张量的总左导出
+是否等于 derived analytic tensor 还需要额外的 degree-zero 集中性，不能从
+Proposition 7.5 自动得到。
 
 **核心定理 AA.8（Huber pair 与 rational localization）。** 离散 Huber pair \((A,A^+)\) 给出 analytic ring；rational localization 与 analytic module category 相容，并满足 finite rational cover 的 Čech descent。
 
@@ -153,17 +157,31 @@ $$
 
 **外部部分。** \(p\)-liquid 测度对象构造和 analytic ring 条件验证。
 
-**核心定理 AA.11（liquid realization）。** 对核 Fréchet 空间、适用的 Banach 空间、有限维空间和连续线性映射，存在进入 liquid 范畴的 realization
+**核心定理 AA.11（经典完备空间的 liquid 接口）。** 固定 \(0<p\le1\)。对
+\(p\)-Banach 空间以及 complete locally \(p\)-convex 空间 \(E\)，关联凝聚模
 
 $$
-\mathcal L_p:E\mapsto E_{\mathrm{liq}},
+\mathcal L_p(E):=\underline E,
+\qquad
+\underline E(S)=\operatorname{Cont}(S,E),
 $$
 
-并与有限极限、有限直和、闭值域短正合列和经典连续线性映射相容。
+是 \(p\)-liquid。特别地，每个实 Banach 或 Fréchet 空间的凝聚化对所有
+\(0<p\le1\) 都是 \(p\)-liquid。这里 \(\mathcal L_p\) 只是凝聚化后的类型标记，
+不是额外构造出的对象。
 
-**书内部分。** 第二卷附录 J、P、Z 证明拓扑向量空间凝聚化、闭值域 Fréchet cohomology 的 Hausdorff 性、接受 exactness 后的 cohomology 比较。
+**书内部分。** 第二卷第五章及附录 J、P、Z 证明拓扑向量空间凝聚化、Fréchet
+逆极限、凝聚 epimorphism 的局部提升判据，以及在相关 quotient 映射凝聚有效时的
+cohomology 比较。连续 Hodge/Green splitting 是该有效性的充分条件。
 
-**外部部分。** realization 的构造、Hom 判别和 exactness 范围。
+**外部部分。** CS26 Theorem 2.14、Lemma 2.16 及其后推论提供经典完备空间的
+liquid membership；CS26 Theorem 3.11 提供 liquid 范畴结构。外部输入不包含
+“所有闭值域短正合列自动 exact”这一断言。
+
+**反例边界.** 闭像只保证 Fréchet quotient Hausdorff。若
+\(q:E\twoheadrightarrow F\) 没有对 profinite 参数族的局部连续提升，则
+\(\underline q\) 不必是凝聚 epimorphism；因此对象 membership 不能替代 exactness
+检查。
 
 ## AA.6 Clausen-Scholze 复几何核心
 
@@ -171,7 +189,9 @@ $$
 
 **书内部分。** 第三卷第一至三章和附录 B、N、R 给出语言翻译、Dolbeault resolution 的形式层和局部解析骨架。
 
-**外部部分。** Clausen-Scholze 的建模定理、liquid realization 与 Dolbeault-Fredholm 输入的相容性。
+**外部部分。** Clausen-Scholze 的建模定理，以及 classical Dolbeault-Fredholm/Hodge
+输入。把 Fréchet 复形送入 liquid 范畴只用 AA.11 的 membership；把其 cohomology
+与拓扑 cohomology 比较还需逐个验证 quotient 的局部提升，或使用连续 Hodge splitting。
 
 **核心定理 AA.13（coherent finiteness 与 compactness）。** 紧复空间或 proper 情形中，相干上同调有限维，并在 analytic/liquid 派生范畴中给出 perfect/compact 对象。
 
@@ -200,7 +220,7 @@ $$
 | Solidification | 卷二 M/Q/V | 局部对象、反射局部化形式、kernel 性质 | Scholze solid 识别 |
 | Solid tensor | 卷二 K/L/Q/W | 幺半下降、生成元归约 | profinite 测度张量公式 |
 | Analytic rings | 卷二 I/N/R/X/Y | cone 判别、analyticization 泛性质、descent 形式层 | analytic ring localization、rational acyclicity |
-| Liquid | 卷二 J/P/S/Z | 凝聚化、闭值域、Fredholm 后果 | \(p\)-liquid 测度与 realization |
+| Liquid | 卷二 J/P/S/Z | 凝聚化、局部提升判据、Fredholm 后果 | \(p\)-liquid 测度与经典空间 membership |
 | \(f_!\)/duality 入口 | 卷二 F/L，卷三 J/AD/AJ | 伴随、投影公式后果 | \(f_!\) 构造与 trace |
 | Complex geometry | 卷三 F-AQ | 形式后果、计算模型、proof modules | Clausen-Scholze 建模和经典深定理 |
 
@@ -214,5 +234,6 @@ $$
 
 1. 说明为什么 solid kernel 张量理想性是 solid tensor product 的必要条件。
 2. 在 AA.8 的 rational descent 中区分 ordinary sheaf descent 与 category-valued descent。
-3. 解释 liquid realization 为什么不能只由拓扑向量空间的凝聚化推出。
+3. 解释为什么“\(\underline E\) 是 liquid”不能推出 \(\underline E\to\underline F\)
+   对每个连续满射 \(E\to F\) 都是 epimorphism。
 4. 从 AA.12-AA.15 中任选一个复几何定理，列出其 classical 输入、condensed/analytic 输入和书内形式后果。

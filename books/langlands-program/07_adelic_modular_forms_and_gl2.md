@@ -135,11 +135,12 @@ $$
 \begin{pmatrix}1&x\\0&1\end{pmatrix}g
 \right)\,dx=0.
 $$
-其中 $dx$ 是 $\mathbb A_\mathbb Q$ 上使 $\mathbb Q\backslash\mathbb A_\mathbb Q$ 体积有限的 Haar 测度。
+其中取标准非平凡特征 $\psi:\mathbb A_\mathbb Q/\mathbb Q\to\mathbb C^\times$ 的自对偶 Haar 测度；由第一章和附录 F 的归一化，
+$\operatorname{vol}(\mathbb Q\backslash\mathbb A_\mathbb Q)=1$。尖点条件本身不随 $dx$ 的非零标量倍改变，但后续 Fourier coefficient 公式使用这个固定归一化。
 
 **命题 7.12.** 在经典-adelic 对应下，经典尖点形式对应 adelic 尖点函数。
 
-**证明草图.** 上式是沿 Borel 子群 unipotent radical 的常数项积分。把 $g$ 通过 strong approximation 化到无穷处代表后，该积分等价于经典 Fourier 展开在相应尖点处的常数项。经典尖点条件要求所有尖点处常数项为 $0$，因此 adelic 常数项积分为 $0$。反向同理。完整证明需要逐尖点追踪 $\Gamma_0(N)\backslash\mathbb P^1(\mathbb Q)$ 与 adelic 双商的对应。$\square$
+**证明路线（外部输入）.** 上式是沿 Borel 子群 unipotent radical 的常数项积分。把 $g$ 通过 strong approximation 化到无穷处代表后，该积分等价于经典 Fourier 展开在相应尖点处的常数项。经典尖点条件要求所有尖点处常数项为 $0$，因此 adelic 常数项积分为 $0$；反向使用同一尖点双商比较。完整证明需要逐尖点追踪 $\Gamma_0(N)\backslash\mathbb P^1(\mathbb Q)$ 与 adelic 双商，本段只记录该外部输入的证明路线。
 
 ## 7.6 自守表示
 
@@ -172,18 +173,18 @@ $$
 
 ## 7.7 Hecke 本征形式到自守表示
 
-**外部输入定理 7.16（Hecke eigenform 生成的自守表示）.** 设 $f\in S_k(\Gamma_0(N),\varepsilon)$ 是归一化 cuspidal Hecke eigenform。令 $\Phi_f$ 为其 adelic 提升。则右正则作用生成的表示
+**外部输入定理 7.16（newform 生成的自守表示）.** 设 $f\in S_k(\Gamma_0(N),\varepsilon)$ 是归一化 cuspidal newform，$k\ge2$，$\varepsilon$ 为 Dirichlet character。令 $\Phi_f$ 为按定理 7.9 归一化的 adelic 提升。则其 $K_\infty$-finite 右平移张成空间
 $$
 \pi_f=\langle R(g)\Phi_f:g\in G(\mathbb A_\mathbb Q)\rangle
 $$
-有不可约 cuspidal automorphic representation 作为自然不可约商；对 newform，通常把该不可约表示记为 $\pi_f$。它满足：
+是不可约 cuspidal automorphic representation；本书把它置于 unitary automorphic normalization。它满足：
 
-1. 中心特征由 $\varepsilon$ 和无穷处权决定。
+1. 中心特征是由 $\varepsilon$ 给出的酉 Hecke 特征，并带与权 $k$ 相容的无穷处分量。
 2. 无穷处分量 $\pi_{f,\infty}$ 是与权 $k$ 对应的离散系列或其极限情形。
-3. 若 $p\nmid N$，则 $\pi_{f,p}$ 非分歧，且 Satake 参数由 Hecke 本征值 $a_p$ 决定。
+3. 若 $p\nmid N$，则 $\pi_{f,p}$ 非分歧，其 unitary Satake 参数由定义 7.18.1 给出。
 4. 若 $p\mid N$，则 $\pi_{f,p}$ 的导子记录 $f$ 的局部级结构。
 
-**注 7.17.** 对非 newform 的旧形式，右正则作用生成的空间可能包含同一个全局表示的多个 level vectors。Newform theory 的作用是选出每个表示在导子级别上的规范向量。
+**注 7.17.** 对非 newform 的旧形式，不能直接套用定理 7.16 的不可约性陈述。Oldspace 中的 degeneracy images 是某个 $\pi_f$ 的高 level vectors；newform theory 选出导子级别的一维 newvector line。
 
 **注 7.17.1.** 附录 H 证明经典 Hecke 双陪集代表如何嵌入有限 adelic Hecke algebra，并说明好素数处 $\mathbf 1_{K_p\operatorname{diag}(1,p)K_p}$ 的作用如何给出经典 $T_p$ 本征值。
 
@@ -199,11 +200,11 @@ $$
 | 好素数 $T_p$ 本征值 | 球 Hecke 算子本征值 | 给出 Satake 参数和 Euler 因子 |
 | newform 的最小级 | local newvector 的 conductor | 与 Galois 表示导子和降层比较 |
 
-## 7.8 好素数处的 Satake 参数
+## 7.8 好素数处的两种 Satake 归一化
 
 设 $f(q)=\sum_{n\ge1}a_nq^n$ 是归一化 Hecke eigenform，权 $k$、nebentypus $\varepsilon$、级 $N$。设 $p\nmid N$。
 
-**定义 7.18.** 好素数 $p$ 处的 Satake 参数是无序二元组 $(\alpha_p,\beta_p)$，满足
+**定义 7.18.** 好素数 $p$ 处的 classical Hecke roots 是无序二元组 $(\alpha_p,\beta_p)$，满足
 $$
 \alpha_p+\beta_p=a_p,\qquad
 \alpha_p\beta_p=\varepsilon(p)p^{k-1}.
@@ -214,6 +215,20 @@ X^2-a_pX+\varepsilon(p)p^{k-1}
 $$
 的根。
 
+**定义 7.18.1.** Unitarily normalized automorphic representation $\pi_f$ 的 Satake roots 定义为
+$$
+\alpha_p^{\mathrm u}=\alpha_pp^{-(k-1)/2},\qquad
+\beta_p^{\mathrm u}=\beta_pp^{-(k-1)/2}.
+$$
+它们满足
+$$
+\alpha_p^{\mathrm u}+\beta_p^{\mathrm u}=a_pp^{-(k-1)/2},
+\qquad
+\alpha_p^{\mathrm u}\beta_p^{\mathrm u}=\varepsilon(p).
+$$
+Classical roots 与 unitary Satake roots 属于不同归一化，后文不再都称为
+“$\pi_f$ 的 Satake 参数”。
+
 **命题 7.19.** 好素数处的 Euler 因子可写为
 $$
 L_p(f,s)
@@ -223,20 +238,46 @@ L_p(f,s)
 \left((1-\alpha_pp^{-s})(1-\beta_pp^{-s})\right)^{-1}.
 $$
 
+相应的 unitary automorphic local factor 为
+$$
+L_p(s,\pi_f,\operatorname{Std})
+=\left((1-\alpha_p^{\mathrm u}p^{-s})
+(1-\beta_p^{\mathrm u}p^{-s})\right)^{-1},
+$$
+即更直接地
+$$
+L_p(s,\pi_f,\operatorname{Std})
+=L_p(f,s+(k-1)/2).
+$$
+
 **证明.** 由定义 7.18，
 $$
 (1-\alpha_pX)(1-\beta_pX)
 =1-(\alpha_p+\beta_p)X+\alpha_p\beta_pX^2
 =1-a_pX+\varepsilon(p)p^{k-1}X^2.
 $$
-取 $X=p^{-s}$ 即得结论。$\square$
+取 $X=p^{-s}$ 得到 classical 公式。再把
+$\alpha_p^{\mathrm u},\beta_p^{\mathrm u}$ 代入标准局部因子定义：
+$$
+(1-\alpha_p^{\mathrm u}p^{-s})(1-\beta_p^{\mathrm u}p^{-s})
+=(1-\alpha_pp^{-(s+(k-1)/2)})(1-\beta_pp^{-(s+(k-1)/2)}),
+$$
+即得变量平移。$\square$
 
-**外部输入定理 7.20（局部 Langlands 相容，好素数接口）.** 在 $p\nmid N$ 时，$\pi_{f,p}$ 的非分歧局部 Langlands 参数 $\varphi_{f,p}$ 在与 Deligne 表示相容的算术归一化下满足
+**外部输入定理 7.20（局部 Langlands 相容，好素数接口）.** 在 $p\nmid N$ 时，$\pi_{f,p}$ 的非分歧局部 Langlands 参数使用第五章的几何 Frobenius convention，并满足
 $$
-\operatorname{tr}\varphi_{f,p}(\operatorname{Frob}_p^{\operatorname{arith}})=a_p,\qquad
-\det\varphi_{f,p}(\operatorname{Frob}_p^{\operatorname{arith}})=\varepsilon(p)p^{k-1}
+\varphi_{f,p}(\operatorname{Fr}_p)
+\sim
+\operatorname{diag}(\alpha_p^{\mathrm u},\beta_p^{\mathrm u}).
 $$
-。若改用第五章的几何 Frobenius 参数，则需要把该半单共轭类取逆并按所选标准表示归一化调整。
+若 $\lambda\mid\ell$ 且 $p\ne\ell$，则与 Deligne 表示的算术 Frobenius 归一化比较为
+$$
+\varphi_{f,p}
+\cong
+\iota\,\operatorname{WD}_p(\rho_{f,\lambda}^{\vee})^{\mathrm{F\text{-}ss}}
+\otimes|\cdot|^{(k-1)/2}.
+$$
+这里对偶把 $\rho(\operatorname{Fr}_p)$ 的逆特征值变回 classical roots，随后 norm twist 给出 unitary roots。第十章将把该式扩展到坏位置并明确排除 $p=\ell$ 的额外 p-adic Hodge 责任。
 
 ## 7.9 标准 L 函数
 
@@ -244,19 +285,26 @@ $$
 $$
 L(s,\pi)=\prod_v L(s,\pi_v,\operatorname{Std})
 $$
-在绝对收敛半平面中成立。若 $\pi=\pi_f$ 来自归一化 Hecke eigenform $f$，则本书采用归一化使
+在绝对收敛半平面中成立。若 $\pi=\pi_f$ 来自归一化 newform $f$，本书默认 unitary normalization，故
 $$
-L(s,\pi_f)=L(f,s)
+L(s,\pi_f,\operatorname{Std})=L(f,s+(k-1)/2).
 $$
-作为未完成 L 函数。该选择是算术归一化；若采用 unitary automorphic normalization，变量 $s$ 会相差由权 $k$ 决定的平移。
+若定义非酉算术归一化
+$\pi_f^{\mathrm{alg}}=\pi_f\otimes|\det|^{-(k-1)/2}$，则且仅在该归一化下有
+$L(s,\pi_f^{\mathrm{alg}},\operatorname{Std})=L(f,s)$。
 
-**外部输入定理 7.22（Godement-Jacquet/Jacquet-Langlands 接口）.** 对 `GL(2)` cuspidal automorphic representation $\pi$，标准 L 函数 $L(s,\pi)$ 有解析延拓和函数方程。该理论可由 Rankin-Selberg 方法、Godement-Jacquet zeta 积分或 Jacquet-Langlands 理论建立。
+**外部输入定理 7.22（`GL(2)` 标准 L 函数）.** 设 $\pi$ 为 unitary cuspidal automorphic representation of
+$\operatorname{GL}_2(\mathbb A_K)$。标准 Euler 乘积在 $\operatorname{Re}(s)>1$ 绝对收敛；补入 Archimedean 因子所得 $\Lambda(s,\pi)$ 整，并满足
+$$
+\Lambda(s,\pi)=\varepsilon(s,\pi)\Lambda(1-s,\pi^\vee),
+$$
+其中局部因子、加法特征和 Haar 测度采用归一化总表。该结论可由 Godement-Jacquet 或 Rankin-Selberg 理论得到；本书不重证其全局解析估计。
 
 **注 7.23.** 附录 I 在 `GL(n)` 口径下给出 Godement-Jacquet 和 Rankin-Selberg 积分的定义、Euler 分解、非分歧计算和函数方程接口；本章的 `GL(2)` 标准 L 函数是其中 $n=2$ 的特例。
 
 ## 7.10 本章小结
 
-经典模形式给出 `GL(2)` 自守表示的一个具体模型，但 Langlands 纲领使用的是 adelic 表示语言。Adelic 提升把经典变换律变成左 $G(\mathbb Q)$-不变、右开紧变换和无穷处 $K$-type；尖点条件变成沿 unipotent radical 的常数项积分为零；Hecke 本征值变成非分歧局部分量的 Satake 参数。由此，经典的 $L(f,s)$ 被解释为自守表示 $\pi_f$ 的标准 L 函数。
+经典模形式给出 `GL(2)` 自守表示的一个具体模型，但 Langlands 纲领使用的是 adelic 表示语言。Adelic 提升把经典变换律变成左 $G(\mathbb Q)$-不变、右开紧变换和无穷处 $K$-type；尖点条件变成沿 unipotent radical 的常数项积分为零；Hecke 本征值变成非分歧局部分量的 Satake 参数。由此，经典的 $L(f,s)$ 在 algebraic normalization 下是同变量的标准 L 函数；对本书默认的 unitary $\pi_f$，精确关系是 $L(s,\pi_f)=L(f,s+(k-1)/2)$。
 
 ## 练习
 

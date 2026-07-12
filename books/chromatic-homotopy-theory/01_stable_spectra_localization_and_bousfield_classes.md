@@ -94,6 +94,82 @@ $$
 
 **证明.** 若 $X\to L_EX$ 与 $X\to L'_EX$ 都是 localization，则由命题 1.13 分别取 $Y=L'_EX$ 和 $Y=L_EX$，得到唯一的互逆映射 $L_EX\to L'_EX$ 与 $L'_EX\to L_EX$，并且它们与 $X$ 下方结构相容。稳定 infinity-范畴中的 mapping space 版本给出 contractible choice。证毕。
 
+**定义 1.14A.** 谱映射 $f:X\to Y$ 称为 $E$-等价，若
+$$
+E\otimes f:E\otimes X\longrightarrow E\otimes Y
+$$
+是等价。由于 $E\otimes-$ 是 exact functor，这等价于
+$\operatorname{fib}(f)$（也等价于 $\operatorname{cofib}(f)$）为
+$E$-acyclic。
+
+**命题 1.14B（局部化的 exact 性与消失判据）.** 假设 $L_E$ 存在。则
+$E$-local 谱构成稳定全子范畴，$L_E$ 是 exact 且幂等的反射函子；并且
+对任意谱 $X$，
+$$
+L_EX\simeq0\quad\Longleftrightarrow\quad E\otimes X\simeq0.
+$$
+
+**证明.** 若 $Y_1\to Y_2\to Y_3$ 是 fiber/cofiber 序列，则对任意
+$E$-acyclic 谱 $A$，函子 $F(A,-)$ 把它送到 fiber/cofiber 序列。因此
+三个 $Y_i$ 中任意两个 $E$-local 时第三个也 $E$-local；对任意
+$E$-acyclic 谱 $A$ 都有 $F(A,0)\simeq0$，故零谱也 $E$-local，所以
+local 对象构成稳定全子范畴。反射函子 $L_E$ 作为左
+伴随保持有限 colimit，而稳定范畴中的有限 colimit 与有限 limit 相互
+决定，故 $L_E$ exact。目标 $L_EX$ 已经 local；对它再次局部化并使用
+推论 1.14，得到 $L_E^2X\simeq L_EX$。
+
+若 $X$ 为 $E$-acyclic，则 localization map 是 $E$-等价，所以 $L_EX$
+也 $E$-acyclic。一个同时 acyclic 与 local 的谱 $Y$ 满足
+$F(Y,Y)\simeq0$；其恒等映射为零，故 $Y\simeq0$。反之，若
+$L_EX\simeq0$，则 $X\simeq\operatorname{fib}(X\to L_EX)$ 按定义
+$E$-acyclic。证毕。
+
+**命题 1.14C（有限谱与局部化的 base change）.** 设
+$P\in\mathbf{Sp}_{(p)}^\omega$，$E,X\in\mathbf{Sp}_{(p)}$，且
+$L_E:\mathbf{Sp}_{(p)}\to\mathbf{Sp}_{(p)}$ 存在。则 $P$ dualizable，
+并有自然等价
+$$
+L_E(P\otimes X)\simeq P\otimes L_EX.
+$$
+这里不要求 $L_E$ smashing；有限性假设施加在 $P$ 上。
+
+**证明.** 球谱 dualizable，dualizable 对象对有限 cofiber、悬挂、
+脱悬挂和 retract 封闭，故有限谱 $P$ dualizable。记
+$DP=F(P,\mathbb S_{(p)})$。映射
+$$
+P\otimes X\longrightarrow P\otimes L_EX
+$$
+的 fiber 是 $P\otimes C_EX$；它仍 $E$-acyclic，因为
+$$
+E\otimes P\otimes C_EX\simeq P\otimes(E\otimes C_EX)\simeq0.
+$$
+另一方面，对任意 $E$-acyclic 谱 $A$，dualizability 给出
+$$
+F(A,P\otimes L_EX)\simeq F(DP\otimes A,L_EX).
+$$
+$DP\otimes A$ 仍 $E$-acyclic，所以右端为零。因此
+$P\otimes L_EX$ 是 $E$-local，所示映射满足定义 1.12，结论由推论
+1.14 得到。证毕。
+
+**命题 1.14D（嵌套 acyclic 类的局部化）.** 设 $L_E,L_F$ 均存在，且
+$$
+\mathcal A_E\subseteq\mathcal A_F,
+\qquad
+\mathcal A_E=\{A\mid E\otimes A\simeq0\}.
+$$
+则每个 $F$-local 谱都是 $E$-local，并有自然等价
+$$
+L_EL_F\simeq L_F,
+\qquad
+L_FL_E\simeq L_F.
+$$
+
+**证明.** $F$-local 对象对较大的 acyclic 类 $\mathcal A_F$ 正交，因而
+也对 $\mathcal A_E$ 正交；这证明第一项及 $L_EL_F\simeq L_F$。映射
+$X\to L_EX$ 的 fiber 属于 $\mathcal A_E\subseteq\mathcal A_F$，所以它
+也是 $F$-等价。施加 $L_F$ 后得到
+$L_FX\simeq L_FL_EX$。两项等价都与 localization unit 自然相容。证毕。
+
 ## 1.4 smashing 与非 smashing
 
 **定义 1.15.** localization $L$ 称为 smashing，若对任意谱 $X$，自然映射

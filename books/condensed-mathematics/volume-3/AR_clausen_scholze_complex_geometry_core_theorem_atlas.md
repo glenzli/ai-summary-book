@@ -22,17 +22,39 @@
 
 ## AR.2 Dolbeault-liquid 定理
 
-**核心定理 AR.2（Dolbeault 复形的 liquid realization）。** 对 compact complex manifold \(X\) 和 holomorphic vector bundle \(E\)，Dolbeault Fréchet 复形
+**核心定理 AR.2（Dolbeault 复形的严格 liquid 比较）。** 固定
+\(0<p\le1\)。对 compact complex manifold \(X\) 和 holomorphic vector bundle
+\(E\)，令 Dolbeault Fréchet 复形为
 
 $$
 \Gamma(X,\mathcal A^{0,\bullet}(E)),\bar\partial
 $$
 
-经 liquid realization 后计算 \(H^\bullet(X,E)\)，并与 classical Dolbeault cohomology 相容。
+则每一项的凝聚化都是 \(p\)-liquid。若该复形具有连续 Hodge/Green splitting，
+则对每个 \(q\) 有
 
-**书内部分。** 第三章、附录 N、R 证明 Dolbeault resolution 的 sheaf cohomology 形式层；第二卷附录 Z 证明接受 realization exactness 后的 cohomology 比较。
+$$
+H^q\!\left(\underline{\Gamma(X,\mathcal A^{0,\bullet}(E))}\right)
+\cong
+\underline{H^q_{\mathrm{top}}
+\left(\Gamma(X,\mathcal A^{0,\bullet}(E))\right)}
+\cong
+\underline{H^q(X,E)}.
+$$
 
-**外部部分。** Dolbeault lemma 的完整解析估计、Fredholm-Hodge 定理、liquid realization exactness。
+第一个同构是 liquid/condensed 严格性比较，第二个是 classical Dolbeault theorem。
+
+**书内部分。** 第三章、附录 N、R 证明 Dolbeault resolution 的 sheaf cohomology
+形式层；第二卷附录 P、Z 证明连续 splitting 使 boundary 与 cycle quotient 对
+profinite 参数族局部可提升，并由此推出第一个同构。
+
+**外部部分。** CS26 Theorem 2.14、Lemma 2.16 及其逆极限推论给 Fréchet 项的
+liquid membership；classical Dolbeault lemma 和 Fredholm-Hodge 定理给连续
+Green/Hodge splitting。不存在单独的笼统“liquid realization exactness”输入。
+
+**边界.** 只知道 \(\bar\partial\) 有闭像，只能保证拓扑 cohomology 为 Hausdorff
+Fréchet 空间；要推出第一个同构仍需局部提升，连续 Hodge splitting 是本书采用的
+可核查充分条件。
 
 **形式结论。** 若 cohomology 有限维，则 realization 后 cohomology 是 perfect liquid object。
 
@@ -133,7 +155,7 @@ $$
 | 定理块 | classical 输入 | Clausen-Scholze/analytic 输入 | 书内形式后果 |
 | --- | --- | --- | --- |
 | 建模 | 复解析空间、相干层 | condensed/analytic 表示 | 术语对照、范畴接口 |
-| Dolbeault | Dolbeault lemma、Hodge-Fredholm | liquid realization exactness | cohomology 比较、perfect 性 |
+| Dolbeault | Dolbeault lemma、连续 Hodge-Fredholm splitting | Fréchet 项的 liquid membership | 局部提升、cohomology 比较、perfect 性 |
 | 有限性 | Grauert 或 Hodge theorem | compactness/perfectness 语言 | \(R\Gamma\) finite/perfect |
 | Serre duality | trace、dualizing complex | \(f^!\)、closed monoidal 相容 | perfect pairing、Ext-Serre |
 | GAGA | Serre/Grothendieck GAGA | analytic/coherent 比较 | derived equivalence、cohomology comparison |
@@ -150,5 +172,6 @@ $$
 
 1. 解释为什么 AR.3 是 AR.4 和 AR.6 的共同前提。
 2. 说明 GAGA 的 properness 假设在 AR.5 中为何不可删。
-3. 把 AR.2 的 Dolbeault-liquid theorem 写成“classical theorem + realization theorem + formal consequence”的三段式。
+3. 把 AR.2 写成“classical Hodge/Dolbeault 输入 + liquid membership 输入 + 书内局部提升
+   推论”的三段式。
 4. 说明 AR.7 为什么在本卷只能作为接口，而不能作为已完整证明的定理。

@@ -128,13 +128,14 @@ $$
 
 本书多次使用以下基本事实。
 
-**引理 0.1（变分基本引理）.** 设 $f$ 连续。若对所有紧支撑光滑函数 $\varphi$ 都有
+**引理 0.1（变分基本引理）.** 设 $f\in C([a,b])$。若对所有
+$\varphi\in C_c^\infty((a,b))$ 都有
 
 $$
 \int_a^b f(x)\varphi(x)\,dx=0,
 $$
 
-则 $f(x)=0$。
+则 $f(x)=0$ 对每个 $x\in[a,b]$ 成立。
 
 **证明.** 若存在 $x_0$ 使 $f(x_0)>0$，由连续性可取小邻域 $U$ 使 $f>0$。取非负且支撑在 $U$ 内、不恒为零的 $\varphi$，积分为正，矛盾。$f(x_0)<0$ 同理。故 $f=0$。$\square$
 
@@ -142,14 +143,16 @@ $$
 
 ## 0.6 Euler-Lagrange 方程
 
-**命题 0.1（Euler-Lagrange 方程）.** 设作用量
+**命题 0.1（Euler-Lagrange 方程）.** 设 $L(q,v,\lambda)$ 为 $C^2$
+函数，$q:[\lambda_1,\lambda_2]\to\mathbb R^n$ 为 $C^2$ 曲线，且作用量
 
 $$
 S[q]=\int_{\lambda_1}^{\lambda_2}
 L(q^a,\dot q^a,\lambda)\,d\lambda.
 $$
 
-若 $q$ 在端点固定的变分下使 $S$ 驻值，则
+若 $q$ 对每个 $C^1$、端点为零且使变分仍留在 $L$ 定义域内的变分场
+都使 $S$ 的一阶变分为零，则
 
 $$
 \frac{d}{d\lambda}
@@ -157,16 +160,7 @@ $$
 -\frac{\partial L}{\partial q^a}=0.
 $$
 
-**证明.** 
-
-设作用量
-
-$$
-S[q]=\int_{\lambda_1}^{\lambda_2}
-L(q^a,\dot q^a,\lambda)\,d\lambda.
-$$
-
-取变分 $q^a\mapsto q^a+\epsilon \xi^a$，并要求端点变分为零：
+**证明.** 取变分 $q^a\mapsto q^a+\epsilon \xi^a$，并要求端点变分为零：
 
 $$
 \xi^a(\lambda_1)=\xi^a(\lambda_2)=0.
@@ -202,7 +196,7 @@ $$
 -\frac{\partial L}{\partial q^a}=0.
 $$
 
-这就是 Euler-Lagrange 方程。
+这就是 Euler-Lagrange 方程。$\square$
 
 ## 0.7 场论变分
 

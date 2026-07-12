@@ -12,15 +12,23 @@
 
 **定义 18.1.** 对域 `k`，Grothendieck-Witt ring `GW(k)` 是非退化对称双线性型的 Grothendieck ring，乘法由张量积给出。
 
-**外部输入定理 18.2（Morel）.** 对 perfect field `k`，motivic sphere spectrum 的双次数零稳定同伦与 Grothendieck-Witt ring 相关；典型形式为
+**外部输入定理 18.2（MW-18.2，Morel）.** 对 perfect field `k`，有
+canonical ring isomorphism
 
 $$
-\operatorname{End}_{\mathbf{SH}(k)}(\mathbb 1_k)\simeq GW(k)
+\operatorname{End}_{\mathbf{SH}(k)}(\mathbb 1_k)\cong GW(k).
 $$
 
-或等价的 `\pi_{0,0}` 表述。
+等价地，sphere spectrum 的 `\pi_{0,0}` 为 `GW(k)`。
 
-**依赖源.** Morel, `A1-Algebraic Topology over a Field`。
+**精确来源与推导.** Fabien Morel, *A1-Algebraic Topology over a Field*,
+Corollary 6.43 计算足够悬挂后的 motivic sphere self-maps 为
+`K_0^{MW}(k)`；沿 `S^1\wedge\mathbb G_m` 继续悬挂的 transition maps 与该
+识别相容，所以稳定化 colimit 仍为 `K_0^{MW}(k)`。Lemma 3.10 在 `n=0`
+时给出 ring isomorphism `K_0^{MW}(k)\cong GW(k)`。参见
+`https://doi.org/10.1007/978-3-642-29514-0` 和可检索 PDF
+`https://www.mahalex.net/teaching/seminars/morel/Morel.pdf`。这里使用的是
+Morel 全书的 perfect-field 约定。
 
 **命题 18.3.** 若定理 18.2 适用，则 smooth proper `k`-scheme 的 motivic Euler characteristic 可视为 `GW(k)` 中的元素。
 
@@ -30,7 +38,19 @@ $$
 
 **定义 18.4.** Milnor-Witt K-theory `K_*^{MW}(k)` 是同时记录 Milnor K-theory symbols 和二次型信息的分次环。它包含符号 `[a]` 和与 Hopf map 相关的元素，并满足 Morel 关系。
 
-**外部输入定理 18.5.** Morel 计算了域上的 `A1`-同伦 sheaves，并将其与 Milnor-Witt K-theory 联系；特别 `\mathbb G_m` 和 sphere 的稳定同伦 sheaves 出现 `K_*^{MW}`。
+**外部输入定理 18.5（MW-18.5）.** 在定理 18.2 的 perfect-field 假设下，
+若 `n\geq2`、`i>0`，则 Morel Corollary 6.43 给出
+
+$$
+\operatorname{Hom}_{\mathbf H_\bullet(k)}
+\bigl(S^n\wedge\mathbb G_m^{\wedge j},
+      S^n\wedge\mathbb G_m^{\wedge i}\bigr)
+\cong K_{i-j}^{MW}(k).
+$$
+
+该等式是 pointed unstable motivic homotopy category 中进入稳定区间后的
+映射群计算；定理 18.2 再取对角 `i=j` 并稳定化。它不能改写成所有双次数
+stable stems 都等于 Milnor--Witt K-theory。
 
 **注 18.6.** Milnor-Witt theory 是 motivic homotopy 区别于纯 topological stable homotopy 的重要现象：它保留了域上二次型和符号信息。
 
@@ -64,9 +84,14 @@ $$
 
 ## 18.4 Chow-Witt 与 Milnor-Witt motives
 
-**外部输入定理 18.12.** 存在 Chow-Witt groups、Milnor-Witt correspondences 和相应的 motives/spectra，把普通 Chow groups 与二次型 refinement 结合。
+**高级外部输入 18.12（MW-18.7，P1）.** 在指定 field、regularity、
+orientation line bundle 与 coefficient conventions 后，可构造 Chow--Witt
+groups、Milnor--Witt correspondences 和相应 motives/spectra。该合集不参与
+定理 18.2--18.5 的 P0 sphere/Grothendieck--Witt 主线。
 
-**依赖源.** Barge-Morel、Fasel、Calmes-Fasel、Deglise-Fasel、Deglise-Jin-Khan 等。
+**来源边界.** Barge--Morel、Fasel、Calmes--Fasel、Deglise--Fasel 与
+Deglise--Jin--Khan；不同模型的 twists 和 transfers 不同，实际调用时须为
+所选模型另补 locator，不能用此 P1 汇总项支撑主线证明。
 
 **命题 18.13.** 忘记二次型信息应给出从 Milnor-Witt refined theory 到 ordinary motivic cohomology/Chow theory 的映射。
 
@@ -76,7 +101,10 @@ $$
 
 **定义 18.14.** Quadratic enumerative invariant 是取值于 `GW(k)` 或相关二次型群的枚举不变量，其 rank 恢复经典计数，而完整二次型记录域和局部交数的信息。
 
-**外部输入定理 18.15.** 在适当横截性和定向假设下，motivic degree、Euler class 和 fundamental class formalism 可产生 quadratic refinements of enumerative counts。
+**高级外部输入 18.15（P1）.** 在逐问题声明的 smooth/proper、孤立零点、
+横截性、可分剩余域和相对定向假设下，motivic degree、Euler class 与
+fundamental classes 可产生 `GW(k)`-值枚举精化。这里不存在一个覆盖所有
+枚举问题的无条件定理。
 
 **依赖源.** Kass-Wickelgren、Levine、Hoyois、Deglise-Jin-Khan 及后续 quadratic enumerative geometry 文献。
 
@@ -88,13 +116,19 @@ $$
 
 **定义 18.17.** 设 `f:\mathbb A^n_k\to\mathbb A^n_k` 在孤立零点 `p` 处满足适当非退化条件。Motivic local degree 是 `GW(k(p))` 中的局部二次型，再沿 field trace 推到 `GW(k)`。
 
-**外部输入定理 18.18.** 若零点非退化，则 motivic local degree 可由 Jacobian determinant 的一维二次型表示：
+**高级外部输入 18.18（P1，simple-zero 版本）.** 设
+`\operatorname{char}(k)\ne2`，`p` 为可分闭点，`f:\mathbb A_k^n\to
+\mathbb A_k^n` 在 `p` 为 simple zero，即 `\det J_f(p)\ne0`；并采用标准
+坐标给出的相对定向。则 motivic local degree 由 Jacobian determinant 的
+一维二次型表示：
 
 $$
 \deg_p^{\mathbb A^1}(f)=\operatorname{Tr}_{k(p)/k}\langle \det J_f(p)\rangle.
 $$
 
-**依赖源.** Morel 的 `A1`-degree、Kass-Wickelgren 和后续 quadratic enumerative geometry 文献。
+**来源边界.** Morel 的 `A1`-degree、Kass--Wickelgren 的 local-degree
+比较及后续文献。非 simple zero 需要 Eisenbud--Khimshiashvili--Levine 型
+局部代数双线性型，不能套用这一行公式；本条不参与 P0 闭合。
 
 **命题 18.19.** 对代数闭域 `k`，rank of motivic local degree 恢复普通局部重数的非退化情形。
 
@@ -118,11 +152,18 @@ $$
 
 **证明.** 局部交数若要提升为二次型，需要把 determinant lines、法丛或 cotangent complex 的相关方向数据识别到可取 trace form 的标准对象上。没有 orientation，局部 contribution 只在扭曲系数中定义，不能自然落入统一的 `GW(k)`。因此 orientation 或相对定向是 quadratic refinement 的必要输入。`\square`
 
-**外部输入定理 18.24.** Motivic fundamental classes 的 Milnor-Witt 或 quadratic refinement 与 Chow-Witt、Euler classes 和 Gauss-Bonnet 型公式相容。
+**高级外部输入 18.24（P1）.** 在选定 Milnor--Witt coefficient spectrum、
+twists、properness、duality 和 orientation 假设后，fundamental classes 可与
+Chow--Witt Euler classes 及 Gauss--Bonnet 型公式比较。该比较不是定理 16.2
+的形式后果，也不作为本章 P0 输入。
 
 ## 18.9 本章小结
 
-Milnor-Witt 和 quadratic refinements 展示了 motivic homotopy 的算术特征：sphere endomorphisms 可取 Grothendieck-Witt 值，Euler characteristics 和 enumerative invariants 可保留二次型信息。这些结果依赖 Morel 的 `A1`-代数拓扑、Milnor-Witt correspondences 和 fundamental class formalism。
+本章 P0 主线只有 Morel Corollary 6.43 与 Lemma 3.10：它们精确给出
+`\operatorname{End}(\mathbb 1_k)\cong GW(k)`，从而使 smooth proper Euler
+characteristic 取 Grothendieck--Witt 值。Chow--Witt motives、一般枚举计数、
+local degrees 与 Gauss--Bonnet refinements 均为 P1；它们不能反向作为该
+sphere-endomorphism 识别的依据。
 
 ## 练习
 

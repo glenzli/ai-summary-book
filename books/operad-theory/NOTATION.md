@@ -15,10 +15,11 @@
 - $[n]=\{1,\ldots,n\}$；特别地 $[0]=\varnothing$。
 - $\Sigma_n=\operatorname{Aut}_{\mathbf{B}_{\mathcal U}}([n])$。
 
-## 对称序列与有限分块
+## 对称序列、有限映射与分块
 
 - 有限集 $S$ 的一个分块记为 $\pi$，其块集合记为 $\operatorname{Bl}(\pi)$。
 - 若 $\pi$ 是 $S$ 的分块，则 $S=\coprod_{B\in\operatorname{Bl}(\pi)}B$。
+- $\operatorname{Fib}(S)$：对象为任意函数 $f:S\to T$、态射为与 $f$ 交换的目标双射所成的群胚；允许空纤维。形成 colimit 时使用目标 $T=[k]$ 的 essentially small 骨架。
 - 对称序列（symmetric sequence）默认指函子
   $$
   X:\mathbf{B}_{\mathcal U}\to\mathbf{Set}_{\mathcal U}.
@@ -29,6 +30,13 @@
 ## 代入乘积与 operad
 
 - 对称序列的代入乘积写作 $X\circ Y$。
+- 允许 arity $0$ 的默认公式为
+  $$
+  (X\circ Y)(S)=
+  \operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+  X(T)\times\prod_{t\in T}Y(f^{-1}(t)).
+  $$
+  只有当 $Y(\varnothing)=\varnothing$ 时，才使用按非空分块求和的简化公式。
 - 单位对称序列写作 $I$，满足 $I(S)=\{*\}$ 当 $|S|=1$，否则 $I(S)=\varnothing$。
 - operad 默认指 $\big(\operatorname{SymSeq}_{\mathcal U},\circ,I\big)$ 中的幺半对象。
 - operad 的乘法写作
@@ -107,8 +115,8 @@
 - Wheeled contraction 写作 $\operatorname{tr}_i^j$。
 - 二次数据写作 $(E,R)$，二次 operad 写作 $\mathcal P(E,R)$。
 - 自由 operad 的权重 $r$ 部分写作 $\mathbb F^{(r)}(E)$。
-- Ginzburg-Kapranov 二次对偶写作 $\mathcal P^!$。
-- 二次对偶 cooperad 写作 $\mathcal P^¡$。
+- Ginzburg--Kapranov 有限型线性对偶 operad 写作 $\mathcal P^!=\mathcal P(E^\vee,R^\perp)$。
+- 二次对偶 cooperad 写作 $\mathcal P^¡=\mathcal C(sE,s^2R)\subseteq\mathbb T^c(sE)$；这里 $s$ 是链悬挂，不是 operadic suspension $\Lambda$。
 
 ## Bar-cobar 与 twisting
 
@@ -117,6 +125,8 @@
 - $sC$、$s^{-1}C$：悬挂和去悬挂。
 - $\overline{\mathcal P}$：augmented operad 的增广理想。
 - $\overline{\mathcal C}$：coaugmented cooperad 的 coaugmentation coideal。
+- connected：除单位外 arity $0,1$ 均为零；与仅仅 augmented/reduced 分开。
+- conilpotent：每个元素的迭代 reduced decomposition 在足够大树权重后为零；不表示逐 arity 有统一界。
 - $\mathbb T^c(M)$：由 dg 对称序列 $M$ 生成的 cofree conilpotent cooperad。
 - $\circ_{(1)}$：infinitesimal composition product。
 - $\Delta_{(1)}$：cooperad 的 infinitesimal decomposition。

@@ -22,7 +22,9 @@
 | perverse t-structure 存在 | finite-dimensional stratified complex variety 或合适 etale 模型 | BBD |
 | simple perverse 分类 | 有限分层，strata 上 local systems 可控 | BBD |
 | IC middle extension | locally closed smooth stratum，local system | BBD |
-| decomposition theorem | proper map，semisimple perverse input 或 smooth source with coefficients | BBD/Saito |
+| decomposition theorem | complex algebraic proper map；输入默认 $\operatorname{IC}_X$；characteristic-zero coefficients | BBD 6.2.5；splitting 非 canonical |
+| relative hard Lefschetz | projective map 与指定 $f$-ample class | BBD/Saito；不能只由 properness 推出 |
+| semismall decomposition | proper surjective $f:Z\to Y$，$Z$ smooth pure-dimensional，stratified locally trivial，$2\dim f^{-1}(s)\le\dim Z-\dim S$ | BBD/de Cataldo--Migliorini |
 | KL-IC 对应 | Schubert varieties，mixed setting 或 purity replacement | Kazhdan-Lusztig/BBD |
 
 ## 3. D-module 假设
@@ -41,11 +43,14 @@
 | --- | --- | --- |
 | $LG$ | functor/ind-scheme | sheafification topology |
 | $L^+G$ | group functor | action representability |
-| $\operatorname{Gr}_G$ | ind-projective ind-scheme | Schubert exhaustion |
+| $\operatorname{Gr}_G$ | fpqc quotient represented by ind-projective ind-scheme；Betti model 取 reduction | Schubert exhaustion；nonreduced test-ring families 不进入 Betti category |
 | $\operatorname{Fl}_G$ | ind-projective ind-scheme | Iwahori orbit decomposition |
-| convolution Grassmannian | ind-scheme or prestack | ind-properness of multiplication map on supports |
+| convolution Grassmannian | contracted-product ind-scheme；twisted external product 由 torsor descent | finite Schubert support 上的 proper restriction；一般 ind-map 不足 |
+
+**规则 4.1.** $D^b_{L^+G,\mathrm{fs}}(\operatorname{Gr}_G,E)$ 只含 finite-dimensional support。定义 convolution 时必须给出包含输入和输出支撑的 finite-type stages，并用 closed base change 证明 stage independence。
+
+**规则 4.2.** Properness 只给 $m_!\simeq m_\ast$；perverse t-exactness 另需 stratified-semismall estimate。Fusion commutativity、fiber functor tensor compatibility 和 root datum identification 是三个不同的 geometric Satake inputs。
 
 ## 5. Derived stack 和 Langlands 假设
 
 Geometric Langlands 章节涉及 derived stacks、D-modules on stacks、IndCoh、singular support、renormalized categories 和 factorization categories。当前书稿只允许把这些作为边界对象。若后续定理化，必须新增专门模型附录。
-

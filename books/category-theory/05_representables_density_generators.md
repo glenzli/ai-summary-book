@@ -8,9 +8,14 @@
 
 需要 Yoneda 引理、极限、余极限和伴随。
 
+本章固定 $\mathcal C$ 为 $\mathcal U$-小范畴，预层取值于
+$\mathbf{Set}_{\mathcal U}$。因此元素范畴仍为 $\mathcal U$-小，密度公式中的
+余极限是预层范畴中的 $\mathcal U$-小余极限。
+
 ## 5.1 元素范畴
 
-**定义 5.1.** 设 $P:\mathcal C^{\operatorname{op}}\to\mathbf{Set}$ 为预层。元素范畴（category of elements）$\int_{\mathcal C}P$ 定义如下：
+**定义 5.1.** 设
+$P:\mathcal C^{\operatorname{op}}\to\mathbf{Set}_{\mathcal U}$ 为预层。元素范畴（category of elements）$\int_{\mathcal C}P$ 定义如下：
 
 - 对象是二元组 $(C,x)$，其中 $C\in\mathcal C$ 且 $x\in P(C)$。
 - 从 $(C,x)$ 到 $(D,y)$ 的态射是态射 $f:C\to D$，满足
@@ -19,6 +24,11 @@
   $$
 
 复合由 $\mathcal C$ 中复合给出。
+
+其对象集是 $\mathcal U$-小余并
+$\coprod_{C\in\operatorname{Ob}(\mathcal C)}P(C)$，态射集是
+$\operatorname{Mor}(\mathcal C)$ 与两端元素数据的一个子集；故
+$\int_{\mathcal C}P$ 为 $\mathcal U$-小范畴。
 
 **命题 5.2.** $\int_{\mathcal C}P$ 是范畴。
 
@@ -32,7 +42,8 @@ $$
 
 ## 5.2 预层是可表预层的余极限
 
-**定理 5.3（预层密度定理）.** 对任意预层 $P:\mathcal C^{\operatorname{op}}\to\mathbf{Set}$，存在自然同构
+**定理 5.3（预层密度定理）.** 对任意预层
+$P:\mathcal C^{\operatorname{op}}\to\mathbf{Set}_{\mathcal U}$，存在预层范畴中的自然同构
 
 $$
 P\cong\operatorname{colim}_{(C,x)\in\int_{\mathcal C}P} yC

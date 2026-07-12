@@ -45,7 +45,7 @@
 | 第九章 | Bar-cobar resolution 的 weak equivalence | Loday-Vallette；Fresse | conilpotence 和 filtration 条件 |
 | 附录 I | Koszul 判别等价条件 | Ginzburg-Kapranov；Loday-Vallette；Fresse | weight spectral sequence、有限型假设 |
 | 附录 I | $\Omega\mathcal P^¡\to\mathcal P$ quasi-isomorphism criterion | Ginzburg-Kapranov；Loday-Vallette；Fresse | reduced/conilpotent convention |
-| 附录 Q | $\operatorname{Ass}_{ns}$ Koszul 性 | Ginzburg-Kapranov；Loday-Vallette | 非对称 convention、suspension signs |
+| 附录 Q | $\operatorname{Ass}_{ns}$ Koszul 性 | Loday--Vallette LV-3 = Theorem 8.1.1 + following $\operatorname{As}$ example | reduced/nonunital、非对称 convention；正文内部检查终止性与唯一临界对 |
 | 附录 Q | Bar-cobar counit 是 quasi-isomorphism/cofibrant resolution | Loday-Vallette；Fresse；Hinich | conilpotence、模型结构、滤过收敛 |
 | 附录 Q | Koszul 谱序列收敛与判别 | Ginzburg-Kapranov；Loday-Vallette；Fresse | boundedness、weight filtration convention |
 
@@ -73,11 +73,11 @@
 
 | 位置 | 外部输入 | 主要来源 | 后续需补 |
 | --- | --- | --- | --- |
-| 第十四章 | 对称序列 projective 模型结构 | Hovey；Hirschhorn | equivariant projective 结构 |
+| 第十四章 | 对称序列 projective 模型结构 | 命题 14.7 内部归约为 $\prod_n\mathcal M^{\Sigma_n}$ | 各作用范畴 projective 模型结构的存在仍须在所用底范畴中验证 |
 | 第十四章 | Operad transferred 模型结构 | Berger-Moerdijk, arXiv:math/0206094v3, Theorem 3.1；Fresse | monoid axiom、cofibrant unit |
 | 第十四章 | Operad algebra admissibility | Berger-Moerdijk, arXiv:math/0206094v3, Theorem 3.2；Pavlov--Scholbach PSAR-1--PSAR-3；PSP-1--PSP-2 | symmetric h-monoidality、symmetroidality、smallness、tractability |
 | 第十四章 | Rectification criterion | Berger-Moerdijk, arXiv:math/0206094v3, Theorem 4.4 and Corollary 4.5；Hinich HIN-2；Pavlov--Scholbach PSAR-4--PSAR-6 | cofibrancy、admissibility、symmetric flatness 与底范畴条件 |
-| 第十四章 | Boardman-Vogt resolution | Boardman-Vogt；Berger-Moerdijk | interval object 条件 |
+| 第十四章 | Boardman-Vogt resolution | Boardman-Vogt；Berger-Moerdijk；当前仅作外部边界 14.31 | 尚缺覆盖 interval object、well-pointedness、$\Sigma$-cofibrancy 和目标模型结构的统一 locator，不得直接调用 |
 | 附录 G | Operad transferred model structure schema | Berger-Moerdijk；Fresse FRE-1--FRE-6；Pavlov--Scholbach PSAR-1--PSAR-3 | 小性、树形 filtration、等变 cofibration |
 | 附录 G | Colored admissibility schema | Berger-Moerdijk；Pavlov--Scholbach PSAR-1--PSAR-3；PSP-1--PSP-2 | symmetric h-monoidality、symmetric flatness、tractability |
 | 附录 G | Rectification schema | Hinich HIN-2；Berger-Moerdijk；Pavlov--Scholbach PSAR-4--PSAR-6；Lurie HA-ALG-1--HA-ALG-3 | Quillen equivalence 条件 |
@@ -94,8 +94,8 @@
 | 位置 | 外部输入 | 主要来源 | 后续需补 |
 | --- | --- | --- | --- |
 | 第十五章 | Kan-Quillen 模型结构 | Quillen；Goerss-Jardine | weak homotopy equivalence convention |
-| 第十五章 | $\mathbf{sSet}$ 与 $\mathbf{Top}$ 的 Quillen equivalence | Quillen；Goerss-Jardine | Top 采用的点集范畴 |
-| 第十五章 | Operad 模型结构提升 | Berger-Moerdijk | simplicial/topological 版本 |
+| 第十五章 | $\mathbf{sSet}$ 与 $\mathbf{Top}$ 的底范畴 Quillen equivalence | Quillen；Goerss-Jardine | Top 采用的点集范畴；不得自动提升到 operad categories |
+| 第十五章 | Simplicial/topological operad 模型结构 | BM-1 分别应用于 $\Delta^1$ 与 $[0,1]$ Hopf intervals | Operad-level realization--Sing Quillen equivalence 尚作外部边界 15.18 |
 | 第十五章 | Eilenberg-Zilber 相干性 | Eilenberg-Zilber；Mac Lane | lax symmetric monoidal 选择 |
 | 第十六章 | Dendroidal nerve fully faithful | Moerdijk-Weiss, arXiv:math/0701293v2, Example 4.2；MW-2 | strict Segal 条件 |
 | 第十六章 | $\Delta\hookrightarrow\Omega$ fully faithful | Moerdijk-Weiss, arXiv:math/0701293v2, Section 3；MW-1 | 根方向 convention |
@@ -125,7 +125,7 @@
 
 | 位置 | 外部输入 | 主要来源 | 后续需补 |
 | --- | --- | --- | --- |
-| 第二十章 | Locally constant factorization algebras 等价于 $E_n$-algebras | Costello-Gwilliam；Lurie；Ayala-Francis | Weiss descent 模型 |
+| 第二十章 | Locally constant factorization algebras 等价于 $E_n$-algebras | 当前仅作外部边界 20.6/N.26；Costello--Gwilliam、Lurie 为候选来源 | 尚无精确 theorem locator；AF-3 不能替代该比较 |
 | 第二十章 | Factorization homology excision | Ayala-Francis, arXiv:1206.5522v6, Lemma 3.18 | collar/gluing 条件、stratified/Fukaya 版本另行定位 |
 | 第二十章 | Dunn additivity | Lurie DUNN-1；Dunn | tensor product of infinity-operads；strict topological tensor product另行引用 |
 | 第二十章 | Fukaya category 构造 | Seidel；Fukaya-Oh-Ohta-Ono | transversality/obstruction setup |
@@ -134,6 +134,7 @@
 | 附录 N | Excision 与 derived relative tensor product 公式 | Ayala-Francis, arXiv:1206.5522v6, Lemma 3.18 | collar、边界版本、bar construction 模型 |
 | 附录 N | $\int_{S^1}A\simeq HH_\*(A)$ | Ayala-Francis, arXiv:1206.5522v6, Theorem 3.19；Hochschild/cyclic bar 文献 | $E_1$ 模型、cyclic bar convention |
 | 附录 N | Manifold homology theories 与 Disk$_n$-algebras 的刻画 | Ayala-Francis, arXiv:1206.5522v6, Theorem 3.24 | 与 locally constant factorization algebra 等价分开处理 |
+| 附录 N | 圆柱/Fubini 与 $E_{n-1}$-Hochschild object | 当前仅作外部边界 N.21 | 尚缺 product/Fubini theorem locator；AF-2 与 DUNN-1 单独均不足 |
 | 附录 N | 交换系数下的 $B\otimes M$ 识别 | Lurie；Ayala-Francis | tensoring over spaces、higher Hochschild chains |
 | 附录 N | Fukaya 型 cosheaf/sectorial descent | Ganatra-Pardon-Shende；Seidel；Fukaya-Oh-Ohta-Ono | 几何设置、横截性、紧性、orientation |
 | 附录 V | 带边界 factorization homology 的区间计算 | Ayala-Francis, arXiv:1206.5522v6, Theorem 3.26；Lurie；Costello-Gwilliam | boundary disk category、module 标记 |
@@ -195,7 +196,7 @@ $$
 
 **模型语境.** 同调分次 dg operads 与 conilpotent dg cooperads。
 
-**当前来源定位.** Ginzburg--Kapranov classical core 已由 [P0_REFERENCE_LOCATORS_BATCH_4.md](P0_REFERENCE_LOCATORS_BATCH_4.md) 中 GK-1--GK-7 定位：Definition 4.1.3、Proposition 4.1.4、Theorem 4.1.13、Theorem 4.2.5、Corollary 4.2.7、Theorem 3.2.16 和 Section 4.2.12。Fresse modern cobar/cofibrant replacement 已由 [P0_REFERENCE_LOCATORS_BATCH_5.md](P0_REFERENCE_LOCATORS_BATCH_5.md) 中 FRE-1--FRE-6 定位：Section 3.7、Theorem 3.9、Theorem 3.10、Section 3.14、Theorem 4.2.4、Proposition 4.2.7 and Proposition 4.2.8。Hinich dg-operad model context 已由 HIN-1--HIN-2 定位：Theorem 6.1.1 和 Theorem 4.7.4。Loday--Vallette/Fresse 书本 $\Omega\mathcal P^¡$、$\Omega B\mathcal P$ 紧凑表述已在 [FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md) 中关闭为 convention translation，不再作为 operad theory locator 空缺。
+**当前来源定位.** Ginzburg--Kapranov classical core 已由 [P0_REFERENCE_LOCATORS_BATCH_4.md](P0_REFERENCE_LOCATORS_BATCH_4.md) 中 GK-1--GK-7 定位。Loday--Vallette author-hosted draft v0.99 的 Theorems 6.6.2、7.4.6 和 8.1.1 已在同一批次登记为 LV-1--LV-3：前两项分别精确支撑 connected weight-graded twisting-morphism 四项等价与 $\mathcal P^¡=\mathcal C(sE,s^2R)$ 的 quadratic Koszul criterion；LV-3 连同定理后的 $\operatorname{As}$ 例子支撑附录 Q 的 nonsymmetric rewriting/Koszul 步骤。Fresse modern cobar/cofibrant replacement 由 [P0_REFERENCE_LOCATORS_BATCH_5.md](P0_REFERENCE_LOCATORS_BATCH_5.md) 的 FRE-1--FRE-6 定位；Hinich dg-operad model context 由 HIN-1--HIN-2 定位。Quasi-isomorphism criterion 与模型范畴中的 cofibrant-resolution 结论分开使用。
 
 **允许用法.** 定义 $A_\infty$、$L_\infty$、$C_\infty$ 为 cofibrant resolution；证明 classical operad algebra 的同伦版本由 bar-cobar 控制。
 
@@ -261,7 +262,7 @@ $$
 
 **模型语境.** relative categories、simplicial categories、quasi-categories、coCartesian fibrations。
 
-**当前来源定位.** Ordinary straightening/unstraightening 已由 [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md) 中 HTT-1 定位。模型范畴中 Bousfield localization preserves operad/colored-operad algebras 已由 [P0_REFERENCE_LOCATORS_BATCH_8.md](P0_REFERENCE_LOCATORS_BATCH_8.md) 中 WHT-1--WHT-4 与 WY-1--WY-3 定位。Dwyer--Kan localization、underlying infinity-category、fibrant-cofibrant subcategory comparison 和 Quillen-pair passage 已由 [P0_REFERENCE_LOCATORS_BATCH_10.md](P0_REFERENCE_LOCATORS_BATCH_10.md) 中 DKR-1--DKR-7 定位。Spaces-valued operadic straightening 已由 PRA-1--PRA-5 作 2025 preprint/P1-latest locator 定位。Strict-to-infinity algebra comparison 已由 [P0_REFERENCE_LOCATORS_BATCH_9.md](P0_REFERENCE_LOCATORS_BATCH_9.md) 中 PSAR-5--PSAR-6 与 HA-ALG-1--HA-ALG-3 定位。
+**当前来源定位.** Ordinary straightening/unstraightening 已由 [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md) 中 HTT-1 定位。模型范畴的 underlying symmetric monoidal infinity-category 已由 [P0_REFERENCE_LOCATORS_BATCH_9.md](P0_REFERENCE_LOCATORS_BATCH_9.md) 中 HA-MON-1--HA-MON-2 定位；Bousfield localization 是否继续 monoidal 以及是否保持 operad algebras 则由 WHT-1--WHT-4 与 WY-1--WY-3 分开控制。Dwyer--Kan localization、underlying infinity-category、fibrant-cofibrant subcategory comparison 和 Quillen-pair passage 由 DKR-1--DKR-7 定位。Spaces-valued operadic straightening 由 PRA-1--PRA-5 作 2025 preprint/P1 locator 定位，不扩张到任意 $\mathcal C$-值。Strict-to-infinity algebra comparison 由 PSAR-5--PSAR-6 与 HA-ALG-1--HA-ALG-3 定位。
 
 **允许用法.** 第十九章可用来连接模型范畴、localization 和 functorial families。
 
@@ -277,11 +278,11 @@ $$
 
 **模型语境.** Disk categories、symmetric monoidal infinity-categories、factorization algebras、factorization homology。
 
-**当前来源定位.** Ayala--Francis topological-manifold factorization homology、excision、circle Hochschild calculation、homology-theory characterization 和 boundary version 已由 [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md) 中 AF-0--AF-4 定位。Dunn additivity 已由 [P1_REFERENCE_LOCATORS_FINAL_SWEEP.md](P1_REFERENCE_LOCATORS_FINAL_SWEEP.md) 中 DUNN-1 定位。Costello--Gwilliam/Lurie locally constant factorization algebra equivalence、stratified factorization 和 Fukaya geometry 保留为外部边界 locator。
+**当前来源定位.** Ayala--Francis topological-manifold factorization homology、excision、circle Hochschild calculation、homology-theory characterization、boundary version 和 commutative-coefficient calculation 已由 [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md) 中 AF-0--AF-5 定位；其中 AF-5 是 arXiv:1206.5522v6, Proposition 5.1，支撑 $\int_MA\simeq M\otimes A$。Dunn additivity 已由 [P1_REFERENCE_LOCATORS_FINAL_SWEEP.md](P1_REFERENCE_LOCATORS_FINAL_SWEEP.md) 中 DUNN-1 定位。Costello--Gwilliam/Lurie locally constant factorization algebra equivalence、stratified factorization 和 Fukaya geometry 保留为外部边界 locator。
 
 **允许用法.** 第二十章和附录 N、V 可用来计算标准低维例子并解释 excision。
 
-**禁止用法.** 不得把无边界 disk 归一化用于带边界或分层空间；不得把 Hochschild 识别推广到所有 $E_n$-algebras 和所有流形。
+**禁止用法.** 不得把无边界 disk 归一化用于带边界或分层空间；不得把 Hochschild 识别推广到所有 $E_n$-algebras 和所有流形；不得把 AF-5 的 commutative algebra hypothesis 弱化成未指定的“足够交换”。
 
 ### D.12.8 Fukaya category 引用包
 
@@ -311,7 +312,7 @@ $$
 
 以下项目不阻止本书作为 operad theory 数学收口版本使用。它们只说明哪些内容属于 convention package、几何边界或出版社级 production work。
 
-1. Koszul/bar-cobar 定理的 Ginzburg--Kapranov classical core 和 Fresse/Hinich modern cobar/model context 已定位；Loday--Vallette/Fresse 书本紧凑表述作为 convention translation 处理。
+1. Koszul/bar-cobar 定理的 Ginzburg--Kapranov classical core、Loday--Vallette LV-1--LV-2 四项判别、LV-3 nonsymmetric rewriting criterion 和 Fresse/Hinich modern cobar/model context 已分别定位；不得把 quasi-isomorphism criterion 自动升级为 cofibrant-resolution 结论。
 2. Homotopy transfer theorem 的 Markl existence version 已定位；basic perturbation lemma、Kadeishvili minimal model、tree signs 和 minimal model uniqueness 作为 HPT/sign convention package 处理。
 3. Operad transferred model structure、admissibility、rectification、Bousfield localization preservation、Dwyer--Kan localization、dendroidal-Lurie comparison、category-of-operators entry、ordinary/operadic straightening 和 strict-to-infinity algebra comparison 均已有 locator；后续只需逐底范畴记录假设转换、模型限制和 bibliography 版本。
 4. Factorization homology 的 topological-manifold excision、圆周计算、带边界版本和 Dunn additivity 已有 locator；locally constant factorization algebra equivalence、stratified factorization 和 Fukaya geometry 保留为外部几何边界。

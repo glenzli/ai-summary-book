@@ -6,7 +6,7 @@
 
 **规则 0.1（label 形态）.** 附录 label 采用
 `appX-kind-X-NN-slug`
-形态，其中 `X` 是附录字母，`kind` 取 `def`、`conv`、`prop`、`thm`、`cor`、`ex`、`note`、`warn`、`extthm`、`calc`、`exp` 或 `boundary`。
+形态，其中 `X` 是附录字母，`kind` 取 `def`、`conv`、`prop`、`thm`、`cor`、`ex`、`counterex`、`note`、`warn`、`extthm`、`calc`、`exp` 或 `boundary`。
 
 **规则 0.2（statement type）.** `说明`、`警告`、`解释`、`计算`、`边界` 均是正式可引用目标。它们在最终排版中可以统一样式，但不得无迁移表删除编号。
 
@@ -48,6 +48,7 @@
 | 定义 B.8 | `appB-def-B-08-unit-symmetric-sequence` | 单位对称序列 |
 | 命题 B.9 | `appB-prop-B-09-unit-isomorphisms` | 左右单位自然同构 |
 | 命题 B.10 | `appB-prop-B-10-arity-coinvariants-formula` | arity coinvariants 公式 |
+| 反例 B.10.1 | `appB-counterex-B-10-01-partitions-lose-nullary` | 非空分块公式破坏 arity $0$ 左单位 |
 | 警告 B.11 | `appB-warn-B-11-action-conventions` | 左右作用方向风险 |
 | 定义 B.12 | `appB-def-B-12-tree-substitution` | 平面树替换 |
 | 命题 B.13 | `appB-prop-B-13-tree-substitution-associativity` | 树代入结合律 |
@@ -83,7 +84,7 @@
 | 说明 K.3 | `appK-note-K-03-colored-stabilizers` | colored arity 稳定子 |
 | 定义 K.4 | `appK-def-K-04-colored-substitution` | colored substitution |
 | 命题 K.5 | `appK-prop-K-05-colored-substitution-functor` | colored substitution 的自然性与函子性 |
-| 命题 K.6 | `appK-prop-K-06-colored-flattening-associativity` | colored 分块拉平结合律 |
+| 命题 K.6 | `appK-prop-K-06-colored-flattening-associativity` | colored finite-map 拉平与结合相干性 |
 | 定义 K.7 | `appK-def-K-07-colored-labelled-tree` | colored 叶标号树 |
 | 定义 K.8 | `appK-def-K-08-free-colored-operad` | 自由 colored operad |
 | 命题 K.9 | `appK-prop-K-09-free-colored-operad` | 自由 colored operad 泛性质 |
@@ -103,6 +104,7 @@
 
 | 编号 | label | 主题 |
 | --- | --- | --- |
+| 反例 P.0 | `appP-counterex-P-00-partition-left-unit-failure` | 非空分块公式的左单位失败 |
 | 命题 P.1 | `appP-prop-P-01-endomorphism-associativity` | endomorphism operad 结合律 |
 | 命题 P.2 | `appP-prop-P-02-ass-operad-structure` | $\operatorname{Ass}$ 的 operad 结构 |
 | 推论 P.3 | `appP-cor-P-03-linear-ass-algebra` | 线性结合代数低阶识别 |
@@ -147,10 +149,11 @@
 | 说明 X.12 | `appX-note-X-12-noncommutative-factorization` | factorization homology 的非交换性 |
 | 例 X.13 | `appX-ex-X-13-interval-module-regular` | 区间 module 边界条件 |
 | 说明 X.14 | `appX-note-X-14-interval-boundary-conditions` | 区间值依赖边界条件 |
+| 命题 X.14.1 | `appX-prop-X-14-01-dual-numbers-boundary-modules` | dual numbers 的端点条件改变区间同调 |
 | 命题 X.15 | `appX-prop-X-15-symmetric-power-nonzero-class` | $\operatorname{Sym}^p$ 的非零同调类 |
 | 推论 X.16 | `appX-cor-X-16-free-cdga-not-left-quillen` | 正特征自由 cdga 不保持准同构 |
 | 说明 X.17 | `appX-note-X-17-minimal-algebraic-risk` | 对称 coinvariants 的最小代数风险 |
 
 ## 8. 本轮判定
 
-附录 A/B/H/K/P/U/X 的 104 个正式编号项均已进入稳定 label 表。结合 [LABEL_LEDGER_CH01_07.md](LABEL_LEDGER_CH01_07.md)，operad theory 主体及其核心附录的可引用目标已经闭合；下一步是把散文引用替换为这些 label，并继续为模型范畴、Koszul、同伦转移和 infinity-operad 附录做同样处理。
+附录 A/B/H/K/P/U/X 的 107 个正式编号项均已进入稳定 label 表。结合 [LABEL_LEDGER_CH01_07.md](LABEL_LEDGER_CH01_07.md)，operad theory 主体及其核心附录的可引用目标已经闭合；下一步是把散文引用替换为这些 label，并继续为模型范畴、Koszul、同伦转移和 infinity-operad 附录做同样处理。

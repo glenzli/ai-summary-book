@@ -51,7 +51,7 @@
 | 第十至第十三章、附录 J/S/W | $A_\infty/L_\infty$ 与同伦转移符号入口 | 定义 E.18--定义 E.23、定义 J.1--外部输入定理 J.19、定义 L.4--定义 L.7、定义 S.1--说明 S.13 |
 | 第十四章、附录 G/R/O/X | rectification 检查和正特征风险 | 定义 G.3--定义 G.6、外部输入定理 G.11--外部输入定理 G.13、例 R.19、命题 X.15 和推论 X.16 |
 | 第十七至第十九章、附录 M/T | dendroidal-Lurie-model comparison 路径 | 外部输入定理 18.20、定义 19.24--外部输入定理 19.25、规则 M.18、警告 M.19 |
-| 第二十章、附录 N/O/V | factorization homology、excision、Fukaya gluing 边界 | 定义 N.3、外部输入定理 N.15、外部输入定理 N.18、外部输入定理 N.30、错误命题 O.23--正确边界 O.28 |
+| 第二十章、附录 N/O/V | factorization homology、excision、Fukaya gluing 边界 | 定义 N.3、外部输入定理 N.15、外部输入定理 N.18、研究边界 N.30、错误命题 O.23--正确边界 O.28 |
 | 附录 Y/Z 与前沿审计 | “第二十一章”“前沿审计”“附录 D 引用包” | 版本表 21.3、流程 21.16、定义 D.0.2 |
 | `SOURCES.md`、`DEPENDENCY_GRAPH.md`、`THEOREM_LEDGER.md`、`MATH_REVIEW.md` | 只按章节或附录泛称的审校入口 | 对应的定义、命题、外部输入定理和检查项范围 |
 

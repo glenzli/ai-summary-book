@@ -1,22 +1,31 @@
 # 附录 C：术语索引
 
+- **asymptotic truncation（渐近截断）**：对每个固定截断阶给出下一渐近尺度的余项口径，但不要求无穷级数收敛，见第 1 章。
 - **basis（算符基）**：局域算符在冗余关系商空间中的坐标选择。
 - **basis conversion（基变换）**：不同 Wilson 坐标系之间的转换，见附录 E。
+- **bidegree（双重分次）**：图或预测的逆参考尺度次数与圈次数 $(p,L)$，见第 3 章。
+- **BRST-exact structure**：gauge-fixed off-shell 计算扩大空间中的冗余方向；最终物理插入按 BRST cohomology 与 EOM quotient 投影，见第 4 章。
 - **decoupling（退耦）**：重自由度效应随重质量增大而按幂次减小的情形。
 - **EFT（有效场论）**：在给定尺度和自由度下按局域算符展开的场论。
 - **EOM redundancy（运动方程冗余）**：可由场重定义吸收的算符冗余。
+- **evanescent operator**：在 $d_{\rm DR}=4-2\epsilon$ 中独立、四维极限按代数恒等式消失，但可经 $1/\epsilon$ pole 影响有限项的算符。
 - **flavor assumption（味假设）**：对 Wilson flavor 张量的简化假设。
 - **global fit（全局拟合）**：多观测量联合限制 Wilson 系数的统计分析，见第 17、19 章。
 - **heat-kernel / determinant matching**：用泛函行列式做一圈匹配的展开方法，见第 18 章。
+- **hard/soft matching**：UV 与 EFT 的共同软非解析部分先相消，只把 hard 局域多项式匹配到 Wilson 系数，见第 2 章。
 - **HEFT**：非线性电弱有效理论，Higgs 不必作为 $SU(2)_L$ 双重态线性实现。
 - **LEFT**：低于电弱尺度、积掉 $W,Z,h,t$ 后的低能有效理论。
 - **matching（匹配）**：令 UV 与 EFT 的低能振幅或 Green 函数相等以确定 Wilson 系数。
+- **matching scale $\mu_{\rm match}$**：施加重整化 matching 条件的尺度；通常靠近物理阈值，但不是粒子质量本身。
 - **input scheme（输入方案）**：用一组选定实验输入反解拉氏量参数的规则，见第 21 章。
 - **one-loop matching（一圈匹配）**：在一圈阶计算重自由度阈值贡献并投影为局域算符，见第 18 章。
 - **operator mixing（算符混合）**：重整化下一个算符插入产生另一个算符结构的发散。
 - **parameter counting（参数计数）**：固定 flavor、CP 与 Hermiticity 假设后的 Wilson 实维数，见第 20 章。
 - **response matrix（响应矩阵）**：Wilson 参数到归一化观测量位移的线性映射，见第 8、23 章。
 - **power counting（幂计数）**：按小参数排列算符和振幅贡献的规则。
+- **physical gap $M_{\rm gap}$**：低能展开点到最近遗漏重 pole/threshold 的物理尺度，控制局域展开边界。
+- **quotient descent（商空间下降）**：重整化映射保持冗余子空间时，在算符商空间上诱导良定义映射，见命题 4.9A。
+- **reference scale $\Lambda_{\rm ref}$**：把 Wilson 系数写成无量纲坐标的约定尺度；连同 $C_i^{(d)}$ 重标度不改变物理。
 - **SMEFT**：以 SM 场和线性电弱对称性为低能自由度的有效理论。
 - **Warsaw basis**：SMEFT 维数六最常用的完整算符基之一。
 - **Wilson coefficient（Wilson 系数）**：乘在有效算符前、编码短程物理的系数。

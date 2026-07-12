@@ -28,7 +28,9 @@ N^{\ge i}_{\mathrm{naive}}M=\{x\in M\mid \varphi(x)\in d^iM\}.
 $$
 Derived prismatic cohomology 中应替换为 filtered derived category 中的 Nygaard filtration。
 
-**源码核查 F.5.** Bhatt-Scholze, arXiv:1905.08229 v4, `thmCagain` 在 affine smooth 情形把 Nygaard filtration 放在 Frobenius twist 后：
+**源码核查 F.5.** Bhatt--Scholze, Theorem 1.16（正文 Theorem 15.3，
+源码 label `thmCagain`）在 affine smooth 情形把 Nygaard filtration 放在
+completed Frobenius twist 后：
 $$
 \mathrm{Fil}^i_N R\Gamma_{\Prism}(X/A)^{(1)}
 =
@@ -61,19 +63,26 @@ $$
 
 ## F.3 Syntomic convention
 
-**工作公式 F.7.** 本书当前采用
+**公式 F.7（BMS2 quasisyntomic model）.** 对 quasisyntomic ring $A$，
+BMS2, Theorem 1.12 (5) 给出
 $$
-R\Gamma_{\mathrm{syn}}(X,\mathbf Z_p(i))
+\mathbf Z_p(i)(A)
 =
 \operatorname{fib}\left(
-N^{\ge i}R\Gamma_\Delta(X/A)
-\xrightarrow{\varphi_i-\operatorname{can}_i}
-R\Gamma_\Delta(X/A)\{i\}
+\varphi-\operatorname{can}:
+\mathcal N^{\ge i}\widehat\Delta_A\{i\}
+\longrightarrow
+\widehat\Delta_A\{i\}
 \right)
 $$
-作为 convention form。
+in the completed filtered derived category。两张 map 的 target 相同；
+$\varphi-1$ 是固定 canonical map 后的简写。
 
-**警告 F.8.** 公式 F.7 仍是本书内部 convention form。这里 $\operatorname{can}_i$ 只是把源送入同一 Tate-twisted target 的规范映射；不同来源会把它简写为 $1$ 或吸收到 twist 记号中。由于 Bhatt-Scholze 的 Nygaard 定理对 Frobenius twist、$\tau^{\le i}$ 和 $L\eta_I$ 有明确结构，最终 syntomic 公式必须根据所选来源决定是否使用 $p^i-\varphi$、$\varphi_i-\operatorname{can}_i$、truncate 后 fibre 或 modulo $p^n$ 的版本。
+**警告 F.8.** 公式 F.7 不能通过把 $\widehat\Delta_A$ 替换成任意 relative
+prismatic complex 来使用。Bhatt--Scholze 的 relative Nygaard theorem 位于
+$C^{(1)}$，BMS2 的公式位于 quasisyntomic Nygaard-complete object；两者的
+comparison 是外部输入。Modulo $p^r$ 与 nearby-cycles truncation 也必须
+另行标记。
 
 **源码入口 F.9.** BMS2, arXiv:1802.03261 v2, `eq:TateTwist` 给出模 $p$ 的入口：
 $$
@@ -86,13 +95,19 @@ $$
 \widehat{\Prism}_A\{i\}/p
 \right).
 $$
-同一来源的 `thm:main6` 把 $\mathbf Z_p(n)$ 在 characteristic $p$ smooth 情形与 logarithmic de Rham-Witt sheaves 关联，在 mixed characteristic smooth formal $\mathcal O_C$ 情形与截断 nearby cycles 关联。因此第十一章的 syntomic tower 应以 BMS2-SYN 作为最终核查入口。
+同一来源的 Theorem 1.15（mixed-characteristic proof 为 Theorem 10.1）把
+$\mathbf Z_p(n)$ 在 characteristic $p$ smooth 情形与
+$W\Omega^n_{\log}[-n]$ 关联；在 mixed characteristic smooth formal
+$\mathcal O_C$ 情形，它对每个 $r$ 给出
+$\mathbf Z/p^r(n)\simeq\tau^{\le n}R\psi_*\mathbf Z/p^r(n)$，连续
+$\mathbf Z_p$ 版本由 compatible tower 的 derived inverse limit 得到。因此
+第七、十一章均引用 locator `BMS2-SYN`。
 
 ## F.4 Hodge-Tate graded convention
 
 **工作公式 F.10.** 本书当前写作
 $$
-\operatorname{gr}^i_{\mathrm{conj}}\overline\Delta_{X/A}
+\operatorname{gr}^{\mathrm{conj}}_i\overline\Delta_{X/A}
 \simeq
 R\Gamma(X,\wedge^i\mathbb L_{X/(A/I)})[-i]\{-i\}.
 $$
@@ -113,12 +128,15 @@ $$
 
 | Queue | 当前状态 | locator |
 | --- | --- | --- |
-| NQ-1 | 已完成核心源核查 | Bhatt-Scholze v4 `thm:A` |
-| NQ-2 | 已完成核心源核查 | Bhatt-Scholze v4 `thmCagain` |
-| NQ-3 | 基础公式已吸收到第七、十一章；最终变体待 L3 | BMS2 `eq:TateTwist`, `thm:main6`, `thm:nearbycycles` |
+| NQ-1 | 已达 L3 | Bhatt--Scholze Theorems 4.11, 6.3 |
+| NQ-2 | 已达 L3 | Bhatt--Scholze Theorem 1.16 / Theorem 15.3 |
+| NQ-3 | 已达 L3 | BMS2 Theorem 1.12 (5), Theorem 1.15, Theorem 10.1 |
 | NQ-4 | 部分核查 | BMS1 `cor:identtatetwist` 与 BMS2 `prop:breuilkisintwist` 可作为后续入口 |
 | NQ-5 | 保持研究边界 | 不进入基础定理链 |
 
 ## 本附录小结
 
-本附录已经完成 Bhatt-Scholze 核心 Hodge-Tate/Nygaard convention 与 BMS2 syntomic/Tate twist 源码入口的核查，并已把基础公式吸收到第七章和第十一章。正式出版前仍需把 mod $p^r$、truncation 和 nearby cycles 的变体全部升级为 L3。
+本附录已经完成 Bhatt--Scholze 核心 Hodge--Tate/Nygaard convention 与
+BMS2 syntomic/products/nearby-cycles formulas 的 numbered-statement 核查，
+并已把对象、twist、shift 与 truncation 吸收到第七、十一章。尚未闭合的是
+不同 authors 的 Tate-twist normalization crosswalk，而不是上述主公式。

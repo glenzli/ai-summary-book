@@ -39,12 +39,27 @@ $$
 \eta_L(I)\Gamma=\eta_R(I)\Gamma.
 $$
 
-**命题 C.8.** 若 $I$ invariant，则 $A/I$ 自然成为 $(A,\Gamma)$-comodule quotient 的底环，并可形成 quotient Hopf algebroid
+**命题 C.8.** 若 $I$ invariant，记
+$J=\eta_L(I)\Gamma=\eta_R(I)\Gamma$，则 $A/I$ 自然成为 quotient groupoid 的底环，并且结构映射下降为 Hopf algebroid
 $$
-(A/I,\Gamma/I\Gamma).
+(A/I,\Gamma/J).
 $$
+若后文需要 flat Hopf algebroid，还必须另假设 $\Gamma/J$ 作为
+$A/I$-模平坦。
 
-**证明草图.** invariant 条件保证左右单位都下降到 $A/I$，并且 comultiplication、counit 和 antipode 与 quotient 相容。Flatness 需要单独检查或作为假设保留。证毕。
+**证明.** 两个单位映射把 $I$ 送入同一理想 $J$，故诱导
+$\bar\eta_L,\bar\eta_R:A/I\to\Gamma/J$。对 $a\in I$，Hopf algebroid
+恒等式给出
+$$
+\Delta(\eta_L(a))=\eta_L(a)\otimes1,qquad
+\Delta(\eta_R(a))=1\otimes\eta_R(a).
+$$
+因此 $\Delta(J)$ 在商张量积中为零，余乘法下降。余单位满足
+$\varepsilon\eta_L=\varepsilon\eta_R=\operatorname{id}_A$，故把 $J$ 送入
+$I$；共轭映射交换左右单位，故保持 $J$。所有 Hopf algebroid 恒等式在
+取商后仍成立，因为它们是原结构映射之间的等式。于是得到所述 quotient
+Hopf algebroid。平坦性不是这些代数恒等式的形式后果，所以必须单独检查。
+证毕。
 
 **外部输入 C.9.** 在 $BP$ convention 下，
 $$

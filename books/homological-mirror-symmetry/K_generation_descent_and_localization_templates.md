@@ -18,19 +18,40 @@ $$
    $$
 6. 推出 Morita equivalence。
 
-**证明 K.2.** 第 3、4 步把 $\operatorname{Perf}(\mathcal A)$ 与 $\operatorname{Perf}(\mathcal B)$ 分别识别为由 $\mathcal G,\mathcal H$ 的 representables 生成的厚闭包。第 5 步使两边生成子范畴的 perfect module categories quasi-equivalent。故厚闭包等价。证毕。
+**命题 K.2.** 若模板 K.1 的第 3--5 步成立，则
+$\mathcal A\simeq_{\mathrm{Morita}}\mathcal B$。
+
+**证明.** 第 3、4 步把 $\operatorname{Perf}(\mathcal A)$ 与
+$\operatorname{Perf}(\mathcal B)$ 分别识别为由 $\mathcal G,\mathcal H$ 的
+representables 生成的厚闭包。第 5 步使两边 full generating
+subcategories 的 perfect module categories quasi-equivalent，并保持每个
+对象的 representable。该 quasi-equivalence 对 shifts、cones 与 retracts
+延拓，因而给出两个厚闭包的 quasi-equivalence。证毕。
+
+**边界 K.2A.** 只有在 generators 有限、finite direct sums 已存在且对象
+idempotents 被保持时，才可把第 5 步压缩为一个 endomorphism
+$A_\infty$ algebra quasi-isomorphism。Cohomology algebras 同构不够。
 
 ## K.2 Open-closed 生成模板
 
 **模板 K.3.** 要用 Abouzaid criterion 证明 A-side 生成：
 
-1. 计算或定位 $SH^\ast(M)$ 或 $QH^\ast(M)$ 的单位；
-2. 构造 Hochschild class $\alpha\in HH_\ast(\mathcal G)$；
-3. 计算 $\mathcal{OC}(\alpha)$；
-4. 证明 $\mathcal{OC}(\alpha)=1$ 或命中目标幂等分量的单位；
-5. 引用 generation criterion。
+1. 明确使用 exact wrapped theorem 还是另有来源的 compact/monotone
+   summand theorem；
+2. 在 exact wrapped 情形定位 $1_{SH}\in SH^0(M)$；
+3. 对 full subcategory $\mathcal W_{\mathcal G}$ 构造
+   $\alpha\in HH_{-n}(\mathcal W_{\mathcal G})$；
+4. 计算完整 composite
+   $$
+   HH_\bullet(\mathcal W_{\mathcal G})\to
+   HH_\bullet(\mathcal W(M))\xrightarrow{\mathcal{OC}}SH^{\bullet+n}(M);
+   $$
+5. 证明 $\mathcal{OC}(\alpha)=1_{SH}$，再引用定理 14.7。
 
-**边界 K.4.** 若只知道 $\mathcal{OC}$ 非零，不足以推出生成。需要命中单位或相应幂等单位。
+**边界 K.4.** 若只知道 $\mathcal{OC}$ 非零，不足以推出生成。命中 central
+idempotent $e\ne1$ 也不能用 exact theorem 14.7 推出全范畴生成；要生成
+$e$-summand，必须另引 summand generation theorem 并先用 closed-open
+projector 定义该 summand。
 
 ## K.3 Sectorial descent 模板
 

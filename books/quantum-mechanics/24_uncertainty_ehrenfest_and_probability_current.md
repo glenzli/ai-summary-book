@@ -16,7 +16,8 @@ $$
 (\Delta_\psi A)^2=\|(A-\langle A\rangle_\psi)\psi\|^2.
 $$
 
-**定理 24.2（Robertson 不确定性关系）.** 设 $A,B$ 为自伴算子，且 $\psi$ 位于使下列表达式有意义的共同定义域中。则
+**定理 24.2（Robertson 不确定性关系）.** 设 $A,B$ 为自伴算子，
+$\psi\in\mathcal D(AB)\cap\mathcal D(BA)$ 且 $\|\psi\|=1$。则
 $$
 \Delta_\psi A\,\Delta_\psi B
 \ge \frac12\left|\langle\psi,[A,B]\psi\rangle\right|.
@@ -47,14 +48,19 @@ $$
 $$
 合并两式得到结论。$\square$
 
-**推论 24.3.** 在 $[X,P]=iI$ 的共同定义域上，
+**推论 24.3.** 设 $\psi$ 归一化，属于 $XP$ 与 $PX$ 的共同定义域，且位置与动量方差有限。在 $[X,P]\psi=i\psi$ 时，
 $$
 \Delta_\psi X\,\Delta_\psi P\ge \frac12.
 $$
 
+**证明.** 把定理 24.2 应用于 $A=X$、$B=P$。共同定义域假设保证
+交换子期望有意义，并且
+$\langle\psi,[X,P]\psi\rangle=i\langle\psi,\psi\rangle=i$。
+归一化使其模为 $1$，故右端为 $1/2$。$\square$
+
 ## 24.2 概率流与连续性方程
 
-**设定 24.4.** 设 $\psi(t,x)$ 为光滑快速衰减解：
+**设定 24.4.** 取 $m>0$、$d\ge1$。设 $\psi(t,x)$ 为光滑快速衰减解：
 $$
 i\partial_t\psi=-\frac1{2m}\Delta\psi+V(x)\psi,
 $$
@@ -107,7 +113,17 @@ $$
 $$
 H=\frac{P^2}{2m}+V(X)
 $$
-并在 Schwartz 空间上计算。则
+是自伴 Hamiltonian，其中 $V\in C^1(\mathbb R;\mathbb R)$。设归一化解
+$\psi(t)=e^{-itH}\psi_0$ 在所考察时间区间内属于一个共同不变稠密子空间
+$\mathcal D$，并且在 $\mathcal D$ 上：
+
+1. $HX,XH,HP,PH$ 均有定义；
+2. 下文的乘积法则与分部积分成立；
+3. $t\mapsto\langle X\rangle_{\psi(t)}$ 与
+   $t\mapsto\langle P\rangle_{\psi(t)}$ 可微，且
+   $V'(X)\psi(t)\in\mathcal H$。
+
+则
 $$
 \frac d{dt}\langle X\rangle_{\psi(t)}
 =\frac1m\langle P\rangle_{\psi(t)},
@@ -116,7 +132,7 @@ $$
 =-\langle V'(X)\rangle_{\psi(t)}.
 $$
 
-**证明.** 由 Heisenberg 方程，
+**证明.** 上述定义域与可微性假设允许在 $\mathcal D$ 上使用 Heisenberg 方程
 $$
 \frac d{dt}\langle A\rangle=i\langle[H,A]\rangle
 $$
@@ -142,6 +158,12 @@ i[H,P]=-V'(X).
 $$
 取期望值得结论。$\square$
 
+**说明 24.7A（假设的作用）.** “在 Schwartz 空间上形式计算”本身不足以推出
+$e^{-itH}$ 保持 Schwartz 空间。命题把所需的不变域和可微性明确列为假设；在给定
+势函数类下验证这些条件，属于自伴算子与传播子正则性理论。一个常用的充分框架是：
+$V$ 光滑、各阶导数具有适当的多项式增长，并另行证明 Schrodinger 演化保持
+$\mathcal S(\mathbb R)$。本书只在条件成立后使用 Ehrenfest 恒等式。
+
 **说明 24.8.** Ehrenfest 定理显示期望值满足类似经典 Hamilton 方程的关系，但一般并不等同于经典轨道，因为
 $$
 \langle V'(X)\rangle\ne V'(\langle X\rangle)
@@ -154,9 +176,12 @@ $$
 
 ## 练习
 
-**练习 24.1.** 证明 Robertson 定理中若 $[A,B]=icI$，则 $\Delta A\,\Delta B\ge |c|/2$。
+**练习 24.1.** 设 $c\in\mathbb R$，并在包含归一化态 $\psi$ 的
+共同乘积定义域上有 $[A,B]\psi=ic\psi$。证明
+$\Delta_\psi A\,\Delta_\psi B\ge |c|/2$。
 
-**练习 24.2.** 对平面波形式 $\psi=Ae^{i(kx-\omega t)}$，计算概率流 $j$，并说明它与动量的关系。
+**练习 24.2.** 把平面波
+$\psi=Ae^{i(kx-\omega t)}$ 视为广义态，计算其常数概率密度与概率流
+$j$，并说明它与动量的关系。
 
 **练习 24.3.** 对谐振子 $V(X)=m\omega^2X^2/2$，用 Ehrenfest 定理推出 $\langle X\rangle$ 满足经典谐振子方程。
-

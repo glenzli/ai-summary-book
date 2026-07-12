@@ -193,7 +193,7 @@ g\circ(f\circ h)=(g\circ f)\circ h,
 $$
 必要时取路径逆。$\square$
 
-**定理 U.10（Yoneda 嵌入）。** 定义
+**定义 U.10（Yoneda 嵌入）。** 定义
 $$
 y:\mathcal C\to\mathsf{PSh}(\mathcal C)
 $$

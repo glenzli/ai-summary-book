@@ -1,94 +1,148 @@
-# 附录 I：低阶 $A_\infty$、curvature 与 Maurer-Cartan 计算
+# 附录 I：低阶 $A_\infty$、curvature 与 Maurer--Cartan 计算
 
 ## I.1 非弯曲低阶方程
 
-**约定 I.1.** 本附录使用正文 suspension convention，但把低阶方程按“结构含义”展开。具体 Koszul 符号由附录 B 的 bar coalgebra 规则确定。
+**约定 I.1.** 对齐次态射 $a_i$ 写 $x_i=sa_i$，并以
+$|x_i|=|a_i|-1$ 计算符号。张量顺序、coderivation 延拓和 desuspension
+完全采用附录 B 的 (B.1)--(B.3)。
 
-**计算 I.2（一个输入）.** $A_\infty$ 方程在一个输入 $a$ 上给出
+**计算 I.2（一个输入）.** 长度 $1$ 方程是
 $$
-\mu^1(\mu^1(a))=0.
+b_1b_1(x_1)=0.
 $$
-因此 $\mu^1$ 是微分。
+Desuspension 后即 $\mu^1\mu^1(a_1)=0$，所以 $\mu^1$ 是次数 $+1$
+微分。
 
-**计算 I.3（两个输入）.** 对 composable $a_1,a_2$，方程给出
+**计算 I.3（两个输入）.** 对可复合齐次输入，长度 $2$ 方程是
 $$
-\mu^1\mu^2(a_2,a_1)
-=\mu^2(\mu^1a_2,a_1)\pm\mu^2(a_2,\mu^1a_1).
+b_1b_2(x_2,x_1)+b_2(b_1x_2,x_1)
++(-1)^{|x_2|}b_2(x_2,b_1x_1)=0.
+\tag{I.1}
 $$
-这说明 $\mu^2$ 是链映射，或等价地，$\mu^1$ 对乘法满足带符号 Leibniz 规则。
+这就是 suspended 形式的 Leibniz 规则。把每个 $x_i$ 换回 $sa_i$ 并按
+附录 B 的 desuspension 约定移动 suspension，得到 $\mu^1$ 与
+$\mu^2$ 的通常 Koszul Leibniz 规则；(I.1) 已经唯一确定其中每个符号。
 
-**计算 I.4（三个输入）.** 对 $a_1,a_2,a_3$，方程给出
+**计算 I.4（三个输入）.** 长度 $3$ 方程是
 $$
-\mu^2(\mu^2(a_3,a_2),a_1)\pm
-\mu^2(a_3,\mu^2(a_2,a_1))
-=
-\mu^1\mu^3(a_3,a_2,a_1)\pm
-\sum_i\mu^3(\ldots,\mu^1a_i,\ldots).
+\begin{aligned}
+0={}&b_1b_3(x_3,x_2,x_1)
++b_2(b_2(x_3,x_2),x_1)
++(-1)^{|x_3|}b_2(x_3,b_2(x_2,x_1))\\
+&+b_3(b_1x_3,x_2,x_1)
++(-1)^{|x_3|}b_3(x_3,b_1x_2,x_1)\\
+&+(-1)^{|x_3|+|x_2|}b_3(x_3,x_2,b_1x_1).
+\end{aligned}
+\tag{I.2}
 $$
-因此 $\mu^2$ 的 associator 是 $\mu^3$ 的边界。
+因此二元复合的 associator 由 $b_3$ 给出的链同伦控制。
 
-**推论 I.5.** 在 cohomology category $H^\ast(\mathcal A)$ 中，$\mu^2$ 诱导严格结合的复合。
+**推论 I.5.** 对非弯曲 $A_\infty$ category $\mathcal A$，$\mu^2$ 在
+$H^\ast(\mathcal A)$ 上诱导次数 $0$ 的严格结合复合。
 
-**证明.** 对 cocycles $a_i$，计算 I.4 右侧为 $\mu^1$-boundary。因此两种结合方式在 cohomology 中相等。证毕。
+**证明.** 取 $b_1x_i=0$。公式 (I.2) 中最后三项消失，第一项是
+$b_1$-boundary，故两个嵌套的 $b_2$ 项在 suspended cohomology 上满足
+带 (I.2) 所示符号的结合关系。按固定 desuspension 约定移回
+$H^\ast\operatorname{hom}_{\mathcal A}$ 后，这正是次数 $0$ 运算
+$\mu^2$ 的普通结合律。若更换 cocycle 代表，(I.1) 表明复合只改变一个
+$b_1$-boundary，所以该复合良定义。证毕。
 
 ## I.2 dg category 作为特殊情形
 
-**计算 I.6.** 若 $\mu^d=0$ for $d\ge3$，则计算 I.4 变成
+**计算 I.6.** 若 $b_d=0$（$d\ge3$），则 (I.2) 只剩
 $$
-\mu^2(\mu^2(a_3,a_2),a_1)
-\pm \mu^2(a_3,\mu^2(a_2,a_1))=0,
+b_2(b_2(x_3,x_2),x_1)
++(-1)^{|x_3|}b_2(x_3,b_2(x_2,x_1))=0.
 $$
-即 dg category 的严格结合律在符号约定下成立。
+该 suspended 等式在 desuspension 后就是 dg category 的严格结合律。
+同时 (I.1) 给出 dg Leibniz 规则。因此“只保留 $\mu^1,\mu^2$”必须与
+附录 B 的 suspension 符号一起使用，不能把上式误读为无符号等式。
 
 ## I.3 Curved 情况
 
-**计算 I.7（零输入）.** Curved $A_\infty$ 方程在零输入上给出
+**计算 I.7（零输入）.** 对每个对象 $X$，curved 零输入方程恰为
 $$
-\mu^1(\mu^0)=0
+b_1(b_0(X))=0.
+\tag{I.3}
 $$
-加上可能的单位规范化条件。几何上这表示 boundary of one-dimensional disk moduli 的零维端点相消。
+它只说明 curvature 对一阶运算闭；单位规范化是另加的严格含单位条件，
+不是 (I.3) 的额外求和项。
 
-**计算 I.8（一个输入）.** 在一个输入 $x$ 上，低阶方程包含
+**计算 I.8（一个输入）.** 对
+$x\in s\operatorname{hom}(X_0,X_1)$，方程恰为
 $$
-\mu^1\mu^1(x)+\mu^2(\mu^0,x)\pm\mu^2(x,\mu^0)+\text{higher curvature insertions}=0.
+b_1b_1(x)+b_2(b_0(X_1),x)
++(-1)^{|x|}b_2(x,b_0(X_0))=0.
+\tag{I.4}
 $$
-若 curvature 为标量单位 $W\cdot e$，则
+一个外部输入时不存在更高 arity 的 curvature insertion。若
+$\mu^0_{X_i}=W_i e_{X_i}$，则由 (B.7a)
+$b_0(X_i)=-s(W_i e_{X_i})$。按定义 1.8 的 strict-unit laws
+desuspend (I.4)，得到
 $$
-(\mu^1)^2(x)=(W_{\mathrm{right}}-W_{\mathrm{left}})\,x
+(\mu^1)^2=(W_1-W_0)\operatorname{id}.
+\tag{I.5}
 $$
-是变形 morphism complex 中常见的形式。
+所以只有 $W_0=W_1$ 时，$\mu^1$ 才是普通 cochain differential。
 
-## I.4 Maurer-Cartan 变形
+## I.4 Maurer--Cartan 变形
 
-**定义 I.9.** 对 bounding cochain $b$，变形 curvature 为
+**定义 I.9.** 设 $b\in A^1\widehat\otimes\Lambda_{>0}$，写
+$\beta=sb$；则 $|\beta|=0$。变形后的 suspended Taylor components 为
 $$
-\mu_b^0=\sum_{d\ge0}\mu^d(b,\ldots,b).
+b_d^\beta(x_d,\ldots,x_1)
+=\sum_{r_0,\ldots,r_d\ge0}
+b_{d+r_0+\cdots+r_d}
+(\beta^{r_d},x_d,\beta^{r_{d-1}},\ldots,x_1,\beta^{r_0}).
+\tag{I.6}
 $$
+正 valuation 与能量完备性保证该和在每个 valuation 截断下有限。变形
+curvature 是
+$$
+b_0^\beta=\sum_{r\ge0}b_r(\beta^r).
+\tag{I.7}
+$$
+相应 unsuspended curvature 是
+$\mu_b^0=-s^{-1}b_0^\beta$。本书把 (I.6)--(I.7) 作为
+Maurer--Cartan twisting 的基本公式；若把它展开成 unsuspended
+$\mu^r(b,\ldots,b)$，所有符号必须由附录 B 的 graded suspension map
+推出，不另写一个无符号公式。
 
-**命题 I.10.** 若 $\mu_b^0=0$，则变形后的一阶运算 $\mu_b^1$ 平方为零。
+**命题 I.10.** 若 $b_0^\beta=0$，则
+$(b_1^\beta)^2=0$，等价地 $(\mu_b^1)^2=0$。
 
-**证明.** 将 $b$ 插入 curved $A_\infty$ 方程的所有空隙并求和。一个输入的变形方程为
-$$
-\mu_b^1\mu_b^1(x)+\mu_b^2(\mu_b^0,x)\pm\mu_b^2(x,\mu_b^0)+\cdots=0.
-$$
-若 $\mu_b^0=0$，所有 curvature 项消失，得到 $\mu_b^1\mu_b^1=0$。证毕。
+**证明.** 把 (I.6) 代入附录 B 的 curved Stasheff 恒等式。Novikov
+完备性允许按 valuation 截断后重排有限和，再取逆极限；所得方程正是
+Taylor components $b_d^\beta$ 的 curved 恒等式。对一个输入应用 (I.4)
+并使用 $b_0^\beta=0$，得到 $(b_1^\beta)^2=0$。Desuspension 给出结论。
+证毕。
 
-**命题 I.11.** 若 $\mu_b^0=W(b)e$ 且两个对象的 values $W(b_0)$、$W(b_1)$ 不同，则变形 morphism operator 的平方为非零标量乘恒等。它不是同一 fiber Fukaya category 中的普通 differential；在 curved 或 matrix-factorization 型总范畴中，若该标量可逆，则相应 morphism object contractible。
+**命题 I.11（可逆常数 potential 的准确零化口径）.** 设 $k$ 的特征
+不为 $2$，$c\in k^\times$，且 $(V,d)$ 是 $\mathbb Z/2$-分次有限维
+$k$-向量空间上的 matrix factorization of the constant $c$，即 $d$ 为奇
+映射且 $d^2=c\operatorname{id}_V$。则 $(V,d)$ 在
+$H^0\operatorname{MF}(\operatorname{Spec}k,c)$ 中同构于零对象。
 
-**证明.** 由计算 I.8，
+**证明.** Matrix-factorization endomorphism complex 的微分为
 $$
-d^2=(W(b_1)-W(b_0))\operatorname{id}.
+\delta(f)=d f-(-1)^{|f|}f d.
 $$
-若 $c=W(b_1)-W(b_0)$ 可逆，则在标准 $\mathbb Z/2$ 同伦约定且 $2$ 可逆时可取
+取奇 endomorphism $h=(2c)^{-1}d$，则
 $$
-h=(2c)^{-1}d
+\delta(h)=dh+hd=(2c)^{-1}(d^2+d^2)=\operatorname{id}_V.
 $$
-给出 contracting homotopy，因为
-$$
-dh+hd=(2c)^{-1}(d^2+d^2)=\operatorname{id}.
-$$
-若特征或符号约定不同，需要改用相应 curved-category 的 contractibility convention。证毕。
+所以恒等态射是边界，$(V,d)$ 在同伦范畴中为零。证毕。
+
+**警告 I.12.** 当两个 weak bounding cochains 的 values 相差
+$c\ne0$ 时，式 (I.5) 给出的 morphism 数据是 curvature 为 $c$ 的
+matrix factorization，而不是一个 $d^2=0$ 的普通 cochain complex。
+只有在明确采用上述 matrix-factorization/curved 总模型且 $2c$ 可逆时，
+命题 I.11 才给出零化；不同 characteristic 或不同 curved-category
+约定必须另行处理。
 
 ## 本附录小结
 
-低阶 $A_\infty$ 方程解释了 Fukaya category 的基本现象：$\mu^1$ 是微分，$\mu^2$ 只在 cohomology 上严格结合，curvature 阻碍 differential 平方为零，而 Maurer-Cartan 元正是消除该阻碍的数据。
+低阶 $A_\infty$ 方程现在都有可复算的 suspended 符号。Curvature 的
+一个输入方程只有三项；Maurer--Cartan 元把变形 curvature 消为零后才
+得到普通 Floer differential。不同 potential values 的 morphisms 必须按
+curved 或 matrix-factorization 对象解释，不能直接称为 cochain complex。

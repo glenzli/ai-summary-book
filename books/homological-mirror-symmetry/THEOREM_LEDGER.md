@@ -9,29 +9,33 @@
 - **1.9**：dg category 给出严格含单位 $A_\infty$ category。依赖：dg Leibniz 规则与结合律。
 - **1.12**：$A_\infty$ quasi-equivalence 诱导 $H^0$ 等价。依赖：定义 1.11。
 - **1.24**：split-generation 加 full subcategory quasi-equivalence 蕴含 Morita equivalence。依赖：perfect modules 与厚闭包。
-- **2.7**：光滑 noetherian 情况下 bounded coherent complexes 为 perfect。状态：证明草图；需补代数几何 locator。
 - **2.13**：对角线 kernel 给出恒等 Fourier-Mukai transform。依赖：投影公式与对角线恒等式。
 - **3.3**：Lagrangian tangent spaces 为极大 isotropic。依赖：辛线性代数。
 - **3.9**：紧横截 Lagrangians 的交有限。依赖：横截交定理与紧离散有限。
-- **4.10**：exact branes 与 Floer cochains 构成 $A_\infty$ category。依赖：外部输入 4.9。
+- **3.13A**：exact Floer strip 的能量等于端点作用量差。依赖：相容 almost complex structure、Stokes 定理和 exact primitives。
+- **4.10**：exact branes 与 Floer cochains 构成非弯曲、链级未必严格含
+  单位的 $A_\infty$ category。依赖：外部输入 4.9；单位另依赖 4.14A。
+- **5.1A**：局部有限 support 的 universal Novikov series 构成
+  non-Archimedean field。依赖：valuation 完备性与几何级数。
 - **5.3**：Novikov 加权计数在有限能量条件下收敛。依赖：Novikov valuation。
 - **5.9**：Maurer-Cartan 元消去 curvature 并给出非弯曲 $A_\infty$ 结构。依赖：curved $A_\infty$ 方程。
-- **5.14**：不同 obstruction values 不属于同一非弯曲 Fukaya fiber；curved 总模型中由可逆曲率差给出 contractibility。状态：证明草图；依赖 curved morphism square 公式。
-- **6.18**：wrapped HMS 可由生成对象 endomorphism 比较推出。依赖：8.9。
+- **5.14**：不同 potential values 的 morphism operator 平方为 curvature 差；相同 value 才给普通 complex，可逆差在明确 matrix-factorization 口径下为零对象。依赖：I.8、I.11。
+- **6.18**：wrapped HMS 可由两边 split-generation 与生成 full subcategories 的 quasi-equivalence 推出；endomorphism 口径需有限直和和对象 idempotents。依赖：8.9。
 - **7.9**：stop removal localization 中 linking disk 子范畴对象被送零。依赖：Verdier/Morita quotient 形式。
 - **7.14**：functorial HMS square 中第四条边的 Morita 类型由其他三条边确定。依赖：Morita homotopy category 中等价可逆。
-- **8.6**：enhanced/Morita equivalence 蕴含三角等价和数值不变量保持。依赖：pretriangulated enhancement。
+- **8.6**：quasi-equivalence 给 raw $H^0$ 等价并蕴含 Morita；Morita 只直接给 perfect completions 的三角等价。依赖：Yoneda/perfect modules；反例 8.7 排除错误逆推。
 - **8.9**：生成元比较原则。依赖：1.24。
 - **8.12**：quasi-equivalence 保持 Euler pairing。依赖：morphism complexes quasi-isomorphism 与 properness。
 - **9.7**：二维环面中斜率圆交点数为 determinant 绝对值。依赖：代数交数。
 - **10.7**：$\mathbb P^1$ mirror potential 的 Jacobian ring 计算。依赖：Laurent polynomial 商。
-- **11.11**：Fukaya-Seidel HMS 可归约为 directed endomorphism algebras 比较。依赖：8.9。
+- **11.11**：Fukaya--Seidel HMS 可归约为 directed generating full subcategories 的 quasi-equivalence；有限 endomorphism algebra 需保持对象 idempotents。依赖：8.9。
 - **12.2**：hypersurface canonical bundle 的 adjunction 计算。依赖：adjunction formula。
-- **12.9**：Calabi-Yau hypersurface HMS 的生成元证明框架。依赖：8.9。
+- **12.9**：Calabi--Yau hypersurface HMS 由两边 split-generation 与生成 full subcategories 的 quasi-equivalence 推出。依赖：8.9。
 - **12.11**：HMS 保持 Serre functor/Calabi-Yau dimension。依赖：增强等价与 Grothendieck-Serre duality。
 - **13.12**：descent diagrams 的局部 Morita 等价推出全局等价。依赖：homotopy colimit 保持等价。
 - **14.2**：split-generating 集合决定 Morita 类型。依赖：perfect modules 厚闭包。
-- **14.9**：Abouzaid criterion 加 endomorphism 比较推出 wrapped HMS。依赖：外部输入 14.7 与 8.9。
+- **14.9**：Abouzaid criterion、B-side split-generation 与生成 full subcategories 的 quasi-equivalence 推出 wrapped Morita HMS。依赖：外部输入 14.7 与 8.9。
+- **14.11**：closed-open central idempotent 在 idempotent-complete perfect category 中给出正交直和分块。依赖：projector splitting 与 naturality。
 - **15.5**：sectorial descent 下局部生成元生成全局 category。依赖：外部输入 15.3。
 - **15.9**：sectorial descent diagrams 比较推出全局 HMS。依赖：15.3 与 homotopy colimits。
 - **16.9**：Nadler-Zaslow 等价传递 sheaf 生成性到 conormal branes。依赖：外部输入 16.5。
@@ -42,7 +46,13 @@
 - **19.8**：Rabinowitz HMS 推出 Hochschild homology 同构。依赖：18.2。
 - **I.5**：$H^\ast(\mathcal A)$ 中 $\mu^2$ 诱导严格结合复合。依赖：低阶 $A_\infty$ 三输入方程。
 - **I.10**：Maurer-Cartan 方程 $\mu_b^0=0$ 蕴含 $\mu_b^1{}^2=0$。依赖：curved $A_\infty$ 低阶方程。
-- **I.11**：不同 potential values 的 morphism operator 在 curved 总模型中由可逆曲率差给出 contractibility。依赖：curved morphism square 公式。
+- **I.11**：特征不为 $2$ 时，invertible constant 的 matrix factorization 在其 homotopy category 中为零。依赖：endomorphism differential 的显式 contracting homotopy。
+- **B.3/B.4**：固定 suspension convention 下的完整 Stasheff 恒等式及低阶展开。依赖：coderivation extension 与 cogenerator projection。
+- **B.7**：curved 零输入/一输入方程无省略项。依赖：允许 $b_0$ 的 Stasheff 公式。
+- **B.9**：$A_\infty$ functor 的一、二输入方程。依赖：$Fb_A=b_BF$ 的长度分量。
+- **D.2**：smooth proper schemes 上 kernel convolution 表示 Fourier--Mukai functor 复合。依赖：derived base change、projection formula、perfect pushforward。
+- **E.4**：exactness 排除非恒定 sphere 与单边 disk bubbles。依赖：Stokes 与 tame energy positivity。
+- **E.7**：compactified oriented one-manifold 的全部 broken boundaries 给出精确 $A_\infty$ 恒等式。依赖：外部输入 E.6 与 B.3。
 - **J.1**：二维环面斜率圆交点 determinant 计算。依赖：代数交数。
 - **J.4**：$\mathbb P^1$ mirror potential 的 Jacobian ring 计算。依赖：Laurent polynomial 商。
 - **J.8**：$\operatorname{Perf}(\mathbb P^1)$ 中 $(\mathcal O,\mathcal O(1))$ 的 directed algebra 为 Kronecker quiver 型。依赖：$H^0(\mathbb P^1,\mathcal O(1))\cong k^2$。
@@ -52,22 +62,38 @@
 
 ## 外部输入定理
 
-- **1.16**：$A_\infty$ Yoneda embedding cohomologically fully faithful。来源：Lefevre-Hasegawa。
-- **1.21**：twisted complexes 的预三角化包与泛性质。来源：Bondal-Kapranov、Keller、Lefevre-Hasegawa。
-- **2.11**：B-side dg enhancement 与 Morita 理论。来源：Keller、Huybrechts、Bondal-Orlov/Orlov。
-- **2.14**：Fourier-Mukai 表示性。来源：Orlov 及后续扩展。
-- **2.18**：matrix factorizations 与 singularity categories 的 Orlov 型关系。
-- **3.14**：exact Floer 微分平方为零。来源：Seidel exact 口径、FOOO 一般分析技术。
+- **1.16 / B.11**：小严格含单位 $A_\infty$ category 的 Yoneda embedding 在 morphism complexes 上 quasi-isomorphic。来源：Lefevre-Hasegawa。
+- **1.21**：域上小、非弯曲、严格含单位 $A_\infty$ category 的 finite
+  twisted-complex envelope 是 pretriangulated，$H^0$ triangulated；不含
+  arbitrary coproduct 或 idempotent completion。来源：Bondal--Kapranov、
+  Keller、Lefevre-Hasegawa。
+- **2.7**：regular noetherian scheme 上 $D^b_{\mathrm{Coh}}=D_{\mathrm{perf}}$。来源：Stacks Project Tag 0FDC。
+- **2.11**：qcqs scheme 的 h-injective dg enhancement；regular 情形与 Perf/DbCoh 比较。来源：Spaltenstein、Keller、2.7。
+- **2.12A**：perfect kernel 的 Fourier--Mukai transform 提升为 dg quasi-functor，convolution 对应复合。来源：Toen/Keller/Huybrechts。
+- **2.14**：特征零代数闭域上 smooth projective varieties 之间、具有
+  left/right adjoints 的 fully faithful exact functor 由按同构唯一的
+  perfect kernel 表示。来源：Huybrechts Theorem 5.14 (Orlov)。
+- **2.18**：finite Krull-dimensional regular affine hypersurface 的 finite-rank matrix factorizations 与 singularity category 在 idempotent completion 后等价。来源：Orlov。
+- **D.3**：smooth proper Fourier--Mukai transform 的左右 adjoint kernel formulas。来源：Huybrechts/Grothendieck duality。
+- **E.6**：compact exact Fukaya analytic package：Fredholm、no-escape、compactness、orientation、gluing。来源：Seidel Chapters 8--12。
+- **3.14**：transverse compact exact intersection/$H=0$ 模型的 Floer 微分平方为零。来源：E.6；一般 chord 模型转交 4.9。
 - **3.18**：Floer continuation invariance。
-- **4.9**：holomorphic polygon 计数满足 $A_\infty$ 方程。
+- **4.9**：compact exact Hamiltonian-chord polygon operations 满足精确 suspended $A_\infty$ 方程。来源：E.6/E.7。
 - **4.12**：Fukaya category 对 coherent perturbation data 的选择独立性。
-- **4.15**：cohomologically unital $A_\infty$ category 的 strictification。
-- **5.13**：FOOO filtered Fukaya theory、bounding cochains 与 obstruction。
+- **4.14A**：compact exact Fukaya 模型在额外 unit perturbation package 下 cohomologically unital。来源：Seidel Chapters 9--12。
+- **4.15**：域上的小、非弯曲、cohomologically unital $A_\infty$ category 有 quasi-equivalent strictly unital model。来源：Lefevre-Hasegawa。
+- **5.13**：closed symplectic manifold 中单个 compact oriented relatively spin Lagrangian 的 characteristic-zero completed-Novikov filtered curved $A_\infty$ algebra、bounding cochains 与 obstruction；多对象版本另需 coherent virtual package。来源：FOOO。
 - **8.13**：Hochschild invariants 的 Morita invariance。来源：Keller。
-- **6.8**：wrapped Floer 不变量性。
-- **6.10**：wrapped $A_\infty$ 方程。
+- **6.8**：exact conical branes 与 cofinal radial pair data 的 wrapped
+  Fredholm/action/no-escape/compactness/orientation/continuation package；
+  telescope complex choice-independent。来源：wrapped Floer/GPS。
+- **6.10**：coherent wrapped polygon package 给出 orientation/local-system
+  operations、精确 (B.3)、cohomological units 与 auxiliary-choice
+  quasi-equivalence；不自动包含 deformation/sector/stop functoriality。
 - **6.13**：Liouville sector functoriality。来源：GPS 2017。
-- **6.17**：Weinstein cocore/linking disk generation。来源：GPS 2018。
+- **6.17**：Weinstein sector 的 cocores（及 mostly Legendrian stop 所需
+  linking disks）split-generate $H^0\operatorname{Perf}\mathcal W$；
+  inclusion Morita，而非 raw quasi-equivalence。来源：GPS arXiv:1809.03427。
 - **7.5**：linking disk generation near stops。来源：GPS。
 - **7.7**：stop removal equals localization。来源：GPS。
 - **7.12**：Viterbo/Orlov functors 的 localization/homological epimorphism 边界。来源：GPS/Sylvan。
@@ -82,8 +108,8 @@
 - **12.7**：Batyrev mirror pairs HMS 近期结果。
 - **13.7**：Abouzaid-Auroux hypersurfaces in $(\mathbb C^\ast)^n$ HMS。
 - **13.9**：higher-dimensional pants categorical resolutions。
-- **14.6**：open-closed/closed-open maps 构造。
-- **14.7**：Abouzaid generation criterion。
+- **14.6**：exact wrapped open-closed/closed-open、duality 与 Cardy package。来源：Abouzaid、Ganatra、GPS。
+- **14.7**：full subcategory 的 $HH$ 经 $HH(\mathcal W)$ 到 $SH$ 的 composite 命中 global unit，则 split-generates $\mathcal W$。来源：Abouzaid, Theorem 1.1 / equation (1.2)。
 - **15.3**：sectorial descent。
 - **15.6**：wrapped Kunneth 公式。
 - **16.5**：Nadler-Zaslow correspondence。

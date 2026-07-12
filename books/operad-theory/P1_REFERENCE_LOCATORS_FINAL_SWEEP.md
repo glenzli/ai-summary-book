@@ -55,7 +55,7 @@ These items are not closed as internal operad-theory proofs. They are closed as 
 
 The following are deliberately not absorbed into the operad-theory proof chain:
 
-1. **Stratified factorization homology.** Sources: Ayala--Francis--Tanaka and Lurie. It remains a P1 geometry locator for Appendix V/Z; topological-manifold excision and circle calculation are already covered by AF-0--AF-4.
+1. **Stratified factorization homology.** Sources: Ayala--Francis--Tanaka and Lurie. It remains a P1 geometry locator for Appendix V/Z; topological-manifold excision, circle, boundary, and commutative-coefficient calculations are covered by AF-0--AF-5.
 2. **Wrapped Fukaya descent/gluing.** Sources: Ganatra--Pardon--Shende, Seidel, Nadler and related Liouville-sector literature. It remains a P1/geometric external locator.
 3. **Fukaya category construction.** Sources: Seidel and Fukaya--Oh--Ohta--Ono. It remains a P0 geometric source boundary, not an operad-theory theorem.
 

@@ -29,7 +29,7 @@ $$
 $$
 其中 $\varphi_{\chi_i}:W_F\to\mathbb C^\times$ 由局部类域论给出。
 
-**证明草图.** `GL(1)` 局部 Langlands 把 $\chi_i$ 送到一维 Weil 参数 $\varphi_{\chi_i}$。局部 Langlands for `GL(2)` 与 parabolic induction 相容：由 Levi subgroup $F^\times\times F^\times$ 的参数通过标准嵌入
+**证明路线（外部输入）.** `GL(1)` 局部 Langlands 把 $\chi_i$ 送到一维 Weil 参数 $\varphi_{\chi_i}$。局部 Langlands for `GL(2)` 与 parabolic induction 相容：由 Levi subgroup $F^\times\times F^\times$ 的参数通过标准嵌入
 $$
 \operatorname{GL}_1(\mathbb C)\times\operatorname{GL}_1(\mathbb C)
 \hookrightarrow \operatorname{GL}_2(\mathbb C)
@@ -75,7 +75,7 @@ N(e_2)=e_1,\quad N(e_1)=0.
 $$
 等价地，它是一个 indecomposable special parameter。
 
-**证明草图.** Steinberg 表示是 reducible principal series 临界点的 square-integrable factor。LLC 与 Langlands classification 相容：临界点的两个 character 差一个 $|\cdot|$，在参数侧合并为带非零 nilpotent monodromy 的 Jordan block。关系
+**证明路线（外部输入）.** Steinberg 表示是 reducible principal series 临界点的 square-integrable factor。LLC 与 Langlands classification 相容：临界点的两个 character 差一个 $|\cdot|$，在参数侧合并为带非零 nilpotent monodromy 的 Jordan block。关系
 $$
 r(w)Nr(w)^{-1}=|w|N
 $$
@@ -106,7 +106,7 @@ a(\operatorname{St}\otimes\chi)=
 $$
 在标准 `GL(2)` conductor convention 下成立。
 
-**证明草图.** 非分歧 Steinberg 的 conductor 来自非零 monodromy $N$，指数为 $1$。若 $\chi$ 分歧，参数为 special representation 再张量分歧 character，惯性在两个维度上都通过 $\chi$ 作用；Artin conductor 的主要贡献为两个 character 的 conductor，monodromy 不再额外改变最大指数，得到 $2a(\chi)$。完整证明属于局部 epsilon 因子和 newvector 理论。$\square$
+**证明路线（外部输入）.** 非分歧 Steinberg 的 conductor 来自非零 monodromy $N$，指数为 $1$。若 $\chi$ 分歧，参数为 special representation 再张量分歧 character，惯性在两个维度上都通过 $\chi$ 作用；Artin conductor 的主要贡献为两个 character 的 conductor，monodromy 不再额外改变最大指数，得到 $2a(\chi)$。完整证明属于局部 epsilon 因子和 newvector 理论。$\square$
 
 ## AE.3 Supercuspidal 表示
 
@@ -120,7 +120,7 @@ wild 情形，尤其 residue characteristic 为 $2$ 时，需要 Bushnell-Hennia
 
 **命题 AE.11.** 若 $\pi$ 为 supercuspidal，则其 LLC 参数 $\varphi_\pi$ 是不可约二维 Weil 表示，且 $N=0$。
 
-**证明草图.** `GL(2)` LLC 与 parabolic induction 相容。若参数可约为两个一维参数直和，则表示侧属于 principal series 或其极限情形，不可能 supercuspidal。Steinberg 类型对应可约 Weil 表示加非零 monodromy。故 supercuspidal 对应不可约二维 Weil 表示；不可约 Weil 表示没有非零 $N$ 与其相容，因为 $N$ 的 kernel 会给出非零稳定子空间。$\square$
+**证明路线（外部输入）.** `GL(2)` LLC 与 parabolic induction 相容。若参数可约为两个一维参数直和，则表示侧属于 principal series 或其极限情形，不可能 supercuspidal。Steinberg 类型对应可约 Weil 表示加非零 monodromy。故 supercuspidal 对应不可约二维 Weil 表示；不可约 Weil 表示没有非零 $N$ 与其相容，因为 $N$ 的 kernel 会给出非零稳定子空间。$\square$
 
 **命题 AE.12.** 若 $\pi$ 为 supercuspidal，则标准局部 L 因子通常为 $1$；更精确地，
 $$
@@ -138,7 +138,7 @@ $$
 2. Steinberg twists：$\varphi$ 可约但 $N\ne0$；
 3. supercuspidal：$\varphi$ 为不可约二维 Weil 表示，$N=0$。
 
-**证明草图.** 这是 `GL(2)` Langlands classification 和局部 LLC 的相容性。所有不可约可容许表示要么来自 Borel 诱导的 subquotient，要么 supercuspidal；Borel 诱导的一般点给 principal series， reducibility point 给 character 和 Steinberg twist；supercuspidal 对应不可约参数。$\square$
+**证明路线（外部输入）.** 这是 `GL(2)` Langlands classification 和局部 LLC 的相容性。所有不可约可容许表示要么来自 Borel 诱导的 subquotient，要么 supercuspidal；Borel 诱导的一般点给 principal series， reducibility point 给 character 和 Steinberg twist；supercuspidal 对应不可约参数。$\square$
 
 **命题 AE.14.** 椭圆曲线 $E/\mathbb Q_q$ 的局部自守表示类型与约化类型满足如下接口：
 
@@ -146,7 +146,7 @@ $$
 2. 乘法约化对应 Steinberg twist；
 3. 加法 potentially good reduction 通常对应 supercuspidal 或 ramified principal series，取决于潜在约化和惯性作用。
 
-**证明草图.** 好约化时 Tate module 非分歧，参数半单且 $N=0$。乘法约化时 Tate curve 给出非零 monodromy，因此对应 Steinberg twist。加法约化时惯性像有限但非平凡，或经有限扩张后好约化；相应参数可能不可约或分歧可约，分别给 supercuspidal 或 ramified principal series。完整分类依赖局部 `GL(2)` LLC 和椭圆曲线潜在约化理论。$\square$
+**证明路线（外部输入）.** 好约化时 Tate module 非分歧，参数半单且 $N=0$。乘法约化时 Tate curve 给出非零 monodromy，因此对应 Steinberg twist。加法约化时惯性像有限但非平凡，或经有限扩张后好约化；相应参数可能不可约或分歧可约，分别给 supercuspidal 或 ramified principal series。完整分类依赖局部 `GL(2)` LLC 和椭圆曲线潜在约化理论。$\square$
 
 ## 练习
 

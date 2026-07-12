@@ -30,7 +30,10 @@
 
 **命题 24.2.** P0 输入不等于无假设定理。
 
-**证明.** P0 表示正文依赖强度，而不是定理适用范围。每个 P0 输入仍有基、系数、有限性、正则性或特征假设。后续 locator 阶段必须把这些假设写入定理账本。`\square`
+**证明.** P0 表示正文依赖强度，而不是定理适用范围。每个 P0 输入仍有基、
+系数、有限性、正则性或特征假设。前三批 locator 已把基础、六操作和第
+09-18 章的这些假设写入定理账本；后续扩展条目仍须遵守同一规则。
+`\square`
 
 ## 24.2 研究边界
 
@@ -65,21 +68,29 @@
 5. 术语、符号和交叉引用统一；
 6. 关键计算不只停留在口号层。
 
-**命题 24.13.** 截至当前版本，本书满足 1、2、3、6 的草稿级要求，但尚未满足 4、5 的出版级要求。
+**命题 24.13.** 截至当前版本，本书满足 1、2、3、6 的草稿级要求；条件 4
+在基础、六操作及第 09-18 章 P0 主线已经达到，条件 5 和第 19-23 章的全书
+出版级定位仍未完成。
 
-**证明.** 主体 24 章与附录 A-H 已覆盖核心概念、形式工具和低阶计算；每章均含定义、命题/定理和练习。`THEOREM_LEDGER.md` 与 `REFERENCE_LOCATOR_LEDGER.md` 已建立外部输入分层，但许多 P0 条目尚无精确章节/定理号/page locator；交叉引用还未统一为稳定 label。因此结论成立。`\square`
+**证明.** 主体 24 章与附录 A-H 已覆盖核心概念、形式工具和低阶计算；每章
+均含定义、命题/定理和练习。`P0_REFERENCE_LOCATORS_BATCH_1.md` 至 batch 3
+已为所述主线给出定理/章节号、假设与稳定链接。另一方面，equivariant、
+stacky 和 realization 队列仍有 P0 条目未精确定位，交叉引用也未统一为稳定
+label。因此只能得到所述分层结论。`\square`
 
 ## 24.5 资料源定位计划
 
 **定义 24.14.** Theorem locator 是外部输入在资料源中的精确定位，包括版本、章节、定理号、页码、假设和本书使用方式。
 
-**计划 24.15.** 后续出版级校订按以下顺序补 locator：
+**计划 24.15.** 前三批已经完成 Morel--Voevodsky/Drew--Gallauer、基础
+六操作，以及 `H\mathbb Z`、`DM`、`KGL`、`MGL`、slice、finite/framed
+transfers、fundamental classes、norms、Milnor--Witt 主线。后续出版级校订
+只按以下顺序继续：
 
-1. Morel-Voevodsky、Ayoub、Cisinski-Deglise、Drew-Gallauer。
-2. `H\mathbb Z`、`DM`、`KGL`、`MGL`、slice filtration。
-3. Fundamental classes、framed transfers、norms、Milnor-Witt。
-4. Equivariant、stacky、log、perfect、analytic 扩展。
-5. Realization functors 和 conservativity/comparison theorems。
+1. Equivariant 与 stacky P0 扩展；log/perfect/analytic 保留既定 P1/R 边界。
+2. Realization functors 及其 six-operation compatibility、conservativity 和
+   comparison theorems。
+3. 全书 page locator 与自动化 labels 终校。
 
 **命题 24.16.** 没有 theorem locator 的外部输入不得进入最终出版态的无条件正文。
 
@@ -89,11 +100,20 @@
 
 **命题 24.17.** 截至本章，本书已达到“正式教材范围的内部闭合草稿”，但未达到“出版级数学闭合”。
 
-**证明.** 第一至第二十四章已经覆盖 motivic spaces、stable `\mathbf{SH}`、六操作、purity、duality、`H\mathbb Z`、`DM`、`KGL`、`MGL`、slices、transfers、framed recognition、fundamental classes、norms、Milnor-Witt、equivariant/stacky/log/perfect/realization/universal formalisms 和研究边界。因此概念方向已闭合。另一方面，P0/P1 定理尚未补精确 locator，附录中的基础证明、模型比较和符号交叉表尚未完成，故未达到出版级数学闭合。`\square`
+**证明.** 第一至第二十四章已经覆盖 motivic spaces、stable `\mathbf{SH}`、
+六操作、purity、duality、`H\mathbb Z`、`DM`、`KGL`、`MGL`、slices、
+transfers、framed recognition、fundamental classes、norms、Milnor--Witt、
+equivariant/stacky/log/perfect/realization/universal formalisms 和研究边界。
+基础至第十八章的 P0 主线已有精确 locator；但第 19-23 章仍有扩展/realization
+P0 队列，且自动交叉引用和最终排版尚未闭合。因此概念与主线教学闭合，
+全书出版闭合仍未达到。`\square`
 
 ## 24.7 本章小结
 
-Motivic homotopy and six functors 的现代边界集中在 stacky/analytic/perfect/log 扩展、transfer calculus、norms/framed structures、slice computations 和 quadratic refinements。当前书稿已经有完整第一版覆盖面；下一阶段应转入 locator、附录基础证明、交叉引用和逐章严格化。
+Motivic homotopy and six functors 的现代边界集中在
+stacky/analytic/perfect/log 扩展、transfer calculus、slice computations 和
+quadratic refinements。基础至第十八章 P0 主线已完成定位；下一阶段应集中于
+extensions/realization locator、交叉引用和出版终校。
 
 ## 练习
 

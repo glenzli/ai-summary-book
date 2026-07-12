@@ -18,10 +18,13 @@
 
 ## 2. Sheaves、D-modules 和几何表示论教材
 
-- Beilinson, Bernstein, Deligne, *Faisceaux pervers*。用途：perverse sheaves、decomposition theorem、nearby cycles。分类：核心定理。
+- Beilinson, Bernstein, Deligne, *Faisceaux pervers*, Asterisque 100, 1982, https://www.numdam.org/item/AST_1982__100__1_0/。用途：`BBD-1` perverse t-structure、middle extension、simple objects；`BBD-2` decomposition theorem，正文定位到 6.2.5。分类：核心定理。
+- Bernstein and Lunts, *Equivariant Sheaves and Functors*, Lecture Notes in Mathematics 1578, Springer, 1994。用途：Betti equivariant derived categories、finite-dimensional approximations、forgetful t-structure。分类：基础定义和核心 formalism。
 - Kashiwara and Schapira, *Sheaves on Manifolds*。用途：constructible sheaves、microlocal language、Verdier duality。分类：基础定义和核心定理。
 - Hotta, Takeuchi, Tanisaki, *D-Modules, Perverse Sheaves, and Representation Theory*。用途：D-modules、Riemann-Hilbert、localization 语境。分类：基础定义和核心定理。
 - Chriss and Ginzburg, *Representation Theory and Complex Geometry*。用途：equivariant K-theory、Steinberg variety、Springer correspondence、Hecke algebras。分类：基础定义和核心定理。
+- de Cataldo and Migliorini, *The hard Lefschetz theorem and the topology of semismall maps*, Ann. Sci. Ecole Norm. Sup. 35 (2002), 759--772, https://numdam.org/articles/10.1016/s0012-9593%2802%2901108-4/。用途：`BBD-SS-1` semismall decomposition、relevant strata 和 intersection-form nondegeneracy；第十二章 $GL_2$ convolution。分类：核心定理。
+- Saavedra Rivano, *Categories Tannakiennes*, Lecture Notes in Mathematics 265, Springer, 1972；Deligne and Milne, *Tannakian Categories*, in *Hodge Cycles, Motives, and Shimura Varieties*, Lecture Notes in Mathematics 900, Springer, 1982。用途：`TANNAKA-1` neutral Tannakian reconstruction；只构造 affine group scheme，不承担 Satake root datum 识别。分类：核心外部输入。
 
 ## 3. Kazhdan-Lusztig、localization 和 Springer 理论
 
@@ -35,9 +38,9 @@
 
 ## 4. Geometric Satake 和仿射几何
 
-- Mirkovic and Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, arXiv:math/0401222, v5 revised 2018-02-13, https://arxiv.org/abs/math/0401222。用途：geometric Satake 等价。分类：核心定理。
+- Mirkovic and Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, arXiv:math/0401222, v5 revised 2018-02-13, https://arxiv.org/abs/math/0401222。用途：`AFFGR-1` (§2 affine Grassmannian/orbits)、`GSAT-WEIGHT-1` (Theorem 3.6)、`GSAT-CONV-1` (Proposition 4.2, Lemma 4.4, Proposition 4.6, §§5--6)、`GSAT-FIBER-1` (Corollary 3.7, Proposition 6.3)、`GSAT-1` (主等价 (1.1), Theorem 12.1)。分类：核心定理。
 - Ginzburg, affine Grassmannian 和 perverse sheaves 相关工作。用途：geometric Satake 早期构造。分类：核心定理。
-- Zhu, affine Grassmannian 和 geometric Satake 相关讲义/论文。用途：混合特征和现代 Satake 入口。分类：核心定理或研究边界，按章节定位。
+- Zhu, *An introduction to affine Grassmannians and the geometric Satake equivalence*, arXiv:1603.05593, https://arxiv.org/abs/1603.05593。用途：`AFFGR-1`、`AFFGR-CONV-1` 的现代讲义入口及 geometric Satake；mixed-characteristic results 只作另一模型入口。分类：基础定义和核心定理入口。
 - Iwahori and Matsumoto, affine Hecke algebra 相关原始工作。用途：affine Hecke algebra、Iwahori double cosets。分类：核心定理入口。
 - Lusztig, affine Hecke algebras、character sheaves 和 cells 相关工作。用途：affine Kazhdan-Lusztig theory、character sheaves、cells。分类：核心定理和研究边界。
 - Beilinson and Drinfeld, affine Grassmannian、factorization 和 chiral algebras 相关工作。用途：affine Grassmannian、geometric Satake、Kac-Moody localization 和 geometric Langlands 背景。分类：核心定理入口和研究边界。
@@ -52,7 +55,6 @@
 - Braden, Proudfoot, Webster, *Quantizations of conical symplectic resolutions I*, arXiv:1208.3863；Braden, Licata, Proudfoot, Webster, *Quantizations of conical symplectic resolutions II*, arXiv:1407.0964。用途：symplectic resolution category $\mathcal O$ 和 symplectic duality。分类：核心定理和研究边界。
 - Braverman, Finkelberg, Nakajima, *Towards a mathematical definition of Coulomb branches of 3-dimensional $\mathcal N=4$ gauge theories, II*, arXiv:1601.03586, https://arxiv.org/abs/1601.03586。用途：Coulomb branch 的 BFN 构造。分类：研究边界到核心定理之间，进入正文前需补 locator。
 - Braden, Licata, Proudfoot, Webster, symplectic duality。用途：symplectic duality 语言。分类：研究边界，进入正文前需补 locator。
-- Zhu, *An introduction to affine Grassmannians and the geometric Satake equivalence*, arXiv:1603.05593, https://arxiv.org/abs/1603.05593。用途：affine Grassmannian 和 geometric Satake 现代讲义入口。分类：基础定义和核心定理入口。
 - Lusztig, *Introduction to Quantum Groups* 及 canonical basis 相关论文。用途：quantum groups、canonical bases、quiver variety/perverse sheaf 模型。分类：核心定理入口。
 - Kashiwara, crystal bases 和 global basis 相关工作。用途：crystal bases、global crystal basis。分类：核心定理入口。
 - Kontsevich and Soibelman, cohomological Hall algebra 和 Donaldson-Thomas theory 相关工作。用途：CoHA、wall-crossing 和 BPS 结构。分类：研究边界和核心定理入口。

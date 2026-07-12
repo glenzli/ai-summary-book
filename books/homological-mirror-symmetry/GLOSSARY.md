@@ -6,18 +6,19 @@
 | --- | --- |
 | A-side | HMS 中由辛几何、Lagrangian branes、Fukaya categories 构成的一侧 |
 | B-side | HMS 中由代数几何、coherent sheaves、perfect complexes、matrix factorizations 构成的一侧 |
-| brane | Lagrangian 加上 grading、orientation、spin/Pin、local system、bounding cochain 等数据 |
+| brane | Exact 入口中为 Lagrangian、chosen primitive、grading、relative Pin/spin 与 local system；非 exact 时还可能含 bounding cochain |
 | bounding cochain | Maurer-Cartan 解，用于消除或控制 Fukaya category 中的 curvature |
 | curved $A_\infty$ | 允许 $\mu^0\ne0$ 的 $A_\infty$ 结构 |
 | dg category | Hom 为链复形且复合为链映射的范畴 |
 | $A_\infty$ category | 复合只满足高阶同伦结合律的增强范畴 |
 | quasi-equivalence | Hom complexes 上 quasi-isomorphism 且 $H^0$ 上本质满的增强函子 |
-| Morita equivalence | 诱导 perfect module categories 等价的增强函子 |
-| $\operatorname{Perf}(X)$ | $X$ 上 perfect complexes 的增强范畴 |
-| $\mathrm D^b\operatorname{Coh}(X)$ | coherent sheaves 的有界导出范畴 |
-| matrix factorization | $\mathbb Z/2$-分次对象，微分平方为 potential $W$ 的 B-side LG brane |
+| Morita equivalence | 诱导 perfect module dg/$A_\infty$ categories quasi-equivalent；不必使 raw $H^0$ categories 等价 |
+| split-generation | Representable modules 的厚闭包等于 $H^0\operatorname{Perf}(\mathcal A)$ |
+| $\operatorname{Perf}_{\mathrm{dg}}(X)$ | 约定 2.10 的 h-injective model 中 perfect complexes 的 dg enhancement |
+| $\mathrm D^b\operatorname{Coh}(X)$ | coherent sheaves 的 ordinary bounded derived/triangulated category；enhancement 需另写 model |
+| matrix factorization | $\mathbb Z/2$-分次对象，奇微分平方为 potential；affine dg model 与 nonaffine/descent model 必须区分 |
 | singularity category | $\mathrm D^b\operatorname{Coh}(X)/\operatorname{Perf}(X)$，测量奇异性 |
-| Fukaya category | Lagrangian branes 与 Floer cochains 构成的 $A_\infty$ category |
+| compact exact Fukaya category | Compact exact branes、Hamiltonian-chord complexes 与 coherent polygon operations 构成的 $A_\infty$ category |
 | wrapped Fukaya category | 非紧 Liouville 几何中的 Fukaya category，morphisms 由 Hamiltonian chords 生成 |
 | partially wrapped category | 带 stop 限制的 wrapped Fukaya category |
 | stop | 无穷远 contact boundary 上禁止 wrapping 穿过的闭/Legendrian 数据 |
@@ -31,7 +32,7 @@
 | Dehn twist | 沿 Lagrangian sphere 的辛自同构；Picard-Lefschetz monodromy 模型 |
 | open-closed map | 从 Fukaya category 的 Hochschild homology 到 quantum/symplectic cohomology 的映射 |
 | closed-open map | 从 quantum/symplectic cohomology 到 Hochschild cohomology 的映射 |
-| Abouzaid criterion | open-closed map 命中单位时对象集合 split-generates 的准则 |
+| Abouzaid criterion | Exact wrapped 情形中，full subcategory 的 $HH$ 经 $HH(\mathcal W)$ 到 $SH$ 的 composite 命中 global unit 时 split-generates $\mathcal W$ |
 | Hochschild homology | 增强范畴的 Morita 不变量，HMS 必须保持 |
 | HKR | Hochschild homology/cohomology 与 Hodge/polyvector 数据的同构定理 |
 | Fourier-Mukai transform | B-side kernel $K\in\operatorname{Perf}(X\times Y)$ 诱导的导出函子 |

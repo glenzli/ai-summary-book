@@ -7,7 +7,7 @@
 ## 状态约定
 
 - `P`：正文给出证明。
-- `S`：正文给出证明草图，完整证明依赖标准背景材料或附录。
+- `S`：正文给出外部输入的证明路线，完整证明依赖标准背景材料或附录。
 - `E`：外部输入定理；来源应在 [SOURCES.md](SOURCES.md) 或附录 E 中可追溯。
 - `C`：猜想、纲领性预期或尚未在本书中作为定理使用的期望。
 
@@ -24,6 +24,7 @@
 | 1.15 | E | $K$ 在 $\mathbb A_K$ 中离散且 $\mathbb A_K/K$ 紧 | Minkowski/Riemann-Roch 型定理 |
 | 1.19 | P | idele norm 在 $K^\times$ 上平凡 | 乘积公式 |
 | 1.21 | E | adeles 的 Pontryagin 自对偶性 | 局部 Fourier 分析、Poisson summation |
+| 2.4.1 | E | Norm-one idele class group 紧及 Hecke quasi-character 唯一酉化 | idele class group 结构定理 |
 | 2.5 | P | Hecke 特征分解为局部 restricted product | idele 群 restricted product |
 | 2.9 | E | Tate 局部理论和局部函数方程 | Tate thesis |
 | 2.11 | P | 整体 zeta 积分的 Euler 分解 | Fubini、restricted tensor product |
@@ -46,6 +47,8 @@
 | 4.15 | E | 非分歧 Satake 同构 | 球 Hecke 代数 |
 | 4.20 | E | Harish-Chandra 理论接口 | 实还原群表示论 |
 | 5.3 | P | 局部 Weil 群短正合列 | Weil 群定义 |
+| 5.8.1 | P | $W_F\times\operatorname{SL}_2$ 参数给出 Weil-Deligne 数据 | 微分、$\operatorname{SL}_2$ 共轭计算 |
+| 5.8.2 | E | Frobenius-semisimple $W_F\times\operatorname{SL}_2$ 参数与 Weil-Deligne 数据等价 | Deligne、Jacobson-Morozov |
 | 5.13 | S | Satake 参数解释为非分歧局部参数 | 4.15 |
 | 5.14 | P | `GL(1)` 局部 Langlands | 3.2 |
 | 5.15 | E | `GL(n)` 局部 Langlands | Harris-Taylor、Henniart 等 |
@@ -96,11 +99,12 @@
 | 9.23 | E | 半稳定模性定理 | Wiles-Taylor-Wiles |
 | 9.24 | P | 半稳定模性是费马应用章所需模性输入 | 90 章逻辑链 |
 | 10.1 | E | 局部-整体相容性 | Deligne、Carayol 等 |
+| 10.2.1 | E | $q=\ell$ 处 de Rham/potentially semistable 相容边界 | p-adic Hodge theory |
 | 10.3 | P | 好素数 Frobenius-Hecke 迹相容 | 10.1 |
 | 10.6 | E | Serre 模性定理接口 | Khare-Wintenberger、Kisin |
 | 10.8 | E | Ribet 降层接口 | Ribet 定理 |
 | 10.10 | E | 半稳定椭圆曲线降层接口 | 10.8 |
-| 10.11 | E | Frey 曲线局部导子计算 | Tate algorithm |
+| 10.11 | E | Frey 曲线局部导子、$p$ 处 weight 条件与残余绝对不可约性 | Tate algorithm、Frey-Serre-Ribet、Mazur |
 | 10.13 | P | Frey-Ribet 级数结论 | 9.23、10.8、10.11 |
 | 10.14 | P | 级 $2$ 权 $2$ newform 推出 $S_2(\Gamma_0(2))\ne0$ | newform 定义 |
 
@@ -134,6 +138,7 @@
 | 12.42 | E | 若干已知 LLC 情形 | tori、`GL(n)`、classical groups |
 | 12.45 | P | 几乎处处非分歧时 Euler 乘积可形式定义 | 非分歧参数 |
 | 13.8 | P | anisotropic modulo center 情形自守形式尖点 | 紧商积分 |
+| 13.8.1 | E | 无 proper parabolic 与 modulo-center 紧商的 reduction-theory 判准 | reduction theory |
 | 13.11 | E | 自守表示 restricted tensor product 分解 | Flath 分解 |
 | 13.14 | P | 坏位置有限集存在 | 几乎处处非分歧 |
 | 13.17 | P | `GL(n)` 标准局部因子由 Satake 参数给出 | 11.51 |
@@ -171,14 +176,14 @@
 | 15.25 | P | symmetric power lift 存在时的 L 函数相容 | functoriality 定义 |
 | 15.28 | E | Arthur-Mok 型分类的函子性接口 | Arthur、Mok |
 | 15.29 | S | 函子性与 Galois 表示复合相容 | Frobenius-Satake 相容 |
-| 16.2 | P | 测试函数卷积保持右有限自守函数 | 紧支撑积分 |
+| 16.2 | P | 测试函数卷积保持 smoothness 与有限处右开紧有限；archimedean $K$-有限需测试函数附加条件 | 紧支撑积分、平移换元 |
 | 16.5 | E | 紧商 trace formula 接口 | Selberg/Arthur trace formula |
 | 16.7 | E | Arthur trace formula 结构接口 | Arthur trace formula |
 | 16.13 | S | `GL(n)` 中 regular semisimple 稳定共轭等于普通共轭 | 特征多项式 |
 | 16.18 | E | endoscopic transfer 的存在接口 | transfer factors |
 | 16.20 | E | fundamental lemma | Ngô |
 | 16.22 | E | 稳定 trace formula 接口 | Arthur |
-| 16.24 | S | trace formula 比较的函子性含义 | 稳定谱分解 |
+| 16.24 | P | 在 matching、稳定谱展开和分布相等假设下推出 packet 传递 | 线性分布比较 |
 | 16.26 | E | twisted trace formula 的 base change 接口 | Arthur-Clozel |
 | 17.4 | C | Ramanujan-tempered 预期 | temperedness 纲领 |
 | 17.15 | E | Arthur multiplicity formula | Arthur 分类 |
@@ -201,14 +206,15 @@
 | 19.11 | E | 几何 Satake 等价 | Mirkovic-Vilonen 等 |
 | 19.13 | P | 卷积对应张量积 | 19.11 |
 | 19.15 | P | Hecke 函子的张量相容 | 卷积定义 |
-| 19.16 | S | 几何 Satake 的函数迹恢复经典 Satake | sheaf-function dictionary |
+| 19.16 | E | 有限域下降、Weil structure 与半 Tate 归一化下恢复经典 Satake | sheaf-function dictionary |
 | 20.3 | P | local system 给出表示范畴上的张量函子 | 关联丛构造 |
 | 20.6 | P | eigensheaf 对直和与张量积的相容 | Hecke 本征定义 |
 | 20.7 | C | 几何 Langlands 朴素本征层形式 | 几何 Langlands |
 | 20.9 | E | 几何类域论接口 | Abel-Jacobi、Fourier-Mukai |
 | 20.11 | S | eigensheaf 的 trace 给出 Hecke eigenfunction | sheaf-function dictionary |
-| 21.7 | C | 几何 Langlands 范畴形式 | categorical geometric Langlands |
-| 21.9 | S | 范畴形式推出本征层形式 | skyscraper sheaf 与 Hecke 作用 |
+| 21.7 | E | $\mathbb L_G:\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)\to\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G})$ 为等价 | Gaitsgory-Raskin proof-series preprints |
+| 21.8.1 | E | 正特征中某些参数连通分支上的部分 $\ell$-adic categorical equivalence | Gaitsgory-Raskin arXiv:2508.02237 |
+| 21.9 | P | $\mathbb L_G^{-1}$ 把 spectral residual-gerbe 点对象送到 Hecke eigensheaf | 21.7、Hecke/spectral compatibility |
 | 22.2 | S | $\operatorname{Bun}_G(\mathbb F_q)$ 与 adelic 双商 | Weil uniformization |
 | 22.3 | E | sheaf-function dictionary | Grothendieck-Lefschetz trace formula |
 | 22.5 | S | eigensheaf trace 给出 eigenfunction | 20.11、22.3 |
@@ -258,14 +264,14 @@
 | B.14 | S | 离散闭子群商存在右不变测度 | B.12 |
 | B.15 | P | restricted product 张量函数积分分解 | 有限维 Fubini |
 | B.16 | P | restricted product 开紧体积公式 | B.15 |
-| C.4 | S | Hecke 代数积分作用良定义 | 光滑性与紧支撑 |
+| C.4 | P | Hecke 代数积分作用良定义 | 光滑性与紧支撑 |
 | C.5 | P | 双不变 Hecke 函数保持 $J$-不变量 | Haar 左不变性 |
 | C.9 | E | Jacquet functor 基本性质 | Bernstein-Zelevinsky 理论 |
 | C.13 | P | 有限维 Schur 引理 | 代数闭域上线性代数 |
 | C.14 | E | admissible smooth 表示的 Schur 引理 | Bernstein 理论 |
 | C.16 | P | 不可约 admissible smooth 表示有中心特征 | C.14 |
 | C.18 | P | smooth dual 是 smooth representation | stabilizer 共轭 |
-| C.19 | S | $J$-不变 smooth dual 与 $(V^J)^\vee$ 比较 | 开紧平均算子 |
+| C.19 | P | $J$-不变 smooth dual 与 $(V^J)^\vee$ 比较 | 开紧平均算子 |
 | C.21 | P | admissibility 在扩张下稳定 | $J$-不变量左正合 |
 | C.22 | P | 有限长度表示的 admissibility 判准 | C.21 |
 | C.23 | E | reductive $p$-adic groups 中不可约 smooth 表示可容许 | Bernstein 理论 |
@@ -308,23 +314,23 @@
 | G.5 | P | `GL(n)` 自对偶 | root datum 对偶 |
 | G.7 | P | `SL(n)` character/cocharacter lattices | determinant 约束 |
 | G.8 | P | `SL(n)` 与 `PGL(n)` 互为对偶 | root/weight lattice 对偶 |
-| G.11 | S | $\operatorname{Sp}_{2n}$ root system 为 type $C_n$ | Lie algebra weights |
+| G.11 | P | $\operatorname{Sp}_{2n}$ root system 为 type $C_n$ | Lie algebra weights |
 | G.12 | E | classical groups 的对偶表 | root datum classification |
 | G.14 | P | split `GL(n)` 的 L 群 | G.5 |
 | G.15 | P | split `SL(n)` 和 `PGL(n)` 的 L 群 | G.8 |
-| G.17 | S | $\operatorname{Res}_{E/F}\mathbb G_m$ 的 character lattice | 基变换到 $\overline F$ |
+| G.17 | P | $\operatorname{Res}_{E/F}\mathbb G_m$ 的 character lattice | 基变换到 $\overline F$ |
 | G.18 | P | restriction of scalars torus 的 L 群 | G.17 |
 | G.20 | P | determinant 给出 L 同态 | split L 群定义 |
 | G.21 | P | central embedding 给出 L 同态 | split L 群定义 |
 | G.22 | P | symmetric square 给出 L 同态 | 代数群表示 |
 | H.2 | P | 双陪集算子代表无关并保持 $\Gamma$-不变性 | slash 右作用 |
-| H.4 | S | $\ell\nmid N$ 的 $\Gamma_0(N)$ Hecke 双陪集分解 | 指数 $\ell$ 子格分类 |
+| H.4 | P | $\ell\nmid N$ 的 $\Gamma_0(N)$ Hecke 双陪集分解 | 指数 $\ell$ 子格分类 |
 | H.5 | P | $\ell\mid N$ 的 $U_\ell$ 代表族 | 第六章定义 |
 | H.7 | P | $\alpha_b$ 代表族给出 $a_{\ell n}$ 项 | Fourier 根求和 |
 | H.8 | P | $\beta$ 代表给出 $\ell^{k-1}a_{n/\ell}$ 项 | slash 计算 |
-| H.9 | S | 好素数 Hecke Fourier 公式 | H.4、H.7、H.8 |
+| H.9 | P | 好素数 Hecke Fourier 公式 | H.4、H.7、H.8 |
 | H.10 | P | 坏素数 $U_\ell$ Fourier 公式 | H.5、H.7 |
-| H.12 | S | Petersson 内积绝对收敛 | cusp 指数衰减 |
+| H.12 | P | Petersson 内积绝对收敛 | cusp 指数衰减 |
 | H.13 | E | Hecke 算子的 Petersson 正规性 | Hecke correspondence 理论 |
 | H.16 | S | adelic 球 Hecke 作用对应经典 $T_p$ | strong approximation、H.4 |
 | H.17 | S | $K_p$-球向量线上 Hecke 特征值为 $a_p$ | newform theory、H.16 |
@@ -339,14 +345,14 @@
 | I.14 | E | Rankin-Selberg 解析性质 | JPS-Shalika |
 | I.17 | E | Converse theorem 的积分表示背景 | Cogdell-Piatetski-Shapiro |
 | I.19 | P | 函子性转移推出非分歧 L 函数相容 | Satake 参数推前 |
-| J.2 | S | degeneracy operator 保持 cusp forms | 模曲线 degeneracy maps |
+| J.2 | P | degeneracy operator 保持 cusp forms | slash 算子、尖点参数计算 |
 | J.4 | E | Atkin-Lehner-Li old/new decomposition | Atkin-Lehner-Li theory |
 | J.7 | E | Atkin-Lehner operators | Atkin-Lehner theory |
 | J.8 | S | Atkin-Lehner involution 给出函数方程 root number | Mellin transform、Fricke involution |
 | J.11 | E | Casselman newvector theorem | local newform theory |
-| J.12 | S | 全局导子为局部导子乘积 | Casselman newvectors |
+| J.12 | P | 全局导子为局部导子乘积且给出最小 $K_1$-level | Casselman newvectors、有限分歧 |
 | J.13 | S | classical newform 级等于 adelic 导子 | J.4、J.11 |
-| J.14 | S | oldforms 是同一表示的高层向量 | strong multiplicity one |
+| J.14 | P | oldforms 是同一表示的高层向量 | J.13、strong multiplicity one |
 | J.16 | P | 级 $2$ newform 推出 $S_2(\Gamma_0(2))_{\operatorname{new}}\ne0$ | newform 定义 |
 | K.4 | E | Mazur representability | Galois deformation theory |
 | K.5 | S | 绝对不可约给出变形刚性 | Schur 引理 |
@@ -392,9 +398,10 @@
 | O.7 | P | Hecke functor 是 kernel transform | correspondence formalism |
 | O.9 | E | QCoh/IndCoh comparison | Gaitsgory-Rozenblyum |
 | O.12 | E | Singular support theory | Arinkin-Gaitsgory |
-| O.15 | C | Categorical geometric Langlands refined form | geometric Langlands conjecture |
-| O.16 | E | Nilpotent singular support theorem/interface | Arinkin-Gaitsgory、Gaitsgory |
-| O.17 | S | 朴素本征层是范畴对应的点支撑影像 | kernel action |
+| O.15 | E | half-twisted automorphic $\xrightarrow{\mathbb L_G}$ spectral 的 IndCoh 等价 | Gaitsgory-Raskin proof-series preprints |
+| O.16 | E | O.15 的 derived/renormalized/singular-support 技术链 | Gaitsgory-Raskin、Arinkin-Gaitsgory |
+| O.16.1 | E | 正特征中某些参数连通分支上的部分 $\ell$-adic 结果 | Gaitsgory-Raskin arXiv:2508.02237 |
+| O.17 | P | $\mathbb L_G^{-1}$ 下 residual-gerbe 点对象满足 Hecke 本征条件 | O.15 的 spectral/Hecke compatibility |
 | O.19 | E | Riemann-Hilbert correspondence | Kashiwara、regular holonomic D-modules |
 | P.2 | P | 球 Hecke 代数为结合含幺代数 | Haar 卷积 |
 | P.3 | E | Cartan 分解 | Bruhat-Tits theory |
@@ -404,7 +411,7 @@
 | P.12 | S | 非分歧主级数 Satake 参数公式 | Iwasawa 分解、Satake 变换 |
 | P.13 | P | `GL(n)` Satake 参数为无序 $n$ 元组 | 对偶 torus/Weyl 群 |
 | P.14 | P | `GL(n)` 非分歧标准 L 因子公式 | Satake 参数定义 |
-| P.15 | S | 几何 Satake trace 恢复 classical Satake | sheaf-function dictionary |
+| P.15 | E | 有限域 Weil sheaf 的 trace 恢复 classical Satake | Grothendieck-Lefschetz、geometric Satake |
 | Q.2 | E | Cuspidal support 唯一性 | Bernstein-Zelevinsky |
 | Q.4 | E | Segment representations | Zelevinsky |
 | Q.7 | E | Zelevinsky multisegment classification | Zelevinsky |
@@ -457,7 +464,7 @@
 | U.8 | E | Unitary group realization | endoscopy/base change |
 | U.9 | P | polarizable 假设来自 Shimura realization | unitary groups |
 | U.11 | E | p-adic Hodge comparison | Fontaine、Faltings |
-| U.12 | S | regular algebraic weight 决定 Hodge-Tate weights | Hodge filtration |
+| U.12 | E | 在固定构造定理与 $\operatorname{HT}(\chi_\ell)=\{1\}$ 下 regular weight 决定 Hodge-Tate weights | p-adic comparison、Hodge filtration |
 | U.13 | E | 局部-整体相容 | local-global compatibility |
 | U.14 | P | 非分歧相容是局部-整体相容的弱形式 | Satake parameter |
 | U.15 | E | Automorphy lifting interface | Taylor-Wiles、Kisin、BLGGT |
@@ -466,7 +473,7 @@
 | V.2 | E | local/global fields form class formations | class field theory |
 | V.4 | E | 局部 reciprocity | local class field theory |
 | V.5 | P | 非分歧扩张由 valuation quotient 控制 | local norms |
-| V.6 | E | 全局 reciprocity | global class field theory |
+| V.6 | E | 全局 reciprocity 的有限商同构、稠密像与 profinite completion | global class field theory |
 | V.7 | E | 局部符号乘积公式 | global class field theory |
 | V.8 | P | 全局 reciprocity 下降到 $C_K$ | V.7 |
 | V.9 | E | Norm subgroup theorem | class field theory |
@@ -544,15 +551,15 @@
 | AB.11 | P | 几何 Langlands 谱侧使用 $\operatorname{IndCoh}_{\mathcal N}$ 的原因 | singular support |
 | AB.12 | E | six functor formalism | sheaf theory |
 | AB.14 | P | Hecke functor 是 kernel functor 特例 | correspondence |
-| AB.16 | E | renormalized D-modules on $\operatorname{Bun}_G$ | Gaitsgory |
+| AB.16 | E | renormalized half-twisted D-modules on $\operatorname{Bun}_G$ | Gaitsgory；Gaitsgory-Raskin |
 | AB.17 | P | $\operatorname{Bun}_G$ 非紧性迫使 renormalization | Harder-Narasimhan strata |
-| AB.18 | E | spectral action | categorical geometric Langlands |
+| AB.18 | E | spectral action on $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$ | categorical geometric Langlands |
 | AB.19 | S | Hecke eigensheaf 是 spectral action 点支撑特例 | spectral action |
 | AC.1 | E | perfectoid spaces and diamonds | Scholze |
-| AC.4 | E | Fargues-Fontaine curve | Fargues-Fontaine |
-| AC.5 | E | FF 曲线 vector bundles 分类 | Fargues-Fontaine |
-| AC.6 | P | Newton slope 几何化为 bundle slope | slope classification |
-| AC.7 | E | $G$-bundles on FF curve classified by $B(G)$ | Fargues |
+| AC.4 | E | 由完备代数闭 $C/F$ 及 $C^\flat$ 构造 Fargues-Fontaine curve | Fargues-Fontaine |
+| AC.5 | E | 完备代数闭几何点上的 FF vector bundles 按 slopes 分类 | Fargues-Fontaine；Fargues-Scholze II.2.14 |
+| AC.6 | P | 在 AC.4 假设下 Newton slope 几何化为 bundle slope | AC.5、Dieudonne-Manin |
+| AC.7 | E | 完备代数闭几何点上的 $G$-bundle 同构类由 $B(G)$ 分类 | Fargues；Fargues-Scholze III.2.2 |
 | AC.9 | P | basic elements 给出 inner forms | automorphism group |
 | AC.11 | E | local Shimura varieties as diamonds | Scholze-Weinstein |
 | AC.12 | S | Rapoport-Zink spaces 是 local Shimura 特例 | p-divisible groups |
@@ -560,8 +567,8 @@
 | AC.14 | P | local Shimura cohomology 同时有表示侧和 Weil 侧作用 | group actions |
 | AC.15 | E | Fargues-Scholze semisimple LLC | Fargues-Scholze |
 | AC.17 | P | Fargues-Scholze 是局部 Langlands 几何化 | 曲线比较 |
-| AC.18 | P | FF $G$-bundles 统一 inner forms 和 $B(G)$ | AC.7 |
-| AC.19 | S | 非分歧 Satake 参数是几何局部 Langlands 影子 | spectral action |
+| AC.18 | P | AC.4 几何纤维上的 FF $G$-bundles 统一 inner forms 和 $B(G)$ | AC.7、v-descent |
+| AC.19 | E | Fargues-Scholze semisimple 参数与非分歧 Satake 参数相容 | spectral action、unramified Hecke action |
 | AD.2 | S | Weierstrass 变量变换下判别式按 $u^{-12}$ 缩放 | 不变量权重 |
 | AD.4 | E | 局部最小 Weierstrass model 存在 | elliptic curves local theory |
 | AD.6 | E | Neron model existence | Neron models |
@@ -595,13 +602,13 @@
 $$
 90.5,\ 90.7,\ 90.8,\ 90.9 \Longrightarrow 90.10 \Longrightarrow 90.1.
 $$
-其中 $90.9$ 依赖附录 D 的 genus 计算；$90.7$ 属模性输入；$90.8$ 属降层输入；$90.5$ 属 Frey 曲线局部计算输入。
+其中 $90.9$ 依赖附录 D 的 genus 计算；$90.7$ 属模性输入；$90.8$ 属降层输入；$90.5$ 同时包含 Frey 曲线局部导子、$p$ 处 weight 条件和残余绝对不可约性，后三类责任不能互相推出。
 
 数论 Langlands 主线的核心链为
 $$
 1.15,\ 1.21 \Longrightarrow 2.13,\qquad
 3.2,\ 3.11 \Longrightarrow 3.16,\qquad
-4.15,\ 5.15 \Longrightarrow 12.32,
+5.8.1,\ 5.8.2,\ 4.15,\ 5.15 \Longrightarrow 12.32,
 $$
 并继续进入
 $$
@@ -617,4 +624,4 @@ $$
 $$
 19.11,\ 21.7 \Longrightarrow 21.9.
 $$
-当工作在有限域上时，$22.3$ 把 sheaf 侧结果投影到函数侧，连接第十三、十四章的函数域自守表示。
+当工作在有限域上时，$19.16$ 的有限域下降、Weil structure 和 half-Tate normalization 先恢复经典 Satake，$22.3$ 再把 sheaf 侧结果投影到函数侧。正特征 categorical 对应只按 21.8.1 的部分连通分支结果使用，不从 21.7 形式延拓。

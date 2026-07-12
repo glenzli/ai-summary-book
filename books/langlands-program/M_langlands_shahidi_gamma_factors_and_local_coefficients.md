@@ -132,7 +132,7 @@ $$
 
 **命题 M.16（Euler 乘积和局部系数的拼合）.** 在可分解数据下，全局 intertwining operator 分解为局部 intertwining operators 的 restricted tensor product；其 Whittaker coefficient 的全局函数方程分解为局部 local coefficients 的乘积。
 
-**证明草图.** 全局 Whittaker coefficient 沿 $U(K)\backslash U(\mathbb A_K)$ 积分。对纯张量 section，unfolding 后得到局部 Whittaker integrals 的乘积。全局 standard intertwining operator 也按 restricted tensor product 分解。Whittaker uniqueness 使每个局部函数方程由一个标量 local coefficient 控制；全局标量为局部标量乘积。$\square$
+**证明路线（外部输入）.** 全局 Whittaker coefficient 沿 $U(K)\backslash U(\mathbb A_K)$ 积分。对纯张量 section，unfolding 后得到局部 Whittaker integrals 的乘积。全局 standard intertwining operator 也按 restricted tensor product 分解。Whittaker uniqueness 使每个局部函数方程由一个标量 local coefficient 控制；全局标量为局部标量乘积。$\square$
 
 ## M.6 例子
 

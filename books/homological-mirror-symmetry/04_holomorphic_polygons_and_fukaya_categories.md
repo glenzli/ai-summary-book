@@ -2,11 +2,17 @@
 
 ## 本章目标
 
-本章在 exact、横截、regular 的入口假设下定义 Fukaya category 的高阶复合，并说明 $A_\infty$ 方程来自一维 holomorphic polygon 模空间的边界分解。一般 compact 或 obstructed Fukaya category 的构造不在本章内部完成。
+本章在一个固定的 compact exact Liouville 模型中定义 Fukaya category 的
+高阶复合，并说明 $A_\infty$ 方程来自一维 holomorphic polygon 模空间的
+边界分解。分析构造作为附录 E 的精确外部输入；一般 non-exact、monotone
+或 obstructed Fukaya category 不在本章内部完成。
 
 ## 依赖前置知识
 
-需要第一章的 $A_\infty$ 范畴语言和第三章的 exact Floer cochains。需要知道 Riemann surface、almost complex structure 和 Cauchy-Riemann 方程的基本形式。
+需要第一章与附录 B 的 $A_\infty$ 范畴语言、第三章的 exact Floer
+cochains，以及附录 E 中列出的 Fredholm/compactness/orientation/gluing
+输入。需要知道 Riemann surface、almost complex structure 和
+Cauchy--Riemann 方程的基本形式。
 
 ## 4.1 带边界标记点的圆盘
 
@@ -22,40 +28,81 @@ $$
 
 ## 4.2 Polygon 模空间
 
-**定义 4.4.** 设 $\mathbb L_0,\ldots,\mathbb L_d$ 是 exact Lagrangian branes，且相邻对横截。给定输入交点
+**约定 4.3A.** 本章固定约定 E.1A 的 Liouville completion
+$\widehat M$、compact exact brane 小集合 $\mathscr L$、系数域 $k$、Maslov
+cover、background class 与 relative Pin data，并固定一套定义 E.1B 的
+coherent Floer data。符号 $\mathcal F^c_{\mathrm{ex}}(\widehat M)$ 只指这一
+compact exact 模型。
+
+**定义 4.4.** 对有序对象对 $(L_{i-1},L_i)$，Hamiltonian chord 是路径
 $$
-x_i\in L_{i-1}\cap L_i,\qquad 1\le i\le d,
+x_i:[0,1]\to\widehat M,\qquad
+\dot x_i=X_{H_{i-1,i,t}}(x_i),\quad
+x_i(0)\in L_{i-1},\quad x_i(1)\in L_i.
 $$
-和输出交点 $x_0\in L_0\cap L_d$，一个 holomorphic polygon 是映射
+Pair data 取到所有 chords 非退化；紧 branes 与 compactly supported data
+使 chord 集合有限。给定输入 chords
 $$
-u:S\to M,\qquad S\in\mathcal R^{d+1},
+x_i\in\mathcal X(L_{i-1},L_i),\qquad 1\le i\le d,
+$$
+和输出 chord $x_0\in\mathcal X(L_0,L_d)$，一个 perturbed holomorphic
+polygon 是映射
+$$
+u:S\to\widehat M,\qquad S\in\mathcal R^{d+1},
 $$
 满足：
 
-1. Cauchy-Riemann 方程 $(du)^{0,1}=0$，或扰动版本；
+1. 方程 $(du-X_{K_S})^{0,1}_{J_S}=0$；
 2. $u(I_i)\subset L_i$；
-3. 在 puncture $\zeta_i$ 附近渐近于 $x_i$。
+3. 在固定 strip-like ends 上渐近于 $x_i$。
 
 相应模空间记为
 $$
 \mathcal M(x_0;x_d,\ldots,x_1).
 $$
-
-**定义 4.5.** 若 regularity 已成立，模空间的零维部分带有由 brane data 诱导的 orientation。其带符号计数记为
+若解 regular，其维数为
 $$
-n(x_0;x_d,\ldots,x_1)\in k.
+|x_0|-\sum_{i=1}^d|x_i|+d-2.
 $$
+当 pair Hamiltonian 为零且相邻 Lagrangians 横截时，chords 可识别为原来
+的交点模型；自 morphisms 与一般 coherent composition 仍必须使用上述
+pair/universal data。
 
-**警告 4.6.** regularity、orientation、compactness 和 gluing 不是形式代数事实。本章后续所有关于模空间计数的结论都依赖外部分析输入，来源主要为 Seidel exact 口径和 FOOO 一般口径。
+**定义 4.5.** 对 rigid solution
+$u\in\mathcal M^0(x_0;x_d,\ldots,x_1)$，relative Pin data 与
+determinant-line gluing 给出 orientation-line map $c_u$，边界上的局部系统
+parallel transport 给出 $\operatorname{PT}_u$；二者的定义域和值域见
+(E.3)--(E.5)。记
+$$
+\mathfrak m_u=\operatorname{PT}_u\otimes c_u.
+$$
+这是从输入 chord summands 到输出 chord summand 的次数 $2-d$ 线性映射。
+只有所有局部系统平凡秩一且 orientation lines 已选基时，才记其标量为
+$n(x_0;x_d,\ldots,x_1)\in k$。
+
+**警告 4.6.** Regularity、energy bound、no-escape、compactness、orientation
+和 gluing 不是形式代数事实。本章后续计数只引用外部输入定理 E.6 的
+Seidel compact exact 口径；FOOO 的一般 filtered/virtual 口径属于第五章，
+不能用来默默扩大本章定理的定义域。
 
 ## 4.3 高阶复合
 
-**定义 4.7.** 在 exact regular 假设下，Fukaya category 的高阶复合在交点生成元上定义为
+**定义 4.7.** 对每对 branes 定义
 $$
-\mu^d(x_d,\ldots,x_1)
-=\sum_{x_0} n(x_0;x_d,\ldots,x_1)\,x_0,
+CF^\ast(\mathbb L_0,\mathbb L_1)
+=\bigoplus_{x\in\mathcal X(L_0,L_1)}
+\operatorname{Hom}_k((E_{L_0})_{x(0)},(E_{L_1})_{x(1)})\otimes o_x.
 $$
-并按局部系统、orientation lines 和 Koszul 符号线性延拓到
+在定理 E.6 的 regular compact 模型中，对 homogeneous chord summands
+定义
+$$
+\mu^d(\xi_d,\ldots,\xi_1)
+=\sum_{x_0}\ \sum_{u\in\mathcal M^0(x_0;x_d,\ldots,x_1)}
+\mathfrak m_u(\xi_d,\ldots,\xi_1).
+\tag{4.1}
+$$
+零维 compactness 与 chord finiteness 使和为有限和。由维数公式，(4.1)
+给出次数 $2-d$ 的映射
 $$
 \mu^d:
 CF^\ast(\mathbb L_{d-1},\mathbb L_d)\otimes\cdots\otimes
@@ -64,26 +111,58 @@ CF^\ast(\mathbb L_0,\mathbb L_1)
 CF^\ast(\mathbb L_0,\mathbb L_d)[2-d].
 $$
 
-**例 4.8.** 当 $d=1$ 时，$\mu^1$ 是第三章的 Floer 微分。当 $d=2$ 时，$\mu^2$ 由 holomorphic triangles 计数给出，它在 Floer cohomology 上诱导乘法。
+**例 4.8.** 当 $d=1$ 时，$\mu^1$ 是 Hamiltonian-chord Floer 微分；在
+$H_{01}=0$ 且两对象横截时，它退化为定义 3.13 的交点模型。一般 pair
+data 与交点模型只在 continuation 意义下比较。$d=2$ 时，$\mu^2$ 由
+holomorphic triangles 计数，并在 Floer cohomology 上诱导乘法。
 
-**外部输入定理 4.9（Fukaya $A_\infty$ 方程，exact 入口）.** 在 exact、横截、regular、compactness 和 orientation 假设下，运算 $\{\mu^d\}_{d\ge1}$ 满足第一章定义的 $A_\infty$ 方程。
+**反例 4.8A（scalar count 不足以处理局部系统）.** 若某个 $E_{L_i}$
+秩大于 $1$，两条不同边界路径可给出不同 holonomy endomorphisms，即使
+底层 rigid polygons 的 signed cardinality 相同，所得 $\mu^d$ 也可不同。
+因此只记录 $n(x_0;x_d,\ldots,x_1)$ 会丢失运算本身。
 
-**证明草图.** 固定输入和输出，使相应 polygon 模空间的虚维数为 $1$。其紧化边界由 broken configurations 组成：一个 polygon 的某段连续输入先由 $\mu^s$ 合成，再作为另一个 polygon 的输入。这些边界分量与 $A_\infty$ 方程中的各项一一对应。带符号边界计数为零，因此这些项的代数和为零。exactness 用于排除 disk bubbling；regularity 和 gluing 保证紧化边界没有未计入的额外分量。证毕。
+**外部输入定理 4.9（compact exact Fukaya $A_\infty$ 方程）.** 在约定
+4.3A 下，采用外部输入定理 E.6 构造的运算 $\{\mu^d\}_{d\ge1}$ 良定义、
+次数为 $2-d$；其对应 suspended Taylor components $b_d$ 对每个
+$d\ge1$ 满足精确恒等式 (B.3)。因此它们给出一个非弯曲
+$A_\infty$ 结构。
 
-**推论 4.10.** 在定理 4.9 的假设下，exact Lagrangian branes 与 Floer cochains 构成一个 $A_\infty$ category。
+**证明路线（外部输入）.** 良定义性、有限性和次数来自 E.6(1)--(3)。
+推论 E.7 已把 compactified one-dimensional moduli spaces 的全部 broken
+boundary、determinant-line sign 与 gluing multiplicity 逐项识别为 (B.3)。
+Exactness 的内部作用仅是命题 E.4 所证明的 bubble 排除；其余分析责任
+仍属于外部输入 E.6。
+
+**推论 4.10.** 在定理 4.9 的假设下，exact Lagrangian branes 与 Floer
+cochains 构成一个非弯曲 $A_\infty$ category；这里暂不声称链级严格含
+单位。
 
 **证明.** 对象取 branes，morphism spaces 取 $CF^\ast$，高阶复合取定义 4.7。$A_\infty$ 方程由定理 4.9 给出。证毕。
 
 ## 4.4 Exact Fukaya category
 
-**定义 4.11.** 在固定 exact symplectic manifold $(M,\lambda)$ 上，exact Fukaya category $\mathcal F(M)$ 是如下 $A_\infty$ category：
+**定义 4.11.** 在约定 4.3A 下，compact exact Fukaya category
+$$
+\mathcal F^c_{\mathrm{ex}}(\widehat M;\mathscr L,k)
+$$
+是如下 $\mathcal U$-小 $A_\infty$ category：
 
-1. 对象是满足给定 admissibility 条件的 exact Lagrangian branes；
-2. morphism spaces 是 Floer cochain complexes $CF^\ast(\mathbb L_0,\mathbb L_1)$；
-3. 高阶复合由 holomorphic polygons 的带符号计数给出；
-4. 所有辅助 perturbation data 按 coherent choices 选择，使 $A_\infty$ 方程成立。
+1. 对象是 $\mathscr L$ 中含 primitive、grading、relative Pin 与局部系统的
+   compact exact branes；
+2. morphism spaces 是定义 4.7 的 finite Hamiltonian-chord complexes；
+3. 高阶复合是 (4.1) 的 orientation-line/local-system maps 之和；
+4. coherent perturbation data 与全部分析输入由定理 E.6 提供。
 
-**外部输入定理 4.12（选择独立性）.** 在 exact 口径下，不同 coherent perturbation data 得到 quasi-equivalent 的 Fukaya categories。
+在本书明确固定该 scope 时可简写为 $\mathcal F(M)$；该简写不得用于
+monotone、wrapped 或 general obstructed category。
+
+**外部输入定理 4.12（选择独立性）.** 对同一
+$(\widehat M,\mathscr L,k)$ 及同一 brane background data，两套满足 E.1B、
+E.6 的 coherent perturbation systems 之间存在 continuation
+$A_\infty$ functors；它们在 morphism complexes 上为 quasi-isomorphisms，
+在 $H^0$ 上本质满，因而给出 quasi-equivalent compact exact Fukaya
+categories。若改变对象集合、Maslov cover、background class 或系数域，
+该定理不声称所得 categories quasi-equivalent。
 
 **解释 4.13.** 定义 4.11 不是单纯的集合论定义：它压缩了大量分析选择。定理 4.12 保证压缩后的对象可以作为几何不变量。若没有选择独立性，HMS 的 A-side 会依赖非几何辅助数据。
 
@@ -91,8 +170,27 @@ $$
 
 **定义 4.14.** Fukaya category 通常先得到 cohomologically unital $A_\infty$ category：对每个对象 $\mathbb L$，$HF^\ast(\mathbb L,\mathbb L)$ 中有单位元，使 $H^\ast\mathcal F(M)$ 成为含单位范畴。若通过模型替换得到严格单位，则称为 strictly unital Fukaya model。
 
-**外部输入定理 4.15（strictification）.** 在标准 $A_\infty$ 同伦代数假设下，cohomologically unital $A_\infty$ category 可替换为 quasi-equivalent 的 strictly unital model。  
-来源：$A_\infty$ homological algebra，Lefevre-Hasegawa/Keller 口径。
+**外部输入定理 4.14A（compact exact 模型的同调单位）.** 在约定
+4.3A 与外部输入定理 E.6 的假设下，若同时选择与 strip-like ends 相容的
+unit perturbation data，则 continuation 元给出
+$$
+[e_{\mathbb L}]\in HF^0(\mathbb L,\mathbb L),
+$$
+且 $[e_{\mathbb L}]$ 在 $H^\ast\mathcal F^c_{\mathrm{ex}}$ 中是左右单位。
+这是 moduli-space 构造的额外外部输入，不由定理 4.9 的无单位
+$A_\infty$ identities 自动推出。来源：Seidel，*Fukaya Categories and
+Picard--Lefschetz Theory*，Chapters 9--12 的 compact exact 模型。
+
+**外部输入定理 4.15（strictification）.** 设 $k$ 是域，$\mathcal A$ 是
+小、非弯曲、cohomologically unital 的 $k$-linear $A_\infty$ category。
+则存在小、strictly unital 的 $A_\infty$ category $\mathcal A^{\mathrm{su}}$
+以及一个 $A_\infty$ quasi-equivalence
+$$
+\mathcal A^{\mathrm{su}}\longrightarrow\mathcal A.
+$$
+该替换依赖选择，并不把原模型中的同调单位自动变成同一底层 graded
+category 上的严格单位。来源：Lefevre-Hasegawa，*Sur les
+$A$-infini categories*，关于 homological 与 strict unitality 的比较。
 
 **定义 4.16.** Fukaya category 的 split-closed derived category 记为
 $$

@@ -11,22 +11,24 @@
 
 设 $\mathcal C^\otimes$ 是 presentable symmetric monoidal infinity-category，并且 tensor product separately preserves colimits。
 
-**定义 20.1.** 令 $\mathbf{Disk}_n$ 为 $n$-维 disks 的 symmetric monoidal infinity-category：
+**定义 20.1.** 本节固定 framing。令 $\mathbf{Disk}^{fr}_n$ 为 framed $n$-disks 的 symmetric monoidal infinity-category：
 
 1. 对象是有限个 $\mathbb R^n$ 的不交并
    $$
    \coprod_{i=1}^r\mathbb R^n,\qquad r\ge0;
    $$
-2. morphisms 是 embeddings；
+2. morphism spaces 是与所选 framings 相容的 embeddings 及其高阶同伦；
 3. symmetric monoidal structure 由 disjoint union 给出。
 
-若 $M$ 是 $n$-维拓扑或光滑流形，定义 overcategory
+若 $M$ 是 framed $n$-维拓扑或光滑流形，定义 overcategory
 $$
-\mathbf{Disk}_{n/M}=\mathbf{Disk}_n\times_{\mathbf{Mfld}_n}\mathbf{Mfld}_{n/M}.
+\mathbf{Disk}^{fr}_{n/M}=\mathbf{Disk}^{fr}_n\times_{\mathbf{Mfld}^{fr}_n}\mathbf{Mfld}^{fr}_{n/M}.
 $$
 其对象可理解为带嵌入 $U\hookrightarrow M$ 的有限 disk 并。
 
-**说明 20.2.** $\mathbf{Disk}_{n/M}$ 不是 ordinary poset of opens；morphisms 保留 embeddings 的同伦信息。若只取开集包含关系，会丢失同伦相干自同构。
+若改用 oriented、unoriented 或一般 tangential structure $\xi:B\to BO(n)$，必须把上式全部替换为 $\mathbf{Disk}^{\xi}_n$ 与 $\mathbf{Mfld}^{\xi}_n$；同一个裸 $E_n$-algebra 不自动提供这些扩张数据。
+
+**说明 20.2.** $\mathbf{Disk}^{fr}_{n/M}$ 不是 ordinary poset of opens；morphisms 保留 embeddings 的同伦信息。若只取开集包含关系，会丢失同伦相干自同构。
 
 ## 20.2 Factorization algebras
 
@@ -57,13 +59,13 @@ $$
 $$
 是 equivalence。
 
-**外部输入定理 20.6.** 在 $\mathbb R^n$ 上，locally constant factorization algebras with values in $\mathcal C$ 与 $E_n$-algebras in $\mathcal C$ 之间存在 equivalence of infinity-categories：
+**外部边界 20.6（locally constant comparison）.** 在 Costello--Gwilliam/Lurie 型的适当模型中，$\mathbb R^n$ 上取值于 $\mathcal C$ 的 locally constant factorization algebras 与 $E_n$-algebras 之间存在 equivalence of infinity-categories：
 $$
 \operatorname{Fact}^{lc}_{\mathbb R^n}(\mathcal C)\simeq
 \operatorname{Alg}_{E_n}(\mathcal C).
 $$
 
-**证明边界.** 一个 locally constant factorization algebra 的 disk 值给出对象 $A=\mathcal F(D)$；多个小 disk 嵌入大 disk 的结构映射给出 little disks operad 的运算。反向地，一个 $E_n$-algebra 可沿 disk embeddings 左 Kan extension 到 $\mathbb R^n$ 上的 factorization algebra。完整证明需要 Weiss descent、isotopy invariance 和 colimit 技术，本书作为外部输入。$\square$
+一个 locally constant factorization algebra 的 disk 值给出对象 $A=\mathcal F(D)$；多个小 disk 嵌入大 disk 的结构映射给出 little-disks 运算。反向构造使用沿 disk embeddings 的同伦左 Kan extension。完整证明需要固定 factorization-algebra 模型、Weiss descent 与 isotopy invariance；本书当前没有登记覆盖该精确版本的 theorem locator，所以 20.6 不进入后续证明链。AF-3 只刻画 manifolds 上的 homology theories，不能替代这条局部 factorization-algebra 等价。
 
 ## 20.3 Factorization homology
 
@@ -71,12 +73,13 @@ $$
 $$
 \int_M A
 =
-\operatorname{colim}_{(U\hookrightarrow M)\in\mathbf{Disk}_{n/M}} A(U),
+\operatorname{colim}_{(U\hookrightarrow M)\in\mathbf{Disk}^{fr}_{n/M}} A(U),
 $$
 其中 $A$ 被视为 symmetric monoidal functor
 $$
-\mathbf{Disk}_n\to\mathcal C.
+\mathbf{Disk}^{fr}_n\to\mathcal C,
 $$
+且 $M$ 为 framed $n$-manifold。
 
 若 $U\simeq\coprod_{i=1}^r\mathbb R^n$，则
 $$
@@ -88,11 +91,17 @@ $$
 \int_{\mathbb R^n}A\simeq A.
 $$
 
-**证明.** 在 $\mathbf{Disk}_{n/\mathbb R^n}$ 中，恒等嵌入 $\mathbb R^n\hookrightarrow\mathbb R^n$ 是 final object up to contractible choice：任意 disk 嵌入 $\mathbb R^n$ 可经同伦相干方式包含到整空间中。Colimit over a category with final object 等于该 final object 上的值。因此
+**证明.** 因为标准 framed $\mathbb R^n$ 本身是 $\mathbf{Disk}^{fr}_n$ 的对象，
+$$
+\mathbf{Disk}^{fr}_{n/\mathbb R^n}
+\simeq
+(\mathbf{Disk}^{fr}_n)_{/\mathbb R^n}.
+$$
+任意 infinity-category 的 slice $\mathcal D_{/d}$ 都以 $\operatorname{id}_d$ 为 final object；这里该对象正是恒等嵌入 $\mathbb R^n\hookrightarrow\mathbb R^n$。因此
 $$
 \int_{\mathbb R^n}A\simeq A(\mathbb R^n)=A.
 $$
-严格证明 finality 需要 embeddings 空间的 contractibility statement；此处使用 disks in Euclidean space 的标准同伦事实。$\square$
+该证明是 slice 的形式性质，不需要额外声称所有 embedding spaces 可缩。$\square$
 
 **外部输入定理 20.9（excision；AF-1）.** 若 $M$ 沿 collar 分解为
 $$
@@ -126,16 +135,21 @@ $$
 
 ## 20.4 Dunn additivity 与迭代代数
 
-**外部输入定理 20.12（Dunn additivity）.** 在适当 symmetric monoidal infinity-category 中，有 equivalence of infinity-operads
+**外部输入定理 20.12（Dunn additivity；DUNN-1）.** 对 $m,n\ge0$，Lurie *Higher Algebra* Theorem 5.1.2.2 断言 Construction 5.1.2.1 的典范 bifunctor
 $$
-E_m\otimes E_n\simeq E_{m+n}.
+E_m^\otimes\times E_n^\otimes\longrightarrow E_{m+n}^\otimes
 $$
-因此
+把 $E_{m+n}^\otimes$ 展示为 infinity-operads 的 tensor product，即
+$$
+E_m^\otimes\otimes E_n^\otimes\simeq E_{m+n}^\otimes.
+$$
+因此，对任意 symmetric monoidal infinity-category $\mathcal C$，tensor product 的泛性质给出
 $$
 \operatorname{Alg}_{E_{m+n}}(\mathcal C)
 \simeq
 \operatorname{Alg}_{E_m}\big(\operatorname{Alg}_{E_n}(\mathcal C)\big).
 $$
+该输入是 infinity-operadic 定理；它不声称任意 strict topological operad 模型的 Boardman--Vogt tensor product 在无 cofibrancy 假设下即有同一结论。
 
 **说明 20.13.** 该定理说明 $E_{m+n}$-algebra 可看作 $E_m$-algebra object in $E_n$-algebras。它是许多“higher center”和 iterated Hochschild constructions 的 operadic 根源。
 
@@ -162,7 +176,7 @@ $$
 
 **警告 20.17.** 定义 20.16 是结构性描述，不是完整构造。完整 Fukaya category 需要选择 brane structures、gradings、spin structures、Novikov coefficients、transversality theory、compactness、bounding cochains 或 wrapped conditions。不同几何情形有不同模型。
 
-**外部输入定理 20.18.** 在满足相应分析条件的 symplectic geometry 设置中，holomorphic polygon counts 定义 $A_\infty$-category，并且边界退化与 $A_\infty$ relations 对应。
+**外部边界 20.18（Fukaya $A_\infty$ 构造）.** 在一个已经固定并验证 compactness、transversality、orientation 与 brane data 的 symplectic setting 中，holomorphic polygon counts 可定义 $A_\infty$-category，并且一维模空间的边界退化给出 $A_\infty$ relations。本书未固定单一几何模型，故该项只作接口，不能作为无条件定理调用。
 
 **说明 20.19.** $A_\infty$ relations 的来源是 $1$-维 compactified moduli spaces 的边界。边界 strata 对应把一个 polygon 分裂成两个 polygons；代数上正是
 $$
@@ -178,9 +192,9 @@ Fukaya categories 不只形成单个 $A_\infty$-category。在不同几何操作
 
 **例 20.21（Swiss-cheese 型结构）.** 同时含 closed strings 与 open strings 的理论常由 Swiss-cheese operad 或其变体组织。Closed sector 通常带 $E_2$ 或 BV 型结构，open sector 带 $A_\infty$ 型结构，二者之间有兼容 action。
 
-**外部输入定理 20.22.** 在特定几何假设下，Fukaya categories、wrapped Fukaya categories 或其 Hochschild invariants 可组织为由 surfaces、disks、stratified spaces 或 higher operads 控制的代数对象。
+**研究边界 20.22（Fukaya 的高阶 operadic 结构）.** 在特定几何假设下，Fukaya categories、wrapped Fukaya categories 或其 Hochschild invariants 可能组织为由 surfaces、disks、stratified spaces 或 higher operads 控制的代数对象。
 
-**证明边界.** 该定理不是单一通用结论。不同版本依赖不同的 compactness、gluing、orientation 和 transversality 定理。本书只记录 operadic 组织方式；具体几何定理必须在相应模型中单独引用。$\square$
+这不是单一通用结论。不同版本依赖不同的 compactness、gluing、orientation 和 transversality 定理。本书只记录 operadic 组织方式；具体几何定理必须在相应模型中单独引用。
 
 ## 20.7 Factorization homology 与 Fukaya 理论的接口
 
@@ -192,11 +206,11 @@ Factorization homology 把 $E_n$-algebra 沿 $n$-manifold 积分。Fukaya 理论
 4. Hochschild invariants and centers of Fukaya categories；
 5. extended topological field theories。
 
-**外部输入定理 20.23.** 在若干已验证设置中，Fukaya 型范畴可由局部模型通过 cosheaf/factorization homology gluing 得到；其 Hochschild 或 center 型不变量可由 factorization homology 计算。
+**研究边界 20.23（Fukaya gluing 接口）.** 在若干已验证设置中，Fukaya 型范畴可由局部模型通过 cosheaf/factorization-homology 型 gluing 得到；其 Hochschild 或 center 型不变量可能由 factorization homology 计算。该句不进入证明链，除非另行指定几何类别与 theorem locator。
 
 **说明 20.24.** 这类定理是当前研究活跃区域。除非指定具体几何类别、系数、局部模型和 gluing 定理，本书不把它作为全局定理使用。
 
-**说明 20.25.** 本章的计算性补充见定义 N.3、外部输入定理 N.15、外部输入定理 N.18 和外部输入定理 N.30；常见错误命题和不可混用约定见错误命题 O.23--正确边界 O.28。特别地，factorization homology 不等于普通同调，Fukaya category 的构造不由 operad 公理单独推出。
+**说明 20.25.** 本章的计算性补充见定义 N.3、外部输入定理 N.15、外部输入定理 N.18 和研究边界 N.30；常见错误命题和不可混用约定见错误命题 O.23--正确边界 O.28。特别地，factorization homology 不等于普通同调，Fukaya category 的构造不由 operad 公理单独推出。
 
 ## 20.8 本章小结
 

@@ -8,13 +8,13 @@
 |---|---|
 | 阅读顺序与目录 | [README.md](README.md) |
 | 符号约定 | [NOTATION.md](NOTATION.md) |
-| 归一化约定 | [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) |
+| 归一化、regulator 与渐近约定 | [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) |
 | 压缩术语表 | [GLOSSARY.md](GLOSSARY.md) |
 | 主线例题集 | [WORKED_EXAMPLES.md](WORKED_EXAMPLES.md) |
 | 定理、命题、猜想状态 | [THEOREM_INDEX.md](THEOREM_INDEX.md) |
 | 习题与解答索引 | [EXERCISE_INDEX.md](EXERCISE_INDEX.md) |
 | 核心习题解答 | [SOLUTIONS.md](SOLUTIONS.md) |
-| 资料源 | [SOURCES.md](SOURCES.md) |
+| 资料源与原始输入代码 | [SOURCES.md](SOURCES.md) |
 | 逐章资料源映射 | [REFERENCE_MAP.md](REFERENCE_MAP.md) |
 | 主线证明链 | [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md) |
 | 内容收口审定 | [CONTENT_CLOSURE_AUDIT.md](CONTENT_CLOSURE_AUDIT.md) |
@@ -49,7 +49,7 @@
 全书非平凡陈述统一登记在 [THEOREM_INDEX.md](THEOREM_INDEX.md)。状态含义：
 
 - `P`：正文给出证明。
-- `S`：正文给出证明草图。
+- `S`：正文给出标准物理推导说明。
 - `E`：外部输入定理。
 - `C`：物理猜想或对偶性原则。
 
@@ -58,3 +58,18 @@
 ## 4. 习题索引
 
 全部 68 道正文习题都在 [EXERCISE_INDEX.md](EXERCISE_INDEX.md) 中登记，并在 [SOLUTIONS.md](SOLUTIONS.md) 中给出核心解答。若以后新增习题，必须同步更新这两个文件。
+
+## 5. 严格性边界速查
+
+| 需要区分的层级 | 主位置 | 台账 |
+|---|---|---|
+| Polyakov metric equation、conformal-gauge constraint、量子物理态条件 | [第 2 章](02_classical_bosonic_string.md)、[第 4 章](04_canonical_quantization_bosonic_string.md) | [定理索引](THEOREM_INDEX.md) 2.6、2.9A、4.4C |
+| 有限能 operator domain、Virasoro/ghost central term、BRST complex | [第 3--5 章](03_worldsheet_cft.md) | [归一化表](NORMALIZATION_TABLE.md) 第 6、9 节 |
+| Polyakov/FP path integral 与 determinant regulator | [第 5 章](05_path_integral_brv_quantization.md) | [资料源](SOURCES.md) `POLY81` |
+| Reduced amplitude、绝对 normalization、解析延拓与 factorization | [第 6 章](06_vertex_operators_and_string_scattering.md) | [归一化表](NORMALIZATION_TABLE.md) 第 8、9 节 |
+| GSO 单弦投影、modular invariance、target anomaly | [第 8 章](08_rns_superstrings_and_gso.md)、[第 10 章](10_heterotic_strings_and_anomalies.md) | [定理索引](THEOREM_INDEX.md) 8.16、8.16A、10.11 |
+| Exact compact-boson T-duality、Buscher input、几何 D-brane 模型 | [第 7 章](07_compactification_t_duality_and_dbranes.md) | [资料源](SOURCES.md) `BUS87/88`、`NAR86` |
+| $g_s$ loop、$\alpha'$ derivative 与低能 truncation | [第 11 章](11_low_energy_effective_actions.md) | [归一化表](NORMALIZATION_TABLE.md) 第 9 节 |
+| Calabi--Yau 定义、holonomy、moduli、KK truncation | [第 13 章](13_calabi_yau_compactification.md) | [资料源映射](REFERENCE_MAP.md) |
+| Cardy/large-charge asymptotic 与 quantum-entropy 研究边界 | [第 17 章](17_black_branes_and_entropy.md) | [定理索引](THEOREM_INDEX.md) 17.8--17.12A |
+| D3 supergravity input、AdS PDE calculation、GKPW conjecture | [第 18 章](18_ads_cft.md) | [定理索引](THEOREM_INDEX.md) 18.1--18.12 |

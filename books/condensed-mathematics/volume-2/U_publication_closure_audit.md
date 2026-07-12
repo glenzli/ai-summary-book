@@ -62,22 +62,23 @@
 | 项目 | 位置 | 状态 | 说明 |
 | --- | --- | --- | --- |
 | \(p\)-liquid analytic ring | D.5、S.1 | 输入闭合 | analytic ring 条件作为输入 |
-| liquid realization | D.6、S.2-S.3、Z | 输入闭合 | 拓扑向量空间凝聚化书内证明；realization 构造与 exactness 范围作为输入 |
-| finite-dimensional objects | S.6 | 输入闭合 | 接受 realization 后书内证明 perfect 性 |
-| Banach/Fréchet 边界 | J、P、S.5、Z | 闭合 | 明确拓扑向量空间只先凝聚化，不自动 liquid |
-| 闭值域 Fréchet cohomology | P、S.7-S.9、Z | 输入闭合 | 闭值域到 Hausdorff 商书内证明，realization exactness 输入 |
+| 经典空间 liquid membership | D.6、S.2-S.3、Z | 输入闭合 | \(\mathcal L_p(E)=\underline E\)；membership 为 CS26 输入 |
+| finite-dimensional objects | S.6 | 输入闭合 | 有限自由 liquid 模的 perfect 性书内证明 |
+| Banach/Fréchet 边界 | J、P、S.5、Z | 闭合 | Banach/Fréchet 凝聚化确实 liquid；exactness 不自动 |
+| Fréchet cohomology 比较 | P、S.7-S.9、Z | 条件闭合 | 闭值域控制 Hausdorff 商；局部提升或连续 splitting 控制凝聚 exactness |
 | Fredholm perfect cohomology | P、S.10-S.11、Z | 输入闭合 | 有限维性来自 Fredholm 输入 |
 | Dolbeault 类型闭合 | S.12-S.13、Z | 输入闭合 | Dolbeault-Fredholm 输入后 liquid 类型书内闭合 |
 
-**结论 U.3.** Liquid 主线达到输入闭合。完全自足版仍需重证 \(p\)-liquid 测度理论、realization 构造和与经典连续线性算子的相容性。
+**结论 U.3.** Liquid 主线达到输入闭合。完全自足版仍需重证 \(p\)-liquid 测度理论
+和经典完备空间的 membership 定理；连续线性算子的 exactness 已还原为书内局部提升条件。
 
 ## U.5 三条主线接口审查
 
 | 接口 | 位置 | 状态 | 说明 |
 | --- | --- | --- | --- |
 | condensed 到 solid | 卷一第十二章、第二卷 Q | 输入闭合 | 通过 Dirac-to-measure cone 局部化 |
-| solid 到 analytic | 第二卷 R | 输入闭合 | analytic ring 是更一般的测度局部化结构 |
-| analytic 到 liquid | 第二卷 S | 输入闭合 | liquid 是特定 analytic ring 及 realization 理论 |
+| solid 作为 analytic 特例 | 第二卷 R | 输入闭合 | 使用 \((\mathbb Z,\mathbb Z^\square)\) 的精确识别 |
+| liquid 作为 analytic 特例 | 第二卷 S | 输入闭合 | 使用不同底环 \((\underline{\mathbb R},\mathcal M_{<p})\)；不由 solid 自动 scalar extend |
 | 第二卷到第三卷 | 第二卷 T.4 | 闭合 | 第三卷只作为应用卷使用第二卷类型 |
 | 第二卷到第四卷 | 第二卷 T.5、第四卷例子 | 检查表闭合 | 计算例子依赖输入定理，不反推主定理 |
 
@@ -90,7 +91,8 @@
 3. \(D(A,\mathcal M)\)：表示 analytic ring 的 analytic 模范畴。
 4. \(L_{(A,\mathcal M)}\)：表示 analyticization。
 5. \(D_{\mathrm{liq},p}\)：表示固定 \(p\) 后的 liquid analytic 范畴。
-6. \(\mathcal L_p\)：表示拓扑向量空间到 liquid 范畴的 realization，不能省略适用范围。
+6. \(\mathcal L_p(E)=\underline E\)：只表示凝聚化已满足 liquid membership，不能用来
+   隐藏 cokernel 的局部提升义务。
 
 **结论 U.5.** 第二卷符号已足以支撑主线闭包；出版级版本仍应在正文首次出现处增加更多回链。
 
@@ -122,7 +124,7 @@
 6. Huber pair rational localization；
 7. rational Čech descent；
 8. \(p\)-liquid analytic ring；
-9. liquid realization；
+9. 经典完备空间的 liquid membership；
 10. Fréchet Fredholm/Hodge 输入。
 
 ## U.9 后续出版级任务
@@ -131,7 +133,7 @@
 
 1. 为 D.1-D.3 和附录 V-W 增加逐条文献定位和证明概要。
 2. 为 D.4、D.7 和附录 X-Y 增加 analytic ring 与 rational descent 的逐条文献定位。
-3. 为 D.5-D.6 和附录 Z 增加 liquid realization 的精确适用范围。
+3. 为 D.5-D.6 和附录 Z 维护 liquid membership 与凝聚严格性的精确边界。
 4. 把附录 Q-AA 的答案从要点扩成教师手册。
 5. 增加每条输入定理的最小反例或失败模式。
 

@@ -7,7 +7,7 @@
 - $\mathcal U\in\mathcal V\in\mathcal W$：固定 Grothendieck universes。
 - $k$：代数闭底域。若涉及 D-modules、Riemann-Hilbert、category $\mathcal O$ 或复解析拓扑，默认 $k=\mathbb C$。
 - $E$：sheaf 的系数域，默认特征 $0$。若使用 $\ell$-adic sheaves，则 $E$ 是有限扩张的 $\mathbb Q_\ell$，且 $\ell\ne\operatorname{char} k$。
-- $\mathbf{Vect}_E$：$E$-向量空间范畴。
+- $\mathbf{Vect}_E$、$\mathbf{Vect}^{\mathrm{fd}}_E$：全部 $E$-向量空间、有限维 $E$-向量空间的范畴。
 - $D^b_c(X,E)$：$X$ 上 $E$-系数 constructible complexes 的有界导出范畴。具体拓扑依章节声明。
 - $\operatorname{Perv}(X,E)$：middle perversity 下的 perverse sheaves。
 - $\mathcal D_X$：光滑复代数簇 $X$ 上的微分算子层。默认使用 left $\mathcal D_X$-modules，除非另行说明。
@@ -51,16 +51,27 @@
 
 - $[X/H]$：代数群 $H$ 作用于 $X$ 的 quotient stack。
 - $D^b_H(X,E)$：$H$-equivariant constructible derived category，定义为 $D^b_c([X/H],E)$ 的适当模型。
+- $\operatorname{For}_H:D^b_H(X,E)\to D^b_c(X,E)$：沿 atlas 的 forgetful functor；$\operatorname{Perv}_H$ 按它 t-exact 的 convention 定义。
 - $f^\ast,f_\ast,f_!,f^!$：六函子中的拉回、推前、紧支推前和 extraordinary pullback。
 - $\mathbb D_X$：Verdier duality functor。
 - $\operatorname{IC}(\overline S,\mathcal L)$：stratum $S$ 上 local system $\mathcal L$ 的 middle extension intersection complex。
-- $\star$：由 correspondence 定义的 convolution product。
+- $\widetilde\boxtimes$：沿 contracted-product torsor descent 得到的 twisted external product。
+- $\star_!,\star_\ast$：分别使用目标 map 的 $!$-pushforward、$\ast$-pushforward 的 convolution；在实际支撑上 proper 时共同简记为 $\star$。
 - $\mathcal H_W$：Hecke algebra。
 - $\mathcal H_B=D^b_B(G/B,E)$ 或等价的 $D^b(B\backslash G/B,E)$，按章节上下文指定。
 
 ## 4. 前沿和高级对象
 
-- $\operatorname{Gr}_G=G((z))/G[[z]]$：affine Grassmannian。
+- $\mathscr O=\mathbb C[[z]]$、$\mathscr K=\mathbb C((z))$：第十二、十三章的 formal disk ring 与 punctured-disk field；不要与 BGG category $\mathcal O$ 混同。
+- $LG(R)=G(R((z)))$、$L^+G(R)=G(R[[z]])$：loop-group 与 arc-group functors。
+- $\operatorname{Gr}_G=LG/L^+G$：fpqc affine Grassmannian；第十二、十三章形成 Betti sheaves 时取 reduction。
+- $\operatorname{Gr}^\lambda$、$\overline{\operatorname{Gr}}^\lambda$：dominant coweight $\lambda$ 的 $L^+G$-orbit 及 Schubert closure。
+- $D^b_{L^+G,\mathrm{fs}}(\operatorname{Gr}_G,E)$：finite-dimensional-support equivariant Betti derived category。
+- $\operatorname{Sat}_G=\operatorname{Perv}_{L^+G,\mathrm{fs}}(\operatorname{Gr}_G,E)$：characteristic-zero Betti Satake category。
+- $\operatorname{IC}_\lambda$：$\overline{\operatorname{Gr}}^\lambda$ 上按 open orbit 常值 local system 归一化的 IC sheaf。
+- $\omega(\mathcal F)=\bigoplus_i\mathbb H^i(\operatorname{Gr}_G,\mathcal F)$：忘掉 cohomological grading 的 Satake fiber functor。
+- $S_\mu=N(\mathscr K)z^\mu L^+G/L^+G$、$F_\mu$：semi-infinite orbit 与相应 weight functor。
+- $T^\vee$：满足 $X^\ast(T^\vee)=X_\ast(T)$ 的 split dual torus。
 - $\operatorname{Fl}_G=G((z))/I$：affine flag variety，其中 $I$ 是 Iwahori subgroup。
 - $G^\vee$：Langlands dual group。
 - $\operatorname{Bun}_G(C)$：曲线 $C$ 上 $G$-bundles 的模栈。

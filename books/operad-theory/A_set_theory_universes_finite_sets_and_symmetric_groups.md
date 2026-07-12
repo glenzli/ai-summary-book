@@ -88,6 +88,15 @@ $$
 $$
 单位元情形由 $X(e)=\operatorname{id}$ 得到。$\square$
 
+逆元不能省略。令非交换群 $G$ 在自身上作左正则作用，并错误地定义
+$x*\sigma=\sigma x$。若 $\sigma\tau\ne\tau\sigma$，则
+$$
+(x*\sigma)*\tau=(\tau\sigma)x
+\ne
+(\sigma\tau)x=x*(\sigma\tau)
+$$
+（例如取 $x=e$）。所以同一个左作用若不经 $\sigma\mapsto\sigma^{-1}$ 转换，一般不满足右作用公理；$\Sigma_n$ 在 $n\ge3$ 时已经给出此反例。
+
 **约定 A.10.** 正文中若使用有限集 $S$，采用函子性左作用口径；若使用 arity $n$ 公式并出现 $x\cdot\sigma$，采用右作用口径。两者按命题 A.9 互译。
 
 ## A.4 Coinvariants and invariants
@@ -152,12 +161,12 @@ $$
 (X\circ Y)(n)
 =
 \coprod_{k\ge0}X(k)\times_{\Sigma_k}
-\left(\coprod_{n_1+\cdots+n_k=n}
+\left(\coprod_{\substack{n_1+\cdots+n_k=n\\n_i\ge0}}
 Y(n_1)\times\cdots\times Y(n_k)\times_{\Sigma_{n_1}\times\cdots\times\Sigma_{n_k}}\Sigma_n
 \right)
 $$
-可理解为有限集分块群胚上的 coend。有限集口径优先，是为了避免在该公式中反复处理左右作用和商关系。
+可理解为所有函数 $[n]\to[k]$ 及目标双射组成的群胚上的 colimit/coend；$n_i=0$ 对应空纤维。只有当 $Y(0)$ 是初对象时，才可把该索引缩成非空分块。有限集口径优先，是为了避免在该公式中反复处理左右作用和商关系。
 
 ## A.6 本附录小结
 
-全书的安全口径是：用有限集和双射群胚定义对称序列；用骨架 $[n]$ 和 $\Sigma_n$ 只做计算；遇到右作用公式时用 $x\cdot\sigma=X(\sigma^{-1})(x)$ 转换；在一般底环上谨慎处理 coinvariants。这个约定贯穿自由 operad、Schur functor、Koszul 对偶、模型结构和 rectification。
+全书的安全口径是：用有限集和双射群胚定义对称序列；用所有有限集映射的纤维定义允许 arity $0$ 的代入；用骨架 $[n]$ 和 $\Sigma_n$ 只做计算；遇到右作用公式时用 $x\cdot\sigma=X(\sigma^{-1})(x)$ 转换；在一般底环上谨慎处理 coinvariants。这个约定贯穿自由 operad、Schur functor、Koszul 对偶、模型结构和 rectification。

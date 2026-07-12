@@ -29,7 +29,7 @@ $$
 
 **命题 N.3.** 对 $G=\operatorname{GL}_n$，$\mathcal S_\varphi$ 在 LLC 所需意义下平凡，因此 L-packet 为单元素。
 
-**证明草图.** $\widehat G=\operatorname{GL}_n(\mathbb C)$。任意 semisimple Weil-Deligne 参数对应一个 $n$ 维表示。其 centralizer 是各同构不可约 summands 的 multiplicity spaces 上的 general linear groups 的乘积，连通。商去中心后 component group 仍平凡。因此没有 packet 内部离散标签。$\square$
+**证明路线（外部输入）.** $\widehat G=\operatorname{GL}_n(\mathbb C)$。任意 semisimple Weil-Deligne 参数对应一个 $n$ 维表示。其 centralizer 是各同构不可约 summands 的 multiplicity spaces 上的 general linear groups 的乘积，连通。商去中心后 component group 仍平凡。因此没有 packet 内部离散标签。$\square$
 
 ## N.2 Tori
 
@@ -89,7 +89,7 @@ $$
 
 **命题 N.11.** 内形式迫使 enhanced LLC 记录额外 relevance 数据。
 
-**证明草图.** 同一 Langlands 参数可能在 split group 和非 split inner form 上都有相关表示，也可能只在某些 inner forms 上出现。仅给出 $\varphi$ 不能说明表示位于哪个 $G'(F)$。Rigid inner twist、Kottwitz 符号或类似数据用于标记 inner form；component group 的 character 再标记 packet 内成员。$\square$
+**证明路线（外部输入）.** 同一 Langlands 参数可能在 split group 和非 split inner form 上都有相关表示，也可能只在某些 inner forms 上出现。仅给出 $\varphi$ 不能说明表示位于哪个 $G'(F)$。Rigid inner twist、Kottwitz 符号或类似数据用于标记 inner form；component group 的 character 再标记 packet 内成员。$\square$
 
 ## N.5 Endoscopic Data
 
@@ -125,7 +125,7 @@ $$
 
 **命题 N.18.** Arthur multiplicity formula 需要 packet 内部标签，而不只需要 Langlands 参数。
 
-**证明草图.** 离散谱中的 multiplicity 取决于全局 component group character 与局部 packet 标签的配对。若只知道 $\psi$ 而不知道每个 $\pi_v$ 在 $\Pi_{\psi_v}$ 中对应哪个 component group representation，就无法决定 restricted tensor product 是否出现在离散谱中以及重数是多少。$\square$
+**证明路线（外部输入）.** 离散谱中的 multiplicity 取决于全局 component group character 与局部 packet 标签的配对。若只知道 $\psi$ 而不知道每个 $\pi_v$ 在 $\Pi_{\psi_v}$ 中对应哪个 component group representation，就无法决定 restricted tensor product 是否出现在离散谱中以及重数是多少。$\square$
 
 **注 N.19.** 第十七章的 multiplicity formula 接口正是这种现象的全局版本。
 

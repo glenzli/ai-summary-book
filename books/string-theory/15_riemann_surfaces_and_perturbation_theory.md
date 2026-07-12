@@ -24,7 +24,7 @@ $$
 \dim_{\mathbb C}\mathcal M_{g,n}=3g-3+n.
 $$
 
-**证明草图.** 该结论来自 Riemann surface deformation theory：complex structure infinitesimal deformations 由 Beltrami differentials modulo trivial deformations 给出，其 dual space 是 quadratic differentials with allowed simple poles at punctures。Riemann-Roch 给出维数 $3g-3+n$。$\square$
+**推导说明（标准物理口径）.** 该结论来自 Riemann surface deformation theory：complex structure infinitesimal deformations 由 Beltrami differentials modulo trivial deformations 给出，其 dual space 是 quadratic differentials with allowed simple poles at punctures。Riemann-Roch 给出维数 $3g-3+n$。$\square$
 
 ## 15.2 Gauge fixing measure
 
@@ -48,7 +48,7 @@ g_s^{2g-2+n}
 \right\rangle_{\Sigma_g}.
 $$
 
-**证明草图.** 从 Polyakov path integral 出发，对 metrics 商去 diffeomorphism 与 Weyl transformations。局部切片由 complex structure moduli 参数化；Faddeev-Popov determinant 由 $bc$ ghosts 表示；moduli 方向的 ghost zero modes 通过 $b$-ghost 与 Beltrami differentials 配对吸收。$\square$
+**推导说明（标准物理口径）.** 从 Polyakov path integral 出发，对 metrics 商去 diffeomorphism 与 Weyl transformations。局部切片由 complex structure moduli 参数化；Faddeev-Popov determinant 由 $bc$ ghosts 表示；moduli 方向的 ghost zero modes 通过 $b$-ghost 与 Beltrami differentials 配对吸收。$\square$
 
 ## 15.3 Torus partition function 与 modular invariance
 
@@ -85,7 +85,7 @@ $$
 
 **命题 15.8（边界退化与中间态）.** 当 Riemann surface 退化为由长细管连接的两个曲面时，string amplitude 在对应 channel 上因子化为一组中间 string states 的传播。
 
-**证明草图.** Plumbing fixture parameter $q$ 描述细管。CFT 在细管上的传播给出
+**推导说明（标准物理口径）.** Plumbing fixture parameter $q$ 描述细管。CFT 在细管上的传播给出
 $$
 \sum_\alpha q^{L_0^\alpha-a}\bar q^{\tilde L_0^\alpha-a}
 |\alpha\rangle\langle\alpha|.
@@ -120,7 +120,7 @@ p_L=\frac nR+\frac{wR}{\alpha'},
 p_R=\frac nR-\frac{wR}{\alpha'}.
 $$
 
-**证明草图.** Torus trace 中左、右 Virasoro 零模分别含有 $\alpha'p_L^2/4$ 和 $\alpha'p_R^2/4$。对所有 momentum/winding sectors 求和即得。Poisson resummation 显示该 lattice sum 在 T-duality 和 modular transformation 下具有正确协变性。$\square$
+**推导说明（标准物理口径）.** Torus trace 中左、右 Virasoro 零模分别含有 $\alpha'p_L^2/4$ 和 $\alpha'p_R^2/4$。对所有 momentum/winding sectors 求和即得。Poisson resummation 显示该 lattice sum 在 T-duality 和 modular transformation 下具有正确协变性。$\square$
 
 **命题 15.13（level matching from modular $T$）.** Torus partition function 在 $T:\tau\mapsto\tau+1$ 下不变要求物理态满足
 $$

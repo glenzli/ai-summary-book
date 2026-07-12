@@ -1,6 +1,8 @@
 # 附录 D：资料源定理索引和 locator 待办
 
-本附录是外部输入定理的定位入口。当前版本先建立 P0/P1 分级和使用位置；精确 theorem number、页码、版本和假设翻译将在后续 locator 批次补齐。
+本附录是外部输入定理的定位入口。主 chromatic 链的 DHS/HS、
+smash product、fracture 与 convergence 已有精确 theorem/section locator；
+其余 P0/P1 项继续按批次补齐页码、版本和假设翻译。
 
 ## D.1 P0 外部输入
 
@@ -9,13 +11,14 @@
 | CHT-P0-01 | Quillen theorem: $MU_*$ 与 Lazard ring | 第二章复定向到形式群 universal 性 | batch 1 bibliographic locator |
 | CHT-P0-02 | Brown-Peterson splitting and $BP_*$ computation | 第二章 $BP$、$E(n)$、$K(n)$ 系数 | batch 1 bibliographic locator |
 | CHT-P0-03 | Landweber exact functor theorem | 第二、八章 elliptic/Landweber exact theories | batch 1 bibliographic locator |
-| CHT-P0-04 | Devinatz-Hopkins-Smith nilpotence theorem | 第四章 nilpotence | batch 1 bibliographic locator |
-| CHT-P0-05 | Hopkins-Smith periodicity theorem | 第四章 $v_n$ self-maps 和 $T(n)$ | batch 1 bibliographic locator |
-| CHT-P0-06 | Hopkins-Smith thick subcategory theorem | 第四章 $\mathcal C_n$ 分类 | batch 1 bibliographic locator |
-| CHT-P0-07 | Morava K finite detection | 第三、四章 finite type 存在 | batch 1 bibliographic locator |
-| CHT-P0-08 | $\langle E(n)\rangle=\langle\bigvee_{i=0}^nK(i)\rangle$ | 第五章 $L_n$ 解释 | batch 1 bibliographic locator |
-| CHT-P0-09 | Chromatic convergence theorem | 第五章 finite spectra convergence | batch 1 bibliographic locator |
-| CHT-P0-10 | Chromatic fracture square | 第五章 $L_n$ 粘合 | batch 1 bibliographic locator |
+| CHT-P0-04 | Devinatz-Hopkins-Smith nilpotence theorem | 第四章 nilpotence | DHS I, Theorem 1(i) |
+| CHT-P0-05 | Hopkins-Smith periodicity theorem | 第四章 $v_n$ self-maps 和 $T(n)$ | HS II, Theorem 9；Corollaries 3.7/3.8 |
+| CHT-P0-06 | Hopkins-Smith thick subcategory theorem | 第四章 $\mathcal C_n$ 分类 | HS II, Theorem 7 |
+| CHT-P0-07 | Morava K finite detection | 第三、四章 finite type 存在 | HS II, Theorem 14（与零谱比较） |
+| CHT-P0-08 | $\langle E(n)\rangle=\langle\bigvee_{i=0}^nK(i)\rangle$ | 第五章 $L_n$ 解释 | Lurie L23, Proposition 2；Hovey, Corollary 1.12 |
+| CHT-P0-08A | Hopkins--Ravenel smash product theorem | 第五章 $L_n$ smashing 与 finite-type overlap | Ravenel 7.5.6；Lurie L23, Theorem 4 |
+| CHT-P0-09 | Chromatic convergence theorem | 第五章 finite spectra convergence | Ravenel 7.5.7，证明 §8.6；Lurie L32, Theorem 1 |
+| CHT-P0-10 | Chromatic fracture square | 第五章 $L_n$ 粘合 | Lurie L23, Proposition 5（任意谱） |
 | CHT-P0-11 | Lubin-Tate deformation theorem | 第三章 $E_n$ 系数 | batch 2 bibliographic locator |
 | CHT-P0-12 | Goerss-Hopkins-Miller theorem | 第三、六、八章 $\mathbb E_\infty$ 结构和 action | batch 2 bibliographic locator |
 | CHT-P0-13 | Devinatz-Hopkins homotopy fixed point theorem | 第六章 $L_{K(n)}X\simeq(E_nX)^{hG_n}$ | batch 2 bibliographic locator |
@@ -48,8 +51,8 @@
 | CHT-P1-15 | Behrens-Carlisle equivariant periodicity | 第十一章 | frontier locator |
 | CHT-P1-16 | Allen-Piessevaux synthetic equivariant motivic reconstruction | 第十一章 | frontier locator |
 | CHT-P1-17 | Adams-Novikov/chromatic spectral sequence convergence | 第十二章、附录 B/C | batch 2 bibliographic locator |
-| CHT-P1-18 | $K(n)$-module category field-like classification | 附录 H | batch 1/2 bibliographic locator |
-| CHT-P1-19 | Telescope Bousfield class independence | 附录 I | batch 1 bibliographic locator |
+| CHT-P1-18 | Morava K field/module/Künneth package | 第三章、附录 H | HS II, Propositions 1.4、1.5 |
+| CHT-P1-19 | Telescope Bousfield class independence | 附录 I | HS II, Corollary 3.7 与 Theorem 14 |
 | CHT-P1-20 | Morava module/change-of-rings comparison | 附录 J | batch 2 bibliographic locator |
 | CHT-P1-21 | tmf supersingular local model and power operations | 附录 K | batch 2 bibliographic locator |
 | CHT-P1-22 | Adams-Novikov low-stem tables | 附录 M | batch 2 bibliographic locator |
@@ -72,4 +75,7 @@
 
 ## D.5 当前状态
 
-本附录已达到内容层面的引用闭合：所有 P0/P1 外部输入均有 bibliographic 或 frontier locator，且用途和禁止用途已登记。它尚未达到出版校对层面的 theorem/section/page 精确定位状态。
+本附录已达到内容层面的引用闭合。主 chromatic proof chain 已达到
+theorem/section locator 状态；Morava descent、tmf、Picard、前沿与
+equivariant/motivic 项仍主要停留在 bibliographic/frontier locator，尚未
+达到全书出版校对层面的逐页定位状态。

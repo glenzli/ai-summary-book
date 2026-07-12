@@ -91,7 +91,7 @@ E_B(g,s,f)=f_s(g)+M(s)f_s(g),
 $$
 其中 $M(s)$ 为标准 intertwining operator。
 
-**证明草图.** 对
+**证明路线（外部输入）.** 对
 $$
 B(K)\backslash G(K)/B(K)
 $$
@@ -109,13 +109,13 @@ $$
 
 **命题 L.16.** 若 Eisenstein series 的 pole 来自归一化因子中的 L 函数 pole，则其 residue 可产生 residual automorphic representation。
 
-**证明草图.** Constant term formula L.5 把 Eisenstein series 的 meromorphic behavior 降到 intertwining operators。若某个 $M(w,\lambda)$ 在 $\lambda_0$ 有 pole，且该 pole 未被不同 Weyl 项抵消，则 $E(g,\phi,\lambda)$ 在 $\lambda_0$ 有 pole。取 residue 得到 automorphic form；若其 $L^2$ norm 有限，则它生成 residual spectrum 中的表示。$\square$
+**证明路线（外部输入）.** Constant term formula L.5 把 Eisenstein series 的 meromorphic behavior 降到 intertwining operators。若某个 $M(w,\lambda)$ 在 $\lambda_0$ 有 pole，且该 pole 未被不同 Weyl 项抵消，则 $E(g,\phi,\lambda)$ 在 $\lambda_0$ 有 pole。取 residue 得到 automorphic form；若其 $L^2$ norm 有限，则它生成 residual spectrum 中的表示。$\square$
 
 ## L.6 Arthur 参数中的残余谱
 
 **命题 L.17.** 非 tempered Arthur 参数可解释为 residual spectrum 中非 tempered 表示的组织语言之一。
 
-**证明草图.** Arthur 参数
+**证明路线（外部输入）.** Arthur 参数
 $$
 \psi:L_K\times\operatorname{SL}_2(\mathbb C)\to{}^LG
 $$

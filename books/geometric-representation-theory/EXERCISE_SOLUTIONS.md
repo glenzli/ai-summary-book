@@ -10,7 +10,7 @@
 $$
 G/B\times G/B\xleftarrow{p}G\times^B G/B\xrightarrow{m}G/B
 $$
-以及卷积公式 $m_!p^\ast(-\boxtimes -)$，并声明 equivariance、properness 或 compact-support convention。
+若 source 真有 map $p$ 到 Cartesian product，可写卷积公式 $m_!p^\ast(-\boxtimes-)$；若 source 是 contracted product，则必须另写 torsor atlas $\widetilde C\xrightarrow q C$，先把 $p^\ast(-\boxtimes-)$ 沿 $q$ descent，再作 $m_!$。两种情形都要声明 equivariance、support-properness 或 compact-support convention。
 
 **0.3.** 例：Beilinson-Bernstein localization。需检查底域 $k=\mathbb C$、$G$ reductive、$\lambda$ regular dominant、TDO convention、category $\mathcal O$ block 和 global sections 的 exactness。
 
@@ -121,23 +121,25 @@ $$
 
 ## 第 12 章
 
-**12.1.** $GL_1(k((z)))/GL_1(k[[z]])=k((z))^\times/k[[z]]^\times\simeq\mathbb Z$，由 valuation 标号。
+**12.1.** 对任意 field extension $E'/\mathbb C$，每个 $f\in E'((z))^\times$ 唯一写成 $z^n u$，其中 $n\in\mathbb Z$、$u\in E'[[z]]^\times$，所以 geometric points 由 valuation 参数化。但 representability 是对全部 $\mathbb C$-algebras 的 functor statement；dual-number loop $1+\varepsilon z^{-1}$ 说明仅算 fields 看不见 nilpotent families。
 
 **12.2.** $g\in GL_n(k((z)))$ 把标准 lattice $k[[z]]^n$ 送到 lattice $L$；右乘 $GL_n(k[[z]])$ 不改变 $L$，每个 lattice 可由某个 $g$ 得到。
 
-**12.3.** 二重 convolution 参数化 $(\mathcal L_0,\mathcal L_1,\mathcal L_2)$ 的 lattice chain；三重参数化四个 lattices。相邻相对位置给出两个或三个 Schubert 条件。
+**12.3.** 可在 $LG\times LG\times\operatorname{Gr}_G$ 上取
+$(h_1,h_2)$ 作用为
+$(g_1,g_2,x)\mapsto(g_1h_1^{-1},h_1g_2h_2^{-1},h_2x)$。于是 $g_1g_2x$ 不变；先商 $h_1$ 或 $h_2$ 给出两种加括号的 contracted products，四重版本给出 pentagon coherence。
+
+**12.4.** $\mathscr O/(z^2)$ 的非零 proper submodule 中任取元素 $a+bz$；若 $a\ne0$，它生成全模，故 proper submodule 的元素都落在 $(z)$。而 $(z)$ 是一维 $\mathbb C$-space，故唯一 length-$1$ submodule 是 $zQ$。其 inverse image 给出 open stratum 上唯一的 intermediate lattice。
 
 ## 第 13 章
 
-**13.1.** $\operatorname{Gr}_{GL_1}\simeq\mathbb Z$；点 $n$ 的 skyscraper 对应 $G^\vee=GL_1$ 的 character $t\mapsto t^n$。
+**13.1.** 对 $t\in T^\vee(R)$，在 $F_\mu(\mathcal F)\otimes R$ 上乘 $\mu(t)$；naturality、$(\mu+\eta)(t)=\mu(t)\eta(t)$ 和 unit weight $0$ 分别给 morphism、tensor 和 unit compatibility。仅此构造不能证明 injective：若实际出现的 weights 未生成 $X^\ast(T^\vee)$，其公共 kernel 会作用平凡；排除此情形需要额外几何输入。
 
-**13.2.** $SL_2$ 的 coweight lattice 对应 $PGL_2$ 的 weight lattice；dominant coweights $n\ge0$ 对应 $PGL_2$ 的 dominant weights，注意根/权格 quotient。
+**13.2.** 对 $T=\{\operatorname{diag}(t,t^{-1})\}$，$X_\ast(T)\simeq\mathbb Z$，dominant cone 为 $n\ge0$。它成为 $PGL_2$ 的 character lattice；若用 simply connected $SL_2$ 的 fundamental weight 作单位，这些正是 even weights $2n$，所以 odd $SL_2$ highest weights 不下降为 $PGL_2$-representations。
 
-**13.3.** 五项为：perversity、convolution t-exactness、commutativity constraint、global cohomology fiber functor、dual root datum 识别。
+**13.3.** 在 graded-vector-space model 中 rigid dual 为 $(V^\vee)_n=(V_{-n})^\vee$，故 point object $E_n$ 的 dual 是 $E_{-n}$。命题 13.14 下分别对应 $\chi_n$ 与 $\chi_{-n}=\chi_n^\vee$。
 
-**13.4.** 在 $GL_1$ 的 affine Grassmannian 中，Verdier duality 本身固定第 $n$ 个点支撑上的 skyscraper 对象。表示范畴中的 dual character 对应 $n\mapsto -n$，来自 Tannakian rigid dual 或群反演，而不是单独由 Verdier duality 产生。
-
-**13.5.** $SL_2$ 的 $\operatorname{Gr}$ 不只是离散分支；orbit closures 有非平凡几何，表示的 weight spaces 由 MV cycles/weight functors 给出。
+**13.4.** $\dim\operatorname{Sym}^2E^2=3$，$\dim\det(E^2)=1$。Semismall decomposition 的 multiplicities 则都为 $1$：open fiber 的 $H_0$ 与 closed fiber $\mathbb P^1$ 的 top $H_2$ 都是一维。表示维数来自各 IC summands 的 total cohomology，不能与 decomposition multiplicity 混同。
 
 ## 第 14 章
 

@@ -10,7 +10,7 @@
 
 ## 27.1 自由 Gaussian 波包
 
-**设定 27.1.** 一维自由 Hamiltonian 为
+**设定 27.1.** 在 $L^2(\mathbb R)$ 上取 $m>0$，一维自由 Hamiltonian 为
 $$
 H=\frac{P^2}{2m}.
 $$
@@ -18,7 +18,7 @@ $$
 $$
 \psi_0(x)=\left(\frac1{\pi\sigma^2}\right)^{1/4}
 \exp\left(-\frac{x^2}{2\sigma^2}+ik_0x\right),
-\qquad \sigma>0.
+\qquad \sigma>0,\quad k_0\in\mathbb R.
 $$
 
 **命题 27.2.** 自由演化后的波函数为
@@ -30,6 +30,8 @@ $$
 +ik_0x-\frac{ik_0^2t}{2m}
 \right].
 $$
+这里 $t\in\mathbb R$，复平方根取沿实 $t$ 连续且在 $t=0$ 等于 $1$
+的分支。
 
 **证明.** Fourier 表象中
 $$
@@ -76,6 +78,7 @@ $$
 $$
 H=-\frac{\omega}{2}\sigma_z.
 $$
+其中 $\omega\in\mathbb R$。
 
 **命题 27.5.** 若初态为 $\sigma_x$ 的 $+1$ 本征态
 $$
@@ -84,7 +87,7 @@ $$
 则
 $$
 \langle\sigma_x\rangle_t=\cos\omega t,\qquad
-\langle\sigma_y\rangle_t=\sin\omega t,\qquad
+\langle\sigma_y\rangle_t=-\sin\omega t,\qquad
 \langle\sigma_z\rangle_t=0.
 $$
 
@@ -104,7 +107,7 @@ $$
 $$
 $$
 \langle\sigma_y\rangle_t
-=-i\overline a b+i\overline b a=\sin\omega t,
+=-i\overline a b+i\overline b a=-\sin\omega t,
 $$
 其中 $a=e^{i\omega t/2}/\sqrt2$、$b=e^{-i\omega t/2}/\sqrt2$。最后
 $$
@@ -119,9 +122,10 @@ $$
 H=\frac12\begin{pmatrix}\delta&\Omega\\ \Omega&-\delta\end{pmatrix}
 =\frac12(\Omega\sigma_x+\delta\sigma_z),
 $$
-其中 $\Omega$ 为耦合强度，$\delta$ 为失谐。
+其中 $\Omega,\delta\in\mathbb R$，分别为耦合强度与失谐；该实性保证
+$H$ 自伴。
 
-**命题 27.7.** 若初态为 $|0\rangle=(1,0)^T$，则测得 $|1\rangle=(0,1)^T$ 的概率为
+**命题 27.7.** 假设 $\Omega_R:=\sqrt{\Omega^2+\delta^2}>0$。若初态为 $|0\rangle=(1,0)^T$，则测得 $|1\rangle=(0,1)^T$ 的概率为
 $$
 P_{0\to1}(t)
 =\frac{\Omega^2}{\Omega_R^2}\sin^2\frac{\Omega_Rt}{2},
@@ -145,11 +149,19 @@ $$
 $$
 取模平方即得概率公式。$\square$
 
-**推论 27.8.** 共振情形 $\delta=0$ 下，
+**退化情形.** 若 $\Omega=\delta=0$，则 $H=0$，所以
+$U(t)=I$ 且 $P_{0\to1}(t)=0$；命题中的商式在这一点不作定义。
+
+**推论 27.8.** 共振情形 $\delta=0$ 且 $\Omega\ne0$ 下，
 $$
-P_{0\to1}(t)=\sin^2\frac{\Omega t}{2}.
+P_{0\to1}(t)=\sin^2\frac{|\Omega|t}{2}.
 $$
-特别地，在 $t=\pi/\Omega$ 时完成一次全反转。
+特别地，第一次全反转发生在正时间 $t=\pi/|\Omega|$。
+
+**证明.** 在命题 27.7 的公式中取 $\delta=0$，则
+$\Omega_R=|\Omega|$ 且 $\Omega^2/\Omega_R^2=1$，即得显示公式。令
+$|\Omega|t/2=\pi/2$，得到第一次正时间全反转。
+$\square$
 
 ## 本章小结
 
@@ -161,5 +173,5 @@ $$
 
 **练习 27.2.** 在命题 27.5 中，若初态为 $|\uparrow\rangle$，计算三个 Pauli 矩阵的期望值。
 
-**练习 27.3.** 在 Rabi 公式中令 $\delta=0$，求第一次达到 $P_{0\to1}=1$ 的时间。
-
+**练习 27.3.** 在 Rabi 公式中令 $\delta=0$ 且 $\Omega\ne0$，求第一次
+达到 $P_{0\to1}=1$ 的正时间。

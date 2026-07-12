@@ -5,7 +5,7 @@
 第五章已经给出 colored operad 的基本定义。本附录补充四个严格化点：
 
 1. $C$-轮廓群胚的骨架和稳定子。
-2. Colored substitution product 的 coend/分块公式。
+2. Colored substitution product 的纤维群胚/coend 公式。
 3. 由 colored operad 编码代数同态、模、双模和代数-模对。
 4. Enriched colored operad 的定义边界。
 
@@ -40,29 +40,22 @@ $$
 $$
 (X\circ_CY)(S,\kappa;c)
 =
-\coprod_{\pi\in\operatorname{Part}(S)}
-\coprod_{\delta:\operatorname{Bl}(\pi)\to C}
-X(\operatorname{Bl}(\pi),\delta;c)
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+\coprod_{\delta:T\to C}
+X(T,\delta;c)
 \times
-\prod_{B\in\operatorname{Bl}(\pi)}
-Y(B,\kappa|_B;\delta(B)).
+\prod_{t\in T}
+Y(f^{-1}(t),\kappa|_{f^{-1}(t)};\delta(t)).
 $$
+目标双射同时重标号 $T$、$\delta$ 和全部张量因子。函数 $f$ 允许空纤维；若所有 nullary $Y$-项均为空，才可缩成第五章的非空分块特例。
 
 **命题 K.5.** 定义 K.4 关于轮廓同构自然，并给出 $\operatorname{SymSeq}_C$ 上的 bifunctor。
 
-**证明.** 若 $\varphi:(S,\kappa;c)\to(T,\lambda;c)$ 是同构，则 $\varphi$ 把 $S$ 的分块 $\pi$ 推到 $T$ 的分块 $\varphi\pi$。块颜色函数 $\delta$ 被送到
-$$
-(\varphi_\*\delta)(\varphi B)=\delta(B).
-$$
-外层项由块集合双射
-$$
-\operatorname{Bl}(\pi)\to\operatorname{Bl}(\varphi\pi)
-$$
-作用，内层项由限制双射 $B\to\varphi B$ 作用。函子性来自双射推前分块与限制双射对复合的相容。$\square$
+**证明.** 若 $\varphi:(S,\kappa;c)\to(S',\lambda;c)$ 是同构，则把代表映射 $f:S\to T$ 改为 $f\varphi^{-1}:S'\to T$，并在每个纤维上应用 $\varphi$ 的限制。该操作与目标双射关系交换，故通过 colimit。恒等与复合由源重标号和纤维限制的函子性给出。对 $X,Y$ 的态射逐装饰作用，显然与同一商关系相容，因此得到 bifunctor。$\square$
 
-**命题 K.6.** $\circ_C$ 的结合约束由三层 colored 分块拉平给出。
+**命题 K.6.** $\circ_C$ 的结合约束由可复合 colored finite maps 的两层共同表示给出，并满足五边形相干性。
 
-**证明.** 一个 $X\circ_C(Y\circ_CZ)$ 的元素由外层分块 $\pi$、每个外块 $B$ 的内层分块 $\rho_B$、外层块颜色 $\delta$、内层块颜色 $\epsilon_B$ 以及 $X,Y,Z$ 装饰组成。把所有 $\rho_B$ 拉平成 $S$ 的分块 $\rho$，并把 $\operatorname{Bl}(\rho)$ 按外块分组，就得到 $(X\circ_CY)\circ_CZ$ 的元素。反向从 $\rho$ 和其块集合分块恢复 $\pi$ 与各 $\rho_B$。颜色函数也按同一分组拼接和拆分。三层分块拉平结合律给出相干性。$\square$
+**证明.** 两边都由二层映射 $S\xrightarrow{g}U\xrightarrow{p}T$、中间颜色函数 $\epsilon:U\to C$、外层颜色函数 $\delta:T\to C$ 及相容的 $X,Y,Z$ 装饰表示，并对 $U,T$ 的双射取商。一个方向先展开 $(X\circ_CY)(U)$；另一方向把每个 $(pg)^{-1}(t)$ 中的 $Y\circ_CZ$ 目标集合不交并为 $p^{-1}(t)$。这两个操作互逆。四重代入对应三层映射和逐层颜色函数，所有结合路径在该共同数据上相同，故满足五边形。$\square$
 
 ## K.3 自由 colored operad
 
@@ -140,7 +133,7 @@ $$
 
 ## K.6 Enriched colored operad
 
-**定义 K.16.** 设 $(\mathcal V,\otimes,\mathbb 1)$ 是具有相应余积和张量分配性质的对称幺半范畴。一个 $\mathcal V$-enriched $C$-colored symmetric sequence 是函子
+**定义 K.16.** 设 $(\mathcal V,\otimes,\mathbb 1)$ 是 cocomplete 对称幺半范畴，并且张量积分别保持小 colimits。一个 $\mathcal V$-enriched $C$-colored symmetric sequence 是函子
 $$
 X:\mathbf B_C\to\mathcal V.
 $$
@@ -148,19 +141,21 @@ $$
 $$
 (X\circ_CY)(S,\kappa;c)
 =
-\coprod_{\pi,\delta}
-X(\operatorname{Bl}(\pi),\delta;c)
+\operatorname*{colim}_{(f:S\to T)\in\operatorname{Fib}(S)}
+\coprod_{\delta:T\to C}
+X(T,\delta;c)
 \otimes
-\bigotimes_{B\in\operatorname{Bl}(\pi)}
-Y(B,\kappa|_B;\delta(B)).
+\bigotimes_{t\in T}
+Y(f^{-1}(t),\kappa|_{f^{-1}(t)};\delta(t)).
 $$
+这里 colimit 在 $\mathcal V$ 中取，目标双射同步重标号 $T$、$\delta$ 与张量因子；空纤维保留 nullary $Y$-项。若所有这些 nullary 项均为初对象，才可改写为非空 colored 分块公式。
 $\mathcal V$-enriched colored operad 是该代入乘积下的幺半对象。
 
 **说明 K.17.** 当 $\mathcal V=\mathbf{Mod}_R$ 时得到线性 colored operad；当 $\mathcal V=\mathbf{Ch}_k$ 时得到 dg colored operad；当 $\mathcal V=\mathbf{sSet}$ 或 $\mathbf{Top}$ 时得到 simplicial 或 topological colored operad。
 
-**命题 K.18.** 若 $\mathcal V$ 的张量积保持相关小余积，且 $\mathcal V$ 的对称幺半相干性成立，则 $\circ_C$ 在 $\mathcal V$-值 colored symmetric sequences 上满足结合律和单位律。
+**命题 K.18.** 在定义 K.16 的假设下，$\circ_C$ 在 $\mathcal V$-值 colored symmetric sequences 上满足结合律和单位律。
 
-**证明.** 结合律仍由三层 colored 分块拉平给出。唯一新增点是要把
+**证明.** 两个加括号方向都由可复合映射 $S\to U\to T$、逐层颜色函数和同一组 $X,Y,Z$ 装饰表示。唯一新增点是要把
 $$
 X\otimes\bigotimes_B\left(Y_B\otimes\bigotimes_D Z_D\right)
 $$
@@ -168,7 +163,7 @@ $$
 $$
 \left(X\otimes\bigotimes_B Y_B\right)\otimes\bigotimes_D Z_D
 $$
-通过 $\mathcal V$ 的幺半结合约束和 braiding 相识别，并要求张量积与按分块求的余积分配。Mac Lane 相干性保证不同括号和重排得到同一自然同构。$\square$
+通过 $\mathcal V$ 的幺半结合约束和 braiding 相识别，并要求张量积保持公式中的 coproduct 与群胚 colimit。右单位强制 $S\to T$ 为双射，左单位强制 $T$ 为单点，这两项也覆盖 $S=\varnothing$。Mac Lane 相干性与多层映射复合的严格结合性保证五边形和三角形交换。$\square$
 
 ## K.7 模型结构边界
 

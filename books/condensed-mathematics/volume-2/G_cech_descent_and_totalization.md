@@ -118,11 +118,11 @@ $$
 **证明.** 有交换图
 
 $$
-\begin{CD}
-F(X) @>>> \operatorname{Tot}F(U^\bullet_X)\\
-@V f(X) VV @VV \operatorname{Tot}f(U^\bullet_X) V\\
-G(X) @>>> \operatorname{Tot}G(U^\bullet_X).
-\end{CD}
+\begin{array}{ccc}
+F(X) & \longrightarrow & \operatorname{Tot}F(U^\bullet_X)\\
+{\scriptstyle f(X)}\downarrow & & \downarrow{\scriptstyle \operatorname{Tot}f(U^\bullet_X)}\\
+G(X) & \longrightarrow & \operatorname{Tot}G(U^\bullet_X)
+\end{array}
 $$
 
 上下横箭头是等价。右侧竖箭头是逐阶等价的极限，因此是等价。由二出三性质，左侧竖箭头是等价。证毕。

@@ -8,9 +8,18 @@
 
 读者应熟悉范畴、函子、自然变换、有限极限、纤维积和等化子。
 
+## 1.0 大小与空覆盖约定
+
+本章的 \(\mathcal C\) 是第一卷附录 A 所固定 universe 中的小范畴，值域
+\(\mathbf{Set}\) 指同一工作层级的集合范畴。覆盖族的指标集总是有限集，**允许为空集**。
+若 \(\mathcal C\) 有初对象 \(0\)，空族覆盖 \(0\) 时，sheaf 条件包含
+\(F(0)\cong *\)。这个退化条件在 condensed site 上给出 \(F(\varnothing)=*\)，
+不能从只检查非空覆盖的版本中省略。
+
 ## 1.1 预层
 
-**定义 1.1.** 设 $\mathcal C$ 为范畴。$\mathcal C$ 上的集合值预层（presheaf）是反变函子
+**定义 1.1.** 设 $\mathcal C$ 为上述小范畴。$\mathcal C$ 上的集合值预层
+（presheaf）是反变函子
 
 $$
 F:\mathcal C^{\operatorname{op}}\to \mathbf{Set}.
@@ -49,7 +58,7 @@ $$
 **定义 1.3.** 设 $\mathcal C$ 有有限纤维积。一个 Grothendieck 预拓扑由每个对象 $U$ 的一族覆盖族
 
 $$
-\{U_i\to U\}_{i\in I}
+\{U_i\to U\}_{i\in I},\qquad |I|<\infty,
 $$
 
 组成，并满足：
@@ -65,6 +74,8 @@ $$
    \{U_{ij}\to U_i\to U\}_{i,j}
    $$
    是覆盖。
+
+这里 \(I=\varnothing\) 被允许；此时第 2、3 项按空族的通常范畴论约定解释。
 
 配备预拓扑的范畴称为站点（site），记作 $(\mathcal C,J)$。
 
@@ -100,7 +111,7 @@ $$
 F(U)\to \prod_i F(U_i)
 $$
 
-是单射到匹配族集合中。等价地，一个截面若在覆盖的每个部分上为零或相等，则它本身已经确定。
+是单射到匹配族集合中。等价地，两个截面若在覆盖的每个部分上相等，则它们本身相等。
 
 **定义 1.5.** 预层 $F$ 是 sheaf，如果对每个覆盖族 $\{U_i\to U\}$，序列
 
@@ -119,6 +130,19 @@ s\in F(U),\qquad s|_{U_i}=s_i.
 $$
 
 **注 1.6.** sheaf 条件包含两个部分：存在性与唯一性。separated presheaf 只要求唯一性，不要求每个匹配族都能粘合。
+
+**边界 1.6A（空对象）.** 假设 \(\mathcal C\) 有初对象 \(0\)，且空族覆盖
+\(0\)。定义 1.5 对该覆盖变成
+
+$$
+F(0)\longrightarrow \prod_{i\in\varnothing}F(U_i)=*.
+$$
+
+右侧第二个乘积也为单点集，所以等化子是 \(*\)。因此 sheaf 必须满足
+\(F(0)\cong *\)。反之，只检查非空覆盖不会检测这个条件；例如在
+\(\mathbf{CHaus}_\kappa\) 上，可在所有非空对象取单点集、在空对象取一个多点集，
+并把所有到空对象的限制映射选为同一基点，由此得到满足所有非空覆盖条件但不满足空覆盖
+条件的预层。
 
 ## 1.4 子典范性
 
@@ -161,7 +185,8 @@ $$
 
 是通常意义上的 sheaf，当且仅当对每个开覆盖，局部截面能在交集上相容时唯一粘合。
 
-这个例子帮助理解 sheaf 条件，但凝聚数学的站点不是 $\operatorname{Open}(X)$。凝聚数学使用测试空间范畴 $\mathbf{CHaus}$，覆盖族是有限联合满射族。
+这个例子帮助理解 sheaf 条件，但凝聚数学的站点不是 $\operatorname{Open}(X)$。
+凝聚数学使用固定层级的测试空间范畴 $\mathbf{CHaus}_\kappa$，覆盖族是有限联合满射族。
 
 ## 1.7 本章小结
 
@@ -174,7 +199,8 @@ $$
 后续定义凝聚集合时，我们将直接写：
 
 $$
-\mathbf{CondSet}=\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}}),
+\mathbf{CondSet}_\kappa
+=\operatorname{Sh}(\mathbf{CHaus}_\kappa,J_{\operatorname{surj}}),
 $$
 
 其中 $J_{\operatorname{surj}}$ 的覆盖族是有限联合满射的紧 Hausdorff 空间族。
@@ -188,3 +214,6 @@ $$
 **练习 1.3.** 设 $X$ 为拓扑空间。说明为什么通常开覆盖 sheaf 条件中的“交集”其实是纤维积 $U_i\times_U U_j$。
 
 **练习 1.4.** 给出一个预层在覆盖上满足唯一性但不满足存在性的例子。
+
+**练习 1.5.** 在允许空覆盖的 condensed site 上证明
+\(F(\varnothing)=*\)，并说明该结论为何不是任一非空满射覆盖的推论。

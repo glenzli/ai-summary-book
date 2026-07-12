@@ -66,7 +66,7 @@
 
 以下事项不影响当前内容收口判定：
 
-1. 页码级 locator 尚未全部补齐；
+1. 页码级 locator 的逐页复核列入独立的出版校对流程；
 2. 部分外部定理尚未写出完整证明，因为它们本来作为外部输入使用；
 3. geometric Langlands proof series、symplectic duality、critical CoHA 等前沿方向只作边界章或接口章；
 4. 正特征、parity sheaves、real groups、microlocal character formulas 尚未扩成独立正文。

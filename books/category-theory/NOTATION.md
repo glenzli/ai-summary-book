@@ -8,12 +8,12 @@
   $$
   \mathcal U\in\mathcal V\in\mathcal W.
   $$
-  若不特别说明，“集合”指 $\mathcal U$-小集合。
-- $\mathbf{Set}_{\mathcal U}$：$\mathcal U$-小集合范畴。
-- $\mathbf{Cat}_{\mathcal U}$：$\mathcal U$-小范畴和函子构成的范畴。
-- 一个范畴称为小范畴，若其对象集合和全部态射集合均属于指定宇宙。
-- 一个范畴称为局部小范畴，若任意两个对象之间的 Hom 是指定宇宙中的集合。
-- 若需同时讨论所有 $\mathcal U$-小范畴，默认它们组成 $\mathcal V$-小意义下的范畴 $\mathbf{Cat}_{\mathcal U}$。
+  若不特别说明，“集合”指 $\mathcal U$-小集合，即与 $\mathcal U$ 的某个元素双射的集合。
+- $\mathbf{Set}_{\mathcal U}$：以 $\mathcal U$ 中集合为对象的集合范畴。它在 $\mathcal V$ 层小、局部 $\mathcal U$-小，但不在 $\mathcal U$ 层小。
+- $\mathbf{Cat}_{\mathcal U}$：$\mathcal U$-小范畴和函子构成的范畴；它同样在 $\mathcal V$ 层小且局部 $\mathcal U$-小。
+- 一个范畴称为 $\mathcal U$-小，若其对象集和总态射集都是 $\mathcal U$-小集合；称为局部 $\mathcal U$-小，若每个 Hom 是 $\mathcal U$-小集合。
+- 未另行声明的普通范畴默认在 $\mathcal V$ 层小且局部 $\mathcal U$-小。“小范畴”“小极限”“小余极限”中的“小”默认指 $\mathcal U$-小。
+- “本质 $\mathcal U$-小”表示等价于一个 $\mathcal U$-小范畴；它不表示给定对象集本身属于 $\mathcal U$。
 
 ## 普通范畴论
 
@@ -37,10 +37,11 @@
   $$
   \operatorname{Nat}(F,G).
   $$
+  若源范畴 $\mathcal C$ 为 $\mathcal U$-小且目标局部 $\mathcal U$-小，则该集合为 $\mathcal U$-小；若 $\mathcal C$ 只在 $\mathcal V$ 层小，则一般只保证它为 $\mathcal V$-小。
 
 ## 预层、Yoneda 与表示性
 
-- $\widehat{\mathcal C}$ 表示集合值预层范畴：
+- 对 $\mathcal U$-小范畴 $\mathcal C$，$\widehat{\mathcal C}$ 表示 $\mathcal U$-小集合值预层范畴：
   $$
   \widehat{\mathcal C}=\operatorname{Fun}(\mathcal C^{\operatorname{op}},\mathbf{Set}_{\mathcal U}).
   $$

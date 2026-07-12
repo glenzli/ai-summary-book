@@ -136,7 +136,7 @@ analytic localization 的完全证明需要补以下内容：
 
 ## X.7 本附录闭包
 
-**定理 X.9（analytic localization 的分解）。** analytic localization 的证明分解为：
+**证明责任 X.9（analytic localization 的分解）。** analytic localization 的完整证明分解为：
 
 1. 集合生成局部化存在；
 2. \(K_S^{\mathcal M}\)-正交给出局部对象；
@@ -144,7 +144,8 @@ analytic localization 的完全证明需要补以下内容：
 4. kernel 张量理想性给出 analytic tensor；
 5. Huber/rational 结构给出几何 descent。
 
-其中 1、2、4 的形式后果在书内证明；3、5 仍为 Scholze 输入或后续证明目标。
+其中 1、2、4 的形式后果已在书内证明；3、5 是本卷明确登记的 Scholze
+外部输入。因而本条是证明责任清单，不作为已经在书内独立证明的定理。
 
 ## 练习
 
@@ -152,4 +153,3 @@ analytic localization 的完全证明需要补以下内容：
 2. 证明 X.6 中张量代表元无关。
 3. 在 \(A=\mathbb Z\) 的 solid 特例中写出所有 \(K_S^{\mathcal M}\)。
 4. 解释为什么 pre-analytic datum 不足以推出 rational descent。
-

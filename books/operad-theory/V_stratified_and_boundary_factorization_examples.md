@@ -1,6 +1,6 @@
 # 附录 V：带边界与分层 factorization homology 样例
 
-本附录补充第二十章的定义 20.3--外部输入定理 20.23 和附录 N 的定义 N.3--外部输入定理 N.30。目标是说明为什么带边界、带角和分层空间不能用无边界 manifold 的公式直接处理。完整 stratified factorization homology 和 sectorial/Fukaya descent 仍作为外部输入。
+本附录补充第二十章的定义 20.3--研究边界 20.23 和附录 N 的定义 N.3--研究边界 N.30。目标是说明为什么带边界、带角和分层空间不能用无边界 manifold 的公式直接处理。完整 stratified factorization homology 和 sectorial/Fukaya descent 保持为外部或研究边界。
 
 ## V.1 半空间与边界条件
 
@@ -31,13 +31,13 @@ $$
 \int_{[0,1]}(M,A,N)\simeq M\otimes_A^{\mathbf L}N.
 $$
 
-**外部输入定理 V.3（区间计算；AF-4 边界来源）.** 在带边界或分层 factorization homology 的标准模型中，上述公式成立。
+**外部边界 V.3（区间计算；AF-4 入口）.** 在把端点 modules 与所选 boundary disk algebra 模型精确对齐后，标准区间公式为上述 derived tensor product。
 
-**证明边界.** 区间内部由 $A$ 标记，两个端点由 modules 标记。把区间分解为左端 collar、内部小区间和右端 collar，excision 给出 two-sided bar construction
+**证明路线（外部输入）.** 区间内部由 $A$ 标记，两个端点由 modules 标记。把区间分解为左端 collar、内部小区间和右端 collar，excision 给出 two-sided bar construction
 $$
 B(M,A,N).
 $$
-Ayala--Francis, arXiv:1206.5522v6, Theorem 3.26 给出带边界版本的基本定位；严格区间公式还需要把所选边界 disk category 与 module 标记模型逐项对齐。$\square$
+Ayala--Francis, arXiv:1206.5522v6, Theorem 3.26 给出带边界版本的基本定位；严格区间公式还需要把所选边界 disk category 与 module 标记模型逐项对齐。命题 X.14.1 对 $A=k[\varepsilon]/(\varepsilon^2)$ 显式计算了边界条件改变所得 derived tensor product 的现象。
 
 **说明 V.4.** 若取 $M=N=A$，则
 $$
@@ -70,7 +70,7 @@ $$
 $$
 左右一维 strata 可标记为 $E_1$-algebras $A,B$，点 strata 可标记为 $(A,B)$-bimodule $M$。
 
-**外部输入定理 V.6（点缺陷计算）.** 在一维分层 factorization homology 中，
+**外部边界 V.6（点缺陷计算）.** 在固定一维分层 disk category 与标记 convention 后，
 $$
 \int_{[-1,1]}(A,M,B)
 $$
@@ -86,9 +86,9 @@ $$
 2. $M_+$ 上的 $E_n$-algebra $A_+$；
 3. $N$ 上的 defect algebra/module $D$，它应是连接 $A_-$ 与 $A_+$ 的 $E_{n-1}$-型双模对象。
 
-**外部输入定理 V.8.** 在适当分层 factorization homology 模型中，沿 hypersurface 的 gluing 由 $E_{n-1}$-algebra/module 的 relative tensor product 控制。
+**外部边界 V.8（hypersurface gluing）.** 在适当分层 factorization homology 模型中，沿 hypersurface 的 gluing 由 $E_{n-1}$-algebra/module 的 relative tensor product 控制。
 
-**证明边界.** 该结论需要 stratified disk category、constructible factorization algebra 和 conically smooth stratified spaces 的技术。不能由无边界 excision 单独推出。$\square$
+**证明路线（外部输入）.** 该结论需要 stratified disk category、constructible factorization algebra 和 conically smooth stratified spaces 的技术。不能由无边界 excision 单独推出。
 
 ## V.6 Corners 与多模块结构
 
@@ -110,9 +110,9 @@ Wrapped Fukaya categories 的 cosheaf 或 sheaf-theoretic gluing 常在 Liouvill
 2. 对包含或 gluing 分配 functor；
 3. 通过 descent 重构全局 category。
 
-**外部输入定理 V.11.** 在指定的 Liouville sector 或 wrapped Fukaya 设置中，sectorial descent 或 skeletal descent 可把全局 Fukaya category 表示为局部数据的 colimit 或 limit。
+**研究边界 V.11（sectorial/skeletal descent）.** 在指定的 Liouville sector 或 wrapped Fukaya 设置中，sectorial descent 或 skeletal descent 可能把全局 Fukaya category 表示为局部数据的 colimit 或 limit。没有固定模型和精确来源时，本书不调用该句。
 
-**证明边界.** 这属于辛几何与 Floer theory 的外部定理，需要 compactness、transversality、wrapping、stops、orientation 和 functoriality。Operad theory 只组织 gluing 形状。$\square$
+**证明路线（外部输入）.** 这属于辛几何与 Floer theory 的外部定理，需要 compactness、transversality、wrapping、stops、orientation 和 functoriality。Operad theory 只组织 gluing 形状。
 
 ## V.8 使用检查表
 

@@ -139,11 +139,15 @@ $$
 
 ## L.7 Additivity 与因子化同调边界
 
-**外部输入定理 L.19（Dunn/Lurie additivity）.** 在适当模型中，有
+**外部输入定理 L.19（Dunn/Lurie additivity；DUNN-1）.** 对 $m,n\ge0$，Lurie *Higher Algebra* Theorem 5.1.2.2 断言典范 bifunctor
 $$
-E_m\otimes E_n\simeq E_{m+n}
+E_m^\otimes\times E_n^\otimes\longrightarrow E_{m+n}^\otimes
 $$
-或等价的 $E_m$-algebras in $E_n$-algebras 与 $E_{m+n}$-algebras 的比较。该定理依赖所用 tensor product of operads 或 infinity-operads 的精确定义。
+把目标展示为两个 infinity-operads 的 tensor product，故
+$$
+E_m^\otimes\otimes E_n^\otimes\simeq E_{m+n}^\otimes
+$$
+并由 tensor product 的泛性质得到 $E_m$-algebras in $E_n$-algebras 与 $E_{m+n}$-algebras 的比较。这里使用 infinity-operads 的 tensor product；strict topological operad 的 Boardman--Vogt tensor product 仍需另行给出 cofibrancy 与 comparison 定理。
 
 **说明 L.20.** Additivity 是 factorization homology 和 higher algebra 中的重要桥梁，但不属于 little cubes operad 定义本身。正文引用时必须说明使用 Boardman-Vogt tensor product、Lurie tensor product of infinity-operads，还是其他模型。
 

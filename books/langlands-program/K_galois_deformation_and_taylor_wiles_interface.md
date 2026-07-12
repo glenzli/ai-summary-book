@@ -41,7 +41,7 @@ $$
 
 **命题 K.5.** 若 $\overline\rho$ 绝对不可约，则任意 lift 的 automorphism group 在 strict equivalence 口径下不产生额外标量模糊。
 
-**证明草图.** 绝对不可约性和 Schur 引理说明与 $\overline\rho$ 交换的矩阵只有标量。Strict equivalence 中只允许约化为 $1$ 的共轭；标量自同构在固定残余表示和 determinant 条件后不产生非平凡变形同构。该刚性是 Mazur representability 的关键假设之一。$\square$
+**证明路线（外部输入）.** 绝对不可约性和 Schur 引理说明与 $\overline\rho$ 交换的矩阵只有标量。Strict equivalence 中只允许约化为 $1$ 的共轭；标量自同构在固定残余表示和 determinant 条件后不产生非平凡变形同构。该刚性是 Mazur representability 的关键假设之一。$\square$
 
 ## K.2 局部变形条件
 
@@ -111,7 +111,7 @@ H^1_{\mathcal L}(G_{\mathbb Q,S},\operatorname{ad}^0\overline\rho).
 $$
 在标准可表示局部条件下二者相等。
 
-**证明草图.** 对双数环 $k[\epsilon]/(\epsilon^2)$ 的 lift 可写为
+**证明路线（外部输入）.** 对双数环 $k[\epsilon]/(\epsilon^2)$ 的 lift 可写为
 $$
 \rho_\epsilon(g)=(1+\epsilon c(g))\overline\rho(g).
 $$

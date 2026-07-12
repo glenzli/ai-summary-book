@@ -21,12 +21,16 @@
 
 ## 3. BBD perverse sheaves 和 decomposition theorem
 
-**BBD-1.** Beilinson, Bernstein, Deligne, *Faisceaux pervers*, Asterisque 100, 1982。  
-定位：perverse t-structures、middle extension、simple perverse sheaves 分类。  
+**BBD-1.** Beilinson, Bernstein, Deligne, *Faisceaux pervers*, Asterisque 100, 1982。
+定位：§§2.1--2.2 的 perverse t-structures，§4.3 的 simple perverse sheaves 与 middle-extension classification；closed-embedding t-exactness 按 §4 formalism 调用。
 本书用途：第三章 perverse sheaves、第四章 IC sheaves、第五章 Springer sheaf 分解。
 
-**BBD-2.** 同上，decomposition theorem 入口通常定位到 BBD 的 decomposition theorem 部分，常用编号为 6.2.5。  
-本书用途：Springer sheaf semisimplicity、KL-IC purity/semisimplicity、geometric Satake 的部分结构。
+**BBD-2.** 同上，decomposition theorem 定位到 6.2.5。
+本书用途：Springer sheaf semisimplicity、KL-IC purity/semisimplicity，以及第十二章 characteristic-zero $GL_2$ semismall convolution。正文只对 $\operatorname{IC}_X$ 陈述默认 Betti 版本，并把 projective relative hard Lefschetz 单列。
+
+**BBD-SS-1.** de Cataldo and Migliorini, *The hard Lefschetz theorem and the topology of semismall maps*, Ann. Sci. Ecole Norm. Sup. 35 (2002), 759--772。
+定位：proper semismall maps、relevant strata、intersection forms 与 semismall decomposition。
+本书用途：附录 C.7；第十二章 12.18 的 $GL_2$ convolution multiplicity-one decomposition。
 
 ## 4. Riemann-Hilbert
 
@@ -37,15 +41,25 @@
 ## 5. Springer theory
 
 **SPR-1.** Springer, Borho-MacPherson, Kazhdan-Lusztig；教材入口：Chriss-Ginzburg, *Representation Theory and Complex Geometry*。  
-定位：Springer resolution、Springer sheaf 的 $W$-作用、Springer correspondence、Steinberg variety convolution。  
+定位：Springer resolution、nilpotent-orbit fiber-dimension/semismallness、Springer sheaf 的 $W$-作用、Springer correspondence、Steinberg variety convolution。
 本书用途：第五、六章。
 
 ## 6. Geometric Satake
 
-**GSAT-1.** Mirkovic and Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, arXiv:math/0401222。  
-定位：geometric Satake equivalence，perverse sheaves on affine Grassmannian 与 representations of $G^\vee$。  
-本书用途：第十三章和附录 I。  
-假设翻译：$G$ reductive，$\operatorname{Gr}_G$ affine Grassmannian，$L^+G$-equivariant perverse sheaves，系数可比本书默认域更一般，正文需按 $E$ 特化。
+**GSAT-1.** Mirkovic and Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, arXiv:math/0401222, v5, 2018-02-13。
+定位：主等价 (1.1)；Theorem 12.1 识别 dual root datum。
+本书用途：第十三章 13.6 和附录 I。
+假设翻译：原文在 complex affine Grassmannian 的 classical topology 上允许更一般 coefficient rings；正文固定代数闭 characteristic-zero field $E$、reduced ind-scheme 和 finite support。
+
+**AFFGR-1 / AFFGR-CONV-1.** 同一论文 §2 给出 reduced affine Grassmannian、orbit 与 closure convention；§4 的 Proposition 4.2、Lemma 4.4 给出 convolution perversity 与 stratified semismall estimate。
+本书用途：第十二章 representability/orbits、finite-support properness 和 convolution 定义。
+
+**GSAT-CONV-1 / GSAT-FIBER-1 / GSAT-WEIGHT-1.** Proposition 4.6 定位 associativity；§5 和 §6 定位 fusion 及 parity-corrected commutativity；Theorem 3.6、Corollary 3.7、Proposition 6.3、Proposition 6.4 定位 weight decomposition、faithfulness 和 tensor compatibility。
+本书用途：第十三章 13.2、13.4、13.11 和附录 I。
+
+**TANNAKA-1.** Saavedra Rivano, *Categories Tannakiennes*, Lecture Notes in Mathematics 265, 1972；Deligne--Milne, *Tannakian Categories*, Lecture Notes in Mathematics 900, 1982。
+定位：neutral Tannakian reconstruction。
+本书用途：第十三章 13.8；只从 fiber functor 构造 affine group scheme，不用于证明 Satake group 的 reductivity 或 root datum。
 
 ## 7. Soergel 和 Elias-Williamson
 
@@ -68,4 +82,3 @@
 2. 版本差异检查；
 3. 每条假设翻译到 `MODEL_HYPOTHESES_MATRIX.md`；
 4. 正文每次调用处加稳定 label。
-

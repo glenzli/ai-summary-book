@@ -14,7 +14,11 @@ $$
 
 ## 13.2 ADM 约束
 
-**命题 13.1（ADM 约束的投影来源）.** Einstein 方程沿空间切片单位法向 $n^\mu$ 和切向投影 $\gamma^\mu{}_i$ 的分量给出 Hamiltonian constraint 和 momentum constraint。
+**命题 13.1（ADM 约束的投影来源）.** 采用
+$(-,+,+,+)$、$K_{ij}=-\tfrac12\mathcal L_n\gamma_{ij}$ 与
+$j_i=-T_{\mu\nu}n^\mu\gamma^\nu{}_i$。当 $\Lambda=0$ 时，Einstein
+方程沿空间切片未来单位法向 $n^\mu$ 和切向投影 $\gamma^\mu{}_i$ 的
+分量分别给出下述 Hamiltonian constraint 和 momentum constraint。
 
 在无 $\Lambda$ 情况下，约束为
 
@@ -28,11 +32,20 @@ $$
 D_j(K^{ij}-\gamma^{ij}K)=8\pi G j^i.
 $$
 
-其中 $D_i$ 是 $\gamma_{ij}$ 的 Levi-Civita 联络，${}^{(3)}R$ 是三维标量曲率，$\rho$ 和 $j^i$ 是相对于切片法向观察者测得的能量密度和动量密度。
+其中 $D_i$ 是 $\gamma_{ij}$ 的 Levi-Civita 联络，${}^{(3)}R$ 是三维标量曲率。配合第十七章
+$$
+K_{ij}=-\frac12\mathcal L_n\gamma_{ij}
+$$
+的号差，本章定义法向观察者测得的能量密度与空间动量密度为
+$$
+\rho=T_{\mu\nu}n^\mu n^\nu,
+\qquad
+j_i=-T_{\mu\nu}n^\mu\gamma^\nu{}_i.
+$$
 
 第一式称为 Hamiltonian constraint，第二式称为 momentum constraint。
 
-这些约束来自 Einstein 方程沿切片法向和切向的投影。设 $n^\mu$ 是未来指向单位法向量，$\gamma^\mu{}_\nu=\delta^\mu{}_\nu+n^\mu n_\nu$ 是投影到空间切片的投影算子。Gauss-Codazzi 关系给出
+**证明.** 采用本书 mostly-plus 号差和上面的 $K_{ij},j_i$ 定义。这些约束来自 Einstein 方程沿切片法向和切向的投影。设 $n^\mu$ 是未来指向单位法向量，$\gamma^\mu{}_\nu=\delta^\mu{}_\nu+n^\mu n_\nu$ 是投影到空间切片的投影算子。Gauss--Codazzi 关系给出
 
 $$
 G_{\mu\nu}n^\mu n^\nu
@@ -45,17 +58,42 @@ $$
 以及
 
 $$
-G_{\mu\nu}n^\mu\gamma^\nu{}_i
+-G_{\mu\nu}n^\mu\gamma^\nu{}_i
 =D_jK^j{}_i-D_iK.
 $$
 
-将 Einstein 方程投影到这两个方向，就得到 Hamiltonian constraint 和 momentum constraint。其余空间-空间分量给出演化方程。
+将 Einstein 方程投影到这两个方向，并使用
+$$
+-G_{\mu\nu}n^\mu\gamma^\nu{}_i
+=-8\pi G T_{\mu\nu}n^\mu\gamma^\nu{}_i
+=8\pi G j_i,
+$$
+就得到 Hamiltonian constraint 和 momentum constraint。其余空间-空间分量给出演化方程。
+$\square$
 
-## 13.3 外部输入 A：局部适定性
+若显式保留宇宙学常数，则法向--法向投影改为
 
-**外部输入 A.** 给定满足约束的足够光滑初始数据，Einstein 方程在适当规范选择下存在局部唯一发展，并且存在最大 Cauchy 发展。
+$$
+{}^{(3)}R+K^2-K_{ij}K^{ij}
+=16\pi G\rho+2\Lambda,
+$$
 
-本书不证明该定理。证明需要把 Einstein 方程在谐和坐标等规范中化为准线性双曲系统，并处理约束传播。
+而动量约束不变，因为 $g_{\mu\nu}n^\mu\gamma^\nu{}_i=0$。这一
+$2\Lambda$ 的位置也可作为 ADM 号差的交叉检查。
+
+## 13.3 外部输入 A：最大 Cauchy 发展
+
+**外部输入 A（真空最大 Cauchy 发展）.** 设 $\Sigma$ 是光滑三维流形，
+$(\gamma_{ij},K_{ij})$ 是其上满足真空约束的光滑初始数据。则存在一个
+以 $\Sigma$ 为 Cauchy 超曲面的真空、全局双曲发展；所有这类发展中
+存在最大者，并在保持初始嵌入的等距意义下唯一。这里的唯一性不是固定
+坐标分量逐点相等，而是模微分同胚的几何唯一性。
+
+本书不证明该定理。局部存在性需要把 Einstein 方程在谐和坐标等规范
+中化为准线性双曲系统；最大化与几何唯一性还需要
+Choquet-Bruhat--Geroch 的发展拼接论证。加入物质时，只有当相应物质
+方程与 Einstein 方程组成适定的双曲系统并满足兼容约束时，才能使用
+对应版本，不能由真空定理自动推出。
 
 约束传播的逻辑是：若初始切片满足约束，并且演化方程成立，则由 Bianchi 恒等式
 
@@ -67,13 +105,17 @@ $$
 
 ## 13.4 ADM 能量
 
-对渐近平直时空，可以定义 ADM 质量。若空间度规在无穷远接近 Euclidean 度规：
+对渐近平直时空，可以定义 ADM 质量。固定一个渐近平直端及该端的
+渐近 Cartesian 坐标，并至少要求
 
 $$
 \gamma_{ij}=\delta_{ij}+O(r^{-1}),
+\qquad
+\partial_k\gamma_{ij}=O(r^{-2}),
 $$
 
-则 ADM 质量形式上为
+连同使极限存在且在容许渐近坐标变换下不变的标准可积性与奇偶条件。
+在这些假设下，ADM 质量为
 
 $$
 M_{\mathrm{ADM}}
@@ -83,34 +125,60 @@ M_{\mathrm{ADM}}
 (\partial_j\gamma_{ij}-\partial_i\gamma_{jj})n^i\,dS.
 $$
 
-它测量孤立引力系统的总能量。
+在 $c=1$ 单位中，它测量该渐近平直端的总质量，也等同于静止系总能量。
+仅写 $\gamma_{ij}=\delta_{ij}+O(r^{-1})$ 而不控制导数、坐标类和可积性，
+不足以保证该积分定义良好。
 
 在 Minkowski 初始数据中 $\gamma_{ij}=\delta_{ij}$，积分中被积函数为零，所以 $M_{\mathrm{ADM}}=0$。对 Schwarzschild 初始数据，在合适渐近平直坐标下该积分给出参数 $M$。因此 ADM 质量把度规在无穷远的一阶偏离转化为总能量。
 
-**外部输入 B (正质量定理).** 在适当能量条件和渐近平直假设下，
+**外部输入 B（三维 Riemannian 正质量定理）.** 设
+$(\Sigma,\gamma)$ 是完备、连通、无边界的光滑三维 Riemannian 流形，
+具有满足上述标准衰减条件的渐近平直端，并且
+${}^{(3)}R(\gamma)\ge0$。则每个渐近平直端的 ADM 质量满足
 
 $$
 M_{\mathrm{ADM}}\ge0,
 $$
 
-且等号只在 Minkowski 时空中达到。
+若某端等号成立，则 $(\Sigma,\gamma)$ 等距于 Euclidean
+$(\mathbb R^3,\delta)$。在 $\Lambda=0$ 的时间对称数据
+$K_{ij}=0$ 中，Hamiltonian constraint 与非负能量密度给出
+${}^{(3)}R=16\pi G\rho\ge0$，故该版本可直接使用。一般
+$K_{ij}\ne0$ 的正能量定理比较完整 ADM 四动量并采用 dominant energy
+condition；本书不把该更强版本压缩进上面的 Riemannian 陈述。
 
 ## 13.5 能量条件
 
 常见能量条件包括：
 
-- Null energy condition: $T_{\mu\nu}k^\mu k^\nu\ge0$ 对所有类光 $k^\mu$。
-- Weak energy condition: $T_{\mu\nu}u^\mu u^\nu\ge0$ 对所有类时 $u^\mu$。
-- Dominant energy condition: 能量流不超光。
-- Strong energy condition: $(T_{\mu\nu}-\frac12Tg_{\mu\nu})u^\mu u^\nu\ge0$。
+- Null energy condition: 对每个非零类光向量 $k^\mu$，
+  $T_{\mu\nu}k^\mu k^\nu\ge0$。
+- Weak energy condition: 对每个未来类时向量 $u^\mu$，
+  $T_{\mu\nu}u^\mu u^\nu\ge0$。
+- Dominant energy condition: 对每个未来类时向量 $u^\mu$，能流
+  $-T^\mu{}_{\nu}u^\nu$ 为未来因果向量；这同时包含其能量密度非负。
+- Strong energy condition: 对每个类时向量 $u^\mu$，
+  $(T_{\mu\nu}-\frac12Tg_{\mu\nu})u^\mu u^\nu\ge0$。
 
 它们不是数学必然，而是物质模型的物理假设。宇宙学常数正值违反 strong energy condition。
 
 ## 13.6 奇点定理
 
-**外部输入 C (Penrose-Hawking 奇点定理).** 在适当因果条件、能量条件和困陷面或宇宙膨胀假设下，时空测地线不完备。
+**外部输入 C（Penrose 1965 奇点定理的一种标准版本）.** 设四维、
+时间定向、全局双曲时空具有非紧 Cauchy 超曲面，满足 null convergence
+condition
 
-该定理说明 GR 的奇点不是球对称解的偶然产物，而是在广泛条件下出现的整体现象。它并不直接说明曲率一定发散；严格结论是测地线不完备。
+$$
+R_{\mu\nu}k^\mu k^\nu\ge0
+$$
+
+对每个类光向量 $k^\mu$ 成立，并含有一个闭合未来困陷二维曲面。则该
+时空未来类光测地线不完备。
+
+该版本不声称存在曲率发散点，也不声称困陷面本身就是事件视界；严格
+结论是至少一条未来类光测地线只具有有限仿射长度。Hawking 的宇宙学
+版本使用不同的初始膨胀与能量假设，本书不把两类定理混成一个省略假设
+的“Penrose--Hawking 定理”。
 
 ## 13.7 全局双曲性
 
@@ -157,7 +225,7 @@ $$
 Schwarzschild 时间对称切片在各向同性坐标中可写为
 
 $$
-\psi=1+\frac{M}{2r}.
+\psi=1+\frac{GM}{2r}.
 $$
 
 这给出一个简单例子：求解约束方程本身已经是非平凡椭圆型问题；它不是随便指定三维几何和外曲率即可。

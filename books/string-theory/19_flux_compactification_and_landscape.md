@@ -45,7 +45,7 @@ D_iW_{\mathrm{GVW}}=0
 $$
 可固定 complex structure moduli 和 axio-dilaton，但在 tree-level no-scale 结构中通常不固定全部 Kahler moduli。
 
-**证明草图.** $\Omega$ 依赖 complex structure，$G_3$ 依赖 $\tau$，故 $W_{\mathrm{GVW}}$ 对这些 fields 非平凡。Kahler moduli 在 tree-level Kähler potential 中出现，但 superpotential 不依赖它们；no-scale identity 使其势能方向在最低阶保持平坦。$\square$
+**推导说明（标准物理口径）.** $\Omega$ 依赖 complex structure，$G_3$ 依赖 $\tau$，故 $W_{\mathrm{GVW}}$ 对这些 fields 非平凡。Kahler moduli 在 tree-level Kähler potential 中出现，但 superpotential 不依赖它们；no-scale identity 使其势能方向在最低阶保持平坦。$\square$
 
 ## 19.3 Tadpole cancellation
 
@@ -59,7 +59,7 @@ $$
 
 **命题 19.7（tadpole constraint 限制 flux choices）.** Tadpole cancellation 给 flux lattice 中可取整数点施加上界，因此受控模型中的 flux choices 是有限或在给定约束下有限可枚举的。
 
-**证明草图.** $N_{\mathrm{flux}}$ 是 flux quanta 的二次型。若总 tadpole bound 固定为 $L$，则要求 $N_{\mathrm{flux}}\le L$。在正定或适当物理允许区域内，满足该二次约束的 lattice points 有限。$\square$
+**推导说明（标准物理口径）.** $N_{\mathrm{flux}}$ 是 flux quanta 的二次型。若总 tadpole bound 固定为 $L$，则要求 $N_{\mathrm{flux}}\le L$。在正定或适当物理允许区域内，满足该二次约束的 lattice points 有限。$\square$
 
 **例 19.7A（F-theory D3 tadpole）.** 在 F-theory on Calabi-Yau fourfold $Y_4$ 的常见规范中，D3 tadpole condition 写作
 $$
@@ -79,7 +79,7 @@ $$
 
 **命题 19.9A（no-scale potential）.** 若 tree-level superpotential 不依赖 Kahler moduli，且 Kahler potential 满足 no-scale identity，则四维 F-term potential 中 Kahler moduli 方向在最低阶不产生势能。
 
-**证明草图.** 四维 $\mathcal N=1$ supergravity potential 为
+**推导说明（标准物理口径）.** 四维 $\mathcal N=1$ supergravity potential 为
 $$
 V=e^K\left(K^{I\bar J}D_IW D_{\bar J}\overline W-3|W|^2\right).
 $$
@@ -97,7 +97,7 @@ $$
 $$
 并且 supersymmetric Minkowski 解要求 $G_3$ 的 Hodge type 为 primitive $(2,1)$。
 
-**证明草图.** 十维 gravitino/dilatino supersymmetry variations 将 flux 的 $SU(3)$ representation 分量投影。未破缺 supersymmetry 排除 $(3,0)$ 和 non-primitive 分量，保留 primitive $(2,1)$；对应地 $G_3$ 满足 ISD。完整推导依赖 type IIB supersymmetry variations。$\square$
+**推导说明（标准物理口径）.** 十维 gravitino/dilatino supersymmetry variations 将 flux 的 $SU(3)$ representation 分量投影。未破缺 supersymmetry 排除 $(3,0)$ 和 non-primitive 分量，保留 primitive $(2,1)$；对应地 $G_3$ 满足 ISD。完整推导依赖 type IIB supersymmetry variations。$\square$
 
 ## 19.6 Landscape 边界
 

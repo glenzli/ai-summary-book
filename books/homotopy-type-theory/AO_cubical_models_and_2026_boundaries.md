@@ -8,7 +8,7 @@
 
 **定义 AO.2（categorical univalence）.** $\mathcal U$ 的 wild category 称为 categorically univalent，若对象路径到同构/等价对象的 canonical map 满足对应的单值性条件。
 
-**定理 AO.3（categorical univalence 不推出函数外延性）.** 存在 Martin-Löf type theory 模型，其 universe categorically univalent，但函数外延性失败。
+**外部输入定理 AO.3（categorical univalence 不推出函数外延性）.** 存在 Martin-Löf type theory 模型，其 universe categorically univalent，但函数外延性失败。
 
 **来源与证明状态.** Cavallo-Höfer 2026 通过分析 von Glehn 的 polynomial model construction 得到该分离结果：若基模型有 univalent universe，其 polynomial model 可有 categorically univalent universe 而无 function extensionality。
 
@@ -22,7 +22,7 @@ $$
 
 **输入 AO.5（strict Rezk completion of a model）.** 对 HoTT 模型 $\mathcal M$，strict Rezk completion 给出等价模型 $\widehat{\mathcal M}$，并使其满足一种饱和/完备条件：identity type 的项与 cubical path 之间有等价。
 
-**定理 AO.6（homotopy canonicity 的 Rezk 路线）.** 通过在 cartesian cubical sets 的 topos 中构造语法模型的 strict Rezk completion，可给出 HoTT homotopy canonicity 的构造性证明。
+**外部输入定理 AO.6（homotopy canonicity 的 Rezk 路线）.** 通过在 cartesian cubical sets 的 topos 中构造语法模型的 strict Rezk completion，可给出 HoTT homotopy canonicity 的构造性证明。
 
 **来源与边界.** Bocquet 2023/2025 给出该路线。该结果是元理论定理，不是对象语言中的归纳原则。它泛化一范畴的 Rezk completion，但不等同于本书第十四章的范畴 Rezk 完备化构造。
 
@@ -34,7 +34,7 @@ r:\mathbb I\to\mathbb I
 $$
 满足 $r(0)=1$、$r(1)=0$。
 
-**定理 AO.8（reversal 的保守性，opaque 情形）.** 对 self-dual interval theories，例如只有两个端点的最小理论或有界分配格理论，加入 internalizes duality 的 reversal 是保守扩张，至少在 opaque cubical type theories 中成立。
+**外部输入定理 AO.8（reversal 的保守性，opaque 情形）.** 对 self-dual interval theories，例如只有两个端点的最小理论或有界分配格理论，加入 internalizes duality 的 reversal 是保守扩张，至少在 opaque cubical type theories 中成立。
 
 **证明状态.** Cavallo-Sattler 2026 使用 twist construction：区间与其对偶的乘积仍为带 reversal 的区间。该保守性不覆盖所有带严格计算规则的 cubical 实现；论文还构造了带 reversal 的 strict cubical type theory 模型。
 

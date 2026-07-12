@@ -2,7 +2,7 @@
 
 本章进入同伦论口径。第一至第十三章中 operad 多在集合、模或链复形中定义；本章的目标是说明：何时可以把“逐 arity 弱等价”提升为 operad 的同伦理论，何时可以把 operad 代数范畴也赋予模型结构，以及何时一个 cofibrant resolution 真正给出可替换的同伦代数理论。
 
-本章只在一类足够良好的对称幺半模型范畴中陈述主定理。完整证明涉及小对象论证、monoid axiom、pushout-product axiom、树形 filtrations 和等变 cofibration 技术，故大型定理标为外部输入。
+本章不预设一个未展开的“足够良好”总假设包。每个外部定理分别列出所需的单位、区间、monoid axiom、对称 h-monoidality、symmetric flatness、cofibrancy 或 admissibility 条件；这些条件只服务于对应结论。完整证明涉及小对象论证、树形 filtrations 和等变 cofibration 技术，故大型定理标为外部输入。
 
 ## 14.1 对称幺半模型范畴
 
@@ -17,11 +17,11 @@ $$
 3. 三类态射都对 retract 封闭。
 4. 若 $i$ 是 cofibration 且 $p$ 是 fibration，并且二者之一为弱等价，则任意交换方块
    $$
-   \begin{CD}
-   A @>>> X\\
-   @V i VV @VV p V\\
-   B @>>> Y
-   \end{CD}
+   \begin{array}{ccc}
+   A & \longrightarrow & X\\
+   {\scriptstyle i}\downarrow & & \downarrow{\scriptstyle p}\\
+   B & \longrightarrow & Y
+   \end{array}
    $$
    有 lift $B\to X$。
 5. 任意态射可函子地分解为
@@ -79,19 +79,39 @@ $$
 
 称 $f$ 为 projective fibration，若每个 $f(S)$ 是 $\mathcal M$ 中的 fibration。
 
-**外部输入定理 14.7.** 若 $\mathcal M$ 是 cofibrantly generated 模型范畴，则 $\operatorname{SymSeq}(\mathcal M)$ 存在 projective 模型结构，其弱等价和 fibration 逐 arity 定义。
+**命题 14.7（作用范畴的积模型）.** 假设每个 $\mathcal M^{\Sigma_n}$ 都有由底层 $\mathcal M$ 创建 weak equivalences 与 fibrations 的 projective 模型结构。则 $\operatorname{SymSeq}(\mathcal M)$ 有 projective 模型结构，weak equivalences 与 fibrations 逐 arity 检测。
+
+**证明.** 命题 A.7 给出范畴等价
+$$
+\operatorname{SymSeq}(\mathcal M)
+\simeq
+\prod_{n\ge0}\mathcal M^{\Sigma_n}.
+$$
+右侧的积模型结构逐分量定义三类态射并逐分量完成 lifting 与 factorization；模型范畴公理因而逐分量成立。把该结构沿范畴等价搬回左侧，所得 weak equivalences 与 fibrations 正是定义 14.6 的逐 arity 类。$\square$
 
 **说明 14.8.** 这个模型结构不是 operad 的模型结构；它只是底层对称序列的模型结构。Operad 是 $\operatorname{SymSeq}(\mathcal M)$ 中代入乘积 $\circ$ 下的 monoid。把模型结构从对称序列转移到 monoids 需要额外假设。
 
 **定义 14.9.** 对称序列 $X$ 称为 $\Sigma$-cofibrant，若对每个 $n\ge0$，对象 $X(n)$ 作为 $\mathcal M^{\Sigma_n}$ 中的对象是 cofibrant。
 
-**命题 14.10.** 若 $\mathcal M$ 的终对象和初对象存在，则 projective cofibrant 对称序列逐 arity 是 cofibrant；若 $\mathcal M^{\Sigma_n}$ 的 projective 模型结构存在，则 projective cofibrant 对称序列是 $\Sigma$-cofibrant。
+**命题 14.10.** 选择骨架
+$$
+\mathbf B_{\mathcal U}\simeq\coprod_{n\ge0}B\Sigma_n,
+$$
+并假设每个 $\mathcal M^{\Sigma_n}$ 都有逐底层态射检测 weak equivalence 与 fibration 的 projective 模型结构。则有模型范畴等价
+$$
+\operatorname{SymSeq}(\mathcal M)
+\simeq
+\prod_{n\ge0}\mathcal M^{\Sigma_n}.
+$$
+因此 $X$ projectively cofibrant 当且仅当每个 $X(n)$ 在 $\mathcal M^{\Sigma_n}$ 中 cofibrant；特别地，projectively cofibrant 蕴含 $\Sigma$-cofibrant。
 
-**证明.** Projective 模型结构中 evaluation 函子
+若此外遗忘函子 $\mathcal M^{\Sigma_n}\to\mathcal M$ 保持 cofibrations，则 $X(n)$ 的底层对象在 $\mathcal M$ 中 cofibrant。在由自由 $\Sigma_n$-对象 $\Sigma_n\cdot i$ 生成的标准 projective 结构中，这个保持性质成立。
+
+**证明.** 命题 A.7 把对称序列函子范畴识别为各作用范畴的积；定义 14.6 的 weak equivalences 和 fibrations 恰为积模型结构中的逐分量类。积模型结构的 cofibration 也逐分量检测，故
 $$
-\operatorname{ev}_{[n]}:\operatorname{SymSeq}(\mathcal M)\to\mathcal M^{\Sigma_n}
+\varnothing\to X
 $$
-是右 Quillen 函子。它的左伴随把带 $\Sigma_n$-作用的对象放在 arity $n$ 并在其他 arity 取初对象。右 Quillen 函子保 fibrations 和 trivial fibrations，因此左伴随保 cofibrations 和 trivial cofibrations。由 cofibrant 对象定义，$\varnothing\to X$ 为 cofibration；对其应用 evaluation，得到 $\varnothing\to X(n)$ 是 $\mathcal M^{\Sigma_n}$ 中的 cofibration。故 $X(n)$ cofibrant。$\square$
+是 cofibration 当且仅当每个 $\varnothing\to X(n)$ 是 $\mathcal M^{\Sigma_n}$ 中的 cofibration。这证明第一段。第二段在遗忘函子保持 cofibration 时直接应用于 $\varnothing\to X(n)$。标准 projective 结构的生成 cofibrations 为 $\Sigma_n\cdot i$；遗忘后是有限个 $i$ 的 coproduct。Cofibrations 对 coproduct、pushout、transfinite composition 和 retract 封闭，所以遗忘函子保持所有由这些生成元生成的 cofibrations。$\square$
 
 ## 14.3 Operad 的 transferred 模型结构
 
@@ -110,15 +130,17 @@ $$
 2. $f$ 是 fibration，当且仅当 $U(f)$ 是 projective fibration；
 3. cofibration 由左提升性质确定。
 
-若该模型结构存在，则称 $\mathcal M$ 中的 operads admissible。
+若该模型结构存在，本书只说“$\operatorname{Op}(\mathcal M)$ 的 transferred 模型结构存在”。术语 admissible 保留给定义 14.12 和定义 14.19 的固定 operad 代数范畴，以免把两个转移问题混为一谈。
 
 **定义 14.12.** 一类 colored operads 称为 admissible，若对该类中每个 operad $\mathcal O$，其代数范畴 $\operatorname{Alg}_{\mathcal O}(\mathcal M)$ 存在从 $\mathcal M^C$ 转移来的模型结构，其中 $C$ 为颜色集。
 
 注意定义 14.11 是 operad 自身的模型结构，定义 14.12 是固定 operad 的代数范畴模型结构。两者相关但不等同。
 
-**外部输入定理 14.13（Berger-Moerdijk 型转移定理）.** 设 $\mathcal M$ 是 cofibrantly generated 对称幺半模型范畴，并满足适当的小性、monoid axiom、单位和等变 cofibration 条件。则 $\operatorname{Op}(\mathcal M)$ 存在 transferred 模型结构，弱等价与 fibration 逐 arity 检测。
+**外部输入定理 14.13（operad 转移；BM-1 的本书版本）.** 设 $\mathcal M$ 满足 Berger--Moerdijk, arXiv:math/0206094v3, Theorem 3.1 的假设包：$\mathcal M$ 是 cofibrantly generated symmetric monoidal model category，单位 cofibrant，生成映射满足来源中的小性，并且给定 symmetric monoidal fibrant replacement 与来源要求的 commutative Hopf interval。则 $\operatorname{Op}(\mathcal M)$ 存在 transferred 模型结构，weak equivalences 与 fibrations 由底层 collections 逐 arity 创建。
 
-**说明 14.14.** “适当条件”不能删除。原因是自由 operad $\mathbb F(X)$ 由 $X$-装饰树构造。若沿一个生成 trivial cofibration 附加 generator，则在自由 operad 中会产生所有树形复合。要证明所得 operad morphism 仍为弱等价，需要证明这些树形胞腔附加被 $\otimes$、coinvariants、pushout 和 transfinite composition 保持。一般对称幺半模型范畴未必满足这些性质。
+本书不重证自由 operad 的等变树形胞腔论证。若不用上述 BM-1 假设包，必须改引一个明确的现代转移定理并逐条登记其假设；monoid axiom 本身不替代 Hopf interval、等变 cofibration 或树形 filtration 条件。
+
+**说明 14.14.** 自由 operad $\mathbb F(X)$ 由 $X$-装饰树构造。沿生成 trivial cofibration 附加 generator 会产生所有带标记顶点的树形项。外部证明必须控制这些项经过 $\otimes$、有限群 coinvariants、pushout 和 transfinite composition 后仍为 weak equivalences。这解释了 14.13 的附加假设，但不构成该外部定理的书内证明。
 
 **命题 14.15.** 若 transferred 模型结构存在，则遗忘函子
 $$
@@ -164,9 +186,9 @@ $$
 
 **证明.** transferred 模型结构按定义由 $U_{\mathcal O}$ 检测 fibration 和 weak equivalence。因此 $U_{\mathcal O}$ 保 fibration 和 trivial fibration。故 $U_{\mathcal O}$ 是右 Quillen 函子，左伴随 $F_{\mathcal O}$ 是左 Quillen 函子。$\square$
 
-**外部输入定理 14.21（代数范畴的 admissibility）.** 设 $\mathcal M$ 是足够良好的 cofibrantly generated 对称幺半模型范畴。若 $\mathcal O$ 满足相应的 $\Sigma$-cofibrancy 或更一般的等变平坦性条件，则 $\mathcal O$ admissible。
+**外部输入定理 14.21（colored admissibility；PSAR-2）.** 固定 $\mathcal U$-小颜色集 $C$。设 $\mathcal M$ 满足 Pavlov--Scholbach, arXiv:1410.5675v4, Definition 2.1 与 Theorem 5.11 的组合假设：$\mathcal M$ 为来源意义下的 combinatorial 或 admissibly generated、tractable symmetric monoidal model category，并且 symmetric h-monoidal。则每个 $C$-colored symmetric operad $\mathcal O$ admissible；即 $\operatorname{Alg}_{\mathcal O}(\mathcal M)$ 上存在 transferred 模型结构，weak equivalences 与 fibrations 在 $\mathcal M^C$ 中逐颜色创建。
 
-更强的现代形式给出条件，使得所有 small colored symmetric operads 都 admissible。具体条件包括对称版本的 h-monoidality、flatness、smallness 和 tractability；本书只把它们作为外部输入，不在此章展开证明。
+Berger--Moerdijk 的较早固定-operad版本使用 BM-2，并要求该定理中的 operad 类型、cofibrancy 和底范畴假设。PSAR-2 不要求逐个 operad 先证明 $\Sigma$-cofibrant，但其 symmetric h-monoidality、tractability 和生成性假设不能省略。Symmetric flatness 主要进入 rectification，而不是 14.21 的存在性结论。
 
 **例 14.22.** 在特征 $0$ 的域 $k$ 上，链复形范畴 $\mathbf{Ch}_k$ 中有限群表示范畴半单。因此许多对称群 coinvariants 与同调相容性问题大幅简化。由此 dg-operads 和其代数的模型结构较一般底环更稳定。
 
@@ -208,23 +230,23 @@ $$
 
 **证明.** 由 admissibility，两个代数范畴的 fibration 和 weak equivalence 都在底层 $\mathcal M^C$ 中检测。Restriction functor $\varphi^\*$ 不改变底层 $C$-indexed 对象，只改变结构映射。因此它保 fibration 和 weak equivalence，特别保 fibration 与 trivial fibration。故它是右 Quillen 函子。$\square$
 
-**外部输入定理 14.26（rectification criterion）.** 在适当的对称幺半模型范畴中，若
+**外部输入定理 14.26（rectification criterion；PSAR-4）.** 固定颜色集 $C$。设 $\mathcal M$ 是 tractable、symmetric h-monoidal 的 symmetric monoidal model category，且
 $$
 \varphi:\mathcal O\to\mathcal P
 $$
-是 admissible operads 之间的 entrywise weak equivalence，并且源 operad 满足足够的 cofibrancy 或 flatness 条件，则 Quillen adjunction
+是 admissible $C$-colored symmetric operads 之间的 morphism。Pavlov--Scholbach, arXiv:1410.5675v4, Theorem 7.5 给出的 free-cofibrant-algebra comparison 条件成立时，Quillen adjunction
 $$
 \varphi_!:\operatorname{Alg}_{\mathcal O}(\mathcal M)\rightleftarrows\operatorname{Alg}_{\mathcal P}(\mathcal M):\varphi^\*
 $$
-是 Quillen equivalence。
+是 Quillen equivalence；$\varphi$ 对来源意义下的 symmetric flatness 是该比较条件的充分条件。因而正文若只知道 $\varphi$ entrywise weak equivalence，还必须另外验证 symmetric flatness，或直接验证 Theorem 7.5 的 free-cofibrant-algebra 条件。
 
 **说明 14.27.** Rectification 不是自动的。若 $\mathcal O\to\mathcal P$ 是逐 arity 弱等价，但 $\mathcal O$ 不够 cofibrant，或 $\mathcal M$ 中对称幂不保持弱等价，则代数范畴可能不 Quillen equivalent。
 
-**推论 14.28.** 若 $A_\infty\to\operatorname{Ass}$ 是 dg-operads 的 cofibrant resolution，且所在模型范畴满足 rectification criterion，则 $A_\infty$-algebras 的同伦理论与 dg associative algebras 的同伦理论 Quillen equivalent。
+**推论 14.28.** 若 $A_\infty\to\operatorname{Ass}$ 是 dg-operads 的 cofibrant resolution，两端 operads admissible，并且该态射满足外部输入定理 14.26 的 free-cofibrant-algebra comparison 条件（例如已验证相应 symmetric flatness），则 $A_\infty$-algebras 与 dg associative algebras 的模型范畴 Quillen equivalent。
 
-**证明.** 由 cofibrant resolution，$A_\infty\to\operatorname{Ass}$ 是 entrywise weak equivalence。由外部输入定理 14.26，诱导的 extension-restriction adjunction 是 Quillen equivalence。$\square$
+**证明.** Admissibility 先给出 extension--restriction Quillen adjunction。其余假设正是外部输入定理 14.26 的充分输入，所以该 adjunction 是 Quillen equivalence。仅由“cofibrant resolution”得到的 entrywise weak equivalence 不足以完成此步。$\square$
 
-**警告 14.29.** 对 $E_\infty\to\operatorname{Com}$ 不能无条件推出同样结论。在特征 $0$ 链复形中通常可 rectification；在正特征或一般底环上，严格 commutative dg algebra 与 $E_\infty$-algebra 的同伦理论通常不同。
+**警告 14.29.** 对 $E_\infty\to\operatorname{Com}$ 不能无条件推出同样结论。在特征 $0$ 链复形中，只有选定具体 $E_\infty$-operad、验证两端 admissible 并套用 BM-4/HIN-2/PSAR-4 的相应版本后，才可声明 rectification。在正特征或一般底环上，命题 X.15 直接表明自由严格交换代数函子不保持某些 acyclic complexes；本书据此拒绝无假设 rectification，但不把这个局部计算夸大为所有模型中的完整非等价定理。
 
 **说明 14.29.1.** 后续凡使用 transferred operad model structure、operad algebra admissibility 或 rectification，必须逐项核对定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 的检查表。特别是：
 
@@ -243,11 +265,11 @@ $$
 
 若 $Q\mathcal O$ 由树、边长参数和顶点装饰构造，并通过收缩零长度内边编码复合，则称其为 Boardman-Vogt 型 resolution，记作 $W\mathcal O$。
 
-**外部输入定理 14.31（Boardman-Vogt resolution）.** 在满足适当区间对象、幺半和模型范畴条件的 $\mathcal M$ 中，存在 functorial resolution
+**外部边界 14.31（Boardman-Vogt resolution）.** 在具体来源给定的区间对象、well-pointedness、$\Sigma$-cofibrancy 及幺半模型范畴假设下，经典 Boardman--Vogt 定理可给出 functorial map
 $$
 W\mathcal O\to\mathcal O
 $$
-使得 $W\mathcal O$ 在合适意义下 cofibrant，并且该态射为 weak equivalence。
+并在该来源的模型结构中判定其 cofibrancy 与 weak-equivalence 性质。本书目前没有登记覆盖这一整套 $W$-construction 的精确 locator，故不把本段作为可直接调用的外部定理。后文命题 14.33 只作条件推理：必须另行给出所用 $W\mathcal O\to\mathcal O$ 确为 cofibrant resolution 的定理，才能应用 rectification。
 
 **说明 14.32.** 拓扑 operad 的 $W$-construction 可理解为：一个点由一棵树给出，顶点标记为 $\mathcal O$ 中的运算，内部边标记为区间参数。边长为 $0$ 时收缩该边并用 $\mathcal O$ 的复合替代两个相邻顶点。边长为 $1$ 的边记录未被严格复合的同伦层级。
 

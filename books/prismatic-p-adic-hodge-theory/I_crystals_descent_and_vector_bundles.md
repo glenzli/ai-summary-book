@@ -20,18 +20,22 @@ $$
 
 **定义 I.4.** 在 prismatic site $(X/A)_\Delta$ 上，一个 prismatic crystal 是 $\mathcal O_\Delta$-module sheaf $\mathcal E$，使得对每个 morphism of prism probes
 $$
-(B,J)\to(B',J')
+(B,IB)\to(B',IB')
 $$
 都有 base-change isomorphism
 $$
-\mathcal E(B,J)\otimes_BB'\xrightarrow{\sim}\mathcal E(B',J').
+\mathcal E(B,IB)\otimes_BB'\xrightarrow{\sim}\mathcal E(B',IB').
 $$
+这里使用引理 2.4A：在固定 base prism $(A,I)$ 的 relative site 上，probe
+ideal 不是独立的 $J$，而必为 $IB$。Absolute site 的写法见定义 6.1。
 
-**命题 I.5.** 若 $\mathcal E$ 是 prismatic crystal，且 $\mathcal E(B,J)$ 在某个覆盖上 finite projective，则在该覆盖的 pullback probes 上仍为 finite projective。
+**命题 I.5.** 若 $\mathcal E$ 是 relative prismatic crystal，且
+$\mathcal E(B,IB)$ 在某个覆盖上 finite projective，则在该覆盖的 pullback
+probes 上仍为 finite projective。
 
 **证明.** Crystal condition 给出
 $$
-\mathcal E(B',J')\cong\mathcal E(B,J)\otimes_BB'.
+\mathcal E(B',IB')\cong\mathcal E(B,IB)\otimes_BB'.
 $$
 Finite projective modules 在任意 base change 下保持 finite projective。证毕。
 
@@ -54,9 +58,25 @@ $$
 
 ## I.4 $F$-crystals
 
-**定义 I.9.** 一个 prismatic $F$-crystal 是 prismatic crystal $\mathcal E$ 与 Frobenius-semilinear structure 的组合，精确条件由所选来源固定；共同特征是 linearized Frobenius 在 invert prism ideal 后成为同构。
+**定义 I.9.** 令 $\mathcal I_\Delta$ 为 absolute prismatic site 上的 prism
+ideal sheaf。一个 vector-bundle-valued prismatic $F$-crystal 是 finite
+locally free prismatic crystal $\mathcal E$，配有同构
+$$
+\varphi_{\mathcal E}^{\mathrm{lin}}:
+\phi^*\mathcal E[1/\mathcal I_\Delta]
+\xrightarrow{\sim}
+\mathcal E[1/\mathcal I_\Delta].
+$$
+它等价于 localized $\phi$-semilinear Frobenius。若该同构由积分映射
+$\phi^*\mathcal E\to\mathcal E$ 诱导，则称 $\mathcal E$ effective。此处
+$\mathcal I_\Delta(B,J)=J$ 随 absolute probe 变化；relative site 上才可在
+probe $(B,IB)$ 写成 $IB$。这与定义 6.4 及 Bhatt--Scholze, Definition 4.1
+（locator `BS-FCRYS`）一致。
 
-**警告 I.10.** 对 $F$-crystal 的任何例子，都必须检查 Frobenius linearization 的目标和 invert 元素。只写“带 Frobenius”不够。
+**警告 I.10.** 对 $F$-crystal 的任何例子，都必须检查 Frobenius
+linearization 的 source/target 和被反演的 probe ideal。Localized
+isomorphism 不推出 integral isomorphism，effectivity 也不是一般
+$F$-crystal 自动具有的性质；只写“带 Frobenius”不够。
 
 ## I.5 Rational crystals and boundary objects
 
@@ -77,4 +97,3 @@ Crystals 是带 rigidity 的 sheaves；vector bundle crystals 还要求 finite l
 **练习 I.2.** 证明 finite projective modules 在 base change 下保持 finite projective。
 
 **练习 I.3.** 给出两个不同 lattice 有同一 rationalization 的例子。
-

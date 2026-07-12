@@ -9,8 +9,8 @@
 | 稳定谱和 Bousfield 局部化 | 01, H, E | 基本覆盖 | Bousfield localization 存在性 locator |
 | 复定向和形式群 | 02, A | 正文细节已扩写 | Quillen/Landweber locator |
 | BP、Morava K/E | 02, 03, J | 正文细节已扩写 | Hovey-Strickland、GHM locator |
-| 有限谱和周期性 | 04, I | 正文细节已扩写 | Hopkins-Smith precise locator |
-| Chromatic tower/fracture | 05 | 正文细节已扩写 | fracture square precise hypotheses |
+| 有限谱和周期性 | 04, I | 正文细节已扩写 | HS II Theorems 7/9/14 与 Corollaries 3.7/3.8 已定位；finite detection 由 Theorem 14 闭合 |
+| Chromatic tower/fracture | 05 | 主证明链已闭合 | 任意谱 fracture、smash product、finite-type 特例与 convergence/$\lim^1$ 边界均已精确化 |
 | $K(n)$-local descent | 06, J | 正文细节已扩写 | Devinatz-Hopkins locator |
 | Telescope/redshift | 07, G | 正文细节已扩写 | BHLŠ/HW/BSY theorem locator |
 | Elliptic/tmf | 08, K | 正文细节已扩写 | tmf construction 和 level structure locator |
@@ -47,7 +47,7 @@
 
 截至 2026-07-08，本书已达到“教材内容基本收口稿”。它尚未达到 camera-ready 出版态，剩余项主要是：
 
-1. P0/P1 外部定理没有页码级 theorem locator；
+1. 主 chromatic 链已有 theorem/section locator，其余 P0/P1 外部定理仍缺页码级定位；
 2. 完整 ANSS 计算表仍属扩展内容；
 3. tmf、Gross-Hopkins duality、Picard group 的低高度案例可继续加厚；
 4. equivariant/motivic 方向按接口章收口，若要同等权重需独立成书级扩写。

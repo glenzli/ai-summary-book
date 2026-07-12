@@ -96,7 +96,7 @@ $$
 
 **失败原因.** 前者是 dendroidal set 上的 inner Kan/operadic model structure 语言；后者是映到 $N(\mathbf{Fin}_*)$ 的 simplicial set，带 inert/coCartesian 条件。二者通过比较定理相连，而不是字面相同。
 
-**正确边界 O.18.** 从 dendroidal 模型移动到 Lurie 模型，必须引用 Heuts-Hinich-Moerdijk 或相应比较定理，并记录模型结构版本。
+**正确边界 O.18.** 从 dendroidal 模型移动到 Lurie 模型，必须引用 Heuts--Hinich--Moerdijk 或相应比较定理，并记录模型结构版本。HHM-1--HHM-5 的本书 locator 只覆盖 open/no-constants 路径；含 arity $0$ 的对象必须另行处理。
 
 ## O.10 Localization 与取代数
 

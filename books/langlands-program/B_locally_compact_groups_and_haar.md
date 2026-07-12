@@ -20,9 +20,17 @@ $$
 $$
 定义。若 $\Delta_G=1$，称 $G$ unimodular。
 
-**命题 B.6.** 紧群和 reductive $p$-adic groups $G(F)$ 是 unimodular。
+**命题 B.6（紧群）.** 每个紧群都是 unimodular。
 
-**证明草图.** 紧群上左右 Haar 测度都可归一化为总体积 $1$，故相同。Reductive $p$-adic groups 的 unimodularity 可由代数群的 modular character 对 reductive 群平凡推出。$\square$
+**证明.** 取左 Haar 测度 $dg$ 并归一化为 $\operatorname{vol}(G)=1$。
+对任意 $g\in G$，右平移后的测度仍是左 Haar 测度，且总体积仍为 $1$。
+由归一化 Haar 测度唯一性，右平移不改变 $dg$，所以
+$\Delta_G(g)=1$。$\square$
+
+**外部输入定理 B.6A（reductive $p$-adic 群）.** 若 $G$ 是局部域
+$F$ 上的连通 reductive algebraic group，则 $G(F)$ unimodular。该结论
+来自代数群 modular character 在 reductive 群上的平凡性；非 reductive
+抛物子群通常不 unimodular，因此不能删去 reductive 假设。
 
 ## B.3 Restricted Product 测度
 
@@ -119,7 +127,10 @@ $$
 
 **命题 B.14.** 若 $H\subset G$ 为离散闭子群且 $G$ unimodular，则 $H\backslash G$ 存在右 $G$-不变测度。
 
-**证明草图.** 离散群 $H$ 的 modular character 平凡。若 $G$ unimodular，则 $\Delta_G|_H=1=\Delta_H$。由定理 B.12 得商测度。$\square$
+**证明.** 离散群的计数 Haar 测度同时左右不变，故
+$\Delta_H=1$。又 $G$ unimodular 给出 $\Delta_G|_H=1$，于是满足外部输入
+定理 B.12 的充要相容条件。应用该定理得到 $H\backslash G$ 上的右
+$G$-不变商测度。$\square$
 
 ## B.6 Restricted Product 的局部-整体换元
 

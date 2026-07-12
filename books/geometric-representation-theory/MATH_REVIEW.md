@@ -26,9 +26,9 @@
 
 ## 2. 当前风险
 
-1. Bruhat decomposition、Borel fixed point、highest weight theorem、PBW theorem、BBD perverse sheaf formalism、decomposition theorem、Kazhdan-Lusztig basis theorem 均待补精确 theorem locator。
-2. 第三章的 sheaf theory 使用统一符号，仍需拆分 analytic、etale、l-adic 和 D-module 版本的假设表。
-3. 第四章和第五章的 convolution 已完成类型检查和形式结合性证明，但未完成每个场景的 properness/base-change 假设表。
+1. Bruhat decomposition、Borel fixed point、highest weight theorem、PBW theorem、BBD perverse sheaf formalism、decomposition theorem、Kazhdan-Lusztig basis theorem 已有源级或定理包级 locator；出版阶段再统一核对页码、版本与定理编号。
+2. `MODEL_HYPOTHESES_MATRIX.md` 已拆分 Betti、etale $\ell$-adic、mixed Hodge module 与 D-module 模型；正文后续新增调用不得绕过该矩阵切换模型。
+3. 普通、Springer、affine Grassmannian 与 Iwahori convolution 的支撑、properness、base-change 和 perverse t-exactness 责任已分别记录于附录 F、模型矩阵与定理账本；新增场景仍须单独登记，不能由既有场景类推。
 4. Springer correspondence、Beilinson-Bernstein localization、Riemann-Hilbert、Borel-Weil-Bott、Soergel Hodge theory、geometric Satake、Nakajima theory、KLR categorification、BLPW symplectic duality、BFN Coulomb branches 和 KL character formula 均已正确标为外部输入，并达到源级引用覆盖。
 5. 当前 locator 是源级或定理包级定位，不是页码级或定理编号级最终 locator。
 6. 正特征、modular representation theory、parity sheaves、Harish-Chandra modules、real groups 和 microlocal character formulas 目前作为边界方向登记，若扩为独立正文需另建章节链。

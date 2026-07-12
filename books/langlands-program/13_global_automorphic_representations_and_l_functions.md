@@ -26,7 +26,7 @@ $$
 $$
 r_v:{}^LG_v\to\operatorname{GL}(V)
 $$
-的 L 群表示数据。这里不假设数域情形已经存在一个完整的全局 Langlands 群。所有局部因子均通过局部 L 群 ${}^LG_v$ 定义。
+的 L 群表示数据，并额外要求该数据在几乎所有位置非分歧。这里不假设数域情形已经存在一个完整的全局 Langlands 群。所有局部因子均通过局部 L 群 ${}^LG_v$ 定义；若只给任意局部表示族而没有“几乎处处非分歧”条件，命题 13.14 和 Euler 乘积都不成立。
 
 **定义 13.1.** $G$ 的自守商是拓扑商
 $$
@@ -77,7 +77,7 @@ $$
 $$
 f_P(g)=\int_{N(K)\backslash N(\mathbb A_K)} f(ng)\,dn.
 $$
-这里 $dn$ 是 $N(\mathbb A_K)$ 上的 Haar 测度，归一化使商 $N(K)\backslash N(\mathbb A_K)$ 体积有限。
+这里 $N(K)\backslash N(\mathbb A_K)$ 对 unipotent $N$ 为紧商；本书把 quotient Haar measure 归一化为体积 $1$。常数项为零不依赖该测度的非零标量倍，但与 Eisenstein series 的精确常数项公式比较时必须使用同一测度。
 
 **定义 13.7.** 自守形式 $f$ 称为尖点的（cuspidal），若对所有 proper parabolic subgroups $P\subsetneq G$，
 $$
@@ -88,9 +88,11 @@ $$
 \mathcal A_0(G,\omega)\subset\mathcal A(G,\omega).
 $$
 
-**命题 13.8.** 若 $G$ 是 anisotropic modulo center，即 $G(K)\backslash G(\mathbb A_K)/Z_G(\mathbb A_K)$ 紧，则所有自守形式都是尖点形式。
+**命题 13.8.** 若 $G$ 没有定义在 $K$ 上的 proper parabolic subgroup，则所有自守形式都是尖点形式。
 
-**证明.** 若 $G$ modulo center anisotropic，则 $G$ 没有定义在 $K$ 上的 proper parabolic subgroup。尖点条件要求对所有 proper parabolic subgroup 的常数项为零；索引集合为空，因此条件自动满足。$\square$
+**证明.** 定义 13.7 要求对所有定义在 $K$ 上的 proper parabolic subgroup 检验常数项。假设说明该索引集合为空，所以该全称命题为真。$\square$
+
+**外部输入定理 13.8.1（各向异性与紧商判准）.** 对整体域上的 connected reductive group，在除去适当 split central direction 后，“没有 proper $K$-parabolic”与“自守商 modulo center 紧”由 reduction theory 联系。该等价不是命题 13.8 的形式逻辑证明的一部分；后文需要从紧商推出无抛物子群时，必须引用本外部输入。
 
 **注 13.9.** 对 $G=\operatorname{GL}_n$，proper parabolic subgroups 存在，尖点条件是强约束。对 $G=\operatorname{GL}_2$，它退化为第七章沿上三角 Borel 的 unipotent radical 积分为零。
 
@@ -98,7 +100,9 @@ $$
 
 ## 13.3 自守表示与张量积分解
 
-**定义 13.10.** 一个 cuspidal automorphic representation of $G(\mathbb A_K)$ 是右正则表示在 $\mathcal A_0(G,\omega)$ 中出现的不可约可容许表示同构类。若 $\pi$ 是这样的表示，称 $\omega_\pi=\omega$ 为其中心特征。
+**定义 13.10.** 固定 unitary central character $\omega$。一个 cuspidal automorphic representation of $G(\mathbb A_K)$ 是右正则酉表示在
+$L_0^2(G(K)Z_G(\mathbb A_K)\backslash G(\mathbb A_K),\omega)$ 中出现的不可约闭子表示；其 smooth、$K_\infty$-finite vectors 给出正文使用的代数表示。有限位置分量要求 smooth admissible，无穷位置分量按 admissible
+$(\mathfrak g_v,K_v)$-module/Fréchet globalization 理解。若 $\pi$ 是这样的表示，称 $\omega_\pi=\omega$ 为其中心特征。
 
 **外部输入定理 13.11（自守表示的 restricted tensor product 分解）.** 设 $\pi$ 为 cuspidal automorphic representation of $G(\mathbb A_K)$。则存在局部不可约可容许表示 $\pi_v$，使
 $$
@@ -118,9 +122,9 @@ $$
 3. 对 $v\notin S$，$\pi_v$ spherical；
 4. 对 $v\notin S$，局部 L 群表示 $r_v:{}^LG_v\to\operatorname{GL}(V)$ 为非分歧数据。
 
-**命题 13.14.** 适合 $(G,\pi,r)$ 的有限集合 $S$ 存在。
+**命题 13.14.** 对满足本章约定的 $(G,\pi,r)$，适合的有限集合 $S$ 存在。
 
-**证明.** 由 $G/K$ 为有限型代数群，除有限多个位置外，$G$ 有良好 reductive integral model，并在相应非分歧扩张上 split。由定理 13.11，除有限多个位置外 $\pi_v$ spherical。L 群表示 $r$ 的 ramification 数据也只涉及有限多个位置，因为 $G$ 的 pinned root datum 上的 Galois 作用通过有限商控制。把这些有限集合与所有 Archimedean 位置合并，即得所需 $S$。$\square$
+**证明.** 由 $G/K$ 为有限型 reductive group，除有限多个位置外可选 unramified integral model。由定理 13.11，除有限多个位置外 $\pi_v$ spherical。本章约定明确要求 $r_v$ 几乎处处非分歧。把这三个有限例外集与所有 Archimedean 位置合并，即得 $S$。注意“pinned root datum 的作用通过有限商”本身不能约束任意人为给定的局部表示族；这里必须使用本章对 $r$ 的有限分歧假设。$\square$
 
 ## 13.4 非分歧局部因子
 
@@ -181,7 +185,10 @@ $$
 
 **证明.** 由 Satake 同构，spherical Hecke eigencharacter 等价于 L 群中的 Satake parameter 半单共轭类。定义 13.15 只使用该半单共轭类在 $r_v$ 下的 characteristic polynomial。Characteristic polynomial 对共轭不变，因此局部因子只依赖 Hecke eigencharacter。$\square$
 
-**外部输入定理 13.21（Euler 乘积的初始收敛，接口形式）.** 对本书实际调用的标准情形，例如 Hecke L 函数、`GL(n)` 的标准 L 函数和 `GL(n)\times GL(m)` 的 Rankin-Selberg L 函数，$L^S(s,\pi,r)$ 在某个右半平面绝对收敛。对一般 reductive group 与任意 $r$，本书不从 Satake 参数估计推出初始收敛；未列入上述标准情形时，收敛性必须作为单独外部输入或猜想登记。
+**外部输入定理 13.21（标准 Euler 乘积的初始收敛）.** 采用 unitary normalization 时，下列 Euler 乘积在
+$\operatorname{Re}(s)>1$ 绝对收敛：酉 Hecke 特征的 L 函数、unitary cuspidal
+$\operatorname{GL}_n$ 表示的标准 L 函数，以及 unitary cuspidal
+$\operatorname{GL}_n\times\operatorname{GL}_m$ Rankin-Selberg L 函数。若表示或特征再张量实次 norm character，半平面按该实次作相应平移。对一般 reductive group 与任意 $r$，本书不从形式 Satake 参数推出任何收敛半平面；必须逐项登记外部估计或保留为形式 Euler 乘积。
 
 **注 13.22.** 不能把形式 Euler 乘积自动视为全平面解析函数。Euler 乘积首先只在某个可能存在的收敛半平面定义；解析延拓和函数方程是额外深性质。
 
@@ -195,7 +202,7 @@ L(s,\pi_v,r)=L(s,r_v\circ\varphi_v)
 $$
 其中右侧为线性 Weil-Deligne 或 Archimedean Weil 参数的局部 L 因子。
 
-**定义 13.24.** 在所有局部因子已经定义的情形，完全 L 函数定义为
+**定义 13.24.** 在所有局部因子已经定义且 Euler 乘积在某个右半平面绝对收敛的情形，完全 L 函数首先在该半平面定义为
 $$
 L(s,\pi,r)=\prod_v L(s,\pi_v,r).
 $$
@@ -214,7 +221,7 @@ $$
 $$
 \varepsilon(s,\pi,r)=\prod_v\varepsilon(s,\pi_v,r,\psi_v).
 $$
-在标准情形中该乘积除有限多个位置外为 $1$，因此是有限乘积。
+若 $v$ 同时满足 $\pi_v,r_v,\psi_v$ 非分歧、$\mathfrak c(\psi_v)=\mathcal O_v$ 且采用自对偶加法测度，则标准归一化给出局部 epsilon 因子 $1$。这些条件在几乎所有 $v$ 成立，故乘积是有限乘积；缺少加法特征 conductor 或测度条件时不能直接作此断言。
 
 ## 13.7 解析延拓与函数方程
 
@@ -227,15 +234,25 @@ $$
 L(s,\pi,r)
 =
 \varepsilon(s,\pi,r)
-L(1-s,\pi^\vee,r^\vee),
+L(1-s,\pi,r^\vee),
 $$
-其中 $\pi^\vee$ 为 contragredient representation，$r^\vee$ 为对偶表示。若 $r$ 和 $\pi$ 满足额外非平凡性条件，预期除可由中心或平凡表示解释的极点外，$L(s,\pi,r)$ 是 entire。
+其中 $r^\vee$ 为对偶表示。若已知
+$r\circ\varphi_{\pi^\vee}\cong(r\circ\varphi_\pi)^\vee$，可把右端等价写成
+$L(1-s,\pi^\vee,r)$。一般不能同时写 $\pi^\vee$ 与 $r^\vee$，因为那会把线性参数对偶两次。若 $r$ 和 $\pi$ 满足额外非平凡性条件，预期除可由中心或平凡表示解释的极点外，$L(s,\pi,r)$ 是 entire。
 
 **注 13.28.** 函数方程中的 $s\mapsto1-s$ 依赖归一化。本书采用自守归一化；若把经典模形式的权吸收到无穷处 gamma 因子或 Tate twist 中，函数方程中心会相应平移。
 
-**外部输入定理 13.29（Godement-Jacquet）.** 对 $G=\operatorname{GL}_n$ 和标准表示 $r=\operatorname{Std}$，cuspidal automorphic representation $\pi$ 的标准 L 函数具有解析延拓和函数方程。其证明来自 Godement-Jacquet zeta integrals。
+**外部输入定理 13.29（Godement-Jacquet）.** 设 $K$ 为整体域，$n\ge2$，$\pi$ 为 unitary cuspidal automorphic representation of
+$\operatorname{GL}_n(\mathbb A_K)$。其完成标准 L 函数 $\Lambda(s,\pi)$ 整，并满足
+$$
+\Lambda(s,\pi)=\varepsilon(s,\pi)\Lambda(1-s,\pi^\vee).
+$$
+对 $n=1$ 应改用定理 2.13，纯 norm character 允许极点。Godement-Jacquet zeta integrals 还给出局部标准因子和全局积分的 Euler 分解；本书把矩阵空间 Poisson summation 及 Archimedean 分析保留为外部输入。
 
-**外部输入定理 13.30（Rankin-Selberg 与 Langlands-Shahidi，接口形式）.** 对本书使用的若干重要 $r$，包括 `GL(n)\times GL(m)` 的 Rankin-Selberg 表示，以及 Langlands-Shahidi 理论可处理的 maximal parabolic subgroup 的 adjoint action 表示，局部和全局 L 函数可由 Rankin-Selberg 积分或 Langlands-Shahidi 方法构造，并满足 meromorphic continuation 和函数方程。
+**外部输入定理 13.30（Rankin-Selberg 与 Langlands-Shahidi，限定接口）.** 对 unitary cuspidal
+$\pi$ of $\operatorname{GL}_n(\mathbb A_K)$ 和 $\pi'$ of
+$\operatorname{GL}_m(\mathbb A_K)$，完成 Rankin-Selberg L 函数有亚纯延拓和对偶函数方程；其可能极点按 $\pi'$ 与 $\pi^\vee$ 的 twist-equivalence 条件控制。对 Langlands-Shahidi 方法，只有当
+$r$ 是某个已固定 quasi-split group 的 maximal parabolic Levi 对 $\operatorname{Lie}({}^LN)$ 的不可约分量、且局部 genericity 与全局 cuspidality 假设满足该版本定理时，才能断言相应 L 函数的亚纯延拓和函数方程。本条不覆盖任意 $G$ 与任意 $r$。
 
 **注 13.31.** 定理 13.30 不是任意 reductive group 与任意 L 群表示的完整定理。一般解析性质通常需要 functoriality，或需要单独构造相应 integral representation。附录 I 展开 Godement-Jacquet、Rankin-Selberg 和 converse theorem 的积分接口；附录 M 展开 Langlands-Shahidi local coefficient、局部 $\gamma$ 因子和由 Eisenstein 函数方程产生 L 因子的接口。
 
@@ -255,13 +272,16 @@ $$
 
 ### 13.8.2 `GL(2)`：模形式的标准 L 函数
 
-设 $K=\mathbb Q$，$\pi_f$ 来自权 $k$、级 $N$ 的归一化 cuspidal newform $f$。在 $p\nmid N$ 处，Satake 参数为 $(\alpha_p,\beta_p)$，于是
+设 $K=\mathbb Q$，$\pi_f$ 来自权 $k$、级 $N$ 的归一化 cuspidal newform $f$，并采用 unitary normalization。在 $p\nmid N$ 处，若 $(\alpha_p,\beta_p)$ 是 classical Hecke roots，则 Satake roots 为
+$(\alpha_pp^{-(k-1)/2},\beta_pp^{-(k-1)/2})$，于是
 $$
 L_p(s,\pi_f,\operatorname{Std})
 =
-\left((1-\alpha_pp^{-s})(1-\beta_pp^{-s})\right)^{-1}.
+\left((1-\alpha_pp^{-(s+(k-1)/2)})
+(1-\beta_pp^{-(s+(k-1)/2)})\right)^{-1}.
 $$
-这与第六、七章的 Euler 因子相同，差异只在经典归一化与自守归一化的 $s$ 平移 convention。
+因此精确关系是
+$L(s,\pi_f,\operatorname{Std})=L(f,s+(k-1)/2)$；不是在同一变量中“忽略 convention 后相同”。
 
 ### 13.8.3 Adjoint L 函数
 

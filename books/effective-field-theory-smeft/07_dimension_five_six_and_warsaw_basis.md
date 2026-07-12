@@ -12,7 +12,7 @@
 
 **定义 7.1（baryon-number conserving sector）.** 若所有算符均满足 $\Delta B=0$，则称其属于 baryon-number conserving SMEFT 扇区。
 
-**外部输入 7.2（Warsaw basis 计数）.** 在 baryon number 守恒、忽略 flavor 指标展开和 Hermitian conjugation 的计数口径下，Warsaw basis 的维数六独立算符数为
+**外部输入 7.2（Warsaw basis 计数）.** 在 baryon number 守恒、不展开 flavor 指标，并从每个非自伴 dagger pair 中只计一个代表（Hermitian conjugate 不另计）的结构口径下，Warsaw basis 的维数六独立算符数为
 $$
 15+19+25=59,
 $$
@@ -77,7 +77,7 @@ $$
 
 若不要求 $\Delta B=0$，维数六允许若干四费米子结构导致质子衰变型过程。它们与主线 flavor-conserving collider SMEFT 的实验边界非常不同。
 
-**原则 7.9.** 明确写出“Warsaw basis 59 个算符”时，必须同时说明这是 baryon-number conserving、未展开 flavor 的结构计数。
+**原则 7.9.** 明确写出“Warsaw basis 59 个算符”时，必须同时说明这是 baryon-number conserving、未展开 flavor，且每个非自伴 dagger pair 只计一个代表的结构计数；Hermitian 拉氏量仍须恢复共轭项。
 
 ## 本章小结
 

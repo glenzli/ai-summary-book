@@ -29,13 +29,21 @@
 4. pushout-product axiom 和 unit axiom 成立；
 5. monoid axiom 成立。
 
-**定义 G.4.** 称 $\mathcal M$ 满足 operadic 转移包 T1，若除 T0 外还满足足以控制有限对称群作用的条件：对每个 $n$，$\mathcal M^{\Sigma_n}$ 有 projective 模型结构，且张量幂、诱导、coinvariants、pushout 和 transfinite composition 与 weak equivalences 的相容性足以处理自由 operad 的树形 filtration。
+**定义 G.4.** 称 $\mathcal M$ 满足本书的 BM-operad 转移包 T1，若除 T0 外还指定以下数据与性质：
 
-**定义 G.5.** 称 $\mathcal M$ 满足 colored admissibility 包 T2，若所有 small colored symmetric operads $\mathcal O$ 的代数范畴 $\operatorname{Alg}_{\mathcal O}(\mathcal M)$ 都存在 transferred 模型结构。
+1. 单位对象 cofibrant；
+2. symmetric monoidal fibrant replacement；
+3. Berger--Moerdijk 来源意义下的 commutative Hopf interval；
+4. 对每个 $n$，$\mathcal M^{\Sigma_n}$ 有 projective 模型结构；
+5. 生成映射满足 BM-1 所需小性。
 
-**定义 G.6.** 称 $\mathcal M$ 满足 rectification 包 T3，若对足够 cofibrant 或 flat 的 operad 弱等价 $\varphi:\mathcal O\to\mathcal P$，诱导的 extension-restriction adjunction 是 Quillen equivalence。
+T1 是用于外部输入定理 G.11 的一个充分包，不声称是必要条件。
 
-**说明 G.7.** T0 是 monoid 层面的常见入口；T1 是 operad 自身模型结构的入口；T2 控制代数范畴；T3 控制“同伦代数可否严格化”。文献中的 symmetric h-monoidality、symmetric flatness、tractability、pretty smallness 等条件，是 T2 和 T3 的现代技术实现之一。
+**定义 G.5.** 固定 $\mathcal U$-小颜色集 $C$。称 $\mathcal M$ 满足 PSAR-colored admissibility 包 T2，若它满足 PSAR-1--PSAR-2 的来源假设：$\mathcal M$ 是 combinatorial 或 admissibly generated、tractable 的 symmetric monoidal model category，并且 symmetric h-monoidal。
+
+**定义 G.6.** 设 $\mathcal M$ 满足 T2，且 $\varphi:\mathcal O\to\mathcal P$ 是 admissible $C$-colored operads 之间的态射。称 $(\mathcal M,\varphi)$ 满足 rectification 包 T3，若 $\varphi$ symmetric flat；更一般地，也可直接要求 PSAR-4 的 free-cofibrant-algebra comparison condition。
+
+**说明 G.7.** T0 是 monoid 层面的常见入口；T1 是 BM-1 operad 自身模型结构的一个明确入口；T2 通过 PSAR-2 控制固定 colored operad 的代数范畴；T3 通过 PSAR-4 控制给定 operad 态射的 rectification。Pretty smallness、quasi-tractability 或其他文献版本只有在所引定理实际要求时加入，不能与上述词互换。
 
 ## G.3 自由代数中的对称幂风险
 
@@ -83,9 +91,9 @@ $$
 7. 弱等价和 fibration 是否逐 arity 创建；
 8. 引用的外部定理及其版本。
 
-**外部输入定理 G.11（operad transferred model structure schema）.** 在满足适当小性、幺半、等变 cofibration 和树形 filtration 条件的 cofibrantly generated 对称幺半模型范畴中，$\operatorname{Op}(\mathcal M)$ 存在 transferred 模型结构，弱等价和 fibration 由底层对称序列逐 arity 检测。
+**外部输入定理 G.11（operad transferred model structure；BM-1）.** 若 $\mathcal M$ 满足定义 G.4 的 T1，则 Berger--Moerdijk, arXiv:math/0206094v3, Theorem 3.1 给出 $\operatorname{Op}(\mathcal M)$ 的 transferred 模型结构，弱等价和 fibration 由底层对称序列逐 arity 检测。
 
-该定理的具体版本可来自 Berger-Moerdijk、Fresse 或 Pavlov-Scholbach。最终版必须在附录 D 中补充精确 theorem number。
+这是外部存在性定理；本书只在命题 14.15 中证明其一旦存在便形成 Quillen adjunction。Fresse 或 Pavlov--Scholbach 的替代版本必须以各自的完整假设包另行引用，不能只写作者名。
 
 ## G.6 代数范畴 admissibility 检查表
 
@@ -98,7 +106,9 @@ $$
 5. 代数范畴弱等价和 fibration 是否逐颜色检测；
 6. 若 $\mathcal O=\operatorname{Com}$，底范畴是否满足 commutative monoid axiom 或等价替代条件。
 
-**外部输入定理 G.12（admissibility schema）.** 在满足 symmetric h-monoidality、symmetric flatness、tractability 和 smallness 等适当条件的对称幺半模型范畴中，small colored symmetric operads admissible；特别地，其代数范畴存在由底层对象创建的 transferred 模型结构。
+**外部输入定理 G.12（colored admissibility；PSAR-2）.** 固定 $\mathcal U$-小颜色集 $C$。若 $\mathcal M$ 满足定义 G.5 的 T2，则 Pavlov--Scholbach, arXiv:1410.5675v4, Theorem 5.11 断言每个 $C$-colored symmetric operad admissible；其代数范畴的 weak equivalences 与 fibrations 由 $\mathcal M^C$ 创建。
+
+Symmetric flatness 不是这条存在性定理在本书所用版本中的附加结论；它在 G.13 的 rectification 中出现。
 
 ## G.7 Rectification 检查表
 
@@ -117,7 +127,13 @@ $$
 5. 代数对象是否需要 cofibrant replacement 后比较；
 6. 结论是 Quillen equivalence、derived equivalence 还是 infinity-categorical equivalence。
 
-**外部输入定理 G.13（rectification schema）.** 在满足 admissibility 与 symmetric flatness 条件的底范畴中，适当 cofibrant 或 flat 的 operad weak equivalence $\varphi:\mathcal O\to\mathcal P$ 诱导代数范畴的 Quillen equivalence。
+**外部输入定理 G.13（rectification；PSAR-4）.** 若 $(\mathcal M,\varphi)$ 满足定义 G.6 的 T3，则 Pavlov--Scholbach, arXiv:1410.5675v4, Theorem 7.5 给出
+$$
+\varphi_!:\operatorname{Alg}_{\mathcal O}(\mathcal M)
+\rightleftarrows
+\operatorname{Alg}_{\mathcal P}(\mathcal M):\varphi^\*
+$$
+为 Quillen equivalence。若不用 symmetric flatness 这一充分条件，则必须逐字验证该定理的 free-cofibrant-algebra comparison condition。
 
 **警告 G.14.** “$\mathcal O(n)\to\mathcal P(n)$ 对每个 $n$ 是 weak equivalence”只是 rectification 的输入之一，不是结论本身。结论还需要自由代数中的所有对称幂表达式同伦良好。
 
@@ -125,9 +141,16 @@ $$
 
 **说明 G.15.** 在正特征中，$E_\infty$-algebra 通常携带由 $E_\infty$ 结构诱导的 power operations。Strict commutative dg algebra 强加严格交换乘法。二者的同伦理论是否等价取决于底范畴和模型结构；一般不能以 $E_\infty\to\operatorname{Com}$ 的逐 arity quasi-isomorphism 单独证明。
 
-**外部输入命题 G.16.** 在若干正特征或一般底环语境中，$E_\infty$-algebras 与 strict commutative dg algebras 的同伦理论不由无条件 rectification 等同。精确反例和适用范围需引用 Hinich、Berger-Moerdijk、Mandell、Pavlov-Scholbach 或相关 structured ring spectra 文献。
+**命题 G.16（正特征中的内部障碍）.** 对 $k=\mathbb F_p$，存在 acyclic chain complex $C$，使自由严格交换 dg algebra 的正次数部分含非零同调；特别地，
+$$
+\operatorname{Sym}(0)\longrightarrow\operatorname{Sym}(C)
+$$
+不是 quasi-isomorphism。因此任何要求自由交换代数函子保持该 weak equivalence 的 transferred-structure 或 rectification 判据在 $\mathbf{Ch}_{\mathbb F_p}$ 中不满足。
+
+**证明.** 命题 X.15 构造 $C=(k\cdot y\xrightarrow{d}k\cdot x)$，$|y|=2$、$|x|=1$、$dy=x$，并证明 $y^p$ 在 $\operatorname{Sym}^p(C)$ 中是非零同调类。推论 X.16 说明该类在 $\operatorname{Sym}(C)$ 中仍非零，而 $0\to C$ 是 trivial cofibration。最后一句只应用“该判据要求自由函子保持此 weak equivalence”的定义，不声称由这个例子单独分类所有可能模型结构。$\square$
+
+**外部边界 G.17.** Power operations 给出的更强非 rectification 结论属于 Mandell、Hinich、Pavlov--Scholbach 或 structured ring spectra 文献。本书没有从命题 G.16 推出这些深结论；需要时必须另引精确版本。
 
 ## G.9 本附录小结
 
 Operad 的模型范畴理论不是一个单一开关。每当正文使用“admissible”“rectification”“cofibrant resolution 可替代原 operad”或“代数范畴 Quillen equivalent”时，都必须说明底范畴、operad、弱等价、cofibrancy/flatness 和对称幂假设。缺少这些信息时，只能把结论标为外部输入定理或研究边界。
-

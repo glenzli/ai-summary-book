@@ -8,7 +8,7 @@
 
 1. 主线固定：worldsheet CFT、bosonic string、BRST、superstrings、D-branes、compactification、dualities、AdS/CFT 均有正文入口。
 2. 归一化闭合：$\alpha'$、worldsheet signature、OPE、Virasoro、BRST、mass formula 和 ghost number 均有总表。
-3. 定理状态闭合：非平凡命题被标为已证、证明草图、外部输入或物理猜想。
+3. 定理状态闭合：非平凡命题被标为已证、标准物理推导说明、外部输入或物理猜想。
 4. 外部输入闭合：no-ghost theorem、modular invariance、Riemann surface moduli、anomaly cancellation 和 AdS/CFT 不被误写成无条件已证数学定理。
 5. 习题闭合：每条主线至少有核心计算题，并能回指正文定义和命题。
 

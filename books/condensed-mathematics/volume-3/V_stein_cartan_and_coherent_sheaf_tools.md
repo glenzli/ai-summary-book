@@ -155,6 +155,10 @@ Cartan B 给 $H^1(U,\mathcal F')=0$，故 $\Gamma(U,\mathcal F)\to\Gamma(U,\math
 
 这条推论是 Cartan B 在代数操作中的主要用法。
 
+**证明.** V.10 断言映射
+$\Gamma(U,\mathcal F)\to\Gamma(U,\mathcal F'')$ 满射；满射的定义正是
+每个 $\mathcal F''$ 的全局截面都有一个 $\mathcal F$ 中的原像。证毕。
+
 ## V.5 与凝聚/analytic 语言的接口
 
 当 $U$ 是 Stein 复空间时，$\Gamma(U,\mathcal F)$ 不只是向量空间。它带有自然 Fréchet 或 LF 型拓扑。进入 condensed/analytic 语言时，需要额外指定：

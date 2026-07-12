@@ -52,9 +52,9 @@ Q=P\times_{H/K} H,
 $$
 其中 $H\to H/K$ 是右 $K$-torsor。因为 $\phi$ 是 $H$-equivariant，$Q$ 自然是 $S$ 上的 $K$-torsor。反向地，给定 $K$-torsor $Q$，诱导 $H$-torsor $P=Q\times^K H$，并有自然 $H$-equivariant map $P\to H/K$。这两个构造在态射上互逆，故得到 stack 等价。$\square$
 
-**推论 A.9.** $H$-equivariant local systems on $H/K$ 等价于 $K$ 的有限维表示，前提是采用的 sheaf theory 中 $BK$ 上的 local systems 与 $K$-表示相符。
+**推论 A.9.** $H$-equivariant local systems on $H/K$ 等价于 $BK$ 上的 local systems。若采用 Betti 模型，则后者由拓扑群 $K(\mathbb C)$ 的分支群 $\pi_0(K(\mathbb C))$ 的有限维连续表示控制；特别地，若 $K$ 连通，则每个不可约 equivariant local system 都是常值秩一 local system。只有当 $K$ 是有限离散群等额外情形时，才能把它直接写成 $K$ 的有限维表示范畴。
 
-**证明.** 由命题 A.8，$D_H(H/K)$ 可视为 $D(BK)$。local systems 子范畴在该等价下对应 $BK$ 上 local systems。最后一步是所选 sheaf theory 的标准识别，若 $K$ 非离散或系数不合适，则需额外假设。$\square$
+**证明.** 命题 A.8 给出 $[H/K/H]\simeq BK$，拉回沿该 stack 等价把两侧的 local systems 子范畴等价起来。在 Betti 模型中，$\pi_1(BK)\simeq\pi_0(K)$，故 $BK$ 上的 local systems 等价于 $\pi_0(K)$ 的表示；若 $K$ 连通，此群平凡。有限离散 $K$ 满足 $\pi_0(K)=K$，于是恢复通常的有限群表示。注意这不是 algebraic representations of a positive-dimensional $K$ 的范畴。$\square$
 
 ## A.3 导出范畴和六函子
 

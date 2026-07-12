@@ -11,7 +11,7 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“世界面（worldsheet）”。
 - 每个概念先给形式定义，再给物理解释；不得用图像或比喻替代定义。
-- 非平凡命题必须给出证明、证明草图，或明确标注为“外部输入定理”。
+- 非平凡数学命题必须给出完整书内证明或明确标注为“外部输入定理”。标准物理形式主义中的压缩计算标为“推导说明（标准物理口径）”，并说明正规化、路径积分或微扰输入；它不计作严格数学证明。
 - 不使用“显然”“容易看出”等词跳过关键步骤；若步骤短，应写出变分、Poisson bracket、OPE 或 Ward identity 计算。
 - 每个公式必须说明所处环境：Minkowski 或 Euclidean worldsheet、target-space signature、closed/open string、tree/genus、operator formalism 或 path integral formalism。
 - 不把 string theory 写成历史散文；正文默认读者愿意接受研究生层级的微分几何、量子场论、复分析和表示论。

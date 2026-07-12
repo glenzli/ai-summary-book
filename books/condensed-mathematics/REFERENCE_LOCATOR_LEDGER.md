@@ -25,8 +25,8 @@
 
 | 代号 | 文献 | 当前 locator | 状态 |
 | --- | --- | --- | --- |
-| S26 | Peter Scholze, *Lectures on Condensed Mathematics*, arXiv:2605.03658 | Lectures I-XI；TeX source `Condensed.tex` labels `def:condensed`, `thm:niceabcat`, `def:solid`, `thm:specker`, `thm:solid`, `thm:solidtensor`, `def:analytic`, `prop:analyticnice`, `thm:solidAR`, `thm:globalization`, `thm:openduality` | L2 |
-| CS26 | Dustin Clausen and Peter Scholze, *Condensed Mathematics and Complex Geometry*, arXiv:2605.11731 | Lectures I-XV；TeX source `Complex.tex` labels `thm:liquidmain`, `thm:holomorphicdefinitionredux`, `thm:GAGAabstract`, `affinoidgiveslocale`, `thm:lowershriek`, `boundarylessuppershriek`, `thm:grauert`, Serre Duality theorem, GAGA theorem, `GRR`, `thm:GHRRfinal` | L2 |
+| S26 | Peter Scholze, *Lectures on Condensed Mathematics*, arXiv:2605.03658 | Lectures I-XI；本轮核心 locator：Remarks 1.4-1.5、Proposition 1.7、Definition 2.1、Proposition 2.9、Definition 2.11、Definition 5.1、Theorem 5.8、Corollary 6.1、Definition 7.1、Definition 7.4、Proposition 7.5、Warning 7.6、Example 7.10、Theorem 7.11 | L3 |
+| CS26 | Dustin Clausen and Peter Scholze, *Condensed Mathematics and Complex Geometry*, arXiv:2605.11731 | Lectures I-XV；本轮 liquid locator：Definition 2.13、Theorem 2.14、Lemma 2.16、Theorem 3.11；复几何 locator 仍使用下列 theorem labels | L3 |
 | A23 | Dagur Asgeirsson, *Towards solid abelian groups: A formal proof of Nöbeling's theorem*, arXiv:2309.07252 | Sections `sec:preliminaries`, `sec:theorem`, `sec:formalisation`; TeX labels `Nobeling`, `NobelingClosed`, `profinite-profinite` | L3 |
 | ABKMT24 | Asgeirsson-Brasca-Kuhn-Mortarino Majno di Capriglio-Topaz, *Categorical Foundations of Formalized Condensed Mathematics*, arXiv:2407.12840 | Sections on regular/extensive/coherent topology and `back_to_condensed.tex`; labels `prop:regular_extensive_sheaf`, `prop:sheafEquiv`, `thm:condensed set equivalence` | L3 |
 
@@ -34,9 +34,12 @@
 
 | 输入 | 本书编号 | 当前内部位置 | 外部文献 | 状态 | 出版级 locator |
 | --- | --- | --- | --- | --- | --- |
+| universe、\(\kappa\)-截断与改变层级 | volume-1 A.1-A.5 | volume-1 A, NOTATION | S26 | L3 | S26 Remarks 1.4-1.5、Definition 2.1、Proposition 2.9、Definition 2.11 |
 | condensed set on profinite site | volume-1 3, 5, B | volume-1 3, 5, B | S26, ABKMT24 | L2 | S26 Lecture I `def:condensed`; ABKMT24 `condensed.tex` definition and `back_to_condensed.tex` comparison |
+| topology-to-condensed full faithfulness boundary | volume-1 3.15-3.17 | volume-1 3 | S26 | L3 | S26 Proposition 1.7；仅在 \(\kappa\)-compactly generated spaces 上全忠实 |
 | finite jointly surjective / coherent topology sheaf condition | volume-1 1, 5 | volume-1 1, 5, B | S26, ABKMT24 | L3 | S26 Lecture I; ABKMT24 `coherentSheaves.tex` `prop:regular_extensive_sheaf` and `condensed.tex` sheaf characterization |
 | ProFin / CHaus / Stonean sheaf equivalence | volume-1 5, B | volume-1 5, B; volume-4 2 | ABKMT24, S26 | L3 | ABKMT24 `back_to_condensed.tex` theorem `thm:condensed set equivalence`; S26 Lectures I-II for profinite and \(\kappa\)-small setup |
+| unbounded K-injective/K-flat replacements | volume-1 H.13-H.15 | volume-1 H; volume-4 3 | Stacks Project | L3 | Tag `079P`, Theorem 19.12.6（K-injective）；Tag `06YL`, Lemma 21.17.11（termwise-surjective flat K-flat resolution on a ringed site） |
 
 ## 2. Scholze 核心输入定位
 
@@ -45,10 +48,10 @@
 | solidification existence | `INPUT_THEOREM_REGISTER.md` B.2, volume-2 D.1 | volume-2 V, Q, AA | S26 | L2 | S26 Lecture V `def:solid`, theorem `thm:solid`; Lecture VI proof of `thm:solid` |
 | solid kernel tensor ideal | B.3, volume-2 D.2 | volume-2 W, Q, AA | S26 | L2 | S26 Lecture VI `cor:solidproperties`, theorem `thm:solidtensor`; tensor ideal proof sits in proof of symmetric monoidality |
 | profinite measure tensor formula | B.4, volume-2 D.3 | volume-2 W, Q, AA | S26, A23 | L3 | S26 Lecture VI `prop:tensorinfproducts`; A23 theorem `Nobeling` and formal proof section |
-| analytic ring localization | C.1, volume-2 D.4 | volume-2 X, R, AA | S26 | L2 | S26 Lecture VII `def:analytic`, `prop:analyticnice`, `prop:functoriality`, `prop:exanalytic` |
+| analytic ring localization | C.1, volume-2 D.4 | volume-2 X, R, AA | S26 | L3 | S26 Definition 7.1、Definition 7.4、Proposition 7.5、Warning 7.6；rational descent 另列 C.4 |
 | Huber pair rational descent | C.4, volume-2 D.7 | volume-2 Y, R, AA | S26 | L2 | S26 Lectures IX-X: discrete Huber pair definition, rational subsets, `prop:locfullyfaithful`, `prop:locbasechange`, `thm:globalization` |
-| \(p\)-liquid analytic ring | C.3, volume-2 D.5 | volume-2 S, Z, AA | S26, CS26 | L2 | S26 Lecture VII theorem on \((\mathbb R,\mathcal M_{<p})\); CS26 Lectures II-III `thm:qspliquid`, `thm:liquidmain` |
-| liquid realization | C.2, volume-2 D.6 | volume-2 Z, S, AA | CS26 | L2 | CS26 Lectures II-IV: \(p\)-liquid objects, flatness/tensor calculations and examples；精确 realization 适用子范畴仍需 source theorem number 或正式约定 |
+| \(p\)-liquid analytic ring | C.3, volume-2 D.5 | volume-2 S, Z, AA | S26, CS26 | L3 | S26 Theorem 7.11；CS26 Definition 2.13、Theorem 3.11 |
+| 经典完备空间的 liquid membership | C.2, volume-2 D.6 | volume-2 5, J, P, S, Z, AA | CS26 | L3 | CS26 Theorem 2.14、Lemma 2.16 及其后的 inverse-limit 推论；exactness 不属于此输入 |
 | \(f_!\), projection formula, \(f^!\) | volume-2 D.9 | volume-2 F, L, AA | S26, CS26 | L2 | S26 Lecture VIII appendix `thm:solidAR`; Lecture XI `thm:openduality`, `def:flowershriek`; CS26 Lecture XII `thm:lowershriek`, `boundarylessuppershriek` |
 
 ## 3. Clausen-Scholze 复几何输入定位

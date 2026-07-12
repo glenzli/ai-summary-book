@@ -285,7 +285,7 @@ $$
 $$
 成为 $G$ 的非分歧参数。
 
-**证明草图.** 非分歧 character $\chi$ 由一致化元在各 cocharacter 方向上的取值决定。局部类域论把这些取值解释为 $W_F/I_F$ 上的 $\widehat T$-值参数。Satake 同构把 spherical Hecke character 识别为 $\widehat G$ 中的 Weyl 轨道。归一化诱导的 spherical constituent 与该 Hecke character 对应，因此其参数为 $\widehat T$ 中元素在 $\widehat G$ 中的半单共轭类。完整证明依赖 Satake 同构和归一化诱导的 spherical vector 计算。$\square$
+**证明路线（外部输入）.** 非分歧 character $\chi$ 由一致化元在各 cocharacter 方向上的取值决定。局部类域论把这些取值解释为 $W_F/I_F$ 上的 $\widehat T$-值参数。Satake 同构把 spherical Hecke character 识别为 $\widehat G$ 中的 Weyl 轨道。归一化诱导的 spherical constituent 与该 Hecke character 对应，因此其参数为 $\widehat T$ 中元素在 $\widehat G$ 中的半单共轭类。完整证明依赖 Satake 同构和归一化诱导的 spherical vector 计算。$\square$
 
 ### 12.6.4 Packet 大于一的现象
 
@@ -309,7 +309,7 @@ $$
 
 **命题 12.41.** Archimedean LLC 中 tempered 参数应对应 tempered representations。
 
-**证明草图.** Archimedean Langlands 分类把不可约可容许表示表示为标准模的唯一不可约商。Tempered 表示恰对应诱导数据中实部为零的情形。参数侧 boundedness 对应 infinitesimal character 的实部条件和 $W_F$ 像的相对紧性。完整证明属于 Harish-Chandra 和 Langlands 分类理论。$\square$
+**证明路线（外部输入）.** Archimedean Langlands 分类把不可约可容许表示表示为标准模的唯一不可约商。Tempered 表示恰对应诱导数据中实部为零的情形。参数侧 boundedness 对应 infinitesimal character 的实部条件和 $W_F$ 像的相对紧性。完整证明属于 Harish-Chandra 和 Langlands 分类理论。$\square$
 
 ## 12.8 一般还原群的已知性与本书口径
 

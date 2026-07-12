@@ -57,16 +57,20 @@ Springer correspondence 是外部输入，后续可在第五章和第六章中�
 ## 4. Affine Grassmannian 和 Satake
 
 ```
-loop group G((z)) and arc group G[[z]]
-  -> affine Grassmannian Gr_G
-  -> G[[z]]-orbits indexed by dominant coweights
-  -> perverse sheaves and convolution
-  -> rigid symmetric tensor category
-  -> Tannakian reconstruction
-  -> Rep(G^vee)
+fpqc loop quotient LG/L^+G
+  -> representability and reduced Betti Schubert exhaustion
+  -> finite-support equivariant perverse category
+  -> torsor descent of twisted external products
+  -> properness on finite convolution supports
+  -> stratified-semismall convolution t-exactness
+  -> fusion and parity-corrected symmetric structure
+  -> exact faithful global-cohomology fiber functor
+  -> neutral Tannakian group H
+  -> weight-functor torus morphism T^vee -> H
+  -> MV-cycle/rank-one identification H = G^vee
 ```
 
-Mirkovic-Vilonen theorem 是外部输入。Tannakian reconstruction 的一般定理也必须定位。
+第十二章内部证明 descent associativity、unit 和 $GL_2$ semismall dimension check；finite-support properness 与 semismall decomposition 是外部输入。第十三章内部只从 weight grading 构造 $T^\vee\to H$；fusion、fiber functor、neutral Tannaka 和 $H\simeq G^\vee$ 分别使用 `GSAT-CONV-1`、`GSAT-FIBER-1`、`TANNAKA-1`、`GSAT-1`，不得互相替代。
 
 ## 5. 前沿边界
 

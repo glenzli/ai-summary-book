@@ -1,6 +1,6 @@
 # 逐章完整性审计
 
-核查日期：2026-07-08
+核查日期：2026-07-12
 
 本文件判断每章是否仍停留在大纲态。判定标准：
 
@@ -14,17 +14,17 @@
 | --- | --- | --- | --- |
 | 00 | 正文态 | 固定范围、严格性、外部输入边界，并证明复定向给形式群律 | 无主要内容缺口 |
 | 01 | 正文态 | Bousfield acyclic/local/localization、smashing、生成 acyclics 和 local object 检查均有证明 | localization 存在性 locator |
-| 02 | 正文态 | 复定向、形式群、$BP/E(n)/K(n)$、Landweber exactness、$p$-typical convention 已展开 | Quillen/Landweber 精确 locator |
-| 03 | 正文态 | $K(n)$ 检测、$E_n$、residue field、Kunneth、Nakayama 风险均有细节 | GHM/Hovey-Strickland locator |
-| 04 | 正文态 | type、thick、nilpotence、periodicity、telescope、低阶例子和使用规则齐备 | Hopkins-Smith locator |
-| 05 | 正文态 | $L_n/M_n$、tower、fracture、convergence、complete、layer acyclicity 已展开 | fracture precise hypotheses |
-| 06 | 正文态 | $K(n)$-local category、stabilizer、continuous HFP、descent strategy 已展开 | DH/GHM locator |
-| 07 | 正文态 | telescope 反例、redshift 模板、cyclotomic redshift、frontier 分层已展开 | BHLŠ/HW/BSY 精确 locator |
-| 08 | 接口正文态 | elliptic/tmf 三层对象、ordinary/supersingular、$K(2)$ 使用规则已展开 | tmf 构造和 level examples |
-| 09 | 正文态 | semiadditivity、norm/Tate、cardinality、transchromatic character 边界已展开 | semiadditive height 正式 locator |
-| 10 | 接口正文态 | splitting、GH duality、Picard、algebraic approximation 和 convention 模板已展开 | 具体低高度 Picard examples |
+| 02 | 正文态 | 复定向、形式群、$BP/E(n)/K(n)$、Landweber exactness、$p$-typical convention 已展开 | CHT-P0-01/02/03 已定位到 Quillen Theorems 2/4、Ravenel 4.1.12(c)/4.1.18(a)、Landweber 2.6/Corollary 2.7 |
+| 03 | 正文态 | $K(n)$ 检测、$E_n$、residue field、Kunneth、Nakayama 风险均有细节 | CHT-P0-12 已定位到 Goerss--Hopkins Section 7；未调用的 Hovey--Strickland 全书级结构归非主线 P1 |
+| 04 | 正文态 | type 改为首次检测高度；thick/nilpotence/periodicity 状态分离；$v_0$ 与 $n\ge1$ 分开；$M(p)$ type $1$ 已内证；finite detection 定位到 HS II Theorem 14 | 无主链缺口 |
+| 05 | 正文态 | 嵌套局部化、smash product、任意谱 fracture、finite-type specialization、convergence 的 $\lim/\lim^1$ 与截断误差边界已展开 | 主链 locator 已闭合 |
+| 06 | 正文态 | $K(n)$-local category、stabilizer、continuous HFP、descent strategy 已展开 | CHT-P0-13/14 已定位到 Devinatz--Hopkins Definition 1.5、Theorems 1/2、Proposition 6.7；GHM 使用 CHT-P0-12 |
+| 07 | 正文态 | telescope 反例、redshift 模板、cyclotomic redshift、frontier 分层已展开 | BHLŠ/HW/BSY 保持版本化 Frontier，不进入 P0 证明链 |
+| 08 | 接口正文态 | elliptic/tmf 三层对象、ordinary/supersingular、$K(2)$ 使用规则已展开 | CHT-P0-19/20 已定位到 Silverman IV.7.4/7.5、AHS 与 Goerss Theorem 1.2/Definition 1.3；更多 level examples 属 P1 扩展 |
+| 09 | 正文态 | semiadditivity、norm/Tate、cardinality、transchromatic character 边界已展开 | HKR 固定高度接口已精确定位；一般 higher-semiadditive height 结论保持非主线 P1 |
+| 10 | 接口正文态 | splitting、GH duality、Picard、algebraic approximation 和 convention 模板已展开 | Strickland、Mor 与 GHMR locator 已登记；更多低高度实例属 P1 扩展 |
 | 11 | 接口正文态 | genuine/motivic/synthetic 的定义、固定点、realization 风险已展开 | 若作为核心部分需多章扩写 |
-| 12 | 正文态 | ANSS、chromatic SS、change of rings、HFPSS、Tate、计算流程、hidden extensions 和低 stem 表已展开 | 完整 ANSS 表属扩展 |
+| 12 | 正文态 | ANSS、chromatic SS、change of rings、HFPSS、Tate、计算流程、hidden extensions 和低 stem 表已展开 | Ravenel Theorem 4.4.1、Definition 5.1.7、Proposition 5.1.8 已定位；完整 ANSS 表属出版扩展 |
 
 ## 附录
 
@@ -49,9 +49,11 @@
 
 ## 当前结论
 
-当前草稿已经不属于大纲态。它达到“教材内容基本收口稿”：每个主体章节都有可阅读的正文模块、定义链、证明或使用规则；外部输入有 content-level locator；计算链有低 stem 校验表。尚未达到出版态的原因集中在：
+当前草稿已经不属于大纲态。它达到“教材内容基本收口稿”：每个主体章节都有
+可阅读的正文模块、定义链、证明或使用规则；本轮审计的主线 P0 外部输入均有
+theorem/section/page 与稳定 URL，非主线 P1 接口的证明角色也已显式降级；
+计算链有低 stem 校验表。以下工作属于出版扩展而非当前严格完整性阻断项：
 
-1. 精确 theorem/section/page locator 未完成；
-2. 完整 ANSS 表格仍可扩展；
-3. tmf/Gross-Hopkins/Picard 的低高度案例可继续加厚；
-4. equivariant/motivic 若要与普通 chromatic 同等深度，需要拆成独立扩展部分。
+1. 扩充完整 ANSS 表格；
+2. 加厚 tmf/Gross--Hopkins/Picard 的低高度案例；
+3. 把 equivariant/motivic 拆成与普通 chromatic 同等深度的独立扩展部分。

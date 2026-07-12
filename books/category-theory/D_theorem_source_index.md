@@ -6,6 +6,7 @@
 
 ## D.1 普通范畴论
 
+- Grothendieck universe、换 universe 与相对小性：SGA 4, Exposé I；Mac Lane；Riehl。嵌套 universe 的存在在本书中是元理论假设，不列为已证明定理。
 - 范畴、函子、自然变换、Yoneda、极限、共尾性、反射子范畴、伴随、Kan 延拓：Mac Lane；Borceux；Riehl；Leinster。
 - 单子与 Beck 单子性定理：Mac Lane；Borceux；Riehl。
 - Kleisli 范畴、Eilenberg-Moore 范畴与 Kan 延拓点态公式：Mac Lane；Borceux；Riehl。

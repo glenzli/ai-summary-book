@@ -14,22 +14,27 @@
 - Serge Lang, *Algebraic Number Theory*, Springer.
 - Jurgen Neukirch, *Algebraic Number Theory*, Springer.
 - J. S. Milne, *Class Field Theory*, online notes. 用于类域论陈述和 Artin reciprocity 归一化。
-- Andre Weil, *Basic Number Theory*, Springer. 用于 adeles、ideles 和 Tate thesis 背景。
+- Andre Weil, *Basic Number Theory*, Springer, especially Chapter IV. 用于 adeles、ideles、$C_K^1$ 紧性、Hecke quasi-character 的 unitary twist 分解和 Tate thesis 背景；函数域中 degree/norm 的离散像必须单独保留。
 - John Tate, class field theory articles in Cassels-Frohlich. 用于 class formations、Tate cohomology 和 reciprocity maps。
+- John Tate, *Number Theoretic Background*, in *Automorphic Forms, Representations and L-functions*, Proc. Symp. Pure Math. 33, Part 2, AMS, 1979, pp. 3-26. 用于局部/全局 Weil 群和类域论归一化接口。
 
 ## Tate thesis 与 `GL(1)`
 
 - John Tate, *Fourier Analysis in Number Fields and Hecke's Zeta-Functions*, thesis, 1950; reprinted in Cassels-Frohlich.
 - Dinakar Ramakrishnan and Robert J. Valenza, *Fourier Analysis on Number Fields*, Springer.
+- Pierre Deligne, *Les constantes des equations fonctionnelles des fonctions L*, in *Modular Functions of One Variable II*, Lecture Notes in Mathematics 349, Springer, 1973, pp. 501-597. 用于 Weil-Deligne 表示、局部常数和加法特征/测度依赖。
 
 ## 自守形式、自守表示和 `GL(n)`
 
 - Stephen Gelbart, *Automorphic Forms on Adele Groups*, Princeton University Press.
+- Armand Borel and Harish-Chandra, *Arithmetic Subgroups of Algebraic Groups*, Annals of Mathematics 75 (1962), pp. 485-535；Gunter Harder, *Chevalley groups over function fields and automorphic forms*, Annals of Mathematics 100 (1974), pp. 249-306. 用于“无 proper rational parabolic”和 adelic quotient modulo split center 紧性的判准；正文只调用 13.8.1 的接口形式。
 - Daniel Bump, *Automorphic Forms and Representations*, Cambridge University Press.
 - Dorian Goldfeld and Joseph Hundley, *Automorphic Representations and L-Functions for the General Linear Group*, Cambridge University Press.
 - Herve Jacquet and Robert P. Langlands, *Automorphic Forms on GL(2)*, Springer.
-- Roger Godement and Herve Jacquet, *Zeta Functions of Simple Algebras*, Springer.
-- Henry Jacquet, Ilya Piatetski-Shapiro, and Joseph Shalika, works on Rankin-Selberg convolutions for `GL(n)`. 用于 Rankin-Selberg L 函数和强重数一背景。
+- Daniel Flath, *Decomposition of representations into tensor products*, in *Automorphic Forms, Representations and L-functions*, Proc. Symp. Pure Math. 33, Part 1, AMS, 1979, pp. 179-183. 用于不可约可容许自守表示的 restricted tensor product 分解。
+- Roger Godement and Herve Jacquet, *Zeta Functions of Simple Algebras*, Lecture Notes in Mathematics 260, Springer, 1972. 用于 `GL(n)` 标准 L 函数、局部 zeta 积分和函数方程。
+- Herve Jacquet, Ilya Piatetski-Shapiro, and Joseph Shalika, *Rankin-Selberg Convolutions*, American Journal of Mathematics 105 (1983), pp. 367-464. 用于 `GL(n)\times GL(m)` Rankin-Selberg L 函数和局部-整体因子。
+- Herve Jacquet and Joseph Shalika, *On Euler products and the classification of automorphic representations I, II*, American Journal of Mathematics 103 (1981), pp. 499-558 and 777-815. 用于 Euler 乘积与强重数一。
 - Ilya Piatetski-Shapiro and James Cogdell, works on converse theorems for `GL(n)`. 用于 `GL(n)` converse theorem 和函子性检测。
 - I. N. Bernstein and A. V. Zelevinsky, works on induced representations of reductive p-adic groups. 用于 `GL(n)` 的局部分类和 Langlands quotient 接口。
 - A. V. Zelevinsky, works on the classification of irreducible representations of `GL(n)` over non-Archimedean local fields. 用于 segments 和 multisegments。
@@ -43,6 +48,7 @@
 - Freydoon Shahidi, *Eisenstein Series and Automorphic L-Functions*, AMS Colloquium Publications. 用于 Langlands-Shahidi local coefficient、$\gamma$ 因子和全局函数方程。
 - Henry Kim and Freydoon Shahidi, works using the Langlands-Shahidi method for symmetric powers and functorial lifts. 用于低阶函子性与解析性质的实例。
 - James Arthur, *An Introduction to the Trace Formula*, in standard trace formula references. 用于后续离散谱、稳定迹和全局 packet 背景。
+- James Arthur, *The Trace Formula in Invariant Form*, Annals of Mathematics 114 (1981), pp. 1-74. 用于截断、加权轨道积分及不变迹公式的外部接口；稳定化仍需后续 Arthur-endoscopy 文献。
 - Harish-Chandra and Robert Langlands, works on Eisenstein series and spectral decomposition. 用于残余谱、常数项和全局 L 函数解析性质背景。
 - Robert Langlands, *On the Functional Equations Satisfied by Eisenstein Series*, Springer Lecture Notes. 用于 Eisenstein series、constant term formula、intertwining operators 和谱分解背景。
 - C. Moeglin and J.-L. Waldspurger, works on residual spectrum and Eisenstein series. 用于 `GL(n)` residual spectrum 和 Arthur 参数背景。
@@ -96,7 +102,7 @@
 - A. O. L. Atkin and Joseph Lehner, works on Hecke operators and Atkin-Lehner involutions.
 - Wen-Ching Winnie Li, works on newforms and Atkin-Lehner theory.
 - A. O. L. Atkin and Wen-Ching Winnie Li, works on twists of newforms and old/new theory. 用于 Atkin-Lehner-Li 分解。
-- William Casselman, works on newvectors for `GL(2)`. 用于局部 newvector theorem 和导子接口。
+- William Casselman, *On some results of Atkin and Lehner*, Mathematische Annalen 201 (1973), pp. 301-314. 用于 `GL(2)` 局部 newvector theorem、导子和固定向量维数公式。
 - Jean-Pierre Serre, *A Course in Arithmetic*, Springer.
 - Joseph H. Silverman, *The Arithmetic of Elliptic Curves*, Springer.
 - Joseph H. Silverman, *Advanced Topics in the Arithmetic of Elliptic Curves*, Springer.
@@ -109,13 +115,15 @@
 - Andrew Wiles, *Modular elliptic curves and Fermat's Last Theorem*, Annals of Mathematics, 1995.
 - Richard Taylor and Andrew Wiles, *Ring-theoretic properties of certain Hecke algebras*, Annals of Mathematics, 1995.
 - Kenneth Ribet, works on level lowering and the epsilon conjecture.
-- Kenneth Ribet, *On modular representations of Gal(\overline Q/Q) arising from modular forms*, Inventiones Mathematicae, 1990.
+- Kenneth Ribet, *On modular representations of $\operatorname{Gal}(\overline{\mathbb Q}/\mathbb Q)$ arising from modular forms*, Inventiones Mathematicae 100 (1990), pp. 431-476. 用于第十章所调用的权二 level-lowering/epsilon-conjecture 接口。
 - Jean-Pierre Serre, *Sur les representations modulaires de degre 2 de Gal(\overline Q/Q)*, Duke Mathematical Journal, 1987.
 - Chandrashekhar Khare and Jean-Pierre Wintenberger, works proving Serre's modularity conjecture.
 - Christophe Breuil, Brian Conrad, Fred Diamond, and Richard Taylor, *On the modularity of elliptic curves over Q*, Journal of the AMS, 2001.
 - Barry Mazur, *Deforming Galois representations*, in *Galois Groups over Q*.
+- Barry Mazur, *Rational isogenies of prime degree*, Inventiones Mathematicae 44 (1978), pp. 129-162，以及 Frey-Serre-Ribet 的后续论证。用于 Frey residual representation 不可约性接口；低指数的独立处理必须与一般 $p$ 的论证分开登记。
 - Jean-Pierre Serre, *Abelian l-adic representations and elliptic curves*, Benjamin/Addison-Wesley.
-- Pierre Deligne, works on Galois representations attached to modular forms. 用于 Deligne $\ell$-adic 表示。
+- Pierre Deligne, *Formes modulaires et representations $\ell$-adiques*, Seminaire Bourbaki, exp. 355, Lecture Notes in Mathematics 179, Springer, 1971, pp. 139-172；以及 *Formes modulaires et representations de $\operatorname{GL}(2)$*, in Lecture Notes in Mathematics 349, Springer, 1973, pp. 55-105. 用于归一化本征形式的 $\ell$-adic 表示及好素数 Frobenius 多项式。
+- Henri Carayol, *Sur les representations $\ell$-adiques associees aux formes modulaires de Hilbert*, Annales scientifiques de l'Ecole Normale Superieure 19 (1986), pp. 409-468. 用于坏素数处 Weil-Deligne 局部-整体相容接口；正文只调用其中明确列出的经典模形式特例。
 - Goro Shimura and Martin Eichler, works on Eichler-Shimura theory. 用于模曲线上同调和权二情形。
 - Gerd Faltings and Jean-Marc Fontaine, works on p-adic Hodge theory. 用于 de Rham/crystalline comparison 和 Hodge-Tate weights。
 - Michael Harris and Richard Taylor, *The Geometry and Cohomology of Some Simple Shimura Varieties*. 用于数域 `GL(n)` Galois 表示构造。
@@ -126,11 +134,12 @@
 
 - Edward Frenkel, *Langlands Correspondence for Loop Groups*, Cambridge University Press.
 - Edward Frenkel and Dennis Gaitsgory, works and surveys on geometric Langlands. 用于 Hecke eigensheaves 和几何 Langlands 基本形式。
-- Ivan Mirkovic and Kari Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*. 用于几何 Satake。
+- Ivan Mirkovic and Kari Vilonen, *Geometric Langlands duality and representations of algebraic groups over commutative rings*, Annals of Mathematics 166 (2007), pp. 95-143. 用于几何 Satake；有限域函数迹比较还需另行固定 Weil structure、几何 Frobenius 和半 Tate twist。
 - Victor Ginzburg, works on perverse sheaves on affine Grassmannian and Langlands duality. 用于几何 Satake 背景。
 - Alexander Beilinson and Vladimir Drinfeld, works on geometric Langlands and chiral algebras.
 - Alexander Beilinson and Vladimir Drinfeld, works on Beilinson-Drinfeld Grassmannians and factorization. 用于 BD Grassmannian、fusion 和 Hecke factorization。
-- Dennis Gaitsgory, works on D-modules on Bun_G and categorical geometric Langlands.
+- Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture I: construction of the functor*, arXiv:2405.03599；D. Arinkin et al., *Proof of the geometric Langlands conjecture II: Kac-Moody localization and the FLE*, arXiv:2405.03648；Justin Campbell et al., *Proof of the geometric Langlands conjecture III: compatibility with parabolic induction*, arXiv:2409.07051；D. Arinkin et al., *Proof of the geometric Langlands conjecture IV: ambidexterity*, arXiv:2409.08670；Dennis Gaitsgory and Sam Raskin, *Proof of the geometric Langlands conjecture V: the multiplicity one theorem*, arXiv:2409.09856. 作为第二十一章和附录 O 的特征零外部 preprint theorem 来源。Paper I §0.1.1--0.1.2、§1.1 明确把自动侧定义为 $\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)$，并构造 automorphic $\to$ spectral 的 $\mathbb L_G$；从谱侧返回自动侧时使用证明所得逆等价 $\mathbb L_G^{-1}$。调用整个系列时保留其 half-twist、renormalized 和 derived category conventions。
+- Dennis Gaitsgory and Sam Raskin, *Geometric Langlands in positive characteristic from characteristic zero*, arXiv:2508.02237. 只用于正特征 $\ell$-adic 情形中 automorphic nilpotent category 与参数栈某些连通分支之并上的 $\operatorname{IndCoh}$ 范畴之部分 preprint theorem，不作为 unrestricted 正特征等价引用。
 - Masaki Kashiwara, works on D-modules and Riemann-Hilbert correspondence. 用于 D-modules、constructible sheaves 和正则 holonomic 口径。
 - Ryoshi Hotta, Kiyoshi Takeuchi, and Toshiyuki Tanisaki, *D-Modules, Perverse Sheaves, and Representation Theory*. 用于 D-module 六运算、Riemann-Hilbert 和表示论接口。
 - David Nadler, works on geometric Satake and sheaf-theoretic representation theory.
@@ -138,9 +147,10 @@
 - Dennis Gaitsgory and Nick Rozenblyum, *A Study in Derived Algebraic Geometry*, AMS.
 - Dima Arinkin and Dennis Gaitsgory, works on singular support and geometric Langlands. 用于 $\operatorname{IndCoh}_{\mathcal N}$ 谱侧。
 - Peter Scholze, works on perfectoid spaces and diamonds. 用于 diamonds、pro-etale geometry 和 local Shimura varieties。
-- Laurent Fargues and Jean-Marc Fontaine, works on the Fargues-Fontaine curve. 用于 FF 曲线和 vector bundle 分类。
+- Laurent Fargues and Jean-Marc Fontaine, *Courbes et fibrés vectoriels en théorie de Hodge $p$-adique*, Astérisque 406 (2018), especially Théorème 8.2.10. 用于完备代数闭 perfectoid field 上 FF 曲线的 vector bundle 分类；一般基底只经相对曲线和 descent 使用。
+- Laurent Fargues, *G-torseurs en théorie de Hodge $p$-adique*, Compositio Mathematica 156 (2020), no. 10, pp. 2076--2110. 用于完备代数闭 perfectoid field 上 $G$-bundles 与 $B(G)$ 的分类。
 - Peter Scholze and Jared Weinstein, works on local Shimura varieties and moduli of p-divisible groups. 用于 local shtuka diamonds。
-- Laurent Fargues and Peter Scholze, works on geometrization of the local Langlands correspondence. 用于 Fargues-Scholze semisimple LLC 和 spectral action。
+- Laurent Fargues and Peter Scholze, *Geometrization of the local Langlands correspondence*, arXiv:2102.13459v4 (accepted version), especially Theorem II.2.14、Theorem III.2.2、I.9、IX.4、IX.6 and X. II.2.14 与 III.2.2 分别用于完备代数闭非 Archimedean 几何点上的 vector bundles 和 $G$-bundles 同构类分类；相对 $\operatorname{Bun}_G$ 只按 v-stack/descent 口径使用。后四处用于 spectral action 和 semisimple LLC map；该来源不给出正文未声明的 monodromy operator 或完整 enhanced packet 分类。
 - Vladimir Drinfeld, works on shtukas and `GL(2)` function field Langlands.
 - Laurent Lafforgue, works on shtukas and `GL(n)` function field Langlands.
 - Vincent Lafforgue, works on excursion operators and the global Langlands parameterization over function fields. 用于一般还原群的函数域参数化接口。

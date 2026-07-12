@@ -22,54 +22,136 @@ $$
 $$
 De Rham specialization complex 定义为
 $$
-\Delta^{\mathrm{dR}}_{R/A}=\phi_A^\ast\Delta_{R/A}\otimes_A^L A/I,
+\Delta^{\mathrm{dR}}_{R/A}=\phi_A^\ast\Delta_{R/A}
+\widehat\otimes_A^L A/I,
 $$
-其中 $\phi_A^\ast\Delta_{R/A}=A\otimes_{A,\phi_A}^L\Delta_{R/A}$。
+其中 $\phi_A^\ast\Delta_{R/A}=A\otimes_{A,\phi_A}^L\Delta_{R/A}$，并且
+本式的帽号专指 tensor product 之后的 derived $p$-completion：
+$$
+C\widehat\otimes_A^LA/I
+:=(C\otimes_A^LA/I)^{\wedge,L}_p.
+$$
+Hodge--Tate specialization 没有这个额外 completion 符号；这与
+Bhatt--Scholze, Theorem 1.8 (2)--(3) 的两个公式一致。
 
-**警告 3.3.** Hodge-Tate specialization 与 de Rham specialization 的差异在于是否先沿 $\phi_A$ pullback。后续任何公式若省略此差异，都必须视为未校验。
+**警告 3.3.** Hodge-Tate specialization 与 de Rham specialization 的操作
+序列不同：前者直接 derived modulo $I$；后者先沿 $\phi_A$ pullback，再
+derived modulo $I$ 并作 derived $p$-completion。后续公式若省略 Frobenius
+twist 或 completion ideal，都必须视为未校验。
 
 ## 3.2 Hodge-Tate comparison
 
-**外部输入定理 3.4（Hodge-Tate comparison）.** 令 $(A,I)$ 为 bounded prism，令 $X$ 为 smooth $p$-adic formal scheme over $A/I$。则 $\overline\Delta_{X/A}$ 带自然 conjugate filtration，其 associated graded 在标准 twist convention 下由 cotangent complex 给出：
+**外部输入定理 3.4（Hodge-Tate comparison）.** 令 $(A,I)$ 为 bounded
+prism，令 $X$ 为 smooth $p$-adic formal scheme over $A/I$。在 $X_{\mathrm{et}}$
+上，Hodge-Tate specialization 的 cohomology sheaves 满足
 $$
-\operatorname{gr}^{i}_{\mathrm{conj}}\overline\Delta_{X/A}
+\mathcal H^i(\overline\Delta_{X/A})
+\cong \Omega^i_{X/(A/I)}\{-i\}.
+$$
+等价地，在递增 Postnikov（亦称 conjugate）filtration 的编号下，其
+associated graded 为
+$$
+\operatorname{gr}_{i}^{\mathrm{conj}}\overline\Delta_{X/A}
 \simeq
 R\Gamma\left(X,\wedge^i\mathbb L_{X/(A/I)}\right)[-i]\{-i\}.
 $$
 若 $X$ smooth，则可写成
 $$
-\operatorname{gr}^{i}_{\mathrm{conj}}\overline\Delta_{X/A}
+\operatorname{gr}_{i}^{\mathrm{conj}}\overline\Delta_{X/A}
 \simeq
 R\Gamma\left(X,\Omega^i_{X/(A/I)}\right)[-i]\{-i\}.
 $$
+全局公式中的 $\overline\Delta_{X/A}$ 表示对上述 sheaf complex 取
+$R\Gamma(X_{\mathrm{et}},-)$。来源为 Bhatt-Scholze, Theorem 4.11 与
+Theorem 6.3，locator `BS-COMP-HT`。
 
-**说明 3.5.** 这里 $M\{-i\}$ 的符号依赖 $I/I^2$ 的 dual 或 inverse convention。本书当前 convention 采用 `NOTATION.md` 中的 $M\{i\}=M\otimes(I/I^2)^{\otimes i}$；最终版本必须通过 locator 与 Bhatt-Scholze 原文逐项核对符号方向。
+**说明 3.5.** 本书采用
+$M\{i\}=M\otimes_{A/I}(I/I^2)^{\otimes i}$，故定理中为 $\{-i\}$。
+这一方向已与 Bhatt-Scholze v4, Theorem 1.8 (2) 及 Theorem 4.11 核对；
+它不是未定的 dual convention。
 
 **形式推论 3.6.** 若 $X$ proper smooth over $A/I$，且各 $R\Gamma(X,\Omega^i)$ 是 perfect complex，则 $\overline\Delta_{X/A}$ 是 $A/I$ 上的 perfect complex。
 
-**证明.** Conjugate filtration 的 associated graded 是有限个 perfect complex。Perfect complexes 在有限扩张和有限滤过下稳定。故结论成立。证毕。
+**证明.** 设 $d$ 为 $X/(A/I)$ 的最大相对维数；properness 使 $X$
+quasi-compact，故可取有限的 $d$，并且 $\Omega^i=0$ 对 $i>d$。定理 3.4
+给出的 filtration 因而只有 $0\le i\le d$ 个非零 graded pieces。Shift 和
+invertible twist 保持 perfect，故每个 graded piece perfect。由
+$$
+F^{i+1}\overline\Delta_{X/A}\to
+F^i\overline\Delta_{X/A}\to
+\operatorname{gr}^i_{\mathrm{conj}}\overline\Delta_{X/A}
+$$
+逐级使用 perfect complexes 对 cones 的封闭性，得到
+$\overline\Delta_{X/A}$ perfect。证毕。
 
 ## 3.3 De Rham comparison
 
-**外部输入定理 3.7（de Rham comparison）.** 在定理 3.4 的假设下，存在自然拟同构
+**外部输入定理 3.7（de Rham comparison）.** 在定理 3.4 的假设下，
+存在自然的 $E_\infty$-$A/I$-algebra 拟同构
 $$
-\phi_A^\ast R\Gamma_\Delta(X/A)\otimes_A^L A/I
+\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I
 \simeq
 R\Gamma_{\mathrm{dR}}(X/(A/I)).
 $$
-该同构与乘法结构相容，并可在适当模型中提升为 commutative differential graded algebra 层面的同构。
+这里 $\phi_A^\ast C=A\otimes_{A,\phi_A}^LC$，帽号表示 derived
+$p$-completion；右侧 $R\Gamma_{\mathrm{dR}}$ 也按 $p$-completed de Rham
+complex 解释。该同构与乘法和 differential graded algebra 结构相容。
+来源为 Bhatt-Scholze, Corollary 15.4（locator `BS-COMP-DR`）。它本身是
+unfiltered comparison；若要保留 Hodge/Nygaard filtration，必须另行调用
+relative Nygaard theorem，不能把 filtered compatibility 自动加入本陈述。
 
 **警告 3.8.** 若去掉左侧的 $\phi_A^\ast$，通常得到的是 Hodge-Tate specialization 而不是 de Rham cohomology。这个差异是 prismatic theory 中最常见的公式错误之一。
 
 ## 3.4 Crystalline comparison
 
-**外部输入定理 3.9（crystalline comparison）.** 令 $(A,I)$ 为 bounded prism，且 $I=(p)$。若 $X$ smooth over $A/p$，则 prismatic cohomology 与 crystalline cohomology 存在自然 $\phi$-相容比较同构。精确地说，在 Bhatt-Scholze 的 convention 下，$R\Gamma_\Delta(X/A)$ 给出 crystalline cohomology 的 Frobenius descent。
+**外部输入定理 3.9（crystalline comparison）.** 令 $(A,(p))$ 为
+crystalline prism，令 $X$ 为 smooth $p$-adic formal scheme over $A/p$。
+则在 $D(A)$ 中有自然的 $\varphi$-equivariant 拟同构
+$$
+R\Gamma_{\mathrm{crys}}(X/A)
+\simeq
+R\Gamma_\Delta(X/A)\widehat\otimes_{A,\phi_A}^LA
+=\left(\phi_A^\ast R\Gamma_\Delta(X/A)\right)^{\wedge,L}_p.
+$$
+两边均按 derived $p$-complete commutative $A$-algebras 解释。来源为
+Bhatt-Scholze, Theorem 5.2（locator `BS-COMP-CRYS`）。这是积分
+comparison；结论没有 invert $p$。
 
-**说明 3.10.** 本书当前版本暂不把该定理写成唯一公式，因为 crystalline cohomology 的底环和 divided power envelope convention 会影响表述。最终版本需要在 locator 阶段固定 Berthelot crystalline site 的口径。
+**外部输入定理 3.10（Frobenius isogeny）.** 在定理 3.4 的假设下，
+令
+$$
+C=R\Gamma_\Delta(X/A),\qquad
+C^{(1)}=C\widehat\otimes_{A,\phi_A}^LA.
+$$
+命题 2.19 的 linearized Frobenius 在 derived $(p,I)$-completion 后给出
+$C^{(1)}\to C$，并满足
+$$
+\varphi^{\mathrm{lin}}[1/I]:
+C^{(1)}[1/I]
+\xrightarrow{\sim}
+C[1/I].
+$$
+若 $I=(d)$，则 $[1/I]$ 表示 $[1/d]$。来源为 Bhatt-Scholze,
+Corollary 15.5（locator `BS-COMP-PHI`）。积分层的
+$\varphi^{\mathrm{lin}}$ 一般不是同构；invert $I$ 也不等于 invert $p$。
 
 ## 3.5 Etale comparison
 
-**外部输入定理 3.11（etale comparison）.** 令 $(A,I)$ 为 perfect bounded prism，$X$ smooth proper over $A/I$，并令 $X_\eta$ 表示相应 generic fibre。则 prismatic cohomology 在 invert $I$、取 Frobenius fixed points 并 modulo $p^n$ 后，与 $X_\eta$ 的 $p$-adic etale cohomology 比较。该比较为自然拟同构，并与 cup product 相容。
+**外部输入定理 3.11（etale comparison, finite level）.** 令
+$(A,(d))$ 为 oriented perfect prism，令 $R=A/(d)$ 为对应 perfectoid ring，
+令 $X$ 为 $p$-adic formal scheme over $R$，$X_\eta$ 为其 adic generic
+fibre。则对每个 $n\ge1$ 有 $D(\mathbf Z/p^n)$ 中的自然拟同构
+$$
+R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z/p^n)
+\simeq
+\left((R\Gamma_\Delta(X/A)/p^n)[1/d]\right)^{\varphi=1},
+$$
+其中右侧是 $\operatorname{fib}(\varphi-1)$，不是 cohomology groups 的
+ordinary invariants。这里 $\varphi$ 虽对 $A$ semilinear，却固定
+$\mathbf Z_p$；restriction of scalars 后 $\varphi-1$ 是
+$\mathbf Z/p^n$-linear。无 orientation 时写 $[1/I]$。来源为 Bhatt-Scholze,
+Theorem 9.1（locator `BS-COMP-ETALE`）；该 theorem 在 sheaf level 表述，
+上述公式由 derived global sections 得到。
 
 **警告 3.12.** 定理 3.11 不能简写为
 $$
@@ -79,60 +161,105 @@ $$
 
 ## 3.6 Base change
 
-**外部输入定理 3.13（prismatic base change）.** 令 $(A,I)\to(B,J)$ 为 bounded prisms 的态射，令 $X$ 为 smooth $p$-adic formal scheme over $A/I$，并设
+**外部输入定理 3.13（prismatic base change）.** 令
+$(A,I)\to(B,IB)$ 为 bounded prisms 的态射，令 $X$ 为 smooth $p$-adic
+formal scheme over $A/I$，并设
 $$
-Y=X\times_{\operatorname{Spf}(A/I)}\operatorname{Spf}(B/J).
+Y=X\times_{\operatorname{Spf}(A/I)}\operatorname{Spf}(B/IB).
 $$
-则存在自然 base-change comparison
+定义
+$$
+C\widehat\otimes_A^LB
+:=(C\otimes_A^LB)^{\wedge,L}_{(p,IB)}.
+$$
+则有自然拟同构
 $$
 R\Gamma_\Delta(X/A)\widehat\otimes_A^L B
 \simeq
 R\Gamma_\Delta(Y/B),
 $$
-其中左侧完备化按 derived $(p,J)$-adic completion 解释。
+并与 $E_\infty$-乘法结构相容。Prism ideal rigidity 保证任意 prism map 的
+目标 ideal 就是 $IB$。来源为 Bhatt-Scholze, Corollary 4.12（locator
+`BS-COMP-BC`）；complex-level theorem 不额外假设 $A\to B$ 有有限 ordinary
+Tor-amplitude。
 
 **形式推论 3.14.** 若 $R\Gamma_\Delta(X/A)$ 为 perfect $A$-complex，则 base change 后得到的 $R\Gamma_\Delta(Y/B)$ 为 perfect $B$-complex。
 
-**证明.** Perfect complexes 在 derived base change 下保持 perfect；derived completion 在 bounded prism 的假设下与目标完备范畴相容。关键相容性属于定理 3.13 的内容。证毕。
+**证明.** 令 $C=R\Gamma_\Delta(X/A)$。Derived base change
+$P=C\otimes_A^LB$ 是 perfect $B$-complex。因 $(B,IB)$ 是 bounded prism，
+$B$ derived $(p,IB)$-complete。Derived complete $B$-complexes 构成 stable、
+对 retract 封闭的 full subcategory；它包含 $B$，从而包含由有限个 shifts、
+cones 和 retracts 从 $B$ 生成的所有 perfect complexes。因此 $P$ 已 derived
+$(p,IB)$-complete，completion map $P\to P^{\wedge,L}_{(p,IB)}$ 为同构。
+定理 3.13 于是把 $R\Gamma_\Delta(Y/B)$ 识别为 perfect complex $P$。证毕。
+
+**警告 3.14A（cohomology 不自动逐次基变换）.** 定理 3.13 是 complexes
+的 completed derived base-change theorem。它不自动给出
+$$
+H^n_\Delta(X/A)\otimes_AB
+\cong H^n_\Delta(Y/B).
+$$
+先令
+$$
+P=R\Gamma_\Delta(X/A)\otimes_A^LB.
+$$
+只有另知 $P$ 已 derived $(p,IB)$-complete 时，定理 3.13 的 target 才等于
+$P$。在这个额外完备性假设下，若 $B$ 对 $A$ flat，上述 cohomology base
+change 由 Tor spectral sequence 得到；若 $R\Gamma_\Delta(X/A)$ bounded
+且 $B$ 的 ordinary Tor-dimension 至多一，则命题 5.16 给出短正合列，并
+可能出现
+$\operatorname{Tor}_1^A(H^{n+1}_\Delta(X/A),B)$。没有该完备性假设时，
+Tor spectral sequence 只计算 $H^n(P)$，不能越过 completion 直接计算
+$H^n_\Delta(Y/B)$。
 
 ## 3.7 统一图式
 
-**说明 3.15.** 对 smooth proper $X$，prismatic cohomology 的作用可以概括为如下图式，其中箭头均需按相应外部输入定理解释：
-$$
-\begin{array}{ccc}
-R\Gamma_\Delta(X/A) & \xrightarrow{\;\mathrm{HT}\;} & \operatorname{gr}\text{-pieces from }\Omega^\bullet_X \\
-\downarrow\mathrm{dR} & & \\
-R\Gamma_{\mathrm{dR}}(X/(A/I)) & & \\
-\downarrow\mathrm{crys}\text{ in }I=(p)\text{ case} & & \\
-R\Gamma_{\mathrm{crys}}(X/A) & & \\
-\downarrow\mathrm{etale}\text{ in perfect case} & & \\
-R\Gamma_{\mathrm{et}}(X_\eta,\mathbf Z_p) & &
-\end{array}
-$$
-该图不是一个单一交换图，而是一组在不同 base prism 和 specialization 下成立的比较。
+**说明 3.15（操作层级表）.** 下列结果不能串成一个未标注的交换图：
+
+| 层级 | 对 $R\Gamma_\Delta(X/A)$ 的操作 | 目标范畴 | 是否积分 |
+| --- | --- | --- | --- |
+| Hodge-Tate | $\otimes_A^LA/I$ | $D(A/I)$ | 是；保留 $p$-torsion |
+| de Rham | $\phi_A^*(-)\widehat\otimes_A^LA/I$ | $D(A/I)$ | 是 |
+| crystalline | $I=(p)$ 时 $\widehat\otimes_{A,\phi_A}^LA$ | $D(A)$ | 是；未 invert $p$ |
+| Frobenius isogeny | completed twist $C^{(1)}$ 后 $[1/I]$ | $D(A[1/I])$ | 只反演 $I$；不等于 rationalization |
+| etale finite level | $/p^n$、$[1/I]$、derived $\varphi=1$ | $D(\mathbf Z/p^n)$ | torsion-level |
+| rational period comparison | 再 invert $p$ 并延标到 period ring | $D(B_{\mathrm{dR}})$ 等 | 否；属于第四章 |
+
+特别地，$[1/I]$、$[1/p]$、$\otimes_A^LA/I$ 与 $/p^n$ 是四种不同操作。
 
 ## 3.8 比较态射的类型检查
 
 **定义 3.16.** 本书把 comparison statement 分为四类：
 
 1. **specialization isomorphism**：由 $R\Gamma_\Delta(X/A)$ 经 base change 得到目标 cohomology；
-2. **filtered comparison**：比较同时保留 filtration；
-3. **Frobenius comparison**：比较保留 Frobenius 或 Frobenius-semilinear structure；
-4. **fixed-point comparison**：目标由 Frobenius fixed 或 fibre construction 得到。
+2. **completed base change**：derived tensor 后还要对指定理想 completion；
+3. **Frobenius isogeny**：linearized Frobenius 只在指定 localization 后可逆；
+4. **fixed-point comparison**：目标由 Frobenius fibre construction 得到。
 
-**命题 3.17.** Etale comparison 属于 fixed-point comparison，而 de Rham comparison 属于 specialization isomorphism with filtration。
+Filtered comparison 和 rational period comparison 是额外属性或第五类接口；只有来源
+明确声明时才加入。
+
+**命题 3.17.** 定理 3.11 属于 fixed-point comparison；定理 3.7 属于
+Frobenius-twisted specialization，而不是定理 3.11 的普通 base change 特例。
 
 **证明.** De Rham comparison 的形式是
 $$
-\phi_A^\ast R\Gamma_\Delta(X/A)\otimes_A^L A/I\simeq R\Gamma_{\mathrm{dR}}(X/(A/I)),
+\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I
+\simeq R\Gamma_{\mathrm{dR}}(X/(A/I))^{\wedge,L}_p,
 $$
-并保留 Hodge filtration。Etale comparison 需要先 invert $I$，再通过 $\varphi=1$ 的 derived fibre construction 提取 $\mathbf Z_p$-信息。两者使用不同的操作，故分类不同。证毕。
+其 target 仍为 $A/I$-linear de Rham complex。Etale comparison 则先 modulo
+$p^n$、invert $I$，再在 $D(\mathbf Z/p^n)$ 中取 $\varphi-1$ 的 fibre。
+两者的系数范畴和操作序列均不同，故分类不同。证毕。
 
 **警告 3.18.** 若一个证明把 fixed-point comparison 当作普通 base change comparison 使用，则它通常会丢失 derived fixed points 中的 cokernel 项。
 
 ## 本章小结
 
-本章定义了 Hodge-Tate 和 de Rham specialization，列出 prismatic cohomology 的基础比较定理，并明确这些定理都是外部输入。书内可证明的是滤过、perfectness 和 base change 的形式推论；核心比较同构本身依赖 Bhatt-Scholze。
+本章定义了 Hodge-Tate 和 de Rham specialization，并把 crystalline、etale、
+Frobenius isogeny 与 base change 写成类型完整的 Bhatt-Scholze 外部输入。
+书内证明了有限 filtration 推 perfectness 以及 perfect complex 在 completed base
+change 下无需再次 completion 的形式推论。积分、finite-level、after-$I$ 与
+after-$p$ 的结论已分别标记。
 
 ## 练习
 

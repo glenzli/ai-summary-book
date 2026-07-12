@@ -59,13 +59,15 @@ p\in(p)+\phi((p))A.
 $$
 因为右侧包含 $(p)$，该包含成立。
 
-**练习 2.3 解答.** 在 $(X/A)_\Delta$ 中，对象可写为 prism probe $(B,J)$ 连同 map $\operatorname{Spf}(B/J)\to X$ over $\operatorname{Spf}(A/I)$。一个态射
+**练习 2.3 解答.** 在 $(X/A)_\Delta$ 中，对象可写为 prism probe
+$(B,IB)$ 连同 map $\operatorname{Spf}(B/IB)\to X$ over
+$\operatorname{Spf}(A/I)$。引理 2.4A 保证 probe ideal 必为 $IB$。一个态射
 $$
-(B,J)\to(B',J')
+(B,IB)\to(B',IB')
 $$
-需要是与底 prism $(A,I)$ 相容的 $\delta$-环态射，满足 $J$ 映入 $J'$，并使诱导的
+需要是与底 prism $(A,I)$ 相容的 $\delta$-环态射，并使诱导的
 $$
-\operatorname{Spf}(B'/J')\to\operatorname{Spf}(B/J)\to X
+\operatorname{Spf}(B'/IB')\to\operatorname{Spf}(B/IB)\to X
 $$
 等于目标对象给定的结构态射。也就是说，$\delta$-结构、Cartier divisor ideal、底 prism map 和到 $X$ 的 quotient map 四者必须同时交换。
 
@@ -75,7 +77,10 @@ $$
 $$
 A\otimes_{A,\phi_A}^L\Delta_{R/A},
 $$
-再 modulo $I$。Frobenius pullback 改变 $A$-module structure，因此两个 construction 不同。
+再 modulo $I$。Frobenius pullback 改变 $A$-module structure，因此两个
+construction 不同。严格地说，de Rham comparison 还对所得 tensor product
+作 derived $p$-completion，而 Hodge--Tate specialization 的定义没有这个
+额外步骤。
 
 **练习 3.2 解答.** 形式推论 3.6 使用 conjugate filtration。若 filtration 的 associated graded 只有有限多项，且每个
 $$
@@ -119,25 +124,38 @@ $$
 
 **练习 6.1 解答.** Crystal condition 要求沿 prismatic site 中的 morphism pullback 后有指定同构，并满足 cocycle compatibility。普通 sheaf 只给 restriction maps；crystal 要求这些 restriction 在结构层变换后表现为刚性 base change。
 
-**练习 6.2 解答.** 若 $I=(d)$，则
+**练习 6.2 解答.** 若该 probe 的 ideal $J=(d)$，则
 $$
-\mathcal E[1/I]=\mathcal E[1/d].
+\mathcal E[1/J]=\mathcal E[1/d].
 $$
 若换生成元 $d'=ud$，其中 $u$ 是单位，则 inverting $d'$ 与 inverting $d$ 给出同一局部化。
 
-**练习 6.3 解答.** Prismatic $F$-crystal 的 Frobenius structure 是
-$$
-\varphi^*\mathcal E[1/I]\simeq\mathcal E[1/I].
-$$
-若不 invert $I$，该 map 可能有零点或极点，无法成为 vector bundle 层面的同构。Effective 条件正是控制 Frobenius 不产生 pole 的一种积分限制。
+**练习 6.3 解答.** 定理 6.9 的左侧是带 morphisms、tensor operations
+和 descent 的 $F$-crystals 范畴，右侧是 crystalline $\mathbf Z_p$-lattices
+及其 $G_K$-equivariant maps 的范畴。Etale realization 不只给每个对象一个
+cohomology group；它给 functor，并且定理同时断言 full faithfulness 与
+essential surjectivity。因此结论是范畴等价，而不是两个 cohomology
+complexes 的拟同构。
 
 ## 第七章
 
 **练习 7.1 解答.** 若 $x\in N^{\ge i+1}_{\mathrm{naive}}M$，则 $\varphi(x)\in d^{i+1}M\subset d^iM$，所以 $x\in N^{\ge i}_{\mathrm{naive}}M$。
 
-**练习 7.2 解答.** 原始 Frobenius 通常把 $N^{\ge i}$ 的元素送入 $I^i$ 倍的目标。Divided Frobenius $\varphi_i$ 是在第 $i$ 层上除去这部分 $I^i$ 可除性后得到的 normalized map。若忽略这一点，syntomic fibre 中的第二个箭头就会落在错误目标中；本书在类型敏感写法中记为 $\varphi_i-\operatorname{can}_i$，其中 $\operatorname{can}_i$ 把源映到同一个 Tate-twisted target。
+**练习 7.2 解答.** Semilinear Frobenius 的 $A$-linear source 是沿
+$\phi_A$ 的 scalar pullback；在 complete category 中应使用
+$C^{(1)}=C\widehat\otimes_{A,\phi_A}^LA$。定理 7.3 的同构
+$C^{(1)}\simeq L\eta_I C$ 把 Frobenius 的 divisibility 编码进
+$L\eta_I$；随后 $L\eta_I C\to C$ 才给原 Frobenius linearization。若把
+filtration 直接放在 $C$ 上，就丢掉这个 source twist。
 
-**练习 7.3 解答.** 第一个错误位置是 twist 的正负号：$\{i\}$ 与 $\{-i\}$ 可能因 convention 反转。第二个错误位置是 divided Frobenius 的目标：可能是 $C$、$C\{i\}$ 或经过 mod $p^r$/truncation 的版本。附录 F 固定本书使用的核查口径。
+**练习 7.3 解答.** 定义 7.5 的 source 是
+$\mathcal N^{\ge i}\widehat\Delta_S\{i\}$，两张 maps 的共同 target 都是
+$\widehat\Delta_S\{i\}$，fibre 位于 $p$-complete
+$D(\mathbf Z_p)$；derived modulo $p^r$ 后才位于
+$D(\mathbf Z/p^r)$。$\widehat\Delta_S$ 是 BMS2 经 quasisyntomic descent
+得到的 Nygaard-complete object，而 relative $R\Gamma_\Delta(X/A)$ 的
+Nygaard filtration 位于其 completed Frobenius twist。把两者凭记号相似直接
+替换，会遗漏这项深 comparison 及其 hypotheses。
 
 ## 第八章
 
@@ -162,7 +180,7 @@ E_1^{i,j}\cong H^j(X,\Omega^i)\{-i\}.
 $$
 在该记号下，第二指标 $j$ 记录原始 sheaf cohomology degree，总次数仍为目标的 $i+j$。
 
-**练习 9.3 解答.** 错误论证可以写成：定理 9.4 给出 $\overline\Delta_{X/A}$ 的 conjugate filtration，其 graded pieces 由 $\Omega^i[-i]\{-i\}$ 控制；因此 de Rham complex $R\Gamma_{\mathrm{dR}}(X/(A/I))$ 的 Hodge filtration 也有相同 strictness。错误发生在第一步之后：conjugate filtration 的对象是 Hodge-Tate specialization $\overline\Delta_{X/A}$，而 Hodge filtration 的对象是 de Rham specialization $\phi_A^\ast R\Gamma_\Delta(X/A)\otimes_A^L A/I$。没有 filtered comparison 时，不能从一个 specialization 的滤过性质推出另一个 specialization 的滤过性质。
+**练习 9.3 解答.** 错误论证可以写成：定理 9.4 给出 $\overline\Delta_{X/A}$ 的 conjugate filtration，其 graded pieces 由 $\Omega^i[-i]\{-i\}$ 控制；因此 de Rham complex $R\Gamma_{\mathrm{dR}}(X/(A/I))$ 的 Hodge filtration 也有相同 strictness。错误发生在第一步之后：conjugate filtration 的对象是 Hodge-Tate specialization $\overline\Delta_{X/A}$，而 Hodge filtration 的对象是 $p$-completed de Rham specialization $\phi_A^\ast R\Gamma_\Delta(X/A)\widehat\otimes_A^L A/I$。定理 9.9 只是 unfiltered comparison；没有额外 filtered comparison 时，不能从一个 specialization 的滤过性质推出另一个 specialization 的滤过性质。
 
 ## 第十章
 
@@ -191,17 +209,44 @@ $$
 
 ## 第十一章
 
-**练习 11.1 解答.** 对两项 complex $[C\xrightarrow{\varphi-1}C]$，其 $H^0$ 为 $\ker(\varphi-1)$，$H^1$ 为 $\operatorname{coker}(\varphi-1)$。在 derived fixed point 中，后者记录 ordinary fixed points 看不见的 obstruction。
+**练习 11.1 解答.** 对两项 complex
+$[M\xrightarrow{u-1}M]$，其 $H^0$ 为 $\ker(u-1)$，$H^1$ 为
+$\operatorname{coker}(u-1)$。在 derived fixed point 中，后者记录 ordinary
+fixed points 看不见的 obstruction。
 
-**练习 11.2 解答.** Ordinary fixed points 只取 $\ker(\varphi-1)$。Derived fixed points 是 fibre，cohomology 还包含 $\operatorname{coker}(\varphi-1)$ 等高阶信息。在 comparison theorem 中这些 higher terms 记录 obstruction，不能丢弃。
+**练习 11.2 解答.** 若 $\varphi(am)=\phi_A(a)\varphi(m)$，则
+$$
+(\varphi-1)(am)=\phi_A(a)\varphi(m)-am,
+$$
+一般不等于 $a(\varphi-1)(m)$，所以 $\varphi-1$ 不是 $A$-linear。定理
+11.2 先 modulo $p^r$，再把系数限制到被 Frobenius 固定的
+$\mathbf Z/p^r$；此时 $\varphi-1$ 是 $\mathbf Z/p^r$-linear，fibre 位于
+$D(\mathbf Z/p^r)$。
 
-**练习 11.3 解答.** Chern class 是典型例子。若 syntomic 与 etale comparison 不保 cup product，则 line bundle 的 first Chern class 在两侧可能不对应，cycle class map 也无法作为 ring-valued cohomology operation 比较。
+**练习 11.3 解答.** 定理 11.8 (2) 的 source 只识别
+$\mathbf Z/p^r(i)$ 与 $\tau^{\le i}R\psi_*\mathbf Z/p^r(i)$。去掉
+$\tau^{\le i}$ 会额外断言 nearby-cycles complex 在 degrees $>i$ 的部分也由
+syntomic complex 控制；这既不由原拟同构形式推出，也不是 BMS2,
+Theorem 10.1 的结论。
 
 ## 第十二章
 
-**练习 12.1 解答.** Rank-one Breuil-Kisin module 可写为 $M=\mathfrak S e$，Frobenius linearization 由 $\varphi^*M\to M$ 中 $1\otimes e\mapsto a e$ 决定。Invert $E(u)$ 后为同构当且仅当 $a$ 在 $\mathfrak S[1/E(u)]$ 中为单位。
+**练习 12.1 解答.** 定义 12.4 的 datum 本身就是
+$$
+(\phi_{\mathfrak S}^*M)[1/E(u)]\xrightarrow{\sim}M[1/E(u)],
+$$
+所以 localized linearization 可逆是定义条件，不是由 finite generation
+推出的结论。这个 localization 没有 invert $p$，故不能推出 $M[1/p]$
+finite projective、Frobenius 在 $M[1/p]$ 上可逆，或 $p$-power torsion
+消失。Rank one 时若 map 为乘以 $a$，条件只说明
+$a\in\mathfrak S[1/E(u)]^\times$。
 
-**练习 12.2 解答.** Breuil-Kisin module 的底环是 $\mathfrak S=W(k)[[u]]$，通常 invert $E(u)$。Breuil-Kisin-Fargues module 的底环是 $A_{\inf}$，通常 invert $\xi$。二者底环、几何来源和 lattice 信息不同。
+**练习 12.2 解答.** Breuil-Kisin module 的底环是
+$\mathfrak S=W(k)[[u]]$，定义只要求有限生成，并要求 linearized Frobenius
+在 invert $E(u)$ 后为同构。BKF module 的底环是 $A_{\inf}$，要求有限
+呈示、$N[1/p]$ finite free，并有
+$N[1/\xi]\simeq N[1/\phi(\xi)]$ 的 semilinear Frobenius。二者的底环、
+反演 divisor 与 finiteness 条件均不同。
 
 **练习 12.3 解答.** Rational filtered $\varphi$-module 通常是在张量 $\mathbf Q_p$ 或 invert 相应 period 元素后得到的对象。Localization 会遗忘 integral lattice 和 torsion。最简单的线性代数例子是同一个 $V=\mathbf Q_p$ 中的两个 lattice
 $$
@@ -249,9 +294,11 @@ $$
 
 **练习 A.1 解答.** 对 $A=\mathbf Z_p$、$J=(p)$、$M=A$，
 $$
-M^{\wedge,L}_J=R\varprojlim_n(\mathbf Z_p\otimes_{\mathbf Z_p}^L\mathbf Z_p/p^n).
+M^{\wedge,L}_J=R\varprojlim_nK_{\mathbf Z_p}(p^n).
 $$
-因为 $\mathbf Z_p$ 是底环本身，derived tensor 无额外 Tor 项，得到
+因为 $p^n$ 在 $\mathbf Z_p$ 中是 nonzerodivisor，
+$K_{\mathbf Z_p}(p^n)\simeq\mathbf Z_p/p^n$。Transition maps 满射，故
+没有 $\varprojlim^1$ 项，并得到
 $$
 R\varprojlim_n\mathbf Z_p/p^n\simeq\mathbf Z_p.
 $$
@@ -263,15 +310,20 @@ M/p^{n+1}M\to M/p^nM
 $$
 总是满射，因为任意 $m\bmod p^nM$ 可由同一个 $m\bmod p^{n+1}M$ 提升。满射 inverse system 满足 Mittag-Leffler 条件。无 $p$-torsion 不是满射性的必要条件，但它保证这些 quotients 对 $p$-adic filtration 的解释没有隐藏 $p$-torsion 干扰。
 
-**练习 A.3 解答.** 按附录 A 的 convention，$K(A;f,g)=K(A;f)\otimes_AK(A;g)$，其中 $A$ 位于 degree $0$。四项写为
+**练习 A.3 解答.** 按附录 A 的 convention，
+$K_A(f,g)=K_A(f)\otimes_AK_A(g)$，每个单变量 Koszul complex 的右端
+$A$ 位于 degree $0$。因此三项 complex 为
 $$
-0\to A\xrightarrow{d^0}A\oplus A\xrightarrow{d^1}A\to0,
+0\to A\xrightarrow{d^{-2}}A\oplus A\xrightarrow{d^{-1}}A\to0,
 $$
-degree 分别为 $0,1,2$，且可取
+degree 分别为 $-2,-1,0$。若 degree $-1$ 的两个 summands 依次对应
+$K_A(f)^{-1}\otimes K_A(g)^0$ 与
+$K_A(f)^0\otimes K_A(g)^{-1}$，则可取
 $$
-d^0(a)=(fa,ga),\qquad d^1(b,c)=gc-fb.
+d^{-2}(a)=(-ga,fa),\qquad d^{-1}(b,c)=fb+gc.
 $$
-符号来自 tensor product differential；换 convention 会同时改变最后一项符号，但 cohomology 同构。
+直接计算得 $d^{-1}d^{-2}(a)=-fga+gfa=0$。同时改变 degree $-1$
+某一 summand 的基会得到等价的符号 convention。
 
 ## 附录 B
 

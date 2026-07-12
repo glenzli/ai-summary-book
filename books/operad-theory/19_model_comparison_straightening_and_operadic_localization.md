@@ -38,11 +38,11 @@ $$
 $$
 右端表示把 $\mathcal W$ 中态射送到 equivalences in $\mathcal E$ 的函子构成的 full subcategory。
 
-**外部输入定理 19.4（Dwyer-Kan）.** 每个 relative category admits Dwyer-Kan localization。若采用 hammock localization，则可得到 simplicial category
+**外部输入定理 19.4（infinity-categorical localization；DKR-1--DKR-2）.** DKR-1（Hinich, arXiv:1311.4128v4, Sections 1.1.2--1.1.3）用 marked simplicial sets 的 fibrant replacement 构造每个 relative category 的 infinity-categorical localization。经典 hammock localization 给出 simplicial category
 $$
 L^H(\mathcal C,\mathcal W)
 $$
-其 homotopy coherent nerve 是 $L(\mathcal C,\mathcal W)$ 的一个模型。
+；在 DKR-2（Proposition 1.2.1）的 fibrancy 假设下，其 homotopy coherent nerve 与上述 localization 比较。后文只使用定义 19.3 的 universal property，不把两个模型视为字面相等。
 
 **命题 19.5.** 若
 $$
@@ -76,11 +76,11 @@ $$
 
 若 $\mathcal M$ 不是小范畴，则在固定 universe 中取一个小的 full subcategory of representatives，或在更大 universe 中工作。
 
-**外部输入定理 19.8.** 若 $\mathcal M$ 是 simplicial model category，并且 $\mathcal M^{cf}$ 是 cofibrant-fibrant objects 的 full simplicial subcategory，则
+**外部输入定理 19.8（fibrant-cofibrant presentation；DKR-5--DKR-6）.** 若 $\mathcal M$ 是 simplicial model category，并且 $\mathcal M^{cf}$ 是 cofibrant-fibrant objects 的 full simplicial subcategory，则
 $$
 N_\Delta(\mathcal M^{cf})\to \mathcal M_\infty
 $$
-是 equivalence of infinity-categories，其中 $N_\Delta$ 为 homotopy coherent nerve。
+是 equivalence of infinity-categories，其中 $N_\Delta$ 为 homotopy coherent nerve。来源为 Hinich Propositions 1.3.4--1.3.5 对 fibrant/cofibrant subcategories 与 simplicial presentation 的比较。
 
 **命题 19.9.** Quillen adjunction
 $$
@@ -97,11 +97,11 @@ $$
 $$
 并诱导 $\mathbf L F$。同理，$GR$ 对函子性 fibrant replacement $R$ 诱导 $\mathbf R G$。模型范畴中的 derived adjunction unit/counit 通过 localization 诱导 infinity-categorical adjunction unit/counit。完整相干性依赖模型范畴 localization 定理。$\square$
 
-**外部输入定理 19.10.** 若上面的 Quillen adjunction 是 Quillen equivalence，则
+**外部输入定理 19.10（Quillen-equivalence passage；DKR-7）.** 若上面的 Quillen adjunction 是 Quillen equivalence，则
 $$
 \mathbf L F:\mathcal M_\infty\to\mathcal N_\infty
 $$
-是 equivalence of infinity-categories。
+是 equivalence of infinity-categories。Hinich Proposition 1.5.1（DKR-7）构造 induced adjunction；Quillen equivalence 的 derived unit/counit criterion 使该 adjunction 成为 equivalence。
 
 **说明 19.11.** 这就是“Quillen equivalent models present the same infinity-category”的精确含义。它不是说两个模型范畴同构，也不是说它们的对象逐个相等。
 
@@ -115,7 +115,7 @@ p:X\to S
 $$
 使得 $S$ 中每条边 $s\to t$ 和每个 $x\in X_s$ 都存在 $p$-coCartesian lift $x\to y$ over $s\to t$。
 
-**外部输入定理 19.13（straightening/unstraightening）.** 对任意 infinity-category $S$，coCartesian fibrations over $S$ 的 infinity-category 等价于 functor infinity-category
+**外部输入定理 19.13（straightening/unstraightening；HTT-1）.** 对任意 infinity-category $S$，Lurie *Higher Topos Theory* Theorem 3.2.0.1 给出 coCartesian fibrations over $S$ 的 infinity-category 与 functor infinity-category 的等价
 $$
 \operatorname{Fun}(S,\mathbf{Cat}_\infty).
 $$
@@ -172,7 +172,13 @@ A:\mathcal O^\otimes\to\mathcal C^\otimes
 $$
 因为 fiber product 的点是二元组 $(x,A(x))$，投影到第一因子为 $x$。Section 保持 inert coCartesian lifts 的条件正是 map of infinity-operads 的结构保持条件。因此二者给出相同的对象和 morphisms。$\square$
 
-**外部输入定理 19.18（operadic straightening）.** 在适当 marked simplicial set 或 infinity-operad 模型中，$\mathcal O$-algebras in $\mathcal C$ 可由某个 coCartesian fibration of operadic families 的 sections 描述；该描述与 Lurie-style $\operatorname{Alg}_{\mathcal O}(\mathcal C)$ 等价。
+**外部输入定理 19.18（spaces-valued operadic straightening；PRA-4）.** 设 $\mathcal O^\otimes$ 是 Lurie infinity-operad。Pratali, arXiv:2501.05263v2, Theorem 5.1 给出 equivalence
+$$
+\operatorname{Left}^{\mathrm{opd}}_{\mathcal O^\otimes}
+\simeq
+\operatorname{Alg}_{\mathcal O^\otimes}(\mathcal S^\times),
+$$
+左侧是 $\mathcal O^\otimes$ 上的 operadic left fibrations，右侧是 spaces 中的 $\mathcal O$-algebras。该来源是 2025 preprint，本书将其作为 P1 locator；它不证明任意 symmetric monoidal $\mathcal C$-值代数的 straightening。
 
 **说明 19.19.** Operadic straightening 是 ordinary straightening 的 operad 相对版本。它不仅分类 $S\to\mathbf{Cat}_\infty$，还必须保留 inert morphisms 所编码的多输入分量结构。
 
@@ -190,17 +196,16 @@ X\otimes Y\to X'\otimes Y'
 $$
 是 weak equivalence。
 
-**外部输入定理 19.21（monoidal localization）.** 若 $\mathcal M$ 是足够良好的 symmetric monoidal model category，例如 combinatorial、left proper、满足 pushout-product/unit 条件，并且 tensor product preserves weak equivalences between cofibrant objects，则 localization
+**外部输入定理 19.21（underlying symmetric monoidal infinity-category；HA-MON-1）.** 设 $\mathcal M$ 是 Lurie *Higher Algebra* 第 4.1.7 节意义下的 symmetric monoidal model category：单位 cofibrant，幺半结构 closed，且 tensor product 是 left Quillen bifunctor。令 $\mathcal M^c$ 为 cofibrant objects 的全子范畴，$\mathcal W^c$ 为其 weak equivalences。则
 $$
-\mathcal M_\infty=L(\mathcal M,\mathcal W)
+N(\mathcal M^c)[(\mathcal W^c)^{-1}]
 $$
-自然成为 symmetric monoidal infinity-category
+自然成为 symmetric monoidal infinity-category，其底层 infinity-category 等价于 $\mathcal M_\infty=L(\mathcal M,\mathcal W)$，tensor product 是 derived tensor product。来源为 HA Proposition 4.1.7.4 与 Example 4.1.7.6（HA-MON-1）。若 $\mathcal M$ 还是相容的 simplicial symmetric monoidal model category，则 HA Corollary 4.1.7.16（HA-MON-2）用 fibrant-cofibrant objects 的 operadic nerve 给出显式模型
 $$
 \mathcal M_\infty^\otimes\to N(\mathbf{Fin}_*).
 $$
-其 tensor product 由 $\mathcal M$ 的 derived tensor product 给出。
 
-**定位说明 19.21.1.** 定理 19.21 的模型范畴版本可与 White WHT-4 的 monoidal Bousfield localization criteria 对照；若还要求 localization 保持 operad 或 colored-operad algebra structures，则使用 White WHT-1--WHT-3 和 White--Yau WY-1--WY-3。该定位只给出模型范畴 preservation 版本，不替代 Lurie/Hinich 型 symmetric monoidal infinity-categorical localization。
+**定位说明 19.21.1.** HA-MON-1--HA-MON-2 构造原模型范畴的 underlying symmetric monoidal infinity-category。White WHT-4 处理进一步作 Bousfield localization 时何时仍为 monoidal；若还要求该 localization 保持 operad 或 colored-operad algebra structures，则使用 WHT-1--WHT-3 和 WY-1--WY-3。这三个问题不能共用一个“monoidal localization”缩写。
 
 **命题 19.22.** 在定理 19.21 的假设下，若 $X,Y\in\mathcal M$，则
 $$
@@ -230,7 +235,11 @@ $$
 \operatorname{Alg}_{\mathcal O^{\operatorname{loc}}}(\mathcal M_\infty).
 $$
 
-**外部输入定理 19.25（algebra localization comparison）.** 在适当的 admissibility、cofibrancy、monoidal localization 和 rectification 假设下，存在 equivalence of infinity-categories
+**外部输入定理 19.25（simplicial strict-to-infinity comparison；PSAR-5）.** 设 $\mathcal M$ 是 PSAR-5 所允许的 simplicial symmetric monoidal model category，$\mathcal O$ 是 simplicial colored operad，$\mathcal O$ admissible，并且 projective cofibrant replacement
+$$
+Q\mathcal O\longrightarrow\mathcal O
+$$
+满足来源要求的 symmetric flatness。则 Pavlov--Scholbach, arXiv:1410.5675v4, Theorem 7.11 给出 equivalence of infinity-categories
 $$
 \operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty
 \simeq
@@ -239,7 +248,7 @@ $$
 
 **定位说明 19.25.1.** White WHT-1--WHT-3 和 White--Yau WY-1--WY-3 支撑的是 Bousfield localization preserves operad/colored-operad algebra structures 的模型范畴断言。它们不足以单独推出定理 19.25 的 infinity-categorical equivalence；该 equivalence 应按 P0 引用定位批次 9 中 PSAR-5--PSAR-6、HA-ALG-1--HA-ALG-3 或 P0 引用定位批次 10 中 DKR-7 的模型依赖输入使用。
 
-**说明 19.26.** 该定理是许多“严格代数模型呈现 infinity-categorical algebra objects”的基础。它依赖假设；在一般底环上的 commutative dg algebras、非 cofibrant operads 或不良 monoidal model categories 中不能直接套用。
+**说明 19.26.** HA-ALG-1 与 HA-ALG-2 分别给出 associative 和 commutative algebra 的其他精确版本，不能替代任意 colored operad 的 PSAR-5 假设。对一般底环上的 commutative dg algebras、未验证 admissibility 的 operads 或不良 monoidal model categories，不能直接套用本条。
 
 **命题 19.27.** 若 $\varphi:\mathcal O\to\mathcal P$ 是满足外部输入定理 14.26 的 operad weak equivalence，则 localization 后有 equivalence
 $$
@@ -260,11 +269,11 @@ $$
 
 在良好假设下，严格 operad 代数、模型范畴和 infinity-operad 代数之间的关系可概括为：
 $$
-\begin{CD}
-\operatorname{Alg}_{\mathcal O}(\mathcal M) @>{L}>> \operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty\\
-@V{\text{rectification}}VV @VV{\simeq}V\\
-\operatorname{Alg}_{\mathcal P}(\mathcal M) @>{L}>> \operatorname{Alg}_{\mathcal P^{\operatorname{loc}}}(\mathcal M_\infty).
-\end{CD}
+\begin{array}{ccc}
+\operatorname{Alg}_{\mathcal O}(\mathcal M) & \xrightarrow{L} & \operatorname{Alg}_{\mathcal O}(\mathcal M)_\infty\\
+{\scriptstyle \mathrm{rectification}}\downarrow & & \downarrow{\scriptstyle \simeq}\\
+\operatorname{Alg}_{\mathcal P}(\mathcal M) & \xrightarrow{L} & \operatorname{Alg}_{\mathcal P^{\operatorname{loc}}}(\mathcal M_\infty)
+\end{array}
 $$
 
 这里 $\mathcal P^{\operatorname{loc}}$ 表示由 $\mathcal P$ 经 localization 或 category-of-operators construction 得到的 infinity-operad，不是定义 10.1 和定义 L.1 中的 Koszul resolution $\mathcal P_\infty=\Omega\mathcal P^¡$。
@@ -279,6 +288,8 @@ $$
 **警告 19.28.** “先取代数再 localization”与“先 localization 再取代数”不自动交换。它们交换正是定理 19.25 类型结果的内容。
 
 **说明 19.29.** 规则 M.18 把本章使用的 localization、dendroidal-Lurie 比较、category of operators nerve 和 algebra localization comparison 组织成允许路径。最终版若引用跨模型结论，应在正文旁标明使用规则 M.18 中哪一条路径，并检查警告 M.19 的禁止捷径。
+
+**警告 19.29.1（constants 与 HHM 路径）.** HHM-1--HHM-5 在本书用于 dendroidal--Lurie 比较的 zig-zag 带 open/no-constants 限制。本书默认 operad 允许 arity $0$，所以默认对象不能未经处理沿该路径移动。Category-of-operators nerve 与 HA-OP locator 是另一条入口，也不由 HHM zig-zag 的缩写自动给出。
 
 ## 19.8 本章小结
 

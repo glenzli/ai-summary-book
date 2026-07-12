@@ -147,11 +147,22 @@ $$
 $$
 \mathcal P^¡.
 $$
-它由悬挂后的生成元和关系构造，并带有到 $\mathcal P$ 的典范 twisting morphism
+在本书的同调分次中，定义
+$$
+\mathcal P^¡=\mathcal C(sE,s^2R)
+\subseteq\mathbb T^c(sE),
+$$
+即 cofree conilpotent cooperad 中由 cogenerators $sE$ 和 weight-$2$ corelations $s^2R$ 决定的最大子 cooperad。这里 $s$ 是定义 9.2 的链悬挂，不是定义 E.11 的 operadic suspension $\Lambda$；$s^2R$ 通过两顶点树上“每个顶点各悬挂一次”的典范识别嵌入，交换悬挂符号时使用 Koszul braiding。特别地，
+$$
+(\mathcal P^¡)^{(0)}=I,\qquad
+(\mathcal P^¡)^{(1)}=sE,\qquad
+(\mathcal P^¡)^{(2)}=s^2R
+$$
+作为 $\mathbb T^c(sE)$ 相应权重部分的子对象。它带有到 $\mathcal P$ 的典范 twisting morphism
 $$
 \kappa:\mathcal P^¡\to\mathcal P.
 $$
-完整定义需要定义 9.6 的 dg cooperad、定义 9.2 的悬挂符号和定义 9.11 的 infinitesimal decomposition。
+该映射在 weight $1$ 上为 $sE\xrightarrow{s^{-1}}E$，在其他权重为零。这里 $\mathcal P^!$ 是定义 8.12 由 $E^\vee$ 与 $R^\perp$ 构造的正交对偶 operad，而 $\mathcal P^¡$ 是本定义的 conilpotent cooperad；只有在有限型假设下作双对偶或线性对偶比较时，才能把二者经 suspension/sign twist 联系起来，不能只靠更换感叹号互换。完整符号还使用定义 9.6 的 dg cooperad、定义 9.2 的链悬挂和定义 9.11 的 infinitesimal decomposition。
 
 **定义 8.16.** 二次 operad $\mathcal P$ 称为 Koszul，若由 $\kappa:\mathcal P^¡\to\mathcal P$ 定义的 Koszul complex
 $$

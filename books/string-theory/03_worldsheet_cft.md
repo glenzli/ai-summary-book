@@ -97,7 +97,22 @@ $$
 \prod_{i<j}|z_i-z_j|^{\alpha' k_i\cdot k_j}.
 $$
 
-**证明草图.** 将 $X=x+X'$ 分为零模和非零模。零模积分给出动量守恒；非零模 Gaussian integral 给出 pairwise contractions。$\square$
+**推导说明（标准物理口径）.** 将 $X=x+X'$ 分为常数零模和平均值为零的非零模。零模只出现在
+$$
+\exp\!\left(ix\cdot\sum_i k_i\right),
+$$
+故按平直测度积分得到 $(2\pi)^D\delta^{(D)}(\sum_i k_i)$。对 Gaussian 场 $X'$，Wick 指数公式给出
+$$
+\left\langle\prod_i:e^{ik_i\cdot X'(z_i)}:\right\rangle
+=\exp\!\left(-\sum_{i<j}k_i\cdot k_j
+\langle X'(z_i)X'(z_j)\rangle\right).
+$$
+代入
+$$
+\langle X^\mu(z_i)X^\nu(z_j)\rangle
+=-\frac{\alpha'}2\eta^{\mu\nu}\log|z_i-z_j|^2
+$$
+即得到 $\prod_{i<j}|z_i-z_j|^{\alpha'k_i\cdot k_j}$。这里等式仍依赖 Gaussian 路径积分及其零模测度的标准正规化。$\square$
 
 ## 3.3 Primary fields 和 Ward identity
 
@@ -164,14 +179,29 @@ $$
 +\frac{c}{12}m(m^2-1)\delta_{m+n,0}.
 $$
 
-**证明草图.** 将 commutator 写成嵌套 contour integral：
+**证明.** 将 commutator 写成嵌套 contour integral：
 $$
 [L_m,L_n]
 =
 \oint_0\frac{dw}{2\pi i}w^{n+1}
 \oint_w\frac{dz}{2\pi i}z^{m+1}T(z)T(w).
 $$
-取 $T(z)T(w)$ OPE 的 residues，二阶和一阶极点给出 $(m-n)L_{m+n}$，四阶极点给出中心项。$\square$
+内层 $z$-留数分别为
+$$
+\frac{c}{12}m(m^2-1)w^{m-2},\qquad
+2(m+1)w^mT(w),\qquad
+w^{m+1}\partial T(w).
+$$
+对最后一项作 contour 分部积分，得到
+$$
+\oint\frac{dw}{2\pi i}w^{m+n+2}\partial T(w)
+=-(m+n+2)L_{m+n}.
+$$
+它与第二项的 $2(m+1)L_{m+n}$ 合并为 $(m-n)L_{m+n}$。第一项只有在 $m+n=0$ 时有 $w^{-1}$ 留数，并给出
+$$
+\frac{c}{12}m(m^2-1)\delta_{m+n,0}.
+$$
+这正是所述交换关系。$\square$
 
 ## 3.5 Ghost CFT
 
@@ -184,16 +214,45 @@ $$
 T_{bc}(z)=-2:b\partial c:(z)-:(\partial b)c:(z).
 $$
 
-**命题 3.11（$bc$ central charge）.** 权重 $(2,-1)$ 的 $bc$ system central charge 为
+**命题 3.11（$bc$ central charge）.** 采用 OPE point-splitting normal ordering，
+权重 $(2,-1)$ 的 $bc$ operator algebra 的 central charge 为
 $$
 c_{bc}=-26.
 $$
 
-**证明草图.** 一般 $bc$ system 权重 $(\lambda,1-\lambda)$ 的 central charge 为
+**证明.** 一般反对易 $bc$ system 的权重为 $(\lambda,1-\lambda)$，stress tensor 取
+$$
+T_{bc}=(1-\lambda):\!(\partial b)c\!:-\lambda:\!b\partial c\!:.
+$$
+置
+$$
+A=:(\partial b)c:,
+\qquad B=:b\partial c:,
+\qquad T_{bc}=(1-\lambda)A-\lambda B.
+$$
+由 $b(z)c(w)\sim(z-w)^{-1}$ 对 $z,w$ 求导，并包含交换反对易场的 Wick
+符号，四种双收缩的四阶极点系数依次为
+$$
+\begin{array}{c|cccc}
+ &A(z)A(w)&B(z)B(w)&A(z)B(w)&B(z)A(w)\\ \hline
+(z-w)^4\times(\text{双收缩})&-1&-1&-2&-2.
+\end{array}
+$$
+例如 $\partial b(z)c(w)\sim-(z-w)^{-2}$、
+$c(z)\partial b(w)\sim(z-w)^{-2}$，而交叉项使用
+$\partial b(z)\partial c(w)\sim-2(z-w)^{-3}$。故总四阶极点为
+$$
+\frac{-(1-\lambda)^2-\lambda^2
++4\lambda(1-\lambda)}{(z-w)^4}
+=-\frac{6\lambda^2-6\lambda+1}{(z-w)^4}.
+$$
+单收缩后把未收缩场在 $z=w$ 处 Taylor 展开，二阶、一阶极点分别为
+$2T_{bc}(w)$ 与 $\partial T_{bc}(w)$。与 Virasoro OPE 的四阶极点 $c/2$ 比较，得到
 $$
 c=1-3(2\lambda-1)^2.
 $$
-代入 $\lambda=2$ 得 $c=-26$。该公式可由 $T_{bc}(z)T_{bc}(w)$ 的 fermionic Wick contraction 直接推出。$\square$
+代入 $\lambda=2$ 即得 $c=-26$。这是正规序 operator algebra 中的精确中心项；
+此计算没有使用 Polyakov 路径积分测度。$\square$
 
 **定义 3.12（ghost number current）.** $bc$ system 的 ghost number current 为
 $$
@@ -262,4 +321,3 @@ $$
 **练习 3.3.** 用 $T(z)T(w)$ OPE 的 contour integral 推导 Virasoro algebra 的中心项。
 
 **练习 3.4.** 计算 level $1$ descendant $L_{-1}|h\rangle$ 的范数，并说明 $h=0$ 时发生什么。
-

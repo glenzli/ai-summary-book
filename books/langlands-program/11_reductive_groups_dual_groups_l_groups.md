@@ -190,7 +190,7 @@ s_{\alpha^\vee}(\lambda)=\lambda-\langle\alpha,\lambda\rangle\alpha^\vee
 $$
 保持 $\Phi^\vee(G,T)$。
 
-**证明草图.** 根 $\alpha$ 对应的 rank-one subgroup 给出 Weyl group 中的元素 $n_\alpha$，它归一化 $T$。共轭作用
+**证明路线（外部输入）.** 根 $\alpha$ 对应的 rank-one subgroup 给出 Weyl group 中的元素 $n_\alpha$，它归一化 $T$。共轭作用
 $$
 t\mapsto n_\alpha t n_\alpha^{-1}
 $$
@@ -204,7 +204,7 @@ $$
 
 **命题 11.19.** 群 $W(G,T)$ 由根反射 $s_\alpha$ 生成。
 
-**证明草图.** 由 Bruhat decomposition 或 Borel 子群结构定理，$N_G(T)/T$ 的元素由 simple root 对应的 rank-one subgroup 的正规化元生成。每个这样的正规化元在 $X^*(T)$ 上的作用是相应根反射。$\square$
+**证明路线（外部输入）.** 由 Bruhat decomposition 或 Borel 子群结构定理，$N_G(T)/T$ 的元素由 simple root 对应的 rank-one subgroup 的正规化元生成。每个这样的正规化元在 $X^*(T)$ 上的作用是相应根反射。$\square$
 
 为了得到分类所需的不带选择歧义的数据，还要选择 Borel subgroup。
 

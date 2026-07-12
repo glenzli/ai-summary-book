@@ -87,7 +87,8 @@ $$
 \psi_n^{(1)}=\sum_{m\ne n}
 \frac{\langle\psi_m^{(0)},V\psi_n^{(0)}\rangle}{E_n^{(0)}-E_m^{(0)}}\psi_m^{(0)}.
 $$
-简并时先在简并子空间中对角化 $V$。
+简并时先在简并子空间 $M$ 中对角化压缩算子 $P_MVP_M|_M$；只有在
+$V(M)\subseteq M$ 时才能把它写成 $V|_M$。
 
 ## 综合题 8
 
@@ -176,10 +177,13 @@ $$
 $$
 a=\frac{\Pi_x+i\Pi_y}{\sqrt{2qB}}
 $$
-得 $[a,a^*]=1$，于是
+时须取 $qB>0$；此时 $[a,a^*]=1$，于是
 $$
 H=\frac{qB}{m}(a^*a+1/2).
 $$
+对 $qB<0$ 交换升降算子的选取，谱统一为
+$E_n=|qB|(n+1/2)/m$；$qB=0$ 时退化为自由粒子，不能使用该升降
+算子商式。
 Aharonov-Bohm 相位依赖闭环磁通
 $$
 \exp\left(iq\oint A\cdot dx\right),
@@ -188,7 +192,8 @@ $$
 
 ## 综合题 15
 
-令 $A_0=A-\langle A\rangle$、$B_0=B-\langle B\rangle$。Cauchy-Schwarz 给出
+对归一化态 $\psi\in\mathcal D(AB)\cap\mathcal D(BA)$，令
+$A_0=A-\langle A\rangle$、$B_0=B-\langle B\rangle$。Cauchy-Schwarz 给出
 $$
 \Delta A\,\Delta B\ge |\langle A_0\psi,B_0\psi\rangle|.
 $$
@@ -212,23 +217,33 @@ $$
 
 ## 综合题 16
 
-定义 $\psi_I=e^{itH_0}\psi_S$ 与 $V_I=e^{itH_0}Ve^{-itH_0}$。代入 Schrodinger 方程得
+设 $H_\lambda=H_0+\lambda V$，定义
+$\psi_I=e^{itH_0}\psi_S$ 与 $V_I=e^{itH_0}Ve^{-itH_0}$。代入
+Schrodinger 方程得
 $$
-i\dot\psi_I=V_I\psi_I.
+i\dot\psi_I=\lambda V_I\psi_I.
 $$
 传播子满足
 $$
-U_I(t,t_0)=I-i\int_{t_0}^tV_I(s)U_I(s,t_0)\,ds,
+U_I(t,t_0)=I-i\lambda\int_{t_0}^tV_I(s)U_I(s,t_0)\,ds,
 $$
 迭代得时间有序 Dyson 级数
 $$
-I+\sum_{n\ge1}(-i)^n\int_{t_0\le s_n\le\cdots\le s_1\le t}V_I(s_1)\cdots V_I(s_n)\,ds_1\cdots ds_n.
+I+\sum_{n\ge1}(-i\lambda)^n\int_{t_0\le s_n\le\cdots\le s_1\le t}V_I(s_1)\cdots V_I(s_n)\,ds_1\cdots ds_n.
 $$
-一阶跃迁振幅为
+一阶跃迁振幅的 $\lambda$ 系数为
 $$
 c_f^{(1)}(t)=-i\int_{t_0}^t e^{i(E_f-E_i)s}\langle f|V(s)|i\rangle\,ds.
 $$
-黄金规则需要连续谱态密度和长时间分布极限，因此依赖谱测度或散射理论。
+若 $\|V_I(s)\|\le M$ 且 $\Delta t=t-t_0\ge0$，二阶及以上的
+Dyson 尾项范数不超过
+$$
+e^{|\lambda|M\Delta t}-1-|\lambda|M\Delta t.
+$$
+黄金规则需要连续谱态密度和长时间分布极限。标签归一化态给出
+$2\pi\lambda^2|\langle f(E_i)|V|i\rangle|^2\rho(E_i)$；若改用
+能量归一化态 $|\widetilde f,E\rangle=\rho(E)^{1/2}|f,\alpha(E)\rangle$，
+则不得再乘 $\rho(E_i)$。严格极限依赖谱测度或散射理论。
 
 ## 综合题 17
 
@@ -263,16 +278,18 @@ $$
 对 Hamiltonian $H=-\omega\sigma_z/2$，若初态为 $|+x\rangle$，则
 $$
 \langle\sigma_x\rangle_t=\cos\omega t,\qquad
-\langle\sigma_y\rangle_t=\sin\omega t,\qquad
+\langle\sigma_y\rangle_t=-\sin\omega t,\qquad
 \langle\sigma_z\rangle_t=0.
 $$
 对
 $$
 H=\frac12(\Omega\sigma_x+\delta\sigma_z),
 $$
-从 $|0\rangle$ 到 $|1\rangle$ 的概率为
+其中 $\Omega,\delta\in\mathbb R$。当 $\Omega^2+\delta^2>0$ 时，从
+$|0\rangle$ 到 $|1\rangle$ 的概率为
 $$
 P_{0\to1}(t)=\frac{\Omega^2}{\Omega^2+\delta^2}
 \sin^2\frac{\sqrt{\Omega^2+\delta^2}\,t}{2}.
 $$
+当 $\Omega=\delta=0$ 时 $H=0$ 且该概率为 $0$，上面的商式不作定义。
 这三个例题分别检验 Fourier 自由演化、Pauli 代数酉旋转和二能级谱分解/指数公式。

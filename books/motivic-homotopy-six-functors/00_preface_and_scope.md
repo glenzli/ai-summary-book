@@ -10,9 +10,19 @@
 
 ## 0.1 本书对象
 
-**约定 0.1.** 除非另有说明，本书固定 Grothendieck universes `\mathbb U\in\mathbb V`，并在 `\mathbb V` 中讨论 presentable infinity-categories。所有几何小范畴都替换为等价的 `\mathbb U`-小骨架。
+**约定 0.1.** 除非另有说明，本书固定 Grothendieck universes
+`\mathbb U\in\mathbb V`。“小”意指 `\mathbb U`-小；presentable 意指
+`\mathbb U`-accessible 且具有全部 `\mathbb U`-小余极限，并作为
+`\operatorname{Cat}_{\mathbb V}` 的对象讨论。所有概形取
+`\mathbb U`-小，几何输入范畴替换为等价的 `\mathbb U`-小骨架。完整大小
+约定见附录 A。
 
-**约定 0.2.** 默认基概形 `S` 为有限维 Noetherian 概形。记 `\operatorname{Sm}_S` 为 `S` 上光滑有限型概形的一个小骨架，赋予 Nisnevich topology。
+**约定 0.2.** 第一至第三章在单个 `\mathbb U`-小有限维 Noetherian 基概形
+`S` 上工作，`\operatorname{Sm}_S` 为 smooth finite-type `S`-schemes 的
+`\mathbb U`-小骨架。讨论 base change 和六操作时，另固定一个
+`\mathbb U`-小有限维 Noetherian 概形 `B`，默认基范畴为有限型
+`B`-概形；它对有限纤维积封闭。Exceptional functors 只对 separated
+`B`-morphisms 使用。
 
 **定义 0.3.** 本书的非稳定 motivic space 范畴定义为
 
@@ -20,7 +30,8 @@ $$
 \mathbf H(S)=L_{\mathbb A^1}\operatorname{Shv}_{Nis}(\operatorname{Sm}_S),
 $$
 
-其中 `L_{\mathbb A^1}` 是关于所有投影
+其中 sheaf 指 Cech/Nisnevich sheaf，不默认 hypercomplete；
+`L_{\mathbb A^1}` 是关于所有投影
 
 $$
 X\times_S\mathbb A^1_S\longrightarrow X,\qquad X\in\operatorname{Sm}_S
@@ -28,13 +39,18 @@ $$
 
 的 accessible localization。
 
-**定义 0.4.** 本书的稳定 motivic homotopy 范畴写作 `\mathbf{SH}(S)`，定义为 `\mathbf H_*(S)` 对 Tate sphere
+**定义 0.4.** 本书的稳定 motivic homotopy infinity-范畴写作
+`\mathbf{SH}(S)`，先定义为 `\mathbf H_*(S)` 对 Tate sphere
 
 $$
 T=\mathbb A^1/(\mathbb A^1\setminus0)
 $$
 
-的稳定化。它是稳定 presentable symmetric monoidal infinity-category。该结论的存在性和与经典模型的比较作为外部输入定理处理。
+的 presentable symmetric monoidal object-inversion
+`\mathbf H_*(S)[T^{-1}]`。该反演的存在性、`T` 的 3-symmetry 以及与
+symmetric `T`-spectra 的比较是外部输入；给定这些输入后，`T` 的两个因子
+`S^{1,0}` 与 `\mathbb G_m` 分别可逆，ordinary suspension 因而可逆，所以
+稳定性在第三章与附录 C 中书内推出。
 
 **注 0.5.** 原始 Morel-Voevodsky 构造使用 simplicial sheaves 和模型范畴。本书优先采用 infinity-categorical localization，因为它能直接表达泛性质、六操作和 presentability；模型范畴版本在比较章节中处理。
 
@@ -56,19 +72,34 @@ $$
 
 ## 0.3 六操作的地位
 
-**定义 0.10.** 对基范畴中的态射 `f:X\to Y`，六操作指
+**定义 0.10.** 对默认基范畴中的态射 `f:X\to Y`，总有
+`f^*:\mathbf{SH}(Y)\to\mathbf{SH}(X)` 及其右伴随
+`f_*:\mathbf{SH}(X)\to\mathbf{SH}(Y)`。若 `f` separated，另有
+`f_!\dashv f^!`。连同 fiberwise operations，六操作写作
 
 $$
 f^*,\quad f_*,\quad f_!,\quad f^!,\quad -\otimes_X-,\quad \underline{\operatorname{Hom}}_X(-,-).
 $$
 
-其中 `f^*\dashv f_*`，`f_!\dashv f^!`，并要求这些函子满足 base change、projection formula、proper compatibility、localization、purity 和复合相干。
+其中 `f^*\dashv f_*` 对所有 `f`，`f_!\dashv f^!` 只在上述 exceptional
+态射类中。Base change、projection formula、proper compatibility、
+localization、purity 和复合相干各有自己的适用假设，不是六个函子存在后
+自动成立的一条总括命题。
 
 **注 0.11.** 在 `\mathbf{SH}(-)` 中，`f^*` 通常先由拉回光滑概形诱导，`f_*` 由伴随函子定理得到；`f_!` 与 `f^!` 的存在和良好性质不能由定义自动推出，是 motivic 六操作理论的核心内容。
 
-**外部输入定理 0.12.** 在适当基范畴和有限性假设下，`S\mapsto\mathbf{SH}(S)` 支持 Grothendieck 六操作形式主义，并满足 base change、projection formula、localization、purity 等相干性质。
+**外部输入定理 0.12.** 在约定 0.2 的有限型 `B`-schemes 上，
+`S\mapsto\mathbf{SH}(S)` 支持第四章定义的 Grothendieck 六操作形式主义：
+exceptional base change 与 `!`-projection formula 对 separated morphisms
+成立；ordinary proper base change、proper compatibility 对 proper
+morphisms 成立；open-closed localization 对 complementary immersions
+成立；smooth purity 对 smooth separated morphisms 成立。一般 ordinary
+base change 和一般 closed-immersion purity 不在无条件结论中。
 
-**依赖源.** Ayoub, Cisinski-Deglise, Hoyois, Drew-Gallauer。不同资料源覆盖的基范畴和相干强度不同，后续章节逐项拆分。
+**依赖源.** Hoyois, Theorems 1.1 与 6.18（平凡群情形）提供本书采用的
+一套精确 package；Ayoub 是非等变构造源。Drew--Gallauer Theorem 7.14
+负责 universal coefficient-system 口径，不单独替代 operation-specific
+geometric theorems。第五至第八章逐项拆分。
 
 ## 0.4 研究边界的处理
 
@@ -80,7 +111,11 @@ $$
 
 ## 0.5 本章小结
 
-本书采用 `\mathbf H(S)` 和 `\mathbf{SH}(S)` 的 infinity-categorical 口径，把局部化和稳定化写成泛性质，把六操作存在性作为外部输入，再在其上证明形式后果。全书默认基概形为有限维 Noetherian 概形；其他几何对象只在专门章节中引入。
+本书采用 `\mathbf H(S)` 和 `\mathbf{SH}(S)` 的 infinity-categorical 口径，
+把 sheafification、`\mathbb A^1`-localization 和 symmetric monoidal
+`T`-inversion 写成带宇宙的泛性质。六操作在固定有限型 `B`-schemes 上按
+态射类声明，再在外部输入之上证明形式后果。Hypercompletion、任意 qcqs
+基、代数栈和其他几何对象只在明确声明后使用。
 
 ## 练习
 

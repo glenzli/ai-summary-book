@@ -104,6 +104,10 @@ $$
 $$
 能量本征分量的概率 $\|\psi_r\|^2$ 不随时间变。
 
+**证明.** 由 $\psi_r=P_r\psi$ 与命题 5.9，
+$U(t)\psi=\sum_re^{-itE_r}P_r\psi$。每个相位因子的模为 $1$，故
+$\|e^{-itE_r}\psi_r\|^2=\|\psi_r\|^2$。$\square$
+
 ## 本章小结
 
 时间演化由强连续酉群给出。Stone 定理把这种群等价地编码为自伴 Hamiltonian。Schrodinger 图像演化态，Heisenberg 图像演化可观测量，二者给出相同期望值。

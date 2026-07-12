@@ -35,11 +35,11 @@ G(F)=\bigsqcup_{\lambda\in X_*(T)^+}K\varpi^\lambda K.
 $$
 因此 $\{\mathbf 1_{K\varpi^\lambda K}\}_{\lambda\in X_*(T)^+}$ 构成 $\mathcal H(G,K)$ 的向量空间基。
 
-**证明说明.** 一般情形依赖 Bruhat-Tits theory。对 $G=\operatorname{GL}_n$ 可用 Smith normal form 证明：任意 $g\in\operatorname{GL}_n(F)$ 可由左右 $\operatorname{GL}_n(\mathcal O_F)$ 初等变换化为
+**证明路线（外部输入）.** 一般情形依赖 Bruhat-Tits theory。对 $G=\operatorname{GL}_n$ 可用 Smith normal form 证明：任意 $g\in\operatorname{GL}_n(F)$ 可由左右 $\operatorname{GL}_n(\mathcal O_F)$ 初等变换化为
 $$
 \operatorname{diag}(\varpi^{a_1},\ldots,\varpi^{a_n}),\qquad a_1\ge\cdots\ge a_n,
 $$
-指数列唯一。$\square$
+指数列唯一。一般 split reductive group 的存在性与唯一性仍作为定理 P.3 的外部输入。
 
 **定义 P.4.** 记
 $$
@@ -77,11 +77,11 @@ $$
 $$
 其中 $W$ 为 Weyl group。该同构与归一化非分歧主级数的 spherical vector eigencharacter 相容。
 
-**证明说明.** 乘法性来自 Iwasawa 分解 $G(F)=B(F)K$ 和卷积积分的 Fubini 重排；像落在 $W$-不变量中使用 rank-one intertwining operators；满射和单射使用 Cartan 分解下的三角性：
+**证明路线（外部输入）.** 乘法性来自 Iwasawa 分解 $G(F)=B(F)K$ 和卷积积分的 Fubini 重排；像落在 $W$-不变量中使用 rank-one intertwining operators；满射和单射使用 Cartan 分解下的三角性：
 $$
 \mathcal S(T_\lambda)=q^{\langle\rho,\lambda\rangle}e^\lambda+\sum_{\mu<\lambda}c_{\lambda\mu}e^\mu
 $$
-在由正 coroot cone 定义的 dominance order 下成立。完整证明需处理根子群积分和 Weyl 群归一化。$\square$
+在由正 coroot cone 定义的 dominance order 下成立。根子群积分、Weyl 不变性和三角反演是本书没有重证的部分。
 
 ## P.4 非分歧表示和 Satake 参数
 
@@ -119,11 +119,11 @@ $$
 $$
 的 spherical constituent，则 $s(\pi)$ 等于非分歧 character $\chi:T(F)\to\mathbb C^\times$ 对应的 $\widehat T$ 半单共轭类。
 
-**证明草图.** 归一化诱导中的 spherical vector $v_K$ 由 $v_K(1)=1$ 决定。对 $h\in\mathcal H(G,K)$，卷积作用在 $v_K(1)$ 处给出
+**证明路线（外部输入）.** 归一化诱导中的 spherical vector $v_K$ 由 $v_K(1)=1$ 决定。对 $h\in\mathcal H(G,K)$，卷积作用在 $v_K(1)$ 处给出
 $$
 \int_{G(F)}h(g)v_K(g)\,dg.
 $$
-用 Iwasawa 分解 $g=tnk$ 重写积分，归一化因子正好产生定义 P.5 中的 $\delta_B^{-1/2}$。因此 Hecke eigencharacter 等于把 $\mathcal S(h)$ 在 $\chi$ 对应点求值。$\square$
+用 Iwasawa 分解 $g=tnk$ 重写积分，归一化因子正好产生定义 P.5 中的 $\delta_B^{-1/2}$。因此 Hecke eigencharacter 等于把 $\mathcal S(h)$ 在 $\chi$ 对应点求值。该计算依赖定理 P.7 的 Satake 同构，故这里只登记路线。
 
 ## P.5 `GL(n)` 的显式公式
 
@@ -161,9 +161,12 @@ $\square$
 
 ## P.6 与几何 Satake 的关系
 
-**命题 P.15.** 几何 Satake 的 sheaf-function trace 在有限域曲线的非分歧点处恢复 classical Satake 同构。
+**外部输入定理 P.15.** 设 $G$ split over $\mathbb F_q$，取定义在 $\mathbb F_q$ 上、带 Weil structure 的
+$G[[t]]$-equivariant $\overline{\mathbb Q}_\ell$-perverse sheaves，$\ell\ne\operatorname{char}\mathbb F_q$，并选择 $q^{1/2}\in\overline{\mathbb Q}_\ell$ 以固定 half-Tate twist。Stalk 上几何 Frobenius 的交错迹把几何 Satake 的卷积 Grothendieck ring 送到
+$\mathcal H(G(\mathbb F_q((t))),G(\mathbb F_q[[t])))$，并恢复本附录 $\delta_B^{1/2}$-归一化的 classical Satake 同构。
 
-**证明草图.** 几何 Satake 把 $\operatorname{Rep}(\widehat G)$ 与 affine Grassmannian 上的 $G(\mathcal O)$-equivariant perverse sheaves 的卷积范畴等价。对定义在有限域上的对象取 Frobenius trace 函数，卷积对应函数卷积；Schubert cell 的 IC sheaf trace 给出球 Hecke 代数中的标准基元素的归一化版本。因此张量积规则在函数侧变为球 Hecke 代数乘法，得到 Satake 同构。完整证明依赖 sheaf-function dictionary 和 decomposition theorem。$\square$
+**证明路线（外部输入）.** Sheaf-function dictionary 把卷积送到函数卷积；几何 Satake 把 IC sheaves 的卷积规则送到 $\operatorname{Rep}(\widehat G)$ 的张量规则。IC normalization 的 cohomological shift 与 half-Tate twist 产生
+$q^{\langle\rho,\lambda\rangle}$，恰与 P.7 的归一化吻合。完整证明依赖 decomposition theorem、purity 和几何 Satake，本段不重证。
 
 ## 练习
 

@@ -18,7 +18,10 @@
 
 - `02_derived_categories_and_b_side_enhancements.md`
   - 依赖：`01_dg_and_a_infinity_categories.md`。
-  - 提供：derived category、perfect complex、$\operatorname{Perf}(X)$、$\mathrm D^b\operatorname{Coh}(X)$、dg enhancement、Fourier-Mukai transform、matrix factorizations。
+  - 提供：derived category、perfect complex、h-injective
+    $\operatorname{Perf}_{\mathrm{dg}}(X)$ model、
+    $\mathrm D^b\operatorname{Coh}(X)$ 的三角影子、enhanced
+    Fourier--Mukai transform、affine matrix-factorization dg model。
   - 被依赖：HMS 断言模板、后续标准例子、Landau-Ginzburg 章节。
 
 ## A-side 层
@@ -29,8 +32,12 @@
   - 被依赖：`04_holomorphic_polygons_and_fukaya_categories.md`。
 
 - `04_holomorphic_polygons_and_fukaya_categories.md`
-  - 依赖：`01_dg_and_a_infinity_categories.md`、`03_symplectic_lagrangian_and_floer_foundations.md`。
-  - 提供：holomorphic polygon 模空间、$\mu^d$、Fukaya $A_\infty$ 方程、exact Fukaya category、split-closed derived Fukaya category、wrapped 边界。
+  - 依赖：`01_dg_and_a_infinity_categories.md`、
+    `03_symplectic_lagrangian_and_floer_foundations.md`、附录 B 与 E。
+  - 提供：compact exact Hamiltonian-chord complexes、coherent polygon
+    data、orientation/local-system operations、精确 $A_\infty$ 方程、
+    cohomological units/strictification 边界、split-closed derived Fukaya
+    category、wrapped 边界。
   - 被依赖：后续 wrapped/stopped/Fukaya-Seidel 章节与 HMS 例子。
 
 - `05_obstruction_bounding_cochains_and_novikov_coefficients.md`
@@ -40,7 +47,9 @@
 
 - `06_liouville_sectors_and_wrapped_fukaya_categories.md`
   - 依赖：`03_symplectic_lagrangian_and_floer_foundations.md`、`04_holomorphic_polygons_and_fukaya_categories.md`。
-  - 提供：Liouville manifolds/domains/sectors、Hamiltonian chords、wrapped Fukaya category、cocore generation。
+  - 提供：Liouville manifolds/domains/sectors、exact conical branes、
+    cofinal Hamiltonian chords、telescope wrapped complexes、wrapped
+    analytic/categorical package、cocore generation。
   - 被依赖：stops、sectorial descent、microlocal sheaves、wrapped HMS。
 
 - `07_stops_partially_wrapped_categories_and_localization.md`
@@ -52,7 +61,8 @@
 
 - `08_hms_statement_enhancements_and_invariants.md`
   - 依赖：`01_dg_and_a_infinity_categories.md`、`02_derived_categories_and_b_side_enhancements.md`、`03_symplectic_lagrangian_and_floer_foundations.md`。
-  - 提供：HMS 数据包、三层强度、生成元比较原则、不变量检查和陈述模板。
+  - 提供：HMS 数据包、raw/triangulated/quasi-equivalence/Morita 层级、
+    生成元比较原则、不变量检查和陈述模板。
   - 被依赖：所有具体 HMS 例子章节。
 
 ## 标准例子层
@@ -80,8 +90,12 @@
 ## 生成、descent 与 sheaf 层
 
 - `14_split_generation_open_closed_and_abouzaid_criterion.md`
-  - 依赖：`01_dg_and_a_infinity_categories.md`、`04_holomorphic_polygons_and_fukaya_categories.md`。
-  - 提供：open-closed、closed-open、Abouzaid generation criterion、幂等分解。
+  - 依赖：`01_dg_and_a_infinity_categories.md`、
+    `06_liouville_sectors_and_wrapped_fukaya_categories.md`、
+    `08_hms_statement_enhancements_and_invariants.md`。
+  - 提供：degree-shifted wrapped open-closed、closed-open、Abouzaid
+    Theorem 1.1 的 global-unit criterion、Morita HMS 推论、closed-open
+    idempotent projector 分块与 curvature-value 边界。
 
 - `15_sectorial_descent_for_wrapped_fukaya_categories.md`
   - 依赖：`06_liouville_sectors_and_wrapped_fukaya_categories.md`、`14_split_generation_open_closed_and_abouzaid_criterion.md`。
@@ -127,8 +141,10 @@
   - 依赖：主体章节练习。
   - 提供：第零章至第二十章练习解答与提示。
 
-## 待补缺口
+## 在线版范围外的出版工作
 
-- theorem locator 已达在线最低闭合；出版级精确编号尚未补。
-- 标准例子缺逐项低阶 $A_\infty$ 计算。
-- 出版级 label ledger 尚未建立。
+- Theorem locator 已达在线闭合；印刷版还需执行逐条版本、页码与精确编号校勘。
+- 标准例子的核心计算已存在；印刷版可继续扩充逐项高阶
+  $A_\infty$ 运算表。
+- 当前交叉引用由文件名与正文编号承担；独立的印刷版 label ledger 属于
+  排版阶段工作。

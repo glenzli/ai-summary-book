@@ -85,7 +85,7 @@ $$
 \underline{\mathbb Z}\otimes A\simeq A.
 $$
 
-**证明思路.** 由命题 9.4，给出态射
+**证明.** 由命题 9.4，给出态射
 
 $$
 \underline{\mathbb Z}\otimes A\to C
@@ -97,7 +97,7 @@ $$
 \underline{\mathbb Z}\times A\to C.
 $$
 
-由于 $\underline{\mathbb Z}$ 是整数对象，这等价于给出加性态射 $A\to C$。由 Yoneda 型判别，$\underline{\mathbb Z}\otimes A$ 表示与 $A$ 相同的 Hom 函子，故二者同构。证毕。
+由于 $\underline{\mathbb Z}$ 是整数对象，这等价于给出加性态射 $A\to C$。这些双射关于 $C$ 自然；由 Yoneda 引理，$\underline{\mathbb Z}\otimes A$ 与 $A$ 表示同一个 Hom 函子，因而存在唯一自然同构 $\underline{\mathbb Z}\otimes A\simeq A$。证毕。
 
 **注 9.7.** 严格证明可在预层层面使用普通同构 $\mathbb Z\otimes M\simeq M$，再 sheafification。
 

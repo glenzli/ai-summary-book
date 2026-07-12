@@ -63,11 +63,25 @@ I_G=I/(g-1)I.
 $$
 在 $k[C_p]$ 中，$I$ 由 $g-1$ 生成，而 $(g-1)^p=g^p-1=0$。因此 $I/(g-1)I$ 非零。故左 exactness 失败。$\square$
 
-**推论 X.5.** 在正特征中，对称幂
+**推论 X.5（对称 coinvariants 的非正合性）.** 取 $n=p$。在正特征
+$p$ 中，函子
 $$
-(X^{\otimes n})_{\Sigma_n}
+(-)_{\Sigma_p}:k[\Sigma_p]\operatorname{-Mod}\to k\operatorname{-Mod}
 $$
-不应被当作 exact functor 使用。
+不是正合函子。因此在处理
+$(X^{\otimes p})_{\Sigma_p}$ 时，不能仅由张量幂的正合性推出取
+coinvariants 后仍正合。
+
+**证明.** 令 $H=C_p\subset\Sigma_p$ 为一个 $p$-循环生成的子群。
+诱导函子
+$\operatorname{Ind}_H^{\Sigma_p}=k[\Sigma_p]\otimes_{k[H]}-$ 正合，因为
+$k[\Sigma_p]$ 作为右 $k[H]$-模自由。并且存在自然同构
+$$
+\bigl(\operatorname{Ind}_H^{\Sigma_p}M\bigr)_{\Sigma_p}\cong M_H.
+$$
+若 $(-)_{\Sigma_p}$ 正合，则它与正合诱导函子的复合也正合，从而
+$(-)_H$ 正合；这与命题 X.4 矛盾。最后一句只是指出自由交换代数公式中
+的 coinvariants 步骤需要导出化、群阶可逆或其他额外假设。$\square$
 
 ## X.4 特征 $2$ 中 Lie 反对称的边界
 
@@ -172,6 +186,27 @@ $$
 
 **说明 X.14.** 区间值取决于端点边界条件。无边界 disk 归一化不能替代该计算。
 
+**命题 X.14.1（端点条件改变区间值）.** 令
+$$
+A=k[\varepsilon]/(\varepsilon^2)
+$$
+集中在链次数 $0$，并令左右端点都取 augmentation $A\to k$ 给出的 $A$-module $k$。则
+$$
+H_i(k\otimes_A^{\mathbf L}k)\cong k
+\qquad(i\ge0),
+$$
+所以 $k\otimes_A^{\mathbf L}k$ 不等价于正则边界条件给出的
+$A\otimes_A^{\mathbf L}A\simeq A$。
+
+**证明.** $k$ 有自由 $A$-模分解
+$$
+\cdots\xrightarrow{\varepsilon}A
+\xrightarrow{\varepsilon}A
+\xrightarrow{\varepsilon}A
+\longrightarrow k\longrightarrow0.
+$$
+因为乘以 $\varepsilon$ 的像和核都等于理想 $(\varepsilon)$，且 augmentation 的核也是 $(\varepsilon)$，该复形正合。与 $k$ 在 $A$ 上张量后，$\varepsilon$ 在 $k$ 上作用为零，故所有 differential 都变成零；因此每个非负 Tor 次数都得到一个 $k$。另一方面，$A$ 只在次数 $0$ 有同调。两者不可能 quasi-isomorphic。$\square$
+
 ## X.9 对称幂不保持准同构的链复形计算
 
 令 $k=\mathbb F_p$。取同调分次链复形 $C$：
@@ -187,7 +222,7 @@ $$
 $$
 中的元素 $y^p$。
 
-**命题 X.15.** $y^p$ 在 $\operatorname{Sym}^p(C)$ 中给出非零同调类。因此 $\operatorname{Sym}^p$ 不保持准同构 $C\to0$。
+**命题 X.15.** $y^p$ 在 $\operatorname{Sym}^p(C)$ 中给出非零同调类。因此 $\operatorname{Sym}^p$ 不保持准同构 $0\to C$；在 $\mathbf{Ch}_k$ 的 projective 模型结构中，这还是一个 trivial cofibration。
 
 **证明.** 微分满足 Leibniz rule。于是
 $$
@@ -196,13 +231,25 @@ d(y^p)=\sum_{i=1}^{p}y^{i-1}(dy)y^{p-i}
 $$
 因为 $\operatorname{char} k=p$。所以 $y^p$ 是 cycle。另一方面，$\operatorname{Sym}^p(C)$ 的最高同调次数为 $2p$，而 $y^p$ 正处在该最高次数；不存在次数 $2p+1$ 的元素，其微分可以等于 $y^p$。故 $y^p$ 不是 boundary。
 
-又 $C$ acyclic，故 $C\to0$ 是 quasi-isomorphism。若 $\operatorname{Sym}^p$ 保持该 quasi-isomorphism，则 $\operatorname{Sym}^p(C)$ 应 acyclic；这与 $[y^p]\ne0$ 矛盾。$\square$
+又 $C$ acyclic，故 $0\to C$ 是 quasi-isomorphism；它逐次数单射，因而在域上是 projective cofibration。若 $\operatorname{Sym}^p$ 保持该 quasi-isomorphism，则
+$$
+0=\operatorname{Sym}^p(0)\longrightarrow\operatorname{Sym}^p(C)
+$$
+应为 quasi-isomorphism；这与 $[y^p]\ne0$ 矛盾。$\square$
 
 **推论 X.16.** 在 $\mathbf{Ch}_k$ 正特征中，自由 commutative dg algebra functor
 $$
 \operatorname{Sym}(C)=\bigoplus_{n\ge0}\operatorname{Sym}^n(C)
 $$
-不保持所有 acyclic chain complexes 到 $0$ 的 quasi-isomorphism。任何把 $E_\infty$-algebras rectifies to strict commutative dg algebras 的断言都必须加入额外假设或改用适当模型。
+不保持所有 trivial cofibrations。任何把 $E_\infty$-algebras rectifies to strict commutative dg algebras 的断言都必须加入额外假设或改用适当模型。
+
+**证明.** 命题 X.15 构造了 acyclic 复形 $C$，使
+$H_*(\operatorname{Sym}^p(C))$ 含非零类 $[y^p]$。由于
+$\operatorname{Sym}(C)=\bigoplus_{n\ge0}\operatorname{Sym}^n(C)$ 且微分
+保持对称次数，该类在整个直和中仍非零。因此
+$\operatorname{Sym}(0)\to\operatorname{Sym}(C)$ 不是 quasi-isomorphism；它正是自由交换代数函子作用于 trivial cofibration $0\to C$ 的结果。
+最后一句只是这一反例对 rectification 假设的必要性说明，不声称给出
+所有失败情形的分类。$\square$
 
 **说明 X.17.** 这个计算不是 Mandell 型 power operations 的完整反例；它只是最小代数风险：对称 coinvariants 在正特征中不具备特征 $0$ 下的 exact/homotopical 行为。
 
@@ -216,5 +263,5 @@ $$
 4. 特征 $2$ 中 Lie 反对称与 alternating 不等价；
 5. $E_\infty$ rectification 需要底范畴假设；
 6. $\int_{S^1}A$ 是 Hochschild homology，不是普通同调；
-7. 带边界 factorization homology 需要 module 边界条件；
+7. 带边界 factorization homology 需要 module 边界条件，且 dual numbers 例子给出不同端点条件产生不同同调的显式计算；
 8. 正特征中对称幂可以把 acyclic complex 送到有非零同调的 complex。

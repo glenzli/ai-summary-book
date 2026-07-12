@@ -58,14 +58,14 @@ $$
 展开地说，它包含：
 
 1. 每个有限集 $S$ 上的 simplicial set $\mathcal O(S)$；
-2. 对每个有限集分块 $\pi$ 的复合映射
+2. 对每个有限集映射 $f:S\to T$ 的复合映射
    $$
-   \mathcal O(\operatorname{Bl}(\pi))\times\prod_{B\in\operatorname{Bl}(\pi)}\mathcal O(B)\to \mathcal O(S);
+   \mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to \mathcal O(S);
    $$
 3. 单位点 $\Delta^0\to\mathcal O(\{*\})$；
-4. 与分块细化、双射重标号相容的结合律、单位律和等变性。
+4. 与可复合有限集映射、双射重标号相容的结合律、单位律和等变性。
 
-这里的乘积是 simplicial sets 的笛卡儿积。
+这里的乘积是 simplicial sets 的笛卡儿积；$f$ 的空纤维保留 nullary operation spaces。
 
 **定义 15.8.** Simplicial operad morphism $f:\mathcal O\to\mathcal P$ 是 operad morphism in $\mathbf{sSet}$。称 $f$ 为 entrywise weak equivalence，若每个 $n$ 上
 $$
@@ -73,7 +73,7 @@ f(n):\mathcal O(n)\to\mathcal P(n)
 $$
 是 Kan-Quillen weak equivalence。
 
-**外部输入定理 15.9.** $\operatorname{Op}(\mathbf{sSet})$ 存在 transferred 模型结构，其中 weak equivalences 和 fibrations 逐 arity 检测。
+**外部输入定理 15.9（simplicial operad 转移；BM-1）.** 在 Kan--Quillen $\mathbf{sSet}$ 的 cartesian model structure 中，单位 $\Delta^0$ cofibrant，$\operatorname{Ex}^{\infty}$ 给出保有限积的 fibrant replacement，$\Delta^1$ 连同端点与对角给出 commutative Hopf interval。故 Berger--Moerdijk Theorem 3.1（BM-1）适用，$\operatorname{Op}(\mathbf{sSet})$ 存在 transferred 模型结构，weak equivalences 和 fibrations 逐 arity 检测。
 
 **说明 15.10.** 因为 $\mathbf{sSet}$ 中所有对象 cofibrant，许多 cofibrancy 假设比链复形情形更温和。但 operad 代数的 rectification 仍需检查 fixed point、coinvariant 或等变条件；它不是单由“所有对象 cofibrant”推出。
 
@@ -86,11 +86,11 @@ $$
 
 **定义 15.12.** Topological operad 是 $\operatorname{SymSeq}(\mathbf{Top})$ 中关于 cartesian product 诱导的代入乘积的幺半对象。
 
-换言之，对每个有限分块 $\pi$ 有连续映射
+换言之，对每个有限集映射 $f:S\to T$ 有连续映射
 $$
-\mathcal O(\operatorname{Bl}(\pi))\times\prod_{B\in\operatorname{Bl}(\pi)}\mathcal O(B)\to\mathcal O(S),
+\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to\mathcal O(S),
 $$
-且这些映射满足 operad 公理。
+且这些映射满足 operad 公理；空纤维对应 nullary operation spaces。
 
 **定义 15.13.** Topological operad $\mathcal O$ 称为 well-pointed，若单位包含
 $$
@@ -100,7 +100,7 @@ $$
 
 **说明 15.14.** Well-pointed 条件常用于 $W$-construction 和代数同伦理论。$\Sigma$-free 条件常用于避免对称群稳定子带来的等变同伦问题。
 
-**外部输入定理 15.15.** $\operatorname{Op}(\mathbf{Top})$ 在适当 compactly generated 口径下存在 transferred 模型结构，weak equivalences 和 fibrations 逐 arity 检测。
+**外部输入定理 15.15（topological operad 转移；BM-1）.** 取 compactly generated weak Hausdorff spaces 的标准 cofibrantly generated cartesian model structure。单位点 cofibrant，所有对象 fibrant，$[0,1]$ 连同端点与对角给出 commutative Hopf interval；因此 BM-1 给出 $\operatorname{Op}(\mathbf{Top})$ 的 transferred 模型结构，weak equivalences 和 fibrations 逐 arity 检测。若改用其他 convenient category of spaces，必须重新检查 BM-1 的单位、小性、fibrant replacement 与 interval 假设。
 
 **命题 15.16.** 若 $\mathcal O$ 是 topological operad，则
 $$
@@ -113,13 +113,13 @@ $$
 \operatorname{Sing}(X\times Y)_n=\mathbf{Top}(|\Delta^n|,X\times Y)
 \cong \mathbf{Top}(|\Delta^n|,X)\times\mathbf{Top}(|\Delta^n|,Y).
 $$
-因此 topological operad 的复合映射
+因此 topological operad 沿任意 $f:S\to T$ 的复合映射
 $$
-\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B)\to\mathcal O(S)
+\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to\mathcal O(S)
 $$
 经 $\operatorname{Sing}$ 后给出
 $$
-\operatorname{Sing}\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\operatorname{Sing}\mathcal O(B)\to\operatorname{Sing}\mathcal O(S).
+\operatorname{Sing}\mathcal O(T)\times\prod_{t\in T}\operatorname{Sing}\mathcal O(f^{-1}(t))\to\operatorname{Sing}\mathcal O(S).
 $$
 单位、结合律和等变性由 $\operatorname{Sing}$ 的函子性和保积性质保持。故 $\operatorname{Sing}\mathcal O$ 是 simplicial operad。$\square$
 
@@ -129,25 +129,25 @@ $$
 $$
 自然成为 topological operad。
 
-**证明.** 几何实现与 $\operatorname{Sing}$ 伴随，并且在 compactly generated spaces 中与有限积相容。对每个分块 $\pi$，simplicial operad 的复合
+**证明.** 几何实现与 $\operatorname{Sing}$ 伴随，并且在 compactly generated spaces 中与有限积相容。对每个有限集映射 $f:S\to T$，simplicial operad 的复合
 $$
-\mathcal P(\operatorname{Bl}(\pi))\times\prod_B\mathcal P(B)\to\mathcal P(S)
+\mathcal P(T)\times\prod_{t\in T}\mathcal P(f^{-1}(t))\to\mathcal P(S)
 $$
 几何实现后给出连续映射
 $$
-|\mathcal P(\operatorname{Bl}(\pi))\times\prod_B\mathcal P(B)|\to|\mathcal P(S)|.
+|\mathcal P(T)\times\prod_{t\in T}\mathcal P(f^{-1}(t))|\to|\mathcal P(S)|.
 $$
 利用有限积相容性，把左端识别为
 $$
-|\mathcal P(\operatorname{Bl}(\pi))|\times\prod_B|\mathcal P(B)|.
+|\mathcal P(T)|\times\prod_{t\in T}|\mathcal P(f^{-1}(t))|.
 $$
 由几何实现的函子性，单位、结合律和等变性保持。$\square$
 
-**外部输入定理 15.18.** 逐 arity 几何实现与奇异复形提升为 Quillen equivalence
+**外部边界 15.18（operad-level realization--Sing comparison）.** 命题 15.16--命题 15.17 已在内部构造逐 arity 伴随
 $$
 |-|:\operatorname{Op}(\mathbf{sSet})\rightleftarrows \operatorname{Op}(\mathbf{Top}):\operatorname{Sing}
 $$
-在相应 transferred 模型结构之间成立。
+这个构造只给出底层伴随。要断言它在定理 15.9 与 15.15 的 transferred 模型结构间为 Quillen equivalence，还需要一个明确的 operad-category change-of-base theorem，并核对单位、cofibrancy 和 monoidal comparison。PSAR-6 主要控制 transported operads 的 algebra categories，不能在此未经翻译替代 operad-category 比较。本书尚未登记这条提升的精确 locator，故 15.18 不进入证明链；底范畴的 Quillen equivalence 仍由外部输入定理 15.3 单独使用。
 
 ## 15.4 Little cubes operad
 
@@ -175,6 +175,8 @@ c\circ(d_1,\ldots,d_n)
 \in\mathcal C_d(k_1+\cdots+k_n),
 $$
 其中输出按 blocks 顺序排列。
+
+这里允许 $k_i=0$；此时 $d_i$ 是唯一空 cube 族，外层第 $i$ 个 cube 不产生输出 cube。这是 little-cubes 模型中的 nullary substitution。
 
 **命题 15.21.** $\mathcal C_d$ 是 topological operad。
 
@@ -214,15 +216,15 @@ $$
 
 **命题 15.24.** 若 $\mathcal O$ 是 topological operad，则 $C_\*(\mathcal O;k)$ 自然给出 dg-operad，前提是选择了相干的 Eilenberg-Zilber lax monoidal 结构。
 
-**证明.** 对每个分块 $\pi$，topological operad 复合给出
+**证明.** 对每个有限集映射 $f:S\to T$，topological operad 复合给出
 $$
-\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B)\to\mathcal O(S).
+\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t))\to\mathcal O(S).
 $$
 先用 Eilenberg-Zilber lax monoidal map 得到
 $$
-C_\*(\mathcal O(\operatorname{Bl}(\pi));k)\otimes\bigotimes_B C_\*(\mathcal O(B);k)
+C_\*(\mathcal O(T);k)\otimes\bigotimes_{t\in T} C_\*(\mathcal O(f^{-1}(t));k)
 \to
-C_\*\left(\mathcal O(\operatorname{Bl}(\pi))\times\prod_B\mathcal O(B);k\right),
+C_\*\left(\mathcal O(T)\times\prod_{t\in T}\mathcal O(f^{-1}(t));k\right),
 $$
 再对复合映射取 chains，得到 dg-operad 的复合。单位由点的奇异 $0$-simplex 给出。结合律和等变性依赖 Eilenberg-Zilber 结构的相干性；这正是定理 15.23 中相干关系的用途。$\square$
 

@@ -173,7 +173,7 @@ Arthur 参数把“非 tempered 离散谱”从一般 tempered 预期中分离�
 
 **命题 17.21.** 若离散谱中的表示 $\pi$ 属于参数 $\psi=\boxplus_i(\pi_i,b_i)$，且某个 $b_i>1$，则 $\pi$ 的某些局部分量预期非 tempered。
 
-**证明草图.** 当 $b_i>1$ 时，Arthur $\operatorname{SL}_2$ 的非平凡不可约表示在定义 17.7 中引入 $|w|$ 的非零幂。该幂改变 Langlands 参数在 Weil 群上的 boundedness，因此对应局部分量不再 tempered。完整陈述需要局部 A-packet 与 Langlands quotient 的关系。$\square$
+**证明路线（外部输入）.** 当 $b_i>1$ 时，Arthur $\operatorname{SL}_2$ 的非平凡不可约表示在定义 17.7 中引入 $|w|$ 的非零幂。该幂改变 Langlands 参数在 Weil 群上的 boundedness，因此对应局部分量不再 tempered。完整陈述需要局部 A-packet 与 Langlands quotient 的关系。$\square$
 
 **注 17.22.** 这并不反驳 cuspidal Ramanujan 猜想；它说明离散谱中 residual 和 endoscopic 贡献需要 Arthur 参数而不是单纯 tempered 参数来描述。
 

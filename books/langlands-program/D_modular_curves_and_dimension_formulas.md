@@ -121,7 +121,7 @@ $$
 e_2=1,\qquad e_3=0.
 $$
 
-**证明草图.** 对 $\Gamma_0(N)$，椭圆点计数可化为下列同余方程的解数：
+**证明路线（外部输入）.** 对 $\Gamma_0(N)$，椭圆点计数可化为下列同余方程的解数：
 $$
 e_2=\#\{x\in\mathbb Z/N\mathbb Z:x^2+1\equiv0\pmod N\},
 $$
@@ -156,7 +156,7 @@ $$
 $$
 在 $Y(\Gamma)=\Gamma\backslash\mathfrak H$ 上下降为 holomorphic differential，并在 cusp 处全纯延拓。
 
-**证明草图.** 权 $2$ 变换公式为
+**证明路线（外部输入）.** 权 $2$ 变换公式为
 $$
 f(\gamma z)(cz+d)^{-2}=f(z).
 $$

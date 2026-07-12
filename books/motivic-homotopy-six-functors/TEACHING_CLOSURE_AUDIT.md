@@ -1,8 +1,12 @@
 # 教材内容闭合审计
 
-核查日期：2026-07-08
+核查日期：2026-07-11
 
-本审计只判断本书是否作为教材内容本身收口，不判断是否已经达到 camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题索引和习题解答要点；出版终稿仍需要页码级 theorem locator、自动化 labels、排版细校和更完整的长篇习题详解。
+本审计只判断本书是否作为教材内容本身收口，不判断是否已经达到
+camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题索引和习题
+解答要点；第 09-18 章 P0 主线已完成 theorem/chapter-level locator。出版
+终稿仍需要扩展/realization locator、自动化 labels、排版细校和更完整的
+长篇习题详解。
 
 ## 审查口径
 
@@ -21,7 +25,7 @@
 | 理论范围 | 达到 | 00-24 章覆盖 motivic spaces、稳定化、六操作、纯性、cohomology、motives、K-theory、cobordism、slice、transfers、framed structures、fundamental classes、norms、Milnor-Witt、equivariant/stack/log/perfect/realization/universal formalisms |
 | 章节密度 | 达到 | 主体章不再是大纲态；定义、命题、证明、边界和练习链条已经形成 |
 | 证明闭合 | 达到教学标准 | 内部形式命题均以证明段落收束；深定理以“外部输入定理”标记，不伪装成书内证明 |
-| 引用闭合 | 达到教学标准 | `SOURCES.md`、`THEOREM_LEDGER.md`、`REFERENCE_LOCATOR_LEDGER.md` 和 `P0_REFERENCE_LOCATORS_BATCH_1.md` 给出资料源、用途、假设层级和部分精确 locator |
+| 引用闭合 | 达到教学标准 | `SOURCES.md`、两个 ledgers 和三批 P0 locator 给出资料源、定理号、稳定 URL、假设层级及不覆盖边界；第 09-18 章 P0 已闭合 |
 | 编号与排版 | 达到教学标准 | `TYPESETTING_AND_NUMBERING.md` 已固定章内编号、附录编号、练习/解答编号、证明格式和交叉引用规范 |
 | 索引 | 达到教学标准 | `INDEX.md` 已给出主题索引，可用于阅读和教学导航 |
 | 习题解答 | 达到教学标准 | `EXERCISE_SOLUTIONS.md` 已覆盖 201 道练习的一版解答要点 |
@@ -64,8 +68,12 @@
 | `THEOREM_LEDGER.md` | 按本书使用的定理登记内部命题、P0/P1 外部输入和研究边界 |
 | `REFERENCE_LOCATOR_LEDGER.md` | 把核心外部输入分为 located、source-verified、pending；pending 表示出版级 theorem locator 未补完，不表示没有引用来源 |
 | `P0_REFERENCE_LOCATORS_BATCH_1.md` | 已精确定位 Drew-Gallauer、framed recognition、norms、fundamental classes/Gysin maps |
+| `P0_REFERENCE_LOCATORS_BATCH_2.md` | 已精确定位 presentability、稳定化、六操作、purity 与 triangulated shadow |
+| `P0_REFERENCE_LOCATORS_BATCH_3.md` | 已精确定位第 09-18 章 cohomology、motives、transfers、norms 与 Milnor-Witt 主线 |
 
-按教材标准，引用已经完整：每类外部输入都可追溯到资料源、用途和假设边界。按出版标准，仍需继续把所有 P0 条目补到定理号和页码级 locator。
+按教材标准，引用已经完整：每类外部输入都可追溯到资料源、用途和假设
+边界。第 09-18 章主线已达到定理/章节级 P0 定位；按全书出版标准，仍需
+完成第 19-23 章 extensions/realization 队列并做统一页码终校。
 
 ## 已完成的出版增强项
 
@@ -75,7 +83,7 @@
 
 ## 不阻塞教材闭合的剩余项
 
-- 为剩余 P0 外部输入补页码级 theorem locator。
+- 为第 19-23 章 extensions/realization 的剩余 P0 外部输入补 theorem/page locator。
 - 把 Markdown 交叉引用进一步自动化为 anchors 或 LaTeX labels。
 - 把解答要点扩展为完整长篇详解。
 - 增加更多计算例子，例如 Gysin excess、slice spectral sequence、Chern character、quadratic Euler characteristic。

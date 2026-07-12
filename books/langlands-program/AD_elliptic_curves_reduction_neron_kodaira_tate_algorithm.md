@@ -23,7 +23,7 @@ $$
 \Delta'=u^{-12}\Delta.
 $$
 
-**证明草图.** Weierstrass 不变量 $b_i,c_4,c_6,\Delta$ 对标准变量变换有权重。$x$ 的权重为 $2$，$y$ 的权重为 $3$，判别式为权重 $12$ 的相对不变量。把长 Weierstrass 不变量逐项代入变换公式可得 $\Delta=u^{12}\Delta'$，即所述公式。$\square$
+**证明路线（外部输入）.** Weierstrass 不变量 $b_i,c_4,c_6,\Delta$ 对标准变量变换有权重。$x$ 的权重为 $2$，$y$ 的权重为 $3$，判别式为权重 $12$ 的相对不变量。把长 Weierstrass 不变量逐项代入变换公式可得 $\Delta=u^{12}\Delta'$，即所述公式。$\square$
 
 **定义 AD.3.** integral Weierstrass model 称为 minimal，若 $v_F(\Delta)$ 在所有 integral Weierstrass models 中最小。最小值记为
 $$
@@ -58,7 +58,7 @@ $$
 
 **命题 AD.8.** $E/F$ 有好约化当且仅当 Neron model $\mathcal E/\mathcal O_F$ 是 Abelian scheme；在椭圆曲线情形等价于 $\mathcal E_k$ 为光滑 genus $1$ 曲线。
 
-**证明草图.** 若 $E$ 有好约化，则存在 proper smooth integral model，其群结构由 $E$ 的 group law 延拓，并满足 Neron mapping property，因此是 Neron model。反之，若 Neron model proper，则它是 Abelian scheme，特殊纤维为 Abelian variety；维数一情形即光滑 genus $1$ 曲线。完整证明使用 Neron mapping property 和 Abelian schemes 的 valuative criterion。$\square$
+**证明路线（外部输入）.** 若 $E$ 有好约化，则存在 proper smooth integral model，其群结构由 $E$ 的 group law 延拓，并满足 Neron mapping property，因此是 Neron model。反之，若 Neron model proper，则它是 Abelian scheme，特殊纤维为 Abelian variety；维数一情形即光滑 genus $1$ 曲线。完整证明使用 Neron mapping property 和 Abelian schemes 的 valuative criterion。$\square$
 
 ## AD.3 Kodaira-Neron 约化类型
 
@@ -109,7 +109,7 @@ L(E/F,s)=
 \end{cases}
 $$
 
-**证明草图.** Split multiplicative 情形由 Tate uniformization 给出 exact sequence
+**证明路线（外部输入）.** Split multiplicative 情形由 Tate uniformization 给出 exact sequence
 $$
 0\to\mathbb Q_\ell(1)\to V_\ell(E)\to\mathbb Q_\ell\to0.
 $$
@@ -162,7 +162,7 @@ E:\ y^2=(x-r_1)(x-r_2)(x-r_3)
 $$
 有 $r_i\in\mathcal O_F$，且模 $\mathfrak p_F$ 后恰有两个根相等、第三个根不同，则 $E$ 有乘法约化。
 
-**证明草图.** 模 $\mathfrak p_F$ 的平面三次曲线有唯一奇点。两个根相等且第三个根不同意味着奇点为 node，而不是 cusp；node 的两条切线是否在 $k$ 中定义决定 split/nonsplit。按定义这就是乘法约化。$\square$
+**证明路线（外部输入）.** 模 $\mathfrak p_F$ 的平面三次曲线有唯一奇点。两个根相等且第三个根不同意味着奇点为 node，而不是 cusp；node 的两条切线是否在 $k$ 中定义决定 split/nonsplit。按定义这就是乘法约化。$\square$
 
 ## AD.7 Frey 曲线局部导子接口
 
@@ -204,7 +204,7 @@ $$
    $$
 4. 模 $p$ 表示 $\overline\rho_{E,p}$ 的 prime-to-$p$ Serre conductor 等于 $2$。
 
-**证明草图.** 第 2 项由命题 AD.18 和判别式公式 AD.19 的局部 valuation 给出；半稳定性还需检查素数 $2$ 的标准归一化情形。由于半稳定乘法约化的导子指数为 $1$，得到第 3 项。对 $q\mid abc$，$v_q(\Delta_E)$ 是 $p$ 的倍数；Tate curve 描述说明模 $p$ 惯性扩张类在这些 $q$ 处消失或降为非分歧，从而 residual conductor 删除这些奇素数。素数 $2$ 的剩余贡献由 Tate algorithm 的专门计算给出。完整计算是 Frey-Serre-Ribet 理论的局部输入。$\square$
+**证明路线（外部输入）.** 第 2 项由命题 AD.18 和判别式公式 AD.19 的局部 valuation 给出；半稳定性还需检查素数 $2$ 的标准归一化情形。由于半稳定乘法约化的导子指数为 $1$，得到第 3 项。对 $q\mid abc$，$v_q(\Delta_E)$ 是 $p$ 的倍数；Tate curve 描述说明模 $p$ 惯性扩张类在这些 $q$ 处消失或降为非分歧，从而 residual conductor 删除这些奇素数。素数 $2$ 的剩余贡献由 Tate algorithm 的专门计算给出。完整计算是 Frey-Serre-Ribet 理论的局部输入。$\square$
 
 **命题 AD.21.** 接受 AD.20，则第十章定理 10.11 中的 Frey 曲线局部导子计算成立。
 

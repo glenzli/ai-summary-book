@@ -11,7 +11,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“Bousfield 局部化（Bousfield localization）”。
 - 定义必须先于直觉；例子必须逐项检查对象、结构映射、同伦不变量和局部化条件。
-- 非平凡命题必须给出证明、证明草图，或明确标注为“外部输入定理”；外部输入必须能在 `SOURCES.md` 和 `THEOREM_LEDGER.md` 中定位。
+- 非平凡命题必须给出完整书内证明，或明确标注为“外部输入定理”；证明路线只解释外部输入，不计作书内证明，且外部输入必须能在 `SOURCES.md` 和 `THEOREM_LEDGER.md` 中定位。
 - 不使用“显然”“容易看出”等词跳过关键步骤；短证明也要写出使用的泛性质、cofiber/fiber 序列、局部化定义或谱序列收敛条件。
 - 所有谱、环谱、模谱、同伦群、局部化函子、厚子范畴、形式群、Hopf algebroid、Morava stabilizer group 和连续群上同调必须标明所在范畴和固定素数。
 - 严格区分 $K(n)$-局部、$E(n)$-局部、finite/telescopic 局部、$T(n)$-局部、$p$-局部、$p$-完备和有理化；不得把等价、Bousfield 等价、同伦等价、Quillen 等价和 infinity-范畴等价混用。

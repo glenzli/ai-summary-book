@@ -149,6 +149,18 @@ $$
 $$
 在 $D^b_G(\mathcal N,E)$ 中的对象。由于 $\mu$ proper，也可写为 $\mu_!$。
 
+**外部输入定理 5.15.1（Springer semismallness）.** 对 nilpotent-orbit stratification，Springer map
+$$
+\mu:\widetilde{\mathcal N}\to\mathcal N
+$$
+是 proper semismall，$\widetilde{\mathcal N}$ 光滑、连通且
+$\dim\widetilde{\mathcal N}=\dim\mathcal N$。因此外部输入定理 C.7 给出
+$$
+\mathsf{Spr}\in\operatorname{Perv}_G(\mathcal N,E),
+$$
+且它是 semisimple perverse sheaf。
+来源定位：`SPR-1` 的 Springer-fiber dimension theorem 与 `BBD-SS-1`。本书已证明 properness，但不重证一般 orbit 上的 fiber-dimension inequality。
+
 **外部输入定理 5.16.** Springer sheaf $\mathsf{Spr}$ 带有自然 $W$-作用，并且对 $x\in\mathcal N$，该作用在 Springer fiber cohomology $H^\ast(\mathcal B_x,E)$ 上给出 Springer representation。  
 来源：Springer、Borho-MacPherson、Kazhdan-Lusztig、Chriss-Ginzburg。
 
@@ -157,7 +169,7 @@ $$
 
 ## 本章小结
 
-本章内部构造了 Springer resolution、证明 Springer map proper、定义了 Springer fibers、Steinberg variety 和 convolution。Weyl group action、top Borel-Moore homology 与 $\mathbb C[W]$ 的同构、Springer correspondence 均是核心外部输入。
+本章内部构造了 Springer resolution、证明 Springer map proper、定义了 Springer fibers、Steinberg variety 和 convolution。Springer map 的 semismallness、Springer sheaf 的 perverse semisimplicity、Weyl group action、top Borel-Moore homology 与 $\mathbb C[W]$ 的同构、Springer correspondence 均是核心外部输入。
 
 ## 练习
 

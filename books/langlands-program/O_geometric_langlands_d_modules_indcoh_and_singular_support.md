@@ -96,35 +96,46 @@ $$
 (\operatorname{LocSys}_{\widehat G}(X)).
 $$
 
-**注 O.14.** 这解释了第二十一章中“nilpotent singular support 修正”的动机。若忽略该条件，谱侧范畴通常过大，不能与自动侧 D-modules on $\operatorname{Bun}_G$ 等价。
+**注 O.14.** 这解释了第二十一章中“nilpotent singular support 修正”的动机。若忽略该条件，谱侧范畴通常过大，不能与自动侧 half-twisted D-modules on $\operatorname{Bun}_G$ 等价。
 
 ## O.5 Categorical Geometric Langlands
 
-**猜想 O.15（几何 Langlands，IndCoh 形式）.** 对 smooth projective curve $X$ over characteristic $0$ field 和 reductive group $G$，预期存在范畴等价
+**外部输入定理 O.15（几何 Langlands，IndCoh 形式；特征零 preprint theorem）.** 设 $X/\mathbb C$ 为 smooth projective connected curve，$G/\mathbb C$ 为 connected reductive group。按 Gaitsgory-Raskin proof series 固定第二十一章 21.5 的 half-twisting gerbe、中心、renormalized automorphic category 和 global nilpotent cone 后，来源构造从自动侧到谱侧的函子并证明范畴等价
 $$
-D\operatorname{-mod}(\operatorname{Bun}_G)
-\simeq
+\mathbb L_G:
+\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+\xrightarrow{\sim}
 \operatorname{IndCoh}_{\mathcal N_{\operatorname{glob}}}
 (\operatorname{LocSys}_{\widehat G}(X))
 $$
-在固定 level structure、twisting line bundle、central character 或 gerbe、automorphic category renormalization 和 stack quotient convention 后成立。
+并有相应 Betti 版本；等价与来源中构造的 spectral action、Hecke action 和 parabolic induction 相容。
 
-**外部输入定理 O.16（若干已知情形和构造）.** 几何 Langlands 的范畴形式在若干情形和方向上已有深刻结果，包括：
+**外部输入定理 O.16（技术来源与定理边界）.** O.15 依赖的外部技术链包括：
 
 1. $G$ 为 torus 的几何类域论；
 2. Beilinson-Drinfeld 的 opers 和 Hecke eigensheaves 构造；
-3. Gaitsgory 等关于 D-modules on $\operatorname{Bun}_G$ 和 spectral side 的理论；
-4. Arinkin-Gaitsgory 的 singular support 和 $\operatorname{IndCoh}_{\mathcal N}$ 框架。
+3. Gaitsgory-Rozenblyum 关于 derived stacks、D-modules on $\operatorname{Bun}_G$ 和 renormalization 的理论；half-twist 另按 21.5 与 Gaitsgory-Raskin proof series 固定；
+4. Arinkin-Gaitsgory 的 singular support 和 $\operatorname{IndCoh}_{\mathcal N}$ 框架；
+5. Gaitsgory-Raskin 合作项目五篇 2024 proof-series preprints 中 Langlands functor、fundamental local equivalence、parabolic induction、ambidexterity 和 multiplicity one 的组合。
 
-**命题 O.17.** 若 O.15 成立，则 skyscraper sheaf at a local system $\mathcal E$ 的谱侧对象应对应自动侧 Hecke eigensheaf。
+**外部输入定理 O.16.1（正特征中的部分 $\ell$-adic 结果；preprint theorem）.** Gaitsgory-Raskin 2025 预印本在其精确定义的正特征 unramified $\ell$-adic 设定中，证明带 nilpotent singular support 的 automorphic sheaves 范畴等价于 Langlands 参数栈的某些连通分支之并上的适当 $\operatorname{IndCoh}$ 范畴。该陈述既不把“某些分支”改成“全部分支”，也不把来源中的范畴替换成 naive constructible derived category。
 
-**证明草图.** Hecke functors 在自动侧对应于谱侧 tensor action by representations of $\widehat G$。若取谱侧支撑在点 $\mathcal E$ 的对象，则 tensor by $V$ 产生 fiber $V_{\mathcal E}$ 的线性数据。等价传到自动侧后给出
+**研究边界 O.16.2.** O.15 与 O.16.1 合在一起仍不陈述正特征整个参数栈上的 unrestricted $\ell$-adic、ramified、integral 或 quantum categorical geometric Langlands，也不陈述 Fargues-Scholze local geometrization。Preprint theorem 的来源状态、部分正特征定理和这些未覆盖版本必须分别记录。
+
+**推论 O.17.** 设 local system $\mathcal E$ 的 residual gerbe 点对象 $\delta_{\mathcal E}$ 属于 O.15 的谱侧范畴。则
+$$
+\mathcal F_{\mathcal E}:=\mathbb L_G^{-1}(\delta_{\mathcal E})
+\in\operatorname{DMod}_{1/2}(\operatorname{Bun}_G)
+$$
+满足 Hecke eigensheaf 条件。
+
+**证明.** O.15 的 spectral/Hecke compatibility 说明逆等价 $\mathbb L_G^{-1}$ 把谱侧 tautological tensor action 送回自动侧 Hecke functors。Residual gerbe 点对象在 $V$ 的作用下产生 $V_{\mathcal E}$；逆等价传到自动侧后给出
 $$
 \mathsf H_V(\mathcal F_{\mathcal E})
 \simeq
 \mathcal F_{\mathcal E}\boxtimes V_{\mathcal E},
 $$
-即 Hecke eigensheaf 条件。$\square$
+并继承对 $V$ 的 tensor compatibility，即 Hecke eigensheaf 条件。$\square$
 
 ## O.6 Betti、de Rham 和 de Rham Betti 比较
 
@@ -147,7 +158,7 @@ $$
 3. 谱侧 local systems stack 是 derived 且 singular。
 4. IndCoh 比 QCoh 更适合 singular spectral side。
 5. Nilpotent singular support 条件定义正确大小的谱侧范畴。
-6. Categorical geometric Langlands 应是 $D\operatorname{-mod}(\operatorname{Bun}_G)$ 与 $\operatorname{IndCoh}_{\mathcal N}(\operatorname{LocSys}_{\widehat G})$ 的等价。
+6. 特征零 unramified categorical geometric Langlands 按 O.15 登记为外部 preprint theorem；其 $\mathbb L_G$ 为 half-twisted automorphic $\to$ spectral，反向调用写 $\mathbb L_G^{-1}$。正特征只按 O.16.1 调用某些参数连通分支之并上的部分结果，其他分支、系数、ramification 与 local variants 仍是独立边界。
 
 ## 练习
 

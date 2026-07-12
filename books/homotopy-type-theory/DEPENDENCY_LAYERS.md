@@ -4,7 +4,7 @@
 
 ## L0 内部类型论基础
 
-**内容。** 判断、语境、替换、$\Pi$、$\Sigma$、恒等类型、自然数、空类型、单位类型、和类型、层级宇宙。
+**内容。** 判断、语境、替换、类型转换、$\Pi$、$\Sigma$、恒等类型、J、依赖 transport、自然数、空类型、单位类型、和类型、非累积层级宇宙。
 **文件。** `01`、`02`、`03`、附录 A、D。
 **允许依赖。** 无函数外延性、无单值性、无 HIT、无截断、无选择。
 
@@ -18,13 +18,13 @@
 
 **内容。** 函数外延性、命题外延性、子类型外延性、单值性、Universe 非集合性、SIP。
 **文件。** `06`、`07`、附录 F、H、I、J、AG、T。
-**允许依赖。** L0-L1；univalence 和 funext 必须显式标注为原则、公理、cubical 计算解释或外部输入。
+**允许依赖。** L0-L1；univalence 和 funext 必须显式标注为原则、公理、cubical 计算解释或外部输入。Universe path 不得改写成 judgmental equality，跨层使用不得隐含 cumulativity 或 resizing。
 
 ## L3 HIT、截断与集合商
 
 **内容。** 命题截断、一般截断、集合商、圆、悬挂、pushout、cofiber。
 **文件。** `08`、`09`、`10`、附录 L、AD、AI、AY、BK。
-**允许依赖。** L0-L2；HIT 一般存在性属于外部元理论，具体 HIT 的规则以附录 L 为准。
+**允许依赖。** L0-L2；HIT 一般存在性属于外部元理论，具体 HIT 的形成、消去、宇宙与计算强度以附录 L 为准。CHM 的 judgmental 高维计算只适用于其列举的 cubical 签名。
 
 ## L4 基础合成同伦论
 
@@ -60,7 +60,7 @@
 
 **内容。** Cubical type theory、HIIT/QIIT 元理论、Rezk/Segal types、directed/simplicial type theory、2LTT、cohesive HoTT、模型论。
 **文件。** `15`、`16`、`17`、附录 S、Z、AO、AN、AS、AX、BB、BC、BD、BE、BG、AT。
-**允许依赖。** 可引用前层作为对象语言例子；不得把本层规则回流到 L0-L5 的内部证明。
+**允许依赖。** 可引用前层作为对象语言例子；不得把本层规则回流到 L0-L5 的内部证明。每个模型/元理论输入须列出被解释语法、外部假设、精确结论和非结论；语义相等不扩张对象语言的 judgmental equality。
 
 ## 分层规则
 

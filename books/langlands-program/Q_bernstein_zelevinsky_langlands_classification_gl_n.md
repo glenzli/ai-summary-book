@@ -82,7 +82,7 @@ $$
 
 **命题 Q.11.** 对 `GL(n)`，局部 Langlands 对应的集合双射形式与 Langlands quotient 分类相容。
 
-**证明草图.** 每个 essentially square-integrable $\delta(\Delta)$ 在 LLC 下对应某个不可约 Weil-Deligne 参数 $\phi_\rho$ 张量 special representation $\operatorname{Sp}_\ell$ 并带 unramified twist。Standard module 的诱导对应参数直和：
+**证明路线（外部输入）.** 每个 essentially square-integrable $\delta(\Delta)$ 在 LLC 下对应某个不可约 Weil-Deligne 参数 $\phi_\rho$ 张量 special representation $\operatorname{Sp}_\ell$ 并带 unramified twist。Standard module 的诱导对应参数直和：
 $$
 \phi=\bigoplus_i\phi_{\delta_i}.
 $$

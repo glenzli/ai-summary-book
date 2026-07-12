@@ -187,7 +187,7 @@ $$
    给出；
 3. 复合由 $\mathcal P$ 的 operad composition 给出。
 
-**外部输入定理 18.18.** Nerve
+**外部输入定理 18.18（category-of-operators nerve；HA-OP-1）.** Nerve
 $$
 N(\mathcal P^\otimes)\to N(\mathbf{Fin}_*)
 $$
@@ -197,11 +197,11 @@ $$
 
 ## 18.7 与 dendroidal 模型的比较
 
-**外部输入定理 18.20（Heuts-Hinich-Moerdijk 型比较）.** Dendroidal infinity-operads 与 Lurie-style infinity-operads 之间存在模型比较。更精确地，适当的 dendroidal operadic model structure 与 Lurie preoperads / marked simplicial sets 模型之间通过 Quillen equivalence 或等价的 infinity-category 相联系。
+**外部输入定理 18.20（open dendroidal--Lurie comparison；HHM-1--HHM-5）.** Heuts--Hinich--Moerdijk 在 open/no-constants 语境中，经 simplicial operads、dendroidal sets、forest sets、marked open forest sets 与 Lurie preoperads 构造 Quillen-equivalence zig-zag。具体定位为 Theorems 2.4.1、2.5.1、2.5.3、Corollary 2.5.4 和 Theorem 5.3.14；结论是模型范畴及其 underlying infinity-categories 的等价，不是逐对象相等。
 
-**说明 18.21.** 该比较说明两种模型描述同一同伦理论，但它不允许在证明中把 dendroidal inner horn filler 直接替换为 Lurie operadic fibration 条件。任何跨模型使用的定理都必须说明经过比较等价传递。
+**说明 18.21.** 本书默认允许 arity $0$，而外部输入定理 18.20 的 locator 只覆盖 open/no-constants 子理论。因此含 nullary operations 的对象不得未经处理套用该 zig-zag；必须先限制到 open 部分或另引覆盖 constants 的比较定理。即使在 open 情形，也不能把 dendroidal inner horn filler 直接替换为 Lurie operadic fibration 条件；跨模型结论必须作为比较等价下的不变量传递。
 
-**命题 18.22.** 若一个结论只依赖 infinity-operad 的同伦不变量，并且已知在 dendroidal 模型与 Lurie 模型的比较等价下保持，则可在两个模型之间转移。
+**命题 18.22.** 在外部输入定理 18.20 的 open/no-constants 范围内，若一个结论只依赖 infinity-operad 的同伦不变量，并且已知在该比较等价下保持，则可在两个模型之间转移。
 
 **证明.** 比较定理给出相应 homotopy theories 的等价。Homotopy invariant 的结论可表述为目标 infinity-category 中的等价不变性质。等价函子反映并保持等价，因此该性质在两边对应对象之间传递。$\square$
 

@@ -4,27 +4,29 @@
 
 本附录处理第六章定理 6.11 的证明边界：在单值基础中，univalence 蕴含依赖函数外延性。正文为了保持前几章依赖清晰，仍把函数外延性单独列为基本外延原则；本附录说明若采用“只假设单值性”的口径，函数外延性可作为外部数学定理引入，而不需要额外公理。
 
-**外部定理 T.0.1（单值性推出依赖函数外延性）.** 假设 universe univalence。则对任意 $T:\mathcal U$、$P:T\to\mathcal U$ 和
+**外部定理 T.0.1（单值性推出依赖函数外延性）.** 设 $A:\mathcal U_i$、$P:A\to\mathcal U_j$，并假设分类 fibers $P(a)$ 的宇宙 $\mathcal U_j$ 满足 universe univalence $\mathsf{UA}_j$。则对任意
 $$
-f,g:\prod_{t:T}P(t),
+f,g:\prod_{a:A}P(a),
 $$
 规范映射
 $$
-\mathsf{happly}_{f,g}:(f=g)\to\prod_{t:T}f(t)=g(t)
+\mathsf{happly}_{f,g}:(f=g)\to\prod_{a:A}f(a)=g(a)
 $$
 是等价。
 
+基底 $A$ 不必属于 $\mathcal U_j$。结论类型位于 $\mathcal U_{\max(i,j)}$，而作为对 $A$ 与 $P$ 的层级多态外部定理，其整体声明位于更高宇宙；这里没有使用累积性或 resizing。
+
 ## T.1 陈述层级
 
-**定义 T.1.1（普通函数外延性）.** 对 $X,Y:\mathcal U$ 和 $f,g:X\to Y$，逐点路径
+**定义 T.1.1（普通函数外延性）.** 对 $X:\mathcal U_i$、$Y:\mathcal U_j$ 和 $f,g:X\to Y$，逐点路径
 $$
 \prod_{x:X}f(x)=g(x)
 $$
 推出函数路径 $f=g$。
 
-**定义 T.1.2（依赖函数外延性）.** 对依赖族 $P:T\to\mathcal U$ 和截面 $f,g:\prod_{t:T}P(t)$，逐点路径
+**定义 T.1.2（依赖函数外延性）.** 对 $A:\mathcal U_i$、依赖族 $P:A\to\mathcal U_j$ 和截面 $f,g:\prod_{a:A}P(a)$，逐点路径
 $$
-\prod_{t:T}f(t)=g(t)
+\prod_{a:A}f(a)=g(a)
 $$
 推出截面路径 $f=g$。
 
@@ -34,41 +36,13 @@ $$
 
 ## T.2 证明路线
 
-本书不在正文展开该长证明的全部路径代数，而记录以下标准数学路线。
+本书不把该外部输入伪装成压缩的书内证明。所引用来源把证明分成以下两个精确结果。
 
-**步骤 T.2.1（等价预合成保持函数空间）.** 若 $w:X\simeq X'$，则预合成
-$$
-(X'\to Y)\to(X\to Y),\qquad h\mapsto h\circ w
-$$
-是等价。
+**外部步骤 T.2.1（弱函数外延性）.** HoTT Book 定义 4.9.1 的弱函数外延性断言：对任意基底 $A$ 和 $P:A\to\mathcal U_j$，若每个 $P(a)$ 可收缩，则 $\prod_{a:A}P(a)$ 可收缩。定理 4.9.4 从 $\mathsf{UA}_j$ 推出该原则。
 
-**证明说明.** 由单值性把 $w$ 转为类型路径；沿类型路径的 transport 在函数空间上给出预合成。反身路径情形为恒等函数，故由路径归纳得到一般情形。$\square$
+**外部步骤 T.2.2（弱形式推出强形式）.** HoTT Book 定理 4.9.5 在不再使用单值性的前提下，从弱函数外延性推出：对所有 $P:A\to\mathcal U_j$ 与截面 $f,g$，$\mathsf{happly}_{f,g}$ 是等价。
 
-**步骤 T.2.2（path space 投影给普通函数外延性）.** 对任意 $Y$，路径空间
-$$
-\sum_{y_0,y_1:Y}(y_0=y_1)
-$$
-带有两个端点投影。利用 T.2.1 对这些投影的相应等价性，可把逐点路径族提升为非依赖函数路径。
-
-**证明说明.** 关键是把“端点投影上的纤维可收缩”转译为函数空间中的路径提升。该转译只使用单值性、等价预合成和路径归纳。$\square$
-
-**步骤 T.2.3（可收缩族的函数空间可收缩）.** 若每个 $P(x)$ 可收缩，则
-$$
-\prod_{x:X}P(x)
-$$
-可收缩。
-
-**证明说明.** 中心取逐点中心；任意截面到中心截面的路径由普通函数外延性逐点给出。$\square$
-
-**步骤 T.2.4（contractible cone 推出强依赖函数外延性）.** 固定 $g:\prod_{t:T}P(t)$。类型
-$$
-\sum_{f:\prod_{t:T}P(t)}(f=g)
-$$
-由路径类型的基本性质可收缩。另一方面，类型
-$$
-\sum_{f:\prod_{t:T}P(t)}\prod_{t:T}f(t)=g(t)
-$$
-也由 T.2.3 可收缩。两者之间的规范映射第一分量为恒等，第二分量为 $\mathsf{happly}$；两个可收缩类型之间的规范映射是等价，因此 $\mathsf{happly}$ 是等价。
+**来源与未重证边界.** T.0.1 是 HoTT Book 第 4.9 节、尤其定理 4.9.4 与 4.9.5 的合成。本书在此只记录精确输入、层级和依赖，不重证其中关于 pointed universe、retract 和 contractible total space 的长构造。因此后文只能把 T.0.1 作为外部输入使用，不能把 T.2.1-T.2.2 称为书内证明。
 
 ## T.3 本书采用方式
 
@@ -81,4 +55,4 @@ $$
 
 ## T.4 引用边界
 
-T.0.1 是关于 universe univalence 的定理，不能由 categorical univalence、weak univalence 或某个模型中的弱相似原则替代。凡引用“单值性推出函数外延性”，必须确认所用单值性是第六章的类型等价到类型路径的强形式。
+T.0.1 是关于 fiber universe $\mathcal U_j$ 的 universe univalence 定理，不能由 categorical univalence、directed univalence 或某个模型中的弱相似原则替代。凡引用“单值性推出函数外延性”，必须确认所用单值性是第六章的类型等价到 universe path 的强形式，并记录它作用的 fiber universe。

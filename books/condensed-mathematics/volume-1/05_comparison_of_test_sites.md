@@ -66,7 +66,7 @@ $$
 
 是范畴等价。
 
-**证明思路.** sheaf 由其在覆盖基上的取值决定。给定 $\mathcal C$ 上的 sheaf，限制到 $\mathcal D$ 后，对 $\mathcal D$ 中的覆盖族仍满足同一等化子条件，因此得到 $\mathcal D$ 上的 sheaf。反过来，给定 $\mathcal D$ 上的 sheaf $F$，对 $U\in\mathcal C$ 选择 $\mathcal D$-覆盖 $\{D_i\to U\}$，并定义 $F(U)$ 为匹配族集合：
+**证明.** sheaf 由其在覆盖基上的取值决定。给定 $\mathcal C$ 上的 sheaf，限制到 $\mathcal D$ 后，对 $\mathcal D$ 中的覆盖族仍满足同一等化子条件，因此得到 $\mathcal D$ 上的 sheaf。反过来，给定 $\mathcal D$ 上的 sheaf $F$，对 $U\in\mathcal C$ 选择 $\mathcal D$-覆盖 $\{D_i\to U\}$，并定义 $F(U)$ 为匹配族集合：
 
 $$
 F(U)=
@@ -153,6 +153,12 @@ $$
 \simeq
 \operatorname{Sh}(\mathbf{ProFin}_{\mathcal U},J_{\operatorname{surj}}).
 $$
+
+**证明.** 定理 5.6 说明全子范畴
+$\mathbf{ProFin}_{\mathcal U}\subset\mathbf{CHaus}_{\mathcal U}$
+满足定理 5.2 的稳定基条件：每个紧 Hausdorff 空间有来自 profinite
+空间的覆盖，并且任意有限覆盖在拉回后仍可由 profinite 覆盖共同细化。
+因此定理 5.2 的限制函子正是上式中的等价。证毕。
 
 因此也可以定义
 

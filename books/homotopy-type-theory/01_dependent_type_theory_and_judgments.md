@@ -85,7 +85,25 @@ $$
 4.  合同性：类型和项构造尊重 judgmental equality。
 5.  替换稳定性：若 $a\equiv b:A$，则把 $a$ 或 $b$ 替入同一表达式得到 judgmentally equal 的结果。
 
-**警告 1.10.** $a\equiv b:A$ 与 $a=_A b$ 不同。前者是判断，后者是类型。若 $p:a=_A b$，则 $p$ 是一条路径；它一般不使 $a$ 与 $b$ judgmentally equal。
+这些性质只说明 judgmental equality 如何传播；它的生成元来自各类型构造的计算规则，例如 $\Pi$ 型的 $\beta$ 规则。不能因为在元语言中相信两个项表示同一数学对象，就把它们添加为 judgmental equality。
+
+**规则 1.9.1（类型转换）.** 若
+
+$$
+\Gamma\vdash A\equiv B:\mathcal U_i
+\qquad\text{且}\qquad
+\Gamma\vdash a:A,
+$$
+
+则可得 $\Gamma\vdash a:B$。这里 $A\equiv B:\mathcal U_i$ 是宇宙中的 judgmental equality；转换不要求额外的证明项。类似地，项的 judgmental equality 可沿 judgmentally equal 的类型转换。
+
+**警告 1.10（两种相等不可反射）.** $a\equiv b:A$ 与 $a=_A b$ 不同。前者是元层判断，后者从第二章开始是内部类型。若 $a\equiv b:A$，则第二章引入恒等类型后，规则 1.9.1 允许反身项 $\mathsf{refl}_a$ 具有类型 $a=_A b$；反向一般不成立：
+
+$$
+p:a=_A b\quad\not\Rightarrow\quad a\equiv b:A.
+$$
+
+本书不采用 equality reflection，也不把所有路径证明压成 judgmental equality。除非某条类型规则明确声明，本书同样不默认 $\eta$-等式，例如不默认 $\lambda x.\,f(x)\equiv f$。
 
 ## 1.4 宇宙
 
@@ -95,9 +113,30 @@ $$
 \Gamma\vdash \mathcal U_i:\mathcal U_{i+1}.
 $$
 
-**约定 1.12.** 若 $\Gamma\vdash A:\mathcal U_i$，也说 $A$ 是一个 $i$-小类型。本书默认追踪宇宙层级；若公式中不显示层级，是因为层级可由上下文恢复，而不是因为不存在大小问题。
+**约定 1.12（predicative、非累积宇宙口径）.** 若 $\Gamma\vdash A:\mathcal U_i$，也说 $A$ 是一个 $i$-小类型。本书采用以下固定口径。
 
-**警告 1.13.** 本章不假设 $\mathcal U_i:\mathcal U_i$，否则会引入 Girard 悖论风险。也不默认 universe resizing。
+1.  不从 $A:\mathcal U_i$ 自动推出 $A:\mathcal U_j$，即使 $i<j$；默认宇宙不是累积的。
+2.  $\Pi$、$\Sigma$ 和恒等类型的层级由各自形成规则直接给出，不借助未声明的累积性。
+3.  若某章需要把低层类型放入高层宇宙，必须在那里声明具体的 universe lift 及其等价；本章没有隐式 lift。
+4.  不采用 universe resizing；一个高层类型与低层类型等价，并不把前者自动变成低层类型。
+
+**定义 1.12.1（小族与总空间的层级）.** 若
+
+$$
+\Gamma\vdash A:\mathcal U_i,
+\qquad
+\Gamma,x:A\vdash B(x):\mathcal U_j,
+$$
+
+则称 $B$ 为 $A$ 上的 $j$-小类型族，意思是每个 fiber $B(x)$ 都在 $\mathcal U_j$ 中。若把该族写成宇宙值函数 $B:A\to\mathcal U_j$，则这个函数项本身位于
+
+$$
+\mathcal U_{\max(i,j+1)},
+$$
+
+因为 $\mathcal U_j:\mathcal U_{j+1}$。另一方面，下面的形成规则将 $\prod_{x:A}B(x)$ 和 $\sum_{x:A}B(x)$ 放在 $\mathcal U_{\max(i,j)}$。这两个层级陈述不能混同。
+
+**警告 1.13.** 本章不假设 $\mathcal U_i:\mathcal U_i$。宇宙本身比其所分类的小类型高一层；忽略这一点会破坏 predicativity，并带来 Girard 悖论一类的不一致风险。
 
 ## 1.5 依赖函数类型
 
@@ -171,7 +210,7 @@ $$
 \Gamma\vdash \mathsf{pr}_2(z):B(\mathsf{pr}_1(z)).
 $$
 
-**规则 1.24（$\Sigma$ 计算）.** 若 $z\equiv(a,b)$，则
+**规则 1.24（$\Sigma$ 计算）.** 对任意 $a:A$ 和 $b:B(a)$，有
 
 $$
 \mathsf{pr}_1(a,b)\equiv a:A
@@ -185,7 +224,7 @@ $$
 
 **定义 1.25.** 若 $B$ 不依赖于 $x:A$，则 $\sum_{x:A}B$ 记为 $A\times B$。
 
-**命题 1.26（非依赖二元积的消去）.** 若 $C:\mathcal U_k$，且在语境 $x:A,y:B$ 中有 $c(x,y):C$，则存在函数
+**命题 1.26（非依赖二元积的消去）.** 设 $A:\mathcal U_i$、$B:\mathcal U_j$、$C:\mathcal U_k$，且在语境 $x:A,y:B$ 中有 $c(x,y):C$。则存在函数
 
 $$
 h:A\times B\to C

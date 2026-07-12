@@ -85,7 +85,7 @@ a_n(T_\ell f)=a_{\ell n}(f)+\ell^{k-1}a_{n/\ell}(f)
 $$
 在 trivial character 且 $\ell\nmid N$ 的情形成立。
 
-**证明草图.** 双陪集分解
+**证明路线（外部输入）.** 双陪集分解
 $$
 \Gamma_0(N)\begin{pmatrix}1&0\\0&\ell\end{pmatrix}\Gamma_0(N)
 =\bigsqcup_{b\bmod\ell}\Gamma_0(N)\begin{pmatrix}1&b\\0&\ell\end{pmatrix}
@@ -135,7 +135,7 @@ $$
 
 **命题 W.18.** Atkin-Lehner sign 是局部 root number 的 classical shadow。
 
-**证明草图.** Newform $f$ 的 Mellin transform 给出 completed L-function。Fricke/Atkin-Lehner involution 在积分变量 $z\mapsto-1/(Nz)$ 下把 $s$ 与 $k-s$ 交换，产生 functional equation 的符号。Adelic 解释中该符号分解为局部 epsilon factors，故 classical Atkin-Lehner eigenvalue 记录坏素数处的局部 root number 数据。$\square$
+**证明路线（外部输入）.** Newform $f$ 的 Mellin transform 给出 completed L-function。Fricke/Atkin-Lehner involution 在积分变量 $z\mapsto-1/(Nz)$ 下把 $s$ 与 $k-s$ 交换，产生 functional equation 的符号。Adelic 解释中该符号分解为局部 epsilon factors，故 classical Atkin-Lehner eigenvalue 记录坏素数处的局部 root number 数据。$\square$
 
 ## W.7 费马应用中的级 $2$ 矛盾
 

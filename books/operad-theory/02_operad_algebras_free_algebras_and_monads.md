@@ -166,10 +166,11 @@ $$
 $$
 T=\coprod_{s\in S}T_s
 $$
-并令 $\pi$ 为由子集 $T_s\subset T$ 组成的分块。块集合 $\operatorname{Bl}(\pi)$ 与 $S$ 有 canonical bijection
+并令
 $$
-\lambda:S\to\operatorname{Bl}(\pi),\qquad s\mapsto T_s.
+q:T\longrightarrow S
 $$
+为不交并的典范投影，所以 $q^{-1}(s)$ 是带标签的 $T_s$ 副本；允许 $T_s=\varnothing$，此时 $s$ 仍是目标中的一个输入槽，只是该槽的纤维为空。
 令
 $$
 a:T\to A
@@ -179,13 +180,13 @@ $$
 p\cdot(x_s)_{s\in S}
 =
 \left[
-\mu_\pi\big(\mathcal O(\lambda)(p);(o_s)_{s\in S}\big);
+\mu_q\big(p;(o_s)_{s\in S}\big);
 a:T\to A
 \right],
 $$
-其中 $\mu_\pi$ 是 $\mathcal O$ 沿分块 $\pi$ 的 operad 复合。
+其中 $\mu_q$ 是 $\mathcal O$ 沿有限集映射 $q$ 的 operad 复合。
 
-若选择 $S=[k]$ 和 $T_s=[n_s]$，这一定义就是坐标公式
+若选择 $S=[k]$ 和 $T_s=[n_s]$（$n_s\ge0$），这一定义就是坐标公式
 $$
 p\cdot(x_1,\ldots,x_k)
 =
@@ -217,13 +218,15 @@ $$
 T=\coprod_{t\in S}T_t\longrightarrow
 T'=\left(\coprod_{t\ne s}T_t\right)\coprod T'_s
 $$
-为在 $T_s$ 上等于 $\theta$、在其他块上为恒等的双射。Operad 复合的自然性给出
+为在 $T_s$ 上等于 $\theta$、在其他 summands 上为恒等的双射。令 $q:T\to S$ 与 $q':T'\to S$ 为典范投影，则 $q'\Theta=q$。Operad 复合的自然性给出
 $$
-\mu_{\pi'}\big(\mathcal O(\lambda')(p);(o'_s,o_t)_{t\ne s}\big)
+\mu_{q'}\big(p;(o'_s,o_t)_{t\ne s}\big)
 =
 \mathcal O(\Theta)\,
-\mu_{\pi}\big(\mathcal O(\lambda)(p);(o_s,o_t)_{t\ne s}\big).
+\mu_q\big(p;(o_s,o_t)_{t\ne s}\big).
 $$
+记右端被 $\mathcal O(\Theta)$ 作用前的元素为
+$u=\mu_q(p;(o_s,o_t)_{t\ne s})\in\mathcal O(T)$。
 同时新的输入函数 $a':T'\to A$ 满足
 $$
 a=a'\circ\Theta.
@@ -262,10 +265,11 @@ $$
 $$
 其中最后一步使用 operad 单位律。
 
-结合律：设 $p\in\mathcal O(k)$，$q_i\in\mathcal O(n_i)$，且每个输入又写成
+结合律：设 $p\in\mathcal O(k)$，$q_i\in\mathcal O(n_i)$，其中 $n_i\ge0$，且每个输入又写成
 $$
 y_{ij}=[r_{ij};a^{ij}_1,\ldots,a^{ij}_{m_{ij}}].
 $$
+这里 $m_{ij}\ge0$。即使某个 $n_i$ 或 $m_{ij}$ 为零，空纤维仍保留相应外层槽。
 先用 $q_i$ 作用再用 $p$ 作用，得到的外层 operad 元素是
 $$
 \gamma\big(p;\gamma(q_1;r_{11},\ldots,r_{1n_1}),\ldots,

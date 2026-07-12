@@ -58,7 +58,7 @@ $$
 $$
 在适当 grading 下成立。
 
-**证明草图.** Floer cochain 由命题 9.7 的交点生成。二维直线环面模型中可选择使差分消失或按 grading 分离的情形；更一般情形需计算 strips 并使用 continuation。完整陈述依赖椭圆曲线 HMS 文献中的模型选择。证毕。
+**证明路线（外部输入）.** Floer cochain 由命题 9.7 的交点生成。二维直线环面模型中可选择使差分消失或按 grading 分离的情形；更一般情形需计算 strips 并使用 continuation。完整陈述依赖椭圆曲线 HMS 文献中的模型选择。证毕。
 
 **解释 9.9.** B-side 上，stable bundles $V_{r,d}$、$V_{r',d'}$ 的 Ext 维数由 Riemann-Roch 和稳定性控制：
 $$

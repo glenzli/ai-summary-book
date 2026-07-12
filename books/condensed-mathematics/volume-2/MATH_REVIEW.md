@@ -28,17 +28,19 @@
 20. solid localization 的 Dirac-to-measure cone、生成核、solidification 泛性质和张量理想输入。
 21. analytic descent、rational localization、rational Čech descent 和对象/态射 gluing 的证明义务。
 22. 可展示稳定局部化的幂等性、local/acyclic 正交、正合 kernel、局部等价和幺半下降的形式证明。
-23. Fréchet 复形闭值域、Fredholm 有限性、liquid realization 与 Dolbeault 类型检查。
+23. Fréchet 复形闭值域、局部提升严格性、Fredholm 有限性与 Dolbeault 类型检查。
 24. Solid 主定理包：solid 局部对象、反射局部化、solid 张量、solid 环、solid 模和生成元检验。
 25. Analytic 主定理包：analytic 局部对象、analyticization、analytic 张量、Huber pair、rational localization 和 Čech descent。
-26. Liquid 主定理包：\(p\)-liquid analytic ring、liquid realization、闭值域 Fréchet 复形、Fredholm cohomology 和 Dolbeault 类型闭合。
+26. Liquid 主定理包：\(p\)-liquid analytic ring、经典空间 membership、严格
+Fréchet 复形、Fredholm cohomology 和 Dolbeault 类型闭合。
 27. Solid/analytic/liquid 统一闭包定理：四层主线、输入总表、第二卷主线闭包和第三卷接口规则。
 28. 出版级闭包审查：逐项检查 solid、analytic、liquid 主线的定义、输入、证明、边界、接口和练习答案状态。
 29. Solidification 反射存在性证明模块：集合生成局部化、Dirac-to-measure cone 正交、\(K_S\)-局部对象和 Scholze solidification 识别边界。
 30. Solid 核张量理想性证明模块：张量理想生成元判别、凝聚生成族、profinite 测度张量计算和 Nöbeling 定理的位置。
 31. Analytic localization 证明模块：analytic cone、反射局部化、analyticization 泛性质、analytic tensor 和 solid 特例比较。
 32. Rational descent 证明模块：Čech nerve、mapping space descent、对象 gluing、compact generation descent 和 Huber rational acyclicity 输入。
-33. Liquid realization 证明模块：拓扑向量空间凝聚化、liquid realization exactness、闭值域 Fréchet cohomology 比较、Fredholm perfect 性和 Dolbeault 类型闭合。
+33. 经典空间 liquid 接口模块：拓扑向量空间凝聚化、membership、局部提升
+exactness、Fréchet cohomology 比较、Fredholm perfect 性和 Dolbeault 类型闭合。
 34. Scholze 与 Clausen-Scholze 核心定理图谱：把 condensed、solid、analytic、liquid、\(f_!\)、复几何建模、有限性、对偶、GAGA 和 HRR/GRR 明确列为凝聚数学主线核心。
 
 ## 外部输入定理

@@ -41,6 +41,12 @@ $\square$
 
 **推论 L.2.** 若 $\lambda\in\mathbb Z_{\ge0}$，则 $f^{\lambda+1}v_\lambda$ 是 singular vector，生成 proper submodule。
 
+**证明.** 在 L.1 的公式中取 $n=\lambda+1$，系数
+$(\lambda+1)(\lambda-(\lambda+1)+1)$ 为零，故
+$e f^{\lambda+1}v_\lambda=0$。该向量权为
+$\lambda-2(\lambda+1)=-\lambda-2$，与最高权向量权不同；它生成的
+最高权子模不含 $v_\lambda$，所以是 proper submodule。$\square$
+
 ## L.2 $SL_2$ Springer fiber
 
 **命题 L.3.** 对 $G=SL_2$，非零 nilpotent $x$ 的 Springer fiber 是一点。
@@ -70,4 +76,3 @@ $$
 LG/L^+G=\mathbb C((z))^\times/\mathbb C[[z]]^\times\simeq\mathbb Z.
 $$
 每个连通分支是一点。Satake category 等价于 $\mathbb Z$-graded finite-dimensional vector spaces，卷积对应 grading 相加。Langlands dual group 仍为 $GL_1$，其表示按 characters $\mathbb Z$ 分解。这给出 geometric Satake 的最小检验例。
-

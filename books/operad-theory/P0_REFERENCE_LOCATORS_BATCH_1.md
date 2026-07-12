@@ -17,7 +17,7 @@
 
 **定位 BM-1.** arXiv:math/0206094v3, Theorem 3.1.
 
-**本书使用.** 第十四章中“operads in a symmetric monoidal model category 有 transferred model structure”的外部输入。
+**本书使用.** 第十四章中“operads in a symmetric monoidal model category 有 transferred model structure”的外部输入，并分别支撑外部输入定理 15.9 与 15.15 对 simplicial sets/topological spaces 的 Hopf-interval 特化。
 
 **需要同时记录的假设.**
 

@@ -57,7 +57,7 @@ $$
 
 **定义 Z.13（normalization）.** Normalization 断言项可按给定归约关系化为正规形。Normalization 通常强于 canonicity，但具体关系取决于系统。
 
-**定理 Z.14（canonicity 是元定理）.** Canonicity、normalization 和 type checking decidability 是关于类型论语法与归约系统的元语言定理，不是本书对象语言中的一般构造原则。
+**元理论边界 Z.14（canonicity 的层级）.** Canonicity、normalization 和 type checking decidability 是关于类型论语法与归约系统的元语言性质，不是本书对象语言中的一般构造原则。
 
 **使用边界。** 第十六章引用 canonicity 时，只说明某类 cubical 系统具有良好计算行为；它不允许在前文证明中把任意闭自然数项直接替换为 numeral，除非当前章节明确采用对应归约关系。
 

@@ -10,19 +10,29 @@
 
 ## 3.1 Constructible derived categories
 
-**约定 3.1.** 本章固定一个 sheaf theory 模型。若 $k=\mathbb C$，可使用 classical topology 上的 $E$-vector sheaves。若 $k$ 任意且 $\ell\ne\operatorname{char}k$，可使用 $\ell$-adic constructible sheaves。正文中不在同一证明里混用两种模型。
+**约定 3.1（本章的 Betti 模型）.** 本章固定 $k=\mathbb C$，并固定特征为 $0$ 的系数域 $E$。除非另行声明，$X,Y$ 是分离、有限型复代数 scheme，层实际定义在解析空间 $X^{\mathrm{an}}$ 的 classical topology 上；“constructible”总指对某个有限代数分层 constructible。所有 local systems 都要求 stalk 为有限维 $E$-向量空间。
 
-**定义 3.2.** 给定带有限分层
+本章的结论因此不自动包含 $\ell$-adic 版本。若后文改用 $\ell$-adic sheaves，必须重新声明底域、素数 $\ell\ne\operatorname{char}k$、系数域和 Tate twist，并引用该模型的六函子与 perverse formalism；两种模型之间没有未声明的 comparison functor。
+
+**定义 3.2.** 给定有限代数分层
 $$
 X=\coprod_{\alpha\in A}X_\alpha
 $$
-的代数簇，$D^b_c(X,E)$ 表示这样的有界导出范畴：其对象 $\mathcal F$ 的 cohomology sheaves 在每个 stratum $X_\alpha$ 上为局部常值且有限秩。
+，其中每个 $X_\alpha$ 是光滑、连通、locally closed subvariety，令
+$$
+D^b_{\mathscr S}(X,E)\subset D^b(E_{X^{\mathrm{an}}})
+$$
+为这样的 full triangulated category：$\mathcal F$ 的每个 cohomology sheaf 在每个 $X_\alpha^{\mathrm{an}}$ 上局部常值、stalk 有限维，且只有有限多个 cohomological degrees 非零。$D^b_c(X,E)$ 表示允许有限分层加细后所得的 constructible category。符号 $H^i(\mathcal F)$ 表示 standard t-structure 的 cohomology sheaf，$\mathbb H^i(X,\mathcal F)$ 表示 hypercohomology；二者不得混写。
 
-**定义 3.3.** 若代数群 $H$ 作用于 $X$ 并保持分层，则
+**定义 3.3.** 令复代数群 $H$ 左作用于 $X$ 并保持分层。本书取 Bernstein--Lunts finite-dimensional approximation 与 quotient-stack construction 相容的 Betti 模型，并记
 $$
 D^b_H(X,E)=D^b_c([X/H],E)
 $$
-表示 $H$-equivariant constructible derived category。等价地，可把对象看作 $\mathcal F\in D^b_c(X,E)$ 连同作用图
+为 $H$-equivariant constructible derived category。沿 atlas $u:X\to[X/H]$ 的拉回给出 forgetful functor
+$$
+\operatorname{For}_H:D^b_H(X,E)\longrightarrow D^b_c(X,E).
+$$
+在普通 1-categorical 记号中，一个等变对象可缩写为 $\mathcal F\in D^b_c(X,E)$ 连同作用图
 $$
 a:H\times X\to X,\qquad p:H\times X\to X
 $$
@@ -30,26 +40,32 @@ $$
 $$
 a^\ast\mathcal F\simeq p^\ast\mathcal F
 $$
-并满足 cocycle condition。
+及 cocycle condition；严格地说，导出对象需要沿 nerve $H^\bullet\times X$ 的 coherent descent datum，单独写出一个同构并不足以定义对象。后文所有 pullback、pushforward 和卷积都在这个已固定模型中进行。
 
 **命题 3.4.** 若 $X=H/K$，则在附录 A 的假设下，$D^b_H(X,E)\simeq D^b(BK,E)$。
 
-**证明.** 由命题 A.8 有 quotient stack 等价 $[H/K/H]\simeq BK$。对等价的 stacks 应用 constructible derived category functor 得到所需等价。若采用 descent datum 口径，则 $H$-equivariant sheaf on $H/K$ 被基点纤维和 $K$-monodromy 完全决定，得到同一结论。$\square$
+**证明.** 命题 A.8 给出 quotient stack 的等价
+$$
+[(H/K)/H]\simeq BK.
+$$
+constructible derived category 对 stack equivalence 不变，故拉回给出所述三角范畴等价，其准逆由反向 stack equivalence 的拉回给出；两个复合由 stack 等价的 2-isomorphisms 自然同构于恒等函子。$\square$
+
+**类型警告 3.4.1.** 命题 3.4 的右侧是 sheaves on $BK$，不是 algebraic representations of $K$。例如 Betti 模型中若 $K$ 连通，则 $\pi_1(BK)\simeq\pi_0(K)=1$，所以 $BK$ 上的不可约 local system 只有常值秩一对象，而连通 reductive $K$ 通常有许多非平凡代数表示。有限稳定子情形才直接恢复有限群的表示；详见推论 A.9。
 
 ## 3.2 六函子和 Verdier duality
 
-**约定 3.5.** 对 morphism $f:X\to Y$，本书把
+**约定 3.5.** 对分离、有限型 morphism $f:X\to Y$，本书把
 $$
 f^\ast,\ f_\ast,\ f_!,\ f^!
 $$
-均视为导出 functor。未导出 functor 不使用相同符号。
+均视为 Betti constructible categories 上的 derived functors；若需要强调，可写 $Rf_\ast$ 与 $Rf_!$。存在自然比较 morphism $f_!\to f_\ast$，当 $f$ proper 时它是自然同构。未导出 functor 不使用相同符号。
 
-**外部输入定理 3.6.** 在 constructible sheaf theory 的标准假设下，六函子满足 adjunctions
+**外部输入定理 3.6（Betti 六函子）.** 在约定 3.1 和 3.5 的范围内，六函子保持 constructibility，并满足 adjunctions
 $$
 f^\ast\dashv f_\ast,\qquad f_!\dashv f^!,
 $$
-proper base change、projection formula 和 Verdier duality compatibility。  
-来源：BBD、Kashiwara-Schapira 或相应 l-adic six-functor formalism。
+base change、projection formula、Kunneth compatibility 和 Verdier duality compatibility。若使用 $\ast$-base-change 的 proper 版本，则相应竖直 morphism 必须 proper；$!$-base-change 按六函子 formalism 的版本调用。
+来源定位：`BBD-1` 与 Kashiwara--Schapira；本书不重证六函子 formalism。
 
 **定义 3.7.** Verdier duality 定义为
 $$
@@ -73,7 +89,7 @@ $$
 
 ## 3.3 Perverse t-structure
 
-**定义 3.9.** 假设 $X$ 为复代数簇或具有合适维数函数的 $k$-簇。middle perversity 的 aisle 和 co-aisle 由条件
+**定义 3.9.** 对约定 3.1 中的复代数簇 $X$，middle perversity 的 aisle 和 co-aisle 由条件
 $$
 {}^pD^{\le0}(X)=
 \{\mathcal F\mid \dim\{x\in X\mid H^i(i_x^\ast\mathcal F)\ne0\}\le -i,\ \forall i\}
@@ -97,6 +113,14 @@ $$
 H^i(j_\alpha^!\mathcal F)=0\quad(i< -d_\alpha).
 $$
 
+**约定 3.9.1（等变 perversity）.** 对有限维复代数群 $H$ 的作用，本书定义
+$$
+\operatorname{Perv}_H(X,E)
+=\{\mathcal F\in D^b_H(X,E)\mid
+\operatorname{For}_H(\mathcal F)\in\operatorname{Perv}(X,E)\}.
+$$
+也就是说，forgetful functor 按定义 t-exact，不额外加入 $\dim H$ shift。这与直接按 stack dimension 给 $[X/H]$ 归一化不是同一句话：atlas $X\to[X/H]$ 光滑、相对维数 $\dim H$，而 intrinsic stack convention 通常使 $u^\ast[\dim H]$ t-exact。第十二章的 pro-algebraic $L^+G$-equivariance 将在有限维支撑和有限商上采用本约定。
+
 **外部输入定理 3.10.** 上述条件定义 $D^b_c(X,E)$ 上的 t-structure，其心 $\operatorname{Perv}(X,E)$ 是 artinian and noetherian abelian category，在有限分层和有限系数条件下有有限长度。  
 来源：BBD。
 
@@ -110,9 +134,13 @@ $$
 
 **例 3.12.** 若 $X=\mathbb A^1$，则常值 sheaf $E_X[1]$ 是 perverse sheaf，而 $E_X$ 不是 perverse sheaf。原因是唯一 open stratum 维数为 $1$，perverse normalization 要求局部系统放在 cohomological degree $-1$。
 
-**命题 3.13.** 对闭嵌入 $i:Z\hookrightarrow X$，若 $Z$ 光滑纯维数 $d$，则 $i_\ast E_Z[d]$ 是支撑在 $Z$ 上的 perverse sheaf，前提是 $i_\ast$ 对闭嵌入保持 perverse sheaves。
+**命题 3.13.** 令 $i:Z\hookrightarrow X$ 为复代数簇的闭嵌入。对任意 $\mathcal P\in\operatorname{Perv}(Z,E)$，有
+$$
+i_!\mathcal P\simeq i_\ast\mathcal P\in\operatorname{Perv}(X,E),
+$$
+且 $i_\ast$ 在 perverse hearts 上 fully faithful。特别地，若 $Z$ 光滑纯维数 $d$，则 $i_\ast E_Z[d]$ 是支撑在 $Z$ 上的 perverse sheaf。
 
-**证明.** 由命题 3.11，$E_Z[d]$ 在 $Z$ 上 perverse。闭嵌入满足 $i_\ast=i_!$，且 BBD formalism 中闭嵌入的 $i_\ast$ 是 t-exact 的外部输入。因此 $i_\ast E_Z[d]$ perverse。该命题的内部部分是 shift 检查；t-exactness 属于 perverse formalism。$\square$
+**证明.** 闭嵌入是 proper，故约定 3.5 给出 $i_!\simeq i_\ast$。BBD perverse formalism 中闭嵌入的 $i_\ast$ 是 t-exact 且 derived-level fully faithful，这是外部输入 `BBD-1` 的一部分，因此其在 hearts 上也 fully faithful。最后，对光滑 $Z$，命题 3.11 给出 $E_Z[d]\in\operatorname{Perv}(Z,E)$，代入一般结论即可。$\square$
 
 ## 3.4 Intersection complexes
 
@@ -131,31 +159,64 @@ $$
 $$
 由于 $X_w\simeq\mathbb A^{\ell(w)}$，其常值 sheaf shift 为 $E_{X_w}[\ell(w)]$。
 
-**命题 3.17.** 若 $\overline S$ 光滑且 $S$ 是其 dense open stratum，边界 codimension 至少为 $1$，则
+**命题 3.17.** 若 $\overline S$ 光滑、连通、纯维数为 $d$，且 $S\subset\overline S$ 是非空 dense open stratum，则
 $$
-\operatorname{IC}(\overline S,E_S)\simeq E_{\overline S}[\dim S].
+\operatorname{IC}(\overline S,E_S)\simeq E_{\overline S}[d].
 $$
 
-**证明.** 因为 $\overline S$ 光滑连通纯维数 $\dim S$，命题 3.11 给出 $E_{\overline S}[\dim S]$ perverse。其限制到 $S$ 为 $E_S[\dim S]$。光滑常值 sheaf 没有支撑在边界上的 perverse subobject 或 quotient；这一点可由 local normal slice 的 perverse support/cosupport 条件验证，或作为 middle extension formalism 的标准结论。由 middle extension 的唯一性得到同构。$\square$
+**证明.** 命题 3.11 给出 $E_{\overline S}[d]\in\operatorname{Perv}(\overline S,E)$。把定理 3.15 用于 identity stratum $\overline S\hookrightarrow\overline S$ 和不可约秩一 local system $E_{\overline S}$，可知该 perverse sheaf 是 simple。它限制到 $S$ 正是 $E_S[d]$。
+
+若 $\mathcal Q\subset E_{\overline S}[d]$ 是支撑在边界上的 perverse subobject，则 simplicity 强迫 $\mathcal Q=0$ 或 $\mathcal Q=E_{\overline S}[d]$；后一种情形限制到 $S$ 后会得到 $0=E_S[d]$，矛盾，故 $\mathcal Q=0$。对支撑在边界上的 quotient 使用同一 simplicity 论证，也只能得到零对象。因此 $E_{\overline S}[d]$ 满足 middle extension 的无边界 subobject/quotient 刻画。由定理 3.15 的唯一性，
+$$
+j_{!*}E_S[d]\simeq E_{\overline S}[d].
+$$
+这就是所需同构。$\square$
 
 ## 3.5 Decomposition theorem 的边界
 
-**外部输入定理 3.18.** Decomposition theorem：对复代数簇的 proper map $f:X\to Y$，若 $X$ 光滑或更一般地取 semisimple perverse sheaf 输入，则 $Rf_\ast$ 分解为 shifted semisimple perverse sheaves 的直和，并满足相对 hard Lefschetz。  
-用途：Springer theory、IC sheaves、KL positivity、geometric Satake。来源：BBD 或 Saito mixed Hodge modules 版本。
+**外部输入定理 3.18（本书使用的 Betti decomposition package）.** 令 $f:X\to Y$ 为复代数簇之间的 proper algebraic morphism，$E$ 为特征 $0$ 域，$X$ 为不可约复代数簇，$\operatorname{IC}_X$ 取定义 3.14 的 perverse normalization。则在 $D^b_c(Y,E)$ 中存在同构
+$$
+Rf_\ast\operatorname{IC}_X
+\simeq
+\bigoplus_{i\in\mathbb Z}
+{}^pH^i(Rf_\ast\operatorname{IC}_X)[-i],
+$$
+每个 ${}^pH^i$ 是 semisimple perverse sheaf，因而对某个适配分层可写成有限直和
+$$
+{}^pH^i(Rf_\ast\operatorname{IC}_X)
+\simeq
+\bigoplus_{(S,\mathcal L)}
+\operatorname{IC}(\overline S,\mathcal L)^{\oplus m_{i,S,\mathcal L}},
+$$
+其中 $\mathcal L$ 是有限秩不可约 local system。该 derived splitting 一般不 canonical；perverse cohomology objects 及其 semisimple isomorphism classes 才是 canonical 数据。
 
-**警告 3.19.** 本书不会把 decomposition theorem 当作形式代数事实。它依赖深层几何，包括 hard Lefschetz、weights 或 Hodge theory。凡是使用它推出 semisimplicity、positivity 或 purity 的地方，必须标注外部输入。
+若进一步 $f$ projective，$\eta=c_1(\mathcal A)$ 来自 $f$-ample line bundle，则相对 hard Lefschetz 是另一项结论：对每个 $i\ge0$，
+$$
+\eta^i:{}^pH^{-i}(Rf_\ast\operatorname{IC}_X)
+\xrightarrow{\ \sim\ }
+{}^pH^{i}(Rf_\ast\operatorname{IC}_X).
+$$
+若 $X$ 光滑纯维数 $d$，才可把输入改写为 $\operatorname{IC}_X\simeq E_X[d]$。来源定位：`BBD-2`，BBD 6.2.5；semismall 特化见 `BBD-SS-1`。本书不重证这些结论。
+
+**警告 3.19（不能越过的边界）.** 定理 3.18 不允许作下列替换：
+
+1. 不得把 $\operatorname{IC}_X$ 无条件替换成任意 semisimple perverse sheaf；常用推广要求输入属于 geometric origin、pure Hodge module 或相应有 weight 的类别。
+2. 特征 $0$ 不能删去；modular coefficients 下 decomposition 和 semisimplicity 都可能失败。
+3. Properness 足够陈述上述 decomposition，但相对 hard Lefschetz 的这一版本还需要 projectivity 和一个 $f$-ample class。
+4. Betti semisimplicity 本身不提供 Frobenius weights 或 trace positivity；需要这些结论时必须切换到 mixed/Hodge 或 $\ell$-adic 模型并重新声明假设。
 
 **检查表 3.20.** 使用 decomposition theorem 前必须说明：
 
-1. $f$ 是否 proper；
-2. 输入对象是否 semisimple perverse；
-3. 使用 Betti、l-adic 还是 mixed Hodge module 版本；
-4. 是否需要相对 hard Lefschetz；
-5. 是否使用 purity 推出系数非负。
+1. $f$ 的定义域、值域和 algebraicity，以及它是 proper 还是 projective；
+2. 输入是 $\operatorname{IC}_X$、光滑源上的 $E_X[\dim X]$，还是另一个已证明属于允许类别的对象；
+3. 使用 Betti、$\ell$-adic 还是 mixed Hodge module 版本及其系数条件；
+4. 所需输出是 derived splitting、perverse semisimplicity，还是 relative hard Lefschetz；
+5. splitting 是否被错误地当作 canonical；
+6. 是否另行使用 purity、weights 或 Frobenius trace 推出正性。
 
 ## 本章小结
 
-本章固定了 equivariant sheaves 的 quotient stack 口径、六函子符号、perverse t-structure 和 IC sheaf normalization。内部证明只覆盖齐性空间 equivariant sheaves、proper 情形下 Verdier duality 相容的形式推论和光滑簇上局部系统 shift 的 perversity。BBD formalism 和 decomposition theorem 均为外部输入。
+本章固定了 Betti constructible 模型、equivariant sheaves 的 quotient-stack 口径、forgetful t-structure、六函子符号、perverse normalization 和 IC sheaf。内部证明覆盖齐性空间的 stack 等价、proper 情形下 Verdier duality 的形式推论、光滑簇上的 shift 以及光滑闭包上的 IC 计算；六函子、BBD t-structure、middle extension 和 decomposition package 均明确作为外部输入。特别地，sheaves on $BK$ 不再与正维代数群的 algebraic representations 混同，decomposition 也不再与 projective relative hard Lefschetz 混写。
 
 ## 练习
 

@@ -8,9 +8,15 @@
 
 需要第二章的可表性、终对象和 Yoneda 观点。
 
+本章的图形范畴 $\mathcal J$ 默认 $\mathcal U$-小，目标范畴
+$\mathcal C$ 默认局部 $\mathcal U$-小。因而锥之间的态射和下文出现的
+Hom 集仍在 $\mathbf{Set}_{\mathcal U}$ 中；若改用
+$\mathcal V$-小图形，存在性假设必须相应加强。
+
 ## 3.1 锥与极限
 
-**定义 3.1.** 设 $\mathcal J$ 为小范畴，$D:\mathcal J\to\mathcal C$ 为图形。对象 $X\in\mathcal C$ 到 $D$ 的锥（cone）由一族态射
+**定义 3.1.** 设 $\mathcal J$ 为 $\mathcal U$-小范畴，
+$D:\mathcal J\to\mathcal C$ 为图形。对象 $X\in\mathcal C$ 到 $D$ 的锥（cone）由一族态射
 
 $$
 \lambda_j:X\to D(j),\qquad j\in\mathcal J
@@ -22,7 +28,19 @@ $$
 D(\alpha)\circ\lambda_j=\lambda_k.
 $$
 
-**定义 3.2.** 图形 $D$ 的极限是一个锥 $(L,\pi_j:L\to D(j))$，使得对任意锥 $(X,\lambda_j)$，存在唯一态射 $u:X\to L$ 满足
+两个锥 $(X,\lambda)$ 与 $(Y,\mu)$ 之间的锥态射是一个态射
+$u:X\to Y$，满足
+
+$$
+\mu_j u=\lambda_j\qquad(\forall j\in\mathcal J).
+$$
+
+恒等与复合继承自 $\mathcal C$，并保持这些等式；由此得到局部
+$\mathcal U$-小的锥范畴 $\operatorname{Cone}(D)$。
+
+**定义 3.2.** 图形 $D$ 的极限是锥范畴
+$\operatorname{Cone}(D)$ 的终对象。展开说，它是一个锥
+$(L,\pi_j:L\to D(j))$，使得对任意锥 $(X,\lambda_j)$，存在唯一态射 $u:X\to L$ 满足
 
 $$
 \pi_j\circ u=\lambda_j
@@ -34,9 +52,23 @@ $$
 L=\lim_{\mathcal J}D.
 $$
 
-**命题 3.3.** 极限若存在，则在唯一同构意义下唯一。
+该符号表示选定极限锥的顶点；它不宣称所有可能的极限顶点严格相等。
 
-**证明.** 极限是锥范畴中的终对象。由命题 2.2，终对象在唯一同构意义下唯一。展开说，两个极限锥 $(L,\pi_j)$ 和 $(L',\pi'_j)$ 互相诱导唯一态射 $u:L\to L'$ 与 $v:L'\to L$；复合 $v\circ u$ 与 $\operatorname{id}_L$ 都是从极限锥 $L$ 到自身并保持投影的态射，故相等。同理 $u\circ v=\operatorname{id}_{L'}$。$\square$
+**命题 3.3（结构化唯一性）.** 若
+$(L,\pi_j)$ 与 $(L',\pi'_j)$ 都是 $D$ 的极限锥，则存在唯一同构
+
+$$
+u:L\xrightarrow{\cong}L'
+$$
+
+满足 $\pi'_j u=\pi_j$ 对每个 $j$ 成立。唯一性只在保持全部投影的
+锥态射中断言。
+
+**证明.** 因 $(L',\pi')$ 在 $\operatorname{Cone}(D)$ 中终，存在唯一锥态射
+$u:(L,\pi)\to(L',\pi')$；同理存在唯一锥态射
+$v:(L',\pi')\to(L,\pi)$。复合 $vu$ 与
+$\operatorname{id}_{(L,\pi)}$ 都是从终对象 $(L,\pi)$ 到自身的锥态射，故相等。同理 $uv=\operatorname{id}_{(L',\pi')}$，所以 $u$ 可逆。
+若 $u'$ 是另一个满足 $\pi'_ju'=\pi_j$ 的同构，它首先是同一对锥之间的锥态射，终性给出 $u'=u$。$\square$
 
 ## 3.2 基本例子
 
@@ -54,6 +86,11 @@ $$
 \mathcal C(X,A\times B)\cong\mathcal C(X,A)\times\mathcal C(X,B).
 $$
 
+该双射把 $u:X\to A\times B$ 送到
+$(p_Au,p_Bu)$，并且是在变量 $X\in\mathcal C^{\operatorname{op}}$
+上的自然同构。两个积锥之间只有一个保持 $p_A,p_B$ 的同构，但底层对象之间可能有别的同构。例如在
+$\mathbf{Set}_{\mathcal U}$ 中取 $A=B=2$，集合 $2\times2$ 有许多置换；其中只有恒等置换同时保持两个标准投影。
+
 **定义 3.6.** 两个平行态射 $f,g:A\to B$ 的等化子（equalizer）是对象 $E$ 和态射 $e:E\to A$，满足 $f e=g e$，且对任意 $h:X\to A$ 若 $fh=gh$，存在唯一 $u:X\to E$ 使 $e u=h$。
 
 **例子 3.7.** 在 $\mathbf{Set}$ 中，$f,g:A\to B$ 的等化子是子集
@@ -68,7 +105,7 @@ $$
 
 **定理 3.8.** 若范畴 $\mathcal C$ 有终对象、所有二元积和所有等化子，则 $\mathcal C$ 有所有有限极限。
 
-**证明.** 设 $D:\mathcal J\to\mathcal C$，其中 $\mathcal J$ 有有限多个对象和态射。构造两个有限积
+**证明.** 设 $D:\mathcal J\to\mathcal C$，其中 $\mathcal J$ 有有限多个对象和态射。先由终对象和二元积归纳构造任意有限对象族的积：空族的积取终对象，$n+1$ 个对象的积取前 $n$ 个对象之积再与最后一个对象作二元积。于是下列两个有限积都存在：
 
 $$
 P=\prod_{j\in\operatorname{Ob}\mathcal J}D(j),
@@ -104,7 +141,18 @@ $$
 
 所以 $(E,\pi_j)$ 是锥。
 
-若 $(X,\lambda_j)$ 是任意锥，由积的泛性质得到唯一 $h:X\to P$ 使 $p_j h=\lambda_j$。锥条件说明 $s h=t h$，故由等化子泛性质得到唯一 $u:X\to E$ 使 $e u=h$。于是 $\pi_j u=\lambda_j$。唯一性由 $e$ 作为等化子态射和 $P$ 的积投影共同检测。$\square$
+若 $(X,\lambda_j)$ 是任意锥，由积的泛性质得到唯一 $h:X\to P$ 使 $p_j h=\lambda_j$。锥条件说明 $s h=t h$，故由等化子泛性质得到唯一 $u:X\to E$ 使 $e u=h$。于是 $\pi_j u=\lambda_j$。
+
+最后验证该 $u$ 在锥态射中唯一。若 $u':X\to E$ 也满足
+$\pi_j u'=\lambda_j$，则所有积投影上有
+
+$$
+p_j e u'=\lambda_j=p_j e u.
+$$
+
+积的唯一性给出 $eu'=eu$。等化子态射 $e$ 是单态射：若
+$er=er'$, 则 $r,r'$ 都是同一态射经 $e$ 的分解，等化子泛性质的唯一性给出
+$r=r'$。因此 $u'=u$，$(E,\pi)$ 是极限锥。$\square$
 
 ## 3.4 余锥与余极限
 
@@ -128,7 +176,14 @@ $$
 
 ## 3.5 函子范畴中的逐点极限
 
-**命题 3.12.** 设 $\mathcal A$ 小，$\mathcal C$ 有形状 $\mathcal J$ 的极限。则函子范畴 $\operatorname{Fun}(\mathcal A,\mathcal C)$ 有形状 $\mathcal J$ 的极限，并逐点计算：
+**命题 3.12.** 设 $\mathcal A,\mathcal J$ 为 $\mathcal U$-小范畴，
+$\mathcal C$ 局部 $\mathcal U$-小且有所有形状 $\mathcal J$ 的极限。对每个图形
+
+$$
+D:\mathcal J\to\operatorname{Fun}(\mathcal A,\mathcal C),
+$$
+
+函子范畴中的极限存在，并逐点计算：
 
 $$
 (\lim_{\mathcal J}D)(A)\cong\lim_{\mathcal J}(D(-)(A)).
@@ -210,17 +265,22 @@ $$
 
 ## 3.6 表示性刻画与保存极限
 
-**命题 3.13.** 若 $D:\mathcal J\to\mathcal C$ 有极限 $L$，则对每个对象 $X\in\mathcal C$ 有自然同构
+**命题 3.13.** 设 $\mathcal J$ 为 $\mathcal U$-小范畴。若
+$D:\mathcal J\to\mathcal C$ 有极限锥 $(L,\pi)$，则有
+$\mathcal C^{\operatorname{op}}\to\mathbf{Set}_{\mathcal U}$ 的自然同构
 
 $$
 \mathcal C(X,L)\cong \lim_{j\in\mathcal J}\mathcal C(X,Dj)
 $$
 
-其中右边是在 $\mathbf{Set}$ 中的极限。对偶地，若 $D$ 有余极限 $Q$，则
+其中右边是在 $\mathbf{Set}_{\mathcal U}$ 中的极限。对偶地，若 $D$ 有余极限 $Q$，则有对 $X\in\mathcal C$ 自然的同构
 
 $$
 \mathcal C(Q,X)\cong \lim_{j\in\mathcal J^{op}}\mathcal C(Dj,X).
 $$
+
+右边的集合极限存在，因为 $\mathcal J$ 为 $\mathcal U$-小且
+$\mathbf{Set}_{\mathcal U}$ 有所有 $\mathcal U$-小极限。
 
 **证明.** 一个元素 $u\in\mathcal C(X,L)$ 给出族
 

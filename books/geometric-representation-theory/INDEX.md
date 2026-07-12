@@ -34,6 +34,7 @@
 | Verdier duality | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 A](A_foundations_algebraic_geometry_and_stacks.md) |
 | perverse sheaf | [第三章 3.3](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | intersection complex | [第三章 3.4](03_equivariant_sheaves_six_functors_and_perversity.md), [第四章](04_schubert_geometry_hecke_categories_and_kazhdan_lusztig.md) |
+| decomposition theorem / semismall map | [第三章 3.5](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | D-module | [第七章](07_d_modules_riemann_hilbert_and_regular_holonomic.md), [附录 E](E_d_module_conventions_and_twists.md) |
 | Riemann-Hilbert correspondence | [第七章 7.4](07_d_modules_riemann_hilbert_and_regular_holonomic.md), [附录 D](D_source_theorem_index.md) |
 
@@ -56,8 +57,10 @@
 | --- | --- |
 | affine Grassmannian | [第十二章](12_affine_grassmannian_loop_groups_and_convolution.md), [第十三章](13_geometric_satake_and_tannakian_reconstruction.md) |
 | convolution Grassmannian | [第十二章 12.3](12_affine_grassmannian_loop_groups_and_convolution.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
+| twisted external product / support-proper convolution | [第十二章 12.3](12_affine_grassmannian_loop_groups_and_convolution.md), [附录 F](F_convolution_correspondences_and_associativity.md) |
 | geometric Satake | [第十三章](13_geometric_satake_and_tannakian_reconstruction.md), [附录 I](I_geometric_satake_tannakian_details.md) |
 | Tannakian reconstruction | [第十三章 13.3](13_geometric_satake_and_tannakian_reconstruction.md), [附录 I](I_geometric_satake_tannakian_details.md) |
+| weight functor / semi-infinite orbit | [第十三章 13.4](13_geometric_satake_and_tannakian_reconstruction.md), [附录 I](I_geometric_satake_tannakian_details.md) |
 | affine flag variety | [第十四章](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | Iwahori-Hecke category | [第十四章 14.2](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | affine Kac-Moody algebra | [第十五章](15_kac_moody_localization_chiral_and_factorization_categories.md) |

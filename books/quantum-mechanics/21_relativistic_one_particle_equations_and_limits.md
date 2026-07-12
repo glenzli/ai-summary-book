@@ -6,7 +6,7 @@
 
 ## 依赖前置知识
 
-需要 Schrodinger 方程、动量算子、矩阵和自旋。
+需要 Schrodinger 方程、动量算子、矩阵和自旋。本章为显示非相对论极限而暂时恢复 $\hbar$ 与 $c$；所有公式均按这一局部单位约定书写。
 
 ## 21.1 Klein-Gordon 方程
 
@@ -14,7 +14,7 @@
 $$
 E^2=p^2c^2+m^2c^4
 $$
-形式替换 $E\mapsto i\partial_t$、$p\mapsto -i\nabla$ 得到 Klein-Gordon 方程
+形式替换 $E\mapsto i\hbar\partial_t$、$p\mapsto -i\hbar\nabla$ 得到 Klein-Gordon 方程
 $$
 \left(\frac1{c^2}\partial_t^2-\Delta+\frac{m^2c^2}{\hbar^2}\right)\phi=0.
 $$
@@ -34,7 +34,10 @@ $$
 \alpha_i\beta+\beta\alpha_i=0,\qquad \beta^2=I.
 $$
 
-**命题 21.4.** Dirac Hamiltonian 的平方给出相对论能量关系。
+**命题 21.4.** 在 Schwartz 核心 $\mathcal S(\mathbb R^3;\mathbb C^N)$ 上，Dirac Hamiltonian 的平方给出相对论能量关系：
+$$
+H_D^2=(c^2P^2+m^2c^4)I.
+$$
 
 **证明.** 令 $H_D=c\alpha\cdot p+\beta mc^2$。使用反对易关系，
 $$
@@ -46,9 +49,11 @@ $$
 
 ## 21.3 非相对论极限
 
-**说明 21.5.** 当动能远小于 $mc^2$ 时，
+**说明 21.5.** 设 $m>0$。当 $|p|/(mc)\ll1$ 时，
 $$
-\sqrt{p^2c^2+m^2c^4}=mc^2+\frac{p^2}{2m}+O(c^{-2}).
+\sqrt{p^2c^2+m^2c^4}
+=mc^2+\frac{p^2}{2m}-\frac{p^4}{8m^3c^2}
++O\!\left(\frac{p^6}{m^5c^4}\right).
 $$
 去掉静止能相位 $e^{-imc^2t/\hbar}$ 后，低能极限恢复 Schrodinger 动力学，并伴随自旋和磁矩修正。
 
@@ -58,7 +63,7 @@ $$
 $$
 H_D=c\alpha\cdot P+\beta mc^2
 $$
-若矩阵 $\alpha_i,\beta$ Hermitian，则形式上给出守恒密度
+若矩阵 $\alpha_i,\beta$ Hermitian，则对光滑且具有足够空间衰减的解给出守恒密度
 $$
 \rho=\psi^\dagger\psi
 $$
@@ -69,11 +74,11 @@ $$
 
 **证明.** Dirac 方程写作
 $$
-i\partial_t\psi=H_D\psi.
+i\hbar\partial_t\psi=H_D\psi.
 $$
 其伴随为
 $$
--i\partial_t\psi^\dagger=(H_D\psi)^\dagger.
+-i\hbar\partial_t\psi^\dagger=(H_D\psi)^\dagger.
 $$
 在无外场且矩阵 Hermitian 情形，质量项在 $\partial_t(\psi^\dagger\psi)$ 中相消，动量项给出
 $$
@@ -86,11 +91,34 @@ $$
 
 **说明 21.8.** Klein-Gordon 方程也有守恒流，但其时间分量不正定，不能直接解释为普通概率密度。这一点是从非相对论波函数理论过渡到场论的第一个结构性障碍。
 
-**公式 21.9（Klein-Gordon 流）.** 对复 Klein-Gordon 场，守恒流常写为
+**命题 21.9（Klein-Gordon 流及其非正定性）.** 设 $m>0$。对光滑且具有足够空间衰减的复 Klein-Gordon 解 $\phi$，定义
 $$
-j^\mu=\frac{i}{2m}\left(\overline\phi\,\partial^\mu\phi-\phi\,\partial^\mu\overline\phi\right).
+\rho_{\mathrm{KG}}
+=\frac{i\hbar}{2mc^2}
+\left(\overline\phi\,\partial_t\phi
+-\phi\,\partial_t\overline\phi\right),
+\qquad
+\mathbf j_{\mathrm{KG}}
+=-\frac{i\hbar}{2m}
+\left(\overline\phi\,\nabla\phi
+-\phi\,\nabla\overline\phi\right).
 $$
-其 $j^0$ 可取正也可取负，因此不同于 Schrodinger 理论中的 $|\psi|^2$。
+则
+$$
+\partial_t\rho_{\mathrm{KG}}+\nabla\cdot\mathbf j_{\mathrm{KG}}=0.
+$$
+然而 $\rho_{\mathrm{KG}}$ 可取正也可取负，因此不同于 Schrodinger 理论中的 $|\psi|^2$。
+
+**证明.** 用 $\overline\phi$ 乘 Klein-Gordon 方程，再减去其复共轭方程乘以 $\phi$。质量项相消，剩余项为
+$$
+\frac1{c^2}\partial_t
+\left(\overline\phi\,\partial_t\phi
+-\phi\,\partial_t\overline\phi\right)
+-\nabla\cdot
+\left(\overline\phi\,\nabla\phi
+-\phi\,\nabla\overline\phi\right)=0.
+$$
+乘以 $i\hbar/(2m)$ 即得连续性方程。对频率相反的平面波，$\rho_{\mathrm{KG}}$ 符号相反，故不正定。$\square$
 
 ## 本章小结
 

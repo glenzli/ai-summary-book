@@ -44,6 +44,15 @@ $$
 | 同种流交换对称四指标张量 | 还满足 $(pr)\leftrightarrow(st)$ | $(n_g^4+n_g^2)/2=45$ |
 | 一般 chiral scalar/tensor 四指标张量 | 复张量，拉氏量含 h.c. | $2n_g^4=162$ |
 
+**证明.** 一般复 $n_g\times n_g$ 矩阵有 $2n_g^2$ 个实参数；其
+Hermitian 固定子空间有 $n_g^2$ 个实参数，实对称固定子空间有
+$n_g(n_g+1)/2$ 个。四指标张量先把有序指标对 $(p,r)$ 看成一个含
+$n_g^2$ 个元素的指标。引理 20.3 给 generic Hermitian 情形 $n_g^4$
+个实参数。再要求两个同种流交换，相当于取该 $n_g^2$ 维指标空间的
+对称平方；其复维数为 $n_g^2(n_g^2+1)/2$，Hermitian 实结构的固定
+空间具有同样的实维数。最后，一般 chiral 张量没有 Hermiticity
+约束，故每个复分量贡献两个实参数。代入 $n_g=3$ 得表中数值。$\square$
+
 ## 20.3 Warsaw basis 分区计数
 
 下表给出三代 full flavor 下的教材内部计数。这里“generic”表示只使用显式 Hermiticity 和同种流交换对称；Warsaw basis 的全部 flavor/Fierz 线性恒等式需逐项审计。
@@ -111,4 +120,3 @@ Flavor 完整性首先是线性代数问题。三代 SMEFT 的参数空间很大
 **练习 20.2.** 对 $n_g=2$ 重算推论 20.4 的各项参数数。
 
 **练习 20.3.** 说明为什么 flavor universal 假设不是由标准模型规范群推出的。
-

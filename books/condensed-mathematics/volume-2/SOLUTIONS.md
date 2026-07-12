@@ -155,7 +155,10 @@ $$
 0\to\operatorname{im}d^{q-1}\to\ker d^q\to H^q_{\mathrm{top}}(E^\bullet)\to0.
 $$
 
-realization 保持该短正合列对应的三角形，故液化复形的第 \(q\) 个 cohomology 由同一 quotient 表示。
+若 \(E^{q-1}\twoheadrightarrow\operatorname{im}d^{q-1}\) 与
+\(\ker d^q\twoheadrightarrow H^q_{\mathrm{top}}(E^\bullet)\) 对 profinite 参数族局部可
+提升，则第五章命题 5.9 说明其凝聚化是短正合列，故液化复形的第 \(q\) 个 cohomology
+由同一 quotient 表示。闭值域只保证这些商是 Hausdorff Fréchet 空间，不提供局部提升。
 
 **S.3.** 若连续线性映射像不闭，例如某些紧算子在无限维 Banach 空间中的像，则 quotient 非 Hausdorff。此时没有 Fréchet 短正合列，S.3 的 exactness 假设不能应用。
 
@@ -163,9 +166,13 @@ realization 保持该短正合列对应的三角形，故液化复形的第 \(q\
 
 **T.1.** T.3 的第 4 项依赖 R.9：analytic 张量定义为 ordinary tensor 后 analyticization，因此 analyticization 与张量相容来自 analytic kernel 的张量理想性。
 
-**T.2.** T.3 的第 7 项需要闭值域假设，因为只有闭值域时拓扑 cohomology 是 Hausdorff Fréchet 空间，才能进入 liquid realization 的 exactness 范围。
+**T.2.** 闭值域使拓扑 cohomology 成为 Hausdorff Fréchet 空间；第 7 项还需要相关
+quotient 对 profinite 参数族局部可提升。后者严格强于闭值域，连续 Hodge/Green
+splitting 是同时满足两项要求的充分条件。
 
-**T.3.** 第三卷 Dolbeault 复形使用 T.3 的第 6-8 项：liquid 范畴、Fréchet realization、Fredholm cohomology 和 perfect 性。
+**T.3.** 第三卷 Dolbeault 复形使用 T.3 的第 6-8 项：Fréchet 项的 liquid
+membership、连续 Hodge splitting 给出的凝聚严格性、Fredholm cohomology 和
+perfect 性。
 
 ## 10. Solidification 反射存在性练习
 
@@ -354,7 +361,8 @@ $$
 
 **答案。** ordinary sheaf descent 断言一个 sheaf 的截面可由覆盖上的截面和交叠相容数据恢复。category-valued descent 断言整个范畴 \(D(A,\mathcal M)\) 可由 rational cover 上的一族范畴及其高阶交叠 totalization 恢复；它同时要求对象、态射空间、张量和局部化结构都满足 descent。
 
-**AA.3.** 为什么 liquid realization 不能只由拓扑向量空间凝聚化推出？
+**AA.3.** 为什么“\(\underline E\) 是 liquid”不能推出每个连续满射
+\(E\to F\) 凝聚化后都是 epimorphism？
 
 **答案。** 凝聚化只给 sheaf
 
@@ -362,7 +370,10 @@ $$
 S\mapsto\operatorname{Cont}(S,E),
 $$
 
-它记录连续族。liquid realization 还要求该对象落入特定 analytic/liquid 范畴，并满足 Hom 判别、exactness、闭值域短正合列相容和与测度对象的相容性。这些不是普通 sheaf 条件的形式后果。
+它记录连续族。CS26 的 membership 定理可进一步证明 \(\underline E\) 满足
+\(\mathcal M_{<p}\) 的 Hom 判别，但 epimorphism 是关于态射的局部提升性质：每个
+\(S\to F\) 必须在有限覆盖后提升到 \(E\)。对象 membership 不含这个量词，因此不能
+推出 exactness；有连续截面时局部提升才自动成立。
 
 **AA.4.** 以 Serre duality 为例列出三段式。
 

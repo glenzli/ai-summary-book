@@ -4,13 +4,16 @@
 
 ## 集合论与范畴
 
-- 固定一个 Grothendieck universe $\mathcal U$。若不特别说明，“集合”“范畴”“拓扑空间”均指 $\mathcal U$-小对象。
+- 固定不可数强极限基数 \(\kappa\) 与 Grothendieck universes
+  \(\mathcal U\in\mathcal V\)，详见附录 A。测试空间底层集合基数小于
+  \(\kappa\)，sheaf 值为 \(\mathcal U\)-小对象，相关范畴在 \(\mathcal V\) 中讨论。
 - $\mathbf{Set}$：集合范畴。
 - $\mathbf{Ab}$：阿贝尔群范畴。
 - $\mathbf{Top}$：拓扑空间范畴。
-- $\mathbf{CHaus}$：紧 Hausdorff 空间范畴，态射为连续映射。
-- $\mathbf{ProFin}$：profinite 集合范畴，即紧、Hausdorff、全不连通空间范畴。
-- $\mathbf{ED}$：极不连通紧 Hausdorff 空间范畴。
+- $\mathbf{CHaus}_\kappa$：\(\kappa\)-小紧 Hausdorff 空间的选定骨架；
+  无下标 \(\mathbf{CHaus}\) 表示同一固定层级。
+- $\mathbf{ProFin}_\kappa$：\(\kappa\)-小 profinite 集合骨架；无下标时同上。
+- $\mathbf{ED}_\kappa$：\(\kappa\)-小极不连通紧 Hausdorff 空间骨架；无下标时同上。
 - 对范畴 $\mathcal C$，记
   $$
   \widehat{\mathcal C}=\operatorname{Fun}(\mathcal C^{\operatorname{op}},\mathbf{Set})
@@ -29,7 +32,9 @@
   \operatorname{Sh}(\mathcal C,J)
   $$
   为 sheaf 范畴。
-- 若覆盖族写作 $\{U_i\to U\}_{i\in I}$，本书默认 $I$ 是有限集，除非特别说明。
+- 若覆盖族写作 $\{U_i\to U\}_{i\in I}$，本书默认 $I$ 是有限集且允许
+  \(I=\varnothing\)。在 condensed site 上空族只覆盖空对象，并强制
+  \(F(\varnothing)=*\)（阿贝尔群值时为零群）。
 - 对覆盖族的 sheaf 条件常写为等化子：
   $$
   F(U)\longrightarrow \prod_i F(U_i)
@@ -39,8 +44,8 @@
 
 ## 凝聚对象
 
-- $\mathbf{CondSet}$：凝聚集合范畴。
-- $\mathbf{CondAb}$：凝聚阿贝尔群范畴。
+- $\mathbf{CondSet}=\mathbf{CondSet}_\kappa$：本书固定层级的凝聚集合范畴。
+- $\mathbf{CondAb}=\mathbf{CondAb}_\kappa$：本书固定层级的凝聚阿贝尔群范畴。
 - $\mathbf{Solid}$：固体阿贝尔群范畴。
 - 对拓扑空间 $T$，其关联凝聚集合暂记为
   $$

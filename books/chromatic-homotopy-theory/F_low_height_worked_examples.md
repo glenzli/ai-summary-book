@@ -4,7 +4,20 @@
 
 **命题 F.1.** $L_{K(0)}X\simeq H\mathbb Q\otimes X$。
 
-**证明草图.** $K(0)=H\mathbb Q$。有理化是关于 $H\mathbb Q$ 的 Bousfield localization，因而 $L_{K(0)}$ 是 rational localization。完整证明依赖谱的有理化模型。证毕。
+**证明.** 按本书约定 $K(0)=H\mathbb Q$。单位映射
+$X\to H\mathbb Q\otimes X$ 是 $H\mathbb Q$-等价，因为再次张量
+$H\mathbb Q$ 后，乘法等价
+$H\mathbb Q\otimes H\mathbb Q\simeq H\mathbb Q$ 使该映射成为等价。
+另一方面，$H\mathbb Q\otimes X$ 是 $H\mathbb Q$-module。若
+$A$ 为 $H\mathbb Q$-acyclic，则由自由--遗忘伴随
+$$
+\operatorname{Map}(A,H\mathbb Q\otimes X)
+\simeq
+\operatorname{Map}_{H\mathbb Q}(H\mathbb Q\otimes A,H\mathbb Q\otimes X)
+$$
+可知该映射空间可缩，所以目标是 $H\mathbb Q$-local。它因此满足
+Bousfield localization 的泛性质，得到
+$L_{K(0)}X\simeq H\mathbb Q\otimes X$。证毕。
 
 **例 F.2.** 对球谱，
 $$
@@ -42,7 +55,13 @@ H\mathbb Q\xrightarrow{p}H\mathbb Q\to H\mathbb Q\otimes M(p).
 $$
 在 $\mathbb Q$ 上乘以 $p$ 是同构，所以 cofiber 为零。故 $K(0)_*M(p)=0$。证毕。
 
-**外部输入 F.8.** $M(p)$ 是否携带特定 $v_1$ self-map 及其周期性依赖素数和有限谱构造。完整 type $1$ 周期性属于 Hopkins-Smith periodicity theorem 的低高度实例。
+**命题 F.8.** 对每个素数 $p$，$M(p)$ 是 type $1$；证明见命题 4.18
+或 N.5。这里的 type 判定是书内 $K(0)$/$K(1)$ 长正合列计算。只有
+$v_1$ self-map 的存在性与具体周期属于 Hopkins--Smith periodicity
+theorem 及其低高度实例。
+
+**证明.** 命题 4.18 已对任意素数证明 $K(0)_*M(p)=0$ 且
+$K(1)_*M(p)\ne0$；按定义 4.1，首次非消失高度为 $1$。证毕。
 
 ## F.4 高度 2：supersingular elliptic curves
 

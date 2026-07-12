@@ -1,24 +1,25 @@
 # P0/P1 外部输入 locator：第二批源码级核查
 
-核查日期：2026-07-08。
+初次核查日期：2026-07-08。PDF 定理号复核：2026-07-11。
 
-本文件延续 [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)，补齐 BMS2/THH-Breuil-Kisin 方向和 Bhatt-Lurie prismatization 方向的 source-label locator。它不新增数学定理；所有条目仍需在最终出版前转换为正式页码、定理号和期刊版本引用。
+本文件延续 [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)，补齐 BMS2/THH-Breuil-Kisin 方向和 Bhatt-Lurie prismatization 方向的 source-label locator。它不新增数学定理。2026-07-11 已复核的 BMS2 numbered statements 标为 `L3`；其余 rows 仍须在出版前转换为稳定编号或保持真实的 research-interface 等级。
 
 ## P0-4：Bhatt-Morrow-Scholze, Topological Hochschild homology and integral p-adic Hodge theory
 
 来源版本：Bhatt-Morrow-Scholze, arXiv:1802.03261, v2 final, 2019-04-09。
-本地核查源：`/private/tmp/prismatic_locator/1802/bms2.tex`。
+核查介质：上述 arXiv 版本的 PDF 与 TeX source snapshot；下表记录的
+source labels/line neighborhoods 不依赖临时解压路径。
 
 | 本书 ID | 用途 | label | 源码位置 | 当前等级 |
 | --- | --- | --- | --- | --- |
-| BMS2-BK | Breuil-Kisin cohomology 主定理 | `thm:main1` | line 147 附近 | L2S |
+| BMS2-BK | Breuil-Kisin cohomology 主定理 | `thm:main1`; Theorem 1.2 | line 147 附近及 PDF | L3 |
 | BMS2-TC | perfectoid rings 上 $\pi_0TC^-$ 与 $A_{\inf}$ | `thm:TCperfectoid` | line 225 附近 | L2S |
 | BMS2-AOMEGA | $A\Omega$ via $TC^-$ descent | `thm:main2`, `main_theorem` | lines 246, 2598 附近 | L2S |
 | BMS2-CRYS | equal characteristic crystalline comparison | `thm:main3`, `thm:tccharp` | lines 258, 2290 附近 | L2S |
 | BMS2-FILT | THH/TC/TP motivic filtration and Nygaard package | `thm:main5`, `MotivicFiltTHH`, `NygaardGradedFilt`, `NygaardSmooth` | lines 284, 1720, 1741, 1763 附近 | L2S |
-| BMS2-SYN | syntomic sheaves and nearby cycles | `subsection_syntomic`, `cor:CocontinuousTateTwist`, `eq:TateTwist`, `thm:main6`, `thm:nearbycycles` | lines 1862, 1916, 1929, 352, 2785 附近 | L2S |
+| BMS2-SYN | syntomic fibre、乘法及 nearby cycles | `eq:TateTwist`, `thm:main6`, `thm:nearbycycles`; Theorem 1.12 (5), Theorem 1.15, Theorem 10.1 | lines 1929, 352, 2785 附近及 PDF | L3 |
 | BMS2-BKTWIST | Breuil-Kisin twist compatibility | `subsec:BKtwist`, `prop:breuilkisintwist` | lines 1462, 1495 附近 | L2S |
-| BMS2-BKLOCAL | local Breuil-Kisin construction from relative THH | `thm:BKlocal`, `cor:BKtwisted`, `rmk:NygaardBK`, `prop:BKnc` | lines 2938, 3121, 3174, 3186 附近 | L2S |
+| BMS2-BKLOCAL | local Breuil-Kisin construction from relative THH | `thm:BKlocal`; Theorem 11.2（其余配套结果仍见源码 labels） | line 2938 附近及 PDF | L3 |
 
 ### 约定核查结果
 
@@ -42,7 +43,8 @@ $$
 ## P1-1：Bhatt-Lurie, The prismatization of p-adic formal schemes
 
 来源版本：Bhatt-Lurie, arXiv:2201.06124, v1 preliminary, 2022-01-16。
-本地核查源：`/private/tmp/prismatic_locator/2201/prismatization-for-arxiv.tex`。
+核查介质：上述 arXiv 版本的 TeX source snapshot；临时 source 路径不作为
+可复现 locator，且该 preliminary 文献继续保持 `L2S`。
 
 | 本书 ID | 用途 | label | 源码位置 | 当前等级 |
 | --- | --- | --- | --- | --- |
@@ -67,14 +69,15 @@ Bhatt-Lurie 的结果在本书中只作为 prismatization 和 Cartier-Witt stack
 
 ## 本批次结论
 
-本批次把以下缺口从 `L1` 升级为 `L2S`：
+本批次及 2026-07-11 PDF 复核完成了以下升级：
 
-- BMS2-BK：Breuil-Kisin cohomology via relative THH。
-- BMS2-SYN：syntomic sheaves、Tate twist convention 和 nearby cycles 出口。
+- BMS2-BK：Breuil-Kisin cohomology 主定理升级到 `L3`。
+- BMS2-SYN：syntomic fibre、乘法和 nearby cycles 出口升级到 `L3`。
+- BMS2-BKLOCAL：局部 Breuil-Kisin 构造主定理升级到 `L3`；其配套命题仍为 `L2S`。
 - BL-WCART：Cartier-Witt/prismatization、crystals-as-QCoh 和 pushforward compatibility。
 
 仍未完成：
 
 - Classical Fontaine/Faltings/Tsuji comparison 的最终 source selection。
-- BMS2 与 Bhatt-Lurie 的出版级 `L3` 页码/定理号转换。
+- BMS2 中 TC/TP filtration、$A\Omega$ descent 等未进入本轮正文主链的条目，以及 Bhatt-Lurie 条目的出版级 `L3` 转换。
 - 前沿 2025-2026 预印本的二次 locator。

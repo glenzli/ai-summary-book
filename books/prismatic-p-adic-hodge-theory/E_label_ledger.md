@@ -10,8 +10,8 @@
 | --- | --- | --- |
 | `00_preface_and_scope.md` | 约定 0.1 - 练习 0.3 | 已登记 |
 | `01_delta_rings_witt_vectors_and_perfectoid_background.md` | 定义 1.1 - 练习 1.3 | 已登记 |
-| `02_prisms_and_prismatic_sites.md` | 定义 2.1 - 练习 2.3 | 已登记 |
-| `03_prismatic_cohomology_comparisons.md` | 约定 3.1 - 练习 3.3 | 已登记 |
+| `02_prisms_and_prismatic_sites.md` | 定义 2.1 - 警告 2.22；补充标签 2.4A, 2.19A；练习 2.1 - 2.3 | 已登记 |
+| `03_prismatic_cohomology_comparisons.md` | 约定 3.1 - 警告 3.18；补充标签 3.14A；练习 3.1 - 3.3 | 已登记 |
 | `04_fontaine_period_rings_and_classical_p_adic_hodge.md` | 约定 4.1 - 练习 4.3 | 已登记 |
 | `05_a_inf_breuil_kisin_and_bms_integral_theory.md` | 约定 5.1 - 练习 5.3 | 已登记 |
 | `06_prismatic_f_crystals_and_galois_representations.md` | 定义 6.1 - 练习 6.3 | 已登记 |
@@ -20,7 +20,7 @@
 | `09_hodge_tate_de_rham_and_conjugate_filtration.md` | 定义 9.1 - 练习 9.3 | 已登记 |
 | `10_crystalline_de_rham_witt_and_q_de_rham.md` | 定义 10.1 - 练习 10.3 | 已登记 |
 | `11_etale_comparison_frobenius_fixed_and_syntomic_tower.md` | 约定 11.1 - 练习 11.3 | 已登记 |
-| `12_breuil_kisin_bkf_modules_and_lattices.md` | 约定 12.1 - 练习 12.3 | 已登记 |
+| `12_breuil_kisin_bkf_modules_and_lattices.md` | 约定 12.1 - 练习 12.3；补充标签 12.8A | 已登记 |
 | `13_coefficients_hodge_tate_crystals_and_nonabelian_boundary.md` | 定义 13.1 - 练习 13.3 | 已登记 |
 | `14_artin_stacks_shimura_and_arithmetic_applications.md` | 研究边界 14.1 - 练习 14.3 | 已登记 |
 | `15_closure_failure_modes_and_open_problems.md` | 命题 15.1 - 练习 15.3 | 已登记 |
@@ -29,12 +29,12 @@
 
 | 文件 | 编号范围 | 状态 |
 | --- | --- | --- |
-| `A_derived_completion_koszul_and_torsion.md` | 定义 A.1 - 练习 A.3 | 已登记 |
+| `A_derived_completion_koszul_and_torsion.md` | 定义 A.1 - 警告 A.16；练习 A.1 - A.3 | 已登记 |
 | `B_examples_and_local_calculations.md` | 命题 B.1 - 练习 B.3 | 已登记 |
 | `C_comparison_hypotheses_and_structure_tables.md` | 表 C.1 - 表 C.5 | 已登记 |
 | `D_theorem_locator_index.md` | Locator D.1 - D.4 | 已登记 |
 | `E_label_ledger.md` | Ledger E.1 - E.4 | 已登记 |
-| `F_nygaard_tate_twist_crosswalk.md` | Crosswalk F.1 - F.5 | 已登记 |
+| `F_nygaard_tate_twist_crosswalk.md` | 约定 F.1 - 核查状态 F.11 | 已登记 |
 | `G_formal_schemes_sites_and_derived_global_sections.md` | 定义 G.1 - 练习 G.3 | 已登记 |
 | `H_delta_prism_detailed_proofs.md` | 命题 H.1 - 练习 H.3 | 已登记 |
 | `I_crystals_descent_and_vector_bundles.md` | 定义 I.1 - 练习 I.3 | 已登记 |
@@ -49,7 +49,8 @@
 以下声明在最终版必须带 L3 locator：
 
 - 外部输入定理 1.8, 1.13, 1.17。
-- 外部输入定理 3.4, 3.7, 3.9, 3.11, 3.13。
+- 外部输入引理/定义 2.4A, 2.13--2.16。
+- 外部输入定理 3.4, 3.7, 3.9, 3.10, 3.11, 3.13。
 - 外部输入定义/定理 4.7, 4.9, 4.11, 4.12, 4.13, 4.14。
 - 外部输入定理 5.6, 5.8, 5.10, 5.14。
 - 外部输入定理 6.9。
@@ -58,7 +59,8 @@
 - 外部输入定理 9.4, 9.9。
 - 外部输入定理 10.2, 10.6, 10.8, 10.11。
 - 外部输入定理 11.2, 11.8, 11.10。
-- 外部输入定理 12.9, 12.10, 12.12。
+- 外部输入定理 12.8, 12.9, 12.10, 12.12, 12.13。
+- 外部输入定理 A.6, A.12；定义 A.2, A.13, A.15 的一般等价与生成元无关性由 `BS-DCOMP` 支撑。
 
 ## E.4 编号维护规则
 

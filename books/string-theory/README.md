@@ -11,7 +11,7 @@
 本书写作约束见 [SKILL.md](SKILL.md)。后续写作必须遵守：
 
 - 定义先于物理图像；每个关键公式必须声明时空签名、世界面签名、$\alpha'$ 归一化和正规序约定。
-- 非平凡命题必须给出证明、证明草图，或标注为“外部输入定理”。
+- 非平凡命题必须给出证明、标准物理推导说明，或标注为“外部输入定理”。
 - 世界面 CFT、BRST、ghost、modular invariance、anomaly cancellation、supersymmetry 和 duality 不得只用口号描述。
 - 低能极限、有效作用和散射振幅必须说明所处近似阶数：tree level、genus expansion、$\alpha'$ expansion 或 string coupling expansion。
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 中追溯。

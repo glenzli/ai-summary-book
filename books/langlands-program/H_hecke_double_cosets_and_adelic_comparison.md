@@ -78,7 +78,7 @@ $$
 \begin{pmatrix}\ell&0\\0&1\end{pmatrix}.
 $$
 
-**证明草图.** 双陪集右陪集可由指数 $\ell$ 的子格分类。矩阵
+**证明.** 双陪集右陪集可由指数 $\ell$ 的子格分类。矩阵
 $$
 \begin{pmatrix}1&0\\0&\ell\end{pmatrix}
 $$
@@ -94,7 +94,12 @@ $$
 $$
 \begin{pmatrix}\ell&0\\0&1\end{pmatrix}.
 $$
-条件 $\ell\nmid N$ 保证 $\Gamma_0(N)$ 在模 $\ell$ 层面与 $\operatorname{SL}_2(\mathbb Z)$ 有相同的 $\mathbb P^1(\mathbb F_\ell)$ 轨道计算，不额外合并这些代表。$\square$
+条件 $\ell\nmid N$ 使模 $\ell$ 约化映射
+$\Gamma_0(N)\to\operatorname{SL}_2(\mathbb F_\ell)$ 满射（由中国剩余
+定理把模 $N$ 的下左角条件与模 $\ell$ 的指定矩阵同时提升）。因此右陪集
+恰由 $\mathbb P^1(\mathbb F_\ell)$ 参数化，不会额外合并。不同的
+$b\in\mathbb F_\ell$ 及无穷点给出不同的一维商，故所列并为不交并；
+$\ell+1$ 个代表又覆盖全部指数 $\ell$ 子格，因而覆盖整个双陪集。$\square$
 
 **命题 H.5（坏素数 $U_\ell$ 分解）.** 若 $\ell\mid N$，则第六章定义的 $U_\ell$ 对应代表族
 $$
@@ -173,7 +178,7 @@ T_\ell f=\sum_{n\ge0}
 $$
 其中 $a_{n/\ell}=0$ 当 $\ell\nmid n$。
 
-**证明草图.** 由 H.4，$T_\ell$ 的代表由 $\alpha_b$ 和 $\beta$ 给出。H.7 给出 $\alpha_b$ 部分的贡献为 $a_{\ell n}$。$\beta$ 部分需与 nebentypus 变换律比较：在 $\Gamma_0(N)$ 层面，代表 $\beta$ 的作用对应下三角方向的 degree $\ell$ isogeny，其右下角在模 $N$ 单位群中的贡献为 $\ell$，故乘上 $\varepsilon(\ell)$。H.8 给出其 Fourier 指标从 $n/\ell$ 来，贡献
+**证明.** 由 H.4，$T_\ell$ 的代表由 $\alpha_b$ 和 $\beta$ 给出。H.7 给出 $\alpha_b$ 部分的贡献为 $a_{\ell n}$。$\beta$ 部分需与 nebentypus 变换律比较：在 $\Gamma_0(N)$ 层面，代表 $\beta$ 的作用对应下三角方向的 degree $\ell$ isogeny，其右下角在模 $N$ 单位群中的贡献为 $\ell$，故乘上 $\varepsilon(\ell)$。H.8 给出其 Fourier 指标从 $n/\ell$ 来，贡献
 $$
 \varepsilon(\ell)\ell^{k-1}a_{n/\ell}.
 $$
@@ -199,11 +204,15 @@ $$
 
 **命题 H.12.** Petersson inner product 绝对收敛。
 
-**证明草图.** 在基本域的紧部分上，$f,g$ 连续且有界。每个 cusp 邻域中，用局部参数 $q=e^{2\pi iz/h}$，尖点形式满足
+**证明.** 在基本域的紧部分上，$f,g$ 连续且有界，故 integrand 可积。每个 cusp 邻域中，用宽度为 $h$ 的局部参数 $q=e^{2\pi iz/h}$，尖点形式满足
 $$
 f(z)=O(e^{-2\pi y/h}),\qquad g(z)=O(e^{-2\pi y/h})
 $$
-当 $y\to\infty$。因此 integrand 至多为指数衰减乘以多项式 $y^k$，在 cusp 邻域可积。有限多个 cusp 相加仍收敛。$\square$
+当 $y\to\infty$。因此某些 $C,c>0$ 使绝对值积分在该 cusp 中由
+$$
+C\int_0^h dx\int_Y^\infty e^{-cy}y^{k-2}\,dy
+$$
+控制；此积分有限。有限指数子群 $\Gamma_0(N)$ 只有有限多个 cusp，故各 cusp 邻域与紧部分的积分之和绝对收敛。$\square$
 
 **外部输入定理 H.13（Hecke 算子的正规性）.** 对 unitary nebentypus，Hecke 算子在 Petersson inner product 下满足标准伴随关系。特别地，当 nebentypus 平凡且 $\ell\nmid N$ 时，按第六章采用的 classical Hecke normalization，$T_\ell$ 为 self-adjoint，并可在有限维空间 $S_k(\Gamma_0(N))$ 上对角化。
 
@@ -228,7 +237,7 @@ $$
 
 **命题 H.16.** 在第七章经典-adelic 对应的归一化下，$\mathbf T_p$ 对右 $K_0(N)$-有限 adelic 函数的作用对应第六章的经典 Hecke 算子 $T_p$。
 
-**证明草图.** 局部双陪集
+**证明路线（外部输入）.** 局部双陪集
 $$
 K_p\begin{pmatrix}1&0\\0&p\end{pmatrix}K_p
 $$
@@ -242,7 +251,7 @@ $$
 
 **命题 H.17.** 若 $f$ 为归一化 Hecke eigenform，$p\nmid N$，且 $T_pf=a_pf$，则 $\pi_{f,p}^{K_p}$ 是一维，$\mathbf T_p$ 在该线上作用为 $a_p$。
 
-**证明草图.** Newform theory 给出好素数处 $\pi_{f,p}$ 为 spherical representation 且 $K_p$-不变量一维。由 H.16，$\mathbf T_p$ 作用与经典 $T_p$ 作用相同，因此特征值为 $a_p$。$\square$
+**证明路线（外部输入）.** Newform theory 给出好素数处 $\pi_{f,p}$ 为 spherical representation 且 $K_p$-不变量一维。由 H.16，$\mathbf T_p$ 作用与经典 $T_p$ 作用相同，因此特征值为 $a_p$。$\square$
 
 ## H.6 Satake 参数和 Hecke 多项式
 

@@ -1,6 +1,6 @@
 # Online theorem locator
 
-审计日期：2026-07-08  
+审计日期：2026-07-11
 定位等级：在线教材最低闭合版。它要求读者能追溯到具体文献、主结果和本书使用位置；不要求出版社级页码、定理编号和版本差异校勘。
 
 ## 定位原则
@@ -14,7 +14,7 @@
 
 | 本书编号 | 外部输入 | Online locator | 本书使用 |
 | --- | --- | --- | --- |
-| 1.16, B.7 | $A_\infty$ Yoneda fully faithful | Lefevre-Hasegawa, *Sur les A-infini catégories*, arXiv:math/0310337；定位到 modules、Yoneda embedding、derived category of $A_\infty$ categories 的主体章节 | 1.4, B.4 |
+| 1.16, B.11 | $A_\infty$ Yoneda fully faithful | Lefevre-Hasegawa, *Sur les A-infini catégories*, arXiv:math/0310337；定位到 modules、Yoneda embedding、derived category of $A_\infty$ categories 的主体章节 | 1.4, B.5 |
 | 1.21 | twisted complexes 与 pretriangulated envelope | Lefevre-Hasegawa arXiv:math/0310337；Keller, *On differential graded categories*, arXiv:math/0601185，定位到 pretriangulated dg categories 与 triangulated hull 讨论 | 1.5 |
 | C.2 | dg quotient | Drinfeld, *DG quotients of DG categories*, arXiv:math/0210114；主构造为 dg category modulo full dg subcategory，并与 Verdier quotient 相容 | C.1 |
 | 8.13, 18.2 | Hochschild Morita invariance | Keller, arXiv:math/0601185，定位到 dg Morita theory 与 Hochschild invariants 的 survey 部分 | 8.4, 18.1 |
@@ -23,29 +23,33 @@
 
 | 本书编号 | 外部输入 | Online locator | 本书使用 |
 | --- | --- | --- | --- |
-| 2.11 | dg enhancement 与 derived Morita 口径 | Keller, arXiv:math/0601185；Huybrechts, *Fourier-Mukai Transforms in Algebraic Geometry*, chapters on derived categories and Fourier-Mukai kernels | 2.3 |
-| 2.14, D.3 | Fourier-Mukai 表示性、adjoints | Huybrechts, *Fourier-Mukai Transforms in Algebraic Geometry*；Orlov representability literature；定位到 fully faithful functors represented by kernels 与 adjoint kernel formulas | 2.4, D.2 |
-| 2.18, 19.4 | matrix factorizations 与 singularity categories | Orlov, *Derived Categories of Coherent Sheaves and Triangulated Categories of Singularities*, arXiv:math/0503632；主结果连接 graded B-branes/LG models 与 triangulated categories of singularities | 2.5, 19.2 |
+| 2.7 | regular scheme 上 $D^b_{\mathrm{Coh}}=D_{\mathrm{perf}}$ | Stacks Project, Tag 0FDC, Lemma 36.11.8 | 2.2 |
+| 2.11 | h-injective dg enhancement | Spaltenstein, *Resolutions of unbounded complexes*, Compos. Math. 65 (1988), 121--154；Keller arXiv:math/0601185 | 2.3 |
+| 2.12A | kernel transform 的 dg/Morita enhancement | Toen, *The homotopy theory of dg-categories and derived Morita theory*, arXiv:math/0408337，derived Morita 与 schemes/kernels 部分；Huybrechts | 2.4, D.1 |
+| 2.14, D.3 | Orlov representability、adjoint kernels | Huybrechts, *Fourier--Mukai Transforms in Algebraic Geometry*, Theorem 5.14 (Orlov: fully faithful plus left/right adjoints)；adjoint-kernel chapter | 2.4, D.2 |
+| 2.18 | affine regular hypersurface MF/singularity comparison | Orlov, *Triangulated categories of singularities and D-branes in Landau-Ginzburg models*, arXiv:math/0302304 | 2.5 |
+| 19.4 | 其他 matrix-factorization/singularity 版本 | Orlov, arXiv:math/0503632；具体 equivariant/nonaffine 版本须逐章另定 | 19.2 |
 | 18.4 | HKR theorem | 标准 Hochschild-Kostant-Rosenberg 定理；本书只使用光滑 proper 特征零情形与 Todd 修正提醒 | 18.2 |
 
 ## A-side Fukaya 与 Floer 输入
 
 | 本书编号 | 外部输入 | Online locator | 本书使用 |
 | --- | --- | --- | --- |
-| 3.14 | exact Floer differential squares to zero | Seidel, *Fukaya Categories and Picard-Lefschetz Theory*, exact Fukaya category 部分；FOOO 用于一般 virtual/obstructed 口径 | 3.4 |
-| 3.18 | continuation invariance | Seidel exact Floer theory；FOOO general filtered theory | 3.5 |
-| 4.9 | holomorphic polygons satisfy $A_\infty$ equations | Seidel, exact Fukaya category and polygon moduli spaces；FOOO filtered $A_\infty$ structures | 4.3 |
-| 4.12 | Fukaya category choice independence | Seidel exact setting；FOOO general setting | 4.4 |
-| 4.15 | cohomological units strictification | Lefevre-Hasegawa/Keller $A_\infty$ homological algebra | 4.5 |
-| 5.13 | filtered curved $A_\infty$、bounding cochains | FOOO, *Lagrangian Intersection Floer Theory: Anomaly and Obstruction*, filtered $A_\infty$ structures, Maurer-Cartan/bounding cochains, Kuranishi perturbations | 5.4 |
+| 3.14, 4.9, E.6 | compact exact Floer/Fukaya analytic package | Seidel, *Fukaya Categories and Picard-Lefschetz Theory*, Chapters 8--12；Chapter 11 indices/determinant lines，Chapter 12 complete Fukaya category；DOI 10.4171/063 | 3.4, 4.2--4.3, E |
+| 3.18, 4.12 | continuation 与 coherent-choice invariance | Seidel Chapters 8--12 的 exact compact model | 3.5, 4.4 |
+| 4.14A | compact exact Fukaya category 的 cohomological units | Seidel, *Fukaya Categories and Picard-Lefschetz Theory*, Chapters 9--12 的 unit/complete-category package | 4.5 |
+| 4.15 | homological/cohomological units strictification | Lefevre-Hasegawa, *Sur les $A$-infini categories*, arXiv:math/0310337，homological 与 strict unitality 的比较 | 4.5 |
+| 5.13 | one-object filtered curved $A_\infty$ algebra、bounding cochains | FOOO, *Lagrangian Intersection Floer Theory: Anomaly and Obstruction*, filtered $A_\infty$ structures, Maurer-Cartan/bounding cochains, Kuranishi perturbations；多对象 category 需另加 coherent polygon data | 5.4 |
 
 ## Wrapped、stopped、sectorial 与 microlocal
 
 | 本书编号 | 外部输入 | Online locator | 本书使用 |
 | --- | --- | --- | --- |
-| 6.8, 6.10 | wrapped Floer invariance 与 wrapped $A_\infty$ category | Ganatra-Pardon-Shende, *Covariantly functorial wrapped Floer theory on Liouville sectors*, arXiv:1706.03152；Liouville sectors 与 wrapped functoriality | 6.2--6.3 |
+| 6.8, 6.10 | telescope wrapped complexes；no-escape/continuation；wrapped $A_\infty$ category | Ganatra-Pardon-Shende, *Covariantly functorial wrapped Floer theory on Liouville sectors*, arXiv:1706.03152；Floer data、compactness、orientations、continuation 与 category construction | 6.2--6.3 |
 | 6.13 | Liouville sector functoriality | GPS arXiv:1706.03152；主结果为 sector inclusions 诱导 wrapped Fukaya functors | 6.4 |
-| 6.17, 7.5, 7.7, 14.7, 15.3, 15.6 | generation、stop removal、sectorial descent、Kunneth | GPS, *Sectorial descent for wrapped Fukaya categories*, arXiv:1809.03427；摘要列出 descent/cosheaf、mostly Legendrian stop generation、stop removal equals localization、Fukaya-Seidel thimble generation、Kunneth、exact triangle、fully-faithfulness criterion | 6.5, 7.2--7.3, 14.3, 15 |
+| 14.6 | wrapped open-closed/closed-open 与 duality | Ganatra, *Symplectic cohomology and duality for the wrapped Fukaya category*, arXiv:1304.7312；GPS arXiv:1706.03152 用于 sector 版本 | 14.2 |
+| 14.7 | exact wrapped generation criterion | Abouzaid, *A geometric criterion for generating the Fukaya category*, arXiv:1001.4593 / Publ. Math. IHES 112 (2010), Theorem 1.1 and equation (1.2) | 14.3, K.2 |
+| 6.17, 7.5, 7.7, 15.3, 15.6 | split-generation、stop removal、sectorial descent、Kunneth | GPS, *Sectorial descent for wrapped Fukaya categories*, arXiv:1809.03427；Weinstein cocore/mostly-Legendrian linking-disk split-generation、stop removal equals localization、descent 与 Kunneth results | 6.5, 7.2--7.3, 15 |
 | 16.6 | wrapped/microlocal correspondence | GPS, *Microlocal Morse theory of wrapped Fukaya categories*, arXiv:1809.08807；主结果为 stopped cotangent wrapped category 与 microsupport-bounded sheaf category compact objects 的等价 | 16.2 |
 | 16.5 | Nadler-Zaslow correspondence | Nadler-Zaslow, *Constructible Sheaves and the Fukaya Category*, arXiv:math/0604379；主结果为 constructible sheaves quasi-embed into twisted Fukaya category of $T^\ast X$ | 16.2 |
 | 17.5, 17.7 | Orlov/Viterbo functors | Sylvan, *Orlov and Viterbo functors in partially wrapped Fukaya categories*, arXiv:1908.02317；主结果为 Orlov functor spherical criterion 和 Viterbo transfer homological epimorphism/localization | 17.2--17.3 |

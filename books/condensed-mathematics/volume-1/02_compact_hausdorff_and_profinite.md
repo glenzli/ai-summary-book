@@ -10,9 +10,12 @@
 
 ## 2.1 紧 Hausdorff 空间范畴
 
-**定义 2.1.** 记 $\mathbf{CHaus}$ 为紧 Hausdorff 空间范畴，态射为连续映射。
+**定义 2.1.** 记 $\mathbf{CHaus}_\kappa$ 为底层集合基数小于附录 A 中固定
+\(\kappa\) 的紧 Hausdorff 空间骨架，态射为连续映射。本章简写为
+\(\mathbf{CHaus}\)；所有极限和覆盖仍在这个固定层级内计算。
 
-本书固定 universe 后，只考虑小的紧 Hausdorff 空间。实际写作中不再每次重复这一点。
+有限极限不会越过该层级：有限个基数小于无限基数 \(\kappa\) 的集合，其有限乘积和
+子集仍有基数小于 \(\kappa\)。
 
 **命题 2.2.** $\mathbf{CHaus}$ 有有限极限。
 
@@ -35,7 +38,7 @@ $$
 **定义 2.3.** 设 $S\in\mathbf{CHaus}$。一族有限态射
 
 $$
-\{S_i\to S\}_{i=1}^n
+\{S_i\to S\}_{i=1}^n,\qquad n\ge 0,
 $$
 
 称为有限联合满射覆盖，如果诱导映射
@@ -47,6 +50,10 @@ $$
 在底层集合上是满射。
 
 这里 $\coprod$ 是有限不交并。有限不交并的紧 Hausdorff 空间仍是紧 Hausdorff 空间。
+当 \(n=0\) 时，源是空空间；因此空族恰好覆盖 \(S=\varnothing\)。
+
+**来源定位.** 这一口径对应 S26 Definitions 1.2 与 2.1 的有限联合满射拓扑；其中
+sheaf 的显式条件包括 \(F(\varnothing)=*\)。附录 A 解释了本书的基数截断。
 
 **命题 2.4.** 有限联合满射覆盖在拉回下稳定。
 
@@ -57,6 +64,9 @@ $$
 $$
 
 联合满射。
+
+若 \(n=0\)，则 \(S=\varnothing\)，从而存在 \(T\to S\) 强制
+\(T=\varnothing\)；拉回后的空族覆盖 \(T\)。以下设 \(n>0\)。
 
 任取 $t\in T$。其像为 $s\in S$。由于 $\coprod_i S_i\to S$ 满射，存在某个 $i$ 和 $s_i\in S_i$ 使得 $s_i$ 映到 $s$。于是 $(t,s_i)\in T\times_S S_i$ 映到 $t$。故拉回族联合满射。原覆盖族只有有限多个对象，拉回后仍只有同样有限多个对象，因此有限性保持。证毕。
 
@@ -156,7 +166,8 @@ $$
 
 **定义 2.9.** 一个 profinite 空间是有限离散空间的逆极限。等价地，它是紧、Hausdorff、全不连通的拓扑空间。
 
-记 profinite 空间范畴为 $\mathbf{ProFin}$。
+记固定层级的 profinite 空间范畴为 $\mathbf{ProFin}_\kappa$，并在本卷中简写为
+\(\mathbf{ProFin}\)。
 
 **注 2.10.** “全不连通”有不同强弱版本。本书采用紧 Hausdorff 情形中的标准等价表述：连通分支均为单点，并且具有足够多的 clopen 子集分离点。严格证明属于 Stone 对偶理论，本章只记录后续需要的结论。
 
@@ -207,9 +218,9 @@ $$
 下一章将在此基础上正式定义凝聚集合：
 
 $$
-\mathbf{CondSet}
+\mathbf{CondSet}_\kappa
 =
-\operatorname{Sh}(\mathbf{CHaus},J_{\operatorname{surj}}).
+\operatorname{Sh}(\mathbf{CHaus}_\kappa,J_{\operatorname{surj}}).
 $$
 
 ## 练习
@@ -223,3 +234,6 @@ $$
 **练习 2.4.** 设 $A$ 为无限离散集合。它是否是紧 Hausdorff 空间？它是否是 profinite 空间？说明理由。
 
 **练习 2.5.** 查阅 Stone 对偶理论，证明紧 Hausdorff 全不连通空间具有 clopen 基。
+
+**练习 2.6.** 验证空族覆盖 \(\varnothing\) 在拉回与复合下满足预拓扑公理，并在
+定理 2.8 中单独检查这个退化情形。
