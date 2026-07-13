@@ -8,26 +8,35 @@
 我们在正文中提到了泛化误差可以分解为偏差、方差和噪音。这里给出严格的推导。
 
 #### 1. 问题设定
-假设真实数据生成模型为 $y = f(\mathbf{x}) + \epsilon$，其中噪音 $\epsilon$ 满足 $\mathbb{E}[\epsilon] = 0, \text{Var}(\epsilon) = \sigma^2$。
-我们用数据集 $\mathcal{D}$ 训练了一个模型 $\hat{f}(\mathbf{x}; \mathcal{D})$。
-我们需要计算在测试点 $\mathbf{x}$ 处的期望均方误差（Expected MSE），期望是针对所有可能的训练集 $\mathcal{D}$ 而言的。
+假设真实数据生成模型为 $y=f(\mathbf{x})+\epsilon$，其中噪声满足 $\mathbb E[\epsilon\mid\mathbf x]=0$、$\operatorname{Var}(\epsilon\mid\mathbf x)=\sigma^2$（为简化取同方差）。训练集 $\mathcal D$ 自身包含独立采样的训练噪声，并据此得到模型 $\hat f(\mathbf x;\mathcal D)$。在固定测试输入 $\mathbf x$ 处，令独立测试标签为 $y^*=f(\mathbf x)+\epsilon^*$，其中 $\epsilon^*$ 与 $\mathcal D$ 独立。
 
-$$ \text{Error}(\mathbf{x}) = \mathbb{E}_{\mathcal{D}} \left[ (y - \hat{f}(\mathbf{x}; \mathcal{D}))^2 \right] $$
+$$
+\operatorname{Error}(\mathbf{x})
+=\mathbb{E}_{\mathcal{D},\epsilon^*}
+\left[(y^*-\hat f(\mathbf{x};\mathcal D))^2\right].
+$$
 
 #### 2. 推导步骤
 为了简化符号，简写 $\hat{f}(\mathbf{x}; \mathcal{D})$ 为 $\hat{f}$。
-利用 $y = f + \epsilon$，展开平方项：
+利用 $y^*=f+\epsilon^*$，展开平方项：
 
 $$
 \begin{aligned}
-\text{Error}(\mathbf{x}) &= \mathbb{E}_{\mathcal{D}} \left[ (f + \epsilon - \hat{f})^2 \right] \\
-&= \mathbb{E}_{\mathcal{D}} \left[ (f - \hat{f})^2 + \epsilon^2 + 2\epsilon(f - \hat{f}) \right]
+\operatorname{Error}(\mathbf{x})
+&= \mathbb{E}_{\mathcal{D},\epsilon^*}
+\left[(f + \epsilon^* - \hat{f})^2\right] \\
+&= \mathbb{E}_{\mathcal{D},\epsilon^*}
+\left[(f - \hat{f})^2 + (\epsilon^*)^2 + 2\epsilon^*(f - \hat{f})\right]
 \end{aligned}
 $$
 
-由于 $\epsilon$ 与 $\mathcal{D}$ 独立且 $\mathbb{E}[\epsilon]=0$，交叉项期望为 0：
-$$ \mathbb{E}_{\mathcal{D}}[2\epsilon(f - \hat{f})] = 2\mathbb{E}[\epsilon] \mathbb{E}_{\mathcal{D}}[f - \hat{f}] = 0 $$
-且 $\mathbb{E}[\epsilon^2] = \sigma^2$。
+由于 $\epsilon^*$ 与 $\mathcal D$ 独立且条件均值为 0，交叉项期望为 0：
+$$
+\mathbb E_{\mathcal D,\epsilon^*}[2\epsilon^*(f-\hat f)]
+=2\mathbb E_{\epsilon^*}[\epsilon^*]\,
+\mathbb E_{\mathcal D}[f-\hat f]=0,
+$$
+且 $\mathbb E[(\epsilon^*)^2]=\sigma^2$。
 
 现在关注主要项 $\mathbb{E}_{\mathcal{D}} \left[ (f - \hat{f})^2 \right]$。
 这是一个关于随机变量 $\hat{f}$ 的二阶矩。我们利用恒等式 $\mathbb{E}[X^2] = (\mathbb{E}[X])^2 + \text{Var}(X)$ 的变体。
@@ -46,9 +55,14 @@ $$
 
 #### 3. 最终结果
 将所有项合并：
-$$ \text{Error}(\mathbf{x}) = \underbrace{(f(\mathbf{x}) - \mathbb{E}[\hat{f}(\mathbf{x})])^2}_{\text{Bias}^2} + \underbrace{\mathbb{E}[(\hat{f}(\mathbf{x}) - \mathbb{E}[\hat{f}(\mathbf{x})])^2]}_{\text{Variance}} + \underbrace{\sigma^2}_{\text{Noise}} $$
+$$
+\operatorname{Error}(\mathbf{x})
+=\underbrace{\left(f(\mathbf{x})-\mathbb E_{\mathcal D}[\hat f(\mathbf{x};\mathcal D)]\right)^2}_{\text{Bias}^2}
++\underbrace{\mathbb E_{\mathcal D}\!\left[\left(\hat f(\mathbf{x};\mathcal D)-\mathbb E_{\mathcal D}[\hat f(\mathbf{x};\mathcal D)]\right)^2\right]}_{\text{Variance}}
++\underbrace{\sigma^2}_{\text{Independent test noise}}.
+$$
 
-这一数学分解清晰地揭示了**偏差-方差权衡 (Bias-Variance Tradeoff)**：试图降低偏差（通过增加模型复杂度）往往会导致方差增加。下图直观展示了这三者随模型复杂度变化的博弈关系：
+这一分解定义了平方损失回归中的偏差、方差与不可约测试噪声。在部分经典模型族中，增加复杂度常降低偏差并提高方差；现代过参数化模型可能出现双下降等不同现象，因此下图只是概念性曲线。
 
 <img src="../chapter_02/images/bias_variance_tradeoff.png" width="80%" />
 
@@ -135,6 +149,7 @@ $$ \delta = 4 (2N)^{d_{VC}} \exp\left( -\frac{1}{8} N \epsilon^2 \right) $$
 $$ E_{out}(h) \le E_{in}(h) + \underbrace{\sqrt{\frac{8}{N} \left( d_{VC} \ln (2N) + \ln \frac{4}{\delta} \right)}}_{\text{Complexity Penalty } \Omega} $$
 *(注：为简化展示，此处使用了 $m_{\mathcal{H}}(N) \approx N^{d_{VC}}$ 的近似形式，严谨形式略有差异但不影响结论)*
 
-**核心结论**：
-机器学习可行的充要条件是 **VC 维有限**。
-只要 $d_{VC}$ 是有限的，随着数据量 $N \to \infty$，多项式增长被指数衰减压制，罚项 $\Omega \to 0$，我们就能保证 $E_{out} \approx E_{in}$。
+**适用域内的核心结论**：
+对二分类假设类，在分布无关 PAC 学习框架及适当可测性条件下，有限 VC 维与该类的 PAC 可学习性相对应；相应的 agnostic/一致收敛版本也以有限 VC 维刻画容量。这不是关于回归、结构化预测、分布依赖学习或“所有机器学习”的充要条件。
+
+有限 $d_{VC}$ 使统一泛化罚项随 $N$ 增大而趋于 0，从而以高概率控制所有 $h\in\mathcal H$ 的经验风险与总体风险差距。要得到低总体风险，还需要假设类中存在足够好的预测器并由学习算法找到低经验风险解；泛化界本身不保证近似误差或优化误差很小。

@@ -99,10 +99,10 @@ def plot_priors():
     # Laplace (L1)
     y_laplace = laplace_pdf(x, 0, 1/np.sqrt(2)) # Match variance for fair comparison
     
-    ax.plot(x, y_gauss, label='Gaussian Prior (L2)\n$p(w) \propto e^{-w^2}$', color='#6C8EBF', linewidth=3)
+    ax.plot(x, y_gauss, label='Gaussian Prior (L2)\n$p(w) \\propto e^{-w^2}$', color='#6C8EBF', linewidth=3)
     ax.fill_between(x, y_gauss, alpha=0.2, color='#6C8EBF')
     
-    ax.plot(x, y_laplace, label='Laplace Prior (L1)\n$p(w) \propto e^{-|w|}$', color='#D6B656', linewidth=3)
+    ax.plot(x, y_laplace, label='Laplace Prior (L1)\n$p(w) \\propto e^{-|w|}$', color='#D6B656', linewidth=3)
     ax.fill_between(x, y_laplace, alpha=0.2, color='#D6B656')
     
     ax.set_title('Bayesian Priors for Regularization', fontsize=14)

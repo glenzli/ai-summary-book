@@ -12,7 +12,7 @@ This file maintains the mapping between the images used in the book and the Pyth
 | `svm_vs_perceptron.png` | `chapter_01.md#section-1-4` | `chapter_01/scripts/generate_svm_vs_perceptron.py` | Renamed from visualize_*.py |
 | `universal_approximation_step.png` | `chapter_01.md#section-1-3` | `chapter_01/scripts/generate_universal_step_plot.py` | Generates PNG now |
 | `universal_approximation_relu.png` | `chapter_01.md#section-1-3` | `chapter_01/scripts/generate_universal_relu_plot.py` | Replaces svg |
-| `universal_approximation.png` | `chapter_01.md#section-1-3`, `chapter_02.md#section-2-1` | `chapter_01/images/generate_approximation_plot.py` | |
+| `universal_approximation.png` | `chapter_01.md#section-1-3`, `chapter_02.md#section-2-1` | `chapter_01/scripts/generate_approximation_plot.py` | |
 | `activation_functions/*.png` | `chapter_01.md#section-1-3` | `chapter_01/scripts/generate_activation_plot.py` | Generates: sigmoid, tanh, relu, leaky_relu, gelu, swish |
 
 ## Chapter 02: Foundations
@@ -31,9 +31,9 @@ This file maintains the mapping between the images used in the book and the Pyth
 | `bias_variance_tradeoff.png` | `chapter_02.md#section-2-1` | `chapter_02/scripts/generate_theory_plots.py` | Function: `plot_bias_variance` |
 | `regularization_geometry.png` | `chapter_02.md#section-2-1` | `chapter_02/scripts/generate_regularization_plot.py` | Standalone script |
 | `dropout_ensemble.png` | `chapter_02.md#section-2-1` | `chapter_02/scripts/generate_dropout_ensemble.py` | |
-| `backprop_node.png` | `appendix/a.6_backpropagation.md` | `appendix/images/generate_backprop_details.py` | New split view (Node) |
-| `backprop_gates.png` | `appendix/a.6_backpropagation.md` | `appendix/images/generate_backprop_details.py` | New split view (Gates) |
-| `universal_approximation_bump.png` | `appendix/a.5_universal_approximation.md` | `chapter_02/images/generate_theory_plots.py` | Function: `plot_universal_approximation` |
+| `backprop_node.png` | `appendix/a.6_backpropagation.md` | `appendix/scripts/generate_backprop_details.py` | New split view (Node) |
+| `backprop_gates.png` | `appendix/a.6_backpropagation.md` | `appendix/scripts/generate_backprop_details.py` | New split view (Gates) |
+| `universal_approximation_bump.png` | `appendix/a.5_universal_approximation.md` | `chapter_02/scripts/generate_theory_plots.py` | Function: `plot_universal_approximation` |
 
 ## Chapter 03: Transformers
 

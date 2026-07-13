@@ -19,7 +19,7 @@ $$ s_{ij} = \frac{\mathbf{u}_i^T\mathbf{v}_j}{\tau} $$
 
 ### A.12.2.1 单向 InfoNCE（以 $x$ 预测匹配的 $y$）
 
-对固定的 $x_i$，把 $\{y_j\}_{j=1}^N$ 看作 $N$ 类分类问题：只有 $y_i$ 是正类，其余为负类。
+对固定的 $x_i$，把 $\{y_j\}_{j=1}^N$ 看作 $N$ 类分类问题：训练配对 $y_i$ 是指定正类，其余为 batch 内候选。后者在损失中充当 negatives，但现实数据中可能存在语义等价或多重正确配对（false negatives）。
 
 于是我们可以定义一个“行 Softmax”：
 $$ P(j\mid i) = \frac{\exp(s_{ij})}{\sum_{k=1}^{N}\exp(s_{ik})} $$
@@ -38,10 +38,10 @@ $$ \mathcal{L}_{\text{CLIP}} = \frac{1}{2}(\mathcal{L}_{x\to y} + \mathcal{L}_{y
 ## A.12.3 温度系数 $\tau$：控制“分布尖锐度” (Role of Temperature)
 
 把 $\tau$ 看成 Softmax logits 的缩放因子：
-- $\tau$ 越小，$s_{ij}$ 变大，Softmax 越尖锐，模型更“强硬”地区分正负样本。
-- $\tau$ 越大，分布更平滑，训练信号更保守。
+- $\tau$ 越小，logits 的绝对尺度增大，Softmax 通常更尖锐，梯度尺度也会改变。
+- $\tau$ 越大，分布通常更平滑；具体训练效果仍取决于特征归一化、batch negatives 与优化器。
 
-在实践中，$\tau$ 常作为可学习参数，让模型自动找到合适的对比强度。
+在实践中，$\tau$ 可以固定，也可以通过受约束的 logit scale 学习；并非所有 InfoNCE 实现都学习温度。
 
 ## A.12.4 一个常见直觉：对角线最大化 (Maximizing the Diagonal)
 
@@ -49,14 +49,12 @@ $$ \mathcal{L}_{\text{CLIP}} = \frac{1}{2}(\mathcal{L}_{x\to y} + \mathcal{L}_{y
 - 对角线 $s_{ii}$：正确配对
 - 非对角线 $s_{ij}$：错误配对
 
-InfoNCE 的训练效果可以直观理解为：
-- 拉高对角线元素
-- 拉低非对角线元素
+InfoNCE 的训练效果可以直观理解为提高对角配对相对于同一行/列候选的 log-softmax 概率。它优化相对差值，不要求每个非对角元素分别降到某个绝对值；false negatives 也会使“所有非对角都应拉低”的说法失效。
 
 这就是为什么在论文/工程里，经常用“相似度矩阵热力图”来肉眼检查训练是否正常：训练良好时，热力图会在对角线附近出现明显亮带。
 
 ## A.12.5 与“互信息下界”的关系（可选） (Optional: MI Lower Bound)
 
-InfoNCE 也常被解释为互信息 $I(X;Y)$ 的一个下界估计器：当负样本来自边缘分布、且批大小足够大时，优化 InfoNCE 会提高 $X$ 与 $Y$ 的统计依赖程度。
+在特定联合/边缘采样方案与 critic 假设下，InfoNCE 可导出形如 $I(X;Y)\ge \log N-\mathcal L_{\mathrm{NCE}}$ 的互信息下界。有限 $N$ 会限制该界，负样本相关、false negatives 和具体 batch 构造也会影响解释，因此不能把任意对比损失值直接当成互信息估计。
 
 这条解释对理解“为什么对比学习能学到语义表征”很有帮助，但严格证明需要更长的概率论推导，这里不展开。

@@ -32,7 +32,14 @@ $$ L(\mathbf{\theta} + \Delta \mathbf{\theta}) \approx L(\mathbf{\theta}) + \nab
 $$ \nabla L(\mathbf{\theta})^T \Delta \mathbf{\theta} < 0 $$
 令 $\Delta \mathbf{\theta} = -\eta \nabla L(\mathbf{\theta})$ （其中 $\eta > 0$ 是一个小正数）：
 $$ \nabla L(\mathbf{\theta})^T (-\eta \nabla L(\mathbf{\theta})) = -\eta \|\nabla L(\mathbf{\theta})\|^2 < 0 $$
-不等式成立（除非梯度为 0）。这证明了沿着负梯度方向更新参数，确实能使函数值减小。
+不等式成立（除非梯度为 0），说明负梯度具有负的**方向导数**。一阶 Taylor 式只描述局部行为；要保证有限步长后实际下降，还需 $\eta$ 足够小及适当光滑性。例如若 $L$ 的梯度是 $M$-Lipschitz，则下降引理给出
+
+$$
+L(\theta-\eta\nabla L(\theta))
+\le L(\theta)-\eta\left(1-\frac{M\eta}{2}\right)\|\nabla L(\theta)\|^2,
+$$
+
+所以 $0<\eta<2/M$ 时（且梯度非零）可保证这一步下降。非光滑目标或过大步长不能直接套用该结论。
 
 <img src="images/gradient_descent_1d.png" width="60%" />
 
@@ -60,7 +67,7 @@ $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \nabla \ell_i $$
 
 *   **优点**：
     *   **速度极快**：算一个样本就能更新一次。
-    *   **逃离局部极小值**：单样本梯度的“噪音”反而成为了优势，由于方向的随机性，它有助于模型跳出平坦的极小值点或<span style="background-color: #F8CECC; color: black; padding: 2px 4px; border-radius: 4px;">鞍点 (Saddle Points)</span>，这在非凸优化（如神经网络）中非常重要。
+    *   **非凸地形中的扰动**：随机梯度噪声在某些条件下可能帮助离开严格鞍点或浅而平坦的盆地，但不保证逃离一般局部极小值；噪声也可能增加稳态误差。
 
 #### 3. 小批量梯度下降 (Mini-batch SGD)
 实际中最常用的是折中方案：每次取一小批样本（如 Batch Size = 32 或 64）。
@@ -72,31 +79,35 @@ $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \nabla \ell_i $$
 
 ### A.1.4 SGD 收敛性证明草图 (Sketch of Convergence Proof)
 
-SGD 看起来非常随机和不稳定，我们如何从数学上保证它最终能找到解？这依赖于 **Robbins-Monro 算法** 的理论框架。
+SGD 的收敛结论依赖目标几何、梯度估计、噪声矩与步长等假设。下面只给出 **Robbins-Monro** 随机逼近框架中的一个经典充分条件组合。
 
 #### 1. 收敛条件 (Robbins-Monro Conditions)
-为了保证 SGD 收敛到全局最优解（假设函数是凸的），学习率 $\eta_t$（第 $t$ 步的步长）必须满足两个关键条件：
+在凸/强凸目标、无偏随机梯度与适当矩界等附加条件下，常用的步长充分条件是：
 
 1.  **发散和条件**：$\sum_{t=1}^{\infty} \eta_t = \infty$
     *   **直觉**：只要时间足够长，步长累积起来必须能到达参数空间的任何位置。如果步长衰减太快（比如 $\eta_t = 1/2^t$），蚂蚁可能还没走到谷底就因为步长趋近于 0 而停在半山腰了。
 2.  **平方收敛条件**：$\sum_{t=1}^{\infty} \eta_t^2 < \infty$
-    *   **直觉**：步长必须衰减得足够快，以消除随机采样的“噪音”带来的震荡。这保证了当 $t \to \infty$ 时，方差趋于 0。
+    *   **直觉**：平方步长可和使有界二阶矩噪声的累计加权影响可控；它本身不等于证明随机梯度方差随 $t$ 自动趋于 0。
 
-典型的满足条件序列是 $\eta_t = \frac{1}{t}$ 或 $\eta_t = \frac{1}{\sqrt{t}}$。
+一类满足条件的幂律序列是
+
+$$ \eta_t=t^{-\alpha},\qquad \frac{1}{2}<\alpha\le 1. $$
+
+例如 $1/t$ 满足两项条件；$1/\sqrt t$ 的平方是调和级数，故不满足 $\sum_t\eta_t^2<\infty$。
 
 #### 2. 收敛性推导 (Convex Case)
-假设目标函数 $L(\theta)$ 是 $\mu$-强凸的，且梯度是 $L$-利普希茨连续的，随机梯度的方差有界 ($\mathbb{E}[\|\nabla \ell_i\|^2] \le \sigma^2$)。
+假设目标函数 $L(\theta)$ 是 $\mu$-强凸的，梯度适当光滑，随机梯度无偏，并满足有界二阶矩 $\mathbb{E}[\|g_t\|^2\mid\theta_t]\le G^2$。这里是**二阶矩**界，不应称为方差界；方差界会写成 $\mathbb E[\|g_t-\nabla L(\theta_t)\|^2\mid\theta_t]\le\sigma^2$。
 
 考虑参数与最优解 $\theta^*$ 的距离平方的期望：
 $$ \mathbb{E}[\|\theta_{t+1} - \theta^*\|^2] = \mathbb{E}[\|\theta_t - \eta_t g_t - \theta^*\|^2] $$
 其中 $g_t$ 是随机梯度。展开后利用无偏性 $\mathbb{E}[g_t] = \nabla L(\theta_t)$：
-$$ \le (1 - 2\eta_t \mu) \mathbb{E}[\|\theta_t - \theta^*\|^2] + \eta_t^2 \sigma^2 $$
+$$ \le (1 - 2\eta_t \mu) \mathbb{E}[\|\theta_t - \theta^*\|^2] + \eta_t^2 G^2 $$
 
 这个递归不等式揭示了 SGD 的核心动力学：
 *   **第一项** $(1 - 2\eta_t \mu)$：类似于收缩因子，通过梯度下降拉近与 $\theta^*$ 的距离。
-*   **第二项** $\eta_t^2 \sigma^2$：这是引入的随机 **噪音项**，由于 $\sigma^2 > 0$，它总是试图把我们推离最优解。
+*   **第二项** $\eta_t^2 G^2$：这是控制随机梯度更新平方大小的上界项；它包含信号与噪声的二阶矩，不宜解释为纯方差总在“推离”最优解。
 
-**结论**：只要 $\eta_t$ 按照上述条件衰减，噪音项 $\eta_t^2$ 的衰减速度快于收缩项，最终误差项会趋于 0。这就是 SGD 收敛的数学保障。
+**结论边界**：结合强凸性、无偏性、二阶矩界、适当步长上界与 Robbins-Monro 条件，可用随机逼近定理证明相应收敛结论。该草图不是对非凸神经网络或任意学习率调度的全局最优保证。
 
 ---
 
@@ -108,5 +119,4 @@ $$ \le (1 - 2\eta_t \mu) \mathbb{E}[\|\theta_t - \theta^*\|^2] + \eta_t^2 \sigma
 
 <img src="images/learning_rate_comparison.png" width="100%" />
 
-现代优化器（如 Adam）的核心工作就是自动调节这个 $\eta$，让它在平坦的地方大步走，在陡峭的地方小步走。
-
+Adam 等自适应优化器用梯度一阶/二阶矩构造逐坐标预条件更新。其步长取决于历史梯度尺度、$\epsilon$、全局学习率和调度，并不无条件等同于“平坦处大步、陡峭处小步”，也不直接估计 Hessian 曲率。

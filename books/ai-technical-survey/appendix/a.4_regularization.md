@@ -16,11 +16,11 @@ $$
 $$
 
 **拉格朗日函数 (The Lagrangian)**：
-为了将上述 **有约束** 问题转化为 **无约束** 问题，我们引入一个新的标量变量 $\lambda$（称为拉格朗日乘子），构造如下函数：
+为分析上述约束问题，我们引入标量 $\lambda$（拉格朗日乘子）并构造拉格朗日函数。它服务于驻点、KKT 或对偶鞍点条件，不等于把 $\mathbf x$ 与 $\lambda$ 放在一起做一次普通无约束最小化：
 $$ \mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) + \lambda g(\mathbf{x}) $$
 
 **极值的必要条件**：
-如果 $\mathbf{x}^*$ 是原始问题的局部最优解，那么它必须是拉格朗日函数 $\mathcal{L}$ 的 **驻点 (Stationary Point)**。这意味着 $\mathcal{L}$ 对所有变量的偏导数都必须为 0：
+在 $f,g$ 可微且满足约束资格条件（单个等式时可取 $\nabla g(\mathbf x^*)\ne0$）下，若 $\mathbf{x}^*$ 是局部约束最优解，则存在乘子 $\lambda^*$ 使拉格朗日函数满足一阶必要条件：
 
 1.  **对 $\mathbf{x}$ 求偏导**：
     $$ \nabla_{\mathbf{x}} \mathcal{L} = \nabla f(\mathbf{x}) + \lambda \nabla g(\mathbf{x}) = 0 \implies \nabla f(\mathbf{x}) = -\lambda \nabla g(\mathbf{x}) $$
@@ -65,12 +65,28 @@ $$ \mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) + \lambda g(\mathbf{x}) $$
     “相切”在数学上就意味着两条曲线在接触点有相同的法线方向。函数的法线方向就是梯度方向。因此，**最优解处，两个梯度方向平行**。
 
 ### 3. 对应到机器学习正则化
-正则化本质上也是一个约束优化问题：
-*   **原问题**：最小化 Loss，约束是权重范数 $\|\mathbf{w}\| \le C$（限制模型复杂度）。
-*   **拉格朗日函数**：$\mathcal{L} = \text{Loss} + \lambda (\|\mathbf{w}\| - C)$。
-*   由于 $C$ 是常数，优化时可以忽略，最终形式变为：
-    $$ J(\mathbf{w}) = \text{Loss} + \lambda \|\mathbf{w}\| $$
-    这就解释了为什么我们可以直接把正则化项加到 Loss 后面进行训练。$\lambda$ 控制了约束的强弱：$\lambda$ 越大，相当于要求 $C$ 越小（模型越简单）。
+范数惩罚与范数约束在**适当条件下**可以通过拉格朗日对偶联系起来，但不是无条件一一对应。考虑不等式约束
+
+$$
+\min_{\mathbf w}\;\operatorname{Loss}(\mathbf w)
+\quad\text{s.t.}\quad \Omega(\mathbf w)\le C.
+$$
+
+其拉格朗日函数为
+
+$$
+\mathcal L(\mathbf w,\lambda)
+=\operatorname{Loss}(\mathbf w)+\lambda\bigl(\Omega(\mathbf w)-C\bigr),
+\qquad \lambda\ge 0.
+$$
+
+在凸性、约束资格条件（例如 Slater 条件）和强对偶成立时，KKT 条件还要求原始可行性、对偶可行性与互补松弛
+
+$$
+\lambda\bigl(\Omega(\mathbf w)-C\bigr)=0.
+$$
+
+对某个活跃预算 $C$，可能存在乘子 $\lambda$，使约束问题与 $\operatorname{Loss}(\mathbf w)+\lambda\Omega(\mathbf w)$ 共享最优解；反过来，一个惩罚问题的解可对应预算 $C=\Omega(\mathbf w_\lambda)$。但映射未必唯一，约束不活跃时可有 $\lambda=0$，非凸问题或多重最优解下也不能宣称完全等价。实践中，$C$ 与 $\lambda$ 都是控制容量偏好的不同超参数化。
 
 ---
 
@@ -78,9 +94,9 @@ $$ \mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) + \lambda g(\mathbf{x}) $$
 
 除了上述的“约束优化”视角，正则化还可以从概率统计的视角——即贝叶斯推断中 **先验知识 (Prior Knowledge)** 的自然体现——来理解。
 
-### 1. 频率派 vs 贝叶斯派 (Frequentist vs Bayesian)
-*   **频率派**认为参数 $\mathbf{w}$ 是客观存在的固定常数，只是我们不知道。我们的目标是通过数据找出这个最优的 $\mathbf{w}$ (即 **MLE**)。
-*   **贝叶斯派**认为参数 $\mathbf{w}$ 本身是一个 **随机变量**，服从某个概率分布。我们对 $\mathbf{w}$ 有一个初始的信仰（先验分布），然后通过观测数据来更新这个信仰，得到最终的分布（后验分布）。
+### 1. 频率学派与贝叶斯视角 (Frequentist and Bayesian Views)
+*   **频率学派**通常把未知参数 $\mathbf{w}$ 视为固定量，并用重复抽样分布分析估计量与检验程序。极大似然估计（MLE）是常用方法之一，但不是频率统计的全部。
+*   **贝叶斯视角**用先验分布表达对未知参数的不确定性，再通过观测数据得到后验分布。这里说参数“服从分布”是推断模型的一部分，不必理解为参数在一次已固定的现实系统里不断随机变化。
 
 ### 2. MAP (极大后验估计) 推导
 贝叶斯公式的核心是：
@@ -92,7 +108,7 @@ $$
 \begin{aligned}
 \mathbf{w}_{MAP} &= \arg\max_{\mathbf{w}} \log P(\mathbf{w}|\mathcal{D}) \\
 &= \arg\max_{\mathbf{w}} \left( \underbrace{\log P(\mathcal{D}|\mathbf{w})}_{\text{Log-Likelihood}} + \underbrace{\log P(\mathbf{w})}_{\text{Log-Prior}} \right) \\
-&= \arg\min_{\mathbf{w}} \left( \underbrace{-\log P(\mathcal{D}|\mathbf{w})}_{\text{Loss Function}} \underbrace{- \log P(\mathbf{w})}_{\text{Regularization}} \right)
+&= \arg\min_{\mathbf{w}} \left( \underbrace{-\log P(\mathcal{D}|\mathbf{w})}_{\text{Loss Function}} + \underbrace{- \log P(\mathbf{w})}_{\text{Regularization}} \right)
 \end{aligned}
 $$
 
@@ -112,16 +128,16 @@ $$
 
 不同的正则化项对应了不同的先验假设。
 
-**Case 1: L2 正则化 $\iff$ 高斯先验 (Gaussian Prior)**
-假设我们认为权重 $\mathbf{w}$ 服从正态分布 $\mathcal{N}(0, \tau^2)$：
+**Case 1: L2 正则化 $\iff$ 各向同性高斯先验 (Isotropic Gaussian Prior)**
+假设 $d$ 维权重 $\mathbf{w}$ 服从 $\mathcal{N}(\mathbf 0, \tau^2 I_d)$：
 $$ P(\mathbf{w}) \propto \exp\left( -\frac{\|\mathbf{w}\|^2}{2\tau^2} \right) $$
 取负对数后：
 $$ -\log P(\mathbf{w}) \propto \|\mathbf{w}\|^2 $$
 这正是 **L2 正则化**。高斯分布在 0 附近是平滑的凸起，它希望权重集中在 0 附近，但对于稍微偏离 0 的小权重也能容忍。
 
-**Case 2: L1 正则化 $\iff$ 拉普拉斯先验 (Laplace Prior)**
-假设我们认为权重 $\mathbf{w}$ 服从拉普拉斯分布 $\text{Laplace}(0, b)$：
-$$ P(\mathbf{w}) \propto \exp\left( -\frac{\|\mathbf{w}\|}{b} \right) $$
+**Case 2: L1 正则化 $\iff$ 独立拉普拉斯先验 (Independent Laplace Prior)**
+假设各坐标独立且 $w_j\sim\operatorname{Laplace}(0,b)$，则联合密度满足：
+$$ P(\mathbf{w}) \propto \exp\left( -\frac{\|\mathbf{w}\|_1}{b} \right) $$
 取负对数后：
 $$ -\log P(\mathbf{w}) \propto \|\mathbf{w}\|_1 $$
 这正是 **L1 正则化**。
@@ -130,34 +146,34 @@ $$ -\log P(\mathbf{w}) \propto \|\mathbf{w}\|_1 $$
 
 **由图可见区别**：
 *   **高斯分布 (蓝色)**：在 $x=0$ 处是圆滑的。它虽然通过概率密度“压制”大权重，但不会强制权重为 0。
-*   **拉普拉斯分布 (黄色)**：在 $x=0$ 处有一个 **尖峰 (Sharp Peak)**。这使得在 $w=0$ 这个点上的概率密度极高。在优化过程中，这股强大的“吸力”极其容易把权重直接吸死在 0 上，从而产生 **稀疏解**。
+*   **拉普拉斯分布 (黄色)**：其负对数先验是 $|w|/b$，在 $w=0$ 处不可微。L1-MAP 容易产生精确零的关键是这个目标函数的**非光滑折点**及相应最优性条件，而不是概率密度对单点产生物理“吸力”；连续先验在任意单点上的概率质量仍为 0。
 
 ---
 
 ## A.4.3 优化视角：权重衰减与梯度更新 (Weight Decay in Optimization)
 
-在正文 2.1.2 节中，我们提到了工程上常用的 **Weight Decay**。本节从微积分的角度严格推导它与 L2 正则化的等价性。
+在正文 2.1.2 节中，我们提到了工程上常用的 **Weight Decay**。本节推导普通、未预条件 SGD 下 L2 penalty 与比例权重衰减的代数对应；对 Adam 等自适应方法，这一等价关系一般不成立。
 
 ### 1. L2 正则化 $\Leftrightarrow$ 权重比例衰减 (Proportional Decay)
 假设目标函数包含 L2 正则项：
 $$ J(w) = J_{orig}(w) + \frac{1}{2}\lambda \|w\|^2 $$
 
 **梯度计算**：
-$$ \nabla J(w) = \nabla J_{orig}(w) + \lambda w $$
+$$ \nabla J(w_t) = \nabla J_{orig}(w_t) + \lambda w_t $$
 
 **SGD 更新规则**：
 我们将梯度代入 SGD 更新公式：
 $$
 \begin{aligned}
-w_{t+1} &= w_t - \eta \nabla J(w) \\
-        &= w_t - \eta (\nabla J_{orig}(w) + \lambda w_t) \\
-        &= w_t - \eta \nabla J_{orig}(w) - \eta \lambda w_t \\
-        &= \underbrace{(1 - \eta \lambda)}_{\text{Decay Factor}} w_t - \eta \nabla J_{orig}(w)
+w_{t+1} &= w_t - \eta \nabla J(w_t) \\
+        &= w_t - \eta (\nabla J_{orig}(w_t) + \lambda w_t) \\
+        &= w_t - \eta \nabla J_{orig}(w_t) - \eta \lambda w_t \\
+        &= \underbrace{(1 - \eta \lambda)}_{\text{Decay Factor}} w_t - \eta \nabla J_{orig}(w_t)
 \end{aligned}
 $$
-**结论**：L2 正则化在 SGD 优化中，等价于在每次更新梯度前，先将权重 **按比例缩小**（例如乘以 0.99）。这就是 **Weight Decay** 名称的由来。
+**结论**：在上述普通 SGD 更新、相同学习率与系数约定下，把 L2 penalty 的梯度加入更新，与同时把旧权重乘以 $1-\eta\lambda$ 给出同一个迭代式。这就是 **Weight Decay** 名称的由来；加入动量、预条件、参数分组或自适应缩放后必须重新核对更新式，不能直接沿用这一结论。
 
-### 2. L1 正则化 $\Leftrightarrow$ 符号衰减 (Sign Decay)
+### 2. L1 次梯度与 Proximal 更新
 假设目标函数包含 L1 正则项：
 $$ J(w) = J_{orig}(w) + \lambda \|w\|_1 $$
 
@@ -172,9 +188,19 @@ w_{t+1} &= w_t - \eta (\nabla J_{orig}(w) + \lambda \text{sign}(w)) \\
         &= w_t - \eta \nabla J_{orig}(w) - \eta \lambda \text{sign}(w)
 \end{aligned}
 $$
-**直观对比**：
-*   **L2 (Weight Decay)**：$w \leftarrow w - \alpha w$。减去的是 $w$ 的一部分。$w$ 越大，减得越多；$w$ 越小，减得越少。这导致权重会无限接近 0，但很难真正变成 0。
-*   **L1 (Sign Decay)**：$w \leftarrow w - C$。减去的是一个常数。无论 $w$ 多大，都减固定的量。这导致权重会以恒定速度归零，并在到达 0 时因截断而真正变成 0（稀疏解）。
+这个 vanilla 次梯度更新会朝 0 推动参数，但离散步长可能越过 0 或在其附近振荡；算法没有“到 0 后自动截断并保持为 0”的保证。精确稀疏解通常用 proximal gradient 的 soft-thresholding 更清楚地解释。先对光滑损失走一步
+
+$$ u_t=w_t-\eta\nabla J_{orig}(w_t), $$
+
+再应用 L1 的 proximal operator：
+
+$$
+w_{t+1}
+=\operatorname{prox}_{\eta\lambda\|\cdot\|_1}(u_t)
+=\operatorname{sign}(u_t)\max\bigl(|u_t|-\eta\lambda,0\bigr).
+$$
+
+当 $|u_t|\le\eta\lambda$ 时，soft-thresholding 会把坐标精确置零；后续是否保持为零仍取决于光滑损失梯度。
 
 ---
 
@@ -227,15 +253,21 @@ $$ \mathbb{E}[\tilde{h}_i] = \mathbb{E}[r_i \cdot h_i] = P(r_i=1) h_i + P(r_i=0)
 **验证期望**：
 此时训练时的期望变为：
 $$ \mathbb{E}[\tilde{h}_i] = \mathbb{E}\left[ \frac{r_i}{1-p} h_i \right] = \frac{1-p}{1-p} h_i = h_i $$
-这样，训练时的期望输出就和测试时完全一致了！
+在把 $\mathbf h$ 视为给定时，这使训练期随机掩码输出的条件期望与测试期输出一致；单次样本的激活和更高阶矩仍不同。
 
 ### 4. 反向传播 (Backpropagation)
 Dropout 不仅影响前向传播，也影响反向传播。（关于反向传播的详细数学原理，请参考 **[附录 A.6 反向传播 (Backpropagation)](a.6_backpropagation.md)**）。
 设 Loss 对输出 $\tilde{\mathbf{h}}$ 的梯度为 $\frac{\partial L}{\partial \tilde{\mathbf{h}}}$。
 根据链式法则，Loss 对原始 $\mathbf{h}$ 的梯度为：
 
-$$ \frac{\partial L}{\partial \mathbf{h}} = \frac{\partial L}{\partial \tilde{\mathbf{h}}} \odot \mathbf{r} $$
+$$
+\frac{\partial L}{\partial \mathbf{h}}
+= \frac{\partial L}{\partial \tilde{\mathbf{h}}}
+\odot \frac{\mathbf r}{1-p}.
+$$
+
+这是前文 **inverted dropout** 前向式的反向传播；若采用未缩放的 $\tilde{\mathbf h}=\mathbf r\odot\mathbf h$，这里才不含 $1/(1-p)$。
 
 **直观含义**：
 如果 $r_i=0$（神经元被 Drop），那么梯度乘以 0 也会变成 0。
-这意味着：**被丢弃的神经元，既没有输出，也不会在反向传播中更新权重**。它们在这一轮迭代中是彻底“冻结”的。
+对该掩码覆盖的样本/位置，这条激活路径的梯度为 0；共享权重仍可能从同一 batch 的其他样本、空间位置或未被丢弃路径获得梯度，因此不能笼统称整个神经元或参数在一轮迭代中“冻结”。

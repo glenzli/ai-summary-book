@@ -4,9 +4,9 @@
 ## 3.1 注意力机制：从瓶颈到聚焦
 ### 3.1 Attention Mechanisms: From Bottleneck to Focus
 
-在第 2 章中，我们探讨了 Seq2Seq 模型。虽然它是一个强大的框架，但它存在一个致命的缺陷：**信息瓶颈 (Information Bottleneck)**。无论输入句子有多长，Encoder 都必须将其压缩成一个固定长度的向量 $\mathbf{c}$。这就像要求你读完一本《红楼梦》，然后把所有细节都浓缩在这一张便利贴上，这显然是不可能的。
+第 2 章介绍的早期无注意力 Encoder-Decoder 会把整段输入压缩为固定维度上下文向量 $\mathbf{c}$。向量维度固定不意味着它数学上不能编码长输入，但有限容量与训练难度会使长句翻译质量明显下降，这通常称为 **固定上下文瓶颈 (Fixed-context Bottleneck)**。
 
-本节我们将介绍 **注意力机制 (Attention Mechanism)**，它允许 Decoder 在生成的每一步都“回头看”源句子的不同部分，从而打破了这一瓶颈。
+本节介绍 **注意力机制 (Attention Mechanism)**：Decoder 在每个输出步对各 Encoder 状态重新加权，从而不再只依赖单一固定上下文向量。
 
 #### 3.1.1 瓶颈问题 (The Bottleneck Problem)
 
@@ -14,7 +14,7 @@
 $$ \mathbf{c} = \text{Encoder}(\mathbf{x}_1, \dots, \mathbf{x}_T) $$
 $$ \mathbf{y}_t = \text{Decoder}(\mathbf{y}_{t-1}, \mathbf{s}_{t-1}, \mathbf{c}) $$
 
-当 $T$ 很大时（例如长文本翻译），$\mathbf{c}$ 无法承载所有信息，导致性能急剧下降。这在数学上表现为长距离梯度流的衰减，在语义上表现为细节丢失。
+当 $T$ 增大时，模型需要把更多信息压入同一向量，经验上会出现翻译质量下降和细节丢失。固定上下文容量与循环网络中的长距离梯度问题相关但不是同一机制，应分别分析。
 
 #### 3.1.2 Bahdanau 注意力 (Additive Attention)
 
@@ -179,16 +179,16 @@ graph TB
 **计算公式**：
 $$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
 
-1.  **$QK^T$**: 计算 Query 和 Key 的相似度矩阵（Gram Matrix）。
+1.  **$QK^T$**: 计算 Query 和 Key 的两两打分矩阵。只有在两侧向量集合相同等特殊情形下才通常称为 Gram 矩阵。
 2.  **Scale ($\frac{1}{\sqrt{d_k}}$)**:
     *   **为什么要缩放？** 假设 $q, k$ 的分量独立且服从 $\mathcal{N}(0, 1)$，则 $q \cdot k = \sum_{i=1}^{d_k} q_i k_i$ 的方差为 $d_k$。当 $d_k$ 很大时，点积结果会很大，导致 Softmax 进入饱和区（梯度趋近于 0）。
-    *   除以 $\sqrt{d_k}$ 将方差归一化为 1，保证梯度的稳定性。
+    *   在这组理想化假设下，除以 $\sqrt{d_k}$ 将点积方差归一化为 1，降低 Softmax 过早饱和的风险；真实训练中的相关性、初始化和归一化仍会影响梯度。
 3.  **Softmax**: 将相似度转换为概率分布。
 4.  **MatMul V**: 根据概率分布加权求和 Value。
 
 #### 3.2.3 多头注意力 (Multi-Head Attention)
 
-如果只用一个注意力头，模型可能只能关注到一个方面（例如语法结构）。我们希望模型能同时关注多个方面（语法、语义、指代等）。
+单头只有一组投影和注意力分布。多头机制提供多个并行子空间，使模型有机会表示不同关系；具体头是否对应语法、指代等可解释概念是训练结果，不是结构保证。
 
 **机制**：
 将 $Q, K, V$ 投影到 $h$ 个不同的子空间，分别计算注意力，最后拼接起来。
@@ -211,12 +211,12 @@ $$ \text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2 $$
 
 | 特性 | RNN | Transformer |
 | :--- | :--- | :--- |
-| **计算并行性** | 差 ($O(N)$ 串行) | 极好 ($O(1)$ 并行) |
-| **长距离依赖** | 弱 (路径长度 $O(N)$) | 强 (路径长度 $O(1)$) |
-| **计算复杂度** | $O(N \cdot d^2)$ | $O(N^2 \cdot d)$ |
+| **单层序列方向的串行深度** | $O(N)$ | $O(1)$（各位置可并行） |
+| **任意两位置的最短信息路径** | 最坏 $O(N)$ | 单层全注意力中 $O(1)$ |
+| **主要算术量（简化）** | $O(Nd^2)$ | 投影/FFN 为 $O(Nd^2)$，注意力为 $O(N^2d)$ |
 
 <span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">Key Concept</span> **全局视野**：
-RNN 看句子像管中窥豹，一次看一个词；Transformer 是一目十行，一次性把所有词之间的关系（$N^2$ 个连接）都算出来了。这也是为什么它对算力（显存）要求更高的原因。
+训练阶段，RNN 必须沿时间递推；全注意力 Transformer 可并行计算各位置，并在一层内建立任意位置间路径。代价是稠密注意力需要二次方数量的两两分数；总成本还包括通常占重要份额的线性投影和 FFN。
 
 #### 3.2.6 残差连接与归一化：深层可训练的关键 (Residual & Normalization)
 
@@ -259,19 +259,18 @@ $$
 <img src="chapter_03/images/positional_encoding.png" width="85%" />
 
 **数学性质**：
-这种编码方式允许模型轻松学习到 **相对位置**。
+这种编码方式为学习 **相对位置** 提供了有用代数结构。
 对于任意固定偏移 $k$，$\mathbf{PE}_{pos+k}$ 可以表示为 $\mathbf{PE}_{pos}$ 的线性函数（旋转矩阵）：
 $$
 \begin{bmatrix} \sin(pos+k) \\ \cos(pos+k) \end{bmatrix} =
 \begin{bmatrix} \cos k & \sin k \\ -\sin k & \cos k \end{bmatrix}
 \begin{bmatrix} \sin(pos) \\ \cos(pos) \end{bmatrix}
 $$
-这意味着 Attention 机制可以通过简单的线性投影来关注“相对位置”信息（例如：关注前一个词）。
+这说明固定偏移在每个频率对子空间中对应线性旋转，因此模型可以利用这一结构学习相对位移关系；它不保证模型必然学会或可靠外推所有相对位置规则。
 
 #### 3.3.2 层归一化 (Layer Normalization)
 
-**批归一化 (Batch Normalization, BN)** 在 CNN 中很常用，但在 RNN/Transformer 中表现不佳（因为序列长度可变，Batch 统计量不稳定）。
-Transformer 使用 **层归一化 (Layer Normalization, LN)**。
+**批归一化 (Batch Normalization, BN)** 在 CNN 中很常用；它依赖跨样本/位置的批统计，面对变长序列、小批量和自回归训练/推理口径时较不方便。Transformer 因此通常采用对每个 token 特征独立计算的 **层归一化 (Layer Normalization, LN)** 或 RMSNorm 等变体。
 
 **公式**：
 对于一个样本的一个层输入向量 $\mathbf{x} \in \mathbb{R}^{d}$，计算其自身的均值和方差：
@@ -291,7 +290,7 @@ Transformer 广泛使用了残差连接：$x + \text{Sublayer}(x)$。关于 LN �
     $$ x_{out} = \text{LN}(x + \text{Sublayer}(x)) $$
     *   问题：梯度在反向传播时可能会在输出层附近激增，导致深层网络难以训练（需要 Warmup）。
 
-2.  **Pre-Norm (现代 LLM 标配，如 GPT-2/3, LLaMA)**：
+2.  **Pre-Norm (现代 LLM 常见，如 GPT-2/3；LLaMA 使用同位置的 RMSNorm)**：
     $$ x_{out} = x + \text{Sublayer}(\text{LN}(x)) $$
     *   优势：梯度更容易沿恒等路径传播，深层模型通常更稳定，也能减轻对长 warmup 的依赖。
 
@@ -384,7 +383,7 @@ KV Cache 是典型的 **空间换时间**。
 *   **优点**：大幅减少 FLOPs，推理速度提升。
 *   **缺点**：显存占用随序列长度线性增加。对于长文本（如 128k context），KV Cache 可能会撑爆显存，这催生了 **MQA (Multi-Query Attention)** 和 **GQA (Grouped-Query Attention)** 等变体（减少 K, V 的头数）。
 
-为了建立更直观的工程感知，下图给出了一个简化的“KV Cache 显存随序列长度增长”的示意曲线：
+为了建立更直观的工程感知，下图给出了一个简化的“KV Cache 显存随序列长度增长”示意。曲线假设 FP16、标准多头注意力中 KV 头数等于标注头数，且忽略 allocator、对齐和其他运行时开销；采用 MQA/GQA/MLA 或 KV 量化时数值会显著不同。
 
 <img src="chapter_03/images/kv_cache_memory_curve.png" width="80%" />
 
@@ -406,7 +405,7 @@ $$
 S = \frac{QK^T}{\sqrt{d_k}}, \qquad S \in \mathbb{R}^{n \times n}.
 $$
 
-如果隐藏维度和头数先固定，则注意力分数计算和注意力权重存储都随 $n^2$ 增长。第二类是推理成本。自回归生成时可以用 KV Cache 避免重复计算历史 token，但缓存本身仍随上下文长度线性增长：
+如果隐藏维度和头数固定，注意力分数的算术量随 $n^2$ 增长；朴素实现还会物化二次方中间量，FlashAttention 一类精确算法则可避免将完整分数/概率矩阵写回 HBM。第二类是推理成本。自回归生成时可以用 KV Cache 避免重复计算历史 token，但缓存本身仍随上下文长度线性增长：
 
 $$
 \text{KV cache size} \propto L \cdot n_{\text{layers}} \cdot n_{\text{kv-heads}} \cdot d_{\text{head}}.
@@ -481,7 +480,7 @@ DeepSeek-V3 的技术报告把效率问题拆成了几条相互配合的路径�
 
 首先是 **MoE (Mixture-of-Experts)**。DeepSeek-V3 是一个总参数量很大的 MoE 模型，但每个 token 只激活部分专家。这样可以扩大模型容量，同时控制单个 token 的前向计算量。MoE 的主要代价是路由、负载均衡、通信和训练稳定性。
 
-其次是 **MLA (Multi-head Latent Attention)**。标准 MHA 会为每个 token 存储每一层的 key/value。GQA/MQA 通过减少 KV 头数降低缓存；MLA 更进一步，把 key/value 信息压缩到潜在向量中，再在需要时重构注意力所需的表示。粗略写成：
+其次是 **MLA (Multi-head Latent Attention)**。标准 MHA 会为每个 token 存储每一层的 key/value。GQA/MQA 通过减少 KV 头数降低缓存；MLA 更进一步，把 key/value 信息压缩到潜在向量中。概念上可写成从潜变量恢复注意力成分：
 
 $$
 c_t^{KV} = W^{DKV} h_t, \qquad
@@ -489,13 +488,13 @@ k_t^C = W^{UK} c_t^{KV}, \qquad
 v_t^C = W^{UV} c_t^{KV}.
 $$
 
-这里 $c_t^{KV}$ 是被缓存的潜在表示，$k_t^C, v_t^C$ 是从潜在表示恢复出的 key/value 成分。实际 MLA 还会处理与 RoPE 相关的解耦 key 成分。对综述读者来说，重点是：MLA 把“缓存完整 K/V”改成“缓存较小的潜在状态”，从而降低长上下文推理中的显存压力。
+这里 $c_t^{KV}$ 是被缓存的潜在表示，$k_t^C, v_t^C$ 是概念上的 key/value 成分。实际 MLA 还缓存/处理与 RoPE 相关的解耦 key 成分；高效实现可把上投影吸收到 query 或输出侧矩阵中，不必逐 token 显式重建完整 K/V。重点是：MLA 改变缓存表示，从而降低长上下文推理显存。
 
 再次是 **NSA / DSA 类稀疏注意力**。2025 年的 Native Sparse Attention (NSA) 论文提出硬件对齐、可端到端训练的稀疏注意力机制，结合粗粒度 token 压缩、细粒度 token 选择和局部精确路径，在长上下文场景中降低训练与推理成本。DeepSeek-V3.2-Exp 的官方模型页进一步把 DeepSeek Sparse Attention (DSA) 作为实验性架构重点，目标是在长上下文训练和推理中提高效率，同时尽量保持模型输出质量。
 
 这条路线的关键不只是“少算一些注意力分数”，而是让稀疏结构进入模型生命周期：
 
-*   **预训练阶段**：模型从一开始就适应稀疏可见集合，而不是把稀疏化作为后期压缩补丁。
+*   **训练阶段**：稀疏结构需要进入预训练或后续继续训练，使模型适应受限可见集合，而不是只在推理时无训练地裁剪连接；不同工作采用的起点并不相同。
 *   **推理阶段**：索引器、稀疏 kernel、KV cache 布局共同决定真实延迟。
 *   **长上下文任务**：局部窗口、全局压缩和动态选择需要同时处理“最近上下文”和“远距离证据”。
 
@@ -517,7 +516,7 @@ Meta 的 Llama 3 技术报告则代表另一条重要路线：开放权重、大
 *   **硬件依赖**：不规则稀疏模式可能节省 FLOPs，却增加索引、访存和 kernel 调度开销。
 *   **可解释性错觉**：稀疏模式看起来像“模型选择了重点”，但它仍是训练目标和优化过程产生的中间计算结构，不能直接等同于人类注意力或理解。
 
-所以，更稳妥的表述是：稀疏注意力、MLA、MoE、FlashAttention 和长上下文评测共同构成了 2025-2026 年架构效率研究的重要方向。它们并不推翻 Transformer，而是在保留注意力表达能力的同时，重写注意力的成本结构。
+所以，更稳妥的表述是：稀疏注意力、MLA、MoE、FlashAttention 和长上下文评测共同构成了 2025-2026 年架构效率研究的重要方向。它们并不推翻 Transformer，而是尝试在保留任务所需能力的同时重写注意力的成本结构；稀疏化本身仍可能丢失信息。
 
 ---
 
@@ -699,19 +698,19 @@ $$
 
 ---
 
-本节补上了注意力之外的长序列路线。下一节继续沿着“效率”这条线，讨论 DeepSeek 系列论文中围绕条件记忆、上下文压缩、稀疏注意力、MoE 与推理吞吐的若干设计。
+本节补上了注意力之外的长序列路线。下一节继续沿着“效率”这条线，讨论 DeepSeek 公开架构以及围绕其稀疏注意力索引器展开的独立后续研究。
 <a id="section-3-7"></a>
 
-## 3.7 DeepSeek 系列效率论文：记忆、上下文与吞吐
-### 3.7 DeepSeek Efficiency Papers: Memory, Context, and Throughput
+## 3.7 DeepSeek 架构与相关效率研究：记忆、上下文与吞吐
+### 3.7 DeepSeek Architectures and Related Efficiency Research
 
-如果把 2024-2026 年的大模型研究只理解成“模型名和榜单”，会漏掉一条更重要的线索：头部模型团队在反复拆解同一个工程问题。
+如果把 2024-2026 年的大模型研究只理解成“模型名和榜单”，会漏掉一条更重要的线索：不同研究团队在反复拆解同一个工程问题。
 
 这个问题是：
 
 > 如何在保持模型能力的同时，降低长上下文、推理延迟、显存占用和训练成本？
 
-DeepSeek 系列论文和开源实现提供了一个很适合综述教材观察的案例。它不是单一技术，而是一组围绕效率的组合：MLA、MoE、MTP、FP8 训练、稀疏注意力、条件记忆、上下文压缩、OCR 压缩和推理系统优化。
+DeepSeek 的论文、模型卡和开源实现提供了一个适合观察架构效率的案例；MISA 等独立团队工作又展示了围绕公开架构继续优化的路径。本节会明确区分原团队材料与后续研究，而不把它们合称为同一团队的“系列论文”。
 
 #### 3.7.1 DeepSeek-V3：MLA、MoE、MTP 与训练效率
 
@@ -719,7 +718,7 @@ DeepSeek-V3 技术报告中的几个关键词经常被一起提到，但它们�
 
 *   **MLA (Multi-head Latent Attention)**：压缩 KV Cache，降低长上下文推理显存。
 *   **DeepSeekMoE**：扩大总参数量，但每个 token 只激活部分专家，降低单 token 计算量。
-*   **MTP (Multi-Token Prediction)**：让模型在训练时预测多个未来 token，为表示学习和推理加速提供额外信号。
+*   **MTP (Multi-Token Prediction)**：让模型在训练时预测多个未来 token，作为辅助训练目标；相应预测结构也可研究用于多 token 草拟，但不等于部署时已采用该方案。
 *   **FP8 混合精度训练**：降低训练显存和带宽压力，但需要处理数值稳定性。
 *   **负载均衡与并行策略**：MoE 训练不只看模型结构，还要解决专家路由不均、通信开销和流水线气泡。
 
@@ -741,7 +740,7 @@ k_t^C=W^{UK}c_t^{KV},\qquad
 v_t^C=W^{UV}c_t^{KV}.
 $$
 
-因此，推理时长上下文显存压力主要由 $c_t^{KV}$ 的维度决定，而不是完整 $K,V$ 的维度。它牺牲的是一些重构和投影计算，换来更低的 KV cache 占用。
+因此，推理时长上下文显存压力主要由 $c_t^{KV}$、解耦 RoPE key 等实际缓存项决定，而不是完整 $K,V$ 的维度。计算收益取决于矩阵吸收方式、kernel 和量化实现，不能简单概括成“每步显式重构换显存”。
 
 **MoE** 则把 FFN 层拆成多个专家。对第 $t$ 个 token，路由器给出专家权重：
 
@@ -757,7 +756,7 @@ $$
 g_{t,e}\,\operatorname{FFN}_e(h_t).
 $$
 
-这样，总参数量可以很大，但每个 token 只经过少数专家。问题是路由可能不均衡：如果大量 token 都挤向少数专家，会造成通信瓶颈和训练不稳定，所以 MoE 系统通常还需要负载均衡损失、专家并行和通信优化。
+这样，总参数量可以很大，但每个 token 只经过少数专家。路由不均会造成容量与通信瓶颈。MoE 常结合辅助负载均衡损失、容量控制、专家并行和通信优化；DeepSeek-V3 特别报告了 auxiliary-loss-free 的负载均衡策略，并保留 sequence-wise 的补充平衡项，因此不应把传统辅助损失写成其唯一做法。
 
 **MTP** 可以理解为给语言模型增加更远的预测目标。普通 causal LM 只预测下一个 token：
 
@@ -765,7 +764,7 @@ $$
 \mathcal{L}_{1}=-\sum_t \log p_\theta(x_{t+1}\mid x_{\le t}).
 $$
 
-多 token 预测会把未来多个位置加入目标：
+教学上可把多 token 预测抽象为把未来多个位置加入目标：
 
 $$
 \mathcal{L}_{\text{MTP}}
@@ -773,13 +772,13 @@ $$
 \lambda_j \log p_\theta(x_{t+j}\mid x_{\le t}).
 $$
 
-它的直觉是迫使隐藏状态携带更长一步的未来信息。对推理服务来说，如果模型或附加头能较可靠地预测多个后续 token，就能和投机解码、多 token decode 等技术形成联系。
+这个式子省略了 DeepSeek-V3 中按预测深度顺序连接的 MTP 模块及其表示依赖，不是报告原式。其直觉是让表示支持更远的未来预测；训练完成后，主模型仍可丢弃 MTP 模块，而若保留相应预测结构并配合验证，也可与投机/多 token 解码发生联系。
 
 #### 3.7.2 NSA / DSA：从全注意力走向可训练稀疏注意力
 
-第 3.5 节已经介绍了 Native Sparse Attention (NSA) 和 DeepSeek Sparse Attention (DSA) 的基本思想。这里再从 DeepSeek 系列工程目标看一遍。
+第 3.5 节已经介绍了 [Native Sparse Attention (NSA)](https://arxiv.org/abs/2502.11089) 和 [DeepSeek Sparse Attention (DSA)](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) 的基本思想。这里先回看 DeepSeek 团队公开路线，再明确区分后面的独立 MISA 工作。
 
-标准长上下文模型的问题是：即使某个 token 只真正需要少数远距离证据，稠密注意力仍然要计算大量 token-token 分数。NSA/DSA 的路线是让模型学习或使用一套混合可见集合：
+标准长上下文模型的问题是：即使某个 token 只真正需要少数远距离证据，稠密注意力仍然要计算大量 token-token 分数。下面先用混合可见集合概括设计空间：NSA 明确包含压缩、选择与滑窗分支，DSA 则以轻量索引器驱动细粒度 token 选择；该集合不是二者任一论文的逐项实现式。
 
 $$
 \mathcal{S}(i) =
@@ -825,7 +824,7 @@ w^I_{t,j}\,
 \mathcal{T}_t=\operatorname{TopK}(I_{t,:},k).
 $$
 
-主注意力只看 $\mathcal{T}_t$ 中的 token，但索引器为了得到 $\mathcal{T}_t$ 仍要做约 $O(H^I L)$ 的打分。MISA (Mixture of Indexer Sparse Attention) 这类方法的观察是：所有索引头共同提供多样性，但对单个 query 来说，不一定每个头都同样重要。于是可以先用块级统计选择少量活跃索引头：
+主注意力只看 $\mathcal{T}_t$ 中的 token，但索引器为了得到 $\mathcal{T}_t$ 仍要做约 $O(H^I L)$ 的打分。**[MISA (Mixture of Indexer Sparse Attention)](https://arxiv.org/abs/2605.07363) 是 Zhou 等人在 2026 年提出的独立后续研究，并非 DeepSeek 团队论文**。它把 DSA 索引头视为可路由的专家池：所有头共同提供多样性，但对单个 query 不一定同等重要，于是先用块级统计选择少量活跃索引头：
 
 $$
 E_{t,j}
@@ -851,57 +850,31 @@ $$
 
 #### 3.7.3 Engram：条件记忆与可查表知识
 
-Engram / Conditional Memory 的思想可以理解为：并不是所有知识都必须挤在 Transformer 参数和上下文窗口里。一部分高频模式、短语、事实或局部结构可以通过可扩展查表结构存储，并在推理时按条件检索。
+[Engram](https://arxiv.org/abs/2601.07372) 将 **conditional memory** 具体实现为可扩展的哈希寻址 N-gram embedding：根据当前位置附近的离散 token N-gram 构造键，以近似 $O(1)$ 的查表取得记忆向量，再把它注入模型层。它主要承载可由局部词元模式寻址的静态模式；不能据此把任意事实库或通用检索都归入 Engram。
 
-抽象地说，普通语言模型把知识压进参数：
-
-$$
-P_\theta(x_t \mid x_{<t}).
-$$
-
-条件记忆路线则引入一个外部或半外部的记忆检索项：
+一个不追求实现细节的隐藏表示抽象是：
 
 $$
-P(x_t \mid x_{<t}) \approx f_\theta(x_{<t}, M[\phi(x_{<t})]),
+u_t = \sum_{n\in\mathcal N} E_n\!\left[\operatorname{hash}_n(x_{t-n+1:t})\right],
+\qquad
+\tilde h_t^{(\ell)} = h_t^{(\ell)} + G_\ell\!\left(h_t^{(\ell)},u_t\right),
 $$
 
-其中 $\phi(x_{<t})$ 是上下文特征或哈希键，$M[\cdot]$ 是可查表记忆。它与 RAG 有相似动机，但粒度不同：RAG 通常检索文档块，Engram 更像在模型内部附近增加可扩展的模式记忆。
+其中 $E_n$ 是 N-gram 记忆表，$u_t$ 是查得的记忆表示，$G_\ell$ 表示模型层中的融合/门控。这个式子只是教学抽象，说明记忆进入**隐藏表示**；具体哈希、融合位置和模块结构应以论文为准。
 
-这类方法值得放进 AI 综述，因为它挑战了一个常见假设：模型能力不一定全部来自“更大参数 + 更长上下文”。在某些场景中，可查表记忆、检索缓存、短语级统计和模型前向计算可以形成混合系统。
-
-从概率建模看，条件记忆可以看作模型分布和记忆分布的混合。设语言模型给出：
-
-$$
-p_{\theta}(x_t\mid x_{<t}),
-$$
-
-记忆表根据上下文键 $\phi(x_{<t})$ 检索候选 token 或短语，得到：
-
-$$
-p_M(x_t\mid \phi(x_{<t})).
-$$
-
-再由门控函数决定是否相信记忆：
-
-$$
-p(x_t\mid x_{<t})
-= (1-\lambda_t)p_{\theta}(x_t\mid x_{<t})
-+ \lambda_t p_M(x_t\mid \phi(x_{<t})).
-$$
-
-其中 $\lambda_t\in[0,1]$ 可以由上下文、模型隐藏状态或检索置信度决定。这个式子解释了 Engram 一类方法和 RAG 的差别：RAG 往往把文档块塞进上下文，让 Transformer 自己读；条件记忆则更像在模型输出分布附近接入一个可扩展的模式表。
+这类方法说明，模型容量除了稠密参数、MoE 激活和上下文 token 外，还可以沿“条件查表容量”扩展。它与 RAG 都有按条件取回信息的动机，但接口和粒度不同：RAG 通常从可更新语料中检索文档或结构化记录并作为证据输入；Engram 的记忆表随模型训练得到，按局部 N-gram 键在层内取表示。两者不能用同一个“输出概率插值”公式替代。
 
 #### 3.7.4 DeepSeek-OCR：上下文压缩不只发生在文本里
 
-DeepSeek-OCR 的标题是 *Contexts Optical Compression*。它把文档、图像和 OCR 理解放进同一个问题：如果视觉文档里的信息可以被压缩成更短、更结构化的 token 序列，长上下文压力就会下降。
+[DeepSeek-OCR](https://arxiv.org/abs/2510.18234) 的标题是 *Contexts Optical Compression*。作者将其称为一次 **initial investigation**：把文本页面编码为较少的视觉 token，再由语言解码器做 OCR 重建，以实验压缩率与识别精度的关系。这为“视觉 token 能否承载文本上下文”提供了证据，但不是已经解决通用长上下文压缩。
 
-这条线与普通 OCR 不同。传统 OCR 更像“图像转文字”；上下文光学压缩关心的是：
+这项工作的公开实验主要关心：
 
-*   哪些视觉区域值得保留？
-*   表格、公式、版式、图表如何变成可推理的紧凑表示？
-*   长文档是否能先在视觉侧压缩，再进入语言模型上下文？
+*   在给定视觉 token 预算下，页面文字能否被准确重建？
+*   压缩率提高时 OCR 精度如何退化？
+*   文档基准上的 token 效率与识别质量如何权衡？
 
-从系统角度看，这和 DSA/MLA/Engram 是同一类问题：减少无效 token，让模型把计算花在高信息密度的表示上。
+它与 DSA、MLA、Engram 共享“改变信息容量或表示成本”的大方向，但作用位置不同：OCR 压缩减少视觉输入 token，MLA 压缩 KV 表示，DSA 减少注意力连接，Engram 增加条件查表容量。
 
 可以把上下文压缩抽象成一个编码器：
 
@@ -909,15 +882,15 @@ $$
 z = C_{\psi}(o),
 $$
 
-其中 $o$ 是原始视觉文档，$z$ 是较短的视觉/文本混合表示。语言模型真正处理的是：
+其中 $o$ 是原始视觉文档，$z$ 是较短的视觉 token 表示。解码器处理的是：
 
 $$
 p_\theta(y\mid z, x).
 $$
 
-如果 $|z|\ll |o|$ 且 $z$ 保留了版式、文字、表格和图像证据，就能降低后续长上下文压力。风险也同样明确：压缩器如果丢掉了小字、脚注、表格结构或公式细节，后面的语言模型无法凭空恢复。因此上下文压缩必须和任务评测绑定，而不能只看 token 压缩率。
+若 $|z|$ 较小且 OCR 重建仍准确，视觉表示可降低后续序列长度。论文结果不能自动外推到通用问答、跨页推理、表格/公式语义或任意长文档；压缩器丢掉的细节也无法由后续模型可靠恢复。因此必须按下游任务评测，而不能只看 token 压缩率。
 
-#### 3.7.5 推理速度：输出 token 已经成为竞争对象
+#### 3.7.5 推理服务的速度指标
 
 用户体验中的速度通常不是一个指标，而是一组指标：
 
@@ -926,9 +899,9 @@ $$
 *   **Throughput**：单位时间服务多少请求或生成多少 token。
 *   **Cost per token**：单 token 成本。
 
-DeepSeek-V3 的 MLA/MoE/MTP，V3.2-Exp 的 DSA，DeepSeek-OCR 的上下文压缩，以及 Engram 的条件记忆，都可以放进这个速度框架里理解：它们不是只为了论文指标，而是在降低“读长上下文”和“吐长答案”的系统成本。
+DeepSeek-V3 的 MLA/MoE/MTP、V3.2-Exp 的 DSA、DeepSeek-OCR 的视觉 token 压缩，以及 Engram 的条件记忆，可以放进同一成本框架比较，但不能混为同一机制：它们分别作用于缓存、激活计算、输入表示或模型容量。
 
-这也解释了为什么 2025-2026 年的模型竞争不再只拼 benchmark 分数。真实产品会同时拼：
+因此，部署评估不能只看离线 benchmark，还要同时考察：
 
 *   模型质量。
 *   输出速度。
@@ -939,4 +912,4 @@ DeepSeek-V3 的 MLA/MoE/MTP，V3.2-Exp 的 DSA，DeepSeek-OCR 的上下文压缩
 
 ---
 
-本节把 DeepSeek 相关论文放回技术脉络中：它们共同指向大模型效率的几条主线。后续第 5 章会从训练和部署角度继续展开后训练、蒸馏与推理服务优化。
+本节把 DeepSeek 公开材料与独立后续研究放回技术脉络中，区分了缓存压缩、稀疏连接、条件记忆与视觉 token 压缩。后续第 5 章会从训练和部署角度继续展开后训练、蒸馏与推理服务优化。

@@ -59,9 +59,8 @@ ELMo 的核心洞察是：**词向量不应该是一个查表操作（Lookup Tab
 
 ELMo 通过组合不同层级的 LSTM 隐藏状态来生成最终的词向量。
 
-*   **Layer 0 (Char CNN)**: 处理字符级输入，解决 OOV (Out-of-Vocabulary) 问题。
-*   **Layer 1 (LSTM)**: 捕捉句法 (Syntax) 信息。
-*   **Layer 2 (LSTM)**: 捕捉语义 (Semantics) 信息。
+*   **Layer 0 (Char CNN)**: 由字符构造 token 表示，从而缓解固定词表带来的 OOV 问题，但不能保证理解任意新词。
+*   **Layer 1/2 (BiLSTM)**: 逐层形成上下文表示。ELMo 论文的下游任务权重分析显示较低层往往更有利于句法任务、较高层往往更有利于语义任务；这是一项经验趋势，不是每层预先规定的功能。
 
 ```mermaid
 graph TD
@@ -120,16 +119,16 @@ ELMo 引入了一个关键范式：**基于特征的迁移 (Feature-based Transf
 2.  **特征提取 (Feature Extraction)**: 将训练好的 ELMo 作为一个“特征提取器”，将其输出的动态向量作为下游任务模型的输入。
 3.  **任务训练**: 下游模型（如分类器）只需要学习如何利用这些丰富的特征。
 
-虽然 ELMo 依然是基于 RNN 的架构，受限于长距离依赖处理能力（见 2.3 节），但它证明了 **利用大规模无监督数据预训练上下文表示** 的巨大潜力。这为随后 BERT 和 GPT 的爆发奠定了基础。
+ELMo 仍受循环计算和长距离依赖限制，但其实验系统展示了 **利用大规模无标注文本预训练上下文表示** 对多类下游任务的迁移价值，并影响了后续 BERT、GPT 等预训练路线。
 
-<span style="background-color: #F8CECC; color: black; padding: 2px 4px; border-radius: 4px;">局限性</span>：ELMo 的双向性是“浅层”的（Shallow Bidirectionality），因为它只是简单拼接了前向和后向的独立 LSTM。真正的双向融合需要更强大的架构——Transformer。
+<span style="background-color: #F8CECC; color: black; padding: 2px 4px; border-radius: 4px;">双向口径</span>：ELMo 的前向与后向语言模型在各自堆栈中独立计算，再在表示层组合，因此常被称为“shallow bidirectional”。BERT 则让每层 self-attention 都可同时使用左右上下文；这是一种不同的深层融合方式，不意味着只有 Transformer 才能组合双向信息。
 <a id="section-4-2"></a>
 
 ## 4.2 BERT：双向编码器表示 (BERT: Bidirectional Encoder Representations)
 
 ### 1. 从 Feature-based 到 Fine-tuning (From Feature-based to Fine-tuning)
 
-在 4.1 节中，我们看到 ELMo 通过“冻结”预训练网络并提取特征来提升下游任务性能。然而，OpenAI GPT (基于 Decoder) 和 Google BERT (基于 Encoder) 引入了更激进的策略：**微调 (Fine-tuning)**。
+在 4.1 节中，我们看到 ELMo 的典型用法是冻结预训练双向语言模型、学习层权重，并把表示加入下游模型。OpenAI GPT (基于 Decoder) 和 Google BERT (基于 Encoder) 则系统展示了端到端 **微调 (Fine-tuning)** 预训练 Transformer 的路线。
 
 <span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">微调范式</span>：不仅是输出层，**整个预训练模型** 的参数都会在下游任务中进行更新。这意味着模型可以针对特定任务进行端到端的适配。
 
@@ -141,7 +140,7 @@ BERT 仅使用了 Transformer 的 **Encoder** 部分（详见 3.2 节）。与 G
 
 #### 2.1 输入表示 (Input Representations)
 
-BERT 的输入设计非常精巧，由三部分相加而成：
+BERT 的输入表示由三部分相加：
 1.  **Token Embeddings**: WordPiece 词向量。
 2.  **Segment Embeddings**: 区分句子对（句子 A vs 句子 B）。
 3.  **Position Embeddings**: 学习到的位置编码（非正弦）。
@@ -195,7 +194,7 @@ graph TD
 
 ### 3. 预训练任务 (Pre-training Tasks)
 
-BERT 的成功归功于两个精心设计的自监督任务：**掩码语言模型 (Masked Language Model, MLM)** 和 **下一句预测 (Next Sentence Prediction, NSP)**。
+BERT 原论文联合使用两个自监督任务：**掩码语言模型 (Masked Language Model, MLM)** 和 **下一句预测 (Next Sentence Prediction, NSP)**。后续消融表明 NSP 并非普遍必要，因此不能把 BERT 的迁移效果简单归因于两个目标缺一不可。
 
 #### 3.1 掩码语言模型 (Masked Language Model, MLM)
 
@@ -213,13 +212,13 @@ BERT 的成功归功于两个精心设计的自监督任务：**掩码语言模�
 
 **训练目标（最小数学形式）**：令 $\mathcal{M}$ 为被选中 mask 的位置集合，MLM 的损失可以写为：
 
-$$ \mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid x_{\setminus \mathcal{M}}) $$
+$$ \mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P_\theta(x_i \mid \tilde{x}) $$
 
-其中 $x_{\setminus \mathcal{M}}$ 表示把被 mask 的位置替换为 `[MASK]` / 随机词 / 原词后的输入序列。
+其中 $x_i$ 是原 token，$\tilde{x}$ 是按 80/10/10 规则破坏后的输入序列；保持原词的 10% 位置也仍计入预测损失。
 
 #### 3.2 下一句预测 (Next Sentence Prediction, NSP)
 
-为了让模型理解句子间的逻辑关系（对问答、推理任务至关重要），NSP 任务要求模型判断句子 B 是否紧接在句子 A 之后。
+BERT 设计 NSP 的原意，是给句对任务提供跨句训练信号：模型判断句子 B 是否紧接在句子 A 之后。它并不直接监督一般“逻辑关系”，随机负例也可能让任务依赖主题差异等捷径。
 *   **正例 (Positive)**: 50% 概率选择真实的下一句。
 *   **负例 (Negative)**: 50% 概率从语料库中随机选择一句。
 
@@ -227,7 +226,7 @@ $$ \mathcal{L}_{\text{MLM}} = - \sum_{i \in \mathcal{M}} \log P(x_i \mid x_{\set
 
 $$ \mathcal{L}_{\text{NSP}} = -\left[y\log P_\theta + (1-y)\log(1-P_\theta)\right] $$
 
-（实践中，后续工作如 RoBERTa 发现 NSP 并非必需；但把它作为一个“句子级别”的对齐信号来理解，仍然很有帮助。）
+（后续工作如 RoBERTa 在改变数据与训练配方后移除了 NSP 并取得更好结果；因此这里应把它理解为 BERT 原始配方中的句对训练信号，而不是对齐或推理的必要条件。）
 
 ```mermaid
 graph LR
@@ -253,9 +252,9 @@ graph LR
 BERT 推动了 NLP 从任务特定模型走向“预训练 + 微调”的主流范式。
 *   **架构**: 纯 Encoder，深度双向。
 *   **数据**: 大规模无标注文本（BooksCorpus + Wikipedia）。
-*   **影响**: 提出了通用的预训练-微调工作流，使得少量标注数据也能达到 State-of-the-art (SOTA) 的效果。
+*   **影响**: 系统化推广了预训练 Transformer 加下游微调的工作流，并在原论文所测语言理解任务上以较少任务标注取得强结果。
 
-然而，BERT 作为一个**自编码 (Auto-Encoding)** 模型，主要用于理解任务。在**生成 (Generation)** 任务上，它先天不足（无法像自回归模型那样流畅生成文本）。这便是 GPT 系列登场的舞台。
+然而，BERT 的双向 MLM 目标并未训练“只看左侧前缀逐 token 生成”的条件分解，因此原始 BERT 不可直接当作自回归生成器。通过增加解码器或采用其他掩码/去噪目标仍可构造生成系统；这里的差别是训练目标与推理接口，而不是编码器在数学上“不能生成”。
 <a id="section-4-3"></a>
 
 ## 4.3 GPT 系列：生成式预训练变换器 (GPT Series: Generative Pre-trained Transformers)
@@ -264,7 +263,7 @@ BERT 推动了 NLP 从任务特定模型走向“预训练 + 微调”的主流�
 
 在 BERT 专注于“完形填空”以此理解语言结构的同时，GPT 系列选择了一条更接近自然语言顺序生成的道路：**自回归生成 (Autoregressive Generation)**。
 
-**GPT (Generative Pre-trained Transformer)** 系列的核心假设是：如果一个模型能够在足够大、足够多样的数据上极好地预测下一个词（Predict the Next Token），它会被迫学习语法、语义、世界知识和部分推理模式。这里的“理解”不应被神秘化：它表现为可迁移的统计表征和上下文内泛化能力，而不是人类式意识。
+**GPT (Generative Pre-trained Transformer)** 用下一 token 预测作为统一训练目标。大规模实验表明，该目标可以学到可迁移的语法、语义、知识模式和上下文适配能力；能否可靠完成某类推理或事实任务仍需独立评测。
 
 **训练目标（最小数学形式）**：GPT 采用 **自回归语言建模 (Causal Language Modeling, CLM)**。给定序列 $x_{1:T}$，最大化似然等价于最小化负对数似然：
 
@@ -305,7 +304,7 @@ graph TD
 
 ### 2. GPT 的演进之路 (Evolution of GPT)
 
-GPT 系列的发展可以理解为模型规模（Scale）、数据分布、训练工程与能力（Capability）共同演进的历史，其中一些能力在评测上呈现出 **涌现 (Emergence)** 或跃迁式现象。
+GPT 系列的发展可以理解为模型规模（Scale）、数据分布、训练工程与能力（Capability）共同演进的历史。一些评测曲线看起来有 **涌现 (Emergence)** 或跃迁，但这种形态会受到指标离散化、任务选择和采样方法影响，不等同于存在已知的普适能力临界点。
 
 #### 2.1 GPT-1: 预训练 + 微调 (Pre-training + Fine-tuning)
 *   **规模**: 1.17亿参数。
@@ -314,7 +313,7 @@ GPT 系列的发展可以理解为模型规模（Scale）、数据分布、训�
 #### 2.2 GPT-2: 零样本学习者 (Zero-shot Learner)
 *   **规模**: 15亿参数。
 *   **洞察**: "Language Models are Unsupervised Multitask Learners"。
-*   GPT-2 的实验表明，当模型足够大、数据足够多时，它不需要显式的微调，通过给出一个合适的 **提示 (Prompt)**，就能完成翻译、摘要等任务。
+*   GPT-2 的论文在不做任务梯度更新的设置下，用任务特定输入格式评估翻译、摘要等零样本行为；结果展示了迁移潜力，也明显依赖任务与评测格式。
     *   *Prompt*: "English: Hello. French: " -> 模型自动补全 "Bonjour"。
 
 #### 2.3 GPT-3: 上下文学习 (In-context Learning)
@@ -336,7 +335,7 @@ libro
 
 ### 3. 缩放定律 (Scaling Laws)
 
-GPT 系列的成功不仅是工程上的胜利，更是科学上的发现。Kaplan 等人（2020）提出了著名的 **Scaling Laws**：
+Kaplan 等人（2020）系统刻画了语言模型的经验 **Scaling Laws**：
 模型性能（Loss）与计算量（Compute）、数据集大小（Data Size）、参数量（Parameters）之间存在 **幂律关系 (Power Law)**。
 
 这意味着：在相似数据分布和训练设定下，**增加算力、数据和参数通常会带来可预测的损失下降**。但缩放不是免费午餐：高质量数据会枯竭，训练与推理成本会上升，评测也会受到数据污染和任务选择影响。2024 年之后的近期系统越来越依赖后训练、工具使用和测试时计算，而不只是扩大预训练规模。
@@ -345,9 +344,9 @@ GPT 系列的成功不仅是工程上的胜利，更是科学上的发现。Kapl
 
 ### 4. 总结 (Summary)
 
-GPT 系列通过坚持简单的“预测下一个词”目标，并在数据、模型规模和训练工程上持续扩展，表现出一批涌现式能力。它将 NLP 的范式从“特定任务微调”推向了“通用任务提示”，也为后续的指令微调、工具调用和推理模型奠定了接口基础。
+GPT 系列通过下一 token 预测目标，并在数据、模型规模和训练工程上持续扩展，获得了广泛的上下文学习与生成能力。它推动 NLP 从“每个任务单独微调”扩展到“通过上下文描述任务”，也为后续指令微调、工具调用和推理后训练提供了统一的自回归接口。
 
-然而，早期的 GPT（如 GPT-3）虽然博学，但并不一定听话或安全。如何让这些庞然大物与人类意图对齐（Alignment），成为了后续 InstructGPT 和 ChatGPT 的核心课题。
+然而，早期 GPT 基座模型主要优化文本似然，并不保证稳定遵循用户指令或满足安全策略。后续 InstructGPT 等工作因此研究指令微调、偏好学习与安全评测。
 <a id="section-4-4"></a>
 
 ## 4.4 统一框架：T5 与 BART (Unified Frameworks: T5 & BART)
@@ -412,7 +411,7 @@ T5 使用了一种类似 BERT MLM 但更适合生成任务的目标：**Span Cor
 
 $$ \mathcal{L}_{\text{span}} = -\sum_{t=1}^{T} \log P(y_t \mid y_{<t}, \tilde{x}) $$
 
-它与 BERT-MLM 的差别在于：BERT 预测的是“被 mask 的离散位置上的 token”，而 T5 预测的是“一个连续的文本片段”，因此更自然地对齐生成任务。
+它与 BERT-MLM 的差别在于：BERT 在被选位置独立产生 token 分类损失；T5 的解码器自回归生成由哨兵符分隔的一个或多个被删 span，因此目标之间也存在序列条件依赖，更直接对应 seq2seq 生成接口。
 
 ### 3. BART: 去噪自编码器 (Denoising Autoencoder)
 
@@ -429,12 +428,12 @@ BART 在 **文本摘要 (Summarization)** 等生成任务上表现尤为出色�
 
 ### 4. 本章总结 (Chapter Summary)
 
-至此，我们已经集齐了 Transformer 家族的三大流派：
+本章比较了三类常见 Transformer 架构：
 
 |流派 (Paradigm)|代表模型 (Model)|架构 (Arch)|优势 (Pros)|劣势 (Cons)|
 |:---|:---|:---|:---|:---|
-|**Encoder-only**|BERT, RoBERTa|Bi-directional|理解能力强，适合分类/抽取|无法进行流畅的文本生成|
-|**Decoder-only**|GPT-2, GPT-3|Auto-regressive|生成能力强，零样本泛化好|对上下文的双向理解较弱（训练时）|
-|**Encoder-Decoder**|T5, BART|Full Transformer|在 seq2seq 任务中通用性强，兼顾理解与生成|训练和推理开销通常略大|
+|**Encoder-only**|BERT, RoBERTa|Bidirectional|高效形成整段输入表示，适合分类/抽取|原始 MLM 接口不能直接左到右生成|
+|**Decoder-only**|GPT-2, GPT-3|Autoregressive|统一条件生成与上下文学习接口|每个位置只能读取左侧前缀；长输出需串行解码|
+|**Encoder-Decoder**|T5, BART|Full Transformer|输入可双向编码，输出自回归，适合 seq2seq|同时维护编码器与解码器，成本取决于输入/输出长度和规模|
 
 在接下来的章节中，我们将进入 **大模型时代 (The Era of LLMs)**，探讨如何通过指令微调 (Instruction Tuning) 和人类反馈强化学习 (RLHF) 将这些基座模型转化为更可用的指令跟随系统。

@@ -47,16 +47,17 @@ for x, y, title, subtitle, fill, stroke in branches:
     parts.append(text(x + 95, y + 60, subtitle, 13, 500, "#334155"))
     parts.append(arrow(590, 192, x + 95, y, "#64748b", 1.8))
 
-parts.append(rect(330, 465, 520, 78, "#ffffff", "#94a3b8", 1.5, 10))
-parts.append(text(590, 500, "Quantized builds", 21, 700, "#334155"))
-parts.append(text(590, 525, "INT8 / INT4 / AWQ / GPTQ / GGUF / mixed precision", 14, 500, "#475569"))
+parts.append(rect(310, 455, 560, 100, "#ffffff", "#94a3b8", 1.5, 10))
+parts.append(text(590, 485, "Quantized checkpoints and packaging", 20, 700, "#334155"))
+parts.append(text(590, 513, "Precision: INT8 / INT4 / mixed precision", 14, 500, "#475569"))
+parts.append(text(590, 537, "Methods: AWQ / GPTQ   |   Container: GGUF", 14, 500, "#475569"))
 
 for x, y, *_ in branches:
-    parts.append(arrow(x + 95, y + 80, 590, 465, "#64748b", 1.6))
+    parts.append(arrow(x + 95, y + 80, 590, 455, "#64748b", 1.6))
 
 parts.append(rect(230, 600, 720, 45, "#ffffff", "#cbd5e1", 1.2, 8))
 parts.append(text(590, 628, "Runtime: vLLM, llama.cpp, SGLang, TGI, TensorRT-LLM, routers, RAG, safety filters", 15, 600, "#334155"))
-parts.append(arrow(590, 543, 590, 600, "#334155", 2))
+parts.append(arrow(590, 555, 590, 600, "#334155", 2))
 parts.append("</svg>\n")
 
 OUT.parent.mkdir(parents=True, exist_ok=True)

@@ -30,7 +30,7 @@ $$ \frac{\partial L}{\partial x} = \underbrace{\frac{\partial L}{\partial z}}_{\
 *   **乘法门 (Mul Gate)**：$z = x \cdot y$。局部梯度 $\frac{\partial z}{\partial x} = y$。
     *   **行为**：**梯度交换器 (Switcher)**。$x$ 的梯度会被缩放 $y$ 倍；$y$ 的梯度会被缩放 $x$ 倍。这也解释了为什么输入数据过大或过小会导致梯度爆炸或消失。
 *   **ReLU 门 (ReLU Gate)**：$z = \max(0, x)$。
-    *   **行为**：**梯度开关 (Filter)**。如果前向传播时 $x > 0$，梯度原样通过；如果 $x \le 0$，梯度被“杀死”（置 0）。
+    *   **行为**：**梯度开关 (Filter)**。若 $x>0$，局部导数为 1；若 $x<0$，为 0；在 $x=0$ 处不可导，框架通常选取 0 等约定次梯度。
 
 <img src="images/backprop_gates.png" width="100%" />
 

@@ -66,7 +66,7 @@ def plot_lora_matrix():
     ax.text(start_x + 16, 5, "=", fontsize=20, ha='center')
     
     # Result
-    draw_matrix(start_x + 17, 2, 4, 6, "Effective Update\n$\Delta W$\n(d x d)", '#F8CECC', 'BA')
+    draw_matrix(start_x + 17, 2, 4, 6, "Effective Update\n$\\Delta W$\n(d x d)", '#F8CECC', 'BA')
 
     # Add descriptive text
     ax.text(start_x + 10.5, 9, "LoRA: Low-Rank Adaptation", fontsize=16, ha='center', fontweight='bold')

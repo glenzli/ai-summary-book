@@ -82,8 +82,8 @@ def plot_weight_initialization():
             # Add mean/std stats
             mean = np.mean(data)
             std = np.std(data)
-            ax.text(0.95, 0.85, f"$\mu$={mean:.2f}\n$\sigma$={std:.2f}", 
-                    transform=ax.transAxes, ha='right', va='top', fontsize=9, 
+            ax.text(0.95, 0.85, f"$\\mu$={mean:.2f}\n$\\sigma$={std:.2f}",
+                    transform=ax.transAxes, ha='right', va='top', fontsize=9,
                     bbox=dict(facecolor='white', alpha=0.7, edgecolor='none'))
 
         # Row Label

@@ -1,27 +1,32 @@
 # 附录 A.5 通用近似定理 (Universal Approximation Theorem)
-## Appendix A.5 Proof of Universal Approximation Theorem
+## Appendix A.5 Proof Outline and a One-Dimensional ReLU Construction
 
-本附录将提供通用近似定理（Universal Approximation Theorem, UAT）的数学证明概要。该定理是深度学习的理论基石，证明了神经网络具有拟合任意复杂函数的潜力。
+本附录给出通用近似定理（Universal Approximation Theorem, UAT）的证明概要，并用一维 ReLU 网络说明分段线性逼近。定理讨论特定函数空间中的稠密性，不保证可训练性、样本效率或泛化。
 
 ### A.5.1 定理陈述 (Statement of the Theorem)
 
-**Cybenko (1989)** 和 **Hornik (1991)** 给出的经典形式如下：
+需要区分几类常被合并引用的结果：
 
-设 $\sigma(\cdot)$ 是一个非线性、连续且单调递增的激活函数（例如 Sigmoid 或 ReLU）。
-对于任意紧致集合 (Compact Set) $K \subset \mathbb{R}^n$（例如一个闭区间 $[0,1]^n$）上的连续函数 $f: K \to \mathbb{R}$，以及任意误差 $\epsilon > 0$，都存在一个单隐藏层神经网络 $g(\mathbf{x})$，包含有限个隐藏单元 $N$，使得：
+*   **Cybenko (1989)**：若 $\sigma$ 是连续 sigmoidal 函数，即 $\sigma(t)\to 0$（$t\to-\infty$）且 $\sigma(t)\to 1$（$t\to+\infty$），则有限个 ridge functions $\sigma(\mathbf w^T\mathbf x+b)$ 的线性组合在 $C([0,1]^n)$ 中按上确界范数稠密。更一般地，Cybenko 的证明使用 **discriminatory** 条件。
+*   **Hornik (1991) 及后续推广**：普适性不依赖 sigmoid 的单调形状。对具有偏置的单隐层网络，在相应正则条件下，激活函数“不是（几乎处处）多项式”给出稠密性的关键刻画；Leshno 等人 (1993) 给出了这一非多项式条件。ReLU 是连续、非多项式激活，因此属于后续结论，而不是 Cybenko 原始 sigmoidal 定理的例子。
+
+以连续函数的一致逼近为例：对紧致集合 $K\subset\mathbb R^n$、$f\in C(K)$ 和任意 $\epsilon>0$，在上述相应激活条件下，存在有限宽单隐层网络
+
+$$
+g(\mathbf{x}) = \sum_{i=1}^{N} v_i\,\sigma(\mathbf{w}_i^T \mathbf{x} + b_i)
+$$
+
+使得
 
 $$ \sup_{\mathbf{x} \in K} |f(\mathbf{x}) - g(\mathbf{x})| < \epsilon $$
 
-其中神经网络形式为：
-$$ g(\mathbf{x}) = \sum_{i=1}^{N} v_i \sigma(\mathbf{w}_i^T \mathbf{x} + b_i) $$
-
-简单来说，**只要隐藏层神经元足够多，单层神经网络可以以任意精度逼近任何连续函数。**
+这里的“任意精度”只针对指定紧致域、函数类和范数，也以允许网络宽度随 $f$ 与 $\epsilon$ 变化为前提。
 
 ---
 
 ### A.5.2 基于 Hahn-Banach 定理的证明思路 (Proof Outline)
 
-这里我们采用一种基于泛函分析的证明思路（Cybenko 的原始证明思路），利用 **Hahn-Banach 定理** 和 **Riesz 表示定理**。
+这里取 $K=[0,1]^n$ 且 $\sigma$ 为连续 sigmoidal 函数，概述 Cybenko 的泛函分析证明思路；ReLU 的普适性不由这一组 sigmoidal 前提直接推出。证明使用 **Hahn-Banach 定理** 和 **Riesz 表示定理**。
 
 #### 1. 定义函数空间
 记 $C(K)$ 为定义在紧致集合 $K$ 上的所有连续函数的集合，赋予上确界范数（Sup-Norm）：
@@ -51,7 +56,7 @@ Cybenko 证明了对于 Sigmoid 类的 Sigmoidal 函数（$x \to -\infty$ 时 $\
 $$ \int_K \sigma(\mathbf{w}^T \mathbf{x} + b) d\mu(\mathbf{x}) = 0 $$
 那么必然蕴含 $\mu = 0$。
 
-这主要通过傅里叶变换或特定的积分变换来证明。直观上，通过调节 $\mathbf{w}$ 和 $b$，我们可以让 $\sigma(\mathbf{w}^T \mathbf{x} + b)$ 逼近任意的示性函数 (Indicator Function) 或阶跃函数。如果你能对所有的阶跃函数积分为 0，那么你对这个空间里的所有函数积分都必须为 0。
+证明利用缩放后的 sigmoidal 函数逼近由超平面定义的阶跃，并据此表明该有限符号测度在相应半空间族上为零，最终推出 $\mu=0$。这里不是声称单个 sigmoid 能逼近任意示性函数，而是说明该函数族足以分离非零测度。
 
 #### 4. 矛盾
 如果你能证明 $\mu = 0$，这就与“存在非零泛函 $L$”矛盾了。
@@ -59,22 +64,37 @@ $$ \int_K \sigma(\mathbf{w}^T \mathbf{x} + b) d\mu(\mathbf{x}) = 0 $$
 
 ---
 
-### A.5.3 直观构造法 (Constructive Proof using Bump Functions)
+### A.5.3 一维 ReLU 的分段线性构造 (One-Dimensional Construction)
 
-对于 ReLU 激活函数，我们可以给出更直观的构造性证明。
+这里给出一个诚实但限于一维的构造。记 $(u)_+=\operatorname{ReLU}(u)$。
 
-1.  **构造小凸起 (Bump Function)**
-    利用两个 ReLU 函数可以构造一个“梯形”或“矩形”凸起。
-    $$ g(x) = \text{ReLU}(x) - \text{ReLU}(x-a) - \text{ReLU}(x-b) + \text{ReLU}(x-c) $$
-    这可以在一维上形成一个局部的凸起。在多维情况下，可以通过 $g(\mathbf{x}) = \sum g_i(x_i)$ 或其他组合方式构造。
+1.  **四个 ReLU 构造梯形帽函数**
 
-2.  **黎曼积分逼近**
-    任何连续函数都可以用一系列的小矩形（阶梯函数）来逼近（黎曼和）。
-    既然神经网络可以构造出任意位置、任意高度、任意宽度的“小矩形”，那么它自然可以逼近任意连续函数。
+    对 $0<a<b$ 和平移量 $t$，定义
+
+    $$
+    h_{t,a,b}(x)=\frac{1}{a}\left[
+    (x-t)_+-(x-t-a)_+-(x-t-b)_+ +(x-t-a-b)_+
+    \right].
+    $$
+
+    它由**四个** ReLU 组成：在 $[t,t+a]$ 线性上升，在 $[t+a,t+b]$ 保持为 1，在 $[t+b,t+a+b]$ 线性下降，其余位置为 0。若写成 $(x)_+-(x-a)_+-(x-b)_++(x-c)_+$，必须满足 $0<a<b$ 且 $c=a+b$ 才有上述紧支撑梯形。连续 ReLU 网络不能精确表示有跳跃的不连续矩形指示函数。
+
+2.  **用分段线性插值逼近连续函数**
+
+    对区间 $[A,B]$ 上的连续函数 $f$，一致连续性保证：当分割网格足够细时，连接采样点 $(x_j,f(x_j))$ 的分段线性插值 $p$ 满足 $\|f-p\|_\infty<\epsilon$。任意连续分段线性函数都可写成
+
+    $$
+    p(x)=\alpha+\beta x+\sum_{j=1}^{m}\gamma_j(x-x_j)_+,
+    $$
+
+    其中 $\gamma_j$ 是相邻线段斜率的变化量。因此，单隐层 ReLU 网络可以在一维紧区间上一致逼近连续函数。若网络定义不单列仿射直连项，可用 $x=(x)_+-(-x)_+$ 表示线性项，并用输出偏置表示常数项。
+
+3.  **多维边界**
+
+    直接写 $\sum_i g_i(x_i)$ 只能得到坐标可加函数，不能构造一般的局部矩形或表示变量交互。多维普适性依赖 $\sigma(\mathbf w^T\mathbf x+b)$ 这类 ridge functions 的正式密度定理，不能由上述一维插值论证直接推出。
 
 <img src="../chapter_02/images/universal_approximation_bump.png" width="80%" />
-
-*(注：该图在 Chapter 2.1 的可视化代码中需涵盖或单独生成)*
 
 ---
 
@@ -82,4 +102,4 @@ $$ \int_K \sigma(\mathbf{w}^T \mathbf{x} + b) d\mu(\mathbf{x}) = 0 $$
 
 通用近似定理虽然保证了**存在性**，但没有告诉我们：
 1.  **如何找到**这个网络（优化问题）。
-2.  需要**多少**神经元（效率问题）。通常为了逼近复杂函数，单层网络需要的神经元数量是指数级增长的（Curse of Dimensionality）。这也是为什么我们需要**深度**（Deep Learning）的原因——深度网络可以用更少的参数更高效地表示复杂函数。
+2.  需要**多少**神经元（效率问题）。对没有额外结构的一般高维函数类，逼近率可能受到维数灾难；对具有组合、局部或对称结构的函数类，深层架构有时能更高效。UAT 本身不证明“深度一定更省参数”。

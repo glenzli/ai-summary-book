@@ -4,9 +4,9 @@
 
 在 RLHF 中，我们将大模型微调建模为一个 RL 问题：
 *   **Agent**: LLM (Policy $\pi_\theta$).
-*   **Environment**: 用户 Prompt 及对话上下文。
+*   **State/Environment**: Prompt、已生成前缀以及生成终止规则；奖励模型、验证器和系统约束在轨迹结束或中间步骤提供反馈。
 *   **Action**: 生成下一个 Token。
-*   **Reward**: 奖励模型 (Reward Model) 给出的分数。
+*   **Reward**: 可以来自奖励模型、人类偏好代理、规则或可执行验证器，不限于单一 RM 分数。
 
 我们的目标是最大化期望累积奖励：
 $$ J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} [R(\tau)] $$
@@ -19,7 +19,7 @@ $$ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t} \
 
 然而，直接使用 Policy Gradient 极不稳定：
 1.  **步长难以确定**: 更新太小收敛慢，更新太大导致策略崩溃。
-2.  **数据效率低**: 每一批数据用完即弃。
+2.  **数据效率受限**: 朴素 on-policy 更新只能在策略尚未偏离采样策略太远时复用轨迹。
 
 ## A.11.3 PPO: 近端策略优化 (Proximal Policy Optimization)
 
@@ -34,19 +34,19 @@ $$ r_t(\theta) = \frac{\pi_\theta(a_t | s_t)}{\pi_{old}(a_t | s_t)} $$
 
 ### A.11.3.2 截断目标函数 (Clipped Objective)
 
-PPO 的目标函数 $L^{CLIP}$ 由两部分取最小值构成，形成一个“悲观”的下界：
+PPO 的 clipped surrogate 由两部分取最小值构成，对会把概率比率推得过远的有利更新截平：
 
 $$ L^{CLIP}(\theta) = \mathbb{E}_t \left[ \min(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) A_t) \right] $$
 
 *   $\epsilon$: 超参数，通常为 0.1 或 0.2。
 *   **第一项** $r_t(\theta) A_t$: 标准的 TRPO 代理目标。
-*   **第二项** $\text{clip}(\dots) A_t$: 将比率强制限制在 $[1-\epsilon, 1+\epsilon]$ 之间。
+*   **第二项** $\text{clip}(\dots) A_t$: 截断该样本对代理目标的贡献；它不会把实际策略比率硬性约束在 $[1-\epsilon, 1+\epsilon]$ 内。
 
 **直观理解**：
 1.  如果 $A_t > 0$（动作很好）：我们希望增加该动作的概率 ($r_t > 1$)。但为了稳定，如果 $r_t > 1+\epsilon$，就不再给予额外的奖励梯度。
 2.  如果 $A_t < 0$（动作很差）：我们希望减少该动作的概率 ($r_t < 1$)。但为了稳定，如果 $r_t < 1-\epsilon$，就不再给予额外的惩罚梯度。
 
-这种机制保证了策略迭代的单调提升，避免了剧烈震荡。
+这种机制通常提高更新稳定性，但 PPO clipping 不提供 TRPO 式的严格单调改进保证，实际结果仍取决于优势估计、学习率、epoch 数和 KL 漂移。
 
 ## A.11.4 KL 散度与 RLHF (KL Divergence in RLHF)
 
@@ -61,10 +61,10 @@ $$ R(x, y) = R_{RM}(x, y) - \beta D_{KL}(\pi_\theta(\cdot|x) || \pi_{ref}(\cdot|
 展开 KL 项：
 $$ D_{KL} = \sum \pi_\theta(y|x) \log \frac{\pi_\theta(y|x)}{\pi_{ref}(y|x)} $$
 
-如果我们完全忽略 $R_{RM}$，只最小化 KL，那么 $\pi_\theta$ 就会坍缩回 $\pi_{ref}$。
-如果我们完全忽略 KL，$\pi_\theta$ 就会为了高分利用 RM 的漏洞（输出乱码或重复模式）。
+如果完全忽略 $R_{RM}$ 并只最小化该 KL，最优点是 $\pi_\theta=\pi_{ref}$。
+如果完全忽略 KL，策略偏移缺少这一锚定，更可能利用奖励模型漏洞；是否发生以及表现为何种模式取决于奖励与优化过程。
 
-该项本质上是在 **Exploration (探索高分)** 和 **Exploitation (保持语言能力)** 之间寻求平衡。
+该项是在**优化外部奖励**与**保持接近参考策略**之间做正则化权衡；这不同于强化学习中通常所说的 exploration-exploitation 权衡。
 
 ## A.11.5 DPO：绕过显式 RL 的偏好优化 (Direct Preference Optimization)
 
@@ -88,6 +88,6 @@ $$ \mathcal{L}_{\text{DPO}} = -\log \sigma\big(\Delta(x, y_w, y_l)\big) $$
 
 - **胜者/败者差分**：只关心 $\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)$，等价于“相对偏好”的学习信号。
 - **参考策略锚定**：减去 $\log \pi_{ref}(\cdot)$，会惩罚那些虽然能赢，但会把策略分布推得过远的更新方向（这与 RLHF 里 KL Penalty 的角色一致）。
-- **$\beta$ 的作用**：$\beta$ 越大，模型会更激进地追随偏好；$\beta$ 越小，模型更保守、更贴近 $\pi_{ref}$。
+- **$\beta$ 的作用**：它缩放策略相对参考策略的对数比，并在 DPO 的理论来源中对应 KL 正则系数/温度。较大的 KL 系数意味着最优策略更受参考模型约束；在有限数据和具体优化器下，不能只看损失中的乘法位置就断言“$\beta$ 越大越激进”。
 
-这也是为什么在很多开源实践中，DPO 往往更“省事”且更稳定：它把 RLHF 的核心权衡压缩成了一个直接监督目标。
+DPO 不需要在线采样循环、显式奖励模型训练和 critic，因此实现链路通常比 PPO-RLHF 短；稳定性与最终效果仍取决于偏好数据、参考模型、$\beta$ 和分布偏移。

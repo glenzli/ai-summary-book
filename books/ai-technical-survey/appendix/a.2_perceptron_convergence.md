@@ -11,8 +11,9 @@
 在开始证明之前，我们需要对问题进行严格的数学定义。
 
 ### 1. 线性可分性 (Linear Separability)
-假设训练数据集 $D = \{(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), ..., (\mathbf{x}_N, y_N)\}$ 是线性可分的。
-这意味着存在一个理想的权重向量 $\mathbf{w}^*$（为简化推导，我们将偏置 $b$ 并入权重向量 $\mathbf{w}$，将 $1$ 并入输入向量 $\mathbf{x}$），使得对所有的样本 $i=1...N$：
+假设训练数据集 $D = \{(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), ..., (\mathbf{x}_N, y_N)\}$ 是线性可分的。为纳入偏置，定义增广向量 $\tilde{\mathbf x}_i=(\mathbf x_i,1)$ 与 $\tilde{\mathbf w}=(\mathbf w,b)$。下文为简化记号，把这些增广向量仍写成 $\mathbf x_i,\mathbf w$；因此范数、半径和间隔都在**增广空间**中计算。
+
+线性可分意味着存在 $\mathbf{w}^*$，使得对所有样本 $i=1,\ldots,N$：
 
 $$ y_i (\mathbf{w}^{*T} \mathbf{x}_i) > 0 $$
 
@@ -20,7 +21,7 @@ $$ y_i (\mathbf{w}^{*T} \mathbf{x}_i) > 0 $$
 
 $$ y_i (\mathbf{w}^{*T} \mathbf{x}_i) \ge \gamma $$
 
-其中 $\gamma > 0$ 被称为 **几何间隔 (Geometric Margin)**。$\gamma$ 代表了超平面与最近的数据点之间的距离，它衡量了分类的“难易程度”（$\gamma$ 越大，缝隙越宽，越好分）。
+其中 $\gamma>0$ 是在 $\|\mathbf w^*\|=1$ 归一化下的**增广空间间隔**。它等于增广样本到增广空间决策超平面的欧氏距离下界；当偏置通过常数坐标并入时，不能不加说明地把它称为原输入空间中的几何距离。
 
 <img src="images/margin_gamma_comparison.png" width="100%" />
 
@@ -39,7 +40,7 @@ $$ \|\mathbf{x}_i\| \le R $$
 <span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">Conclusion</span>
 $$ k \le \left( \frac{R}{\gamma} \right)^2 $$
 
-这意味算法**必然收敛**。更新次数 $k$ 取决于数据范围 $R$ 和分类间隔 $\gamma$，而与样本数量 $N$ 无直接关系。
+在上述线性可分、有界增广输入、单位学习率和从零初始化等条件下，算法会在有限次错误更新后停止。上界显式依赖 $R/\gamma$，没有单独的 $N$ 项；数据集规模仍可通过可达到的间隔和半径间接影响该比值。
 
 ---
 
@@ -95,7 +96,7 @@ $$ \|\mathbf{w}_k\|^2 \le \|\mathbf{w}_{k-1}\|^2 + R^2 $$
 <span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Eq. 2</span>
 $$ \|\mathbf{w}_k\|^2 \le k R^2 $$
 
-这说明：$\mathbf{w}_k$ 的长度增长**最多是线性的**，受到误差修正机制的限制。
+这说明 $\|\mathbf w_k\|^2$ 至多按 $k$ 线性增长，等价地 $\|\mathbf w_k\|\le\sqrt{k}\,R$，所以权重向量的**长度**至多按 $\sqrt{k}$ 增长。
 
 ### 步骤 3: 结合两式得出结论
 
@@ -125,12 +126,12 @@ $$ k \le \frac{R^2}{\gamma^2} = \left( \frac{R}{\gamma} \right)^2 $$
 
 ## A.2.4 物理意义与洞察
 
-这个不等式 $k \le (R/\gamma)^2$ 告诉了我们要想让模型学得快（$k$ 小），需要满足两个条件：
+错误次数界由无量纲比值 $R/\gamma$ 决定：相对于样本半径更大的分离间隔会给出更紧的上界。不能把 $R$ 和 $\gamma$ 当作彼此独立、可由统一缩放单独改善的量。
 
 1.  **间隔 $\gamma$ 要大**：如果数据分得越开，两类之间有一条宽宽的大河，模型就能很容易找到分界线，很快收敛。如果两类数据挤在一起（$\gamma$ 很小），模型就要反复微调，收敛很慢。
 
 <img src="images/convergence_speed_gamma.png" width="100%" />
 
-2.  **半径 $R$ 要小**：如果数据分布非常散乱（$R$ 很大），梯度的方差可能很大，导致更新震荡。这也解释了为什么在深度学习中，我们通常要进行 **数据归一化 (Data Normalization)** 或 **标准化 (Standardization)**，将数据限制在一个较小的半径内，有助于加速收敛。
+2.  **尺度不变性**：若把定理中的所有增广样本统一乘以 $c>0$，则 $R$ 与 $\gamma$ 都乘以 $c$，所以 $R/\gamma$ 和错误次数上界不变。数据归一化或标准化可能改善数值条件、不同坐标尺度和其他优化算法的行为；非均匀特征变换也可能改变间隔比，但不能用“只减小 $R$”从该感知机界推出必然加速。
 
 <img src="images/data_radius_normalization.png" width="100%" />

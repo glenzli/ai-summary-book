@@ -58,7 +58,7 @@ Google 的 **FLAN** (Finetuned Language Net) 系列研究表明，通过将数�
 
 ### 3. 对话微调 (Chat Tuning)
 
-在指令微调的基础上，OpenAI 进一步针对 **多轮对话 (Multi-turn Chat)** 进行了优化。这要求模型不仅处理当前指令，还要利用对话历史 (Context Window) 维持上下文一致性。
+在指令微调基础上，对话模型还需要针对 **多轮对话 (Multi-turn Chat)** 的角色格式和历史依赖训练。公开资料通常只披露部分数据与配方，因此这里描述通用机制，不把任一闭源产品的完整训练流程视为已知事实。
 
 #### 3.1 格式 (Format)
 
@@ -79,17 +79,17 @@ What if I don't have eggs?
 
 指令微调（SFT）把模型从普通续写分布推向“根据指令生成回答”的交互分布，使其更稳定地遵循用户请求。
 然而，SFT 依然存在局限：
-1.  **数据的昂贵性**: 高质量的指令数据通常需要专家撰写（如 OpenAI 雇佣了大量标注员）。
+1.  **数据成本**: 高质量指令数据往往需要人工撰写、审核或验证；合成数据也需要过滤与独立评测。
 2.  **目标不一致**: 仅模仿人类的回答（交叉熵损失最小化）并不等于生成“好”的回答。有时候模型会学会一本正经地胡说八道（Hallucination），因为它在训练数据中见过类似模式。
 
-为了解决“好坏”的价值判断问题，我们需要引入更高级的对齐技术—— **RLHF**。
+一种把人类比较判断转成训练信号的路线是 **RLHF**；它补充 SFT，但不等于已经定义或解决所有价值判断。
 <a id="section-5-2"></a>
 
 ## 5.2 RLHF 与价值对齐 (RLHF & Value Alignment)
 
 ### 1. 为什么需要 RLHF? (Why RLHF?)
 
-有监督微调 (SFT) 教会了模型“如何说话”，但没有教会它“什么是好的回答”。
+有监督微调 (SFT) 让模型拟合示范回答，也会传递部分质量与安全偏好；但单个示范无法直接表达多个可接受回答之间的相对偏好。
 人类的偏好是主观且难以定义的：
 *   **Helpful (有帮助)**: 准确回答问题。
 *   **Harmless (无害)**: 不生成偏见、暴力或非法内容。
@@ -146,16 +146,17 @@ graph TD
 
 ### 3. KL 散度：防止模型“作弊” (KL Divergence: The Safety Anchor)
 
-在 PPO 过程中，一个常见的问题是 **Reward Hacking**：模型可能会发现某种特定的怪异模式能骗取高分（例如一直重复“谢谢”）。
+在 PPO 过程中，一个常见的问题是 **Reward Hacking**：模型可能发现某种模式能获得高分，却不符合真实目标（具体模式取决于奖励模型，重复、冗长或迎合只是可能例子）。
 为了防止 RL 模型偏离原本的语言能力太远，我们在奖励函数中加入了一个 **KL 惩罚项 (KL Penalty)**：
 
 \[
-R_{total} = R_{model}(x, y) - \beta \log \left( \frac{\pi_{RL}(y|x)}{\pi_{SFT}(y|x)} \right)
+R_{total}(x,y) = R_{model}(x,y)
+- \beta \sum_t \log \frac{\pi_{RL}(y_t\mid x,y_{<t})}{\pi_{SFT}(y_t\mid x,y_{<t})}
 \]
 
 *   \(\pi_{RL}\): 当前正在训练的模型。
 *   \(\pi_{SFT}\): 冻结的初始 SFT 模型。
-*   **作用**: 强迫 RL 模型的分布不要偏离 SFT 模型太远，保持语言的流畅性。
+*   **作用**: 上式是沿采样回答得到的 KL 相关惩罚估计；其期望对应策略相对参考策略的 KL 正则，用于限制分布偏移，但不保证事实性或安全性。
 
 <img src="chapter_05/images/kl_anchor_tradeoff.png" width="85%" />
 
@@ -168,9 +169,9 @@ RLHF 很有效，但 PPO 训练对超参数、奖励模型质量和 KL 约束较
 
 $$ \mathcal{L}_{\text{DPO}} = -\log \sigma\Big(\beta\big[(\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)) - (\log \pi_{ref}(y_w|x) - \log \pi_{ref}(y_l|x))\big]\Big) $$
 
-其中 $\beta$ 控制“偏好强度”（可视作温度/权衡系数）。它的直觉和 RLHF 一致：**既要贴近人类偏好，又不能偏离原本的语言能力太远**。（更完整的推导与它与 KL 约束的关系，请见 **[附录 A.11](appendix/a.11_rl_and_ppo.md)**）
+其中 $\beta$ 是温度/权衡系数；在 DPO 的理论来源中，它对应 KL 正则强度的参数化。较大的 KL 系数意味着最优策略更受参考模型约束，但有限数据下的训练敏感度不能只由损失中的乘法位置判断。（更完整的推导与 KL 关系见 **[附录 A.11](appendix/a.11_rl_and_ppo.md)**）
 
-DPO 正在逐渐成为 PPO-RLHF 的高效替代方案，被广泛应用于开放权重模型的微调中。与此同时，推理模型又重新把强化学习带回中心：它们常用可验证奖励或过程奖励来提升数学、代码和多步推理能力。因此，“偏好对齐”和“推理强化”正在分化成两条相关但目标不同的后训练路线。
+DPO 已成为偏好微调的常用方法之一，但不是 PPO-RLHF 的无条件替代：离线偏好数据、在线探索和奖励可验证性适合不同算法。与此同时，公开的 o1、DeepSeekMath/DeepSeek-R1 材料显示，强化学习也被用于数学、代码等可验证任务。因此，“偏好对齐”和“推理强化”是相关但目标与数据口径不同的后训练路线。
 
 ### 5. 小结与后续
 
@@ -181,15 +182,15 @@ RLHF 及其后续偏好优化方法显著提升了模型的可用性和指令遵
 
 ### 1. 全量微调的负担 (The Burden of Full Fine-Tuning)
 
-随着模型规模突破千亿参数（175B+），传统的全量微调（Full Fine-Tuning）变得不再可行。
-*   **显存噩梦**: 微调 175B 模型需要存储梯度和优化器状态，这通常需要 1TB+ 的显存（相当于几十张 A100 GPU）。
-*   **存储灾难**: 每次微调一个下游任务，都需要保存一份完整的模型副本（700GB+）。
+随着模型规模达到百亿至千亿参数，传统全量微调（Full Fine-Tuning）仍可通过分片与多机训练完成，但资源门槛很高。
+*   **训练状态**: 以 175B 参数为例，仅 BF16/FP16 权重约为 350 GB（按十进制字节粗算）；梯度、FP32 master weights 和 Adam 一二阶状态会使未分片训练状态达到数 TB，实际数值取决于精度、优化器和并行策略。
+*   **检查点存储**: 每个 BF16/FP16 全量检查点约 350 GB，FP32 才约 700 GB，且还未计 tokenizer、量化元数据或文件格式开销。
 
 <span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">解决方案</span>：PEFT (Parameter-Efficient Fine-Tuning)。即 **冻结** 大部分模型参数，只训练极少量的额外参数。
 
 ### 2. LoRA: 低秩自适应 (Low-Rank Adaptation)
 
-LoRA 是目前最流行、最高效的 PEFT 方法。它的数学直觉非常优雅：**模型权重的更新量是低秩的 (The change in weights is low-rank)。**
+LoRA 是广泛使用的 PEFT 方法。它把任务适配限制为低秩权重增量；这是结构假设与可调超参数，不是关于所有最优权重更新都严格低秩的定理。
 
 #### 2.1 核心公式 (Core Formulation)
 
@@ -216,7 +217,7 @@ W = W_0 + \Delta W, \quad \Delta W = \frac{\alpha}{r} B A
 <img src="chapter_05/images/lora_rank_tradeoff.png" width="85%" />
 
 #### 2.3 优势 (Advantages)
-1.  **极度节省参数**: 对于 GPT-3，\( r=4 \) 时，LoRA 只需要训练 0.01% 的参数。
+1.  **节省可训练参数**: LoRA 论文在 GPT-3 175B 的一种 $r=4$ 配置中报告约 470 万可训练参数，约占总参数的 0.003%；比例取决于把 LoRA 放在哪些矩阵上。
 2.  **无推理延迟**: 在推理时，可以将 \( BA \) 直接加回 \( W_0 \) 中（\( W' = W_0 + BA \)），不增加额外的计算层。
 3.  **多任务切换**: 不同的任务只需要切换不同的 \( A, B \) 矩阵，基础模型 \( W_0 \) 共享。
 
@@ -230,19 +231,19 @@ W = W_0 + \Delta W, \quad \Delta W = \frac{\alpha}{r} B A
 *   在 Transformer 的每一层（Attention 和 FFN 层之间）插入小型的“适配器”神经网络（Bottleneck Layers）。
 *   **缺点**: 增加了网络深度，导致推理延迟（Inference Latency）。
 
-#### 3.2 Prefix Tuning / P-Tuning
-*   在 Input Embeddings 之前拼接一组可学习的“虚拟 Token”（Virtual Tokens/Prefix）。
-*   **直觉**: 相当于通过梯度下降自动寻找一组连续空间中的“软 Prompt”。
-*   **缺点**: 占用了宝贵的上下文窗口长度。
+#### 3.2 Prefix Tuning / Prompt Tuning / P-Tuning
+*   **Prefix Tuning** 通常为 Transformer 各层注意力加入可训练的连续 key/value prefix；**Prompt Tuning** 更接近只在输入嵌入前加入可训练软 token。P-Tuning 系列还包含提示编码器等变体，三者不应完全等同。
+*   **直觉**: 通过梯度下降学习连续提示或注意力前缀，同时冻结大部分底模参数。
+*   **代价**: 运行时要处理额外前缀表示，会增加注意力/KV 开销并占用有效序列预算；具体是否计入 API“上下文长度”取决于实现。
 
 ### 4. QLoRA: 量化 LoRA (Quantized LoRA)
 
 如果 LoRA 解决了训练参数量的问题，那么 QLoRA 则进一步解决了 **基座模型显存占用** 的问题。
-*   **4-bit NormalFloat (NF4)**: 将冻结的基座模型 \( W_0 \) 压缩到 4-bit 加载。
+*   **4-bit NormalFloat (NF4)**: 用针对近似正态权重分布设计的 4-bit 量化码本存储冻结基座；计算通常仍在 BF16 等更高精度中进行。NF4 不是 IEEE FP4。
 *   **Double Quantization**: 对量化常数再进行一次量化。
 *   **Paged Optimizers**: 利用 CPU 内存来处理 GPU 显存峰值。
 
-<span style="background-color: #D5E8D4; color: black; padding: 2px 4px; border-radius: 4px;">成果</span>：QLoRA 使得在单张 48GB GPU 上微调 65B 模型成为可能，极大地民主化了 LLM 的微调。
+<span style="background-color: #D5E8D4; color: black; padding: 2px 4px; border-radius: 4px;">论文结果</span>：QLoRA 论文报告可在单张 48GB GPU 上微调 65B 模型。这是特定软件、序列长度和训练配置下的结果，说明量化冻结权重可以显著降低微调显存门槛。
 
 QLoRA 也让“先量化加载底模，再训练小 adapter”成为常规流程。实际使用时要注意：训练时的 4-bit 加载、推理时的量化格式、最终是否合并 LoRA，是三件不同的工程选择。
 <a id="section-5-4"></a>
@@ -252,17 +253,17 @@ QLoRA 也让“先量化加载底模，再训练小 adapter”成为常规流程
 ### 1. 为什么需要量化？(Why Quantization?)
 
 大模型的参数量巨大，导致其部署面临两大瓶颈：
-1.  **显存带宽 (Memory Bandwidth)**: 模型生成速度（Tokens/sec）主要受限于从显存读取权重的速度，而非计算速度（Memory-bound）。
+1.  **显存带宽 (Memory Bandwidth)**: 在小 batch 自回归 decode 等常见场景中，每步读取大量权重，往往呈 memory-bound；大 batch、长 prefill、MoE 通信或某些 kernel 也可能受计算与通信限制。
 2.  **显存容量 (Memory Capacity)**: 运行一个 70B 的模型（FP16）需要 140GB+ 显存，这远超消费级显卡的能力。
 
 **量化 (Quantization)** 通过降低数值精度来减少显存占用和带宽需求。
 
 ### 2. 数值精度概览 (Numerical Precision Overview)
 
-*   **FP32 (Full Precision)**: 32-bit，标准的深度学习训练格式。
-*   **FP16 / BF16 (Half Precision)**: 16-bit，现代 GPU 训练和推理的主流格式。BF16 拥有与 FP32 相同的指数位范围，训练更稳定。
+*   **FP32 (Single Precision)**: 32-bit，常用于高精度累加、优化器状态或数值敏感计算。
+*   **FP16 / BF16 (Half Precision)**: 16-bit，是现代加速器训练和推理的常见格式。BF16 与 FP32 具有相同数量的指数位、动态范围更接近 FP32，但尾数精度更低；是否更稳定仍取决于 loss scaling 与算子实现。
 *   **INT8**: 8-bit 整数。
-*   **FP4 / NF4**: 4-bit 浮点数（QLoRA 引入）。
+*   **FP4 / NF4**: 都是 4-bit 表示，但不是同一格式。FP4 指一类低位浮点编码；NF4 是 QLoRA 使用的非均匀量化数据类型/码本。
 
 ```mermaid
 graph TD
@@ -283,6 +284,8 @@ graph TD
 
 <img src="chapter_05/images/quantization_tradeoff.png" width="80%" />
 
+图中的容量只按“参数数目 $\times$ 位宽”估算权重本体；实际文件和显存还包含 scale、zero point、分组元数据、padding 及运行时 workspace。“质量”曲线是示意值，不代表任一模型实测。
+
 ### 3. 常见量化技术 (Common Quantization Techniques)
 
 #### 3.1 Post-Training Quantization (PTQ)
@@ -294,11 +297,11 @@ $$ q = \text{clip}\big(\text{round}(w/s) + z\big), \quad \hat{w} = s\,(q-z) $$
 
 其中 $q$ 是 INT8/INT4 的离散值，$\hat{w}$ 是反量化后的近似权重。工程上常用 **按通道量化 (Per-channel Quantization)** 来降低误差（不同输出通道用不同的 $s,z$）。
 
-*   **GPTQ**: 一种基于二阶信息（Hessian Matrix）的逐层量化方法，能将模型压缩到 3-bit 或 4-bit 而几乎不损失精度。
-*   **AWQ (Activation-aware Weight Quantization)**: 核心发现是——并不是所有权重都同等重要。AWQ 保护那些对应 **较大激活值** 的权重（Salient Weights），对其他权重进行激进量化。
+*   **GPTQ**: 一种利用近似二阶信息逐层补偿量化误差的权重量化方法。3/4-bit 后的质量损失取决于模型、分组、校准集、任务和 kernel，不能概括为“几乎无损”。
+*   **AWQ (Activation-aware Weight Quantization)**: 依据校准激活识别敏感权重通道，并通过逐通道缩放等方式减小权重量化误差；它不等同于简单把少量权重永久保留为高精度。
 
 #### 3.2 Quantization-Aware Training (QAT)
-感知量化训练。在训练过程中模拟量化误差，通常效果优于 PTQ，但训练成本高。
+感知量化训练。在训练过程中模拟或直接使用量化误差，常能恢复 PTQ 丢失的质量，但并非所有模型/位宽都必然优于成熟 PTQ，且需要额外训练成本。
 
 #### 3.3 混合量化 (Mixed Quantization)
 
@@ -310,7 +313,7 @@ $$ q = \text{clip}\big(\text{round}(w/s) + z\big), \quad \hat{w} = s\,(q-z) $$
 *   对 KV Cache 使用不同精度，以降低长上下文推理显存。
 *   对 attention、MLP 和输出头采用不同 kernel 与量化格式。
 
-这样做的原因是量化误差并不均匀。某些层和通道对误差特别敏感，如果一刀切压到低比特，可能出现格式错误、长上下文退化、数学/代码能力下降或工具调用 JSON 不稳定。AWQ、GPTQ、SmoothQuant 等方法都可以看作在寻找“哪些部分可以压，哪些部分必须保留”的工程答案。开放模型生态中的 GGUF、AWQ、GPTQ、EXL2 等发布格式，本质上就是不同量化策略和推理 runtime 的组合（见 **[5.8 开放权重模型生态](chapter_05.md#section-5-8)**）。
+这样做的原因是量化误差并不均匀。某些层和通道对误差特别敏感，如果一刀切压到低比特，可能出现格式错误、长上下文退化、数学/代码能力下降或工具调用 JSON 不稳定。AWQ、GPTQ、SmoothQuant 等方法以不同目标控制这些误差。发布时还要区分量化方法/检查点约定、GGUF 等文件容器与 llama.cpp 等推理 runtime（见 **[5.8 开放权重模型生态](chapter_05.md#section-5-8)**）。
 
 ### 4. 高效推理与显存管理 (Efficient Inference & Memory Management)
 
@@ -354,7 +357,7 @@ $$ q = \text{clip}\big(\text{round}(w/s) + z\big), \quad \hat{w} = s\,(q-z) $$
 通过 RLHF、DPO、IPO、KTO、ORPO 等方法，让模型倾向于输出更有帮助、更诚实、更安全的回答。核心数据通常是同一提示下多个回答的比较。
 
 **第三层：推理强化 (Reasoning RL)**
-数学、代码、逻辑题有时可以自动验证答案，因此可以使用可验证奖励训练模型进行更长的搜索和推理。DeepSeek-R1 这类系统把强化学习重新推到中心，不只是为了“礼貌地回答”，而是为了让模型在可验证任务上学会分配更多测试时计算。
+数学、代码、逻辑题有时可以自动验证答案，因此可以使用可验证奖励提高采样轨迹和最终答案的成功率。DeepSeek-R1 报告展示了强化学习在这类任务中的作用；它与测试时生成长度相关，但不能据此断言所有推理产品都采用同样的搜索或计算分配机制。
 
 **第四层：工具与格式训练 (Tool and Format Training)**
 现代 Agent 需要稳定输出 JSON、函数调用、SQL、代码补丁、计划、引用和结构化结果。它们要求模型不仅“懂内容”，还要能遵守接口协议。
@@ -388,7 +391,7 @@ $$
 \max_\theta \; \mathbb{E}_{y\sim \pi_\theta(\cdot\mid x)}[R(x,y)].
 $$
 
-PPO 类方法通常还要训练一个 value model 来估计基线，降低策略梯度方差。推理模型常见的 GRPO (Group Relative Policy Optimization) 则利用同一题目的多次采样构造组内相对优势，减少对独立 value model 的依赖。设对同一输入 $x$ 采样 $G$ 个回答：
+PPO 类方法通常还要训练一个 value model 来估计基线，降低策略梯度方差。GRPO (Group Relative Policy Optimization) 由 DeepSeekMath 论文提出，DeepSeek-R1 继续采用其组相对思想：对同一题多次采样构造相对优势，从而省去独立 critic/value model。设对同一输入 $x$ 采样 $G$ 个回答：
 
 $$
 y_1,\dots,y_G\sim \pi_{\theta_{\text{old}}}(\cdot\mid x),
@@ -403,20 +406,29 @@ A_i=\frac{r_i-\operatorname{mean}(r_1,\dots,r_G)}
 {\operatorname{std}(r_1,\dots,r_G)+\epsilon}.
 $$
 
-优化时提高 $A_i>0$ 的回答概率，压低 $A_i<0$ 的回答概率，同时用 clipping 和 KL 约束限制策略跳得太远：
+策略比率必须按回答中的 token 计算，而不是用整段序列概率之比。令
+
+$$
+\rho_{i,t}(\theta)
+=\frac{\pi_\theta(y_{i,t}\mid x,y_{i,<t})}
+{\pi_{\theta_{\mathrm{old}}}(y_{i,t}\mid x,y_{i,<t})}.
+$$
+
+省略 batch 期望后，一个教学化的 clipped GRPO 损失可写为：
 
 $$
 \mathcal{L}_{\text{GRPO}}
-\approx
--\sum_i
+=-\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|y_i|}\sum_{t=1}^{|y_i|}
+\left[
 \min\left(
-\rho_i A_i,\;
-\operatorname{clip}(\rho_i,1-\epsilon,1+\epsilon)A_i
+\rho_{i,t} A_i,\;
+\operatorname{clip}(\rho_{i,t},1-\epsilon,1+\epsilon)A_i
 \right)
-+\beta\,D_{\mathrm{KL}}(\pi_\theta\|\pi_{\mathrm{ref}}),
+-\beta D_{\mathrm{KL},i,t}(\pi_\theta\|\pi_{\mathrm{ref}})
+\right],
 $$
 
-其中 $\rho_i=\pi_\theta(y_i\mid x)/\pi_{\theta_{\text{old}}}(y_i\mid x)$。这个式子解释了为什么数学和代码任务适合推理 RL：同一题可以生成多个候选，验证器给分后，模型学会把更可能成功的推理轨迹概率推高。
+其中 $D_{\mathrm{KL},i,t}$ 表示在该 token 上使用的参考策略 KL 项或其采样估计。不同 GRPO 实现对长度归一化、优势估计、KL 估计和 clipping 聚合会有差别；上式只保留 DeepSeekMath/DeepSeek-R1 路线的共同骨架。数学和代码任务适合这种方法，是因为同题候选可由答案检查器或测试给出相对可靠的结果奖励。
 
 三者的差异可以概括为：
 
@@ -486,22 +498,22 @@ $$
 
 这类训练的难点是边界。比如“解释 SQL 注入原理”可以是安全教育，也可以是攻击准备；“写漏洞利用代码”可能是 CTF，也可能是现实攻击。模型不能只靠关键词判断，而需要结合意图、上下文、权限和用途。
 
-#### 5.5.6 为什么安全训练通常不直接惩罚 CoT
+#### 5.5.6 CoT 可监控性的研究边界
 
-推理模型的 Chain of Thought (CoT) 给安全带来一个特殊机会：如果模型的中间推理是可读的，我们可以用监控器检查其中是否出现欺骗、越权、隐藏目标或危险计划。
+可读的 Chain of Thought (CoT) 可能给安全监控提供额外信号，例如检查其中是否出现欺骗、越权或危险计划。但 CoT 未必忠实反映内部计算，也可能根本不向用户或监控器完整暴露。
 
-但这也带来一个反直觉问题：**不宜把“CoT 看起来安全”直接变成强优化目标**。
+2025 年的 CoT monitorability 论文提出一项需要验证的警告：**把“CoT 看起来安全”直接设成强优化目标，可能损害这类信号的可监控性**。这是研究结论与设计风险，不是所有安全训练系统已经采用的统一规则。
 
 原因是，一旦模型知道 CoT 会被严格惩罚，它可能学会把危险意图从可读 CoT 中隐藏起来，只在最终动作、工具调用或隐式状态里体现。换句话说，直接惩罚 CoT 可能提升表面安全，却降低 CoT 的可监控性。
 
-更稳妥的做法通常是：
+由此得到的候选设计原则包括：
 
 *   用 CoT 作为监控和审计信号，而不是唯一训练目标。
 *   主要对最终输出、工具调用和外部行为施加安全约束。
 *   对 CoT monitorability 做专门评测，检查模型是否学会“想一套、说一套”。
 *   在高风险任务中结合沙箱、权限、人类审批和输出验证。
 
-这并不意味着 CoT 一定忠实，也不意味着所有 CoT 都应该展示给用户。它的重点是：如果 CoT 还能提供一些可监控信号，就不应通过粗暴优化把这扇窗户主动关上。
+这不意味着 CoT 忠实，也不意味着应向用户展示内部轨迹。实际系统仍需评估监控器的误报/漏报，并把最终输出、工具调用、权限与外部行为作为主要安全边界。
 
 可以把这里的区别写成两种优化方式。一种是直接优化 CoT 外观：
 
@@ -561,18 +573,18 @@ $$
 
 #### 5.6.1 知识蒸馏：让小模型学习大模型
 
-**知识蒸馏 (Knowledge Distillation)** 的基本思想是：用强教师模型 $T$ 产生软标签或推理轨迹，让学生模型 $S$ 学习教师的行为。
+**知识蒸馏 (Knowledge Distillation)** 的基本思想是：用教师模型产生软标签、回答或推理轨迹，让学生模型学习教师的行为。
 
 分类任务中，经典蒸馏会让学生匹配教师的概率分布：
 
 $$
 \mathcal{L}_{\text{KD}}
-= T^2 \cdot \mathrm{KL}\left(
-\mathrm{softmax}(z_T/T)\;\|\;\mathrm{softmax}(z_S/T)
+= \tau^2 \cdot \mathrm{KL}\left(
+\mathrm{softmax}(z_T/\tau)\;\|\;\mathrm{softmax}(z_S/\tau)
 \right),
 $$
 
-其中 $T$ 是温度，$z_T,z_S$ 是教师和学生的 logits。温度越高，类别之间的相对信息越平滑。
+其中 $\tau$ 是温度，$z_T,z_S$ 是教师和学生的 logits。温度越高，类别之间的相对信息越平滑；前面的 $\tau^2$ 用于补偿梯度尺度。
 
 语言模型中的蒸馏可以有几种粒度：
 
@@ -655,12 +667,10 @@ $$
 蒸馏和合成数据把模型训练从单次大工程变成持续迭代过程。下一节转向推理服务：当模型已经训练好，怎样让它更快、更便宜、更稳定地输出？
 <a id="section-5-7"></a>
 
-## 5.7 推理速度与服务系统：为什么大家都在拼输出速度
-### 5.7 Inference Speed and Serving Systems: Why Output Speed Matters
+## 5.7 推理速度与服务系统
+### 5.7 Inference Speed and Serving Systems
 
-当模型能力接近时，真实产品体验会被推理速度强烈影响。用户等待的是首 token 延迟，开发者关心的是吞吐和成本，平台关心的是 GPU 利用率和稳定性。
-
-因此，2025-2026 年的大模型竞争已经明显从“谁的模型更大”扩展到“谁能更快、更便宜、更稳地服务”。
+推理服务需要同时满足交互延迟、批量吞吐、资源成本与稳定性。模型质量相近时，这些系统指标会直接影响任务可用性；它们也构成可重复测量的工程研究对象，而不只是产品体验描述。
 
 <img src="chapter_05/images/inference_speed_stack.svg" width="95%" />
 
@@ -688,13 +698,14 @@ $$
 
 PagedAttention / vLLM 的关键贡献是把 KV Cache 分成块，用类似虚拟内存的方式管理，减少预分配浪费和碎片。连续批处理 (continuous batching) 则让新请求可以动态加入正在运行的 batch，提升 GPU 利用率。
 
-从复杂度看，prefill 阶段需要一次性处理长度为 $n$ 的输入，标准注意力代价近似为 $O(n^2d)$；decode 阶段每步只生成一个 token，但要读取历史 KV，单步代价近似随上下文长度线性增长：
+从单层算术量看，prefill 的标准注意力约为 $O(n^2d)$，投影与 FFN 另有 $O(nd^2)$；decode 每生成一个 token，注意力读取长度 $n$ 的历史 KV，约为 $O(nd)$，投影与 FFN 仍约为 $O(d^2)$：
 
 $$
-\text{decode step cost} \approx O(nd).
+\text{prefill} \approx O(n^2d+nd^2),\qquad
+\text{decode step} \approx O(nd+d^2).
 $$
 
-因此，短 prompt 长输出的瓶颈通常在 decode；长 prompt 短输出的瓶颈通常在 prefill。服务系统做调度时必须区分这两类请求。
+这些是忽略层数、常数、稀疏性与通信的简化式。短 prompt 长输出的累计时间常由 decode 主导；长 prompt 短输出则常由 prefill 主导，但具体瓶颈还取决于 batch、硬件、量化和 kernel。
 
 PagedAttention 可以抽象成块表映射：
 
@@ -713,25 +724,25 @@ $$
 1.  Draft model 生成候选 token 序列 $\tilde{y}_{1:k}$。
 2.  Target model 并行计算这些候选的概率。
 3.  根据接受规则保留一段前缀。
-4.  重复。
+4.  若 $k$ 个草稿 token 全部接受，再从 target 的下一位置分布取一个 token；否则按修正分布处理首个拒绝位置，然后重复。
 
 这类方法的收益取决于草稿模型质量、目标模型验证成本、batch 形状和采样策略。Medusa、EAGLE 等方法则尝试通过额外预测头或特征预测来减少独立 draft model 的成本。
 
-投机解码的核心约束是：加速不能改变目标模型分布。理想情况下，draft model 只负责提出候选，target model 仍负责最终接受/拒绝。若草稿分布为 $q$，目标分布为 $p$，一个候选 token 的接受概率可以理解为与比值
+标准随机投机采样的核心约束是保持目标分布。Draft model 只提出候选，target model 负责验证。若草稿分布为 $q$、目标分布为 $p$，候选 token $y$ 的接受概率是
 
 $$
 \min\left(1,\frac{p(y)}{q(y)}\right)
 $$
 
-相关。直觉是：如果 draft 给出的 token 在 target 看来也很合理，就接受；如果 target 不认可，就回退并按 target 分布采样。这样才能在保持输出分布接近目标模型的同时减少 target model 的串行调用次数。
+若拒绝，不能简单“按 $p$ 重采样”，而应从归一化的修正分布 $[p-q]_+$ 采样；通过整套接受与修正规则，标准算法在精确算术下保持 target 分布不变。贪心投机解码、近似验证和其他多 token 方法有不同保证。
 
-DeepSeek-V3 的 MTP 也可以放在这个背景下理解：让模型在训练时学习多 token 预测，不只是增加训练信号，也为推理加速提供结构基础。
+DeepSeek-V3 的 MTP 首先是训练期的多 token 预测目标；其预测模块具有用于投机解码的潜力，但技术报告中的这一动机不等于公开部署已经采用某个特定投机方案。
 
 #### 5.7.4 量化、低精度与硬件协同
 
 量化降低权重和 KV Cache 的显存占用，也降低显存带宽压力。常见路线包括：
 
-*   权重量化：INT8、INT4、GPTQ、AWQ。
+*   权重量化：目标精度可为 INT8/INT4，GPTQ、AWQ 是常见方法或检查点约定。
 *   KV Cache 量化：降低长上下文推理显存。
 *   混合精度：FP16、BF16、FP8。
 *   Kernel 优化：FlashAttention、FlashMLA、fused MLP、fused sampling。
@@ -747,7 +758,7 @@ DeepSeek-V3 的 MTP 也可以放在这个背景下理解：让模型在训练时
 *   **Expert Parallelism**：MoE 模型中把专家分布到不同设备。
 *   **Data Parallel Serving**：多副本服务不同请求。
 
-此外，产品系统会使用路由策略：简单任务交给小模型，复杂任务交给大模型；短任务走低延迟路径，长任务走高吞吐路径；工具调用前后使用不同模型负责规划、执行和校验。
+此外，服务系统可使用路由策略：简单任务交给小模型，复杂任务交给大模型；短任务走低延迟路径，长任务走高吞吐路径；工具调用前后也可由不同模型负责规划、执行和校验。
 
 #### 5.7.6 输出速度不是纯工程问题
 
@@ -764,13 +775,13 @@ DeepSeek-V3 的 MTP 也可以放在这个背景下理解：让模型在训练时
 
 到这里，第 5 章已经覆盖从 SFT、RLHF、DPO、推理 RL、蒸馏、量化到服务系统的主要链条。下一章转向多模态、世界模型、视频生成和 Agent 系统。
 
-开放权重生态还会把这些技术重新组合：同一个底模可能有 LoRA 版、merge 版、distill 版、AWQ/GPTQ/GGUF 量化版和不同 runtime 的服务版。下一节用一张生态图把这些分支统一起来。
+开放权重生态还会组合这些技术：同一个底模可能有 LoRA、merge、distill、GPTQ/AWQ 等量化衍生版，并以 GGUF 等容器/文件格式供特定 runtime 加载。下一节用一张生态图区分训练方法、权重变换、文件格式与服务运行时。
 <a id="section-5-8"></a>
 
 ## 5.8 开放权重模型生态：底模、LoRA、蒸馏、合并与量化
 ### 5.8 Open-Weight Model Ecosystem: Base Models, LoRA, Distillation, Merging, and Quantization
 
-开放权重生态之所以繁荣，不只是因为有人发布了 base model。真正让生态爆炸的是：一个底模可以通过多种低成本技术衍生出大量变体。
+开放权重模型发布后，可以通过参数高效微调、蒸馏、权重合并和量化衍生出多种检查点或适配器。不同衍生物的许可证、数据来源、兼容性与评测结果仍需分别核对。
 
 这些变体包括：
 
@@ -810,9 +821,9 @@ $$
 *   用某个强教师生成的答案训练，得到 distill model。
 *   用少量角色风格数据训练，得到 style adapter。
 *   用多个模型权重合并，得到 merged model。
-*   用量化工具压缩，得到 GGUF/AWQ/GPTQ 等部署版本。
+*   用 GPTQ/AWQ 等方法量化权重，并可封装为 GGUF 等运行时支持的文件格式。
 
-从几何上看，很多衍生模型不是离底模很远的新模型，而是在同一个参数盆地附近移动。若两个微调模型仍在相近区域，权重差分 $\Delta\theta$ 往往可以被线性组合、裁剪或低秩近似。这就是 LoRA、task vector、merge 和蒸馏能在开放生态里频繁组合的原因。
+对**来自同一初始化且训练位移适中**的微调检查点，权重坐标仍然对齐，差分 $\Delta\theta$ 有时可被线性组合、裁剪或低秩近似；这为 LoRA、task vector 和部分 merge 方法提供了条件。蒸馏依赖教师输出而非参数盆地，学生甚至可以采用不同底座或架构，因此不能用同一几何理由解释。
 
 #### 5.8.2 LoRA 在生态中的角色
 
@@ -838,7 +849,7 @@ $$
 *   **快速切换**：同一个底模加载不同 adapter，切换任务或风格。
 *   **可合并**：推理前把 LoRA 权重合入底模，减少运行时额外开销。
 
-但 LoRA 也有边界：如果任务需要大量新知识、复杂推理机制或架构变化，LoRA 可能只学到表层风格；如果 adapter 数据质量差，还会损害底模的通用能力。
+但 LoRA 也有边界：固定秩与注入位置会限制适配容量，训练数据与超参数也可能损害底模原有能力。LoRA 能否学到领域知识或推理行为是经验问题，不能一概降格为“只学表层风格”。
 
 LoRA merge 的原理也很直接。训练时前向计算为：
 
@@ -879,11 +890,11 @@ $$
 
 *   解题格式：如何拆题、列步骤、检查答案。
 *   中间知识：教师在答案里暴露出的领域模式。
-*   搜索痕迹：哪些候选路径值得尝试。
+*   可见的候选探索模式：回答中展示了哪些路径；这不保证等同于教师内部实际搜索过程。
 *   风格与语气：回答更像某个教师模型。
 *   错误模式：教师的幻觉、偏见和模板也会被学生继承。
 
-DeepSeek-R1-Distill-Qwen / Distill-Llama 这类模型就是典型例子：强推理教师生成高质量推理数据，再用 Qwen 或 Llama 系列底座做监督微调。它们不是“把 R1 权重塞进 Qwen”，而是用 R1 的输出数据改变 Qwen/Llama 的参数。
+DeepSeek-R1 报告说明，R1-Distill-Qwen / Distill-Llama 使用由 DeepSeek-R1 生成并筛选的数据，对 Qwen 或 Llama 系列底座做监督微调。它们不是“把 R1 权重塞进 Qwen”，而是行为/响应层面的蒸馏；样本质量与学生能力仍需独立评测。
 
 蒸馏目标也有层次差别。
 
@@ -908,7 +919,7 @@ $$
 
 响应蒸馏便宜但信号稀疏；CoT 蒸馏提供更多中间监督，但可能复制教师的伪推理；logit 蒸馏信号最密，但通常需要访问教师 logits，闭源教师一般做不到。
 
-社区里所谓“某某 Claude 风格的 Qwen”“某某 GPT 风格的 Llama”，通常也是类似逻辑：用目标风格或目标能力的数据去训练另一个开放底座。严格说，这叫行为蒸馏、风格蒸馏或数据迁移；它不等于获得了闭源模型权重，也不保证能力完整复制。
+使用另一模型生成的响应训练开放底座，通常应称为响应蒸馏、行为克隆或合成数据微调，而不是“获得”教师权重或完整能力。对于闭源教师，还必须另行核对服务条款、数据许可、隐私和输出来源；技术相似不等于数据使用被授权。
 
 #### 5.8.4 模型合并：为什么 merge 有时有效
 
@@ -959,7 +970,7 @@ $$
 
 #### 5.8.5 混合量化：不是所有层都同样该压缩
 
-量化也推动了开放模型生态。常见发布格式包括 FP16/BF16、INT8、INT4、GPTQ、AWQ、GGUF、EXL2 等。
+开放模型发布中需要区分三个层次：FP16/BF16、INT8/INT4 是数值精度；GPTQ、AWQ 是量化方法/检查点约定；GGUF 是可承载多种张量类型的文件容器，EXL2 则与特定量化及运行时生态相关。它们不应并列成同一种“精度格式”。
 
 所谓 **混合量化 (Mixed Quantization)**，核心是不同层、不同张量或不同模块使用不同精度：
 
@@ -974,10 +985,10 @@ $$
 量化可以写成近似问题。对一组权重 $W$，希望找到量化权重 $\hat W$，使输出误差尽量小：
 
 $$
-\min_{\hat W\in\mathcal{Q}} \|WX-\hat WX\|_2^2,
+\min_{\hat W\in\mathcal{Q}} \|WX-\hat W X\|_F^2,
 $$
 
-其中 $X$ 是校准集激活，$\mathcal{Q}$ 是某个低比特量化集合。GPTQ 用近似二阶信息逐层减少误差；AWQ 观察到少数大激活通道对输出影响很大，因此保护这些通道；SmoothQuant 则在激活和权重之间重新分配缩放，降低激活异常值带来的量化困难。
+其中 $X$ 是按列组织的校准样本激活，$\|\cdot\|_F$ 汇总该矩阵上各输出元素的平方重构误差，$\mathcal{Q}$ 是某个低比特量化集合。这是便于比较的教学化目标；具体方法的近似与校准目标并不完全相同。GPTQ 用近似二阶信息逐层减少误差；AWQ 根据激活识别敏感通道并优化逐通道缩放；SmoothQuant 则在激活和权重之间迁移缩放难度，以降低激活异常值带来的量化困难。
 
 #### 5.8.6 开放生态的真实结构
 
@@ -993,4 +1004,4 @@ $$
 
 ---
 
-本节解释了开放权重生态的基本机制。它也给前面几节做了收口：后训练决定模型行为，蒸馏传播能力，LoRA 降低实验成本，merge 扩展组合空间，量化让模型真正跑起来。
+本节区分了开放权重生态中的后训练、蒸馏、adapter、权重合并、量化方法、文件容器和服务运行时。每一层都可能改变能力、兼容性、许可证义务与安全边界，不能只凭衍生模型名称判断。
