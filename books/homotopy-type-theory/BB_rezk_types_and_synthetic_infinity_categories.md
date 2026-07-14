@@ -131,6 +131,6 @@ $$
 
 这些对象之间存在比较定理，但比较定理不是定义相等。
 
-## BB.7 本附录关闭的缺口
+## BB.7 对象语言边界
 
-本附录把“higher category theory in HoTT”从关键词补成三层结构：Segal 条件给出复合，Rezk completeness 给出对象路径与等价边的单值性，高阶 Yoneda 和 functor Rezk object 给出范畴论工具。剩余义务是完整 semisimplicial 相干的对象语言实现、mapping Rezk object 的构造和高阶 Yoneda 的逐项证明。
+Segal 条件、Rezk completeness 与高阶 Yoneda 分别控制复合、对象路径和可表性，但本附录没有固定一套能够内部形成全部 semisimplicial 数据的基础 HoTT 语法。Mapping Rezk object 与高阶 Yoneda 只能在附录 AN、AS、AX 所列的扩展语言或精确外部来源中使用；它们不是第十三章一范畴结果的自动高维推广。

@@ -1,12 +1,6 @@
 # 第十章：Chromatic splitting、Gross-Hopkins duality 与 Picard groups
 
-## 本章目标
-
-本章讨论 $K(n)$-local category 的三个结构性问题：chromatic splitting、Gross-Hopkins duality 和 Picard group。它们都位于基础 chromatic tower 之后，依赖 Morava stabilizer descent、local duality 和连续群上同调。
-
-## 依赖前置知识
-
-需要第五章的 fracture square、第六章的 Morava descent 和第九章的前沿分层。Brown-Comenetz dual、local cohomology 和 Picard spectrum 作为外部背景。
+chromatic tower 给出高度之间的粘合，却没有自动说明重叠项是否分裂；$K(n)$-局部范畴也有自己的对偶对象和可逆谱，往往含有纯代数近似看不见的 exotic 元素。Chromatic splitting、Gross--Hopkins duality 与 Picard group 正好分别测量这三种现象。本章从第五章的 fracture square 和第六章的 Morava descent 出发，说明连续群上同调怎样进入分裂、对偶和可逆性计算，并明确区分已知定理、局部低高度计算与猜想边界。Brown--Comenetz dual、local cohomology 和 Picard spectrum 在需要处定义或作为精确外部背景调用。
 
 ## 10.1 Chromatic splitting problem
 
@@ -125,7 +119,7 @@ $$
 
 **例 10.20.** “$I_n^{GH}$ 是球谱的悬挂”不是可接受陈述，除非已经证明 determinant twist 和 exotic factor 在当前 $(n,p)$ 下都平凡。
 
-## 本章小结
+## 10.7 分裂、对偶与可逆对象
 
 Chromatic splitting 研究 fracture square 的重叠项，Gross-Hopkins duality 描述 $K(n)$-local dualizing object，Picard group 分类 $K(n)$-local 可逆谱。这三者都不是基础形式推论，而是 Morava stabilizer descent、连续群上同调和 local duality 的深层应用。
 

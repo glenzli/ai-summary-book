@@ -1,12 +1,8 @@
 # 第五十三章：$\infty$-Cosmos 与模型无关的高阶范畴论
 
-## 本章目标
+Quasi-categories、complete Segal spaces 和单纯范畴各自实现高阶范畴，但许多伴随、极限与 Kan 延拓定理只依赖它们共有的 enriched 与 isofibration 结构。$\infty$-cosmos 把这些共同公理抽取出来，并在其 homotopy 2-category 中发展模型无关的高阶范畴论。Modules、comma objects 与 weighted limits 由此能一次证明，再应用到不同模型。
 
-本章介绍 $\infty$-cosmos 语言。Quasi-category、complete Segal space、simplicial category 等模型各有技术细节；$\infty$-cosmos 抽取其中共同的 2-范畴化结构，使 adjunctions、limits、Kan extensions、modules 和 weighted limits 能在模型无关的环境中陈述和证明。
-
-## 依赖前置知识
-
-需要 simplicial categories、quasi-categories、isofibrations、2-categories、homotopy 2-categories、adjunctions、limits、modules/profunctors 和 enriched category theory。
+本章使用 simplicial enrichment、isofibrations、2-categories 与 profunctors。Cosmos 公理不会被简化为“任意富范畴”；每个模型是否满足 completeness、cotensor 和 flexible weighted limit 条件会明确作为外部验证。
 
 ## 53.1 $\infty$-Cosmos 的对象
 
@@ -54,21 +50,21 @@ $$
 
 **外部输入定理 53.10.** 在 $\infty$-cosmos 中，homotopy 2-category 中的 adjunction 等价于 quasi-categorical adjunction 的多种模型定义。
 
-**命题 53.11.** 左伴随在 $\mathcal K_2$ 中保持由右伴随检测的表示性 colimit。
+**命题 53.11.** 设 $f:A\rightleftarrows B:u$ 是 $\infty$-cosmos 所表示的 $\infty$-categories 之间的伴随。若 $D:J\to A$ 有 colimit $c$，则 $fc$ 是 $fD$ 的 colimit。
 
-**证明.** 设 $f\dashv u$。若 $c$ 为图 $D$ 的 colimit，表示性条件为对所有 $x$，
-
-$$
-\mathcal K_2(c,x)\cong \lim \mathcal K_2(D-,x).
-$$
-
-对 $fc$ 与对象 $y$，由伴随得
+**证明.** 对每个 $y\in B$，伴随与 colimit 的映射空间刻画给出
 
 $$
-\mathcal K_2(fc,y)\cong\mathcal K_2(c,uy)\cong\lim\mathcal K_2(D-,uy)\cong\lim\mathcal K_2(fD-,y).
+\operatorname{Map}_B(fc,y)
+\simeq
+\operatorname{Map}_A(c,uy)
+\simeq
+\lim_{j\in J^{op}}\operatorname{Map}_A(Dj,uy)
+\simeq
+\lim_{j\in J^{op}}\operatorname{Map}_B(fDj,y).
 $$
 
-故 $fc$ 表示 $fD$ 的 colimit。$\square$
+这正是 $fc$ 的 colimit 泛性质。若只在 Hom categories $\mathcal K_2(-,-)$ 中写普通集合式同构，会丢失映射空间层的高阶相干；这里的等价发生在 spaces 中。$\square$
 
 ## 53.5 Modules 与 weighted limits
 
@@ -82,7 +78,7 @@ $$
 
 ## 53.6 模型无关性的意义
 
-**命题 53.15.** 若两个 $\infty$-category 模型给出等价的 $\infty$-cosmoi，则在 $\infty$-cosmos 语言中表述的伴随、极限和 Kan 延拓定理可跨模型转移。
+**命题 53.15.** 若两个 $\infty$-category 模型之间有保持 simplicial enrichment、isofibrations、equivalences、cotensors 与指定 flexible limits 的 cosmos equivalence，则在这些结构中表述的伴随、极限和 Kan 延拓定理可跨模型转移。
 
 **证明.** $\infty$-cosmos 等价保持对象、映射 quasi-categories、equivalences、isofibrations 以及由这些结构定义的 comma、slice、adjunction 和 limit。若某定理的陈述和证明只使用这些保持结构，则沿等价运输后仍成立。$\square$
 
@@ -90,9 +86,9 @@ $$
 
 **证明.** 按定义，$f$ 是 equivalence 当且仅当它在 homotopy 2-category $\mathcal K_2$ 中为等价。任意 2-category 中的等价 1-态射满足 $2$-out-of-$3$：若 $f,g$ 为等价，则 $gf$ 的拟逆由拟逆反向复合给出；若 $gf$ 与 $f$ 为等价，则 $g\simeq (gf)f^{-1}$ 为等价；另一种情形同理。因此 $\mathcal K$ 中 equivalences 也满足 $2$-out-of-$3$。$\square$
 
-## 53.7 本章小结
+## 53.7 跨模型的高阶范畴演算
 
-$\infty$-cosmos 是高阶范畴论的模型无关操作系统。它保留足以讨论伴随、极限、isofibrations、modules 和 weighted limits 的结构，同时避免在每个定理中重新选择 quasi-category、Segal space 或 simplicial category 模型。它为严格教材提供一个统一的技术顶层语言。
+$\infty$-cosmos 为高阶范畴论提供模型无关的公理框架。它保留足以讨论伴随、极限、isofibrations、modules 和 weighted limits 的结构，同时避免在每个定理中重新选择 quasi-category、Segal space 或 simplicial category 模型。
 
 ## 练习
 

@@ -10,7 +10,8 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 ## 基本原则
 
 - 使用中文叙述；标准英文术语第一次出现时括注，例如“世界面（worldsheet）”。
-- 每个概念先给形式定义，再给物理解释；不得用图像或比喻替代定义。
+- 每个概念先由具体问题、失败的旧语言或可计算例子引出，再给形式定义并立即说明
+  良定义性与物理含义；不得用图像或比喻替代定义。
 - 非平凡数学命题必须给出完整书内证明或明确标注为“外部输入定理”。标准物理形式主义中的压缩计算标为“推导说明（标准物理口径）”，并说明正规化、路径积分或微扰输入；它不计作严格数学证明。
 - 不使用“显然”“容易看出”等词跳过关键步骤；若步骤短，应写出变分、Poisson bracket、OPE 或 Ward identity 计算。
 - 每个公式必须说明所处环境：Minkowski 或 Euclidean worldsheet、target-space signature、closed/open string、tree/genus、operator formalism 或 path integral formalism。
@@ -47,10 +48,14 @@ description: Use when writing, extending, or reviewing the rigorous Chinese text
 ## 写作格式
 
 - 文件名使用两位编号，例如 `03_worldsheet_cft.md`。
-- 每章开头列出“本章目标”和“依赖前置知识”。
+- 每章 H1 后、第一个 H2 前写自然导言，原则上不少于约 120 个有效汉字；导言从
+  现象、计算或前章缺口进入，并自然吸收真正需要的前置知识、convention 与推进方向。
+- 不使用“本章目标”“依赖前置知识”“主线”“本章小结”等固定正文标题，也不以
+  同义标题恢复统一模板。
 - 定义、约定、例子、命题、引理、定理、推论、练习使用“**定义 1.2.**”格式。
 - 证明结束使用 `$\square$`。
-- 每章末尾必须包含“本章小结”和“练习”。
+- 每章在练习前以自然段回应章首问题并说明所得结论的适用边界；收束不设统一标题。
+  每章保留“练习”分节，题目必须使用正文实际建立的定义、计算或证明机制。
 - 新增全书性符号必须先更新 [NOTATION.md](NOTATION.md)。
 - 新增或改名术语必须同步更新 [GLOSSARY.md](GLOSSARY.md)。
 - 新增习题必须同步更新 [EXERCISE_INDEX.md](EXERCISE_INDEX.md) 和 [SOLUTIONS.md](SOLUTIONS.md)。

@@ -1,18 +1,8 @@
 # 第十九章：几何 Satake
 
-## 本章目标
+Hecke 修改的局部模型是 affine Grassmannian $\operatorname{Gr}_G=G((t))/G[[t]]$。它的 Schubert 分层由 dominant coweights 参数化，而对偶群 $\widehat G$ 的不可约表示由相同组合数据参数化；几何 Satake 说明这不是巧合。$G[[t]]$-等变 perverse sheaves 在卷积下形成张量范畴，并与 $\operatorname{Rep}(\widehat G)$ 等价。于是对偶群不再只是根资料的形式互换，而成为 Hecke 几何的 Tannaka 群。
 
-本章陈述几何 Satake 等价。第十八章说明 Hecke 修改的局部模型是 affine Grassmannian
-$$
-\operatorname{Gr}_G=G((t))/G[[t]].
-$$
-几何 Satake 定理说：$\operatorname{Gr}_G$ 上的 $G[[t]]$-等变 perverse sheaves 构成一个张量范畴，并且该范畴等价于对偶群 $\widehat G$ 的有限维表示范畴。这个定理是几何 Langlands 中对偶群出现的几何来源。
-
-## 依赖前置知识
-
-需要第十一章的对偶群和根资料，第十八章的 affine Grassmannian 与 Schubert varieties。需要 perverse sheaves、intersection cohomology、卷积、Tannakian category 和 equivariant derived category 的基础。本章把几何 Satake 等价作为外部输入定理，只证明若干形式后果。附录 Y 给出 Ran space、Beilinson-Drinfeld Grassmannian、factorization 和 fusion 对本章张量结构的技术支撑。
-
-收口归一化回指：本章比较几何 Satake 与经典 Satake 时必须分开追踪 IC half-Tate trace 的 $q^{-\langle\rho,\lambda\rangle}$、cohomological parity 与经典 Satake transform 的 $q^{\langle\rho,\lambda\rangle}$；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、9 节。
+本章以几何 Satake 本身为外部输入，证明其对 Hecke 作用的形式后果。Perverse sheaves、intersection cohomology 与 Tannakian 范畴是必要背景；factorization 与 fusion 的技术来源见附录 Y。和经典 Satake 比较时，IC shift、half-Tate twist 与 $q^{\langle\rho,\lambda\rangle}$ 必须分别追踪，具体见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、9 节。
 
 ## 19.1 Affine Grassmannian 的 Schubert 分层
 
@@ -147,7 +137,7 @@ $$
 $$
 为由 Hecke correspondence 和 kernel $\mathcal S_V$ 给出的函子。
 
-**收口精修 19.A（最小 Hecke 作用模型）.** 若 $V=V_\lambda$ 是最高权 $\lambda$ 的 $\widehat G$-表示，则 $\mathcal S_V$ 可看作 affine Grassmannian 中 Schubert 闭包 $\overline{\operatorname{Gr}}_\lambda$ 上的交叉上同调 sheaf。Hecke 函子 $\mathsf H_V$ 在点 $x\in X$ 处允许 $G$-bundle 发生相对位置不超过 $\lambda$ 的修改。对 $G=\mathbb G_m$，这只是把线丛张量 $\mathcal O_X(nx)$；取 Frobenius trace 后，对应的函数操作就是经典 Hecke 算子在该点的求和。一般 $G$ 的定义把这个线丛例子替换为由 $\operatorname{Rep}(\widehat G)$ 控制的修改类型。
+**例 19.A（最小 Hecke 作用模型）.** 若 $V=V_\lambda$ 是最高权 $\lambda$ 的 $\widehat G$-表示，则 $\mathcal S_V$ 可看作 affine Grassmannian 中 Schubert 闭包 $\overline{\operatorname{Gr}}_\lambda$ 上的交叉上同调 sheaf。Hecke 函子 $\mathsf H_V$ 在点 $x\in X$ 处允许 $G$-bundle 发生相对位置不超过 $\lambda$ 的修改。对 $G=\mathbb G_m$，这只是把线丛张量 $\mathcal O_X(nx)$；取 Frobenius trace 后，对应的函数操作就是经典 Hecke 算子在该点的求和。一般 $G$ 的定义把这个线丛例子替换为由 $\operatorname{Rep}(\widehat G)$ 控制的修改类型。
 
 **命题 19.15.** 对 $V,W\in\operatorname{Rep}(\widehat G)$，Hecke 函子满足形式相容
 $$
@@ -196,7 +186,7 @@ $$
 
 **注 19.17.** 代数闭域上的裸 sheaf 没有 Frobenius trace；必须先有有限域下降和 Weil structure。几何 Satake 因而在上述附加数据下范畴化经典 Satake，而不是无条件把任意 sheaf 变成函数。
 
-## 19.7 本章小结
+## 19.7 几何 Satake 的作用
 
 几何 Satake 定理建立了核心等价
 $$

@@ -1,12 +1,15 @@
 # 第一章：基概形、光滑站点与 Nisnevich descent
 
-## 本章目标
+一个几何不变量若只按光滑概形逐点赋值，还不能称为几何理论：在开集或 etale 邻域
+上得到的局部数据必须能够粘合。Zariski 拓扑对许多代数问题过粗，而 etale 拓扑又会
+改变点的剩余域；Nisnevich 覆盖恰好要求每个点在某个 etale 邻域中以相同剩余域提升，
+因而能同时看见局部几何与点值信息。这一条件将决定后文 deformation、purity 和
+localization 可以怎样局部检验。
 
-本章建立 motivic homotopy theory 的输入站点。核心对象不是所有概形，而是基概形 `S` 上的光滑有限型概形范畴 `\operatorname{Sm}_S`，并在其上赋予 Nisnevich topology。本章证明若干只依赖 sheaf theory 的基本命题，为第二章的 `\mathbb A^1`-局部化做准备。
-
-## 依赖前置知识
-
-需要概形、光滑态射、etale 态射、Grothendieck topology、presheaves、sheaves、spaces、Yoneda embedding 和 presentable infinity-categories。
+我们固定有限维 Noetherian 基概形 `S`，先在 `\operatorname{Sm}_S` 的小骨架上构造
+空间值预层，再用覆盖筛和 Cech 神经表达下降。所需的概形、Yoneda 嵌入与
+presentable infinity-范畴知识分别由附录 E、A 补足；本章会把每个层论结论落实到
+elementary Nisnevich square，而不是把“满足下降”当作未展开的口号。
 
 ## 1.1 基概形与光滑站点
 
@@ -164,9 +167,30 @@ $$
 
 是 spaces 中的拉回方块。
 
-**证明.** 由 elementary square 的定义，`U\amalg V\to X` 是 Nisnevich covering family：`U` 覆盖开集中的点；闭补中的点由 `V\to X` 中剩余域同构的唯一提升覆盖。对覆盖 `U\amalg V\to X` 应用 Cech descent。由于 `U\times_XV\simeq V'`，而 `U\times_XU` 和 `V\times_XV` 中的退化项在 sheaf 条件的等化数据中分别表达两个限制的自相容性，得到 `F(X)` 是 `F(U)` 与 `F(V)` 在 `F(V')` 上的同伦拉回。`\square`
+**证明.** 附录 B 的外部输入定理 B.11(1) 断言：在 Nisnevich
+infinity-topos 中，elementary distinguished square 的 representable sheaves
+组成推出方块
 
-**注 1.14.** 反方向，即 elementary Nisnevich squares 连同空集条件生成 Nisnevich descent，需要 cd-structure 的完整理论。本章暂不使用该反向，后续附录 B 补全。
+$$
+h_X\simeq h_U\mathop{\amalg}_{h_{V'}}h_V.
+$$
+
+对该推出方块应用反变函子
+`\operatorname{Map}_{\operatorname{Shv}_{Nis}}(-,F)`。映射出余极限等于
+映射空间的极限，Yoneda lemma 又给出
+`\operatorname{Map}(h_Y,F)\simeq F(Y)`，故
+
+$$
+F(X)\simeq F(U)\times_{F(V')}F(V).
+$$
+
+这里不能只把覆盖 `U\amalg V\to X` 的 Cech 神经截断在一次交叠：
+`V\times_XV` 一般不等于 `V`。Precisely 是 distinguished-square
+excision 定理把完整的高阶下降数据压缩为上述同伦拉回。`\square`
+
+**注 1.14.** 反方向，即把空集送到终对象并把每个 elementary
+Nisnevich square 送到同伦拉回便推出 Nisnevich descent，也需要
+cd-structure 的生成定理。正反两个方向及其来源统一列在附录 B 的定理 B.11。
 
 ## 1.4 例子与非例子
 
@@ -180,7 +204,7 @@ $$
 
 **证明.** 第二章将 `\mathbb A^1`-局部对象定义为对所有投影 `X\times\mathbb A^1\to X` 取映射空间后得到等价。由 Yoneda lemma，`\operatorname{Map}(X,F)\simeq F(X)`，`\operatorname{Map}(X\times\mathbb A^1,F)\simeq F(X\times\mathbb A^1)`。给定假设正是这些映射空间等价。`\square`
 
-## 1.5 本章小结
+## 1.5 Nisnevich 方块留下的几何信息
 
 Motivic homotopy theory 的第一层输入是小站点 `\operatorname{Sm}_S` 和 Nisnevich topology。Presheaves 提供自由 cocompletion，Nisnevich sheaves 通过 accessible left exact localization 得到。Descent 条件可由覆盖的 Cech nerve 表达；elementary Nisnevich squares 为后续局部化和 purity 提供几何基本块。
 

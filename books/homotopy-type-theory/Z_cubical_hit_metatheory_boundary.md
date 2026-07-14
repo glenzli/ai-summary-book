@@ -26,7 +26,7 @@ $$
 2.  path constructor 的 propositional computation；
 3.  在 cubical 口径中可加强为更计算性的规则。
 
-**使用边界 Z.7。** 第十一章和附录 N、V 的圆 encode-decode 证明只需要附录 L 给出的规则；若采用 path constructor 的 propositional computation，则需在文本证明中显式给出对应计算路径，例如附录 N.8 所说的基点计算路径。
+**使用边界 Z.7。** 第十一章和附录 N、V 的圆 encode-decode 证明只需要附录 L 给出的规则。本书采用点构造子 judgmental、loop 构造子 propositional 的计算口径：基点值直接归约，所有涉及 $\mathsf{loop}$ 的步骤则显式使用 $\beta_{\mathsf{loop}}$ 或 $\beta^P_{\mathsf{loop}}$；附录 N.8 核对了这一区分。
 
 ## Z.3 Cubical 口径
 
@@ -99,7 +99,7 @@ $$
 1.  第 0-8 章的基础类型论不依赖 cubical canonicity。
 2.  第 9-11 章使用 HIT，但只使用附录 L 的规则。
 3.  第 12 章的 EM 上同调使用附录 Y 的高级输入。
-4.  第 13-14 章的单值范畴论使用对象语言中的单值性；Rezk 完备化泛性质的证明架构见附录 AA，剩余为文本层 transport 相容细节。
+4.  第 13-14 章的单值范畴论使用对象语言中的单值性；Rezk 完备化泛性质采用 Ahrens--Kapulkin--Shulman Theorem 8.4，附录 AA 记录其精确接口，不声称内部化来源证明中的 transport 相容计算。
 5.  第 15-16 章可以讨论模型论和对象语言扩展差异，但不得把一个系统的规则无翻译地搬到另一个系统。
 
-**当前状态 Z.21。** 本附录关闭的是“边界不清”缺口，而不是证明全部 cubical 元理论。完整 cubical canonicity、normalization、HIT 语义和模型比较仍应引用原论文和模型论文献。
+**边界 Z.21。** 本附录只区分可在对象语言中调用的规则与元语言结果，并不证明完整 cubical canonicity、normalization、HIT 语义或模型比较。这些结论只有在给出具体 calculus、归约关系、模型与来源定理后才能作为外部元定理使用。

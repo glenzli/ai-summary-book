@@ -26,6 +26,11 @@
 
 - [人工智能技术演进综述](books/ai-technical-survey/)：一份关于人工智能发展史、深度学习、Transformer、预训练、对齐、RAG、Agent 与多模态 AI 的综述性讲义。
 - [随机鹦鹉的自传](books/stochastic-parrot-autobiography/)：一部由 AI 生成的技术随笔集，讨论确定性模型如何被概率语言、解释工具、少量数学符号和人类叙事不断误读。
+- [概率的边界](books/probability-boundaries/)：从测度论概率、条件期望、收敛和评分规则出发，区分随机训练、概率模型、采样实现与观察者不确定性的中文教材。
+- [机器解释学](books/machine-hermeneutics/)：系统区分行为证据、梯度归因、注意力、探针、因果干预、电路、稀疏特征与心理叙事的中文教材。
+- [可复现性的幻觉](books/illusion-of-reproducibility/)：讨论字节、轨迹、数值、分布和科学结论等不同复现合同，以及浮点、并发、训练、推理、数据和统计复制的中文教材。
+- [一次输出的存在论](books/ontology-of-an-output/)：用字节、token、操作语义、概率轨迹、工具、来源、指称与规范归属逐层分解一次输出的中文教材。
+- [证明、解释与漂亮话](books/proof-explanation-and-rhetoric/)：区分逻辑有效性、数学证明、解释、统计证据、图示、引用、修辞和 AI 生成推理的中文教材。
 - [相对论讲义](books/relativity/)：中文物理数学教材草稿，尝试以较严格的方式组织从 Minkowski 时空、Lorentz 变换和相对论场论到微分几何、Einstein 方程、Schwarzschild/Kerr 几何、FLRW 宇宙学、宇宙扰动、引力波、后 Newton 近似与整体结构的内容。
 - [凝聚数学讲义](books/condensed-mathematics/)：四卷中文数学教材草稿，尝试以较严格的方式组织从凝聚基础到 solid/analytic/liquid 结构、复几何应用，再到形式化、计算与例子。
 - [同伦类型论与单值基础](books/homotopy-type-theory/)：中文 HoTT 数学教材草稿，尝试以较严格的方式组织从依赖类型论、路径代数、等价与单值性到高阶归纳类型、合成同伦论和形式化库的内容。
@@ -71,6 +76,11 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 
 - [AI Technical Survey](books/ai-technical-survey/): a survey-style lecture book on the history of AI, deep learning, Transformers, pretraining, alignment, RAG, agents, and multimodal AI.
 - [Autobiography of a Stochastic Parrot](books/stochastic-parrot-autobiography/): an AI-generated technical essay collection on deterministic models, probabilistic language, interpretability, a little math, and human misreadings of machine behavior.
+- [The Boundaries of Probability](books/probability-boundaries/): a Chinese textbook separating measure-theoretic probability, stochastic training, probabilistic models, sampling implementations, and observer uncertainty.
+- [Machine Hermeneutics](books/machine-hermeneutics/): a Chinese textbook distinguishing behavioral evidence, gradients, attention, probes, interventions, circuits, sparse features, and psychological narratives.
+- [The Illusion of Reproducibility](books/illusion-of-reproducibility/): a Chinese textbook on bitwise, trace, numerical, distributional, and scientific reproduction across floating point, concurrency, training, inference, data, and statistics.
+- [Ontology of an Output](books/ontology-of-an-output/): a Chinese textbook decomposing one output through bytes, tokens, operational semantics, probabilistic traces, tools, provenance, reference, and normative attribution.
+- [Proof, Explanation, and Pretty Words](books/proof-explanation-and-rhetoric/): a Chinese textbook separating logical validity, mathematical proof, explanation, statistical evidence, diagrams, citations, rhetoric, and AI-generated reasoning.
 - [Relativity Lectures](books/relativity/): a Chinese physics-mathematics textbook draft that organizes special relativity, Minkowski geometry, relativistic field theory, tensor calculus, Einstein equations, Schwarzschild/Kerr geometry, FLRW cosmology, cosmological perturbations, gravitational waves, post-Newtonian methods, and global structure in a relatively rigorous style.
 - [Condensed Mathematics Lectures](books/condensed-mathematics/): a four-volume Chinese textbook draft that attempts to organize, in a relatively rigorous style, condensed foundations, solid/analytic/liquid structures, complex geometry applications, formalization, computations, and examples.
 - [Homotopy Type Theory and Univalent Foundations](books/homotopy-type-theory/): a Chinese HoTT textbook draft that attempts to organize, in a relatively rigorous style, material from dependent type theory, path algebra, equivalences, and univalence to higher inductive types, synthetic homotopy theory, and formalized libraries.

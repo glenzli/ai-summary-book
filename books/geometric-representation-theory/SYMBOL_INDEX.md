@@ -75,9 +75,13 @@
 | 符号 | 含义 | 入口 |
 | --- | --- | --- |
 | $\mathfrak M_\theta(v,w)$ | Nakajima quiver variety | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
+| $\mathfrak L(v,w)$ | quiver variety 到 affine quotient 的零 fiber | [第十七章](17_quiver_varieties_and_nakajima_representations.md), [第二十二章 22.3](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
 | $R(\nu),R^\Lambda$ | KLR algebra 和 cyclotomic KLR algebra | [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
 | $U_q(\mathfrak g),U_q^-(\mathfrak g)$ | quantum group 和其负半部 | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
 | $B(\Lambda)$ | highest-weight crystal | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
+| $\mathcal R,\mathcal R_m^{\mathrm{sec}}$ | BFN space 与固定 coweight 的 regular sections | [第二十章 20.1--20.2](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | $\mathcal M_C(G,N)$ | BFN Coulomb branch | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | $\mathcal A_\hbar(G,N)$ | quantized Coulomb branch algebra | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | $\operatorname{CoHA}(Q)$ | quiver cohomological Hall algebra | [第二十一章](21_hall_coha_and_donaldson_thomas_interfaces.md) |
+| $X_m=\{xy=z^m\}$ | $A$-型 Poisson 曲面模型 | [第二十三章 23.2](23_research_frontier_2026_and_open_problem_map.md) |
+| $\mathcal E_s$ | stratum $X_s$ 的 indecomposable parity extension | [第二十三章 23.3](23_research_frontier_2026_and_open_problem_map.md) |

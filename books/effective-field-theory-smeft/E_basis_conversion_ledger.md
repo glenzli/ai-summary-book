@@ -26,10 +26,10 @@ $$
 $$
 因此
 $$
-{C_{HG}\over\Lambda^2}{\cal O}_{HG}
+{C_{HG}\over\Lambda_{\rm ref}^2}{\cal O}_{HG}
 \supset
-{C_{HG}v\over\Lambda^2}hG_{\mu\nu}^AG^{A\mu\nu}
- +{C_{HG}\over2\Lambda^2}h^2G_{\mu\nu}^AG^{A\mu\nu}.
+{C_{HG}v\over\Lambda_{\rm ref}^2}hG_{\mu\nu}^AG^{A\mu\nu}
+ +{C_{HG}\over2\Lambda_{\rm ref}^2}h^2G_{\mu\nu}^AG^{A\mu\nu}.
 $$
 这给出 Higgs basis 中的 $hgg$ 和 $hhgg$ contact。
 
@@ -39,10 +39,10 @@ H^\dagger\tau^3H=-{(v+h)^2\over2},
 $$
 所以
 $$
-{C_{HWB}\over\Lambda^2}{\cal O}_{HWB}
+{C_{HWB}\over\Lambda_{\rm ref}^2}{\cal O}_{HWB}
 \supset
--{C_{HWB}v^2\over2\Lambda^2}W_{\mu\nu}^3B^{\mu\nu}
--{C_{HWB}v\over\Lambda^2}hW_{\mu\nu}^3B^{\mu\nu}.
+-{C_{HWB}v^2\over2\Lambda_{\rm ref}^2}W_{\mu\nu}^3B^{\mu\nu}
+-{C_{HWB}v\over\Lambda_{\rm ref}^2}hW_{\mu\nu}^3B^{\mu\nu}.
 $$
 第一项产生中性规范场 kinetic mixing；第二项产生 Higgs-neutral-gauge contact。转到 Higgs basis 前必须先做 kinetic diagonalization。
 

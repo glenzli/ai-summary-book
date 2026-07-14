@@ -1,12 +1,6 @@
 # 第十一章：Fukaya-Seidel category 与 Picard-Lefschetz theory
 
-## 本章目标
-
-本章引入 Landau-Ginzburg A-model 的 Fukaya-Seidel category。它由 Lefschetz fibration、vanishing paths、thimbles 和 directed $A_\infty$ category 构成，是 Fano/Landau-Ginzburg HMS 中最常用的 A-side 模型之一。
-
-## 依赖前置知识
-
-需要第四章的 Fukaya category、第六章的非紧 exact 几何、第八章的 HMS 断言模板。
+把 Landau--Ginzburg 势函数只当作一个多项式，会遗漏它沿复平面变化时产生的单值化。围绕临界值移动一次，正则纤维中的 vanishing cycle 经历 Dehn twist；选择一组有序 vanishing paths，又把这种几何组织成一个上三角的 $A_\infty$ 范畴。Fukaya--Seidel category 正是从 Lefschetz fibration 提取这一有向信息的模型。本章以第四章的多边形运算和第六章的非紧 exact 几何为基础，依次构造 thimbles、directed morphisms 与 Picard--Lefschetz 变换，并在 $\mathbb P^1$ 镜像上计算其 Kronecker 型代数。
 
 ## 11.1 Lefschetz fibration
 
@@ -24,7 +18,18 @@ $$
 
 **命题 11.3.** vanishing cycle $V_i$ 是 $F_b$ 中的 Lagrangian sphere。
 
-**证明路线（外部输入）.** Lefschetz 临界点的局部模型为复 Morse 函数。沿路径接近临界值时，fiber 中一族实中维球面收缩到临界点。平行移动保持辛形式，因此所得子流形 Lagrangian；局部模型给出其拓扑为 sphere。完整证明使用 symplectic parallel transport。证毕。
+**证明.** 把临界值平移到 $0$，并在临界点附近采用 Lefschetz 局部模型
+$\pi(z)=z_1^2+\cdots+z_n^2$。对足够小的正实数 $t$，纤维
+$\pi^{-1}(t)$ 中的实点集
+$$
+V_t=\{(x_1,\ldots,x_n)\in\mathbb R^n:x_1^2+\cdots+x_n^2=t\}
+$$
+微分同胚于 $S^{n-1}$。标准辛形式
+$\sum_j dx_j\wedge dy_j$ 在 $V_t\subset\{y_1=\cdots=y_n=0\}$ 上限制为
+零，而 $\dim_{\mathbb R}V_t=n-1=\tfrac12\dim_{\mathbb R}\pi^{-1}(t)$，故
+$V_t$ 是该纤维中的 Lagrangian sphere。沿 vanishing path 的辛平行移动是
+纤维间的辛同构，因而把 $V_t$ 送到基点纤维中的 Lagrangian sphere
+$V_i$。证毕。
 
 ## 11.2 Directed Fukaya category
 
@@ -41,7 +46,7 @@ $$
 
 **定义 11.5.** Fukaya-Seidel category $\mathcal F\mathcal S(\pi)$ 是 directed Fukaya category 的适当 twisted/split closure，或等价地由 Lefschetz thimbles 在 total space 中生成的 wrapped/partially wrapped category 的模型。具体版本依赖文献口径。
 
-**外部输入定理 11.6（Seidel Fukaya-Seidel 构造）.** exact Lefschetz fibration 的 vanishing cycles 和 thimbles 构成 directed $A_\infty$ category；其 quasi-equivalence type 在 Hurwitz moves 和合适选择下按预期变化。  
+**外部输入定理 11.6（Seidel Fukaya-Seidel 构造）.** exact Lefschetz fibration 的 vanishing cycles 和 thimbles 构成 directed $A_\infty$ category；其 quasi-equivalence type 在 Hurwitz moves 和合适选择下按预期变化。
 来源：Seidel, *Fukaya Categories and Picard-Lefschetz Theory*。
 
 ## 11.3 Picard-Lefschetz 变换
@@ -51,6 +56,17 @@ $$
 **外部输入定理 11.8（Picard-Lefschetz monodromy）.** 绕一个 Lefschetz 临界值的 symplectic monodromy Hamiltonian isotopic 于沿相应 vanishing cycle 的 Dehn twist。
 
 **解释 11.9.** Picard-Lefschetz theory 把 base 中路径的 braid 操作翻译为 fiber Fukaya category 中的 Dehn twists。这是 exceptional collections、mutations 和 HMS 中 monodromy 对应的基础。
+
+**外部输入定理 11.9A（Dehn twist exact triangle）.** 设 $V$ 是满足 Fukaya
+分析包和分次假设的 Lagrangian sphere，$L$ 是另一 brane。则在
+$D^\pi\mathcal F$ 中存在函子性 exact triangle
+$$
+HF^\ast(V,L)\otimes V\longrightarrow L\longrightarrow \tau_V(L)
+\longrightarrow[1].
+\tag{11.1}
+$$
+第一箭头是 evaluation。该三角把几何 Dehn twist 提升为范畴自函子；其构造
+和 exactness 采用 Seidel 的 Picard--Lefschetz/Fukaya 理论作为外部输入。
 
 ## 11.4 HMS 形态
 
@@ -98,11 +114,26 @@ $$
 $$
 对应两个交点或两条 thimble morphisms。
 
+**命题 11.12A（B-side Kronecker 代数）.** 令
+$G=\mathcal O\oplus\mathcal O(1)\in\operatorname{Perf}(\mathbb P^1)$。则
+$\mathbf R\operatorname{End}(G)$ 形式化，并 quasi-isomorphic 于 Kronecker
+quiver 的 path algebra：它有两个对象幂等元 $e_0,e_1$、两条从 $e_0$ 到
+$e_1$ 的箭头，除此之外只有单位复合。
+
+**证明.** 对 $i,j\in\{0,1\}$，
+$$
+\operatorname{Ext}^p(\mathcal O(i),\mathcal O(j))
+\cong H^p(\mathbb P^1,\mathcal O(j-i)).
+$$
+$H^0(\mathcal O)=k$，$H^0(\mathcal O(1))=k^2$，而
+$H^p(\mathcal O(-1))=0$ 及这里出现的所有 $p>0$ 上同调均为零。因此
+endomorphism cohomology 集中在次数 $0$，两条非单位箭头恰来自
+$H^0(\mathcal O(1))$ 的一组基。最小 $A_\infty$ 模型因次数和有向性没有
+$\mu^d$（$d\ge3$）的非零值，故形式化。证毕。
+
 **警告 11.13.** 例 11.12 的完整 HMS 证明还需比较乘法和 $A_\infty$ 结构，而不只是 morphism 维数。
 
-## 本章小结
-
-Fukaya-Seidel category 是 Lefschetz fibration 的 directed Fukaya category。Vanishing cycles、thimbles、Dehn twists 和 Picard-Lefschetz monodromy 提供了可计算的 A-side 模型。Fano/LG HMS 通常通过 thimbles 与 exceptional collections 的 endomorphism algebra 比较来证明。
+Vanishing paths 的次序把 Lefschetz fibration 变成 directed $A_\infty$ 数据，绕临界值的 monodromy 则由相应 Lagrangian sphere 的 Dehn twist 表示。对 $z+qz^{-1}$，两个 thimbles 与 $(\mathcal O,\mathcal O(1))$ 都产生 Kronecker 型有向代数；一般 Fano/LG 情形沿同一路线比较 thimbles 与 exceptional objects，但必须连同高阶复合和生成性一起比较。
 
 ## 练习
 

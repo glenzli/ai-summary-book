@@ -294,6 +294,7 @@
 - $\mathbf{Disk}_{n/M}$：嵌入 $n$-manifold $M$ 的 disk category over $M$。
 - $\mathbf{Disk}^{fr}_{n/M}$、$\mathbf{Disk}^{\xi}_{n/M}$：带 framing 或 $\xi$-structure 的 over disk category。
 - $\operatorname{Fact}^{lc}_M(\mathcal C)$：$M$ 上取值于 $\mathcal C$ 的 locally constant factorization algebras。
+- $\operatorname{Fact}^{lc,\otimes}_M(\mathcal C)$：其中 prefactorization 乘法在不交并上为等价的 multiplicative 子范畴。
 - $\int_M A$：$E_n$-algebra $A$ 在 $n$-manifold $M$ 上的 factorization homology。
 - $\otimes^{\mathbf L}_B$：相对于 algebra object $B$ 的 derived relative tensor product。
 - $HH_\*(A)$：associative 或 $E_1$-algebra $A$ 的 Hochschild homology object。

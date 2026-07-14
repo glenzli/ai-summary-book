@@ -1,12 +1,6 @@
 # 第八章：HMS 断言、增强等价与必要不变量
 
-## 本章目标
-
-本章给出 HMS 命题的标准写法，并列出任何候选 HMS 等价必须通过的范畴不变量检查。前面各技术章节已经固定两侧增强范畴的对象类型与外部输入边界；本章据此收束“什么才算一个严格 HMS 陈述”。
-
-## 依赖前置知识
-
-需要第一章的 dg/$A_\infty$ 增强语言、第二章的 B-side 术语和第三章的 A-side 入口。
+两侧范畴都写下来以后，符号 $\mathcal A\simeq\mathcal B$ 仍可能表达四种不同强度：映射上同调的数值匹配、三角影子等价、原始增强的 quasi-equivalence，或只在完美模上成立的 Morita equivalence。它们之间有正向推出，却没有任意反向升级。为了使一个镜像陈述可证明也可证伪，本章把几何、系数、增强模型和等价强度装入同一个 HMS 数据包，并说明生成元比较如何产生 Morita 等价。第一章提供等价层级，第二至第七章提供两侧可填入的数据。
 
 ## 8.1 HMS 数据包
 
@@ -165,7 +159,7 @@ $$
 $$
 quasi-isomorphism 保持上同调维数。proper 假设保证上式中的交错和有限。因此 Euler pairing 被保持。证毕。
 
-**外部输入定理 8.13（Hochschild Morita invariance）.** Hochschild homology 和 Hochschild cohomology 在 dg 或 $A_\infty$ Morita equivalence 下不变。  
+**外部输入定理 8.13（Hochschild Morita invariance）.** Hochschild homology 和 Hochschild cohomology 在 dg 或 $A_\infty$ Morita equivalence 下不变。
 来源：Keller 的 dg categories 与 derived Morita theory。
 
 **推论 8.14.** 一个 Morita 版本 HMS 等价给出
@@ -178,11 +172,12 @@ $$
 8.13，Hochschild homology 在 Morita 等价下不变，故得到显示的同构。
 HKR 识别不是该推论的一部分，只在另行满足所列几何假设时使用。证毕。
 
-## 8.5 HMS 陈述模板
+## 8.5 从镜像字典到可调用的比较数据
 
-一个严格 HMS 章节应采用如下模板。
+对象之间的候选对应只有在下列数据同时给定时，才能成为后续命题的输入。
 
-**模板 8.15.**
+**定义 8.15（完整 HMS 比较数据）.** 对定义 8.1 的数据包，完整比较数据
+由以下九部分组成：
 
 1. **镜像数据。** 明确 A-side 和 B-side 的几何对象。
 2. **系数与分次。** 指定 $k$、Novikov field、grading、brane data 和 orientation conventions。
@@ -193,8 +188,13 @@ HKR 识别不是该推论的一部分，只在另行满足所列几何假设时�
    $A_\infty$ algebra。
 6. **等价函子。** 说明函子、kernel 或 module 如何构造。
 7. **等价强度。** 标明 quasi-equivalence、Morita equivalence 或 stable $\infty$-equivalence。
-8. **不变量检查。** 检查 Euler pairing、Grothendieck group、Hochschild invariants、Serre functor 或 Calabi-Yau dimension。
-9. **外部输入。** 登记 analytic、algebraic 或 recent-preprint 输入。
+8. **不变量同构。** 记录 Euler pairing、Grothendieck group、Hochschild
+   invariants、Serre functor 或 Calabi--Yau structure 中由候选函子诱导的映射；
+9. **外部输入边界。** 指明 analytic 或 algebraic 深定理承担了哪一步证明。
+
+前七项决定命题的类型和证明主体，第八项给出必要一致性条件，第九项区分
+书内推理与引用结果。它们不是九条彼此平行的验收项：若第四项生成性失败，
+第五、六项即使在一个小子范畴上成立，也不能推出全局 HMS。
 
 **例 8.16（非陈述）。** “$X$ 与 $Y$ 是镜像，所以 Hodge diamonds 旋转”不构成 HMS 证明。它最多是 closed-string 层面的必要数值证据，尚未构造 open-string category 等价。
 
@@ -206,21 +206,17 @@ $$
 strictly unital $A_\infty$ quasi-equivalence；有限直和口径下，这可由保持
 对象幂等元的 endomorphism $A_\infty$ algebras quasi-isomorphism 实现。
 
-## 8.6 当前研究边界
+## 8.6 必要证据不能反演为等价
 
-截至 2026-07-11，HMS 的活跃方向包括：
+定义 8.15 还揭示了常见的逻辑断点。一个候选字典可以保持 $K_0$ 与 Euler
+pairing，却没有给出 morphism complexes 上的 quasi-isomorphism；也可以比较
+所有 $H^\ast\operatorname{hom}$，却遗漏非零 $\mu^3$ 和 Massey products。
+同样，生成 full subcategories 的 quasi-equivalence 只有和两边
+split-generation 合用时，才经命题 8.9 推出全局 Morita 等价。因此后续
+每个例子都必须指出：哪些计算只是必要证据，哪些外部定理给出生成性，
+以及哪个增强函子真正承担等价。
 
-- wrapped/partially wrapped Fukaya categories 的 functoriality、descent 与 localization；
-- microlocal sheaves 与 Fukaya categories 的等价；
-- hypersurfaces in algebraic tori、pair-of-pants decompositions 和 tropical degenerations；
-- Rabinowitz Fukaya categories 与 singularity/matrix factorization 版本；
-- functorial HMS、wall-crossing、BPS categories 和物理启发的高阶结构。
-
-这些方向会进入后续专题章节。除非完成 theorem locator 和证明依赖审查，本书不会把近期预印本中的新结论写成基础定理。
-
-## 本章小结
-
-严格 HMS 命题是一条增强范畴等价命题，而不是镜像直觉或数值匹配。生成元法是实际证明中的核心机制：先证明两边生成，再比较 endomorphism $A_\infty$ algebras。Euler pairing、Hochschild invariants 和 Grothendieck groups 是必要检查，但不能替代等价证明。
+一个 HMS 候选现在可以沿两条互补路线检验：生成元及其全部 $A_\infty$ 运算提供充分的 Morita 证明机制，Euler pairing、$K_0$ 与 Hochschild 不变量则提供必要的排错条件。前者不能被只比较 cohomology algebra 取代，后者即使全部吻合也不构成等价。接下来的椭圆曲线例子会首次让对象字典、交点/Ext 计算和乘法三层同时显形。
 
 ## 练习
 
@@ -230,4 +226,5 @@ strictly unital $A_\infty$ quasi-equivalence；有限直和口径下，这可由
 
 **练习 8.3.** 给出一个只通过 Grothendieck group 同构但不应推出范畴等价的理由。
 
-**练习 8.4.** 选一个已知 HMS 例子，按模板 8.15 列出需要检查的九项数据。
+**练习 8.4.** 选一个已知 HMS 例子，写出定义 8.15 的九部分比较数据，并
+指出其中哪些是书内计算、哪些是外部输入。

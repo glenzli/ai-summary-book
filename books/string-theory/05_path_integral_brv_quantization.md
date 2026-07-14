@@ -1,12 +1,13 @@
 # 第五章：路径积分、ghost 和 BRST 量子化
 
-## 本章目标
-
-本章从 Polyakov path integral 出发，说明 gauge fixing 如何产生 $bc$ ghosts，为什么临界维数等价于总 central charge 为零，以及 BRST cohomology 如何定义物理态。相对于第四章 old covariant quantization，BRST 语言更适合描述 gauge equivalence、顶点算子和散射振幅。
-
-## 依赖前置知识
-
-需要第三章的 CFT 和第四章的 Virasoro constraints。BRST convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
+Polyakov 路径积分表面上是对 $X$ 与世界面 metric 的积分，实际上却把整条
+$\operatorname{Diff}(\Sigma)\times\operatorname{Weyl}(\Sigma)$ gauge orbit 重复
+计算了无穷多次。选定 conformal gauge 后，这个冗余不会凭空消失：Faddeev--Popov
+Jacobian 变成 $bc$ ghost CFT，metric 的剩余变形变成 moduli，而 gauge 等价关系由
+一个 nilpotent BRST charge 编码。以下从第三章的 OPE 与第四章的 Virasoro constraints
+出发，逐步构造 ghost action、BRST complex 和零模选择规则，并说明总 central charge
+为何必须消失。所用 ghost number、正规序与 $Q_B$ 归一化固定在
+[全书归一化表](NORMALIZATION_TABLE.md) 中。
 
 ## 5.1 Polyakov path integral
 
@@ -236,9 +237,11 @@ $|\eta(\tau)|^{-48}\sim e^{4\pi\tau_2}$，这是闭弦 tachyon 沿长管传播�
 正规化后的被积函数和有限 cutoff 表达式，不能称为有限真空能。Modular fundamental
 domain 去除了 worldsheet UV 重复计数，但不会消除物理 tachyon 的 IR instability。
 
-## 本章小结
-
-Gauge fixing 不是无害步骤：它引入 ghost CFT、zero mode selection rules 和 BRST cohomology。临界维数 $26$ 是 quantum Weyl invariance 的结果；物理态不是任意 Fock states，而是 BRST cohomology classes。
+截断 torus 积分的例子把 gauge fixing 的几层后果集中展示出来：ghost determinant
+消去两个非物理 bosonic directions，modular fundamental domain 避免重复计数，
+但任何一项都不会消除 tachyon 的长管红外发散。局部层面，总 central charge 为零
+使 Weyl/BRST anomaly 消失并固定 $D=26$；态空间层面，closed states 还必须模去
+exact states。由此得到的 BRST cohomology 才能在下一章通过顶点算子进入散射振幅。
 
 ## 练习
 

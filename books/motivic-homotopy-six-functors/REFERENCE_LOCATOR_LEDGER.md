@@ -1,6 +1,6 @@
 # Reference locator ledger
 
-核查日期：2026-07-11
+核查日期：2026-07-15
 
 本账本用于把 `THEOREM_LEDGER.md` 中的外部输入定位到精确资料源。当前教材可读版允许外部输入以资料源和假设边界标记出现；出版级闭合前必须为 P0 条目补版本、章节、定理号、页码和假设。
 
@@ -49,9 +49,10 @@
 | NM-17.x | norm functors and normed examples | Bachmann-Hoyois | located | Theorem 3.3/localization、Corollary 3.11（finite-locally-free unstable）；Proposition 3.13（finite etale 且 Weil restriction 存在）；Proposition 4.5; Definition 7.1; Theorems 14.5, 15.22, 16.19；见 batches 1, 3 |
 | MW-18.2 | `End(1_k)\cong GW(k)` | Morel | located | Corollary 6.43 + Lemma 3.10；perfect field；见 batch 3 |
 | MW-18.5 | stable-range sphere maps and `K_*^{MW}` | Morel | located | Corollary 6.43；perfect field；见 batch 3 |
-| EQ-19.3 | equivariant six operations | Hoyois | source-verified | 补 linearly reductive 假设 |
-| ST-20.x | stacks 上六操作 | Khan-Ravi | source-verified | 补 scalloped stacks 定义和主定理 |
-| RE-22.4 | Betti realization | Ayoub 等 | pending | 补 six-operation compatibility locator |
+| EQ-19.3 | equivariant six operations | Hoyois | located | Definition 2.26；Proposition 5.7；Theorems 1.1, 6.9, 6.18；各处保留 tame/G-resolution/G-quasi-projective 假设 |
+| ST-20.5/6 | scalloped stacks 上六操作 | Khan-Ravi | located | Definitions 2.7, 2.9；Theorems 4.5, 4.10, 7.1；exceptional pair 仅对可表有限型态射 |
+| ST-20.12 | torus concentration | Khan-Ravi | located | Notation 11.1；Theorem 11.2；Corollary 11.3；必须反演指定 Euler classes |
+| RE-22.4 | Betti realization | Ayoub | located | JIMJ 9 (2010), Theorem 3.19；原文 motivic category 与 constructible/right-adjoint 边界保留 |
 | UF-23.2 | universal six-functor formalism | Drew-Gallauer | located | Theorem 7.14; Proposition 7.13; Theorem 7.3; see P0 batch 1 |
 
 ## 第 9--18 章 P1 boundary queue
@@ -69,7 +70,7 @@
 
 | 账本标签 | 结果 | 资料源 | 当前状态 | 使用边界 |
 | --- | --- | --- | --- | --- |
-| PF-21.5 | perfect schemes motivic homotopy | Dahlhausen-Hekking-Wolters 2025 | source-verified | 研究边界，不作基础输入 |
+| PF-21.13 | perfect schemes motivic homotopy | Dahlhausen-Hekking-Wolters 2025 | source-verified | 研究边界，不作基础输入 |
 | RB-24.1 | pullback formalism 几何判据 | Magen 2025 | source-verified | 研究边界，不作基础输入 |
 | RB-24.2 | complex analytic stacks localization | Magen 2026 | source-verified | 研究边界，不作基础输入 |
 
@@ -78,7 +79,7 @@
 1. 第九至第十八章教学主线的 P0 locators 已由 batch 3 闭合；后续不得把
    其中明确降级的 Adams、Chern character、framed Hilbert、Tambara 或
    quadratic-enumerative P1 边界反向当成主线输入。
-2. 下一批 P0 只处理 extensions/realization：equivariant、stacky 与 Betti
-   realization，并逐项保留其定义域和六操作相容假设。
+2. Equivariant、stacky 与 Betti realization 的 P0 条目已定位；后续修订须继续保留
+   tame/scalloped、representability、finite-type 与 constructibility 边界。
 3. Cisinski--Deglise 的一般基 `DM`/absolute-purity package 若进入正文证明，
    应作为独立模型定位；它不改变 batch 3 的域上 module comparison。

@@ -1,12 +1,6 @@
 # 第六章：Nilpotent orbits、generalized Springer correspondence 与 character sheaves
 
-## 本章目标
-
-本章把第五章的 Springer theory 推向两个方向：nilpotent orbits 的局部系统参数，以及 Lusztig 的 generalized Springer correspondence 和 character sheaves。正文重点是定义和依赖边界，完整分类定理作为外部输入。
-
-## 依赖前置知识
-
-需要第五章的 nilpotent cone、Springer fibers 和 Springer correspondence，以及第三章的 equivariant local systems 和 IC sheaves。
+第五章只从 Springer sheaf 中看见一部分 nilpotent orbit 数据。若稳定子 $G_x$ 不连通，同一个轨道 $G/G_x$ 上可以有多个不可约 $G$-等变局部系统，因而会产生多个 IC 层；普通 Springer correspondence 未必覆盖它们。这里先把局部系统精确还原为 component group $A_G(x)$ 的表示，再说明 Lusztig 如何按 cuspidal datum 和 relative Weyl group 把全部简单等变 perverse sheaves 分成系列。同一套抛物诱导思想移到共轭作用下的 $G$ 本身便通向 character sheaves，但 finite-field trace 与复 Betti 层之间仍需要额外的 Frobenius 输入。
 
 ## 6.1 Nilpotent orbits 和 component groups
 
@@ -65,9 +59,11 @@ $$
 
 **证明.** 由命题 6.3，irreducible equivariant local systems 由 $A_G(x)=G_x/G_x^\circ$ 的不可约表示参数化。命题 6.4.1 给出 $G_x=G_x^\circ$，故 component group 平凡。$\square$
 
+$GL_n$ 因而把“轨道加局部系统”的参数退化为仅有分拆标号的轨道；对其他 reductive groups，component group 的非平凡表示不可忽略。Springer correspondence 的归一化必须在比较这些参数之前固定。
+
 ## 6.2 Springer correspondence 的归一化
 
-**约定 6.5.** 本书的普通 Springer correspondence 采用如下归一化：regular nilpotent orbit 对应 trivial representation 还是 sign representation 依赖使用 top cohomology action 的 convention。最终版本必须在附录 D 中锁定。本阶段只在需要时明确说明 convention，不跨章节隐含使用。
+**约定 6.5.** 本书把定理 5.16 的 Springer action 归一化为：regular nilpotent orbit 配平凡局部系统时对应 $W$ 的 trivial representation。于是零轨道在 top cohomology $H^{2\dim\mathcal B}(\mathcal B,E)$ 中对应 sign representation。把整个作用张量 sign 得到文献中的另一常见归一化；引用采用该归一化的结果时必须先作这一转换。
 
 **外部输入定理 6.6.** 普通 Springer correspondence 给出 $\operatorname{Irr}(W)$ 到 pairs $(\mathcal O,\mathcal L)$ 的单射，其像由 Springer sheaf 的 simple summands 决定。  
 用途：Weyl group representation 的几何构造。来源：Springer、Borho-MacPherson、Chriss-Ginzburg。
@@ -85,16 +81,23 @@ $\mathsf{Spr}\in\operatorname{Perv}_G(\mathcal N,E)$ 且 semisimple，所以它�
 
 ## 6.3 Generalized Springer correspondence
 
-**定义 6.9.** 一个 cuspidal datum 通常写作
+**定义 6.9.** 一个 cuspidal datum 写作
 $$
 (L,\mathcal O_L,\mathcal L_L),
 $$
-其中 $L\subset G$ 是 Levi subgroup，$\mathcal O_L\subset\mathcal N_L$ 是 nilpotent orbit，$\mathcal L_L$ 是 $\mathcal O_L$ 上的 irreducible $L$-equivariant local system，并满足 Lusztig 的 cuspidality 条件。
+其中 $L\subset G$ 是 Levi subgroup，$\mathcal O_L\subset\mathcal N_L$ 是 nilpotent orbit，$\mathcal L_L$ 是其上的 irreducible $L$-equivariant local system。令
+$$
+\mathcal K_L=\operatorname{IC}(\overline{\mathcal O_L},\mathcal L_L).
+$$
+对 $L$ 的每个 proper parabolic $P_L$ 及其 Levi quotient $M$，nilpotent correspondence 定义 normalized parabolic restriction functor
+$$
+\operatorname{Res}^{L}_{M\subset P_L}:
+\operatorname{Perv}_L(\mathcal N_L,E)\longrightarrow
+D^b_M(\mathcal N_M,E).
+$$
+若所有这些 restriction 都把 $\mathcal K_L$ 送到零对象，则称 $(\mathcal O_L,\mathcal L_L)$ cuspidal。该 functor 的 pull--push 与 shift 采用 Lusztig generalized Springer theory 的 normalization；定理 6.11 连同其存在性一并作为外部输入。
 
-**警告 6.10.** cuspidality 不是“不能由更小 Levi 看出”的直觉短语。严格定义需要 parabolic induction/restriction functors 和 perverse sheaf vanishing 条件。当前阶段不把 cuspidality 用作证明步骤。
-
-**外部输入定理 6.11.** Lusztig generalized Springer correspondence 把 $\mathcal N$ 上的 simple $G$-equivariant perverse sheaves 分解为由 cuspidal data 控制的 series；每个 series 内部由相应 relative Weyl group 的不可约表示参数化。  
-来源：Lusztig。进入正文定理链前需补 locator。
+**外部输入定理 6.11.** Lusztig generalized Springer correspondence 把 $\mathcal N$ 上的 simple $G$-equivariant perverse sheaves 分解为由 cuspidal data 控制的 series；每个 series 内部由相应 relative Weyl group 的不可约表示参数化。这里采用 Lusztig 在固定系数特征与 cuspidal normalization 下的版本，不把不同系数理论中的对应自动合并。
 
 ## 6.4 Character sheaves
 
@@ -117,9 +120,7 @@ shift 由 perversity normalization 决定。
 
 **证明.** $a_!b^\ast$ 是导出 functor。perverse t-structure 下，smooth pullback 需要按相对维数 shift 才 t-exact，proper pushforward 不一般 t-exact，只有在 semismall 或 decomposition theorem 场景下可控制 perverse cohomology。因此没有 shift、twist 和几何假设，不能得出 character sheaf 的 perversity。$\square$
 
-## 本章小结
-
-本章定义了 nilpotent orbit、component group、equivariant local system、ordinary 和 generalized Springer correspondence 的输入数据，以及 character sheaves 的基本范畴。内部证明包括 orbit 和 equivariant local system 的类型识别，以及 $GL_n$ centralizer 连通性和 local system 平凡性；Lusztig 的分类、character sheaf theory 和 finite group character 关系均为外部输入。
+Component group 解释了为何轨道本身不足以参数化简单等变 perverse sheaves，而 $GL_n$ 的连通 centralizer 又给出一个完全退化的对照。Cuspidal restriction 的消失条件把 generalized Springer series 与普通 Springer summands 区分开来；character sheaves 则把相同的诱导机制从 nilpotent cone 搬到共轭作用下的群。下一章改用微分方程语言描述 constructible 层，为 localization 建立代数侧入口。
 
 ## 练习
 

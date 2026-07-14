@@ -28,12 +28,15 @@
 - $\operatorname{tr}_{\mathcal K}$：对 $\mathcal K$ 的偏迹。
 - $\{M_i\}$：Kraus 算子族。
 - $\{E_i\}$：POVM 效应，$E_i\ge0$ 且 $\sum_iE_i=I$。
+- $\{\mathcal I_i\}$：量子仪器；$\mathcal I_i(\rho)$ 是结果 $i$ 的未归一化输出态。
+- $D(\rho,\sigma)=\frac12\|\rho-\sigma\|_1$：密度算子的迹距离。
 
 ## 动力学
 
 - 默认单位 $\hbar=1$。
 - $H$：Hamiltonian，自伴算子。
-- $U(t)=e^{-itH}$：时间演化酉群。
+- $U(t)=e^{-itH}$：时间无关 Hamiltonian 的自治演化酉群。
+- $U(t,s)$：显含时间 Hamiltonian 的二参数传播子，满足 $U(t,s)U(s,r)=U(t,r)$。
 - $\rho(x,t)=|\psi(x,t)|^2$：位置表象概率密度。
 - $j(x,t)=m^{-1}\operatorname{Im}(\overline\psi\nabla\psi)$：概率流。
 - $X_j,P_j$：位置与动量算子。
@@ -42,7 +45,7 @@
 - $A,\Phi$：电磁矢势和标势；若与抽象算子冲突，以局部说明为准。
 - $\Pi=P-qA(X)$：动力学动量。
 - $B=\nabla\times A$：磁场。
-- $U_I(t,t_0)$：相互作用图像传播子。
+- $U_I(t,t_0)$：相互作用图像的二参数传播子。
 - $J_\pm=J_x\pm iJ_y$：角动量升降算符。
 - $\Delta=\sum_j\partial_j^2$：Laplacian。
 - $S(t)=e^{-itH}$：有时也用于传播子；若有冲突，以章节局部说明为准。

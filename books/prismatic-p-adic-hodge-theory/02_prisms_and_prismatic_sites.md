@@ -1,12 +1,6 @@
 # 第二章：Prism、Cartier divisor 与 prismatic site
 
-## 本章目标
-
-本章给出 prism、有界 prism、oriented prism、基本例子和 relative prismatic site 的严格定义。目标是把 prismatic cohomology 的输入对象写清楚：不是一个单独的环，而是一个带 $\delta$-结构和 Cartier divisor 的完备算术 thickenings 构成的 site。
-
-## 依赖前置知识
-
-依赖第一章的 $\delta$-环、Frobenius lift、distinguished element、Witt vectors 和 Breuil-Kisin 型例子。需要熟悉 formal schemes、site、sheaf 和 faithfully flat topology 的基本语言。
+单个带 Frobenius 的环不足以承载相对几何中的下降与比较；需要让所有兼容的算术增厚同时成为探针。Prism 把第一章的 $\delta$-环与 Cartier divisor、导出完备性和生成条件组合起来，relative prismatic site 再把这些对象连同覆盖组织成真正的 site。本章从 Cartier divisor 的局部主理想性质开始，逐项核对有界与 oriented 版本，并以 crystalline、perfect 与 Breuil--Kisin prism 检验定义。随后固定 structure sheaf 和 $R\Gamma_\Delta$ 的类型。所用前置是第一章的 Frobenius lift 与 distinguished element，以及 formal scheme、sheaf 和 faithfully flat topology 的基本语言。
 
 ## 2.1 Cartier divisor ideal
 
@@ -41,7 +35,7 @@ $(A,I)\to(B,J)$ 是 prisms 的态射，则事实上
 $$
 J=IB.
 $$
-这是 Bhatt-Scholze, Proposition 3.5（locator `BS-PRISM-DEF`）。证明使用
+这是 Bhatt-Scholze, Proposition 3.5。证明使用
 prism 条件和 Cartier divisor 结构，本书不重证。特别地，固定 base prism
 后，probe ideal 不是独立变化的数据。
 
@@ -149,8 +143,7 @@ $$
 定义 A.13。特别地，模 $(p,IB)$ 后的映射必须 faithfully flat；这不是只
 要求 ordinary $B\to C$ flat。
 
-Bhatt-Scholze, Corollary 3.12 与 Definition 4.1（locator
-`BS-PRISM-SITE`）是此处的外部输入：它们证明上述 covers 确实定义
+Bhatt-Scholze, Corollary 3.12 与 Definition 4.1 是此处的外部输入：它们证明上述 covers 确实定义
 Grothendieck topology，并证明定义 2.15 的两个 presheaves 都是 sheaves。
 此外有自然同构
 $$
@@ -226,7 +219,7 @@ $R\to B$，否则 $R$ 不映入 $B$。证毕。
 不是 $R$-algebras，而是 modulo $IB$ 后才接收 $R$-algebra structure 的
 prism thickenings。
 
-## 本章小结
+## 2.7 从算术增厚到相对 site
 
 本章给出了 prism、有界 prism、基本例子和 relative prismatic site 的定义。Prismatic cohomology 是该 site 上结构层的 derived global sections。所有比较定理都发生在这个定义之后，不能作为定义本身的一部分。
 

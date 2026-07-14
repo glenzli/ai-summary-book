@@ -22,7 +22,7 @@
     $\operatorname{Perf}_{\mathrm{dg}}(X)$ model、
     $\mathrm D^b\operatorname{Coh}(X)$ 的三角影子、enhanced
     Fourier--Mukai transform、affine matrix-factorization dg model。
-  - 被依赖：HMS 断言模板、后续标准例子、Landau-Ginzburg 章节。
+  - 被依赖：HMS 比较数据、后续标准例子、Landau--Ginzburg 章节。
 
 ## A-side 层
 
@@ -54,7 +54,8 @@
 
 - `07_stops_partially_wrapped_categories_and_localization.md`
   - 依赖：`06_liouville_sectors_and_wrapped_fukaya_categories.md`。
-  - 提供：stops、partially wrapped categories、linking disks、stop removal、Viterbo/Orlov functoriality。
+  - 提供：stops、partially wrapped categories、linking disks、stop removal、
+    dg quotient 的 $A_2$ 计算模型以及 Viterbo/Orlov functoriality。
   - 被依赖：functorial HMS、microlocal sheaf models。
 
 ## HMS 断言层
@@ -77,7 +78,8 @@
 
 - `11_fukaya_seidel_categories_and_picard_lefschetz_theory.md`
   - 依赖：`04_holomorphic_polygons_and_fukaya_categories.md`、`06_liouville_sectors_and_wrapped_fukaya_categories.md`。
-  - 提供：Lefschetz fibration、vanishing cycles、Fukaya-Seidel categories、directed HMS strategy。
+  - 提供：Lefschetz fibration、vanishing cycles、Dehn-twist exact triangle、
+    Fukaya--Seidel categories、directed HMS 与 $\mathbb P^1$ Kronecker 代数。
 
 - `12_k3_quartics_and_calabi_yau_hypersurfaces.md`
   - 依赖：`08_hms_statement_enhancements_and_invariants.md`、`11_fukaya_seidel_categories_and_picard_lefschetz_theory.md`.
@@ -85,7 +87,8 @@
 
 - `13_pairs_of_pants_tropical_degeneration_and_hypersurfaces.md`
   - 依赖：`06_liouville_sectors_and_wrapped_fukaya_categories.md`、`07_stops_partially_wrapped_categories_and_localization.md`、`12_k3_quartics_and_calabi_yau_hypersurfaces.md`。
-  - 提供：pair-of-pants、tropical degeneration、hypersurfaces in tori、local-to-global HMS 模板。
+  - 提供：pair-of-pants、tropical degeneration、Abouzaid--Auroux
+    quasi-embedding、Lekili--Polishchuk categorical resolution 与相容局部镜像数据。
 
 ## 生成、descent 与 sheaf 层
 
@@ -103,25 +106,30 @@
 
 - `16_nadler_zaslow_microlocal_sheaves_and_cotangent_bundles.md`
   - 依赖：`02_derived_categories_and_b_side_enhancements.md`、`06_liouville_sectors_and_wrapped_fukaya_categories.md`。
-  - 提供：constructible sheaves、microsupport、Nadler-Zaslow、microlocal sheaf model。
+  - 提供：constructible sheaves、方向性 microsupport 例子、conormal
+    Lagrangians、Nadler--Zaslow--Nadler 与 GPS microlocal models。
 
 - `17_stop_removal_viterbo_functors_and_functorial_hms.md`
   - 依赖：`07_stops_partially_wrapped_categories_and_localization.md`、`15_sectorial_descent_for_wrapped_fukaya_categories.md`。
-  - 提供：functorial HMS、Orlov/Viterbo functors、strict functorial square。
+  - 提供：functorial HMS、spherical Orlov/Viterbo functors、增强交换方块及
+    localization-kernel 对应。
 
 - `18_hochschild_closed_open_and_categorical_enumerative_checks.md`
   - 依赖：`14_split_generation_open_closed_and_abouzaid_criterion.md`、`02_derived_categories_and_b_side_enhancements.md`。
-  - 提供：Hochschild invariants、HKR、categorical enumerative checks。
+  - 提供：Hochschild chain 模型、HKR、Ganatra non-degenerate OC/CO
+    isomorphisms 与 categorical enumerative checks。
 
 ## 研究边界层
 
 - `19_rabinowitz_fukaya_singularities_and_matrix_factorizations.md`
   - 依赖：`02_derived_categories_and_b_side_enhancements.md`、`06_liouville_sectors_and_wrapped_fukaya_categories.md`。
-  - 提供：Rabinowitz Fukaya categories、Milnor fibers、matrix factorizations。
+  - 提供：Milnor fibers、Brieskorn--Pham Milnor number、matrix
+    factorizations、Rabinowitz Fukaya categories 与已证 HMS 范围。
 
 - `20_functorial_wall_crossing_bps_and_2026_research_boundary.md`
   - 依赖：`17_stop_removal_viterbo_functors_and_functorial_hms.md`、`18_hochschild_closed_open_and_categorical_enumerative_checks.md`。
-  - 提供：functorial HMS、wall-crossing、BPS categories 和研究边界规则。
+  - 提供：增强范畴值图、Bridgeland stability、$A_2$ 跨墙计算、spherical
+    twists、model-specified BPS data 与类型明确的开放问题。
 
 ## 计算与解答层
 

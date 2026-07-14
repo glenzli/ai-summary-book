@@ -3052,7 +3052,11 @@ $$
 
 **答案 51.6.** Grothendieck topos 中 epimorphisms 是 effective descent morphisms。
 
-**答案 51.7.** 若 $p^*$ monadic 且 monad 代数范畴等价于 descent category，则 $\mathcal C_{/B}\simeq\operatorname{Desc}(p)$。
+**答案 51.7.** 伴随 $\Sigma_p\dashv p^*$ 的 monad 是 $T=p^*\Sigma_p$。展开 $T$-代数结构，可得典范等价
+$$
+\operatorname{Alg}_T(\mathcal C_{/E})\simeq\operatorname{Desc}(p).
+$$
+在此等价下，Beck 比较函子就是 descent 比较函子。因此 $p^*$ monadic 当且仅当 $p$ 是 effective descent morphism。
 
 **答案 51.8.** 范畴 Galois 结构由反射伴随 $I\dashv H$ 及合适 extension/fibration 类组成，并要求 pullback 稳定和反射相容。
 
@@ -3064,7 +3068,7 @@ $$
 
 **答案 51.12.** Galois groupoid 是 kernel pair $E\times_BE\rightrightarrows E$ 在 Galois 结构下反射得到的内部 groupoid。
 
-**答案 51.13.** 合适 Galois 结构中，normal extensions over $B$ 与相应 Galois groupoids 的 actions 等价。
+**答案 51.13.** 在满足标准闭包公理的 admissible Galois 结构中，monadic extension $p:E\to B$ 保证 descent data 可有效恢复；范畴 Galois 基本定理据此把被 $p$ 分裂的 coverings 与 $\operatorname{Gal}_\Gamma(p)$ 上的内部离散纤维化（等价地，适当的内部作用）识别。若 $p$ normal，该 groupoid 由 $p$ 的 kernel pair 经反射得到。
 
 **答案 51.14.** 对有限 Galois 扩张 $L/K$，$L\otimes_KL\cong\prod_{\sigma\in G}L$；descent datum 等价于每个 $\sigma$ 的半线性作用，cocycle 即群作用律。
 

@@ -26,10 +26,15 @@ BOOKS = (
     "geometric-representation-theory",
     "homological-mirror-symmetry",
     "homotopy-type-theory",
+    "illusion-of-reproducibility",
     "langlands-program",
+    "machine-hermeneutics",
     "motivic-homotopy-six-functors",
+    "ontology-of-an-output",
     "operad-theory",
     "prismatic-p-adic-hodge-theory",
+    "probability-boundaries",
+    "proof-explanation-and-rhetoric",
     "quantum-mechanics",
     "relativity",
     "string-theory",
@@ -48,7 +53,15 @@ PLACEHOLDER = re.compile(
 )
 INCOMPATIBLE = re.compile(r"\\begin\{CD\}|\\mathbbm|\\xymatrix")
 BARE_COLONEQQ = re.compile(r"(?<!\\)\bcoloneqq\b")
-MALFORMED_INTEGRAL_DIFFERENTIAL = re.compile(r"\\int[^\n$]{0,240}(?<!\\),d(?=[A-Za-z\\])")
+BARE_TEX_SPACING = re.compile(
+    r"(?<![\\A-Za-z])(?:quad|qquad)(?=(?:\\[A-Za-z]+|\s+[A-Za-z0-9]))"
+)
+BARE_TEX_DELIMITER = re.compile(
+    r"(?<![\\A-Za-z])(?:left|right)(?=[\[\]\(\)\{\}\\])"
+)
+MALFORMED_INTEGRAL_DIFFERENTIAL = re.compile(
+    r"\\int[^\n$]{0,240}(?<=[\s}\)\]]),d(?=[A-Za-z\\])"
+)
 LATEX_BEGIN = re.compile(r"\\begin\{([^}]+)\}")
 LATEX_END = re.compile(r"\\end\{([^}]+)\}")
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
@@ -175,6 +188,24 @@ def audit_file(path: Path) -> list[Finding]:
         if BARE_COLONEQQ.search(line):
             findings.append(
                 Finding("ERROR", path, number, "疑似漏写反斜杠：应使用 \\coloneqq")
+            )
+        if BARE_TEX_SPACING.search(line):
+            findings.append(
+                Finding(
+                    "ERROR",
+                    path,
+                    number,
+                    "疑似漏写反斜杠：数学间距命令应使用 \\quad 或 \\qquad",
+                )
+            )
+        if BARE_TEX_DELIMITER.search(line):
+            findings.append(
+                Finding(
+                    "ERROR",
+                    path,
+                    number,
+                    "疑似漏写反斜杠：伸缩分隔符应使用 \\left 或 \\right",
+                )
             )
         if MALFORMED_INTEGRAL_DIFFERENTIAL.search(line):
             findings.append(

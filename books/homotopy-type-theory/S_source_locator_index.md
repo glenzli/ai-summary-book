@@ -28,21 +28,21 @@
 | 第 8-11 章 | HoTT Book Chapter 6；Rijke 教材 | 分层截断与商、圆、悬挂、pushout、基本群 |
 | 第 9 章、附录 L | HoTT Book Chapter 6；CHM 2018 §3.3 | 公理化 HIT 输入的计算强度；悬挂/pushout 的点 judgmental $\beta$ 与 merid/glue propositional $\mathsf{ap}/\mathsf{apd}$-$\beta$；一般 schema 边界 |
 | 附录 M/N/V/W | HoTT Book | 整数、encode-decode、基本群同构 |
-| 附录 AD/AI/AY | HoTT Book；合成同伦论文献 | 悬挂、pushout 等价不变性、pushout 路径空间 |
+| 附录 AD/AI/AY | HoTT Book Chapter 6、Theorem 8.10.2 | 悬挂、pushout 等价不变性；抽象 path-code 包及 Blakers--Massey 外部边界 |
 
 ## S.4 单值范畴论
 
 | 范围 | 主要来源 | 用途 |
 |---|---|---|
-| 第 13-14 章 | HoTT Book；单值范畴论文献 | 预范畴、单值范畴、Yoneda、Rezk 完备化 |
-| 附录 P/Q/U/X/AA/AF/AH | 单值范畴论和 Rezk completion 文献 | 范畴路径、Yoneda、函子范畴、终对象、伴随 |
+| 第 13-14 章 | HoTT Book Chapter 9；Ahrens--Kapulkin--Shulman 2015, Lemmas 6.8、6.15 与 Theorem 8.4 | 预范畴、单值范畴、Yoneda；weak equivalence 的限制函子泛性质 |
+| 附录 P/Q/U/X/AA/AF/AH | Ahrens--Kapulkin--Shulman, DOI 10.1017/S0960129514000486 | 范畴路径、Yoneda、函子范畴、终对象、伴随及 Rezk 外部输入边界 |
 | 附录 BE/BB | displayed categories、univalent bicategories、Rezk/Segal object 文献 | 高阶范畴接口和研究边界 |
 
 ## S.5 高级合成同伦论
 
 | 范围 | 主要来源 | 用途 |
 |---|---|---|
-| 第 12 章 | HoTT Book；合成同伦论和代数拓扑文献 | 高阶同伦群、EM 型、上同调、Blakers-Massey、谱接口 |
+| 第 12 章 | HoTT Book Theorems 8.6.4、8.10.2；相应高级附录所列来源 | 高阶同伦群、EM 型、上同调、Blakers--Massey、谱接口 |
 | 附录 Y/AP/AU/AL/BF/BJ/BK/BM | 合成同伦论、Postnikov、cofiber、局部系数文献 | 证明核、外部输入和高级接口 |
 | 附录 AM/AQ/AV/AZ/BN | 代数拓扑、谱序列、稳定同伦论文献 | smash product、exact couple、Serre/AHSS/Adams、Steenrod/Ext |
 

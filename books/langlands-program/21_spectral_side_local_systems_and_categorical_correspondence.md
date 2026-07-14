@@ -1,14 +1,8 @@
 # 第二十一章：谱侧、局部系统和范畴化对应
 
-## 本章目标
+逐个局部系统寻找一个 Hecke eigensheaf，会忽略 reducible 参数的自同构、obstruction theory 以及 Eisenstein 系列带来的连续族。现代几何 Langlands 因而比较两个完整范畴：谱侧是 derived stack $\operatorname{LocSys}_{\widehat G}(X)$ 上带 nilpotent singular support 的 ind-coherent sheaves，自动侧是 $\operatorname{Bun}_G$ 上的 half-twisted D-modules。点对象对应 eigensheaf 只是这一范畴等价的一个影子。本章会明确区分 ordinary 与 renormalized 范畴、等价方向及不同特征下目前已知的范围。
 
-本章把第二十章的 Hecke eigensheaf 形式升级为范畴化的几何 Langlands 对应。朴素表述给每个 $\widehat G$-local system 一个 Hecke eigensheaf；现代形式要求一个范畴等价：谱侧是 $\widehat G$-local systems 模栈上的 sheaves，特征零 de Rham 自动侧是 $\operatorname{Bun}_G$ 上的 half-twisted D-modules，其他系数理论则使用来源定义的相应 automorphic sheaf category。
-
-## 依赖前置知识
-
-需要第十八章的 $\operatorname{Bun}_G$，第十九章的几何 Satake，第二十章的 Hecke eigensheaves。需要派生代数几何、D-modules、ind-coherent sheaves、quasi-coherent sheaves、singular support 和 stack 上的范畴。特征零 unramified de Rham/Betti 版本按 Gaitsgory-Raskin 合作项目的五篇 preprint theorem 记录为外部输入；正特征 $\ell$-adic 情形只调用 21.8.1 的部分结果，unrestricted、ramified 和 quantum 版本仍列为研究边界。附录 O 给出本章所用 D-module、IndCoh 和 singular support 的技术索引，附录 AB 给出 derived stacks、cotangent complex、six functors、renormalization 和 spectral action 的更细接口。
-
-收口归一化回指：本章只固定范畴化接口；若与有限域函数迹或局部几何 Langlands 比较，必须使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
+所需的 derived stacks、D-modules、IndCoh 与 singular support 技术集中在附录 O、AB。特征零 unramified 结果按 Gaitsgory--Raskin proof series 作为外部 preprint theorem；正特征只陈述来源所覆盖的部分范围，不外推到 unrestricted 版本。与有限域 trace function 比较时使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
 
 ## 21.1 谱侧局部系统模栈
 
@@ -89,7 +83,7 @@ $$
 $$
 以及相应 Betti 版本；该等价与项目中精确定义的 spectral/Hecke action 和 parabolic induction 兼容。
 
-**注 21.8（来源状态与函子方向）.** 定理 21.7 的来源是 2024 年起发布的五篇 proof-series preprints，而非本书证明；本书把它登记为“外部 preprint theorem”，且不让任何算术主线证明依赖其出版或审稿状态。Proof I 构造的 $\mathbb L_G$ 的方向是 automorphic $\to$ spectral；正文若从谱侧对象构造自动侧对象，一律写逆等价 $\mathbb L_G^{-1}$。公式左端是定义 21.5 的 ordinary half-twisted category，不是定义 21.6.1 的 renormalized companion；右端是 derived 且带 nilpotent singular support 的范畴，不能替换为 naive bounded derived category。
+**注 21.8（来源与函子方向）.** 定理 21.7 采用 Gaitsgory--Raskin 自 2024 年起发布的五篇 proof-series preprints 中的版本，而非本书证明。Proof I 构造的 $\mathbb L_G$ 的方向是 automorphic $\to$ spectral；从谱侧对象构造自动侧对象时使用逆等价 $\mathbb L_G^{-1}$。公式左端是定义 21.5 的 ordinary half-twisted category，不是定义 21.6.1 的 renormalized companion；右端是 derived 且带 nilpotent singular support 的范畴，不能替换为 naive bounded derived category。
 
 **外部输入定理 21.8.1（正特征中的部分 $\ell$-adic 几何 Langlands；preprint theorem）.** 在 Gaitsgory-Raskin 2025 预印本精确定义的正特征 unramified $\ell$-adic 设定中，带 nilpotent singular support 的 automorphic sheaves 范畴与 Langlands 参数栈的**某些连通分支之并**上的适当 $\operatorname{IndCoh}$ 范畴等价。这里“某些连通分支之并”和“适当定义的范畴”都是定理的一部分；本书不把该结果扩张为整个参数栈上的 unrestricted 等价。
 
@@ -147,7 +141,7 @@ $$
 
 **注 21.13.1.** 附录 Y 说明 Hecke action 的 factorization 结构为何是范畴化几何 Langlands 的基础输入。若没有多点 Hecke 修改和 tensor compatibility，就不能从 Hecke eigensheaves 恢复完整的 $\widehat G$-local system。
 
-## 21.6 本章小结
+## 21.6 范畴化对应的精确形式
 
 特征零 unramified 几何 Langlands 的核心不是“点到对象”的对应，而是外部输入定理 21.7 的范畴等价：
 $$

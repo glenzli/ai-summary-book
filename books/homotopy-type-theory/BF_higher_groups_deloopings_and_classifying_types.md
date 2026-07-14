@@ -141,6 +141,6 @@ $$
 
 **对比 BF.18.** 附录 Y 的 $H^n(X;A)$ 使用阿贝尔群 $A$ 和 EM 型 $K(A,n)$。当 $n=1$ 且 $G$ 非阿贝尔时，classifying type $BG$ 仍可分类 torsor，但不形成普通阿贝尔群值上同调。
 
-## BF.8 本附录关闭的缺口
+## BF.8 Delooping 与分类的边界
 
-本附录补齐 higher groups、delooping、automorphism classifying types、torsors、principal bundles 和 transport actions 的核心接口。剩余义务是一般 HIT 构造 $BG$、torsor 分类的逐行证明、非阿贝尔 cohomology 的完整结构和与谱/EM 型上同调的比较。
+Transport action 只需带基点类型 $BG$；“$BG$ 分类所有 $G$-torsor”则还需要具体 delooping 构造和分类定理。一般 $BG$ 的 HIT、非阿贝尔上同调以及它与谱或 EM 型上同调的比较在本书中不是内部定理，只有在相应外部输入明确给出后才能使用。

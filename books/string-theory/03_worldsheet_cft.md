@@ -1,12 +1,12 @@
 # 第三章：二维共形场论和 OPE 语言
 
-## 本章目标
-
-本章建立世界面 CFT 的基本语言：Euclidean continuation、radial quantization、operator product expansion、Ward identity、Virasoro algebra、primary fields、free boson 和 ghost CFT。后续 string spectrum、BRST cohomology 和 scattering amplitudes 都依赖这些工具。
-
-## 依赖前置知识
-
-需要复分析、第一章的 stress tensor 和第二章的 conformal gauge。OPE 归一化见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
+经典 conformal gauge 只告诉我们 $X^\mu$ 满足波动方程；量子理论还必须说明两个
+局部算子靠近时出现什么奇点，以及这些奇点怎样编码对称性和态空间。Wick rotation
+把世界面变成复曲面后，径向方向可充当 Euclidean 时间，围道积分把 OPE 的留数变成
+算符作用，stress tensor 的自 OPE 则产生带中心项的 Virasoro 代数。本章以 free
+boson 的二点函数为可计算起点，随后引入 primary fields、Ward identity、ghost CFT
+与 null states。所需前置仅为复分析以及前两章的 stress tensor 和 conformal gauge；
+$X^\mu X^\nu$ OPE 的系数沿用 [全书归一化表](NORMALIZATION_TABLE.md)。
 
 ## 3.1 Euclidean worldsheet、复坐标和径向量子化
 
@@ -308,9 +308,11 @@ $$
 
 **注 3.17.** Minimal models、BRST cohomology 和 string physical state conditions 都会用到 null states。完整 Kac determinant formula 属于二维 CFT 表示论，本书只使用低 level 计算和 null state decoupling 的接口。
 
-## 本章小结
-
-玻色弦量子化的核心是二维 CFT。Matter fields 给出 $c=D$，ghosts 给出 $c=-26$；primary weights 给出 on-shell 条件；contour deformation 和 OPE residues 给出 Ward identities、Virasoro algebra 与 BRST 计算。
+OPE 由此不再只是短距离记号：它的围道留数实现 Ward identities，$T(z)T(w)$ 的
+四阶极点记录 central charge，primary weight 将在顶点算子中变成质量壳条件，而
+null descendants 预示物理态还要取商。Free bosons 贡献 $c=D$，重参数化 ghosts
+贡献 $c=-26$；两者何时能组成无 anomaly 的弦世界面理论，要在建立振子态空间和
+量子 Virasoro constraints 后才能回答。
 
 ## 练习
 

@@ -1,18 +1,6 @@
 # 第六章：线性 operad、Schur 函子与经典例子
 
-## 本章目标
-
-本章把集合值 operad 线性化到模范畴。核心目标是：
-
-1. 定义 $R$-模值对称序列和代入乘积。
-2. 解释 coinvariants 在代入公式中的作用。
-3. 构造 Schur functor，并把 operad 代数识别为相应 monad 的代数。
-4. 给出 $\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Lie}$ 的线性版本。
-5. 定义 Poisson operad 的生成元关系形式。
-
-## 依赖前置知识
-
-需要第一至四章的对称序列、自由代数、生成元关系和 Ass/Com 例子。需要知道交换环、模、张量积和有限群作用下 coinvariants 的定义。
+把集合值运算逐项取自由 $R$-模，只完成了“允许线性组合”这一步；代入还要同时处理张量积、诱导模和对称群 coinvariants。以二元运算为例，$m\otimes(v_1\otimes v_2)$ 与重标号后的 $m\sigma\otimes(v_{\sigma(1)}\otimes v_{\sigma(2)})$ 必须代表同一形式值，否则 Schur functor 甚至不能良定义。本章固定交换环 $R$，从模值对称序列重建代入乘积，并由 Schur functor 得到自由线性代数的 monad。结合、交换、Lie 与 Poisson 四类 operad 将展示生成元、对称作用和关系在同一公式中如何协同。
 
 ## 6.1 $R$-模值对称序列
 
@@ -254,13 +242,13 @@ $$
 
 **证明.** 由生成元，代数结构是在 $R$-模 $A$ 上给出交换含单位乘法和 Lie 括号。前两类关系分别给出交换代数和 Lie 代数公理。第三类关系在 endomorphism operad 中正是每个 $\ell(x,-)$ 对乘法 $m$ 是导子的条件。反向由任意 Poisson $R$-代数的乘法和括号通过生成元关系的泛性质给出 operad 代数结构。$\square$
 
-## 6.7 本章的边界
+## 6.7 经典线性例子尚未覆盖同伦信息
 
 本章只给出经典线性 operad 的入口。Gerstenhaber、BV、$E_n$、Koszul 对偶和 bar-cobar 构造需要链复形、悬挂、符号规则、二次对偶和模型范畴语言。第八章至第十三章会先建立这些工具，再把本章的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$ 和 $\operatorname{Pois}$ 纳入同伦代数框架。
 
-## 本章小结
+## 6.8 Coinvariants 连接运算与线性输入
 
-线性 operad 是模值对称序列范畴中的幺半对象。代入乘积在 arity 公式中必须使用诱导模和 coinvariants；Schur functor 把线性 operad 送到 $\mathbf{Mod}_R$ 上的 monad。$R[\operatorname{Ass}]$、$R[\operatorname{Com}]$、$\operatorname{Lie}_R$ 和 $\operatorname{Pois}_R$ 分别编码结合代数、交换代数、Lie 代数和 Poisson 代数。
+模值代入与集合值代入的差别集中在一个不能省略的商：对称群同时作用于运算和张量输入，Schur functor 必须取相对张量积或 coinvariants 才能消除重标号。这个机制把线性 operad 变成 $\mathbf{Mod}_R$ 上的 monad，并在 $R[\operatorname{Ass}]$、$R[\operatorname{Com}]$、$\operatorname{Lie}_R$ 与 $\operatorname{Pois}_R$ 中分别恢复结合、交换、Lie 与 Poisson 代数。它也预告了后面的同伦风险：coinvariants 对弱等价的行为依赖底环和等变 cofibrancy，不能只凭逐 arity 计算判断。
 
 ## 练习
 

@@ -43,12 +43,12 @@
 ## 章节依赖映射
 
 - 第 1-3 章依赖第三卷 AR.1-AR.2 与输入 C.2-C.5：Fréchet 项的 liquid membership
-  精确引用 CS26 Theorem 2.14、Lemma 2.16 与 Theorem 3.11；cohomology 比较使用
+  精确引用 CS26 Theorem 0.2.14、Lemma 0.2.16 与 Theorem 0.3.11；cohomology 比较使用
   第二卷命题 5.9 的局部提升及 classical Hodge/Green splitting。Clausen-Scholze
   提供复解析对象、holomorphic functions 与 coherent sheaves 的建模，classical
   Dolbeault lemma 仍是 D.1。
 - 第 4-7 章依赖第三卷 AR.3-AR.6 与输入 D.3-D.7：coherent cohomology finite-dimensionality、Serre duality、GAGA 和 HRR/GRR；CS26 locator 已登记，经典证明来源已经分层定位，部分仍需最终 theorem/page locator。
-- 第 8 章整理 six functor formalism 的位置。
+- 第 8 章依赖第二卷的 $f_!\dashv f^!$ 输入、一般闭幺半伴随和经典 sheaf 六函子语言；开嵌入的 $j_!\ne j_*$、proper 情形 $f_!\simeq f_*$、Serre 配对的伴随改写及伴随复合在正文证明，base change、projection formula、dualizing complex 识别和完整六函子构造保留为精确开放条件。
 - 附录 A-B 用于说明证明路线和术语翻译，不引入新的外部来源。
 - 附录 C-E 使用经典复几何标准事实，包括 Cartan A/B、Dolbeault lemma、Serre duality 和 $\mathbb P^1$ 上线丛上同调计算。
 - 附录 F-G 不引入新来源；它们把第三卷已经使用的经典输入和 Clausen-Scholze 输入拆成精确陈述与依赖链。

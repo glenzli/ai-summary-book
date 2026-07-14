@@ -101,10 +101,86 @@ $$ P(|E_{in}(h) - E_{out}(h)| > \epsilon) \le 2 \exp(-2N\epsilon^2) $$
 *   如果 $N \le d_{VC}$，模型有可能打散这 $N$ 个点。
 *   如果 $N > d_{VC}$，模型 **一定** 无法打散这 $N$ 个点（即总存在某种标签组合，模型学不会）。
 
-**经典案例：2D 感知机 (Linear Classifier)**
-*   **N=3**：我们可以任意放置 3 个点（非共线），无论怎么把它们标记为红/蓝，都能画一条直线把它们分开。所以 2D 感知机能打散 3 个点。
-*   **N=4**：对于 XOR 形状的 4 个点（对角线同色），无法用一条直线分开。所以 2D 感知机不能打散 4 个点。
-*   **结论**：2D 感知机的 $d_{VC} = 3$。推而广之，$d$ 维感知机的 $d_{VC} = d+1$。
+**经典案例：仿射线性分类器的 VC 维**
+
+这里必须先排除一个常见但错误的上界证明。画出正方形四角并赋予 XOR 标签，只能说明**这一组四点在这一种标记下**不可线性分；VC 维的上界要求证明任意 $d+2$ 点都存在某种无法实现的标记。下面用 Radon 分割完成全部量词。
+
+令 $\mathcal H_d$ 是 $\mathbb R^d$ 上带偏置的仿射半空间类：
+
+$$
+h_{\mathbf w,b}(\mathbf x)
+=
+\begin{cases}
++1, & \mathbf w^\mathsf T\mathbf x+b\ge 0,\\
+-1, & \mathbf w^\mathsf T\mathbf x+b<0.
+\end{cases}
+$$
+
+**命题**：$\operatorname{VCdim}(\mathcal H_d)=d+1$。
+
+**证明（下界）**：取 $d+1$ 个仿射独立点 $\mathbf x_1,\ldots,\mathbf x_{d+1}$。仿射独立等价于增广向量
+
+$$
+\widetilde{\mathbf x}_i=(\mathbf x_i,1)\in\mathbb R^{d+1}
+$$
+
+线性独立，因此它们构成 $\mathbb R^{d+1}$ 的一组基。对任意标签 $y_i\in\{-1,+1\}$，线性方程组
+
+$$
+\mathbf w^\mathsf T\mathbf x_i+b=y_i,
+\qquad i=1,\ldots,d+1,
+$$
+
+都有唯一解 $(\mathbf w,b)$。因为右侧严格等于 $\pm1$，所得分类器在每个点上实现指定标签。于是这 $d+1$ 个点被打散，故 $\operatorname{VCdim}(\mathcal H_d)\ge d+1$。
+
+**Radon 分割（书内证明）**：任取 $d+2$ 个点 $\mathbf x_1,\ldots,\mathbf x_{d+2}\in\mathbb R^d$。它们的 $d+2$ 个增广向量位于 $d+1$ 维空间，必线性相关，所以存在不全为零的系数 $\lambda_i$ 使
+
+$$
+\sum_{i=1}^{d+2}\lambda_i\mathbf x_i=0,
+\qquad
+\sum_{i=1}^{d+2}\lambda_i=0.
+$$
+
+令 $I=\{i:\lambda_i>0\}$、$J=\{j:\lambda_j<0\}$。两者都非空，并且
+
+$$
+A:=\sum_{i\in I}\lambda_i
+=-\sum_{j\in J}\lambda_j>0.
+$$
+
+归一化后得到
+
+$$
+\sum_{i\in I}\frac{\lambda_i}{A}\mathbf x_i
+=
+\sum_{j\in J}\frac{-\lambda_j}{A}\mathbf x_j.
+$$
+
+等式两侧都是凸组合，故 $\operatorname{conv}\{\mathbf x_i:i\in I\}$ 与 $\operatorname{conv}\{\mathbf x_j:j\in J\}$ 相交。系数为零的点可任意归入一侧，不影响这个交点。
+
+**证明（上界）**：对任意 $d+2$ 点取上述 Radon 分割，把 $I$ 一侧标为 $+1$，把 $J$ 一侧标为 $-1$，其余零系数点任意标记。假设某个仿射分类器实现了这些标签，并令两凸包的公共点为 $\mathbf z$。由 $I$ 侧的凸组合和仿射性，
+
+$$
+\mathbf w^\mathsf T\mathbf z+b
+=
+\sum_{i\in I}\frac{\lambda_i}{A}
+(\mathbf w^\mathsf T\mathbf x_i+b)
+\ge 0.
+$$
+
+由 $J$ 侧的凸组合，每一项都严格小于零，所以
+
+$$
+\mathbf w^\mathsf T\mathbf z+b
+=
+\sum_{j\in J}\frac{-\lambda_j}{A}
+(\mathbf w^\mathsf T\mathbf x_j+b)
+<0,
+$$
+
+矛盾。因此任意 $d+2$ 点都不能被打散，$\operatorname{VCdim}(\mathcal H_d)\le d+1$。结合下界即得结论。$\square$
+
+在 $d=2$ 时，这个证明覆盖所有四点构型。若四点处于凸位置，Radon 分割由相交的两条对角线给出；同一条对角线的两个端点同色、两条对角线异色，正是常见的 XOR 图。若一点落在另外三点的三角形内，则把内部点标成一类、三个顶点标成另一类，同样无法由直线分开。共线、重合等退化情形也已包含在增广向量的线性相关论证中。因此，下面的 XOR 图是上界证明的一个可视化实例，而不是证明的全部。
 
 <img src="images/vc_dimension.png" width="90%" />
 

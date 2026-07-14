@@ -39,7 +39,11 @@ $$
 
 ## 3. pro-étale 与 condensed site 的差异
 
-pro-étale site 的对象是 \(U\to X\) 的几何对象，覆盖来自 pro-étale morphism。condensed site 的对象是紧 Hausdorff 空间，覆盖来自有限联合满射。二者都使用投射型局部对象简化 sheaf cohomology，但不是同一站点；不能把紧 Hausdorff 空间直接当作 \(X_{\mathrm{proet}}\) 的对象，除非额外给出到 \(X\) 的几何结构。
+按 Bhatt--Scholze 的原始口径，pro-étale site 的对象是 weakly étale 几何对象
+\(U\to X\)，覆盖取 fpqc covering；pro-étale 逆极限描述给同一个 Grothendieck
+topology。condensed site 的对象是紧 Hausdorff 空间，覆盖来自有限联合满射。二者都
+使用投射型局部对象简化 sheaf cohomology，但不是同一站点；不能把紧 Hausdorff 空间
+直接当作 \(X_{\mathrm{proet}}\) 的对象，除非额外给出到 \(X\) 的几何结构并验证覆盖。
 
 ## 4. 谱值 sheaf 条件
 
@@ -53,4 +57,8 @@ $$
 
 ## 5. 凝聚谱的零对象检测
 
-若谱值 sheaf \(E\) 的所有 homotopy sheaves \(\pi_n(E)\) 为零，则对每个测试对象 \(S\)，谱 \(E(S)\) 的所有同伦群为零。因此 \(E(S)\simeq0\)。逐对象为零推出 sheaf \(E\simeq0\)。
+在 hypercomplete 谱值 sheaf 范畴中，若 \(E\) 的所有 homotopy sheaves
+\(\pi_n(E)\) 为零，则每个 Postnikov 截断都为零。hypercompleteness 把 \(E\) 识别为
+这些截断的极限，故 \(E\simeq0\)。不能把 homotopy sheaf 的值直接等同于每个
+\(E(S)\) 的 homotopy group；在非 hypercomplete 范畴中还须另加 Postnikov
+left-completeness 假设。

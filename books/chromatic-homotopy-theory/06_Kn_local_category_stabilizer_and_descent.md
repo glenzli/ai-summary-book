@@ -1,12 +1,6 @@
 # 第六章：$K(n)$-局部范畴、Morava stabilizer group 与 descent
 
-## 本章目标
-
-本章研究单一高度 $n$ 的局部世界：$\mathbf{Sp}_{K(n)}$、Morava E-theory $E_n$、extended Morava stabilizer group $\mathbb G_n$、homotopy fixed points 和 descent spectral sequence。
-
-## 依赖前置知识
-
-需要第三章的 $E_n$ 与 $K(n)$。Goerss-Hopkins-Miller theorem、Devinatz-Hopkins homotopy fixed point theory 和 Morava module descent 作为外部输入。
+第五章把所有高度排成 tower；若把视野固定在第 $n$ 层，新的问题是怎样描述整个 $K(n)$-局部范畴。Morava $E_n$ 提供可计算的完备系数环，extended stabilizer group $\mathbb G_n$ 编码其连续对称，而 homotopy fixed points 把带群作用的局部坐标重新下降为谱。由此，$K(n)$-local sphere 的同伦群问题转化为连续群上同调与 descent spectral sequence。本章使用第三章的 $E_n$、$K(n)$ 及其变形解释；Goerss--Hopkins--Miller、Devinatz--Hopkins 连续同伦固定点理论和 Morava module descent 均以精确外部输入出现。
 
 ## 6.1 $K(n)$-局部范畴
 
@@ -113,7 +107,7 @@ $$
 
 **警告 6.20.** 第 4 步通常是主要困难。即使 $E_2$ 页已知，differentials 和 extensions 仍可能改变最终同伦群。
 
-## 本章小结
+## 6.8 从局部坐标到同伦下降
 
 $K(n)$-local category 是单一高度的局部世界。Morava E-theory $E_n$ 带有 extended stabilizer group 的连续作用，$K(n)$-local sphere 可表示为 $E_n^{h\mathbb G_n}$。计算由连续群上同调谱序列控制。所有这些深层结构依赖 Goerss-Hopkins-Miller 和 Devinatz-Hopkins 外部输入。
 

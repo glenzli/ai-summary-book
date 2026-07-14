@@ -1,12 +1,8 @@
 # 第十四章：Yoneda、极限、伴随与 Rezk 完备化
 
-## 本章目标
+一个对象 $c$ 可以由所有射入它的态射共同识别：Yoneda 引理把预层 $P$ 在 $c$ 处的元素，与从可表预层 $\mathcal C(-,c)$ 到 $P$ 的自然变换等同。这个观察一方面把对象嵌入预层范畴，另一方面提供 Rezk 完备化的具体构造：只保留那些“仅仅可表”的预层，就得到对象同构能够转成路径的单值范畴。
 
-本章给出 HoTT 中单值范畴论的核心工具：Yoneda 引理、极限、伴随和 Rezk 完备化。长证明在附录 Q、U、X、AA、AF 中展开为证明核、书内归约或外部输入边界。Rezk type 和 complete Segal object 属于高阶范畴接口，见附录 BB。
-
-## 依赖前置知识
-
-本章依赖单值范畴、函数外延性、命题截断和集合层数学。Yoneda 引理的证明核见附录 Q；预层范畴和 Yoneda 嵌入 fully faithful 版本见附录 U；Rezk 完备化的构造输入和外部边界见附录 R。
+本章先完成 Yoneda 的双向构造，再用可收缩 Hom 表述极限、用 Hom 等价表述伴随，最后区分 Rezk 完备化的书内构造与其外部泛性质。全章使用函数外延性、命题截断和第十三章的单值范畴。固定的预范畴 $\mathcal C$ 假设 locally small；$\mathsf{PSh}(\mathcal C)$ 的对象类型通常位于比 Hom 所在小宇宙更高的层级，本章不使用 resizing，也不声称完备化保持对象小性。
 
 ## 14.1 预层与 Yoneda
 
@@ -80,7 +76,7 @@ $$
 \mathcal C\to\widehat{\mathcal C}.
 $$
 
-**构造 14.10（Rezk 完备化蓝图）.** 本书采用附录 R 的 Yoneda 本质像构造：
+**构造 14.10（Yoneda 本质像）.** 本书采用附录 R 的 Yoneda 本质像构造：
 $$
 \widehat{\mathcal C}_0
 \coloneqq
@@ -94,24 +90,30 @@ $$
 \eta_{\mathcal C}(c)=
 \bigl(y(c), |(c,\mathsf{refl}_{y(c)})|\bigr).
 $$
-附录 R.7-R.10 给出 $\widehat{\mathcal C}$ 单值、$\eta_{\mathcal C}$ fully faithful 且 essentially surjective 的证明路线。
+附录 R.7-R.10 在书内证明 $\widehat{\mathcal C}$ 单值、$\eta_{\mathcal C}$ fully faithful 且 essentially surjective；其中对本质像见证的截断消去只进入另一个命题截断目标。
 
-**定理 14.11（Rezk 完备化泛性质，书内归约）.** 若 $\mathcal D$ 是单值范畴，则预合成
+**外部输入定理 14.11（Rezk 完备化泛性质）.** 若 $\mathcal D$ 是单值范畴，则预合成函子
 $$
-(-)\circ\eta_{\mathcal C}:
+\eta_{\mathcal C}^{*}:
+[\widehat{\mathcal C},\mathcal D]
+\longrightarrow
+[\mathcal C,\mathcal D]
+$$
+是预范畴同构；特别地，其对象函数
+$$
 \mathsf{Fun}(\widehat{\mathcal C},\mathcal D)
-\to
+\longrightarrow
 \mathsf{Fun}(\mathcal C,\mathcal D)
 $$
-是等价。
+是类型等价。
 
-**验证状态：书内归约 / 外部输入边界。** 见附录 R.11、附录 AA 和 K.1.4。函子范畴、自然同构和预层范畴单值性已在附录 X 展开；Rezk 泛性质已在附录 AA 降为 weak equivalence 限制函子的等价。AA.8-AA.10 的 transport 和代表元相容计算仍是文本层逐项审查义务，但不再作为外部构建任务登记。
+**来源与未重证边界.** Ahrens--Kapulkin--Shulman, *Univalent categories and the Rezk completion*, Mathematical Structures in Computer Science 25 (2015), Theorem 8.4，DOI `10.1017/S0960129514000486`。该定理的精确版本是：若 $H:\mathcal A\to\mathcal B$ fully faithful 且 essentially surjective，目标 $\mathcal D$ 单值，则
+$(-\circ H):[\mathcal B,\mathcal D]\to[\mathcal A,\mathcal D]$
+是预范畴同构。附录 R.9-R.10 已书内证明 $\eta_{\mathcal C}$ 满足这两个假设；附录 AA 解释来源证明中如何用 contractible types 避免从命题截断选择代表。本书不重证 Theorem 8.4 中对象扩张、Hom transport、函子律和代表元独立性的逐项计算，因此它们不再标成书内证明。
 
-## 本章小结
+## 14.5 表示、唯一性与完备化
 
-HoTT 中的范畴论要求把“唯一到唯一同构”改写成“唯一到路径”，这正是单值范畴的作用。Yoneda、极限、伴随和 Rezk 完备化构成单值范畴论的基础工具箱。
-
-本章的 Rezk 完备化是 Hom 为集合的一范畴层构造；附录 BB 的 Rezk object 是合成 $\infty$-范畴对象。二者名称相近，但层级不同，引用时必须区分。
+Yoneda 把元素恢复为自然变换，极限把唯一性写成 Hom 的可收缩性，伴随把构造间的对应写成自然 Hom 等价。Rezk 完备化则把 Yoneda 的本质像组织成单值范畴；其对象、Hom、嵌入及 weak-equivalence 性质已在书内构造，而“对所有单值目标的限制函子为同构”采用 Theorem 14.11 的精确外部输入。这里始终是 Hom 为集合的一范畴层理论；附录 BB 的 Rezk object 属于合成 $\infty$-范畴语言，名称相近但对象和规则不同。
 
 ## 练习
 

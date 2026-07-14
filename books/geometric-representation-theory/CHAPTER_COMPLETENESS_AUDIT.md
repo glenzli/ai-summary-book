@@ -1,6 +1,6 @@
 # 逐章完备审查
 
-审查日期：2026-07-08  
+审查日期：2026-07-15
 审查目标：判断各章是否已经脱离目录式形态，是否具备正式教材章节的基本部件。
 
 ## 1. 判定标准
@@ -36,13 +36,13 @@
 | 14 | 主体收口 | affine flag、Iwahori orbits、standard objects、affine simple reflection、rank-one affine 例子 | affine KL locator |
 | 15 | 主体收口 | affine Kac-Moody cocycle、vacuum module、localization、factorization 接口 | critical/FLE locator |
 | 16 | 主体收口 | Hecke correspondence、$GL_n$ modification、eigensheaf、$GL_1$ 例子 | 保持研究边界 |
-| 17 | 主体收口 | quiver moment map、Grassmannian quotient、Hecke correspondence、Nakajima 输入 | Nakajima locator |
-| 18 | 主体收口 | KLR generators/relations、induction、$\mathfrak{sl}_2$ nilHecke、canonical basis 输入 | KLR/Rouquier locator |
-| 19 | 主体收口 | conical symplectic resolution、quantization、category $\mathcal O$、BGG 原型、duality 表 | BLPW/Losev locator |
-| 20 | 主体收口 | BFN space、torus pure gauge 计算、Borel-Moore convolution、loop rotation quantization | BFN finite type/flatness locator |
-| 21 | 主体收口 | Hall correspondence、associativity、CoHA 接口、有限域 vector space Hall 计算 | critical CoHA locator |
-| 22 | 主体收口 | quantum group、crystal、$\mathfrak{sl}_2$ crystal、几何模型表 | Lusztig/Kashiwara locator |
-| 23 | 主体收口 | 前沿成熟度分级、GLC/Coulomb/parity/CoHA/2-categorical 入口、验证流程 | 仅维护源审计 |
+| 17 | 主体收口 | quiver moment map、$T^*\operatorname{Gr}$ 推导、$T^*\mathbb P^1$ 坐标、nilpotent map、权空间 | Nakajima locator |
+| 18 | 主体收口 | KLR generators/relations、induction、$R(2)$ divided difference 与矩阵 Morita 模型 | KLR/Rouquier locator |
+| 19 | 主体收口 | conical symplectic resolution、$T^*\mathbb P^1$ incidence、Weyl 点模、category $\mathcal O$ | BLPW/Losev locator |
+| 20 | 主体收口 | BFN space、torus pure gauge、权一 matter 分支、Borel--Moore convolution、loop rotation | BFN finite type/flatness locator |
+| 21 | 主体收口 | Hall correspondence、Gaussian 系数、二步旗标结合律、CoHA/DT 边界 | critical CoHA locator |
+| 22 | 主体收口 | quantum group、$A_1$ Grassmannian fibers、incidence crystal、几何模型比较 | Lusztig/Kashiwara locator |
+| 23 | 主体收口 | local-to-global、Poisson/symplectic、torsion、范畴比较与 derived-model 障碍；五个低秩反例/算例 | 一般前沿定理仍按外部输入处理；维护流程只见附录 J |
 
 ## 3. 附录审查
 

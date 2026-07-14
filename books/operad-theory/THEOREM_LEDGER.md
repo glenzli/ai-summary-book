@@ -83,7 +83,7 @@
 | 附录 P | cyclic bar levels；derived relative tensor product 括号说明 | $\int_{S^1}A\simeq HH_\*(A)$ 比较 | bar 模型不替代几何 excision 证明 |
 | 附录 X | arity $0$、coinvariants、特征 $2$ Lie、$\operatorname{Sym}^p$ 不保持 acyclic complex、正特征 rectification、$HH_\*(k)$、$HH_0(M_n(k))$、区间 module 条件例子 | Morita invariance、boundary factorization、rectification 深层定理 | 小例子不能替代一般定理 |
 | 附录 Z | operadic category 数据包低阶检查；BV interchange 低阶形式；relative dendroidal object；Fukaya $A_\infty$ 条件性边界证明 | operadic category nerve、relative dendroidal Rezk nerve、Fukaya 高阶结构仍需外部定理 | 三类前沿均不得直接定理化 |
-| 第二十一章 | 研究边界分类；版本表；模型差异表；进入正文验证流程 | 进入正文前需逐条核查 | 2025-2026 预印本不得直接定理化 |
+| 第二十一章 | 模型比较、rectification、Infinity-operadic Koszul、广义树形、relative localization 与几何 gluing 的开放问题 | 每项固定输入、期望结论与低阶检验 | 已知特例不等于一般问题已解，近期预印本不得直接定理化 |
 | 前沿审计 | 2026-06-30 arXiv 条目版本、用途和进入正文前检查清单 | 当前不作为证明输入；只有升级为正文定理时才新增 locator | 只固定研究边界 |
 
 ## 5. 元文档
@@ -98,7 +98,7 @@
 | `INTERNAL_NUMBERING_AND_CROSSREF_AUDIT.md` | 编号与交叉引用审计 | 检查第一至第七章编号是否可稳定引用 |
 | `LABEL_LEDGER_CH01_07.md` | 稳定 label 表 | 登记第一至第七章交叉引用目标 |
 | `LABEL_LEDGER_CORE_APPENDICES.md` | 核心附录 label 表 | 登记附录 A/B/H/K/P/U/X 交叉引用目标 |
-| `LABEL_LEDGER_CH08_21.md` | 高级章节 label 表 | 登记第八至第二十一章的 416 个交叉引用目标 |
+| `LABEL_LEDGER_CH08_21.md` | 高级章节 label 表 | 登记第八至第二十一章的 420 个交叉引用目标 |
 | `LABEL_LEDGER_REMAINING_APPENDICES.md` | 剩余附录 label 表 | 登记附录 C/D/E/F/G/I/J/L/M/N/O/Q/R/S/T/V/W/Y/Z 的 398 个交叉引用目标 |
 | `CROSSREF_REWRITE_AUDIT.md` | 散文引用替换审计 | 记录两轮散文编号替换，覆盖主体章节、高级章节、主要附录和元文档 |
 | `D_source_theorem_index.md` | 外部输入索引与引用包 | 外部定理定位主表 |
@@ -125,6 +125,6 @@
 5. 模型范畴中的 transferred structure 与 rectification 已有案例层和主 locator；按底范畴逐例翻译文献假设属于 production-level hypothesis table。
 6. factorization homology 的 topological manifold excision、圆周 Hochschild 计算、带边界基础版本和 Dunn additivity 已完成定位；stratified/Fukaya 版本已关闭为外部几何边界。
 7. Fukaya category 相关内容只能保持为接口，除非加入具体几何模型和外部分析定理。
-8. 2026 研究边界条目尚未进入正文证明链。
+8. 近期研究资料只作为第二十一章开放问题的背景，不属于第一至二十章的证明输入。
 
 因此，本书当前状态是“operad theory 数学收口版”，不是 camera-ready 出版版本。

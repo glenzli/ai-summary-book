@@ -24,8 +24,11 @@
 
 - Fabien Morel, Vladimir Voevodsky, "A1-homotopy theory of schemes", Publications Mathematiques de l'IHES 90 (1999), 45-143.
   - 用途：Nisnevich site、simplicial sheaves、A1-localization、unstable motivic homotopy、homotopy purity 的 foundational source。
-  - 精确定位：homotopy purity 为 Section 3, Theorem 2.23。
-  - 定位状态：located；其他基础结果仍按章节继续补 locator。
+  - 精确定位：elementary distinguished squares 检测 Nisnevich sheaves 为
+    Section 1, Proposition 1.4；homotopy purity 为 Section 3,
+    Theorem 2.23。
+  - 稳定链接：`https://www.numdam.org/article/PMIHES_1999__90__45_0.pdf`。
+  - 定位状态：located。
 
 - Vladimir Voevodsky, "A1-homotopy theory", ICM 1998 proceedings.
   - 用途：历史口径、核心构造和应用背景。
@@ -263,43 +266,73 @@
     resolution-property 假设。
 
 - Adeel A. Khan, Charanya Ravi, "Generalized cohomology theories for algebraic stacks", arXiv:2106.15001.
-  - 用途：scalloped algebraic stacks 上的 stable motivic homotopy、六操作、Gysin maps、localization、Mayer-Vietoris。
-  - 核查：arXiv 摘要页显示作者、标题和 2021-06-28 日期；摘要说明把 stable motivic homotopy category 扩展到 scalloped algebraic stacks 并建立 Grothendieck 六操作。
-  - 定位状态：P0。
+  - 用途：scalloped algebraic stacks 上的 stable motivic homotopy、六操作、
+    genuine/lisse 比较、Gysin maps 与 torus concentration。
+  - 精确定位：Definitions 2.7, 2.9（scallop）；Theorems 4.5, 4.10
+    （稳定范畴与下降）；Theorem 7.1（可表有限型态射的 exceptional pair）；
+    Theorem 7.10（smooth purity）；Theorem 11.2 与 Corollary 11.3
+    （Euler-localized concentration）；§12（lisse extension）。
+  - 稳定链接：https://www.preschema.com/papers/sixstack.pdf
+  - 定位状态：P0/located。
 
 - Chirantan Chowdhury, "Motivic Homotopy Theory of Algebraic Stacks", arXiv:2112.15097.
   - 用途：另一种 algebraic stacks 扩展和 enhanced operation map 方法。
   - 定位状态：研究边界/P1。
 
 - Doosung Park, "A1-homotopy theory of log schemes", arXiv:2205.14750.
-  - 用途：fs log schemes、log motivic homotopy、strict morphisms 的六操作。
+  - 用途：fs log schemes、log motivic homotopy、localization、trivial-log 比较和
+    strict morphisms 的六操作。
+  - 稳定链接：https://arxiv.org/abs/2205.14750
   - 定位状态：研究边界/P1。
+
+- Elden Elmanto, Adeel A. Khan, "Perfection in motivic homotopy theory",
+  Proc. Lond. Math. Soc. 120 (2020), 28-38, arXiv:1812.07506.
+  - 用途：universal homeomorphism invariance、Frobenius 与 perfection 比较。
+  - 精确定位：Theorem 2.1.1；Corollaries 2.1.5-2.1.7；integral
+    nil-invariance 的边界见 Introduction 与 Proposition 2.2.1。
+  - 稳定链接：https://arxiv.org/abs/1812.07506
+  - 定位状态：P1/located。
 
 - Christian Dahlhausen, Jeroen Hekking, Storm Wolters, "Motivic homotopy theory for perfect schemes", arXiv:2510.01390.
   - 用途：positive characteristic perfect schemes、six-functor formalism、universal homeomorphism localization。
-  - 核查：2025-10-01 arXiv 记录；截至 2026-07-08 写入研究边界，不作为基础定理。
+  - 核查：2025-10-01 arXiv 记录；2026-07-15 复核，仍作为研究边界，不作为基础定理。
   - 定位状态：研究边界。
 
 - Roy Magen, "Geometric Criteria for 6-Functor Formalisms in the Setting of Pullback Formalisms", arXiv:2511.09371.
   - 用途：pullback formalisms 中的六函子几何判据、stacky/analytic universal property、Betti realization compatibility。
-  - 核查：2025-11-12 arXiv 记录；截至 2026-07-08 写入研究边界，不作为基础定理。
+  - 核查：2025-11-12 arXiv 记录；2026-07-15 复核，仍作为研究边界，不作为基础定理。
   - 定位状态：研究边界。
 
 - Roy Magen, "The Localization Theorem for the Motivic Homotopy Theory of Complex Analytic Stacks and other Geometric Settings", arXiv:2605.14470.
   - 用途：complex analytic stacks 的 Morel-Voevodsky localization analogue、为 2025 pullback formalism 结果提供输入。
-  - 核查：2026-05-14 arXiv 记录；截至 2026-07-08 写入研究边界，不作为基础定理。
+  - 核查：2026-05-14 arXiv 记录；2026-07-15 复核，仍作为研究边界，不作为基础定理。
   - 定位状态：研究边界。
 
 ## Realization functors
 
-- Ayoub 的 Betti realization 和 motivic six operations 兼容结果。
-  - 用途：Betti realization、six-operation compatibility。
-  - 定位状态：P0，需补精确 locator。
+- Joseph Ayoub, "Note sur les operations de Grothendieck et la realisation de
+  Betti", J. Inst. Math. Jussieu 9 (2010), 225-263.
+  - 用途：相对 Betti realization 与 Grothendieck 六操作、nearby cycles 的相容。
+  - 精确定位：Theorem 3.19 及论文主相容性结论；原文的 motivic category、有限型和
+    constructibility 限制均须保留。
+  - DOI：https://doi.org/10.1017/S1474748009000127
+  - 定位状态：P0/located。
 
-- Daniel C. Isaksen, etale realization on A1-homotopy theory of schemes.
-  - 用途：etale realization、pro-spaces、completion restrictions。
-  - 定位状态：P1。
+- Daniel C. Isaksen, "Etale realization on the A1-homotopy theory of schemes",
+  Adv. Math. 184 (2004), 37-63, arXiv:math/0106158.
+  - 用途：完成后的 unstable etale realization、pro-spaces。
+  - 定位状态：P1/located at paper main theorem and abstract scope。
 
-- Tom Bachmann, real etale stable homotopy theory 相关文献。
-  - 用途：real etale realization、real closed fields、real realization comparison。
-  - 定位状态：P1。
+- Gereon Quick, "Stable etale realization and etale cobordism",
+  Adv. Math. 214 (2007), 730-760, arXiv:math/0608313.
+  - 用途：任意特征基域上的 stable profinite etale realization。
+  - 定位状态：P1/located at paper main construction。
+
+- Tom Bachmann, "Motivic and real etale stable homotopy theory",
+  Compos. Math. 154 (2018), 883-917.
+  - 用途：`\rho`-局部 motivic category 与小 real-etale site 上 stable homotopy
+    category 的比较。
+  - 精确定位：Main Theorem；有限维 Noetherian 基；特别地
+    `\mathbf{SH}(\mathbb R)[\rho^{-1}]\simeq\mathbf{Sp}`。
+  - DOI：https://doi.org/10.1112/S0010437X17007710
+  - 定位状态：P1/located。

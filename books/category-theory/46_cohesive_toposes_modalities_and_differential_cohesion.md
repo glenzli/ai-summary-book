@@ -1,28 +1,25 @@
 # 第四十六章：Cohesive Topos、模态与微分凝聚
 
-## 本章目标
+普通 topos 区分变化集合，却未必同时记住一个空间的同伦形状、离散点和余离散包络。Cohesive topos 通过一串伴随 $\Pi\dashv\mathrm{Disc}\dashv\Gamma\dashv\mathrm{Codisc}$ 组织这些操作，并由相应幂等模态在内部语言中表达。微分凝聚再加入 infinitesimal shape 等结构，使形式邻域与 de Rham 信息进入同一语义框架。本章关注这些伴随和模态的精确公理，而不是把“凝聚性”当作一般 topos 的自动性质。
 
-本章介绍 cohesive topos 与 modal type theory 的范畴论核心。普通 topos 处理逻辑和集合变化；cohesive topos 进一步同时记录形状、离散化、余离散化和内在空间结构。它为同伦类型论、微分几何、同调论和高阶几何提供统一的模态语义。
-
-## 依赖前置知识
-
-需要 adjoint functors、geometric morphisms、topos、$\infty$-topos、left exact localization、modalities、reflective subcategory、shape functor、homotopy types 和基本微分几何语义。
+所需背景是几何态射、$\infty$-topos、左正合局部化和 reflective subcategories。具体 smooth/derived models 与 differential cohesion 作为外部例子；每个模态是否左正合、是否有 fully faithful 伴随都会分别声明。
 
 ## 46.1 Cohesive 几何态射串
 
-**定义 46.1.** 一个 cohesive $\infty$-topos 是带有到 spaces 的几何态射
+**定义 46.1.** 本章所称 cohesive $\infty$-topos 是一个 essential 几何态射
 
 $$
 p:\mathcal H\to\mathcal S
 $$
 
-并配有典型伴随串
+其逆像 $p^*:\mathcal S\to\mathcal H$ 与右伴随 $p^!:\mathcal S\to\mathcal H$ 都全忠实，并存在伴随串
 
 $$
-\Pi\dashv \operatorname{Disc}\dashv \Gamma\dashv \operatorname{Codisc},
+p_!=\Pi\dashv p^*=\operatorname{Disc}
+\dashv p_*=\Gamma\dashv p^!=\operatorname{Codisc}.
 $$
 
-其中 $\Gamma:\mathcal H\to\mathcal S$ 为全局截面，$\operatorname{Disc}$ 与 $\operatorname{Codisc}$ 分别给出离散和余离散对象，$\Pi$ 为 shape 或 fundamental $\infty$-groupoid。
+还要求 $\Pi$ 保持有限积。这里 $\Gamma$ 为全局截面，$\operatorname{Disc}$ 与 $\operatorname{Codisc}$ 分别给出离散和余离散对象，$\Pi$ 为 shape。不同文献对 cohesion 还会加入连续性或局部连通性公理；后文只使用本定义列出的资料。
 
 **外部输入定理 46.2.** 光滑空间、拓扑空间或高阶 stacks 的合适 $\infty$-topos 在适当假设下给出 cohesive $\infty$-topos。
 
@@ -58,7 +55,7 @@ $$
 
 ## 46.3 Modalities 与 left exact localization
 
-**定义 46.6.** $\infty$-topos $\mathcal H$ 上的模态是 left exact reflective localization
+**定义 46.6.** 本章采用较窄约定：$\infty$-topos $\mathcal H$ 上的模态是 left exact reflective localization
 
 $$
 L:\mathcal H\to\mathcal H_L
@@ -70,7 +67,7 @@ $$
 
 **证明.** Left exact 的定义就是保持有限极限。Pullback 是有限极限的一种，故 $L$ 保持 pullback 方块为 pullback 方块。$\square$
 
-**命题 46.8.** 若 $L$ 是 left exact localization，则 $L$-局部对象在 pullback 下稳定。
+**命题 46.8.** 若 $L$ 是 left exact localization，且 $Y\to W\leftarrow Z$ 的三个对象都 $L$-局部，则 pullback $Y\times_WZ$ 仍 $L$-局部。
 
 **证明.** 设 $Y,Z$ 为局部对象，且 $X=Y\times_WZ$。应用 $L$ 得到
 
@@ -78,7 +75,7 @@ $$
 LX\simeq L(Y\times_WZ)\simeq LY\times_{LW}LZ.
 $$
 
-若 $W$ 也局部，则右侧为 $Y\times_WZ=X$。更一般地，在局部对象形成的反射子 $\infty$-topos 内，有限极限由原范畴中有限极限再局部化给出。$\square$
+题设保证右侧为 $Y\times_WZ=X$，故单位 $X\to LX$ 为等价。若 $W$ 不局部，该结论一般不能由 left exactness 单独推出。$\square$
 
 **命题 46.9.** 若 $L$ 是 left exact localization，则 $L$-局部对象构成的全子范畴对有限极限封闭。
 
@@ -118,15 +115,23 @@ $$
 \Im:\mathcal H\to\mathcal H
 $$
 
-用于把对象的无穷小邻域信息压缩为 de Rham 型对象。
+用于把对象的无穷小邻域信息压缩为 de Rham 型对象，并满足与 shape、flat、sharp 模态的指定相容公理。仅给出一个幂等端函子并不足以定义 differential cohesion。
 
 **外部输入定理 46.13.** 光滑高阶 stacks 的合适 $\infty$-topos 支持 de Rham stack、infinitesimal shape 和 differential cohomology 的 cohesive 语义。
 
-**定义 46.14.** 对光滑对象 $X$，其 de Rham shape $X_{\mathrm{dR}}$ 可抽象为把 nilpotent 或 infinitesimal thickening 方向局部化后的对象。
+**定义 46.14.** 对定义在 connective commutative rings 上的 prestack $X$，其 de Rham prestack 定义为
 
-**命题 46.15.** 若 $X$ 已无非平凡无穷小方向，则自然映射 $X\to X_{\mathrm{dR}}$ 为等价。
+$$
+X_{\mathrm{dR}}(R)=X(R_{\mathrm{red}}),
+\qquad
+R_{\mathrm{red}}=\pi_0(R)/\sqrt{0}.
+$$
 
-**证明.** $X_{\mathrm{dR}}$ 是关于无穷小加厚的局部化。若 $X$ 对所有此类加厚已经满足映射空间不变，即 $X$ 是该局部化的局部对象，则局部化单位 $X\to X_{\mathrm{dR}}$ 按局部对象定义为等价。$\square$
+商映射 $R\to R_{\mathrm{red}}$ 诱导自然变换 $X\to X_{\mathrm{dR}}$。在所用几何语境中再对该 prestack 作相应 sheafification。
+
+**命题 46.15.** 若 $X$ nil-invariant，即对每个 connective ring $R$，映射 $X(R)\to X(R_{\mathrm{red}})$ 都是等价，则自然映射 $X\to X_{\mathrm{dR}}$ 为等价。
+
+**证明.** 按定义 46.14，自然变换在测试环 $R$ 上正是 $X(R)\to X(R_{\mathrm{red}})$。Nil-invariance 说明它逐点为等价，因而是 prestacks 的等价；sheafification 后仍为等价。$\square$
 
 ## 46.6 Cohomology 的模态解释
 
@@ -150,7 +155,7 @@ $$
 
 取 $\pi_0$ 后得到 $X$ 的 cohesive cohomology 等于其 shape $\Pi X$ 上的普通同伦 cohomology。$\square$
 
-## 46.7 本章小结
+## 46.7 形状、离散化与模态
 
 Cohesive topos 把空间对象的形状、离散化、余离散化和无穷小结构统一到伴随串和模态中。Left exact localization 保证模态与依赖类型论中的替换和恒等类型相容。Differential cohesion 进一步把 de Rham 和微分上同调结构纳入同一范畴逻辑框架。
 

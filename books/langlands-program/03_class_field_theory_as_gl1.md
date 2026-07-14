@@ -1,14 +1,8 @@
 # 第三章：类域论作为 `GL(1)` Langlands
 
-## 本章目标
+Tate thesis 已经把 Hecke 特征的 L 函数写成 adelic 积分，但还没有说明这些特征为何应当被视为 Galois 参数。答案正是类域论：局部 reciprocity 把 $F^\times$ 与 $G_F^{\mathrm{ab}}$ 联系起来，全局 reciprocity 则把 idele class group $C_K$ 与 $G_K^{\mathrm{ab}}$ 联系起来。把这两个定理改写为表示论语言，便得到完整的 `GL(1)` Langlands 对应。本章尤其仔细追踪一致化元映到几何还是算术 Frobenius，因为这一选择直接改变局部 L 因子的公式。
 
-本章把局部和全局类域论改写为 `GL(1)` 的 Langlands 对应。重点不是重证类域论，而是固定 reciprocity map 的归一化、说明 Hecke 特征与一维 Galois/Weil 参数的对应，并检查局部 L 因子相容。
-
-## 依赖前置知识
-
-需要第一章的局部域、整体域、ideles 和 idele class group，第二章的 Hecke 特征和 Tate L 函数。有限 Galois 扩张、分解群、惯性群和 Frobenius 元作为代数数论基础使用。附录 V 给出 class formation、Artin reciprocity、norm subgroup theorem、ray class fields 和 conductor 的接口。
-
-收口归一化回指：本章 reciprocity map、一致化元、几何 Frobenius、算术 Frobenius 和一维局部 L 因子的 convention 固定在 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6 节。
+所需的 adelic 与 Hecke 特征语言来自前两章；分解群、惯性群和 Frobenius 元按代数数论基础使用。Class formation、Artin reciprocity、norm subgroup theorem、ray class fields 与 conductor 的更深层证明入口见附录 V。本文统一采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6 节的 reciprocity 与 Frobenius 约定。
 
 ## 3.1 局部类域论的陈述
 
@@ -62,7 +56,7 @@ $\widehat{F^\times}\simeq G_F^{\operatorname{ab}}$。因此一般复 quasi-chara
 
 **注 3.3.1.** 附录 V 把定理 3.2 和后续全局 reciprocity 放入 class formation 口径，并解释 norm subgroup theorem 如何分类有限 Abel 扩张。本章只使用其 `GL(1)` Langlands 形式。
 
-**收口精修 3.A（类域论使用点）.** 后文调用本章时只使用以下接口：
+**类域论的调用范围 3.A.** 后文使用类域论时，分别调用以下局部或全局结论：
 
 1. 有限阶 Hecke character 的导子给出 ray class group 上的特征，并经全局 reciprocity 对应有限 Abel Galois 特征。
 2. 一般 quasi-character 属于 Weil group 或 idele class group 口径；若不要求有限阶，不能直接视为 profinite Galois group 的复特征。
@@ -245,7 +239,7 @@ $$
 
 该定理是第二章 Tate thesis 与类域论的合并形式。第五章将定义局部 Weil 群和 Weil-Deligne 参数。
 
-## 3.7 本章小结
+## 3.7 类域论的表示论形式
 
 类域论把 Abel Galois 理论翻译为 $F^\times$ 和 $C_K$ 的特征理论。局部情形中，有限阶特征可通过有限 Galois 商描述，而一般连续特征应通过一维 Weil 参数描述；全局情形中，有限阶 Hecke 特征对应有限像一维 Galois 表示，一般 Hecke quasi-character 对应 Weil 侧的一维表示。`GL(1)` Langlands 不是类比，而是类域论本身的表示论重写。
 

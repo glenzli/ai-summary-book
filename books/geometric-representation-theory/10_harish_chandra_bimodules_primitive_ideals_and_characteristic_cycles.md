@@ -1,12 +1,6 @@
 # 第十章：Harish-Chandra bimodules、primitive ideals 与 characteristic cycles
 
-## 本章目标
-
-本章介绍 Harish-Chandra bimodules、primitive ideals、associated varieties 和 characteristic cycles。它们连接 enveloping algebra 的非交换代数问题、nilpotent cone 的几何和 D-module 的 microlocal geometry。
-
-## 依赖前置知识
-
-需要第二章的 $U(\mathfrak g)$ 和中心 character，第五章的 nilpotent cone，第七章的 characteristic variety。
+一个 simple $U(\mathfrak g)$-模可以先由 annihilator 变成双边理想，再由 PBW filtration 变成 $\mathfrak g^*$ 中的代数簇；经 localization 后，同一对象又在 $T^*\mathcal B$ 中留下 characteristic cycle。Harish--Chandra bimodule 是连接左右 $U(\mathfrak g)$-作用的代数载体，primitive ideal 记录不可约表示看不见的算子，associated variety 与 moment map 则把这些非交换数据送入 nilpotent cone。$\mathfrak{sl}_2$ 的 Casimir 只给出中心 character，$\mathcal O_X$ 的零截面 characteristic cycle 则展示 multiplicity 如何从 good filtration 读出；一般 primitive-orbit 对应仍属于 Joseph 理论的外部输入。
 
 ## 10.1 Harish-Chandra bimodules
 
@@ -57,6 +51,8 @@ $$
 
 **外部输入定理 10.7.** 若 $M$ 有中心 character 且属于适当有限生成范畴，则 $\operatorname{AV}(M)$ 包含于 nilpotent cone。对 primitive quotient，associated variety 与 nilpotent orbit closure 密切相关。
 
+Associated variety 只记支撑而不记各不可约分支的重数。D-module 一侧的 characteristic cycle 保留这些重数，因此是比较 localization 前后微局部信息的更细对象。
+
 **例 10.7.1.** 对 $\mathfrak{sl}_2$ 的有限维 simple module $L(n)$，Casimir element 在 $L(n)$ 上以标量作用。因而
 $$
 C-c_n\in\operatorname{Ann}_{U(\mathfrak{sl}_2)}(L(n))
@@ -85,16 +81,14 @@ $$
 
 **外部输入定理 10.11.** Beilinson-Bernstein localization 把 primitive ideals、highest weight modules 和 flag variety 上的 holonomic D-modules 联系起来；特征 variety 经 moment map 投影到 nilpotent cone 后给出 associated variety 的几何解释。
 
-**依赖说明 10.12.** 该关系需要同时使用：
+**几何机制 10.12.** 该关系需要同时使用：
 
 1. localization equivalence；
 2. $\mathcal D_\lambda$-module 的 characteristic variety；
 3. moment map $T^\ast\mathcal B\to\mathcal N$；
 4. good filtration 与 associated graded 的相容性。
 
-## 本章小结
-
-本章定义了 Harish-Chandra bimodules、primitive ideals、associated varieties 和 characteristic cycles。内部证明覆盖基本 bimodule 类型、primitive ideal 的 two-sided 性和 $\mathcal O_X$ 的 characteristic cycle；primitive ideals 的分类和 nilpotent orbit 关系均为外部输入。
+从 primitive annihilator 到 associated variety 的过程把非交换理想压到 $\mathfrak g^*$ 中，而 characteristic cycle 进一步在 cotangent bundle 中保留 Lagrangian 分支及其重数。Localization 与 moment map 使两条路径相遇于 nilpotent cone，但一般的 orbit-closure 结论需要 Joseph 与 microlocal 理论。下一章给出另一种压缩几何的方法：用多项式环上的双模纯代数地重建 Hecke category。
 
 ## 练习
 

@@ -1,22 +1,8 @@
 # 第十八章：曲线、`G`-Bundles 和 Hecke 修改
 
-## 本章目标
+函数域 $K=k(X)$ 允许把 adelic 商几何化：一个 $G$-bundle 在每个闭点的形式邻域上平凡化后，粘合数据正由局部 loop group 元素记录。因此数论中的 $G(K)\backslash G(\mathbb A_K)$ 与几何中的 $\operatorname{Bun}_G(X)$ 并非松散类比，而是同一局部--整体装配机制的两种表达。Hecke 算子也随之变为真正的 correspondence：它在一个点改变丛的局部格，而在点外保持同构。本章先构造 $G$-bundle 模栈和 Hecke 栈，再由其两个投影得到作用在层范畴上的 Hecke 函子。
 
-本章进入几何 Langlands。数论 Langlands 中的基本商是
-$$
-G(K)\backslash G(\mathbb A_K),
-$$
-而几何 Langlands 中的基本对象是光滑射影曲线 $X$ 上的 $G$-bundle 模栈
-$$
-\operatorname{Bun}_G(X).
-$$
-Hecke 算子不再只是 Hecke 代数中的卷积算子，而是由 Hecke correspondence 给出的函子。本章建立曲线、$G$-bundles、Hecke 修改和 Hecke 栈的基本语言，为几何 Satake 和 Hecke eigensheaves 做准备。
-
-## 依赖前置知识
-
-需要代数几何中的光滑射影曲线、主丛、代数栈、纤维积和层范畴。需要第十一章的还原群和对偶群。几何 Langlands 的完整理论涉及 derived algebraic geometry、D-modules、$\ell$-adic sheaves、perverse sheaves 和 factorization structures；本章只建立基础几何对象。
-
-收口归一化回指：本章连接函数域 adeles 与曲线几何时采用第二十二章和 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节的 sheaf-function convention。
+所需背景是光滑射影曲线、主丛、代数栈和纤维积。Derived stacks、D-modules、$\ell$-adic/perverse sheaves 与 factorization structures 在后续章节逐步加入。与函数域自守函数比较时，统一采用第二十二章及 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节的 sheaf--function 约定。
 
 ## 18.1 曲线与函数域类比
 
@@ -189,7 +175,7 @@ $$
 \mathsf H_\lambda.
 $$
 
-## 18.7 本章小结
+## 18.7 从 adelic 商到 $\operatorname{Bun}_G$
 
 几何 Langlands 把函数域自守理论几何化：adelic 双商被 $\operatorname{Bun}_G(X)$ 取代，Hecke 算子被 Hecke correspondence 和 Hecke 函子取代，局部 Hecke 代数被 affine Grassmannian 的几何结构取代。下一章的几何 Satake 将说明：$\operatorname{Gr}_G$ 上的 $G(\mathcal O)$-等变 perverse sheaves 的张量范畴等价于对偶群 $\widehat G$ 的表示范畴。
 

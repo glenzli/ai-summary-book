@@ -1,12 +1,14 @@
 # 第八章：复几何应用的范畴语言
 
-## 本章目标
+复流形上的全纯截面天然组成 Fréchet 空间，Dolbeault 微分连接这些空间，而相干层的
+上同调与对偶又要求核、商和紧支撑推前相互兼容。仅把每个拓扑向量空间忘成代数向量
+空间会丢失分析结构；仅说它们“是 liquid”又不足以保证复形的 cokernel 与上同调比较。
+第五章的 liquid 实现和局部提升条件正好给出对象层与正合层之间的区分。
 
-本章说明 condensed/analytic 方法如何进入复几何。这里不重证复几何定理，而是把 Clausen-Scholze 的目标翻译成本卷已经建立的范畴语言。
-
-## 依赖
-
-需要第五章的 liquid 入口和第七章的相干对偶图景。
+另一方面，第七章的 $f_!\dashv f^!$ 把紧支撑与对偶组织成伴随。我们据此逐项翻译
+相干有限性、Serre 对偶、GAGA 和 Riemann-Roch 所需的范畴对象与态射，说明哪些来自
+本卷形式，哪些仍是 Clausen-Scholze 或经典复几何的深层外部输入。第三卷将把这些接口
+连回具体 Dolbeault、Čech 和射影空间计算，而不是把四个定理只列成未来目标。
 
 ## 8.1 复几何中的分析对象
 
@@ -28,7 +30,7 @@
 3. sheaf cohomology 替换为 analytic/solid 派生范畴中的 derived global sections。
 4. 对偶性通过 $f_!$ 和 $f^!$ 组织。
 
-## 8.3 目标定理
+## 8.3 四项经典比较问题
 
 Clausen-Scholze 的复几何讲义以 compact complex manifolds 为核心，重新证明若干经典定理。
 
@@ -82,21 +84,20 @@ $$
 3. proper pushforward 或 $f_!$ 的有限性。
 4. 对偶性和 trace map。
 
-## 8.6 本卷边界
+## 8.6 范畴接口还缺少的几何输入
 
-本卷完成的是范畴语言：
+solid 与 analytic localization 已经提供派生代数，liquid 实现提供函数空间对象，
+Huber pair 和 $f_!\dashv f^!$ 则提供局部化与对偶接口。要从这些形式得到紧复流形上的
+有限维性、Serre 对偶、GAGA 和 Riemann-Roch，仍需 Dolbeault 局部正合、椭圆有限性、
+相干解析层理论和特征类推前等深层几何输入。第三卷会精确登记这些输入，并把接受输入后
+的 Čech、谱序列、对偶与特征类形式后果写回主线正文。
 
-1. solid 派生范畴。
-2. analytic rings 与解析化。
-3. liquid 向量空间入口。
-4. Huber pair 到解析环。
-5. $f_!$、投影公式和对偶的形式。
+## 8.7 通往复几何主线的接口
 
-真正证明 compact complex manifolds 的 finiteness、Serre duality、GAGA 和 Riemann-Roch，需要另写几何卷。
-
-## 8.7 本章小结
-
-复几何应用说明 condensed mathematics 不是单纯重写拓扑空间，而是为分析对象建立可做同调代数和对偶理论的环境。
+拓扑函数空间经 liquid 实现进入可做导出运算的范畴，解析 sheaf 的上同调可由局部化与
+totalization 组织，紧支撑和对偶则由 $f_!\dashv f^!$ 连接。这些接口解释了凝聚语言
+能承载哪些经典构造，却不替代有限性、对偶或 GAGA 的深层证明。第三卷将从复解析空间
+和相干层本身开始，把这里的类型翻译落实为可计算例子与严格的输入后推论。
 
 ## 练习
 

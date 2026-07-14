@@ -1,12 +1,6 @@
 # 第十二章：K3 曲面、四次曲面与 Calabi-Yau hypersurfaces
 
-## 本章目标
-
-本章记录 HMS 在高维 Calabi-Yau hypersurfaces 中的标准形态和证明策略。重点是把 quartic K3、quintic threefold、projective-space hypersurfaces 与 Batyrev mirror pairs 放进同一范畴模板，而不是复述完整证明。
-
-## 依赖前置知识
-
-需要第八章 HMS 模板、第十一章 Fukaya-Seidel 技术和第二章 B-side enhancement。
+椭圆曲线上可以直接画出交点与三角形，高维 Calabi--Yau hypersurface 却通常没有一张覆盖全范畴的显式图。可行的证明会先退化几何，选出 vanishing cycles、cocores 或 immersed generators，再把庞大的范畴问题压缩为带幂等元的 $A_\infty$ 代数比较。这个压缩只有在两侧 split-generation 已证明时才有效。本章先用 adjunction 确认 Calabi--Yau 条件，再区分四次 K3、projective hypersurfaces 与 Batyrev mirror pairs 的外部定理范围，最后抽取它们共同使用的生成元逻辑与 Serre 函子检验。
 
 ## 12.1 Calabi-Yau hypersurface 数据
 
@@ -41,20 +35,31 @@ D^\pi\mathcal F(Y)\simeq H^0\operatorname{Perf}(X).
 $$
 若 $Y$ 以 Landau-Ginzburg 或 affine hypersurface model 出现，则 A-side category 可能替换为 Fukaya-Seidel、wrapped 或 relative Fukaya category。
 
-**外部输入定理 12.5（Seidel quartic surface HMS）.** 四次 K3 曲面的 HMS 有 Seidel 证明的版本，使用 Picard-Lefschetz、graded Lagrangian spheres 和 directed Fukaya category 技术。  
-来源：Seidel 的 quartic surface HMS 相关论文与专著接口；后续 theorem locator 需精确定位。
+**外部输入定理 12.5（Seidel quartic surface HMS）.** 对 $\mathbb P^3$
+中的光滑 quartic surface 及 Seidel 所构造的镜像族和 Novikov 系数，存在其
+论文所述的 derived/enhanced HMS 等价。该定理使用 Picard--Lefschetz、
+graded Lagrangian spheres 与 directed Fukaya 技术；本章不重建其几何生成性
+和 $A_\infty$ 计算。
+来源：Seidel, *Homological mirror symmetry for the quartic surface*,
+arXiv:math/0310414v4。
 
-**外部输入定理 12.6（Sheridan Calabi-Yau hypersurfaces）.** 对 projective space 中维数 $d>2$ 的光滑 Calabi-Yau hypersurfaces，Sheridan 证明了 HMS 的重要版本。证明使用 pair-of-pants、relative Fukaya category、branched covers、Morse-Bott 模型和 matrix factorizations。  
+**外部输入定理 12.6（Sheridan Calabi-Yau hypersurfaces）.** 对 projective space 中维数 $d>2$ 的光滑 Calabi-Yau hypersurfaces，Sheridan 证明了 HMS 的重要版本。证明使用 pair-of-pants、relative Fukaya category、branched covers、Morse-Bott 模型和 matrix factorizations。
 来源：Sheridan, *Homological Mirror Symmetry for Calabi-Yau hypersurfaces in projective space*。
 
-**外部输入定理 12.7（Batyrev mirror pairs 方向）.** 对由 dual reflexive polytopes 构造的大类 Batyrev Calabi-Yau mirror pairs，已有 2024 年证明型结果建立 HMS。  
-来源：Ganatra-Hanlon-Hicks-Pomerleano-Sheridan, *Homological mirror symmetry for Batyrev mirror pairs*。本书把它列为近期研究边界，进入基础定理链前需 theorem locator 和假设审查。
+**外部输入定理 12.7（Batyrev mirror pairs）.** 对
+Ganatra--Hanlon--Hicks--Pomerleano--Sheridan 所规定的一大类、由对偶 reflexive
+polytopes 构造的 Batyrev Calabi--Yau hypersurface mirror pairs，HMS 成立；
+系数特征可取 $0$，并可取除有限多个素特征以外的正特征。精确 polytope
+admissibility 与两侧 category model 保留为来源定理的假设，本章后续不把
+该条目作为内部命题的前提。
+来源：上述作者，*Homological mirror symmetry for Batyrev mirror pairs*,
+arXiv:2406.05272。
 
-## 12.3 证明策略的共同结构
+## 12.3 从退化几何到生成元比较
 
-高维 Calabi-Yau hypersurface HMS 的证明通常包含以下步骤。
+高维 Calabi--Yau hypersurface HMS 的证明会产生下列彼此依赖的数据。
 
-**步骤 12.8.**
+**定义 12.8（hypersurface comparison datum）.** 这样的比较数据包括：
 
 1. 把镜像退化到 pair-of-pants 或 tropical pieces。
 2. 在 A-side 构造相对或 wrapped Fukaya category。
@@ -65,7 +70,7 @@ $$
    dg/$A_\infty$ quasi-equivalence；有限直和口径下才压缩为保持对象
    idempotents 的 endomorphism-algebra quasi-isomorphism。
 
-**命题 12.9.** 若步骤 12.8 的第 3、5、6 步成立，且第 3、5 步所列对象
+**命题 12.9.** 若定义 12.8 的第 3、5、6 项成立，且第 3、5 项所列对象
 分别 split-generate 两边，则得到相应 HMS 的 Morita 版本。
 
 **证明.** 第 3、5 步给出 A/B 两边 split-generating full subcategories。第 6 步给出这些 full subcategories 的 quasi-equivalence。由生成元比较原则 8.9 得到 Morita equivalence。证毕。
@@ -82,9 +87,7 @@ $$
 
 **证明.** 增强等价保持 perfect module category、dualizability 和 Serre functor 的自然同构类。B-side 的 Serre functor 由 Grothendieck-Serre duality 给出 $(-)\otimes K_X[n]\simeq[n]$。经等价传回 A-side 即得结论。证毕。
 
-## 本章小结
-
-K3、quintic 和更一般 Calabi-Yau hypersurfaces 的 HMS 已有深刻证明型结果，但证明依赖大量几何和 $A_\infty$ 技术。本书在此阶段只把它们纳入严格模板：明确两边类别、生成对象、endomorphism algebra 和外部输入，而不把大型证明压缩成未经验证的正文推导。
+高维例子的共同核心不是一份步骤清单，而是命题 12.9 的逻辑：几何退化用于找到可算生成元，真正推出全局 Morita 等价的则是两侧 split-generation 与生成 full subcategories 的 quasi-equivalence。Adjunction 和 Serre 函子提供独立的一致性检查，却不承担生成性。下一章进一步解释，pair-of-pants 与 tropical decomposition 如何把全局生成元计算拆成局部问题。
 
 ## 练习
 
@@ -92,6 +95,9 @@ K3、quintic 和更一般 Calabi-Yau hypersurfaces 的 HMS 已有深刻证明型
 
 **练习 12.2.** 解释为什么 Serre functor 是 HMS 的必要不变量。
 
-**练习 12.3.** 把 Sheridan 证明策略按模板 8.15 重写成九项清单。
+**练习 12.3.** 把 Sheridan 的 hypersurface 结果写成定义 8.15 的比较数据，
+并指出 relative Fukaya category、branched cover 与 matrix factorization
+分别出现在哪一项。
 
-**练习 12.4.** 说明 Batyrev mirror pairs 结果进入基础定理链前需要核查哪些假设。
+**练习 12.4.** 说明调用定理 12.7 时为何必须保留 coefficient
+characteristic、polytope admissibility 和两侧 category model。

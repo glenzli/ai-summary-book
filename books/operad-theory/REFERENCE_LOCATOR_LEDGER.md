@@ -28,7 +28,7 @@
 | Straightening/unstraightening | 第十九章 | coCartesian fibrations 与 functor categories 的等价 | Lurie HTT；Pratali | Ordinary straightening 已由 [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md) 定位；spaces-valued operadic straightening 已由 [P0_REFERENCE_LOCATORS_BATCH_10.md](P0_REFERENCE_LOCATORS_BATCH_10.md) 中 PRA-1--PRA-5 作最新 P1/preprint locator 定位 |
 | Monoidal/algebra localization | 第十九章 | localization 与 algebra objects 的比较 | White；White--Yau；Lurie HA；Hinich；Pavlov-Scholbach | 模型范畴中 Bousfield localization preserves operad/colored-operad algebras 已由 [P0_REFERENCE_LOCATORS_BATCH_8.md](P0_REFERENCE_LOCATORS_BATCH_8.md) 中 WHT-1--WHT-4 与 WY-1--WY-3 定位；strict associative/commutative algebra comparison 与 colored strict-to-infinity algebra comparison 已由 [P0_REFERENCE_LOCATORS_BATCH_9.md](P0_REFERENCE_LOCATORS_BATCH_9.md) 中 HA-ALG-1--HA-ALG-3 和 PSAR-5 定位；任意 colored/infinity algebra localization 仍需按模型假设选择具体定理 |
 | Factorization homology excision | 第二十章，附录 N/V | excision 与 relative tensor product 公式 | Ayala-Francis；Lurie | Ayala-Francis topological manifolds 版本已由 [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md) 定位；stratified 与 Fukaya 几何版本已在 [P1_REFERENCE_LOCATORS_FINAL_SWEEP.md](P1_REFERENCE_LOCATORS_FINAL_SWEEP.md) 中登记为边界 locator，不能由 operad theory 内部证明替代 |
-| Locally constant factorization algebra | 第二十章，附录 N | locally constant factorization algebras on $\mathbb R^n$ 与 $E_n$-algebras 等价 | Costello-Gwilliam；Lurie；Ayala-Francis | Ayala-Francis homology theories 与 Disk$_n$-algebras 的刻画已由 [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md) 定位；Costello-Gwilliam/Lurie locally constant factorization algebra 等价已在 [P1_REFERENCE_LOCATORS_FINAL_SWEEP.md](P1_REFERENCE_LOCATORS_FINAL_SWEEP.md) 中保留为外部几何/field-theoretic boundary locator，不作为 operad theory 内部证明 |
+| Locally constant factorization algebra | 第二十章，附录 N | locally constant multiplicative factorization algebras on $\mathbb R^n$ 与 $E_n$-algebras 等价 | Costello-Gwilliam；Lurie；Ayala-Francis | Ayala-Francis homology theories 与 Disk$_n$-algebras 的刻画已由 [P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md) 定位；Costello-Gwilliam/Lurie 的 multiplicative 比较已在 [P1_REFERENCE_LOCATORS_FINAL_SWEEP.md](P1_REFERENCE_LOCATORS_FINAL_SWEEP.md) 中保留为外部几何/field-theoretic boundary locator，不作为 operad theory 内部证明 |
 | Fukaya category construction | 第二十章，附录 N/Z | holomorphic polygon counts define $A_\infty$ category under analytic hypotheses | Seidel；Fukaya-Oh-Ohta-Ono | 已由 [FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md) 关闭为几何外部边界；不进入 operad theory 内部证明链 |
 
 ## 2. P1 定位包
@@ -77,7 +77,7 @@
 
 **规则 5.3.** P2 条目不得被引用为证明步骤；若某处需要它证明命题，必须先把该条目升级到 P0 或 P1。
 
-**规则 5.4.** R 条目不得进入第一至二十章的证明链。若要进入，必须先通过流程 21.16，并按定义 D.0.2 在附录 D 和本文件中重新分类。
+**规则 5.4.** R 条目不得进入第一至二十章的证明链。若要进入，必须满足第二十一章相应开放问题所列的模型、假设与低阶检验，并按定义 D.0.2 在附录 D 和本文件中重新分类。
 
 ## 6. 当前出版状态
 

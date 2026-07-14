@@ -250,13 +250,16 @@ $$
 A[\underline S]\to\mathcal M[S]\to K_S^{\mathcal M}
 $$
 
-取 \(R\operatorname{Hom}_A(-,C)\)，得到 fiber sequence。映射
+取内部派生 Hom \(R\underline{\operatorname{Hom}}_A(-,C)\)，得到
+$D(\mathbf{CondAb})$ 中的 fiber sequence。映射
 
 $$
-R\operatorname{Hom}_A(\mathcal M[S],C)\to R\operatorname{Hom}_A(A[\underline S],C)
+R\underline{\operatorname{Hom}}_A(\mathcal M[S],C)
+\to R\underline{\operatorname{Hom}}_A(A[\underline S],C)
 $$
 
-是等价，当且仅当前一项 fiber \(R\operatorname{Hom}_A(K_S^{\mathcal M},C)\) 为零。
+是等价，当且仅当其 fiber
+\(R\underline{\operatorname{Hom}}_A(K_S^{\mathcal M},C)\) 为零。
 
 **X.2.** analytic 张量代表元无关。
 

@@ -1,12 +1,6 @@
 # 第十一章：Soergel bimodules、Hodge theory 与 Hecke categorification
 
-## 本章目标
-
-本章介绍 Soergel bimodules 及其对 Hecke algebra 和 Kazhdan-Lusztig theory 的范畴化。它是从 Schubert 几何到纯代数 Hodge theory 的桥梁，也是现代几何表示论中“几何对象的代数替代物”的典型案例。
-
-## 依赖前置知识
-
-需要第四章的 Hecke algebra 和 KL basis，以及基本 graded commutative algebra。
+第四章用 Schubert IC 层范畴化 Hecke 代数，但一般 Coxeter system 未必来自任何旗簇。Soergel 的办法只保留反射表示 $\mathfrak h$、多项式环 $R=\operatorname{Sym}(\mathfrak h^*)$ 与不变子环 $R^s$，再以 $R\otimes_{R^s}R(1)$ 代替简单反射 correspondence。若这种纯代数模型正确，Bott--Samelson 张量积的不可分直和项应恢复 KL 基；Elias--Williamson 的 Hodge 理论正是在没有 Schubert variety 的情况下证明这一点。类型 $A_1$ 中 $R=E[\alpha]$、$R^s=E[\alpha^2]$，二次张量积可以完全分解，是检验 grading 与 Hecke 关系的最小样本。
 
 ## 11.1 Reflection faithful representation 和多项式环
 
@@ -46,6 +40,8 @@ $$
 $$
 其中 $\underline H_w$ 是 KL basis element。
 
+这一断言把“哪个不可分双模对应哪个 KL 元素”从构造问题提升为 character 等式。其证明需要在双模上建立 hard Lefschetz 与 Hodge--Riemann 关系，而不是借用并不存在的一般 Schubert 几何。
+
 ## 11.3 Elias-Williamson Hodge theory
 
 **外部输入定理 11.9.** Elias-Williamson Hodge theory of Soergel bimodules 证明 Soergel conjecture，并推出任意 Coxeter system 的 Kazhdan-Lusztig positivity。其核心包括 Soergel bimodules 的 hard Lefschetz theorem 和 Hodge-Riemann bilinear relations。  
@@ -71,7 +67,7 @@ $$
 $$
 取值于 Hecke algebra 的适当归一化。
 
-**警告 11.14.** 这个定义依赖 realization 和 grading shift convention。正式使用时必须说明 $H_s$、$\underline H_s$ 与第四章 $T_s,C_s$ 的换元关系。
+**约定边界 11.14.** 这个定义依赖 realization 和 grading shift convention。与第四章比较时，必须同时给出 $H_s$、$\underline H_s$ 与 $T_s,C_s$ 的换元关系。
 
 **命题 11.15.** 对 simple reflection $s$，$B_s=R\otimes_{R^s}R(1)$ 在分式域上分解为两个 rank-one 部分，对应 $e$ 和 $s$。
 
@@ -84,6 +80,8 @@ $$
 a\otimes b\mapsto ab,\qquad a\otimes b\mapsto a\,s(b).
 $$
 这两个映射在分式域上分离二次扩张的两个共轭分支。加入 grading shift 后得到 $B_s$ 的两个分式域支撑部分。$\square$
+
+分式域分解抽取了 $e$ 与 $s$ 两个图像支撑，却没有隐藏 integral grading；在 $A_1$ 中回到 $R$ 上，$R=R^s\oplus R^s\alpha$ 直接给出两个相差 shift 的 summands。
 
 ## 11.6 $A_1$ 计算
 
@@ -123,9 +121,7 @@ $$
 
 **边界说明 11.20.** 第 11.19 条不是定义，而是几何与代数模型比较定理。若底域、系数或 parity 条件变化，IC sheaf 可能不再对应同一个 indecomposable Soergel bimodule。
 
-## 本章小结
-
-本章定义了 Soergel bimodules 和 Bott-Samelson bimodules，证明其 monoidal 类型闭合，给出 character map 的分式域分解口径和 $A_1$ 计算，并把 categorification theorem、Soergel conjecture 和 Elias-Williamson Hodge theory列为外部输入。该章为后续 modular representation theory 和 parity sheaves 留出接口。
+简单反射双模把反射超平面的二次扩张编码进 $R$-双模，Bott--Samelson 张量积则复制 reduced words 的组合。$A_1$ 分解 $B_s\otimes_RB_s\simeq B_s(1)\oplus B_s(-1)$ 具体重现 KL 生成元的二次关系；一般 character 等式由纯代数 Hodge 理论保证。下一章回到几何，但把有限旗簇替换成 loop group 的 affine Grassmannian。
 
 ## 练习
 

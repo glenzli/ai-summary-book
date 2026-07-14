@@ -1,16 +1,6 @@
 # 第五章：Chromatic localization、fracture 与 convergence
 
-## 本章目标
-
-本章把 $K(0),K(1),\ldots,K(n)$ 组装成 chromatic tower。核心对象是 $L_n=L_{E(n)}$、monochromatic layer $M_n$、chromatic fracture square 和 chromatic convergence theorem。
-
-## 依赖前置知识
-
-需要第一章的 Bousfield localization、有限谱 dualizability，第二章的
-$E(n)$ 和第三、四章的 $K(n)$ 与 finite type。以下四项明确作为外部
-输入：$E(n)$ 的 Bousfield 类分解、Hopkins--Ravenel smash product
-theorem、chromatic fracture square 和 chromatic convergence theorem。
-正文只内部证明这些输入的形式后果。
+单独的 $K(n)$ 只看到一个高度，而一个谱通常同时含有多个色层。$E(n)$-局部化把高度不超过 $n$ 的信息累积起来，相邻局部化的 fiber 给出 monochromatic layer；这些层能否重新拼回原谱，则由 fracture square 与 chromatic convergence 控制。本章把第一章的 Bousfield 局部化、第二章的 $E(n)$ 和第三、四章的 $K(n)$ 与 finite type 组装成一座 tower，并在每一步区分有限谱条件与一般谱条件。$E(n)$ 的 Bousfield 类分解、Hopkins--Ravenel smash product theorem、fracture square 和 convergence theorem 明确作为外部输入；正文完整证明由它们推出的形式后果。
 
 ## 5.1 $E(n)$-localization
 
@@ -40,7 +30,7 @@ CHT-P0-08A）.** 对每个 $n\ge0$ 和每个 $X\in\mathbf{Sp}_{(p)}$，自然映
 $$
 L_n\mathbb S_{(p)}\otimes X\longrightarrow L_nX
 $$
-是等价。也就是说，$L_n$ 是 smashing localization。来源定位为
+是等价。也就是说，$L_n$ 是 smashing localization。该版本见
 Ravenel, *Nilpotence and Periodicity in Stable Homotopy Theory*, Theorem
 7.5.6；证明在该书 Chapter 8。这个深定理不能由定义 5.1 或 Landweber
 exactness 形式推出。
@@ -304,7 +294,7 @@ $$
 对一般 $X$ 它仍不是 $L_{K(n)}X$；命题 5.14A 则精确给出有限 type
 $n$ 输入时二者相同的范围。
 
-## 本章小结
+## 5.8 分层、断裂与重构
 
 Chromatic tower 通过 $E(n)$-localization 组织高度 $\le n$ 的信息，
 monochromatic layer 取相邻层的 fiber，fracture square 对每个谱把高度

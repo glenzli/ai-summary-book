@@ -1,19 +1,16 @@
 # 第三章：解析环的正式条件
 
-## 本章目标
+给每个极不连通空间 $S$ 指定一个模 $\mathcal M[S]$，只得到一套测度数据；它尚未
+说明哪些 $A$-模能对这些测度积分。反过来，若直接把“解析模组成良好阿贝尔范畴”写进
+定义，又会把需要证明的结构定理偷偷当作公理。两者之间真正的桥梁是复形级 Hom 条件：
+对由各 $\mathcal M[T]$ 生成的复形，Dirac 映射
+$A[\underline S]\to\mathcal M[S]$ 必须诱导内部导出 Hom 等价。
 
-第一卷第十四章只给出 analytic ring 的入口。本章区分三件不能互相替代的事：
-
-1. theory of measures 的数据；
-2. analytic ring 的复形级公理；
-3. 由该公理推出的阿贝尔范畴、导出全嵌入、解析化与幺半结构定理。
-
-旧写法把第 3 项当作第 2 项的定义，造成循环。本章按 S26 Lecture VII 的顺序修正。
-
-## 依赖
-
-需要第一卷第十四章、第二卷第一章，以及第一卷附录 A 的固定
-\(\kappa\)-层级约定。
+沿 S26 Lecture VII 的次序，我们先定义 theory of measures，再定义预解析环的局部
+对象与 analytic ring 公理，最后把阿贝尔心、导出全嵌入、解析化和幺半结构明确登记为
+外部结构定理。第一卷第十四章提供入口，第二卷第一章提供 cone-localization 模型，
+附录 A 的 $\kappa$-约定控制所有测试对象与 Hom 的大小。这样 solid 特例与 Radon
+测度反例可以在同一类型框架中比较，而不会混淆定义和后果。
 
 ## 3.0 类型与方差
 
@@ -209,11 +206,13 @@ Ribe 的非局部凸扩张给出 analytic 公理失败的障碍。S26 Example 7.
 Theorem 7.11 则以 \(\mathcal M_{<p}\)、\(0<p\le1\) 修复它。第五章将精确定义相应
 \(p\)-liquid 模。
 
-## 3.6 本章小结
+## 3.6 定义、公理与结构定理的分界
 
-analytic ring 的定义是复形级 Hom 公理。反射局部化、cohomology 判别和幺半结构是
-S26 Proposition 7.5 的外部结构定理；cone 判别只是接受定义后的形式改写。Solid 是一个
-特例，liquid 则来自普通 Radon 测度失败后的 \(<p\)-测度修正。
+测度理论提供 $\mathcal M[S]$ 与 Dirac 映射，analytic ring 则额外满足复形级内部 Hom
+公理。把 Dirac 映射取 cofiber 后，局部对象的 cone 判别是定义的形式改写；反射存在、
+cohomology 判别与幺半结构仍由 S26 Proposition 7.5 外部提供。取
+$(\mathbb Z,\mathbb Z^\square)$ 恢复 solid，而普通 Radon 测度的失败说明并非任意
+测度理论都通过公理。第四章将直接以这些 cofiber 构造 Bousfield localization。
 
 ## 练习
 

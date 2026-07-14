@@ -1,12 +1,8 @@
 # 第四十八章：高阶 Morita、Trace 与 $E_n$-Koszul 对偶
 
-## 本章目标
+普通 Morita 范畴以代数为对象、双模为态射；高阶版本对 $E_n$-代数逐级迭代这一结构，使 1-态射成为 $E_{n-1}$ 型双模，直到高阶交织子。可对偶对象的 trace 在圆周方向产生 Hochschild 型不变量，因子化同调则把这种 trace 延伸到更一般流形。对增广 $E_n$-代数，迭代 bar construction 又导向 $E_n$-Koszul 对偶及余代数结构。
 
-本章把高阶代数、因子化同调和 Morita 理论进一步合并。高阶 Morita 范畴以 $E_n$-代数为对象，低一阶代数双模为态射；trace 与 Hochschild 型不变量由圆周或环形因子化同调表达；$E_n$-Koszul 对偶则把增广 $E_n$-代数和余代数结构联系起来。
-
-## 依赖前置知识
-
-需要 $E_n$-代数、模 $\infty$-范畴、相对张量积、Morita $\infty$-范畴、dualizable objects、因子化同调、Hochschild homology、bar/cobar 构造和稳定 presentable 对称幺半 $\infty$-范畴。
+本章综合 $E_n$-代数、模 $\infty$-范畴、相对张量积、Morita theory、因子化同调与 bar/cobar。Cobordism hypothesis 与高阶 Morita 可对偶性作为外部输入；Koszul 对偶只在完备性、连通性或 nilpotence 条件下陈述。
 
 ## 48.1 高阶 Morita 范畴
 
@@ -36,9 +32,9 @@ $$
 
 ## 48.2 可对偶性与光滑真性
 
-**定义 48.5.** $E_1$-代数 $A$ 称为 proper，若其底层对象作为 $C$ 中对象可对偶或紧有限；称为 smooth，若 $A$ 作为 $A^{op}\otimes A$-module 是 perfect。
+**定义 48.5.** 设 $C=\operatorname{Mod}_k$。$E_1$-$k$-代数 $A$ 称为 proper，若其底层 $k$-module 是 perfect；称为 smooth，若 $A$ 作为 $A^e=A^{op}\otimes_kA$-module 是 perfect。
 
-**外部输入定理 48.6.** 在稳定线性 Morita 语境中，$E_1$-代数或小稳定范畴为 fully dualizable 的核心有限性条件由 smooth 和 proper 控制。
+**外部输入定理 48.6.** 在小、幂等完备、$k$-线性稳定 $\infty$-范畴及完美双模组成的 Morita $(\infty,2)$-范畴中，对象 fully dualizable 当且仅当它 smooth 且 proper。对代数 $A$，这正是定义 48.5 的两个完美性条件。
 
 **命题 48.7.** 矩阵代数 $M_n(k)$ 与 $k$ Morita 等价，因此二者有相同的 Morita 不变量。
 
@@ -71,15 +67,15 @@ $$
 
 ## 48.4 Higher traces 与环形因子化同调
 
-**定义 48.11.** 对 $E_n$-代数 $A$，其 higher Hochschild object 可由 $n$-维几何对象上的因子化同调表达，例如
+**定义 48.11.** 对 $E_n$-代数 $A$，沿 $k$ 个彼此独立的可追踪方向作迭代 trace，对应的局部几何模型是
 
 $$
-\int_{S^k\times\mathbb R^{n-k}}A
+\int_{(S^1)^k\times\mathbb R^{n-k}}A,\qquad 0\le k\le n.
 $$
 
-在合适范围中给出 $k$-重 trace。
+这里必须使用 $k$-维环面 $(S^1)^k$，而不是球面 $S^k$；后者的因子化同调是另一个有意义但一般不同的不变量。
 
-**外部输入定理 48.12.** Higher Morita traces 与 factorization homology 相容：可对偶 $E_n$-代数的 higher traces 可由相应带环形或球面方向的因子化同调计算。
+**外部输入定理 48.12.** Higher Morita traces 与 factorization homology 相容：在相应可对偶性和切向结构假设下，可对偶 $E_n$-代数的 $k$-重迭代 trace 由 $(S^1)^k\times\mathbb R^{n-k}$ 上的因子化同调计算。
 
 **命题 48.13.** 当 $k=1,n=1$ 时 higher trace 公式恢复 $HH(A)$。
 
@@ -135,7 +131,7 @@ $\square$
 
 **证明.** $A^!=\operatorname{End}_A(\mathbb 1)$ 把 $A$-作用下的单位对象自同态作为对偶对象。Bar 构造把乘法的迭代合成转化为余乘法型结构；cobar 构造反向恢复乘法。因此在满足收敛条件时，局部乘法数据可由对偶余代数控制，因子化同调/上同调的对偶定理正是这种转换的全局形式。$\square$
 
-## 48.7 本章小结
+## 48.7 双模、trace 与迭代对偶
 
 高阶 Morita 理论把 $E_n$-代数、双模、相对张量积和 higher traces 放入统一的 $(\infty,n)$-范畴。Trace 恢复 Hochschild homology 并与圆周因子化同调一致。Koszul 对偶通过 bar/cobar 和 endomorphism of the unit 连接代数与余代数，是因子化同调对偶性和高阶代数有限性理论的核心工具。
 

@@ -39,7 +39,7 @@
 10. [第九章：Higher semiadditivity 与 transchromatic character](09_higher_semiadditivity_and_transchromatic_character.md)
 11. [第十章：Chromatic splitting、Gross-Hopkins duality 与 Picard groups](10_chromatic_splitting_duality_and_picard.md)
 12. [第十一章：Equivariant 和 motivic chromatic homotopy](11_equivariant_and_motivic_chromatic_homotopy.md)
-13. [第十二章：计算工具、Adams-Novikov 与机器可核查表](12_computational_tools_adams_novikov_and_machine_checks.md)
+13. [第十二章：计算工具、Adams--Novikov 与谱序列核验](12_computational_tools_adams_novikov_and_machine_checks.md)
 
 ### 附录
 

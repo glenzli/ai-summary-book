@@ -125,6 +125,6 @@ $$
 
 **边界 BL.20.** Cubical univalence 的计算性不自动覆盖任意 classical axiom。把 cubical 口径下的证明与 classical HoTT 定理混用时必须区分数据内容和命题内容。
 
-## BL.8 本附录关闭的缺口
+## BL.8 逻辑强度的边界
 
-本附录把 LEM、DNE、resizing、唯一选择、可数选择、依赖选择、一般选择和 canonicity 风险纳入统一纪律。剩余义务是给出各原则的模型独立性、与实数比较定理的最小假设分析，以及每个 classical corollary 的构造性替代版本。
+LEM、DNE、resizing、唯一选择、可数选择、依赖选择与一般选择是不同原则。它们之间的独立性需要模型论证明；具体分析定理则应逐项寻找最小假设。一个 classical corollary 不自动带有构造性替代，也不能仅凭 cubical univalence 保留原有 canonicity。

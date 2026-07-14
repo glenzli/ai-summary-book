@@ -46,7 +46,7 @@
 | 17 | Polchinski Vol. 2, Becker-Becker-Schwarz, Johnson；`CARDY86`、`SW99`、`DMVV97`、`EZ85/DMZ12`、`SV96`、`FKS95`、`WALD93/94` |
 | 18 | Maldacena, Gubser-Klebanov-Polyakov, Witten, Polchinski Vol. 2；`BF82`、`HREN00`、`MAL-W98` |
 | 19 | Becker-Becker-Schwarz, Blumenhagen-Lust-Theisen, Polchinski Vol. 2 |
-| 20 | Hori et al., Maldacena, Witten, Di Francesco-Mathieu-Senechal |
+| 20 | Polchinski, Johnson, Hori et al., Di Francesco-Mathieu-Senechal；POL95/DKPS96、AS68、GV98、WIT87、CARDY86、DMVV97、EZ85/DMZ12 |
 
 ## 附录
 
@@ -79,3 +79,4 @@
 | 17.7--17.12 | `E/C` | `CARDY86`、`SW99`、`DMVV97`、`EZ85/DMZ12`、`SV96`、`FKS95`、`WALD93/94` | D1-D5 CFT/charge convention、普通 Cardy theorem、K3 elliptic genus、fixed-index Jacobi asymptotics、large-index uniformity boundary、black-hole solution、attractor flow、Noether-charge theorem 与 absolute-degeneracy/quantum match |
 | 18.1、18.6 | `C` | `MAL97`、`GKP98/WIT98` | 完整非微扰 bulk/boundary 等价 |
 | 18.4、18.11、18.12 | `E/S` | Polchinski Vol. 2；`HREN00`、`MAL-W98` | D3 solution、holographic counterterms、Wilson-loop dictionary |
+| 20.6、20.12、20.14、20.17 | `E` | `AS68`、`WIT87`、`CARDY86`、`DMVV97`、`EZ85/DMZ12` | twisted Dirac index、elliptic-genus Jacobi law、Rademacher/Cardy growth 与 symmetric-product formula |

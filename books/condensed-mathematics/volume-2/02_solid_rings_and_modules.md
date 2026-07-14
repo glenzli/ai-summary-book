@@ -1,12 +1,14 @@
 # 第二章：solid 环与 solid 模
 
-## 本章目标
+第一章得到的反射子范畴若不对乘法闭合，就只能分类对象，不能承载代数。普通派生张量
+$M\otimes^L_{\mathbb Z}N$ 可能离开 solid 子范畴；因此候选乘积必须先在
+$D(\mathbf{CondAb})$ 中张量，再施加 $L^\square$。真正非形式的步骤是证明 localization
+核为张量理想，使结合律、对称性和单位能够从环境范畴下降。
 
-第一章把 solid 对象组织成派生范畴。本章讨论其中的代数对象：solid 环、solid 模以及派生 solid 张量积。
-
-## 依赖
-
-需要第二卷第一章和第一卷第九至十三章。
+我们调用第一章的 solidification，以及第一卷第九至十三章的凝聚张量、派生张量和
+自由 solid 对象。Scholze 的幺半 localization 与自由对象乘法公式保留为外部输入；
+接受它们后，solid 环、solid 模和相对 solid 张量的定义及类型检查都是完整的形式推论。
+$p$-进整数与有限生成代数将同时说明这种反射和 ordinary completion 不是同一操作。
 
 ## 2.1 solid 张量积
 
@@ -122,9 +124,13 @@ solidification 不是普通拓扑环的 Hausdorff completion。它是凝聚范�
 
 这些过程在例子中会相互作用，但定义不同。
 
-## 2.7 本章小结
+## 2.7 Solid 乘法的适用边界
 
-solid 环和 solid 模把第一章的派生 solid 范畴变成代数环境。下一步要做的是把 solid 的“测度对象”推广为一般解析环的测度理论。
+张量后 solidification 给出闭合乘积，外部输入确保它构成闭对称幺半范畴，并使
+$\mathbb Z^\square[S]\otimes^{L,\square}\mathbb Z^\square[T]$ 由乘积测试空间
+$S\times T$ 表示。solid 环与模因而是该范畴中的内部代数对象。这个构造由特定
+Dirac-to-solid 映射生成，既不是 $p$-进逆极限，也不是任意拓扑完成。第三章将保留
+localization 的形式而替换测度对象，从而得到一般 analytic ring。
 
 ## 练习
 

@@ -1,8 +1,6 @@
 # 第十六章：Dendroidal sets 与树范畴 $\Omega$
 
-Simplicial set 是定义在 simplex category $\Delta$ 上的 presheaf。Dendroidal set 是定义在树范畴 $\Omega$ 上的 presheaf。若 $\Delta$ 编码 composable strings of unary arrows，则 $\Omega$ 编码 rooted trees of many-input operations。本章只建立组合定义与严格 operad nerve；模型结构和 inner Kan 条件留到下一章。
-
-本章沿用约定 A.1 的 $\mathcal U\in\mathcal V\in\mathcal W$。所有树的边集和顶点集都是 $\mathcal U$-小有限集；从一开始固定一个 $\mathcal U$-小代表集 $\mathbf{Tree}^{\mathrm{sk}}_{\mathcal U}$，它在有限 rooted trees 的每个同构类中恰取一个代表。除非特别说明，字母 $S,T$ 只遍历这些固定代表。
+普通 nerve 用 $[n]$ 记录一串可复合的一元箭头，因此 simplex category $\Delta$ 无法看见一个二元顶点，更无法同时记住树上多个多输入顶点。对 operad 而言，正确的测试对象是有限有根树 $T$ 生成的自由 colored operad $\Omega(T)$；对所有 $T$ 取反变集合便得到 dendroidal set。Corolla 读取单个多元运算，线性树恢复 simplicial 方向，一般树则记录嵌套复合。本章构造树范畴、representable、dendroidal nerve 与 face/degeneracy；下一章才放松严格 nerve 的唯一复合。为控制大小，固定 $\mathcal U\in\mathcal V\in\mathcal W$ 及有限有根树同构类的 $\mathcal U$-小骨架，字母 $S,T$ 均在该骨架中取值。
 
 ## 16.1 Rooted trees
 
@@ -263,13 +261,13 @@ $$
 
 **说明 16.29.** 文献中 ordinary nerve 常写成 $x_0\to\cdots\to x_n$。这与本章根向约定相差一个方向选择；必要时可通过取 opposite category 或改变线性树嵌入约定转换。
 
-## 16.7 本章小结
+## 16.7 从树值预层到相干复合
 
-Dendroidal set 是固定 $\mathcal U$-小树骨架 $\Omega$ 上的 $\mathbf{Set}_{\mathcal U}$-值 presheaf。树 $T$ 通过自由 colored operad $\Omega(T)$ 嵌入 operad 理论，dendroidal nerve 由
+树 $T$ 通过自由 colored operad $\Omega(T)$ 成为 operad 的测试对象，dendroidal nerve 由
 $$
 N_d(\mathcal P)_T=\operatorname{Operad}_{\mathrm{col}}(\Omega(T),\mathcal P)
 $$
-定义。Corollas 读取具体 operations，单位树读取 colors，Segal core 记录一棵树上每个顶点的局部运算。Strict operads 的 nerve 满足严格 Segal 性；放松边界和 horn 的填充条件，将得到 homotopy coherent operads。
+定义。Corolla 读取具体 operation set，单位树读取 colors，Segal core 只保留各顶点的局部运算；strict operad 的代入则把这些局部数据唯一压成整棵树的数据。Faces 读取收缩或删顶点后的复合，degeneracies 插入单位。下一章将保留同一批测试树，却把“唯一压平”放松为 inner horn 可填：复合不再是严格唯一的元素，而由一族相干选择控制。
 
 ## 练习
 

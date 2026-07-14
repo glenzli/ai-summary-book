@@ -67,19 +67,18 @@ $$
 
 ## L.2 Hodge decomposition 的形式后果
 
-**输入定理 L.3（Hodge decomposition hypothesis）.** 假设每个 $H^q$ 有正交分解
+**输入定理 L.3（强 Hodge 分解假设）.** 假设 $d_{q-1}$ 与 $d_q$ 均为闭稠定算子，
+相邻复合为零，两个相关像闭，并且每个 $H^q$ 有正交分解
 
 $$
 H^q
 =
-\overline{\operatorname{im}d_{q-1}}
+\operatorname{im}d_{q-1}
 \oplus
 \mathcal H^q
 \oplus
-\overline{\operatorname{im}d_q^\ast}.
+\operatorname{im}d_q^\ast.
 $$
-
-并且 $\operatorname{im}d_{q-1}$ 闭。
 
 **定理 L.4.** 在 L.3 假设下，自然映射
 
@@ -93,25 +92,23 @@ $$
 
 **证明.** 先证单射。若 $h\in\mathcal H^q$ 且 $h=d_{q-1}y$，则 $h\in\operatorname{im}d_{q-1}$。Hodge 分解是正交直和，而 $\mathcal H^q$ 与 $\operatorname{im}d_{q-1}$ 正交，故 $h=0$。
 
-再证满射。取 $x\in\ker d_q$。按分解写
+再证满射。对 $y\in\ker d_q$ 和
+$v=d_q^*b\in\operatorname{im}d_q^*$，adjoint 定义给
 
 $$
-x=d_{q-1}a+h+d_q^\ast b.
+\langle y,v\rangle=\langle d_qy,b\rangle=0.
 $$
 
-对等式作用 $d_q$，得
+故 $\ker d_q\perp\operatorname{im}d_q^*$。另一方面
+$\operatorname{im}d_{q-1}$ 与 $\mathcal H^q$ 均包含于 $\ker d_q$；把 L.3 的正交分解
+与 $\ker d_q$ 相交便得
 
 $$
-0=d_qx=d_qd_q^\ast b
+\ker d_q=\operatorname{im}d_{q-1}\oplus\mathcal H^q.
 $$
 
-因为 $d_qd_{q-1}=0$ 且 $d_qh=0$。于是
-
-$$
-0=\langle d_qd_q^\ast b,b\rangle=\|d_q^\ast b\|^2.
-$$
-
-故 $d_q^\ast b=0$，所以 $x$ 与 $h$ 在商 $\ker d_q/\operatorname{im}d_{q-1}$ 中代表同一类。证毕。
+所以每个 cocycle 唯一写成 $d_{q-1}a+h$，其 cohomology 类由 $h$ 表示，映射满射。
+这个证明不对任意分解向量施加可能未定义的复合无界算子。证毕。
 
 **推论 L.5.** 若 $\mathcal H^q$ 有限维，则 $H^q_{\operatorname{coh}}$ 有限维。
 
@@ -185,7 +182,8 @@ $$
 
 1. Dolbeault 复形的各项是 liquid 向量空间。
 2. $\bar\partial$ 是 liquid 范畴中的连续线性态射。
-3. Fredholm/Hodge 分解说明 cohomology 是有限维离散或有限型对象。
+3. Fredholm/Hodge 分解说明 cohomology 是带通常欧氏拓扑的有限维对象；其凝聚化是
+   有限自由系数模，而不是底层集合的离散化。
 4. 有限维对象在 analytic 派生范畴中是紧/dualizable 的基本例子。
 
 **边界说明.** 本附录证明“Fredholm-Hodge 输入推出有限维上同调”。它没有证明 elliptic regularity，也没有证明 Clausen-Scholze 的 liquid 建模。
@@ -194,7 +192,9 @@ $$
 
 **练习 L.1.** 证明引理 L.2 中 $\mathcal H^q=\ker d_q\cap\ker d_{q-1}^\ast$。
 
-**练习 L.2.** 在定理 L.4 中，说明为什么 $d_qd_q^\ast b=0$ 推出 $d_q^\ast b=0$。
+**练习 L.2.** 在定理 L.4 中，证明
+$\operatorname{im}d_q^*\perp\ker d_q$，并由强 Hodge 分解直接计算
+$\ker d_q$。
 
 **练习 L.3.** 设有两项向量丛 resolution $0\to E_1\to E_0\to\mathcal F\to0$，写出推出 $\mathcal F$ 上同调有限性的长正合列证明。
 

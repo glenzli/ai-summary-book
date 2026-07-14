@@ -1,12 +1,15 @@
 # 第二章：A1-局部化与 motivic spaces
 
-## 本章目标
+Nisnevich 下降只说明局部数据能够粘合，却还没有表达“同伦”。例如
+`X\times_S\mathbb A^1_S\to X` 在层范畴中通常不是等价，但若仿射直线要扮演区间，
+它必须在新的同伦论中成为等价。与其把对象按某种朴素同伦关系取商，我们使用
+accessible localization：一个对象被保留，当且仅当它对所有这些投影给出相同的
+映射空间。
 
-本章把 Nisnevich sheaves of spaces 进一步局部化，使仿射直线 `\mathbb A^1` 在同伦意义下成为单位区间。所得范畴 `\mathbf H(S)` 是非稳定 motivic homotopy theory 的基本环境。本章只使用 accessible localization 和 Yoneda lemma 证明基本性质。
-
-## 依赖前置知识
-
-需要第一章的光滑站点、Nisnevich sheaves、presentable infinity-categories、Bousfield/accesssible localization、Yoneda lemma、pointed objects 和 cofiber。
+第一章给出的 Nisnevich 层范畴是这次局部化的输入。Yoneda 引理把抽象的局部对象
+条件化为可检验的公式 `F(X)\simeq F(X\times\mathbb A^1)`；pointed object 与
+cofiber 则让几何商空间进入同一框架。由此得到的 `\mathbf H(S)` 不是按定义的
+infinity-topos，局部化是否保持有限极限、乘积或幺半结构都必须另行证明。
 
 ## 2.1 A1-局部化
 
@@ -142,7 +145,7 @@ $$
 
 **证明.** `\mathbf H(S)` 是局部化后的范畴，局部化函子会反演 `W_{\mathbb A^1}` 中的态射。投影 `X\times\mathbb A^1\to X` 在 `\mathbf H(S)` 中为等价，但在 sheaf 范畴中通常不是等价，因为对测试对象 `Y`，映射空间 `\operatorname{Map}(Y,X\times\mathbb A^1)` 与 `\operatorname{Map}(Y,X)` 不必等价。`\square`
 
-## 2.6 本章小结
+## 2.6 仿射直线成为区间以后
 
 Motivic spaces 由两步构成：先施加 Nisnevich descent，再反演所有 `X\times\mathbb A^1\to X`。局部对象正是 `\mathbb A^1`-invariant Nisnevich sheaves。这个定义的强点是泛性质清楚；弱点是很多几何结构不会自动保留，必须在后续章节中逐项建立。
 

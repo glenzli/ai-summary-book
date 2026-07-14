@@ -4,8 +4,8 @@
 
 | 题号 | 章节 | 题目 |
 |---|---|---|
-| 0.1 | [序章：范围、严格性和主线](00_preface_and_scope.md) | 说明为什么 string perturbation theory 的展开参数不是 $\hbar$，而是 worldsheet topology 或 string coupling。 |
-| 0.2 | [序章：范围、严格性和主线](00_preface_and_scope.md) | 举例说明同一个质量公式在不同 $\alpha'$ convention 下如何改变。 |
+| 0.1 | [序章：对象、约定与阅读路径](00_preface_and_scope.md) | 说明为什么 string perturbation theory 的展开参数不是 $\hbar$，而是 worldsheet topology 或 string coupling。 |
+| 0.2 | [序章：对象、约定与阅读路径](00_preface_and_scope.md) | 举例说明同一个质量公式在不同 $\alpha'$ convention 下如何改变。 |
 | 1.1 | [第一章：相对论场论、作用量和 sigma model 语言](01_relativistic_fields_and_sigma_models.md) | 从一维作用量推导 Euler-Lagrange 方程。 |
 | 1.2 | [第一章：相对论场论、作用量和 sigma model 语言](01_relativistic_fields_and_sigma_models.md) | 对自由标量场计算 canonical stress tensor 和 Hilbert stress tensor，并说明二者的关系。 |
 | 1.3 | [第一章：相对论场论、作用量和 sigma model 语言](01_relativistic_fields_and_sigma_models.md) | 证明常 dilaton coupling 在 genus $g$ 闭合世界面上给出 $g_s^{2g-2}$。 |
@@ -69,6 +69,8 @@
 | 19.1 | [第十九章：flux compactifications、moduli stabilization 和 landscape 边界](19_flux_compactification_and_landscape.md) | 说明 flux quantization 为什么使连续 moduli potential 依赖离散数据。 |
 | 19.2 | [第十九章：flux compactifications、moduli stabilization 和 landscape 边界](19_flux_compactification_and_landscape.md) | 解释为什么 GVW superpotential 通常先固定 complex structure moduli 而不是 Kahler moduli。 |
 | 19.3 | [第十九章：flux compactifications、moduli stabilization 和 landscape 边界](19_flux_compactification_and_landscape.md) | 用 no-scale identity 说明 tree-level flux potential 为什么不固定 Kahler moduli。 |
-| 20.1 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 举例说明一个 string duality 如何产生非平凡的量子场论陈述。 |
-| 20.2 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 从本书四类陈述中各举一例，并说明其证明状态。 |
-| 20.3 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 选择一个外部接口方向，说明它为什么应作为专题阅读而不是新增主线章。 |
+| 20.1 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 由 Dirichlet classical solution 推导两张平行 D-branes 之间最低 NS vector 的质量。 |
+| 20.2 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 用 Riemann--Roch 与 Serre duality 计算高次数 line bundle 的零模数，并说明 index 边界。 |
+| 20.3 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 对 resolved-conifold $\operatorname{Li}_3$ 势作三次导数并解释 multiple covers。 |
+| 20.4 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 按 mode partitions 计算 $24$-boson oscillator generating function 的 $q^3$ 系数。 |
+| 20.5 | [第二十章：string theory 与量子场论、几何和数论的接口](20_interfaces_with_qft_geometry_number_theory.md) | 定位 supersymmetric-index 不变性证明中离散谱、trace-class 与 Fredholm 假设的用途。 |

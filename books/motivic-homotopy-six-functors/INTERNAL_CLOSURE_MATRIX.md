@@ -1,6 +1,6 @@
 # 内部闭合矩阵
 
-核查日期：2026-07-11
+核查日期：2026-07-15
 
 本矩阵判断本书作为正式教材的内部完整性。结论分三层：
 
@@ -13,10 +13,10 @@
 
 | 层级 | 当前状态 | 说明 |
 | --- | --- | --- |
-| 概念闭合 | 达到 | 24 章覆盖 motivic homotopy and six functors 主体方向 |
+| 概念闭合 | 达到 | 第 00-24 章共 25 章，覆盖 motivic homotopy and six functors 主体方向 |
 | 内部闭合 | 初步达到 | 附录 A-H 补齐大小、站点、稳定化、mate calculus、代数几何背景、三角/∞ 翻译、源定理索引和低阶计算 |
 | 教学闭合 | 达到 | 主体章不再是大纲态；定义、证明、外部输入、边界和练习已经形成可读教材链条 |
-| 出版闭合 | 部分达到 | 核心范畴论、稳定化、六操作、purity 及第 09-18 章教学主线 P0 locator 已由三批账本闭合；扩展/realization、自动化交叉引用、最终排版和长篇详解仍待完成 |
+| 出版闭合 | 部分达到 | 核心范畴论、稳定化、六操作、purity、第 09-18 章主线及 equivariant、stacky、相对 Betti P0 locator 已闭合；自动化交叉引用、最终排版和长篇详解仍待完成 |
 
 ## 主体章节闭合
 
@@ -28,7 +28,7 @@
 | Motivic six operations | 05-08 | Hoyois trivial-group package 已定位；形式推导闭合 | 若并用 Ayoub/Cisinski-Deglise 版本，逐项补不同假设 locator |
 | Cohomology and motives | 09-13 | P0 教学主线及比较定理 locator 已闭合；三角/稳定 infinity 层级已分开 | P1 仅含 etale/Bloch-Kato、rational Chern character、一般基 `DM` 与 Adams 型推广 |
 | Transfers and refinements | 14-18 | P0 finite transfers、framed recognition、fundamental classes、norms、Morel locator 已闭合 | P1 仅含 Hilbert/framed 全相容、Tambara refinements、Chow-Witt motives 与 quadratic enumerative 公式 |
-| Extensions and realization | 19-24 | 概念闭合，研究边界分层完成 | stack/log/perfect/analytic/realization locator |
+| Extensions and realization | 19-24 | P0 输入已定位；P1/R 结果与研究边界分层完成 | P1/R 若升级为主线，须重新核查 locator 与假设 |
 
 ## 附录闭合
 
@@ -40,12 +40,13 @@
 | D | Mate calculus、Beck-Chevalley、projection formula | 内部闭合 |
 | E | smooth/etale/proper/open/closed/lci 背景 | 内部闭合 |
 | F | stable infinity 与 triangulated 翻译 | OET 闭合；triangulated shadow 外部基础定理 located |
-| G | 资料源定理索引 | 第 09-18 章 P0 已闭合；扩展/realization 队列继续保留 |
+| G | 资料源定理索引 | 主线及 equivariant、stacky、相对 Betti P0 已闭合；P1/R 边界保留 |
 | H | `T`、localization、Thom、transfer/norm 基本计算 | 内部闭合 |
 
 ## 出版增强项
 
-1. 为第 19-23 章 extensions/realization 的剩余 P0 条目补精确 theorem locator；第 09-18 章不再列入该队列。
+1. 若把 log、etale、real-etale、perfect 或 analytic 的 P1/R 结果升级为主线输入，
+   先补精确 theorem locator，并逐项核对基、系数、constructibility 与态射类别。
 2. 把正文中的“外部输入定理”逐条链接到 `THEOREM_LEDGER.md` 标签。
 3. 将 `TYPESETTING_AND_NUMBERING.md` 的规范转成自动化 anchors 或 LaTeX labels。
 4. 继续增加高级计算例子：Gysin excess、slice spectral sequence、Chern character、quadratic Euler characteristic。
@@ -54,7 +55,6 @@
 
 ## 当前可接受结论
 
-本书现在可以称为“完整教材可读版”和“学术教学闭合草稿”。第 09-18 章
-主线外部输入已有定理/章节级 locator 和稳定链接；其高级研究边界已明确降为
-P1。全书仍不能称为 camera-ready 或出版终稿，因为 extensions/realization、
-自动化交叉引用、长篇解答和最终排版尚未闭合。
+本书现在可以称为“完整教材可读版”和“学术教学闭合草稿”。主线外部输入已有
+定理/章节级 locator 和稳定链接；高级比较与研究边界已明确降为 P1/R。全书仍不能
+称为 camera-ready 或出版终稿，因为自动化交叉引用、长篇解答和最终排版尚未闭合。

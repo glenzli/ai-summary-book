@@ -1,17 +1,12 @@
 # 第十七章：black branes、BPS states 和黑洞熵
 
-## 本章目标
-
-本章说明 D-branes 如何用于计算某些 supersymmetric black holes 的微观熵。核心逻辑是：
-
-1. BPS 条件保护态数或指数；
-2. 弱耦合 D-brane bound states 可被二维 CFT 或量子力学计数；
-3. 强耦合下同一电荷态表现为 black brane 或 black hole；
-4. 大电荷极限中 microscopic entropy 与 Bekenstein-Hawking entropy 匹配。
-
-## 依赖前置知识
-
-需要第十二章 D-branes、第十四章 dualities、第十一章 supergravity 和第十五章高 genus/factorization 的一致性接口。
+黑洞面积给出宏观熵，却没有指出被计数的量子态。对一般非极端黑洞，跨越强弱耦合
+追踪态数几乎不可控；BPS charge sector 则允许用 supersymmetric index 保护一部分
+信息。在弱耦合处，同一组 charges 可由 D-brane bound states 的二维 CFT 计数；在
+强耦合和大电荷处，它们形成带 horizon 的 black brane/black hole。以下结合第十二章
+D-branes、第十四章 duality 字典、第十一章 supergravity 与第十五章 factorization，
+详细处理 K3 上 D1--D5--P 系统：先分清 degeneracy 与 index，再用 elliptic genus、
+Jacobi/Rademacher 渐近得到微观增长，最后与 Bekenstein--Hawking/Wald entropy 比较。
 
 ## 17.1 BPS states 与 index
 
@@ -273,9 +268,11 @@ higher-derivative、one-loop 和 nonperturbative corrections 的宏观 quantum e
 anomaly 与 topological-string 方法在特定 compactification 中给出强检验；每个应用
 仍须声明 ensemble、measure、zero modes、contour 和 wall-crossing chamber。
 
-## 本章小结
-
-Black brane entropy 是 string theory 非微扰结构的关键检验。D-brane 计数并不是对所有黑洞的完整解释，但它在 supersymmetric、受保护、大电荷系统中给出可计算且与几何熵一致的微观态增长。
+高导数修正提醒我们，微观与宏观的比较必须同时固定 charge convention、ensemble、
+index、zero modes 和 wall-crossing chamber。对受控的 D1--D5--P 大电荷序列，
+Jacobi/Rademacher 增长给出与 horizon area 相同的 leading exponent，受保护指数使
+弱耦合计数能够跨到强耦合。这个结果并不推广为所有黑洞的逐态分类，却为特定
+supersymmetric sector 提供了量子态、二维 CFT 与几何熵之间可逐项检查的连接。
 
 ## 练习
 

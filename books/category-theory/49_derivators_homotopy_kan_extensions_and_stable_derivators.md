@@ -1,12 +1,8 @@
 # 第四十九章：Derivator、同伦 Kan 延拓与稳定 Derivator
 
-## 本章目标
+单个同伦范畴会忘记同伦余极限图的形状；derivator 不恢复全部高阶映射空间，而是同时记录每个小图形 $I$ 上的同伦范畴 $\mathbb D(I)$ 以及限制和同伦 Kan 延拓。这个 2-函子数据足以严格表达逐点同伦极限、base change 与稳定性，并在传统三角范畴和完整 $\infty$-范畴之间形成中间语言。本章从 derivator 公理出发，比较它由模型范畴或 $\infty$-范畴产生的方式。
 
-本章补入 derivator 这一介于模型范畴、三角范畴和 $\infty$-范畴之间的同伦范畴论语言。Derivator 记录所有图形范畴 $I$ 上的同伦范畴 $\mathbb D(I)$，使同伦 Kan 延拓、同伦极限和稳定性可以在 2-范畴层面表达。它解决三角范畴丢失高阶同伦信息过多的问题，同时比完整 $\infty$-范畴口径更接近传统同调代数。
-
-## 依赖前置知识
-
-需要 2-范畴、同伦范畴、模型范畴、Kan 延拓、稳定 $\infty$-范畴、三角范畴、同伦极限和同伦余极限。
+所需背景是 2-范畴、模型范畴、Kan 延拓和稳定同伦论。Derivator 只捕获 diagram homotopy categories；正文会明确哪些结论可由它检测，哪些高阶相干信息仍然遗失。
 
 ## 49.1 预 Derivator
 
@@ -48,7 +44,13 @@ $$
    $$
 4. 左右 Kan 延拓满足点态公式的同伦版本。
 
-**外部输入定理 49.5.** 组合模型范畴、presentable $\infty$-category 或相对范畴在合适条件下产生 derivator。
+**外部输入定理 49.5.** 每个 combinatorial model category 由
+
+$$
+\mathbb D_{\mathcal M}(I)=\operatorname{Ho}(\mathcal M^I)
+$$
+
+（取逐点弱等价的导出图范畴）产生 derivator。每个有全部小极限和小余极限的 $\infty$-category $C$ 也由定义 49.13 产生 derivator。任意 relative category 未必有这些同伦 Kan 延拓，因而不自动产生 derivator。
 
 ## 49.3 同伦 Kan 延拓
 
@@ -103,7 +105,7 @@ $$
 
 其中 $h$ 表示同伦范畴。
 
-**外部输入定理 49.14.** 对良好 $C$，$\mathbb D_C$ 是 derivator；若 $C$ stable，则 $\mathbb D_C$ stable。
+**外部输入定理 49.14.** 若 $C$ 有全部小极限和小余极限，则 $\mathbb D_C$ 是 derivator。若 $C$ 还 stable，则 $\mathbb D_C$ 是 stable derivator。若只研究某个固定 diagram 2-category，可把“小”相应限制为其中允许的形状。
 
 **命题 49.15.** $\mathbb D_C(*)\simeq hC$。
 
@@ -129,7 +131,7 @@ $$
 
 **证明.** Derivator 公理要求 $\mathbb D$ 把图形范畴的小 coproduct 送为范畴的 product。空 coproduct 是初始小范畴 $\varnothing$，其像是空 product，即终范畴。二元 coproduct $I\amalg J$ 的像即二元 product，得到第二个等价。$\square$
 
-## 49.7 本章小结
+## 49.7 同时保留所有图形的同伦范畴
 
 Derivator 把同伦论从单个同伦范畴扩展为所有图形的同伦范畴系统。限制函子、同伦 Kan 延拓、点态公式和稳定性公理让三角范畴中的许多非函子性构造重新变得可控。它与 $\infty$-范畴互补：$\infty$-范畴保留全部高阶映射空间，derivator 保留足够多的图形同伦范畴以支撑同伦代数计算。
 

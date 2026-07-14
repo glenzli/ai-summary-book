@@ -312,10 +312,10 @@ $$
 $$
 因此 $\mathsf{encode}_{\mathsf{base}}$ 有准逆。由推论 G.7，$\mathsf{encode}_{\mathsf{base}}$ 是等价。$\square$
 
-## N.8 剩余边界
+## N.8 计算口径核对
 
-本附录把圆基本群的核心 encode-decode 证明降为书内证明核，但仍依赖以下全书级义务：
-
-1.  若采用仅 propositional computation 的 HIT 口径，需要在 N.2-N.7 的每个基点公式中显式插入 $c_0$ 的 transport。
-
-这些义务不影响证明路线，但影响逐行证明展开时的项形状。
+本证明使用规则 9.4-9.5 与附录 L 固定的圆输入：点构造子上的计算是 judgmental，loop 构造子上的计算是 propositional。因此
+$$
+\mathsf{code}(\mathsf{base})\equiv\mathbb Z
+$$
+以及消去截面在 $\mathsf{base}$ 上的值都不需要额外 transport；涉及 $\mathsf{loop}$ 的等式则通过 $\beta_{\mathsf{loop}}$、$\beta^P_{\mathsf{loop}}$ 和命题 N.3 的 transport 计算处理。若改用连点计算也仅为 propositional 的另一套 HIT 语法，必须先给出从该语法到本书规则包的翻译；那不是本定理当前口径中的遗留证明步骤。

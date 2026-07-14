@@ -12,8 +12,9 @@
    equation，不是 gauge-fixed action 自动给出的零算符。
 4. 自由 boson CFT 在 point-split operator algebra 中给出 OPE、Virasoro algebra 和
    central charge $c=D$。
-5. 正则量子化先在有限激发公共定义域上给出 oscillator/Virasoro operators；截距使用
-   声明的 regulator，再由 BRST/Lorentz closure 固定。
+5. 正则量子化先在离壳 Schwartz--finite-oscillator 公共域上定义
+   oscillator/Virasoro operators；质量壳条件逐固定动量广义 fiber 施加，物理波包
+   取壳上直积分。截距使用声明的 regulator，再由 BRST/Lorentz closure 固定。
 6. BRST 量子化把 gauge redundancy 写成 cohomology。
 7. 顶点算子把 BRST cohomology 类对应到 worldsheet local operators。
 8. Tree-level 散射振幅由 punctured sphere 或 disk 上的 CFT correlator 和 ghost gauge fixing 给出。

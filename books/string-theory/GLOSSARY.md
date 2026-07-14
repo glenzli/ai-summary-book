@@ -19,6 +19,8 @@
 | point splitting | point-splitting regularization | 点分裂正规化 | [第 3 章](03_worldsheet_cft.md) |
 | central charge | central charge | 中心荷 | [第 3 章](03_worldsheet_cft.md) |
 | Virasoro algebra | Virasoro algebra | Virasoro 代数 | [第 3 章](03_worldsheet_cft.md) |
+| 固定动量广义态 | generalized momentum eigenstate | 普通 $L^2$/Schwartz 动量本征态 | [第 4 章](04_canonical_quantization_bosonic_string.md) |
+| 质量壳直积分 | on-shell direct integral | Schwartz 域中质量壳乘法算符的 kernel | [第 4 章](04_canonical_quantization_bosonic_string.md) |
 | ghost | Faddeev-Popov ghost | 鬼场 | [第 5 章](05_path_integral_brv_quantization.md) |
 | BRST cohomology | BRST cohomology | BRST 上同调、BRST 商 | [第 5 章](05_path_integral_brv_quantization.md) |
 | semi-relative complex | closed-string semi-relative BRST complex | 未注明 $b_0^-,L_0^-$ 条件的闭弦上同调 | [第 5 章](05_path_integral_brv_quantization.md) |
@@ -52,6 +54,9 @@
 | topological twist | topological twist | 拓扑扭曲 | [第 16 章](16_topological_strings_and_mirror_symmetry.md) |
 | mirror symmetry | mirror symmetry | 镜像对称 | [第 16 章](16_topological_strings_and_mirror_symmetry.md) |
 | BPS state | BPS state | BPS 态 | [第 17 章](17_black_branes_and_entropy.md) |
+| elliptic genus | elliptic genus | 未处理 continuum/zero modes 的普通简并生成函数 | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) |
+| supersymmetric index | supersymmetric index | 无条件等同于绝对 BPS degeneracy | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) |
+| weak Jacobi form | weak Jacobi form | 任意二变量生成函数 | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) |
 | black brane | black brane | 黑 brane | [第 17 章](17_black_branes_and_entropy.md) |
 | Wald entropy | Wald Noether-charge entropy | 任意情形下的面积律 | [第 17 章](17_black_branes_and_entropy.md) |
 | AdS/CFT | AdS/CFT correspondence | 全息对偶 | [第 18 章](18_ads_cft.md) |

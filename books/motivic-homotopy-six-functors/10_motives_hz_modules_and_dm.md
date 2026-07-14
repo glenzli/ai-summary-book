@@ -1,12 +1,15 @@
 # 第十章：Voevodsky motives、Cisinski-Deglise motives 与 HZ-modules
 
-## 本章目标
+将一个谱 `E` 张量上 `H\mathbb Z`，会只保留能够由 motivic cohomology 线性看见的
+部分。由此得到的 module 范畴与传统 motives 极其接近，但“接近”必须区分层级：
+同伦范畴的三角等价并不自动给出 mapping spectra 的等价，域上的比较也不能无条件
+推广到一般基概形或整系数正特征。
 
-本章解释 triangulated categories of motives 与 `H\mathbb Z`-modules 的关系。核心观点是：`H\mathbb Z` 把 `\mathbf{SH}(S)` 线性化，`H\mathbb Z`-modules 提供 motives 的稳定 infinity-categorical 模型；但 Voevodsky motives、Cisinski-Deglise motives 和 module categories 的比较依赖深外部定理。
-
-## 依赖前置知识
-
-需要 motivic cohomology、commutative algebra objects、module categories、monadicity、triangulated categories、six operations、Tate twists 和 finite correspondences 的基本背景。
+本章先完全在 `\mathbf{SH}(S)` 内构造 `H\mathbb Z`-modules、自由-遗忘伴随和
+光滑概形的 motive，再陈述 Voevodsky 与 Cisinski--Deglise 型范畴的外部比较。
+第九章提供代表谱和 cohomology 公式，有限对应的几何来源留到第十四章。读者由此能
+分清三件事：module 是内部定义，`DM` 是另一个构造，而二者的识别是一条带系数、
+基和范畴层级假设的定理。
 
 ## 10.1 HZ-modules
 
@@ -124,12 +127,12 @@ Corollary 5.3，`https://arxiv.org/abs/1708.05651`。
 
 ## 10.4 Cisinski-Deglise motivic categories
 
-**高级外部输入 10.11（P1）.** Cisinski--Deglise 在其规定的基概形、系数和
+**高级外部输入 10.11.** Cisinski--Deglise 在其规定的基概形、系数和
 motivic category 上构造 triangulated six operations、Tate twists、
-localization 与 purity。这个一般基 package 不参与定理 10.8 的域上 P0
-比较；使用时必须指定是 Beilinson motives、cdh motives 还是其他模型。
+localization 与 purity。这个一般基 package 不参与定理 10.8 的域上比较；
+使用时必须指定是 Beilinson motives、cdh motives 还是其他模型。
 
-**约定 10.12.** 在本章 P0 主线中，`\mathbf{DM}(k)` 只表示定理 10.8 所用的
+**约定 10.12.** 在本章中，`\mathbf{DM}(k)` 只表示定理 10.8 所用的
 Voevodsky big motives，并始终附带相应系数。对一般 `S`，符号
 `\mathbf{DM}(S)` 只有在先指定 Beilinson、cdh、effective 或 constructible
 模型及其比较定理后才使用；本书不把这些模型按定义识别。
@@ -140,19 +143,53 @@ Voevodsky big motives，并始终附带相应系数。对一般 `S`，符号
 
 ## 10.5 Effective motives 与稳定 motives
 
-**定义 10.14.** Effective `H\mathbb Z`-motives 是由
+**定义 10.14.** 记
+`\operatorname{DM}^{eff}_{H\mathbb Z}(S)` 为
+`\operatorname{Mod}_{H\mathbb Z_S}(\mathbf{SH}(S))` 中由对象
 
 $$
-M_S(X)=H\mathbb Z_S\otimes\Sigma_T^\infty X_+
+M_S(X)(q)=M_S(X)\otimes\mathbb Z(q),
+\qquad X\in\operatorname{Sm}_S,\quad q\geq0,
 $$
 
-在不允许负 Tate twist 的操作下生成的子范畴。稳定 motives 则允许所有 Tate twists `\mathbb Z(q)`，`q\in\mathbb Z`。
+生成的最小 full stable localizing subcategory。这里 localizing 表示对小余极限
+和 cofiber 封闭；定义只额外闭合非负 Tate twists，并不预先要求
+`(-)\otimes\mathbb Z(1)` 的逆保持在该子范畴中。
 
-**命题 10.15.** 从 effective motives 到 stable motives 的过渡等价于形式上反演 Tate object。
+**命题 10.15（Tate 反演的精确像）.** 张量自函子
+`(1)=(-)\otimes\mathbb Z(1)` 保持
+`\operatorname{DM}^{eff}_{H\mathbb Z}(S)`，因而有 canonical exact
+colimit-preserving functor
 
-**证明.** Effective 口径只允许非负 Tate twists。Stable 口径要求 `\mathbb Z(1)` 可逆，从而存在 `\mathbb Z(-1)`。把 effective category 中的 Tate suspension functor 形式反演，得到含所有正负 Tate twists 的稳定范畴。这正是从 effective motives 到 stable motives 的范畴论含义。`\square`
+$$
+\operatorname{DM}^{eff}_{H\mathbb Z}(S)[(1)^{-1}]
+\longrightarrow
+\operatorname{Mod}_{H\mathbb Z_S}(\mathbf{SH}(S)).
+$$
 
-**注 10.16.** 文献中的 `DM^{eff}`、`DM`、constructible motives、Beilinson motives、cdh motives 不应混用。它们的生成子、系数、拓扑和六操作闭包条件不同。
+它的 essential image 是由所有 `M_S(X)(q)`，其中
+`X\in\operatorname{Sm}_S`、`q\in\mathbb Z`，生成的 localizing
+subcategory。特别地，只有在这些对象生成整个 module category 时，该 functor
+才是到整个 `\operatorname{Mod}_{H\mathbb Z_S}` 的等价。
+
+**证明.** 对生成子有
+
+$$
+M_S(X)(q)(1)\simeq M_S(X)(q+1),
+$$
+
+且 `(1)` 保持小余极限和 cofiber，所以它保持定义 10.14 的 localizing
+subcategory。自函子局部化的泛性质遂给出所示 canonical functor。局部化中
+`(1)` 可逆，故每个 `M_S(X)(q)`、`q\in\mathbb Z` 都在其像中；反过来，
+局部化由 effective 生成子及 `(1)` 的正负幂在小余极限和 cofiber 下生成，故
+essential image 不会超出这些对象生成的 localizing subcategory。最后一句正是
+essential image 等于整个目标的充要条件。`\square`
+
+**注 10.16.** 定义 10.14 是本书内部的 `H\mathbb Z`-module effective
+subcategory，不是把文献中的任意 `DM^{eff}(S)` 重新定义了一遍。要把命题
+10.15 的 source 或 target 与 Voevodsky、Cisinski--Deglise 的模型识别，仍须
+使用定理 10.8 一类的比较定理。Constructible motives、Beilinson motives 与
+cdh motives 的生成子、系数、拓扑和六操作闭包也各不相同。
 
 ## 10.6 Module monadicity
 
@@ -188,11 +225,11 @@ $$
 
 ## 10.7 Six operations on modules
 
-**高级外部输入 10.19（P1）.** 对一个已选定且满足基变换、投影公式和
+**高级外部输入 10.19.** 对一个已选定且满足基变换、投影公式和
 exceptional-functor 假设的 premotivic `H\mathbb Z`，其 module coefficient
 system 可继承六操作；与某个一般基 `\mathbf{DM}(-)` 的六操作相容还需要
 premotivic comparison theorem。该 package 不由定理 10.8 的单纤维范畴等价
-推出，也不作为本章 P0 证明的输入。
+推出，且本章后续证明不调用这一一般基结论。
 
 **命题 10.20.** 若 `f^*H\mathbb Z_Y\simeq H\mathbb Z_X`，则 `f^*` 把 `H\mathbb Z_Y`-modules 送到 `H\mathbb Z_X`-modules。
 
@@ -206,24 +243,38 @@ $$
 
 ## 10.8 Linearization 的边界
 
-**命题 10.21.** 从 `\mathbf{SH}(S)` 到 `H\mathbb Z`-modules 的函子
+**命题 10.21（保守性的一个充分判据）.** 考虑自由 module 函子
 
 $$
 H\mathbb Z_S\otimes -:\mathbf{SH}(S)\to\operatorname{Mod}_{H\mathbb Z_S}
 $$
 
-一般不是保守的。
+若单位 `\mathbb 1_S` 属于由 `H\mathbb Z_S` 生成的 thick tensor ideal，则该函子
+保守。Module 公理本身不蕴含这一生成条件，因而也不形式蕴含保守性。
 
-**证明.** 保守性要求若 `H\mathbb Z_S\otimes E\simeq0` 则 `E\simeq0`。自由 module functor 是 extension of scalars，它只检测 `H\mathbb Z` 可见的信息。稳定 motivic homotopy 中存在不由 motivic cohomology 检测的高同伦、K-theoretic、cobordism 或 torsion phenomena。因此保守性不能从定义推出；若在特殊子范畴成立，必须另行证明。`\square`
+**证明.** 设 `H\mathbb Z_S\otimes E\simeq0`，并令
 
-**注 10.22.** 这就是 motives 与 stable motivic homotopy 的重要差异：`\mathbf{DM}` 是线性化世界，`\mathbf{SH}` 保留 sphere spectrum 及其非线性稳定同伦信息。
+$$
+\mathcal I_E=\{A\in\mathbf{SH}(S)\mid A\otimes E\simeq0\}.
+$$
 
-## 10.9 本章小结
+张量积对有限余极限正合，故 `\mathcal I_E` 对 cofiber、retract 和有限直和封闭；
+结合律还说明它是 tensor ideal。假设给出 `H\mathbb Z_S\in\mathcal I_E`，于是由
+`H\mathbb Z_S` 生成的 thick tensor ideal 包含于 `\mathcal I_E`。若
+`\mathbb 1_S` 属于该 ideal，则 `E\simeq\mathbb 1_S\otimes E\simeq0`。
+这证明保守性。反之，自由 module 的定义只给出乘法与单位作用，并没有给出
+`\mathbb 1_S` 的上述有限生成表达，所以不能仅由 module 形式主义断言保守。`\square`
+
+**注 10.22.** `H\mathbb Z`-modules 是线性化世界，`\mathbf{SH}` 还保留球谱的
+非线性稳定同伦信息。某个局部化、完成或受限子范畴上的保守性必须由类似命题 10.21
+的生成判据或独立比较定理建立。
+
+## 10.9 线性化得到什么，又忘掉什么
 
 `H\mathbb Z`-modules 为 motives 提供稳定同伦中的线性模型。域上比较分成
 characteristic zero 的 monoidal triangulated equivalence，和反演指数特征后
 的 presentably symmetric monoidal stable infinity-categorical equivalence。
-一般基六操作比较属于 P1；它不能由单纤维的三角等价形式推出。
+一般基六操作比较需要额外 premotivic 假设；它不能由单纤维的三角等价形式推出。
 
 ## 练习
 
@@ -233,7 +284,8 @@ characteristic zero 的 monoidal triangulated equivalence，和反演指数特�
 
 **练习 10.3.** 解释 Tate motive `\mathbb Z(1)` 与双次数 shift 的关系。
 
-**练习 10.4.** 举例说明为什么 `H\mathbb Z`-linearization 不应期望保守。
+**练习 10.4.** 证明命题 10.21 中 `\mathcal I_E` 是 thick tensor ideal，并说明
+为什么“`H\mathbb Z_S` 是代数对象”不足以推出 `\mathbb 1_S` 由它厚生成。
 
 **练习 10.5.** 列出比较 `\mathbf{DM}(S)` 与 `H\mathbb Z`-modules 时必须检查的假设。
 

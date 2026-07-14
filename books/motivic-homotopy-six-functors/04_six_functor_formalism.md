@@ -1,12 +1,14 @@
 # 第四章：六操作的抽象形式主义
 
-## 本章目标
+对一个态射 `f:X\to Y`，拉回、普通推前、紧支撑推前和 exceptional pullback
+回答的是四个不同问题；张量与 internal Hom 又描述每个纤维范畴内部的闭幺半结构。
+只把六个符号列在一起，并不能保证沿 Cartesian 方块换基，也不能保证复合两次所得的
+比较与一次复合相容。六操作的内容正是这些伴随和比较态射组成的一整套相干结构。
 
-本章在不依赖 motivic 特殊构造的层面定义六操作形式主义，并证明若干纯形式后果。后续章节会把这些抽象符号应用到 `\mathbf{SH}(-)`。本章的重点是：六操作不是六个孤立函子，而是伴随、幺半结构、base change、projection formula、localization 和复合相干的整体。
-
-## 依赖前置知识
-
-需要伴随函子、presentable stable infinity-categories、closed symmetric monoidal categories、Cartesian square、mate calculus、Beck-Chevalley condition、recollement 和 stable cofiber sequences。
+本章暂时忘掉 motivic 几何，只在稳定 presentable 闭对称幺半 infinity-范畴中工作。
+先固定方差和允许 exceptional 态射的类，再从伴随构造 mate，区分一个交换变换“存在”
+与它“可逆”。附录 D 给出 mate calculus 的图式细节；这里则证明后文反复调用的
+投影公式、粘合和复合后果，从而让第五章的几何外部输入有精确的落点。
 
 ## 4.1 系数系统
 
@@ -258,11 +260,11 @@ open-closed gluing；以及 smooth purity。Ordinary base change 只在另行列
 Theorem 1.1、Theorem 6.18、Corollaries 6.10--6.11（取平凡群）；Ayoub 的
 motivic six operations；Drew--Gallauer Theorem 7.14 只承担 universal
 coefficient-system 口径，不能单独替代全部 operation compatibilities。
-第五、八章逐条记录假设和 locator。
+第五、八章逐条写出各操作的几何假设和精确来源。
 
-**注 4.18.** 定理 4.17 是本书 P0 外部输入。后续章节不会把它当作单一
-黑箱永久使用，而会拆成 proper、open、closed、smooth、base-change、
-projection formula、purity 和 duality 等模块。
+**注 4.18.** 定理 4.17 是后文的基础外部输入，但不能当作一条无条件的总括
+定理。后续将分别调用 proper、open、closed、smooth、base-change、projection
+formula、purity 和 duality 条款；每次调用都保留相应态射类。
 
 ## 4.6 Localization recollement 的形式后果
 
@@ -284,7 +286,31 @@ $$
 
 **证明.** `j^*\mathbb 1_X\simeq\mathbb 1_U` 来自 `j^*` 强对称幺半；`i^*\mathbb 1_X\simeq\mathbb 1_Z` 同理。代入命题 4.20。`\square`
 
-## 4.7 本章小结
+**例子 4.22（离散参数空间上的六个函子）.** 令基范畴为小集合，置
+
+$$
+\mathcal D(X)=\operatorname{Fun}(X,\mathbf{Sp}),
+$$
+
+张量积和 internal Hom 均逐点计算。对映射 `f:X\to Y`，`f^*` 是预合成；
+其左右 Kan extension 分别记为 `f_!` 与 `f_*`，并取 `f^!=f^*`。于是对
+`E=(E_x)_{x\in X}` 有逐纤维公式
+
+$$
+(f_!E)_y\simeq\bigoplus_{x\in f^{-1}(y)}E_x,
+\qquad
+(f_*E)_y\simeq\prod_{x\in f^{-1}(y)}E_x.
+$$
+
+Kan extension 的泛性质给出 `f_!\dashv f^*=f^!` 和 `f^*\dashv f_*`；
+逐点张量又使 `f^*` 强对称幺半。若每条纤维有限，稳定范畴中的有限积与
+有限余积相同，故 `f_!\simeq f_*`。若某条纤维无限，两者一般不同：取
+`Y=*`、`X=\mathbb N`、`E_x=\mathbb S`，则两边分别为
+`\bigvee_{\mathbb N}\mathbb S` 与 `\prod_{\mathbb N}\mathbb S`。这个例子
+说明伴随关系本身并不蕴含 `f_!\simeq f_*`；在几何六操作中，properness
+正是保证相应比较可逆的附加条件。
+
+## 4.7 六个函子如何组成一个形式主义
 
 六操作形式主义由稳定系数系统、伴随、closed symmetric monoidal structures、base-change、projection formula、proper compatibility、localization 和 purity 组成。`f_*` 可由 `f^*` 的右伴随形式得到，但 `f_!`、`f^!` 及其几何性质是深外部输入。对 `\mathbf{SH}(-)` 而言，六操作存在性是本书后续所有几何应用的基础。
 

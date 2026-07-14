@@ -8,7 +8,7 @@
 4. Open strings and branes：第 7、12 章。
 5. Superstrings：第 8 至 11 章。
 6. Compactification and dualities：第 13 至 16 章。
-7. Nonperturbative and holography：第 17 至 20 章。
+7. Nonperturbative、holography 与跨领域接口：第 17 至 20 章。
 
 ## 最短阅读路径
 
@@ -17,6 +17,7 @@
 - 超弦路径：0 -> 3 -> 5 -> 8 -> 9 -> 10 -> 11。
 - 几何紧化路径：0 -> 1 -> 3 -> 7 -> 13 -> 16。
 - AdS/CFT 路径：0 -> 7 -> 11 -> 12 -> 17 -> 18。
+- 跨领域接口路径：0 -> 4 -> 12 -> 13 -> 16 -> 17 -> 20。
 
 ## 外部输入层
 
@@ -26,5 +27,5 @@
 | no-ghost theorem | 第 4、5 章 | 外部输入 |
 | spin structures and theta functions | 第 8、15 章 | 附录接口 |
 | anomaly cancellation | 第 9、10 章 | 外部输入加计算模型 |
-| Calabi-Yau Hodge theory | 第 13、16 章 | 附录接口 |
+| Calabi-Yau Hodge/index theory | 第 13、16、20 章 | 附录接口与外部输入 |
 | AdS/CFT dictionary | 第 18 章 | 物理猜想与检验分层 |

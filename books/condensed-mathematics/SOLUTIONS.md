@@ -6,7 +6,7 @@
 
 本文件给出四卷显式练习的答案入口。短题给出直接答案；证明题给出关键步骤；查阅题给出应当核对的结论。若题目依赖 Gleason、Nöbeling、Cartan、Clausen-Scholze 或 Scholze 的深层定理，答案会明确标为“输入定理”。
 
-当前答案足以支撑主线输入定理型最终收口版。逐题逐行教师手册属于非阻塞出版增强，可在不改变正文主线闭包的情况下继续扩写。
+当前答案覆盖四卷正文与主要附录中的显式练习。短解着重给出决定性步骤；需要完整链级计算或深层输入定理的题目，则注明继续核对的对象、假设与来源。
 
 ## 卷一答案要点
 
@@ -22,6 +22,8 @@
 - 1.2：三元覆盖的等化子为 $F(U)\to\prod_iF(U_i)\rightrightarrows\prod_{i,j}F(U_i\times_UU_j)$；三重交进入 Čech 微分下一阶。
 - 1.3：开集 $U_i,U_j\subset U$ 的纤维积在开集偏序范畴中就是交集 $U_i\cap U_j$。
 - 1.4：拓扑空间上预层 $U\mapsto$ 局部常值函数但只允许全局常值粘合，可满足唯一性而缺少存在性；也可用非 sheaf 化预层的标准例子。
+- 1.5：空匹配族只有一个元素，故空覆盖的 sheaf 条件给
+  $F(\varnothing)\cong *$；非空满射覆盖只约束某个非空对象上的限制图，不能推出该值。
 
 ### 第 2 章
 
@@ -30,6 +32,8 @@
 - 2.3：相容条件保证若 $q(x)=q(y)$，则 $x,y$ 在某个交对象上对应同一点，两个局部映射取值相等。
 - 2.4：无限离散集合不是紧空间，因此不是 compact Hausdorff，也不是 profinite；profinite 必须紧 Hausdorff 全不连通。
 - 2.5：对 Stone 空间，布尔代数元素对应 clopen 子集；这些 clopen 集构成基。
+- 2.6：空族拉回后仍为空族，空族与任一覆盖复合仍为空族；定理 2.8 在该情形退化为
+  $F(\varnothing)\cong *$。
 
 ### 第 3 章
 
@@ -37,6 +41,9 @@
 - 3.2：离散 $A$ 上，$\operatorname{Cont}(S_1\sqcup S_2,A)\cong\operatorname{Cont}(S_1,A)\times\operatorname{Cont}(S_2,A)$。
 - 3.3：由 Yoneda，$\operatorname{Hom}(\underline K,\underline L)\cong\underline L(K)=\operatorname{Hom}_{\mathbf{CHaus}}(K,L)$。
 - 3.4：同一集合取离散拓扑和非离散拓扑时，从紧空间进入它们的连续映射集合不同，因此凝聚化可不同。
+- 3.5：$\lambda$ 为极限序数保证序拓扑中 $\{\lambda\}$ 不开；
+  $\operatorname{cf}(\lambda)>\kappa$ 保证任一基数 $<\kappa$ 的子集在某个
+  $\beta<\lambda$ 以下有界，从而测试映射的 $\lambda$-纤维为开集。
 
 ### 第 4 章
 
@@ -126,7 +133,8 @@
 
 - A.1：所有小集合的集合通常超过同一 universe，形成大范畴。
 - A.2：第七章直和指标集必须落在选定 universe 内，否则对象不小。
-- A.3：$\kappa$-condensed sets 固定测试对象大小；本书用固定 universe 简化。
+- A.3：强极限性保证由少于 $\kappa$ 个、每个基数小于 $\kappa$ 的集合构成的并仍小于 $\kappa$，并控制相应的小乘积；这两处分别用于闭合对象集合与限制 sheaf 运算的大小。
+- A.4：输入定理 A.5 只比较基数小于 $\operatorname{cf}(\kappa')$ 的图式。任意乘积的指标集可能达到或超过该共尾数，此时比较函子没有已声明的极限保持结论，因而不能无条件交换该乘积。
 - B.1：共同细化上的匹配族限制相同，由 sheaf 唯一性得到覆盖选择无关。
 - B.2：开集基决定 sheaf 是基子站点比较的经典例子。
 - B.3：profinite 覆盖拉回后仍可由 profinite 空间细化，关键是共同细化。
@@ -226,6 +234,8 @@
 - 3.2：solid 例子中有限 $S$ 上 $\mathcal M[S]$ 等于普通有限自由对象。
 - 3.3：Dirac 映射比较自由生成元与测度对象，analytic condition 要求这种比较对模块无障碍。
 - 3.4：solid 只针对 $\mathbb Z^\square$ 测度；analytic 允许一般 $(A,\mathcal M)$。
+- 3.5：degree-zero 集中性排除 analyticization 产生的高阶同调；只有此时 derived
+  tensor 的零次同调才由 underived tensor 表示，二者才可直接比较。
 
 ### 第 4 章
 
@@ -240,12 +250,17 @@
 - 5.2：$p$-liquid 判别用 $\operatorname{Hom}(\mathcal M_{<p}[S],-)$ 或相应导出 Hom 对 profinite $S$ 测试。
 - 5.3：不同 $p$ 或 $<p$ 给不同增长条件和测试对象，命题不写清就无类型。
 - 5.4：Banach 空间范畴中 cokernel、tensor、projective resolution 对同调代数不够稳定。
+- 5.5：scalar extension 必须来自 analytic rings 的态射，使 Dirac 映射与测度对象
+  $\mathcal M[S]$ 相容；仅给底环映射不能确定局部对象及相对 analytic tensor。
 
 ### 第 6 章
 
 - 6.1：valuation 乘法性 $|ab|=|a||b|$，三角不等式 $|a+b|\le\max(|a|,|b|)$。
 - 6.2：$|g(x)|\le|f(x)|\ne0$ 表示在该 rational domain 上 $g/f$ 有界。
-- 6.3：有限素数点对应 $p$-进方向；无穷远方向对应阿基米德/边界行为的直观成分。
+- 6.3：平凡 valuation 与各素数的非阿基米德 valuation 满足
+  $|\mathbb Z|\le1$；通常的 Archimedean 绝对值因 $|2|=2>1$ 不给出
+  $\operatorname{Spa}(\mathbb Z,\mathbb Z)$ 的点。无穷远边界要在相对解析扩大等别的
+  Huber pair 中讨论，不能塞回这个 Spa。
 - 6.4：rational localization 是构造结构层和局部几何的基本覆盖。
 
 ### 第 7 章
@@ -310,6 +325,7 @@
 - J.2：算子 $T$ 是 compact，因为它是有限秩截断算子的范数极限；截断后的尾部算子范数为 $1/(N+1)$。
 - J.3：闭像涉及拓扑闭包；纯代数向量空间只记录子空间，不记录闭包。
 - J.4：需说明 analytic ring、凝聚化对象、微分连续性、Hom/tensor 所在范畴，以及忘记结构后的经典 Fréchet 空间。
+- J.5：“每项 $p$-liquid”只需逐项验证对象落在相应 liquid 子范畴，并检查微分在该范畴中有定义；“cohomology 与凝聚化交换”还需要严格正合或闭像条件，使 kernel、image 与 quotient 的拓扑和凝聚化后的核、像、余核相容。仅有逐项 liquid 性不能推出后一结论。
 
 ### 附录 K
 
@@ -699,11 +715,16 @@
 
 - 0.1：典型难计算对象是 $\mathbb Z^\square[S]\otimes^{L,\square}\mathbb Z^\square[T]$；需要 solidification、profinite 极限和导出张量输入。
 - 0.2：有限覆盖的 sheaf 等化子为 $F(U)\to\prod_iF(U_i)\rightrightarrows\prod_{i,j}F(U_i\times_UU_j)$。
+- 0.3：取 $\ell^1\hookrightarrow c_0$。代数 cokernel 是 $c_0/\ell^1$，而
+  Hausdorff 拓扑 cokernel 是 $c_0/\overline{\ell^1}=0$；闭像条件正控制两种 quotient
+  是否一致。
 
 ### 第 1 章
 
 - 1.1：数据为覆盖、匹配族、粘合函数、唯一性证明；Lean 中应拆为结构体字段和等式 lemma。
 - 1.2：需要基覆盖存在、拉回稳定、共同细化、限制拓扑相容和小性控制。
+- 1.3：四步分别是有限余并仍紧 Hausdorff、连续满射从紧空间到 Hausdorff 空间是商映射、
+  匹配族沿商映射唯一因子化、商映射判据保证因子连续；每步的定义域和值域见 1.5 节。
 
 ### 第 2 章
 
@@ -730,6 +751,8 @@
 - 5.2：有限 $S$ 上 $A^\square[S]\cong A[S]\cong\bigoplus_{s\in S}A$。
 - 5.3：$A^+$ 记录有界元素，控制 rational localization 和解析几何边界。
 - 5.4：两个有限商系统有共同细化；极限在共同细化上给出同构。
+- 5.5：缺少 $A^+$ 就既不能判定哪些元素有界，也不能确定 rational localization 中
+  $A^+[f_i/g]$ 的整闭包 $B^+$，因而点集条件与输出 Huber pair 都未确定。
 
 ### 第 6 章
 
@@ -737,6 +760,12 @@
 - 6.2：判别式涉及 $\operatorname{Hom}(\mathcal M_{<p}[S],V)$，测试对象为 profinite $S$ 上的受控测度。
 - 6.3：Dolbeault 复形的项是拓扑向量空间，$\bar\partial$ 连续；这些信息用于同调和对偶。
 - 6.4：逆极限拓扑定义保证 $S\to V$ 连续当且仅当所有坐标 $S\to V_n$ 连续。
+- 6.5：连续截面把任意 $S\to W$ 全局提升为 $S\to V$，所以凝聚化后的态射逐测试对象满；
+  epimorphism 只需局部提升，截面不必线性。
+- 6.6：若 $Ig(x)=\int_0^xg(t)\,dt$，则
+  $\|Ig\|_0\le\|g\|_0$，且 $m\ge1$ 时 $\|Ig\|_m\le\|g\|_{m-1}$。
+- 6.7：$y=(1/n)\in c_0\setminus\ell^1$ 给单点测试上的不可提升截面，故凝聚 cokernel
+  非零；代数 cokernel 为 $c_0/\ell^1$，Hausdorff 拓扑 cokernel 因 $\ell^1$ 稠密而为零。
 
 ### 第 7 章
 
@@ -744,12 +773,21 @@
 - 7.2：pro-etale site 对象是 $U\to X$；compact Hausdorff site 对象是紧 Hausdorff 空间。
 - 7.3：共同点是使用投射型局部对象简化覆盖提升和 sheaf cohomology。
 - 7.4：陈述“$S\in\mathbf{CHaus}$ 是 $X_{\operatorname{proet}}$ 的对象”通常无意义，除非给出到 $X$ 的几何结构。
+- 7.5：至少要验证对 $S$ 的反变函子性、有限满射覆盖的 sheaf 条件、纤维积相容和
+  profinite 逆极限/下降相容；有限集合不能检测无限 profinite 极限及其连续性。
+- 7.6：Wolf 的比较只在 coherent $X$ 与 hypercomplete 层口径下，把 pro-étale
+  $\infty$-topos 识别为 $\operatorname{Gal}(X)$ 的连续 pyknotic 表示；它既不是站点对象
+  的等同，也不是所有 $\mathbf{CHaus}$-层的无条件等价。
 
 ### 第 8 章
 
 - 8.1：示例：Ext 模板输入投射分解 $P_\bullet\to M$ 和目标 $A$，输出 $H^\bullet\operatorname{Hom}(P_\bullet,A)$。
 - 8.2：形式化 sheaf 等化子需要小范畴、覆盖族、有限纤维积、等化子和匹配族定义。
 - 8.3：第五卷会重复主线；更合理是专题小册，如计算习题集或 Lean 形式化。
+- 8.4：局部等价的饱和闭包由余极限、复合与 retract 生成；左伴随 $T$ 保持余极限，
+  因而把该闭包送入局部等价，故 $LTL$ 只依赖局部化后的代表。
+- 8.5：前三层为 $E(U)$、$\prod_iE(U_i)$、$\prod_{i,j}E(U_i\times_UU_j)$；不交分支覆盖
+  带额外退化，Čech nerve 分裂，totalization 因而收缩为有限乘积。
 
 ### 附录 E
 

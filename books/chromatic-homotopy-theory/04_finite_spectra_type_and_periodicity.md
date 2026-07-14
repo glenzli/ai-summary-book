@@ -1,12 +1,6 @@
 # 第四章：有限谱的 type、nilpotence 与 periodicity
 
-## 本章目标
-
-本章进入 chromatic theory 的核心定理包：有限谱按 Morava K-theory 的首次非消失高度分层；有限谱的 thick 子范畴完全由 type 分类；type $n$ 有限谱携带 $v_n$-周期自映射。大型定理作为 Hopkins-Smith/Devinatz-Hopkins-Smith 外部输入处理。
-
-## 依赖前置知识
-
-需要第一章的有限谱和第二、三章的 $K(n)$。nilpotence theorem、periodicity theorem 和 thick subcategory theorem 不预设证明，但要理解其陈述。
+Morava $K$-理论只有在它能把有限谱真正分层时才具有分类力量。对非零有限谱，首次非消失的 $K(n)$ 给出 type；令人意外的是，这个数值不仅检测同调，还完全控制有限谱的 thick 子范畴，并通过 $v_n$ 自映射产生周期族。本章先从定义与低高度例子说明 type 怎样运作，再精确陈述 nilpotence、periodicity 和 thick subcategory 三个深定理，最后展示它们怎样被调用而不把外部证明压缩成口号。所需范畴论来自第一章，$K(n)$ 来自第二、三章；大型定理采用 Hopkins--Smith 与 Devinatz--Hopkins--Smith 的外部输入口径。
 
 ## 4.1 Type
 
@@ -84,7 +78,7 @@ $$
 \mathcal C_0\supsetneq\mathcal C_1\supsetneq\mathcal C_2\supsetneq\cdots
 \supsetneq\mathcal C_\infty.
 $$
-来源定位为 Hopkins--Smith II, Theorem 7；严格包含还使用各高度有限谱
+该定理见 Hopkins--Smith II, Theorem 7；严格包含还使用各高度有限谱
 的存在性。本文不重证该定理。
 
 **使用说明.** 本书把定理 4.8 作为外部输入。任何用 type 分类 thick 子范畴的证明必须引用该定理，不能只引用 $K(n)_*$ 的系数环形式。
@@ -102,7 +96,7 @@ $$
 h_{MU}:\pi_*R\longrightarrow MU_*R
 $$
 为 $MU$-Hurewicz 映射。则 $\ker(h_{MU})$ 中每个元素在 graded ring
-$\pi_*R$ 中幂零。来源定位为 Devinatz--Hopkins--Smith I, Theorem
+$\pi_*R$ 中幂零。这里采用 Devinatz--Hopkins--Smith I, Theorem
 1(i)；本书只使用这个 ring-spectrum 版本，不重证其 nilpotence 技术。
 
 **外部输入定理 4.10A（Serre finiteness）.** 对每个 $d>0$，球谱稳定同伦群 $\pi_d\mathbb S$ 是有限 Abel 群。
@@ -227,7 +221,7 @@ $$
 3. 结论分类的是 thick 子范畴，不是 arbitrary full subcategory；
 4. 若涉及 tensor ideal，应额外说明张量封闭是否已知。
 
-## 本章小结
+## 4.7 有限谱的色层分类
 
 有限谱是 chromatic theory 最刚性的对象。type 给出高度分层，thick subcategory theorem 说明这个分层穷尽所有 thick 子范畴，periodicity theorem 给出 $v_n$ self-map 和 telescopes。三大定理均是外部输入，本书后续会频繁使用，但不会伪装成内部证明。
 

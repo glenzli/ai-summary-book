@@ -1,12 +1,15 @@
 # 第十四章：Finite correspondences、presheaves with transfers 与 motivic complexes
 
-## 本章目标
+普通态射 `X\to Y` 只能沿一张图传递信息，而代数循环允许多个有限分支同时从 `X`
+指向 `Y`。把这些分支按整数线性组合，便得到 finite correspondence；其复合不是集合
+关系的复合，而是三重积上的拉回、交积和 proper 推前。这个交理论步骤正是 transfers
+具有加性且仍能复合的原因。
 
-本章介绍 Voevodsky motives 的 transfer 入口。有限对应（finite correspondences）把普通态射扩展为代数循环式的多值态射，presheaves with transfers 则是能沿这些对应反变的预层。该结构是 motivic complexes、Voevodsky motives 和 `H\mathbb Z` 的重要历史来源。
-
-## 依赖前置知识
-
-需要光滑概形、有限态射、代数循环、Chow 群、加性范畴、presheaves、Nisnevich sheaves、motivic cohomology 和 derived categories。
+本章固定 perfect field，先构造加性范畴 `\operatorname{Cor}_k`，再研究其反变加性
+预层、Nisnevich 层化和 Suslin 复形。第九、十章从代表谱和 modules 看到的
+motivic cohomology，将在这里获得循环复形与 transfer 的几何模型。更一般基上的
+relative cycles、sheafification 保持 transfers 以及与 `H\mathbb Z`-modules 的比较
+均作为分开的外部输入，而不藏在定义中。
 
 ## 14.1 Finite correspondences
 
@@ -159,9 +162,9 @@ hypercohomology transfers 与 `H\mathbb Z` 表示性口径比较。`\square`
 
 **证明.** Finite correspondences 给出加性转移，Hom 群本身是自由阿贝尔群式的线性组合；norm maps 是 multiplicative transfers，要求对称幺半结构和乘法相干。加性 correspondence action 不包含 norm 的乘法分配律，因此二者不能识别。`\square`
 
-## 14.7 本章小结
+## 14.7 交积产生的加性转移
 
-Finite correspondences 的复合由明确的交--推构造和 MVW locator 控制；
+Finite correspondences 的复合由明确的交--推构造和 MVW 的交理论定理控制；
 Nisnevich sheafification 继承 transfers 亦是单独定理。Motivic cohomology
 沿 `X\rightsquigarrow Y` 的 variance 是从 `Y` 到 `X`。与 `H\mathbb Z`
 modules 的比较在 characteristic zero 是三角层级，在正特征主线中需反演

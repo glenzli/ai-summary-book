@@ -1,12 +1,8 @@
 # 第二十四章：Profunctor、Cauchy 完备化与 Correspondence
 
-## 本章目标
+函子 $F:\mathcal C\to\mathcal D$ 只能记录确定方向的对象映射，而许多对应、双模和积分变换更自然地由双变量函子 $\mathcal D^{\mathrm{op}}\times\mathcal C\to\mathbf{Set}$ 表示；这就是 profunctor。两个 profunctor 的复合通过 coend 对中间变量取商，Yoneda 引理保证 representable profunctor 恢复普通函子。这个 bicategory 还自然识别 Cauchy 完备化：可分裂幂等元恰对应具有右伴随的某类广义态射。
 
-本章补充一个贯穿普通范畴论、富范畴、双范畴和高阶 Morita 理论的主题：profunctor。普通函子只给出方向明确的映射，而 profunctor 允许把“从 $\mathcal C$ 到 $\mathcal D$ 的广义态射”表示为双变量函子。其复合由 coend 给出，是第十一章 coend 和第二十二章 Morita 复合的普通范畴论原型。
-
-## 依赖前置知识
-
-需要 Yoneda 引理、coend、双范畴、幺半/富范畴和 correspondence 的基本语言。
+本章综合使用 Yoneda、coend、双范畴和幺半/富范畴。我们会逐项验证复合的结合相干、companion/conjoint 和 representability 判据，为下一章的 enriched equipment 与后续 Morita 理论提供普通范畴模型。
 
 ## 24.1 Profunctor
 
@@ -227,21 +223,21 @@ $$
 
 ## 24.6 $\infty$-correspondences
 
-**定义 24.15.** $\infty$-范畴中的 correspondence 可粗略看作 span
-
-$$
-C\xleftarrow{p}M\xrightarrow{q}D
-$$
-
-或等价地看作函子
+**定义 24.15.** 小 $\infty$-范畴 $C,D$ 之间的 space 值 profunctor 是函子
 
 $$
 C^{op}\times D\to\mathcal S.
 $$
 
-后者是第二十三章预层 $\infty$-范畴语言下的 space 值 profunctor。
+它也可由 straightening 表为总空间 $M\to C\times D$：在 $C$ 方向满足 Cartesian 条件、在 $D$ 方向满足 coCartesian 条件。裸 span
 
-**外部输入定理 24.16.** 在合适模型中，小 $\infty$-范畴、space 值 profunctors
+$$
+C\xleftarrow{}M\xrightarrow{}D
+$$
+
+通常不自动给出 profunctor；只有当合成映射带有上述双纤维化结构时，二者才由 straightening 对应。
+
+**外部输入定理 24.16.** 小 $\infty$-范畴、space 值 profunctors
 
 $$
 C^{op}\times D\to\mathcal S
@@ -310,7 +306,7 @@ $$
 
 这正是 $F$ 的 Hom 映射。因此所有分量为双射，当且仅当 $F$ 完全忠实。$\square$
 
-## 24.8 本章小结
+## 24.8 广义态射与 Cauchy 完备化
 
 Profunctor 把函子、关系、双模和 correspondence 统一为“广义态射”。Coend 复合给出 $\mathbf{Prof}$ 的双范畴结构；Cauchy completion 说明幂等分裂是 Morita 不变量的基本有限性修正；$\infty$-correspondence 则把这些思想提升到高阶范畴和高阶代数。
 

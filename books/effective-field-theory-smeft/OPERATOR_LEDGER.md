@@ -1,6 +1,6 @@
 # 算符与命题台账
 
-审计日期：2026-07-12
+审计日期：2026-07-15
 
 本文件为教材内部交叉引用台账。它不替代正文定义，而记录每类对象在哪里定义、哪里使用、哪些部分依赖外部文献。
 
@@ -8,7 +8,7 @@
 
 | 对象 | 位置 | 书内状态 | 外部依赖 |
 | --- | --- | --- | --- |
-| 尺度类型与 Wilson 坐标 | 序章、第 1、6 章、`NOTATION.md` | $M_{\rm gap}$、$\Lambda_{\rm ref}$、$\mu_{\rm match}$ 已分型；参考尺度重标度由命题 1.5 证明 | 无 |
+| 尺度类型与 Wilson 坐标 | 序章、第 1、6、17、22--24 章、`NOTATION.md` | $M_{\rm gap}$、$\Lambda_{\rm ref}$、$\mu_{\rm match}$ 已分型；$\rho_{\rm loc}=Q/M_{\rm gap}$ 与 $\rho_{\rm ins,i}^{(d)}=|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 已分开；参考尺度重标度由命题 1.5 证明 | 未知 $M_{\rm gap}$ 时，$\rho_{\rm loc}$ 只能条件化 |
 | Hermitian SMEFT 拉氏量与 dagger sectors | 第 4、6、7、13、14、20 章、`NOTATION.md` | 自伴族系数约束与非自伴 $C\mathcal O+C^*\mathcal O^\dagger$ 已显式；结构数和 Wilson 实参数数已分型 | 维数五分类与 Warsaw 结构分类分别使用 SMEFT-D5、SMEFT-WARSAW6 |
 | EFT 作为低能局域/渐近展开 | 第 1 章 | 重传播子一致余项界、解析顶点局域化、统一渐近定义及 divergent asymptotic 反例已闭合 | 一般多圈 decoupling 使用 EFT-DEC；一般 QFT 级数不声称收敛 |
 | Wilson coefficient | 第 2 章 | 定义已闭合 | 无 |
@@ -18,11 +18,12 @@
 | RGE 与 leading log | 第 3、15 章 | 裸作用量固定逆转置约定、路径有序解、换基协变和尺度抵消已闭合 | 线性维数六完整矩阵使用 SMEFT-RGE6；$p=4$ 非线性 mixing 未外推 |
 | EOM、基商与 RG descent | 第 2、4 章 | 一/二阶场重定义、typed quotient、命题 4.9A 不变子空间判据已闭合 | 量子等价使用 EFT-EQ/EFT-EQ-HO；SMEFT quotient 闭合使用 SMEFT-EOM-RG |
 | Gauge/BRST 与 evanescent 投影 | 第 2-4 章 | 计算顺序与四维/DR 边界已声明 | 一般 algebraic renormalization 使用 EFT-REN |
-| SMEFT 有效性 | 第 6、8、17、22 章及附录 D | 参考尺度反例、$Q/M_{\rm gap}$ 局域性、$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 插入层级与 loop/log 独立检查已同步到发布标准和图谱 | 未知 $M_{\rm gap}$ 与 UV coupling 只能条件化；须先有 $M_{\rm gap}=M$ 的单物理尺度 matching，才可另选 $\Lambda_{\rm ref}=M$ |
+| SMEFT 有效性 | 第 6、8、12、17、22--24 章及附录 D | 参考尺度反例、$\rho_{\rm loc}$ 局域性、$\rho_{\rm ins}$ 插入层级与 loop/log 检查已分别定义；第 24 章基准矩阵不再从 $x_b=s_b/\Lambda_{\rm ref}^2$ 推断局域性 | 未知 $M_{\rm gap}$ 与 UV coupling 只能条件化；须先有 $M_{\rm gap}=M$ 的单物理尺度 matching，才可另选 $\Lambda_{\rm ref}=M$ |
 | 破缺相输入方案 | 第 16 章 | 线性例子已闭合 | 完整 Feynman 规则为外部输入 |
 | Flavor 参数计数 | 第 20 章 | 通用张量计数已闭合 | Warsaw exact 2499 计数的逐项 Fierz 审计为外部输入 |
 | 电弱输入方案 | 第 21 章 | $\{\alpha,G_F,m_Z\}$ 线性系统已闭合 | 具体 Wilson-to-epsilon 映射依规范化 |
 | Observables-to-operators 图谱 | 第 22 章 | 结构级图谱已闭合；dilepton map 已分开 Wilson 插入大小与 $Q/M_{\rm gap}$ validity cut | 数值响应矩阵依数据集和工具 |
+| 响应矩阵与 Fisher 信息 | 第 8、22--24 章 | 基变换协变性、秩亏例子、dilepton 的 $\rho_{\rm loc}/\rho_{\rm ins}$ 分型与 flavor 矩阵链已显式 | 真实 $M_{ai}$、$\mathsf Q_{aij}$、协方差、PDF 和过程权重依具体数据集 |
 
 ## 2. Warsaw basis 结构台账
 
@@ -78,7 +79,7 @@ $$
 2.  flavor 指标；
 3.  CP 假设；
 4.  定义尺度；
-5.  $\Lambda_{\rm ref}$ 与条件化的 $M_{\rm gap}$；
+5.  $\Lambda_{\rm ref}$、条件化的 $M_{\rm gap}$，以及可观测量所用的 $\rho_{\rm loc}$ 与 $\rho_{\rm ins}$；
 6.  保留的 $(p,L)$、多次插入和 evanescent/EOM projection；
 7.  与可观测量相连时的输入参数方案及 $Q_{\max}$。
 

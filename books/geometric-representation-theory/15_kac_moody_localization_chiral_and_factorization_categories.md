@@ -1,12 +1,6 @@
 # 第十五章：Kac-Moody localization、chiral algebras 与 factorization categories
 
-## 本章目标
-
-本章登记 Kac-Moody algebras、affine flag/Grassmannian 上的 localization、critical level、chiral algebras 和 factorization categories 的基本接口。
-
-## 依赖前置知识
-
-需要第十二、十四章的 loop group 几何，第七章的 D-modules，以及基本 Kac-Moody algebra 知识。
+Loop group 的 Lie algebra $\mathfrak g((z))$ 不能只用逐点 bracket 描述其表示论：invariant form 与 residue 产生一个中心扩张，中心的标量作用就是 level。Fourier modes 的计算说明只有次数相加为零时才出现中心项，而 $\mathfrak g[[z]]$ 在 cocycle 下 isotropic，因此可以从它诱导真空模。有限维 Beilinson--Bernstein localization 在这里变成 affine flag 或 affine Grassmannian 上的 Kac--Moody localization；当插入点在曲线上移动时，多个局部对象还必须满足 factorization。以下只在 residue cocycle 与诱导模层面完成书内证明，更深的 critical-level、chiral 与 factorization 等价保持为精确的外部输入边界。
 
 ## 15.1 Affine Kac-Moody algebra
 
@@ -64,6 +58,8 @@ $$
 $$
 所以 $c$ 限制到 $\mathfrak g[[z]]$ 上为零。$\square$
 
+Isotropic 性使中心扩张在 $\mathfrak g[[z]]$ 上分裂，因而“正 loop 平凡作用、中心按 level 作用”的一维模确实可以拿来作 induction。这个局部代数对象正是几何 localization 的基本测试对象。
+
 ## 15.2 Localization 的仿射版本
 
 **外部输入定理 15.6.** Kac-Moody localization 把适当 level 的 $\widehat{\mathfrak g}$-modules 与 affine flag variety 或 affine Grassmannian 上的 twisted D-modules 联系起来。critical level 情形与 Feigin-Frenkel center、opers 和 local geometric Langlands 密切相关。
@@ -99,11 +95,9 @@ $$
 3. 对 diagonals 给出相容的 fusion 或 specialization functors；
 4. 满足 associativity、unit 和 descent 条件。
 
-**外部输入定理 15.12.** Geometric Langlands proof series 中的 Fundamental Local Equivalence 使用 critical level Kac-Moody localization、factorization categories 和 ind-coherent sheaves 的深层 formalism。当前只作为研究边界。
+**研究边界 15.12.** Fundamental Local Equivalence 的现代表述使用 critical-level Kac--Moody localization、factorization categories 和 ind-coherent sheaves 的深层 formalism。这里只记录这些对象之间的接口，不把该等价用于任何书内证明。
 
-## 本章小结
-
-本章给出 affine Kac-Moody algebra 的基本定义、residue cocycle 计算、$\mathfrak g[[z]]$ isotropic 检查和真空模泛性质，并把 Kac-Moody localization、critical level、chiral/factorization categories 标为外部输入。
+Residue cocycle 把 loop modes 的局部信息凝聚为中心项，$\mathfrak g[[z]]$ 的 isotropic 性则允许构造真空模；两者共同说明 level 怎样进入 affine localization。Factorization 要求这些局部构造随曲线上多个互异点张量分解、沿对角线融合。下一章把这种局部 Hecke/fusion 数据放到整条曲线上的 $G$-bundles，形成 geometric Langlands 的 automorphic 与 spectral 两侧。
 
 ## 练习
 

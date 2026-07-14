@@ -1,12 +1,8 @@
 # 第二十九章：相对范畴、单纯局部化与模型比较
 
-## 本章目标
+模型范畴提供计算弱等价的分解和提升工具，但高阶局部化真正需要的原始数据只有相对范畴 $(\mathcal C,W)$。Dwyer--Kan 单纯局部化把 $W$ 中态射变成等价，同时保留由 zigzags 产生的映射空间；quasi-categories、complete Segal spaces 与单纯范畴则是这同一高阶对象的不同模型。比较定理的内容不是它们的同伦范畴等价，而是映射空间与函子范畴层面的 DK-equivalence。
 
-本章补齐从模型范畴到 $\infty$-范畴的模型无关路径。相对范畴 $(\mathcal C,W)$ 只指定哪些态射应成为等价；Dwyer-Kan 单纯局部化把它提升为带映射空间的单纯范畴；complete Segal spaces 和 quasi-categories 则给出等价的高阶范畴模型。本章的核心目标是说明：不同模型不是不同数学对象，而是同一同伦范畴论的不同坐标。
-
-## 依赖前置知识
-
-需要模型范畴、单纯集、Kan 复形、quasi-category、映射空间、同伦范畴、presentable $\infty$-范畴和局部化的泛性质。
+本章综合模型范畴、Kan 复形、quasi-category、映射空间和局部化泛性质。我们会区分 ordinary localization、simplicial localization 与 underlying $\infty$-category，并把各模型间 Quillen equivalence 的存在作为外部输入，明确指出何时需要 fibrant replacement。
 
 ## 29.1 相对范畴与 $\infty$-局部化
 
@@ -77,7 +73,7 @@ $$
 
 **证明.** 第一条件给出 $\pi_0$ 上 Hom 集同构，所以 $\pi_0F$ 完全忠实。第二条件给出本质满。因此 $\pi_0F$ 是范畴等价。$\square$
 
-**外部输入定理 29.10（Dwyer-Kan 单纯局部化）.** 对任意 relative category $(\mathcal C,W)$，存在 simplicial category $L(\mathcal C,W)$，称为 simplicial localization，使得其 coherent nerve 或等价模型实现 $\mathcal C[W^{-1}]$ 的 $\infty$-categorical localization。Hammock localization 给出显式模型。
+**外部输入定理 29.10（Dwyer--Kan 单纯局部化）.** 对任意 relative category $(\mathcal C,W)$，存在 simplicial category $L(\mathcal C,W)$，称为 simplicial localization。先在 Bergner 模型结构中取 fibrant replacement，使其映射单纯集成为 Kan 复形，再取 coherent nerve，所得 quasi-category 实现 $\mathcal C[W^{-1}]$ 的 $\infty$-categorical localization。Hammock localization 给出与之 Dwyer--Kan 等价的显式模型。
 
 ## 29.3 模型范畴产生的 $\infty$-范畴
 
@@ -95,9 +91,9 @@ $$
 
 一般模型范畴可用 cosimplicial/simplicial resolutions 或 hammock localization 计算导出映射空间。
 
-**命题 29.13.** Quillen 等价诱导 underlying $\infty$-categories 的等价。
+**外部输入推论 29.13.** Quillen 等价诱导 underlying $\infty$-categories 的等价。
 
-**证明.** 设 $F:\mathcal M\rightleftarrows\mathcal N:G$ 是 Quillen 等价。其总左导出和总右导出给出同伦范畴等价。更强地，Quillen 等价诱导 hammock localizations 之间的 Dwyer-Kan equivalence：映射空间由 cofibrant-fibrant replacements 计算，而 Quillen 等价保持并反映这些导出映射空间的弱等价。由定理 29.10，coherent nerve 后得到 $\mathcal M_\infty\simeq\mathcal N_\infty$。$\square$
+**说明.** 设 $F:\mathcal M\rightleftarrows\mathcal N:G$ 是 Quillen 等价。总导出伴随给出同伦范畴等价，但这本身不足以证明高阶结论。Dwyer--Kan 的比较定理进一步断言相应 hammock localizations 之间是 Dwyer--Kan equivalence，即同时比较对象和全部导出映射空间。对其取 Bergner fibrant replacement 与 coherent nerve，得到 $\mathcal M_\infty\simeq\mathcal N_\infty$。
 
 **注 29.14.** 命题 29.13 的关键不是同伦范畴等价本身，而是映射空间也被正确比较。因此普通三角范畴等价通常不足以判定稳定 $\infty$-范畴等价。
 
@@ -111,7 +107,11 @@ $$
 
 它把映射对象为 Kan 复形的 simplicial category 送到 quasi-category。其左伴随可看作把单纯集自由生成同伦相干单纯范畴。
 
-**命题 29.16.** 若 $\mathcal A$ 的 Hom 单纯集全为离散单纯集，则 $N_{\operatorname{hc}}(\mathcal A)$ 与普通 nerve $N(\pi_0\mathcal A)$ 等价。
+**命题 29.16.** 若 $\mathcal A$ 的 Hom 单纯集全为离散单纯集，则有自然同构
+
+$$
+N_{\operatorname{hc}}(\mathcal A)\cong N(\pi_0\mathcal A).
+$$
 
 **证明.** Hom 单纯集离散时，$\mathcal A$ 没有非平凡高维映射同伦。Coherent nerve 的 $n$-单纯形是从同伦相干 $[n]$ 形状到 $\mathcal A$ 的 simplicial functor；所有高维相干数据因 Hom 离散而唯一退化。因此只剩普通可复合箭头串，即普通 nerve 的 $n$-单纯形。逐维识别给出等价。$\square$
 
@@ -151,13 +151,13 @@ $$
 
 说明一个 $2$-单纯形等价于一对可复合 $1$-单纯形加上复合数据。更高 $n$ 的 Segal 等价说明 $n$-单纯形由 $n$ 条可复合边控制。由于这些是空间而非集合，复合不是严格函数，而是在可缩选择空间中给出的同伦相干复合。$\square$
 
-**外部输入定理 29.21（Rezk nerve 与 CSS 模型）.** Relative categories 有 Rezk nerve，取值于 complete Segal spaces；Rezk CSS 模型结构、Joyal quasi-category 模型结构、Bergner simplicial category 模型结构和相对范畴的合适模型结构之间存在 Quillen 等价链。
+**外部输入定理 29.21（Rezk nerve 与 CSS 模型）.** Relative category 有 Rezk classification diagram。原始双单纯集一般既非 Reedy fibrant，也不必逐字满足 complete Segal 条件；在 complete Segal space 模型结构中取 fibrant replacement（等价地作 Rezk completion）后，得到呈示 $\mathcal C[W^{-1}]$ 的 complete Segal space。Rezk CSS、Joyal quasi-category、Bergner simplicial category 与相对范畴的相应模型结构之间存在 Quillen 等价链。
 
 ## 29.6 模型选择原则
 
 **命题 29.22.** 若一个构造只依赖 $\infty$-categorical localization 的泛性质，则它在 relative categories、simplicial categories、quasi-categories 和 complete Segal spaces 的模型之间不变。
 
-**证明.** 这些模型之间的 Quillen 等价保持并反映相应的弱等价对象。由定理 29.17 和 29.21，它们表示同一 homotopy theory of homotopy theories。若构造由 $\mathcal C[W^{-1}]$ 的泛性质刻画，则任意模型替换给出的对象满足同一泛性质；由命题 29.3 的唯一性，所得结果等价。$\square$
+**证明.** 先把每个模型经相应 fibrant/cofibrant replacement 送到它所呈示的 $\infty$-范畴。定理 29.17 和 29.21 的导出等价识别这些呈示，而不要求原始模型对象逐字相同。若构造只由 $\mathcal C[W^{-1}]$ 的泛性质刻画，则模型替换后得到的对象满足同一泛性质；由命题 29.3 的唯一性，结果等价。$\square$
 
 **例子 29.23.** Presentable $\infty$-categories 可用 combinatorial model categories 的左 Bousfield localizations 建模，也可直接用 accessible localizations of presheaf $\infty$-categories 建模。具体模型不同，左伴随、局部对象、映射空间和 Bousfield localization 的 $\infty$-范畴意义相同。
 
@@ -251,7 +251,7 @@ $$
 
 中第二箭头和复合箭头均为弱等价，故第一箭头为弱等价。于是 $F$ 也是 Dwyer-Kan equivalence。三种情形合并即得 $2$-out-of-$3$。$\square$
 
-## 29.8 本章小结
+## 29.8 同一高阶范畴的不同模型
 
 相对范畴提供最小输入：一个范畴和一类将被倒置的态射。Dwyer-Kan 局部化把它变成映射空间丰富的 simplicial category。Coherent nerve、quasi-category、complete Segal space 和 simplicial category 模型通过 Quillen 等价比较。模型范畴只是产生 $\infty$-范畴的一种方式；真正不变量是由泛性质确定的 $\infty$-categorical localization。
 

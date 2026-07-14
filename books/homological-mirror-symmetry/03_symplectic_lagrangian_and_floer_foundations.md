@@ -1,12 +1,6 @@
 # 第三章：辛流形、Lagrangian brane 与 exact Floer 口径
 
-## 本章目标
-
-本章建立 HMS 的 A-side 基础对象：辛流形、Lagrangian submanifolds、brane data、exact Floer cochains 和 analytic inputs 的边界。完整 Fukaya category 的构造将在后续章节展开；本章只建立可检查的 exact 入口。
-
-## 依赖前置知识
-
-需要熟悉光滑流形、微分形式、切丛、向量丛、基本同调代数和第一章的 $A_\infty$ 语言。
+一个 Lagrangian 子流形本身还不是 Fukaya 范畴的对象：没有分次便不能给交点赋次数，没有 Pin/spin 与取向线便不能带符号计数，没有 exactness 或能量完成便不能控制条带序列。更根本地，横截交点只是 Floer 复形的生成元，微分平方为零还要从一维伪全纯条带模空间的紧化边界推出。本章在最可控的 exact 口径中逐项加入这些数据，并把几何定义、形式能量恒等式与真正依赖分析理论的结论分开。所需背景是微分形式、切丛、基本同调代数以及第一章的分次复形语言。
 
 ## 3.1 辛流形与 Lagrangian
 
@@ -44,7 +38,7 @@ cover（或等价 grading structure）；若 $\operatorname{char}k\ne2$，再固
 background class $b_M\in H^2(M;\mathbb Z/2)$。还需要 primitive、grading、
 relative spin/Pin 结构和局部系统等数据。
 
-**定义 3.6.** 固定系数域 $k$。在本书的 exact Calabi-Yau 入口中，一个 Lagrangian brane 是数据
+**定义 3.6.** 固定系数域 $k$。在以下 exact Calabi--Yau 口径中，一个 Lagrangian brane 是数据
 $$
 \mathbb L=(L,f_L,\alpha_L,\mathfrak p_L,E_L)
 $$
@@ -211,7 +205,7 @@ $$
 
 ## 3.6 从 Floer cochains 到 Fukaya category
 
-本章只定义了对象和 morphism complexes 的入口。Fukaya category 还需要高阶复合
+对象和 morphism complexes 只是 Fukaya category 的一阶数据；完整范畴还需要高阶复合
 $$
 \mu^d:
 CF^\ast(L_{d-1},L_d)\otimes\cdots\otimes CF^\ast(L_0,L_1)
@@ -219,9 +213,7 @@ CF^\ast(L_{d-1},L_d)\otimes\cdots\otimes CF^\ast(L_0,L_1)
 $$
 这些复合由 holomorphic $(d+1)$-gons 的零维模空间计数定义。其 $A_\infty$ 方程来自一维 polygon 模空间的边界分解。第四章将把这个构造写成定理链，并明确列出 analytic inputs。
 
-## 本章小结
-
-A-side 的最低入口是带 brane data 的 Lagrangian，而不是裸 Lagrangian 子流形。Floer cochains 由横截交点生成，Floer 微分由 holomorphic strips 的计数给出。$\mu^1{}^2=0$、不变量性和高阶 $A_\infty$ 方程都依赖深层分析输入；本书在未建立分析基础时必须把它们标为外部输入。
+这一章得到的是 Fukaya 范畴的对象和一阶态射数据，而不是完整范畴。Exact brane 使作用量与能量可控，横截交点给出 Floer 生成元，条带计数在外部分析包的保障下才成为平方为零且与扰动选择无关的微分。把二元复合及其全部高阶结合同伦加进来，需要考察带更多边界标记点的圆盘，这正是下一章的起点。
 
 ## 练习
 

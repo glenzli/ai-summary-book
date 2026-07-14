@@ -157,7 +157,8 @@ Z.5 是经典有限维向量空间结论。进入 condensed/analytic 语境时�
 
 1. Sobolev/Fréchet 空间的凝聚化及其 liquid membership。
 2. $\bar\partial$、$\bar\partial^\ast$、Green operator 的连续性。
-3. harmonic projection 在目标范畴中对应有限维离散对象。
+3. harmonic projection 的像取通常欧氏拓扑，并在目标范畴中对应有限自由系数模；这
+   不等于把有限维向量空间离散化。
 4. Hodge decomposition 与导出全局截面比较相容。
 
 这些验证不是椭圆复形形式论的自动结论。

@@ -1,14 +1,8 @@
 # 第二十章：Hecke Eigensheaves
 
-## 本章目标
+经典 Hecke 本征函数满足 $T_{V,x}f=a_{V,x}f$，其中本征值是一个数；几何化以后，Hecke 算子成为函子，标量本征值也必须升级为随 $x\in X$ 变化的局部系统。给定 $\widehat G$-local system $\mathcal E$，每个表示 $V$ 产生 $V_{\mathcal E}$，而 Hecke eigensheaf $\mathcal F$ 要满足 $\mathsf H_V(\mathcal F)\simeq\mathcal F\boxtimes V_{\mathcal E}$，并且这些同构对张量积相容。本章从这一类型正确的公式出发，讨论存在性、唯一性以及取 Frobenius 迹后如何返回经典本征函数。
 
-本章定义 Hecke eigensheaf，并给出几何 Langlands 对应的基本形式。第十九章给出 $\operatorname{Rep}(\widehat G)$ 对 $\mathcal D(\operatorname{Bun}_G)$ 的 Hecke 作用。Hecke eigensheaf 是这些 Hecke 函子的共同本征对象，其本征值不是数字，而是曲线 $X$ 上的 $\widehat G$-local system。
-
-## 依赖前置知识
-
-需要第十八章的 $\operatorname{Bun}_G$ 和 Hecke correspondence，第十九章的几何 Satake。需要 local systems、D-modules 或 $\ell$-adic sheaves、张量函子和 derived categories。完整几何 Langlands 需要 derived stacks、renormalized sheaf categories 和 spectral side；本章只陈述基础接口。附录 O 固定 D-modules、kernel formalism 和 IndCoh 口径，附录 AB 给出 derived stacks、six functors、kernel functor 和 renormalization 的技术层，供本章和第二十一章引用。
-
-收口归一化回指：本章 Hecke eigensheaf 到 Hecke eigenfunction 的比较必须声明 Frobenius trace、Tate twist 和几何 Satake normalization；见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
+本章使用 $\operatorname{Bun}_G$、Hecke correspondence 与几何 Satake；D-module、kernel formalism 和 IndCoh 口径见附录 O、AB。有限域比较必须同时声明 Frobenius、Tate twist 与 Satake normalization，统一约定见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 9 节。
 
 ## 20.1 对偶群局部系统
 
@@ -139,7 +133,7 @@ $$
 
 **注 20.13.** 对 ramified 几何 Langlands，还需加入 marked points、level structures、parabolic bundles、Iwahori 或 deeper level Hecke categories。本书当前先处理 unramified 形式。
 
-## 20.7 本章小结
+## 20.7 从本征值到本征层
 
 Hecke eigensheaf 是几何 Langlands 的核心对象。几何 Satake 把 $\operatorname{Rep}(\widehat G)$ 转化为 Hecke 函子；$\widehat G$-local system $\mathcal E$ 把每个表示 $V$ 转化为局部系统 $V_{\mathcal E}$；Hecke eigensheaf 是同时满足
 $$

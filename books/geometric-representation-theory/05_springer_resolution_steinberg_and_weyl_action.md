@@ -1,12 +1,6 @@
 # 第五章：Springer resolution、Steinberg variety 与 Weyl group action
 
-## 本章目标
-
-本章构造 Springer resolution、Springer fibers、Steinberg variety 和 Borel-Moore homology convolution。目标是把 Weyl group 表示从 flag variety 和 nilpotent cone 的几何中产生出来，并明确哪些部分是内部构造，哪些部分是 Springer correspondence 的外部输入。
-
-## 依赖前置知识
-
-需要第一章的 flag variety 和 Borel 数据，第三章的 sheaf theory，以及附录 A 的 correspondence 和 convolution 模板。
+一个 nilpotent 元 $x$ 本身不带 Weyl group 作用，但所有满足 $x\in[\mathfrak b',\mathfrak b']$ 的 Borel 子代数组成的 Springer fiber 却能承载 Weyl group 表示。关键几何步骤是把奇异的 nilpotent cone 替换为随 Borel 变化的光滑空间 $\widetilde{\mathcal N}$，再比较同一点上方的两份分辨率。前者给出 Springer sheaf，后者形成 Steinberg variety；其 Borel--Moore 同调卷积把 correspondence 的复合变成代数乘法。$SL_2$ 中零元上方是 $\mathbb P^1$、正则幂零元上方是一点，这个差异将具体展示 fiber 几何如何记录轨道位置。
 
 ## 5.1 Nilpotent cone
 
@@ -97,6 +91,8 @@ $$
 
 后一项唯一性可用 $SL_2$ 的矩阵模型直接检查：非零 nilpotent $x$ 有一维 kernel，保持该 kernel 的 Borel 是唯一使 $x$ 成为上三角严格幂零矩阵的 Borel。
 
+单个 fiber 说明分辨率在不同轨道上怎样退化。要把这些 fiber 之间的关系组成一个作用，需要同时记住同一 $x$ 上方的两面旗标；这正是 fiber product $\widetilde{\mathcal N}\times_{\mathcal N}\widetilde{\mathcal N}$ 的含义。
+
 ## 5.3 Steinberg variety 和卷积
 
 **定义 5.11.** Steinberg variety 定义为 fiber product
@@ -141,6 +137,8 @@ $$
 更强的等变 K-theory 或 equivariant Borel-Moore homology 版本给出 affine Hecke algebra 或 graded Hecke algebra。  
 来源：Kazhdan-Lusztig、Chriss-Ginzburg、Ginzburg。
 
+这个同构说明 Weyl group 并非额外安放在 fiber 上的对称性，而是 Steinberg correspondences 的不可约顶维成分所生成的卷积代数。把代数作用落实到每个 fiber 的上同调，还需要将 proper map 的推前组织成 Springer sheaf。
+
 ## 5.4 Springer sheaf 和 Weyl group action
 
 **定义 5.15.** Springer sheaf 定义为
@@ -158,8 +156,7 @@ $\dim\widetilde{\mathcal N}=\dim\mathcal N$。因此外部输入定理 C.7 给�
 $$
 \mathsf{Spr}\in\operatorname{Perv}_G(\mathcal N,E),
 $$
-且它是 semisimple perverse sheaf。
-来源定位：`SPR-1` 的 Springer-fiber dimension theorem 与 `BBD-SS-1`。本书已证明 properness，但不重证一般 orbit 上的 fiber-dimension inequality。
+且它是 semisimple perverse sheaf。Semismallness 采用 Springer-fiber dimension theorem，并与 BBD 的 semismall decomposition theorem 合用。本书已证明 properness，但不重证一般 orbit 上的 fiber-dimension inequality。
 
 **外部输入定理 5.16.** Springer sheaf $\mathsf{Spr}$ 带有自然 $W$-作用，并且对 $x\in\mathcal N$，该作用在 Springer fiber cohomology $H^\ast(\mathcal B_x,E)$ 上给出 Springer representation。  
 来源：Springer、Borho-MacPherson、Kazhdan-Lusztig、Chriss-Ginzburg。
@@ -167,9 +164,7 @@ $$
 **外部输入定理 5.17.** Springer correspondence 给出 $W$ 的不可约表示与若干对 $(\mathcal O,\mathcal L)$ 的对应，其中 $\mathcal O\subset\mathcal N$ 是 nilpotent orbit，$\mathcal L$ 是 $\mathcal O$ 上的 irreducible $G$-equivariant local system。  
 限制：具体归一化和 sign representation convention 必须在第六章和附录 D 中锁定。
 
-## 本章小结
-
-本章内部构造了 Springer resolution、证明 Springer map proper、定义了 Springer fibers、Steinberg variety 和 convolution。Springer map 的 semismallness、Springer sheaf 的 perverse semisimplicity、Weyl group action、top Borel-Moore homology 与 $\mathbb C[W]$ 的同构、Springer correspondence 均是核心外部输入。
+Springer resolution 把 nilpotent 元与容纳它的 Borel 同时记录，Steinberg variety 再把两种选择组成可卷积的 correspondence。$SL_2$ 的两个 fibers 是这套机制的最小模型；一般群中，semismallness 与 Springer correspondence 负责把几何分解精确转成 $W$-表示。下一章将进一步问：当 nilpotent orbit 的稳定子不连通时，fiber 上还会出现哪些等变局部系统？
 
 ## 练习
 

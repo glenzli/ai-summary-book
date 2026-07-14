@@ -59,7 +59,7 @@ $$
 
 **外部输入定理 M.10（category of operators；HA-OP-1）.** Ordinary colored operad 的 category of operators nerve 给出 Lurie-style infinity-operad。
 
-**说明 M.11.** Lurie 模型中的 active/inert 分解方向依赖 convention。本文统一使用第十八章的 $\mathbf{Fin}_*$ 约定：$\rho^i:\langle n\rangle\to\langle1\rangle$ 为 inert。
+**说明 M.11.** Lurie 模型中的 active/inert 分解方向依赖 convention。本文统一使用第十八章的 $\mathbf{Fin}_*$ 约定：$\rho^i:\langle n\rangle\to\langle1\rangle$ 为 inert，每个基态射按命题 18.5 先分解为 inert、再分解为 active；infinity-operad 只要求前一阶段的 coCartesian lifts。
 
 ## M.5 Dendroidal-Lurie 比较
 

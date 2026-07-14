@@ -1,15 +1,17 @@
 # 同伦类型论与单值基础
 
 作者：Dr. Stochastic Parrot
-状态：核心 HoTT 文本出版收口
-最近资料核查：2026-06-29
+状态：连续教材修订版
+最近资料核查：2026-07-15
 主资料源：*Homotopy Type Theory: Univalent Foundations of Mathematics*；Egbert Rijke, *Introduction to Homotopy Type Theory*；cubical type theory、simplicial model、单值范畴论、合成同伦论和经典代数拓扑文献。
 
 这是一本中文 HoTT 教材。目标不是科普介绍，而是按严格教材方式，从依赖类型论的判断规则、恒等类型和路径代数开始，进入等价、函数外延性、单值性、高阶归纳类型、截断、同伦层级、合成同伦论、单值范畴论和当前研究边界。
 
-本书采用文本出版口径收口：每个核心定义必须有规则或精确定义；每个非平凡断言必须标注为书内证明、证明说明、外部输入或研究边界；不以书稿外材料作为封稿条件。
+本书采用严格教材口径：每个核心定义必须有规则或精确定义；每个非平凡断言必须具有书内定理、条件化推导、精确外部输入或研究边界之一的身份；解释证明思路的文字本身不算证明。
 
-资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，证明状态蓝图见 [B_proof_status_blueprints.md](B_proof_status_blueprints.md)，剩余义务见 [K_remaining_obligations.md](K_remaining_obligations.md)，出版审计见 [PUBLICATION_CLOSURE_AUDIT.md](PUBLICATION_CLOSURE_AUDIT.md)。
+资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，证明身份规则见 [B_proof_status_blueprints.md](B_proof_status_blueprints.md)，关键依赖边界见 [K_remaining_obligations.md](K_remaining_obligations.md)，出版审计见 [PUBLICATION_CLOSURE_AUDIT.md](PUBLICATION_CLOSURE_AUDIT.md)。
+
+本地验收入口为 [`validate.py`](validate.py)；它检查第 0-17 章导言、旧模板回归、Banach/Rezk 关键边界，并调用严格叙事审计、严格 OET 审计与 `git diff --check`。
 
 ## 建议阅读顺序
 
@@ -25,17 +27,17 @@
 10. [第九章：高阶归纳类型的规则格式](09_higher_inductive_types.md)
 11. [第十章：圆、悬挂、Pushout 与同伦余极限](10_circle_suspension_pushouts.md)
 12. [第十一章：基本群、覆盖空间与圆的计算](11_fundamental_group_and_coverings.md)
-13. [第十二章：合成同伦论与高级接口](12_synthetic_homotopy_and_advanced_interfaces.md)
+13. [第十二章：从环路到稳定现象](12_synthetic_homotopy_and_advanced_interfaces.md)
 14. [第十三章：预范畴、单值范畴与结构等同](13_univalent_categories.md)
 15. [第十四章：Yoneda、极限、伴随与 Rezk 完备化](14_yoneda_limits_adjunctions_rezk.md)
-16. [第十五章：模型、来源与引用边界](15_models_sources_and_boundaries.md)
+16. [第十五章：模型语义、可靠性与相对一致性](15_models_sources_and_boundaries.md)
 17. [第十六章：Cubical Type Theory、计算单值性与模型](16_cubical_type_theory_and_models.md)
-18. [第十七章：研究边界、开放问题与版本化阅读](17_research_frontier_and_open_problems.md)
+18. [第十七章：研究边界中的语言与定理](17_research_frontier_and_open_problems.md)
 
 ## 核心附录
 
 - [附录 A：路径代数参考表](A_path_algebra_reference.md)
-- [附录 B：证明状态蓝图](B_proof_status_blueprints.md)
+- [附录 B：证明身份与使用规则](B_proof_status_blueprints.md)
 - [附录 C：练习提示与解题路线](C_exercise_hints_and_solutions.md)
 - [附录 D：基础证明核](D_foundational_proof_kernel.md)
 - [附录 E：等价证明核](E_equivalence_proof_kernel.md)
@@ -44,7 +46,7 @@
 - [附录 H：布尔类型与 Universe 非集合性](H_bool_universe_not_set.md)
 - [附录 I：结构等同性原则证明核](I_structure_identity_principle.md)
 - [附录 J：一元代数签名的结构等同性](J_algebraic_signature_sip.md)
-- [附录 K：剩余证明义务登记](K_remaining_obligations.md)
+- [附录 K：关键依赖与不可逆边界](K_remaining_obligations.md)
 - [附录 L：高阶归纳类型输入规则表](L_HIT_input_rules.md)
 - [附录 M：整数对象与 Successor 等价](M_integers_and_successor.md)
 - [附录 N：圆的 Encode-Decode 证明核](N_circle_encode_decode.md)
@@ -63,7 +65,7 @@
 
 ## 高级接口附录
 
-- [附录 AA：Rezk 完备化泛性质证明架构](AA_rezk_universal_property_schema.md)
+- [附录 AA：Weak equivalence 与 Rezk 泛性质的外部输入](AA_rezk_universal_property_schema.md)
 - [附录 AB：同伦层级向上闭包证明核](AB_hlevel_upward_closure.md)
 - [附录 AC：Eckmann-Hilton 与高阶同伦群交换性](AC_eckmann_hilton_and_higher_homotopy.md)
 - [附录 AD：二点类型悬挂与圆的等价](AD_suspension_bool_circle.md)
@@ -87,7 +89,7 @@
 - [附录 AV：Serre、Atiyah-Hirzebruch 与 Adams 谱序列接口](AV_serre_ahss_adams_spectral_sequences.md)
 - [附录 AW：Dedekind 实数、Locatedness 与 Cauchy 实数比较](AW_dedekind_reals_and_cauchy_comparison.md)
 - [附录 AX：Directed / Simplicial Type Theory 的语义接口](AX_directed_semantics_interface.md)
-- [附录 AY：Pushout 路径空间的 Encode-Decode 证明核](AY_pushout_path_encode_decode_kernel.md)
+- [附录 AY：Pushout path-code 的内部接口与外部边界](AY_pushout_path_encode_decode_kernel.md)
 - [附录 AZ：谱、稳定范畴与收敛证明接口](AZ_spectra_stable_category_and_convergence.md)
 - [附录 BA：构造性分析中的连续性、紧致性与典型定理](BA_constructive_analysis_continuity_compactness.md)
 - [附录 BB：Rezk 类型、Complete Segal 对象与合成无穷范畴](BB_rezk_types_and_synthetic_infinity_categories.md)
@@ -103,7 +105,7 @@
 - [附录 BL：逻辑原则、Resizing、选择与构造性边界](BL_logic_resizing_choice_and_constructivity.md)
 - [附录 BM：局部系数、扭曲上同调与 Postnikov 系数系统](BM_local_coefficients_and_twisted_cohomology.md)
 - [附录 BN：Steenrod 代数、Ext 与 Adams 计算接口](BN_steenrod_algebra_ext_and_adams_calculations.md)
-- [附录 BO：构造性度量空间、级数与积分接口](BO_constructive_metric_spaces_series_and_integration.md)
+- [附录 BO：构造性度量空间、级数与积分](BO_constructive_metric_spaces_series_and_integration.md)
 
 ## 收口文件
 
@@ -117,4 +119,4 @@
 
 ## 当前范围
 
-按文本教材口径，本书核心主线已经收口：L0-L5 的内部语言、等价、单值性、HIT、圆的基本群、单值范畴论、Yoneda 和 Rezk 完备化架构均有书内证明核或明确外部输入。L6-L9 的集合层数学、构造性分析、稳定同伦论、directed/cohesive/2LTT、Rezk/Segal 高阶相干和模型论均作为高级接口或研究边界保留，不阻塞核心 HoTT 封稿。
+按文本教材口径，L0-L5 的内部语言、等价、单值性、HIT、圆的基本群、单值范畴论与 Yoneda 均有书内证明核或明确公理输入；Rezk 完备化的构造在书内完成，其限制函子泛性质精确采用外部定理。L6-L9 的构造性分析、稳定同伦论、directed/cohesive/2LTT、高阶 Rezk/Segal 相干和模型论按各自假设作为高级接口或研究边界保留。

@@ -1,6 +1,6 @@
 # 总索引
 
-本索引按主题组织，条目后给出主要出现位置。它服务于教材阅读；出版版可进一步转换为页码索引。
+本索引按主题组织，条目后给出主要出现位置。
 
 ## 基础范畴论与大小
 
@@ -157,30 +157,42 @@
 ## Equivariant、stacky、log 与 perfect 扩展
 
 - Algebraic stack：第二十章
-- Atlas descent：第二十章
+- Divisorial log structure：第二十一章
 - Borel-equivariant theory：第十九章
 - Classifying stack `BG`：第二十章
 - Equivariant motivic homotopy：第十九章、第二十章
+- Euler-localized concentration：第二十章
 - Fixed point localization：第十九章、第二十章
 - Genuine equivariant theory：第十九章
+- Lisse extension：第二十章
 - Log motivic homotopy：第二十一章
 - Log scheme：第二十一章
+- Nil-invariance：第二十一章
 - Perfect scheme：第二十一章
+- Perfectization：第二十一章
 - Quotient stack：第十九章、第二十章
 - Representation sphere：第十九章
+- Scallop decomposition：第二十章
 - Scalloped stack：第二十章
 - Universal homeomorphism：第二十一章
 
-## Realization 与前沿边界
+## Realization、比较与研究边界
 
 - Analytic realization：第二十二章、第二十四章
 - Betti realization：第二十二章、第二十三章
+- Equivariant Betti realization：第二十二章
 - Etale realization：第二十二章
+- Profinite realization：第二十二章
 - Pullback formalism：第二十三章、第二十四章
 - Real etale realization：第二十二章
+- `\rho`-localization：第二十二章
 - Realization conservativity：第二十二章、第二十四章
+- Slice 与 realization 比较：第二十四章
+- 几何输入五元组：第二十四章
+- 六操作比较：第二十二章、第二十三章、第二十四章
+- Transfer 类型比较：第十四至第十七章、第二十四章
 - Research boundary：序章、第二十四章
-- Theorem locator：第二十四章、资料账本
+- Theorem locator：资料账本
 
 ## 资料源与账本
 
@@ -190,5 +202,4 @@
 - P0 locator 第一批：[P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)
 - P0 locator 第二批：[P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)
 - P0 locator 第三批（第 09-18 章主线）：[P0_REFERENCE_LOCATORS_BATCH_3.md](P0_REFERENCE_LOCATORS_BATCH_3.md)
-- 教材闭合审计：[TEACHING_CLOSURE_AUDIT.md](TEACHING_CLOSURE_AUDIT.md)
-- 章节密度审计：[CHAPTER_DENSITY_AUDIT.md](CHAPTER_DENSITY_AUDIT.md)
+- 数学审校记录：[MATH_REVIEW.md](MATH_REVIEW.md)

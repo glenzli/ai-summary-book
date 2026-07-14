@@ -1,12 +1,8 @@
 # 第五十六章：幂等分裂、Karoubi 包络与绝对余极限
 
-## 本章目标
+幂等态射 $e:X\to X$ 在集合和模范畴中总能表示为某个 retract，但一般范畴未必包含它的像。Karoubi 包络以普适方式补入全部幂等分裂，得到 Cauchy 完备范畴。另一方面，被所有函子保持的绝对余极限恰刻画这种无需额外结构即可识别的 retract 型构造；在富范畴中，它们推广为绝对加权余极限，并与具有伴随的 profunctors 相连。
 
-本章补充范畴论内部的完备化主题：幂等分裂、Karoubi 包络、Cauchy 完备性和绝对余极限。一个余极限若被所有函子保持，称为绝对余极限。绝对余极限与分裂幂等、可分裂 coequalizer 和 Cauchy 完备化紧密相连，是 Morita 理论、profunctor 和 enriched category theory 中的基本工具。
-
-## 依赖前置知识
-
-需要幂等态射、retract、余等化子、伴随、profunctor、Cauchy completion、富范畴和加权余极限。
+本章使用 retract、余等化子、profunctor、富范畴和加权余极限。我们会证明 Karoubi 包络的普适性质，并区分 ordinary Cauchy completeness、富 Cauchy completeness 与“具有所有小余极限”，后三者并不等价。
 
 ## 56.1 幂等与分裂
 
@@ -54,6 +50,8 @@ $$
 f= d f e.
 $$
 
+对象 $(X,e)$ 的恒等态射是 $e$，而不是 $\operatorname{id}_X$；确有 $e=eee$，并且对任意满足 $f=dfe$ 的态射，$df=f=fe$。
+
 **命题 56.5.** $\operatorname{Kar}(\mathcal C)$ 中每个幂等都分裂。
 
 **证明.** 设 $p:(X,e)\to(X,e)$ 为 $\operatorname{Kar}(\mathcal C)$ 中幂等。则在 $\mathcal C$ 中 $p^2=p$ 且 $p= epe$。对象 $(X,p)$ 存在于 $\operatorname{Kar}(\mathcal C)$。态射
@@ -89,7 +87,23 @@ $$
 
 **命题 56.10.** 分裂 coequalizer 是绝对余极限。
 
-**证明.** 分裂 coequalizer 的数据由有限个态射和等式给出：$q:B\to Q$ coequalizes $f,g:A\rightrightarrows B$，并有 section $s:Q\to B$ 及 splitting data，使 coequalizer 泛性质可由这些等式直接验证。任意函子保持复合和等式，因此把这组分裂数据送到同样的分裂 coequalizer 数据。故任意函子保持它。$\square$
+**证明.** 分裂 coequalizer 的数据可写为
+
+$$
+A\mathrel{\substack{\xrightarrow{f}\\[-2pt]\xrightarrow[g]{}}}B
+\xrightarrow{q}Q,
+\qquad
+s:Q\to B,\quad t:B\to A,
+$$
+
+满足
+
+$$
+qf=qg,\qquad qs=\operatorname{id}_Q,\qquad
+ft=\operatorname{id}_B,\qquad gt=sq.
+$$
+
+这些等式直接验证 $q$ 的 coequalizer 泛性质。任意函子保持复合、恒等与等式，因此把这组 splitting data 送到同样的分裂 coequalizer 数据；故任意函子保持它。$\square$
 
 ## 56.5 Cauchy 完备性
 
@@ -97,9 +111,17 @@ $$
 
 **外部输入定理 56.12.** 在 enriched category theory 中，Cauchy completion 等价于加入所有绝对加权余极限；普通范畴情形退化为 Karoubi 包络。
 
-**命题 56.13.** 普通范畴中，Karoubi 包络是幂等完备化。
+**命题 56.13.** 若 $\mathcal D$ 幂等完备，则预合成 $i:\mathcal C\to\operatorname{Kar}(\mathcal C)$ 给出范畴等价
 
-**证明.** 命题 56.5 说明 $\operatorname{Kar}(\mathcal C)$ 幂等完备，命题 56.6 给出全忠实嵌入。若 $F:\mathcal C\to\mathcal D$ 且 $\mathcal D$ 幂等完备，则对每个 $(X,e)$，$F(e)$ 在 $\mathcal D$ 中分裂，取其分裂对象作为扩张值，可把 $F$ 延拓到 $\operatorname{Kar}(\mathcal C)$。分裂对象唯一到唯一同构保证延拓在等价意义下唯一。$\square$
+$$
+\operatorname{Fun}(\operatorname{Kar}(\mathcal C),\mathcal D)
+\xrightarrow{\ \simeq\ }
+\operatorname{Fun}(\mathcal C,\mathcal D).
+$$
+
+因此 Karoubi 包络是幂等完备化。
+
+**证明.** 命题 56.5 说明 $\operatorname{Kar}(\mathcal C)$ 幂等完备，命题 56.6 给出全忠实嵌入。若 $F:\mathcal C\to\mathcal D$，则对每个 $(X,e)$，幂等 $F(e)$ 在 $\mathcal D$ 中可分裂；令扩张在 $(X,e)$ 上取该分裂对象，并用 $f=dfe$ 诱导分裂对象间态射。分裂对象及其诱导态射的选择空间可缩，故得到本质唯一的扩张。对自然变换作同一限制与扩张，说明预合成函子全忠实且本质满，因而为等价。$\square$
 
 **命题 56.14.** Karoubi 包络是幂等的：
 
@@ -109,7 +131,7 @@ $$
 
 **证明.** 由命题 56.5，$\operatorname{Kar}(\mathcal C)$ 已幂等完备。再由命题 56.8，把幂等完备范畴嵌入其 Karoubi 包络是等价。取该范畴为 $\operatorname{Kar}(\mathcal C)$ 即得结论。$\square$
 
-## 56.6 本章小结
+## 56.6 分裂幂等与绝对余极限
 
 幂等分裂是范畴中 retract 存在性的最小完备性要求。Karoubi 包络自由加入所有幂等的分裂。绝对余极限是不依赖目标函子的余极限，普通范畴中与幂等分裂紧密相关；富范畴中则导向 Cauchy completion 和 Morita 理论。
 

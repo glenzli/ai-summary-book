@@ -1,14 +1,8 @@
 # 第二十二章：函数域类比和数论-几何桥梁
 
-## 本章目标
+函数域 $K=\mathbb F_q(X)$ 同时是一维整体域和代数曲线的函数域，因此数论与几何两种语言可以真正相遇。Adelic 双商描述 $G$-bundle 的有限域点，Hecke correspondence 几何化 Hecke 算子，Frobenius trace 又把层送回函数。若把有限域换成代数闭域，trace function 消失，但层范畴及其 Hecke 作用仍然存在，这便解释了几何 Langlands为何比函数域 Langlands保留更多结构。本章沿这条桥梁比较 Drinfeld--Lafforgue、shtukas、几何 Satake 和范畴化对应，同时指出数域不能原样复制这套几何模型的原因。
 
-本章解释数论 Langlands、函数域 Langlands 和几何 Langlands 之间的桥梁。函数域 $K=k(X)$ 同时有 adelic 算术描述和曲线几何描述；当 $k=\mathbb F_q$ 时，sheaf-function dictionary 把几何对象变成函数域上的自守函数；当 $k$ 代数闭时，几何 Langlands 保留范畴结构而不取 Frobenius trace。本章总结这些关系，并明确哪些类比是定理，哪些只是指导原则。
-
-## 依赖前置知识
-
-需要第一章的函数域和 adeles，第十三章的全局自守表示，第十八至二十一章的几何 Langlands 基本对象。需要 étale fundamental group、Frobenius trace、Grothendieck sheaf-function dictionary 和 moduli stack 的基础。本章把 sheaf-function dictionary、Grothendieck-Lefschetz trace formula 和 Drinfeld-Lafforgue 函数域结果作为外部输入。附录 S 给出 shtuka stacks、Lafforgue `GL(n)` 定理和 V. Lafforgue excursion operators 的技术接口；附录 AC 给出 Fargues-Fontaine 曲线和 local shtukas，用于说明局部几何化与全局函数域几何化的区别。
-
-收口归一化回指：本章是函数域 Galois 表示、Satake 参数和 sheaf-function dictionary 的交叉点；几何/算术 Frobenius、trace function 和 Tate twist convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、9 节。
+Sheaf--function dictionary、Grothendieck--Lefschetz trace formula 与函数域 `GL(n)` 定理均作为外部输入；shtuka 和 excursion operators 见附录 S，Fargues--Fontaine 曲线与 local shtukas 见附录 AC。几何/算术 Frobenius、trace function 与 Tate twist 约定见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、9 节。
 
 ## 22.1 函数域的双重身份
 
@@ -59,7 +53,7 @@ $$
 $$
 $\square$
 
-**收口精修 22.A（sheaf-function convention 表）.** 本章把几何对象转成函数时使用以下约定：
+**Frobenius 迹约定 22.A.** 把几何对象转成函数时采用以下约定：
 
 | 几何侧 | 函数侧 | 归一化提醒 |
 |---|---|---|
@@ -111,7 +105,7 @@ $\square$
 
 **注 22.15.** 这说明几何 Langlands 与数论 Langlands 不是两条完全分离的路线；几何方法已经成为数论端oscopy 和函数域 Langlands 的关键组成部分。
 
-## 22.7 本章小结
+## 22.7 函数域的双重语言
 
 函数域是数论和几何之间的桥梁。Adelic 双商可解释为 $\operatorname{Bun}_G$ 的点，Hecke 算子可解释为 Hecke correspondence，Hecke eigenfunctions 可由 Hecke eigensheaves 取 Frobenius trace 得到。Drinfeld 和 Lafforgue 的工作用曲线和 shtukas 证明了函数域 `GL(n)` Langlands。数域没有完全相同的几何模型，但 Shimura varieties、trace formula、perfectoid methods 和几何 Langlands 的范畴思想持续影响数域 Langlands。
 

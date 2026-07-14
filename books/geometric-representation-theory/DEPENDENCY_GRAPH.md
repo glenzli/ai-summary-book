@@ -72,22 +72,48 @@ fpqc loop quotient LG/L^+G
 
 第十二章内部证明 descent associativity、unit 和 $GL_2$ semismall dimension check；finite-support properness 与 semismall decomposition 是外部输入。第十三章内部只从 weight grading 构造 $T^\vee\to H$；fusion、fiber functor、neutral Tannaka 和 $H\simeq G^\vee$ 分别使用 `GSAT-CONV-1`、`GSAT-FIBER-1`、`TANNAKA-1`、`GSAT-1`，不得互相替代。
 
-## 5. 前沿边界
+## 5. 研究边界与已知障碍
 
 ```
-Satake, Kac-Moody localization, factorization categories
-  -> local geometric Langlands inputs
-  -> global geometric Langlands categories
+pointwise Satake/Hecke action
+  -> Ran-space factorization coherence
+  -> a global functor between fixed categorical models
+  -> full faithfulness
+  -> essential surjectivity
 ```
 
 ```
-affine Grassmannian convolution and Borel-Moore homology
-  -> BFN Coulomb branches
-  -> quantized Coulomb branches
-  -> symplectic duality interfaces
+BFN convolution algebra A
+  -> finite generation, reducedness and normality
+  -> nondegenerate Poisson tensor on the smooth locus
+  -> symplectic-singularity extension property
+  -> existence of a projective symplectic resolution
+  -> a flat quantization and category O
 ```
 
-这些依赖当前只作为研究边界，不能用于证明基础章节中的核心定理。
+```
+integral IC stalks, costalks and intersection forms
+  -> torsion-prime detection
+  -> parity sheaves and p-canonical basis
+  -> modular character or tilting formulas
+```
+
+```
+shared K_0, crystal or canonical-basis labels
+  -> an explicit comparison functor
+  -> preservation of grading, convolution and duality
+  -> coherent 2-morphisms
+  -> categorical or 2-categorical equivalence
+```
+
+```
+classical geometric points
+  -> functor of points and quotient-stack stabilizers
+  -> derived intersections and tangent complexes
+  -> singular support and base-change-compatible convolution
+```
+
+第二十三章分别在每条链的第一步给出低秩计算，再把后续箭头标为研究边界；任何尚未建立的后续箭头都不能倒用于前二十二章。
 
 ## 6. 范畴化、辛几何和 Hall 方向
 
@@ -128,4 +154,4 @@ quiver representation stacks
   -> DT and wall-crossing interfaces
 ```
 
-Nakajima、KLR/Rouquier、BLPW、BFN、CoHA 和 canonical basis 的核心定理均为外部输入。当前主体章节只建立定义、类型检查和接口，不把这些方向的深层定理倒用于基础章节。
+Nakajima、KLR/Rouquier、BLPW、BFN、CoHA 和 canonical basis 的核心定理均为外部输入。第十七至二十二章已在各自的最低秩模型中完成可直接检验的坐标、矩阵或旗标计算；这些内部计算不替代一般外部定理，也不把深层结论倒用于基础章节。

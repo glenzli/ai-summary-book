@@ -1,14 +1,8 @@
 # 第十章：局部-整体相容性和降层
 
-## 本章目标
+一个全局模形式同时产生所有素数处的局部表示，也产生一个可限制到各分解群的 Galois 表示。局部--整体相容性要求这两种局部化经过 Weil--Deligne 与局部 Langlands 后给出同一参数。降层定理利用这种相容性反向读取 residual conductor：若某些素数处的分歧在模 $\lambda$ 后消失，残余表示便可能来自更低级的 newform。Frey 曲线论证的关键正是把这种级数下降推到不存在的 $S_2(\Gamma_0(2))$。
 
-本章解释 `GL(2)/\mathbb Q` 中模形式、Galois 表示和局部表示之间的相容性，并陈述 Ribet 降层定理的接口形式。重点是说明：为什么一个来自高 level newform 的残余表示，在满足局部条件时也来自较低 level；以及该机制如何把 Frey 曲线的模性降到级 $2$。
-
-## 依赖前置知识
-
-需要第五章的局部参数，第七章的 `GL(2)` 自守表示，第八章的椭圆曲线导子，第九章的残余表示和模性。本章把局部-整体相容性、Serre 导子、Serre 模性定理和 Ribet 降层作为外部输入。附录 AD 给出本章使用的椭圆曲线约化类型、Tate algorithm、Ogg conductor formula 和 Frey 曲线局部导子接口。
-
-收口归一化回指：本章比较 $\rho_{f,\lambda}|_{G_{\mathbb Q_q}}$、Weil-Deligne 参数、局部 `GL(2)` 表示和 residual conductor；所有 Frobenius、Tate twist 和局部因子转换见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、7 节。
+本章调用第五、七、八、九章的局部参数、自守表示、导子和残余表示。局部--整体相容性、Serre 模性与 Ribet 降层均作为外部输入；椭圆曲线的约化和局部导子计算见附录 AD。所有 Frobenius、Tate twist 与局部因子转换按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、6、7 节执行。
 
 ## 10.1 局部-整体相容性的形式
 
@@ -162,7 +156,7 @@ $$
 
 **注 10.12.1.** 附录 AD.7 将 Frey 曲线的局部导子输入拆为判别式计算、奇素数处乘法约化、$v_q(\Delta_E)$ 被 $p$ 整除、以及 prime-to-$p$ residual conductor 降到 $2$ 四个步骤；命题 AD.21 只承担定理 10.11(1)--(3)、(5) 的这部分局部结论。$p$ 处 Serre weight 条件和 10.11(6) 的绝对不可约性是另外的 Frey-Serre-Ribet 外部输入，不能从 AD.21 推出。
 
-**收口精修 10.A（Frey-Ribet 使用表）.** 费马应用中本章只承担如下逻辑转换：
+**Frey--Ribet 论证的逻辑链 10.A.** 费马应用需要本章提供如下转换：
 
 | 输入 | 来源 | 本章作用 |
 |---|---|---|
@@ -190,7 +184,7 @@ $$
 
 结合第九十章的引理 $S_2(\Gamma_0(2))=0$，命题 10.13 给出 Fermat 反例不存在的核心矛盾。
 
-## 10.8 本章小结
+## 10.8 从局部相容性到降层
 
 局部-整体相容性把模形式的局部 Hecke 数据、Galois 表示的局部 ramification 和自守表示的局部分量对应起来。Ribet 降层说明，如果残余表示在某些坏素数处 ramification 降低，则它来自更低 level 的 newform。Frey 曲线恰好制造了这种导子下降：曲线本身有很多坏素数，但模 $p$ 表示的 residual conductor 删除了它们，最终降到级 $2$，与 $S_2(\Gamma_0(2))=0$ 矛盾。
 

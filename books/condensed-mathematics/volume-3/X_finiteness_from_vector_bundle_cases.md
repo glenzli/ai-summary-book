@@ -104,7 +104,8 @@ Grauert finiteness 不要求第二条，因此严格强于 X.3 的形式化约�
 1. $E^\bullet\to\mathcal F$ 是 analytic 派生范畴中的 quasi-isomorphism。
 2. $R\Gamma$ 是目标 analytic/liquid 派生范畴中的导出全局截面。
 3. 谱序列来自有界过滤或 t-structure。
-4. “有限维”应解释为离散有限维复向量空间对象。
+4. “有限维”应解释为带通常欧氏拓扑的有限维复向量空间；其凝聚化是有限自由
+   $\underline{\mathbb C}$-模，不是对底层集合赋离散拓扑。
 
 如果只在普通向量空间层面证明有限性，不能自动推出所有拓扑增强结构相容。
 

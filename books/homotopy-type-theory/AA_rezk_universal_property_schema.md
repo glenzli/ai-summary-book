@@ -1,203 +1,127 @@
-# 附录 AA：Rezk 完备化泛性质证明架构
+# 附录 AA：Weak equivalence 与 Rezk 泛性质的外部输入
 
-本附录把 R.11 的外部输入进一步拆成标准定理架构。完整逐行证明仍很长，但本附录给出足够精确的数学骨架：weak equivalence 的限制函子、自然变换的唯一下降、对象扩张的 contractible choice，以及 Rezk 完备化泛性质的归约。
+Rezk 完备化的对象可以在预层范畴中直接写出，但其泛性质要求从“每个对象仅仅有一个原像”构造整个扩张函子。命题截断禁止任意选择代表，因此真正的证明要把每个待选数据组织成可收缩类型，再取其规范中心。本附录记录这一机制和本书采用的精确外部定理；它不把省略的 transport 与代表元相容计算冒充书内证明。
 
-设 $\mathcal C,\mathcal D,\mathcal E$ 为预范畴，其中 $\mathcal D,\mathcal E$ 为单值范畴。
+固定预范畴 $\mathcal A,\mathcal B,\mathcal E$，并假设 $\mathcal E$ 是单值范畴。所有 Hom 都是集合，函数与自然变换相等使用函数外延性，essential surjectivity 使用命题截断。
 
-## AA.1 Weak equivalence
+## AA.1 Weak equivalence 与限制函子
 
-**定义 AA.1（fully faithful）.** 函子
+**定义 AA.1（fully faithful）.** 函子 $F:\mathcal A\to\mathcal B$ fully faithful，若对任意 $a,a':\mathcal A$，
 $$
-F:\mathcal C\to\mathcal D
+F_{a,a'}:\mathcal A(a,a')\to\mathcal B(Fa,Fa')
 $$
-是 fully faithful，若对任意 $x,y:\mathcal C$，函数
-$$
-F_{x,y}:\mathcal C(x,y)\to\mathcal D(Fx,Fy)
-$$
-是等价。
+是类型等价。
 
-**定义 AA.2（essentially surjective）.** 函子 $F$ 是 essentially surjective，若
+**定义 AA.2（essentially surjective）.** $F$ essentially surjective，若
 $$
-\prod_{d:\mathcal D}\left\|
-\sum_{c:\mathcal C}Fc\cong d
+\prod_{b:\mathcal B}
+\left\|
+\sum_{a:\mathcal A}Fa\cong b
 \right\|.
 $$
 
-**定义 AA.3（weak equivalence）.** $F$ 是 weak equivalence，若它 fully faithful 且 essentially surjective。
+**定义 AA.3（weak equivalence）.** $F$ 是 weak equivalence，若它 fully faithful 且 essentially surjective。第二项只给出截断后的代表存在性，不给出函数 $\mathcal B_0\to\mathcal A_0$。
 
-**注 AA.4。** 这里的 essentially surjective 是命题截断命题。不能从中全局选择每个 $d$ 的代表 $c$；这正是 Rezk 泛性质证明中需要单值目标和 contractible choice 的原因。
-
-## AA.2 限制函子
-
-**定义 AA.5（限制函子）.** 给定
+**定义 AA.4（限制函子）.** 预合成给出
 $$
-F:\mathcal C\to\mathcal D
+F^*:[\mathcal B,\mathcal E]\to[\mathcal A,\mathcal E],
+\qquad
+H\longmapsto H\circ F.
 $$
-和目标范畴 $\mathcal E$，定义
+对自然变换 $\alpha:H\Rightarrow K$，其限制分量为
 $$
-F^\ast:[\mathcal D,\mathcal E]\to[\mathcal C,\mathcal E]
-$$
-为预合成：
-$$
-F^\ast(H)\coloneqq H\circ F.
-$$
-在自然变换上，
-$$
-F^\ast(\alpha)_c\coloneqq \alpha_{Fc}.
+(F^*\alpha)_a\coloneqq\alpha_{Fa}.
 $$
 
-## AA.3 限制函子的 fully faithful 性
+## AA.2 自然变换为什么能从本质像恢复
 
-**命题 AA.6（自然变换由本质满像决定）.** 设 $F$ essentially surjective。若
-$$
-H,K:\mathcal D\to\mathcal E
-$$
-且 $\alpha,\beta:H\Rightarrow K$ 满足
-$$
-\prod_{c:\mathcal C}\alpha_{Fc}=\beta_{Fc},
-$$
-则
-$$
-\alpha=\beta.
-$$
+**引理 AA.5（书内证明）.** 若 $F$ essentially surjective，且
+$\alpha,\beta:H\Rightarrow K$ 在每个 $Fa$ 上分量相等，则 $\alpha=\beta$。
 
-**证明（证明核）。** 由附录 X.4，自然变换相等只需逐对象证明
+**证明.** 固定 $b:\mathcal B$。目标 $\alpha_b=\beta_b$ 是 Hom 集合中的路径，因而是命题；可对
+$\left\|\sum_a Fa\cong b\right\|$
+消去。取 $(a,i)$ 后，自然性给出
 $$
-\alpha_d=\beta_d.
-$$
-固定 $d:\mathcal D$。目标位于 Hom 集合
-$$
-\mathcal E(Hd,Kd)
-$$
-的路径空间中，因此是命题。故可对 essentially surjective 给出的命题截断消去，取代表
-$$
-(c,i):\sum_{c:\mathcal C}Fc\cong d.
-$$
-自然性沿同构 $i:Fc\cong d$ 给出交换方块：
-$$
-K(i)\circ\alpha_{Fc}=\alpha_d\circ H(i),
+K(i)\circ\alpha_{Fa}=\alpha_b\circ H(i),
 $$
 $$
-K(i)\circ\beta_{Fc}=\beta_d\circ H(i).
+K(i)\circ\beta_{Fa}=\beta_b\circ H(i).
 $$
-由假设 $\alpha_{Fc}=\beta_{Fc}$，两式右侧相等。再用 $H(i)$ 是同构，右消去得到
-$$
-\alpha_d=\beta_d.
-$$
-由函数外延性和 X.4 得到 $\alpha=\beta$。$\square$
+代入 $\alpha_{Fa}=\beta_{Fa}$，再与同构 $H(i)$ 的逆复合，得到
+$\alpha_b=\beta_b$。对 $b$ 使用函数外延性，并用自然性证明的命题性比较自然变换记录，即得 $\alpha=\beta$。$\square$
 
-**命题 AA.7（限制函子在 Hom 上是嵌入）.** 若 $F$ essentially surjective，则对任意
-$H,K:\mathcal D\to\mathcal E$，
-$$
-F^\ast:(H\Rightarrow K)\to(HF\Rightarrow KF)
-$$
-是 embedding。
+存在性比唯一性困难，因为要实际定义 $\bar\gamma_b$。来源论文不是先挑一个代表再证明选择无关，而是使用如下可收缩候选类型。
 
-**证明.** 若两个自然变换限制后相等，则由 AA.6 它们相等。由于自然变换类型是集合（X.5），路径纤维为命题，故是 embedding。$\square$
+**构造 AA.6（分量候选）.** 给定 $\gamma:HF\Rightarrow KF$ 与 $b:\mathcal B$，令
+$$
+\mathsf{Comp}(b)\coloneqq
+\sum_{u:\mathcal E(Hb,Kb)}
+\prod_{(a,i):\sum_{a:\mathcal A}Fa\cong b}
+\bigl(
+\gamma_a=K(i^{-1})\circ u\circ H(i)
+\bigr).
+$$
+若临时取代表 $(a_0,i_0)$，唯一可能的第一分量是
+$$
+u_0\coloneqq
+K(i_0)\circ\gamma_{a_0}\circ H(i_0^{-1}).
+$$
+另一代表 $(a_1,i_1)$ 与它之间的比较同构
+$i_1^{-1}\circ i_0:Fa_0\cong Fa_1$
+由 fully faithful 性唯一提升到 $\mathcal A$ 中；$\gamma$ 对该提升的自然性恰好证明两种公式相等。由于 Hom 是集合，其余相容证明都是命题。
 
-**命题 AA.8（限制函子的 Hom-surjectivity，证明架构）.** 若 $F$ fully faithful 且 essentially surjective，且 $\mathcal E$ 单值，则对任意
-$H,K:\mathcal D\to\mathcal E$，任意自然变换
-$$
-\gamma:HF\Rightarrow KF
-$$
-可唯一扩张为自然变换
-$$
-\bar\gamma:H\Rightarrow K
-$$
-满足 $F^\ast(\bar\gamma)=\gamma$。
+这段说明给出了来源证明的关键等式，但本书没有展开：同构提升与复合的全部 transport、$\mathsf{Comp}(b)$ 的依赖对路径、以及由其中心组成自然变换时的自然性。因此下面的存在定理明确作为外部输入。
 
-**证明架构。** 对 $d:\mathcal D$，考虑分量候选类型
-$$
-\mathsf{Comp}(d)\coloneqq
-\sum_{u:\mathcal E(Hd,Kd)}
-\prod_{(c,i:Fc\cong d)}
-  \bigl(K(i)\circ \gamma_c=u\circ H(i)\bigr).
-$$
-该类型是 contractible：
+## AA.3 限制函子定理
 
-1.  存在性可在命题截断下证明，因为“$\mathsf{Comp}(d)$ 可收缩”是命题；取代表 $(c,i)$ 后，定义
-    $$
-    u\coloneqq K(i)\circ\gamma_c\circ H(i)^{-1}.
-    $$
-2.  若取另一代表 $(c',i')$，则 $i'^{-1}\circ i:Fc\cong Fc'$。由 $F$ fully faithful 得到唯一同构 $h:c\cong c'$ 映到它。$\gamma$ 的自然性沿 $h$ 证明两种 $u$ 相等。
-3.  任意两个候选 $u,u'$ 都由其对某个代表 $(c,i)$ 的兼容方程和同构消去相等；Hom 集合性消去所有高阶证明。
+**外部输入引理 AA.7（限制函子的 fully faithful 性）.** 若 $F$ full 且 essentially surjective，则对任意预范畴 $\mathcal E$，
+$$
+F^*:[\mathcal B,\mathcal E]\to[\mathcal A,\mathcal E]
+$$
+fully faithful。
 
-取 $\mathsf{Comp}(d)$ 的中心作为 $\bar\gamma_d$。自然性对 $f:d\to d'$ 的证明同样是 Hom 集合中的路径命题，可用 essentially surjective 截断消去，把 $d,d'$ 化到 $Fc,Fc'$，再由 $\gamma$ 的自然性和 $F$ 的 fully faithful 性验证。唯一性由 AA.6。$\square$
+**来源.** Ahrens--Kapulkin--Shulman 2015, Lemmas 8.1 与 8.2。Lemma 8.1 是引理 AA.5 的来源版本；Lemma 8.2 用与构造 AA.6 等价的可收缩类型（论文公式 (8.3)）构造扩张自然变换。本书不重证后一个可收缩性论证的全部依赖路径。
 
-**定理 AA.9（限制函子 fully faithful）.** 若 $F$ 是 weak equivalence 且 $\mathcal E$ 单值，则
+**外部输入定理 AA.8（weak equivalence 的限制泛性质）.** 若 $F:\mathcal A\to\mathcal B$ 是 weak equivalence，且 $\mathcal E$ 是单值范畴，则
 $$
-F^\ast:[\mathcal D,\mathcal E]\to[\mathcal C,\mathcal E]
+F^*:[\mathcal B,\mathcal E]\to[\mathcal A,\mathcal E]
 $$
-是 fully faithful。
+是预范畴同构。
 
-**证明.** Hom 上的 injectivity 由 AA.7；surjectivity 由 AA.8；自然变换类型是集合，故二者合成给出 Hom 等价。$\square$
+**来源与精确版本.** Ahrens--Kapulkin--Shulman 2015, Theorem 8.4，DOI `10.1017/S0960129514000486`。论文先由 Lemmas 8.1--8.2 得到 fully faithful，再对每个 $G:\mathcal A\to\mathcal E$ 构造扩张对象与态射的可收缩候选类型，从而证明 essential surjectivity；单值目标把 weak equivalence 提升为预范畴同构。该定理使用论文意义下的 category，即本书的单值范畴。
 
-## AA.4 限制函子的 essential surjectivity
+**未重证边界.** 本书不承担 Theorem 8.4 中以下逐项证明：
 
-**命题 AA.10（函子沿 weak equivalence 下降，证明架构）.** 若 $F:\mathcal C\to\mathcal D$ 是 weak equivalence，$\mathcal D$ 与 $\mathcal E$ 单值，则任意
-$$
-G:\mathcal C\to\mathcal E
-$$
-都存在命题截断意义下的
-$$
-\sum_{H:\mathcal D\to\mathcal E}HF\cong_{\mathsf{nat}}G.
-$$
+1. 对象候选类型 $X_b$ 的依赖对路径与代表相容；
+2. 态射候选类型 $Y_f$ 的可收缩性；
+3. 由 $Y_f$ 的中心得到的恒等、复合与自然性；
+4. 扩张函子限制回 $\mathcal A$ 时的 transport 计算。
 
-**证明架构。** 对每个 $d:\mathcal D$，定义扩张对象候选类型
-$$
-\mathsf{Obj}(d)\coloneqq
-\sum_{e:\mathcal E}
-\prod_{(c,i:Fc\cong d)}G(c)\cong e
-$$
-并附加代表相容性。与 AA.8 相同，该类型是 contractible：取代表 $(c,i)$ 时令 $e\coloneqq G(c)$；代表变换由 fully faithful 把 $\mathcal D$ 中的同构拉回 $\mathcal C$，再由 $G$ 送到 $\mathcal E$。因为 $\mathcal E$ 单值，同构给出对象路径，所以 contractible choice 可用于定义 $H(d)$，且不需要从 essentially surjective 截断中作全局选择。
+因此，AA.8 是精确外部输入，不是已经在本书内部构造出的定理，也不能因列出证明机制而改变身份。
 
-对态射 $f:d\to d'$，用代表 $(c,i)$、$(c',i')$ 把 $f$ 转成
-$$
-Fc\to Fc'
-$$
-的态射，再由 fully faithful 唯一提升为
-$$
-c\to c',
-$$
-定义 $H(f)$ 为其 $G$-像并沿对象路径重写。函子律目标在 Hom 集合路径中，故可用截断消去和 Hom 集合性验证。
+## AA.4 应用于 Yoneda 本质像
 
-最后，$HF\cong_{\mathsf{nat}}G$ 在对象 $c$ 处由 $Fc$ 的代表 $(c,\mathsf{id})$ 给出；自然性由构造的态射部分计算得到。$\square$
-
-**定理 AA.11（限制函子是等价）.** 若 $F:\mathcal C\to\mathcal D$ 是 weak equivalence，$\mathcal D,\mathcal E$ 单值，则
+**命题 AA.9（书内构造的输入核对）.** 对附录 R 的
 $$
-F^\ast:[\mathcal D,\mathcal E]\to[\mathcal C,\mathcal E]
+\eta_{\mathcal C}:\mathcal C\to\widehat{\mathcal C},
 $$
-是范畴论意义下的 weak equivalence；由于函子范畴单值（X.9），它给出对象类型层面的等价。
+目标 $\widehat{\mathcal C}$ 是单值范畴，且 $\eta_{\mathcal C}$ fully faithful 并 essentially surjective。
 
-**证明.** Fully faithful 由 AA.9；essentially surjective 由 AA.10。函子范畴 $[\mathcal D,\mathcal E]$ 和 $[\mathcal C,\mathcal E]$ 的单值性由 X.9，故 weak equivalence 可视为本书所需的“合适意义下等价”。$\square$
+**证明.** 单值性是 R.7，fully faithful 是 R.9，essential surjectivity 是 R.10。最后一项只向命题截断目标消去“仅仅可表”的证明，故不选择全局代表。$\square$
 
-## AA.5 Rezk 完备化泛性质
-
-**定理 AA.12（Rezk 完备化泛性质，证明架构）.** 设
+**外部输入推论 AA.10（Rezk 完备化泛性质）.** 对任意单值范畴 $\mathcal E$，
 $$
-\eta:\mathcal C\to\widehat{\mathcal C}
+\eta_{\mathcal C}^*:
+[\widehat{\mathcal C},\mathcal E]
+\longrightarrow
+[\mathcal C,\mathcal E]
 $$
-为附录 R 的 Yoneda 本质像 Rezk 嵌入。对任意单值范畴 $\mathcal E$，预合成
-$$
-\eta^\ast:
-[\widehat{\mathcal C},\mathcal E]\to[\mathcal C,\mathcal E]
-$$
-是等价。
+是预范畴同构。
 
-**证明架构。** 附录 R.8 证明 $\eta$ fully faithful；R.10 证明 $\eta$ essentially surjective；R.7 证明 $\widehat{\mathcal C}$ 单值。由 AA.11 应用于
-$$
-F\coloneqq\eta,\qquad
-\mathcal D\coloneqq\widehat{\mathcal C},
-$$
-得到 $\eta^\ast$ 是等价。$\square$
+**证明路线（外部输入）.** 将 AA.9 的 weak equivalence
+$F\coloneqq\eta_{\mathcal C}$
+代入外部输入定理 AA.8。来源论文 Theorem 8.5 还直接构造同一个 Yoneda 本质像 Rezk 完备化；其 universes 与 locally-small 假设见论文 §8 和 Remark 8.6。$\square$
 
-## AA.6 当前验证边界
+## AA.5 读者应保留的区分
 
-本附录把 R.11 从单句外部输入降为可审查的证明架构。仍未完全逐行书内化的是 AA.8 和 AA.10 中 contractible choice 的全部 transport 计算，尤其是：
-
-1.  不同代表 $(c,i)$ 与 $(c',i')$ 的相容路径；
-2.  fully faithful 提升同构与函子 $G$ 的相容；
-3.  单值目标中对象路径 transport 对 Hom 的具体作用；
-4.  函子律和自然性证明分量的 Hom 集合性消去。
-
-这些正是 Rezk completion 逐项证明中需要大量相干处理的部分。本书后续若扩写，应优先展开 AA.8-AA.10 的 transport 与代表元相容计算，而不是重新发明 Rezk 完备化。
+Rezk 完备化对象、继承的 Hom、单值性以及嵌入的 weak-equivalence 性质都已在附录 R 书内给出。只有从任意 weak equivalence 向单值目标扩张函子的普遍机制采用外部输入 AA.8。这个分界使命题截断的作用清楚可见：证明“某个分量唯一”时可以消去截断；定义整个函子时，必须先证明候选类型可收缩，不能暗中选择代表。

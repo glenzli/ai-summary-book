@@ -1,12 +1,15 @@
 # 第七章：Smooth/proper ambidexterity、duality 与 trace
 
-## 本章目标
+一个 smooth proper `S`-概形同时具有两种有限性：smoothness 提供切丛和 Thom
+扭曲，properness 允许忘掉“紧支撑”这一限定。正是二者的结合，使
+`\Sigma_T^\infty X_+` 拥有对偶，并使恒等自映射产生取值于
+`\operatorname{End}(\mathbb 1_S)` 的 Euler characteristic。若只保留 smooth 或
+proper 中的一项，这条对偶性链就会在不同位置断裂。
 
-本章解释六操作和 purity 如何产生 ambidexterity、duality 与 trace。这里的核心原则是：properness 允许 `f_!` 与 `f_*` 比较，smoothness 允许 `f^!` 与 `f^*` 通过切丛 Thom twist 比较。二者合在一起给出 smooth proper 对象的对偶性和 Euler characteristic。
-
-## 依赖前置知识
-
-需要第五章的 proper compatibility、第六章的 smooth purity、closed symmetric monoidal stable categories、dualizable objects、trace、smooth morphisms、proper morphisms 和 Thom twists。
+本章从 `f_\sharp\dashv f^*` 出发，用第六章的 smooth purity 识别
+`f_!`，再用第五章的 proper compatibility 换成 `f_*`。随后在一般闭对称幺半稳定
+范畴中回顾 dualizable object 与 trace，最后把公式应用到 motivic 谱。这样可以清楚
+地区分 additive transfer、trace 与第十七章的 multiplicative norm。
 
 ## 7.1 Smooth left adjoint
 
@@ -178,7 +181,7 @@ $$
 
 **证明.** additive transfer 来自 stable category 中的伴随和六操作，例如 `f_*, f_\sharp`；它保持加法结构并与直和/余积相容。norm 是对称幺半或 multiplicative 方向的 functor，目标是乘法转移。一个 functor 同时保留加法和乘法需要额外分配律和 normed structure；这些不由六操作伴随自动给出。`\square`
 
-## 7.6 本章小结
+## 7.6 Ambidexterity 产生的对偶与迹
 
 Smoothness 给出 `f_\sharp`；smooth separated 情形由 purity 推出
 `f_!\simeq f_\sharp\Sigma^{-T_f}`。Properness 给出

@@ -1,12 +1,6 @@
 # 第九章：椭圆曲线、复环面与 SYZ 的第一模型
 
-## 本章目标
-
-本章把 HMS 的第一个标准例子写成可检查的数据包：椭圆曲线与其镜像二维环面。重点是对象字典、morphism 计算、斜率与次数、三角形计数和 theta 函数的作用。完整证明作为外部输入登记。
-
-## 依赖前置知识
-
-需要前八章的增强范畴和 Fukaya 范畴语言。需要知道椭圆曲线、线丛的次数和二维环面的基本拓扑。
+椭圆曲线是少数能把镜像字典的三层结构同时画出来的例子：向量丛的 rank/degree 变成环面上圆的同调斜率，Ext 的 Euler 特征变成交数，而 theta 函数的乘法系数来自平坦环面中的三角形面积。只匹配第一层还只是对象命名，只匹配前两层仍未看到复合；第三层才触及范畴结构。本章在前八章的增强语言中逐层完成这些计算，并把完整 Polishchuk--Zaslow 等价诚实地保留为外部输入。所需几何背景仅是二维环面、椭圆曲线和线丛次数。
 
 ## 9.1 镜像数据
 
@@ -52,13 +46,19 @@ $$
 $$
 横截位置下几何交点数为该 determinant 的绝对值。证毕。
 
-**命题 9.8.** 在横截且无 disk bubbling 的二维 exact-local 模型中，
+**命题 9.8.** 在横截、无 disk bubbling 且取平直代表元的二维环面模型中，
 $$
 \dim HF^\ast(L_{r,d},L_{r',d'})=|rd'-r'd|
 $$
 在适当 grading 下成立。
 
-**证明路线（外部输入）.** Floer cochain 由命题 9.7 的交点生成。二维直线环面模型中可选择使差分消失或按 grading 分离的情形；更一般情形需计算 strips 并使用 continuation。完整陈述依赖椭圆曲线 HMS 文献中的模型选择。证毕。
+**证明.** 由命题 9.7，Floer cochain complex 有 $|rd'-r'd|$ 个生成元。
+两条平直圆的所有横截交点具有相同的局部交号；选定两条 branes 的 grading
+后，它们因而具有相同的模 $2$ 次数。Floer 微分次数为 $1$，故在这个
+$\mathbb Z/2$-分次 complex 上必为零。无 disk bubbling 假设保证不存在改变
+该链模型的 obstruction 项，于是 $HF^\ast=CF^\ast$，维数等于生成元数。
+若改用非平直 Hamiltonian 扰动，则还需调用定理 3.18 的 continuation
+quasi-isomorphism，结论仍保持。证毕。
 
 **解释 9.9.** B-side 上，stable bundles $V_{r,d}$、$V_{r',d'}$ 的 Ext 维数由 Riemann-Roch 和稳定性控制：
 $$
@@ -76,7 +76,7 @@ $$
 
 **解释 9.11.** 在平坦环面上，holomorphic triangles 可提升到 $\mathbb R^2$ 中的仿射三角形。其面积给出 Novikov 权重，按所有 lift 求和得到 theta series。这与 B-side 椭圆曲线上的 theta 函数乘法相匹配。
 
-**外部输入定理 9.12（Polishchuk-Zaslow 椭圆曲线 HMS）.** 椭圆曲线与镜像二维环面之间存在 HMS 等价，且对象、morphisms 和乘法由斜率 Lagrangians、stable bundles 与 theta 函数乘法对应。  
+**外部输入定理 9.12（Polishchuk-Zaslow 椭圆曲线 HMS）.** 椭圆曲线与镜像二维环面之间存在 HMS 等价，且对象、morphisms 和乘法由斜率 Lagrangians、stable bundles 与 theta 函数乘法对应。
 来源：Polishchuk-Zaslow, *Categorical Mirror Symmetry: The Elliptic Curve*；后续由 Kreussler 和 Polishchuk 等工作补强不同增强和横截限制。
 
 ## 9.5 SYZ 视角
@@ -89,9 +89,7 @@ $$
 
 **解释 9.14.** 在椭圆曲线例子中，Lagrangian section 对应 line bundle，fiber 上的 local system 参数对应点或平移数据。这个模型是高维 SYZ 的最低维影子。
 
-## 本章小结
-
-椭圆曲线 HMS 是最早可计算的标准例子。它把 stable bundles 的 rank/degree 与 Lagrangian circles 的斜率联系起来，把 Ext 维数与交点数联系起来，把 theta 函数乘法与 holomorphic triangle 计数联系起来。完整等价仍是外部输入定理，但本章给出了其数据包和必要计算。
+行列式 $rd'-r'd$ 同时控制 B-side Euler 特征与 A-side 有向交数，平坦环面中三角形的 Novikov 和又与 theta 乘法相接，这三层匹配解释了椭圆曲线 HMS 为何远强于一张对象表。外部输入定理 9.12 承担把这些局部计算组织成增强等价的责任；SYZ 对偶圆纤维则提示，在高维情形中对象字典会受到奇异纤维与圆盘修正的干扰。
 
 ## 练习
 

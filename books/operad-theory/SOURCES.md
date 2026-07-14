@@ -59,14 +59,14 @@
 
 ## 几何应用与 factorization
 
-- Kevin Costello and Owen Gwilliam, *Factorization Algebras in Quantum Field Theory*, Volumes 1-2. 用途：factorization algebra 的系统来源和量子场论应用。
+- Kevin Costello and Owen Gwilliam, *Factorization Algebras in Quantum Field Theory*, Volumes 1-2. 用途：prefactorization 乘法、Weiss cosheaf 条件、multiplicativity 与量子场论应用。作者稿链接：<https://people.math.umass.edu/~gwilliam/vol1may8.pdf>。
 - David Ayala and John Francis, “Factorization homology of topological manifolds,” *Journal of Topology*, 2015; arXiv:1206.5522v6. 用途：AF-1 excision、AF-2 圆周 Hochschild 计算、AF-3 homology-theory characterization、AF-4 boundary version，以及 AF-5/Proposition 5.1 的 commutative coefficient 公式 $\int_MA\simeq M\otimes A$。链接：<https://arxiv.org/abs/1206.5522>。
 - David Ayala, John Francis, and Hiro Lee Tanaka, “Factorization homology of stratified spaces,” 2010s. 用途：stratified factorization homology 和几何 gluing。
 - Paul Seidel, *Fukaya Categories and Picard-Lefschetz Theory*, European Mathematical Society, 2008. 用途：Fukaya categories 的 $A_\infty$ 结构和 Picard-Lefschetz 应用。
 - Kenji Fukaya, Yong-Geun Oh, Hiroshi Ohta, and Kaoru Ono, *Lagrangian Intersection Floer Theory: Anomaly and Obstruction*, AMS/IP, 2009. 用途：Floer theory、obstructions 和 Fukaya category 构造。
 - Sheel Ganatra, John Pardon, and Vivek Shende, “Covariantly functorial wrapped Floer theory on Liouville sectors,” 2010s. 用途：wrapped Fukaya categories、sectorial descent 和几何 gluing。
 
-## 2025-2026 研究边界
+## 近期研究资料与边界
 
 以下资料只作为研究边界入口。除非后续章节完成独立验证，不得把其中新结果写成正文定理。
 
@@ -88,7 +88,7 @@
 - [INTERNAL_NUMBERING_AND_CROSSREF_AUDIT.md](INTERNAL_NUMBERING_AND_CROSSREF_AUDIT.md) 不新增数学定理；它审计第一至第七章编号和内部交叉引用是否可稳定使用。
 - [LABEL_LEDGER_CH01_07.md](LABEL_LEDGER_CH01_07.md) 不新增数学定理；它把第一至第七章已编号声明登记为稳定交叉引用 label。
 - [LABEL_LEDGER_CORE_APPENDICES.md](LABEL_LEDGER_CORE_APPENDICES.md) 不新增数学定理；它把核心附录 A/B/H/K/P/U/X 的已编号声明登记为稳定交叉引用 label。
-- [LABEL_LEDGER_CH08_21.md](LABEL_LEDGER_CH08_21.md) 不新增数学定理；它把第八至第二十一章的 416 个正式编号项登记为稳定交叉引用 label。
+- [LABEL_LEDGER_CH08_21.md](LABEL_LEDGER_CH08_21.md) 不新增数学定理；它把第八至第二十一章的 420 个正式编号项登记为稳定交叉引用 label。
 - [LABEL_LEDGER_REMAINING_APPENDICES.md](LABEL_LEDGER_REMAINING_APPENDICES.md) 不新增数学定理；它把剩余附录 C/D/E/F/G/I/J/L/M/N/O/Q/R/S/T/V/W/Y/Z 的 398 个正式编号项登记为稳定交叉引用 label。
 - [CROSSREF_REWRITE_AUDIT.md](CROSSREF_REWRITE_AUDIT.md) 不新增数学定理；它记录两轮散文交叉引用到编号引用的替换。
 - [PUBLICATION_CLOSURE_MATRIX.md](PUBLICATION_CLOSURE_MATRIX.md) 不新增数学定理；它定义核心可读教材态、基本完本严格草稿态和最终出版态，并记录当前完成状态。
@@ -128,7 +128,7 @@
 - 第十七章的 dendroidal inner Kan 条件、normal monomorphisms、inner anodynes 和 operadic model structure，主要依赖 Moerdijk-Weiss 与 Cisinski-Moerdijk；strict nerve unique fillers 已由 MW-4 定位，operadic model structure 已由 CM-1--CM-4 定位，weak equivalences 和 nerve/model comparison 仍作为外部输入。
 - 第十八章的 Lurie-style infinity-operads、inert/active maps、symmetric monoidal infinity-categories 和 algebras over infinity-operads，主要依赖 Lurie、Heuts、Hinich 和 Heuts-Hinich-Moerdijk；category of operators nerve 已由 HA-OP-1--HA-OP-3 定位，dendroidal-Lurie 模型比较已由 HHM-1--HHM-5 定位，coCartesian fibration 技术仍按 Lurie/Hinich 外部输入处理。
 - 第十九章的 Dwyer-Kan localization、模型范畴的 underlying infinity-category、straightening/unstraightening、monoidal localization 和 operadic localization，主要依赖 Dwyer-Kan、Barwick-Kan、Hovey、Hirschhorn、Lurie、Hinich、Pavlov-Scholbach、White 和 White--Yau；ordinary straightening 由 HTT-1 定位，underlying symmetric monoidal infinity-category 由 HA-MON-1--HA-MON-2 定位，Bousfield localization preservation 由 WHT-1--WHT-4 与 WY-1--WY-3 定位，Dwyer--Kan/coherent nerve 由 DKR-1--DKR-7 定位，strict-to-infinity algebra comparison 由 PSAR-5--PSAR-6 与 HA-ALG-1--HA-ALG-3 定位，spaces-valued operadic straightening 由 PRA-1--PRA-5 作 P1/preprint locator 定位。
-- 第二十章的 factorization algebras、factorization homology、Dunn additivity、Fukaya categories 和几何 gluing，主要依赖 Costello-Gwilliam、Ayala-Francis、Lurie、Seidel、Fukaya-Oh-Ohta-Ono 和 Ganatra-Pardon-Shende；excision/圆周/边界/交换系数基础版本已由 AF-0--AF-5 定位，Dunn additivity 已由 DUNN-1 定位，locally constant factorization algebra、Fukaya category 构造和几何 gluing 定理仍作为外部几何边界。
+- 第二十章的 factorization algebras、factorization homology、Dunn additivity、Fukaya categories 和几何 gluing，主要依赖 Costello-Gwilliam、Ayala-Francis、Lurie、Seidel、Fukaya-Oh-Ohta-Ono 和 Ganatra-Pardon-Shende；excision/圆周/边界/交换系数基础版本已由 AF-0--AF-5 定位，Dunn additivity 已由 DUNN-1 定位，locally constant multiplicative factorization algebra 与 $E_n$ 的比较、Fukaya category 构造和几何 gluing 定理仍作为外部几何边界。
 - 附录 A 的 universes、finite set groupoids、symmetric group actions、coinvariants 和 coends 使用标准集合论、范畴论和表示论事实；Maschke 定理作为外部基础事实。
 - 附录 B 的分块、代入乘积、arity coinvariants 公式和树代入主要依赖第一至第四章已采用的 Markl-Shnider-Stasheff、Loday-Vallette 和有限集群胚口径；证明在附录中直接给出。
 - 附录 C 的模型范畴、weak factorization systems、Quillen adjunctions、Quillen equivalences 和 monoidal model categories 主要依赖 Quillen、Hovey 和 Hirschhorn；homotopy category 计算和 Quillen equivalence 判别作为标准外部基础事实。

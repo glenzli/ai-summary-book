@@ -1,18 +1,8 @@
 # 第十五章：函子性原理
 
-## 本章目标
+Langlands 对应若只是一组孤立双射，就无法解释 base change、对称幂提升或不同群之间的转移。函子性原理指出，真正控制这些操作的是 L 群同态 $\xi:{}^LH\to{}^LG$：它把 $H$ 的局部参数推向 $G$，并应在全局上把自守表示 $\sigma$ 转移为 $\Pi$。弱转移只要求几乎所有非分歧 Satake 参数相容，强转移则要求每个位置的局部参数相容；二者之间的差距正是许多深定理所在。
 
-本章系统表述 Langlands 函子性原理（functoriality principle）。第十一章定义了 L 同态
-$$
-\xi:{}^LH\to{}^LG,
-$$
-第十二章说明局部参数可由 $\xi$ 推前，第十三、十四章说明当目标为 `GL(n)` 时可借助强重数一和 converse theorem 检测全局自守性。本章把这些接口组织为全局转移问题：给定 $H$ 的自守表示 $\sigma$，是否存在 $G$ 的自守表示 $\Pi$，使得几乎所有局部 Satake 参数由 $\xi$ 推前得到？
-
-## 依赖前置知识
-
-需要第十一章的 L 群和 L 同态，第十二章的局部 L-packet，第十三章的全局自守表示和 L 函数，第十四章的 `GL(n)` converse theorem。需要知道 base change、automorphic induction、isobaric sum、Rankin-Selberg L 函数和 trace formula 的基本接口。本章把一般函子性、base change、automorphic induction、若干 symmetric power lifts、tensor product lifts 和 endoscopic transfer 的已知情形作为外部输入或猜想。
-
-收口归一化回指：本章的函子性相容性以非分歧 Satake 参数和 L 群表示的局部因子为检测对象；相关 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
+本章在前四章的一般群语言上讨论 base change、automorphic induction、symmetric powers、tensor products 与 endoscopy，并明确哪些情形已知、哪些仍是猜想。当目标是 `GL(N)` 时，强重数一和 converse theorem 提供特殊工具。非分歧 Satake 参数及 L 因子的检测约定见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
 
 ## 15.1 从 L 同态到局部参数推前
 
@@ -296,7 +286,7 @@ Galois-自守相容把 $s(\pi_v)$ 与 $\rho_{\pi,\ell}(\operatorname{Frob}_v)$ �
 
 **注 15.30.** 命题 15.29 是条件命题。数域上并非每个自守表示都已知有 Galois 表示；也并非每个 L 同态都已知保持代数性、纯性和局部 Hodge-Tate 条件。
 
-## 15.10 本章小结
+## 15.10 L 群同态与自守转移
 
 函子性原理说：自守表示之间的自然转移应由 L 群同态控制，而不是由原群之间的同态控制。弱转移由几乎所有 Satake 参数决定；强转移要求每个局部参数相容。目标为 `GL(N)` 时，强重数一保证弱转移唯一，converse theorem 可把候选局部数据提升为全局自守表示。Base change、automorphic induction、symmetric powers、tensor products、exterior powers 和 endoscopy 都是函子性的具体面向。一般函子性仍是 Langlands 纲领的核心开放问题之一。
 

@@ -42,7 +42,7 @@
 | Black branes 与 entropy | [第 17 章](17_black_branes_and_entropy.md) | [习题解答](SOLUTIONS.md) |
 | AdS/CFT | [第 18 章](18_ads_cft.md) | [定理索引](THEOREM_INDEX.md) |
 | Flux compactification 与 landscape | [第 19 章](19_flux_compactification_and_landscape.md) | [资料源映射](REFERENCE_MAP.md) |
-| 外部接口边界 | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) | [内容收口审定](CONTENT_CLOSURE_AUDIT.md) |
+| D-brane/QFT、指标、曲线计数与模性接口 | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) | [资料源](SOURCES.md) |
 
 ## 3. 定理状态索引
 
@@ -57,13 +57,13 @@
 
 ## 4. 习题索引
 
-全部 68 道正文习题都在 [EXERCISE_INDEX.md](EXERCISE_INDEX.md) 中登记，并在 [SOLUTIONS.md](SOLUTIONS.md) 中给出核心解答。若以后新增习题，必须同步更新这两个文件。
+全部 70 道正文习题都在 [EXERCISE_INDEX.md](EXERCISE_INDEX.md) 中登记，并在 [SOLUTIONS.md](SOLUTIONS.md) 中给出核心解答。若以后新增习题，必须同步更新这两个文件。
 
 ## 5. 严格性边界速查
 
 | 需要区分的层级 | 主位置 | 台账 |
 |---|---|---|
-| Polyakov metric equation、conformal-gauge constraint、量子物理态条件 | [第 2 章](02_classical_bosonic_string.md)、[第 4 章](04_canonical_quantization_bosonic_string.md) | [定理索引](THEOREM_INDEX.md) 2.6、2.9A、4.4C |
+| Polyakov metric equation、conformal-gauge constraint、离壳域与壳上物理态 | [第 2 章](02_classical_bosonic_string.md)、[第 4 章](04_canonical_quantization_bosonic_string.md) | 第 4 章定义 4.4B--C、4.8；[定理索引](THEOREM_INDEX.md) 2.6、2.9A、4.9 |
 | 有限能 operator domain、Virasoro/ghost central term、BRST complex | [第 3--5 章](03_worldsheet_cft.md) | [归一化表](NORMALIZATION_TABLE.md) 第 6、9 节 |
 | Polyakov/FP path integral 与 determinant regulator | [第 5 章](05_path_integral_brv_quantization.md) | [资料源](SOURCES.md) `POLY81` |
 | Reduced amplitude、绝对 normalization、解析延拓与 factorization | [第 6 章](06_vertex_operators_and_string_scattering.md) | [归一化表](NORMALIZATION_TABLE.md) 第 8、9 节 |
@@ -73,3 +73,4 @@
 | Calabi--Yau 定义、holonomy、moduli、KK truncation | [第 13 章](13_calabi_yau_compactification.md) | [资料源映射](REFERENCE_MAP.md) |
 | D1-D5 charge convention、普通 Cardy、K3 elliptic genus/fixed-index Jacobi 渐近、index/绝对简并边界与 quantum entropy | [第 17 章](17_black_branes_and_entropy.md) | [定理索引](THEOREM_INDEX.md) 17.7--17.12A、[资料源](SOURCES.md) `SW99`、`DMVV97`、`EZ85/DMZ12` |
 | D3 supergravity input、AdS PDE calculation、GKPW conjecture | [第 18 章](18_ads_cft.md) | [定理索引](THEOREM_INDEX.md) 18.1--18.12 |
+| 拉伸弦/Higgs 字典、Dirac index、A-model 生成函数与 elliptic-genus 模性 | [第 20 章](20_interfaces_with_qft_geometry_number_theory.md) | [定理索引](THEOREM_INDEX.md) 20.2--20.17 |

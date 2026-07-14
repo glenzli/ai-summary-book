@@ -1,12 +1,6 @@
-# 第十二章：计算工具、Adams-Novikov 与机器可核查表
+# 第十二章：计算工具、Adams--Novikov 与谱序列核验
 
-## 本章目标
-
-本章给出 chromatic homotopy theory 的计算工具箱：Adams-Novikov spectral sequence、$BP_*BP$-comodules、Morava change of rings、homotopy fixed point spectral sequence、Tate spectral sequence 和计算校验表。本章强调严格输入和输出，不把谱序列页面直接等同于同伦群。
-
-## 依赖前置知识
-
-需要第二章的 $BP$、第三章的 $E_n$、第六章的 Morava descent 和附录 B 的谱序列约定。Hopf algebroid 和 comodule 的基础在附录 C 展开。
+前十一章说明了色层对象为何存在，真正计算稳定 stems 时却要在多种谱序列之间传递：Adams--Novikov 从 $BP_*BP$-comodule 开始，change of rings 把局部代数转向 stabilizer group，homotopy fixed point 与 Tate 谱序列再处理 descent 和群作用。任何一次转译都可能引入 differential、extension 或收敛问题，所以一张 $E_2$ 页面从来不等于最终同伦群。本章以一个可复核的计算流程组织这些工具，说明输入对象、分次、收敛口径和交叉校验分别放在哪里。第二章的 $BP$、第三章的 $E_n$、第六章的 descent 与附录 B/C 的谱序列和 Hopf algebroid 约定贯穿全章。
 
 ## 12.1 Adams-Novikov spectral sequence
 
@@ -78,9 +72,9 @@ $$
 
 **说明 12.15.** Tate vanishing 是 redshift、cyclotomic spectra 和 higher semiadditivity 中反复出现的技术点，但每次 vanishing 都有独立假设。
 
-## 12.6 机器可核查表
+## 12.6 可复现的计算记录
 
-**检查表 12.16.** 任何 chromatic 计算表进入本书正文前必须记录：
+**数据约定 12.16.** 一次可复现的 chromatic 计算至少记录：
 
 1. 素数 $p$；
 2. 高度 $n$；
@@ -95,9 +89,9 @@ $$
 
 **警告 12.17.** 机器计算可以降低表格错误率，但不能替代数学证明。软件输出必须绑定到明确的 chain complex、resolution 或 spectral sequence model。
 
-## 12.7 从对象到稳定 stems 的计算流程
+## 12.7 从对象到稳定 stems
 
-**流程 12.18.** 对谱 $X$ 计算 $\pi_*X$ 的 Adams-Novikov 型流程如下：
+**方法 12.18.** 对谱 $X$ 进行 Adams--Novikov 型计算时，逻辑次序如下：
 
 1. 选择素数 $p$ 和 completion；
 2. 计算或引用 $BP_*X$ 作为 $BP_*BP$-comodule；
@@ -116,9 +110,22 @@ $$
 
 **证明.** $E_\infty$ 页给出的是 filtered group 的 associated graded。不同 filtered groups 可以有同一个 associated graded，例如 $\mathbb Z/4$ 与带两层 filtration 的 $\mathbb Z/2\oplus\mathbb Z/2$ 都可给出两个 $\mathbb Z/2$ graded pieces。因此 extension data 必需。证毕。
 
+**例 12.19A（同一 associated graded 的两种提升）.** 对
+$A=\mathbb Z/4$ 取过滤
+$$
+F^0A=A,\qquad F^1A=2A,\qquad F^2A=0;
+$$
+对 $B=\mathbb Z/2\oplus\mathbb Z/2$ 取
+$$
+F^0B=B,\qquad F^1B=0\oplus\mathbb Z/2,\qquad F^2B=0.
+$$
+两者的 $\operatorname{gr}^0$ 与 $\operatorname{gr}^1$ 都是
+$\mathbb Z/2$，但 $A$ 含四阶元素而 $B$ 没有。因此即使所有 differential
+已经确定，若不解这一加法 extension，谱序列仍不能区分目标群是 $A$ 还是 $B$。
+
 ## 12.8 与 chromatic tower 的交叉校验
 
-**规则 12.20.** 若某个 Adams-Novikov 计算声称发现高度 $n$ 周期族，应检查：
+**判据 12.20.** 若某个 Adams--Novikov 计算声称发现高度 $n$ 周期族，应检查：
 
 1. 该族在 $K(n)_*$ 或 $E_n$-based descent 中是否可见；
 2. 低高度 $K(m)$ 对 $m<n$ 是否消失或变成 torsion；
@@ -127,9 +134,9 @@ $$
 
 **警告 12.21.** 命名一个族为 $v_n$-periodic 不等于证明它由某个 finite type $n$ spectrum 的 $v_n$ self-map 产生。
 
-## 本章小结
+## 12.9 从谱序列页面到稳定 stems
 
-Chromatic 计算的共同模式是：用 $BP$ 和 formal group moduli 组织全局信息，再用 Morava stabilizer group 和 descent 研究单一高度。Adams-Novikov、chromatic spectral sequence、change of rings 和 homotopy fixed point spectral sequence 是核心工具。严格教材必须记录每个谱序列的收敛、hidden extensions 和模型假设。
+Chromatic 计算的共同模式是：用 $BP$ 和 formal group moduli 组织全局信息，再用 Morava stabilizer group 和 descent 研究单一高度。Adams--Novikov、chromatic spectral sequence、change of rings 和 homotopy fixed point spectral sequence 是核心工具。一个完整计算必须交代每个谱序列的收敛、hidden extensions 和模型假设。
 
 ## 练习
 

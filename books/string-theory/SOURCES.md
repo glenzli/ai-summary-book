@@ -35,6 +35,10 @@
 
 | 代码 | 原始资料 | 本书用途 |
 |---|---|---|
+| POL95/DKPS96 | J. Polchinski, “Dirichlet-Branes and Ramond-Ramond Charges,” *Phys. Rev. Lett.* **75** (1995), 4724–4727, hep-th/9510017；M. R. Douglas, D. Kabat, P. Pouliot and S. H. Shenker, “D-branes and Short Distances in String Theory,” *Nucl. Phys. B* **485** (1997), 85–127, hep-th/9608024 | 20.2 的拉伸开弦质量、brane separation/worldvolume gauge-theory 接口 |
+| AS68 | M. F. Atiyah and I. M. Singer, “The Index of Elliptic Operators: III,” *Ann. Math.* **87** (1968), 546–604 | 外部输入 20.6 的 twisted Dirac index |
+| GV98 | R. Gopakumar and C. Vafa, “M-Theory and Topological Strings--I, II,” hep-th/9809187、hep-th/9812127 | 20.8--20.10 的 genus-zero BPS invariants 与 multiple-cover 组织 |
+| WIT87 | E. Witten, “Elliptic Genera and Quantum Field Theory,” *Commun. Math. Phys.* **109** (1987), 525–536 | 外部输入 20.12 的 supersymmetric elliptic genus、index 与 modularity 接口 |
 | `POLY81` | A. M. Polyakov, “Quantum Geometry of Bosonic Strings,” *Phys. Lett. B* **103** (1981), 207–210 | 5.1、5.12 的 gauge-fixed genus expansion；路径积分仍按标准物理口径 |
 | `GT72` | P. Goddard and C. B. Thorn, “Compatibility of the Dual Pomeron with Unitarity and the Absence of Ghosts in the Dual Resonance Model,” *Phys. Lett. B* **40** (1972), 235–238；R. C. Brower, “Spectrum-Generating Algebra and No-Ghost Theorem for the Dual Model,” *Phys. Rev. D* **6** (1972), 1655–1662 | 外部输入 4.10 的非零动量 old-covariant physical quotient |
 | `KO83/FGZ86` | M. Kato and K. Ogawa, “Covariant Quantization of String Based on BRS Invariance,” *Nucl. Phys. B* **212** (1983), 443–460；I. B. Frenkel, H. Garland and G. J. Zuckerman, “Semi-Infinite Cohomology and String Theory,” *Proc. Natl. Acad. Sci. USA* **83** (1986), 8442–8446 | 4.10 的非零动量 relative BRST no-ghost/cohomology 版本；不覆盖任意 ghost number |

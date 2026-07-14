@@ -1,12 +1,6 @@
 # 第十三章：Warsaw basis 的维数六算符表
 
-## 本章目标
-
-本章把第七章中只作为外部输入引用的 Warsaw basis 展开为可读的算符目录。为保持第一版可审查，本章采用 baryon number 守恒、保留 flavor 指标但不逐项展开 flavor 对称计数的口径。
-
-## 依赖前置知识
-
-需要第五章的标准模型场表示、第七章的 Warsaw basis 分类和附录 A 的场强约定。
+实际匹配得到一个颜色、弱同位旋和 flavor 张量后，必须能在一套明确的独立算符中找到它的坐标。Warsaw basis 提供的正是这种索引系统，但“59”只有在 baryon number 守恒、不展开 flavor，且每个非自伴 dagger pair 只计一个代表时才成立。这里按 $X^3$、$H^6$、$H^4D^2$、$X^2H^2$、双费米子和四费米子依次列出维数六结构，并始终显示规范指标与 flavor 指标的收缩方式。读表时应把它与前面的商空间定义合用：目录中的对象是 IBP、领先 EOM、Bianchi 与四维 Fierz 约化后的代表，不是任意局域单项式；用于 Hermitian 拉氏量时，非自伴项还必须连同共轭系数和 dagger 一起恢复。
 
 ## 13.1 记号
 
@@ -25,6 +19,8 @@ iH^\dagger\tau^I D_\mu H-i(D_\mu H)^\dagger\tau^I H.
 $$
 
 **约定 13.3（Hermitian conjugates）.** 本章列表对非 Hermitian 算符只列一个 chirality/flavor 方向；拉氏量中应加入 Hermitian conjugate，Wilson 系数与其共轭按 flavor 指标相应配对。Hermitian 算符的 Wilson 系数矩阵另满足自身的 Hermiticity 条件。
+
+在这些约定下，目录先从没有 flavor 指标的纯玻色 sector 开始。它最直接地显示 CP-even 场强平方与含 dual field strength 的 CP-odd 候选如何成对出现。
 
 ## 13.2 纯玻色算符：15 个
 
@@ -71,6 +67,8 @@ $$
 \qquad
 \mathcal O_{H\widetilde WB}=H^\dagger\tau^I H\,\widetilde W_{\mu\nu}^I B^{\mu\nu}.
 $$
+
+这十五个纯玻色结构在 dagger 下自伴。加入一个费米子双线性后，chirality 与 flavor 方向开始重要：Yukawa-like 和 dipole 算符通常不是自伴项，current 类则多在交换 flavor 指标后回到自身。
 
 ## 13.3 双费米子算符：19 个结构
 
@@ -135,6 +133,8 @@ $$
 \mathcal O_{Hud}^{pr}
 =i(\widetilde H^\dagger D_\mu H)(\bar u_p\gamma^\mu d_r).
 $$
+
+四费米子 sector 还要区分同种流、异种流和 scalar/tensor contractions。同种流交换会在 flavor 展开后产生额外对称关系，而四维 Fierz 关系已用于选择下面的代表；圈级计算若在 $d_{\rm DR}$ 维进行，仍须按第四章保留 evanescent 补空间。
 
 ## 13.4 四费米子算符：25 个结构
 
@@ -221,9 +221,9 @@ $$
 $$
 本书主线不使用它们；质子衰变和 GUT 匹配属于后续高级章节。
 
-## 本章小结
+## 13.6 从目录到 Hermitian 拉氏量
 
-本章给出了 Warsaw basis 在维数六、守恒 baryon number 扇区的结构表。59 是无 flavor 展开、且每个非自伴 dagger pair 只计一个代表时的结构计数；按约定 13.3，Hermitian 拉氏量仍须恢复共轭项。实际 Wilson 系数空间由 flavor 指标、Hermiticity 和 CP 假设进一步决定。
+把 15 个纯玻色、19 个双费米子和 25 个四费米子结构相加得到 59。这个数字采用守恒 baryon number、未展开 flavor 且非自伴 dagger pair 只计一个代表的口径。构造 Hermitian 拉氏量时，约定 13.3 要求恢复所有共轭项；进入拟合时还要展开 flavor 指标，并施加相应 Hermiticity、交换与 CP 条件。因此目录提供的是算符商空间的坐标标签，而不是现成的实参数向量。
 
 ## 练习
 

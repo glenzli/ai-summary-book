@@ -16,7 +16,9 @@ $$
 X_{\operatorname{proet}}.
 $$
 
-对象是 $X$ 上的 pro-etale 对象 $U\to X$，覆盖是 pro-etale 站点中的 jointly surjective 族。
+按 Bhatt--Scholze 的原始口径，对象是 $X$ 上的 weakly étale scheme
+$U\to X$，即该态射及其对角态射均平坦；覆盖取 fpqc covering。pro-etale 逆极限
+描述定义同一个 Grothendieck topology，但这项比较是外部输入。
 
 因此二者不是同一个站点。比较只能发生在证明模式、局部对象和同调控制策略层面。
 
@@ -24,8 +26,8 @@ $$
 
 | 主题 | 凝聚数学 | pro-etale 理论 |
 | --- | --- | --- |
-| 基本站点 | compact Hausdorff/profinite/ED 测试空间 | $X$ 上的 pro-etale 对象 |
-| 典型对象 | $S\in\mathbf{CHaus}$ | $U\to X$ pro-etale |
+| 基本站点 | compact Hausdorff/profinite/ED 测试空间 | $X$ 上的 weakly étale 对象与 fpqc 覆盖 |
+| 典型对象 | $S\in\mathbf{CHaus}$ | $U\to X$ weakly étale |
 | 关键局部对象 | extremally disconnected compact Hausdorff spaces | w-contractible 或类似对象 |
 | 主要用途 | 拓扑代数、函数分析、solid/analytic/liquid 结构 | etale cohomology 的局部与几何控制 |
 | 共同技术 | sheaf、覆盖、共同细化、投射测试对象 | sheaf、覆盖、共同细化、投射测试对象 |
@@ -68,11 +70,18 @@ $$
 
 二者在“现代几何如何选择更好的站点”这一层面相互启发。共同经验是：若原始站点上对象不够投射、覆盖不够细、同调不够可控，就扩大或改变站点，使局部对象更适合计算。
 
+这里还应记录一个比“证明模式相似”更强、但仍不等同两个站点的已知结果。对 coherent
+scheme $X$，Wolf 证明 hypercomplete pro-étale $\infty$-topos 等价于
+$\operatorname{Gal}(X)$ 在 pyknotic spaces 中的连续表示范畴。比较的中介是 Galois
+category，不是一个把裸 compactum 直接视为 $X$-scheme 的函子；coherent 与
+hypercomplete 假设也不能从陈述中删去。正文第七章 7.6 节给出精确调用口径。
+
 ## D.6 典型错误
 
 错误 1：把 profinite set 当作 scheme 上的 pro-etale cover。
 
-修正：profinite set 可作为凝聚测试对象；pro-etale cover 必须带有到 $X$ 的几何结构。
+修正：profinite set 可作为凝聚测试对象；pro-etale 站点中的覆盖对象必须带有到 $X$ 的
+weakly étale 几何结构，并满足该站点的 fpqc 覆盖条件。
 
 错误 2：把 condensed sheaf 的值 $F(S)$ 与 etale sheaf 的值 $G(U)$ 直接比较。
 

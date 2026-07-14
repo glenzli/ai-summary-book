@@ -1,17 +1,6 @@
 # 第十一章：Etale comparison、Frobenius fixed points 与 syntomic tower
 
-## 本章目标
-
-本章写清楚 étale comparison 的操作顺序和 coefficient category：先在
-perfect prism 上 modulo $p^r$ 并 invert prism ideal，再把 semilinear
-Frobenius 视为 $\mathbf Z/p^r$-linear endomorphism并取 derived fibre。
-Syntomic comparison 则使用 Nygaard-divided Frobenius 与明确的 truncation。
-
-## 依赖前置知识
-
-依赖第三章的 finite-level étale comparison、第七章与附录 F 的 Nygaard
-convention、附录 A 的 derived inverse limit，以及 derived category 中 fibre
-triangle 的基本性质。
+Étale 信息不是从 prismatic complex 上朴素取 Frobenius 不变量就自动出现：必须先控制有限层系数、反演 prism ideal，再把 semilinear Frobenius 放到正确的线性系数范畴中取 derived fiber。若把这些操作交换，得到的对象甚至不在同一范畴。Syntomic tower 又把 Nygaard-divided Frobenius 与截断结合，记录逐级 Tate twist。本章从第三章的有限层 étale comparison 和第七章的 Nygaard 约定出发，完整写出操作顺序、fiber triangle、逆极限与 cup product；附录 A/F 提供 derived limit 和指标约定。
 
 ## 11.1 Perfect prism 上的 etale comparison
 
@@ -39,8 +28,7 @@ C^{\varphi=1}=\operatorname{fib}(\varphi-1:C\to C).
 $$
 虽然 $\varphi$ 对 $A$ semilinear，它固定 $\mathbf Z_p$，故在 modulo $p^r$
 并 restriction of scalars 后是 $\mathbf Z/p^r$-linear，所以上式的 fibre
-确实位于 $D(\mathbf Z/p^r)$。来源为 Bhatt-Scholze, Theorem 9.1（locator
-`BS-COMP-ETALE`）。
+确实位于 $D(\mathbf Z/p^r)$。来源为 Bhatt-Scholze, Theorem 9.1。
 
 若 $X=\operatorname{Spf}(S)$ 是 affine，则同一定理的全局推论是
 $$
@@ -140,8 +128,7 @@ sections；不能把任意 relative prismatic complex 无条件代入该公式�
    \tau^{\le i}R\psi_*\mathbf Z/p^r(i).
    $$
 
-来源为 BMS2, Theorem 1.15、Corollary 8.21 与 Theorem 10.1（locator
-`BMS2-SYN`）。这些是外部输入；本书不重证 quasisyntomic descent、Nygaard
+来源为 BMS2, Theorem 1.15、Corollary 8.21 与 Theorem 10.1。这些是外部输入；本书不重证 quasisyntomic descent、Nygaard
 identification 或 nearby-cycles comparison。
 
 **警告 11.9.** Mixed-characteristic theorem 的 truncation 正是
@@ -193,7 +180,7 @@ $C^{u=1}\simeq0$。
 **证明.** 命题 11.12 中每个 kernel 与 cokernel 均为零，故
 $H^n(C^{u=1})=0$ 对所有 $n$ 成立。证毕。
 
-## 本章小结
+## 11.6 从有限层固定点到 syntomic tower
 
 Etale comparison 是 modulo $p^r$、invert prism ideal 与 derived
 Frobenius fibre 的 finite-level theorem；$\mathbf Z_p$ 版本通过 derived

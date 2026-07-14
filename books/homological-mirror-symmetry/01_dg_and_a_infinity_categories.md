@@ -1,14 +1,6 @@
 # 第一章：dg 范畴、$A_\infty$ 范畴与预三角化
 
-## 本章目标
-
-本章建立 HMS 所需的增强范畴语言。重点是 dg category、$A_\infty$ category、quasi-equivalence、Morita equivalence、twisted complexes 和 pretriangulated envelope。后续的 Fukaya category 与 B-side derived category 都会用这些概念表达。
-
-## 依赖前置知识
-
-需要熟悉链复形、同调、张量积、普通范畴和函子。关于 signs 的完整
-coderivation 公式与低阶展开见附录 B；本章的所有 $A_\infty$ 公式均按
-该处 (B.1)--(B.3) 解读。
+Fukaya 范畴中的三角形计数能够定义二元复合，四边形的边界却表明这个复合通常只在同伦意义下结合。若只保留同调范畴，这个结合失败以及修正它的全部高阶同伦都会消失；若只说“两个范畴等价”，又会混淆 quasi-equivalence 与只比较完美模的 Morita equivalence。为分开这些层级，本章从复形富集的 dg 范畴出发，经 suspension coalgebra 定义 $A_\infty$ 范畴，再加入 Yoneda 模、twisted complexes 和预三角化包。链复形、同调、张量积和普通函子是所需的代数背景；所有符号严格按附录 B 的 coderivation 约定解释。
 
 ## 1.1 复形与 dg 范畴
 
@@ -161,9 +153,10 @@ $$
 \operatorname{hom}_{\mathcal A}(X,Y)\to
 \operatorname{hom}_{\operatorname{Mod}(\mathcal A)}(Y_X,Y_Y)
 $$
-是 quasi-isomorphism。  
-来源：Lefevre-Hasegawa 的 $A_\infty$ categories 与 modules 理论；完整
-输入边界与定位见外部输入定理 B.11 及 theorem locator。
+是 quasi-isomorphism。
+来源：Lefevre-Hasegawa 的 $A_\infty$ categories 与 modules 理论。这里的
+结论只断言 morphism complexes 上的 quasi-isomorphism；关于严格含单位、
+module 约定和 derived Yoneda 的完整假设见外部输入定理 B.11。
 
 **定义 1.17.** $\operatorname{Perf}(\mathcal A)$ 是 $\operatorname{Mod}(\mathcal A)$ 中由 representable modules 经过有限 cones、shifts、direct summands 和 quasi-isomorphism 闭包生成的 full subcategory。若函子 $F:\mathcal A\to\mathcal B$ 诱导
 $$
@@ -247,9 +240,7 @@ quasi-equivalent，则 $\mathcal A$ 与 $\mathcal B$ Morita equivalent。
 
 **证明.** split-generation 的含义是 representable modules $Y_{G_i}$ 经过 shifts、cones 和 direct summands 生成 $\operatorname{Perf}(\mathcal A)$，而 $Y_{H_i}$ 同样生成 $\operatorname{Perf}(\mathcal B)$。full subcategories 的 quasi-equivalence 诱导其 perfect module categories 的 quasi-equivalence。由于两边的 perfect categories 分别由这些生成对象的 representables 的厚闭包给出，诱导函子在厚闭包上本质满且在 morphism complexes 上保持 quasi-isomorphism。因此得到 Morita equivalence。证毕。
 
-## 本章小结
-
-dg category 是复形富化的范畴，$A_\infty$ category 是把结合律替换为一族高阶同伦的结构。HMS 必须在这些增强层面表述，因为 Fukaya categories 的高阶复合和 B-side 的导出增强都不是三角影子能完整记录的。Morita 口径允许通过生成对象和 endomorphism algebras 来证明 HMS。
+到这里，严格结合的 dg 模型与高阶结合的 $A_\infty$ 模型已经进入同一比较框架。Quasi-equivalence 控制原始映射复形，Morita equivalence 控制由 representables 生成的完美模世界，而 twisted complexes 把 cones 与 shifts 加入对象层。后文证明 HMS 时常只计算有限组生成对象，命题 1.24 正是从这些局部 $A_\infty$ 数据通向全范畴 Morita 等价的形式桥梁。
 
 ## 练习
 

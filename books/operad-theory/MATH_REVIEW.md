@@ -168,7 +168,7 @@
 
 ### `20_factorization_algebras_fukaya_categories_and_geometry.md`
 
-- 已定义 $\mathbf{Disk}_n$、$\mathbf{Disk}_{n/M}$、prefactorization algebra、factorization algebra、locally constant factorization algebra、factorization homology、$A_\infty$-category 和 Fukaya category 的结构性描述。
+- 已定义 $\mathbf{Disk}_n$、$\mathbf{Disk}_{n/M}$、prefactorization algebra、factorization algebra、locally constant 与 multiplicative 条件、factorization homology、$A_\infty$-category 和 Fukaya category 的结构性描述。
 - Locally constant factorization algebras 与 $E_n$-algebras 的等价、factorization homology excision、Dunn additivity、Fukaya category 构造、operadic Fukaya structures 和 gluing 定理均标为外部输入。
 - 已明确 Fukaya category 的完整构造依赖 brane data、transversality、compactness、orientation 和 obstruction theory，不能只由 operad 公理推出。
 - 已接入附录 N 的 factorization homology 计算边界和附录 O 的失败模式清单。
@@ -374,7 +374,7 @@
 
 - 已为第八至第二十一章生成稳定 label 规则和编号项清单。
 - 已使用 statement type 白名单抽取，避免把证明行中的反向引用误登记为 label。
-- 已核对第八至第二十一章共有 416 个正式编号项，其中包括新增 `9.7.1`、`17.18.1`、`19.29.1` 及既有插入编号。
+- 已核对第八至第二十一章共有 420 个正式编号项，其中包括 `9.7.1`、`17.18.1`、`18.6.1`、`18.18.1`、`19.29.1`、`20.4.1`、`20.5.1` 及其他既有插入编号。
 - 结合第一至第七章 label 表，正文二十一章的可引用目标已经闭合。
 
 ### `LABEL_LEDGER_REMAINING_APPENDICES.md`
@@ -489,9 +489,9 @@
 
 ### `21_research_frontier_2026.md`
 
-- 已把 2026 年核查过的近期 arXiv 条目标为研究边界，而非正文定理。
-- 已加入版本表、模型差异表和进入正文的验证流程。
-- 后续若使用其中结果，必须补充版本号、定理编号、模型约定、符号转换和依赖链。
+- 已改写为不依赖年份的开放问题综述，按模型比较、一般底环 rectification、Infinity-operadic Koszul、operadic categories、relative localization 与 Fukaya 型 gluing 六类障碍组织。
+- 每个问题都固定输入模型、期望结论、已知覆盖范围和 strict 或低 arity 检验，避免把研究摄入流程写进教材正文。
+- 后续若把新结果作为外部输入，仍须在附录 D 与来源账本中补充版本、定理编号、模型约定、符号转换和依赖链。
 
 ### `Y_infinity_operadic_homology_and_koszul_frontier.md`
 

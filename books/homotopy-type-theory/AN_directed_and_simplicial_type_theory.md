@@ -87,4 +87,4 @@ $$
 1.  第十三、十四章的单值范畴论仍在普通 HoTT 中；AN 只提供 directed/simplicial 扩展入口。
 2.  附录 AS 给出 directed/simplicial 对象语言的规则核。
 3.  第十七章谈 higher category theory 时必须区分 univalent categories、Segal types、simplicial type theory 和 external $\infty$-category theory。
-4.  若后续扩写 directed HoTT，应新增独立主章，而不是把 directed hom 混入第二章的 identity type。
+4.  Directed HoTT 必须作为具有独立形成与消去规则的对象语言处理，不能把 directed hom 混入第二章的 identity type。

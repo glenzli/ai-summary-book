@@ -1,18 +1,6 @@
 # 第十二章：Brace operad 与 Hochschild cochains
 
-## 本章目标
-
-本章给出 Deligne 猜想的一条具体 operadic 路线：Hochschild cochains 上的 brace operations。目标是：
-
-1. 定义 Hochschild cochain complex。
-2. 定义 cup product、insertion 和 Gerstenhaber bracket。
-3. 定义 brace operations。
-4. 说明 brace identities 与 brace operad。
-5. 陈述 brace operad 与 $E_2$-operad 的弱等价作为外部输入。
-
-## 依赖前置知识
-
-需要第十一章的 Gerstenhaber 结构和 Deligne 猜想。本章先写普通未分次结合代数的 cochain 公式；分次版本采用定义 E.18--定义 E.23 的 suspended Hochschild braces 约定。
+若 $f:A^{\otimes p}\to A$ 与 $g:A^{\otimes q}\to A$，把 $g$ 插入 $f$ 的第 $i$ 个槽会得到 arity $p+q-1$ 的 cochain。对所有位置带符号求和产生 insertion，交换两次 insertion 产生 Gerstenhaber bracket；同时插入 $g_1,\ldots,g_r$ 则必须枚举互不重叠且保持顺序的槽位，这正是 brace $f\{g_1,\ldots,g_r\}$。不同嵌套 brace 的展开由同一批插入图重新分组，因而形成 operad 公理所需的相干性。本章从这些可计算公式出发构造 brace operad，并说明它如何给出 Deligne 定理的一条链级实现；先处理普通未分次结合代数，分次版本统一采用附录 E 的悬挂约定。
 
 ## 12.1 Hochschild cochains
 
@@ -218,15 +206,15 @@ $$
 $$
 给出。转回内部次数为 $0$ 的未分次 cochains 时，$|F|=1-m$、$|G|=1-n$，所以交换符号为 $(-1)^{(m-1)(n-1)}$，与定义 12.6 一致。
 
-## 12.7 边界和后续
+## 12.7 链级 brace 不能被上同调替代
 
 **警告 12.20.** Brace operad 作用给出的是 Hochschild cochains 上的链级结构。若只看 $HH^\*(A,A)$，会丢失大量高阶 brace operations 和同伦信息。
 
 **说明 12.21.** 对 $A_\infty$-algebra、dg category、monoidal category 或 stable infinity-category，也有 Hochschild cochains 和 Deligne 型结构的推广。这些推广需要 colored operad、dg category 或 infinity-categorical Hochschild theory；本书后续只在建立相应模型后使用。
 
-## 本章小结
+## 12.8 插入公式中的 $E_2$ 相干性
 
-Hochschild cochains 上的 insertion 给出 Gerstenhaber bracket，brace operations 组织所有高阶插入相干性。Brace operad 控制这些运算，并与链级 $E_2$-operad 弱等价。因此 Deligne 猜想可以理解为：Hochschild cochains 自然是 brace algebra，而 brace algebra 是一个具体的 $E_2$-algebra 模型。
+单次 insertion 的交换子在上同调上成为 Gerstenhaber 括号，多重 brace 则把所有有序、不重叠的插入同时编码。Brace identity 的本质不是新的神秘等式，而是同一最终插入图按“先内后外”或“一次展开”分组后得到相同带符号总和。由外部比较定理，brace operad 提供链级 $E_2$-模型；这里的弱等价不能改写成 operad 的字面同构。下一章将把类似的树求和用于同伦转移：内部边不再只记录插入位置，还会标记 contraction homotopy。
 
 ## 练习
 

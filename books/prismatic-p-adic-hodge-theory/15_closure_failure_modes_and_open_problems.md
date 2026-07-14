@@ -1,32 +1,46 @@
-# 第十五章：正式教材收口、错误模式与开放问题
+# 第十五章：错误模式、理论边界与开放问题
 
-## 本章目标
+棱柱理论把许多比较对象放进同一框架，也因此产生一类特别隐蔽的错误：不同 prism 上的 specialization 被写成相等，反演后成立的 Frobenius 同构被提升到积分层，或一个前沿预印本的接口被当作无条件分类定理。辨认这些错误本身是一项数学能力，因为每一种都能追溯到缺失的底环、完备化、有限性或 descent 假设。本章以具体反例模式整理前十四章的边界，随后把仍未解决的问题按“系数与非阿贝尔化、几何化、torsion 与有效性”组织起来。它不再统计写作完成度，而是说明现有理论在哪一步停止，以及继续推进必须增加什么结构。
 
-本章把全书作为 Prismatic / p-adic Hodge Theory 自身进行收口：列出已闭合定义链、不可混用边界、常见错误模式、外部输入定位需求和开放问题。它不新增基础定理，而是保证前十四章的数学对象和证明依赖可以被审查。
+## 15.1 比较箭头不是对象等同
 
-## 15.1 已闭合的定义链
+固定 bounded prism $(A,I)$、适当光滑的 $p$-adic formal scheme
+$X/(A/I)$，并记
+$$
+C_{X/A}=R\Gamma_\Delta(X/A).
+$$
+第三至十一章出现的 Hodge--Tate、de Rham、crystalline 与 étale 输出，
+都由 $C_{X/A}$ 经过不同的换基、Frobenius pullback、反演或 derived fixed
+point 构造获得。它们共享源对象，却不因此属于同一系数范畴。
 
-**命题 15.1.** 本书的基础定义链在内部闭合：$\delta$-环、Frobenius lift、Cartier divisor ideal、bounded prism、prismatic site、structure sheaf、prismatic cohomology、Hodge-Tate/de Rham specialization、prismatic crystal 和 prismatic $F$-crystal 均已在进入使用前定义。
+**命题 15.1（比较路径的类型约束）.** 一个从 $C_{X/A}$ 到经典上同调的
+比较陈述，至少要给出下列数据：
 
-**证明.** 第一章定义 $\delta$-环和 Frobenius lift；第二章定义 prism、bounded
-prism、prismatic site 和 $R\Gamma_\Delta$；第三章定义 specialization；第六章
-定义 prismatic crystals 和 $F$-crystals；第七章分别按 Bhatt--Scholze 的
-relative Nygaard theorem 与 BMS2 的 quasisyntomic model 固定
-Nygaard/syntomic 对象。后续章节使用这些对象时均引用前置章节。证毕。
+1. base prism $(A,I)$ 与 $X$ 的几何假设；
+2. 施加在 $C_{X/A}$ 上的 derived base change 或 completion；
+3. 是否先作 $\varphi_A^*$，以及 Frobenius 是 semilinear 还是已线性化；
+4. 是否反演 $I$、模 $p^r$ 或取 derived inverse limit；
+5. 目标复形所在的系数环与导出范畴。
 
-## 15.2 外部输入链
+缺少任一项时，“prismatic cohomology 等于某经典上同调”都不是类型完整的
+等式。
 
-**约定 15.2.** 以下内容在本书中不可作为内部证明结论使用：
+**证明.** Derived tensor product 改变系数环，Frobenius pullback 改变
+$A$-module structure，反演 $I$ 与模 $p^r$ 又改变对象所在的局部化或有限层
+范畴。Derived fixed point 还是一个 fiber，而非原对象的子模。若不记录这些
+操作，源与靶甚至不必属于同一范畴，因而不存在可供判断的同构。$\square$
 
-- perfectoid rings 与 perfect prisms 的等价；
-- prismatic comparison theorem；
-- BMS integral comparison；
-- Fontaine-Faltings-Tsuji classical comparison；
-- prismatic $F$-crystals 与 crystalline lattices 的范畴等价；
-- Bhatt-Lurie prismatization 主解释；
-- 2025-2026 研究边界预印本中的新定理。
+## 15.2 形式推导与深比较定理的分界
 
-这些内容必须引用 [D_theorem_locator_index.md](D_theorem_locator_index.md) 或后续精确 locator。
+从一个已经给定的比较同构出发，换基、取 fiber、传递 cup product 等形式后果
+可以在导出范畴中证明；比较同构本身的存在却不是这些形式操作的结果。Perfectoid
+rings 与 perfect prisms 的对应、prismatic comparison、BMS integral
+comparison、Fontaine--Faltings--Tsuji comparison、$F$-crystals 与 crystalline
+lattices 的范畴等价，以及 prismatization 的 crystals-as-QCoh 解释，分别需要
+almost/pro-étale descent、torsion 控制或 stacky descent 等深层输入。
+
+**判据 15.2.** 若一条论证只使用导出张量、fiber triangle 和 Frobenius 的形式
+恒等式，它最多能传递一个已知比较定理，不能据此建立上述任一比较定理的存在性。
 
 ## 15.3 常见错误模式
 
@@ -49,59 +63,71 @@ conjugate filtration 识别为 Hodge filtration。
 
 **修正 15.10.** 必须说明 $\{i\}$ 是 $(I/I^2)^{\otimes i}$、其 dual，还是经 orientation 后的 $d^i$ 表示。
 
-## 15.4 正式教材剩余工作
+## 15.4 四条彼此独立的假设轴
 
-**说明 15.11.** 本书达到正式教材扩展稿后，剩余工作分为四类：
+比较定理的适用范围可以按四条轴记录：
 
-1. locator：为尚未进入核心主线的 classical/frontier 输入选定稳定的
-   section/theorem/page；核心 prismatic/BMS 主链已经达到 `L3`；
-2. numbering：按稳定 label ledger 维护新增声明，并把剩余散文引用改成
-   可定位编号；现有正式声明已经登记；
-3. convention：核心 Nygaard、Frobenius pullback 与 filtration indexing
-   已逐源核对；剩余工作是跨作者 Tate-twist normalization；
-4. production：统一术语、语气、公式断行、图表和参考格式。
+- **底对象轴**：perfect、Breuil--Kisin、crystalline 或一般 bounded prism；
+- **几何轴**：smooth、proper、quasisyntomic、lci、stacky 或 derived；
+- **系数轴**：常系数、vector-bundle crystal、torsion coefficient 或非阿贝尔对象；
+- **积分轴**：integral、模 $p^r$、反演 $pI$ 后或 rational。
 
-## 15.5 开放问题目录
+**定义 15.11.** 把一条比较陈述的假设型记为
+$$
+\mathsf T=(\mathsf B,\mathsf G,\mathsf C,\mathsf L),
+$$
+其中四个分量依次记录上述底对象、几何、系数与积分层级。
 
-**研究边界 15.12.** 以下问题代表本书后续可扩展方向：
+**命题 15.12.** 若两条定理的假设型在某一轴上不同，且没有沿该轴的 base-change、
+descent、devissage 或反演比较定理，则二者不能无条件合并。
 
-- prismatic cohomology with coefficients 的教材化定义和 comparison theorem；
-- prismatic non-abelian Hodge theory 的对象范畴；
-- spectral syntomic operations 的基础教材化；
-- prismatic $F$-gauges 与 displays、Dieudonne theory 的统一口径；
-- Artin stacks 和 derived stacks 上的 prismatic theory；
-- Shimura varieties 的 prismatic realization 与 integral Langlands-type structures。
+**证明.** 四条轴分别改变 site、允许的覆盖、系数范畴或目标环。没有连接该轴的
+函子与相容性定理时，两条结论的源或靶类型不同，合并陈述没有定义。$\square$
 
-## 15.6 逐章收口判据
+## 15.5 按结构障碍组织的开放问题
 
-**定义 15.13.** 称一章达到教材收口，如果它满足：
+**研究边界 15.13.** 当前扩展方向可按缺失结构而非论文清单分成四组：
 
-1. 有明确目标和前置知识；
-2. 所有核心术语在使用前定义；
-3. 非平凡命题有证明、外部输入的证明路线或外部输入标记；
-4. 至少有一个例子、计算、结构表或错误边界；
-5. 章末有小结和练习；
-6. 外部输入可在 locator 索引中追踪。
+1. **系数与非阿贝尔化**：为 Hodge--Tate crystals、$q$-Higgs modules 与
+   非阿贝尔对象构造共同的系数范畴，并证明 comparison 与 descent；
+2. **几何化**：在 Artin/derived stacks 上比较 prismatization、QCoh 与原始
+   prismatic site，同时控制 pushforward；
+3. **torsion 与有效性**：刻画 $F$-gauge、display 和 $F$-crystal 之间何时保留
+   integral lattice、height 与 Frobenius/Verschiebung；
+4. **上同调运算**：构造 spectral syntomic operations，并证明它们与 cup product、
+   Tate twist 和 classical realizations 相容。
 
-**命题 15.14.** 按定义 15.13，本书第 0-15 章当前达到教材收口草稿标准，但未达到 camera-ready 标准。
+Shimura varieties、Brauer groups 与 finite flat group schemes 分别为这些障碍提供
+测试场景，但不能替代一般比较定理。
 
-**证明.** 每章均有目标、前置知识、小结和练习。核心术语由正文或附录 G-K
-定义。大型定理均标为外部输入并登记在附录 D 或资料源中。第 0-15 章均
-包含命题、证明、例子、结构表或错误边界。核心 prismatic comparison、
-Nygaard、BMS1/BMS2 与 $F$-crystal locators 已达到 `L3`；尚未达到
-camera-ready 的原因是 classical source selection、少数非主线 `L2S`
-technical locators、交叉引用和出版排版仍待完成。证毕。
+## 15.6 可复合比较定理的最低格式
 
-**说明 15.15.** “教材收口草稿”不同于“最终数学闭包”：前者要求内部教学链完整，后者还要求外部输入精确定位、符号 convention 全部逐源核对。
+**定义 15.14.** 一条比较定理称为可复合的，如果它明确给出：源与靶、假设型
+$\mathsf T$、比较态射的构造或外部来源、对 base change/Frobenius/filtration 的
+自然性，以及结论发生在 integral、finite-level 还是 rational 层。
 
-## 本章小结
+**命题 15.15.** 两条可复合比较定理只有在中间对象、系数环、Frobenius
+线性化和过滤约定逐项一致时，才能通过态射复合产生第三条比较定理。
 
-本书当前已经具有正式教材的主要结构：定义链、正文链、外部输入链、边界链和审查链。数学上可继续向最终收口推进，但最终出版仍需要 locator、编号、符号和 production 四类工作。
+**证明.** 态射复合首先要求前一靶等于后一源。对导出 $A$-modules，这包括
+$A$-作用、completion 与 localization；对 filtered Frobenius objects，还包括
+semilinear structure 和过滤指标。逐项一致时，导出范畴中的复合存在且自然性可传递；
+任一项不一致时必须先提供相应换基或重指标同构。$\square$
+
+## 15.7 统一语言不能抹去的差异
+
+Prismatic language 的力量在于让多个 realization 共享一个源对象；它的风险也来自
+同一处，因为共享源不等于目标相同。可靠的论证必须沿比较路径保留 base prism、
+几何假设、系数和积分层级。未来的系数、stacky 与非阿贝尔理论若要真正纳入这套
+框架，也必须给出这些轴上的函子和相容性，而不能只沿用已有对象的名称。
 
 ## 练习
 
 **练习 15.1.** 从错误模式 15.3、15.5、15.7、15.9 中任选一个，写出一个错误证明并修正。
 
-**练习 15.2.** 给定一个新的 prismatic 预印本，按约定 14.10 和说明 15.11 判断它能否进入正文基础定理链。
+**练习 15.2.** 任取第十四章的一条应用结果，写出其假设型
+$\mathsf T=(\mathsf B,\mathsf G,\mathsf C,\mathsf L)$，并指出与 smooth proper
+scheme 情形相比改变了哪一轴。
 
-**练习 15.3.** 为定理 11.8 设计一个 locator 表项，至少包括 source、版本、定理号、hypotheses 和本书用途。
+**练习 15.3.** 选择研究边界 15.13 的一个方向，写出一条类型完整但尚未声称为真的
+目标比较命题，并列出使其可复合所需的自然性条件。

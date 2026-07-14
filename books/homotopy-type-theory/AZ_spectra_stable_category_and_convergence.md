@@ -85,6 +85,6 @@ $$
 
 **证明核.** 有界性保证对固定总次数，cycle-boundary filtration 在有限页后稳定；因此 $E_\infty$ 可定义为稳定值。exhaustive/separated/complete 条件把 associated graded 重建为目标群的过滤。扩张问题不由谱序列自动解决，需额外处理。$\square$
 
-## AZ.5 本附录关闭的缺口
+## AZ.5 从各页到极限的边界
 
-谱序列收敛不再只是“将来工作”：它被分解为 filtered spectrum、cofiber 长正合列、exact couple、有限性条件和过滤完备性。剩余工作是为具体谱序列逐项证明这些输入。
+Filtered spectrum、cofiber 长正合列和 exact couple 只构造谱序列各页。强收敛还需要有限性及目标过滤的 exhaustive、separated、complete 条件；每个具体谱序列都必须单独验证这些输入，不能从 exact couple 的存在自动推出。

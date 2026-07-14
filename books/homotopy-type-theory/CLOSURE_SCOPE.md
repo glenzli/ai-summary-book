@@ -1,95 +1,42 @@
-# 收口范围与封稿门槛
+# 教材范围与完成条件
 
-本文件固定《同伦类型论与单值基础》的文本出版收口范围。新口径下，本书不以书稿外材料作为封稿条件；封稿只检查数学文本、证明状态、来源、符号和边界是否一致。
+《同伦类型论与单值基础》从依赖类型论的判断规则出发，经恒等类型、等价、单值性、HIT、圆的基本群和单值一范畴，进入合成同伦论、模型语义与扩展语言。完整性在这里不意味着把所有高级主题都内部证明，而是让每个结论的逻辑身份、依赖和来源都可追踪。
 
-## C.1 收口目标
+## C.1 核心内部链
 
-本书的收口目标是一条可审查的 HoTT 教材链：
+核心链包括第 1-11 章的基础 HoTT 与圆计算，以及第 13-14 章中预范畴、单值范畴、Yoneda、函子范畴、极限和伴随的书内部分。它们的基础证明核位于附录 A-Q、U-W、X 与相关附录中。
 
-1.  内部语言：依赖类型论、恒等类型、路径归纳、归纳类型和宇宙；
-2.  单值基础：等价、函数外延性、单值性、同伦层级、截断和集合商；
-3.  基础合成同伦论：HIT、圆、悬挂、pushout、encode-decode、基本群、fiber/cofiber sequence；
-4.  单值范畴论：预范畴、单值范畴、Yoneda、函子范畴、Rezk 完备化架构；
-5.  模型与对象语言边界：cubical type theory、simplicial model、QIIT、2LTT、directed/cohesive HoTT 等作为外部输入或研究边界；
-6.  高级接口：合成上同调、谱、Postnikov、模态、构造性实数、局部系数和谱序列作为分层接口。
+函数外延性、univalence 和指定 HIT 规则是明确加入对象语言的原则，不是由低层规则自动推出的 judgmental computation。Rezk completion 的本质像构造与 weak-equivalence 性质在书内处理；限制函子泛性质采用精确外部定理。
 
-## C.2 封稿等级
+## C.2 高级数学边界
 
-**等级 0：结构收口。**
-目录、依赖、符号、来源和审查文件完整；不再新增主要方向。
+第十二章及高级附录讨论 EM 型、Blakers--Massey、Freudenthal、谱、谱序列、Postnikov、Steenrod operations 与 Adams 计算。只有在对象与假设已经完整列出时，正文才作条件化推导；大型存在性、连通性和收敛结论保留外部输入身份。
 
-**等级 1：出版草稿。**
-每个定理都有证明状态标签；每个外部输入都有来源；每个新符号在 `NOTATION.md` 中登记；每个未关闭证明义务在 `K_remaining_obligations.md` 中登记。
+构造性分析必须说明实数对象、度量表示、完备性强度和截断消去目标。Directed/simplicial type theory、2LTT、cohesive HoTT、HIIT/QIIT 与 cubical 元理论分别属于扩展对象语言或元语言；它们不能无翻译地回流到基础 identity type。
 
-**等级 2：严格出版候选。**
-核心 HoTT 主线的关键证明说明已降为书内证明、精确外部输入或明确研究边界；高级接口全部显式标为外部输入或研究边界；无未解释公理偷用。
+## C.3 教材叙事条件
 
-当前按 HoTT 教材自身主线计算，L0-L5 核心链已达到等级 2 的收口口径。
+第 0-17 章必须形成连续教材，而不是项目清单：每章 H1 后先给出能够独立建立动机和语境的自然导言；定义前解释要解决的问题；定理间给出依赖与过渡；章末按该章内容收束。固定“本章目标/依赖前置知识/主线/本章小结”骨架不再允许。
 
-## C.3 固定核心
+例子应实际展开对象和映射，不能只说“可类似验证”。高级导读可以诚实停止在外部输入或研究边界，但不能用“证明架构”“适当闭包”等措辞代替缺失定义。
 
-以下文件属于收口期的核心 HoTT 内部链：
+## C.4 OET 完成条件
 
-- `01_dependent_type_theory_and_judgments.md`
-- `02_identity_types_and_paths.md`
-- `03_basic_inductive_types.md`
-- `04_contractibility_and_hlevels.md`
-- `05_equivalences_and_fibers.md`
-- `06_function_extensionality_and_univalence.md`
-- `07_univalence_consequences.md`
-- `08_truncations_sets_quotients.md`
-- `09_higher_inductive_types.md`
-- `10_circle_suspension_pushouts.md`
-- `11_fundamental_group_and_coverings.md`
-- `13_univalent_categories.md`
-- `14_yoneda_limits_adjunctions_rezk.md`
-- `D_foundational_proof_kernel.md` 至 `AI_pushout_equivalence_invariance.md` 中对应核心证明核。
+1. 每个定义给出形成对象所需的变量、量词与 universe 条件。
+2. 每个书内定理构造目标类型的项，并标出截断、transport、函数外延性、univalence 或 HIT 的使用点。
+3. 每个条件化推导列出额外输入；每个外部定理给出可定位的来源和未内部化边界。
+4. 对命题截断或 mere existence 消去前，先证明目标是命题；不能从 mere 数据选择代表元进入非命题目标。
+5. 模型可靠性只推出解释后的有效性；相对一致性必须列出元理论假设，不等同于对象语言中的绝对一致性。
 
-## C.4 固定高级接口
+## C.5 验证入口
 
-以下内容保留为教材高级接口，但封稿时不得伪装为完全内部证明：
+完成候选必须通过：
 
-- 合成上同调、EM 型、cup product、谱和谱序列；
-- Blakers-Massey、Freudenthal、Hopf fibration、Postnikov、Whitehead；
-- Steenrod algebra、Adams/Serre/AHSS 具体计算；
-- Cauchy/Dedekind 实数、构造性分析、积分；
-- directed/simplicial type theory、Rezk types、2LTT；
-- cohesive HoTT、SDG、SAG；
-- cubical/model/canonicity 元理论。
+```text
+python3 books/homotopy-type-theory/validate.py
+python3 books/audit_textbook_narrative.py homotopy-type-theory --strict
+python3 books/audit_oet_rigor.py homotopy-type-theory --strict
+git diff --check -- books/homotopy-type-theory
+```
 
-这些内容可以有书内证明核，但若依赖额外对象语言、模型、HIIT/QIIT 或经典稳定同伦论计算，必须保留外部输入或研究边界标签。
-
-## C.5 禁止继续扩展的方向
-
-收口模式下禁止新增以下类型内容，除非它直接关闭 `K_remaining_obligations.md` 中已登记的义务：
-
-1.  新的研究领域概览；
-2.  新的外部对象语言；
-3.  新的几何、代数或分析专题；
-4.  未与现有定理依赖相连的例子；
-5.  未进入来源索引或证明义务表的外部输入。
-
-## C.6 封稿门槛
-
-封稿前必须同时满足：
-
-1.  `README.md` 中所有本地链接存在；
-2.  宽松占位语和跳步词扫描只允许命中约束文件中的禁止条款；
-3.  每个正文和附录新增符号均在 `NOTATION.md` 中；
-4.  每个来源型断言均在 `SOURCES.md` 或附录 S 中可定位；
-5.  `K_remaining_obligations.md` 中每条义务有状态：关闭、外部输入保留或研究边界保留；
-6.  不再出现未标注的选择、排中律、resizing、HIT、univalence 或函数外延性使用；
-7.  高级接口没有回流为 L0-L5 的隐式证明前提。
-
-## C.7 收口工作顺序
-
-1.  固定范围和依赖分层；
-2.  清理核心 HoTT 证明义务；
-3.  清理 HIT 与圆的基本群证明义务；
-4.  清理单值范畴论证明义务；
-5.  把高级合成同伦论、分析和模型论内容统一标为接口、外部输入或研究边界；
-6.  做全书术语、编号、符号、来源和交叉引用审校。
-
-## C.8 当前结论
-
-按 HoTT 核心而不是所有高级接口计算，C.7 的第 1-6 项已经完成到严格出版候选口径。剩余可做的工作只属于出版校对层面：术语、编号、符号表、来源表和交叉引用修正；除非发现核心证明链中的真实错误，不再新增数学方向。
+附录 B 解释证明身份，附录 K 记录不可逆依赖；二者是数学使用规则，不是待办或验收清单。

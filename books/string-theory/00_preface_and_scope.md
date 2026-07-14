@@ -1,12 +1,12 @@
-# 序章：范围、严格性和主线
+# 序章：对象、约定与阅读路径
 
-## 本章目标
-
-本章规定本书的对象、严格性等级和主线边界。String theory 同时使用微分几何、二维量子场论、表示论和高能物理语言；若不先固定 convention，很容易把同一个公式在不同归一化下混用。
-
-## 依赖前置知识
-
-需要经典力学、特殊相对论、量子力学、复变函数和基础量子场论。微分几何、Lie algebra、Riemann surface 和 supersymmetry 的技术细节将在附录中补充。
+同一个弦论公式可能同时被读成二维场论的 Ward identity、时空粒子的质量壳条件，
+或某个低能有效作用的近似；若省略世界面 signature、target metric、正规序方案与
+证明状态，这几种读法很快就会互相混淆。本书从映射 $X:\Sigma\to M$ 及其世界面
+作用量出发，依次经过共形场论、量子约束、散射振幅、超弦、紧化和对偶性，并在每次
+跨越数学定理、标准物理推导与非微扰猜想的边界时明确所用假设。读者应熟悉经典力学、
+特殊相对论、量子力学、复变函数和基础量子场论；微分几何、Lie algebra、Riemann
+surface 与 supersymmetry 的记号可随正文查阅附录。
 
 ## 0.1 本书的对象
 
@@ -36,9 +36,9 @@
 
 **原则 0.4.** 路径积分推导若依赖尚未完全构造的测度，应标为 formal path integral calculation 或外部输入。不能把形式 Gaussian integral 直接当作 Hilbert 空间定理使用。
 
-## 0.3 主线
+## 0.3 从世界面到时空的推进
 
-本书主线如下：
+全书的论证次序由下列问题连接起来：
 
 1. 从 point particle 到 string worldsheet。
 2. 从 Nambu-Goto action 到 Polyakov action。
@@ -51,9 +51,10 @@
 9. 从 anomaly cancellation 到 consistent superstring theories。
 10. 从 compactification 和 duality 到几何与 holography。
 
-## 本章小结
-
-本书不把 string theory 写成单一公式，而写成一条由 worldsheet QFT、CFT、BRST、geometry 和 duality 组成的结构链。每次进入新主线时，都必须声明哪些部分在本书内证明，哪些部分作为标准外部输入。
+因此，贯穿后文的不是一条孤立公式，而是从 worldsheet QFT 到 CFT、BRST、
+geometry 与 duality 的连续结构。一个结论只有在对象、归一化和适用层级都已固定后
+才进入后续推导；需要大型外部理论时，正文会给出足以调用的精确版本，而不会把证明
+路线写成已经完成的证明。
 
 ## 练习
 

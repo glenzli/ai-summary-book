@@ -153,11 +153,21 @@ exceptional pullback 已定义，所以 smooth purity
 
 **解答 10.1.** 对 commutative algebra object `A`，自由函子为 `A\otimes -`，遗忘函子忘掉 module action。映射空间等价 `Map_A(A\otimes X,M)\simeq Map(X,U(M))` 给出自由-遗忘伴随。
 
-**解答 10.2.** 命题 10.4 给出 `H\mathbb Z`-module category 的稳定、presentable 和张量性质。命题 10.6 的 `H\mathbb Z`-linearization 由自由 module 函子 `H\mathbb Z\otimes -` 给出，并继承这些性质。
+**解答 10.2.** 取命题 10.4 中 `E=\Sigma_T^\infty X_+`、
+`M=\Sigma^{p,q}H\mathbb Z_S`。自由 module
+`H\mathbb Z_S\otimes E` 正是 `M_S(X)`，而 `M` 的底层对象仍为
+`\Sigma^{p,q}H\mathbb Z_S`。对映射空间取 `\pi_0`，右端就是定义 9.2，故得到
+命题 10.6。
 
 **解答 10.3.** Tate motive `\mathbb Z(1)` 对应 motivic 双次数中的 weight shift。一般 `\mathbb Z(q)` 表示第 `q` 个 Tate twist，并与 `S^{2q,q}` 或 `T^q` 的稳定悬挂坐标相连。
 
-**解答 10.4.** Sphere spectrum 中可能存在不被 `H\mathbb Z`-homology 检测的稳定同伦信息，例如 torsion 或更高 chromatic 信息。自由 `H\mathbb Z`-module 化会只保留 motivic cohomology 线性部分，因此不应保守。
+**解答 10.4.** 对固定 `E`，若 `A\otimes E` 与 `B\otimes E` 为零，则由张量积
+的正合性，任意由 `A,B` 经有限 cofiber、有限直和和 retract 构造的对象与 `E`
+张量后仍为零；若 `A\otimes E=0`，则对任意 `C`，
+`(C\otimes A)\otimes E\simeq C\otimes(A\otimes E)=0`。因此
+`\mathcal I_E` 是 thick tensor ideal。代数对象结构只给出
+`\mathbb 1_S\to H\mathbb Z_S` 和乘法，并不给出从有限 cofiber、retract 与张量
+构造 `\mathbb 1_S` 的表达；厚生成是额外条件。
 
 **解答 10.5.** 需检查基是否为 perfect field 或更一般允许基、系数环、有无有理化或反演特征指数、使用 triangulated 还是 infinity-categorical enhancement、six operations 是否相容。
 
@@ -347,67 +357,127 @@ $$
 
 ## 第二十章
 
-**解答 20.1.** 不同 algebraic stacks 类别在 atlas、diagonal、stabilizer、局部商性质和有限性上差别很大。六操作是否存在依赖这些假设，因此必须声明允许类别。
+**解答 20.1.** 第 `i` 个方块是
+`\mathcal W_i\to\mathcal V_i`、`\mathcal U_{i-1}\to\mathcal U_i` 组成的
+Cartesian Nisnevich 方块。这里
+`\mathcal W_i=\mathcal V_i\times_{\mathcal U_i}\mathcal U_{i-1}`，而
+`\mathcal V_i\setminus\mathcal W_i\to
+\mathcal U_i\setminus\mathcal U_{i-1}` 为同构，所以 `\mathcal V_i` 只在旧开集上
+与新片交叠。
 
-**解答 20.2.** Lisse-extended motivic homotopy type 通过所有 smooth maps `U\to\mathcal X` from schemes 形成 diagram，再用 descent/limit 把 scheme-level motivic categories 粘合成 stack 上的 theory。
+**解答 20.2.** 长度为一时，`\mathcal U_0=\varnothing`、
+`\mathcal U_1=\mathcal X`。下降给出
+`F(\mathcal X)\simeq F(\varnothing)\times_{F(\varnothing)}F(\mathcal V_1)
+\simeq F(\mathcal V_1)`，对 `G` 同理；故 `\eta_{\mathcal V_1}` 为等价即推出
+`\eta_{\mathcal X}` 为等价。
 
-**解答 20.3.** 限制到 schemes 时，应恢复前文的 `\mathbf{SH}(X)`、`f^*,f_*,f_!,f^!`、tensor 和 internal Hom，并保持 base change、projection formula、localization、purity 等相干。
+**解答 20.3.** Khan--Ravi Theorem 7.1 只对可表有限型 `f` 构造
+`f_!\dashv f^!`。任意栈态射虽有 `f^*\dashv f_*`，但非可表态射的 exceptional
+pair 不在该定理定义域内，必须另引外部结果。
 
-**解答 20.4.** Quotient stack `[X/G]` 同时记录底层 quotient 和 stabilizer。Equivariant motivic homotopy 正需要这些 stabilizer、fixed point 和 representation sphere 信息。
+**解答 20.4.** 指标范畴 `\operatorname{Lis}_{\mathcal X}` 的对象是 smooth
+`u:U\to\mathcal X`，其中 `U` 为 qcqs algebraic space；态射是与结构映射相容的
+smooth-chart 态射。过渡函子是 inverse image，故
+`\mathbf{SH}^{\triangleleft}(\mathcal X)=\lim_{(U,u)}\mathbf{SH}(U)`。
 
-**解答 20.5.** Fixed point localization 需要 equivariant purity、normal bundle 的权重分解、可逆化某些 Euler classes，以及与 stacky/equivariant six operations 的相容。
+**解答 20.5.** Genuine `\mathbf{SH}(BG)` 保留 representation spheres、稳定子与
+genuine transfers。Lisse extension 由所有 smooth charts 的 inverse-image 相容族构成，
+在 quotient stack 上表现为 Borel 型理论；其 `K`-理论甚至可给出完备化，所以自然比较
+函子一般不是等价。
 
-**解答 20.6.** Atlas `p:U\to\mathcal X` 的 Cech nerve 为 `U_n=U\times_{\mathcal X}\cdots\times_{\mathcal X}U`，含 `n+1` 个 `U`，face maps 省略一个因子，degeneracy maps 重复一个因子。
+**解答 20.6.** 对 `[Z/G]\hookrightarrow[X/G]`，法丛是带 `G`-线性化的
+`N_{Z/X}`。Thom twist 要使用这个 equivariant vector bundle；忘掉线性化会同时忘掉
+固定点处的权重和相应 Euler 类。
 
-**解答 20.7.** `BG=[S/G]` 的粗空间可能是 `S`，但 `BG` 的点有 automorphism group `G`。Equivariant vector bundles 和 representation spheres 依赖该 automorphism group，因此不能由粗空间决定。
+**解答 20.7.** 基 `S` 必须连通、Noetherian、仿射；
+`T=\mathbb G_{m,S}^{\times l}` 为 split torus；`i:Z\hookrightarrow X` 是有限型
+`T`-equivariant derived algebraic spaces 的闭浸入；`T` 在 `X\setminus Z` 上无固定点；
+系数 `F\in\mathbf{SH}(BT)`。结论还必须在指定 Euler 类局部化以后读取。
 
-**解答 20.8.** 若 stack 局部为 `[U/G]`，该局部片段上的 motivic theory 可用 `G`-equivariant motivic theory on `U` 描述。全局 theory 由这些局部模型和交叠 descent data 粘合。
+**解答 20.8.** 对正权 `r>0`，作用为 `t\cdot x=t^rx`，固定点只有 `x=0`。
+Concentration 反演与该 character 对应的 Euler 类 `e(L^{\otimes r})`。
 
-**解答 20.9.** Normal directions 在 stack 上带 stabilizer 表示。Stacky purity 的 Thom twist 必须记录该表示，否则 Gysin map 会退化为粗空间上的错误 twist。
+**解答 20.9.** 自然函子只给出比较方向。它可能是 localization、completion 或遗忘
+函子；若没有 fully faithfulness 与 essential surjectivity 的额外定理，就不能推出等价。
 
 ## 第二十一章
 
-**解答 21.1.** Trivial log structure 是 `\mathcal O_X^\times\hookrightarrow\mathcal O_X`。带此 log structure 的 log scheme 不含额外边界数据，因此应恢复普通 scheme 的 motivic theory。
+**解答 21.1.** 取 `M_X=\mathcal O_X^\times`，结构映射为包含。则
+`\alpha^{-1}(\mathcal O_X^\times)=M_X`，所需映射为恒等；特征幺半群为零。
 
-**解答 21.2.** Perfect scheme 通常指特征 `p` 下 Frobenius morphism 为同构的 scheme。等价地，其仿射环上的 Frobenius 是同构。
+**解答 21.2.** 在 `X=\operatorname{Spec}k[x,y]` 上，图表
+`\mathbb N^2\to k[x,y]` 把 `(1,0)` 送到 `x`、`(0,1)` 送到 `y`。它记录两条分支
+`x=0`、`y=0` 及其交点。
 
-**解答 21.3.** Universal homeomorphism 是 integral、surjective、universally injective 的 morphism。它在任意 base change 后仍为 topological homeomorphism。
+**解答 21.3.** 仿射局部看 Frobenius `A\to A`。每个 `a\in A` 满足首一方程
+`T^p-a^p=0`，故态射 integral；素理想在 Frobenius 逆像下不变，故谱映射为同胚，
+且任意基变换后仍 universally injective。于是它是 universal homeomorphism。
 
-**解答 21.4.** `[1/p]` 局部化会把 `p`-primary torsion 信息杀掉或可逆化。许多 integral phenomena 正存在于 `p`-torsion 或 Frobenius 效应中，因此会丢失。
+**解答 21.4.** 对非 perfect 域 `k`，Frobenius 在 `K_1(k)=k^\times` 上是
+`x\mapsto x^p`，并非满射；所以 integral motivic 等价一般失败。反演 `p` 正是
+Elmanto--Khan 定理消除该障碍所需的局部化。
 
-**解答 21.5.** Open complement localization 只记录闭开分解。Log boundary 把边界 divisor 作为结构的一部分保留，能记录交叉、monoid 和退化方向等更细信息。
+**解答 21.5.** 若 `I^N=0`，每个素理想都含 `I`，所以
+`\operatorname{Spec}(A/I)\to\operatorname{Spec}A` 在点集上双射；闭集由根理想决定，
+故该双射是同胚。
 
-**解答 21.6.** Perfect scheme 的定义即 Frobenius 为同构；在仿射情形，环 `R` perfect 表示 `x\mapsto x^p` 为双射，因此对应 scheme Frobenius 为同构。一般情形由仿射局部粘合。
+**解答 21.6.** 对 `X=\operatorname{Spec}A`，概形的 inverse limit 对偶于环的 direct
+limit，因此
+`X^{\mathrm{perf}}=\operatorname{Spec}(\operatorname{colim}_F A)`。
 
-**解答 21.7.** Perfectization 是沿 Frobenius 迭代取极限或 colimit 的过程，可能把非 perfect 的 nilpotent、inseparable 或 `p`-primary integral 信息改变，因此 integral motivic theory 不必保持。
+**解答 21.7.** 若 `X` perfect，则 tower 中每个 `F_X` 都是同构；由同构组成的逆系统
+的极限典范同构于任一项，故 `X^{\mathrm{perf}}\simeq X`。
 
-**解答 21.8.** 对 divisor `D\subset X`，log structure 可由允许在 `D` 有零/极点的函数或 complement `X\setminus D` 的单位诱导。它把 “接近边界” 的 monoid 信息写入结构层之外的数据。
+**解答 21.8.** 闭开 localization 记录 `D\hookrightarrow X\hookleftarrow U` 所产生的
+recollement。Divisorial log structure 还在对象上记录边界分支的 monoid 与交叉方式；
+相同开补可以来自不同边界模型。
 
-**解答 21.9.** 普通 `\mathbb A^1` interval 强制 affine line homotopy。Log interval 允许带边界或 log 结构的 homotopy，能适配 semistable degeneration 或 log smooth geometry。
+**解答 21.9.** 若 integral Frobenius pullback 为等价，则它在由 `KGL` 表示的
+`K_1(k)` 上也应为同构；但该映射是 `p` 次幂，非 perfect 时不满，矛盾。
 
-**解答 21.10.** 闭嵌入 `\operatorname{Spec}(A/I)\to\operatorname{Spec}A`，其中 `I` nilpotent，是 integral、surjective 且诱导同一底层拓扑空间，因此是 universal homeomorphism。
+**解答 21.10.** Perfect motivic category 从定义域与同伦关系开始就令 Frobenius
+可逆，且其中乘 `p` 已可逆。普通 integral `\mathbf{SH}(X)` 仍可检测非 perfect
+Frobenius；二者只有经论文给出的 localization/comparison 才能比较。
 
 ## 第二十二章
 
-**解答 22.1.** 若 realization `R` 从 `\mathbf H(S)` 因子化，则由 `\mathbb A^1`-局部化泛性质，`R(X\times\mathbb A^1\to X)` 必须是等价。
+**解答 22.1.** 先由 Nisnevich descent 通过层化因子化，再由
+`X\times\mathbb A^1\to X` 的像为等价通过 `\mathbb A^1`-局部化因子化；最后由
+`T` 的像可逆通过 symmetric monoidal `T`-stabilization 因子化。三步泛性质分别给出
+唯一性。
 
-**解答 22.2.** 在 complex topology 中，`\mathbb A^1(\mathbb C)\simeq\mathbb C` 可缩。因此 `X(\mathbb C)\times\mathbb C\to X(\mathbb C)` 是 homotopy equivalence，Betti realization 反演 `\mathbb A^1`。
+**解答 22.2.** Betti realization 把 `T` 送到 pointed homotopy cofiber
+`\operatorname{hocofib}(\mathbb C^*\to\mathbb C)`；它是复直线在原点处的 Thom
+space，故同伦等价于 `S^2`。而 `\mathbb P^1(\mathbb C)\cong S^2`，所以
+`T\simeq(\mathbb P^1,\infty)` 的两个描述在 realization 后一致。
 
 **解答 22.3.** Etale homotopy type 通常只能以 pro-space 捕捉所有 finite etale covers 和 cohomological approximations。单个 space 往往不能保留这些 inverse system 信息。
 
-**解答 22.4.** Complex Betti realization 使用 `X(\mathbb C)` 的拓扑空间。Real realization 使用 `X(\mathbb R)` 或带 `C_2`-作用的 complex points，能反映实闭域和共轭作用的信息。
+**解答 22.4.** 对实概形 `X=\operatorname{Spec}\mathbb C`，`X(\mathbb R)=\varnothing`；
+但 `X(\mathbb C)` 有两个点，复共轭交换它们。因此 real-points realization 与
+`C_2`-equivariant Betti realization 不同。
 
-**解答 22.5.** Realization functor 可能忘记 motivic weight、torsion 或 arithmetic 信息。它保守需要额外假设；不能由 functor 存在推出。
+**解答 22.5.** `S` 必须 Noetherian 且有限维；局部化元素是由 `-1` 给出的
+`\rho:\mathbb 1\to\mathbb G_m`；结论是
+`\mathbf{SH}(S)[\rho^{-1}]\simeq\mathbf{SH}(S_{\mathrm{ret}})`，不能删去
+`\rho`-局部化。
 
-**解答 22.6.** 需要自然等价 `R_Y(f_!E)\simeq f^{top}_!R_X(E)`，并与复合、base change、projection formula 和单位对象相容。
+**解答 22.6.** Pullback 相容只给出
+`R_Xf^*\simeq(f^{\mathrm{an}})^*R_Y`。要对 `f_!` 取 mate，仍需 realization
+保持相应伴随并控制开浸入延零、proper compactification 与 base change；仅有两边各自
+存在伴随不足以证明 mate 可逆。
 
-**解答 22.7.** 命题 22.13 的证明路线是：若 realization 与六操作相容，则把 motivic localization sequence 逐项送到目标理论；目标中的 exactness 保持 cofiber sequence，因此得到 realized localization sequence。
+**解答 22.7.** 对 motivic localization sequence 施加正合 `R`，再用它与
+`j_!,j^*,i_*,i^*` 的四个相容等价逐项替换。正合性保持 cofiber，所得正是目标范畴的
+localization sequence。
 
 ## 第二十三章
 
 **解答 23.1.** Coefficient system 是把每个基对象 `S` 赋予一个稳定 presentable symmetric monoidal category，并对态射给出 pullback/pushforward 等结构且满足相干公理的系统。
 
-**解答 23.2.** Universal property 表示从 `\mathbf{SH}` 到任意满足相同 motivic 公理的 coefficient system 的 morphism 由唯一方式存在。它描述的是初性，而不是某个具体模型。
+**解答 23.2.** Universal property 表示在 `\operatorname{CoSy}^{c}_B` 中，从
+`\mathbf{SH}` 到任意对象的 morphism space 可缩。唯一性只针对该 ambient category
+编码的 coefficient-system 结构，不自动包括定义之外的全部六操作相容性。
 
 **解答 23.3.** Pullback formalism 主要控制 `f^*` 和其相干。完整六操作还需要 `f_*`、`f_!`、`f^!`、projection formula、base change、localization、purity 等额外结构。
 
@@ -415,31 +485,72 @@ $$
 
 **解答 23.5.** 2025-2026 pullback formalism 结果较新，假设、适用几何类别和与既有六操作的关系仍需逐项核查。因此本书把它们列为研究边界，而非基础外部输入。
 
-**解答 23.6.** 若 category 由 smooth generators 在 colimits 下生成，则保持 colimits 的 functor 由其在这些 generators 上的值决定。验证 morphism 等价也可在 generators 上检测。
+**解答 23.6.** 对两个保持余极限的正合函子之间的自然变换，令 `\mathcal L` 为其分量
+是等价的对象。`\mathcal L` 是 localizing subcategory；若它包含 smooth generators，
+生成假设给出 `\mathcal L` 等于整个纤维范畴。这个论证检测自然变换，不凭空构造函子。
 
 **解答 23.7.** Universal property 描述对象在某个结构范畴中的唯一性。具体模型构造给出一个实现该性质的对象；不同模型若满足同一初性，则等价。
 
-**解答 23.8.** 可列为：Nisnevich descent、`\mathbb A^1`-invariance、stability、symmetric monoidal structure、base change/projection formula、localization/purity 或相应六操作相干。
+**解答 23.8.** 三层分别是：由 Nisnevich descent 与闭开 localization 组成的局部性；
+由 `\mathbb A^1`-invariance 与 `T`-stability 组成的 motivic 不变性；以及 monoidal、
+smooth pushforward、base change、projection formula 等系数结构。初性只保持 ambient
+category 实际编码的部分。
 
 **解答 23.9.** `\mathbf{SH}` 已经反演 `X\times\mathbb A^1\to X`。若某理论不满足 `\mathbb A^1`-invariance，则它不能接收来自局部化后的 universal functor，除非先做局部化修正。
 
-**解答 23.10.** 范畴等价只比较两个给定对象。Universal property 还控制从该对象到所有目标的映射空间，因此包含唯一性、自然性和与结构相容的信息。
+**解答 23.10.** 底层范畴等价不必保持 pullback、monoidal product 或 localization。
+结构化 universal property 还控制到所有目标的结构保持映射空间；但其额外内容严格受
+ambient category 限制，不能自动扩张到未编码的全部六操作。
 
 **解答 23.11.** 若 `A` 和 `B` 都在某范畴中初始，则由初性有唯一态射 `A\to B` 和 `B\to A`。复合 `A\to A` 与恒等同为从初始对象到自身的唯一态射，因此为恒等；同理另一复合为恒等。
 
 ## 第二十四章
 
-**解答 24.1.** P0 外部输入是正文主链依赖的标准结果，缺少它会影响理论构造。研究边界是近期或扩展方向，只作说明或开放问题，不支撑主链证明。
+**解答 24.1.** 默认五元组为：有限型 `B`-概形组成的几何范畴
+`\mathcal C`；光滑站点上的 Nisnevich 拓扑 `\tau`；区间
+`I=\mathbb A^1`；悬挂坐标
+`T=\mathbb A^1/(\mathbb A^1-0)`；以及 separated finite-type 态射类
+`\mathcal E`。最后一项控制 exceptional 伴随 `f_!\dashv f^!` 的定义域。
 
-**解答 24.2.** Theorem locator 应包含作者、题名、版本或出版信息、章节、定理/命题编号、页码、精确假设、与本书使用语句的差异。
+**解答 24.2.** `I`-局部化按定义反演所有 `X\times I\to X`。若一个预层级
+函子经该局部化因子化，则这些态射的像必须为等价。取 `I=\mathbb A^1`，这正要求
+目标中 `u(X\times\mathbb A^1)\to u(X)` 为等价；若 `u` 保持乘积，可改写为
+`u(X)\times u(\mathbb A^1)\to u(X)`，故 `u(\mathbb A^1)` 的可缩性给出该条件。
 
-**解答 24.3.** Conceptual closure 表示理论范围和内部逻辑已成形。Publication closure 还要求编号、页码、排版、完整 locator、索引、习题详解和校对全部完成。
+**解答 24.3.** 取只有一条非恒等箭头 `f:X\to Y` 的基范畴，并令四个纤维范畴都
+等于某个稳定范畴 `\mathcal C`。令第一套 pullback 为恒等函子，第二套 pullback
+为一个不与恒等自然等价的自等价 `\Phi`。逐纤维取 `R_X=R_Y=\operatorname{id}`
+都是范畴等价，但 pullback 相容要求
+`R_Xf^*=\operatorname{id}\simeq\Phi=f'^*R_Y`，这并不存在。因此它不是
+coefficient-system morphism，更不是六操作比较。
 
-**解答 24.4.** 例如选择 realization 保守性问题，其前三章基础包括 Nisnevich descent、`\mathbb A^1`-localization、`T`-stabilization 和 `\mathbf{SH}(S)` 的定义。
+**解答 24.4.** 对 `p:\coprod_{r=1}^dS\to S`，有
+`\mathbf{SH}(\coprod S)\simeq\mathbf{SH}(S)^d`。普通推前为
+`p_*(E_1,\ldots,E_d)=\prod_rE_r\simeq\bigoplus_rE_r`，norm 为
+`p_\otimes(E_1,\ldots,E_d)=\bigotimes_rE_r`。取 `d=2`、`E_1=0`、
+`E_2=\mathbb 1`，前者为 `\mathbb 1`，后者为零，故加性推前不能形式决定 norm。
 
-**解答 24.5.** 例：Betti realization 在何种基域、完备化或 cellular 子范畴上保守？该问题依赖 realization 与稳定 motivic homotopy、weight 和 torsion 信息的相互作用。
+**解答 24.5.** 正合局部化把 `a` 的 cofiber 送到 `L(a)` 的 cofiber；因此
+`L(a)` 为等价恰好说明 `L(\operatorname{cofib}(a))=0`。在 `D(\mathbb Z)` 中，
+非零对象 `\mathbb Z/p` 满足
+`\mathbb Z/p\otimes_{\mathbb Z}^{\mathbf L}\mathbb Z[1/p]\simeq0`，说明反演
+`p` 的局部化有非零核。
 
-**解答 24.6.** 用定义 24.12 检查任一章：是否有定义、核心命题、证明或外部输入、例子/边界/失败模式、练习和与主线的连接。若只列主题而无这些结构，则仍像大纲。
+**解答 24.6.** 保持余极限只保证 `R` 把定义 slice 的 cofiber 送到 cofiber；它
+并不给出 `R(f_qE)\simeq f'_qR(E)`。缺少的是 `R` 与右伴随 `r_q` 的交换，亦即
+命题 24.12(2)。只有先识别 cofiber sequence 的前两项，才能识别第三项。
+
+**解答 24.7.** 以问题 24.17 为例：已知输入是某个明确 target 和系数下的
+realization `R`；所求对象是 `\mathbf{SH}(S)` 的一个生成子明确的 full
+subcategory `\mathcal C`；需要验证的相干图包括 `R` 与悬挂、cofiber、张量和所用
+六操作的交换图；预期输出是 `R|_{\mathcal C}` 反射等价并给出其 kernel 的生成族。
+
+**解答 24.8.** Perfectization 只在正特征语境中定义；它与普通 Nisnevich 下降、
+`\mathbb A^1` 及 Tate 球的比较需要 universal-homeomorphism localization 和
+`p` 可逆性的外部定理。复点函子要求复基；它保持有限纤维积，Nisnevich 覆盖给出
+拓扑局部粘合，`\mathbb A^1(\mathbb C)=\mathbb C` 可缩，而 Tate 球实现为稳定可逆
+的拓扑球。前一构造的关键障碍是 integral `p`-primary 信息，后一构造的关键障碍是
+紧支撑与全部六操作相容，而不是前三项局部化本身。
 
 ## 附录 A
 

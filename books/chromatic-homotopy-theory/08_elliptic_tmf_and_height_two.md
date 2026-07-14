@@ -1,12 +1,6 @@
 # 第八章：Elliptic cohomology、tmf 与高度二几何
 
-## 本章目标
-
-本章建立高度二几何的接口：椭圆曲线的形式群、ordinary/supersingular 分层、elliptic cohomology 和 topological modular forms。当前版本只写入严格入口，不把 tmf 的构造细节作为内部证明。
-
-## 依赖前置知识
-
-需要第二章的形式群高度、第三章的 Morava E-theory 和第六章的 $\mathbb E_\infty$ 精化。代数栈、模形式和 derived algebraic geometry 作为外部背景。
+高度二第一次让形式群的局部分类与一族熟悉的全局几何对象直接相遇：椭圆曲线在 ordinary 点给出高度一形式群，在 supersingular 点给出高度二形式群。Elliptic cohomology 试图把这种几何变成上同调理论，topological modular forms 则把模曲线上的局部谱数据粘合为全局对象。本章沿椭圆曲线的形式完备化、ordinary/supersingular 分层和 $K(2)$-局部信息建立严格入口。第二章的形式群高度、第三章的 Morava $E$-理论和第六章的 $\mathbb E_\infty$ 精化提供局部语言；代数栈、模形式及 derived algebraic geometry 的深构造作为外部背景，不伪装成书内证明。
 
 ## 8.1 椭圆曲线的形式群
 
@@ -101,9 +95,9 @@ $$
 
 **警告 8.17.** 只有在 supersingular locus 由单点和相应 automorphism group 控制的特殊情形，才可能写成单个 $E_2^{hG}$。一般情形需要 groupoid descent。
 
-## 本章小结
+## 8.8 高度二的局部与全局
 
-椭圆曲线的形式群把 height $2$ 带入稳定同伦论。ordinary 点对应高度 $1$，supersingular 点对应高度 $2$。tmf 是模栈上的全局谱对象，不是单个 Morava E-theory。它的构造属于外部输入，后续章节应补齐定理定位和计算样例。
+椭圆曲线的形式群把 height $2$ 带入稳定同伦论。ordinary 点对应高度 $1$，supersingular 点对应高度 $2$。tmf 是模栈上的全局谱对象，不是单个 Morava E-theory；因此局部的 $E_2$ 模型只能描述其 supersingular 完备化，不能取代全局下降数据。
 
 ## 练习
 

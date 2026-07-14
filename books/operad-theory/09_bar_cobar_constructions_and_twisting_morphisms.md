@@ -1,21 +1,6 @@
 # 第九章：Bar-cobar 构造与 twisting morphism
 
-## 本章目标
-
-本章建立同伦代数所需的 dg-operad 工具。核心目标是：
-
-1. 固定链复形和 Koszul 符号约定。
-2. 定义 dg 对称序列、dg-operad 和 dg-cooperad。
-3. 定义 cofree conilpotent cooperad。
-4. 定义 twisting morphism 及其 Maurer-Cartan 方程。
-5. 构造 cobar functor $\Omega$ 和 bar functor $B$。
-6. 证明 twisting morphism、cobar 映射和 bar 映射之间的自然对应。
-
-本章的重点是定义和泛性质。Quillen 等价、Koszul 判别和具体同伦 operad 的 quasi-isomorphism 留到后续章节，并作为外部输入定理使用。
-
-## 依赖前置知识
-
-需要定义 6.6 的线性 operad、定义 8.4 和定义 8.16 的二次/Koszul 语言，以及链复形、张量积、微分和同调的基本知识。
+把一个 cooperad 的分解沿树边展开，会在自由 operad 上产生新微分；反过来，把 operad 乘法沿树边收缩，会在 cofree cooperad 上产生新微分。两种构造都面临同一个检验：内部微分、树微分和 Koszul 符号合在一起后必须平方为零。卷积 pre-Lie 乘积把这个检验压缩为 Maurer--Cartan 方程 $d\alpha+\alpha\star\alpha=0$，其解就是 twisting morphism。本章在同调分次链复形上完整构造 cobar 与 bar，并证明它们由 twisting morphism 表示同一泛性质。线性 operad、二次/Koszul 语言以及 graded tensor 的符号规则将被逐项调用。
 
 ## 9.1 链复形与符号约定
 
@@ -408,9 +393,9 @@ $$
 
 **说明 9.24.** 定义 I.20 和命题 I.21 分别对 bar 使用递增顶点滤过、对 cobar 使用递减顶点滤过。Connectedness 使两者在固定 arity 中有限，从而避免未声明的完成化与收敛问题。引用 LV-2 的 Koszul 判别时必须说明 characteristic $0$、connected weight grading、conilpotence 和 suspension convention；只有在进一步使用 $E^\vee$、$\mathcal P^!$ 或双对偶识别时才加入有限型假设。FRE 版本所需的 $C$-cofibrancy 与 operad cofibrancy 又是另一组条件。
 
-## 本章小结
+## 9.10 一条 Maurer--Cartan 方程的两侧
 
-Bar-cobar 理论把“同伦代数结构”转化为 twisting morphism 的 Maurer-Cartan 方程。Cobar 构造 $\Omega\mathcal C$ 是自由 operad 上加由 cooperad 分解诱导的微分；bar 构造 $B\mathcal P$ 是 cofree cooperad 上加由 operad 乘法诱导的微分。核心泛性质是
+Cobar 构造 $\Omega\mathcal C$ 在自由 operad 上加入由 cooperad 分解诱导的微分，bar 构造 $B\mathcal P$ 则在 cofree conilpotent cooperad 上加入由 operad 乘法诱导的微分。两边的平方为零都由同一树级抵消机制控制，并汇入泛性质
 $$
 \operatorname{Hom}_{\mathrm{dgOp}}(\Omega\mathcal C,\mathcal P)
 \cong
@@ -418,7 +403,7 @@ $$
 \cong
 \operatorname{Hom}_{\mathrm{dgCoop}}(\mathcal C,B\mathcal P).
 $$
-后续 $A_\infty$、$L_\infty$ 和 $E_n$-operad 的定义都将使用这一机制。
+因此，一个 twisting morphism 既可以读成 cobar 到 operad 的态射，也可以读成 cooperad 到 bar 的态射。下一章把这套机器应用于 $\operatorname{Ass}$、$\operatorname{Lie}$ 和 $\operatorname{Com}$ 的 Koszul 对偶：树微分将具体变成 $A_\infty$、$L_\infty$ 与 $C_\infty$ 的高阶恒等式。
 
 ## 练习
 

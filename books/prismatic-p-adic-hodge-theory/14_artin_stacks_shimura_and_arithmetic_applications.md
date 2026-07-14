@@ -1,18 +1,12 @@
 # 第十四章：Artin stacks、Shimura varieties 与算术应用边界
 
-## 本章目标
-
-本章把 prismatic theory 的几何应用边界组织为四类：Artin stacks、Shimura varieties、Brauer groups 和 finite flat group schemes。这些方向展示 prismatic methods 的扩展能力，但本书只把它们作为应用边界或外部输入，不纳入基础定理链。
-
-## 依赖前置知识
-
-依赖第六章 prismatic $F$-crystals、第七章 syntomic structures、第八章 prismatization and $F$-gauges、第十二章 lattices。
+从 smooth proper formal scheme 走向 Artin stack、Shimura variety 或 finite flat group scheme 时，改变的不只是对象名称：cohomological descent、properness、torsion 控制和 integral lattice 的假设都会重新出现。Prismatic 方法在这些方向已有重要应用，但每一项都依赖超出基础 site 理论的专门比较定理。本章沿第六章的 $F$-crystal、第七章的 syntomic 结构、第八章的 prismatization/$F$-gauge 和第十二章的 lattice，选取四类应用说明输入条件如何变化、输出落在哪个范畴，以及哪些结论仍只能作为研究边界。目标是教会读者判断应用定理的类型，而不是列一张成果名称表。
 
 ## 14.1 Artin stacks
 
 **研究边界 14.1.** Kubrak-Prikhodko 研究 Artin stacks 情形中的 integral $p$-adic Hodge theory。对 Hodge-proper stack，他们使用 prismatic cohomology 建立与 Raynaud generic fibre etale cohomology 相关的 $p$-adic Hodge theory，并得到 crystalline Galois representation 和 Breuil-Kisin module 描述。
 
-**说明 14.2.** Stacky 情形的重要变化是 properness、cohomological finiteness 和 generic fibre comparison 的假设与 schemes 情形不同。正式引入该理论需要先建立 stacks 上的 prismatic cohomology 和 cohomological descent。
+**说明 14.2.** Stacky 情形的重要变化是 properness、cohomological finiteness 和 generic fibre comparison 的假设与 schemes 情形不同。应用比较定理前需要先建立 stacks 上的 prismatic cohomology 和 cohomological descent。
 
 ## 14.2 Shimura varieties
 
@@ -36,17 +30,17 @@
 
 **证明.** Dieudonne theory 的对象由 group scheme 类型和 Frobenius/Verschiebung 结构决定。Prismatic statement 只有在同时给出 site、height condition 和结构映射对应时，才足以恢复 classical Dieudonne module。证毕。
 
-## 14.5 应用边界原则
+## 14.5 应用定理的类型条件
 
-**约定 14.10.** 本书处理应用边界时遵守三条规则：
+**判据 14.10.** 一个可比较的算术应用至少要满足三项类型条件：
 
-1. 只使用一手文献和版本已核查预印本；
-2. 不把应用定理倒用为 prismatic cohomology 的基础定义；
-3. 对每个应用记录其额外 hypotheses，而不是只记录结论名称。
+1. 指定输入几何对象及其 finiteness/properness 条件；
+2. 指定额外的 tensors、level、operations 或 group-scheme 结构；
+3. 指定输出是 cohomology、Galois representation、realization functor 还是 obstruction。
 
-## 14.6 应用定理的假设表
+## 14.6 四类应用的输入与输出
 
-**说明 14.11.** 应用章节不得只写“某某方向使用 prismatic cohomology”。一个可审查的应用条目至少要有如下表格。
+**说明 14.11.** “某个方向使用 prismatic cohomology”没有确定的命题类型；下表把四类应用的输入、附加结构与输出分开。
 
 | 方向 | 几何对象 | 额外结构 | 输出 | 不能省略的假设 |
 | --- | --- | --- | --- | --- |
@@ -55,13 +49,13 @@
 | Brauer groups | arithmetic variety | syntomic operations | duality/evaluation obstruction | field and cohomological range |
 | finite flat groups | height one group scheme | Frobenius/Verschiebung | prismatic $F$-gauge | characteristic and height |
 
-**命题 14.12.** 若一个应用结果没有说明几何对象和额外结构，则不能纳入本书的应用边界表。
+**命题 14.12.** 若一个应用结果没有说明几何对象和额外结构，则其目标 cohomology、representation 或 obstruction 不能由陈述唯一确定。
 
 **证明.** Prismatic methods 的输出依赖输入几何对象和额外结构。Artin stack、Shimura variety、Brauer class 和 finite flat group scheme 的比较对象不同；未说明输入类型时，目标 cohomology 或 representation 也无法确定。证毕。
 
-## 本章小结
+## 14.7 应用定理中的附加假设
 
-Artin stacks、Shimura varieties、Brauer groups 和 finite flat group schemes 说明 prismatic theory 已经成为 arithmetic geometry 的通用工具。但正式教材的基础链仍然是 $\delta$-环、prism、site、comparison theorem、integral modules 和 $F$-crystals；应用边界必须分层记录。
+Artin stacks、Shimura varieties、Brauer groups 和 finite flat group schemes 说明 prismatic theory 已经成为 arithmetic geometry 的通用工具。共同的 $\delta$-环、prism 与 $F$-crystal 语言并不消除各自的附加结构：stacky descent、Shimura tensors、syntomic operations 和 height-one Frobenius/Verschiebung 数据必须分别保留，应用结论才具有确定类型。
 
 ## 练习
 

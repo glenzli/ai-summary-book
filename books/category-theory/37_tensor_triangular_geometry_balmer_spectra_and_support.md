@@ -1,12 +1,8 @@
 # 第三十七章：Tensor triangular geometry、Balmer spectrum 与支撑理论
 
-## 本章目标
+交换环的素理想由乘法检测，稳定张量范畴中的 prime thick tensor ideals 扮演同样角色。Balmer spectrum 把这些素理想组成拓扑空间，对象的支撑则记录它在哪些素点不消失；在 $\operatorname{Perf}(R)$ 上可恢复 $\operatorname{Spec}R$，在稳定同伦和表示论中则产生 chromatic 或 support-variety 几何。本章建立 prime、support datum 与分类定理的精确关系，并区分小的紧对象范畴与其 presentable completion。
 
-本章介绍 tensor triangular geometry。它把小的幂等完备稳定对称幺半范畴看作“非交换或高阶空间”，并用 prime tensor ideals 构造 Balmer spectrum。该理论统一了交换环的 Zariski 谱、代数簇上的 perfect complexes、稳定同伦论中的 chromatic primes，以及表示论中的 support varieties。
-
-## 依赖前置知识
-
-需要三角范畴、稳定 $\infty$-范畴、幂等完备化、厚子范畴、紧对象、对称幺半结构、Bousfield localization、chromatic homotopy 和 perfect complexes。
+所需背景是稳定/三角范畴、幂等完备、厚子范畴、紧对象和对称幺半结构。Thomason subset 分类与具体谱识别作为带假设的外部输入；rigidity、essential smallness 和 tensor ideal 条件会在每条定理中保留。
 
 ## 37.1 Tensor triangulated categories
 
@@ -51,7 +47,7 @@ $$
 \operatorname{supp}(x)=\{\mathfrak p\in\operatorname{Spc}(T)\mid x\notin\mathfrak p\}.
 $$
 
-这些集合生成 $\operatorname{Spc}(T)$ 的拓扑。
+Balmer 拓扑规定每个 $\operatorname{supp}(x)$ 为闭集；它们构成闭集的一组基，并且补集 $U(x)$ 是 quasi-compact open。
 
 **命题 37.6.** 对 $x,y\in T$，有
 
@@ -74,7 +70,13 @@ $$
 
 ## 37.3 Thomason subsets 与分类定理
 
-**定义 37.7.** 拓扑空间 $X$ 的 Thomason subset 是可写为 quasi-compact open subsets 的补的并的子集。若 $X$ spectral，这等价于 specialization-closed 且满足合适 quasi-compactness 条件的子集。
+**定义 37.7.** 拓扑空间 $X$ 的 Thomason subset 是形如
+
+$$
+\bigcup_{\lambda\in\Lambda}Z_\lambda
+$$
+
+的子集，其中每个 $Z_\lambda$ 为闭集且 $X\setminus Z_\lambda$ quasi-compact open。若 $X$ Noetherian，这恰好是 specialization-closed subsets；对一般 spectral space，不能删去 quasi-compact-complement 条件。
 
 **外部输入定理 37.8（Balmer 分类定理）.** 对 rigid tt-category $T$，radical thick tensor ideals 与 $\operatorname{Spc}(T)$ 的 Thomason subsets 之间存在包含保持对应：
 
@@ -114,9 +116,13 @@ $$
 \{\mathfrak p\in\operatorname{Spec}R\mid P_{\mathfrak p}\not\simeq0\}.
 $$
 
-**命题 37.12.** 若 $P$ 是 perfect $R$-complex，且 $P\simeq0$，则其支撑为空。若 $R$ noetherian，反过来支撑为空蕴含 $P\simeq0$。
+**命题 37.12.** 对任意交换环 $R$ 与 perfect $R$-complex $P$，有
 
-**证明.** $P=0$ 时局部化 $P_{\mathfrak p}=0$ 对所有 $\mathfrak p$ 成立，支撑为空。反向在 noetherian 情形中，perfect complex 有有限生成 cohomology，若所有局部化为零，则所有 cohomology modules 局部化为零，从而 cohomology 为零，故 $P\simeq0$。$\square$
+$$
+P\simeq0\quad\Longleftrightarrow\quad\operatorname{supp}(P)=\varnothing.
+$$
+
+**证明.** 正向显然。反向假设 $P_{\mathfrak p}\simeq0$ 对所有素理想成立。局部化与有限 perfect complex 的 cohomology 交换，故每个 $H^i(P)$ 在所有素理想处局部化为零。任意非零模都有非空支撑：取非零元，其 annihilator 包含于某个素理想，该元在相应局部化中仍非零。因此 $H^i(P)=0$ 对所有 $i$ 成立，故 $P\simeq0$。此论证不需要 Noetherian 假设。$\square$
 
 ## 37.5 例子：有限谱与 chromatic primes
 
@@ -128,7 +134,7 @@ $$
 
 ## 37.6 Tensor triangular geometry 与局部化
 
-**命题 37.15.** 若 $I\subseteq T$ 是 thick tensor ideal，则 Verdier quotient $T/I$ 继承张量结构，当张量能良好下降时，商函子 $T\to T/I$ 是 tt-functor。
+**命题 37.15.** 若 $I\subseteq T$ 是 thick tensor ideal，则 Verdier quotient $T/I$ 典范继承张量结构，商函子 $T\to T/I$ 是 tt-functor。
 
 **证明.** 因 $I$ 是 tensor ideal，若 $x\to x'$ 的锥在 $I$ 中，则对任意 $y$，$x\otimes y\to x'\otimes y$ 的锥也在 $I$ 中。故张量把被倒置的态射送到被倒置的态射，从而由 Verdier quotient 泛性质下降到 $T/I$。对称幺半相干由 $T$ 中相干下降得到。$\square$
 
@@ -196,7 +202,7 @@ $$
 
 对支撑基开集的计算得到。$\square$
 
-## 37.8 本章小结
+## 37.8 稳定张量范畴的素谱
 
 Tensor triangular geometry 用 prime thick tensor ideals 构造 $\operatorname{Spc}(T)$，把稳定同伦论、代数几何和表示论中的支撑理论统一起来。Balmer spectrum 把“对象在哪里非零”变成拓扑支撑；分类定理把 radical thick tensor ideals 与 Thomason subsets 对应。它是 compact tensor triangulated categories 的几何化语言。
 

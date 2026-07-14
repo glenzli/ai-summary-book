@@ -293,14 +293,14 @@ $$
 \mathcal F_A(V).
 $$
 
-**外部边界 N.26（locally constant comparison）.** 在选定的 Costello--Gwilliam/Lurie 型模型中，$\mathcal F_A$ 是 locally constant factorization algebra，并且在 $\mathbb R^n$ 上该构造给出 equivalence
+**外部边界 N.26（locally constant comparison）.** 在选定的 Costello--Gwilliam/Lurie 型模型中，$\mathcal F_A$ 是 locally constant multiplicative factorization algebra，并且在 $\mathbb R^n$ 上该构造给出 equivalence
 $$
 \operatorname{Alg}_{E_n}(\mathcal C)
 \simeq
-\operatorname{Fact}^{lc}_{\mathbb R^n}(\mathcal C).
+\operatorname{Fact}^{lc,\otimes}_{\mathbb R^n}(\mathcal C).
 $$
 
-**说明 N.27.** 该比较不是形式 Kan extension 的普通范畴论推论。关键点是 Weiss descent、isotopy invariance 和 disk embeddings 的同伦性质。Ayala--Francis, arXiv:1206.5522v6, Theorem 3.24 已定位 homology theories for manifolds 与 Disk$_n$-algebras 的刻画，但不等于 Costello--Gwilliam/Lurie 语境中的 locally constant factorization algebra 完整等价。后者尚无本书精确 locator，因此 N.26 不进入证明链。
+**说明 N.27.** 该比较不是形式 Kan extension 的普通范畴论推论。关键点是 Weiss descent、multiplicativity、isotopy invariance 和 disk embeddings 的同伦性质。Ayala--Francis, arXiv:1206.5522v6, Theorem 3.24 已定位 homology theories for manifolds 与 Disk$_n$-algebras 的刻画，但不等于 Costello--Gwilliam/Lurie 语境中的 locally constant multiplicative factorization algebra 完整等价。后者尚无本书精确 locator，因此 N.26 不进入证明链。
 
 ## N.10 Factorization homology 与普通同调的关系
 
@@ -345,9 +345,9 @@ Fukaya theory 中出现 factorization homology 的方式通常不是“给任意
 
 缺少任一项时，只能把结论作为研究动机，不能纳入证明链。
 
-## N.12 使用检查表
+## N.12 Factorization homology 公式的适用条件
 
-在正文中使用 factorization homology 结论前，必须检查：
+一个 factorization homology 公式的类型由下列数据共同决定；任一项改变都可能改变对象或比较映射：
 
 1. **切结构。** $M$ 是 framed、oriented、unoriented，还是带一般 $\xi$-structure。
 2. **系数结构。** $A$ 是 $E_n$、$E_n^\xi$、$E_\infty$，还是 enriched/categorical 版本。

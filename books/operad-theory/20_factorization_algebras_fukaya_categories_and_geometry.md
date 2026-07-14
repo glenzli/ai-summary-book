@@ -1,11 +1,6 @@
 # 第二十章：Factorization algebra、Fukaya categories 与几何应用
 
-本章说明 operad theory 如何进入几何。核心例子有两类：
-
-1. factorization algebras and factorization homology；
-2. Fukaya categories and higher operadic structures。
-
-这些主题的完整证明依赖分析、层论、同伦论和辛几何。本章只建立严格的概念接口，并把深定理标为外部输入。
+两个互不相交的小圆盘嵌入一个大圆盘，会给局部对象之间的张量乘法；一族彼此交叠的开集覆盖大开集，则要求局部数据通过 descent 重构整体。这两种局部到整体机制不能混为同一个 colimit：前者是 prefactorization algebra 的多输入结构，后者是底层一元 precosheaf 对 Weiss cover 的余层条件。Factorization homology 又把 disk algebra 沿流形作 infinity-categorical colimit。辛几何中的 Fukaya category 提供另一类树形复合，但其定义还依赖伪全纯曲线的紧性、横截性和定向。本章先把这些接口逐项定型，再只在假设明确时连接 $E_n$-代数、Hochschild 同调与几何 gluing。
 
 ## 20.1 Disk categories
 
@@ -32,26 +27,82 @@ $$
 
 ## 20.2 Factorization algebras
 
-**定义 20.3.** $M$ 上取值于 $\mathcal C$ 的 prefactorization algebra 是如下数据：
+**定义 20.3.** 令 $\mathbf{Open}^{\otimes}(M)$ 为如下对称多范畴：颜色是 $M$ 的开子集；从 $(U_1,\ldots,U_r)$ 到 $V$ 有唯一 multimorphism，当且仅当 $U_i$ 两两不交且 $\bigcup_iU_i\subset V$。$M$ 上取值于 $\mathcal C^\otimes$ 的 prefactorization algebra 是一个对称 multifunctor
+$$
+\mathcal F:\mathbf{Open}^{\otimes}(M)\longrightarrow\mathcal C^\otimes.
+$$
+展开后，它给出：
 
-1. 对每个开集 $U\subset M$，给出对象 $\mathcal F(U)\in\mathcal C$；
-2. 对任意两两不交开集 $U_1,\ldots,U_r\subset V$，给出结构映射
+1. 对每个开集 $U\subset M$，一个对象 $\mathcal F(U)\in\mathcal C$；
+2. 对任意两两不交开集 $U_1,\ldots,U_r\subset V$，一条乘法结构映射
    $$
-   \mathcal F(U_1)\otimes\cdots\otimes\mathcal F(U_r)\to\mathcal F(V);
+   m_{U_1,\ldots,U_r;V}:
+   \mathcal F(U_1)\otimes\cdots\otimes\mathcal F(U_r)
+   \longrightarrow\mathcal F(V);
    $$
 3. 对 $r=0$，给出单位映射 $\mathbb 1_\mathcal C\to\mathcal F(V)$；
-4. 对嵌套的不交开集配置，上述映射满足结合律、单位律和对称群等变性。
+4. 对嵌套的不交开集配置，上述映射满足结合律、单位律和对称群等变性，或在 infinity-categorical 模型中满足相应的全部相干条件。
 
-**定义 20.4.** Prefactorization algebra $\mathcal F$ 称为 factorization algebra，若它满足 Weiss descent：对每个开集 $V\subset M$ 和每个 Weiss cover $\{U_i\}_{i\in I}$，自然映射
+取 $r=1$ 得到包含 $U\subset V$ 所诱导的 unary map $\mathcal F(U)\to\mathcal F(V)$；因此 $\mathcal F$ 有一个底层协变函子
 $$
-\operatorname{colim}_{(U_{i_1},\ldots,U_{i_r})\subset V}
-\mathcal F(U_{i_1})\otimes\cdots\otimes\mathcal F(U_{i_r})
+\mathcal F_{\mathrm{un}}:\mathbf{Open}(M)\longrightarrow\mathcal C,
+$$
+称为 underlying precosheaf。
+
+**定义 20.4（Weiss cover、Čech 索引与 descent）.** 设 $\varnothing\ne V\subset M$ 为开集，$I$ 为 $\mathcal U$-小集合。一族开集 $\mathcal U=\{U_i\subset V\}_{i\in I}$ 称为 $V$ 的 Weiss cover，若每个非空有限子集 $S\subset V$ 都包含在某个 $U_i$ 中。取单点集可见 $\bigcup_iU_i=V$；普通开覆盖未必是 Weiss cover。
+
+定义 Čech 索引范畴 $\mathsf{Cech}(\mathcal U)$。它的对象是二元组
+$$
+([q],\mathbf i),\qquad
+q\ge0,\quad
+\mathbf i=(i_0,\ldots,i_q)\in I^{q+1},\quad
+U_{\mathbf i}:=\bigcap_{a=0}^qU_{i_a}\ne\varnothing.
+$$
+从 $([q],\mathbf i)$ 到 $([p],\mathbf j)$ 的态射是一条保序映射
+$$
+\theta:[p]\longrightarrow[q]
+$$
+使 $j_a=i_{\theta(a)}$ 对所有 $0\le a\le p$ 成立。此时
+$U_{\mathbf i}\subset U_{\mathbf j}$，故底层 precosheaf 的一元结构映射给出函子
+$$
+D_{\mathcal U}:\mathsf{Cech}(\mathcal U)\longrightarrow\mathcal C,
+\qquad
+([q],\mathbf i)\longmapsto\mathcal F(U_{\mathbf i}).
+$$
+这个索引保留重复指标及不同的保序映射。更具体地，$\mathsf{Cech}(\mathcal U)$ 是 simplicial index set $I^{\mathcal U}_\bullet:\Delta^{\operatorname{op}}\to\mathbf{Set}$
+$$
+I^{\mathcal U}_q=
+\{\mathbf i\in I^{q+1}:U_{\mathbf i}\ne\varnothing\}
+$$
+的 Grothendieck construction；把每个指标 $\mathbf i$ 送到 $\mathcal F(U_{\mathbf i})$，所得 simplicial Čech object 为
+$$
+\check C_q(\mathcal U;\mathcal F)
+=
+\coprod_{\substack{\mathbf i\in I^{q+1}\\U_{\mathbf i}\ne\varnothing}}
+\mathcal F(U_{\mathbf i})
+$$
+删除或重复指标所诱导的面映射与退化映射都来自相应开集包含。
+
+各包含 $U_{\mathbf i}\subset V$ 构成 cocone。称 $\mathcal F$ 满足关于 $\mathcal U$ 的 Weiss descent，若典范映射
+$$
+\operatorname*{colim}_{\mathsf{Cech}(\mathcal U)}D_{\mathcal U}
+\simeq
+\left|\check C_\bullet(\mathcal U;\mathcal F)\right|
 \longrightarrow
 \mathcal F(V)
 $$
-是 equivalence。
+是 $\mathcal C$ 中的 equivalence。这里的 colimit 是 infinity-categorical colimit。Factorization algebra 是对每个非空开集及其每个 Weiss cover 都满足该条件的 prefactorization algebra。本书把空开集的值与定义 20.3 的 nullary 单位作为额外约定；若采用 $\mathcal F(\varnothing)$ 为初始对象的 reduced 口径，也可把空交集加入 Čech 图而不改变 colimit。
 
-这里 colimit 遍历 cover 中两两不交且并入 $V$ 的有限开集族。
+**说明 20.4.1（乘法不是 descent 映射）.** Weiss descent 的图只使用 $\mathcal F_{\mathrm{un}}$ 的一元包含映射，不含张量积。反之，定义 20.3 的
+$$
+\mathcal F(U_1)\otimes\cdots\otimes\mathcal F(U_r)\to\mathcal F(V)
+$$
+要求 $U_i$ 两两不交，是 prefactorization 乘法。若 $V=V_1\amalg V_2$ 且两部分均非空，普通覆盖 $\{V_1,V_2\}$ 不是 Weiss cover，因为分别取一点得到的二点集不包含在任一覆盖元中；所以不能用 descent 把这条乘法误写成 Čech colimit 映射。定义 20.4 本身也不额外假设
+$$
+\mathcal F(V_1)\otimes\mathcal F(V_2)\longrightarrow
+\mathcal F(V_1\amalg V_2)
+$$
+必为 equivalence；这种性质另称 multiplicativity。
 
 **定义 20.5.** Factorization algebra $\mathcal F$ 称为 locally constant，若对任意 disks $D\subset D'\subset M$，包含诱导映射
 $$
@@ -59,13 +110,38 @@ $$
 $$
 是 equivalence。
 
-**外部边界 20.6（locally constant comparison）.** 在 Costello--Gwilliam/Lurie 型的适当模型中，$\mathbb R^n$ 上取值于 $\mathcal C$ 的 locally constant factorization algebras 与 $E_n$-algebras 之间存在 equivalence of infinity-categories：
+称 $\mathcal F$ 为 multiplicative，若对任意有限族两两不交的非空开集 $U_1,\ldots,U_r$，$r\ge1$，prefactorization 结构映射
 $$
-\operatorname{Fact}^{lc}_{\mathbb R^n}(\mathcal C)\simeq
+\mathcal F(U_1)\otimes\cdots\otimes\mathcal F(U_r)
+\longrightarrow
+\mathcal F(U_1\amalg\cdots\amalg U_r)
+$$
+是 equivalence。这里要求的是一条已经存在的乘法映射成为 equivalence；它既不是该映射的定义，也不是 Weiss descent 映射。Unital 版本还要求这些等价与定义 20.3 的 nullary 单位相容。
+
+**例 20.5.1（直线上的有序乘法）.** 设 $A$ 是 $\mathbf{Ch}_k$ 中的含单位结合 dg 代数。在 $\mathbb R$ 中有限个开区间的不交并所成的 factorizing basis 上，令
+$$
+\mathcal F_A(I_1\amalg\cdots\amalg I_r)=A^{\otimes r}.
+$$
+若干源区间落入同一个目标区间时，就按直线从左到右的次序在 $A$ 中相乘；没有源区间落入某个目标分量时插入单位。特别地，对
+$$
+I_1<I_2<J
+$$
+有
+$$
+m_{I_1,I_2;J}:A\otimes A\longrightarrow A,
+\qquad a\otimes b\longmapsto ab.
+$$
+三个区间的两种嵌套结构映射分别给出 $(ab)c$ 与 $a(bc)$，所以 prefactorization 结合律在此恰为 $A$ 的结合律。所有单区间包含诱导恒等 quasi-isomorphism，故该 basis 数据局部常值；不交并的定义等式还表明它在该 basis 上 multiplicative。
+
+把这份 basis 数据延拓到全部开集并证明 Weiss descent，需要同伦左 Kan extension 或等价的 cosheafification 定理；这是外部比较 20.6 的构造部分。需要注意，上式 $A\otimes A\to A$ 来自两个不交区间的乘法，而一个 Weiss cover 的 descent 图由交集及一元包含组成，两种映射的类型已经不同。
+
+**外部边界 20.6（locally constant comparison）.** 在 Costello--Gwilliam/Lurie 型的适当模型中，$\mathbb R^n$ 上取值于 $\mathcal C$ 的 locally constant multiplicative factorization algebras 与 $E_n$-algebras 之间存在 equivalence of infinity-categories：
+$$
+\operatorname{Fact}^{lc,\otimes}_{\mathbb R^n}(\mathcal C)\simeq
 \operatorname{Alg}_{E_n}(\mathcal C).
 $$
 
-一个 locally constant factorization algebra 的 disk 值给出对象 $A=\mathcal F(D)$；多个小 disk 嵌入大 disk 的结构映射给出 little-disks 运算。反向构造使用沿 disk embeddings 的同伦左 Kan extension。完整证明需要固定 factorization-algebra 模型、Weiss descent 与 isotopy invariance；本书当前没有登记覆盖该精确版本的 theorem locator，所以 20.6 不进入后续证明链。AF-3 只刻画 manifolds 上的 homology theories，不能替代这条局部 factorization-algebra 等价。
+一个 locally constant multiplicative factorization algebra 的 disk 值给出对象 $A=\mathcal F(D)$；多个小 disk 嵌入大 disk 的结构映射给出 little-disks 运算，而 multiplicativity 把有限 disk 并的值识别为各分量值的张量积。反向构造使用沿 disk embeddings 的同伦左 Kan extension。完整证明需要固定 factorization-algebra 模型、Weiss descent、multiplicativity 与 isotopy invariance；这里只把定理 20.6 作为具有这些假设的外部比较，不用 manifolds 上同调理论的分类结果替代这条局部等价。
 
 ## 20.3 Factorization homology
 
@@ -206,15 +282,15 @@ Factorization homology 把 $E_n$-algebra 沿 $n$-manifold 积分。Fukaya 理论
 4. Hochschild invariants and centers of Fukaya categories；
 5. extended topological field theories。
 
-**研究边界 20.23（Fukaya gluing 接口）.** 在若干已验证设置中，Fukaya 型范畴可由局部模型通过 cosheaf/factorization-homology 型 gluing 得到；其 Hochschild 或 center 型不变量可能由 factorization homology 计算。该句不进入证明链，除非另行指定几何类别与 theorem locator。
+**研究边界 20.23（Fukaya gluing 接口）.** 在若干已验证设置中，Fukaya 型范畴可由局部模型通过 cosheaf/factorization-homology 型 gluing 得到；其 Hochschild 或 center 型不变量可能由 factorization homology 计算。没有指定几何类别、系数和 gluing theorem 时，这只是一组研究方向，不能作为一般 Fukaya 范畴的定理使用。
 
 **说明 20.24.** 这类定理是当前研究活跃区域。除非指定具体几何类别、系数、局部模型和 gluing 定理，本书不把它作为全局定理使用。
 
 **说明 20.25.** 本章的计算性补充见定义 N.3、外部输入定理 N.15、外部输入定理 N.18 和研究边界 N.30；常见错误命题和不可混用约定见错误命题 O.23--正确边界 O.28。特别地，factorization homology 不等于普通同调，Fukaya category 的构造不由 operad 公理单独推出。
 
-## 20.8 本章小结
+## 20.8 两种局部到整体机制的边界
 
-Locally constant factorization algebras 是 $E_n$-algebras 的几何化；factorization homology 是把 $E_n$-algebra 沿 $n$-manifold 积分的 colimit。Dunn additivity 解释了迭代 $E_n$-结构。Fukaya categories 是 $A_\infty$-categories 的几何来源，并在更高结构下与 operads、factorization algebras 和 topological field theories 相连。所有涉及辛几何分析和全局 gluing 的结论都必须作为外部输入处理。
+Prefactorization 乘法沿不交嵌入合并若干局部输入，Weiss descent 则沿交叠的 Čech 图重构一个开集的值；factorization algebra 同时携带二者，但二者的索引和映射类型不同。Locally constant 条件使 disk 值只依赖局部同胚型，在指定模型与外部比较定理下由此得到 $E_n$-代数。Factorization homology 是另一项构造，它在 $\mathbf{Disk}^{fr}_{n/M}$ 上取 colimit，并以 excision 而非普通开覆盖的 Mayer--Vietoris 公式完成计算。Fukaya 型结构可以提供 $A_\infty$ 运算和某些 gluing 接口，但伪全纯曲线的分析与 sectorial descent 仍是独立几何输入，不能由 operad 公理或 Weiss descent 的形式定义推出。
 
 ## 练习
 

@@ -32,11 +32,10 @@
 | 3.15 | P | Virasoro 低 level Gram matrix | Virasoro algebra |
 | 4.3 | P | oscillator commutators | canonical quantization |
 | 4.4A | P | 开弦 oscillator algebra | Neumann delta kernel |
-| 4.4C | P | Virasoro mode 和在有限激发域上局部有限 | common algebraic domain |
-| 4.5 | P | Virasoro algebra from oscillators | normal ordering |
-| 4.7 | P | open/closed string mass formula and level matching | Virasoro constraint |
+| 4.4D | P | Virasoro mode 和在离壳域/固定动量 fiber 上局部有限 | common algebraic domain |
+| 4.6 | P | Virasoro algebra from oscillators | normal ordering |
 | 4.7C | P | exponential cutoff 的截距有限部 | regulated mode sum |
-| 4.9 | S | 玻色弦临界条件 | BRST consistency |
+| 4.9 | P | open/closed string mass formula and level matching | fixed-momentum Virasoro constraint |
 | 4.10 | E | 非零动量 open/closed no-ghost physical quotient | $D=26$、$a=1$、$p\ne0$、open $H^1_{\rm rel}$/closed $H^2_{\rm sr}$ |
 | 4.10A | E | 零动量 no-ghost/BRST cohomology 的例外边界 | open level-one 反例、relative/semi-relative/absolute zero modes、AB97 |
 | 4.15 | P | light-cone physical oscillators | Virasoro constraints |
@@ -178,6 +177,13 @@
 | 19.7 | S | tadpole constraint 限制 flux choices | lattice bound |
 | 19.9A | S | no-scale potential | 4d supergravity |
 | 19.13 | S | ISD flux condition | IIB supersymmetry variations |
-| 20.10 | S | 全书主线陈述分类 | theorem-status audit |
-| 20.13 | P | 主线闭包 | textbook closure principle |
+| 20.2 | S | 拉伸开弦质量与 D-brane gauge enhancement | Dirichlet zero mode、low-energy SYM |
+| 20.5 | P | Betti number 计数 product-background bosonic 零模 | quadratic reduction、compact Hodge theorem |
+| 20.6 | E | twisted Dirac index | Atiyah--Singer theorem |
+| 20.9 | P | genus-zero Yukawa coupling 的 instanton 展开 | polylogarithm differentiation |
+| 20.12 | E | elliptic genus 的 weak-Jacobi 变换 | spectral flow、modular anomaly |
+| 20.13 | P | $24$ 个 bosonic oscillators 的生成函数 | occupation-number product |
+| 20.14 | E | $24$-colored partitions 的 leading growth | Rademacher/Cardy theorem |
+| 20.16 | P | 离散谱 supersymmetric index 的不变性 | positive-energy pairing、Fredholm deformation |
+| 20.17 | E | K3 symmetric-product elliptic genus | DMVV formula |
 | A.3 | P | Bianchi identity | differential geometry |

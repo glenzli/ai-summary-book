@@ -1,22 +1,22 @@
 # 凝聚数学讲义：第四卷
 
 作者：Dr. Stochastic Parrot  
-状态：工具卷基本完本草稿
+状态：计算与稳定接口教材稿
 副题：形式化、计算与例子
 
-本卷接续 [第一卷](../volume-1/)、[第二卷](../volume-2/) 与 [第三卷](../volume-3/)。前三卷建立了凝聚基础、solid/analytic/liquid 结构和复几何应用；第四卷转向可计算内容、形式化路线和具体例子。
+本卷接续 [第一卷](../volume-1/)、[第二卷](../volume-2/) 与 [第三卷](../volume-3/)。前三卷建立凝聚基础、solid/analytic/liquid 结构和复几何应用；第四卷把这些定义落实为带输入、步骤、输出与失败条件的计算，并在最后进入凝聚谱的稳定接口。
 
 ## 建议阅读顺序
 
-1. [序章：第四卷的定位](00_preface_and_scope.md)
-2. [第一章：形式化凝聚数学的对象](01_formalized_condensed_mathematics.md)
+1. [序章：把定义变成可复核计算](00_preface_and_scope.md)
+2. [第一章：匹配族的机器可检规格](01_formalized_condensed_mathematics.md)
 3. [第二章：站点、覆盖与 sheaf 条件的计算](02_site_and_sheaf_computations.md)
-4. [第三章：Ext 与 Tor 的计算模板](03_ext_tor_computation_templates.md)
+4. [第三章：Ext 与 Tor 的投射分解计算](03_ext_tor_computation_templates.md)
 5. [第四章：solid 张量积例子](04_solid_tensor_examples.md)
-6. [第五章：analytic rings 的例子库](05_analytic_ring_examples.md)
-7. [第六章：liquid 函数分析例子](06_liquid_functional_analysis_examples.md)
-8. [第七章：pro-etale topology 与凝聚数学](07_pro_etale_and_condensed.md)
-9. [第八章：计算目录与后续问题](08_catalogue_and_open_problems.md)
+6. [第五章：analytic ring 的 Dirac--测度计算](05_analytic_ring_examples.md)
+7. [第六章：liquid 化中的连续性与正合性](06_liquid_functional_analysis_examples.md)
+8. [第七章：两个站点上的投射局部对象](07_pro_etale_and_condensed.md)
+9. [第八章：凝聚谱中的六种运算与开放问题](08_catalogue_and_open_problems.md)
 10. [附录 A：形式化蓝图](A_formalization_blueprints.md)
 11. [附录 B：练习解答与计算样板](B_worked_solutions_and_computations.md)
 12. [附录 C：solid、analytic、liquid 的类型检查](C_solid_analytic_liquid_type_checks.md)
@@ -27,9 +27,11 @@
 
 ## 当前范围
 
-本卷是前三卷的计算和形式化补充。它不引入新的主线理论，而是把站点、sheaf、Ext/Tor、solid tensor、analytic rings、liquid spaces 和 pro-etale 背景整理成可查阅、可练习、可形式化的材料。
+正文沿一条连续计算线展开：有限覆盖给出 sheaf 等化子，投射分解给出 Ext/Tor，profinite 有限商给出 solid 测度外积，Dirac cone 给出 analytic localization，连续截面给出 liquid 复形的正合性，最后这些对象级计算升级为 mapping 与 tensor spectra。
 
-本卷修订后重点补强了证明细节：第二章给出有限覆盖等化子、可表 sheaf 和基子站点比较证明；第三章给出 Ext/Tor 的定义独立性、消失定理和两项分解公式；附录补充形式化拆解、练习解答、类型检查、pro-etale 边界说明、pyknotic/凝聚同伦方向、凝聚基础形式化证明义务和凝聚谱接口。
+第二章完成有限覆盖、可表 sheaf 和基子站点比较；第三至第五章完整展开循环对象、Cantor 测度、单点紧化测度与普通换底失败；第六章计算 $C^\infty([0,1])$ 的逆极限及微分积分复形；第七章在有限 étale 分支上比较两个站点的下降形状；第八章计算循环凝聚谱，并把六函子相容性表述为生成 cone 的保持问题。
+
+附录保留参考形态：A、F 记录形式化证明义务，B 给补充解答，C、D 负责类型与站点边界，E、G 汇集 pyknotic 和谱值接口。理解正文所需的计算与证明机制已经写回数字章节；附录 G 与第八章互相交叉引用，不再承担唯一主线。
 
 ## 资料
 

@@ -1,6 +1,6 @@
 # 资料源
 
-本书不是泛泛综述。每个核心定义、定理和证明路线都应能追溯到正式数学资料、教材、论文或经典文献。基础类型论、单值性、simplicial/cubical 语义与 HIT 条目于 2026-07-11 重新核查；附录 AO 的四组外部输入于 2026-07-12 按指定 arXiv 版本重新核查；其余近期研究条目沿用 2026-06-29 至 2026-06-30 的核查记录。后续扩写必须重新核查可能变化的版本信息。
+本书不是泛泛综述。每个核心定义、定理和外部输入都应能追溯到正式数学资料、教材、论文或经典文献。基础类型论、单值性、simplicial/cubical 语义、HIT、Rezk 与第十二章连通性来源于 2026-07-15 复核；附录 AO 的四组外部输入于 2026-07-12 按指定 arXiv 版本核查。引用版本可能变化时，必须重新核对版本、假设和定理编号。
 
 ## S0 核心教材
 
@@ -15,8 +15,8 @@
 
 ## S1 模型论与 Cubical Type Theory
 
-4.  Chris Kapulkin, Peter LeFanu Lumsdaine, *The Simplicial Model of Univalent Foundations (after Voevodsky)*, arXiv:1211.2851.
-    用途：第 16 章外部输入定理 16.1；一个 univalent universe 的 simplicial set 模型、contextual-category coherence 和相对于带两个不可达基数的 ZFC 的一致性推论。该来源不支撑 HIT、normalization 或 judgmental computation。
+4.  Chris Kapulkin, Peter LeFanu Lumsdaine, *The Simplicial Model of Univalent Foundations (after Voevodsky)*, JEMS 23 (2021), DOI `10.4171/JEMS/1050`, arXiv:1211.2851v5.
+    用途：第 15 章外部输入定理 15.5 与第 16 章 16.1；一个 univalent universe 的 simplicial set 模型、contextual-category coherence 和相对于带两个不可达基数的 ZFC 的一致性推论。该来源不支撑 HIT、normalization 或 judgmental computation。
 
 5.  Cyril Cohen, Thierry Coquand, Simon Huber, Anders Mörtberg, *Cubical Type Theory: a constructive interpretation of the univalence axiom*, LIPIcs TYPES 2015 (2018), DOI `10.4230/LIPIcs.TYPES.2015.5`, arXiv:1611.02108.
     用途：第 16 章定义 16.2 与外部输入定理 16.3；interval/face lattice、$\mathsf{Path}$、composition/transport、Glue、univalence 和构造性 cubical set 语义。精确落点为 §§4、6、7.2、8；该对象语言的 $\mathsf{Path}$ 不与第 2 章的归纳 $\mathsf{Id}$ 静默等同。
@@ -41,19 +41,19 @@
 11. HoTT Book 中的范畴论章节。
     用途：预范畴、单值范畴、Yoneda、Rezk completion 的教材基础。
 
-12. Ahrens、Kapulkin、Shulman 等关于 univalent categories、displayed categories、bicategories 和 Rezk completion 的论文。
-    用途：第十三至十四章、附录 BE 和附录 BB 的高阶范畴接口。
+12. Benedikt Ahrens, Krzysztof Kapulkin, Michael Shulman, *Univalent categories and the Rezk completion*, Mathematical Structures in Computer Science 25 (2015), 1010--1039, DOI `10.1017/S0960129514000486`, arXiv:1303.0584, <https://doi.org/10.1017/S0960129514000486>.
+    用途：第 13 章外部输入定理 13.9 使用 Lemmas 6.8、6.15；第 14 章定理 14.11、附录 R.11 与 AA.8-AA.10 使用 Lemmas 8.1--8.2、Theorems 8.4--8.5 及 Remark 8.6。采用其 weak equivalence、单值目标限制函子和 Yoneda 本质像 Rezk completion 的精确版本；本书不把论文 Theorem 8.4 中的代表元相容、Hom transport 和函子律计算标为书内证明。Displayed categories、univalent bicategories 与合成高阶范畴另依附录 BE、BB 所列来源。
 
-13. Emily Riehl, Michael Shulman, *A type theory for synthetic $\infty$-categories*.
-    用途：Rezk/Segal、synthetic $\infty$-category type theory 和 directed/simplicial type theory 边界。
+13. Emily Riehl, Michael Shulman, *A type theory for synthetic $\infty$-categories*, Higher Structures 1 (2017), 147--224, DOI `10.21136/HS.2017.06`, arXiv:1705.07442v5, <https://doi.org/10.21136/HS.2017.06>.
+    用途：第 17 章外部输入接口 17.7 与附录 BB、AX；shapes/topes/extension types、Segal types、Rezk types、covariant families、dependent Yoneda lemma 和 bisimplicial Reedy 语义。该三层 simplicial type theory 的 directed hom 不与本书基础 identity type 混同。
 
 ## S3 合成同伦论与代数拓扑
 
-14. HoTT Book 中的 synthetic homotopy theory、circle、suspension、pushout 和 Blakers-Massey 相关章节。
-    用途：第十至十二章和附录 AD、AI、AL、AU、AY。
+14. The Univalent Foundations Program, *Homotopy Type Theory: Univalent Foundations of Mathematics*, Chapter 8，特别是 Theorem 8.10.2（Blakers--Massey）与 Theorem 8.6.4（Freudenthal）。
+    用途：第十至十二章和附录 AD、AI、AL、AU、AY；本书采用 Theorem 8.10.2 的连通性结论，不把附录 AY 的抽象 path-code 包冒充该来源证明的内部重构。
 
-15. Brunerie、Licata、Finster、Lumsdaine、Shulman 等关于合成同伦论、Blakers-Massey、Freudenthal、Hopf fibration 和球面同伦群的资料。
-    用途：高级合成同伦论接口和低阶球面计算边界。
+15. Egbert Rijke, *The join construction*, arXiv:1701.07538，特别是 Theorems 2.2、6.9；另参 Brunerie、Licata、Finster、Lumsdaine、Shulman 等关于合成同伦论与球面同伦群的工作。
+    用途：附录 AU 的 fiberwise join 与 join connectivity 外部输入，以及高级合成同伦论和低阶球面计算边界。
 
 16. Hatcher, *Algebraic Topology*.
     用途：classical homotopy groups、fiber/cofiber sequences、spectral sequences、Postnikov tower 和 Steenrod operations 的传统数学背景。

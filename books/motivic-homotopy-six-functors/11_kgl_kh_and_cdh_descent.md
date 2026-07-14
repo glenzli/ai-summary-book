@@ -1,12 +1,14 @@
 # 第十一章：Algebraic K-theory、homotopy K-theory 与 cdh descent
 
-## 本章目标
+在正则概形上，代数 `K`-理论与仿射直线相容；进入奇异几何后，这一性质会失败。
+因此 `\mathbb A^1`-局部的 motivic 范畴自然表示的不是未经修正的 `K`，而是同伦
+`K`-理论 `KH`。代表谱 `KGL` 还带有 Bott 元，使 motivic 的两个分次方向压缩为
+周期性的 `K`-理论次数。
 
-本章说明 algebraic K-theory 在 motivic homotopy theory 中的表示性。关键区分是：普通 K-theory 对奇异对象不一定 `\mathbb A^1`-不变，而 homotopy K-theory `KH` 是 `\mathbb A^1`-不变的版本。稳定 motivic homotopy 中的谱 `KGL` 表示同伦不变 K-theory。
-
-## 依赖前置知识
-
-需要 ring spectra、motivic cohomology、six operations、proper/localization、Bott periodicity、algebraic K-theory、homotopy K-theory、cdh topology 的基本背景。
+本章从 `KGL` 的外部构造和表示性开始，随后比较正则与奇异情形，最后把六操作的
+closed--open localization 与 `KH` 的 cdh 下降并列。前者只处理一个开闭分解，
+后者还控制抽象 blow-up 方块；二者不能互相代替。所需的环谱与 localization 已在
+前章建立，cdh 拓扑和 Bott 周期性在使用处给出精确定义及来源。
 
 ## 11.1 KGL
 
@@ -156,10 +158,10 @@ Cartesian 当且仅当其左上对象到其余三项的 pullback 的 canonical m
 
 ## 11.5 Chern character 与 rational comparison
 
-**高级外部输入 11.17（P1）.** 在另外指定的有理化、基概形和有限性假设
+**高级外部输入 11.17.** 在另外指定的有理化、基概形和有限性假设
 下，motivic Chern character 把 `KGL_\mathbb Q` 与 motivic cohomology 的
 Tate 分量联系起来。本节的条件命题不调用某个无条件分解；实际计算前须
-另补所采用版本的 locator。
+另行指定所采用定理的版本和全部假设。
 
 **命题 11.18.** 若有 ring spectrum map
 
@@ -179,7 +181,7 @@ $$
 
 取同伦群后得到分解。`\square`
 
-## 11.6 本章小结
+## 11.6 奇异几何为何需要 KH
 
 `KGL` 在 Noetherian finite-dimensional 基上由严格交换 Bott 模型给出并表示
 `KH`。`K\simeq KH` 的本章版本限于 regular Noetherian rings 或

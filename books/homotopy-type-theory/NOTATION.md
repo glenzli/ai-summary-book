@@ -115,7 +115,9 @@
 
 ## 实数与序
 
-- $d(x,y)<\varepsilon$：Cauchy 实数或预度量空间中的有理误差距离关系。
+- $\mathsf B_q(x,y)$：附录 BO 的有理开球关系，表示 $x,y$ 的距离小于正有理数 $q$；它是命题值关系，不是可参与乘法的距离数值。
+- $\mathsf{Lim}(a,x)$：序列 $a:\mathbb N\to X$ 以有理开球口径收敛到 $x$。
+- $\mathsf{Fix}(T)\coloneqq\sum_{x:X}(T(x)=x)$：自映射 $T$ 的不动点类型。
 - $x<y$、$x\le y$：构造性实数序关系；具体口径见附录 AR。
 - $x\#0$：$x$ 远离零，即 $x<0$ 或 $0<x$ 的构造性强非零性。
 - $\mathbb R_D$：Dedekind 实数。

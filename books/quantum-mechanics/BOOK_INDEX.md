@@ -43,7 +43,7 @@
 
 | 类型 | 数量 | 答案入口 |
 |---|---:|---|
-| 章末练习与附录练习 | 68 | [HINTS.md](HINTS.md)、[SOLUTIONS.md](SOLUTIONS.md) |
+| 章末练习与附录练习 | 71 | [HINTS.md](HINTS.md)、[SOLUTIONS.md](SOLUTIONS.md) |
 | 跨章节综合题 | 18 | [HINTS.md](HINTS.md)、[COMPREHENSIVE_SOLUTIONS.md](COMPREHENSIVE_SOLUTIONS.md) |
 
 章末练习按章节编号一一对应，例如 `12.2` 的提示在提示手册中标为“提示 12.2”，答案在答案手册中标为“答案 12.2”。附录练习使用 `A.1`、`B.1`、`C.1` 等编号。综合题提示和答案按“综合题 1”至“综合题 18”编号。

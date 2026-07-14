@@ -1,12 +1,6 @@
 # 第二十一章：Hall algebras、cohomological Hall algebras 与 Donaldson-Thomas 接口
 
-## 本章目标
-
-本章介绍 Hall algebra 和 cohomological Hall algebra 的几何表示论接口。它们把 quiver 表示、stack 上的卷积、Donaldson-Thomas invariants 和 quantum groups 联系起来。
-
-## 依赖前置知识
-
-需要 quiver representations、stack quotient、Borel-Moore homology 和卷积 correspondence。
+把两个表示相乘，可以不在张量积中进行，而去计数所有以一个为子对象、另一个为商的扩张。Hall algebra 用有限域上的点数实现这一想法；CoHA 则把点数替换为表示 stack 上短正合列 correspondence 的同调 pull--push。结合律的共同来源不是形式符号，而是同一个对象的二步滤过。零箭头 quiver 已包含完整的最低阶计算：所有扩张分裂，但中间子空间的选择给出 Gaussian binomial coefficient。先算出 $[V_a]*[V_b]$，再把同一旗标计数提升到 Borel--Moore homology，便能清楚区分 ordinary Hall、CoHA 与还需 potential、vanishing cycles 和 orientation data 的 Donaldson--Thomas 版本。
 
 ## 21.1 Hall algebra 的范畴来源
 
@@ -76,7 +70,7 @@ $$
 4. Donaldson-Thomas invariants；
 5. cluster varieties 和 wall crossing。
 
-每个接口都是独立研究方向，本章只建立词汇和依赖位置。
+这些联系都需要额外的比较定理。短正合列 correspondence 的存在与结合性本身既不产生 potential，也不自动给出 Yangian、KLR 或 Coulomb-branch action。
 
 ## 21.4 最小 Hall 代数计算
 
@@ -92,9 +86,54 @@ $$
 $$
 在向量空间范畴中总是分裂，所以 $E\simeq\mathbb F_q^2$。这样的短正合列由 $E$ 中作为 subobject 的一维子空间决定。$\mathbb P^1(\mathbb F_q)$ 有 $q+1$ 个点，因此系数为 $q+1$。若采用除以 automorphism groups 的 groupoid cardinality 归一化，系数会相应改变。$\square$
 
-## 本章小结
+**命题 21.9.1（Gaussian Hall 乘法）.** 仍取未 twisted、按 subobjects 计数的 normalization，并记 $V_a=\mathbb F_q^a$。则
+$$
+[V_a]*[V_b]
+=\binom{a+b}{b}_q[V_{a+b}],
+$$
+其中
+$$
+\binom{a+b}{b}_q
+=\prod_{r=0}^{b-1}
+\frac{q^{a+b}-q^r}{q^b-q^r}
+$$
+是 Gaussian binomial coefficient。
 
-本章给出 Hall algebra 和 CoHA 的卷积来源，写出短正合列 stack correspondence、结合性证明和有限域向量空间的最小计算，并说明它们与 quiver、DT 和 quantum groups 的接口。核心 CoHA 定理作为外部输入。
+**证明.** 向量空间范畴中的短正合列全部分裂，所以中间项只能是 $V_{a+b}$。给定中间项后，一条
+$$
+0\to V_b\to V_{a+b}\to V_a\to0
+$$
+由其像 $U\subset V_{a+b}$ 决定，其中 $\dim U=b$。有序线性无关 $b$-元组的数目为
+$$
+(q^{a+b}-1)(q^{a+b}-q)\cdots(q^{a+b}-q^{b-1}),
+$$
+而同一个 $b$-维子空间含有
+$$
+(q^b-1)(q^b-q)\cdots(q^b-q^{b-1})
+$$
+个有序基。两者相除即得公式。$\square$
+
+**推论 21.9.2（结合律的数值影子）.** 对 $a,b,c\ge0$，
+$$
+\binom{a+b}{b}_q\binom{a+b+c}{c}_q
+=\binom{b+c}{c}_q\binom{a+b+c}{b+c}_q.
+$$
+
+**证明.** 两侧都计数 flags
+$$
+0\subset U_c\subset U_{b+c}\subset V_{a+b+c},
+\qquad
+\dim U_c=c,\qquad \dim U_{b+c}=b+c.
+$$
+先选 $U_c$ 时，剩余选择是在商 $V_{a+b+c}/U_c$ 中选 $b$-维子空间；先选 $U_{b+c}$ 时，再在其中选 $c$-维子空间。两种次序分别给出等式两边。$\square$
+
+例 21.9 是 $a=b=1$ 的特例，而
+$$
+[S]*[V_2]=(q^2+q+1)[V_3]
+$$
+对应 $\mathbb P^2(\mathbb F_q)$ 的点数。CoHA 将这种有限点计数替换为同一 subspace/extension correspondence 的 fundamental classes、Euler classes 与 cohomological degrees。
+
+Gaussian coefficient 显示，即使所有扩张都分裂，Hall 乘法仍会记住子对象的几何；结合恒等式正是二步旗标的两种计数。CoHA 沿同一短正合列 stack 作 pull--push，但 potential、vanishing cycles 与 orientation data 会改变所用同调理论，不能从 ordinary Hall 公式省略。下一章把 quiver variety、KLR projectives 与 CoHA 等模型重新放到 canonical basis 与 crystal 的同一问题下比较。
 
 ## 练习
 
@@ -105,3 +144,5 @@ $$
 **练习 21.3.** 说明 ordinary CoHA 与 critical CoHA 的输入数据差异。
 
 **练习 21.4.** 在有限域向量空间范畴中计算 $[S]\ast[\mathbb F_q^2]$ 的未 twisted Hall 系数。
+
+**练习 21.5.** 用先选 $U_c$ 再选 $U_{b+c}/U_c$ 的方法重新证明推论 21.9.2，并解释两个 Gaussian factors 各自参数化什么。

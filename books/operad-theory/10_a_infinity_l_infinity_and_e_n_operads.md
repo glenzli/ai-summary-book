@@ -1,18 +1,6 @@
 # 第十章：$A_\infty$、$L_\infty$ 与 $E_n$-operad
 
-## 本章目标
-
-本章把第九章的 bar-cobar 工具用于三类核心同伦代数结构：
-
-1. $A_\infty$-operad：控制同伦结合代数。
-2. $L_\infty$-operad：控制同伦 Lie 代数。
-3. $E_n$-operad：控制 $n$ 重 loop space 型或局部 $n$ 维交换性的代数结构。
-
-本章采用严格的 operad 定义作为主定义；手写高阶恒等式只作为展开说明。这样可以避免在符号约定尚未完全固定时把错误符号写进核心定义。
-
-## 依赖前置知识
-
-需要命题 6.15、命题 6.16 和命题 6.18 中的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$，定义 8.15--定义 8.16 的 Koszul 对偶，以及定义 9.6、定义 9.14、定理 9.20 的 dg-operad、cooperad、bar-cobar 和 twisting morphism。
+把一个 dg 结合代数传到同调上，二元乘法通常仍可定义，却未必保留全部链级信息；缺失部分首先由三元运算 $m_3$ 记录，随后出现整族 $m_n$。Lie 情形同样产生反对称的高阶括号。Bar--cobar 与 Koszul 对偶把这些恒等式组织为 $A_\infty$、$L_\infty$ 和 $C_\infty$-operad 的代数。另一条路线来自 little cubes：若若干小 $n$-立方体能在大立方体中移动而互不相交，其配置空间直接组成拓扑 operad $E_n$。本章比较这两种“高阶”来源，同时严格区分 dg resolution、拓扑 operad、链模型与同调 operad；手写恒等式只展开已经固定的 operadic 定义。
 
 ## 10.1 同伦 $\mathcal P$-代数的 operadic 定义
 
@@ -186,9 +174,9 @@ $$
 
 **说明 10.26.** 定义 L.12、外部输入定理 L.14、警告 L.18 和外部输入定理 L.19 汇总 $E_n$-operad 的模型层级、$H_\*(\mathcal C_n)\cong\operatorname{Pois}_n$ 的边界、$E_\infty$ 与 $\operatorname{Com}$ 的 rectification 风险，以及 Dunn/Lurie additivity 的外部输入状态。本章默认遵守这些区分。
 
-## 本章小结
+## 10.8 代数分解与几何配置的交汇
 
-$A_\infty$、$L_\infty$ 和 $C_\infty$ 是通过 bar-cobar/Koszul 对偶得到的 dg-operad，分别控制同伦结合、同伦 Lie 和同伦交换代数。$E_n$-operad 来自 little cubes/disks 的拓扑 operad，控制 $n$ 维局部交换性；其同调是 Poisson 型 operad，但链级结构包含更高同伦信息。本章把这两条路线放入同一 operadic 框架，但保持模型层级的区分。
+$A_\infty$ 与 $L_\infty$ 的低阶关系具体说明：$m_3$ 或 $\ell_3$ 不是任意附加运算，而是严格结合律或 Jacobi 恒等式缺陷的指定同伦。Little cubes 则把相干性编码在配置空间的路径和高阶同伦中。两条路线都由 operad 组织，却处在不同模型层级；取 $H_\*(E_n)$ 只能得到 Poisson 型同调运算，不能恢复完整链级 $E_n$-结构。第十一章将聚焦 $n=2$ 的代数影子，解释 Gerstenhaber 括号、BV 算子与 Hochschild cochains 上链级 $E_2$-作用之间的差距。
 
 ## 练习
 

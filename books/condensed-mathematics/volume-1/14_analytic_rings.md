@@ -1,12 +1,14 @@
 # 第十四章：解析环
 
-## 本章目标
+solid 理论固定使用整值测度对象 $\mathbb Z^\square[S]$；一旦底环改变，或希望处理
+实数函数空间，哪些无限 Dirac 组合应当收敛便不再由这套对象决定。普通 Radon 测度看似
+自然，却不能自动满足所需的派生 Hom 条件。问题因此不是给凝聚环附加一个拓扑，而是
+为每个极不连通测试空间指定允许的测度模，并要求这种指定与解析模的延拓性质相容。
 
-solid 结构适合非阿基米德型完备化，但不足以覆盖实分析和更一般的解析几何。解析环（analytic ring）提供了更灵活的“测度理论”。本章给出 Scholze 讲义中的基本定义和例子。
-
-## 依赖前置知识
-
-需要凝聚环、凝聚模、solid 测度对象和派生 Hom。
+第九、十章的凝聚环与模提供底层代数，第十二、十三章的 solid 测度给出首个模型，
+第十一章的派生 Hom 则负责表达复形级条件。我们依 Scholze 的定义引入测度理论、解析
+模与解析环，验证 solid 特例和有限生成环例子，并把实数方向的失败精确留给第二卷的
+$p$-liquid 修正，而不把 Banach 完备化误认成解析化。
 
 ## 14.1 测度理论
 
@@ -79,12 +81,14 @@ $$
 若每个 $C_i$ 都是形如 $\mathcal M[T]$ 的对象的直和，其中 $T\in\mathbf{ED}$，则对任意 $S\in\mathbf{ED}$，自然映射
 
 $$
-R\operatorname{Hom}_A(\mathcal M[S],C)
+R\underline{\operatorname{Hom}}_A(\mathcal M[S],C)
 \longrightarrow
-R\operatorname{Hom}_A(A[\underline S],C)
+R\underline{\operatorname{Hom}}_A(A[\underline S],C)
 $$
 
-是同构。
+是 $D(\mathbf{CondAb})$ 中的同构。这里使用内部派生 Hom；若再取终对象上的派生截面，
+才得到普通派生映射复形。只写不带下划线的全局 $R\operatorname{Hom}$ 会丢失解析环公理
+要求的凝聚参数，因而不是本定义的等价替代。
 
 **注 14.6.** 这个定义是 solid 定义的相对版本：把自由对象 $A[\underline S]$ 替换成允许的测度对象 $\mathcal M[S]$，并要求对由这些测度对象生成的复形有正确的派生 Hom 行为。
 
@@ -142,14 +146,14 @@ $$
 
 第一卷不展开 liquid vector spaces，只记录：实分析方向不是 solid 的直接形式推广。第二卷会把 liquid/analytic 结构作为主题之一。
 
-## 14.7 本章小结
+## 14.7 允许的测度决定解析模
 
-本章给出了解析环的定义框架：
-
-1. 测度理论指定极不连通测试对象上的允许测度模块。
-2. 解析环要求测度对象对特定生成复形满足派生 Hom 判别。
-3. solid 是解析环框架中的基本例子。
-4. 实数与泛函分析需要更精细的 analytic/liquid 结构。
+测度理论把每个极不连通 $S$ 送到 $\mathcal M[S]$，Dirac 映射则把普通自由模与允许
+测度相连；解析条件要求相应派生 Hom 判别在生成复形上成立。取
+$\mathcal M[S]=\mathbb Z^\square[S]$ 恢复 solid，而有限生成离散环给出换底后的基本
+模型。实数 Radon 测度的失败表明测度选择是实质结构而非装饰。第二卷将把这一条件写成
+正式 localization，并以 $\mathcal M_{<p}$ 建立 liquid 方向；下一章先说明解析环如何
+沿 rational localization 进入几何。
 
 ## 练习
 

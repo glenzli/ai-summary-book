@@ -1,12 +1,6 @@
 # 第八章：Beilinson-Bernstein localization 与 category O 的几何化
 
-## 本章目标
-
-本章陈述 Beilinson-Bernstein localization 的基本形式，解释 twisted differential operators on $G/B$ 如何几何化带固定中心 character 的 $\mathfrak g$-modules，并说明 category $\mathcal O$、Schubert stratification 和 Kazhdan-Lusztig character formula 的关系。
-
-## 依赖前置知识
-
-需要第二章的 category $\mathcal O$ 和中心 character，第三章的 perverse sheaves，第七章的 D-modules，以及第一章的 line bundles on $G/B$。
+第二章的 $U(\mathfrak g)$-模是全局代数对象，而第七章的 $\mathcal D$-module 是局部微分方程；Beilinson--Bernstein localization 断言，在 regular dominant 中心参数下，这两种描述可以在 flag variety 上互相恢复。群作用先给 $U(\mathfrak g)\to\Gamma(\mathcal B,\mathcal D_\lambda)$，extension of scalars 再产生 localization functor，但形式伴随远不足以证明等价：global generation 与高阶上同调消失才是核心。等价建立后，category $\mathcal O$ 的标准、简单对象可沿 Schubert 分层解释，$\mathfrak{sl}_2$ 的两条 strata 则给出最小的 character-formula 检验。
 
 ## 8.1 $G$ 作用产生的微分算子
 
@@ -29,7 +23,7 @@ $$
 
 **定义 8.4.** 对 $\lambda\in\mathfrak t^\ast$，$\mathcal D_\lambda$ 表示 $\mathcal B$ 上由 $\lambda$ 参数化的 twisted differential operators sheaf。它可由 $G/U\to G/B$ 的 $T$-torsor 和 character $\lambda$ 构造，也可视为作用在线丛 $\mathcal L_\lambda$ 上的微分算子 sheaf 的适当推广。
 
-**警告 8.5.** $\lambda$ 的 shift convention 在文献中不统一。有的使用 $\lambda$，有的使用 $\lambda-\rho$ 或 $\lambda+\rho$。本书在最终 locator 中必须把 Harish-Chandra isomorphism 的 dot action 与 $\mathcal D_\lambda$ 的定义对齐。
+**约定 8.5.** $\lambda$ 的 shift convention 在文献中不统一。本章把 $\mathcal D_\lambda$ 与中心 character $\chi_\lambda$ 绑定在定理 8.6 的同一参数化中；凡把 TDO 写成 $\mathcal D_{\lambda\pm\rho}$ 的来源，都先以 Harish--Chandra dot action 翻译到这一参数后再调用。因此后面的 $\lambda$ 不与未平移的线丛权自动等同。
 
 **外部输入定理 8.6.** 对适当 $\lambda$，
 $$
@@ -81,7 +75,7 @@ $$
 
 **证明.** 任一 adjunction $F\dashv G$ 给出 unit $\eta:\operatorname{id}\to GF$ 和 counit $\epsilon:FG\to\operatorname{id}$。若 $F,G$ 是互逆等价，则 $GF$ 和 $FG$ 分别自然同构于恒等函子；三角恒等式迫使 $\eta$ 和 $\epsilon$ 即为这些自然同构。应用到 $F=\operatorname{Loc}_\lambda$、$G=\Gamma$ 得结论。$\square$
 
-**依赖说明 8.11.** Beilinson-Bernstein theorem 的实质不是命题 8.8 的形式伴随，而是以下外部输入：
+**机制 8.11.** Beilinson--Bernstein theorem 的实质不是命题 8.8 的形式伴随，而是以下外部输入：
 
 1. $\Gamma(\mathcal B,\mathcal D_\lambda)\simeq U_\lambda$；
 2. $\mathcal D_\lambda$-modules 的 higher cohomology vanishing；
@@ -108,7 +102,7 @@ $$
 **外部输入定理 8.15.** Kazhdan-Lusztig character formula：regular integral block of category $\mathcal O$ 中 simple modules 的 characters 可由 Kazhdan-Lusztig polynomials 在 $1$ 处的值表示。  
 几何证明通过 Beilinson-Bernstein localization、Riemann-Hilbert correspondence、Schubert varieties 的 IC sheaves 和 decomposition theorem 建立。
 
-**依赖说明 8.16.** 定理 8.15 的几何证明链为
+**几何链 8.16.** 定理 8.15 的几何证明依次经过
 $$
 \mathcal O_\chi
 \xrightarrow{\operatorname{Loc}}
@@ -122,9 +116,7 @@ $$
 
 **例 8.17.** 对 $\mathfrak{sl}_2$ 的 regular integral block，Weyl group 有 $e,s$ 两个元素。Schubert varieties 为点和 $\mathbb P^1$，二者光滑，故 KL polynomial 均为 $1$。因此 simple character 公式退化为 Verma characters 的两项交错组合。这与直接计算 $\mathfrak{sl}_2$ Verma module 的 singular vector 相符。
 
-## 本章小结
-
-本章构造了 localization functor 并证明其与 global sections 的伴随性，补充了 equivalence 下 unit/counit 的形式检查、BB 定理的实质依赖列表和 $\mathfrak{sl}_2$ regular block 的低阶说明。Beilinson-Bernstein 等价、twisted differential operators 的 global sections 计算、category $\mathcal O$ 与 Schubert-constructible D-modules 的识别、Kazhdan-Lusztig character formula 均为外部输入。
+Localization 的 tensor--Hom 伴随解释了函子的形式来源，global generation 与消失定理才使 unit、counit 成为同构。经 Riemann--Hilbert 后，regular integral block 的标准、简单对象落到 Schubert 分层的标准层与 IC 层上；$\mathfrak{sl}_2$ 中闭包光滑，所以 KL 多项式退化为 $1$。下一章从同一旗簇上的线丛上同调出发，比较 Borel--Weil--Bott 与跨墙函子。
 
 ## 练习
 

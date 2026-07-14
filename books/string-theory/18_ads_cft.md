@@ -1,18 +1,13 @@
 # 第十八章：AdS/CFT 的精确定式和基本检验
 
-## 本章目标
-
-本章给出 AdS/CFT 的标准例子、参数字典和基本检验，明确区分：
-
-1. brane near-horizon 几何计算；
-2. large $N$ 与 large 't Hooft coupling 极限；
-3. GKPW dictionary；
-4. 已检验的 protected quantities；
-5. 尚无完整数学证明的非微扰等价陈述。
-
-## 依赖前置知识
-
-需要第十二章 D-branes、第十四章 dualities、第十七章 brane/black brane 逻辑和第十一章低能 supergravity。
+一叠 D3-branes 有两种低能描述：开弦端点给出四维 $\mathcal N=4$ Yang--Mills，
+闭弦侧的 backreaction 则产生 $\operatorname{AdS}_5\times S^5$ near-horizon
+geometry。Decoupling limit 暗示二者描述同一 interacting sector，但要把这条物理
+猜想变成可计算字典，必须追踪 $N$、$g_s$、$\alpha'$、AdS 半径与 't Hooft coupling，
+并区分 large-$N$、large-$\lambda$ 的不同近似。以下使用第十二章 D-branes、
+第十一章 supergravity 和第十四、十七章的受保护强耦合检验，推导参数关系与 GKPW
+prescription，再以 scalar two-point function、Wilson loop 和 anomaly matching
+说明哪些结论是条件推导，哪些仍依赖完整 AdS/CFT 等价。
 
 ## 18.1 标准对偶
 
@@ -254,9 +249,12 @@ $S_{\mathrm{NG}}^{\mathrm{ren}}$。$O(\lambda^0)$ 来自 worldsheet fluctuations
 $O(g_s^2)=O(\lambda^2/N^2)$ 来自 closed-string handles；若有多个 saddles 还需比较其 action 与 Stokes
 phenomena。该式是双重渐近展开，不是有限 $N,\lambda$ 的精确等号。$\square$
 
-## 本章小结
-
-AdS/CFT 是 string theory 最精确的非微扰定义候选之一。标准例子由 D3-branes 的两种低能描述产生；参数字典解释 classical gravity 极限；GKPW dictionary 在猜想成立时给出 correlation functions 的操作 prescription。全局等价在本书中保持为物理猜想。
+Wilson loop 的最小曲面展示了参数字典的实际含义：classical worldsheet 要求
+$\lambda\gg1$，忽略 closed-string handles 还要求 $N\gg1$，重整化面积只给双重
+渐近展开的首项。相同层级贯穿 GKPW correlators 与 bulk effective action。
+D3-brane decoupling、对称性和 protected observables 为对偶提供强检验，但它们不构成
+有限 $N,\lambda$ 全局等价的数学证明；AdS/CFT 因而既是一套精确可操作的条件字典，
+也是仍以物理猜想身份使用的非微扰定义候选。
 
 ## 练习
 

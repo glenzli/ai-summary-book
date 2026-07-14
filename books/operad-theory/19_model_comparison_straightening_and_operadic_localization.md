@@ -1,12 +1,6 @@
 # 第十九章：模型比较、straightening 与 operadic localization
 
-本章解释如何从严格模型转入 infinity-categorical 模型。前面已经出现三类对象：
-
-1. 模型范畴中的 operads 与其代数；
-2. dendroidal infinity-operads；
-3. Lurie-style infinity-operads over $N(\mathbf{Fin}_*)$。
-
-它们不是同一个定义。要在它们之间移动，必须使用 localization、straightening/unstraightening 和模型比较定理。本章的原则是：凡是跨模型的结论，都必须说明经过哪个 localization 或 Quillen equivalence。
+同一个同伦 operad 可以由 cofibrant simplicial operad、inner Kan dendroidal set 或 $N(\mathbf{Fin}_*)$ 上的 operadic fibration 呈现，但“呈现同一同伦理论”不意味着这些对象逐项相等。模型范畴先要在弱等价处局部化；coCartesian fibration 再由 straightening 变成取值于 infinity-categories 的函子；跨 dendroidal 与 Lurie 模型还需独立的 Quillen-equivalence zigzag。尤其是 operad 的代数范畴，先取代数再局部化与先局部化再取代数只有在 admissibility、cofibrancy 和 monoidal compatibility 满足时才可比较。本章逐条构造这些桥梁，并让每次模型迁移都保留可追踪的源、靶与假设。
 
 ## 19.1 Relative categories 与 Dwyer-Kan localization
 
@@ -190,7 +184,7 @@ $$
 \simeq
 \operatorname{Alg}_{\mathcal O^\otimes}(\mathcal S^\times),
 $$
-左侧是 $\mathcal O^\otimes$ 上的 operadic left fibrations，右侧是 spaces 中的 $\mathcal O$-algebras。该来源是 2025 preprint，本书将其作为 P1 locator；它不证明任意 symmetric monoidal $\mathcal C$-值代数的 straightening。
+左侧是 $\mathcal O^\otimes$ 上的 operadic left fibrations，右侧是 spaces 中的 $\mathcal O$-algebras。这里采用 Pratali 2025 预印本的 spaces-valued 版本；它不证明任意 symmetric monoidal $\mathcal C$-值代数的 straightening。
 
 **说明 19.19.** Operadic straightening 是 ordinary straightening 的 operad 相对版本。它不仅分类 $S\to\mathbf{Cat}_\infty$，还必须保留 inert morphisms 所编码的多输入分量结构。
 
@@ -300,13 +294,13 @@ $$
 
 **警告 19.28.** “先取代数再 localization”与“先 localization 再取代数”不自动交换。它们交换正是定理 19.25 类型结果的内容。
 
-**说明 19.29.** 规则 M.18 把本章使用的 localization、dendroidal-Lurie 比较、category of operators nerve 和 algebra localization comparison 组织成允许路径。最终版若引用跨模型结论，应在正文旁标明使用规则 M.18 中哪一条路径，并检查警告 M.19 的禁止捷径。
+**说明 19.29.** 规则 M.18 把本章使用的 localization、dendroidal--Lurie 比较、category of operators nerve 和 algebra localization comparison 组织成有类型的复合路径。调用跨模型结论时，应明确所用路径及其每条边的假设；警告 M.19 列出的捷径没有相应比较函子，因而不能进入证明。
 
-**警告 19.29.1（constants 与 HHM 路径）.** HHM-1--HHM-5 在本书用于 dendroidal--Lurie 比较的 zig-zag 带 open/no-constants 限制。本书默认 operad 允许 arity $0$，所以默认对象不能未经处理沿该路径移动。Category-of-operators nerve 与 HA-OP locator 是另一条入口，也不由 HHM zig-zag 的缩写自动给出。
+**警告 19.29.1（constants 与 HHM 路径）.** 定理 18.20 的 dendroidal--Lurie 比较 zig-zag 带 open/no-constants 限制。本书默认 operad 允许 arity $0$，所以默认对象不能未经处理沿该路径移动。Category-of-operators nerve 提供另一条入口，但它也不由这个 open zig-zag 自动给出。
 
-## 19.8 本章小结
+## 19.8 比较图中的每条边都有假设
 
-模型范畴通过 Dwyer-Kan localization 给出 underlying infinity-category。Quillen equivalence 在 localization 后成为 infinity-categorical equivalence。Straightening/unstraightening 把 coCartesian fibrations 与 category-valued functors 等价起来；operadic straightening 在此基础上加入 inert morphisms。Symmetric monoidal localization 和 algebra localization comparison 是把严格 operad 代数与 infinity-operad 代数连接起来的关键定理，但它们都需要 cofibrancy、admissibility 和 monoidal compatibility 假设。
+Dwyer--Kan localization 把模型范畴保留为 mapping spaces 完整的 underlying infinity-category，而不只留下 homotopy category。Straightening/unstraightening 把 coCartesian transport 改写成函子数据；operadic 版本还必须保持第十八章的 inert coCartesian edges。Quillen equivalence、symmetric monoidal localization 和 algebra localization comparison 因而承担不同责任，不能由“模型等价”四字合并。特别地，含 constants 的 operad 不能未经处理走 open dendroidal--Lurie 路径，代数对象也不能在缺少 cofibrancy、admissibility 或 monoidal compatibility 时交换 localization。第二十章使用 factorization homology 时，将把这些条件落实到具体的 presentable symmetric monoidal infinity-category 中。
 
 ## 练习
 

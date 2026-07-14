@@ -1,16 +1,12 @@
 # 第三十六章：Tannaka duality、仿射群概形与高阶重构
 
-## 本章目标
+一个仿射群概形 $G$ 的表示范畴不仅是阿贝尔范畴，还带有张量积与遗忘到向量空间的纤维函子；纤维函子的张量自同构群可以重构 $G$。经典 Tannaka 对偶由此把几何群对象转化为范畴与纤维函子。高阶版本试图从 $\operatorname{QCoh}(X)$、其对称幺半结构和保余极限张量函子恢复 derived 或 spectral stack $X$，但需要 quasi-affineness、perfectness 或其他可重构性假设。
 
-本章讨论 Tannaka duality 的范畴论形式。经典 Tannaka 理论从一个带纤维函子的对称幺半阿贝尔范畴重构仿射群概形；现代高阶 Tannaka 理论则从对称幺半稳定 $\infty$-范畴、$\operatorname{QCoh}$ 和保张量函子重构 derived 或 spectral stacks。核心思想是：几何对象可以由其 sheaf 范畴及张量结构恢复。
-
-## 依赖前置知识
-
-需要幺半范畴、闭范畴、阿贝尔范畴、Grothendieck 范畴、presentable $\infty$-categories、$\operatorname{Pr}^L$、$\operatorname{QCoh}$、descent、Barr-Beck-Lurie 和 derived stacks。
+本章综合幺半/阿贝尔范畴、$\operatorname{Pr}^L$、QCoh、descent 与 Barr--Beck--Lurie。我们会先证明可直接验证的 affine group scheme 例子，再把高阶重构作为有假设的外部定理；不会把任意张量范畴都宣称为某个 stack 的 QCoh。
 
 ## 36.1 经典 Tannakian 范畴
 
-**定义 36.1.** 设 $k$ 为域。一个 neutral Tannakian category 是刚性 $k$-线性阿贝尔对称幺半范畴 $\mathcal C$，配有 faithful exact $k$-线性对称幺半函子
+**定义 36.1.** 设 $k$ 为域。一个 neutral Tannakian category 是本质小的刚性 $k$-线性阿贝尔对称幺半范畴 $\mathcal C$，满足 $\operatorname{End}_{\mathcal C}(\mathbb 1)=k$，并配有 faithful exact $k$-线性对称幺半函子
 
 $$
 \omega:\mathcal C\to\operatorname{Vect}_k^{fd}.
@@ -25,7 +21,7 @@ $$
 \operatorname{Aut}^{\otimes}(\omega_R)
 $$
 
-其中 $\omega_R:\mathcal C\to\operatorname{Proj}_R$ 由标量扩张得到。
+其中 $R$ 遍历交换 $k$-代数，$\omega_R:\mathcal C\to\operatorname{Proj}_R$ 由标量扩张得到。
 
 **外部输入定理 36.3（经典 Tannaka duality）.** 若 $(\mathcal C,\omega)$ 是 neutral Tannakian category，则 $G=\operatorname{Aut}^{\otimes}(\omega)$ 是仿射群概形，并有对称幺半等价
 
@@ -84,14 +80,15 @@ X(A)\to
 \operatorname{Fun}^{L,\otimes}(\operatorname{QCoh}(X),\operatorname{Mod}_A).
 $$
 
-**外部输入定理 36.10（高阶 Tannaka duality）.** 对满足适当几何性、完备性和保存 connective/flat 对象条件的 derived stacks $X$，自然映射
+**外部输入定理 36.10（一个高阶 Tannaka 版本）.** 设 $X$ 为 Noetherian spectral algebraic stack，且对角线 quasi-affine；设 $A$ 为 connective $E_\infty$-ring。Bhatt--Halpern-Leistner 型 Tannaka 定理把自然映射
 
 $$
 X(A)\to
-\operatorname{Fun}^{L,\otimes}_{\operatorname{good}}(\operatorname{QCoh}(X),\operatorname{Mod}_A)
+\operatorname{Fun}^{L,\otimes}_{cn,pc}
+(\operatorname{QCoh}(X),\operatorname{Mod}_A)
 $$
 
-为等价。也就是说，$X$ 可从 $\operatorname{QCoh}(X)$ 的对称幺半 presentable $\infty$-范畴结构中重构。
+识别为等价，其中右侧只取保持 connective 与 pseudo-coherent（或该版本中等价的 almost-perfect）对象的保小余极限对称幺半函子。其他几何类别有不同的本质像条件；本章后文的“good”均指本定理固定的 $cn,pc$ 条件。
 
 **命题 36.11.** 若 $X=\operatorname{Spec}R$，则高阶 Tannaka 映射退化为
 
@@ -121,21 +118,25 @@ $$
 
 这里 $U_\bullet$ 是 Cech nerve。Totalization 正是把覆盖上的 quasi-coherent categories 与所有高阶相容同构粘合起来。$\square$
 
-**命题 36.13.** Tannaka 重构与 descent 相容：若 $X$ 由 $U_\bullet$ 粘合，则从 $\operatorname{QCoh}(X)$ 得到的点等价于 compatible systems of points of $U_\bullet$。
-
-**证明.** 对任意 $A$，高阶 Tannaka 把 $X(A)$ 识别为合适张量函子
+**外部输入推论 36.13（Tannaka 与几何下降）.** 在定理 36.10 的几何类别中，若 $U\to X$ 是 fpqc 仿射覆盖，则 stack 条件先给出
 
 $$
-\operatorname{QCoh}(X)\to\operatorname{Mod}_A.
+X(A)\simeq\operatorname{Tot}U_\bullet(A).
 $$
 
-若 $\operatorname{QCoh}(X)\simeq\operatorname{Tot}\operatorname{QCoh}(U_\bullet)$，则从 totalization 出发的张量函子等价于从每个 $\operatorname{QCoh}(U_n)$ 出发并满足 cosimplicial 相容的数据。再次用仿射或局部 Tannaka，后者等价于 $U_\bullet(A)$ 的 compatible system，即 $X(A)$ 的 descent data。$\square$
+逐层应用定理 36.10，可把右侧解释为满足 Cech 相容性的 $cn,pc$ 张量函子数据。这里不能仅从
+
+$$
+\operatorname{QCoh}(X)\simeq\operatorname{Tot}\operatorname{QCoh}(U_\bullet)
+$$
+
+形式地推出结论：从一个极限范畴到 $\operatorname{Mod}_A$ 的函子一般不等于从各层出发的兼容函子。所需交换由 stack descent 与定理 36.10 的本质像判别共同提供。
 
 ## 36.5 群对象、类ifying stacks 与表示范畴
 
 **定义 36.14.** 设 $G$ 为 affine group scheme 或 derived affine group stack。其 classifying stack $BG$ 定义为把 $A$ 送到 $G$-torsors on $\operatorname{Spec}A$ 的空间。
 
-**外部输入定理 36.15.** 在适当有限性假设下，
+**外部输入定理 36.15.** 若 $G$ 是基域 $k$ 上 affine flat group scheme（或满足相应可表示性条件的 derived affine group stack），则
 
 $$
 \operatorname{QCoh}(BG)\simeq\operatorname{Rep}(G)
@@ -205,7 +206,7 @@ $$
 
 张量自同构 $\operatorname{Aut}^{\otimes}(\omega)$ 按定义记录保持所有准凝聚表示张量结构的基点自同构。Classifying stack 的基点自同构空间正是 loop group $\Omega_*BG$，而 $\Omega_*BG\simeq G$。因此该张量自同构群表示 $G$。$\square$
 
-## 36.7 本章小结
+## 36.7 从张量范畴恢复几何
 
 Tannaka duality 是“由表示范畴重构对称对象”的范畴论机制。经典理论从刚性阿贝尔张量范畴和 fiber functor 重构仿射群概形；coend 公式给出坐标 Hopf algebra；高阶理论从 $\operatorname{QCoh}(X)$ 的对称幺半 presentable $\infty$-范畴结构重构 derived stack $X$。Barr-Beck-Lurie descent 保证重构与覆盖粘合相容。
 

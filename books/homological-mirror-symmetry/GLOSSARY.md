@@ -26,10 +26,12 @@
 | stop removal | 移除 stop 等于 quotient/localization by linking disks 的定理 |
 | Liouville sector | 适合局部 wrapped theory 与 descent 的带边界 Liouville 对象 |
 | sectorial descent | wrapped Fukaya category 对 sectorial cover 的 cosheaf/gluing 定理 |
+| Viterbo functor | Liouville subdomain inclusion 诱导的由大空间到小空间的 restriction/transfer；在 independently Weinstein 假设下为 homological epimorphism，更强 Weinstein-cobordism 假设下可为 genuine localization |
 | Fukaya-Seidel category | Lefschetz fibration/LG potential 的 directed Fukaya category |
 | vanishing cycle | Lefschetz fibration 中沿 vanishing path 收缩的 Lagrangian sphere |
 | thimble | total space 中由 vanishing path 产生的 Lagrangian disk |
 | Dehn twist | 沿 Lagrangian sphere 的辛自同构；Picard-Lefschetz monodromy 模型 |
+| spherical object | 自 Ext 代数为 $k\oplus k[-d]$ 并满足非退化 pairing 的对象；其 evaluation cone 定义 spherical twist autoequivalence |
 | open-closed map | 从 Fukaya category 的 Hochschild homology 到 quantum/symplectic cohomology 的映射 |
 | closed-open map | 从 quantum/symplectic cohomology 到 Hochschild cohomology 的映射 |
 | Abouzaid criterion | Exact wrapped 情形中，full subcategory 的 $HH$ 经 $HH(\mathcal W)$ 到 $SH$ 的 composite 命中 global unit 时 split-generates $\mathcal W$ |
@@ -37,8 +39,13 @@
 | HKR | Hochschild homology/cohomology 与 Hodge/polyvector 数据的同构定理 |
 | Fourier-Mukai transform | B-side kernel $K\in\operatorname{Perf}(X\times Y)$ 诱导的导出函子 |
 | SYZ | 通过 dual torus fibrations 理解镜像的几何图像 |
+| microsupport | 位于 $T^*Q$ 的闭 conic 集合，记录 sheaf 截面传播受阻的协方向，而不只是普通 support |
+| categorical resolution | 用较光滑的增强范畴及到奇异 derived category 的局部化来解析后者；不是底层簇的普通 resolution 的同义词 |
 | Landau-Ginzburg model | 带 potential $W:X\to\mathbb A^1$ 或 $\mathbb C$ 的几何模型 |
 | Jacobian ring | Laurent/polynomial potential 的 critical ring，常与 closed-string B-model 匹配 |
 | Rabinowitz Fukaya category | 与 contact/Reeb/Rabinowitz Floer theory 相关的 Fukaya 型 category |
-| BPS category | 物理启发的范畴化结构；必须指定具体数学模型 |
+| Bridgeland stability condition | central charge 与 slicing 组成的数据，满足相位、正交性、Harder--Narasimhan、局部有限及 support property 条件 |
+| wall | 固定 charge 分解的两个 central charges 同相时出现的实余维一 locus；跨墙改变半稳定对象不自动给出自等价 |
+| functorial HMS | A/B 两侧增强范畴值图之间带全部 coherence 的自然等价，而不只是各顶点分别等价 |
+| BPS category | 本书只指明确数据 $(\mathcal C,\Gamma_{\mathrm{ch}},v,Z,\mathfrak s)$；不同物理文献中的同名对象不预设统一定义 |
 | theorem locator | 外部输入定理的文献、主结果和使用位置定位 |

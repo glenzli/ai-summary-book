@@ -29,8 +29,10 @@
 | 符号 | 含义 |
 |---|---|
 | $\mathcal H$ | auxiliary/完成后的 matter state space；协变量子化中可先带不定 pairing |
-| $\mathcal F_{\mathrm{fin}}$ | 固定动量的有限 oscillator excitation module |
-| $\mathcal D_{\mathrm{mat}}$ | oscillator 与 Virasoro modes 的公共代数定义域 |
+| $\mathcal F_{\mathrm{osc,fin}}$ | 不固定动量的有限 oscillator excitation space |
+| $\mathcal F_{\mathrm{fin}}(p)$ | 固定动量广义态上的有限 oscillator excitation module |
+| $\mathcal D_{\mathrm{off}}$ | $\mathcal S(\mathbb R^D)\otimes_{\mathrm{alg}}\mathcal F_{\mathrm{osc,fin}}$；oscillator 与 Virasoro modes 的离壳公共代数定义域 |
+| $\mathscr P_r^{\mathrm{op}}$ | 开弦 level $r$ 的 momentum-space mass shell |
 | $\mathcal D_{\mathrm{BRST}}$ | 有限 $L_0$-level 的 algebraic BRST complex |
 | $\mathcal H_{\text{gh}}$ | ghost state module；其 pairing、zero modes 与 picture 需另行指定 |
 | $\mathcal H_{\text{phys}}$ | physical state space |
@@ -42,6 +44,7 @@
 | $\mathscr A_n$ | 含动量 delta function 的完整连通 $S$-matrix element |
 | $\mathcal M_n$ | 去掉动量 delta function 的 reduced amplitude |
 | $S_{\mathrm{ren}}$ | 指定 cutoff/counterterms 后的 renormalized on-shell action |
+| $\phi(\tau,z)$ | elliptic genus；其 multiplier 与 Jacobi index 需随 charge convention 指定 |
 
 ## 状态标记
 

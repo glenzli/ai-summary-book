@@ -1,14 +1,8 @@
 # 第十二章：局部 Langlands 猜想
 
-## 本章目标
+第五章给出了 Weil--Deligne 数据，第十一章构造了 L 群，现在可以问局部 Langlands 的核心问题：哪些 L 参数对应 $G(F)$ 的不可约可容许表示？对 `GL(n)`，每个参数对应一个表示；对一般还原群，同一参数通常控制一个 L-packet，packet 内部还要用 centralizer component group 的表示及内形式数据区分。忽略这些增强数据会把一个多层对应错误地写成朴素双射。本章因此先固定表示侧和参数侧的对象类型，再分别讨论 temperedness、L 因子、packet 与已知定理的边界。
 
-本章给出局部 Langlands 猜想（local Langlands conjecture, LLC）的精确定式。第五章已经定义 Weil 群和 Weil-Deligne 参数，第十一章已经定义对偶群和 L 群；本章把这些参数与局部群 $G(F)$ 的不可约表示联系起来。核心点是：一般还原群的局部 Langlands 不是单个参数对应单个表示，而是参数对应 L-packet；若要得到真正的一一对应，通常必须加入 component group 的表示以及内形式数据。
-
-## 依赖前置知识
-
-需要第四章的光滑表示和 Hecke 代数，第五章的 Weil-Deligne 参数，第十一章的 L 群、L 同态和 Satake 参数。需要知道局部域上的不可约可容许表示、抛物诱导、tempered representation 和 essentially square-integrable representation 的基本定义。附录 Z 给出 temperedness、characters 和 Plancherel 的局部调和分析口径，附录 AA 给出 depth、parahoric 和 hyperspecial 的结构口径，附录 AC 给出 Fargues-Fontaine 曲线、local Shimura varieties 和 Fargues-Scholze semisimple LLC 的几何接口，附录 AE 给出 `GL(2)` 局部 LLC 的 principal series、Steinberg 和 supercuspidal 例子。本章把 `GL(n)` 局部 Langlands、Archimedean 局部 Langlands、一般还原群的 enhanced LLC 和 endoscopic character identities 作为外部输入或猜想。
-
-收口归一化回指：本章所有 LLC 陈述均默认几何 Frobenius、归一化抛物诱导和归一化 Satake 参数；具体 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节。
+局部调和分析的 character、Plancherel 与 temperedness 口径见附录 Z，depth 和 parahoric 见附录 AA，Fargues--Fontaine 几何接口见附录 AC，`GL(2)` 的具体参数见附录 AE。`GL(n)` LLC、Archimedean LLC 与一般增强对应按外部输入或猜想标记；Frobenius、抛物诱导和 Satake 归一化见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节。
 
 ## 12.1 表示侧：不可约可容许表示
 
@@ -359,7 +353,7 @@ $$
 
 **注 12.46.** 全局章节将研究 $L^S(s,\pi,r)$ 的收敛、解析延拓和函数方程。局部 LLC 只提供局部因子的定义和相容性，不单独证明全局解析性质。
 
-**收口精修 12.A（LLC 状态边界）.** 本章把局部 Langlands 分成以下可调用层次：
+**局部 Langlands 的已知范围 12.A.** 下表把已经证明的对应、条件性形式与猜想分开：
 
 | 层次 | 本书使用方式 | 状态 |
 |---|---|---|
@@ -369,7 +363,7 @@ $$
 | Classical groups | 进入 Arthur packets 和 standard transfer | Arthur-Mok 等外部输入 |
 | 一般 enhanced LLC | packet、component group、inner form 和 endoscopy 的总框架 | 猜想或已知特殊情形，不能当作全体已证 |
 
-## 12.10 本章小结
+## 12.10 参数、packet 与增强数据
 
 局部 Langlands 猜想把局部表示论组织为参数理论。对 `GL(n)`，参数与不可约可容许表示一一对应；对一般还原群，一个参数给出有限 L-packet，packet 内部通常由 component group 的不可约表示和内形式数据区分。LLC 的内容不仅是集合分解，还包括中心特征、局部因子、非分歧 Satake 参数、tempered 性、离散性、抛物诱导、对偶、函子性和 endoscopy 的相容性。后续全局章节会把这些局部参数作为自守 L 函数和全局函子性的局部输入。
 

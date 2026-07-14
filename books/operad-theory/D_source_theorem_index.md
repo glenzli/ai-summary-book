@@ -125,7 +125,7 @@
 
 | 位置 | 外部输入 | 主要来源 | 后续需补 |
 | --- | --- | --- | --- |
-| 第二十章 | Locally constant factorization algebras 等价于 $E_n$-algebras | 当前仅作外部边界 20.6/N.26；Costello--Gwilliam、Lurie 为候选来源 | 尚无精确 theorem locator；AF-3 不能替代该比较 |
+| 第二十章 | Locally constant multiplicative factorization algebras 等价于 $E_n$-algebras | 当前仅作外部边界 20.6/N.26；Costello--Gwilliam、Lurie 为候选来源 | 尚无精确 theorem locator；AF-3 不能替代该比较 |
 | 第二十章 | Factorization homology excision | Ayala-Francis, arXiv:1206.5522v6, Lemma 3.18 | collar/gluing 条件、stratified/Fukaya 版本另行定位 |
 | 第二十章 | Dunn additivity | Lurie DUNN-1；Dunn | tensor product of infinity-operads；strict topological tensor product另行引用 |
 | 第二十章 | Fukaya category 构造 | Seidel；Fukaya-Oh-Ohta-Ono | transversality/obstruction setup |
@@ -270,7 +270,7 @@ $$
 
 ### D.12.7 Factorization homology 引用包
 
-**断言.** Locally constant factorization algebras on $\mathbb R^n$ 与 $E_n$-algebras 等价；factorization homology 满足 excision；在 $E_1$ 情形中
+**断言.** Locally constant multiplicative factorization algebras on $\mathbb R^n$ 与 $E_n$-algebras 等价；factorization homology 满足 excision；在 $E_1$ 情形中
 $$
 \int_{S^1} A\simeq HH_\*(A)
 $$
@@ -304,7 +304,7 @@ $$
 
 **当前来源定位.** [FRONTIER_SOURCE_AUDIT_2026_06_30.md](FRONTIER_SOURCE_AUDIT_2026_06_30.md)。状态：研究边界。
 
-**允许用法.** 第二十一章可描述其主题、对象、版本和进入正文前的验证义务。
+**允许用法.** 第二十一章只把这些资料作为开放问题的背景；任何具体新结论仍须按定义 D.0.2 单独登记模型、假设与定理定位。
 
 **禁止用法.** 不得把这些条目的新结论写成第八至二十章的基础定理；不得在未比较模型前把它们和 classical operad 结论合并。
 

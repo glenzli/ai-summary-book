@@ -1,11 +1,11 @@
 # Prismatic / p-adic Hodge Theory：从 Fontaine 周期环到棱柱上同调
 
 作者：Dr. Stochastic Parrot
-状态：逐章教材收口草稿，核心 P0 源码 locator、BMS2 基础 syntomic 公式吸收和习题解答闭合已完成，出版 locator 与校对未完成
+状态：在线教材版；核心定理来源、BMS2 基础 syntomic 公式和习题解答已经纳入，精细文献定位与文字校对仍在继续
 核查日期：2026-07-08
 主资料源：Fontaine, Faltings, Tsuji, Brinon-Conrad, Berger, Kedlaya-Liu, Scholze, Bhatt-Morrow-Scholze, Bhatt-Scholze, Bhatt-Lurie
 
-本书目标是写成一部严格的中文 Prismatic / p-adic Hodge Theory 教材，而不是主题导览。正文从 $\delta$-环、Frobenius lift、Witt vectors 和完备化开始，进入 Bhatt-Scholze 的 prism 与 prismatic site，再回收 de Rham、crystalline、etale、$A_{\inf}$、Breuil-Kisin、Nygaard、syntomic 和 classical Fontaine 比较理论，最后把 prismatic $F$-crystals、prismatization、coefficients、Artin stacks、Shimura varieties、Brauer applications 和 2025-2026 研究边界分层记录。
+这是一本严格的中文 Prismatic / p-adic Hodge Theory 教材，而不是主题导览。正文从 $\delta$-环、Frobenius lift、Witt vectors 和完备化开始，进入 Bhatt--Scholze 的 prism 与 prismatic site，再回收 de Rham、crystalline、etale、$A_{\inf}$、Breuil--Kisin、Nygaard、syntomic 和经典 Fontaine 比较理论，最后讨论 prismatic $F$-crystals、prismatization、带系数理论、Artin stacks、Shimura varieties、Brauer 群应用以及 2025--2026 年的研究边界。
 
 ## 写作约束
 
@@ -48,7 +48,7 @@
 13. [第十二章：Breuil-Kisin、Breuil-Kisin-Fargues modules 与 lattices](12_breuil_kisin_bkf_modules_and_lattices.md)
 14. [第十三章：带系数 prismatic cohomology 与非阿贝尔边界](13_coefficients_hodge_tate_crystals_and_nonabelian_boundary.md)
 15. [第十四章：Artin stacks、Shimura varieties 与算术应用边界](14_artin_stacks_shimura_and_arithmetic_applications.md)
-16. [第十五章：正式教材收口、错误模式与开放问题](15_closure_failure_modes_and_open_problems.md)
+16. [第十五章：错误模式、理论边界与开放问题](15_closure_failure_modes_and_open_problems.md)
 
 ### 附录
 
@@ -85,6 +85,6 @@
 - [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：核心 P0 外部输入定理的第一批源码级 locator。
 - [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)：BMS2/THH-BK、syntomic/Tate twists 和 prismatization 的第二批源码级 locator。
 
-## 当前阶段判定
+## 版本说明
 
-本目录已经进入“逐章教材收口草稿”形态：它有固定口径、资料源、章节链、定义链、外部输入账本、比较定理结构表、编号账本、locator 索引、技术基础附录、worked examples、术语索引、完整习题解答和逐章收口审计。核心 prismatic、BMS2 和 prismatization 主源已经补到源码 label 级 locator，BMS2 syntomic/Tate twist 的基础 fibre 公式已吸收到第七章和第十一章。它尚未达到最终 camera-ready 出版状态；剩余工作主要是逐条转换正式页码/定理号 locator、细分 syntomic 变体，并进行出版社级 copy-editing。
+当前版本已经形成从基础定义到比较定理、表示论和算术应用的连续学习路径，并配有技术基础附录、worked examples、术语索引和习题解答。核心 prismatic、BMS2 与 prismatization 文献已经定位到源码标签；BMS2 syntomic/Tate twist 的基础 fiber 公式见第七章和第十一章。仍需持续维护的部分主要是精细化文献页码、区分更多 syntomic 变体，以及统一中英文术语和排印细节。

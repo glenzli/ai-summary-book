@@ -1,10 +1,26 @@
 # 数学审查记录
 
-核查日期：2026-07-12
-当前状态：第一至第二十四章与附录 A-H 形成完整教材草稿。2026-07-11 已对
-基础主链及第 09-18 章 cohomology/motives/transfers 主线做 OET 复核并完成
-正文修订；剩余 extensions/realization P0 locator、自动化交叉引用和长篇
-详解仍未达到出版闭合。
+核查日期：2026-07-15
+当前状态：第 00 至 24 章与附录 A-H 形成完整教材草稿。基础主链、第 09-18 章
+cohomology/motives/transfers 主线及第 19-23 章扩展理论的 P0 外部输入均已完成
+OET 复核和 locator 对账。自动化交叉引用、长篇习题详解与最终版式仍属于出版增强，
+不影响教材内容闭合。
+
+## 2026-07-15 教材化与扩展章终校
+
+- 第 00-24 章已改为内容特定的自然导言和数学收束；固定的“本章目标/依赖/主线/小结”
+  模板以及正文中的项目管理口吻已经移除。
+- 第一章及附录 B 的 Nisnevich distinguished square 论证改用可表预层的推出、层化与
+  Yoneda，不再把 representable presheaf 错当成在预层层面保持该推出。
+- 第 19-20 章把 equivariant、genuine/lisse、scalloped stack、exceptional functor
+  定义域与 torus concentration 的假设分别写明；Hoyois 与 Khan--Ravi 的 P0 定理已定位。
+- 第二十一章区分整系数 nil-invariance、反演指数特征后的 universal-homeomorphism
+  invariance 以及 perfect motivic theory 的研究边界，避免把三者合并成无条件等价。
+- 第二十二章区分绝对 Betti、相对六操作 realization、pro-space etale realization、
+  profinite etale realization、实点与 `C_2`-equivariant Betti theory；Tate sphere 的像以
+  homotopy cofiber 表述。
+- 第二十三章把 universal property 限定在明确的 ambient category 及其编码结构中，
+  不再由 pullback formalism 自动推出定义之外的全部六操作相容性。
 
 ## 2026-07-12 purity/excess 交叉审计
 
@@ -85,7 +101,7 @@
 - `TEACHING_CLOSURE_AUDIT.md` 已按内容、证明、引用、术语和教学可读性给出教材闭合判定。
 - `TYPESETTING_AND_NUMBERING.md` 已固定编号、排版、证明格式和交叉引用规范。
 - `INDEX.md` 已补全书主题索引。
-- `EXERCISE_SOLUTIONS.md` 已给出 201 道练习的一版解答要点。
+- `EXERCISE_SOLUTIONS.md` 已给出 205 道练习的一版解答要点。
 - `P0_REFERENCE_LOCATORS_BATCH_1.md` 已定位 Drew-Gallauer universal formalism、framed recognition、norms、fundamental classes/Gysin maps。
 - `P0_REFERENCE_LOCATORS_BATCH_2.md` 已定位基础范畴论、稳定化、六操作、purity 与 triangulated shadow。
 - `P0_REFERENCE_LOCATORS_BATCH_3.md` 已定位第 09-18 章教学主线，并把不参与主线的高级比较降为 P1。
@@ -101,8 +117,8 @@
   recognition、norms、fundamental classes、stack/equivariant/log/analytic
   扩展都标为外部输入或研究边界；smooth ambidexterity 则明确由 purity
   和伴随唯一性书内推出。
-- 三批 P0 locator 已覆盖基础、六操作和第 09-18 章主线；剩余 P0 集中于
-  equivariant/stacky/realization 扩展，不影响已声明范围的教学闭合。
+- 三批 P0 locator 及后续扩展章对账已覆盖基础、六操作、第 09-18 章主线以及
+  equivariant、stacky 与相对 Betti realization。仍标为 P1 或 R 的结果不参与主线证明。
 
 ## 剩余增强项
 

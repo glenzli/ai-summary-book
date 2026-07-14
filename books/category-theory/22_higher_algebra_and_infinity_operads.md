@@ -1,12 +1,8 @@
 # 第二十二章：高阶代数、$\infty$-operad 与幺半 $\infty$-范畴
 
-## 本章目标
+幺半 $\infty$-范畴不能只靠一个二元张量和无限串相干同构来定义；$\infty$-operad 把所有多元运算及其代入关系一次编码在到 $N(\mathrm{Fin}_*)$ 的纤维化中。Inert 态射抽取输入槽，active 态射执行运算，Segal 条件保证多输入对象由各槽装配。由此，associative、commutative 与 $E_n$-代数成为同一框架中的代数对象，并能讨论模、中心和张量积。
 
-本章给出高阶代数的入口：$\infty$-operad、$E_n$-代数、幺半 $\infty$-范畴和代数对象。目标是明确后续学习 Lurie *Higher Algebra* 所需的范畴论语言。
-
-## 依赖前置知识
-
-需要 Cartesian fibration、coCartesian fibration、幺半范畴和 quasi-category。
+本章建立在 Cartesian/coCartesian fibration、普通幺半范畴和 quasi-category 上。我们会严格区分 active--inert 分解、operadic coCartesian lifts 与普通 coCartesian fibration；完整高阶相干和 rectification 定理作为外部输入，不用示意图替代其假设。
 
 ## 22.1 从 operad 到 $\infty$-operad
 
@@ -148,17 +144,23 @@ $$
 
 **定义 22.11.** $E_n$-operad 由 $\mathbb R^n$ 中小圆盘配置的同伦类型给出。$E_1$ 控制结合代数，$E_\infty$ 控制同伦交换代数，有限 $n$ 控制介于二者之间的高阶交换性。
 
-**外部输入定理 22.12（Dunn additivity）.** 在适当模型中有等价
+**外部输入定理 22.12（Dunn additivity）.** 对 $m,n\ge0$，小圆盘 operad 的 Boardman--Vogt 张量满足
 
 $$
 E_m\otimes E_n\simeq E_{m+n}.
 $$
 
-该定理解释迭代 $E_m$ 与 $E_n$ 代数结构如何合成为 $E_{m+n}$ 结构。
+若 $C$ 是 presentable 对称幺半 $\infty$-范畴且张量积分别保持小余极限，则进一步有自然等价
+
+$$
+\operatorname{Alg}_{E_m}\bigl(\operatorname{Alg}_{E_n}(C)\bigr)
+\simeq
+\operatorname{Alg}_{E_{m+n}}(C).
+$$
 
 ## 22.7 高阶代数中的伴随和模
 
-**外部输入定理 22.13.** 若 $C$ 是 presentable 幺半 $\infty$-范畴且张量积分别保持余极限，则 $\operatorname{Alg}_{\mathcal O}(C)$ 在广泛条件下仍是 presentable，并且自由-遗忘伴随存在。
+**外部输入定理 22.13.** 设 $\mathcal O^\otimes$ 为小 $\infty$-operad，$C^\otimes$ 为 presentable $\mathcal O$-幺半 $\infty$-范畴，并假设每个多元张量运算分别保持小余极限。则 $\operatorname{Alg}_{\mathcal O}(C)$ 是 presentable；遗忘函子可达并保持极限与 sifted 余极限，因而存在自由代数左伴随。
 
 **定义 22.14.** 对 $E_1$-代数 $A$，可定义左 $A$-模 $\infty$-范畴 $\operatorname{LMod}_A(C)$、右模和双模。若 $C=\mathbf{Sp}$，这给出环谱及其模谱的同伦代数。
 
@@ -226,7 +228,7 @@ $$
 
 在谱或 spaces 等合适环境中，$Z(A)$ 带有 $E_2$-代数结构。更一般地，$E_n$-代数的中心带有 $E_{n+1}$ 型结构。
 
-**外部输入定理 22.J（高阶 Deligne 型定理）.** 对合适的 $E_n$-代数 $A$，其 Hochschild cochains 或中心对象自然带有 $E_{n+1}$-代数结构。$n=1$ 时，这说明 $E_1$-代数的中心是 $E_2$-代数。
+**外部输入定理 22.J（高阶 Deligne 型定理）.** 设 $C$ 是 presentable 对称幺半稳定 $\infty$-范畴，且张量积分别保持小余极限。对 $C$ 中的 $E_n$-代数 $A$，其 Hochschild cochains（等价地，在相应 Morita 语境中的中心）自然带有 $E_{n+1}$-代数结构。$n=1$ 时，这说明 $E_1$-代数的中心是 $E_2$-代数。
 
 **定义 22.K.** 设 $A$ 是 $E_n$-代数，$M$ 是 framed $n$-流形。因子化同调 $\int_M A$ 是把 $A$ 沿 $M$ 中小 $n$-圆盘配置作局部到整体粘合得到的对象；形式上可写为余极限
 
@@ -456,7 +458,7 @@ $$
 
 **例子 22.AA.** 对强对称幺半函子 $\Sigma^\infty_+:\mathcal S\to\mathbf{Sp}$，$E_\infty$-space 被送到 $E_\infty$-ring spectrum。这是“代数结构可沿幺半函子传递”的高阶版本；具体构造依赖该函子的对称幺半性。
 
-## 22.11 本章小结
+## 22.11 多元运算的高阶相干
 
 高阶代数把普通代数对象放入 $\infty$-范畴和 operad 控制的相干体系中。$E_n$-代数记录不同层级的同伦交换性，幺半 $\infty$-范畴为谱、导出几何和拓扑场论提供统一语言。Morita 理论把代数按模范畴和双模组织起来，fully dualizable 条件则是 extended TFT 中的有限性核心。
 

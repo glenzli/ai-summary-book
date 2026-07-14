@@ -1,12 +1,6 @@
 # 第二章：导出范畴、完美复形与 B-side 增强
 
-## 本章目标
-
-本章建立 HMS 的 B-side 语言：导出范畴、完美复形、coherent sheaves、dg enhancement、Fourier-Mukai transforms 和 matrix factorizations。重点不是复述代数几何全貌，而是把 B-side 写成可与 A-side Fukaya 范畴比较的增强范畴。
-
-## 依赖前置知识
-
-需要熟悉复形、同调、abelian category、局部自由层、张量积、拉回和推出。一般 derived algebraic geometry 不作为本章前置。
+符号 $\mathrm D^b\operatorname{Coh}(X)$ 容易造成一种错觉：似乎 B-side 已经由一个三角范畴完整确定。实际上，Fourier--Mukai 核在链级复合，Hochschild 不变量依赖增强，而当 $X$ 奇异时，完美复形与有界 coherent 复形甚至不是同一个范畴。本章沿着这三处差异展开：先由 quasi-isomorphism 的局部化得到导出范畴，再分离 $\operatorname{Perf}(X)$ 与 $\mathrm D^b\operatorname{Coh}(X)$，随后给出 dg enhancement、核函子和 matrix factorization 的可比较模型。读者需要复形、abelian 范畴、局部自由层及导出拉推张量的基本语言；一般导出代数几何不作前置输入。
 
 ## 2.1 从复形到导出范畴
 
@@ -265,15 +259,7 @@ factorizations；这些版本需要各自的 Orlov/relative-singularity 输入�
 7. 比较 raw enhancement、pretriangulated envelope 还是 perfect/Morita
    completion。
 
-## 本章小结
-
-B-side 的主体不是孤立的三角范畴，而是固定 model 的增强导出几何对象。
-Regular noetherian 情况下
-$\operatorname{Perf}_{\mathrm{dg}}(X)$ 与
-$\mathrm D^b_{\mathrm{dg}}\operatorname{Coh}(X)$ quasi-equivalent；奇异时
-dual-numbers 反例说明二者确实不同。Affine matrix factorizations 有显式
-dg differential；nonaffine 版本必须另选 descent model。Fourier--Mukai
-kernels 提供 enhanced B-side functors。
+于是 B-side 不再是一个未注明模型的三角影子。Regular noetherian 情形允许把完美复形与有界 coherent 复形比较，dual numbers 则说明奇异情形不能沿用这一识别；Fourier--Mukai 核给出增强函子的链级来源，而 matrix factorization 把势函数的曲率写入微分平方。下一步要构造的 A-side 与这些对象在形式上截然不同，但比较时必须达到同样的增强精度。
 
 ## 练习
 

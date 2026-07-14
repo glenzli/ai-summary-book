@@ -1,12 +1,14 @@
 # 第六章：Homotopy purity、Thom spaces 与 purity transformations
 
-## 本章目标
+闭嵌入 `i:Z\hookrightarrow X` 的开补商 `X/(X\setminus Z)` 看似依赖整个环境
+`X`，而局部几何提示它应只由 `Z` 附近的一阶法向信息决定。Homotopy purity 将这一直觉
+精确化：在光滑正则情形，闭补商与法丛的 Thom 空间等价。稳定以后，同一法向数据又
+以 Thom twist 的形式进入 `i^!`、Gysin 映射和交叉理论。
 
-本章引入 Thom spaces 和 purity。Purity 是 motivic homotopy theory 中连接局部化、法丛、Gysin maps 和 exceptional pullback 的核心定理。本章先证明 Thom spaces 的形式性质，再把 homotopy purity 和六操作中的 purity transformations 标记为外部输入。
-
-## 依赖前置知识
-
-需要 pointed motivic spaces、vector bundles、closed immersions、normal bundles、cofiber、stable motivic homotopy category、six operations、localization 和 tensoring by Thom spectra。
+需要特别警惕的是，非稳定 homotopy purity、smooth purity、regular immersion 的
+purity transformation 与 absolute purity 并不是同一条定理。本章先在 pointed
+motivic spaces 中定义 Thom 空间并计算零丛和平凡丛，再逐一写出这些 purity 陈述的
+对象类型与假设。法丛和 lci 态射的代数几何背景可查附录 E，六操作方差沿用第五章。
 
 ## 6.1 Thom spaces
 
@@ -300,7 +302,7 @@ $$
 `\Sigma^{-N_i}i^*\to i^!`。其可逆性是定义 6.14 的 coefficientwise purity
 条件。两个陈述的假设、所在范畴和结论类型都不同，故不能互换。`\square`
 
-## 6.6 本章小结
+## 6.6 从闭补商到 Thom 扭曲
 
 Thom spaces 把向量丛转换为 pointed motivic spaces，homotopy purity 把 smooth
 closed pair 的闭补商识别为法丛 Thom space。稳定六操作对 smoothable lci

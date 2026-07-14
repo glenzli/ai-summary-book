@@ -1,20 +1,6 @@
 # 第十三章：同伦转移定理与最小模型
 
-## 本章目标
-
-本章说明 operad 同伦代数如何在 quasi-isomorphism 下转移。核心目标是：
-
-1. 定义 contraction 和 strong deformation retract。
-2. 陈述同伦转移定理。
-3. 给出 $A_\infty$ 和 $L_\infty$ 转移的树公式。
-4. 定义 minimal model。
-5. 说明 higher operations 与 Massey products、formality obstruction 的关系。
-
-本章的完整符号证明依赖 homological perturbation theory。为保持正文可检查，本章给出精确公式框架，并把全符号版本标为外部输入。
-
-## 依赖前置知识
-
-需要定理 9.20 的 bar-cobar 构造、定义 10.5 和定义 10.10 的 $A_\infty/L_\infty$-代数，以及链复形的 homotopy 和 quasi-isomorphism。
+取链复形 $A$ 的同调 $H(A)$ 会把微分变成零，却不会自动保留 $A$ 上代数结构的全部信息。给定 contraction $H\mathrel{\substack{\xrightarrow{i}\\[-2pt]\xleftarrow[p]{}}}A$ 与同伦 $h$，二元乘法可投影为 $p\mu(i\otimes i)$；它的结合缺陷由含一条 $h$-边的两棵二叉树补偿，这正给出 $m_3$。更多内部边产生全部高阶运算。Homotopy transfer theorem 把这一计算推广到 $\mathcal P_\infty$-代数，并由 minimal model 把 quasi-isomorphism 类型中的信息集中到高阶乘积。以下需要 bar--cobar、$A_\infty/L_\infty$ 与链同伦语言；完整树级符号作为精确外部输入调用。
 
 ## 13.1 Contraction
 
@@ -258,11 +244,11 @@ $$
 
 这个流程的数学内容在于第 4 步和第 6 步：选择不同 contraction 会给出不同公式，但所得 minimal models 在 $\infty$-isomorphism 意义下等价。
 
-## 本章小结
+## 13.9 高阶乘积保存了什么
 
-同伦转移定理说明：若链复形 $A$ 上有 $\mathcal P_\infty$-代数结构，并且 $A$ 与 $H$ 同伦等价，则 $H$ 上也有自然的 $\mathcal P_\infty$-代数结构。对 dg associative algebra，转移公式由平面二叉树控制；对 dg Lie algebra，转移公式由反对称化的有根树控制。Minimal model 把微分信息转化为高阶运算，是 formality、Massey products 和同伦分类的基本工具。
+同伦转移并不把结构简单地“搬到同调上”：每棵树的叶标记 inclusion，内部边标记 homotopy，顶点标记原运算，根标记 projection；所有树的带符号和共同给出转移运算。于是 minimal model 虽有 $m_1=0$，却可能以 $m_3,m_4,\ldots$ 保存原微分与乘法相互作用的信息。高阶项全部消失才支持 formality，而非零 $m_3$ 则能检测 Massey 型障碍。
 
-定义 J.4--外部输入定理 J.19 是本章的计算入口。需要实际计算 $m_3$、$m_4$、$\ell_3$ 或 $\infty$-morphism 分量时，应先固定定义 J.1 的 normalized contraction，再按定义 J.5、定义 J.9 和定义 J.15 的树递归展开。
+实际计算应先固定附录 J 的 normalized contraction，再按树递归展开，不能混用不同 side conditions 或符号口径。下一章将把“沿弱等价替换结构”的问题放入模型范畴：同伦转移给出具体高阶结构，并不自动等同于严格代数范畴之间的 Quillen equivalence。
 
 ## 练习
 

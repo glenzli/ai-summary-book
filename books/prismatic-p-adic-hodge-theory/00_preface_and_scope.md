@@ -1,12 +1,6 @@
 # 序章：范围、严格性标准和资料源
 
-## 本章目标
-
-本章说明本书研究的数学对象、严格性标准和资料源边界。读者在进入第一章前，应当知道本书中“prism”“prismatic cohomology”“$p$-adic Hodge theory”分别处于哪一层级，哪些陈述会在书内证明，哪些陈述必须作为外部输入定理。
-
-## 依赖前置知识
-
-需要熟悉交换代数、模、张量积、导出范畴的基本语言、scheme/formal scheme 的基本定义、Galois 表示和同调代数。Perfectoid spaces、almost mathematics、pro-etale topology 和 prismatic cohomology 不预设，会在后续章节逐步引入；但一些大型比较定理只作为外部输入使用。
+经典 $p$-进 Hodge 理论通过多个周期环比较 étale、de Rham 与 crystalline 上同调；棱柱理论的目标不是再增加一个孤立的比较对象，而是找到能够同时产生这些 specialization 的积分同调。要理解这种统一，必须先分清三层：prism 是带 $\delta$-结构与 Cartier divisor 的算术增厚，prismatic cohomology 是相对 site 上的导出上同调，而 Galois 表示比较还需要额外的 Frobenius、滤过与反演操作。本序章固定这些对象的类型、全书的证明状态和资料边界。读者应熟悉交换代数、导出范畴、formal scheme、Galois 表示与同调代数；perfectoid、almost、pro-étale 和棱柱构造从后文进入，大型比较定理精确标为外部输入。
 
 ## 0.1 本书研究的对象
 
@@ -101,7 +95,7 @@ $$
 
 **证明.** 附录 G 给出 formal schemes、site 和 derived global sections；附录 H 给出 $\delta$-环和 prism 条件的代数计算；附录 I 给出 crystals 和 descent；附录 J 给出 period/lattice 线性代数。正文基础定义均依赖这些工具。大型比较定理在相应章节均标为外部输入，因此不属于内部证明闭包。证毕。
 
-## 本章小结
+## 0.7 统一框架中的证明责任
 
 本书把 prismatic theory 作为严格数学对象处理：先定义 $\delta$-环和 prism，再构造 prismatic site 和 cohomology，随后通过比较定理连接 classical and integral $p$-adic Hodge theory。大型比较定理作为外部输入；书内证明集中在定义层、例子层、形式推论和可局部检查的代数计算。
 

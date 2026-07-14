@@ -1,12 +1,6 @@
 # 第十章：Crystalline、de Rham-Witt 与 $q$-de Rham specialization
 
-## 本章目标
-
-本章处理 prismatic cohomology 的三个算术 specialization：crystalline prism 上的 crystalline cohomology、perfectoid/$A_{\inf}$ 情形中的 de Rham-Witt 接口，以及 $q$-crystalline prism 上的 $q$-de Rham theory。目标是把“统一”拆成可检查的不同 base prism。
-
-## 依赖前置知识
-
-依赖第二章的基本 prism 例子、第三章 comparison theorem interface、第五章 BMS theory、附录 B 的局部计算。需要 crystalline cohomology、Witt vectors 和 de Rham-Witt complex 的基本背景。
+“Prismatic cohomology 统一多种理论”只有在 base prism 改变时仍能逐项识别输出，才是可验证的命题。Crystalline prism、perfectoid/$A_{\inf}$ prism 与 $q$-crystalline prism 分别导向 crystalline、de Rham--Witt 和 $q$-de Rham 结构，但所需完备化、Frobenius 与坐标依赖并不相同。本章以第二章的基本 prism 和第三章的比较接口为共同起点，结合第五章的 BMS 对象与附录 B 的局部模型，分别推导三种 specialization 的输入、输出和边界，并用低阶 $q$-二项式计算展示 $q\to1$ 时怎样回到通常微分。
 
 ## 10.1 Crystalline prism
 
@@ -93,7 +87,7 @@ $$
 
 **证明.** 多项式 $[n]_q$ 在 $q=1$ 的值为 $n$。代入命题 10.15 即得。证毕。
 
-## 本章小结
+## 10.7 Base prism 决定的三个出口
 
 Crystalline、de Rham-Witt 和 $q$-de Rham 都是 prismatic cohomology 的 specialization 或 comparison 后果，但它们对应不同 prism 和不同外部输入定理。正式教材写法必须避免把“统一”误写成“相同”。
 

@@ -1,12 +1,6 @@
 # 第三章：Prismatic cohomology 与基础比较定理
 
-## 本章目标
-
-本章把第二章定义的 $R\Gamma_\Delta(X/A)$ 与 classical cohomology theories 联系起来。所有深层比较定理均标为外部输入；本章的内部工作是固定对象、态射、specialization、滤过和 Frobenius 结构的精确口径。
-
-## 依赖前置知识
-
-依赖第二章的 bounded prism、relative prismatic site、$\mathcal O_\Delta$、$\overline{\mathcal O}_\Delta$ 和 Frobenius。需要熟悉 de Rham complex、crystalline cohomology、etale cohomology 和 derived tensor product 的基本语言。
+Prismatic cohomology 的统一性只有在比较态射的源、靶和换基操作全部写清时才有内容。同一个 $\Delta_{R/A}$ 通过模掉 prism ideal、沿 Frobenius 换基、反演特定元素或取完备化，分别通向 Hodge--Tate、de Rham、crystalline 与 étale 信息；这些操作既不发生在同一系数范畴，也不能任意交换。本章以第二章的 bounded prism、structure sheaves 与 Frobenius 为起点，固定每个 specialization 的导出张量、滤过和 semilinear 结构。深比较定理作为精确外部输入，书内则完成态射类型、base change 与相互兼容性的形式推导。
 
 ## 3.1 Affine 记号
 
@@ -63,7 +57,7 @@ R\Gamma\left(X,\Omega^i_{X/(A/I)}\right)[-i]\{-i\}.
 $$
 全局公式中的 $\overline\Delta_{X/A}$ 表示对上述 sheaf complex 取
 $R\Gamma(X_{\mathrm{et}},-)$。来源为 Bhatt-Scholze, Theorem 4.11 与
-Theorem 6.3，locator `BS-COMP-HT`。
+Theorem 6.3。
 
 **说明 3.5.** 本书采用
 $M\{i\}=M\otimes_{A/I}(I/I^2)^{\otimes i}$，故定理中为 $\{-i\}$。
@@ -96,7 +90,7 @@ $$
 这里 $\phi_A^\ast C=A\otimes_{A,\phi_A}^LC$，帽号表示 derived
 $p$-completion；右侧 $R\Gamma_{\mathrm{dR}}$ 也按 $p$-completed de Rham
 complex 解释。该同构与乘法和 differential graded algebra 结构相容。
-来源为 Bhatt-Scholze, Corollary 15.4（locator `BS-COMP-DR`）。它本身是
+来源为 Bhatt-Scholze, Corollary 15.4。它本身是
 unfiltered comparison；若要保留 Hodge/Nygaard filtration，必须另行调用
 relative Nygaard theorem，不能把 filtered compatibility 自动加入本陈述。
 
@@ -114,7 +108,7 @@ R\Gamma_\Delta(X/A)\widehat\otimes_{A,\phi_A}^LA
 =\left(\phi_A^\ast R\Gamma_\Delta(X/A)\right)^{\wedge,L}_p.
 $$
 两边均按 derived $p$-complete commutative $A$-algebras 解释。来源为
-Bhatt-Scholze, Theorem 5.2（locator `BS-COMP-CRYS`）。这是积分
+Bhatt-Scholze, Theorem 5.2。这是积分
 comparison；结论没有 invert $p$。
 
 **外部输入定理 3.10（Frobenius isogeny）.** 在定理 3.4 的假设下，
@@ -132,7 +126,7 @@ C^{(1)}[1/I]
 C[1/I].
 $$
 若 $I=(d)$，则 $[1/I]$ 表示 $[1/d]$。来源为 Bhatt-Scholze,
-Corollary 15.5（locator `BS-COMP-PHI`）。积分层的
+Corollary 15.5。积分层的
 $\varphi^{\mathrm{lin}}$ 一般不是同构；invert $I$ 也不等于 invert $p$。
 
 ## 3.5 Etale comparison
@@ -167,7 +161,7 @@ R\Gamma_{\mathrm{et}}(\operatorname{Spec}(S[1/p]),\mathbf Z/p^n)
 \Delta_{S/A}=R\Gamma_\Delta(X/A).
 \tag{3.2}
 $$
-来源为 Bhatt-Scholze, Theorem 9.1（locator `BS-COMP-ETALE`）。对非 affine
+来源为 Bhatt-Scholze, Theorem 9.1。对非 affine
 $X$，由 (3.1) 取 derived global sections 只直接得到右侧 sheaf fixed
 complex 的 hypercohomology。若要把它改写成 (3.2) 型的
 $R\Gamma_\Delta(X/A)$ 公式，至少还须验证 canonical exchange map
@@ -205,8 +199,7 @@ R\Gamma_\Delta(X/A)\widehat\otimes_A^L B
 R\Gamma_\Delta(Y/B),
 $$
 并与 $E_\infty$-乘法结构相容。Prism ideal rigidity 保证任意 prism map 的
-目标 ideal 就是 $IB$。来源为 Bhatt-Scholze, Corollary 4.12（locator
-`BS-COMP-BC`）；complex-level theorem 不额外假设 $A\to B$ 有有限 ordinary
+目标 ideal 就是 $IB$。来源为 Bhatt-Scholze, Corollary 4.12；complex-level theorem 不额外假设 $A\to B$ 有有限 ordinary
 Tor-amplitude。
 
 **形式推论 3.14.** 若 $R\Gamma_\Delta(X/A)$ 为 perfect $A$-complex，则 base change 后得到的 $R\Gamma_\Delta(Y/B)$ 为 perfect $B$-complex。
@@ -279,7 +272,7 @@ $p^n$、invert $I$，再在 $D(\mathbf Z/p^n)$ 中取 $\varphi-1$ 的 fibre。
 
 **警告 3.18.** 若一个证明把 fixed-point comparison 当作普通 base change comparison 使用，则它通常会丢失 derived fixed points 中的 cokernel 项。
 
-## 本章小结
+## 3.9 一个对象的四种 specialization
 
 本章定义了 Hodge-Tate 和 de Rham specialization，并把 crystalline、etale、
 Frobenius isogeny 与 base change 写成类型完整的 Bhatt-Scholze 外部输入。

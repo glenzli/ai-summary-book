@@ -1,12 +1,8 @@
 # 第十六章：Cubical Type Theory、计算单值性与模型
 
-## 本章目标
+第六章把单值性作为公理加入，因此 $\mathsf{ua}(e)$ 的计算只表现为路径；某些 cubical type theory 却用区间和 Glue 构造单值性，并赋予更直接的归约行为。这不是同一证明写得更详细，而是对象语言已经改变。类似地，“有 simplicial 模型”“满足 canonicity”“具有 normalization”分别是模型存在、闭项计算与归约完备性的不同元定理，不能互相代替。
 
-本章讨论 HoTT 的元理论背景：simplicial model、cubical type theory、计算单值性、canonicity、directed/simplicial type theory、two-level type theory、cohesive HoTT 和模型比较。这里的内容属于外部输入，不作为前面内部证明的替代。对象语言、元语言和实现语言的边界见附录 Z。
-
-## 依赖前置知识
-
-本章依赖单值性、HIT 和模型比较。读者应区分对象语言中的类型论证明与元语言中的模型论证明。
+本章比较这些精确结论。先看 simplicial set 模型给出的条件性相对一致性，再固定 CCHM 语法中的 $\mathsf{Path}$、composition 和 Glue，随后区分 canonicity 与 normalization 的适用 calculus。Directed、cohesive 与 two-level 扩展只作为对象语言接口出现；它们新增的 hom、模态或 strict equality 不会回流成前文恒等类型的规则。
 
 ## 16.1 Simplicial model
 
@@ -123,9 +119,9 @@ $$
 
 **边界原则。** 附录 Z.7 给出本书各章与 cubical/HIT 元理论的接口。后续新增 HIT 或 cubical 计算规则时，必须同步记录形成、构造、消去、计算规则和元理论假设。
 
-## 本章小结
+## 16.10 语义结论不能越过的边界
 
-HoTT 的严谨性要求同时控制内部推导与外部元理论。Simplicial model 给出带明确集合论假设的相对一致性解释；CCHM 通过不同的 $\mathsf{Path}$、composition 和 Glue 语法证明单值性；canonicity 与 normalization 只对其精确 calculus 成立；CHM 的强 HIT 计算只覆盖列出的签名。其余 directed、two-level、cohesive 和 QIIT 接口同样不得回流为基础 HoTT 的隐式规则。
+Simplicial 模型说明一组规则在给定元理论假设下有解释；CCHM 用另一套路径语法给出计算单值性；Huber 与 Sterling--Angiuli 的元定理又各自固定了不同 calculus。它们共同支持 HoTT 的语义与计算研究，却不产生一个可以任意混合规则的“总系统”。判断某个等式能否归约、某个 HIT 是否保持 canonicity，必须回到具体语法、替换定理和模型可靠性。研究边界由此不是主题清单，而是精确语言之间尚需构造的解释与保守性问题。
 
 ## 练习
 

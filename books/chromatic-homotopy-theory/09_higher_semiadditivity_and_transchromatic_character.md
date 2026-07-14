@@ -1,12 +1,6 @@
 # 第九章：Higher semiadditivity 与 transchromatic character
 
-## 本章目标
-
-本章把 higher semiadditivity 作为 chromatic theory 的现代结构工具引入。我们只证明稳定范畴中有限和余有限的基础形式事实；$K(n)$-local 和 $T(n)$-local 范畴的 higher semiadditivity 作为外部输入。transchromatic character 作为高度之间传递信息的接口处理。
-
-## 依赖前置知识
-
-需要第五章的 chromatic localization、第六章的 $K(n)$-local category 和第七章的 redshift/telescope 分层。需要熟悉 finite group actions、homotopy fixed points、homotopy orbits 和 norm map 的基本语言。
+在普通加性范畴中，有限积与有限余积一致；higher semiadditivity 追问这种“求和”能否沿有限群胚乃至更高有限空间推广。对色层局部范畴，这种能力并非装饰，它控制 norm、Tate construction 和不同高度之间的 character map。以下先在稳定范畴中证明有限和余有限的基础形式，再精确调用 $K(n)$-local 与 $T(n)$-local higher semiadditivity，并把 transchromatic character 解释为信息跨高度传递的机制。所需色层语言来自第五至七章；群作用、homotopy fixed points、orbits 与 norm map 按其标准 infinity-范畴含义使用。
 
 ## 9.1 Semiadditivity 的最低阶形式
 
@@ -69,7 +63,7 @@ $$
 
 **外部输入 9.15.** Hopkins-Kuhn-Ravenel generalized character theory 给出 Morava E-theory 在有限群 classifying spaces 上的 character map。后续 transchromatic character theory 将其推广到高度变化和更高范畴版本。
 
-**边界 9.16.** Ben-Moshe 2024 的 transchromatic higher semiadditivity 结果说明 categorified transchromatic character 与 semiadditive integration 相容。当前版本把它作为前沿输入，进入证明链前需 locator。
+**边界 9.16.** Ben-Moshe 2024 的 transchromatic higher semiadditivity 结果说明 categorified transchromatic character 与 semiadditive integration 相容。这里把它作为带原文假设的前沿输入；它不是由外部输入 9.15 的有限群 character map 形式推出的。
 
 ## 9.5 与 redshift 的关系
 
@@ -102,7 +96,7 @@ $$
 
 **边界 9.24.** 对 $A=BG$，semiadditive cardinality 与 $|G|^{-1}$ 型现象相关，但在 chromatic local categories 中不能按普通有理数解释。需要 higher semiadditive cardinality 的正式理论。
 
-## 本章小结
+## 9.8 高阶求和与高度迁移
 
 Higher semiadditivity 把有限集合的 biproduct 现象推广到 $\pi$-finite spaces 的 indexed limit/colimit 比较。普通稳定范畴只自动具有 0-semiadditivity；chromatic local categories 的高阶版本是深层外部输入。Transchromatic character 将高度之间的信息传递与 semiadditive integration 联系起来，是现代 chromatic theory 的核心前沿之一。
 

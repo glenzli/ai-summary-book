@@ -1,14 +1,8 @@
 # 第十七章：Arthur 参数和谱分解
 
-## 本章目标
+局部 Langlands 参数最自然地描述 tempered 表示，但 classical groups 的离散自守谱中会系统性出现 residual 和非 tempered 分量。Arthur 的修正是在参数域中加入一个额外的 $\operatorname{SL}_2(\mathbb C)$；它不是装饰，而是记录偏离 temperedness 的方式，并把离散谱组织成由 `GL(n)` cuspidal data 构成的形式直和。稳定 trace formula 随后通过 component group 字符给出 multiplicity formula，决定一个 global packet 中哪些表示真正出现。
 
-本章解释 Arthur 参数（Arthur parameters）在自守谱分解中的作用。局部 Langlands 参数描述单个局部表示的 L-packet；全局 Langlands 参数预期描述 tempered 或更一般的自守表示。但对 classical groups 的离散谱，非 tempered 表示系统性出现。Arthur 的思想是在 Langlands 参数之外加入一个额外的 $\operatorname{SL}_2(\mathbb C)$，用它编码非 tempered 性和残余谱来源，并通过稳定 trace formula 给出 multiplicity formula。
-
-## 依赖前置知识
-
-需要第十二章的 L-packet，第十三章的自守谱，第十五章的函子性，第十六章的 stable trace formula 和 endoscopy。需要知道 tempered representation、discrete automorphic spectrum、isobaric sum、component group 和 stable character。Arthur 对 classical groups 的分类、Mok 对 unitary groups 的分类、局部 Arthur packets 和 multiplicity formula 均作为外部输入。附录 X 给出 classical groups、unitary groups、multiplicity formula、standard transfer 和 inner form refinements 的逐群接口。
-
-收口归一化回指：本章 Arthur 参数、standard transfer、局部 packet 和 multiplicity formula 的符号均依赖第十二、十六章 convention；Satake、tempered normalization 和 transfer convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
+本章承接 L-packet、自守谱、函子性和 endoscopy。Arthur 对 classical groups 的分类、Mok 的 unitary group 分类及局部 packet 均作为外部输入，逐群接口见附录 X。Satake、tempered 与 standard transfer 的归一化遵循 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、8 节。
 
 ## 17.1 离散谱与残余谱
 
@@ -185,7 +179,7 @@ Arthur 参数中的块 $(\pi_i,b_i)$ 与 L 函数极点相关。
 
 **注 17.24.** 这解释了为什么第十五章中的 symmetric/exterior square L 函数不仅是函子性例子，也进入 classical groups 谱分解的参数条件。
 
-**收口精修 17.A（Arthur 输入边界）.** 本章后续只使用 Arthur 理论的以下接口：
+**Arthur 分类的外部输入 17.A.** 后文使用 Arthur 理论时，精确调用下列结果：
 
 | 输入 | 作用 | 状态 |
 |---|---|---|
@@ -195,7 +189,7 @@ Arthur 参数中的块 $(\pi_i,b_i)$ 与 L 函数极点相关。
 | standard transfer to `GL(N)` | 连接 functoriality 和 L 函数 | 外部输入 |
 | self-duality sign criterion | 限定哪些 `GL(n)` cuspidal data 可进入参数 | 外部输入 |
 
-## 17.10 本章小结
+## 17.10 Arthur 参数如何组织离散谱
 
 Arthur 参数是 Langlands 参数的谱分解增强版。额外的 $\operatorname{SL}_2(\mathbb C)$ 记录非 tempered 和 residual 现象；全局参数 $\boxplus_i(\pi_i,b_i)$ 把 classical groups 的离散谱与 `GL(n)` cuspidal data 连接起来。Arthur multiplicity formula 用 component group 字符决定 packet 中哪些表示以何重数出现。该理论依赖稳定 trace formula 和 endoscopic transfer，是现代 classical groups Langlands 理论的核心。
 

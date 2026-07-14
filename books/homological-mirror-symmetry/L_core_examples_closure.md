@@ -32,7 +32,7 @@ $$
 W=\sum_{\rho\in\Sigma(1)}c_\rho z^{m_\rho}.
 $$
 
-**计算 L.6（$\mathbb P^n$）。** 对
+**计算 L.6（$\mathbb P^n$）。** 设 $q\in k^\times$。对
 $$
 W=z_1+\cdots+z_n+q(z_1\cdots z_n)^{-1},
 $$
@@ -40,9 +40,22 @@ critical equations 是
 $$
 z_i=q(z_1\cdots z_n)^{-1}.
 $$
-故 $z_1=\cdots=z_n=z$ 且 $z^{n+1}=q$。因此 $W$ 有 $n+1$ 个非退化 critical points，Jacobian ring 半单分解为 $n+1$ 个幂等分量。
+故 $z_1=\cdots=z_n=z$ 且 $z^{n+1}=q$，并有
+$$
+\operatorname{Jac}(W)\cong k[z]/(z^{n+1}-q).
+$$
+若再假设 $k$ 代数闭且 $\operatorname{char}k\nmid n+1$，该多项式有
+$n+1$ 个互异根，故这些 critical points 非退化，Jacobian ring 半单分解为
+$n+1$ 个域因子。没有这些域与特征假设时，不能断言根数或半单性。
 
-**计算 L.7（closed-open 检查）。** Toric Fukaya category 中的 torus fiber $(L_u,\xi)$ 对应 critical point $\xi$。若 $dW(\xi)=0$，则其 deformed Floer cohomology 不消失；若 $dW(\xi)\ne0$，则 curvature 不能被消去或对应 morphism object contractible。Closed-open map 将 quantum/symplectic closed-string 数据映到 Hochschild cochains，Jacobian ring 与 closed-string ring 的同构是 toric HMS 的必要检查。
+**计算 L.7（closed-open 检查）。** 在外部输入定理 10.5、10.8 所规定的
+toric Fano/Novikov 模型中，带局部系统或 weak bounding cochain 的 torus fiber
+$(L_u,\xi)$ 的 deformed Floer cohomology 由势函数临界方程控制：
+$dW(\xi)=0$ 时得到相应非零分块，非临界点在标准 Koszul 模型中给出
+acyclic complex。这里的结论依赖 toric Floer 计算，不能只从形式
+Maurer--Cartan 方程推出。Closed--open map 将 closed-string 数据映到
+Hochschild cochains，Jacobian ring 与 closed-string ring 的同构是 toric HMS
+的必要检查。
 
 **在线闭合判定 L.8.** 本书已给出 potential、critical equations、Jacobian ring 和 closed-open 检查逻辑。完整 toric HMS 的 $A_\infty$ quasi-isomorphism 仍引用 Abouzaid/FOOO。
 

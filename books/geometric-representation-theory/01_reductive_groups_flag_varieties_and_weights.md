@@ -1,12 +1,6 @@
 # 第一章：Reductive groups、flag varieties 与权格
 
-## 本章目标
-
-本章建立几何表示论的代数群基础：reductive group、Borel subgroup、maximal torus、root datum、flag variety、Schubert cell 和权格。重点是固定全书 convention，并证明若干可内部验证的结构命题。
-
-## 依赖前置知识
-
-需要附录 A 的代数群作用和商栈语言，以及基本交换代数和代数簇概念。
+表示的最高权由 maximal torus 的 character 记录，而 flag variety 上的轨道却由 Weyl group 记录；几何表示论的第一件事，是说明这两套离散数据为何来自同一组 Borel 数据。给定连通 reductive group $G$，选择 $B\supset T$ 同时决定正根、Bruhat 长度、线丛符号和 Schubert 分层。若这些约定含混，后面的 Borel--Weil、Kazhdan--Lusztig 与 localization 公式会同时出现符号错误。下面从代数群作用和齐性空间出发建立这些对象，并始终用 $SL_2/B\simeq\mathbb P^1$ 检查抽象定义在最低秩时究竟描述了什么。
 
 ## 1.1 Reductive group 和 Borel 数据
 
@@ -30,6 +24,8 @@ $$
 \mathfrak g=\mathfrak t\oplus\bigoplus_{\alpha\in\Phi}\mathfrak g_\alpha,
 $$
 其中非零权 $\alpha$ 构成根系 $\Phi=\Phi(G,T)\subset X^\ast(T)$。由 $B$ 决定正根集合 $\Phi^+$，其 simple roots 记为 $\Delta$。
+
+这些定义只抽取了线性化后的数据。要知道根与 coroot 确实组成可用于反射和分类的 root datum，还需要代数群结构定理；这正是下一条外部输入承担的责任。
 
 **外部输入定理 1.5.** 对连通 reductive group $G$，Borel subgroup 和 maximal torus 存在；任意两个 Borel subgroups 共轭，任意两个 maximal tori 共轭；$(X^\ast(T),\Phi,X_\ast(T),\Phi^\vee)$ 构成 reduced root datum。  
 用途：全书根数据基础。来源需在附录 D 定位到 Borel 或 Springer。
@@ -103,6 +99,8 @@ $$
 
 **证明.** 直接由外部输入定理 1.13 得到。该推论在本书中不增加新外部假设，只是重新包装 Bruhat decomposition。$\square$
 
+有限个 affine cells 把一个 projective variety 化成可组合的局部模型。第四章会在这些 cell 上放置标准层与 IC 层；在此之前，还要解释权如何在同一个齐性空间上变成线丛。
+
 ## 1.4 权、线丛和 equivariant vector bundles
 
 **定义 1.15.** 对 $\lambda\in X^\ast(T)$，令 $k_\lambda$ 为一维 $B$-表示，其中 $U=R_u(B)$ 平凡作用，$T$ 通过 character $\lambda$ 作用。定义 $G/B$ 上的 $G$-equivariant line bundle
@@ -119,8 +117,9 @@ G\times^B V=(G\times V)/B,
 $$
 其中右作用为 $(g,v)\cdot b=(gb,b^{-1}v)$。左 $G$ 作用在第一因子上，因此得到 $G$-equivariant vector bundle。反向地，给定 $G$-equivariant vector bundle $\mathcal E$，取基点 $eB$ 处纤维 $\mathcal E_{eB}$。稳定子为 $B$，由 equivariance 得到 $B$ 在该纤维上的表示。两个构造互逆：associated bundle 在基点处纤维为 $V$；而任意 $G$-equivariant bundle 由 $G$ 对基点轨道的传递性从基点纤维诱导出来。态射层面同理，$G$-equivariant bundle morphism 由基点纤维上的 $B$-linear map 唯一决定。$\square$
 
-**外部输入定理 1.17.** Borel-Weil-Bott theorem 描述 $\mathcal L_\lambda$ 的 cohomology 为不可约 $G$-表示或零，具体由 dot action 和 Weyl group 长度决定。  
-用途：第九章。当前不在第一章证明链中使用。
+**外部输入定理 1.17.** Borel--Weil--Bott theorem 描述 $\mathcal L_\lambda$ 的 cohomology 为不可约 $G$-表示或零，具体由 dot action 和 Weyl group 长度决定。第九章会用它计算线丛上同调并解释 wall crossing；本章只固定其几何对象与符号。
+
+在一般群上，这个结论需要完整的线丛上同调理论；在 $SL_2$ 中，旗簇只是射影直线，根、反射、两个 Schubert cell 与线丛次数都能直接看见。这个模型也检验了上面选择的开、闭轨道方向。
 
 ## 1.5 低秩检查：$SL_2$
 
@@ -136,9 +135,7 @@ $$
 $$
 把 $[x:1]$ 送到 $[a x+b:a^{-1}]$，即仿射坐标变为 $a^2x+ab$。取 $a=1$、$b$ 可任意平移，所以补集为单一 $B$-轨道，且同构于 $\mathbb A^1$。$\square$
 
-## 本章小结
-
-本章固定了 $G,B,T,W,\mathcal B$、根数据和 Schubert stratification 的基本符号。内部证明覆盖了稳定子、代表无关性、equivariant vector bundle 与 $B$-表示的对应以及 $SL_2$ 的显式轨道分解。大型结构定理，如 Bruhat decomposition、$G/B$ 的 projectivity 和 Borel-Weil-Bott，已明确标为外部输入。
+从 $B\supset T$ 出发，权格给出线丛，Weyl group 给出 Schubert cells，而 $SL_2$ 的两轨道分解把二者固定在同一张几何图像中。下一章暂时离开旗簇，转到 $U(\mathfrak g)$-模；那里出现的最高权和 dot action 将在第八、九章重新回到这些线丛与 Schubert strata 上。
 
 ## 练习
 
@@ -151,4 +148,3 @@ $$
 **练习 1.2.** 证明 $G$-equivariant line bundles on $G/B$ 与 $X^\ast(B)=X^\ast(T)$ 中的 characters 对应，并指出本章 convention 中 $\lambda$ 与 $\mathcal L_\lambda$ 的符号关系。
 
 **练习 1.3.** 对 $G=SL_3$ 写出 $W\simeq S_3$ 的六个元素、长度和 Bruhat order 的 Hasse diagram。
-

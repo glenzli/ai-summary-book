@@ -1,12 +1,8 @@
 # 第五章：时间演化、Stone 定理与 Schrodinger 方程
 
-## 本章目标
+没有测量发生时，封闭系统仍会改变：叠加态的不同能量分量积累不同相位，随后对另一可观测量的测量概率便随时间振荡。演化必须保持归一化和所有内积，因此由酉算子实现；若系统自治，先演化 $s$ 再演化 $t$ 与直接演化 $t+s$ 相同，这才产生一参数群。把这一群写成 $e^{-itH}$ 并非矩阵记号的直接推广，因为无限维 Hamiltonian 通常无界，指数的存在与生成元的自伴性需要 Stone 定理。
 
-本章给出封闭量子系统的时间演化公设，说明强连续酉群、自伴 Hamiltonian 和 Schrodinger 方程之间的关系。
-
-## 依赖前置知识
-
-需要 Hilbert 空间、有界算子、自伴算子和指数函数演算。
+本章先从酉算子的几何性质进入，再在自治口径下连接强连续群、Hamiltonian 与 Schrodinger 方程。Schrodinger 图像和 Heisenberg 图像随后把同一统计变化分别归因于态或可观测量。最后的二能级计算会显示一个关键现象：能量测量概率保持不变，并不意味着所有测量概率都不变。显含时间的 Hamiltonian 不满足一参数群口径，而由二参数传播子描述，相关构造在含时扰动章节中另行完成。
 
 ## 5.1 酉演化
 
@@ -23,11 +19,14 @@ $$
 $$
 取绝对值平方即得转移概率保持。$\square$
 
-**公设 5.3（封闭系统演化）.** 封闭系统的时间演化由强连续一参数酉群 $U(t)$ 给出：
+**公设 5.3（自治封闭系统演化）.** 时间平移齐次、由时间无关
+Hamiltonian 支配的封闭系统，其时间演化由强连续一参数酉群 $U(t)$ 给出：
 $$
 U(0)=I,\qquad U(t+s)=U(t)U(s),
 $$
-且对每个 $\psi$，$t\mapsto U(t)\psi$ 连续。
+且对每个 $\psi$，$t\mapsto U(t)\psi$ 连续。若 Hamiltonian 显含时间，
+一般只要求二参数酉传播子满足
+$U(t,s)U(s,r)=U(t,r)$ 与 $U(s,s)=I$，不把它称为一参数群。
 
 ## 5.2 Stone 定理与 Hamiltonian
 
@@ -55,6 +54,8 @@ $$
 $$
 于是 $\psi(t)=e^{-itH}\psi_0$ 满足 $i\dot\psi(t)=H\psi(t)$。$\square$
 
+生成元形式把时间演化变成微分方程。预测同一个实验统计时，可以让态按该方程演化，也可以固定态而把可观测量作酉共轭；两种选择只是记账位置不同。
+
 ## 5.3 Heisenberg 图像
 
 **定义 5.7.** Schrodinger 图像中态随时间变：
@@ -76,6 +77,9 @@ $$
 \frac{d}{dt}U^*AU=iU^*HAU-iU^*AHU=i[H,U^*AU],
 $$
 其中 $H$ 与 $U(t)$ 交换，因为 $U(t)$ 是 $H$ 的函数。$\square$
+
+Heisenberg 方程把交换子变成变化率，但最直接的计算往往仍来自
+Hamiltonian 的谱分解：每个能量子空间只积累一个相位。
 
 ## 5.4 谱表示中的相位演化
 
@@ -108,9 +112,31 @@ $$
 $U(t)\psi=\sum_re^{-itE_r}P_r\psi$。每个相位因子的模为 $1$，故
 $\|e^{-itE_r}\psi_r\|^2=\|\psi_r\|^2$。$\square$
 
-## 本章小结
+**例子 5.10A（二能级相位与可见振荡）.** 令
+$$
+H=\frac{\omega}{2}\sigma_z,\qquad
+|+x\rangle=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}.
+$$
+则
+$$
+U(t)|+x\rangle
+=\frac1{\sqrt2}
+\begin{pmatrix}e^{-i\omega t/2}\\e^{i\omega t/2}\end{pmatrix}.
+$$
+能量的两个结果概率始终各为 $1/2$。若在时刻 $t$ 测量
+$\sigma_x$，得到 $+1$ 的振幅和概率分别为
+$$
+\langle+x|U(t)|+x\rangle=\cos\frac{\omega t}{2},
+\qquad
+\Pr_t(\sigma_x=+1)=\cos^2\frac{\omega t}{2}.
+$$
+相对相位因此可以不改变能量分布，却改变另一组谱投影的概率。
 
-时间演化由强连续酉群给出。Stone 定理把这种群等价地编码为自伴 Hamiltonian。Schrodinger 图像演化态，Heisenberg 图像演化可观测量，二者给出相同期望值。
+自治演化的完整链条现在是：强连续一参数酉群由唯一自伴
+Hamiltonian 生成，定义域中的初态满足 Schrodinger 方程，酉共轭则给出
+Heisenberg 图像。二能级例子说明真正可观测的是能量分量之间的相对
+相位。下一章把抽象 Hamiltonian 具体化为一维微分算子，并在那里同时
+面对自伴实现、边界条件和概率流匹配。
 
 ## 练习
 

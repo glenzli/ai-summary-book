@@ -1,6 +1,6 @@
 # 第十七章：Dendroidal inner Kan 条件与 homotopy operads
 
-定义 16.14--命题 16.18 把 strict colored operad 嵌入 dendroidal sets。本章放松 strict composition：不要求每棵树的全局运算由顶点运算严格唯一决定，而只要求缺少一个 inner face 的 horn 能被填充。这个条件是 quasi-category inner horn 条件的 operadic analogue。
+对一棵两顶点树，strict operad 会把两个顶点运算唯一复合成收缩内边后的运算；一般同伦对象中，这个复合不应预先选成严格唯一的元素。Dendroidal inner horn 正好保留除某个内面外的全部兼容数据，而 filler 补回该面。要求所有 inner horns 可填，便把“存在相干复合”与“复合严格唯一”分离开来。本章由两顶点计算进入 inner Kan 条件，再说明 normal monomorphism 为什么控制树自同构，并以 Cisinski--Moerdijk 模型结构把 raw filler 集合提升到可谈派生映射空间的同伦理论。线性树限制将同时恢复 quasi-category 的 inner horn 图景。
 
 ## 17.1 Inner horn fillers
 
@@ -63,15 +63,44 @@ $$
 $$
 \operatorname{Col}(X)=X_\eta.
 $$
-对颜色 $c_1,\ldots,c_n,c$，定义 operations space 的集合层级近似为 fiber
+对颜色 $c_1,\ldots,c_n,c$，定义它们之间的**运算集**（operation set）为普通集合纤维
 $$
-X(c_1,\ldots,c_n;c)
+\operatorname{Op}_X(c_1,\ldots,c_n;c)
 =
-\{x\in X_{C_n}: \partial_i x=c_i,\ \partial_{\mathrm{out}}x=c\}.
+X_{C_n}\times_{X_\eta^{n+1}}
+\{(c_1,\ldots,c_n,c)\}.
 $$
-这里 $\partial_i:\eta\to C_n$ 表示第 $i$ 条输入边的颜色，$\partial_{\mathrm{out}}:\eta\to C_n$ 表示输出边的颜色。
+这里 $X_{C_n}\to X_\eta^{n+1}$ 由 $n$ 条输入边和一条输出边的树映射
+$$
+\partial_i:\eta\to C_n,
+\qquad
+\partial_{\mathrm{out}}:\eta\to C_n
+$$
+诱导。换言之，$\operatorname{Op}_X(c_1,\ldots,c_n;c)$ 的元素只是具有指定边颜色的 corolla dendrex；此定义没有给它附加拓扑或 simplicial 方向。
 
-**说明 17.7.** 上式只是集合层级的 fiber。若要得到真正的 mapping spaces，需要在 dendroidal set 的 simplicial enrichment、slice 或 derived mapping object 中构造同伦 fiber。本书后续只在需要时引入该技术。
+**说明 17.7（派生运算空间）.** 记
+$$
+\iota_E:
+\coprod_{e\in E(C_n)}\Omega[\eta]\longrightarrow\Omega[C_n]
+$$
+为所有边包含诱导的 dendroidal set 态射。固定颜色元组
+$$
+\mathbf c=(c_1,\ldots,c_n,c):
+\coprod_{e\in E(C_n)}\Omega[\eta]\longrightarrow X.
+$$
+在外部输入定理 17.15 的 operadic model structure 中选取任一同伦函数复形
+$\operatorname{Map}^{\mathbf R}_{\mathbf{dSet}}(-,-)$，定义派生运算空间
+$$
+\operatorname{Op}^{h}_X(c_1,\ldots,c_n;c)
+:=
+\operatorname{hofib}_{\mathbf c}\!\left(
+\operatorname{Map}^{\mathbf R}_{\mathbf{dSet}}(\Omega[C_n],X)
+\longrightarrow
+\operatorname{Map}^{\mathbf R}_{\mathbf{dSet}}
+\left(\coprod_{e\in E(C_n)}\Omega[\eta],X\right)
+\right).
+$$
+同伦函数复形的不同构造给出弱等价的空间，故上式的弱同伦型良定义。普通纤维 $\operatorname{Op}_X$ 与这个同伦纤维不是同一个定义；后文若只使用集合层信息，一律写 operation set。
 
 **命题 17.8（两顶点 horn 的复合集）.** 设 $T$ 是由两个顶点沿 inner edge $e$ 连接的树，$X$ 是 inner Kan dendroidal set，并且
 $$
@@ -165,9 +194,9 @@ $$
 
 **警告 17.21.** Quasi-category 的 nerve 若来自 ordinary category，则 inner horn fillers 唯一；一般 quasi-category 只要求 filler 存在。Dendroidal 情形完全类似：strict operad 给唯一 fillers，infinity-operad 只给存在性。
 
-## 17.7 本章小结
+## 17.7 从 filler 集到派生运算空间
 
-Dendroidal inner Kan 条件把 operad 的复合从严格唯一改为 horn filler 的存在。Strict operads 的 dendroidal nerve 有唯一 inner fillers；一般 dendroidal infinity-operad 的 fillers 表示 homotopy coherent composition。Cisinski-Moerdijk 模型结构把这些对象组织成 homotopy operads 的模型范畴，其中 cofibrations 是 normal monomorphisms，fibrant objects 是 inner Kan dendroidal sets。
+两顶点 inner horn 的 filler 给出可能的复合集，但 inner Kan 条件只保证这个集合非空；它既不保证唯一，也不单凭集合纤维产生 operation space。Strict nerve 的唯一 filler 恰好恢复普通 operad 的严格代入。要表达一般 infinity-operad 中选择之间的高阶同伦，必须进入 operadic model structure，并取说明 17.7 的派生映射空间同伦纤维。Normal monomorphism 控制树自同构造成的稳定子，inner horns 成为 trivial cofibrations，inner Kan dendroidal sets 则成为 fibrant objects。下一章将用完全不同的基范畴 $\mathbf{Fin}_*$ 编码同一类多输入现象，模型之间的移动只能通过明示的比较定理完成。
 
 ## 练习
 

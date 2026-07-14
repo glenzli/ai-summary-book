@@ -133,8 +133,8 @@ $$
 4.  Adams resolution 的构造；
 5.  完备化和收敛定理。
 
-本书当前不把 AV.10 作为已证明结果，只把它作为稳定同伦论扩展的精确目标格式。
+AV.10 在本书中不是内部定理，而是稳定同伦论外部接口的精确目标格式。
 
-## AV.5 本附录关闭的缺口
+## AV.5 收敛结论的输入边界
 
-附录 AQ 说明“谱序列是什么”；本附录说明三类核心谱序列需要哪些 HoTT 输入。剩余缺口已经具体化为：cellular filtration、局部系数、cofiber 长正合列、spectrum 范畴、Steenrod algebra、Ext 代数和收敛证明。
+Serre、AHSS 与 Adams 谱序列分别需要 fibration、cellular filtration 与 Adams resolution；共同出现的页和微分并不使这些输入相同。Cellular filtration、局部系数、cofiber 长正合列、spectrum 范畴、Steenrod algebra、Ext 与相应收敛定理缺一不可，未列齐时不能断言目标或强收敛。

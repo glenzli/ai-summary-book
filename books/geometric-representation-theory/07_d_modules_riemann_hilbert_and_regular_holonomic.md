@@ -1,12 +1,6 @@
 # 第七章：D-modules、Riemann-Hilbert 对应与 regular holonomic 条件
 
-## 本章目标
-
-本章建立 D-module 语言，为 Beilinson-Bernstein localization、Kazhdan-Lusztig conjecture 的 D-module 证明和 geometric Langlands 中的 D-module category 做准备。重点是 left/right convention、特征 variety、holonomicity、regularity 和 Riemann-Hilbert 对应的边界。
-
-## 依赖前置知识
-
-需要基本光滑代数簇、切向量场、导出范畴和第三章的 constructible sheaves。
+Constructible sheaf 擅长记录分层拓扑，却不直接携带 Lie algebra 作用；在光滑复代数簇上，$\mathcal D$-module 把函数与向量场共同组织成微分方程，使群作用能够通过微分算子进入几何。并非每个 $\mathcal D$-module 都对应有限分层上的层：coherence 控制代数有限性，characteristic variety 测量微局部方向，holonomicity 把其维数压到最小，而 regularity 排除过于剧烈的奇性。$\mathbb A^1$ 上的结构层与点支撑 delta module 分别给出零截面和一条 cotangent fiber；这两个计算将固定 good filtration、left-module 与 de Rham shift 的 convention。
 
 ## 7.1 微分算子层
 
@@ -55,6 +49,8 @@ $$
 \dim\operatorname{Char}(\mathcal M)\ge\dim X.
 $$
 
+这个不等式说明 $\mathcal D$-module 的 characteristic variety 不可能比底空间更小；达到下界的对象才有希望对应有限维分层数据。下面两个例子分别取遍最基本的水平与垂直 Lagrangian。
+
 **定义 7.9.** coherent $\mathcal D_X$-module $\mathcal M$ 称为 holonomic，若
 $$
 \dim\operatorname{Char}(\mathcal M)=\dim X.
@@ -85,6 +81,8 @@ $$
 
 **警告 7.12.** left/right 转换会影响 de Rham functor 的公式和 pushforward convention。本书默认 left modules；引用 right module 文献时必须转换。
 
+Left/right 转换解决的是代数记号，不会自动提供拓扑对应。要从微分方程得到 constructible complex，还必须限制到 regular holonomic objects，并调用解析 Poincare lemma 与 Riemann--Hilbert 定理。
+
 ## 7.4 De Rham functor 和 Riemann-Hilbert
 
 **定义 7.13.** 对 left $\mathcal D_X$-module $\mathcal M$，de Rham complex 定义为
@@ -109,9 +107,7 @@ $$
 
 **证明.** $\operatorname{DR}_X(\mathcal O_X)$ 是代数 de Rham complex 按 $\dim X$ shift。Poincare lemma 在复解析拓扑上给出 de Rham complex 与 $\mathbb C_X$ 的准同构，因此得到 $\mathbb C_X[\dim X]$。该证明使用 analytic Poincare lemma。$\square$
 
-## 本章小结
-
-本章定义了 $\mathcal D_X$、good filtration、characteristic variety、holonomic 和 regular holonomic modules、left/right 转换以及 de Rham functor，并计算了 $\mathcal O_X$ 和点支撑 delta module 的 characteristic varieties。Riemann-Hilbert correspondence 和 Bernstein inequality 是外部输入。第八章将在这些 convention 上陈述 Beilinson-Bernstein localization。
+结构层的 characteristic variety 是零截面，delta module 的 characteristic variety 是 cotangent fiber；二者都达到 Bernstein 下界，并在 de Rham functor 下成为 perverse normalization 的基本对象。Riemann--Hilbert 把这种微分方程语言与第三章的 constructible 语言对齐。下一章把 $\mathcal D$-module 放到 $G/B$ 上，让 $U(\mathfrak g)$ 的中心 character 真正进入几何。
 
 ## 练习
 

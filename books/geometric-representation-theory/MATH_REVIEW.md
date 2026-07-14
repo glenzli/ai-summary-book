@@ -1,7 +1,7 @@
 # 数学审查记录
 
-审查日期：2026-07-08  
-状态：教材内容收口审查
+审查日期：2026-07-15
+状态：连续教材叙事与 OET 边界复核
 
 ## 1. 已完成检查
 
@@ -13,14 +13,14 @@
 - 已补入 Springer resolution、nilpotent orbits、D-modules 和 Beilinson-Bernstein localization 的实质章节。
 - 已补入 Borel-Weil-Bott、Harish-Chandra bimodules、Soergel bimodules、affine Grassmannian 和 geometric Satake 的实质章节。
 - 已补入 affine flag、Kac-Moody localization、geometric Langlands 接口、quiver varieties、KLR categorification、symplectic resolutions 和 BFN Coulomb branches 的实质章节。
-- 已补入 Hall/CoHA/DT 接口、quantum groups/crystals/canonical bases 和 2024-2026 研究边界章节。
+- 已补入 Hall/CoHA/DT 接口、quantum groups/crystals/canonical bases，并把第二十三章改为按稳定数学障碍组织的研究边界。
 - 已新增附录 B/G/H/I/J，用于 Coxeter/root data、低秩例子、KL/Soergel 计算、Satake Tannakian 检查和前沿结果验证流程。
 - 已新增附录 C/D/E/F，用于 perverse convention、theorem locator 队列、D-module convention 和 convolution 检查。
 - 已新增正式教材完备矩阵、模型假设矩阵、内部证明核、低阶计算核和 P0 locator 第一批。
 - 已新增 `CHAPTER_COMPLETENESS_AUDIT.md`，逐章判定主体内容是否脱离目录式形态。
 - 已新增 `CONTENT_CLOSURE_AUDIT.md`，明确内容完备、证明完备和源级引用覆盖的判定。
 - 已新增 `PUBLISHING_STYLE.md`、`TERMINOLOGY.md`、`INDEX.md`、`SYMBOL_INDEX.md`、`EXAMPLE_INDEX.md` 和 `EXERCISE_SOLUTIONS.md`，用于统一排版、压缩术语、建立术语/符号/例子索引和集中习题答案。
-- 已加密第十四章 affine flag/Iwahori-Hecke、第二十章 BFN Coulomb branch 和第二十三章前沿边界流程。
+- 已加密第十四章 affine flag/Iwahori-Hecke、第十七至二十二章低秩算例，以及第二十三章的五类障碍模型；前沿结果维护流程保留在附录 J。
 - 已加密附录 B/F/G/H/I，补入 Coxeter、卷积单位、低秩 Springer、KL/Soergel 和 Satake Tannakian 的可计算检查。
 - 2024 geometric Langlands proof series 和 BFN Coulomb branch 只作为研究边界入口，不进入基础证明链。
 

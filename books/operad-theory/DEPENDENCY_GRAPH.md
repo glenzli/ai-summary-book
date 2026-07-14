@@ -131,14 +131,14 @@ Mermaid 图中的箭头表示“证明或定义需要先读”。外部输入定
 
 | 文件 | 直接依赖 | 外部输入热点 |
 | --- | --- | --- |
-| `20_factorization_algebras_fukaya_categories_and_geometry.md` | 第十、十八、十九章 | locally constant factorization algebra 与 $E_n$、excision、Fukaya 构造 |
+| `20_factorization_algebras_fukaya_categories_and_geometry.md` | 第十、十八、十九章 | locally constant multiplicative factorization algebra 与 $E_n$、excision、Fukaya 构造 |
 | `N_factorization_homology_examples_and_geometry.md` | 第二十章、附录 L/M/O | excision、圆周计算、Fukaya gluing |
 | `V_stratified_and_boundary_factorization_examples.md` | 第二十章，附录 N/O/R | stratified factorization homology、sectorial descent |
 | `P_low_arity_checks_and_worked_computations.md` | 第一、六、十、十二、十六、十七、二十章，附录 B/E/L/N/O | dendroidal/factorization 比较仍由外部输入控制 |
 | `X_concrete_algebraic_examples_and_counterexamples.md` | 附录 A/F/O/R/V/W | Morita invariance、rectification、boundary factorization 仍外部 |
 | `Y_infinity_operadic_homology_and_koszul_frontier.md` | 第八、九、十六至十九章，附录 D/I/M/Q | Hoffbeck-Moerdijk 前沿结果仍为研究边界 |
 | `Z_operadic_categories_relative_rezk_and_fukaya_frontier.md` | 第五、十六至二十章，附录 D/M/N/O/V | operadic nerve、relative Rezk nerve、Fukaya 高阶结构仍为研究边界 |
-| `21_research_frontier_2026.md` | 全书前文、前沿审计 | 2026 预印本版本核查 |
+| `21_research_frontier_2026.md` | 全书前文、附录 Y/Z | 六类开放问题的输入、目标与低阶检验 |
 
 几何层不能反向证明代数层结论。例如，Fukaya category 中出现 $A_\infty$ relations 不能作为 $A_\infty$ operad 定义的证明；它只能作为由外部分析定理构造出的例子。
 
@@ -158,9 +158,9 @@ Mermaid 图中的箭头表示“证明或定义需要先读”。外部输入定
 | Factorization homology excision | 第二十章，附录 N | Ayala-Francis topological manifolds 版本已定位；Dunn additivity 已定位；tangential structure 与 collar 条件仍需逐条假设对齐 |
 | Stratified/boundary factorization | 附录 V | boundary topological manifold 版本已定位；stratified disk category、module/defect 标记仍需另行定位 |
 | Fukaya gluing | 第二十章，附录 N | 几何模型、横截性、紧性、orientation |
-| Infinity-operadic Koszul 前沿 | 第二十一章，附录 Y | linear infinity-operad 定义、特化比较、版本和定理编号 |
-| Operadic categories / relative Rezk / Fukaya 前沿 | 第二十一章，附录 Z | nerve/Rezk/gluing 模型、版本和定理编号 |
-| 2026 前沿结果 | 第二十一章，附录 Y/Z | arXiv 版本、定理编号、模型约定 |
+| Infinity-operadic Koszul 开放问题 | 第二十一章，附录 Y | linear infinity-operad 定义、完备性、strict 特化比较 |
+| Operadic categories / relative Rezk / Fukaya 开放问题 | 第二十一章，附录 Z | nerve/Rezk/gluing 模型、泛性质与低阶退化 |
+| 会随版本变化的外部结果 | 附录 D、来源审计 | 版本、定理编号、模型约定与依赖路径 |
 
 ## 阅读路径
 

@@ -1,12 +1,8 @@
 # 第十九章：Cartesian fibration 与 straightening
 
-## 本章目标
+一个以 $S$ 为底的范畴族可以写成函子 $S^{\mathrm{op}}\to\mathbf{Cat}$，也可以把所有纤维粘成一个总范畴 $X\to S$；普通 Grothendieck 构造连接这两种描述。在 $\infty$-范畴中，Cartesian 边记录沿底边的拉回，Cartesian fibration 则保证这种拉回存在并具有高阶相干性。Straightening/unstraightening 定理说明，这类纤维化与 $S^{\mathrm{op}}\to\mathrm{Cat}_\infty$ 的高阶函子等价，coCartesian 版本对偶地编码协变族。
 
-本章介绍 Cartesian fibration、coCartesian fibration 和 straightening/unstraightening 定理。这是 $\infty$-范畴中处理变动范畴族和高阶函子的核心工具。
-
-## 依赖前置知识
-
-需要 quasi-category、slice、映射空间和普通 Grothendieck 构造的直觉。
+本章沿用 quasi-category、slice 与映射空间，并以普通 Grothendieck 构造作为动机。我们会先定义 Cartesian 边的映射空间泛性质，再讨论闭合性和 base change；完整 straightening 定理作为外部输入，其方向和方差约定会在公式中固定。
 
 ## 19.1 Cartesian 边
 
@@ -123,15 +119,15 @@ $$
 
 ## 19.4 straightening/unstraightening
 
-**外部输入定理 19.7（straightening/unstraightening）.** 对任意 $\infty$-范畴 $S$ 和合适目标 $\infty$-范畴 $\mathcal C$，存在等价
+**外部输入定理 19.7（straightening/unstraightening）.** 对任意小 $\infty$-范畴 $S$，存在 $\infty$-范畴等价
 
 $$
-\operatorname{Fun}(S^{\operatorname{op}},\mathcal C)
+\operatorname{Fun}(S^{\operatorname{op}},\mathcal{Cat}_\infty)
 \simeq
-\operatorname{CartFib}_{/S}(\mathcal C)
+\operatorname{CartFib}(S),
 $$
 
-在 $\mathcal C=\mathcal{Cat}_\infty$ 时，右边是 $S$ 上的 Cartesian fibrations。对偶地，
+其中右边的对象是 $S$ 上的 Cartesian fibrations，态射是保持 Cartesian 边的 $S$-函子。对偶地，
 
 $$
 \operatorname{Fun}(S,\mathcal{Cat}_\infty)
@@ -326,7 +322,7 @@ $$
 
 因此常值族的 Cartesian section 正是选择一个对象 $a\in\mathcal A$，并在基范畴方向保持该对象不变。
 
-## 19.8 本章小结
+## 19.8 范畴族与高阶函子的两种表达
 
 Cartesian fibration 是“随基点变化的 $\infty$-范畴”的几何化表示。基为点时它退化为一个普通 quasi-category；普通 Grothendieck construction 则说明纤维内态射和跨纤维限制态射如何同时编码。Straightening/unstraightening 说明这种几何对象等价于从基 $\infty$-范畴到 $\mathcal{Cat}_\infty$ 的函子。Cartesian sections 进一步把相容选择解释为一个高阶极限。
 

@@ -1,12 +1,8 @@
 # 第四十七章：层化同伦、Exit-path 范畴与可构造 Sheaves
 
-## 本章目标
+局部常值 sheaf 由基本 $\infty$-groupoid 的表示分类；层化空间上，sheaf 只要求在每个 stratum 内局部常值，并允许跨层发生单向 specialization。Exit-path $\infty$-category 把可从较奇异层“退出”的层化路径及其高阶同伦编码起来，constructible sheaves 因而可描述为其到目标范畴的函子。这个对应把 strata 上的局部系统和跨层粘合数据统一为一个范畴对象。
 
-本章说明层化空间上的 sheaf 理论如何由范畴论控制。Exit-path $\infty$-category 把沿层化只允许从低维奇异层“流出”的路径编码为高阶范畴；可构造 sheaves 则等价于该 exit-path 范畴上的函子。这给 perverse sheaves、constructible sheaves、topological field theory 和因子化同调提供共同的范畴模型。
-
-## 依赖前置知识
-
-需要 sheaves、constructible sheaves、$\infty$-categories、singular complex、Kan complex、functor categories、stratified spaces、locally constant sheaves 和 higher topos。
+本章使用 sheaves、$\infty$-categories、singular complexes 和 stratified spaces。Exit-path 分类需要 conical、locally contractible 等温和性条件；方差取决于 sheaf 还是 cosheaf，正文会固定方向而不把二者混同。
 
 ## 47.1 层化空间
 
@@ -32,13 +28,21 @@ $$
 
 **定义 47.4.** 层化空间 $X\to P$ 中的 exit path 是路径 $\gamma:[0,1]\to X$，使其所在 stratum 随时间只能沿偏序向“较大”层移动：若 $t\le t'$，则 $\pi(\gamma(t))\le\pi(\gamma(t'))$。
 
-**定义 47.5.** Exit-path $\infty$-category $\operatorname{Exit}(X)$ 的对象为 $X$ 的点，$n$-单纯形为保持层化方向的 exit-simplex
+**定义 47.5.** Exit-path $\infty$-category $\operatorname{Exit}(X)$ 的对象为 $X$ 的点。其 $n$-单纯形不是任意连续映射 $\Delta^n\to X$：先给 $\Delta^n$ 赋由顶点次序诱导的标准层化，并选非降链
 
 $$
-\Delta^n\to X.
+p_0\le p_1\le\cdots\le p_n
 $$
 
-**外部输入定理 47.6.** 对合适 conically stratified space，exit simplicial set 是 quasi-category。
+作为到 $P$ 的层标号；一个 exit-simplex 是与这些层化相容的 stratified map
+
+$$
+\Delta^n\longrightarrow X.
+$$
+
+面与退化由标准单纯形的 stratified maps 诱导。
+
+**外部输入定理 47.6.** 若 $X$ conically stratified、paracompact，且 strata 与 links 满足通常局部可缩性条件，则 exit simplicial set 是 quasi-category。
 
 **命题 47.7.** 若 $X$ 只有一个 stratum，则 $\operatorname{Exit}(X)$ 等价于 $X$ 的 fundamental $\infty$-groupoid。
 
@@ -58,14 +62,14 @@ $$
 
 **定义 47.10.** 设 $X$ 层化。空间值 sheaf $F$ 称为 constructible，若对每个 stratum $X_p$，限制 $F|_{X_p}$ 是 locally constant sheaf。
 
-**外部输入定理 47.11（Exit-path 分类）.** 若 $X$ 是足够好的 conically stratified space，则有自然等价
+**外部输入定理 47.11（Exit-path 分类）.** 在定理 47.6 的假设下，有自然等价
 
 $$
 \operatorname{Shv}_{cbl}(X;\mathcal S)\simeq
 \operatorname{Fun}(\operatorname{Exit}(X),\mathcal S).
 $$
 
-更一般地，对合适目标 $\infty$-category $C$，$C$-值 constructible sheaves 由 $\operatorname{Exit}(X)$ 上的 $C$-值函子分类。
+更一般地，若 presentable $\infty$-category $C$ 的极限满足该 sheaf 理论所需的可交换性，则 $C$-值 constructible sheaves 由 $\operatorname{Fun}(\operatorname{Exit}(X),C)$ 分类。本章采用 sheaf 的这一协变 exit 约定；constructible cosheaves 对应相反的方差。
 
 **命题 47.12.** 单层情形中，该定理退化为 locally constant sheaves 与 fundamental $\infty$-groupoid 表示的等价。
 
@@ -105,7 +109,7 @@ $$
 
 **证明.** 单层情形中允许的局部模型只有普通 $\mathbb R^n$，层化 $\operatorname{Disk}$-范畴退化为 $\operatorname{Disk}_n$，层化 open embeddings 退化为普通 open embeddings。于是左 Kan 延拓定义与第四十二章的定义相同。$\square$
 
-## 47.8 本章小结
+## 47.8 由 exit paths 分类可构造层
 
 Exit-path $\infty$-category 把层化空间中的方向性和高阶同伦合为一个范畴对象。Constructible sheaves 被分类为 exit-path 范畴上的函子；perverse sheaves 在此基础上加入 t-结构条件；层化因子化同调则把同一局部到整体思想推广到带奇异层的流形。
 

@@ -1,16 +1,12 @@
 # 第四十二章：因子化同调、$E_n$-代数与非阿贝尔 Poincare 对偶
 
-## 本章目标
+一个 $E_n$-代数描述在小 $n$-圆盘上可进行的局部运算；因子化同调通过对称幺半左 Kan 延拓，把这些局部数据沿任意 $n$-流形装配。Excision 把沿 collar-gluing 的几何分解送到相对张量积，因此 $S^1$ 上的因子化同调恢复 Hochschild homology，而 grouplike $E_n$-space 的情形给出非阿贝尔 Poincare 对偶。本章从 Disk$_n$-algebra 的普适定义推导这些例子和局部--整体公式。
 
-本章把第二十二章中的因子化同调入口扩写为独立理论。因子化同调把 $E_n$-代数沿 $n$-流形“积分”，其定义是从小圆盘范畴到流形范畴的对称幺半左 Kan 延拓。它同时概括 Hochschild homology、拓扑场论的局部到整体原则和非阿贝尔 Poincare 对偶。
-
-## 依赖前置知识
-
-需要 $\infty$-operad、$E_n$-代数、presentable 对称幺半 $\infty$-范畴、left Kan extension、余极限、同伦余极限、流形嵌入范畴、Morita 理论和 Hochschild homology。
+本章依赖 $\infty$-operad、presentable 对称幺半 $\infty$-范畴、Kan 延拓和 Morita theory。流形需带 framing 或相应 tangential structure；非阿贝尔对偶的 grouplike 与连通性假设会明确保留。
 
 ## 42.1 小圆盘范畴与 $E_n$-代数
 
-**定义 42.1.** $\operatorname{Disk}_n$ 表示由有限个 $\mathbb R^n$ 的不交并组成的对称幺半 $\infty$-范畴，态射为空间化嵌入，幺半结构为不交并。
+**定义 42.1.** $\operatorname{Disk}^{fr}_n$ 表示由有限个带标准 framing 的 $\mathbb R^n$ 的不交并组成的对称幺半 $\infty$-范畴，态射为保持 framing 的光滑开嵌入空间，幺半结构为不交并。下文简写为 $\operatorname{Disk}_n$；若改用其他 tangential structure，必须同时替换圆盘和流形范畴。
 
 **定义 42.2.** 设 $C^\otimes$ 为对称幺半 $\infty$-范畴。$C$ 中的 $E_n$-代数是对称幺半函子
 
@@ -32,7 +28,7 @@ $$
 
 ## 42.2 因子化同调的 Kan 延拓定义
 
-**定义 42.4.** 记 $\operatorname{Mfld}_n$ 为 $n$-维光滑流形与开嵌入组成的对称幺半 $\infty$-范畴，幺半结构为不交并。包含函子记作
+**定义 42.4.** 记 $\operatorname{Mfld}^{fr}_n$ 为 framed $n$-维光滑流形与保持 framing 的开嵌入组成的对称幺半 $\infty$-范畴，幺半结构为不交并，并简写为 $\operatorname{Mfld}_n$。包含函子记作
 
 $$
 i:\operatorname{Disk}_n\hookrightarrow\operatorname{Mfld}_n.
@@ -106,7 +102,7 @@ $$
 
 ## 42.5 圆周与 Hochschild homology
 
-**外部输入定理 42.12.** 若 $A$ 是合适稳定对称幺半 $\infty$-范畴中的 $E_1$-代数，则
+**外部输入定理 42.12.** 设 $C$ 是 presentable 对称幺半稳定 $\infty$-范畴，张量积分别保持小余极限；若 $A\in\operatorname{Alg}_{E_1}(C)$，则
 
 $$
 \int_{S^1}A\simeq HH(A).
@@ -128,7 +124,7 @@ $$
 
 **定义 42.14.** $E_n$-空间 $A$ 称为 grouplike，若 $\pi_0(A)$ 在诱导的 $E_n$-乘法下为群。
 
-**外部输入定理 42.15（非阿贝尔 Poincare 对偶）.** 若 $A$ 是 grouplike $E_n$-空间，且 $M$ 是合适带框架 $n$-流形，则
+**外部输入定理 42.15（非阿贝尔 Poincare 对偶）.** 若 $A$ 是 grouplike $E_n$-space，且 $M$ 是 framed $n$-manifold（允许非紧，但采用 compact support），则
 
 $$
 \int_MA\simeq \operatorname{Map}_c(M,B^nA),
@@ -170,7 +166,7 @@ $$
 
 **证明.** $E_n$-代数 $A$ 经定理 42.19 对应到局部常值 factorization algebra。余全局截面按 Weiss cover 和圆盘覆盖取同伦余极限。因子化同调的点态公式正是对所有嵌入 $U\hookrightarrow M$ 的圆盘开集取余极限，因此二者由同一个局部到整体泛性质刻画。$\square$
 
-## 42.8 本章小结
+## 42.8 把局部代数沿流形积分
 
 因子化同调以 $E_n$-代数为局部系数，把流形分解转化为相对张量积。圆盘计算、对称幺半性和 excision 是它的三个基本公理。圆周上的情形恢复 Hochschild homology；grouplike $E_n$-空间的情形给出非阿贝尔 Poincare 对偶；因子化代数则给出同一结构的 cosheaf 表述。
 

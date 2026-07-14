@@ -1,12 +1,6 @@
 # 第二十章：Flavor 参数计数表
 
-## 本章目标
-
-本章把第十四章的 flavor 原则推进为可计算的参数计数规则。目标不是背诵一个总数，而是给出每类 Wilson 张量在不同 flavor 假设下的实参数维数，并说明 Warsaw basis 的完整三代计数为什么需要额外的 flavor/Fierz 恒等式审计。
-
-## 依赖前置知识
-
-需要第十三章的算符分类、第十四章的 Hermiticity 和 CP 纪律，以及附录 A 的场论记号。
+一个三代二指标 Wilson 系数若为一般复矩阵有十八个实参数，若算符在 dagger 下交换两个 flavor 指标，则 Hermiticity 把它减为九个；四指标张量还会因同种流交换和 Fierz 关系继续约化。参数数因此不是由算符表的行数直接相乘得到，而是某个 involution 与置换作用下实固定子空间的维数。这里先证明一个有限指标集上的 Hermitian involution 计数引理，再把它应用到 Warsaw basis 的 bosonic、current、dipole 和四费米子分区。由显式 Hermiticity 与同种流交换得到的 generic 计数为 2508，文献中的完整三代数 2499 还使用 Warsaw 特有的 flavor/Fierz 线性关系；两种数字的假设与证明责任必须分开。
 
 ## 20.1 计数对象
 
@@ -55,7 +49,7 @@ $n_g^2$ 个元素的指标。引理 20.3 给 generic Hermitian 情形 $n_g^4$
 
 ## 20.3 Warsaw basis 分区计数
 
-下表给出三代 full flavor 下的教材内部计数。这里“generic”表示只使用显式 Hermiticity 和同种流交换对称；Warsaw basis 的全部 flavor/Fierz 线性恒等式需逐项审计。
+下表给出三代 full flavor 下仅使用显式 Hermiticity 和同种流交换对称所得的计数。这里“generic”正是这一有限假设；Warsaw basis 的其余 flavor/Fierz 线性恒等式需另行逐项证明。
 
 | Warsaw 分区 | 结构 | generic 实参数数 |
 | --- | --- | --- |
@@ -73,7 +67,7 @@ $$
 15+54+144+63+18+270+1134+810=2508.
 $$
 
-**外部输入 20.5（Warsaw 三代完整计数）.** Warsaw basis 文献中常用的 baryon-number conserving、三代 full flavor、Hermitian 拉氏量实参数总数为 $2499$。与 generic 计数的差异来自 Warsaw-specific 的 flavor/Fierz 线性关系，而不是来自 EFT 定义本身。若教材要把 $2499$ 完全内化，必须逐项证明这些线性关系。
+**外部输入 20.5（Warsaw 三代完整计数）.** Warsaw basis 文献中常用的 baryon-number conserving、三代 full flavor、Hermitian 拉氏量实参数总数为 $2499$。与 generic 计数的差异来自 Warsaw-specific 的 flavor/Fierz 线性关系，而不是来自 EFT 定义本身。要在书内重现 $2499$，必须逐项证明这些线性关系。
 
 **原则 20.6（计数报告）.** 任何 Wilson 空间维数都必须同时报告：
 
@@ -93,25 +87,26 @@ CP 计数不是简单地把所有复系数实部留下。原因是：
 3.  flavor off-diagonal 相可能产生 CP violation；
 4.  重新定义 fermion 相位会移动部分相位。
 
-**定义 20.7（教材级 CP-conserving 子空间）.** 本书采用的最低 CP-conserving 口径为：去掉显式 CP-odd bosonic 算符，并把所有允许 h.c. 的 Wilson 矩阵取为实矩阵；Hermitian current 系数取为实对称矩阵。
+**定义 20.7（受限的 CP-conserving 子空间）.** 在固定弱基中，去掉显式 CP-odd bosonic 算符，并把所有允许 h.c. 的 Wilson 矩阵取为实矩阵；Hermitian current 系数取为实对称矩阵。
 
-**警告 20.8.** 这一定义足够用于教材练习，但不是完整 flavor 物理中的弱基不变量分析。完整 CP 分类需要处理 Yukawa 对角化、CKM 相位和 rephasing invariant。
+**警告 20.8.** 定义 20.7 是一个便于计数的受限子空间，不是完整 flavor 物理中的弱基不变量分析。完整 CP 分类需要处理 Yukawa 对角化、CKM 相位和 rephasing invariants。
 
 ## 20.5 从计数到拟合
 
-设可观测量向量为 $O_a$，Wilson 参数为 $\theta_i$。在线性 SMEFT 截断下
+设可观测量向量为 $O_a$，并令独立实坐标
+$\theta_i=C_i^{(6)}(\mu)/\Lambda_{\rm ref}^2$，故 $[\theta_i]=-2$。在线性 SMEFT 截断下
 $$
-O_a=O_a^{\rm SM}+M_{ai}\theta_i+O(\Lambda^{-4}).
+O_a=O_a^{\rm SM}+M_{ai}\theta_i+R_{a,p\ge4}.
 $$
-若 $\dim\theta$ 大于独立观测量数，则 Fisher 矩阵
+若 $\dim\theta$ 大于 $M$ 的行数，则 $M$ 必有核；在正定协方差下，Fisher 矩阵
 $$
 F_{ij}=M_{ai}(\Sigma^{-1})_{ab}M_{bj}
 $$
-必然有零方向。Flavor 假设的数学作用是把 $\theta$ 限制在较低维子空间，而不是改变 EFT 本身。
+具有同一个核。Flavor 假设的数学作用是把 $\theta$ 限制在较低维子空间，而不是改变 EFT 本身；只有当这个子空间避开原有核方向时，参数才可能被现有数据分别识别。
 
-## 本章小结
+## 20.6 参数维数如何进入拟合
 
-Flavor 完整性首先是线性代数问题。三代 SMEFT 的参数空间很大，且不同 flavor 假设对应不同实向量空间。正式结果必须报告计数口径，否则“多少个 Wilson 系数”不是一个有定义的问题。
+Hermitian involution 把复系数张量变成实参数空间，同种流交换与 Fierz 关系再对它取子空间或商。三代 generic 计数 2508 与完整 Warsaw 计数 2499 的差值正来自后一步的额外关系，而非规范群或 EFT 定义。进入拟合时，flavor universal、diagonal、MFV 与 full flavor 是不同的线性空间；若不声明所用空间，“多少个 Wilson 系数”和 Fisher 矩阵的秩都没有确定含义。
 
 ## 练习
 

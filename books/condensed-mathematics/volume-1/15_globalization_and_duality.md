@@ -1,12 +1,14 @@
 # 第十五章：全局化与相干对偶纲要
 
-## 本章目标
+一个解析环只描述单个仿射坐标对象；几何却要求在 rational 子域上局部化、在交叠上
+下降，并沿映射比较模范畴。尤其对非 proper 映射，普通推前会遗失无穷远边界，投影
+公式与对偶右伴随必须由能够记录边界的 $f_!$ 取代。第十四章的测度理论到这里才显出
+全局用途：它让局部函数与完备模仍留在可做派生代数的范畴中。
 
-本章给出凝聚数学后半部分的结构性路线：如何从仿射解析环走向几何空间上的范畴，以及 solid modules 如何进入相干对偶。这里不完整证明六函子形式，只建立概念地图和基本定义。
-
-## 依赖前置知识
-
-需要解析环、固体模、导出范畴以及代数几何中的仿射概形、Huber pair 和 valuation。
+我们从离散 Huber pair $(A,A^+)$、valuation 与 $\operatorname{Spa}(A,A^+)$ 的
+rational subsets 开始，说明仿射解析环如何组织成几何输入；随后精确陈述 Scholze 对
+有限型仿射映射构造 $f_!$、投影公式和右伴随 $f^!$ 的外部定理。完整六函子与深层
+相干对偶不在第一卷内伪证，本章只完成调用这些输入所需的定义和形式后果。
 
 ## 15.1 离散 Huber pair
 
@@ -24,7 +26,11 @@ $$
 (A,A^+)\mapsto (A,A^+)^\square.
 $$
 
-对有限生成情形，该构造可由前面 $A^\square$ 型测度理论给出；一般情形通过有限生成子对的滤过余极限定义。
+对有限生成 $\mathbb Z$-代数 $A$，记 $A_{\mathbb Z}^+$ 为 $\mathbb Z$ 在 $A$ 中像的
+整闭包，并约定 $A^\square=(A,A_{\mathbb Z}^+)^\square$。这与
+$(A,A)^\square$ 是两个不同 Huber-pair 解析环：后者对应 scheme-like 的离散图表，
+前者给相对 $\mathbb Z$ 的解析扩大并容纳非 proper 边界。一般离散 Huber pair 的构造
+通过有限生成子对的滤过余极限定义。
 
 ## 15.2 Spa 与 rational subsets
 
@@ -110,14 +116,13 @@ $$
 
 第一卷只给纲要；完整六函子形式放入第二卷和后续几何部分。
 
-## 15.6 本章小结
+## 15.6 边界项进入推前
 
-本章把前面建立的 algebraic machinery 放入几何图景：
-
-1. 离散 Huber pair 提供解析环的全局化入口。
-2. $\operatorname{Spa}(A,A^+)$ 和 rational subsets 组织局部化。
-3. 对仿射有限型映射，可构造 $f_!$ 并满足投影公式。
-4. solid modules 是非 proper 相干对偶的技术语言。
+离散 Huber pair 通过 $\operatorname{Spa}(A,A^+)$ 与 rational subsets 把解析环放入
+可局部化的几何；在有限型仿射情形，外部输入构造的 $f_!$ 保留边界信息并满足投影
+公式，其右伴随 $f^!$ 提供对偶对象。第一卷由此抵达一个清楚的接口：站点、投射分解、
+派生张量和测度对象都已建立，而 rational descent、analytic localization 及六函子
+相容性仍需系统展开。第二卷从这些接口出发发展 solid、analytic、liquid 的正式理论。
 
 ## 练习
 

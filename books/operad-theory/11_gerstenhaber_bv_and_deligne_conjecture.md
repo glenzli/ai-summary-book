@@ -1,18 +1,6 @@
 # 第十一章：Gerstenhaber、BV 与 Deligne 猜想
 
-## 本章目标
-
-本章介绍 Hochschild 理论和二维同伦代数之间的核心桥梁。目标是：
-
-1. 定义 Gerstenhaber 代数和 Gerstenhaber operad。
-2. 定义 BV 代数和 BV operad 的基本口径。
-3. 说明 $E_2$-operad、Gerstenhaber operad 和 Hochschild cochains 之间的关系。
-4. 陈述 Deligne 猜想及其 operadic 形式。
-5. 区分同调层 Gerstenhaber 结构和链级 $E_2$-结构。
-
-## 依赖前置知识
-
-需要第六章的 Poisson operad、第十章的 $E_n$-operad，以及 dg 代数和 Hochschild cochains 的基本定义。本章涉及 Hochschild cohomology，默认使用上同调分次；与本书前面同调分次的转换由 $C^n=C_{-n}$ 完成。
+对结合代数 $A$，Hochschild cup product 在上同调上交换，而插入 cochains 所得的括号次数为 $-1$；这两种运算并非偶然并列，它们满足带移位符号的 Poisson 兼容律。若再有平方为零的二阶算子 $\Delta$，括号还可以由 $\Delta$ 对乘法的偏离导出，这便是 BV 结构。真正困难之处在链级：$HH^\*(A,A)$ 上的 Gerstenhaber 代数并不自动给出 $C^\*(A,A)$ 上的 $E_2$-代数。本章先分清 Gerstenhaber、BV 与 framed $E_2$ 三个层级，再以 Deligne 猜想的定理版本连接 Hochschild cochains；具体的 brace 作用留到下一章计算。全章使用上同调分次，转换到前文同调分次时取 $C^n=C_{-n}$。
 
 ## 11.1 分次约定
 
@@ -141,9 +129,9 @@ $$
 
 **说明 11.16.** 在某些几何和拓扑语境中，Hochschild 或 string topology 型对象不仅有 $E_2$ 结构，还带有 framed $E_2$ 结构，从而在同调上产生 BV algebra。是否存在 BV 结构取决于额外的旋转、Calabi-Yau、cyclic 或 trace 型数据，不能从普通结合代数的 Hochschild cochains 自动推出。
 
-## 本章小结
+## 11.7 从上同调括号追问链级作用
 
-Gerstenhaber algebra 是带有交换乘法和次数 $-1$ Lie bracket 的 shifted Poisson algebra。BV algebra 通过一个平方为零的二阶算子产生 Gerstenhaber bracket。Deligne 猜想说明 Hochschild cochains 不只在 cohomology 上有 Gerstenhaber 结构，而是在链级有 $E_2$-algebra 结构。Framed $E_2$ 的同调给出 BV operad，但 BV 结构需要额外数据。
+Gerstenhaber 结构把交换乘法与次数 $-1$ 的 Lie 括号组合成 shifted Poisson 代数；BV 算子在满足二阶性时导出同一个括号，但反向恢复 $\Delta$ 需要额外数据。Deligne 定理比这两种上同调陈述更强，因为它要求 Hochschild cochains 本身承载链级 $E_2$-作用。下一章将把抽象存在性落到可写出的插入公式：单次 insertion 产生括号，多重 brace 同时记录所有不相交插入位置及其相干性。
 
 ## 练习
 
@@ -156,4 +144,3 @@ Gerstenhaber algebra 是带有交换乘法和次数 $-1$ Lie bracket 的 shifted
 **练习 11.4.** 解释为什么 $HH^\*(A,A)$ 上的 Gerstenhaber 结构不等价于 $C^\*(A,A)$ 上的 $E_2$ 结构。
 
 **练习 11.5.** 查阅 framed little disks 的定义，说明旋转自由度如何给出一元同调类。
-

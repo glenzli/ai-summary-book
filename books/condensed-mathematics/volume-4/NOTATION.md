@@ -14,7 +14,17 @@
 - $K_S$：solid localization 的 cone。
 - $K_S^{\mathcal M}$：analytic localization 的 cone。
 - $X_{\operatorname{proet}}$：scheme 的 pro-etale site。
+- $U_S$：第七章点情形中由 profinite 集合 $S$ 的有限商逆极限得到的 pro-etale 候选对象。
 - $\mathcal M_{<p}[S]$：$p$-liquid 理论中的测度对象。
+- $\operatorname{Sp}$：谱的稳定 $\infty$-范畴。
+- $\operatorname{CondSp}$：compacta 站点上的谱值 sheaf 范畴；
+  $\operatorname{CondSp}^{\wedge}$：其 hypercomplete 子范畴。本卷第八章采用后者。
+- $\operatorname{Gal}(X)$：coherent scheme $X$ 的 Galois category。
+- $HA$：阿贝尔 sheaf $A$ 对应的 Eilenberg--Mac Lane heart 对象。
+- $\operatorname{Map}(E,F)$：全局 mapping spectrum；
+  $\underline{\operatorname{Map}}(E,F)$：内部 mapping 凝聚谱。
+- $\operatorname{Tot}$：cosimplicial 对象的 totalization。
+- $A(*)[n]$：乘 $n$ 映射 $A(*)\to A(*)$ 的核。
 
 ## 约定
 

@@ -1,12 +1,12 @@
 # 第一章：相对论场论、作用量和 sigma model 语言
 
-## 本章目标
-
-本章建立作用量、变分、Noether current、stress tensor 和 sigma model 的基本语言。后续 string worldsheet action 将被视为二维场论的特殊 sigma model；因此本章的重点不是一般场论百科，而是为世界面理论固定可复用的变分和张量规范。
-
-## 依赖前置知识
-
-需要多变量微积分、特殊相对论和经典场论基础。微分几何记号见附录 A。除非特别说明，本章 target metric 取 mostly plus，世界面 Lorentzian metric 取 $(-,+)$。
+一条弦的世界面理论仍是一套局部场论，但它同时要求我们控制三种容易混淆的变分：
+对场的变分给出运动方程，对连续对称性的变分给出 Noether current，对度量的变分
+则给出约束弦运动的 stress tensor。为了看清三者的关系，先从带边界的局部作用量
+开始，再把场解释为从底流形到 target 的映射；背景度量、二形式和 dilaton 随即成为
+sigma model 的耦合。以下计算只需多变量微积分、特殊相对论与经典场论基础，所用
+微分几何记号可查附录 A。除特别声明外，target metric 采用 mostly plus，Lorentzian
+世界面 metric 的号差为 $(-,+)$。
 
 ## 1.1 局部作用量和 Euler-Lagrange 方程
 
@@ -203,9 +203,11 @@ Euclidean path integral 权重为 $e^{-S_\Phi}$，故得到 $e^{-\Phi_0\chi(\Sig
 
 **注 1.11（背景场作为耦合常数）.** String theory 中的 target-space fields $g_{\mu\nu}$、$B_{\mu\nu}$ 和 $\Phi$ 可被看作 worldsheet sigma model 的耦合常数。量子 Weyl invariance 对这些耦合常数施加 beta function 方程，低阶给出 target-space field equations。
 
-## 本章小结
-
-String worldsheet theory 是二维场论。作用量变分给出 bulk equations 和边界条件；metric 变分给出 stress tensor；Weyl invariance 给出 tracelessness；sigma model 的耦合常数正是 target-space 背景场。
+至此，世界面所需的场论语言已经落在同一套变分公式中：bulk 项决定 Euler--Lagrange
+方程，边界项决定允许的端点条件，metric 变分产生 Hilbert stress tensor，而二维
+Weyl 对称性要求其迹消失。把 $g_{\mu\nu}$、$B_{\mu\nu}$ 与 $\Phi$ 视为 sigma
+model 耦合后，世界面一致性就能反过来约束 target-space 背景；下一章的弦作用量
+正是这套机制最基本的实例。
 
 ## 练习
 
@@ -214,4 +216,3 @@ String worldsheet theory 是二维场论。作用量变分给出 bulk equations 
 **练习 1.2.** 对自由标量场计算 canonical stress tensor 和 Hilbert stress tensor，并说明二者的关系。
 
 **练习 1.3.** 证明常 dilaton coupling 在 genus $g$ 闭合世界面上给出 $g_s^{2g-2}$。
-

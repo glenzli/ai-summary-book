@@ -1,12 +1,15 @@
 # 第三章：Tate sphere、P1-稳定化与 SH(S)
 
-## 本章目标
+在非稳定范畴 `\mathbf H_*(S)` 中，悬挂一般不可逆，因而 cofiber sequence 还不能
+自由地向两个方向延伸。代数几何又多出一个拓扑中没有的坐标：去掉原点的仿射直线
+`\mathbb G_m`。把普通圆方向与这一 Tate 方向同时稳定，才得到能够容纳双分次同伦群、
+Thom 扭曲和六操作的范畴。
 
-本章从 pointed motivic spaces 进入稳定 motivic homotopy theory。关键步骤是引入 Tate sphere `T`，并对 `T` 做稳定化，得到 `\mathbf{SH}(S)`。本章证明可以由 pointed cofiber calculus 得到的基本等价，并把稳定化的存在性和模型比较标记为外部输入。
-
-## 依赖前置知识
-
-需要第二章的 `\mathbf H_*(S)`、pointed colimits、smash product、cofiber、presentable symmetric monoidal infinity-categories 和谱对象稳定化。
+具体地，我们从 pointed cofiber
+`\mathbb A^1/(\mathbb A^1\setminus0)` 得到 Tate 球 `T`，比较它与
+`\mathbb P^1/\infty` 以及 `S^{1,0}\wedge\mathbb G_m`，再利用对称幺半对象反演的
+泛性质定义 `\mathbf{SH}(S)`。稳定化的存在、3-symmetry 和谱模型比较属于明确的
+外部输入；一旦这些输入固定，普通悬挂可逆性与稳定性则由书内的张量可逆性论证推出。
 
 ## 3.1 Pointed smash product
 
@@ -215,7 +218,7 @@ $$
 
 该 full subcategory 对平移、cofiber 和小余极限封闭，因为 `\operatorname{Map}(-,K)` 把 colimit 变为 limit。它包含所有生成子及其平移，故由生成性得 `\mathcal L=\mathcal C`。取 `A=K`，得 `\operatorname{Map}(K,K)` 可缩，于是恒等态射同伦于零，故 `K\simeq0`。反向由等价态射的 fiber 为零直接得到。`\square`
 
-## 3.6 本章小结
+## 3.6 两个悬挂坐标与稳定范畴
 
 稳定 motivic homotopy theory 通过对称幺半地反演 Tate sphere
 `T=\mathbb A^1/(\mathbb A^1-0)` 得到。`T` 与

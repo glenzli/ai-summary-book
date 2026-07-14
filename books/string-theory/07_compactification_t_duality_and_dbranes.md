@@ -1,12 +1,12 @@
 # 第七章：紧化、T-duality 和 D-branes
 
-## 本章目标
-
-本章建立 string theory 中第一个真正偏离点粒子直觉的结构：圆紧化有 winding sectors，闭弦谱在小圆和大圆之间等价；对开弦，T-duality 把 Neumann 边界条件变为 Dirichlet 边界条件，从而迫使 D-branes 出现。
-
-## 依赖前置知识
-
-需要第二章的边界变分、第四章的模展开与质量公式、第六章中顶点算子和开闭弦谱的对应。
+把一个 target 方向卷成半径 $R$ 的圆后，点粒子只记得离散 momentum，闭弦却还能
+绕圆 $w$ 次。两种整数共同进入 $p_L,p_R$，使半径 $R$ 与 $\alpha'/R$ 的质量谱
+完全相同；这不是低能近似，而是紧化 free-boson CFT 的等价。更意外的是，同一变换
+对开弦会交换 Neumann 与 Dirichlet 边界条件，使端点被限制在 target 子流形上。
+以下从第二章的边界变分、第四章的模展开和质量公式出发，先计算圆紧化谱，再沿
+T-duality 追踪边界条件、Chan--Paton labels 与 D-branes；第六章的顶点算子语言
+用于辨认对应的时空态。
 
 ## 7.1 圆紧化和 winding sectors
 
@@ -272,9 +272,11 @@ $$
 
 **定义 7.21（orientifold）.** Orientifold 是把 worldsheet orientation reversal 与 target-space involution 组合后取商的构造。它引入 unoriented strings 和 orientifold planes，常用于 tadpole cancellation 与构造 type I/string compactifications。
 
-## 本章小结
-
-圆紧化闭弦具有 momentum 与 winding 两类量子数，质量谱在 $R\leftrightarrow\alpha'/R$ 下不变。对开弦，T-duality 把边界条件互换，使 D-branes 从世界面边界变分中必然出现。Chan-Paton factors 解释了 brane stack 上的 gauge fields，并为后续 D-brane effective theory 提供入口。
+圆紧化因而同时改变了谱与几何语言：momentum/winding lattice 在
+$R\leftrightarrow\alpha'/R$ 下保持 CFT，开弦的 dual coordinate 则把自由端点
+变成固定端点。D-brane 不是额外塞入的时空物体，而是允许的边界条件在 T-duality
+下的必然像；一叠 branes 上的 Chan--Paton 矩阵又预示非阿贝尔 gauge fields。
+Orbifold 必须补入 twisted sectors 的同一 modular 逻辑，将在更一般紧化中反复出现。
 
 ## 练习
 

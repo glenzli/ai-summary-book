@@ -1,12 +1,8 @@
 # 第七章：单值性的基本后果
 
-## 本章目标
+单值性最容易被误写成“同构的东西就是同一个东西”。精确说法更有内容：一个等价 $e:A\simeq B$ 产生路径 $\mathsf{ua}(e):A=B$，任何依赖于类型的结构族都可以沿这条路径 transport。于是问题不再是口头上是否把 $A$ 与 $B$ 视为相同，而是搬运后的运算、关系或证明究竟得到什么。
 
-本章发展单值性的初步数学后果：等价不变性、结构等同性、universe 的非集合性、集合层对象的外延原则。重点是把“等价结构可以视为相等”写成类型论中可 transport 的命题。
-
-## 依赖前置知识
-
-本章依赖第六章的函数外延性和单值性，以及第五章的等价。高阶归纳类型仍未使用。
+本章从元素 transport 的可计算例子进入，再把同一机制推广到带结构对象的 $\Sigma$ 型。函数外延性和单值性已经从第六章可用，高阶归纳类型仍未出现。布尔取反还会显示另一面：类型自等价在宇宙中生成真实环路，所以单值宇宙一般不能是集合。
 
 ## 7.1 等价不变性
 
@@ -25,6 +21,25 @@ $$
 
 **例 7.3.** 若 $P(X)\coloneqq\mathsf{isSet}(X)$，则等价 $A\simeq B$ 可把 $A$ 是集合的证明运输为 $B$ 是集合的证明。第五章也能直接证明同伦层级保持性；单值性给出统一的 transport 解释。
 
+**例 7.3.1（布尔取反的元素 transport）.** 令
+$$
+\mathsf{negEquiv}:\mathbf 2\simeq\mathbf 2
+$$
+的底层函数交换 $\mathsf{false}$ 与 $\mathsf{true}$，并以自身为逆。取
+$$
+p\coloneqq\mathsf{ua}(\mathsf{negEquiv}):\mathbf 2=\mathbf 2.
+$$
+由命题 6.9.1，在恒等类型中有
+$$
+\mathsf{transport}^{\lambda X:\mathcal U.\,X}
+(p,\mathsf{false})
+=
+\mathsf{negEquiv}.1(\mathsf{false})
+\equiv
+\mathsf{true}.
+$$
+最后一步是布尔递归的 judgmental 计算，前一步则只是路径。这个例子同时展示了单值 transport 的作用和两种相等强度的差别。
+
 ## 7.2 结构等同性
 
 **定义 7.4.** 设结构由族 $S:\mathcal U\to\mathcal U'$ 给出。带结构类型为
@@ -42,9 +57,18 @@ $$
 
 ## 7.3 Universe 不是集合
 
-**命题 7.6（Universe 的高阶性）.** 若 universe $\mathcal U$ 中存在有非平凡自等价的类型 $A$，则 $\mathcal U$ 通常不是集合。
+**命题 7.6（Universe 的高阶性）.** 假设 $\mathcal U$ 单值。若存在 $A:\mathcal U$ 与自等价 $e:A\simeq A$，使
+$$
+e\ne\mathsf{idEquiv}_A,
+$$
+则 $\neg\mathsf{isSet}(\mathcal U)$。
 
-**证明（书内证明）.** 见附录 H.7。取 $A\equiv\mathbf 2$，其取反函数给出非平凡自等价。若 $\mathcal U$ 是集合，则 $\mathsf{ua}(\mathsf{negBool})$ 与 $\mathsf{refl}_{\mathbf 2}$ 相等；对该路径作用 $\mathsf{idtoequiv}$ 后得到取反等价等于恒等等价，从而底层函数相等，与 $\mathsf{false}\ne\mathsf{true}$ 矛盾。$\square$
+**证明（书内证明）.** 若 $\mathcal U$ 是集合，则两条 loop
+$\mathsf{ua}(e),\mathsf{refl}_A:A=A$ 相等。对该路径作用
+$\mathsf{idtoequiv}$，再用单值性的逆律，得到
+$e=\mathsf{idEquiv}_A$，与假设矛盾。附录 H.7 取
+$A\equiv\mathbf 2$、$e\equiv\mathsf{negBool}$，并由
+$\mathsf{false}\ne\mathsf{true}$ 验证该自等价确实非平凡。$\square$
 
 **警告 7.7.** 这不是矛盾。HoTT 允许 universe 具有高阶路径结构；它不要求所有类型都是集合。
 
@@ -60,9 +84,9 @@ $$
 
 **例 7.9.** 在集合层数学中，两个子集相等可由逐点等价证明。这是传统外延性在 HoTT 中的一个精确版本。
 
-## 本章小结
+## 7.5 从等价运输到结构恒等
 
-单值性把等价提升为路径，使结构可以沿等价运输。它不是简单的“同构即相等”口号，而是由 $\mathsf{idtoequiv}$ 的等价性控制的类型论原则。
+单值性提供的不是省略结构保持条件的许可证，而是统一产生这些条件的 transport 原理。布尔取反说明 transport 可以改变元素，SIP 则用 $\Sigma$ 路径把底层等价与结构分量的相容性合在一起。与此同时，自等价在宇宙中形成环路，证明宇宙保留了高阶信息。下一章的截断会反向操作：在明确的泛性质下忘掉一部分高阶信息。
 
 ## 练习
 

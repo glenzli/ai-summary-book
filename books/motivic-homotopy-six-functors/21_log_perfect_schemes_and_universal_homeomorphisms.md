@@ -1,115 +1,183 @@
 # 第二十一章：Log schemes、perfect schemes 与 universal homeomorphisms
 
-## 本章目标
+普通 motivic homotopy 用闭开局部化处理边界，并把 Frobenius 保留为一个通常不可逆的
+态射。Log geometry 与 perfect geometry 分别改变这两个选择：前者把 divisor 的
+边界数据编码进对象，后者只考虑 Frobenius 已可逆的几何。Universal homeomorphism
+invariance 则精确描述了普通 `\mathbf{SH}` 在反演指数特征后忘掉多少纯不可分信息。
 
-本章记录 motivic homotopy theory 的三个扩展方向：log schemes、positive characteristic 的 perfect schemes，以及 universal homeomorphism invariance。这些方向均处于活跃发展中，本章把它们作为研究边界或高级外部输入处理。
+这三套观念不能混成一个定义。Log motivic homotopy 有自己的 site 与 interval；
+perfect motivic homotopy 是正特征中的另一种模型；universal homeomorphism theorem
+则是普通 `\mathbf{SH}` 的局部化结论。本章分别建立三者的定义域，再说明它们相交的
+位置。
 
-## 依赖前置知识
+## 21.1 对数结构与边界
 
-需要 log schemes、fs log structures、perfect schemes、Frobenius、universal homeomorphisms、positive characteristic、six-functor formalisms、localization 和 `\mathbb A^1`-invariance。
-
-## 21.1 Log motivic homotopy
-
-**定义 21.1.** Log motivic homotopy theory 试图把 motivic homotopy 从 schemes 扩展到带 log structure 的几何对象，使边界、退化和 compactification 数据成为同伦论的一部分。
-
-**外部输入定理 21.2.** 对 fs log schemes，可构造 `\mathbb A^1`-local stable motivic homotopy categories；对 schemes with trivial log structure，该构造与 Morel-Voevodsky 原构造相容，并在 strict morphisms 上给出六操作形式主义。
-
-**依赖源.** Doosung Park, "A1-homotopy theory of log schemes"。
-
-**命题 21.3.** Trivial log structure 情形应恢复普通 motivic homotopy theory。
-
-**证明.** 定理 21.2 已包含该相容性作为外部输入。若 log structure 为 trivial，则 log smooth/site/interval 数据退化为 scheme-level 数据；因此构造限制到普通 `\mathbf{SH}`。具体等价依赖定理 21.2 的比较部分。`\square`
-
-## 21.2 Perfect schemes
-
-**定义 21.4.** 在特征 `p>0` 中，perfect scheme 是 Frobenius morphism 为同构的 scheme。Perfectization 把 scheme 沿 Frobenius 迭代极限化。
-
-**研究边界 21.5.** 存在 positive characteristic perfect base schemes 上的 perfect motivic homotopy theory，并可通过 coefficient system 公理建立六操作形式主义；其与 universal homeomorphism localization 和 `\mathbf{SH}[1/p]` 有联系。
-
-**依赖源.** Dahlhausen-Hekking-Wolters, "Motivic homotopy theory for perfect schemes"。截至 2026-07-08 作为研究边界处理。
-
-**命题 21.6.** Perfect motivic homotopy theory 不能未经说明替代普通 positive characteristic motivic homotopy theory。
-
-**证明.** Perfectization 反演或忽略了 purely inseparable/Frobenius 方向的信息。普通 motivic homotopy theory 保留原 scheme 的结构；perfect theory 则在 universal homeomorphism 或 `p` 反演语境中工作。二者比较需要研究边界 21.5 中的 localization statement，并且不能在本书中作为未加条件的基础输入使用。`\square`
-
-## 21.3 Universal homeomorphisms
-
-**定义 21.7.** 态射 `f:X\to Y` 称为 universal homeomorphism，若对任意 base change 后的底层拓扑空间映射仍为 homeomorphism，且 `f` integral、surjective、radicial。
-
-**外部输入定理 21.8.** 在若干 motivic contexts 中，反演指数特征后，`\mathbf{SH}` 对 universal homeomorphisms 不变。
-
-**例子 21.9.** 特征 `p` 中的 absolute Frobenius `F_X:X\to X` 在许多有限性假设下是 universal homeomorphism。若 `X` perfect，则它是同构。
-
-**例子 21.10.** Nilpotent thickening `X_{red}\hookrightarrow X` 常给出 universal homeomorphism。Motivic theory 是否对该 thickening 不变，取决于是否处在允许 universal homeomorphism invariance 的局部化语境。
-
-**命题 21.11.** 若 `f:X\to Y` 是 universal homeomorphism 且已知 `f^*:\mathbf{SH}(Y)[1/p]\to\mathbf{SH}(X)[1/p]` 为等价，则 `Y` 与 `X` 在该 localized motivic theory 中不可区分。
-
-**证明.** 这是范畴等价的直接含义。若 `f^*` 为等价，则它有逆等价，所有 objects、mapping spaces、cohomology theories 和六操作可见信息都通过该等价对应。`\square`
-
-## 21.4 Frobenius 与 perfectization
-
-**定义 21.12.** 若 `X` 是特征 `p` 的 scheme，其 absolute Frobenius 为
+**定义 21.1.** 概形 `X` 上的 log structure 是交换幺半群层 `M_X`、态射
+`\alpha:M_X\to\mathcal O_X`（右端按乘法看待），以及条件
 
 $$
-F_X:X\to X
+\alpha^{-1}(\mathcal O_X^\times)\xrightarrow{\ \simeq\ }
+\mathcal O_X^\times.
 $$
 
-在拓扑空间上为恒等，在结构层上为 `p` 次幂映射。
+若特征幺半群 `\overline M_X=M_X/\mathcal O_X^\times` etale 局部来自 finitely
+generated integral saturated monoid，则称 `(X,M_X)` 为 fine and saturated，简称
+fs log scheme。Trivial log structure 是 `M_X=\mathcal O_X^\times`。
 
-**定义 21.13.** Perfectization `X^{perf}` 可形式地写作 Frobenius 迭代系统的极限
+**例子 21.2（divisorial log structure）.** 设 `j:U=X\setminus D\hookrightarrow X`
+是稠密开浸入。令
 
 $$
-X^{perf}=\varprojlim(\cdots\xrightarrow{F_X}X\xrightarrow{F_X}X).
+M_{(X,D)}=\mathcal O_X\cap j_*\mathcal O_U^\times
 $$
 
-**命题 21.14.** 若 `X` 已 perfect，则 `X^{perf}\simeq X`。
+为在 `U` 上可逆的正则函数层，交取在 `j_*\mathcal O_U` 中。若 `D` 是 normal
+crossings divisor，则它给出 fs log structure。局部方程 `x_1\cdots x_r=0` 对应图表
+`\mathbb N^r\to\mathcal O_X`，第 `a` 个基向量送到 `x_a`；因而交叉分支数也被记录。
 
-**证明.** Perfect 表示 Frobenius `F_X` 为同构。由同构组成的逆系统的极限同构于任一项，因此 `X^{perf}\simeq X`。`\square`
+**外部输入定理 21.3（Park）.** Fs log schemes 上存在
+`\mathbb A^1`-local stable motivic homotopy categories。它们满足 localization；
+在 trivial log structures 上与 Morel--Voevodsky 的构造等价，并由此在 strict
+morphisms of fs log schemes 上获得 Grothendieck 六操作形式主义。这里的
+`\mathbb A^1` 与局部化均按 Park 的 log-site 构造理解。来源为 Doosung Park,
+*A1-homotopy theory of log schemes*, arXiv:2205.14750 的主定理。
 
-**命题 21.15.** Frobenius 在 perfect scheme 上不再产生新的 universal homeomorphism 信息。
+**命题 21.4.** Trivial log structure 的比较是外部输入定理的一部分，不能只由
+`M_X=\mathcal O_X^\times` 形式推出。
 
-**证明.** 在 perfect scheme 上 Frobenius 是同构。同构当然是 universal homeomorphism，但它已经可逆，不再给出需要局部化反演的新态射。`\square`
+**证明.** 对象层的 triviality 只说明没有额外特征幺半群；要得到范畴等价，还需比较
+log smooth site、覆盖、`\mathbb A^1`-局部化及稳定化。定理 21.3 同时控制这些步骤，
+所以比较依赖该定理。`\square`
 
-## 21.5 Log intervals and boundary information
+## 21.2 Universal homeomorphisms
 
-**定义 21.16.** Log motivic homotopy 中的 interval 可能不是普通 `\mathbb A^1`，而是带 log structure 的对象，例如 log affine line 或 compactified log interval。具体选择取决于所用 log motivic theory。
+**定义 21.5.** 态射 `f:T\to S` 称为 universal homeomorphism，若任意基变换后都在
+底层拓扑空间上诱导同胚。等价地，`f` integral、surjective 且 universally injective
+（即 radicial）。
 
-**命题 21.17.** Log structure 可以把开补边界变成对象的一部分，而不是只作为 localization 的闭补处理。
+**外部输入定理 21.6（Elmanto--Khan）.** 设 `P` 是一组素数，并假设每个
+`q\notin P` 在 `\mathcal O_S` 中可逆。对任意 universal homeomorphism
+`f:T\to S`，inverse image 诱导等价
 
-**证明.** 普通 motivic homotopy 中，开嵌入 `U=X\setminus D` 与闭补 `D` 通过 localization sequence 关联；边界 `D` 是另一个对象。Log geometry 则把 divisor 或边界数据编码进 `X` 的 log structure，使得同一个底层 scheme 携带额外边界信息。因此 log motivic theory 可在对象层面保留退化和边界，而不仅通过开闭分解间接记录。`\square`
+$$
+f^*:\mathbf{SH}(S)[P^{-1}]\xrightarrow{\ \simeq\ }
+\mathbf{SH}(T)[P^{-1}].
+$$
 
-**例子 21.18.** 一个带 normal crossings divisor `D\subset X` 的对数概形可视为 compactification `U=X\setminus D` 的边界增强版本。Log motivic homotopy 试图使这种边界增强在同伦论中可见。
+这是 *Perfection in motivic homotopy theory*, Theorem 2.1.1。若 `S` 的指数特征为
+`p`，可取 `P=\{p\}`，得到 `\mathbf{SH}[1/p]` 中的拓扑不变性。
 
-## 21.6 边界规则
+**例子 21.7（Frobenius）.** 对每个 `\mathbb F_p`-scheme `X`，absolute Frobenius
 
-**约定 21.19.** Log、perfect 和 universal homeomorphism 扩展在本书中默认不进入基础定理依赖链。只有在明确标注对应外部输入、基和系数假设时才可使用。
+$$
+F_X:X\longrightarrow X
+$$
 
-**命题 21.20.** 若某定理在 `\mathbf{SH}[1/p]` 中成立，不能自动推出它在 integral `\mathbf{SH}` 中成立。
+在底层空间上为恒等，并在结构层上取 `p` 次幂。它对**任意** `X` 都是 universal
+homeomorphism，不需要 Noetherian 或有限型假设；若 `X` perfect，它才进一步成为
+同构。定理 21.6 因此给出
 
-**证明.** 局部化 `\mathbf{SH}\to\mathbf{SH}[1/p]` 会杀掉 `p`-primary 信息。一个态射在局部化后成为等价，只说明其 cofiber 为 `p`-power torsion 型或被局部化杀掉；不能推出原 cofiber 为零。因此 integral statement 需要额外证明。`\square`
+$$
+F_X^*:\mathbf{SH}(X)[1/p]\xrightarrow{\ \simeq\ }
+\mathbf{SH}(X)[1/p].
+$$
 
-## 21.7 本章小结
+**例子 21.8（nilpotent thickening）.** 若 `I\subset A` 是 nilpotent ideal，则
+`\operatorname{Spec}(A/I)\hookrightarrow\operatorname{Spec}(A)` 是 universal
+homeomorphism。这个特例比定理 21.6 更强：stable motivic homotopy 的闭开局部化
+已经给出 nil-invariance，故该拉回在整系数下就是等价。一般纯不可分 universal
+homeomorphism 则不能据此获得整系数等价。
 
-Log schemes、perfect schemes 和 universal homeomorphism invariance 展示了 motivic homotopy theory 在边界和正特征方向的扩展。它们对退化、边界和 Frobenius 几何很重要，但都需要精确假设；本书将它们保留为高级章节和研究边界。
+**命题 21.9.** “nil-invariance”不蕴含“所有 universal homeomorphisms 下的 integral
+invariance”。
+
+**证明.** 前者处理由 nilpotent ideal 给出的闭浸入；后者还包括非平凡纯不可分域扩张
+与 Frobenius。若域 `k` 的 Frobenius 在 integral `\mathbf{SH}(k)` 上诱导等价，则它在
+`K_1(k)=k^\times` 上诱导的 `x\mapsto x^p` 也必须为同构；对非 perfect `k` 这不成立。
+这正说明定理 21.6 中反演 `p` 不能一般删去。`\square`
+
+## 21.3 Perfectization
+
+**定义 21.10.** `\mathbb F_p`-scheme `X` 称为 perfect，若 `F_X` 是同构。其
+perfectization 定义为概形极限
+
+$$
+X^{\mathrm{perf}}
+=\varprojlim(\cdots\xrightarrow{F_X}X\xrightarrow{F_X}X).
+$$
+
+在仿射情形 `X=\operatorname{Spec}A`，这等于
+
+$$
+\operatorname{Spec}\!\left(\varinjlim
+(A\xrightarrow{F_A}A\xrightarrow{F_A}\cdots)\right).
+$$
+
+因此必须区分 scheme 方向的 inverse limit 与 ring 方向的 direct limit。
+
+**命题 21.11.** 若 `X` perfect，则 canonical map
+`X^{\mathrm{perf}}\to X` 是同构；对一般 `X`，它是 universal homeomorphism。
+
+**证明.** 第一项由系统中的所有 Frobenius 均为同构立即得到。一般情形可仿射局部
+验证：`A\to A^{\mathrm{perf}}` integral、radicial，且在素谱上为同胚；这些性质可粘合。
+`\square`
+
+**推论 21.12.** 对任意 `\mathbb F_p`-scheme `X`，有
+
+$$
+\mathbf{SH}(X)[1/p]\simeq
+\mathbf{SH}(X^{\mathrm{perf}})[1/p].
+$$
+
+**证明.** 对 canonical universal homeomorphism
+`X^{\mathrm{perf}}\to X` 应用定理 21.6；这也是 Elmanto--Khan Corollary 2.1.7。
+`\square`
+
+**研究边界 21.13.** Dahlhausen--Hekking--Wolters 的 2025 预印本
+*Motivic homotopy theory for perfect schemes* 直接在 perfect schemes 上构造
+motivic category，验证 coefficient-system 与六操作公理，并证明其中乘 `p` 已可逆；
+其模型识别 universal-homeomorphism localization 与 `\mathbf{SH}[1/p]`。截至本书
+核查日期，此结果按预印本边界引用，不替代定理 21.6 的已发表结论。
+
+## 21.4 三种理论如何相接
+
+Log structure 保存边界的幺半群数据；perfectization 忘掉 Frobenius 方向；
+universal-homeomorphism localization 则说明普通 motivic theory 在反演 `p` 后也看不见
+这类方向。它们之间有比较，却没有无条件等同。
+
+例如，带 normal crossings divisor `D` 的 `(X,M_{(X,D)})` 与开补
+`U=X\setminus D` 拥有同一几何背景，但前者还记住各边界分支及其交叉。另一方面，
+`X^{\mathrm{perf}}\to X` 在 `\mathbf{SH}[1/p]` 中成为等价，却不会使这些 log
+边界数据自动消失。任何横跨三种理论的定理，都必须分别指定 log structure、特征、
+系数局部化和允许的态射类。
+
+## 21.5 边界、Frobenius 与系数
+
+本章的关键区别可以概括为：nilpotent thickening 在 stable motivic homotopy 中整系数
+不可见；一般 universal homeomorphism 只在适当素数局部化后不可见；perfect theory
+则从定义开始就令 Frobenius 可逆。Log theory处理的是另一方向，它增加而不是删除
+边界信息。这些差异决定了哪些比较可以成为定理，哪些只能保留为研究中的模型对应。
 
 ## 练习
 
-**练习 21.1.** 定义 trivial log structure，并说明为什么应恢复普通 schemes。
+**练习 21.1.** 验证 trivial log structure 满足定义 21.1。
 
-**练习 21.2.** 定义 perfect scheme。
+**练习 21.2.** 对 normal crossings 方程 `xy=0` 写出 divisorial log structure 的局部图表。
 
-**练习 21.3.** 解释 universal homeomorphism 的三个条件。
+**练习 21.3.** 证明 `\mathbb F_p`-scheme 的 absolute Frobenius 是 universal
+homeomorphism。
 
-**练习 21.4.** 说明为什么 `[1/p]` 局部化会丢失 integral 信息。
+**练习 21.4.** 说明定理 21.6 在指数特征 `p` 情形为什么要求反演 `p`。
 
-**练习 21.5.** 比较 log boundary 信息和 open complement localization。
+**练习 21.5.** 证明 nilpotent thickening 诱导底层拓扑空间的同胚。
 
-**练习 21.6.** 证明 perfect scheme 的 Frobenius 为同构。
+**练习 21.6.** 在仿射情形核对 perfectization 的两种极限公式。
 
-**练习 21.7.** 说明 perfectization 为什么可能改变 integral motivic 信息。
+**练习 21.7.** 证明 perfect `X` 满足 `X^{\mathrm{perf}}\simeq X`。
 
-**练习 21.8.** 解释 log structure 如何记录边界 divisor。
+**练习 21.8.** 比较 divisorial log structure 与闭开 localization 各自保存的信息。
 
-**练习 21.9.** 比较普通 `\mathbb A^1` interval 和 log interval 的作用。
+**练习 21.9.** 用 `K_1(k)` 解释非 perfect 域上 integral Frobenius invariance 为何失败。
 
-**练习 21.10.** 给出 nilpotent thickening 是 universal homeomorphism 的例子。
+**练习 21.10.** 说明研究边界 21.13 为什么不能反向推出普通
+`\mathbf{SH}(X)` 已经是 perfect motivic category。

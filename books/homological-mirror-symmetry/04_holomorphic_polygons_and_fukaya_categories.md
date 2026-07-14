@@ -1,18 +1,6 @@
 # 第四章：holomorphic polygon、$A_\infty$ 结构与 Fukaya category
 
-## 本章目标
-
-本章在一个固定的 compact exact Liouville 模型中定义 Fukaya category 的
-高阶复合，并说明 $A_\infty$ 方程来自一维 holomorphic polygon 模空间的
-边界分解。分析构造作为附录 E 的精确外部输入；一般 non-exact、monotone
-或 obstructed Fukaya category 不在本章内部完成。
-
-## 依赖前置知识
-
-需要第一章与附录 B 的 $A_\infty$ 范畴语言、第三章的 exact Floer
-cochains，以及附录 E 中列出的 Fredholm/compactness/orientation/gluing
-输入。需要知道 Riemann surface、almost complex structure 和
-Cauchy--Riemann 方程的基本形式。
+Floer 微分只使用两条 Lagrangian 边界条件；要把若干 Floer cochains 复合，圆盘边界必须依次落在 $L_0,\ldots,L_d$ 上。零维多边形模空间给出 $\mu^d$，一维模空间的断裂端恰好排列成 Stasheff 恒等式中的各项。几何计数与代数恒等式在这里第一次完整相接。本章固定 compact exact Liouville 模型，以第三章的 Floer cochains 为态射，并按第一章和附录 B 的 suspension 约定组织高阶运算；Fredholm 正则性、紧致化、取向与 gluing 采用附录 E 的外部输入，一般 non-exact 或 obstructed 情形留到第五章。
 
 ## 4.1 带边界标记点的圆盘
 
@@ -206,9 +194,7 @@ $$
 
 **警告 4.19.** $\mathcal W(M)$ 不是 $\mathcal F(M)$ 的形式小修改。wrapped 版本需要控制无穷远处的 Reeb dynamics、Hamiltonian 增长、sectorial boundary、stops 和 continuation maps。后续章节将使用 Ganatra-Pardon-Shende 的 Liouville sectors 与 descent 作为外部输入。
 
-## 本章小结
-
-Fukaya category 的 $A_\infty$ 运算来自 holomorphic polygons 的计数。$A_\infty$ 方程是 compactified one-dimensional moduli spaces 的边界计数为零。exact 假设使 bubbling 受到控制，但 regularity、orientation、gluing 和选择独立性仍是外部分析输入。HMS 中常用的是 $\mathcal F(M)$ 的预三角化和 split-closed/Morita 完备化。
+多边形计数至此给出了一个非弯曲 $A_\infty$ 范畴：零维模空间定义运算，一维紧化的定向边界给出全部关系。Exactness 排除了特定 bubbling，却不代替正则性、取向和 gluing；这些分析责任仍由外部输入承担。HMS 实际比较的往往还不是原始 $\mathcal F(M)$，而是它的 twisted、split-closed 或 perfect/Morita 完成。离开 exact 世界后，首先失效的正是“曲率为零”这一点。
 
 ## 练习
 

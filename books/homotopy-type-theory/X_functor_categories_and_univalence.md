@@ -231,14 +231,14 @@ $$
 
 **证明.** 对象方面，附录 U 的预层即反变集合值函子；态射方面，U.1 的自然变换正是 X.3 的自然变换，其中 $\mathcal C^{\mathsf{op}}$ 把反变自然性改写为协变自然性。恒等与复合的分量定义与 X.6 相同。由 Hom 集合性，范畴律证明分量相等自动成立。$\square$
 
-## X.7 对 Rezk 完备化的作用
+## X.7 对 Rezk 完备化泛性质的作用
 
 附录 R 把 Rezk 完备化构造为 Yoneda 嵌入在预层范畴中的本质像。本附录补上其中两个一般范畴论输入：
 
 1.  函子范畴 $[\mathcal C,\mathcal D]$ 的预范畴结构；
 2.  当目标 $\mathcal D$ 单值时，函子范畴单值。
 
-因此 R.11 剩余的真正长证明不再是“函子范畴本身”，而是 Rezk 完备化的泛性质：对任意单值范畴 $\mathcal E$，沿
+对任意单值范畴 $\mathcal E$，沿
 $$
 \eta:\mathcal C\to\widehat{\mathcal C}
 $$
@@ -246,4 +246,4 @@ $$
 $$
 [\widehat{\mathcal C},\mathcal E]\to[\mathcal C,\mathcal E]
 $$
-的合适等价。附录 AA 已给出该泛性质的 weak-equivalence 限制函子证明架构；剩余证明义务是本质像对象中的命题截断代表元、fully faithful 嵌入的扩张唯一性以及单值目标中对象路径 transport 的逐行相容计算。
+得到预范畴同构，是 Ahrens--Kapulkin--Shulman, *Univalent categories and the Rezk completion*, Theorem 8.4 的外部输入。附录 R 在书内验证 $\eta$ 是 weak equivalence，附录 AA 则精确记录该外部定理的假设、结论和消去边界。尤其是命题截断代表元的处理、fully faithful 扩张以及对象路径引起的 Hom transport 相容性均由来源定理承担；本附录的函子范畴单值性不能替代那些计算。

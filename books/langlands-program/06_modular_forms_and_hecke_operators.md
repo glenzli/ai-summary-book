@@ -1,14 +1,8 @@
 # 第六章：上半平面上的模形式与 Hecke 算子
 
-## 本章目标
+一般自守表示的抽象语言在 `GL(2)/\mathbb Q` 上有一个可计算的经典模型：上半平面上的模形式。解析变换律给出有限维函数空间，尖点条件控制无穷远行为，Hecke 算子把算术对称性转化为可同时对角化的线性算子，而本征形式的 Fourier 系数又组成 Euler 乘积。本章沿这条链从 slash 算子走到 Hecke 本征形式与 L 函数，为下一章的 adelic 重写保留每一处归一化。
 
-本章建立 `GL(2)/\mathbb Q` 的经典入口：上半平面、同余子群、模形式、尖点形式、Hecke 算子、Hecke 特征形式和由 Fourier 系数定义的 L 函数。下一章将把这些经典对象改写为 adelic automorphic representations。
-
-## 依赖前置知识
-
-需要复分析、Riemann 曲面、群作用和线性代数。模曲线紧化、有限维性、Hecke 算子保持模形式空间等事实在本章作为外部输入或外部输入的证明路线处理。附录 W 给出模曲线代数化、Hecke correspondences、old/new 分解和 Atkin-Lehner-Li 理论的接口。
-
-收口归一化回指：本章采用 classical modular form normalization；与第七、九、十四章比较时，Hecke roots、Galois Frobenius 和自守 L 函数变量按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 5、6、8 节转换。
+所需背景是复分析、Riemann 曲面、群作用和线性代数。模曲线紧化、有限维性及 Hecke correspondence 的几何证明作为外部输入，old/new 分解和 Atkin--Lehner--Li 理论见附录 W。本章使用经典模形式归一化；与自守和 Galois 归一化之间的转换见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 5、6、8 节。
 
 ## 6.1 上半平面和 slash 算子
 
@@ -287,7 +281,7 @@ $$
 
 这里 $\operatorname{Frob}_\ell^{\operatorname{arith}}$ 表示在剩余域上诱导 $x\mapsto x^\ell$ 的算术 Frobenius。本书在类域论和局部 Langlands 参数中默认使用几何 Frobenius；与本定理比较时必须取逆、对偶或 Tate twist 的相应归一化。本定理是模形式与二维 Galois 表示之间的核心桥梁。
 
-## 6.8 本章小结
+## 6.8 模形式的算术数据
 
 本章定义了经典模形式和尖点形式，构造了 Hecke 算子，并从归一化 Hecke 特征形式得到 L 函数。好素数处的 Euler 因子由 Hecke 本征值控制；Deligne 定理把这些本征值解释为二维 Galois 表示的 Frobenius trace。下一章将把这些经典对象翻译为 adelic `GL(2)` 自守表示。
 

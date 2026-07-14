@@ -2,11 +2,11 @@
 
 ## Y.0 目的和边界
 
-本附录把版本表 21.3 和流程 21.16 中的 infinity-operadic homology 和 algebras over infinity-operads 的 Koszul 对偶方向转化为可检查的教材接口。它不证明 Hoffbeck--Moerdijk 预印本中的新定理，也不把这些结果并入定义 8.16 和定理 9.20 所属的 classical Koszul duality。它只完成三件事：
+本附录为开放问题 21.7--21.9 建立 strict specialization 接口。它不把 infinity-operadic homology 或 Koszul 对偶的外部结果并入定义 8.16 和定理 9.20 所属的 classical Koszul duality，而是完成三件可在书内验证的工作：
 
 1. 给出 strict operad 到树指标线性对象的可证明嵌入。
 2. 说明 classical operad algebra 与 tree-indexed algebra 描述之间的严格关系。
-3. 写出任何 infinity-operadic Koszul duality 进入正文前必须满足的特化检验。
+3. 写出任何 infinity-operadic Koszul 扩张若要兼容经典理论必须满足的特化条件。
 
 除非另有说明，本附录固定交换环 $k$，链复形采用同调分次，$\Omega$ 表示 Moerdijk--Weiss 树范畴。
 
@@ -154,7 +154,7 @@ $$
 $$
 在 $\mathcal P$ Koszul 时是 quasi-isomorphism。若 extension claim 不能在 strict 子情形中恢复此映射，则它与定义 8.16 和定理 9.20 所使用的对象不是同一断言；用它替代 classical theorem 会改变结论的源、靶或代数范畴。若代数 homotopy theory 不相容，则即使源、靶形式相似，也不能推出同一个 category of algebras 的结果。因此未通过该检验的 extension claim 不能作为 classical theorem 的替代品。$\square$
 
-**命题 Y.4.4.** 若 extension claim 通过 strict specialization test，也仍然只能作为 classical theorem 的扩展候选；要进入正文，还必须补充模型结构、版本和定理编号。
+**命题 Y.4.4.** 若 extension claim 通过 strict specialization test，也仍然只能作为 classical theorem 的扩展候选；要把它用作外部输入，还必须给出模型结构、完整假设和精确定理来源。
 
 **证明.** strict specialization test 只检查该 claim 在已知子情形中不矛盾。它不证明一般 linear infinity-operad 上的 dual object 存在，也不证明 bar-cobar adjunction、model structure、fibrancy/cofibrancy 或 derived equivalence。上述内容都是新的外部输入。因此通过测试只是必要条件，不是充分证明。$\square$
 
@@ -172,9 +172,9 @@ $$
 
 **解释 Y.5.2.** 若改用自由非结合 operad，则两种两顶点平面树代表 $(xy)z$ 与 $x(yz)$ 两个不同基元；结合关系正是把它们在商 operad 中等同。由此可见：树指标对象记录的不只是 arity，也记录复合形状；Koszul 或 bar-cobar 理论中的权重滤过必须保留树形信息。
 
-## Y.6 进入正文的检查表
+## Y.6 Koszul 扩张问题的充分数据
 
-若后续版本要把 infinity-operadic Koszul duality 写入正文，必须逐项补齐：
+一个 infinity-operadic Koszul duality 命题只有在下列数据均已定义时才具有确定的真假条件：
 
 1. linear infinity-operad 的正式定义及其与本附录 Segal-linear object 的关系；
 2. strict operad 嵌入该模型的函子 $j$；
@@ -183,7 +183,7 @@ $$
 5. bar-cobar adjunction 的源、靶和单位/余单位；
 6. algebras over $X$ 与 coalgebras over $X^\ash$ 的 precise homotopy theory；
 7. 与定义 8.16 和定理 9.20 所属 classical Koszul duality 的 commuting comparison diagram；
-8. arXiv 或出版版本、定理编号和 proof dependencies。
+8. 若结论来自外部资料，给出可定位的定理版本和 proof dependencies。
 
 ## 练习
 

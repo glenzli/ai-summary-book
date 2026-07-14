@@ -37,9 +37,9 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 ## 写作格式
 
 - 文件名使用两位编号，例如 `01_delta_rings_witt_vectors_and_perfectoid_background.md`。
-- 每章开头列出“本章目标”和“依赖前置知识”。
+- 每章在标题后以自然导言引出算术几何问题，并把必要依赖融入叙述或精确回指；不使用固定“本章目标”“依赖前置知识”栏目。
 - 定义、约定、例子、命题、引理、定理、推论、警告、练习使用“**定义 1.2.**”格式。
-- 每章末尾必须包含“本章小结”和“练习”。
+- 每章以内容特定的段落收束论证并保留“练习”；不使用固定“本章小结”栏目。
 - 公式使用 Markdown/LaTeX；长交换图优先用明确的态射链或 `tikzcd` 风格代码块描述。
 - 全书性符号必须先登记到 `NOTATION.md`。
 

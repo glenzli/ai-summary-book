@@ -1,6 +1,6 @@
 # 章节密度审计
 
-核查日期：2026-07-08
+核查日期：2026-07-15
 
 本审计回答“是否只是大纲”的问题。判定标准不是单纯行数，而是每章是否含有：定义、核心命题、证明或外部输入、至少一个例子/边界/失败模式、练习，以及与全书主线的明确连接。
 
@@ -36,11 +36,11 @@
 | 17 | A | norm、Tambara 相干、base change、失败模式完整 |
 | 18 | A | `GW`、Milnor-Witt、local degree、Euler class、orientation 完整 |
 | 19 | A | quotient stacks、Borel/genuine、free quotient、fixed points、change of groups 完整 |
-| 20 | A | stacky theory、atlas descent、`BG`、local quotient、stacky purity 完整 |
-| 21 | A | log、perfect、universal homeomorphism、Frobenius、log intervals 完整 |
-| 22 | A | Betti/etale/real/analytic realization、six-operation compatibility、conservativity 完整 |
-| 23 | A | universal coefficient systems、axioms、pullback formalism、model-independence 完整 |
-| 24 | B | 研究边界和收口标准完整；若做出版终稿，可继续补 locator |
+| 20 | A | scallop decomposition、genuine/lisse 区分、六操作定义域、stacky purity 与 torus concentration 完整 |
+| 21 | A | log theory、nil-invariance、universal-homeomorphism invariance、Frobenius 与 perfect 研究边界完整 |
+| 22 | A | Betti/etale/real realization 的目标类别、因子化、六操作相容性与边界完整 |
+| 23 | A | ambient category、universal coefficient systems、pullback formalism 与唯一性范围完整 |
+| 24 | A | 研究边界由局部化判据、比较图、反例和练习收束，P0/P1/R 边界明确 |
 
 ## 附录
 
@@ -52,9 +52,12 @@
 | D | A | mate calculus 与 Beck-Chevalley 完整 |
 | E | A | 代数几何最小背景完整 |
 | F | A | stable infinity 与 triangulated 翻译完整 |
-| G | B | 源定理索引完整，locator 未补完 |
+| G | A | 主线及 equivariant、stacky、Betti P0 源定理索引已定位，P1/R 边界明确 |
 | H | A | 低阶计算完整 |
 
 ## 当前结论
 
-本书不再处于大纲态。作为“完整教材可读版”，主体内容已经可读、可追溯、可用于教学。编号/排版规范、主题索引和习题解答要点已经完成一版；尚未达到出版终稿，原因不是章节太像大纲，而是外部输入 locator、自动化交叉引用、长篇习题详解和最终版式校对尚未完成。
+本书不再处于大纲态。作为“完整教材可读版”，主体内容已经可读、可追溯、可用于
+教学。主线 P0 外部输入、编号/排版规范、主题索引和习题解答要点已经完成一版；尚未
+达到出版终稿，原因不是章节密度或 P0 locator，而是自动化交叉引用、长篇习题详解和
+最终版式校对尚未完成。

@@ -1,17 +1,13 @@
 # 第十六章：topological strings、A/B model 和 mirror symmetry
 
-## 本章目标
-
-本章建立 topological string 的主线：
-
-1. 从二维 $N=(2,2)$ SCFT 进行 topological twist；
-2. A-model 只依赖 symplectic/Kahler 数据，并计算 Gromov-Witten 型不变量；
-3. B-model 只依赖 complex structure 数据，并由 periods 与 variation of Hodge structure 控制；
-4. Mirror symmetry 交换 A/B models，并把 enumerative geometry 问题转化为 period 计算。
-
-## 依赖前置知识
-
-需要第十三章 Calabi-Yau 紧化、第三章 CFT、附录 A 的复几何和附录 D 的 Riemann surface 语言。
+普通 sigma model correlator 依赖世界面 metric 与 target 的全部局部细节；若能找到
+scalar supercharge $Q$ 使 stress tensor 成为 $Q$-exact，那么 $Q$-cohomology 中的
+相关函数只保留拓扑或复几何数据。二维 $N=(2,2)$ SCFT 的两种 topological twist
+分别产生 A- 与 B-model：前者局域到 holomorphic maps 并感知 Kahler class，后者由
+complex-structure periods 控制。以下结合第三章 CFT、第十三章 Calabi--Yau moduli
+以及附录 A、D 的复几何和曲面语言，构造这两种模型，再用 mirror map 把 A-model
+curve counting 转成 B-model Picard--Fuchs 方程。相关函数的物理推导与数学化
+Gromov--Witten/mirror theorems 会明确分层。
 
 ## 16.1 Topological twist
 
@@ -137,9 +133,12 @@ $$
 
 **推导说明（标准物理口径）.** Picard-Fuchs 方程在 maximally unipotent monodromy point 附近有 Frobenius basis：一个 holomorphic solution 和一个 logarithmic solution。其比值给出 flat coordinate，即 A-model complexified Kahler parameter。$\square$
 
-## 本章小结
-
-Topological string 是 string theory 与现代几何之间最精确的接口之一。A-model 把 holomorphic curve counting 编码为物理 correlators；B-model 把 complex structure variation 和 periods 组织为 special geometry；mirror symmetry 把二者等同。
+Quintic 的 Picard--Fuchs 方程把这一接口落实为算法：在 large-complex-structure
+点求 holomorphic 与 logarithmic periods，其比值给出 mirror coordinate，再把
+B-model Yukawa coupling 展开成 A-model 的曲线次数生成函数。A-model 对 complex
+structure 的变化不敏感，B-model 对 Kahler 变化不敏感，根源都是相应变形为
+$Q$-exact。Mirror symmetry 在两侧交换这些数据；具体 mirror theorem 可是严格
+外部输入，而不受限族上的整体物理对偶仍需保留其假设。
 
 ## 练习
 
@@ -148,4 +147,3 @@ Topological string 是 string theory 与现代几何之间最精确的接口之�
 **练习 16.2.** 解释 mirror symmetry 如何把 curve counting 转化为 period 计算。
 
 **练习 16.3.** 写出 quintic mirror Picard-Fuchs operator，并说明 holomorphic period 与 logarithmic period 在 mirror map 中的作用。
-

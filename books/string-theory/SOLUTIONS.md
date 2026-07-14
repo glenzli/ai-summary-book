@@ -1169,18 +1169,148 @@ $$
 
 ## 练习 20.1
 
-**题目.** 举例说明一个 string duality 如何产生非平凡的量子场论陈述。
+**题目.** 两张平行 D$p$-branes 相距 $L$。从 Dirichlet classical solution
+计算其对 $L_0$ 的贡献，并验证最低 GSO-allowed NS vector 的质量为
+$L/(2\pi\alpha')$。
 
-**解答.** AdS/CFT 断言 type IIB string theory on $\operatorname{AdS}_5\times S^5$ 等价于四维 $\mathcal N=4$ SYM。该对偶把强耦合、大 $N$ gauge theory 的某些 observables 转化为 classical supergravity 计算，例如 thermal entropy 的强耦合行为或 Wilson loop 的 minimal surface 近似。这给出单纯微扰 QFT 难以直接得到的强耦合陈述。$\square$
+**解答.** 取一个 Dirichlet 方向，并令两个端点分别位于 $0,L$。满足边界条件的
+零模部分为
+$$
+X_{\mathrm{cl}}(\sigma)=\frac{L}{\pi}\sigma,\qquad
+\partial_\sigma X_{\mathrm{cl}}=\frac{L}{\pi}.
+$$
+代入 open-string Hamiltonian 或 Virasoro zero mode，得到 stretching contribution
+$$
+\Delta L_0
+=\frac1{4\pi\alpha'}\int_0^\pi
+d\sigma\,(\partial_\sigma X_{\mathrm{cl}})^2
+=\frac{L^2}{4\pi^2\alpha'}.
+$$
+因此 NS sector 的物理态条件为
+$$
+0=L_0-\frac12
+=\alpha'k_\parallel^2
++\frac{L^2}{4\pi^2\alpha'}
++N_{\mathrm{osc}}-\frac12.
+$$
+最低 GSO-allowed vector 有 $N_{\mathrm{osc}}=1/2$。使用
+$M^2=-k_\parallel^2$ 得
+$$
+M^2=\frac{L^2}{4\pi^2\alpha'^2},
+\qquad
+M=\frac{L}{2\pi\alpha'}.
+$$
+这也等于 fundamental-string tension
+$T_F=(2\pi\alpha')^{-1}$ 乘以弦长 $L$。$\square$
 
 ## 练习 20.2
 
-**题目.** 从本书四类陈述中各举一例，并说明其证明状态。
+**题目.** 设 genus-$g$ Riemann surface 上的 line bundle $L$ 满足
+$\deg L>2g-2$。用 Riemann--Roch 与 Serre duality 证明
+$h^0(X,L)=\deg L+1-g$，并解释这个等式为何只固定净手征零模而非完整相互作用。
 
-**解答.** 世界面 QFT 内可证明的命题例子是 free boson OPE 推导 Virasoro algebra。外部输入定理例子是 Yau theorem 或 no-ghost theorem。低能有效理论推导例子是 sigma-model beta function 给出 Einstein equation。物理猜想例子是 AdS/CFT 或 type IIB $SL(2,\mathbb Z)$ S-duality。四者的证明状态不同，正文必须分别标为已证、外部输入、推导或猜想。$\square$
+**解答.** Riemann--Roch 给出
+$$
+h^0(X,L)-h^1(X,L)=\deg L+1-g.
+$$
+Serre duality 把第二项写成
+$$
+h^1(X,L)=h^0(X,K_X\otimes L^{-1}).
+$$
+右侧 line bundle 的 degree 为
+$$
+\deg K_X-\deg L=2g-2-\deg L<0.
+$$
+负次数 holomorphic line bundle 没有非零 holomorphic section，故
+$h^1(X,L)=0$，从而
+$$
+h^0(X,L)=\deg L+1-g.
+$$
+在内部 fermion 方程由该 Dolbeault complex 实现时，index
+$h^0-h^1$ 给出两种 chirality 零模数之差。它不确定 Yukawa couplings、massive
+Kaluza--Klein modes、gauge representations 或 quantum corrections；这些还依赖
+bundle embedding、作用量和 overlap integrals。因此 index 固定净手征数，不固定
+完整低能相互作用。$\square$
 
 ## 练习 20.3
 
-**题目.** 选择一个外部接口方向，说明它为什么应作为专题阅读而不是新增主线章。
+**题目.** 从
+$F_0^{\mathrm{inst}}(Q)=\operatorname{Li}_3(Q)$ 出发，计算前三次
+$t=\log Q$ 导数，并展开 $Q/(1-Q)$ 的前四项；说明这些项如何记录 multiple covers。
 
-**解答.** 以 derived algebraic geometry 为例。它与 B-model、D-brane category 和 homological mirror symmetry 有深层关系，但本书主线只需要知道 B-model 依赖 complex structure、periods 控制 special geometry、mirror symmetry 交换 A/B model。Derived algebraic geometry 的完整技术体系并非推导 worldsheet CFT、spectrum、BRST、compactification 或 AdS/CFT dictionary 的必要前置。因此它应作为 mirror symmetry 后续专题阅读，而不是新增主线章。$\square$
+**解答.** 因为 $Q=e^t$，有
+$$
+\frac{d}{dt}\operatorname{Li}_s(Q)
+=Q\frac{d}{dQ}\operatorname{Li}_s(Q)
+=\operatorname{Li}_{s-1}(Q).
+$$
+所以
+$$
+\frac{dF_0^{\mathrm{inst}}}{dt}
+=\operatorname{Li}_2(Q),
+$$
+$$
+\frac{d^2F_0^{\mathrm{inst}}}{dt^2}
+=\operatorname{Li}_1(Q)=-\log(1-Q),
+$$
+以及
+$$
+\frac{d^3F_0^{\mathrm{inst}}}{dt^3}
+=\operatorname{Li}_0(Q)
+=\frac{Q}{1-Q}
+=Q+Q^2+Q^3+Q^4+O(Q^5).
+$$
+原势
+$$
+\operatorname{Li}_3(Q)=\sum_{d\ge1}\frac{Q^d}{d^3}
+$$
+中 $Q^d/d^3$ 是 primitive $\mathbb P^1$ 的 degree-$d$ multiple-cover weight。
+三次 $t$ 导数各带来一个 $d$，恰消去 $d^{-3}$，于是 Yukawa coupling 中每个
+positive cover degree 的系数均为 $1$。$\square$
+
+## 练习 20.4
+
+**题目.** 直接按 oscillator partitions 计算 $Z_{24}(q)$ 的 $q^3$ 系数，并把
+贡献分成 mode partitions $3$、$2+1$ 与 $1+1+1$ 三类。
+
+**解答.** 总 level $3$ 有三种整数分拆。
+
+1. 对 $3$，态为 $\alpha_{-3}^i|0\rangle$，共有 $24$ 个。
+2. 对 $2+1$，态为
+   $\alpha_{-2}^i\alpha_{-1}^j|0\rangle$。两个 mode numbers 不同，故
+   $i,j$ 可独立选择，共 $24^2=576$ 个。
+3. 对 $1+1+1$，三个 mode-$1$ bosons 构成 $24$ 维 species space 的三次对称幂，
+   维数为
+   $$
+   \binom{24+3-1}{3}=\binom{26}{3}=2600.
+   $$
+
+相加得到
+$$
+d_3=24+576+2600=3200,
+$$
+所以
+$$
+Z_{24}(q)=1+24q+324q^2+3200q^3+O(q^4).
+$$
+$\square$
+
+## 练习 20.5
+
+**题目.** 逐项指出命题 20.16 的证明在哪些地方使用了离散谱、trace-class
+与 Fredholm 假设，并说明非紧 sigma model 的 continuum 为什么可能产生额外边界项。
+
+**解答.** 离散谱与有限重保证每个 $E>0$ eigenspace 都可单独分解，并在有限维空间
+内用 $Q+Q^\dagger$ 配对两种 fermion parity。Trace-class 假设保证
+$$
+\operatorname{Tr}((-1)^Fe^{-\beta H})
+$$
+收敛，并允许对 eigenspaces 求和以及使用 supertrace 的循环性。Fredholm 性保证
+零模有限维、像闭合，使
+$\dim\ker H_{\bar0}-\dim\ker H_{\bar1}$ 定义良好且在小变形下稳定。
+
+非紧 sigma model 常有从 $E=0$ 开始或逼近 $E=0$ 的连续谱。此时正能
+boson--fermion states 虽在局部配对，其散射相移或谱密度之差仍可在 continuum
+端点留下边界贡献；态也可能从 target 的无穷远流入或流出。于是朴素 holomorphic
+index 可能不再是 trace-class，需加入 regulator 或非全纯 completion。命题 20.16
+因此不能在缺少这些假设时直接套用。$\square$

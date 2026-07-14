@@ -6,15 +6,25 @@
 
 ## E.1 pyknotic 对象的定义
 
-设 $\mathbf{CHaus}$ 为紧 Hausdorff 空间范畴，覆盖为有限 jointly surjective 族。令 $\mathcal C$ 是一个具有有限极限并能谈论 descent 的范畴，例如集合范畴、空间范畴、谱范畴或 presentable $\infty$-category。
+固定两个 universe，并令 $\mathbf{Comp}$ 为较小层级 compact Hausdorff 空间在较大层级
+中的站点，覆盖为有限 jointly surjective 族。这个层级选择是 pyknotic 定义的一部分，
+不能在“大范畴”上无条件忽略。令 $\mathcal C$ 为可在其中形成 $\mathcal C$-值
+hypersheaf 的 presentable $\infty$-category；集合和阿贝尔群的 1-范畴情形按其离散
+$\infty$-范畴理解。
 
-**定义 E.1.1.** $\mathcal C$ 中的 pyknotic object 是一个满足 sheaf 条件的函子
+**定义 E.1.1（本附录的 hypercomplete 约定）.** $\mathcal C$ 中的 pyknotic object
+是一个满足 hyperdescent 的函子
 
 $$
-F:\mathbf{CHaus}^{op}\to\mathcal C.
+F:\mathbf{Comp}^{op}\to\mathcal C.
 $$
 
-当 $\mathcal C=\mathbf{Set}$ 时，这就是凝聚集合；当 $\mathcal C=\mathcal S$ 为 spaces/anima 的 $\infty$-范畴时，称为 pyknotic anima 或 condensed anima；当 $\mathcal C=\operatorname{Sp}$ 时，称为 pyknotic spectrum 或 condensed spectrum。
+Barwick--Haine 因此把 pyknotic objects 概括为 compacta 站点上的
+(hyper)sheaves；具体文献可能先取 sheaf 再另作 hypercompletion。当
+$\mathcal C=\mathbf{Set}$ 时，0-截断对象自动 hypercomplete，在固定同一站点和
+universe 后这就是凝聚集合。当 $\mathcal C=\mathcal S$ 时称为 pyknotic space/anima；
+当 $\mathcal C=\operatorname{Sp}$ 时称为 pyknotic spectrum。若使用“condensed
+anima/spectrum”一词，必须同时声明是否已 hypercomplete。
 
 **命题 E.1.2（0-截断比较）.** 若 pyknotic anima $F:\mathbf{CHaus}^{op}\to\mathcal S$ 的每个值都是 0-截断空间，则 $F$ 等价于一个凝聚集合。反过来，每个凝聚集合给出一个 0-截断的 pyknotic anima。
 
@@ -24,7 +34,8 @@ $$
 
 ## E.2 sheaf 条件的同伦形式
 
-设 $\mathcal U=\{U_i\to U\}$ 是有限覆盖。对空间值预层 $F$，sheaf 条件不是普通等化子，而是要求自然映射
+设 $\mathcal U=\{U_i\to U\}$ 是有限覆盖。对空间值预层 $F$，Čech descent 不是普通
+等化子，而是要求自然映射
 
 $$
 F(U)\to
@@ -39,7 +50,8 @@ F(U)\to
 \right)
 $$
 
-为等价。右侧是 Čech nerve 的同伦极限。
+为等价。右侧是 Čech nerve 的同伦极限。Pyknotic hypersheaf 还要求对任意 hypercover
+满足同类 totalization；只检查单个覆盖的 Čech nerve 一般不能替代 hyperdescent。
 
 **命题 E.2.1.** 若 $F$ 是 0-截断空间值预层，则上述同伦 sheaf 条件等价于第一卷的集合值 sheaf 条件。
 
@@ -47,21 +59,23 @@ $$
 
 ## E.3 凝聚谱与稳定化
 
-**定义 E.3.1.** 凝聚谱是满足 descent 的函子
-
-$$
-E:\mathbf{CHaus}^{op}\to\operatorname{Sp}.
-$$
-
-凝聚谱范畴记为
+**定义 E.3.1.** 记谱值 sheaf 与超完备谱值 sheaf 范畴分别为
 
 $$
 \operatorname{CondSp}
 =
-\operatorname{Shv}(\mathbf{CHaus},\operatorname{Sp}).
+\operatorname{Shv}(\mathbf{Comp},\operatorname{Sp}),
+\qquad
+\operatorname{CondSp}^{\wedge}
+=
+\operatorname{Shv}^{\wedge}(\mathbf{Comp},\operatorname{Sp}).
 $$
 
-**命题 E.3.2.** $\operatorname{CondSp}$ 是稳定范畴。
+第八章和附录 G 的“超完备凝聚谱”取第二个范畴。第一种约定只要求覆盖下降；第二种还
+要求所有 hypercover 下降。
+
+**命题 E.3.2.** $\operatorname{CondSp}$ 与
+$\operatorname{CondSp}^{\wedge}$ 都是稳定 $\infty$-范畴。
 
 **证明.** 谱范畴 $\operatorname{Sp}$ 稳定，且 sheaf 条件由极限表达。预层范畴 $\operatorname{Fun}(\mathbf{CHaus}^{op},\operatorname{Sp})$ 逐点稳定。sheaf 全子范畴由满足一族极限条件的对象组成，对有限极限、有限余极限和 suspension/loop 封闭。因此它稳定。证毕。
 
@@ -69,7 +83,8 @@ $$
 
 ## E.4 pyknotic abelian groups 与凝聚阿贝尔群
 
-**命题 E.4.1.** pyknotic abelian group 的 1-范畴与凝聚阿贝尔群范畴等价。
+**命题 E.4.1.** 在固定同一 compacta 站点与 universe 后，0-截断 pyknotic abelian
+groups 的 1-范畴与凝聚阿贝尔群范畴等价。
 
 **证明.** 阿贝尔群对象是集合值代数结构。若 $F:\mathbf{CHaus}^{op}\to\mathbf{Ab}$ 满足 sheaf 条件，则忘记到集合得到凝聚集合，并且群运算是 sheaf 中的态射。反过来，凝聚阿贝尔群按定义就是阿贝尔群值 sheaf。若从 anima 值观点出发，离散阿贝尔群对象正是 0-截断的 grouplike $E_\infty$-对象，等价于普通阿贝尔群。证毕。
 
@@ -103,7 +118,14 @@ $$
 2. locally constant sheaves 或 constructible sheaves 可由路径/出口路径数据控制。
 3. pyknotic/condensed 对象提供处理非离散拓扑和无限极限的范畴环境。
 
-本书当前只证明了 sheaf、站点比较和投射测试对象的基础部分；完整 exodromy 需要单独教材。
+**外部输入定理 E.6.1（Wolf）.** 若 $X$ 是 coherent scheme，则其 hypercomplete
+pro-étale $\infty$-topos 等价于 Galois category $\operatorname{Gal}(X)$ 在 pyknotic
+spaces 中的连续表示范畴。
+
+因此 pro-étale/pyknotic 接口不是尚未建立的类比；已知定理的精确中介是
+$\operatorname{Gal}(X)$，并带有 coherent 与 hypercomplete 假设。本书当前只证明了
+sheaf、站点比较和投射测试对象的基础部分；Wolf 定理与完整 exodromy 仍作为外部输入，
+后者需要单独教材。
 
 ## E.7 与四卷主线的关系
 
@@ -112,7 +134,7 @@ $$
 | pyknotic sets/anima | 站点、sheaf、凝聚集合 | 空间值 descent 与高范畴语言 |
 | condensed spectra | 派生范畴、Ext/Tor、localization | 稳定 $\infty$-范畴细节 |
 | solid/analytic spectra | solid/analytic localization | 谱值版本的完整张量理论 |
-| Galois/exodromy | pro-etale 比较、投射测试对象 | constructible sheaves 与出口路径 |
+| Galois/exodromy | Wolf 的 pro-étale--pyknotic 比较、投射测试对象 | 一般 exodromy、constructible sheaves 与出口路径 |
 | formalization | 站点和 sheaf 形式化路线 | 实际 Lean/mathlib 代码 |
 
 ## E.8 本附录小结

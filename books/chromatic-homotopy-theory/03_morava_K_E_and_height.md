@@ -1,12 +1,6 @@
 # 第三章：Morava K/E theories 与高度
 
-## 本章目标
-
-本章把第二章的形式群高度转化为两个核心谱：Morava K-theory $K(n)$ 和 Morava E-theory $E_n$。前者像高度 $n$ 的残差域，后者像高度 $n$ 形式群的完备局部变形环。
-
-## 依赖前置知识
-
-需要第二章的复定向、$BP$、$K(n)$ 和形式群高度。Lubin-Tate deformation theory、Goerss-Hopkins-Miller theorem 和 Morava stabilizer group action 作为外部输入。
+高度 $n$ 既需要一个只检测该层的“点”，也需要一个保存该点附近全部无穷小变形的局部模型。Morava $K$-理论 $K(n)$ 扮演残差域，系数是分次域，因而特别适合判定消失；Morava $E$-理论 $E_n$ 则由高度 $n$ 形式群的完备变形环产生，保留连续对称与 descent 所需的信息。本章把第二章的复定向、$BP$ 和形式群高度转化为这两个谱，并逐项比较其系数、Kunneth 性质与检测角色。Lubin--Tate 变形理论、Goerss--Hopkins--Miller 精化及 stabilizer group 作用作为列明用途的外部输入。
 
 ## 3.1 Morava K-theory 的检测角色
 
@@ -82,7 +76,7 @@ $n\ge1$ 及任意 $X,Y\in\mathbf{Sp}_{(p)}$，自然外积给出同构
 $$
 K(n)_*(X\otimes Y)\cong K(n)_*X\otimes_{K(n)_*}K(n)_*Y
 $$
-；没有有限性、connectivity 或 dualizability 假设。来源定位为
+；没有有限性、connectivity 或 dualizability 假设。该版本见
 Hopkins--Smith II, Proposition 1.5；其 Proposition 1.4 给出
 $K(n)\otimes X$ 分解为若干悬挂 $K(n)$ 的 field-spectrum 版本。高度
 $0$ 的对应式是普通有理 Künneth 同构。
@@ -115,7 +109,7 @@ $$
 
 **警告 3.20.** Nakayama lemma 只适用于有限生成模。对一般 $(E_n)_*X$，不能只由 mod $\mathfrak m$ 消失推出整体消失，除非有完备性和有限性假设。
 
-## 本章小结
+## 3.7 残差检测与完备变形
 
 $K(n)$ 是高度 $n$ 的残差检测器，$E_n$ 是高度 $n$ 的完备局部变形对象。二者通过 residue field/Bousfield 类联系起来。$E_n$ 的 $\mathbb E_\infty$ 结构和 stabilizer group 作用是外部输入，后续 $K(n)$-local descent 全部依赖这些结构。
 

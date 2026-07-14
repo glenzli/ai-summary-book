@@ -1,12 +1,8 @@
 # 第四十三章：Condensed sets、Solid modules 与解析范畴
 
-## 本章目标
+拓扑阿贝尔群的商、张量积和完备化常与代数运算不相容；condensed mathematics 改用 profinite 或 compact Hausdorff 测试对象上的 sheaf，把拓扑信息编码进一个 Grothendieck topos。Condensed abelian groups 因而形成良好的 Grothendieck abelian category，solidification 再选出对特定完备张量结构闭合的对象。解析环与 analytic modules 在这一基础上统一离散和拓扑系数。
 
-本章介绍 condensed mathematics 的范畴论骨架。Condensed sets 把拓扑信息编码为 profinite 测试对象上的 sheaves，从而把拓扑群、拓扑向量空间和解析对象放入 Grothendieck topos 与稳定同调代数的框架中。Solid modules 进一步给出适合泛函分析和解析几何的张量范畴。
-
-## 依赖前置知识
-
-需要站点、sheaf、Grothendieck topos、Abelian categories、Grothendieck abelian categories、derived categories、presentable categories、局部化、张量范畴和基本拓扑空间。
+本章使用站点、sheaf、Grothendieck abelian category、导出局部化和张量范畴。我们会区分 condensed、solid、liquid 与 analytic 的定义层级，并把 extremally disconnected 测试对象和 solid tensor 的深定理作为外部输入；详细理论由凝聚数学四卷本承担。
 
 ## 43.1 Profinite 站点与 condensed sets
 
@@ -112,29 +108,44 @@ $$
 
 **外部输入定理 43.16.** 对合适 solid algebra $A$，$D_{\mathrm{solid}}(A)$ 是稳定 presentable 对称幺半 $\infty$-范畴，且张量积分别保持小余极限。
 
-**命题 43.17.** Solidification 的导出函子是左伴随，因而保持小余极限。
+**外部输入推论 43.17.** 稳定 solidification 是左伴随，因而保持小余极限。
 
-**证明.** Solidification 是反射性局部化，即包含函子 $i:\operatorname{Solid}\hookrightarrow\operatorname{Cond}(\mathbf{Ab})$ 有左伴随 $(-)^{\mathrm{solid}}$。导出后仍得到左伴随
+**说明.** 定理 43.16 的构造把 stable solid objects 实现为 $D(\operatorname{Cond}(\mathbf{Ab}))$ 的 accessible reflective localization，故有伴随
 
 $$
-L(-)^{\mathrm{solid}}:D(\operatorname{Cond}(\mathbf{Ab}))\rightleftarrows D(\operatorname{Solid}):Ri.
+L_{\mathrm{solid}}:D(\operatorname{Cond}(\mathbf{Ab}))
+\rightleftarrows D_{\mathrm{solid}}(\mathbb Z):i.
 $$
 
-任意左伴随保持小余极限，故导出 solidification 保持小余极限。$\square$
+任意左伴随保持小余极限，故 $L_{\mathrm{solid}}$ 保持小余极限。这里使用稳定局部化定理；“一个阿贝尔反射函子存在”本身并不足以保证朴素逐项导出后仍得到所需反射。
 
 ## 43.7 解析环与解析范畴
 
-**定义 43.18.** 解析环的范畴论抽象是一个 condensed 或 solid 交换代数 $A$，配有指定的完备化、测试对象和模范畴结构，使 $\operatorname{Mod}^{\mathrm{solid}}_A$ 能同时编码代数和拓扑解析信息。
+**定义 43.18.** 一个 pre-analytic ring 是资料 $(A,\mathcal M)$：$A$ 是 condensed ring，$\mathcal M$ 给每个 extremally disconnected profinite set $S$ 指定一个 derived condensed $A$-module $\mathcal M[S]$，带自然映射
 
-**外部输入定理 43.19.** Clausen-Scholze 的 analytic rings 形成适合相对解析几何的范畴；其模范畴是 solid/condensed 语境中的稳定 presentable 范畴，并满足良好的基变换和完备性性质。
+$$
+A[S]\longrightarrow\mathcal M[S],
+$$
+
+并把有限不交并送到直和。对象 $C\in D(A)$ 称为 $\mathcal M$-complete，若对每个这样的 $S$，自然映射
+
+$$
+\operatorname{RHom}_A(\mathcal M[S],C)
+\longrightarrow
+\operatorname{RHom}_A(A[S],C)
+$$
+
+为等价。若所有由各 $\mathcal M[S]$ 的直和组成的复形都 $\mathcal M$-complete，则称 $(A,\mathcal M)$ 为 analytic ring。其 complete modules 构成相应解析模范畴。
+
+**外部输入定理 43.19.** Clausen--Scholze 的 analytic rings 形成适合相对解析几何的范畴；在标准小性假设下，其 complete module 范畴是稳定 presentable 范畴，并具有解析张量积与基变换。Solid modules 来自一个基本 analytic ring；liquid modules 则来自另一类带测度/基数参数的 analytic rings，二者不是 condensed modules 的同义词。
 
 **命题 43.20.** Condensed 口径把拓扑向量空间问题转化为 sheaf 与模范畴问题。
 
 **证明.** 拓扑对象 $T$ 通过 $S\mapsto\operatorname{Map}_{cts}(S,T)$ 变为 sheaf。若 $T$ 有群、环或向量空间结构，则这些运算逐点给出 condensed group、ring 或 module 结构。于是连续性被吸收到 profinite 测试对象上的函子性和 sheaf 条件中，而同调代数可在 Grothendieck abelian category 或稳定 presentable $\infty$-category 中进行。$\square$
 
-## 43.8 本章小结
+## 43.8 从拓扑对象到解析张量范畴
 
-Condensed sets 用 profinite 测试对象上的 sheaves 替代点集拓扑。离散集合和许多拓扑空间全忠实嵌入其中，condensed abelian groups 形成 Grothendieck abelian category，solidification 则给出适合解析张量积和完备性问题的反射性局部化。由此，拓扑代数和泛函分析对象可进入 sheaf、module、derived category 和 higher algebra 的统一框架。
+Condensed sets 用 profinite 测试对象上的 sheaves 替代点集拓扑。离散集合和许多拓扑空间全忠实嵌入其中，condensed abelian groups 形成 Grothendieck abelian category，solidification 则给出适合解析张量积和完备性问题的反射性局部化。Analytic ring 还需额外的测试模与完备性公理；solid 与 liquid 是由不同解析资料选出的模块类别。
 
 ## 练习
 

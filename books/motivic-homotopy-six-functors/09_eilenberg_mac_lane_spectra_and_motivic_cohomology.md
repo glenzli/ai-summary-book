@@ -1,12 +1,14 @@
 # 第九章：Eilenberg-Mac Lane spectra、motivic cohomology 与 HZ
 
-## 本章目标
+稳定范畴本身并不会指定一个上同调理论；必须先选择代表谱。Motivic
+Eilenberg--Mac Lane 谱 `H\mathbb Z` 的作用，是把代数循环产生的整系数上同调放进
+`\mathbf{SH}(S)` 的映射谱中。这样，杯积来自环谱乘法，带紧支撑版本来自 `p_!`，
+开闭长正合列来自 localization，而不是分别另造四套定义。
 
-本章引入 motivic Eilenberg-Mac Lane spectrum `H\mathbb Z`，并用 `\mathbf{SH}(S)` 中的映射群定义 motivic cohomology。重点是把 cohomology theory 的形式性质归约到 ring spectrum、六操作和 localization cofiber sequence，而把 `H\mathbb Z` 的构造及其与高 Chow 群、cycle complexes 的比较作为外部输入。
-
-## 依赖前置知识
-
-需要 stable motivic homotopy category、ring spectra、bigraded spheres、six operations、localization、Thom twists、ordinary cohomology theory 和基本代数循环背景。
+困难集中在两个几何输入：`H\mathbb Z` 在给定基上的构造，以及它与高 Chow 群和
+循环复形的比较。这些都是深定理，本章按基概形和系数精确引用；环谱、双分次球、
+六操作与 Thom 扭曲则沿用第三至八章。通过 `\operatorname{Spec}k` 和光滑概形的
+低次数计算，读者可以看到抽象表示性怎样恢复 Chow 群与 Milnor `K`-理论。
 
 ## 9.1 Motivic Eilenberg-Mac Lane spectrum
 
@@ -137,11 +139,13 @@ $$
 
 **精确来源.** Mazza--Voevodsky--Weibel, Theorem 5.1，同上稳定 URL。
 
-**注 9.11.** 定理 9.9 和 9.10 是计算接口，不是定义。定义 9.2 已经在 `\mathbf{SH}(S)` 内部给出；比较定理说明该定义恢复循环和 Milnor K-theory 的经典对象。
+**注 9.11.** 定理 9.9 和 9.10 是比较定理，不是定义。定义 9.2 已经在
+`\mathbf{SH}(S)` 内部给出；比较定理说明该定义恢复循环和 Milnor K-theory
+的经典对象。
 
 ## 9.4 Etale cycle maps 与 Bloch-Kato 边界
 
-**高级外部输入 9.12（P1）.** 若 `m` 在基上可逆，则存在从 motivic cohomology 到 etale cohomology 的 cycle map
+**高级外部输入 9.12.** 若 `m` 在基上可逆，则存在从 motivic cohomology 到 etale cohomology 的 cycle map
 
 $$
 H^{p,q}(X,\mathbb Z/m)\longrightarrow
@@ -152,8 +156,8 @@ $$
 
 **注 9.13.** 本书不把 Bloch--Kato 定理作为 motivic homotopy 的内部结论。
 它是 arithmetic motivic cohomology 的深外部输入，也不参与本章定义、乘法、
-localization 或 Chow/Milnor `K` 比较这条 P0 教学主线；实际调用前须按系数和
-截断范围另补 locator。
+localization 或 Chow/Milnor `K` 比较。实际调用必须另行指定系数、截断范围和
+所用定理版本。
 
 ## 9.5 Coefficients
 
@@ -178,13 +182,35 @@ $$
 
 对 `\Sigma_T^\infty X_+` 取映射空间并取 `\pi_0`，得到系数变换。`\square`
 
-## 9.6 本章小结
+**例子 9.16（域和射影直线的低次群）.** 设 `k` 为 perfect field。
+定理 9.10 在 `n=0,1` 时给出
+
+$$
+H^{0,0}(\operatorname{Spec}k,\mathbb Z)\cong
+K_0^M(k)\cong\mathbb Z,
+\qquad
+H^{1,1}(\operatorname{Spec}k,\mathbb Z)\cong
+K_1^M(k)\cong k^\times.
+$$
+
+另一方面，定理 9.9 应用于 `\mathbb P^1_k` 得
+
+$$
+H^{2,1}(\mathbb P^1_k,\mathbb Z)
+\cong CH^1(\mathbb P^1_k)\cong\mathbb Z.
+$$
+
+最后一个同构由 divisor degree 给出；任一 `k`-有理点的 divisor class 是
+生成元。这里三次计算都依赖比较定理，而不是只由环谱 `H\mathbb Z` 的形式性质
+推出；形式性质负责把这些群组织成乘法和 localization 长正合列。
+
+## 9.6 表示性统一的四种运算
 
 `H\mathbb Z` 把 motivic cohomology 放入 `\mathbf{SH}(S)` 的表示性框架中。
 Ring spectrum 结构给出 cup product，六操作给出紧支撑、Borel-Moore、
-localization 长正合列和 Gysin 接口。与 Chow 群、Milnor K-theory 的 P0
-比较已分别限定为 perfect-field smooth separated 情形和任意域的对角情形；
-etale/Bloch--Kato 比较属于 P1 边界。
+localization 长正合列和 Gysin 映射。与 Chow 群、Milnor K-theory 的比较
+分别限定为 perfect-field smooth separated 情形和任意域的对角情形；
+etale/Bloch--Kato 比较需要额外系数与截断假设。
 
 ## 练习
 

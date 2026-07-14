@@ -31,7 +31,7 @@
 | 第三章 | 固定 Betti domain；quotient-stack/descent 类型；forgetful equivariant perversity；光滑 IC 证明；proper Verdier duality 形式推论 | Bernstein--Lunts equivariance、Betti 六函子、BBD perverse/middle extension、BBD decomposition | sheaf models 不混用；arbitrary semisimple input、modular splitting、proper RHL 均被排除 |
 | 第四章 | Hecke convolution correspondence 的类型检查；Grothendieck group 上乘法的定义；$SL_2$ 的低阶 Hecke 计算 | IC sheaf 与 Kazhdan-Lusztig basis、KL conjecture、Soergel categorification | 正特征和 modular KL 需另设章节 |
 | 第五章 | Springer map well-defined、properness；Springer fibers；Steinberg convolution 结合性 | Springer semismallness/perverse semisimplicity、$W$-action、$H^{BM}_{top}(Z)\simeq\mathbb C[W]$、Springer correspondence | affine Hecke/K-theory 版本后置 |
-| 第六章 | Betti equivariant local systems 经 $A_G(x)$ 参数化；接受 semismallness 后的 Springer simple-summand 类型；character-sheaf induction 检查 | equivariant simple-perverse classification、generalized Springer、character sheaves | cuspidality 待专门定义；不使用 algebraic $G_x$-representations 替代 local systems |
+| 第六章 | Betti equivariant local systems 经 $A_G(x)$ 参数化；Springer 归一化；接受 semismallness 后的 simple-summand 类型；cuspidal datum 的 restriction 判据 | equivariant simple-perverse classification、generalized Springer、normalized restriction、character sheaves | 不使用 algebraic $G_x$-representations 替代 local systems；另一种 Springer action 需张量 sign |
 | 第七章 | Weyl algebra 例子；$\mathcal O_X$ characteristic variety；left/right 转换 convention | Bernstein inequality、Riemann-Hilbert、regularity 判据 | irregular D-modules 不进入基础链 |
 | 第八章 | $U(\mathfrak g)$ 作用于 global sections；localization 与 global sections 伴随 | Beilinson-Bernstein localization、TDO global sections、KL character formula | Verma/IC 对应依赖 convention |
 | 第九章 | line bundle cohomology 的 $G$-作用；translation functor 的 $\mathcal O$ 封闭性；$\pi_s$ proper | Borel-Weil-Bott、translation theory、wall crossing-localization 对应 | 权和 $\rho$ shift 需 locator |
@@ -41,14 +41,14 @@
 | 第十三章 | Tannaka weight grading 仅构造 $T^\vee\to H$；$GL_1$ symmetric equivalence；$GL_2$ tensor-square 核对 | convolution/fusion、fiber functor、neutral Tannaka、geometric Satake、root datum 识别 | classical、integral/modular、mixed-characteristic Satake 分离 |
 | 第十四章 | Finite-support Iwahori category；torsor-descent convolution；coherent associativity；affine simple-reflection 局部模型；长度可加标准对象卷积 | affine flag ind-projectivity、finite-support convolution properness、Iwahori orbits、Cartan decomposition、affine KL theorem | affine KL 多版本与 mixed/monodromic coefficients 需分离 |
 | 第十五章 | affine Kac-Moody residue cocycle 检查 | Kac-Moody localization、critical level、FLE | factorization categories 只作接口 |
-| 第十六章 | Hecke correspondence 和 eigensheaf 类型定义 | 2024 GLC proof series、geometric Satake-Hecke action | 不进入证明链 |
-| 第十七章 | quiver variety moment map 形式检查 | Nakajima representation construction | slice 同构后置 |
-| 第十八章 | KLR induction product 结合性 | KLR/Rouquier categorification、canonical basis theorem | KLR relations 附录未写 |
-| 第十九章 | conical symplectic resolution 和 quantization 定义 | BLPW-Losev category O、symplectic duality | 非全称定理 |
-| 第二十章 | torus pure gauge 卷积计算；接受 BFN 后卷积结合性；loop rotation 基变换说明 | BFN Coulomb branch construction、finite generation、quantization flatness | 3d mirror 接口后置 |
-| 第二十一章 | Hall multiplication 结合性的滤过计数证明 | CoHA、critical CoHA、DT wall crossing | orientation data 后置 |
-| 第二十二章 | crystal string 有限性基本证明 | Lusztig/Kashiwara canonical bases、几何模型 | dual canonical convention 需锁定 |
-| 第二十三章 | 前沿成熟度分级；结果进入正文流程；缺项不得作为内部证明输入 | 2024-2026 前沿定理均需 locator | 只作边界 |
+| 第十六章 | Hecke correspondence、eigensheaf 类型定义、$GL_n$ modification 与 $GL_1$ 平移模型 | geometric Satake--Hecke action；任何确定版 global equivalence 另需独立 locator | 局部作用不推出全局等价；不进入基础证明链 |
+| 第十七章 | quiver moment map；$T^*\operatorname{Gr}(v,W)$ 识别；$T^*\mathbb P^1\to\mathcal N(\mathfrak{sl}_2)$ 坐标与 fibers | Nakajima representation construction、Hecke correspondences 的 Kac--Moody relations | 一般 slice 同构后置 |
+| 第十八章 | KLR induction 结合性；$R(2)$ divided-difference 表示；$R(2)\simeq M_2(E[e_1,e_2])$ | KLR/Rouquier categorification、canonical basis theorem | 一般 $Q_{ij}$ 与 grading convention 由外部版本控制 |
+| 第十九章 | conical symplectic resolution 和 quantization 定义；$T^*\mathbb P^1$ incidence resolution；Weyl algebra 正权点模 | BLPW--Losev category $\mathcal O$、具体 symplectic-duality 定理 | symplectic duality 不作全称定理 |
+| 第二十章 | torus pure gauge 卷积；权一 matter 分支的消失阶；接受 BFN 后卷积结合性与 loop-rotation specialization | BFN Coulomb branch construction、finite generation、Poisson 性、quantization flatness | symplectic singularity 与 resolution 需逐个 $(G,N)$ 验证 |
+| 第二十一章 | Hall multiplication 结合性的滤过计数；Gaussian Hall 公式与二步旗标恒等式 | CoHA、critical CoHA、DT wall crossing | potential、vanishing cycles 与 orientation data 不由 ordinary Hall 自动给出 |
+| 第二十二章 | crystal string 条件；$A_1$ Grassmannian fibers 与 incidence graph 给出 $B(n)$ | Lusztig/Kashiwara canonical bases、Nakajima/KLR 几何模型 | canonical/dual canonical convention 需锁定 |
+| 第二十三章 | $GL_1$ Hecke coherence；$A$-型曲面二形式；$A_1$ parity；同构 $K_0$ 的 dual-number 反例；nonreduced loop family | ADE 最小分辨率、一般 modular/parity 理论及各确定版前沿等价 | 按 local-to-global、Poisson-to-symplectic、torsion、categorical comparison、derived models 五类障碍组织 |
 | 附录 B/G/H/I/J | Coxeter convention；$SL_2$ Springer stalk 与 $SL_3$ stable-flag 完整计算；Soergel 低阶计算；Satake 检查表；前沿流程 | Springer $W$-action、MV packages、Soergel 等外部定理 | Euler characteristic 不决定 Springer action；Tannaka 不自动识别 root datum |
 | 正式化文件 | 完备矩阵、模型假设矩阵、内部证明核、低阶计算核、P0 locator 第一批 | 页码级 locator 和最终假设翻译仍需外部核验 | 不新增数学定理 |
 
@@ -64,13 +64,13 @@
 | KLR/Rouquier categorification | KLR algebras、cyclotomic quotients、canonical bases | 第十八章已写入骨架，待 locator |
 | Symplectic duality | BLPW category $\mathcal O$、Koszul duality、twisting/shuffling | 第十九章已写入骨架，待 locator |
 | Coulomb branches | BFN convolution/Borel-Moore homology 构造、quantization | 第二十章已写入骨架，待 locator |
-| Geometric Langlands | 2024 proof series、FLE、multiplicity one、ind-coherent/factorization formalism | 第十六章已写入边界骨架，需 locator |
+| Geometric Langlands | 各确定版本的 global equivalence、FLE、multiplicity one、IndCoh/factorization formalism | 第十六章给出局部接口，第二十三章拆分 local-to-global 障碍；未定位的时效性结果不进入证明链 |
 
-## 3. 当前缺口
+## 3. 当前外部输入缺口
 
-当前草稿已经达到主体教材化收口，但还不是出版终稿。主要缺口为：
+正文的内部推导与低秩模型已经落实；尚需外部核验的部分集中在：
 
-1. 主体目录第一至第二十三章已有定义链、证明或外部输入标记、例子与练习；出版层仍需压缩证明文字并稳定交叉引用。
+1. 第一至第二十三章已有连续定义链、证明或外部输入标记、例子与练习；外部引用仍需稳定 theorem locator 与版本翻译。
 2. Kazhdan-Lusztig、Springer、Riemann-Hilbert、Beilinson-Bernstein、Borel-Weil-Bott、Soergel/Elias-Williamson、Nakajima、KLR/Rouquier、BLPW、BFN、CoHA 和 canonical bases 仍需精确 theorem locator；BBD decomposition、semismall 与 geometric Satake 主链本轮已推进到 theorem/section level，仍需出版页码终校。
 3. 六函子、perverse sheaf、quotient stack、semismall 和 affine-convolution 技术已按 Betti 模型分拆；若新增 $\ell$-adic、mixed Hodge 或 modular 证明链，仍需另建模型专表。
 4. quiver varieties、Coulomb branches、symplectic duality 和 geometric Langlands 已有正文入口；作为外部定理使用时仍需 locator 和模型假设翻译。

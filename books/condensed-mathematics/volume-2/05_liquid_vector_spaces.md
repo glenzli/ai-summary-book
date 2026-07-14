@@ -1,16 +1,16 @@
 # 第五章：Liquid 向量空间入口
 
-## 本章目标
+通常实数上的有界 Radon 测度不能满足第三章的 analytic 公理；这不是记号问题，而是
+某些非局部凸扩张阻止 Dirac 组合具有所需的唯一延拓。修复办法是对 $0<p\le1$，允许
+在某个 $q<p$ 下具有有限 $q$-质量的测度，并取并
+$\mathcal M_{<p}[S]=\bigcup_{q<p}\mathcal M_q[S]$。这里严格的不等号不可省略，它正是
+外部 analytic-ring 定理使用的测度对象。
 
-本章精确说明三件事：\(<p\)-测度如何出现，什么叫 \(p\)-liquid，以及经典
-Banach/Fréchet 空间如何通过凝聚化进入 liquid 范畴。特别要纠正一个常见误界定：
-Banach 或 Fréchet 空间并不需要一个额外且未定义的“realization object”；它的候选对象
-就是 \(S\mapsto\operatorname{Cont}(S,E)\)。深定理在于该凝聚对象确实
-\(p\)-liquid，而 exactness 仍需单独检查。
-
-## 依赖
-
-需要第三、四章的 analytic ring、解析化与内部 Hom 约定。
+第三、四章的内部 Hom 与解析化约定使 $p$-liquid 可以定义为对这些测度的延拓性质。
+对 Banach 或 Fréchet 空间 $E$，候选凝聚对象就是
+$S\mapsto\operatorname{Cont}(S,E)$，并不另造“实现对象”；深层输入断言它确为 liquid。
+另一方面，短正合列的 cokernel 仍取决于局部连续提升。我们会把这一失败条件写成
+$\kappa$-凝聚有效性，并给出连续截面保证 exactness 的完整证明。
 
 ## 5.1 \(<p\)-测度对象
 
@@ -203,11 +203,14 @@ Fréchet 空间；它本身不等于定义 5.8 的局部提升条件。后文比
 从一个层次变换到底环不同的另一层次，需要给出 analytic rings 的态射及相对 analytic
 tensor；仅有抽象环映射 \(\mathbb Z\to\mathbb R\) 不足以自动识别测度对象和完成化。
 
-## 5.7 本章小结
+## 5.7 Liquid 实现与正合性的分离
 
-\(p\)-liquid 的定义是 \(\mathcal M_{<p}[S]\) 上的唯一延拓。Banach 与 Fréchet
-空间的凝聚化确实给出 liquid 对象；真正需要额外假设的是 cokernel 与 cohomology 的
-exactness，命题 5.9 把它化为可检查的局部提升条件。
+$p$-liquid 性要求从 Dirac 映射到 $\underline E$ 的态射唯一延拓到
+$\mathcal M_{<p}[S]$；外部输入保证 Banach 与 Fréchet 空间的凝聚化满足这一点。
+这项对象识别不蕴含凝聚化保持 cokernel。命题 5.9 证明，短正合列能否进入 liquid
+范畴中的短正合列，精确取决于商映射是否在 profinite 测试上局部连续可提升；连续截面
+是充分条件。第六章转向另一种解析数据，研究离散 Huber pair 如何通过 rational
+localization 组织成几何。
 
 ## 练习
 

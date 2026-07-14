@@ -1,12 +1,12 @@
 # 第十四章：S-duality、U-duality、M-theory 和 brane web
 
-## 本章目标
-
-本章给出 string dualities 的概念分层。T-duality 是 perturbative worldsheet CFT 中可见的等价；S-duality、U-duality 和 M-theory 通常是非微扰物理原则，依靠 BPS spectra、低能 supergravity、brane dynamics 和大量检验支撑。
-
-## 依赖前置知识
-
-需要第七章 T-duality、第九至十二章超弦和 D-branes，以及第十三章紧化接口。
+T-duality 能在同一个 worldsheet CFT 中逐模验证；把 $g_s$ 映到 $1/g_s$ 的
+S-duality 却把微扰展开的可控区送到不可控区，不能用同一种证明口径书写。可靠信息
+来自受保护的 BPS masses、charge lattices、anomalies、brane tensions 与低能
+supergravity，而完整非微扰等价仍是物理猜想。以下以第七章 T-duality 为基准，结合
+第九至十二章的超弦、R--R charges 与 D-branes，以及第十三章紧化数据，检验 type IIB
+$SL(2,\mathbb Z)$、IIA/M-theory 圆字典和 U-duality；每个公式都会注明它是直接推导、
+低能匹配还是对偶性输入。
 
 ## 14.1 Duality 的状态分层
 
@@ -112,9 +112,11 @@ $\square$
 
 **推导说明（标准物理口径）.** D3-brane 耦合于 self-dual five-form，其 R-R charge 在 IIB S-duality 下不与 NS-NS charge 混合成不同维度 brane。Worldvolume gauge coupling 由 axio-dilaton 控制，因此 $SL(2,\mathbb Z)$ 作用为四维 gauge theory 的 Montonen-Olive 型 duality。完整量子等价仍是物理猜想的一部分。$\square$
 
-## 本章小结
-
-Duality 是 string theory 从多个微扰展开走向非微扰结构的核心机制。本书把 T-duality、S-duality、U-duality 和 M-theory 分层处理：可证明处给证明，依赖外部理论处标明输入，非微扰整体等价保持为物理猜想。
+D3-brane 的自对偶例子说明了检验 duality 的正确方式：bulk charge、worldvolume
+coupling 与受保护谱必须在同一 dictionary 下匹配，而一组成功匹配并不等于完整量子
+等价已经证明。T-duality 有 worldsheet CFT 级别的控制；M2/F1、D0/KK 的张力和质量
+关系属于可直接核算的低能后果；S-、U-duality 与 M-theory 的整体陈述则保留猜想
+身份。这样的分层使强耦合信息可用，同时不抹去其证明边界。
 
 ## 练习
 

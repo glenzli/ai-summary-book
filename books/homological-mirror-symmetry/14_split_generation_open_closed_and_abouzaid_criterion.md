@@ -1,16 +1,6 @@
 # 第十四章：split-generation、open-closed map 与 Abouzaid criterion
 
-## 本章目标
-
-本章建立 HMS 证明中最常用的生成工具：Morita 口径的 split-generation、
-Hochschild homology、open-closed/closed-open maps，以及 Abouzaid 的 exact
-wrapped generation criterion。范畴形式推论在书内证明；holomorphic-curve
-operations、Cardy relation 与 generation theorem 明确作为外部输入。
-
-## 依赖前置知识
-
-需要第一章 Morita 理论、第四与第六章 Fukaya categories、第八章的等价
-层级，以及附录 B 的 $A_\infty$ 约定。
+逐个描述 wrapped Fukaya category 的全部对象通常不现实；一组候选 Lagrangians 即使有可计算的 endomorphism algebra，也还可能只生成一个真子范畴。Abouzaid 的判据把这个缺口转化为 closed-string 端的单位问题：若候选子范畴的 Hochschild 类经完整 open-closed 复合命中 $SH^0(M)$ 的全局单位，它便 split-generate。为准确使用这句话，本章先在第一章的 Morita 语言中固定 split-generation，再区分 open-closed 与 closed-open 的方向和次数，最后分离命中全局单位、命中幂等分量与只得到非零像三种不同结论。曲线计数和 Cardy 同伦采用外部分析输入，形式范畴推论在正文证明。
 
 ## 14.1 Split-generation 的类型
 
@@ -197,13 +187,7 @@ idempotents。故“potential value $\lambda$”与“primitive idempotent $e$�
 不是同一种索引。不同 curvature values 的 morphism 类型由命题 5.14
 处理，不能代替 closed-open projector 的分块定理。
 
-## 本章小结
-
-Abouzaid criterion 的 exact wrapped 版本要求 full subcategory 的
-Hochschild homology 经完整 open-closed composite 命中 $SH^0(M)$ 的 global
-unit，结论是 split-generation/Morita equivalence。HMS 还需 B-side
-split-generation 与生成 full subcategories 的 quasi-equivalence。
-Idempotent summands 和 curvature eigenvalues 必须分别声明。
+命中 $1_{SH}$ 把局部的 endomorphism 计算提升为全 wrapped category 的 split-generation，但它只给 Morita 结论；HMS 仍需 B-side 的生成性和两组生成对象之间的增强比较。若 open-closed 像只含 central idempotent，结论至多落在相应 summand，且该分块与第五章的 curvature value 分解不是同一索引。下一章将说明这些局部生成对象如何随 sectorial cover 一同胶合。
 
 ## 练习
 

@@ -35,7 +35,8 @@
 - 第 17 章已扩写为 BPS index、D1-D5-P entropy、Cardy formula、Strominger-Vafa matching 和 attractor mechanism 接口的教材章。
 - 第 18 章已扩写为 AdS/CFT 标准对偶、参数字典、D3 near-horizon limit、GKPW dictionary、bulk scalar dimension 和 symmetry matching 的教材章。
 - 第 19 章已扩写为 flux quantization、GVW superpotential、tadpole cancellation、Kahler moduli stabilization 和 landscape 控制条件的教材章。
-- 第 20 章已扩写为 QFT、几何、数论接口边界和全书定理状态回顾的收束章。
+- 第 20 章已重写为可计算的跨领域接口章，覆盖拉伸弦/Higgs 质量、Dirac index、
+  genus-zero curve generating function、elliptic-genus 模性和 K3/D1--D5 案例。
 - 修正闭弦质量公式：闭弦应满足
   $$
   M^2=\frac4{\alpha'}(N-a)=\frac4{\alpha'}(\tilde N-a),\qquad N=\tilde N,
@@ -74,7 +75,9 @@
 - 第 14 章补充 M2 包裹圆的张力匹配和 D3-brane S-duality 自洽性。
 - 第 15 章补充 torus fundamental domain、compact boson lattice sum 和 modular $T$ 对 level matching 的约束。
 - 第 16 章补充 quintic mirror Picard-Fuchs operator、mirror theorem 接口和 mirror map 的局部形式。
-- 第 17 至 20 章补充 wall crossing、Wald entropy、AdS/CFT two-point function、Wilson loop、no-scale potential、ISD flux condition 和接口矩阵。
+- 第 17 至 20 章补充 wall crossing、Wald entropy、AdS/CFT two-point function、
+  Wilson loop、no-scale potential、ISD flux condition，以及 D-brane/QFT、index、
+  topological-string 与 modular-form 的可计算接口。
 - 全书当前 42 个 Markdown 文件，约 5430 行；定理索引 138 条，核心解答集超过 1000 行。
 
 ## 第五轮出版化细节记录
@@ -98,8 +101,11 @@
 ## 第六轮内容本体清理记录
 
 - 新增 `INDEX.md`、`GLOSSARY.md` 和 `EXERCISE_INDEX.md`，统一总索引、压缩术语表和习题索引。
-- 补齐序章练习 0.1、0.2 的解答，使正文 68 道习题与解答集 68 个条目一一对应。
-- 统一第 1、2、5 章的“本章小结”标题格式，修正第 19 章小节编号顺序。
+- 补齐序章练习 0.1、0.2 及第 20 章新增接口题的解答，使正文 70 道习题与解答集
+  70 个条目一一对应。
+- 第 0 至 20 章移除固定目标、依赖与小结模板，改为问题导向的自然导言和收束；
+  第 19、20 章编号按正文出现顺序排列。
 - 扩充附录 A-E：补充 Hodge star、characteristic classes、first-order CFT systems、modular functions、Sugawara construction、descent formalism、theta functions、spin structures、BPS bounds 和 supersymmetry variations。
 - 新增 [WORKED_EXAMPLES.md](WORKED_EXAMPLES.md)，补充 8 个主线例题，覆盖 Polyakov variation、开弦谱、T-duality、BRST exact decoupling、DBI 展开、quintic 计数、AdS scalar dimension 和 no-scale potential。
-- 机械检查结果：48 个 Markdown 文件，6641 行；Markdown 本地链接 262 个且缺失 0 个；定理索引 146 条且缺失 0 条；正文编号标签 403 个且重复 0 个；正文习题 68 道且解答 68 道。
+- 当前机械检查结果：48 个 Markdown 文件，8654 行；本地链接缺失 0 个；定理索引
+  178 条且缺失 0 条；正文编号标签 370 个且重复 0 个；正文习题 70 道且解答 70 道。

@@ -1,16 +1,33 @@
 # 第十八章：Hochschild invariants、closed-open maps 与 categorical enumerative checks
 
-## 本章目标
-
-本章说明 HMS 等价应保持的高阶范畴不变量：Hochschild homology/cohomology、Serre functor、Calabi-Yau structure、closed-open/open-closed maps 和枚举几何检查。它们不能替代 HMS 证明，但能提供强约束。
-
-## 依赖前置知识
-
-需要第一章 Morita 理论、第十四章 open-closed map，以及第二章 B-side 导出几何。
+候选对象字典即使给出相同的 $K_0$，也可能在 morphism complexes、pairing 或高阶复合上失败。Hochschild chains 把所有循环可复合态射同时纳入一个复形，因而比逐对象维数更接近范畴整体；HKR 又把 B-side Hochschild 同调展开为 Hodge 上同调。A-side 的 open-closed/closed-open maps 则把这些范畴不变量接到量子或辛上同调。本章从第一章的 Morita 理论和第十四章的 string maps 出发，给出可计算的必要检验，并精确说明 Todd 修正、properness 与 Calabi--Yau 假设出现在哪里。
 
 ## 18.1 Hochschild invariants
 
-**定义 18.1.** 对 dg 或 $A_\infty$ category $\mathcal A$，Hochschild homology $HH_\ast(\mathcal A)$ 是 Hochschild chains 的 homology；Hochschild cohomology $HH^\ast(\mathcal A)$ 是 Hochschild cochains 的 cohomology，并带 Gerstenhaber algebra 结构。
+**定义 18.1.** 对小、严格含单位 $A_\infty$ category $\mathcal A$，采用附录
+B 的 suspension 约定，其 Hochschild chain module 为 cyclic bar construction
+$$
+CC_\bullet(\mathcal A)=
+\bigoplus_{d\ge0}\ \bigoplus_{X_0,\ldots,X_d}
+\operatorname{hom}_{\mathcal A}(X_d,X_0)\otimes
+s\operatorname{hom}_{\mathcal A}(X_{d-1},X_d)\otimes\cdots\otimes
+s\operatorname{hom}_{\mathcal A}(X_0,X_1).
+\tag{18.1}
+$$
+Hochschild differential 把各 $b_r$ 插入连续输入块，并包含跨越 cyclic cut
+的插入；$b^2=0$ 蕴含该 differential 平方为零。其 homology 记为
+$HH_\ast(\mathcal A)$。Hochschild cochains 是从 bar tensors 到 morphism
+spaces 的 compatible multilinear maps，带由 $A_\infty$ 结构诱导的微分；
+其 cohomology 记为 $HH^\ast(\mathcal A)$，并带 cup product 与 Gerstenhaber
+bracket。
+
+**例 18.1A.** 把 $k$ 看成单对象 dg category，则
+$$
+HH_0(k)\cong k,\qquad HH_i(k)=0\quad(i\ne0).
+$$
+归一化 bar complex 的正长度部分含单位输入并可由插入单位的退化算子收缩；
+只剩长度零的 $k$。这个例子说明 Hochschild chains 虽含任意长度 cyclic
+tensors，却会按范畴关系消去冗余长度。
 
 **外部输入定理 18.2（Morita invariance）.** Hochschild homology 和 cohomology 在 Morita equivalence 下不变。
 
@@ -37,6 +54,23 @@ $$
 
 **警告 18.5.** HKR 的乘法相容不是裸同构自动给出的，需要 Todd class 修正。HMS 文献中比较 pairings 时必须说明采用的规范化。
 
+**例 18.5A（椭圆曲线的 HKR 分次）.** 设 $E$ 是特征零代数闭域上的
+elliptic curve。由
+$$
+h^0(E,\mathcal O_E)=h^1(E,\mathcal O_E)
+=h^0(E,\Omega_E^1)=h^1(E,\Omega_E^1)=1
+$$
+和定理 18.4，得到
+$$
+HH_1(\operatorname{Perf}E)\cong k,\qquad
+HH_0(\operatorname{Perf}E)\cong k^2,\qquad
+HH_{-1}(\operatorname{Perf}E)\cong k.
+\tag{18.2}
+$$
+这里 $HH_1$ 来自 $H^0(\Omega_E^1)$，$HH_0$ 来自
+$H^0(\mathcal O_E)\oplus H^1(\Omega_E^1)$，$HH_{-1}$ 来自
+$H^1(\mathcal O_E)$。这给第九章椭圆曲线对象字典之外的一个全范畴检查。
+
 **命题 18.6.** 若 $X,Y$ 为 Calabi-Yau mirror pair 且 HMS 成立，则 A-side Fukaya category 的 Hochschild homology 维数与 $X$ 的 Hodge numbers 的相应组合匹配。
 
 **证明.** HMS 给出 $HH_\ast(\mathcal F(Y))\cong HH_\ast(\operatorname{Perf}(X))$。由 HKR 外部输入，右边维数等于 Hodge cohomology 的相应直和维数。证毕。
@@ -49,7 +83,20 @@ $$
 $$
 把 closed-string operations 映到 open-string category 的 Hochschild cochains。compact monotone 情况下 $SH^\ast$ 替换为 $QH^\ast$ 或其幂等分量。
 
-**外部输入定理 18.8（closed-open 同构现象）.** 在许多 Weinstein 或 generation 已知的情形中，closed-open map 在合适条件下是同构或检测生成性的关键映射。具体成立范围依赖几何假设。
+**外部输入定理 18.8（Ganatra 的非退化 wrapped 情形）.** 设 $M$ 是
+Liouville manifold，$\mathcal W$ 是一组 exact Lagrangians 生成的 wrapped
+Fukaya category，并满足 Ganatra 所规定的 non-degeneracy 条件，即有足够多
+Lagrangians 使相应 open-closed 类命中单位。在其 wrapped analytic、duality
+和 finiteness 假设下，自然映射
+$$
+HH_\bullet(\mathcal W)\longrightarrow SH^{\bullet+n}(M),\qquad
+SH^\bullet(M)\longrightarrow HH^\bullet(\mathcal W)
+\tag{18.3}
+$$
+是同构，并与 ring/module structures 相容。
+来源：Ganatra, *Symplectic cohomology and duality for the wrapped Fukaya
+category*, arXiv:1304.7312。本定理不对任意 Weinstein manifold 无条件断言
+同构；non-degeneracy 正是不可删除的生成性输入。
 
 **解释 18.9.** B-side 上，$HH^\ast(\operatorname{Perf}(X))$ 与 polyvector fields 相关。镜像对称预期把 A-side quantum/symplectic cohomology 与 B-side polyvector/Hochschild cohomology 匹配。
 
@@ -69,9 +116,7 @@ $$
 
 **警告 18.12.** 通过所有已知 categorical checks 不推出 HMS。它们是必要条件，不是充分条件。
 
-## 本章小结
-
-Hochschild invariants、HKR、closed-open maps 和 categorical checks 是 HMS 的强约束。它们能排除错误字典，验证维数和 pairing，但不能替代生成性和 endomorphism $A_\infty$ algebra 的比较。
+Hochschild Morita 不变性把 HMS 转化为可计算的 Hodge 与 closed-string 约束，Euler pairing 和 Serre 函子又能快速排除错误的对象字典；Todd 修正提醒我们，向量空间同构还不等于乘法或 pairing 相容。不过这些条件全都只是等价的后果。真正建立 HMS 仍须构造生成性和增强函子，下一章的奇点模型会展示为何选择正确的范畴本身就是首要问题。
 
 ## 练习
 

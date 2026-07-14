@@ -1,12 +1,6 @@
 # 第二章：Lie 代数表示、category O 与中心 character
 
-## 本章目标
-
-本章建立代数表示侧的基本对象：universal enveloping algebra、triangular decomposition、weight modules、Verma modules、BGG category $\mathcal O$、中心 character 和 dot action。后续 Beilinson-Bernstein localization 和 Kazhdan-Lusztig character formula 都以本章为代数输入。
-
-## 依赖前置知识
-
-需要第一章的 $(G,B,T,W)$、根数据和正根约定，以及基本 Lie 代数表示论。
+旗簇上的 Schubert cells 由 Weyl group 标号，但 localization 所要几何化的并不是 Weyl group 本身，而是带固定中心 character 的 $U(\mathfrak g)$-模。为了看清几何侧将接收什么，先从第一章的正根约定得到 triangular decomposition，再考察由一个最高权向量自由生成的 Verma module。它既足够具体，可以在 $\mathfrak{sl}_2$ 中逐项写出基和作用，又足够普遍，能组织 category $\mathcal O$ 的简单对象与 block。中心的 Harish--Chandra 参数最终把这里的 dot action 和旗簇上线丛的 $\rho$-shift 接到一起。
 
 ## 2.1 Universal enveloping algebra 和 triangular decomposition
 
@@ -21,6 +15,8 @@ $$
 x\otimes y-y\otimes x-[x,y]
 $$
 取商得到的 associative algebra。
+
+这个商把 Lie bracket 编码为非交换乘法，却还没有给出可计算的正规形。PBW 定理所提供的有序乘法分解，是从最高权条件构造诱导模的关键外部输入。
 
 **外部输入定理 2.3.** PBW theorem 给出向量空间同构
 $$
@@ -92,6 +88,8 @@ U(\mathfrak g)\otimes_{U(\mathfrak b)}\mathbb C_\lambda
 $$
 $\mathfrak n^-$ 由负根空间生成，每个负根向量将 weight 减去相应正根。有限乘积给出 weight 集包含于 $\lambda-\mathbb Z_{\ge0}\Phi^+$。$\square$
 
+因此 Verma module 的所有权都从最高权向负根方向移动。Category $\mathcal O$ 正是把有限生成、有限维权空间和正幂零方向的局部有限性同时保留下来的范畴；这三项条件使 Verma modules 留在其中，也使后面的 block 分解有意义。
+
 ## 2.3 Category $\mathcal O$
 
 **定义 2.10.** BGG category $\mathcal O$ 是满足下列条件的 $\mathfrak g$-modules 构成的 full subcategory：
@@ -114,6 +112,8 @@ $$
 Z(\mathfrak g)=Z(U(\mathfrak g)).
 $$
 若 $M$ 是 $\mathfrak g$-module，且每个 $z\in Z(\mathfrak g)$ 在 $M$ 上以标量 $\chi(z)$ 作用，则称 $M$ 有中心 character $\chi:Z(\mathfrak g)\to\mathbb C$。
+
+中心 character 只给出 $Z(\mathfrak g)$ 上的代数同态；要把它改写成权的 Weyl orbit，需要 Harish--Chandra 同构。这里的 $\rho$-shift 不是记号修饰，而是线性 Weyl action 与最高权表示实际中心作用之间的校正。
 
 **外部输入定理 2.14.** Harish-Chandra isomorphism 给出
 $$
@@ -138,9 +138,7 @@ $$
 
 本书不会在第二章展开 real groups。这个定义只为后续 microlocal geometry、character sheaves 和 representation of real reductive groups 留接口。
 
-## 本章小结
-
-本章构造了 Verma modules 并证明其泛性质和基本 weight 形状，定义了 BGG category $\mathcal O$ 和中心 character。PBW theorem、Harish-Chandra isomorphism、block decomposition 和 KL character formula 均被标为外部输入，等待后续 locator。
+Verma module 的泛性质把最高权向量变成一个通用代数对象，PBW 分解则控制它的权和有限性；中心 character 再把这些对象分入由 dot-orbit 控制的 blocks。几何化这些 blocks 还缺少一套能在奇异分层上稳定工作的层论语言，下一章从 constructible complexes 与 perverse t-structure 建立这套语言。
 
 ## 练习
 
@@ -149,4 +147,3 @@ $$
 **练习 2.2.** 证明命题 2.6 中的泛性质自然等价于 induction functor $U(\mathfrak g)\otimes_{U(\mathfrak b)}-$ 是 restriction functor 的左伴随。
 
 **练习 2.3.** 在 $\mathfrak{sl}_2$ 情形中判断 $M(\lambda)$ 何时有非零 proper submodule，并与 $L(\lambda)$ 比较。
-

@@ -1,22 +1,18 @@
 # 第三十四章：导出代数几何、cotangent complex 与 spectral stacks
 
-## 本章目标
+经典纤维积会抹去 Tor 信息，经典交点也看不见 obstruction；导出代数几何通过 simplicial commutative rings、cdgas 或 $E_\infty$-rings 保留这些高阶层。几何对象成为满足 descent 的空间值函子，cotangent complex 统一控制一阶变形与障碍，QCoh/IndCoh 则形成随 derived stack 变化的稳定 presentable 范畴。Formal moduli problems 进一步把无穷小变形与 dg Lie 或 spectral Lie 结构联系起来。
 
-本章给出 derived algebraic geometry 与 spectral algebraic geometry 的范畴论入口。导出几何把交换环替换为 simplicial commutative rings、commutative dg algebras 或 $E_\infty$-rings；几何对象变为满足下降的 $\infty$-functors。Cotangent complex 控制变形理论；QCoh 和 IndCoh 形成稳定 presentable $\infty$-范畴值 sheaf；formal moduli problems 把局部变形与 dg Lie algebras 或谱 Lie algebras 联系起来。
-
-## 依赖前置知识
-
-需要可表现 $\infty$-范畴、$\infty$-topos、稳定 $\infty$-范畴、六操作、dg 范畴、spectra、$E_\infty$-rings、Cartesian fibration 和 sheaf descent。
+本章依赖 presentable $\infty$-范畴、$\infty$-topos、六操作、谱和 $E_\infty$-rings。不同特征下 cdga 与 simplicial commutative algebra 的比较并非无条件等价；所有 affine representability、descent 与 formal moduli 定理都会声明基环和 connectivity 假设。
 
 ## 34.1 派生环与仿射对象
 
-**定义 34.1.** 派生交换环可以用下列等价或相近模型之一表示：
+**定义 34.1.** “派生交换环”有若干相关但不可无条件混同的模型：
 
-1. simplicial commutative rings；
-2. 非正 cohomological commutative dg algebras，在特征 $0$ 语境中；
-3. connective $E_\infty$-rings。
+1. simplicial commutative rings 给出 simplicial/derived algebraic geometry；
+2. 非正 cohomological commutative dg algebras 在含 $\mathbb Q$ 的基底上与前者比较良好；
+3. connective $E_\infty$-rings 给出 spectral algebraic geometry。
 
-本章用 $\operatorname{CAlg}^{cn}$ 表示 connective $E_\infty$-rings 的 $\infty$-范畴。
+第三种允许球谱方向的高阶信息，通常不等价于 simplicial commutative rings。本章固定 spectral 口径，用 $\operatorname{CAlg}^{cn}$ 表示 connective $E_\infty$-rings 的 $\infty$-范畴。
 
 **定义 34.2.** 派生仿射概形定义为
 
@@ -75,12 +71,16 @@ $$
 **定义 34.9.** 对 derived stack $X$，$\operatorname{QCoh}(X)$ 定义为沿仿射对象映射到 $X$ 的 $\operatorname{QCoh}$ 的极限：
 
 $$
-\operatorname{QCoh}(X)=\lim_{\operatorname{Spec}A\to X}\operatorname{Mod}_A.
+\operatorname{QCoh}(X)=
+\lim_{(\operatorname{Spec}A\to X)\in(\operatorname{dAff}_{/X})^{op}}
+\operatorname{Mod}_A.
 $$
+
+对 $(\operatorname{dAff}_{/X})^{op}$ 中由 $\operatorname{Spec}B\to\operatorname{Spec}A$ 给出的箭头，过渡函子是拉回 $-\otimes_AB:\operatorname{Mod}_A\to\operatorname{Mod}_B$。
 
 **命题 34.10.** 若 $X=\operatorname{Spec}A$，定义 34.9 恢复 $\operatorname{Mod}_A$。
 
-**证明.** 在 overcategory $(\operatorname{dAff}_{/X})$ 中，恒等映射 $\operatorname{Spec}A\to\operatorname{Spec}A$ 是终对象。极限在有终对象的图形上等于终对象处的值，因此
+**证明.** 在 $\operatorname{dAff}_{/X}$ 中，恒等映射是终对象，所以在其反范畴中是初对象。以初对象为指标的图形之极限等于该初对象处的值，因此
 
 $$
 \operatorname{QCoh}(X)\simeq\operatorname{Mod}_A.
@@ -94,7 +94,7 @@ $$
 \operatorname{Perf}(X)\subseteq\operatorname{QCoh}(X).
 $$
 
-**外部输入定理 34.12.** 在 quasi-compact quasi-separated 等合理假设下，$\operatorname{QCoh}(X)$ 是 compactly generated stable presentable $\infty$-category，且 compact objects 与 perfect complexes 一致或在精确假设下相容。
+**外部输入定理 34.12.** 若 $X$ 是 quasi-compact quasi-separated derived scheme，则 $\operatorname{QCoh}(X)$ 是稳定 presentable $\infty$-范畴，并由 perfect complexes 紧生成；其 compact objects 恰为 $\operatorname{Perf}(X)$。对一般 derived stacks，该结论需要 $X$ 为 perfect stack 等附加假设，不能仅由 quasi-compact quasi-separated 推出。
 
 ## 34.4 Cotangent complex
 
@@ -146,23 +146,37 @@ $$
 F:\operatorname{Art}_k\to\mathcal S
 $$
 
-满足 $F(k)\simeq *$，并把小拉回方块送为拉回方块。
-
-**外部输入定理 34.17（Lurie-Pridham）.** 在特征 $0$ 下，formal moduli problems 的 $\infty$-范畴等价于 dg Lie algebras 的合适 $\infty$-范畴。谱版本中由 spectral Lie algebras 或相应 Koszul dual objects 控制。
-
-**命题 34.18.** 若 $X$ 是 derived stack，点 $x:\operatorname{Spec}k\to X$ 的切复形可由 cotangent complex 对偶给出：
+满足 $F(k)\simeq *$，并满足 Schlessinger 条件：若 $A'\to A$ 是 square-zero small extension，且 $B\to A$ 为任意态射，则自然映射
 
 $$
-T_xX\simeq\operatorname{Map}_k(x^*L_X,k).
+F(A'\times_AB)\longrightarrow F(A')\times_{F(A)}F(B)
 $$
 
-**证明.** 点处一阶变形由 square-zero extension $k\oplus M$ 上的 lift 控制。Cotangent complex 的表示性给出变形空间
+是等价。
+
+**外部输入定理 34.17（Lurie--Pridham）.** 设 $k$ 为特征 $0$ 的域，并采用定义 34.16 的 Artinian augmented connective cdga 与 small-extension 条件。则 formal moduli problems 的 $\infty$-范畴等价于位于规定同调次数范围内的 dg Lie $k$-algebras 的局部化。谱版本需要另换为 spectral Lie/Koszul-dual 对象，不能从特征 $0$ 的 cdga 定理形式地推出。
+
+**命题 34.18.** 若 $X$ 是 derived stack，点 $x:\operatorname{Spec}k\to X$ 处的 cotangent complex $x^*L_X$ perfect，则切复形由其对偶给出：
+
+$$
+T_xX:=\underline{\operatorname{RHom}}_k(x^*L_X,k)\in\operatorname{Mod}_k.
+$$
+
+**证明.** 点处系数为 $k$-module $M$ 的一阶变形由 square-zero extension $k\oplus M$ 上的 lift 控制。Cotangent complex 的表示性给出变形空间
 
 $$
 \operatorname{Map}_{\operatorname{Mod}_k}(x^*L_X,M).
 $$
 
-取 $M=k$ 或让 $M$ 变量化，得到切对象为 $x^*L_X$ 的线性对偶。$\square$
+Perfectness 给出 $x^*L_X$ 的对偶对象 $T_xX$，以及自然等价
+
+$$
+\operatorname{Map}_{\operatorname{Mod}_k}(x^*L_X,M)
+\simeq
+\Omega^\infty(T_xX\otimes_kM).
+$$
+
+因此 $T_xX$ 线性控制全部一阶变形。若 $x^*L_X$ 不 perfect，仍可形成内部 derived dual，但不能无条件用 $T_xX\otimes M$ 恢复所有导子空间。$\square$
 
 ## 34.6 IndCoh 与奇异支撑入口
 
@@ -226,7 +240,7 @@ $$
 
 若 $L_{B/A}\simeq0$，则右侧为从零对象到 $M$ 的映射空间，故可缩。反过来，若这些映射空间对所有 $M$ 可缩，则 $L_{B/A}$ 与零对象表示同一函子；由稳定 $\infty$-范畴的 Yoneda 判别，$L_{B/A}\simeq0$。$\square$
 
-**命题 34.24（切映射的形式来源）.** 设 $f:X\to Y$ 为具有 cotangent complexes 的 derived stacks 间态射，$x:\operatorname{Spec}k\to X$ 为点，$y=f\circ x$。Cotangent complexes 的函子性给出映射
+**命题 34.24（切映射的形式来源）.** 设 $f:X\to Y$ 为具有 cotangent complexes 的 derived stacks 间态射，$x:\operatorname{Spec}k\to X$ 为点，$y=f\circ x$，并假设 $x^*L_X$ 与 $y^*L_Y$ perfect。Cotangent complexes 的函子性给出映射
 
 $$
 x^*f^*L_Y\simeq y^*L_Y\to x^*L_X,
@@ -240,7 +254,7 @@ $$
 
 **证明.** $Y$ 上的一阶变形沿 $f$ 拉回为 $X$ 上的一阶变形。按 cotangent complex 的表示性，这一拉回自然变换由 $x^*f^*L_Y\to x^*L_X$ 表示。对 $k$-module 取映射到 $k$ 的内部 Hom，即得到对偶方向的切复形映射。$\square$
 
-## 34.8 本章小结
+## 34.8 保留交点与变形的高阶信息
 
 Derived algebraic geometry 把仿射概形替换为 connective $E_\infty$-rings 的反范畴，把几何对象看作满足下降的 functor of points。$\operatorname{QCoh}$ 是稳定 presentable $\infty$-范畴值 sheaf；cotangent complex 用表示性刻画导子并控制变形；formal moduli problems 把局部变形理论与 Lie 型代数对象联系起来；IndCoh 和 singular support 则为奇异几何和表示论提供更精细的范畴工具。
 

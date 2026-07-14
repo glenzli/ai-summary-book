@@ -1,12 +1,13 @@
 # 第十五章：Riemann surfaces、moduli of curves 和高 genus 扰动论
 
-## 本章目标
-
-本章解释 string perturbation theory 如何由 Riemann surface topology 组织。相对于点粒子 Feynman graphs，弦的相互作用由世界面的拓扑和 puncture moduli 控制。
-
-## 依赖前置知识
-
-需要第五章 path integral、 第六章顶点算子和附录 D 的 Riemann surface 语言。
+点粒子 loop expansion 对每张 Feynman graph 积分内部动量，闭弦扰动论则把同一阶
+相互作用组织成 genus 固定的光滑 Riemann surfaces，并对其 complex structures 与
+punctures 积分。Gauge fixing 后的 metric 零模正是 moduli；每个切向方向都要由
+Beltrami differential 与 $b$-ghost insertion 配对，退化边界则重新出现 target-space
+传播子的 pole。以下把第五章的路径积分测度与第六章的顶点算子放到
+$\mathcal M_{g,n}$ 上，借助附录 D 的曲面语言计算 torus partition function、
+modular quotient 与 degeneration factorization，并说明 supermoduli 在 RNS 振幅中
+额外带来的 picture/spin-structure 条件。
 
 ## 15.1 Genus expansion
 
@@ -134,9 +135,11 @@ e^{2\pi i(L_0-\tilde L_0)}
 $$
 于 $T$ 变换下。要使 partition function 单值，需 $L_0-\tilde L_0$ 为整数；物理闭弦态再由约束选出左右匹配部分。$\square$
 
-## 本章小结
-
-高 genus 弦扰动论是 Riemann surface moduli space 上的积分。Ghost insertions 提供 measure，modular invariance 避免重复计数并约束 spectrum，边界退化保证振幅因子化。
+Torus trace 的 $T$ 变换最后把 level matching 直接读成 modular 单值性；$S$ 变换则
+把同一 complex torus 的不同标记识别起来。一般 genus 下，Beltrami--$b$ 配对把
+gauge-fixed metric 变形转成 moduli measure，Deligne--Mumford 边界的长管极限又使
+振幅按物理中间态因子化。于是 ghost insertions、modular invariance 与 degeneration
+不是三项独立规定，而是高阶弦振幅能够避免重复计数并保持 unitarity 的同一几何机制。
 
 ## 练习
 

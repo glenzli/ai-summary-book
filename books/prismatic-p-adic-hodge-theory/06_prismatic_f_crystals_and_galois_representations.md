@@ -1,16 +1,6 @@
 # 第六章：Prismatic $F$-crystals 与 crystalline Galois representations
 
-## 本章目标
-
-本章定义 absolute prismatic site 上的 vector bundles 与 localized
-Frobenius structure，并陈述 Bhatt-Scholze 的 crystalline-lattice 分类。
-核心边界是：一般 $F$-crystal 只在 prism divisor 外有 Frobenius 同构；
-integral Frobenius map 是额外的 effective 条件。
-
-## 依赖前置知识
-
-依赖第二章的 prismatic site、第四章的 crystalline representations、第五章
-的 Breuil-Kisin 与 $A_{\inf}$ 背景，以及附录 I 的 crystal/descent 语言。
+上同调复形给出全局不变量，Galois lattice 的分类却需要随每个 prism 兼容变化的系数对象。Prismatic crystal 把这种 descent 写成 site 上的向量丛；加入 Frobenius 后，关键细节是线性化只在反演 prism divisor 后必为同构，积分 Frobenius 则是额外的 effective 条件。本章以第二章的 prismatic site、第四章的 crystalline representation 和第五章的 Breuil--Kisin/$A_{\inf}$ 模型为基础，先定义 crystal 与 $F$-crystal，再精确陈述 Bhatt--Scholze 的 lattice 分类，并检查 tensor、dual 与 base change 的兼容性。附录 I 提供所需的 crystal/descent 语言。
 
 ## 6.1 Crystals on the prismatic site
 
@@ -62,7 +52,7 @@ $$
 \phi^*\mathcal O_\Delta[1/\mathcal I_\Delta]
 \cong\mathcal O_\Delta[1/\mathcal I_\Delta].
 $$
-这与 Bhatt-Scholze, Definition 4.1（locator `BS-FCRYS`）一致。这里是
+这与 Bhatt-Scholze, Definition 4.1 一致。这里是
 module pullback identification，不是说任意 prismatic cohomology complex 的
 integral linearized Frobenius 已可逆。
 
@@ -90,7 +80,7 @@ $$
 $$
 其中右侧对象为 finite free $\mathbf Z_p$-modules $T$ 配 continuous
 $G_K$-action，且 $T[1/p]$ crystalline。来源为 Bhatt-Scholze, Theorem
-5.6（locator `BS-FCRYS`）；本书不重证 full faithfulness 或 essential
+5.6；本书不重证 full faithfulness 或 essential
 surjectivity。
 
 **说明 6.10.** 左侧只含 vector-bundle-valued $F$-crystals，不是所有
@@ -172,7 +162,7 @@ crystals。证毕。
 effective objects，还需检查 dual 的 integral lattice 是否仍落在所选
 effective cone；这不是 localized isomorphism 的形式后果。
 
-## 本章小结
+## 6.8 从 crystal 到 Galois lattice
 
 Prismatic $F$-crystal 的基础 datum 是 vector bundle 加 prism divisor 外的
 Frobenius isomorphism；effective 是额外积分条件。Bhatt-Scholze 的外部输入

@@ -1,19 +1,13 @@
 # 第十三章：Calabi-Yau 紧化、模空间和四维有效理论
 
-## 本章目标
-
-本章建立 Calabi-Yau compactification 的主线：
-
-1. Ricci-flat Kahler geometry 怎样满足最低阶 string background equations；
-2. $SU(3)$ holonomy 怎样保留四维 supersymmetry；
-3. Hodge numbers 怎样计数 complex structure 与 Kahler moduli；
-4. type II 与 heterotic 紧化怎样产生四维有效理论。
-
-本章只展开 string compactification 所需的几何接口；Yau theorem、Hodge theory 和 vector bundle stability 的完整证明属于外部数学理论。
-
-## 依赖前置知识
-
-需要第十一章低能有效作用、附录 A 的复几何语言和附录 E 的 spinor convention。
+十维理论要产生四维低能物理，内部六维空间既不能任意弯曲，也不能破坏所有
+supersymmetry。最低阶 Einstein 方程要求 Ricci-flat metric，平行 spinor 又把
+holonomy 收紧到 $SU(3)$；在 compact Kahler threefold 上，这些条件把问题引向
+Calabi--Yau geometry。几何随后不只是背景：harmonic forms 决定质量为零的
+Kaluza--Klein modes，$H^{1,1}$ 与 $H^{2,1}$ 分别参数化 Kahler 和 complex-structure
+deformations。以下使用第十一章有效作用、附录 A 的复几何与附录 E 的 spinors，
+把这些对象转译为 type II/heterotic 四维场；Yau、Hodge 与 bundle stability 的大型
+结果会以精确外部输入出现，而非压缩成形式证明。
 
 ## 13.1 Calabi-Yau manifolds
 
@@ -228,9 +222,12 @@ $(p-q)$-forms；$\lambda_I>0$ 的 mode 具有 $m_I^2=\lambda_I$。
 warping、gauging、Stueckelberg coupling 与 quantum potential 可提升原 harmonic
 modes；因此定理只陈述 free product-background 的线性谱。
 
-## 本章小结
-
-Calabi-Yau compactification 的核心是 Ricci-flat Kahler geometry、$SU(3)$ holonomy 和 Hodge-theoretic moduli counting。它把十维 string backgrounds 降维为四维 supersymmetric effective theories，但不自动解决 vacuum selection 或 moduli stabilization。
+零模展开把几何计数落实为四维质量谱：内部 Laplacian 的 harmonic representatives
+给出线性化 massless fields，正本征值给出 Kaluza--Klein masses；quintic 的
+$h^{1,1}=1,h^{2,1}=101$ 则提供了可计算实例。Ricci-flat Kahler metric 与
+$SU(3)$ holonomy 保留 supersymmetry，却也留下连续 moduli。Flux、warping、gauging
+或量子效应可提升这些零模，所以 Calabi--Yau 紧化建立的是无 flux 基线，而不是
+vacuum selection 或 stabilization 的答案。
 
 ## 练习
 

@@ -54,7 +54,8 @@
 
 当前校验脚本要求：
 
-- 每个结构化章节和附录含“本章目标”“依赖前置知识”“本章小结”“练习”。
+- 正文 00--27 以自然导言和内容特定的收束段落组织，章末保留“练习”；
+  A--C 等结构化数学附录仍保留目标、前置知识和小结栏目。
 - 所有章末练习在 [HINTS.md](HINTS.md) 中有提示。
 - 所有章末练习在 [SOLUTIONS.md](SOLUTIONS.md) 中有答案。
 - 所有综合题在 [HINTS.md](HINTS.md) 中有提示。
@@ -71,8 +72,8 @@ markdown_files=49
 structured_chapters=31
 term_index_rows=30
 external_inputs=20
-chapter_and_appendix_exercises=68
-chapter_and_appendix_hints=68
+chapter_and_appendix_exercises=71
+chapter_and_appendix_hints=71
 comprehensive_exercises=18
 comprehensive_hints=18
 validation=ok

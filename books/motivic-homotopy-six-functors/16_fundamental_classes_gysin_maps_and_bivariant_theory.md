@@ -1,12 +1,15 @@
 # 第十六章：Fundamental classes、Gysin maps 与 bivariant theory
 
-## 本章目标
+六操作给出了 `f^!`，但还没有给出从 ordinary pullback 到 exceptional pullback 的
+比较。对 smoothable lci 态射，virtual tangent class 产生 Thom twist，fundamental
+class 则提供从该 twist 到 `f^!` 的规范态射。由伴随把它转置以后，便得到 Gysin
+映射；在 Cartesian 方块中比较这些类，则出现横截基变换与 excess Euler class。
 
-本章介绍 motivic fundamental classes 和 bivariant theory。六操作提供 `f^!`，purity 提供 Thom twist，而 fundamental class 把几何态射转化为 cohomology operations。它是 Gysin maps、excess intersection、Riemann-Roch 和 quadratic refinements 的共同机制。
-
-## 依赖前置知识
-
-需要六操作、purity、Thom twists、local complete intersection morphisms、cotangent complex、Borel-Moore homology、orientation、intersection theory 和 stable motivic homotopy。
+本章沿第六章的 purity 和第九章的 Borel--Moore 口径，先写清 fundamental class
+的类型，再由 deformation to the normal cone 解释 regular immersion 的来源。
+Smoothable lci、Tor-independence 和 excess bundle 的存在性分别承担不同责任，
+不能压缩成一个“lci 情形”。最后的 bivariant 乘法与 Riemann--Roch 只在所列系数和
+定向假设下使用。
 
 ## 16.1 Fundamental class
 
@@ -96,7 +99,7 @@ $$
 
 即 `E^{a,b}(S)`。`\square`
 
-**外部输入推论 16.9.** 在定理 16.2 的 smoothable-lci、系数与
+**外部输入定理 16.9.** 在定理 16.2 的 smoothable-lci、系数与
 Tor-independence/excess 假设下，motivic fundamental classes 赋予
 `E`-bivariant groups 以乘法、proper pushforward 和 Gysin pullback；
 Theorem 4.2.1 给出 Gysin functoriality 与 transverse base change，
@@ -210,23 +213,23 @@ Euler class `e(\xi)`。若 `g` 不是 smoothable lci、拉回后的 `k` 不是 r
 
 **定义 16.17.** 若 `\varphi:E\to F` 是 oriented motivic ring spectra 之间的 morphism，Riemann-Roch 问题询问 `\varphi` 与 Gysin maps 是否交换；通常需要 Todd class 修正。
 
-**高级外部输入 16.18（P1）.** 在另行指定的 oriented coefficient spectra、
+**高级外部输入 16.18.** 在另行指定的 oriented coefficient spectra、
 可定向 morphisms 与 Todd class 假设下，orientation 改变导致的 Gysin 比较
-满足 Riemann--Roch 型公式。该结果不参与第 16.2--16.16 节的 P0
-fundamental-class 主线；具体应用须另补采用版本的 locator。
+满足 Riemann--Roch 型公式。该结果不参与第 16.2--16.16 节的
+fundamental-class 证明链；具体应用须另行指定所采用版本。
 
 **命题 16.19.** 若 `\varphi` 严格保持 orientation，则 Todd 修正为单位。
 
 **证明.** Todd class 衡量两个 orientation 对 Thom classes 的差异。若 `\varphi` 把 `E` 的 Thom class 送到 `F` 的 Thom class，则差异类为单位。因此 Riemann-Roch 比较中不出现非平凡修正。`\square`
 
-## 16.7 本章小结
+## 16.7 从基本类到 excess 公式
 
-Fundamental classes 把六操作和几何交理论连接起来。P0 构造严格限于
+Fundamental classes 把六操作和几何交理论连接起来。本章采用的构造严格限于
 smoothable lci morphisms；无修正 base change 只在 Tor-independent
 方块成立。非 Tor-independent 方块只有在原 morphism 与拉回 morphism 都是
 smoothable lci 且 excess bundle 存在时，才能使用 Propositions 3.3.4、4.2.2
 的 excess Euler class；其余方块不在该公式范围内。Theorem 4.2.1 定位 Gysin
-maps，而不是 excess theorem 的替代标签。Riemann--Roch 比较保留为 P1。
+maps，而不是 excess theorem 的替代标签。Riemann--Roch 比较需要独立外部输入。
 
 ## 练习
 

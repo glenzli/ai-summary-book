@@ -1,12 +1,8 @@
 # 第四十五章：正合完成、关系、Allegory 与 Regular 逻辑
 
-## 本章目标
+有限极限能够解释等式与合取，却未必允许对内部等价关系取有效商。Exact completion 以普适方式补入这些商，把有限极限或 regular 范畴送到 exact 范畴。与此同时，relation category 用 $X\times Y$ 的子对象替代函数，关系复合依赖像分解，allegory 则抽象其序、对合和 modular law。Regular 逻辑中的存在量词正对应这种沿投影取像的演算。
 
-本章补足普通范畴论中常被略过但对逻辑、topos 和同调代数很关键的一层：从有限极限范畴到 regular/exact 范畴的完成，以及关系范畴和 allegory 的形式化。正合完成把“等价关系有商”作为泛性质加入；关系演算则把态射推广为子对象，从而连接 regular 逻辑和范畴结构。
-
-## 依赖前置知识
-
-需要有限极限、regular category、effective equivalence relation、子对象、image factorization、bicategory、poset-enriched category、逻辑中的存在量词。
+本章使用有限极限、regularity、effective equivalence relations、images 与 bicategories。Exact completion 的普适性质会明确函子应保持何种结构；关系复合的结合性也只在稳定像分解存在时成立。
 
 ## 45.1 内部关系与复合
 
@@ -92,13 +88,11 @@ $$
 
 **外部输入定理 45.9.** 每个小有限极限范畴有 regular completion，可通过关系、覆盖和有限极限语法构造。
 
-**命题 45.10.** 若 $\mathcal C$ 已 regular，则其 regular completion 等价于 $\mathcal C$。
-
-**证明.** 令 $i=\operatorname{id}_{\mathcal C}$。对任意 regular $\mathcal R$，regular functors $\mathcal C\to\mathcal R$ 是保持有限极限且保持 regular epis 的函子。若 completion 的泛性质要求仅从 lex functors 出发，则已 regular 情形中标准反射把 lex functor 的 regular 保持性作为结构约束。对 $\mathcal C$ 作为 regular 范畴自身，恒等函子满足同一表示性质，因此由表示对象唯一性得到等价。$\square$
+**注 45.10（regular 不等于 regular-complete）.** $\mathcal C$ 已经 regular 并不自动推出 $\mathcal C_{\mathrm{reg}}\simeq\mathcal C$。定义 45.8 的右端允许所有 finite-limit-preserving functors $\mathcal C\to\mathcal R$，而 regular functor 还必须保持 regular epimorphisms；前一个条件一般不蕴含后一个条件。典范函子 $i:\mathcal C\to\mathcal C_{\mathrm{reg}}$ 为等价，当且仅当 $\mathcal C$ 自身满足定义 45.8 的自由泛性质。
 
 ## 45.4 Exact category 与正合完成
 
-**定义 45.11.** Regular category $\mathcal E$ 称为 exact category，若每个内部等价关系都是某个态射的 kernel pair。
+**定义 45.11.** Regular category $\mathcal E$ 称为 Barr-exact category，若每个内部等价关系都是某个态射的 kernel pair。这里的“exact”不同于加性范畴中的 Quillen exact structure。
 
 **定义 45.12.** Regular category $\mathcal C$ 的 exact completion 是 exact category $\mathcal C_{\mathrm{ex}}$ 与 regular functor
 
@@ -134,13 +128,21 @@ $$
 
 ## 45.6 Allegory
 
-**定义 45.17.** Allegory 是一个 locally posetal 2-category，带反变恒等于对象的 involution
+**定义 45.17.** Allegory 是一个 locally posetal 2-category，其每个 Hom-poset 有二元交，带反变且恒等于对象的 involution
 
 $$
 (-)^\circ:\mathcal A^{op}\to\mathcal A
 $$
 
-和满足关系演算公理的交结构。其对象可理解为类型，1-态射为关系。
+并满足 $(S\circ R)^\circ=R^\circ\circ S^\circ$ 以及 modular law
+
+$$
+(S\circ R)\wedge T
+\le
+S\circ\bigl(R\wedge S^\circ\circ T\bigr).
+$$
+
+其对象可理解为类型，1-态射为关系。只要求“有反向和交”还不足以定义 allegory；modular law 编码关系复合与交的关键相容性。
 
 **外部输入定理 45.18.** Regular category 的关系范畴 $\operatorname{Rel}(\mathcal C)$ 形成 allegory。Exact categories 可由满足额外 tabulation/effectivity 条件的 allegories 表征。
 
@@ -166,7 +168,7 @@ $$
 
 **证明.** 定义 45.2 中复合先在 $X\times Y\times Z$ 上取 $\pi_{XY}^*R$ 与 $\pi_{YZ}^*S$ 的交，这解释合取 $R(x,y)\wedge S(y,z)$。再沿 $\pi_{XZ}$ 取 image，即 regular category 中的存在量词 $\exists_y$。因此所得子对象正是该公式的解释。$\square$
 
-## 45.8 本章小结
+## 45.8 有效商与关系演算
 
 关系范畴把 regular 逻辑的存在-合取片段几何化；regular completion 自由加入 image 和 regular epi 结构；exact completion 自由加入等价关系的有效商；allegory 把关系演算抽象为 poset-enriched 2-范畴。它们共同说明：正合性不是附加技术条件，而是逻辑商、关系和存在量词稳定性的范畴表达。
 

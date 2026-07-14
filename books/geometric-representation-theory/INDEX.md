@@ -1,6 +1,6 @@
 # 术语索引
 
-本索引按概念簇组织，指向首次定义、核心使用和技术附录。页码级索引留到出版排版阶段。
+本索引按概念簇组织，指向首次定义、核心使用和技术附录；条目使用稳定的章节号与小节号。
 
 ## 代数群、根数据和 flag varieties
 
@@ -34,6 +34,7 @@
 | Verdier duality | [第三章](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 A](A_foundations_algebraic_geometry_and_stacks.md) |
 | perverse sheaf | [第三章 3.3](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | intersection complex | [第三章 3.4](03_equivariant_sheaves_six_functors_and_perversity.md), [第四章](04_schubert_geometry_hecke_categories_and_kazhdan_lusztig.md) |
+| parity complex / $p$-canonical basis | [第二十三章 23.3](23_research_frontier_2026_and_open_problem_map.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | decomposition theorem / semismall map | [第三章 3.5](03_equivariant_sheaves_six_functors_and_perversity.md), [附录 C](C_six_functors_perverse_and_ic_technicalities.md) |
 | D-module | [第七章](07_d_modules_riemann_hilbert_and_regular_holonomic.md), [附录 E](E_d_module_conventions_and_twists.md) |
 | Riemann-Hilbert correspondence | [第七章 7.4](07_d_modules_riemann_hilbert_and_regular_holonomic.md), [附录 D](D_source_theorem_index.md) |
@@ -65,6 +66,7 @@
 | Iwahori-Hecke category | [第十四章 14.2](14_affine_flag_iwahori_hecke_and_affine_kazhdan_lusztig.md) |
 | affine Kac-Moody algebra | [第十五章](15_kac_moody_localization_chiral_and_factorization_categories.md) |
 | geometric Langlands | [第十六章](16_geometric_langlands_local_global_interface.md), [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| local Hecke action / global gluing | [第十六章 16.2--16.4](16_geometric_langlands_local_global_interface.md), [第二十三章 23.1](23_research_frontier_2026_and_open_problem_map.md) |
 
 ## 范畴化、辛几何和量子化
 
@@ -73,24 +75,27 @@
 | Soergel bimodule | [第十一章](11_soergel_bimodules_hodge_theory_and_hecke_categorification.md), [附录 H](H_kazhdan_lusztig_and_soergel_computations.md) |
 | quiver variety | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
 | KLR algebra | [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
+| nilHecke polynomial representation / Morita model | [第十八章 18.2](18_klr_rouquier_categorification_and_canonical_bases.md) |
 | conical symplectic resolution | [第十九章](19_symplectic_resolutions_category_o_and_symplectic_duality.md) |
 | symplectic duality | [第十九章 19.3](19_symplectic_resolutions_category_o_and_symplectic_duality.md), [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
 | Coulomb branch | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
+| Poisson spectrum / symplectic-singularity test | [第二十章 20.10](20_coulomb_branches_bfn_construction_and_quantization.md), [第二十三章 23.2](23_research_frontier_2026_and_open_problem_map.md) |
 | BFN construction | [第二十章 20.1](20_coulomb_branches_bfn_construction_and_quantization.md), [附录 D](D_source_theorem_index.md) |
 | Hall algebra / CoHA | [第二十一章](21_hall_coha_and_donaldson_thomas_interfaces.md) |
 | quantum group | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
 | crystal | [第二十二章 22.2](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
 | canonical basis | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md), [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
+| Grothendieck group / categorical equivalence | [第二十三章 23.4](23_research_frontier_2026_and_open_problem_map.md) |
+| derived stack / classical-point boundary | [第十二章 12.1](12_affine_grassmannian_loop_groups_and_convolution.md), [第二十三章 23.5](23_research_frontier_2026_and_open_problem_map.md) |
 
-## 审查、引用和答案
+## 参考文件和答案
 
 | 术语 | 入口 |
 | --- | --- |
 | theorem ledger | [THEOREM_LEDGER.md](THEOREM_LEDGER.md) |
 | theorem locator | [D_source_theorem_index.md](D_source_theorem_index.md), [P0 locator](P0_REFERENCE_LOCATORS_BATCH_1.md) |
-| 内容收口 | [CONTENT_CLOSURE_AUDIT.md](CONTENT_CLOSURE_AUDIT.md) |
-| 逐章完备 | [CHAPTER_COMPLETENESS_AUDIT.md](CHAPTER_COMPLETENESS_AUDIT.md) |
-| 出版排版样式 | [PUBLISHING_STYLE.md](PUBLISHING_STYLE.md) |
+| 数学复核与维护记录 | [MATH_REVIEW.md](MATH_REVIEW.md), [CHAPTER_COMPLETENESS_AUDIT.md](CHAPTER_COMPLETENESS_AUDIT.md), [CONTENT_CLOSURE_AUDIT.md](CONTENT_CLOSURE_AUDIT.md) |
+| 排版样式 | [PUBLISHING_STYLE.md](PUBLISHING_STYLE.md) |
 | 术语压缩 | [TERMINOLOGY.md](TERMINOLOGY.md) |
 | 符号索引 | [SYMBOL_INDEX.md](SYMBOL_INDEX.md), [NOTATION.md](NOTATION.md) |
 | 例子与计算索引 | [EXAMPLE_INDEX.md](EXAMPLE_INDEX.md), [附录 G](G_low_rank_examples_sl2_sl3_springer_and_schubert.md), [附录 H](H_kazhdan_lusztig_and_soergel_computations.md) |

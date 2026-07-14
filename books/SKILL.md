@@ -9,6 +9,10 @@ description: Shared rigor contract for revising mathematical, mathematical-physi
 `SKILL.md` 负责学科特有约定；发生冲突时，采用不夸大定理状态、假设更
 完整、类型信息更明确的一方。
 
+教材正文还必须遵循 [人类可读教材叙事标准](TEXTBOOK_NARRATIVE_STANDARD.md)。
+OET 标准约束命题是否严谨，叙事标准约束读者如何进入并理解这些命题；
+二者不得互相替代。
+
 ## 强制基线
 
 完整标准见 [OET_RIGOR_STANDARD.md](OET_RIGOR_STANDARD.md)。每轮正文修订

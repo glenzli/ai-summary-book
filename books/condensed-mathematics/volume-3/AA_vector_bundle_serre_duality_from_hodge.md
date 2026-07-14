@@ -4,7 +4,8 @@
 
 一般 Serre duality 的深层部分是配对完美性。附录 J 已给出链级配对与导出范畴形式，附录 T 证明了 $\mathbb P^n$ 线丛模型。本附录补充向量丛情形的经典 Hodge 理论证明结构。
 
-设 $X$ 是紧复流形，$\dim_{\mathbb C}X=n$，$E$ 是 Hermitian 全纯向量丛。目标是得到完美配对
+设 $X$ 是配备 Hermitian 度量的紧复流形，$\dim_{\mathbb C}X=n$，$E$ 是配备
+Hermitian 度量的全纯向量丛。目标是得到完美配对
 
 $$
 H^q(X,\mathcal O(E))
@@ -79,7 +80,8 @@ $$
 满足：
 
 1. $\star_E$ 把 $\bar\partial$-harmonic $E$-值 $(0,q)$-形式同构到 $E^\vee\otimes\omega_X$-值 $(0,n-q)$-harmonic 形式；
-2. 对 harmonic $\alpha$，
+2. 在固定体积形式、复共轭和楔积次序后，可给 $\star_E$ 乘以只依赖
+   $(n,q)$ 的单位复数作归一化，使对 harmonic $\alpha$ 有
    $$
    \int_X\langle\alpha,\star_E\alpha\rangle
    =
@@ -135,7 +137,8 @@ $$
 在 condensed/analytic 版本中，AA.3 的每个对象还带有拓扑或 analytic 结构。要得到范畴内的 Serre duality，必须证明：
 
 1. harmonic projection 是 analytic/liquid 范畴中的 morphism；
-2. finite-dimensional harmonic spaces 对应有限维离散 condensed vector spaces；
+2. finite-dimensional harmonic spaces 取通常欧氏拓扑后，对应有限自由
+   $\underline{\mathbb C}$-模；它们一般不是离散凝聚向量空间；
 3. integration trace 与 $f_!\dashv f^!$ 的 counit 相同；
 4. Hodge star 与 analytic realization 相容。
 

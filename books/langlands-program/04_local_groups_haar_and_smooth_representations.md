@@ -1,14 +1,8 @@
 # 第四章：局部紧群、Haar 测度与光滑表示
 
-## 本章目标
+从 `GL(1)` 走向非交换群之后，连续特征不再足够，局部对象必须由 $G(F)$ 的不可约表示取代。非 Archimedean 群既带拓扑又高度不连通，光滑性把连续作用转化为开紧子群不变量，Hecke 代数则把这些不变量上的群作用编码为卷积算子。球表示与 Satake 同构将进一步把 Hecke 本征值翻译为对偶群中的半单共轭类，这正是局部参数进入自守侧的第一扇门。
 
-本章建立局部 Langlands 所需的表示论语言：局部紧群、Haar 测度、卷积代数、光滑表示、可容许表示、Hecke 代数和球表示。后续 `GL(n)` 和一般还原群的自守表示都以这些概念为局部基础。
-
-## 依赖前置知识
-
-需要局部紧拓扑群、向量空间和基本表示论。非 Archimedean 局部域上的代数群 $G(F)$ 是全不连通局部紧群；Archimedean 情形需要 Lie 群表示论，本章只给出接口。附录 Z 记录 Harish-Chandra character、Plancherel 和 Bernstein-Paley-Wiener 接口；附录 AA 记录 Bruhat-Tits、parahoric 和 hyperspecial 的结构来源。
-
-收口归一化回指：本章卷积、Hecke 幂等元、开紧子群体积和归一化抛物诱导的 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节。
+本章只假定局部紧群、线性表示和 Haar 测度的基础知识。Archimedean 表示论通过 Harish--Chandra 模接口处理；相关 character 与 Plancherel 理论见附录 Z，Bruhat--Tits、parahoric 和 hyperspecial 结构见附录 AA。卷积、开紧子群体积和归一化抛物诱导采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节的约定。
 
 ## 4.1 局部紧群和 Haar 测度
 
@@ -207,7 +201,7 @@ $\operatorname{rec}_F(\varpi)=\operatorname{Fr}_F$ 时的共轭类。三个归�
 
 本书在进入 Archimedean 局部 Langlands 时会单独声明所需版本。
 
-## 4.7 本章小结
+## 4.7 从 Hecke 代数到 Satake 参数
 
 本章建立了非 Archimedean 局部表示论的最低语言。光滑表示把拓扑群作用转化为开紧不变量的代数结构；Hecke 代数把双陪集卷积变成算子；Satake 同构把非分歧表示的 Hecke 本征值翻译为对偶群中的半单共轭类。这正是局部 Langlands 参数的自守侧入口。
 

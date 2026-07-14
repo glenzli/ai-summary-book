@@ -1,22 +1,22 @@
 # 凝聚数学讲义：第三卷
 
 作者：Dr. Stochastic Parrot  
-状态：输入定理型严格教材草稿，基本完本草稿
+状态：输入定理型严格教材稿
 副题：复几何与相干对偶
 
 本卷接续 [第一卷](../volume-1/) 与 [第二卷](../volume-2/)。第一卷建立凝聚基础，第二卷建立 solid、analytic、liquid 和 $f_!$ 的范畴语言；第三卷把这些工具放入复几何。
 
 ## 建议阅读顺序
 
-1. [序章：第三卷的目标](00_preface_and_goals.md)
+1. [序章：从函数空间到复几何定理](00_preface_and_goals.md)
 2. [第一章：复解析空间的凝聚语言](01_complex_analytic_spaces_condensed_language.md)
-3. [第二章：相干层与导出范畴](02_coherent_sheaves_and_derived_categories.md)
-4. [第三章：Dolbeault 复形与 liquid 模](03_dolbeault_complexes_and_liquid_modules.md)
+3. [第二章：相干层、perfect 复形与点支撑例子](02_coherent_sheaves_and_derived_categories.md)
+4. [第三章：Dolbeault resolution 与 liquid 复形](03_dolbeault_complexes_and_liquid_modules.md)
 5. [第四章：相干上同调有限性](04_finiteness_of_coherent_cohomology.md)
 6. [第五章：Serre 对偶](05_serre_duality.md)
 7. [第六章：GAGA](06_gaga.md)
 8. [第七章：Grothendieck-Hirzebruch-Riemann-Roch](07_hirzebruch_riemann_roch.md)
-9. [第八章：六函子形式与后续方向](08_six_functors_and_outlook.md)
+9. [第八章：六函子关系与开放问题](08_six_functors_and_outlook.md)
 10. [附录 A：复几何定理的证明路线](A_proof_roadmap_for_complex_geometry.md)
 11. [附录 B：经典语言与凝聚语言对照](B_classical_to_condensed_dictionary.md)
 12. [附录 C：Stein、Cech 与相干分解](C_stein_cech_and_coherent_resolutions.md)
@@ -62,9 +62,20 @@
 52. [附录 AQ：复几何主定理包与凝聚闭包](AQ_main_theorem_package_and_condensed_closure.md)
 53. [附录 AR：Clausen-Scholze 复几何核心定理图谱](AR_clausen_scholze_complex_geometry_core_theorem_atlas.md)
 
-## 当前范围
+## 正文与附录分工
 
-本卷给出复几何应用的输入定理型严格教材草稿：它解释 compact complex manifolds、coherent analytic sheaves、Dolbeault 复形、Serre duality、GAGA 和 Riemann-Roch 在 condensed/analytic 语言中的位置。深层定理以 Clausen-Scholze 输入定理标注；本卷给出证明策略、范畴翻译、术语对照、局部计算模型和基础例子。附录 F-G 将经典输入定理和依赖链拆细，附录 H 给出 $\mathbb P^1$ 上线丛上同调的完整 Čech 计算，附录 I 给出 Čech-to-derived 谱序列和超上同调计算的同调代数证明，附录 J-K 补 Serre 对偶、GAGA 和 Riemann-Roch 在接受输入定理后的形式证明层，附录 L 补 Fredholm-Hodge 有限性的形式证明层，附录 M 补有限分解和谱序列传播有限性的严格边界，附录 N 补 fine sheaf、acyclic resolution 和 Dolbeault cohomology 计算的形式证明，附录 O 补从向量丛 Serre 对偶到相干层 Ext 形式的条件性同调代数推导，附录 P 补 Chern character、Todd class 和 Riemann-Roch 的形式代数，附录 Q 补 GAGA properness 反例和导出比较细节，附录 R 补 Dolbeault 局部正合的解析骨架，附录 S 补 $\mathbb P^n$ 上 $\mathcal O(d)$ 的 Čech 单项式计算，附录 T-U 补射影空间线丛的 Serre 对偶和 HRR 公式证明，附录 V-Y 补 Stein/Cartan 工具、正则局部环有限分解、有限性传播和 projective GAGA 证明结构，附录 Z-AA 补椭圆复形 Hodge 定理接口和向量丛 Serre 对偶的 Hodge 证明，附录 AB-AE 补 Cartan A/B、Grauert、一般 Serre duality 和 GRR 的精确深层输入模块，附录 AF-AK 补 Weierstrass-Oka、Runge-Cousin、Hörmander L2、graded GAGA、Grothendieck duality 构造义务和 deformation-to-normal-cone GRR 证明模块，附录 AL-AP 补 Weierstrass 除法估计、Hörmander 基本估计到闭值域、Grauert Banach 复形、形式函数/GAGA 代数化和 GRR 局部化推前相容，附录 AQ 把有限性、Serre duality、GAGA、HRR/GRR 和 condensed/analytic 建模合成主定理包，附录 AR 把 Clausen-Scholze 复几何核心定理整理为图谱，避免把复几何深定理伪装成书内已证结论。
+数字章承担连续理解所需的定义、形式证明和 worked examples：第一至三章给出复解析
+局部模型、Fréchet/凝聚函数族、点层 resolution 与 fine Dolbeault 计算；第四至七章
+证明有限性传播、链级 Serre 配对、derived GAGA 和 $K$-理论/HRR 形式后果；第八章以
+六函子关系和开放问题收束。Grauert、一般 Serre duality、GAGA、HRR/GRR 及
+Clausen--Scholze analytic 建模仍作为精确外部输入，不在正文中压缩成伪证明。
+
+附录保留技术展开与参考功能。正文中的 $\mathbb P^1$、Čech、Dolbeault、有限性、
+对偶、GAGA 和特征类计算分别回指附录 H--P；附录 Q--AA 记录 properness、射影空间、
+Stein/Cartan、局部 resolution、椭圆 Hodge 与射影 GAGA 的完整版本；附录 AB--AP
+保存深层经典输入的证明模块与构造义务；附录 AQ--AR 集中登记主定理包和
+Clausen--Scholze 定理图谱。读者可以先沿数字章掌握论证，再在相应附录核对更细的
+符号、边界和来源。
 
 工具卷见 [凝聚数学讲义：第四卷](../volume-4/)。
 

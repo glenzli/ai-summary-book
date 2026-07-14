@@ -1,12 +1,6 @@
 # 第一章：稳定谱、Bousfield 类与局部化
 
-## 本章目标
-
-本章建立 chromatic theory 的范畴论底座：谱、有限谱、同调理论、Bousfield acyclic、local object 和 localization。后续所有 $K(n)$、$E(n)$、$T(n)$ 和 chromatic tower 都是本章结构的特例。
-
-## 依赖前置知识
-
-需要稳定 infinity-范畴的 fiber/cofiber 序列、mapping spectrum、张量积和 exact functor。若只熟悉三角范畴，可把 fiber/cofiber 序列读作 distinguished triangles，但要注意本书证明使用稳定 infinity-范畴中的泛性质。
+一种同调理论看不见的谱，是否可以在不破坏其余可见信息的前提下统一压成零？Bousfield 局部化把这个问题从单个计算提升为稳定范畴中的反射：acyclic 对象规定要舍弃什么，local 对象刻画留下来的映射信息，Bousfield 类则比较不同检测理论的分辨能力。后续的 $K(n)$、$E(n)$、$T(n)$ 以及整座 chromatic tower 都只是这套结构在特定同调理论上的实现。本章使用 fiber/cofiber、mapping spectrum、张量积和 exact functor 的稳定 infinity-范畴泛性质；只熟悉三角范畴的读者可以把相应序列读作 distinguished triangles，但证明中的伴随与映射空间仍按 infinity-范畴理解。
 
 ## 1.1 谱与有限谱
 
@@ -230,7 +224,7 @@ $$
 
 **例 1.24.** 对 finite localization $L_n^f$，acyclics 由 type $n+1$ 有限谱生成。判断 $Y$ 为 $L_n^f$-local 时，不能只检查 $F(F_{n+1},Y)$ 对某一个 type $n+1$ 谱为零，除非已经引用 thick subcategory theorem 和 telescope 选择无关等外部输入。
 
-## 本章小结
+## 1.8 从不可见对象到反射子范畴
 
 Bousfield localization 把“用某个同调理论看不见的谱”系统地变成 acyclic 子类，并通过 local object 给出反射。chromatic homotopy theory 的色层来自把 $E$ 取为 $K(n)$、$E(n)$、$T(n)$ 及其组合。基础范畴事实可在本书内部证明，但 chromatic 特定等式和 finite localization 需要外部定理。
 

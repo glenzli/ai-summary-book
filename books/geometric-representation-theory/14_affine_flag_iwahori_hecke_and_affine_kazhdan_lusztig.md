@@ -1,12 +1,6 @@
 # 第十四章：Affine flag varieties、Iwahori-Hecke categories 与 affine Kazhdan-Lusztig theory
 
-## 本章目标
-
-本章从 affine Grassmannian 过渡到 affine flag variety，引入 Iwahori subgroup、affine Weyl group、Iwahori-Hecke category 和 affine Kazhdan-Lusztig theory。
-
-## 依赖前置知识
-
-需要第十二章的 loop group 和 affine Grassmannian，第四章的 Hecke category。
+Affine Grassmannian 忘掉了 formal disk 中纤维的完整旗标，因此 $L^+G$-orbits 只由 dominant coweights 标号。若在 $z=0$ 保留一个 Borel reduction，稳定群缩小为 Iwahori subgroup $I$，同一 coweight 方向便细化为 extended affine Weyl group 中的许多 alcoves。所得 affine flag variety 同时含有有限旗簇的局部 fiber 与 loop group 的无限 Schubert 几何。沿 $I$-torsor 作卷积会产生 Iwahori--Hecke category；长度可加时标准层直接相乘，长度折返时 lower strata 出现，形成 affine Hecke 关系。Rank-one 的 infinite dihedral group 提供可逐层追踪的最小模型。
 
 ## 14.1 Iwahori subgroup 和 affine flag variety
 
@@ -74,6 +68,8 @@ $$
 L^+G\backslash LG/L^+G
 $$
 中的像。该 double coset 由唯一 dominant coweight 给出。严格的唯一性是 Cartan decomposition 的一部分。$\square$
+
+投影 $\operatorname{Fl}_G\to\operatorname{Gr}_G$ 因而把 affine Weyl combinatorics 压缩成 Cartan 分层；反过来，其 fiber $G/B$ 解释了为什么有限 Hecke category 会在 affine 版本的局部结构中重现。
 
 ## 14.2 Iwahori-Hecke category
 
@@ -175,7 +171,7 @@ $$
 
 **边界说明 14.8.** affine KL theory 在 modular representation theory、quantum groups at roots of unity 和 affine Lie algebra category $\mathcal O$ 中有多个版本。每个版本的 Coxeter group、alcove convention、参数和 grading 必须单独登记。
 
-**检查表 14.9.** 使用 affine Hecke category 结果时必须声明：
+**版本条件 14.9.** 使用 affine Hecke category 结果时必须声明：
 
 1. 使用 $W_{\mathrm{aff}}$ 还是 $\widetilde W$；
 2. 是否允许 monodromic、mixed 或 parity 版本；
@@ -184,9 +180,7 @@ $$
 5. IC sheaf 类对应标准 KL basis 还是反标准归一化；
 6. 是否处在正特征或 modular 系数下。
 
-## 本章小结
-
-本章定义 affine flag variety、finite-support Iwahori-Hecke category、标准对象和 affine simple reflection 的局部模型。卷积现在通过 torsor descent 而非 contracted product 上不存在的 Cartesian-product map 定义，并在 finite Schubert support 上使用 properness；结合性包含 pentagon coherence。Ind-projectivity、orbit decomposition、finite-support convolution properness、Cartan decomposition 和 affine KL basis theorem 是外部输入。
+Affine flag variety 在每个 affine simple reflection 方向上含一条 $\mathbb P^1$，而全部 Iwahori orbits 由 affine Weyl group 拼接。长度可加给出标准对象的无 lower-term 卷积，长度不加则迫使边界 strata 进入；mixed 版本的 IC 层由此恢复 affine KL 基。下一章把 loop group 的无穷维几何与其 Lie algebra 中心扩张相连，level 与 residue cocycle 将取代有限维 localization 的中心 character 参数。
 
 ## 练习
 

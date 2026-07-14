@@ -1,14 +1,8 @@
 # 第十四章：`GL(n)` 的 Langlands 对应与已知定理
 
-## 本章目标
+在一般还原群上，packet、内形式和 endoscopy 使对应十分复杂；`GL(n)` 则提供最清晰的试验场。它的局部 packet 是单元素，局部 Langlands 已成定理，强重数一让几乎所有局部分量决定全局表示，而 converse theorem 又能从 L 函数的解析性质重建自守性。函数域上的全局对应已经由 Lafforgue 完成，数域上的 Galois--自守对应则只在 regular algebraic 等重要范围内成立。本章把这些层次并列呈现，明确区分已知定理与仍未解决的全局问题。
 
-本章把前面的一般语言专门用于 $G=\operatorname{GL}_n$。这是 Langlands 纲领中最完整、最可计算的一族群：局部 L-packet 退化为单元素，局部 Langlands 对应是定理；标准 L 函数、Rankin-Selberg L 函数和强重数一都有成熟理论；在函数域上，`GL(n)` 的全局 Langlands 对应由 Lafforgue 证明。数域情形的全局 Galois-自守对应仍只在若干重要情形中已知，本章会把定理、猜想和接口分开陈述。
-
-## 依赖前置知识
-
-需要第五章的 Weil-Deligne 表示，第十二章的局部 Langlands 猜想，第十三章的全局自守表示和 L 函数。需要知道 `GL(n)` 的 parabolic subgroups、Levi subgroups、归一化抛物诱导和标准表示。本章把 Bernstein-Zelevinsky 分类、局部 Langlands for `GL(n)`、Godement-Jacquet、Rankin-Selberg、强重数一、converse theorem、Lafforgue 函数域全局定理和数域中 regular algebraic automorphic representations 的 Galois 表示构造作为外部输入。附录 AE 给出 `GL(2)` 的 principal series、Steinberg 和 supercuspidal 低维模型，附录 Q 给出一般 `GL(n)` 的 Bernstein-Zelevinsky 接口。
-
-收口归一化回指：本章集中比较 `GL(n)` LLC、Rankin-Selberg 因子、函数域 Galois 表示和数域 regular algebraic 表示；Frobenius、Satake、Tate twist 和 L 函数变量 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6、7、8 节。
+Bernstein--Zelevinsky 分类、Godement--Jacquet、Rankin--Selberg、converse theorem 与 Lafforgue 定理均作为有来源的外部输入；低维例子见附录 AE，一般 `GL(n)` 分类接口见附录 Q。Frobenius、Satake、Tate twist 和 L 函数变量统一按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6、7、8 节解释。
 
 ## 14.1 `GL(n)` 的特殊性
 
@@ -265,7 +259,7 @@ $\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C$ 比较系数）。换回 unitar
 
 **注 14.27.** 猜想 14.26 不能直接写成 $G_K$ 的复表示与自守表示的双射。数域中应使用 $\ell$-adic Galois 表示、motivic Galois group 或 conjectural Langlands group 的版本；Archimedean 参数、Hodge-Tate weights、纯性和代数性条件都必须纳入。
 
-**收口精修 14.A（已知定理与开放边界）.** 本章后续引用 `GL(n)` 结果时按下表区分：
+**`GL(n)` 结果的状态分层 14.A.** 引用 `GL(n)` 对应时，必须按下表区分定理与开放问题：
 
 | 层次 | 状态 | 本书使用方式 |
 |---|---|---|
@@ -274,7 +268,7 @@ $\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C$ 比较系数）。换回 unitar
 | 数域 regular algebraic、极化等情形 | 条件性或带假设的构造定理族 | 作为 Galois 表示构造和相容性输入 |
 | 一般数域全局 `GL(n)` | 猜想 | 不在证明链中当作已证定理使用 |
 
-## 14.10 本章小结
+## 14.10 `GL(n)` 中已知与未知的边界
 
 `GL(n)` 是 Langlands 纲领中结构最清晰的主线。局部上，`GL(n)` 的 L-packet 是单点，局部 Langlands 是不可约可容许表示与 $n$ 维 Weil-Deligne 表示之间的双射。全局自守侧，cuspidal automorphic representations of `GL(n)` 有标准 L 函数、Rankin-Selberg L 函数、强重数一和 converse theorem。函数域上，Lafforgue 定理给出 `GL(n)` 的全局 Galois-自守对应。数域上，完整全局对应仍是猜想，但 regular algebraic 和极化条件下已有深刻的 Galois 表示构造。
 

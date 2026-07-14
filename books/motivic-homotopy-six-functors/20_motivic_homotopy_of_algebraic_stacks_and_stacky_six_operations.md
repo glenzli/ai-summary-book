@@ -1,125 +1,239 @@
 # 第二十章：Algebraic stacks 上的 motivic homotopy 与六操作
 
-## 本章目标
+模空间通常不是概形：对象可以有自同构，局部坐标来自 smooth atlas，稳定子群还会
+作用在切向与法向方向上。因此，把 `S\mapsto\mathbf{SH}(S)` 延拓到 algebraic
+stacks，不能只把“概形”替换成“栈”。定义域必须对局部商表示和 Nisnevich 粘合足够
+稳定；六操作中每一个伴随的适用态射也必须单独说明。
 
-本章讨论 motivic homotopy theory 从 schemes 扩展到 algebraic stacks 的问题。Stacks 允许 quotient phenomena、moduli spaces 和 stabilizers，但也破坏了许多 scheme-level 证明中的有限性和覆盖性质。因此 stacky motivic homotopy 必须以外部输入定理和明确栈类为基础。
+本章采用 Khan--Ravi 的 scalloped derived stacks 口径。第十九章的 quotient stacks
+构成它的局部模型，而 scallop decomposition 提供从这些模型到一般栈的有限归纳。
+这一 genuine 理论还要与任意栈上都能形式定义的 lisse extension 区分；二者之间虽有
+自然函子，却通常不是等价。
 
-## 依赖前置知识
+## 20.1 Scallop 分解
 
-需要 algebraic stacks、smooth/lisse topology、quotient stacks、six operations、descent、stabilizers、Artin stacks、Deligne-Mumford stacks 和 motivic spectra。
+下面的“nice embeddable group”沿用 Khan--Ravi 的专门定义；它不是“任意线性约化
+群”的同义词。该限制保证局部商具有所需的 resolution property，并使 Thom twist
+能够由向量丛的 `K`-理论类控制。
 
-## 20.1 栈上的 motivic homotopy
-
-**定义 20.1.** 一个 stacky motivic homotopy theory 是把某类 algebraic stacks `\mathcal X` 送到 stable presentable category `\mathbf{SH}(\mathcal X)` 的构造，并带有 smooth descent、`\mathbb A^1`-invariance、stabilization 和六操作。
-
-**注 20.2.** “某类 algebraic stacks”是定义的一部分。不同文献使用 scalloped stacks、local quotient stacks、quasi-separated algebraic spaces 或 lisse-extended constructions；这些类别不能混写。
-
-**外部输入定理 20.3.** Stable motivic homotopy category 可扩展到 scalloped algebraic stacks，并支持 Grothendieck 六操作；所得对象表示 stacks 上的 generalized cohomology theories，如 K-theory、motivic cohomology 和 algebraic cobordism。
-
-**依赖源.** Khan-Ravi, "Generalized cohomology theories for algebraic stacks"。
-
-**外部输入定理 20.4.** 还有其他 algebraic stacks 扩展路线，例如利用 enhanced operation map 建立大类 stacks 上的六操作形式主义。
-
-**依赖源.** Chowdhury, "Motivic Homotopy Theory of Algebraic Stacks"。
-
-## 20.2 Lisse-extended 与 genuine stacky theories
-
-**定义 20.5.** Lisse-extended motivic homotopy type 是通过 smooth maps from schemes to a stack 的 diagram 对 scheme-level motivic categories 做 descent/limit/colimit 得到的扩展。
-
-**命题 20.6.** Lisse-extended theory 与 genuine stacky theory 的比较需要额外定理。
-
-**证明.** Lisse extension 是从 smooth atlas 和 lisse site 重建 stack 上对象；genuine stacky theory 可能直接使用 stack 的几何态射、stabilizers 和六操作。二者构造方式不同，functors、compact generation 和 cohomology comparison 不会由定义自动一致。因此需要外部比较定理。`\square`
-
-**外部输入定理 20.7.** 在 Khan-Ravi 的框架中，lisse-extended motivic homotopy type 可恢复若干已有的 stack motives 构造，并在 quotient stacks 上与 equivariant theories 相连。
-
-## 20.3 Stacky 六操作
-
-**定义 20.8.** Stacky 六操作要求对 stacks 间态射 `f:\mathcal X\to\mathcal Y` 给出
+**定义 20.1.** 设 `\mathcal X` 是 qcqs derived algebraic stack。若存在仿射概形
+`S`、`S` 上的 nice embeddable group scheme `G`，以及 quasi-affine 态射
 
 $$
-f^*, f_*, f_!, f^!, \otimes, \underline{\operatorname{Hom}}
+\mathcal X\longrightarrow BG,
 $$
 
-并满足 base change、projection formula、localization、purity 和 descent。
+则称 `\mathcal X` 为 quasi-fundamental。等价地，`\mathcal X` 可写成
+`[X/G]`，其中 `X` 是 `S` 上带 `G`-作用的 quasi-affine derived scheme。
 
-**命题 20.9.** 若 stacky 六操作与 scheme-level 六操作相容，则任意 scheme `X` 视为 stack 时恢复前文六操作。
-
-**证明.** Schemes 全嵌入 algebraic stacks。相容性假设说明对 schemes 间态射，stacky functors 限制为 scheme-level functors。因六操作由这些 functors 和相干同构组成，限制后得到前文的 `\mathbf{SH}(X)` 六操作。`\square`
-
-## 20.4 Fixed point localization
-
-**外部输入定理 20.10.** 对适当 torus actions，stacky motivic homotopy theory 中存在 fixed point localization formula。
-
-**依赖源.** Khan-Ravi 摘要中包含 torus actions 的 fixed point localization formula。
-
-**注 20.11.** Fixed point formula 依赖 equivariant/stacky purity、normal bundle weights 和 localization；不能从普通 open-closed localization 直接推出。
-
-## 20.5 Atlas descent
-
-**定义 20.12.** 设 `p:U\to\mathcal X` 是 algebraic stack 的 smooth atlas。其 Cech nerve 为 simplicial algebraic spaces 或 schemes
+**定义 20.2.** 一个可表 Nisnevich 方块是 Cartesian 方块
 
 $$
-U_\bullet,\qquad U_n=U\times_{\mathcal X}\cdots\times_{\mathcal X}U.
+\begin{array}{ccc}
+\mathcal W&\longrightarrow&\mathcal V\\
+\downarrow&&\downarrow p\\
+\mathcal U&\xrightarrow{j}&\mathcal X
+\end{array}
 $$
 
-**命题 20.13.** 若 stacky motivic theory 满足 smooth descent，则 `\mathbf{SH}(\mathcal X)` 可由 `\mathbf{SH}(U_\bullet)` 的 descent data 重建。
+其中 `j` 是开浸入，`p` 是有限表现的可表 etale 态射，并且
+`\mathcal V\setminus\mathcal W\to\mathcal X\setminus\mathcal U` 是同构。这里的
+补集取相应的闭子栈；这个条件正是“etale 邻域在开集之外不增加新点”。
 
-**证明.** Smooth descent 的含义是 `\mathcal X` 上的对象等价于 atlas Cech nerve 上带相干 descent datum 的对象。范畴值 sheaf 条件把 `\mathbf{SH}(\mathcal X)` 识别为 cosimplicial diagram `\mathbf{SH}(U_\bullet)` 的 limit。`\square`
+**定义 20.3.** `\mathcal X` 的一个 scallop decomposition 是有限的拟紧开子栈过滤
 
-**注 20.14.** 命题 20.13 是形式描述；实际证明需要 stacky motivic theory 是 lisse/smooth topology 上的 sheaf of categories。这是外部输入的一部分。
+$$
+\varnothing=\mathcal U_0\subset\mathcal U_1\subset\cdots
+\subset\mathcal U_n=\mathcal X,
+$$
 
-## 20.6 例子：classifying stack
+以及对每个 `i` 的可表 Nisnevich 方块
 
-**定义 20.15.** 对代数群 `G`，classifying stack `BG` 定义为 `[S/G]`，其中 `G` 平凡作用在 `S` 上。
+$$
+\begin{array}{ccc}
+\mathcal W_i&\longrightarrow&\mathcal V_i\\
+\downarrow&&\downarrow u_i\\
+\mathcal U_{i-1}&\longrightarrow&\mathcal U_i
+\end{array}
+$$
 
-**命题 20.16.** `\mathbf{SH}(BG)` 应理解为 `G`-equivariant motivic spectra over `S`。
+其中 `\mathcal V_i` 是 quasi-fundamental。若 `\mathcal X` 还有分离对角，则称它为
+scalloped stack。
 
-**证明.** 按 quotient stack 口径，`[S/G]` 上的 motivic homotopy theory就是平凡 `G`-对象 `S` 的 equivariant motivic homotopy theory。对象记录的不只是 `S` 上谱，还记录 `G`-equivariant descent/stabilizer action。`\square`
+**命题 20.4（有限粘合归纳）.** 设 `F` 与 `G` 是 scalloped stacks 上满足可表
+Nisnevich 下降的范畴值理论，且 `\eta:F\to G` 是自然变换。若对所有
+quasi-fundamental stack `\mathcal V`，`\eta_{\mathcal V}` 都是等价，则
+`\eta_{\mathcal X}` 对每个 scalloped stack `\mathcal X` 都是等价。
 
-**命题 20.17.** 若忽略 `BG` 的 stabilizer，只把其粗空间看作 `S`，会丢失 equivariant 信息。
+**证明.** 对 scallop decomposition 的长度归纳。长度为零时对象为空，结论由下降的
+空覆盖条件得到。设结论已知于 `\mathcal U_{i-1}`。定义 20.2 的方块给出两个
+homotopy pullback 方块
 
-**证明.** `BG` 的几何点自同构群为 `G`。粗空间 `S` 不记录该自同构群。Equivariant vector bundles、representation spheres 和 fixed-point operations 都依赖 stabilizer；因此粗空间不能恢复 `BG` 上的 motivic theory。`\square`
+$$
+F(\mathcal U_i)\simeq
+F(\mathcal U_{i-1})\times_{F(\mathcal W_i)}F(\mathcal V_i),
+$$
 
-## 20.7 Scalloped stacks and local quotient conditions
+以及对 `G` 的同一公式。`\mathcal V_i` 是 quasi-fundamental，而
+`\mathcal W_i=\mathcal U_{i-1}\times_{\mathcal U_i}\mathcal V_i` 是
+`\mathcal V_i` 的开子栈，故仍为 quasi-fundamental。因此右端三项上的 `\eta`
+均为等价；极限保持等价，故 `\eta_{\mathcal U_i}` 为等价。取 `i=n` 即得结论。
+`\square`
 
-**定义 20.18.** 一个 algebraic stack 称为具有 local quotient 性质，若它可由形如 `[U/G]` 的 quotient stacks 在合适拓扑下局部覆盖，其中 `U` 是 algebraic space 或 scheme，`G` 是满足有限性或可约性假设的群。
+这个命题说明 scallop 不是装饰性的分层：它把一般栈上的比较定理化成有限次
+Nisnevich 粘合问题。
 
-**定义 20.19.** Scalloped stack 是 Khan-Ravi 框架中的一类适于做 motivic homotopy 和六操作的 algebraic stacks。其精确定义包含对分层、局部商表示和稳定性性质的条件，本书把它作为外部输入定义使用。
+## 20.2 稳定 motivic 范畴及六操作的定义域
 
-**命题 20.20.** Local quotient 条件使 stacky motivic theory 可由 equivariant motivic theory 局部建模。
+**外部输入定理 20.5（Khan--Ravi）.** 对每个 scalloped derived stack
+`\mathcal X`，存在 presentable stable symmetric monoidal infinity-category
+`\mathbf{SH}(\mathcal X)`。赋值 `\mathcal X\mapsto\mathbf{SH}(\mathcal X)` 满足
+可表 Nisnevich 下降、向量丛同伦不变性和闭开局部化。其精确构造与这些性质见
+Khan--Ravi, Definitions 2.7、2.9，Theorems 4.5、4.10 与 Example 5.12。
 
-**证明.** 若 stack 在局部形如 `[U/G]`，则该局部片段上的 motivic theory 可用第十九章的 quotient stack/equivariant theory 表达。若 theory 满足 descent，则全局对象可由这些局部 equivariant pieces 及其交叠上的 descent data 粘合。`\square`
+**外部输入定理 20.6（六操作）.** 在定理 20.5 的定义域内：
 
-**注 20.21.** 这说明第十九章和第二十章不是两个孤立方向：equivariant theory 是 stacky theory 的局部模型之一。
+1. 对每个态射 `f:\mathcal X\to\mathcal Y`，有伴随
+   `f^*:\mathbf{SH}(\mathcal Y)\rightleftarrows
+   \mathbf{SH}(\mathcal X):f_*`，且每个纤维有
+   `(\otimes,\underline{\operatorname{Hom}})`；
+2. 只有当 `f` **可表且有限型** 时，原定理才无条件给出 exceptional 伴随
+   `f_!\dashv f^!`；
+3. 这些函子满足相应的 exceptional base change、projection formula、开浸入
+   `j_!\simeq j_\sharp`、可表 proper 态射 `f_!\simeq f_*` 与闭开局部化；
+4. 若可表 smooth 态射 `f` 可紧化，或源与靶有仿射对角，则有纯性等价
 
-## 20.8 Stacky purity
+$$
+f^!\simeq f^*\langle L_{\mathcal X/\mathcal Y}\rangle,
+\qquad
+f_!\simeq f_\sharp\langle-L_{\mathcal X/\mathcal Y}\rangle.
+$$
 
-**外部输入定理 20.22.** 对适当 representable smooth morphisms 或 lci morphisms of stacks，stacky motivic homotopy theory 满足 purity 和 Gysin formalism。
+这里 `\langle\alpha\rangle` 是 `K`-理论类 `\alpha` 所确定的 Thom twist。前三项见
+Theorem 7.1，smooth purity 见 Theorem 7.10。对非可表态射写出 `f_!` 或 `f^!`
+需要另一项定理，不能由本定理补出。
 
-**命题 20.23.** Stacky purity 需要 stabilizer 对 normal directions 的作用。
+**推论 20.7.** 将 qcqs algebraic spaces，特别是满足同样有限性条件的 schemes，
+视为 scalloped stacks，定理 20.6 恢复概形上的相应六操作。
 
-**证明.** 在 quotient stack `[X/G]` 中，闭子栈 `[Z/G]` 的 normal bundle 是 `G`-equivariant normal bundle `N_{Z/X}`。Thom twist 必须记住 `G` 对纤维的线性作用；否则会退化为粗空间上的普通 normal bundle，丢失 stabilizer 表示信息。`\square`
+**证明.** 这些对象嵌入 scalloped stacks 的定义域；Khan--Ravi 的构造在 algebraic
+spaces 上限制为原 stable motivic homotopy theory。操作的比较属于定理 20.5 的
+扩张陈述，不是仅由全嵌入形式推出的。`\square`
 
-## 20.9 本章小结
+## 20.3 Genuine 理论与 lisse extension
 
-Stacks 上的 motivic homotopy 是当前活跃方向之一。它把 quotient stacks、moduli stacks 和 equivariant phenomena 纳入六操作框架。由于 stack 类别和 lisse/genuine 构造差异很大，本书只在明确外部输入和假设下使用 stacky 结果。
+**定义 20.8.** 对任意 qcqs algebraic stack `\mathcal X`，令
+`\operatorname{Lis}_{\mathcal X}` 的对象为 smooth 态射
+`u:U\to\mathcal X`，其中 `U` 是 qcqs algebraic space。lisse-extended 范畴定义为
+
+$$
+\mathbf{SH}^{\triangleleft}(\mathcal X)
+=\varprojlim_{(U,u)\in\operatorname{Lis}_{\mathcal X}}\mathbf{SH}(U),
+$$
+
+过渡函子取 inverse image。这个定义给出 lisse site 上的相容族；它并不等于先任选
+一个 atlas 再把有限层 Cech 神经截断。
+
+**外部输入定理 20.9.** 若 `\mathcal X` scalloped，则有保持余极限与 inverse image 的
+自然函子
+
+$$
+\mathbf{SH}(\mathcal X)\longrightarrow
+\mathbf{SH}^{\triangleleft}(\mathcal X).
+$$
+
+该函子一般远非等价。对 quotient stacks，lisse-extended cohomology 与代数 Borel
+近似相连；例如在相应特征和光滑拟射影假设下，lisse-extended motivic cohomology
+计算 Edidin--Graham equivariant higher Chow groups。见 Khan--Ravi §12，尤其
+Theorems 12.9、12.15 与 Example 12.21。
+
+**例子 20.10（`BG`）.** 取非平凡 nice group `G`。Genuine
+`\mathbf{SH}(BG)` 记录 `G`-表示所给的 Thom spheres、稳定子与 genuine transfers；
+`\mathbf{SH}^{\triangleleft}(BG)` 则是 Borel 型扩展。两者的 `K`-理论比较在
+`\pi_0` 上可表现为从未完备对象到完备化对象的映射，因而不能把 lisse extension
+当作 genuine 理论的另一个写法。粗模空间若只是基 `S`，还会进一步丢掉 `G` 这一
+自同构群，所以 `\mathbf{SH}(BG)` 也不由 `\mathbf{SH}(S)` 决定。
+
+## 20.4 局部化、纯性与稳定子表示
+
+设 `i:\mathcal Z\hookrightarrow\mathcal X` 为闭浸入，`j:\mathcal U\hookrightarrow
+\mathcal X` 为拟紧开补。定理 20.6 给出 cofiber sequence
+
+$$
+j_!j^*E\longrightarrow E\longrightarrow i_*i^*E.
+$$
+
+当 `\mathcal X=[X/G]` 且 `\mathcal Z=[Z/G]` 时，法丛是带 `G`-线性化的
+`N_{Z/X}`。相应 Thom twist 必须保留每个稳定子在法纤维上的表示；若只取粗空间的
+普通法丛，固定点公式中的权重与 Euler 类都会消失。
+
+**命题 20.11.** 若一个比较函子保持 inverse image、闭开局部化和 equivariant
+Thom twists，并且它在某个 scallop decomposition 的所有
+`\mathcal V_i` 上为等价，则它在 `\mathcal X` 上为等价。
+
+**证明.** Thom twist 条件保证局部比较没有忘记稳定子在向量丛方向上的作用；等价性
+本身再由命题 20.4 的有限 Nisnevich 归纳得到。`\square`
+
+## 20.5 Torus concentration
+
+固定连通 Noetherian 仿射基 `S` 和 split torus
+`T=\mathbb G_{m,S}^{\times l}`。设 `L` 是 `B\mathbb G_m` 上的 tautological line
+bundle。对 `F\in\mathbf{SH}(BT)`，令 `S_F` 为各投影拉回的 Euler 类
+
+$$
+\operatorname{pr}_i^*e(L^{\otimes n}),
+\qquad 1\leq i\leq l,\ n\geq1
+$$
+
+所生成的乘法系，并用下标 `\mathrm{loc}` 表示沿 `S_F` 的导出局部化。
+
+**外部输入定理 20.12（concentration）.** 设 `i:Z\hookrightarrow X` 是有限型
+`T`-equivariant derived algebraic spaces 的闭浸入，并且 `T` 在 `X\setminus Z`
+上无固定点。则对每个 `F\in\mathbf{SH}(BT)`，Borel--Moore homology 的 proper
+pushforward 在上述 Euler 类局部化后成为等价：
+
+$$
+i_*:C^{\mathrm{BM}}_\bullet([Z/T]/BT,F)_{\mathrm{loc}}
+\xrightarrow{\ \simeq\ }
+C^{\mathrm{BM}}_\bullet([X/T]/BT,F)_{\mathrm{loc}}.
+$$
+
+若 `X` 还分离且有限型，可取 `Z=X^T`。这是 Khan--Ravi Theorem 11.2 与
+Corollary 11.3。未局部化的 `i_*` 不在定理结论中；“固定点决定全空间”必须连同
+被反演的 Euler 类一起陈述。
+
+**例子 20.13.** 令 `T=\mathbb G_m` 以正权 `r>0` 作用在
+`X=\mathbb A^1` 上，固定点为原点。开补 `\mathbb G_m` 没有固定点，定理 20.12
+说明包含映射 `\{0\}\hookrightarrow\mathbb A^1` 在反演
+`e(L^{\otimes r})` 后诱导 Borel--Moore homology 等价。这个例子也说明 Euler
+局部化不是技术冗余：被删除的开轨道正由相应权重的 Euler 类杀掉。
+
+## 20.6 从局部商到一般栈
+
+Scallop decomposition 把 quotient-stack 计算、Nisnevich 下降和有限归纳组合在一起；
+定理 20.6 则清楚地区分任意态射上的 `f^*\dashv f_*` 与可表有限型态射上的
+`f_!\dashv f^!`。Lisse extension 提供另一种适用于任意栈的 Borel 型理论，却不能
+取代 genuine 范畴。由此，栈上的 motivic homotopy 不是“选 atlas 后逐项计算”的
+简写，而是一套同时记住下降、稳定子表示和 exceptional functor 定义域的理论。
 
 ## 练习
 
-**练习 20.1.** 解释为什么必须声明允许的 algebraic stacks 类别。
+**练习 20.1.** 写出 scallop decomposition 中第 `i` 个 Nisnevich 方块，并说明
+`\mathcal W_i` 的几何意义。
 
-**练习 20.2.** 定义 lisse-extended motivic homotopy type 的思想。
+**练习 20.2.** 证明命题 20.4 中长度为一的情形。
 
-**练习 20.3.** 说明 stacky 六操作限制到 schemes 时应满足什么相容性。
+**练习 20.3.** 对照定理 20.6，说明为什么非可表态射上的 `f_!` 不能在本章中默认存在。
 
-**练习 20.4.** 为什么 quotient stack 是 equivariant motivic homotopy 的自然语言？
+**练习 20.4.** 写出 `\mathbf{SH}^{\triangleleft}(\mathcal X)` 的指标范畴与过渡函子。
 
-**练习 20.5.** 解释 fixed point localization 需要哪些额外几何输入。
+**练习 20.5.** 用 `BG` 解释 genuine theory 与 lisse extension 保存的信息有何不同。
 
-**练习 20.6.** 写出 smooth atlas 的 Cech nerve。
+**练习 20.6.** 在 `[X/G]` 中说明法丛的稳定子表示为何进入 purity twist。
 
-**练习 20.7.** 解释为什么 `BG` 不是由粗空间 `S` 决定的。
+**练习 20.7.** 在定理 20.12 中找出基、群、态射和系数的全部假设。
 
-**练习 20.8.** 说明 local quotient stack 如何由 equivariant theory 局部建模。
+**练习 20.8.** 对权 `r` 的 `\mathbb G_m`-作用计算 `\mathbb A^1` 的固定点，并指出
+concentration 所反演的 Euler 类。
 
-**练习 20.9.** 为什么 stacky purity 需要 stabilizer 表示？
+**练习 20.9.** 解释“genuine 与 lisse-extended 的自然比较存在”为什么不蕴含二者等价。

@@ -1,14 +1,8 @@
 # 第一章：整体域、局部域与 adeles
 
-## 本章目标
+整体域的算术信息分散在所有位置上，但 Langlands 纲领要求同时保留每个局部分量，又能把它们重新装配成一个整体对象。完备化 $K_v$ 提供局部语言，restricted product 则产生 adele 环与 idele 群；乘积公式进一步解释为什么真正的交换自守商是 $K^\times\backslash\mathbb A_K^\times$，而不是孤立的 $K^\times$。这一章从位置与归一化绝对值出发，逐步构造这些对象，并在末尾准备 Tate thesis 所需的 Haar 测度与 Fourier 分析。
 
-本章建立 Langlands 纲领的局部-整体语言：整体域、位置、完备化、adele 环、idele 群和 idele class group。`GL(1)` Langlands、Tate thesis 和自守表示都以这些对象为基础。
-
-## 依赖前置知识
-
-需要基本域论、Dedekind 整环、有限扩张、完备赋值域和局部紧拓扑群的初步知识。Haar 测度只在本章末尾作准备性陈述。附录 F 给出本章所用 Pontryagin 对偶、adeles 自对偶性、$\mathbb A_\mathbb Q/\mathbb Q$ 基本域和 Poisson 求和的分析接口。
-
-收口归一化回指：本章使用的绝对值、乘积公式、adeles、ideles、Haar 测度和 Fourier 测度 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 的第 1、3 节。
+读者只需熟悉基本域论、Dedekind 整环、有限扩张和完备赋值域。Pontryagin 对偶、adeles 自对偶性、$\mathbb A_\mathbb Q/\mathbb Q$ 的基本域及 Poisson 求和集中在附录 F；绝对值、Haar 测度与 Fourier 测度的统一约定见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 1、3 节。
 
 ## 1.1 整体域和局部域
 
@@ -233,7 +227,7 @@ $\operatorname{vol}(\mathcal O_v)=1$；精确体积关系见归一化总表第 3
 
 **注 1.21.1.** 附录 F.4--F.5 把本定理拆成 annihilator、$\widehat{\mathbb A_K/K}\simeq K$、adele Poisson summation 和 idele 缩放公式。第二章的 theta 恒等式具体使用命题 F.21.1。
 
-**收口精修 1.A（adelic analysis 使用边界）.** 后文从本章调用的分析输入只有下表项目：
+**分析输入 1.A（adelic analysis 的作用）.** 下表区分本章已经证明的事实与后续使用的外部分析定理：
 
 | 输入 | 本章状态 | 后续作用 |
 |---|---|---|
@@ -243,7 +237,7 @@ $\operatorname{vol}(\mathcal O_v)=1$；精确体积关系见归一化总表第 3
 | adele Poisson summation | 附录 F 接口 | 进入 Tate thesis 的 theta 恒等式 |
 | restricted product 拓扑 | 已定义 | 统一局部对象为全局 adelic 对象 |
 
-## 1.7 本章小结
+## 1.7 从局部域到 adelic 整体
 
 本章定义了整体域的所有局部化 $K_v$，并用 restricted product 把它们组织为 $\mathbb A_K$ 和 $\mathbb A_K^\times$。乘积公式保证 $K^\times$ 在 idele norm 下平凡，从而 norm 下降到 idele class group $C_K$。下一章将在 $\mathbb A_K$ 上做 Fourier 分析，并把 Hecke 特征的 L 函数写成 zeta 积分。
 

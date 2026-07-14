@@ -1,14 +1,8 @@
 # 第二章：Tate thesis、Hecke 特征与 `GL(1)` L 函数
 
-## 本章目标
+第一章把所有局部域装进了 adele 环；现在需要解释 Euler 乘积为何能由一个全局积分产生，以及函数方程为何是 Fourier 对偶的结果。Tate 的方法把 Hecke 特征 $\chi$ 与 Schwartz--Bruhat 函数 $\Phi$ 放进同一个 zeta 积分 $Z(\Phi,\chi,s)$，局部张量分解给出 Euler 因子，Poisson 求和则控制解析延拓与函数方程。由此，`GL(1)` 的 Galois 侧、自守侧和 L 函数相容第一次同时出现，而且可以精确计算。
 
-本章说明 Tate thesis 如何把 Hecke L 函数写成 adele 上的 zeta 积分，并把 `GL(1)` 的自守表示解释为 idele class group 的特征。这是 Langlands 纲领中最基本且最完整的模型。
-
-## 依赖前置知识
-
-需要第一章的 adeles、ideles、idele class group、Haar 测度和 Fourier 变换约定。附录 F 给出 Schwartz-Bruhat 空间、紧开陪集 Fourier 变换、adele Poisson summation、idele 缩放公式和 Tate theta 恒等式。局部函数方程、Archimedean gamma 因子和整体 zeta 积分的完整解析延拓仍作为 Tate thesis 的外部输入。
-
-收口归一化回指：本章所有 zeta integral、乘法测度、Fourier 变换、Tate thesis 函数方程和 `GL(1)` L 函数变量均按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、8 节处理。
+本章沿用第一章的 adeles、ideles、Haar 测度和 Fourier 约定。Schwartz--Bruhat 空间、adele Poisson summation、idele 缩放公式与 Tate theta 恒等式可在附录 F 查阅；完整解析延拓和 Archimedean gamma 因子作为 Tate thesis 的外部输入。所有积分与 L 函数变量采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、8 节的约定。
 
 ## 2.1 Schwartz-Bruhat 函数
 
@@ -181,7 +175,7 @@ $\mathbb F_q$ 的函数域，则 $\Lambda(s,\chi)$ 是 $q^{-s}$ 的有理函数�
 $2\pi i/\log q$ 理解，即
 $$
 s=-it+\frac{2\pi i n}{\log q},\qquad
-s=1-it+\frac{2\pi i n}{\log q},qquad n\in\mathbb Z.
+s=1-it+\frac{2\pi i n}{\log q},\qquad n\in\mathbb Z.
 $$
 一般
 $\chi=\chi_0|\cdot|_{\mathbb A}^{\sigma}$ 的陈述由
@@ -193,7 +187,7 @@ $$
 $$
 它来自 $\mathbb A_K/K$ 上的 Poisson summation 和 idele 缩放公式。分离 idele norm 的大于 $1$ 和小于 $1$ 部分，得到 $s$ 与 $1-s$ 的关系；$\chi$ 在 $C_K^1$ 上平凡时，$\Phi(0)$ 与 $\widehat\Phi(0)$ 的常数项产生上述平移后的两个极点。局部函数方程把未归一化 zeta 积分转换为完成 L 函数和 epsilon 因子。完整证明还依赖局部 Tate 理论、Archimedean gamma 因子估计和整体积分截断；本段只记录证明路线，不宣称完成这些解析步骤。
 
-**收口精修 2.A（Tate thesis 使用边界）.** 本书后续只使用 Tate thesis 的以下接口：
+**Tate thesis 的可用结论 2.A.** 后文使用 Tate thesis 时，所需结论精确分为以下几项：
 
 | 输入 | 使用位置 | 状态 |
 |---|---|---|
@@ -236,7 +230,7 @@ $$
 2. L 函数相容：$L(s,\chi)=\prod_vL(s,\chi_v)$。
 3. Galois 与自守对应：类域论给出一维参数和 Hecke 特征的对应。
 
-## 2.7 本章小结
+## 2.7 `GL(1)` 模型的完成
 
 Tate thesis 把 Hecke L 函数从 Dirichlet 级数和 Euler 乘积提升为 adele 上的 zeta 积分。类域论进一步说明，这些 Hecke 特征就是 `GL(1)` 的自守表示，并与一维 Galois/Weil 表示对应。Langlands 纲领可以被看作把这一结构从 `GL(1)` 推广到一般还原群。
 

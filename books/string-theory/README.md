@@ -10,7 +10,7 @@
 
 本书写作约束见 [SKILL.md](SKILL.md)。后续写作必须遵守：
 
-- 定义先于物理图像；每个关键公式必须声明时空签名、世界面签名、$\alpha'$ 归一化和正规序约定。
+- 概念由具体问题或计算引出，随后给出形式定义与物理解释；每个关键公式必须声明时空签名、世界面签名、$\alpha'$ 归一化和正规序约定。
 - 非平凡命题必须给出证明、标准物理推导说明，或标注为“外部输入定理”。
 - 世界面 CFT、BRST、ghost、modular invariance、anomaly cancellation、supersymmetry 和 duality 不得只用口号描述。
 - 低能极限、有效作用和散射振幅必须说明所处近似阶数：tree level、genus expansion、$\alpha'$ expansion 或 string coupling expansion。
@@ -22,7 +22,7 @@
 
 ### 第一部分：世界面与玻色弦
 
-0. [序章：范围、严格性和主线](00_preface_and_scope.md)
+0. [序章：对象、约定与阅读路径](00_preface_and_scope.md)
 1. [第一章：相对论场论、作用量和 sigma model 语言](01_relativistic_fields_and_sigma_models.md)
 2. [第二章：经典玻色弦、Nambu-Goto 与 Polyakov 作用量](02_classical_bosonic_string.md)
 3. [第三章：二维共形场论和 OPE 语言](03_worldsheet_cft.md)
@@ -65,5 +65,5 @@
 
 - 已固定主线：世界面 CFT、玻色弦量子化、BRST、超弦、D-branes、紧化、对偶性、AdS/CFT。
 - 已建立写作约束、符号表、术语表、归一化表、依赖图、资料源、定理索引、习题索引和主线例题集。
-- 已完成第 0 至 20 章和附录 A-E，并将第 6 至 20 章扩写为主线教材章或收束章。
+- 已完成第 0 至 20 章和附录 A-E，并将第 6 至 20 章扩写为连续可读的专题教材章。
 - 当前版本已达到教材内容层面收口；后续不是扩张新主线，而是补例题、习题、局部证明、附录公式表和出版化排版。

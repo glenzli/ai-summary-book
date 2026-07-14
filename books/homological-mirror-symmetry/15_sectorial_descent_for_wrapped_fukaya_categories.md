@@ -1,12 +1,6 @@
 # 第十五章：wrapped Fukaya categories 的 sectorial descent
 
-## 本章目标
-
-本章把第六章的 Liouville sectors 推进到 sectorial descent：wrapped Fukaya category 对 sectorial covers 呈 cosheaf 行为。这是高维 HMS 的局部到整体机制。
-
-## 依赖前置知识
-
-需要第六章 Liouville sectors、第七章 stops、第十四章生成性工具。
+把 Liouville 空间切成若干易算部分并不自动得到全局 Fukaya 范畴：普通开覆盖没有控制伪全纯曲线越过边界的方式，交叠处的 wrapped 函子也未必存在。Weinstein sectorial cover 增加了特征叶正交性、可交换边界函数和 reduction 条件，恰好使各有限交仍处在 wrapped theory 的可控范围。Ganatra--Pardon--Shende 的 descent 定理随后把全局范畴识别为这些局部范畴的同伦余极限。本章从第六章的 sector functoriality 出发，写清 cover 假设、Cech 图方向、局部生成元的传递以及两侧 descent 图如何产生全局 HMS。
 
 ## 15.1 Sectorial cover
 
@@ -65,45 +59,63 @@ equivalence。该结论不在任意 sectorial cover 上无条件陈述。
 通过 homotopy colimit 胶合成全局 category。方向是协变的：定理 6.13
 允许的 inclusion of sectors 诱导 $\mathcal W(X_i)\to\mathcal W(X)$。
 
+**例 15.4A（两个 sectors 的 derived pushout）.** 若
+$X=X_1\cup X_2$ 是 Weinstein sectorial cover，且
+$X_{12}=X_1\cap X_2$，则定理 15.3 专门化为
+$$
+\mathcal W(X_1)\mathop{\sqcup}\limits^{h}_{\mathcal W(X_{12})}
+\mathcal W(X_2)\longrightarrow\mathcal W(X)
+\tag{15.3}
+$$
+在 pretriangulated/Morita 口径下的等价。左边不是 morphism 集合的普通并集：
+它还加入由交叠范畴识别两侧对象和态射所需的 homotopy-coherent relations。
+这正是普通 pushout 不能代替 homotopy pushout 的原因。
+
 **命题 15.5.** 假设定理 15.3。若每个 $X_J$ 的 wrapped category 由对象集合 $\mathcal G_J$ split-generate，则 $\mathcal W(X)$ 由所有 $\mathcal G_J$ 在 inclusion functors 下的像 split-generate。
 
-**证明.** homotopy colimit 的对象由局部 diagram 中对象的像生成，morphisms 由局部 morphisms 和 gluing relations 生成。若每个局部 category 由 $\mathcal G_J$ 生成，则整个 diagram 的 homotopy colimit 由这些生成对象的像生成。定理 15.3 把该 homotopy colimit 与 $\mathcal W(X)$ Morita 等价，故得到全局生成。证毕。
+**证明.** 在小、幂等完备稳定范畴的 Morita 局部化中取 Cech 图的 homotopy
+colimit，记结构函子为 $i_J$。令 $\mathcal T$ 是该 colimit 中由全部
+$i_J(G)$（$G\in\mathcal G_J$）厚生成的子范畴。对每个 $J$，
+$\mathcal G_J$ 厚生成 $\operatorname{Perf}\mathcal W(X_J)$，而 exact functor
+$i_J$ 保持有限余极限、shifts 与 retracts，故 $i_J$ 的整个像包含于
+$\mathcal T$。Homotopy colimit 由各结构函子的像生成，因此
+$\mathcal T$ 等于整个 colimit。定理 15.3 再以 Morita 等价把该结论传到
+$\mathcal W(X)$。证毕。
 
 ## 15.3 Kunneth 与 product sectors
 
-**外部输入定理 15.6（wrapped Kunneth 公式）.** 在适当 Liouville sector 假设下，存在 wrapped Fukaya categories 的 Kunneth 型关系
+**外部输入定理 15.6（wrapped Kunneth 公式）.** 对满足 GPS product-sector、
+brane 与无穷远 admissibility 假设的 Liouville sectors $X,Y$，外积函子在
+perfect/Morita 口径给出 Kunneth 型关系
 $$
 \mathcal W(X\times Y)\simeq \mathcal W(X)\otimes\mathcal W(Y)
 $$
-的 Morita 版本。  
+；若带 stops，必须同时采用来源规定的 product stop。
 来源：GPS sectorial descent 体系。
 
 **解释 15.7.** Kunneth 公式允许把局部模型拆成基本 pieces 的乘积，是 pair-of-pants 和 microlocal 模型计算中的重要工具。
 
-## 15.4 HMS 的 descent 比较
+## 15.4 两侧 Cech 图的比较
 
-**模板 15.8.** 要用 sectorial descent 证明 HMS，需构造两个 diagrams：
+**定义 15.8（descent-compatible local HMS datum）.** 对同一有限索引范畴，
+构造两个 diagrams
 $$
 J\mapsto \mathcal W(X_J),\qquad
 J\mapsto \mathcal B_J
 $$
-并证明：
+。称逐点 Morita 等价 $E_J:\mathcal W(X_J)\simeq\mathcal B_J$ 为
+descent-compatible，若满足：
 
 1. 每个 $J$ 上有局部 HMS $\mathcal W(X_J)\simeq\mathcal B_J$；
 2. inclusion functors 与 B-side restriction/pushforward/localization functors 相容；
 3. A-side 和 B-side 都满足 descent；
 4. homotopy colimits 给出全局 categories。
 
-**命题 15.9.** 若模板 15.8 的四项成立，则得到全局 HMS Morita equivalence。
+**命题 15.9.** 若定义 15.8 的四项成立，则得到全局 HMS Morita equivalence。
 
 **证明.** 局部 HMS 给出两个 Cech diagrams 的逐点 Morita equivalence；相容性给出 diagrams 等价。homotopy colimit 保持逐点等价。由 A/B 两边 descent，把 colimits 识别为全局 categories，得证。证毕。
 
-## 本章小结
-
-Sectorial descent 是 wrapped Fukaya categories 的局部到整体定理。这里使用的
-精确外部输入以 Weinstein sectorial cover 为假设；在该范围内，它把全局
-wrapped category 表成局部 categories 的 homotopy colimit，从而把 HMS 证明
-分解为局部 HMS 与 gluing 相容性。
+Weinstein sectorial 条件是从几何覆盖通向范畴余极限的非形式部分；一旦外部输入定理 15.3 可用，局部生成元和逐点 Morita 等价都能沿 homotopy colimit 传到全局。因而局部 HMS 本身仍不够，交叠函子的自然相容性与 B-side descent 同样是全局等价的组成部分。Cotangent bundle 的 sheaf 模型会给这种局部到整体结构一个更具体的计算语言。
 
 ## 练习
 
@@ -113,4 +125,5 @@ wrapped category 表成局部 categories 的 homotopy colimit，从而把 HMS �
 
 **练习 15.3.** 证明命题 15.5 中生成对象在 homotopy colimit 下的形式稳定性。
 
-**练习 15.4.** 按模板 15.8 写出 pair-of-pants decomposition 的 HMS 证明框架。
+**练习 15.4.** 对例 15.4A 写出 B-side derived pushout，并给出使两个
+pushout Morita 等价所需的自然变换数据。

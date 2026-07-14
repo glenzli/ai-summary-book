@@ -1,20 +1,13 @@
 # 第八章：RNS 超弦和 GSO 投影
 
-## 本章目标
-
-本章建立 RNS formalism 的主线：
-
-1. 在世界面上加入 Majorana fermions $\psi^\mu$；
-2. 构造 $N=1$ superconformal matter CFT；
-3. 量子化 NS/R sectors，并写出超弦质量公式；
-4. 由 anomaly cancellation 得到临界维数 $D=10$；
-5. 通过 GSO projection 移除 tachyon，并区分 type IIA 与 type IIB。
-
-本章采用平坦 target background。Curved background 中的 supersymmetric sigma model 与 beta function 条件放在第十一章和第十三章。
-
-## 依赖前置知识
-
-需要第三章 CFT、第四章量子化、第五章 BRST，以及附录 E 的 Clifford algebra 与 spinor convention。
+玻色弦的 tachyon 与二十六维临界条件提示，仅增加时空解释并不能修复谱；需要把
+世界面理论扩展为含 Majorana fermions $\psi^\mu$ 的 $N=1$ superconformal system。
+Fermion 绕闭弦一周可以反周期或周期，这一选择分别产生 NS 与 R sectors：前者的
+半整数模给出时空 bosons，后者的零模形成 Clifford algebra 并给出时空 spinors。
+以下在平坦 target 中用第三章 CFT、第四章振子量子化和第五章 BRST/ghost 计数构造
+这两个 sectors，随后由 anomaly cancellation 得到 $D=10$，并用 GSO projection
+移除 NS tachyon、固定 Ramond chirality。附录 E 固定 spinor convention；弯曲背景
+的 supersymmetric sigma model 与 beta functions 将在低能和紧化章节中出现。
 
 ## 8.1 RNS worldsheet action
 
@@ -371,9 +364,11 @@ h(e^{-\varphi/2})=\frac38,
 $$
 故总 weight 为 $1$。$\square$
 
-## 本章小结
-
-RNS formalism 把 string worldsheet theory 扩展为 $N=1$ superconformal field theory。Matter central charge 为 $3D/2$，ghost central charge 为 $-15$，故临界维数为 $10$。NS/R sectors 分别给出 spacetime bosonic 与 fermionic states；GSO projection 移除 tachyon，并产生 type II superstring 的 spacetime supersymmetry。
+Spin field 的权重计算补上了 R ground state 与局部顶点算子之间的最后一步。此时
+matter central charge 为 $3D/2$，重参数化与 superconformal ghosts 合计为 $-15$，
+所以 anomaly cancellation 选出十维；NS/R 模展开提供时空 bosonic/fermionic 态，
+GSO projection 则同时去掉 tachyon 并组织出一致的 spin-structure sum。左右
+Ramond chirality 的两种组合将在下一章分别成为 type IIA 与 type IIB。
 
 ## 练习
 

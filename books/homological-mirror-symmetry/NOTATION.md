@@ -22,6 +22,9 @@
 
 - $\operatorname{Cat}_{\mathrm{dg},k}$：小 $k$-线性 dg categories 的范畴。
 - $\operatorname{Cat}_{A_\infty,k}$：小严格含单位 $k$-线性 $A_\infty$-categories 与 $A_\infty$-functors 的语境。
+- $\operatorname{Cat}^{\mathrm{perf}}_k$：小、幂等完备、$k$-线性 stable
+  categories 的 Morita 局部化；dg/$A_\infty$ 模型先取 perfect-module
+  stable category 再进入此记号。
 - 对 dg 或 $A_\infty$ category $\mathcal A$，$H^0(\mathcal A)$ 表示同对象、morphism 为 $H^0\operatorname{hom}_{\mathcal A}(X,Y)$ 的普通范畴。
 - $\operatorname{Tw}(\mathcal A)$ 表示 twisted complexes 构成的预三角化包；$\operatorname{Perf}(\mathcal A)$ 表示 perfect right $\mathcal A$-modules 的 dg 或 $A_\infty$ category。
 - “quasi-equivalence” 指 morphism complexes 上 quasi-isomorphism 且 $H^0$ 上本质满的 dg/$A_\infty$ functor。
@@ -72,6 +75,8 @@
   $\mathcal{CO}:SH^\bullet(M)\to HH^\bullet(\mathcal W(M))$ 表示
   closed-open map。
 - $\mathcal F\mathcal S(W)$ 表示 Landau-Ginzburg potential $W$ 的 Fukaya-Seidel category。
+- $\mathcal W_{\mathrm{fib}}(Y,W)$ 表示来源指定的 fiberwise wrapped Fukaya
+  category；它不与普通 $\mathcal W(Y)$ 自动等同。
 
 ## Landau-Ginzburg 与奇点
 
@@ -85,6 +90,18 @@
 - $\operatorname{Sh}_c(Q)$ 表示 constructible sheaves 的增强范畴。
 - $SS(\mathcal F)$ 表示 sheaf $\mathcal F$ 的 microsupport。
 - $\operatorname{Sh}_{\Lambda}(Q)$ 表示 microsupport 包含于 $\Lambda\subset T^\ast Q$ 的 sheaf category。
+- 对光滑 $S\subset Q$，$T_S^\ast Q$ 表示其 conormal bundle。
+
+## 稳定性与函子化数据
+
+- $\Gamma_{\mathrm{ch}}$ 表示有限秩自由 charge lattice，避免与第五章的
+  Novikov 值群 $\Gamma\subset\mathbb R$ 混用；
+  $\Gamma_{\mathrm{ch},\mathbb R}=\Gamma_{\mathrm{ch}}\otimes_\mathbb Z\mathbb R$。
+- $v:K_0(\mathcal C)\to\Gamma_{\mathrm{ch}}$ 是类映射，
+  $Z:\Gamma_{\mathrm{ch}}\to\mathbb C$ 是 central charge，
+  $\mathcal P(\phi)$ 是 Bridgeland slicing 的相位子范畴。
+- 对 spherical object $S$，$T_S$ 表示由 evaluation triangle 定义的
+  spherical twist；它与泛称的 wall-crossing transformation 不作同义使用。
 
 ## HMS 断言
 

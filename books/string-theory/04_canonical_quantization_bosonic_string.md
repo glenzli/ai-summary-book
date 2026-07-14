@@ -1,12 +1,12 @@
 # 第四章：玻色弦的正则量子化
 
-## 本章目标
-
-本章在 conformal gauge 中量子化玻色弦，推导 oscillator algebra、Virasoro generators、物理态条件、质量公式、临界维数和低能谱。第六章的顶点算子和散射振幅将直接使用本章的 Fock space 与谱公式。
-
-## 依赖前置知识
-
-需要第二章的 conformal gauge 和第三章的 Virasoro algebra。质量公式 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
+经典模展开把弦写成无穷多个简谐振子，但“把每个模量子化”还不足以得到物理态：
+协变 Fock pairing 含有负范数方向，$L_0$ 又把连续动量限制在质量壳上，而普通
+Schwartz 波包不可能以非零函数的方式精确支撑在余维一的壳面。这里先由正则辛形式
+逐项推出开、闭弦振子的对易关系，再区分离壳公共算符域、固定动量广义态和质量壳
+直积分，随后施加 Virasoro constraints、求出质量谱，并用 no-ghost 与 light-cone
+量子化说明负范数如何被消除。所用经典解来自第二章，Virasoro/OPE 语言来自第三章；
+$\alpha'$、截距和质量公式均遵循 [全书归一化表](NORMALIZATION_TABLE.md)。
 
 ## 4.1 闭弦模展开和正则量子化
 
@@ -48,7 +48,46 @@ $$
 $$
 \delta_{2\pi}(\sigma-\sigma')=\frac1{2\pi}\sum_{n\in\mathbb Z}e^{in(\sigma-\sigma')}.
 $$
-比较 Fourier coefficients 得 oscillator commutators；零模部分给出 $[x,p]$。$\square$
+为看清每个系数，先把正则动量写成
+$$
+P_\mu(\tau,\sigma)=\frac{p_\mu}{2\pi}
++\frac1{2\pi\sqrt{2\alpha'}}\sum_{n\ne0}
+\left(\alpha_{n,\mu}e^{-in(\tau-\sigma)}
++\widetilde\alpha_{n,\mu}e^{-in(\tau+\sigma)}\right).
+$$
+在固定 $\tau$ 的经典解空间上，正则辛形式为
+$$
+\begin{aligned}
+\Omega_{\mathrm{cl}}
+&=\int_0^{2\pi}d\sigma\,\delta P_\mu\wedge\delta X^\mu\\
+&=\delta p_\mu\wedge\delta x^\mu
++i\sum_{n=1}^{\infty}\frac1n
+\left(
+\delta\alpha_{-n,\mu}\wedge\delta\alpha_n^\mu
++\delta\widetilde\alpha_{-n,\mu}\wedge
+ \delta\widetilde\alpha_n^\mu
+\right).
+\end{aligned}
+$$
+这里使用
+$\int_0^{2\pi}e^{i(m+n)\sigma}d\sigma=2\pi\delta_{m+n,0}$；左右交叉项在
+$\delta P\wedge\delta X$ 中成对抵消。反演 $\Omega_{\mathrm{cl}}$ 得
+$$
+\{x^\mu,p^\nu\}_{\mathrm{PB}}=\eta^{\mu\nu},\qquad
+\{\alpha_m^\mu,\alpha_n^\nu\}_{\mathrm{PB}}
+=-im\delta_{m+n,0}\eta^{\mu\nu},
+$$
+tilde 部分相同，左右 Poisson brackets 为零。按
+$[A,B]=i\{A,B\}_{\mathrm{PB}}$ 量子化即得命题中的关系。
+
+最后直接代回可检查 delta function 的归一化。零模贡献为
+$i\eta^{\mu\nu}/(2\pi)$，每个 chiral sector 的非零模贡献为
+$$
+\frac{i\eta^{\mu\nu}}{4\pi}
+\sum_{n\ne0}e^{in(\sigma-\sigma')}.
+$$
+两份相加并补上 $n=0$ 项，恰为
+$i\eta^{\mu\nu}\delta_{2\pi}(\sigma-\sigma')$。$\square$
 
 ## 4.2 开弦模展开
 
@@ -74,16 +113,47 @@ $$
 $$
 将模展开及
 $$
-P_\mu=\frac1{2\pi\alpha'}\partial_\tau X_\mu
+P_\mu=\frac{p_\mu}{\pi}
++\frac1{\pi\sqrt{2\alpha'}}
+\sum_{n\ne0}\alpha_{n,\mu}e^{-in\tau}\cos n\sigma
 $$
-代入 $[X^\mu(\sigma),P_\nu(\sigma')]=i\delta^\mu{}_\nu\delta_N(\sigma,\sigma')$。常数项比较给出 $[x^\mu,p^\nu]=i\eta^{\mu\nu}$；逐个比较 cosine Fourier coefficient 给出
+代入正则辛形式，并使用
+$\int_0^\pi\cos(m\sigma)\cos(n\sigma)d\sigma=(\pi/2)\delta_{mn}$（$m,n>0$），得到
+$$
+\Omega_{\mathrm{op}}
+=\delta p_\mu\wedge\delta x^\mu
++i\sum_{n=1}^{\infty}\frac1n
+\delta\alpha_{-n,\mu}\wedge\delta\alpha_n^\mu.
+$$
+反演后量子化给出
 $$
 [\alpha_m^\mu,\alpha_n^\nu]
 =m\delta_{m+n,0}\eta^{\mu\nu}.
 $$
-此外，积分 $\int_0^\pi P^\mu d\sigma=p^\mu$ 验证了零模系数 $2\alpha'p^\mu\tau$。$\square$
+相应 equal-time commutator 的零模为 $i\eta^{\mu\nu}/\pi$，非零模为
+$$
+\frac{2i\eta^{\mu\nu}}\pi\sum_{n=1}^{\infty}
+\cos(n\sigma)\cos(n\sigma'),
+$$
+两者之和正是 $i\eta^{\mu\nu}\delta_N(\sigma,\sigma')$。此外，
+$\int_0^\pi P^\mu d\sigma=p^\mu$ 验证了零模系数
+$2\alpha'p^\mu\tau$。$\square$
 
-**定义 4.4B（公共代数定义域）.** 对固定动量 $p$，令
+**定义 4.4B（离壳域与固定动量广义态）.** 令
+$\mathcal F_{\mathrm{osc,fin}}$ 为由有限个 creation operators 作用在形式真空上
+生成的代数振子空间。离壳 Schwartz 波包域定义为
+$$
+\mathcal D_{\mathrm{off}}
+=\mathcal S(\mathbb R^D)
+\otimes_{\mathrm{alg}}\mathcal F_{\mathrm{osc,fin}},
+$$
+闭弦含左右两份振子空间。动量 $p^\mu$ 在第一因子上作乘法，$x^\mu$ 作
+$i\partial/\partial p_\mu$；振子多项式与 matter Virasoro modes 都先定义在这个
+共同不变域上。
+
+对固定 $p\in\mathbb R^D$，形式动量本征态 $|p\rangle$ 是
+$\mathcal S'(\mathbb R^D)$ 中的广义态，而不是 $L^2$ 或 Schwartz 向量。相应有限
+激发 module 记为
 $$
 \mathcal F_{\mathrm{fin}}(p)
 =\operatorname{span}\left\{
@@ -91,23 +161,42 @@ $$
 r<\infty,\ n_i>0
 \right\}.
 $$
-闭弦再与一份有限激发的 tilde Fock module 作代数张量积。若不固定动量，取
-Schwartz wave packets
-$$
-\mathcal D_{\mathrm{mat}}
-=\mathcal S(\mathbb R^D)\otimes_{\mathrm{alg}}\mathcal F_{\mathrm{fin}}
-$$
-（闭弦含左右两份）作为下文全部振子多项式与 Virasoro modes 的共同不变定义域。
-由于 target metric 为 Lorentzian，协变 Fock pairing 是不定的；在应用 no-ghost
-theorem 前，$\mathcal D_{\mathrm{mat}}$ 不是已经完成的物理 Hilbert space。
+闭弦再与一份有限激发的 tilde module 作代数张量积。由于 target metric 为
+Lorentzian，这些协变 Fock modules 带不定 pairing；在应用 no-ghost theorem 前，
+它们都不是已经完成的物理 Hilbert space。
 
-**引理 4.4C（Virasoro 和的局部有限性）.** 对每个固定 $m\in\mathbb Z$，
+**定义 4.4C（质量壳广义态与直积分）.** 设 $\mathcal F_r(p)$ 是开弦 oscillator
+level $r$ 的 fixed-momentum fiber，并令
+$$
+\mathscr P_r^{\mathrm{op}}
+=\left\{p\in\mathbb R^D:\alpha'p^2+r-a=0\right\}.
+$$
+精确壳上态可按两种标准且在选定测度、测试函数配对后互相对应的方式处理：在
+$\mathcal S'(\mathbb R^D)\otimes\mathcal F_{\mathrm{osc,fin}}$ 中使用支撑于
+$\mathscr P_r^{\mathrm{op}}$ 的分布，或在选定壳分支及壳上测度 $d\mu_r$ 后使用
+$$
+\int_{\mathscr P_r^{\mathrm{op}}}^{\oplus}
+d\mu_r(p)\,\mathcal F_r(p).
+$$
+闭弦逐纤维同时施加
+$\alpha'p^2/4+r-a=0$、$\alpha'p^2/4+\widetilde r-a=0$，因而还要求
+$r=\widetilde r$。零动量纤维可以单独定义，但不自动满足后述非零动量 no-ghost
+定理的假设。
+
+不能把上述壳上空间替换为 $\mathcal D_{\mathrm{off}}$ 中乘法算符的 kernel。事实上，
+若 $f\in\mathcal S(\mathbb R^D)$ 满足
+$(\alpha'p^2+r-a)f(p)=0$，则 $f$ 在质量壳补集上为零；该补集稠密，连续性又迫使
+$f$ 在壳上也为零。因此这个 Schwartz kernel 只有零向量，而分布或质量壳直积分
+才承载非零物理波包。
+
+**引理 4.4D（Virasoro 和的局部有限性）.** 对每个固定 $m\in\mathbb Z$，
 正规序二次和
 $$
 \frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:
 $$
-在 $\mathcal D_{\mathrm{mat}}$ 的每个向量上只有有限多个非零项，并把
-$\mathcal D_{\mathrm{mat}}$ 映到自身。
+在 $\mathcal D_{\mathrm{off}}$ 的每个向量上只有有限多个非零项，并把
+$\mathcal D_{\mathrm{off}}$ 映到自身；同一公式也逐纤维作用在
+$\mathcal F_{\mathrm{fin}}(p)$ 上。
 
 **证明.** 给定有限激发态，含 annihilation operator 的项只有当其 mode 出现在该态中
 时才非零，故这类项有限。两个因子均为 creation operators 时，$n<0$ 且
@@ -116,8 +205,17 @@ Schwartz 动量变量上作乘法。因此该和逐向量有限且保持定义�
 
 ## 4.3 Virasoro generators 和 number operators
 
-**定义 4.6（matter Virasoro generators）.** 在定义 4.4B 的共同定义域上，闭弦
-matter Virasoro generators 为
+**定义 4.5（matter Virasoro generators）.** 为把 center-of-mass momentum 纳入
+统一 mode 求和，闭弦约定
+$$
+\alpha_0^\mu=\widetilde\alpha_0^\mu
+=\sqrt{\frac{\alpha'}2}\,p^\mu,
+$$
+开弦约定
+$$
+\alpha_0^\mu=\sqrt{2\alpha'}\,p^\mu.
+$$
+在定义 4.4B 的共同定义域上，闭弦 matter Virasoro generators 为
 $$
 L_m=\frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:,
 \qquad
@@ -125,8 +223,9 @@ L_m=\frac12\sum_{n\in\mathbb Z}:\alpha_{m-n}\cdot\alpha_n:,
 $$
 开弦只有一份同样形式的 $L_m$。
 
-**命题 4.5（Virasoro algebra）.** 作为 $\mathcal D_{\mathrm{mat}}$ 上的算符恒等式，
-$L_m$ 满足 central charge $c=D$ 的 Virasoro algebra：
+**命题 4.6（Virasoro algebra）.** 作为 $\mathcal D_{\mathrm{off}}$ 上以及每个
+固定动量有限激发 fiber 上的算符恒等式，$L_m$ 满足 central charge $c=D$ 的
+Virasoro algebra：
 $$
 [L_m,L_n]=(m-n)L_{m+n}
 +\frac{D}{12}m(m^2-1)\delta_{m+n,0}.
@@ -150,7 +249,7 @@ $$
 $$
 \sum_{r=1}^{m-1}r(m-r)=\frac{m(m^2-1)}6.
 $$
-所有中间和在引理 4.4C 的意义下逐向量有限。故中心元为命题所示；对负 $m$ 的
+所有中间和在引理 4.4D 的意义下逐向量有限。故中心元为命题所示；对负 $m$ 的
 公式由交换子的反对称性得到。该等式尚未声称 $L_m$ 在某个 Hilbert completion 上
 自伴或其闭包唯一。$\square$
 
@@ -192,7 +291,8 @@ $a$ 不是可任意调节的物理参数。
 ## 4.4 物理态条件和质量公式
 
 **定义 4.8（old covariant physical states）.** Old covariant quantization 中，先在
-$\mathcal D_{\mathrm{mat}}$ 内取满足下列条件的向量：
+固定壳上动量 $p$ 的广义 fiber $\mathcal F_{\mathrm{fin}}(p)$ 内取满足下列条件的
+向量：
 $$
 (L_0-a)|\psi\rangle=0,\quad
 (\tilde L_0-a)|\psi\rangle=0,
@@ -203,9 +303,11 @@ L_n|\psi\rangle=\tilde L_n|\psi\rangle=0\quad(n>0).
 $$
 开弦相应地只有一份 Virasoro constraints；最后还要商去其中的 null states。这里
 只施加 $n>0$ 的正频约束，负频 modes 是其形式伴随，并非零算符。物理 Hilbert
-completion 的正定性依赖外部输入定理 4.10。
+completion 的正定性依赖外部输入定理 4.10。具有动量展宽的物理态是定义 4.4C
+所述质量壳直积分中的可测截面，约束逐纤维成立；它不是
+$\mathcal D_{\mathrm{off}}$ 中满足同一乘法方程的 Schwartz 函数。
 
-**命题 4.7（质量公式）.** 开弦质量公式为
+**命题 4.9（质量公式）.** 开弦质量公式为
 $$
 M^2=\frac1{\alpha'}(N-a).
 $$
@@ -238,19 +340,16 @@ N=\tilde N.
 $$
 $\square$
 
-## 4.5 临界维数和 no-ghost theorem
+## 4.5 协变量子化的正定性
 
-**命题 4.9（正规序 BRST 代数的临界条件）.** 在第五章定义的标准 ghost module
-与正规序方案中，$Q_B^2=0$ 当且仅当
-$$
-D=26,\qquad a=1.
-$$
+Virasoro 约束从不定 Fock module 中选出候选物理态，但仅靠定义 4.8 还看不出取商后
+是否仍有 timelike 负范数。下面的 no-ghost theorem 精确回答非零动量纤维上的这个
+问题；它把 $D=26$、$a=1$ 作为假设，而不是从正定性陈述中暗中推出这两个数值。
 
-**证明.** 第五章命题 5.9 对 BRST charge 作逐模计算，得到异常多项式
-$$
-A(n)=\frac{D-26}{12}(n^3-n)+2(a-1)n.
-$$
-$Q_B^2=0$ 等价于所有正整数 $n$ 的 $A(n)$ 消失。比较三次项得 $D=26$，再比较一次项得 $a=1$；反之代入这两个值，所有 $A(n)$ 均为零。$\square$
+**后续等价表述（第 5 章证明）.** 加入标准 $bc$ ghost module 后，命题 5.9 将由
+BRST current 的 OPE 独立证明：正规序 $Q_B$ 的 nilpotency 当且仅当
+$D=26$、$a=1$。该结果在这里不进入证明链，也不作为 no-ghost theorem 的证明；
+本章稍后由 light-cone Poincare algebra 的 closure 给出另一项独立一致性条件。
 
 **外部输入定理 4.10（非零动量 no-ghost theorem）.** 固定平直临界玻色弦
 $D=26$、$a=1$ 和非零 on-shell target momentum $p^\mu\ne0$（在所选 light-cone
@@ -394,9 +493,12 @@ $$
 展开 $J^{-i}$ 的零模项并验证其余 Poincare 交换关系；本书引用该标准 calculation，
 本段只展示决定临界条件的唯一异常项，不以路线代替完整证明。
 
-## 本章小结
-
-正则量子化把弦变成无限多个 oscillator。Virasoro constraints 选择物理态，质量公式来自 $L_0$ 条件，level matching 来自左右闭弦约束相容。临界维数和 no-ghost theorem 保证 covariant quantization 的一致性。
+正则量子化最终给出的不是“Schwartz 函数上的质量壳 kernel”，而是离壳算符域之上的
+固定动量广义 fibers 及其壳上直积分。Virasoro 正模逐纤维选择候选态，$L_0$ 给出
+质量公式，闭弦左右条件给出 level matching；no-ghost theorem 再把非零动量的协变
+商空间识别为横向 Fock space。Light-cone 计算说明这些横向振子在
+$D=26,a=1$ 时才能承载无 anomaly 的 Poincare 作用，第 5 章会从 BRST nilpotency
+重新得到同一临界条件。
 
 ## 练习
 

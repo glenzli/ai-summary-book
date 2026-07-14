@@ -1,12 +1,8 @@
 # 第五十五章：Sketches、Doctrines 与范畴化理论
 
-## 本章目标
+一个代数理论可以列出运算和方程，也可以用 sketch 指定某些图形必须成为极限或余极限；模型便是把这些指定锥送到真实泛锥的函子。Doctrine 再规定允许保存的结构层次，例如有限积、有限极限、regular、coherent 或 geometric 结构。这样，Lawvere theories、essentially algebraic theories、语法范畴和分类 topos 可以在同一 2-范畴框架中比较。
 
-本章介绍用范畴论表达“理论”的内部工具。Sketch 指定某些图形应成为极限或余极限；模型是保持这些指定结构的函子。Doctrine 抽象出允许的逻辑结构，例如有限积、有限极限、regular、coherent 或 geometric 结构。它们把代数理论、有限极限理论、几何理论和类型论语义统一为范畴论对象。
-
-## 依赖前置知识
-
-需要极限、余极限、函子范畴、可表现范畴、语法范畴、分类 topos、有限极限理论和模型概念。
+本章沿用极限、函子范畴、可表现范畴与语法范畴。不同 sketch 的模型类别与 morphism 类型必须匹配；可达性和自由 completion 结论会明确指定 sketch 的大小与允许的权。
 
 ## 55.1 Sketch
 
@@ -26,11 +22,13 @@ $$
 
 ## 55.2 有限积理论
 
-**定义 55.4.** 有限积理论是带有限积的小范畴 $\mathbb T$。其在有有限积范畴 $\mathcal C$ 中的模型是保持有限积的函子
+**定义 55.4.** 一元 Lawvere theory 是带有限积的小范畴 $\mathbb T$，并指定对象 $t$，使每个对象都同构于某个有限幂 $t^n$。其在有有限积范畴 $\mathcal C$ 中的模型是保持有限积的函子
 
 $$
 \mathbb T\to\mathcal C.
 $$
+
+多 sorts 版本指定一族生成对象。若只说“任意带有限积的小范畴”，所得概念比通常的 Lawvere theory 更宽。
 
 **命题 55.5.** 群对象可由有限积理论描述。
 
@@ -38,7 +36,7 @@ $$
 
 ## 55.3 Doctrine
 
-**定义 55.6.** 一个 doctrine 指定一类结构和保持该结构的函子，例如：
+**定义 55.6.** 本章把 doctrine 作为统一术语使用：它指定一类结构、相应理论对象及保持该结构的函子，例如：
 
 - finite product doctrine；
 - finite limit doctrine；
@@ -77,7 +75,7 @@ $$
 
 ## 55.5 可表现性
 
-**外部输入定理 55.12.** 小 sketch 在 locally presentable category 中的模型范畴在合适小性条件下 locally presentable；特别，许多代数结构范畴可由 sketch 模型范畴得到。
+**外部输入定理 55.12.** 小有限极限 sketch 的 Set-模型范畴是 locally finitely presentable。更一般地，若一个小 sketch 只指定 $\kappa$-小极限，则其在 locally $\kappa$-presentable 目标中的模型，在相应可达性假设下形成 accessible、accessibly embedded 的全子范畴；若该子范畴还 cocomplete，则 locally presentable。任意混合指定极限与余极限的 sketch 不自动满足这一结论。
 
 **命题 55.13.** 若模型条件由极限保存给出，则模型范畴是函子范畴的 full subcategory。
 
@@ -91,7 +89,7 @@ $$
 
 **证明.** 设 $M:\mathcal S\to\mathcal C$ 是模型。对任一指定锥，$M$ 将其送为 $\mathcal C$ 中的极限锥；因 $F$ 保持这种极限，$FM$ 将其送为 $\mathcal D$ 中的极限锥。指定余锥同理。自然变换经 $F$ 后仍为自然变换，因此后合成确实给出模型范畴之间的函子。$\square$
 
-## 55.6 本章小结
+## 55.6 用指定泛锥表达理论
 
 Sketches 把理论表示为“图形加指定极限/余极限”；doctrines 指定允许的结构和保持结构的函子。有限积理论描述普通代数理论，有限极限 sketch 描述 essentially algebraic theories，geometric doctrine 连接分类 topos。由此，理论与模型本身也成为范畴论对象。
 

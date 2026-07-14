@@ -28,9 +28,9 @@ description: Use when writing, revising, or checking the rigorous Chinese quantu
 ## 写作格式
 
 - 文件名使用两位编号，例如 `01_hilbert_spaces_states_and_rays.md`。
-- 每章开头列出“本章目标”和“依赖前置知识”。
+- 每章在标题后以自然导言引出物理问题，并把必要依赖融入叙述或精确回指；不使用固定“本章目标”“依赖前置知识”栏目。
 - 定义、约定、例子、命题、引理、定理、推论、练习使用“**定义 1.2.**”格式。
-- 每章末尾必须包含“本章小结”和“练习”。
+- 每章以内容特定的段落收束推导并保留“练习”；不使用固定“本章小结”栏目。
 - 每个练习必须能在 `SOLUTIONS.md` 中找到对应答案或解题要点。
 - 公式使用 Markdown/LaTeX；矩阵计算、交换子计算和谱分解必须写成可检查等式。
 - 全书性符号必须写入 `NOTATION.md`。
@@ -47,4 +47,3 @@ description: Use when writing, revising, or checking the rigorous Chinese quantu
 - 近似方法是否写明误差阶或适用条件。
 - 外部输入定理是否在 `SOURCES.md` 和 `THEOREM_DEPENDENCIES.md` 中可追溯。
 - 新增或修改练习后是否同步更新 `SOLUTIONS.md`。
-

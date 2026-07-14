@@ -1,4 +1,8 @@
 # 第三章 注意力、Transformer 与高效序列架构
+
+早期神经机器翻译会先把整句源文压进一个固定维度向量，再由解码器逐词展开译文。短句尚可，句子变长后，地名、修饰关系和远距离指代都要争夺同一处瓶颈。注意力机制的关键变化不是给模型一个模糊的“焦点”，而是允许解码器在每个输出位置重新计算：此刻应从哪些源位置取回多少信息。
+
+Transformer 把这项逐步查询扩展成整段序列上的矩阵运算，使位置之间可以直接交换信息。随之而来的代价也很具体：稠密注意力要保存并计算二次规模的两两分数，自回归推理还要管理不断增长的 KV Cache。于是本章的架构演进围绕同一矛盾展开：怎样扩大信息可达范围，同时控制训练并行度、推理延迟和内存成本。
 <a id="section-3-1"></a>
 
 ## 3.1 注意力机制：从瓶颈到聚焦
@@ -6,7 +10,7 @@
 
 第 2 章介绍的早期无注意力 Encoder-Decoder 会把整段输入压缩为固定维度上下文向量 $\mathbf{c}$。向量维度固定不意味着它数学上不能编码长输入，但有限容量与训练难度会使长句翻译质量明显下降，这通常称为 **固定上下文瓶颈 (Fixed-context Bottleneck)**。
 
-本节介绍 **注意力机制 (Attention Mechanism)**：Decoder 在每个输出步对各 Encoder 状态重新加权，从而不再只依赖单一固定上下文向量。
+注意力机制 (Attention Mechanism) 让 Decoder 在每个输出步重新加权各 Encoder 状态，从而不再只依赖单一固定上下文向量。
 
 #### 3.1.1 瓶颈问题 (The Bottleneck Problem)
 
@@ -22,33 +26,23 @@ Bahdanau 等人 (2014) 提出的核心思想是：**上下文向量 $\mathbf{c}$
 
 在 Decoder 生成第 $t$ 个词时，它应该根据当前的隐状态 $\mathbf{s}_{t-1}$，去计算与 Encoder 所有隐状态 $\mathbf{h}_j$ 的相关性。
 
-**数学构造**：
+Bahdanau 注意力先用一个小型 MLP 比较上一解码状态 $\mathbf s_{t-1}$ 与每个编码状态 $\mathbf h_j$，得到加性对齐分数：
 
-1.  **对齐分数 (Alignment Score)**：计算 Decoder 状态 $\mathbf{s}_{t-1}$ 与 Encoder 状态 $\mathbf{h}_j$ 的匹配度。Bahdanau 使用一个小型的神经网络（MLP）来计算：
-    $$ e_{tj} = \mathbf{v}_a^T \tanh(\mathbf{W}_a \mathbf{s}_{t-1} + \mathbf{U}_a \mathbf{h}_j) $$
-    这被称为 **加性注意力 (Additive Attention)**。
+$$ e_{tj} = \mathbf{v}_a^T \tanh(\mathbf{W}_a \mathbf{s}_{t-1} + \mathbf{U}_a \mathbf{h}_j). $$
 
-2.  **注意力权重 (Attention Weights)**：使用 Softmax 将分数归一化为概率分布：
-    $$ \alpha_{tj} = \frac{\exp(e_{tj})}{\sum_{k=1}^T \exp(e_{tk})} $$
+softmax 再沿源位置归一化这些分数，$\alpha_{tj}=\exp(e_{tj})/\sum_{k=1}^T\exp(e_{tk})$，最后形成动态上下文
 
-3.  **动态上下文向量 (Dynamic Context Vector)**：加权求和：
-    $$ \mathbf{c}_t = \sum_{j=1}^T \alpha_{tj} \mathbf{h}_j $$
+$$ \mathbf{c}_t = \sum_{j=1}^T \alpha_{tj} \mathbf{h}_j. $$
 
-**直观解释**：
-$\alpha_{tj}$ 就像是“目光的焦点”。如果翻译到 "apple"，模型可能会发现源句子中 "苹果" 对应的 $\mathbf{h}_j$ 的权重 $\alpha_{tj}$ 为 0.9，而其他词的权重很小。
+翻译到 `apple` 时，当前解码状态可以让源句 `苹果` 所在位置获得较大权重；生成下一个词后，状态变化，整组权重也重新计算。这就是“每个输出步重新查询源序列”的机制，权重像焦点只是可视化类比。
 
 #### 3.1.3 Luong 注意力 (Multiplicative Attention)
 
-Luong 等人 (2015) 提出了更简单的计算对齐分数的方法，利用点积：
-
-1.  **点积 (Dot)**: $e_{tj} = \mathbf{s}_{t-1}^T \mathbf{h}_j$
-2.  **通用 (General)**: $e_{tj} = \mathbf{s}_{t-1}^T \mathbf{W}_a \mathbf{h}_j$
-
-这种方法计算更快（矩阵乘法优化），被称为 **乘性注意力 (Multiplicative Attention)**。这正是后来 Transformer 中 Scaled Dot-Product Attention 的雏形。（关于 Transformer 中 Scaled Dot-Product Attention 的详细数学推导，请见 **[附录 A.10](appendix/a.10_transformer_math.md)**）
+Luong 等人 (2015) 改用点积 $e_{tj}=\mathbf s_{t-1}^\mathsf T\mathbf h_j$，或先加一个可学习投影 $e_{tj}=\mathbf s_{t-1}^\mathsf T\mathbf W_a\mathbf h_j$。这类乘性注意力能直接批量化为矩阵乘法，成为 Transformer 缩放点积注意力的直接前奏。（详细数学推导见 **[附录 A.10](appendix/a.10_transformer_math.md)**。）
 
 #### 3.1.4 架构可视化
 
-下面的图展示了引入注意力机制后的数据流。请注意 Context Vector $\mathbf{c}_t$ 是如何随时间步 $t$ 变化的。
+下图把动态上下文放回 Encoder--Decoder 数据流；每个时间步 $t$ 都会由新的权重 $\alpha_{tj}$ 计算 Context Vector $\mathbf{c}_t$。
 
 ```mermaid
 graph TD
@@ -95,14 +89,9 @@ graph TD
 
 #### 3.1.5 注意力的本质：可微的键值查询
 
-我们可以将注意力机制抽象为一种 **查询 (Query)** 过程。
+注意力可以抽象为一种可微查询。查询 $\mathbf q$ 表示当前步骤需要匹配什么，键 $\mathbf k_j$ 提供各位置用于匹配的特征，值 $\mathbf v_j$ 则是匹配后真正被混合的内容。softmax 权重让整条链可微，反向传播因而能从翻译损失中学习怎样构造查询、键与值。
 
-更重要的是，这个“查询”是 **可微分的 (Differentiable)**：注意力权重 $\alpha_{tj}$ 由 Softmax 产生，整个链路可以通过反向传播学习“如何对齐”。
-*   **查询 (Query, $\mathbf{q}$)**: Decoder 当前状态 $\mathbf{s}_{t-1}$（我想要什么？）
-*   **键 (Key, $\mathbf{k}$)**: Encoder 隐状态 $\mathbf{h}_j$ 的特征（你有什么特征？）
-*   **值 (Value, $\mathbf{v}$)**: Encoder 隐状态 $\mathbf{h}_j$ 的内容（你的内容是什么？）
-
-在 RNN Attention 中，Key 和 Value 通常是同一个东西（即 $\mathbf{h}_j$）。但在 Transformer 中，我们将看到这三者被显式地分离开来。
+在早期 RNN Attention 中，Key 和 Value 常共用编码状态 $\mathbf{h}_j$；Transformer 则用独立线性投影显式区分 Query、Key 和 Value。
 
 **技术本质（统一形式）**：无论是加性还是乘性注意力，最终都会得到一个归一化的权重向量，并对 Value 做加权平均。
 
@@ -126,12 +115,12 @@ $$ \alpha_{tj} = \text{softmax}_j(e_{tj}), \quad \mathbf{c}_t = \sum_{j=1}^{T} \
 这种可视化在早期机器翻译中非常常用：如果模型把英文单词 "apple" 对齐到中文 "苹果" 上，热力图会出现一条接近对角线的高亮带。
 <a id="section-3-2"></a>
 
-## 3.2 Transformer 架构解剖：以一当百
+## 3.2 Transformer 的层结构
 ### 3.2 The Transformer Architecture
 
 2017 年，Google 团队发表了 *Attention Is All You Need*，推动 NLP 主流架构发生了重要转向。原始 Transformer 抛弃了循环（RNN）和卷积（CNN），主要依赖注意力机制来捕捉输入和输出之间的全局依赖关系。
 
-本节我们将深入解剖 Transformer 的内部构造，重点关注自注意力机制和多头注意力。
+Transformer 保留 Encoder--Decoder 的任务分工，却把递推状态更新换成位置间的自注意力和逐位置前馈网络。先写出单层的数据流，再分别检查多头投影、残差连接与位置编码承担的作用。
 
 #### 3.2.1 整体架构概览 (Architecture Overview)
 
@@ -171,20 +160,12 @@ graph TB
 
 这是 Transformer 的核心算子。
 
-**输入**：
-*   **查询 (Query, Q)**: $\in \mathbb{R}^{n \times d_k}$
-*   **键 (Key, K)**: $\in \mathbb{R}^{m \times d_k}$
-*   **值 (Value, V)**: $\in \mathbb{R}^{m \times d_v}$
+设 $Q\in\mathbb R^{n\times d_k}$ 含有 $n$ 个查询，$K\in\mathbb R^{m\times d_k}$ 与 $V\in\mathbb R^{m\times d_v}$ 含有 $m$ 个键值位置。查询与键必须共享内积维度 $d_k$，值维度 $d_v$ 则决定输出每个位置携带多少内容。
 
 **计算公式**：
 $$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
 
-1.  **$QK^T$**: 计算 Query 和 Key 的两两打分矩阵。只有在两侧向量集合相同等特殊情形下才通常称为 Gram 矩阵。
-2.  **Scale ($\frac{1}{\sqrt{d_k}}$)**:
-    *   **为什么要缩放？** 假设 $q, k$ 的分量独立且服从 $\mathcal{N}(0, 1)$，则 $q \cdot k = \sum_{i=1}^{d_k} q_i k_i$ 的方差为 $d_k$。当 $d_k$ 很大时，点积结果会很大，导致 Softmax 进入饱和区（梯度趋近于 0）。
-    *   在这组理想化假设下，除以 $\sqrt{d_k}$ 将点积方差归一化为 1，降低 Softmax 过早饱和的风险；真实训练中的相关性、初始化和归一化仍会影响梯度。
-3.  **Softmax**: 将相似度转换为概率分布。
-4.  **MatMul V**: 根据概率分布加权求和 Value。
+$QK^\mathsf T$ 一次得到全部查询与键的两两分数；只有两侧向量集合相同等特殊情形下，它才通常称为 Gram 矩阵。若 $q,k$ 分量在理想化模型中独立且服从 $\mathcal N(0,1)$，点积方差为 $d_k$，维度增大便容易把 softmax 推入饱和区。除以 $\sqrt{d_k}$ 将这组假设下的方差归一化为 1，再由 softmax 对每个查询的 $m$ 个候选归一化，最后乘 $V$ 得到值的加权和。真实训练中的相关性、初始化和归一化仍会影响数值尺度。
 
 #### 3.2.3 多头注意力 (Multi-Head Attention)
 

@@ -1,12 +1,12 @@
 # 第二章：经典玻色弦、Nambu-Goto 与 Polyakov 作用量
 
-## 本章目标
-
-本章从弦世界面面积泛函出发，定义 Nambu-Goto 和 Polyakov 作用量，推导运动方程、边界条件与 Virasoro constraints，并说明 conformal gauge 下的开闭弦经典解。
-
-## 依赖前置知识
-
-需要第一章的作用量变分和 stress tensor。世界面与 target-space 归一化见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。本章默认平坦 target metric $\eta_{\mu\nu}$，除非特别声明。
+点粒子的历史是一条曲线，弦的历史却是一张曲面；把固有长度直接换成世界面面积，
+会得到几何上自然但量子化并不方便的 Nambu--Goto 根式。引入独立世界面 metric 后，
+Polyakov 作用量把同一经典动力学改写成带 diffeomorphism 与 Weyl 冗余的二维场论，
+其 metric 方程正是 Virasoro constraints。以下从面积泛函、变分和边界项逐步验证这层
+等价，再在 conformal gauge 中求出开弦与闭弦的经典模展开。计算沿用第一章的作用量
+与 stress tensor 语言；除特别说明外，target 取平坦 mostly-plus metric
+$\eta_{\mu\nu}$，其余归一化遵循 [全书归一化表](NORMALIZATION_TABLE.md)。
 
 ## 2.1 世界面和诱导度量
 
@@ -281,9 +281,11 @@ $$
 
 **注 2.14（D-brane 预告）.** Dirichlet 条件固定弦端点落在 target 中某个子流形上。量子理论中该子流形成为 D-brane 的几何模型。
 
-## 本章小结
-
-Nambu-Goto 作用量直接描述面积，Polyakov 作用量引入独立世界面 metric，使 gauge symmetry、Virasoro constraints 和量子化结构显式。Conformal gauge 把经典动力学化为二维波动方程，但必须同时保留 $T_{++}=T_{--}=0$ 约束。
+面积描述与辅助度量描述因而给出同一套非退化经典世界面，但后者把冗余与约束分开
+呈现。Conformal gauge 虽把 $X^\mu$ 的方程降为自由波动方程，却没有删除
+$T_{++}=T_{--}=0$；这些约束决定哪些模是真正可传播的。开弦边界项又把 Neumann
+与 Dirichlet 条件放在同一个变分问题中，为后面的 D-branes 留下了清楚入口。下一步
+不是再次求解经典方程，而是理解这些二维场在量子理论中的短距离乘积。
 
 ## 练习
 

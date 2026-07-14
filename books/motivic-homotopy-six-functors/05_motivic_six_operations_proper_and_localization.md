@@ -1,12 +1,14 @@
 # 第五章：Motivic 六操作、proper compatibility 与 localization
 
-## 本章目标
+稳定化给出了每个基概形上的 `\mathbf{SH}(S)`，但几何计算要求这些范畴随基变化。
+若 `X` 分成开部分 `U` 与闭补 `Z`，一个谱应当能由它在两部分上的限制及粘合数据恢复；
+若 `f` proper，紧支撑推前与普通推前应当一致。两件事分别表现为 recollement 和
+`f_!\simeq f_*`，它们都不是第三章稳定化泛性质的自动后果。
 
-本章把第四章的抽象六操作形式主义应用到 `\mathbf{SH}(-)`。本章不重证 motivic 六操作的存在性，而是把它作为 P0 外部输入定理，并严格推出 proper compatibility 与 open-closed localization 的基本形式后果。
-
-## 依赖前置知识
-
-需要前四章、稳定 motivic homotopy category、六操作形式主义、proper/open/closed morphisms、recollement、stable cofiber sequences 和 projection formula。
+本章把 motivic 六操作 package 作为精确标注的外部输入，然后在该输入之上完成形式
+推导。读者只需掌握第四章的伴随与 stable cofiber calculus，几何上则要区分 proper、
+open、closed 和一般 separated 态射。这样，localization triangle 的每一项、每个
+单位余单位和紧致性结论都有确定类型，也为下一章从闭补走向法丛的 purity 定理作准备。
 
 ## 5.1 Motivic 系数系统
 
@@ -265,7 +267,25 @@ $$
 constructibility preservation 也可能需要 quasi-excellence、系数可逆性或
 有限 Tor-dimension 等附加假设。
 
-## 5.7 本章小结
+**例子 5.24（仿射直线的原点与开补）.** 令
+`X=\mathbb A^1_S`，`i:S\hookrightarrow X` 为零截面，
+`j:\mathbb G_{m,S}\hookrightarrow X` 为其开补。定理 5.14 对单位谱给出
+
+$$
+j_!\mathbb 1_{\mathbb G_m}\longrightarrow
+\mathbb 1_{\mathbb A^1}\longrightarrow i_*\mathbb 1_S.
+$$
+
+对该序列作用 `j^*`，由 `j^*j_!\simeq\operatorname{id}`、
+`j^*i_*=0`，得到
+`\mathbb 1_{\mathbb G_m}\xrightarrow{\simeq}
+\mathbb 1_{\mathbb G_m}\to0`。作用 `i^*` 则由
+`i^*j_!=0`、`i^*i_*\simeq\operatorname{id}` 得到
+`0\to\mathbb 1_S\xrightarrow{\simeq}\mathbb 1_S`。因此三项分别记录
+开部分、整个仿射直线和原点支撑；第六章的 purity 会进一步把第三项的
+exceptional 信息识别为零截面法线丛的 Thom twist。
+
+## 5.7 开闭粘合与 proper 推前
 
 Motivic 六操作把 `\mathbf{SH}(-)` 组织成几何系数系统：`f^*\dashv f_*`
 对所有默认态射存在，`f_!\dashv f^!` 只对 separated 态射使用。

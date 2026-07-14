@@ -1,12 +1,15 @@
 # 第十三章：Slice filtration、effective categories 与 cellular methods
 
-## 本章目标
+`\mathbf{SH}(S)` 中的谱通常远比它的同伦群更难直接计算。Slice filtration 试图沿
+Tate 权重逐层逼近一个谱：先取由非负 Tate 悬挂生成的 effective 部分，再比较相邻
+effective cover 的差。它与 Postnikov 塔相似，却不是同一个过滤；其层、收敛性和
+基概形依赖都带有真正的 motivic 内容。
 
-本章介绍 Voevodsky slice filtration。它是 stable motivic homotopy category 中按 Tate twist 方向过滤谱的基本工具，并与 motivic cohomology、`H\mathbb Z`-modules、Adams 型谱序列和计算方法连接。本章给出形式定义和基本性质，把 zero slice 和 slices as motivic modules 等深结果列为外部输入。
-
-## 依赖前置知识
-
-需要 compact generation、localizing subcategories、adjoint functor theorem、Tate twists、stable infinity-categories、`H\mathbb Z`、spectral sequences 和 cellular subcategories。
+本章从 localizing subcategory 的右伴随构造 `f_qE`，证明 slice 对更高 effective
+对象的正交性，再说明 characteristic zero 域上球谱零层为何是 `H\mathbb Z`。
+Cellular 生成与 Adams 塔作为两种不同计算工具随后进入。紧生成、伴随函子定理和
+谱序列的形式知识在本节直接使用；任何收敛结论都单独列为假设，不能由 tower 的存在
+自动推出。
 
 ## 13.1 Effective subcategories
 
@@ -60,9 +63,35 @@ $$
 
 称为 slice tower。
 
-**命题 13.6.** `s_q(E)` 同时是 `q`-effective 的 quotient，并且被 `q+1`-effective 部分截去。
+**命题 13.6.** 对任意 `E\in\mathbf{SH}(S)`，`s_q(E)` 属于
+`\mathbf{SH}(S)^{eff}(q)`，并且对每个
+`A\in\mathbf{SH}(S)^{eff}(q+1)` 有
 
-**证明.** 由定义，`f_q(E)` 属于 `\mathbf{SH}(S)^{eff}(q)`，`f_{q+1}(E)` 属于更高 effective 子范畴。`s_q(E)` 是二者之间映射的 cofiber，因此记录 `q` 层相对于 `q+1` 层的差。该表述是 localizing filtration 的形式后果；若要给出正交刻画，需要右伴随和局部化三角的额外结构。`\square`
+$$
+\operatorname{Map}_{\mathbf{SH}(S)}(A,s_q(E))\simeq *.
+$$
+
+因此 `s_q(E)` 精确记录 `q`-effective cover 中对所有 `q+1`-effective 测试对象
+不可见的部分。
+
+**证明.** 记 `\mathcal C_q=\mathbf{SH}(S)^{eff}(q)`。有包含关系
+`\mathcal C_{q+1}\subseteq\mathcal C_q`。因为 `f_{q+1}(E)\in\mathcal C_q`，
+其 counit `f_{q+1}(E)\to E` 由 `f_q(E)\to E` 的 `\mathcal C_q`-余反射泛性质
+唯一因子化，得到定义 13.5 中的映射
+`f_{q+1}(E)\to f_q(E)`。两项都属于稳定 localizing subcategory
+`\mathcal C_q`，所以其 cofiber `s_q(E)` 也属于 `\mathcal C_q`。
+
+现在取 `A\in\mathcal C_{q+1}`。由于 `A` 同时属于 `\mathcal C_q`，两次
+余反射的伴随等价给出交换图中的等价
+
+$$
+\operatorname{Map}(A,f_{q+1}E)\simeq\operatorname{Map}(A,E)
+\simeq\operatorname{Map}(A,f_qE).
+$$
+
+故 `\operatorname{Map}(A,f_{q+1}E)\to\operatorname{Map}(A,f_qE)` 为等价。
+稳定范畴中的 mapping spectrum 把有限 cofiber sequence 送到 fiber sequence，
+于是 `\operatorname{Map}(A,s_qE)` 为零谱，其底层空间可缩。`\square`
 
 **定义 13.7.** 若 slice tower 对 `E` 收敛，则其 slices 给出计算 `E`-cohomology 或 homotopy sheaves 的 spectral sequence。收敛性必须逐对象证明。
 
@@ -78,7 +107,7 @@ $$
 
 **精确来源与边界.** Vladimir Voevodsky, *On the zero slice of the sphere
 spectrum*, Theorem 6.6，`https://arxiv.org/abs/math/0301013`。更一般基和正
-特征版本不由该定理给出，属于 P1 推广边界。
+特征版本不由该定理给出，需要另行引用推广定理。
 
 **外部输入定理 13.9.** 在定理 13.8 的 characteristic-zero field 口径中，
 任意谱 `E` 的各个 `s_q(E)` 具有与 slice tower 相容的 `H\mathbb Z`-module
@@ -128,19 +157,19 @@ $$
 
 **定义 13.17.** 对 ring spectrum `E`，`E`-based Adams tower 由单位 `\mathbb 1\to E` 的 fiber 迭代构造。若 `E=H\mathbb Z/\ell`，得到 motivic Adams spectral sequence 的输入。
 
-**高级外部输入 13.18（P1）.** 在另行指定的基域、素数、完备化和收敛
+**高级外部输入 13.18.** 在另行指定的基域、素数、完备化和收敛
 假设下，motivic Adams spectral sequence 由相应 motivic Steenrod algebra
 控制，并可计算 sphere spectrum 的若干完成同伦群。该计算 package 不参与
-本章 effective/slice 定义与 zero-slice P0 主线。
+本章 effective/slice 定义与 zero-slice 定理的证明链。
 
 **注 13.19.** Adams 方法、slice 方法和 cellular 方法相互作用复杂。它们是计算 stable motivic homotopy groups 的主要工具，但收敛、隐藏扩张和基域依赖不能省略。
 
-## 13.7 本章小结
+## 13.7 从 effective cover 到可计算层
 
 Slice filtration 用 effective subcategories 按 Tate twist 方向过滤 motivic
 spectra。本章引用的 zero-slice 与 module 结论严格限于 characteristic-zero
-field 的 Voevodsky 版本；更一般基和 Adams 型强计算均属 P1，并须分别检查
-系数与收敛。
+field 的 Voevodsky 版本；更一般基和 Adams 型强计算需要独立的外部定理，并须
+分别检查系数与收敛。
 
 ## 练习
 

@@ -1,12 +1,7 @@
 # 第四章：Fontaine 周期环与 classical $p$-adic Hodge theory
 
-## 本章目标
-
-本章固定 classical $p$-adic Hodge theory 的基本对象：$p$-adic Galois representations、Fontaine period rings、$B$-admissibility、Hodge-Tate/de Rham/crystalline/semistable representations，以及几何比较定理的接口。它为第五至第七章解释 prismatic theory 如何回收 classical comparison 提供目标对象。
-
-## 依赖前置知识
-
-需要熟悉局部域、绝对 Galois 群、连续表示、filtered vector spaces、Frobenius modules 和 de Rham cohomology。Fontaine period rings 的构造作为外部输入，不在本章完整重建。
+棱柱对象最终要解释哪些经典比较现象，必须先有一份不含糊的目标清单。对 $p$-进 Galois 表示 $V$，不同 Fontaine 周期环通过不变量
+$D_B(V)=(V\otimes B)^{G_K}$ 检测 Hodge--Tate、de Rham、crystalline 或 semistable 性；“可容许”还要求维数没有在取不变量时丢失。本章固定局部域、Galois 作用、滤过与 Frobenius module 的全部类型，说明各周期环携带哪些结构，以及几何比较定理输出什么。周期环的完整构造作为外部输入；这里的任务是建立第五至七章必须回收的经典接口，而不是用名称代替 admissibility 条件。
 
 ## 4.1 $p$-adic Galois representations
 
@@ -134,7 +129,7 @@ $$
 
 **说明 4.22.** 这张表也是防错表。若一个 prismatic statement 只给出 cohomology groups 而没有说明 filtration、Frobenius、monodromy 或 Galois action，它至多回收 comparison 的一部分。若一个 statement 声称是 integral comparison，却只在 $\mathbf Q_p$ 或 $B_{\mathrm{dR}}$ 层面成立，它不能替代 BMS 或 Breuil-Kisin 结构。
 
-## 本章小结
+## 4.8 经典比较的目标范畴
 
 本章把 classical $p$-adic Hodge theory 固定为 period rings 和 admissible representations 的理论。所有几何比较定理均为外部输入。后续 prismatic 章节不能把这些结论当作定义，而应说明 prismatic cohomology 如何通过 specialization 和 Frobenius fixed constructions 与它们相接。
 

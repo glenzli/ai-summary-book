@@ -1,8 +1,7 @@
 # Operad Theory：从代数运算到 infinity-operad
 
 作者：Dr. Stochastic Parrot
-状态：operad theory 数学收口已达到，出版社级最终出版校对未完成
-核查日期：2026-06-30
+版本：持续维护的严格中文教材稿
 主资料源：May, Boardman-Vogt, Markl-Shnider-Stasheff, Loday-Vallette, Fresse, Moerdijk-Weiss, Cisinski-Moerdijk, Lurie, Ayala-Francis, Hoffbeck-Moerdijk
 
 本书目标是写成一部严格的中文 Operad Theory 教材，而不是主题导览。正文从有限集上的对称序列、代入乘积和 operad 的单子/幺半对象定义开始，逐步进入经典例子、colored operads、自由 operad、树公式、代数、Koszul 对偶、bar-cobar 构造、模型范畴中的 operad、dendroidal sets 和 infinity-operads。
@@ -51,7 +50,7 @@
 19. [第十八章：Lurie-style infinity-operads 与 operadic fibration](18_lurie_infinity_operads_and_operadic_fibrations.md)
 20. [第十九章：模型比较、straightening 与 operadic localization](19_model_comparison_straightening_and_operadic_localization.md)
 21. [第二十章：factorization algebra、Fukaya categories 与几何应用](20_factorization_algebras_fukaya_categories_and_geometry.md)
-22. [第二十一章：2025-2026 研究边界与开放问题目录](21_research_frontier_2026.md)
+22. [第二十一章：Operad 理论的开放问题与结构性边界](21_research_frontier_2026.md)
 
 ### 附录
 
@@ -136,7 +135,7 @@
 - [18_lurie_infinity_operads_and_operadic_fibrations.md](18_lurie_infinity_operads_and_operadic_fibrations.md)：第十八章严格草稿。
 - [19_model_comparison_straightening_and_operadic_localization.md](19_model_comparison_straightening_and_operadic_localization.md)：第十九章严格草稿。
 - [20_factorization_algebras_fukaya_categories_and_geometry.md](20_factorization_algebras_fukaya_categories_and_geometry.md)：第二十章严格草稿。
-- [21_research_frontier_2026.md](21_research_frontier_2026.md)：近期研究边界索引。
+- [21_research_frontier_2026.md](21_research_frontier_2026.md)：按模型比较、严格化、Koszul 对偶、广义树形、局部化与几何 gluing 组织的开放问题综述。
 - [A_set_theory_universes_finite_sets_and_symmetric_groups.md](A_set_theory_universes_finite_sets_and_symmetric_groups.md)：附录 A 严格草稿。
 - [B_trees_partitions_substitution_and_coinvariants.md](B_trees_partitions_substitution_and_coinvariants.md)：附录 B 严格草稿。
 - [C_model_categories_and_quillen_adjunctions.md](C_model_categories_and_quillen_adjunctions.md)：附录 C 严格草稿。

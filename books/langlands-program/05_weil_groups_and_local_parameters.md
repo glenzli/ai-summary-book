@@ -1,14 +1,8 @@
 # 第五章：Weil 群、Weil-Deligne 数据与局部参数
 
-## 本章目标
+绝对 Galois 群携带正确的算术信息，却不直接呈现局部 L 因子所需要的离散 Frobenius 方向；Weil 群正是为此抽取出的稠密子群。在 $\ell$-adic 表示可能具有幂零单值作用时，还必须加入算子 $N$，形成 Weil--Deligne 数据。这样得到的局部参数既能记录惯性和 Frobenius，也能与第四章的球表示及 Satake 参数逐项比较。本章先在 `GL(1)` 上验证类域论给出的对应，再为一般 `GL(n)` 和还原群写出类型正确的参数空间。
 
-本章定义局部 Weil 群、Weil-Deligne 表示和 Langlands 局部参数，并说明 `GL(1)` 局部 Langlands 如何由局部类域论给出。一般 `GL(n)` 和 reductive 群的局部 Langlands 在本章只作精确定式，不作证明。
-
-## 依赖前置知识
-
-需要第三章的局部类域论和第四章的光滑表示。需要知道局部域的绝对 Galois 群、惯性群和 Frobenius 元；附录 A.2 给出分解群、惯性群、非分歧 Frobenius 和高阶分歧群的代数数论接口。附录 AE 给出 `GL(2)` principal series、Steinberg 和 supercuspidal 参数例子，供本章定义后立即计算。
-
-收口归一化回指：本章 Weil 群、Weil-Deligne 数据、局部 reciprocity、Satake 参数和局部 L 因子均采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节的 convention。
+分解群、惯性群、高阶分歧群的背景可查附录 A.2；`GL(2)` 的 principal series、Steinberg 与 supercuspidal 例子见附录 AE。Weil 群、reciprocity、Satake 参数和局部 L 因子均使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、6 节的统一约定。
 
 ## 5.1 非 Archimedean 局部 Weil 群
 
@@ -235,7 +229,7 @@ $$
 
 **注 5.15.1.** 附录 AE 展开 `GL(2)` 的三个基本模型：主级数对应两个一维参数的直和，Steinberg twist 对应非零 monodromy 的 special parameter，supercuspidal 对应不可约二维 Weil 表示。这是理解一般 `GL(n)` Langlands 分类前最小的可计算例子。
 
-**收口精修 5.A（局部参数使用表）.** 本章之后的局部参数只按以下层次使用：
+**局部参数的使用层次 5.A.** 后续各章按下列层次区分参数数据，不把它们相互替代：
 
 | 层次 | 参数对象 | 状态 |
 |---|---|---|
@@ -268,7 +262,7 @@ $$
 
 **注 5.17.** 一般 reductive 群的局部 Langlands 在许多情形已知，但完整陈述需要精确处理 pure inner forms、增强参数、component groups 和 endoscopy。本书后续章节会逐步引入这些修正。
 
-## 5.8 本章小结
+## 5.8 局部参数的结构
 
 Weil 群把 Galois 群的 profinite 拓扑改造成适合复表示和 L 函数的局部对象。Weil-Deligne 表示进一步记录单值 monodromy 算子 $N$，从而描述分歧表示的局部 L 因子。`GL(1)` 局部 Langlands 正是局部类域论；`GL(n)` 局部 Langlands 把不可约可容许表示与 $n$ 维 Weil-Deligne 表示对应；一般 reductive 群则需要 L 群和 L-packet。
 

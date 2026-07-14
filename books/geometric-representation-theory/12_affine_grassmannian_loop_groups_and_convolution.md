@@ -1,12 +1,6 @@
 # 第十二章：Affine Grassmannian、loop groups 与 convolution
 
-## 本章目标
-
-本章在一个固定的 Betti sheaf 模型中定义 loop group、affine Grassmannian、Schubert stratification 和 spherical convolution。核心任务不是把 $LG/L^+G$ 当作形式商，而是说明 fpqc sheafification、finite-dimensional support、equivariant descent 和卷积图在支撑上的 properness。最后用 $GL_2$ lattices 完成一个非平凡的 semismall convolution 计算。
-
-## 依赖前置知识
-
-需要第一章的 reductive group、第三章的 Betti equivariant sheaves、附录 C 的 semismall decomposition theorem 和附录 F 的 descent convolution 模板。
+有限旗簇上的 Schubert cells 只记录一次有限维相对位置；把两个 $G$-torsor 在 punctured formal disk 上比较，会得到由 coweight 标号的无限族相对位置，这正是 affine Grassmannian。符号 $LG/L^+G$ 容易掩盖两个关键问题：商必须作 fpqc sheafification，而卷积的 twisted external product 必须沿 $L^+G$-torsor 下降，不能从 contracted product 虚构一个到 Cartesian product 的映射。Betti 层还只能在有限个 Schubert closures 的支撑上使用通常六函子。以下先固定这些模型，再用 $GL_1$ 的离散格点和 $GL_2$ 的二重 minuscule lattice chain 计算卷积；后者会实际检验 properness、semismall inequality 与 IC 分解重数。
 
 **约定 12.0.** 本章固定 $k=\mathbb C$、代数闭特征 $0$ 系数域 $E$，以及连通 reductive complex algebraic group $G$。记
 $$
@@ -32,8 +26,7 @@ $$
 $$
 \operatorname{Gr}_G=\varinjlim_n Z_n,
 $$
-其中 transition maps 是 closed immersions，$Z_n$ 可取为 $L^+G$-stable projective schemes，且 $L^+G$ 在每个 $Z_n$ 上的作用 factor through 某个 jet quotient $G(\mathscr O/z^N)$。
-来源定位：`AFFGR-1`；Mirkovic--Vilonen §2、Zhu 的 affine-Grassmannian 讲义。Functor 的 sheafification 与 moduli 描述、ind-representability 均不在本书重证。
+其中 transition maps 是 closed immersions，$Z_n$ 可取为 $L^+G$-stable projective schemes，且 $L^+G$ 在每个 $Z_n$ 上的作用 factor through 某个 jet quotient $G(\mathscr O/z^N)$。这一表示性结果采用 Mirkovic--Vilonen §2 与 Zhu 的 affine-Grassmannian 讲义；functor 的 sheafification、moduli 描述和 ind-representability 均不在本书重证。
 
 **例 12.4.** 对 $G=GL_n$，$\operatorname{Gr}_G(\mathbb C)$ 的点可解释为 $\mathscr K^n$ 中的 $\mathscr O$-lattices，即 free rank-$n$ $\mathscr O$-submodules $L$，满足
 $$
@@ -83,7 +76,7 @@ $$
 \dim_{\mathbb C}\operatorname{Gr}^\lambda
 =\langle2\rho,\lambda\rangle.
 $$
-来源定位：`AFFGR-1`；Mirkovic--Vilonen §2，尤其 orbit 与 closure 公式。
+这些 orbit 与 closure 公式见 Mirkovic--Vilonen §2。
 
 **定义 12.8.** 记 $D^b_{L^+G,\mathrm{fs}}(\operatorname{Gr}_G,E)$ 为以下 equivariant constructible category：对象 $\mathcal F$ 支撑在某个有限并
 $$
@@ -169,8 +162,9 @@ m_{\lambda,\mu}:
 \longrightarrow
 \overline{\operatorname{Gr}}^{\lambda+\mu}
 $$
-是 proper，且相对于 $L^+G$-orbit stratifications 是 stratified semismall。
-来源定位：`AFFGR-CONV-1`；Mirkovic--Vilonen §4，尤其 Proposition 4.2、Lemma 4.4。一般 ind-map $m$ 的符号本身不替代这一 finite-support statement。
+是 proper，且相对于 $L^+G$-orbit stratifications 是 stratified semismall。这里采用 Mirkovic--Vilonen §4，尤其 Proposition 4.2 与 Lemma 4.4；一般 ind-map $m$ 的符号本身不替代这一 finite-support statement。
+
+Properness 只在有限支撑上成立，正好解释了定义 12.8 的限制。得到 proper pushforward 后，卷积仍需检查 stage 独立性、结合约束与单位；这些都来自同一个 torsor descent，而不是另行选择同构。
 
 **定义 12.13（derived convolution）.** 取有限集合
 $\Lambda,M\subset X_\ast(T)^+$，使
@@ -237,6 +231,8 @@ $$
 **证明.** 若第一个 modification 是中性 modification，则相应 convolution subspace 由 $x\mapsto[e,x]$ 与 $\operatorname{supp}\mathcal F$ 同构，且 $m([e,x])=x$。若第二个 modification 中性，则 $[g,e]\mapsto gL^+G$ 给出同样的同构。Twisted external product 在这两个 subspaces 上分别限制为 $\mathcal F$，目标 map 是 identity；命题 F.5 给出两侧自然同构。$\square$
 
 ## 12.4 两个可完全计算的低秩模型
+
+抽象的 descent 图并不显示 pushforward 会分解成哪些 IC 层。$GL_1$ 先把卷积化为 coweight 加法；$GL_2$ 随后出现第一条非平凡 fiber，闭 stratum 上的 $\mathbb P^1$ 恰好贡献额外的 relevant summand。
 
 **命题 12.16（$GL_1$ convolution）.** 对整数 $a,b$，令 $E_a,E_b$ 为相应 points 上的 skyscraper sheaves，则
 $$
@@ -323,9 +319,7 @@ Rm_\ast E_Z[2]
 $$
 而 $E_{zL_0}=\operatorname{IC}_{(1,1)}$，得到结论。这里 splitting 的存在和 relevant-stratum intersection form 的非退化性属于 `BBD-SS-1`，本书内部完成的是 lattice fibers、properness 引用和 semismall dimension check。$\square$
 
-## 本章小结
-
-本章把 affine Grassmannian 定义为 fpqc quotient sheaf，并把 sheaf category 限定在 finite-dimensional support。卷积先在 $LG\times\operatorname{Gr}_G$ 上拉回，再沿 $L^+G$-torsor下降 twisted external product，最后只在 finite Schubert support 上使用 proper pushforward。结合性和单位由完整的 descent/base-change argument 给出。$GL_2$ 例子进一步显式计算了 convolution fibers、semismall inequalities 和 decomposition multiplicities；一般 convolution t-exactness 仍是第十三章标注的外部输入。
+$GL_1$ 表明 spherical convolution 延续了 coweight 加法，$GL_2$ 则展示闭 fiber 的 top homology 如何增加一个 IC summand。一般情形中，finite-support properness 和 torsor descent 已给出可结合的卷积，但还没有证明 perverse heart 在卷积下封闭，也没有解释所得 tensor category 对应哪个代数群。第十三章用 fusion、weight functors 与 Tannakian reconstruction 回答这两个问题。
 
 ## 练习
 

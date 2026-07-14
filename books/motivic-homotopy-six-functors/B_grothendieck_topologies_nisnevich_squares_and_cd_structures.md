@@ -68,21 +68,44 @@ $$
 
 **命题 B.10.** 若 `F` 是 Nisnevich sheaf，则 elementary distinguished square 被 `F` 送为拉回方块。
 
-**证明.** 由命题 B.9，`U\amalg V\to X` 是 Nisnevich 覆盖。对该覆盖应用 Cech descent。由于 `U\times_XV\simeq V'`，覆盖的非退化交叠由 `V'` 控制；sheaf 条件给出
+**证明.** 由外部输入定理 B.11(1)，representable Nisnevich sheaves
+构成推出方块 `h_X\simeq h_U\amalg_{h_{V'}}h_V`。映射到 `F` 把这一
+推出变为同伦拉回；再用 Yoneda lemma，得到
 
 $$
 F(X)\simeq F(U)\times_{F(V')}F(V).
 $$
 
-这就是拉回方块条件。`\square`
+这就是所述拉回方块。注意 `V\times_XV` 一般含有非对角分支，因而不能把
+一般 Cech nerve 未经论证地截断成两项；推出断言正是完成该压缩所需的
+Nisnevich excision 结论。`\square`
 
 ## B.4 cd-structure 生成定理
 
-**外部输入定理 B.11.** 在 Noetherian 有限维基上，Nisnevich topology 可由空覆盖和 elementary distinguished squares 生成；满足适当 boundedness/regularity 条件的 presheaf 若把这些 squares 送为 homotopy pullback，则满足 Nisnevich descent。
+**外部输入定理 B.11（Nisnevich excision 与生成）.** 在有限维
+Noetherian 基上的 `\operatorname{Sm}_S` 中有以下结论。
 
-**依赖源.** Voevodsky cd-structures，Morel-Voevodsky，后续 motivic homotopy 教材。
+1. 每个 elementary distinguished square 在 Nisnevich sheaves 中给出
+   representables 的推出方块
+   $$
+   h_X\simeq h_U\mathop{\amalg}_{h_{V'}}h_V.
+   $$
+   因而任意 space-valued Nisnevich sheaf 把该方块送到同伦拉回。
+2. 反之，若 space-valued presheaf `F` 满足 `F(\varnothing)\simeq *`，并把
+   每个 elementary distinguished square 送到同伦拉回，则 `F` 满足
+   Nisnevich descent。
 
-**注 B.12.** 第一章只使用了“sheaf 推出 square descent”的方向。反方向需要 cd-structure 理论，是外部输入或附录级定理。
+**精确来源与层级.** 对集合值 presheaves，这是 Morel--Voevodsky,
+*A1-homotopy theory of schemes*, Section 1, Proposition 1.4。对 simplicial
+presheaves 或空间值对象的同伦版本，可用 Voevodsky 的 complete regular
+bounded cd-structure 定理；Cisinski--Deglise, *Triangulated Categories of
+Mixed Motives*, Theorem 3.3.2 给出组合模型范畴值版本。第一项不要求把
+Nisnevich infinity-topos预先假定为 hypercomplete；第二项所用的
+cd-structure 生成与有界性正是把 square descent 提升为完整下降的外部输入。
+
+**注 B.12.** 第一章只使用定理 B.11(1)。定理 B.11(2) 说明为何许多模型中
+可以用 elementary squares 定义 Nisnevich-local fibrant objects；它不是对
+任意未声明 cd-structure 条件的站点都成立的形式事实。
 
 ## B.5 Points
 

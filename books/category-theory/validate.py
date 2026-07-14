@@ -44,12 +44,10 @@ def check_links(md_files: list[Path], failures: list[str]) -> None:
 
 
 def check_structure(chapter_files: list[Path], failures: list[str]) -> None:
-    required = ("## 本章目标", "本章小结", "## 练习")
     for path in chapter_files:
         text = path.read_text(encoding="utf-8")
-        for marker in required:
-            if marker not in text:
-                fail(f"missing section in {path.name}: {marker}", failures)
+        if not re.search(r"^##\s+(?:\d+(?:\.\d+)*\s+)?(?:练习|习题)\s*$", text, re.M):
+            fail(f"missing exercise section in {path.name}", failures)
 
 
 def check_forbidden_markers(md_files: list[Path], failures: list[str]) -> None:

@@ -24,7 +24,7 @@
 | Black branes 与熵 | 17.1, 17.2, 17.3 | 17.1, 17.2, 17.3 | 增加 refined wall-crossing 公式例题 |
 | AdS/CFT | 18.1, 18.2, 18.3 | 18.1, 18.2, 18.3 | 增加 bulk scalar two-point normalization |
 | Flux compactification | 19.1, 19.2, 19.3 | 19.1, 19.2, 19.3 | 增加 tadpole lattice 例题 |
-| 接口收束 | 20.1, 20.2, 20.3 | 20.1, 20.2, 20.3 | 增加阅读路径专题题 |
+| 跨领域计算接口 | 20.1, 20.2, 20.3, 20.4, 20.5 | 20.1, 20.2, 20.3, 20.4, 20.5 | 增加 K3 seed coefficients 的直接推导 |
 
 ## 补题原则
 

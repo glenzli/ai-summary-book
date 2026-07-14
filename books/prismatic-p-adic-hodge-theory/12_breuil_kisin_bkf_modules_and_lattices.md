@@ -1,16 +1,6 @@
 # 第十二章：Breuil-Kisin、Breuil-Kisin-Fargues modules 与 lattices
 
-## 本章目标
-
-本章区分四类常被混写的对象：Breuil-Kisin modules、
-Breuil-Kisin-Fargues modules、prismatic $F$-crystals 与 Galois lattices。
-重点是说明各自的底环、Frobenius linearization、反演元素、torsion
-假设及 descent 数据。
-
-## 依赖前置知识
-
-依赖第二章的 Breuil-Kisin prism、第五章的 BMS comparisons、第六章的
-prismatic $F$-crystals 和附录 J 的 semilinear linearization 与 lattice。
+Breuil--Kisin module、Breuil--Kisin--Fargues module、prismatic $F$-crystal 与 Galois lattice 都携带 Frobenius，却生活在不同底环并满足不同的反演与下降条件。把它们统称为“带 Frobenius 的模”会抹去积分分类真正依赖的 height、torsion 和 lattice 信息。本章以第二章的 Breuil--Kisin prism、第五章的 BMS comparison、第六章的 $F$-crystal 和附录 J 的 semilinear linearization 为基础，逐项固定四类对象的类型，并说明 cohomology 输出在何种有限性条件下能够落入相应模范畴以及怎样与 crystalline Galois lattice 比较。
 
 ## 12.1 Breuil-Kisin prism
 
@@ -84,8 +74,7 @@ $\mathbf Z_p$-module，且
 $$
 \Xi\subset T\otimes_{\mathbf Z_p}B_{\mathrm{dR}}
 $$
-是 $B_{\mathrm{dR}}^+$-lattice。来源为 BMS1, Theorem 4.28（locator
-`BMS1-BKF`）。本书不重证该分类。
+是 $B_{\mathrm{dR}}^+$-lattice。来源为 BMS1, Theorem 4.28。本书不重证该分类。
 
 **警告 12.8A.** 定理 12.8 只分类 finite free BKF modules。一般 BKF
 module 可含 $p$-power torsion 或 closed-point contribution，不能直接读出
@@ -143,7 +132,7 @@ $$
 $$
 其中右侧对象是 finite free $\mathbf Z_p$-modules $T$ 配 continuous
 $G_K$-action，且 $T[1/p]$ crystalline。来源为 Bhatt-Scholze, Theorem
-5.6（locator `BS-FCRYS`）。
+5.6。
 
 **外部输入定理 12.13（Breuil-Kisin evaluation 与 descent boundary）.**
 Breuil-Kisin prism $(\mathfrak S,(E(u)))$ 是 $X_\Delta$ 中覆盖 final object
@@ -202,7 +191,7 @@ normalization 有关。未声明 normalization 时，不能从 “height $\le h$
 最后一行的非唯一性由命题 J.11 的例子
 $\mathbf Z_p,p\mathbf Z_p\subset\mathbf Q_p$ 已在书内证明。
 
-## 本章小结
+## 12.8 四类 Frobenius 对象的类型边界
 
 Breuil-Kisin 与 BKF modules 都是积分 Frobenius modules，但底环、反演
 divisor 与 finiteness 条件不同。BMS cohomology 总先给 module 型输出；

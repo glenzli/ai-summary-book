@@ -1,12 +1,6 @@
 # 第十四章：Flavor、CP 与 Wilson 系数空间
 
-## 本章目标
-
-本章解释为什么 Warsaw basis 的 59 个结构不是实际拟合参数个数，并给出 flavor、Hermiticity、CP 和最小 flavor violation 的基本纪律。
-
-## 依赖前置知识
-
-需要第十三章的算符表和标准模型 Yukawa 结构。
+Warsaw 目录中的 $\mathcal O_{Hq}^{(1)}$ 只占一行，它的系数在三代情形却是一个矩阵；四费米子结构更携带四个 flavor 指标。因而“打开一个算符”可能意味着一个实方向、一个复矩阵，或一个受交换关系约束的高阶张量。Hermitian conjugation 先决定哪些分量互为共轭，CP 再选择实部、虚部或显式 dual-field-strength 方向，flavor universal、diagonal 和 MFV 则对应 Wilson 空间中不同的子空间。以三代 Hermitian 二指标系数为例，这里从拉氏量实性推导 $C^{pr}=(C^{rp})^*$，数出九个实参数，并说明为何取实对称后只剩六个。这套线性代数是理解全局拟合维数、RG 混合和 flavor 假设代价的基础。
 
 ## 14.1 Flavor 指标
 
@@ -96,9 +90,9 @@ $$
 5.  是否使用 Hermiticity 约束；
 6.  参数在何尺度定义。
 
-## 本章小结
+## 14.7 结构数不等于拟合维数
 
-SMEFT 的参数空间不是“59 维”。59 是结构目录；真实参数空间由 flavor、CP、Hermiticity 和分析假设共同决定。
+Hermiticity 把 current 算符的复矩阵限制为 Hermitian 矩阵，CP 与 flavor 假设再选择其中不同的实子空间。三代例子中的九个、六个或三个参数分别对应 full Hermitian、实对称与 diagonal nonuniversal 口径，不能互换。Warsaw 的 59 只是未展开 flavor 的结构目录；真正进入 RGE 与响应矩阵的是明确基、定义尺度和 CP/flavor 条件后的实 Wilson 向量。
 
 ## 练习
 

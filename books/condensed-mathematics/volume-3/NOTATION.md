@@ -9,10 +9,17 @@
 - $\Omega_X^p$：全纯 $p$-形式层。
 - $\omega_X$：典范层，光滑 $n$ 维时为 $\Omega_X^n$。
 - $D_{\operatorname{coh}}(X)$：相干导出范畴。
+- $D^b_{\operatorname{coh}}(X)$：有界相干导出范畴。
+- $\operatorname{Perf}(X)$：perfect 复形范畴，即局部拟同构于有界有限秩局部自由复形的对象。
 - $R\Gamma(X,-)$：导出全局截面。
 - $R\Gamma_c(X,-)$：紧支撑导出全局截面。
+- $\mathcal A_X^{p,q}$：光滑 $(p,q)$-形式层。
+- $\bar\partial:\mathcal A_X^{p,q}\to\mathcal A_X^{p,q+1}$：Dolbeault 微分。
+- $\mathcal H^{p,q}(X)$：相应 Dolbeault Laplacian 的 harmonic space。
 - $f_!$：紧支撑推前。
 - $f^!$：$f_!$ 的右伴随。
+- $K^0(X)$：向量丛或 perfect 复形的 Grothendieck 群，按正文适用范围解释。
+- $\chi(X,E)$：$E$ 的上同调 Euler characteristic。
 - $\operatorname{ch}$：Chern character。
 - $\operatorname{td}$：Todd class。
 

@@ -1,12 +1,6 @@
 # 第十一章：Equivariant 和 motivic chromatic homotopy
 
-## 本章目标
-
-本章说明 chromatic ideas 如何进入 equivariant stable homotopy theory 和 motivic homotopy theory。当前版本只建立严格接口：哪些结构与非等变 chromatic theory 平行，哪些结论仍是前沿，哪些不能直接搬运。
-
-## 依赖前置知识
-
-需要有限群作用、genuine equivariant spectra、motivic spectra 和 formal group laws 的基本语言。本章不预设完整 equivariant 或 motivic 技术，所有深层结果均作外部输入或边界说明。
+非等变色层理论以一个素数和一维形式群高度组织谱；加入群作用或代数几何基底后，检测数据会同时依赖子群、几何点和 realization functor，原有 type 不再能原样搬运。本章比较 genuine equivariant 与 motivic 两个扩展方向：哪些 Bousfield、thick ideal 和形式群结构仍有平行版本，哪些结论需要额外的保守性或基底假设，哪些仍处在研究前沿。有限群作用、genuine spectra、motivic spectra 与形式群律的基本语言作为入口；深层分类与重构结果精确标为外部输入，使“类比”不被误写为定理。
 
 ## 11.1 Genuine equivariant spectra
 
@@ -85,7 +79,7 @@ $$
 
 **例 11.22.** Motivic Hopf map $\eta$ 和拓扑 Hopf map 的关系依赖 realization，但 motivic $\eta$-completion 和拓扑 completion 是不同过程。motivic chromatic 章节必须独立记录 completion。
 
-## 本章小结
+## 11.7 可以迁移与不可直接迁移的结构
 
 Equivariant 和 motivic chromatic theory 都保留“高度、周期性、形式群”的核心思想，但对象范畴和检测工具发生变化。Genuine equivariant theory 需要 geometric fixed points 和 representation grading；motivic theory 需要基域、Tate twist 和 $MGL$。当前章节建立接口和风险边界，后续扩写需分成独立教材级章节。
 

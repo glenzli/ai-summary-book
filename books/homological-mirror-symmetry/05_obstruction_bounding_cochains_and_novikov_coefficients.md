@@ -1,12 +1,6 @@
 # 第五章：obstruction、bounding cochains、Novikov 系数与 curved $A_\infty$ 结构
 
-## 本章目标
-
-本章解释为什么 exact 情况之外的 Fukaya theory 需要 curvature、Novikov 系数和 bounding cochains。核心目标是给出 filtered curved $A_\infty$ 语言，并证明 Maurer-Cartan 方程如何把弯曲结构变回可用的 Floer differential。
-
-## 依赖前置知识
-
-需要第一章的 $A_\infty$ 范畴、第三章的 Floer cochains、第四章的 holomorphic polygon 计数。一般虚基本链技术作为外部输入。
+Exactness 在上一章中消去了无输入的圆盘项；一旦允许非 exact Lagrangians，Maslov 指数二圆盘会贡献 $\mu^0$，于是原来的 $\mu^1$ 一般不再平方为零。面积还会产生无限多不同能量的贡献，普通系数域无法记录其收敛。本章先构造带赋值的 Novikov 域，再把 $\mu^0$ 纳入 filtered curved $A_\infty$ 方程，最后用 Maurer--Cartan 元重新组织所有插入项。第一、三、四章提供代数符号与几何来源；虚基本链及一般紧致 Lagrangian 的分析构造仍作为明确的外部输入。
 
 ## 5.1 Novikov 系数
 
@@ -217,9 +211,7 @@ complex。若进一步 $\operatorname{char}k\ne2$ 且 $W_1-W_0$ 可逆，则它�
 故定义 5.11 的 fiber category 有良定义 morphism complexes。不同 value
 时，最后一句正是命题 I.11 应用于常数 $c=W_1-W_0$。证毕。
 
-## 本章小结
-
-非 exact Fukaya theory 的核心新现象是 curvature $\mu^0$。Bounding cochains 是使 curvature 消失或变成标量单位的 Maurer-Cartan 解。Novikov 系数记录面积并保证能量过滤下的无穷和收敛。HMS 中的 Landau-Ginzburg potential 常由 disk counts 产生。
+曲率不是需要从记号中删去的误差，而是非 exact 几何真实产生的数据。Novikov 赋值使按面积加权的级数可收敛，bounding cochain 则在完成过滤中重新求和高阶运算；只有 Maurer--Cartan 方程满足后，变形微分才平方为零。若曲率只化为标量单位，不同标量之间的态射形成 matrix factorization 型对象，这也解释了 disk potential 为何会在镜像的 Landau--Ginzburg 侧出现。
 
 ## 练习
 

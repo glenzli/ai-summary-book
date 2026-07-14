@@ -141,6 +141,6 @@ H^{n+2}(\|X\|_n;\pi_{n+1}(X))
 $$
 其中 $\pi_{n+1}(X)$ 按 BM.14 视为 $\|X\|_n$ 上的局部系统。
 
-## BM.8 本附录关闭的缺口
+## BM.8 扭曲系数的构造边界
 
-本附录把局部系数系统、$G$-module、twisted EM fibration、局部系数上同调、twisted Mayer-Vietoris 和 Postnikov $k$-invariant 的系数系统接入全书。剩余义务是 EM fibration 的完整 HIT/谱构造、局部系数长正合列的逐行 proof term，以及与具体谱序列的计算接口。
+由基点改变得到的 $\pi_1$ 作用可以在书内构造；twisted EM fibration、局部系数长正合列和 twisted Mayer--Vietoris 还需要具体 HIT 或谱模型。没有这些输入时，Postnikov $k$-invariant 的局部系数公式只规定结论应位于何种类型，不构成该结论的证明。

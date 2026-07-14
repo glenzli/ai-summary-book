@@ -1,12 +1,8 @@
 # 第四十一章：范畴逻辑、依赖类型论与 Univalence
 
-## 本章目标
+范畴不仅组织数学对象，也能解释形式系统的语义：上下文对应对象，依赖类型对应 context 上的纤维，项对应截面，替换对应拉回。有限极限解释合取与等式，局部 Cartesian closed 结构解释依赖积和依赖和，topos 提供更丰富的高阶逻辑；若把值域提升为 $\infty$-groupoids，identity type 便具有路径空间的同伦含义。Univalence 则要求等价与恒等的语义以精确方式相容。
 
-本章把范畴论作为逻辑语义的语言来组织。普通极限、指数对象、slice 范畴、fibration 和 $\infty$-topos 分别解释命题逻辑、一阶逻辑、依赖类型论和同伦类型论。核心原则是：语法中的上下文、类型、项和替换，分别对应范畴中的对象、slice 对象、section 和 pullback。
-
-## 依赖前置知识
-
-需要有限极限、Cartesian closed categories、slice categories、fibrations、topos、$\infty$-topos、Cartesian fibration、可表现 $\infty$-范畴和基本同伦论。
+本章使用有限极限、slice、fibration、topos 与 $\infty$-topos。我们会区分 CwF、comprehension category 与 locally Cartesian closed category 的语义强度；univalence 只在具有适当 universe object 的模型中陈述，不把它当作任意范畴的性质。
 
 ## 41.1 子对象纤维化与谓词
 
@@ -24,7 +20,7 @@ $$
 
 **证明.** 恒等态射的 pullback 同构于原单态，所以 $(\operatorname{id}_X)^*=\operatorname{id}_{\operatorname{Sub}(X)}$。若 $X\xrightarrow fY\xrightarrow gZ$，则沿 $gf$ 拉回子对象 $U\hookrightarrow Z$ 得到的方块与先沿 $g$ 再沿 $f$ 拉回得到的迭代 pullback 由 pullback 的粘合性质同构。因此 $(gf)^*=f^*g^*$。在子对象同构类上这给出严格函子性。$\square$
 
-**定义 41.4.** 一个 regular category 是有有限极限、每个态射有 image factorization，且 regular epimorphisms 在 pullback 下稳定的范畴。
+**定义 41.4.** 一个 regular category 是有有限极限的范畴，其中每个态射都分解为 regular epimorphism 后接 monomorphism，并且 regular epimorphisms 在 pullback 下稳定。这里 regular epimorphism 指某一对平行态射的 coequalizer；该分解的单态部分称为 image。
 
 **命题 41.5.** 在 regular category 中，任意 $f:X\to Y$ 的拉回函子
 
@@ -133,7 +129,7 @@ $$
 
 ## 41.5 恒等类型与路径对象
 
-**定义 41.17.** 在有有限极限的范畴中，显示映射 $p:E\to B$ 的相对恒等类型可由对角线
+**定义 41.17.** 设 comprehension category 配有 pullback-stable weak factorization system $(\mathcal L,\mathcal R)$，且显示映射属于 $\mathcal R$。显示映射 $p:E\to B$ 的相对恒等类型由对角线的因子化
 
 $$
 E\to E\times_BE
@@ -145,7 +141,7 @@ $$
 E\to \operatorname{Id}_p(E)\to E\times_BE
 $$
 
-表示，其中第二个态射再次属于指定显示映射类。
+表示，其中第一箭头属于 $\mathcal L$，第二箭头属于 $\mathcal R$，且所选因子化沿基变换稳定。任意因子化都不足以解释恒等类型的 introduction、elimination 与 substitution 规则。
 
 **外部输入定理 41.18.** 带合适 weak factorization system 的 comprehension category 可解释 Martin-Lof identity types；若还满足稳定性和 Beck-Chevalley 条件，则解释替换下稳定的恒等类型。
 
@@ -163,9 +159,9 @@ $$
 
 与等价类型 $\operatorname{Equiv}_\Gamma(A,B)$ 等价。
 
-**外部输入定理 41.21.** Kan simplicial sets、合适模型范畴和足够好的 $\infty$-topos 中存在 univalent universes，因而给出 homotopy type theory 的模型。
+**外部输入定理 41.21.** 设 $\kappa$ 为不可达基数。Kan 单纯集模型中存在分类 $\kappa$-小 Kan fibrations 的 univalent fibration；在满足相应基数与 object-classifier 条件的 $\infty$-topos 中，relatively $\kappa$-compact morphisms 也由 univalent universe 分类。一般模型范畴或任意 $\infty$-topos 不会无条件自带这一 universe。
 
-**命题 41.22.** Univalence 蕴含等价对象可按相等对象替换。
+**命题 41.22.** Univalence 把类型等价转化为 identity path，因而允许沿该 path 作依赖运输。
 
 **证明.** 设 $e:A\simeq B$ 为同一 universe 中两个类型的等价。Univalence 给出等价
 
@@ -173,7 +169,7 @@ $$
 \operatorname{Id}_{\mathcal U}(A,B)\simeq \operatorname{Equiv}(A,B),
 $$
 
-故 $e$ 对应一个路径 $p:A=B$。类型论的消去规则允许沿等式路径运输任意依赖于 universe 元素的构造，因此依赖于 $A$ 的结构可沿 $p$ 运输到依赖于 $B$ 的结构。$\square$
+故 $e$ 对应一个路径 $p:A=B$。类型论的消去规则允许沿该 identity path 运输任意依赖于 universe 元素的构造，因此依赖于 $A$ 的结构可沿 $p$ 运输到依赖于 $B$ 的结构。这是 propositional/path equality 下的运输，并不把 $A$ 与 $B$ 变成 judgmentally 相同的语法表达式。$\square$
 
 ## 41.7 几何逻辑与逆像函子
 
@@ -183,7 +179,7 @@ $$
 
 **证明.** 几何态射的逆像 $f^*$ 按定义保持有限极限，且作为左伴随保持所有小余极限。有限合取由有限极限解释，任意析取由相应子对象并或余极限解释，存在量词由 image 或相应左伴随解释。由于 $f^*$ 保持这些结构，并与 pullback 相容，几何公式和几何 sequent 的解释在 $f^*$ 下保持。$\square$
 
-## 41.8 本章小结
+## 41.8 上下文、纤维与恒等类型
 
 范畴逻辑把语法中的结构逐层翻译为范畴结构：子对象解释谓词，regular image 解释存在量词，Heyting 结构解释直觉逻辑，locally Cartesian closed 结构解释依赖和类型与依赖函数类型，comprehension fibration 解释上下文与类型族，路径对象解释恒等类型，univalent universe 把等价与相等联系起来。由此，范畴论不仅描述数学对象，也提供形式语言和证明系统的语义基础。
 

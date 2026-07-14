@@ -1,12 +1,6 @@
 # 第八章：Prismatization、$F$-gauges 与 2026 研究边界
 
-## 本章目标
-
-本章把 prismatic theory 的前沿接口收束为研究地图：Bhatt-Lurie prismatization、Cartier-Witt stack、prismatic crystals 的 quasicoherent sheaf 解释、$F$-gauges、Shimura varieties、syntomic operations、non-abelian $p$-adic Hodge theory 和 finite flat group schemes。所有 2025-2026 结果均作为研究边界，不进入基础定理链。
-
-## 依赖前置知识
-
-依赖前七章全部内容，尤其是 prismatic site、crystals、Frobenius、Nygaard filtration 和 syntomic complexes。需要 algebraic stacks、quasicoherent sheaves 和 higher categorical language 的基本背景。
+Prismatic site 擅长定义上同调与 crystal，却不直接把这些对象呈现为一个可做几何的模空间。Prismatization 和 Cartier--Witt stack 试图把同一算术增厚数据堆化，使 crystal 变成 stack 上的 quasicoherent sheaf，$F$-gauge 则把 Frobenius 与滤过放进更适合模问题的对象。本章从前七章的 site、crystal、Nygaard 与 syntomic 结构出发，说明这种几何化保留了什么信息，以及 operations、Shimura varieties、finite flat group schemes 和非阿贝尔方向还缺哪些比较定理。代数栈与高阶范畴语言作为背景；2025--2026 的结果逐项标为外部输入或研究边界，不进入基础证明链。
 
 ## 8.1 Prismatization 的动机
 
@@ -37,7 +31,7 @@ $$
 $$
 绝对版本在 $p$-quasisyntomic 假设下给出 $\mathcal D_{qc}(\mathrm{WCart}_X)$ 与 absolute prismatic crystals 的等价。
 
-**警告 8.4.** Bhatt-Lurie 论文在 arXiv 页面标注为 preliminary version。本书不得把其中所有结构当作已教材化基础定理；这里只作为前沿接口。正文只使用其 source-level locator 来解释 prismatization 如何保留 cohomology、crystal 和 pushforward 信息，不用它证明第二、三章的基础 prismatic comparison。
+**警告 8.4.** Bhatt--Lurie 论文在 arXiv 页面标注为 preliminary version，因此这里不由 prismatization 反推第二、三章的基础比较定理。可使用的接口限于已明确定位的 cohomology、crystal 与 pushforward 对应，并始终保留其完备性和几何假设。
 
 ## 8.2 Prismatic $F$-gauges
 
@@ -65,19 +59,19 @@ $$
 
 **研究边界 8.13.** Mondal-Olsson 2026 年工作描述 smooth positive characteristic variety 上 height one finite flat group scheme 所对应的 prismatic $F$-gauge，并由此恢复 crystalline Dieudonne module 和 flat cohomology 的结果。
 
-**说明 8.14.** 该方向把 prismatic $F$-gauges 与 classical Dieudonne theory 重新连接。它与第六章 prismatic $F$-crystal classification 的关系需要后续单独梳理，不能在基础正文中直接合并。
+**说明 8.14.** 该方向把 prismatic $F$-gauges 与 classical Dieudonné theory 重新连接。要同第六章 prismatic $F$-crystal classification 比较，还需构造从 height-one group scheme 的 gauge 数据到相应 crystal 的函子，并证明它保持 Frobenius、Verschiebung 与 descent；没有这些步骤时两项结果不能直接合并。
 
-## 8.6 研究边界收口表
+## 8.6 前沿接口所缺的比较数据
 
-| 方向 | 核心对象 | 当前状态 | 本书处理 |
+| 方向 | 核心对象 | 可比较的输出 | 尚需固定的数据 |
 | --- | --- | --- | --- |
-| Prismatization | $\mathrm{WCart}_X$, QCoh | Bhatt-Lurie preliminary | 前沿接口 |
-| $F$-gauges | filtered/Frobenius gauge objects | 多来源发展中 | 前沿接口 |
-| Syntomic operations | Steenrod operations, spectral syntomic | 2025 preprint | 研究边界 |
-| Coefficients | prismatic crystals with coefficients | 2025 preprint | 研究边界 |
-| Non-abelian Hodge | rational Hodge-Tate crystals | 2025 preprint | 研究边界 |
-| Shimura varieties | prismatic realization | 2023 preprint | 研究边界 |
-| finite flat groups | height one group schemes | 2026 preprint | 研究边界 |
+| Prismatization | $\mathrm{WCart}_X$, QCoh | prismatic cohomology 与 crystals | 完备性、lci/quasisyntomic 假设及 pushforward |
+| $F$-gauges | filtered/Frobenius gauge objects | filtration 与 Frobenius 的统一对象 | gauge 范畴及其到 $F$-crystals 的函子 |
+| Syntomic operations | Steenrod operations, spectral syntomic | cup products 与上同调运算 | spectral enhancement 和次数约定 |
+| Coefficients | prismatic crystals with coefficients | 带系数 comparison | tensor/descent 与 torsion 假设 |
+| Non-abelian Hodge | rational Hodge--Tate crystals | 模空间层的对应 | 非阿贝尔对象范畴与高阶 descent |
+| Shimura varieties | prismatic realization | integral realization functor | group datum、level 与 integral model |
+| finite flat groups | height-one group schemes | Dieudonné 型 gauge | Frobenius/Verschiebung 与 height 条件 |
 
 ## 8.7 从 site 到 stack 的信息保真
 
@@ -93,9 +87,9 @@ $$
 
 **警告 8.16.** Prismatization 是重新组织 prismatic 信息的几何语言，不是把 prismatic site 删除后留下一个普通 stack 的替代品。特别是 $\mathrm{WCart}$ 侧的 quasicoherent sheaf statement 要带完备性、quasisyntomic/lci 假设和 derived stack caveat；省略这些条件会把前沿接口误写成无条件基础定理。
 
-## 本章小结
+## 8.8 从 site 到几何化模空间
 
-Prismatic theory 的前沿已经从 comparison theorem 扩展到 stack-theoretic reinterpretation、$F$-gauges、syntomic operations、Shimura varieties、Brauer groups 和 non-abelian Hodge theory。本章已把 Bhatt-Lurie prismatization 的最小可用数学内容固定为 $\mathrm{WCart}_{X/A}$、cohomology comparison、crystals-as-QCoh 和 pushforward compatibility。基础教材链仍以 $\delta$-环、prism、prismatic site、comparison theorem、$A_{\inf}$、Breuil-Kisin 和 prismatic $F$-crystals 为主体。
+Prismatic theory 的前沿已经从 comparison theorem 扩展到 stack-theoretic reinterpretation、$F$-gauges、syntomic operations、Shimura varieties、Brauer groups 和 non-abelian Hodge theory。它们共享 $\delta$-环、prism、site 与 Frobenius 语言，却分别要求新的完备性、descent 或模空间结构。Prismatization 的最低可比较数据是 $\mathrm{WCart}_{X/A}$、cohomology comparison、crystals-as-QCoh 与 pushforward compatibility；少掉其中任何一项，都只能得到部分重解释而非原 crystal theory 的等价模型。
 
 ## 练习
 
@@ -103,4 +97,4 @@ Prismatic theory 的前沿已经从 comparison theorem 扩展到 stack-theoretic
 
 **练习 8.2.** 列出 $F$-crystal 与 $F$-gauge 至少两个结构差异。
 
-**练习 8.3.** 从本章表格中选择一个方向，说明它为什么不能作为基础定理使用。
+**练习 8.3.** 从本章表格中选择一个方向，写出从核心对象到目标输出仍缺少的比较函子或假设。

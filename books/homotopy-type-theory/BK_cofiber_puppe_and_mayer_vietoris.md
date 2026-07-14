@@ -122,6 +122,6 @@ $$
 
 **连接.** 附录 AL、AU、AY 给出 Blakers-Massey、flattening 和 pushout path code；本附录的 Mayer-Vietoris 是 cohomological shadow。
 
-## BK.8 本附录关闭的缺口
+## BK.8 从 cofiber 到正合列的边界
 
-本附录把 cofiber、suspension as cofiber、cofiber sequence、Puppe sequence、cofiber cohomology exact sequence 和 Mayer-Vietoris 加入教材。剩余义务是 Puppe 序列的全部自然性、局部系数版本、具体例子计算和与谱序列的衔接。
+Cofiber 与 suspension 可由 pushout 在书内形成；Puppe 序列的全体自然性、局部系数 Mayer--Vietoris 以及与谱序列的比较还需要额外外部输入。常系数公式不能替代局部系统，mapping-out 的 fiber 描述也不能在未验证连通性或 EM 型输入时自动产生长正合列。

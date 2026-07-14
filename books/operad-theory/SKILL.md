@@ -1,6 +1,6 @@
 ---
 name: operad-theory-textbook
-description: Use when writing, revising, or checking the rigorous Chinese textbook on operad theory in books/operad-theory. Requires primary-source grounding, formal definitions before intuition, theorem-proof structure, explicit universe and size conventions, notation consistency, and careful separation between classical operad theory, homotopical operads, infinity-operads, and current research frontiers.
+description: Use when writing, revising, or checking the rigorous Chinese textbook on operad theory in books/operad-theory. Requires continuous textbook exposition, primary-source grounding, formal definitions before intuition, theorem-proof structure, explicit universe and size conventions, notation consistency, and careful separation between classical operad theory, homotopical operads, infinity-operads, and stable open problems.
 ---
 
 # Operad Theory 教材写作技能
@@ -24,7 +24,7 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 - 基础章节采用固定 Grothendieck universes 处理小性问题；“有限集”指指定宇宙中的有限集。
 - 代数结构章节先处理 `Set`、`Mod_R`、`Ch_R` 中的 operad，再进入 Koszul 对偶、bar-cobar 和同伦代数。
 - 同伦章节区分严格 operad、模型范畴中的 operad、colored operad、dendroidal model、quasi-category/operadic fibration 模型。
-- 研究前沿只收录已联网核查的一手资料；除非完成独立验证，不把 2025-2026 预印本中的新结果写成正文定理。
+- 开放问题按数学障碍、输入模型和可检验特例组织，不按论文年份、摄入状态或联网核验流程组织。涉及会随版本变化的结论时，仍须核查一手资料；未完成独立验证的预印本结果不得写成正文定理。
 
 ## 资料源规则
 
@@ -36,11 +36,20 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 ## 写作格式
 
 - 文件名使用两位编号，例如 `01_symmetric_sequences_and_operads.md`。
-- 每章开头列出“本章目标”和“依赖前置知识”。
+- 每章 H1 后直接写自然导言，正文章不少于约 120 个有效汉字。导言应从前章留下的问题、一个反例或本章核心构造的必要性进入，并说明本章将建立的数学联系。
+- 不得设置“本章目标”“依赖前置知识”“主线”“阅读路线”等固定骨架，也不得仅换名复刻这些列表。前置知识和路线应融入连续叙述。
 - 定义、约定、例子、命题、引理、定理、推论、练习使用“**定义 1.2.**”格式。
-- 每章末尾必须包含“本章小结”和“练习”。
+- 定义链之间必须补足动机和过渡；每个主要抽象构造至少配一个可计算低阶例子，或明确指向已经完成的书内计算。
+- 每章以内容特定的小节自然收束，说明本章构造解决了什么、留下什么接口；不得使用“本章小结”“要点回顾”等机械总结标题。正文章保留内容相关的练习。
 - 公式使用 Markdown/LaTeX；树形组合可用明确的有限集分块、树代入或 tikzcd 风格代码块描述。
 - 全书性符号必须先登记到 `NOTATION.md`。
+
+## 关键模型约定
+
+- 第十七章在集合值 dendroidal set 的 corolla fiber 上只能称 operation set。只有使用派生映射空间的 homotopy fiber 后，才称 derived operation space。
+- 第十八章在本书采用的 Lurie `Fin_*` 约定下，每个基态射按“先 inert、后 active”分解。Operadic fibration 只要求指定 inert 态射的 coCartesian 提升；active 部分编码多输入运算。
+- 第二十章必须分别定义 prefactorization 乘法与 Weiss descent。Weiss cover 要求每个非空有限点集落在某个覆盖成员中；descent 的索引范畴、箭头方向和所用一元包含映射必须写明。
+- 第二十一章只给稳定的开放问题综述。每个问题需说明输入、期望结论、已知覆盖范围和 strict 或低 arity 检验，不得写成研究摄入表、版本清单或联网核验流程。
 
 ## 严谨性检查
 
@@ -55,3 +64,15 @@ description: Use when writing, revising, or checking the rigorous Chinese textbo
 - 模型范畴章节是否区分 cofibrancy、fibrancy、weak equivalence、Quillen equivalence 和派生映射空间。
 - infinity-operad 章节是否说明采用 dendroidal set、simplicial operad nerve、Lurie operadic fibration 或其他模型。
 - 外部输入定理是否在 `SOURCES.md` 中可追溯。
+
+## 验证命令
+
+本目录目前没有独立验证器。修改正文后从仓库根目录运行共享严格审计：
+
+```bash
+python3 books/audit_textbook_narrative.py operad-theory --strict
+python3 books/audit_oet_rigor.py operad-theory --strict
+git diff --check -- books/operad-theory
+```
+
+前两条必须以零错误、零警告结束。若以后增加本书局部验证器，它不得重新要求固定目标、依赖或小结模板。

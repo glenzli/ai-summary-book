@@ -1,26 +1,29 @@
 # 附录 G：凝聚谱、pyknotic 接口与同伦方向
 
-## G.0 目标
+## G.0 与第八章的分工
 
-附录 E 给出 pyknotic 对象和凝聚同伦的入口。本附录进一步补凝聚谱与 pyknotic 谱的接口，说明从集合值 sheaf 到谱值 sheaf 时，哪些定义直接升级，哪些定理需要新的高阶输入。
-
-本附录只作工具卷接口，不把稳定同伦论发展为第五卷。
+附录 E 给出 pyknotic 对象和凝聚同伦的入口，第八章已把 hyperdescent、循环凝聚谱计算、
+Dirac cone 和六函子相容条件写入正文。本附录保留参考接口，集中说明从集合值 sheaf
+到谱值 sheaf 时哪些定义直接升级，哪些结论需要额外高阶输入。
 
 ## G.1 空间值与谱值 sheaf
 
 设 \(\mathcal C\) 为 compact Hausdorff 或 compacta 站点。记 \(\mathcal S\) 为空间的 \(\infty\)-范畴，\(\operatorname{Sp}\) 为谱的稳定 \(\infty\)-范畴。
 
-**定义 G.1.** 空间值凝聚对象为满足 hyperdescent 的函子
+**定义 G.1（hypercomplete 约定）.** 本附录把满足 hyperdescent 的空间值函子
 
 $$
 F:\mathcal C^{op}\to\mathcal S.
 $$
 
-谱值凝聚对象为满足 hyperdescent 的函子
+称为超完备空间值凝聚对象，并把满足 hyperdescent 的谱值函子
 
 $$
 E:\mathcal C^{op}\to\operatorname{Sp}.
 $$
+
+称为超完备凝聚谱。若只要求覆盖的 Čech descent，则得到一般 sheaf 范畴；再作
+hypercompletion 才进入本附录的约定。
 
 **命题 G.2（谱值 sheaf 的稳定性）.** 谱值 sheaf 范畴是稳定 \(\infty\)-范畴。
 
@@ -30,33 +33,47 @@ $$
 \operatorname{Fun}(\mathcal C^{op},\operatorname{Sp})
 $$
 
-逐对象稳定。sheaf 条件由若干极限条件给出，因此 sheaf 全子范畴对有限极限封闭。谱范畴中有限极限与有限余极限相容，局部化到 sheaf 后仍稳定。证毕。
+逐对象稳定。hyperdescent 等价的 fiber、loop 和 suspension 仍逐 hypercover 满足
+hyperdescent，因为谱中的有限极限与有限余极限相同，并与 totalization 的相关极限
+交换。因此 hypersheaf 全子范畴含零对象，对 fiber、loop 与 suspension 封闭；在稳定
+范畴中这正说明它自身稳定。证毕。
 
 ## G.2 Eilenberg-Mac Lane 嵌入
 
-阿贝尔群值 sheaf \(A\) 给谱值 sheaf \(HA\)：
+阿贝尔群值 sheaf \(A\) 是谱值 hypersheaf 范畴 heart 中的 Eilenberg--Mac Lane
+对象 \(HA\)。其 homotopy sheaves 只有 \(\pi_0(HA)=A\) 非零。一般不能把它的导出
+截面逐对象定义为 \(H(A(S))\)：若 \(S\) 有高阶 sheaf cohomology，则
+\(R\Gamma(S,HA)\) 还带有负次数 homotopy groups。
+
+**命题 G.3.** \(H:\mathbf{CondAb}\to
+\operatorname{Shv}^{\wedge}(\mathcal C,\operatorname{Sp})\) 全忠实到 Eilenberg--Mac
+Lane 对象。
+
+**证明.** 在导出 sheaf 范畴中，mapping spectrum 满足
 
 $$
-S\mapsto H(A(S)).
+\pi_0\operatorname{Map}(HA,HB)
+=\operatorname{Hom}_{\mathbf{CondAb}}(A,B),
+\qquad
+\pi_{-r}\operatorname{Map}(HA,HB)
+=\operatorname{Ext}^r_{\mathbf{CondAb}}(A,B)
 $$
 
-**命题 G.3.** \(H:\mathbf{CondAb}\to\operatorname{Shv}(\mathcal C,\operatorname{Sp})\) 全忠实到 connective Eilenberg-Mac Lane 对象。
-
-**证明.** 对阿贝尔群 \(M,N\)，谱映射空间满足
-
-$$
-\operatorname{Map}_{\operatorname{Sp}}(HM,HN)
-$$
-
-的 \(\pi_0\) 为 \(\operatorname{Hom}_{\mathbf{Ab}}(M,N)\)，负同伦群为零，正同伦群对应 Ext 信息。若限制到 heart，即只取 \(0\)-截断映射，则得到阿贝尔群态射。sheaf 层面逐对象并由 sheaf 条件兼容。精确的全忠实陈述应放在 connective spectra 的 heart 等价中。证毕。
+对 \(r\ge1\)。mapping space 只看 mapping spectrum 的非负 homotopy，而 heart 对象间
+这些群除 \(\pi_0\) 外为零，所以 heart 嵌入全忠实；Ext 信息位于 mapping spectrum 的
+负次数。证毕。
 
 **边界 G.4.** 不能把谱值 sheaf 等同于链复形 sheaf，除非选定 Eilenberg-Mac Lane 或 Dold-Kan/derived category 比较范围。非 connective 谱含有稳定同伦信息，超出普通凝聚阿贝尔群。
 
 ## G.3 Pyknotic 与 condensed 的比较口径
 
-Barwick-Haine 的 pyknotic objects 是 compacta 站点上的 hypersheaves。condensed sets 使用 compact Hausdorff 测试站点和相应覆盖。
+Barwick--Haine 的 pyknotic objects 是 compacta 站点上的 (hyper)sheaves。凝聚集合使用
+compact Hausdorff 测试站点和相应覆盖；在 0-截断层，固定相同 universe 与站点后，
+hypercompletion 不产生差别。
 
-**输入定理 G.5（pyknotic 基础比较口径）.** 在固定 universe 和站点选择后，pyknotic objects 与 condensed objects 有共同的 sheaf-theoretic 核心：都以 compact 测试对象上的 sheaf/hypersheaf 编码拓扑信息。二者在 hyperdescent、coherent topos 性质和 universe 管理上采用不同约定。
+**输入定理 G.5（pyknotic 基础比较口径）.** 在固定 universe、compacta 站点和
+hypercompletion 约定后，0-截断 pyknotic objects 与 condensed sets 等价。对空间值或
+谱值对象，必须继续区分 sheaf 与 hypersheaf；不能只凭术语相近省略 hypercompletion。
 
 本书只使用以下层面的比较：
 
@@ -65,9 +82,15 @@ Barwick-Haine 的 pyknotic objects 是 compacta 站点上的 hypersheaves。cond
 3. 谱值对象：稳定 sheaf 范畴和 hyperdescent；
 4. 几何应用：pro-etale、solid 和 analytic 结构需要额外输入。
 
+**外部输入定理 G.5.1（Wolf）.** 对 coherent scheme $X$，hypercomplete pro-étale
+$\infty$-topos 等价于 $\operatorname{Gal}(X)$ 在 pyknotic spaces 中的连续表示范畴。
+这给出已知的 pro-étale--pyknotic 接口，但不把 pro-étale 站点与 compacta 站点直接
+识别；其谱值稳定化与 solid/analytic localization 的相容还需另行检查。
+
 ## G.4 凝聚谱中的 exactness
 
-**命题 G.6（fiberwise criterion）。** 谱值预 sheaf \(E\) 是 sheaf，当且仅当对每个覆盖超 Čech 对象 \(U_\bullet\to U\)，自然映射
+**命题 G.6（hypercover criterion）。** 谱值预 sheaf \(E\) 是 hypersheaf，当且仅当
+对每个 hypercover \(U_\bullet\to U\)，自然映射
 
 $$
 E(U)\to\varprojlim_{\Delta}E(U_\bullet)
@@ -85,7 +108,10 @@ $$
 
 为零，则 \(E\simeq0\)。
 
-**证明.** 谱对象由所有 homotopy groups 检测。sheaf 化后 \(\pi_n(E)\) 是阿贝尔群值 sheaf；若全部为零，则对每个测试对象 \(S\)，谱 \(E(S)\) 的同伦群全为零，故 \(E(S)\simeq0\)。证毕。
+**证明.** 在 hypersheaf 范畴的 Postnikov 完备 $t$-结构中，谱对象由所有 homotopy
+sheaves 检测。若它们全部为零，则每个 Postnikov 截断都为零；hypercompleteness 说明
+$E$ 是这些截断的极限，故 $E\simeq0$。若只取非 hypercomplete sheaf，这一检测结论
+需要另加 left-completeness 假设。证毕。
 
 ## G.5 与 solid/analytic 的接口
 

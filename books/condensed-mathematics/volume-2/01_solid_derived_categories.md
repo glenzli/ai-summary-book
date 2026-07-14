@@ -1,12 +1,16 @@
 # 第一章：solid 派生范畴
 
-## 本章目标
+第一卷用映射
+$\mathbb Z[\underline S]\to\mathbb Z^\square[S]$ 测试单个凝聚阿贝尔群是否 solid。
+对复形逐项检查这一条件并不稳定于拟同构，也不能直接产生派生张量。正确的派生条件
+应只依赖该映射的 cofiber：若记它为 $K_S$，那么复形 $C$ 为 solid 恰好要求
+$R\operatorname{Hom}(K_S,C)\simeq0$。右正交性把对象层延拓问题改写成稳定范畴中的
+localization 问题。
 
-本章把第一卷中的 solid 阿贝尔群推广到派生范畴。核心思想是：solid 条件不仅是对象层面的 Hom 判别，也可以作为 $D(\mathbf{CondAb})$ 中的 localization 条件。
-
-## 依赖
-
-需要第一卷第十二章、附录 F 和附录 G。
+以下使用第一卷第十二章的自由 solid 对象、附录 F 的 Nöbeling 计算和附录 G 的导出
+工具，并始终在固定 $\kappa$-层级与无界导出 $\infty$-范畴中工作。我们证明 cone 判别
+等形式后果，接受 solidification 反射存在性的外部输入，再用有限与无限 profinite
+例子说明：只有无限测试对象才能看出普通自由对象与 solid 自由对象的严格差异。
 
 ## 1.0 范畴与 Hom 的类型约定
 
@@ -233,15 +237,18 @@ Dirac 映射 \(\mathbb Z[\underline S](*)\to\mathbb Z^\square[S](*)\) 的第二�
 \(\mathbb Z[\underline S]\) 不是 solid，而其 solidification 是
 \(\mathbb Z^\square[S]\)。这也说明有限 \(S\) 的例子不能检测 solid 条件。
 
-## 1.8 本章小结
+## 1.8 Cone 检测出的反射子范畴
 
-本章把 solid 条件写成 localization 条件：
+映射的 cofiber $K_S$ 把 solid 条件压缩为
 
 $$
 R\operatorname{Hom}(K_S,C)=0.
 $$
 
-这使 solidification 成为派生范畴中的左伴随，并为下一章的 solid 张量积和 solid 模奠定基础。
+因此 solid 复形组成由一族右正交条件切出的稳定反射子范畴，外部输入给出的
+$L^\square$ 正是其左伴随。无限一点紧化例子还表明这不是空洞条件：有限测试上的 Dirac
+映射为同构，到了无限 $S$ 才出现无限支撑测度。下一章将检验该 localization 与张量
+相容，并由此在反射子范畴内部定义环与模。
 
 ## 练习
 

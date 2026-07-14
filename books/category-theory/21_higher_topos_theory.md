@@ -1,12 +1,8 @@
 # 第二十一章：高阶 topos
 
-## 本章目标
+空间值预层不仅要求截面集合粘合，还要让所有高阶同伦一致地下降。对一个 $\infty$-site 施加 hyperdescent，得到的 sheaf $\infty$-范畴是预层 $\infty$-范畴的左正合可达局部化；这正是 $\infty$-topos 的原型。高阶 Giraud 定理把这一呈示与内在公理联系起来，同时揭示 ordinary topos 只是 $0$-truncated 对象的层面。本章比较 Čech descent 与 hyperdescent、几何态射与局部化，并说明截断和 Postnikov tower 在高阶 sheaf 理论中的作用。
 
-本章定义 $\infty$-topos，说明它如何推广 Grothendieck topos，并列出高阶 Giraud 定理和 sheaf $\infty$-范畴的基本性质。
-
-## 依赖前置知识
-
-需要 Grothendieck topos、presentable $\infty$-category、极限、余极限和 left exact localization。
+本章使用 Grothendieck topos、presentable $\infty$-category、极限、余极限和 left exact localization。高阶 Giraud 定理及超完备化性质作为外部输入；站点大小、可达性和 hypercompletion 假设将在每个结论处重新声明。
 
 ## 21.1 spaces
 
@@ -176,19 +172,25 @@ $$
 
 **例子 21.J.** 在 $\mathcal S$ 中，$0$-截断对象是集合，$1$-截断对象是群胚的同伦类型，$n$-截断对象是高于 $n$ 的同伦群消失的 homotopy types。截断函子 $\tau_{\le n}$ 是通常 Postnikov 截断。
 
-**定义 21.K.** $\infty$-topos $\mathcal X$ 称为 hypercomplete，若每个对象 $X$ 都可由其 Postnikov tower 恢复，即自然映射
+**定义 21.K.** 对 $X\in\mathcal X$，定义其 Postnikov 完备化为
 
 $$
-X\to\lim_n\tau_{\le n}X
+X^\wedge=\lim_{n\ge -2}\tau_{\le n}X.
 $$
 
-在适当意义下为等价。一般 $\infty$-topos 的 hypercompletion 是一个 left exact localization
+对象 $X$ 称为 hypercomplete，若自然映射
+
+$$
+X\to X^\wedge
+$$
+
+是等价。若 $\mathcal X$ 的每个对象都 hypercomplete，则称 $\mathcal X$ 为 hypercomplete $\infty$-topos。一般 $\infty$-topos 的 hypercompletion 是左正合局部化
 
 $$
 \mathcal X\to\widehat{\mathcal X}.
 $$
 
-**外部输入定理 21.L.** Hypercompletion 可由局部化所有 $\infty$-connective morphisms 得到，并且是 left exact accessible localization。对满足足够好局部同伦条件的站点，hypercomplete sheaves 与满足 hyperdescent 的 sheaves 一致。
+**外部输入定理 21.L.** Hypercompletion 可由局部化所有 $\infty$-connective morphisms 得到，并且是左正合可达局部化。若 $\mathcal X=\operatorname{Shv}(\mathcal C,J;\mathcal S)$ 由一个小 $\infty$-站点给出，则 $\widehat{\mathcal X}$ 的对象正是对每个 hypercover 都满足下降的 space 值 sheaves；这类对象也称 hypersheaves。
 
 ## 21.6 几何态射与点
 
@@ -284,7 +286,7 @@ $$
 
 **证明.** $0$-截断 space 等价于离散集合。于是 $F$ 给出集合值预层。由 $\infty$-sheaf 条件，对每个覆盖族，离散 space 的 Čech 极限取 $\pi_0$ 后正是 ordinary sheaf 的等化子条件；这与命题 21.5 的证明相同。因此该集合值预层是 ordinary sheaf。$\square$
 
-## 21.8 本章小结
+## 21.8 从 descent 到 $\infty$-topos
 
 $\infty$-topos 是 homotopy type 取值的 sheaf 理论。它保留 ordinary topos 的逻辑和几何结构，同时允许对象有高阶同伦。Čech descent 被替换为同伦极限条件，高阶 Giraud 定理给出内在刻画。截断和 Postnikov 塔连接高阶对象与普通 topos；hypercompletion 则控制是否所有对象都能由截断层恢复。
 

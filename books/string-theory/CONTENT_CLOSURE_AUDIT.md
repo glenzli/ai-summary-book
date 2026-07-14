@@ -6,7 +6,7 @@
 
 当前版本达到教材内容层面的基本收口：
 
-1. 内容范围已闭合：第 0 至 20 章覆盖 worldsheet、CFT、量子化、BRST、振幅、超弦、D-branes、紧化、对偶性、topological strings、black branes、AdS/CFT、flux compactification 和外部接口边界。
+1. 内容范围已闭合：第 0 至 20 章覆盖 worldsheet、CFT、量子化、BRST、振幅、超弦、D-branes、紧化、对偶性、topological strings、black branes、AdS/CFT、flux compactification，以及 QFT/几何/数论之间的可计算接口。
 2. 内部依赖已闭合：主线依赖由 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md) 和 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md) 给出；后置章节不再依赖未定义的核心对象。
 3. 证明状态已闭合：非平凡陈述已登记在 [THEOREM_INDEX.md](THEOREM_INDEX.md)，并标为 `P`、`S`、`E` 或 `C`。
 4. 外部输入已闭合：大型外部定理和物理猜想未被写成无条件已证定理，使用边界在正文或本文件中说明。
@@ -34,7 +34,7 @@
 | 6-8 | 顶点、振幅、T-duality、RNS | 闭合，loop/supermoduli 保留接口 | 闭合 |
 | 9-12 | type II、heterotic、低能作用、D-branes | 闭合，kappa/anomaly/inflow 标为外部输入 | 闭合 |
 | 13-16 | CY、duality、Riemann surfaces、topological strings | 闭合，几何大定理标为外部输入 | 闭合 |
-| 17-20 | BPS、AdS/CFT、flux、接口边界 | 闭合，非微扰对偶标为猜想 | 闭合 |
+| 17-20 | BPS、AdS/CFT、flux、跨领域计算接口 | 闭合，非微扰对偶标为猜想 | 闭合 |
 | A-E | 附录接口 | 足以支撑正文 | 闭合 |
 
 ## 4. 仍可改进但不阻塞收口的项目

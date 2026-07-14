@@ -1,8 +1,6 @@
 # 第十四章：模型范畴中的 operad
 
-本章进入同伦论口径。第一至第十三章中 operad 多在集合、模或链复形中定义；本章的目标是说明：何时可以把“逐 arity 弱等价”提升为 operad 的同伦理论，何时可以把 operad 代数范畴也赋予模型结构，以及何时一个 cofibrant resolution 真正给出可替换的同伦代数理论。
-
-本章不预设一个未展开的“足够良好”总假设包。每个外部定理分别列出所需的单位、区间、monoid axiom、对称 h-monoidality、symmetric flatness、cofibrancy 或 admissibility 条件；这些条件只服务于对应结论。完整证明涉及小对象论证、树形 filtrations 和等变 cofibration 技术，故大型定理标为外部输入。
+两个 operad 逐 arity 弱等价，并不保证它们的代数具有相同同伦理论。障碍出现在自由 operad 和自由代数的构造中：张量幂、对称群 coinvariants 与树形余极限未必保持弱等价。因而必须区分三个问题：对称序列是否有逐项模型结构，operad 范畴是否能转移模型结构，以及固定 operad 的代数是否 admissible；即使三者都成立，rectification 还需要额外的平坦性或 cofibrancy。以下逐层陈述这些条件，不把“底范畴足够好”当作假设。存在性定理所需的小对象论证、树形 filtration 和等变 cofibration 技术作为精确外部输入使用。
 
 ## 14.1 对称幺半模型范畴
 
@@ -248,7 +246,7 @@ $$
 
 **警告 14.29.** 对 $E_\infty\to\operatorname{Com}$ 不能无条件推出同样结论。在特征 $0$ 链复形中，只有选定具体 $E_\infty$-operad、验证两端 admissible 并套用 BM-4/HIN-2/PSAR-4 的相应版本后，才可声明 rectification。在正特征或一般底环上，命题 X.15 直接表明自由严格交换代数函子不保持某些 acyclic complexes；本书据此拒绝无假设 rectification，但不把这个局部计算夸大为所有模型中的完整非等价定理。
 
-**说明 14.29.1.** 后续凡使用 transferred operad model structure、operad algebra admissibility 或 rectification，必须逐项核对定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 的检查表。特别是：
+**说明 14.29.1.** Transferred operad model structure、operad algebra admissibility 与 rectification 对应附录 G 中三个不同的假设层级。每次调用都必须明确落在定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 的哪一个结论中。特别是：
 
 1. operads 自身有模型结构；
 2. 固定 operad 的代数范畴有 transferred 模型结构；
@@ -269,7 +267,7 @@ $$
 $$
 W\mathcal O\to\mathcal O
 $$
-并在该来源的模型结构中判定其 cofibrancy 与 weak-equivalence 性质。本书目前没有登记覆盖这一整套 $W$-construction 的精确 locator，故不把本段作为可直接调用的外部定理。后文命题 14.33 只作条件推理：必须另行给出所用 $W\mathcal O\to\mathcal O$ 确为 cofibrant resolution 的定理，才能应用 rectification。
+并在该来源的模型结构中判定其 cofibrancy 与 weak-equivalence 性质。这些结论依赖具体的区间对象和模型结构，不能从树的描述本身推出。后文命题 14.33 因而保持条件形式：只有先验证所用 $W\mathcal O\to\mathcal O$ 确为 cofibrant resolution，才能应用 rectification。
 
 **说明 14.32.** 拓扑 operad 的 $W$-construction 可理解为：一个点由一棵树给出，顶点标记为 $\mathcal O$ 中的运算，内部边标记为区间参数。边长为 $0$ 时收缩该边并用 $\mathcal O$ 的复合替代两个相邻顶点。边长为 $1$ 的边记录未被严格复合的同伦层级。
 
@@ -294,7 +292,7 @@ $$
 
 **说明 14.36.** Derived mapping spaces 是研究 operad 形式性和 automorphism 的核心工具。例如 $E_n$-operads 的 derived automorphism 与 Grothendieck-Teichmuller 型对象相关；这些结果属于更深的同伦 operad 理论，后续章节只在资料边界中使用。
 
-## 14.8 本章小结
+## 14.8 三层模型结构不能合并调用
 
 模型范畴中的 operad 理论有三个层次：
 
@@ -302,9 +300,7 @@ $$
 2. operads 自身的 transferred 模型结构；
 3. 固定 operad 的代数范畴模型结构。
 
-第一个层次通常最容易建立，第二和第三个层次需要额外的幺半、等变和小性条件。Weak equivalence of operads 只有在 admissibility 与 rectification 条件满足时才可替换代数的同伦理论。Cofibrant resolution，尤其 Boardman-Vogt resolution，是把严格代数结构替换为同伦相干结构的标准机制。
-
-定义 G.3--定义 G.6 和外部输入定理 G.11--外部输入定理 G.13 给出本章所有模型结构假设的检查表。P0 引用定位批次 1 已定位 Berger--Moerdijk 的 BM-1--BM-5 和 Cisinski--Moerdijk 的 CM-1--CM-4；P0 引用定位批次 5 已定位 Hinich 的 HIN-1--HIN-2 和 Fresse 的 FRE-1--FRE-6；P0 引用定位批次 9 已定位 Pavlov--Scholbach colored/all-small/symmetric-flatness 版本的 PSAR/PSP 条目。最终出版只需把本章所用假设逐条对齐到相应 locator。
+第一层通常逐 arity 建立，第二层要控制自由 operad 的树 filtration，第三层还要控制自由代数的对称幂。Weak equivalence of operads 只有在 admissibility 与 rectification 条件同时落入相应外部定理时，才可替换代数的同伦理论。Boardman--Vogt resolution 提供 cofibrant 或 homotopy-coherent 候选，但“有一个 resolution”本身不是 Quillen equivalence 的证明。附录 G 把这三层假设分开陈述；后续的空间型、链型和 infinity-categorical 例子都将按这一分层判断可迁移的结论。
 
 ## 练习
 

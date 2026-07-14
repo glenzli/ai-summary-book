@@ -1,12 +1,6 @@
 # 第四章：算符冗余、EOM 与算符基
 
-## 本章目标
-
-本章解释为什么“所有对称性允许的算符”仍然有冗余，以及如何通过分部积分、运动方程、Bianchi 恒等式和 Fierz 恒等式选取算符基。
-
-## 依赖前置知识
-
-需要局域算符、S-matrix 等价的基本观念和场论变分。
+对称性允许的局域单项式远多于独立的散射信息。比如 $\phi^2(\partial\phi)^2$ 与 $\phi^3\Box\phi$ 可由分部积分联系，后者又能借助领先运动方程换成势能项；若把三者当成独立参数，匹配矩阵会人为出现冗余方向。真正的算符基因而不是一张“看起来不同”的单项式清单，而是局域作用量在总导数、逐阶场重定义和张量恒等式下的商空间坐标。本章从标量例子出发，先区分逐点等式、作用量等价与 on-shell S-matrix 等价，再处理二阶场重定义、Hermitian conjugation 和 flavor 类型。圈级计算还迫使我们暂时扩大到 EOM、BRST-exact 与 evanescent 方向，完成重整化后才能投影回物理基。
 
 ## 4.1 分部积分冗余
 
@@ -177,13 +171,13 @@ $$
 
 **警告 4.10（四维 Fierz 与 $d_{\rm DR}$ 维重整化）.** 四维 Fierz/Schouten 恒等式在 $d_{\rm DR}=4-2\epsilon$ 中一般不完整，二者之差定义 evanescent 方向。故四维商 $\mathscr V_{\rm phys}^{D,p}$ 适合陈述最终基，但 loop renormalization 必须先在扩大空间中闭合，再按给定有限方案投影；否则 $1/\epsilon$ pole 乘 $O(\epsilon)$ evanescent 差异会漏掉有限项。
 
-**原则 4.11（基选择与圈级投影流程）.** 构造或重整化算符基时按以下顺序审计：
+**原则 4.11（基选择与圈级投影次序）.** 构造或重整化算符基时依次执行：
 
 1.  写出所有满足规范对称性和 Lorentz 对称性的局域结构；
 2.  固定总导数的边界与拓扑 sector；
 3.  用 Bianchi 等代数恒等式化简，并在 loop 计算中保留 evanescent 补空间；
 4.  从规范不变 $S_0$ 写出协变领先 EOM，标出只在何种 $p$ 阶可用；
-5.  在扩大空间完成 matching/renormalization，核验命题 4.9A 的不变子空间条件；
+5.  在扩大空间完成 matching/renormalization，确认命题 4.9A 的不变子空间条件；
 6.  再投影 EOM、BRST-exact、IBP 和四维 Fierz 冗余；
 7.  最后检查 Hermitian conjugation、flavor 交换对称和 Wilson 实参数计数。
 
@@ -193,9 +187,9 @@ $$
 
 **外部输入边界 4.13（BRST 口径，EFT-REN）.** Gauge-fixed off-shell Green 函数的重整化在包含 ghost、gauge-fixing、EOM 和 BRST-exact 结构的扩大空间中进行；物理 gauge-invariant 插入由相应 BRST cohomology 类表示。本书不重建 algebraic renormalization，只使用其后果：完整 on-shell 振幅与最终物理商空间预测不依赖 gauge parameter，而中间 off-shell Green 函数、冗余系数和有限投影可以依赖它。该边界与第二章警告 2.7E、第三章命题 3.7 的假设共同使用。
 
-## 本章小结
+## 4.6 从单项式到物理坐标
 
-算符分类必须在声明作用量阶、边界、拓扑和 regulator 后 quotient 掉冗余。EOM quotient 是逐阶场重定义，不是逐点代入；圈级 RG 只有在冗余子空间不变时才下降到物理商。算符基是 Wilson 对偶空间的坐标，不是物理本身。
+分部积分、EOM 和张量恒等式删除的是作用量或 S-matrix 中的重复描述，不是把某个局域密度逐点设为零。标量例子还显示，一阶场重定义会在下一逆尺度阶生成新项，所以换基必须与所报告的平方项和多次插入同步。圈级重整化先在含 EOM、BRST-exact 与 evanescent 方向的扩大空间中进行；只有冗余子空间在重整化下保持不变，映射才下降到物理商。由此得到的算符基只是 Wilson 对偶空间的坐标，真正不变的是完整振幅与可观测量。
 
 ## 练习
 

@@ -1,12 +1,6 @@
 # 第十三章：Geometric Satake 等价与 Tannakian reconstruction
 
-## 本章目标
-
-本章精确陈述 characteristic-zero Betti 版本的 geometric Satake equivalence，并把它拆成可审查的外部输入：convolution 的 perverse t-exactness、fusion commutativity、fiber functor、neutral Tannakian reconstruction 和 dual root datum 识别。形式 Tannaka 能推出什么、不能推出什么会分别标明；第十二章的 $GL_2$ convolution 将与标准表示的 tensor square 作逐项核对。
-
-## 依赖前置知识
-
-需要第十二章的 reduced affine Grassmannian、finite-support convolution 和 $GL_2$ semismall 计算，第三章的 perverse sheaves，以及附录 I 的 Tannakian 检查表。
+第十二章已经得到一个可结合的卷积，但单凭 proper pushforward，两个 perverse sheaves 的卷积未必仍 perverse；即使存在 fiber functor，形式 Tannaka 也只产生未知的 affine group scheme $H$，不会自动把它识别为 Langlands dual group。Geometric Satake 的实质正分布在这两个缺口之间：semismall 几何保证 t-exactness，Beilinson--Drinfeld fusion 提供对称约束，semi-infinite orbits 把全上同调分解为 coweight spaces，最后由 MV 几何识别 dual root datum。$GL_1$ 可完整重建 $\mathbb G_m$，而 $GL_2$ 的 minuscule 二重卷积将逐项对应 $V^{\otimes2}=\operatorname{Sym}^2V\oplus\det V$。
 
 **约定 13.0.** 沿用约定 12.0：$G$ 是连通 reductive complex algebraic group，$E$ 是代数闭 characteristic-zero field，$\operatorname{Gr}_G$ 在形成 Betti sheaves 前取 reduction，所有对象有 finite-dimensional support。本章的 $\operatorname{Rep}_E(H)$ 只含 finite-dimensional algebraic $H$-representations。
 
@@ -28,7 +22,7 @@ $\mathcal F,\mathcal G\in\operatorname{Sat}_G$：
 3. Beilinson--Drinfeld Grassmannian 上的 fusion construction 给出 commutativity constraint；经过与 cohomological parity 相容的标准修正后，
    $(\operatorname{Sat}_G,\star,\mathbf1)$ 是 rigid symmetric monoidal $E$-linear abelian category。
 
-第 1 项使用 convolution map 的 stratified-semismall dimension estimate，不是 properness 的形式推论；第 3 项不来自 $LG$ 的交换性，因为一般 $LG$ 非交换。来源定位：`GSAT-CONV-1`；Mirkovic--Vilonen Proposition 4.2、Lemma 4.4、Proposition 4.6、§5 及 §6 的 parity modification。本书不重证 fusion construction。
+第 1 项使用 convolution map 的 stratified-semismall dimension estimate，不是 properness 的形式推论；第 3 项不来自 $LG$ 的交换性，因为一般 $LG$ 非交换。这里采用 Mirkovic--Vilonen Proposition 4.2、Lemma 4.4、Proposition 4.6、§5 及 §6 的 parity modification；fusion construction 不在本书重证。
 
 **定义 13.3.** 定义 total global cohomology functor
 $$
@@ -47,7 +41,7 @@ $$
 \qquad
 \omega(\mathbf1)\simeq E.
 $$
-来源定位：`GSAT-FIBER-1`；Mirkovic--Vilonen Theorem 3.6、Corollary 3.7、Proposition 6.3。Exactness 和 faithfulness 依赖 semi-infinite orbit cohomology，不是 ordinary global sections 的一般性质。
+这一结论见 Mirkovic--Vilonen Theorem 3.6、Corollary 3.7 与 Proposition 6.3。Exactness 和 faithfulness 依赖 semi-infinite orbit cohomology，不是 ordinary global sections 的一般性质。
 
 ## 13.2 Langlands dual group 与等价的精确版本
 
@@ -79,7 +73,9 @@ $$
 \mathsf{Sat}(\operatorname{IC}_\lambda)
 \simeq V_\lambda,
 $$
-其中 $V_\lambda$ 是最高权 $\lambda$ 的 irreducible $G^\vee$-representation。来源定位：`GSAT-1`；Mirkovic--Vilonen 主等价 (1.1) 与 Theorem 12.1，正文模型是其 complex Betti、field、characteristic-zero specialization。
+其中 $V_\lambda$ 是最高权 $\lambda$ 的 irreducible $G^\vee$-representation。这里采用 Mirkovic--Vilonen 主等价 (1.1) 与 Theorem 12.1 的 complex Betti、field、characteristic-zero specialization。
+
+等价把 Schubert IC 层的 orbit 标号变成最高权标号，因此 semisimplicity 不再是 affine Grassmannian 的单独几何猜测，而是特征零 reductive group 表示范畴的直接结果。
 
 **命题 13.7.** 接受定理 13.6 后，$\operatorname{Sat}_G$ 是 semisimple，且 simple objects 的同构类恰为
 $$
@@ -107,9 +103,9 @@ $$
 $$
 \mathcal C\simeq\operatorname{Rep}_E(H).
 $$
-来源定位：`TANNAKA-1`；Saavedra Rivano、Deligne--Milne 的 neutral Tannakian theorem。本书把它作为外部范畴论输入。
+这里采用 Saavedra Rivano、Deligne--Milne 的 neutral Tannakian theorem，并把它作为外部范畴论输入。
 
-**依赖说明 13.9.** 把定理 13.8 用于
+**机制边界 13.9.** 把定理 13.8 用于
 $(\operatorname{Sat}_G,\omega)$ 只构造
 $$
 H=\underline{\operatorname{Aut}}^\otimes(\omega).
@@ -154,7 +150,7 @@ $\mathcal F\in\operatorname{Sat}_G$：
    F_\mu(\mathcal F)\otimes_EF_\eta(\mathcal G).
    $$
 
-来源定位：`GSAT-WEIGHT-1`；Mirkovic--Vilonen Theorem 3.6 与 Proposition 6.4。集中性、有限性和 tensor compatibility 均为外部输入。
+集中性、有限性和 tensor compatibility 采用 Mirkovic--Vilonen Theorem 3.6 与 Proposition 6.4，均为外部输入。
 
 **命题 13.12.** 令 $T^\vee$ 为 split torus with
 $X^\ast(T^\vee)=X_\ast(T)$，并令
@@ -182,6 +178,8 @@ $T^\vee(R)\to H(R)$。该构造与 $R$ 的基变换相容，因而由 Yoneda lem
 **边界说明 13.12.1.** 命题 13.12 只构造 $\iota$；它没有证明 $\iota$ 是 closed immersion，也没有证明其像是 maximal torus。更不能仅凭 $X^\ast(T^\vee)=X_\ast(T)$ 恢复 $H$ 的 roots。把 $\iota(T^\vee)$ 识别为 maximal torus，并证明 $H$ 的 root datum 是 dual root datum，属于定理 13.6 的外部输入部分。
 
 ## 13.5 完整的 torus 检验：$GL_1$
+
+一般的 root-datum 识别依赖 MV cycles；对 torus 没有根，所有 Schubert strata 都是点，Tannaka group 可以不借助该大型输入直接算出。这也检验了卷积、rigid dual 与 character grading 的每一项。
 
 **例 13.13.** 对 $G=GL_1$，命题 12.5 的 reduced Betti Grassmannian 是由 $\mathbb Z$ 标号的离散 points，且
 $$
@@ -249,9 +247,7 @@ $\operatorname{Sym}^2V$ 和 $\bigwedge^2V$。故表示侧确有上述 direct-sum
 
 **边界说明 13.17.** Mirkovic--Vilonen 的 theorem 可处理比本章更一般的 coefficient rings，但 modular 或 integral coefficients 下 $\operatorname{Sat}_G$ 不再由 characteristic-zero semisimplicity 描述，推论 12.18 的 decomposition-theorem proof 也不能原样搬用。Mixed-characteristic affine Grassmannian 和 Satake equivalence 是另一套几何模型，必须单独引用 Zhu 等来源；本章不把这些版本合并成一个无条件陈述。
 
-## 本章小结
-
-本章把 geometric Satake 分成五项有来源的外部输入：stratified-semismall t-exactness、fusion symmetric structure、exact faithful cohomology fiber functor、neutral Tannaka 和 dual root datum identification。内部论证证明了 Tannaka weight grading 只先给出 $T^\vee\to H$，完成了 $GL_1$ 的 symmetric monoidal equivalence，并把 $GL_2$ lattice convolution 与 $V\otimes V=\operatorname{Sym}^2V\oplus\det V$ 逐项对齐。Classical、integral、modular 和 mixed-characteristic versions 均留在明确边界之外。
+Weight functors 先在 Tannaka group 中构造 torus，MV 几何再识别 roots 与 coroots；两步不可合并。$GL_1$ 直接给出有限支撑分次向量空间与 $\operatorname{Rep}(\mathbb G_m)$ 的对称张量等价，$GL_2$ 则把 closed convolution fiber 的一个重数转成 determinant summand。若把 $L^+G$ 换成 Iwahori subgroup，orbit 标号会从 dominant coweights 细化为 affine Weyl group；下一章研究相应的非对称 affine Hecke category。
 
 ## 练习
 

@@ -1,17 +1,13 @@
 # 第十九章：flux compactifications、moduli stabilization 和 landscape 边界
 
-## 本章目标
-
-本章说明 flux 如何改变 compactification 的 moduli dynamics，并给出 landscape 相关说法的严格边界。主线问题是：
-
-1. flux quantization 如何把连续选择变成离散数据；
-2. flux-induced superpotential 如何固定部分 moduli；
-3. tadpole cancellation 与 backreaction 如何限制构造；
-4. landscape 与 swampland 讨论如何不偏离本书主线。
-
-## 依赖前置知识
-
-需要第十三章 Calabi-Yau 紧化、第十一章低能有效作用和第十四章 duality 的状态分层。
+无 flux 的 Calabi--Yau 紧化留下连续 massless moduli，因而还没有选出离散真空。
+允许量子化的 $p$-form flux 后，内部拓扑整数进入四维 superpotential；在 type IIB
+orientifold 的可控近似中，GVW 项通常固定 complex structure 与 axio-dilaton，却因
+no-scale identity 暂时不固定 Kahler moduli。Tadpole、warping、backreaction 与量子
+修正决定这种结论能否维持。以下在第十三章紧化、第十一章有效作用与第十四章 duality
+口径上，推导 flux quantization、GVW F-terms 和 tadpole constraint，再比较 KKLT/
+large-volume 等 Kahler stabilization 机制。所谓 landscape 或 swampland 只在明确
+控制参数与猜想状态后讨论，不代替具体解的存在性和稳定性分析。
 
 ## 19.1 Flux quantization
 
@@ -120,9 +116,12 @@ $$
 
 **注 19.16.** Swampland program 试图区分可由 quantum gravity 完成的低能有效理论与不可能的低能理论。本书不展开 swampland conjectures，只把它们作为第二十章外部接口。任何 swampland 陈述必须标明是 conjecture、evidence 还是 theorem。
 
-## 本章小结
-
-Flux compactification 是连接 string theory 与低能 phenomenology 的技术入口，但其结论高度依赖控制参数、量子修正、tadpole cancellation 和稳定性分析。本书只把受控构造和清楚分层的推测纳入主线。
+No-scale 计算把结论的层级划得很清楚：量子化 flux 产生离散数据，GVW
+superpotential 在 tree level 固定一部分 moduli，Kahler directions 则需
+$\alpha'$、nonperturbative effects 或其他 ingredients 才可能被提升。每一步都要再
+检查 tadpole、backreaction、scale separation 与 metastability；仅写出一个形式
+potential 还不是受控真空。Landscape 是这些离散选择的统计问题，swampland 是关于
+量子引力可完成性的猜想集合，二者都不能越过上述解方程与误差估计。
 
 ## 练习
 
@@ -131,4 +130,3 @@ Flux compactification 是连接 string theory 与低能 phenomenology 的技术�
 **练习 19.2.** 解释为什么 GVW superpotential 通常先固定 complex structure moduli 而不是 Kahler moduli。
 
 **练习 19.3.** 用 no-scale identity 说明 tree-level flux potential 为什么不固定 Kahler moduli。
-

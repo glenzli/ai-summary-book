@@ -1,12 +1,8 @@
 # 第五十一章：范畴 Galois 理论、Descent 与有效下降
 
-## 本章目标
+沿态射 $p:E\to B$ 拉回对象会产生带 cocycle 的 descent data，但并非每份数据都能下降为 $B$ 上对象。若比较函子到 descent-data 范畴是等价，称 $p$ 为有效下降态射；Barr--Beck 把这一条件与拉回函子的单子性联系起来。范畴 Galois 理论进一步把正规扩张、automorphism groupoids 与覆盖分类放入同一框架，并在 Galois categories 中恢复 profinite group actions。
 
-本章系统化 descent 的普通范畴论版本。有效下降研究对象能否由覆盖上的对象和 cocycle 数据恢复；范畴 Galois 理论把覆盖、单子性、正规扩张和 automorphism groupoid 统一为抽象 Galois 对应。它与 Barr-Beck、topos、torsors、Galois categories 和代数几何中的 faithfully flat descent 直接相连。
-
-## 依赖前置知识
-
-需要 pullback、regular epimorphism、monads、Barr-Beck、Cech nerve、fibered categories、effective epimorphism、topos、torsors 和 group actions。
+本章使用 pullback、regular/effective epimorphisms、monads、Cech nerves、torsors 和 topoi。有效下降会按对象类别分别讨论；faithfully flat、open cover 与 regular epi 的结论只在相应几何或正合假设下调用。
 
 ## 51.1 Descent datum
 
@@ -44,35 +40,69 @@ $$
 
 **证明.** 若 $p$ 为同构，则 $E\times_BE\cong E$，descent datum 只有恒等相容性。拉回 $p^*:\mathcal C_{/B}\to\mathcal C_{/E}$ 是 slice 范畴等价，因此也是到 descent category 的等价。$\square$
 
-**外部输入定理 51.6.** 在 regular category 中，regular epimorphisms 在合适条件下是 effective descent morphisms；在 Grothendieck topos 中，epimorphisms 是 effective descent morphisms。
+**外部输入定理 51.6.** 在 Barr-exact category 中，每个 regular epimorphism 都是 effective descent morphism。特别地，Grothendieck topos 中每个 epimorphism 都是 regular epimorphism，因而是 effective descent morphism。仅假设范畴 regular 时，regular epimorphism 一般只保证 descent 的保守部分，不足以推出有效性。
 
 ## 51.3 单子性判别
 
-**命题 51.7.** 若 $p^*:\mathcal C_{/B}\to\mathcal C_{/E}$ monadic，且其 comparison category 等价于 $\operatorname{Desc}(p)$，则 $p$ 为 effective descent morphism。
-
-**证明.** Monadicity 给出
+**命题 51.7.** 设 $\mathcal C$ 有 pullback。后复合函子
 
 $$
-\mathcal C_{/B}\simeq\operatorname{Alg}_T(\mathcal C_{/E})
+\Sigma_p:\mathcal C_{/E}\to\mathcal C_{/B}
 $$
 
-其中 $T=p^*p_*$ 或相应 descent monad。若 $\operatorname{Alg}_T(\mathcal C_{/E})\simeq\operatorname{Desc}(p)$，则复合给出 $\mathcal C_{/B}\simeq\operatorname{Desc}(p)$，这正是 effective descent。$\square$
+左伴随于 $p^*$，相应 descent monad 是
+
+$$
+T=p^*\Sigma_p
+$$
+
+在 $\mathcal C_{/E}$ 上的单子。其 Eilenberg--Moore 范畴典范等价于 $\operatorname{Desc}(p)$；因此 $p$ 是 effective descent morphism 当且仅当右伴随 $p^*$ 是 monadic。
+
+**证明.** 伴随 $\Sigma_p\dashv p^*$ 给出比较函子
+
+$$
+K:\mathcal C_{/B}\longrightarrow\operatorname{Alg}_T(\mathcal C_{/E}).
+$$
+
+把一个 $T$-代数的结构映射沿 kernel pair $E\times_BE\rightrightarrows E$ 展开，正得到定义 51.1 的同构与 cocycle 条件；反过来，descent datum 也唯一确定该代数结构。这个对应在态射上同样成立，并给出典范等价
+
+$$
+\operatorname{Alg}_T(\mathcal C_{/E})\simeq\operatorname{Desc}(p).
+$$
+
+在此等价下，$K$ 正对应定义 51.3 的 descent 比较函子。因此，$p^*$ monadic，即 $K$ 为等价，当且仅当 $p$ 是 effective descent morphism。$\square$
 
 ## 51.4 Galois 结构
 
-**定义 51.8.** 一个范畴 Galois 结构通常由 adjunction
+**定义 51.8.** 一个范畴 Galois 结构是资料
+
+$$
+\Gamma=(\mathcal C,\mathcal X,I,H,\eta,\varepsilon,\mathcal E,\mathcal F),
+$$
+
+其中 $I\dashv H$ 是伴随
 
 $$
 I:\mathcal C\rightleftarrows\mathcal X:H
 $$
 
-及两类 fibrations 或 extensions 组成，满足 pullback 稳定和反射相容条件。$\mathcal X$ 可理解为“trivial objects”的范畴。
+而 $\mathcal E\subseteq\operatorname{Mor}(\mathcal C)$、$\mathcal F\subseteq\operatorname{Mor}(\mathcal X)$ 是包含同构、对复合和 pullback 封闭的 extension 类，并满足 $I(\mathcal E)\subseteq\mathcal F$、$H(\mathcal F)\subseteq\mathcal E$。还要求所需 pullback 存在。称该结构 admissible，若对每个 $B\in\mathcal C$，诱导到 extension-slice 的右伴随全忠实。
 
-**定义 51.9.** Extension $p:E\to B$ 称为 trivial covering，若由 $\mathcal X$ 中对象经 $H$ 和 pullback 得到；称为 covering，若存在 effective descent morphism $q$ 使 $q^*p$ trivial。
+**定义 51.9.** Extension $p:E\to B$ 称为 trivial covering，若单位自然性方块
 
-**命题 51.10.** Trivial covering 在 pullback 下稳定。
+$$
+\begin{array}{c}
+E\xrightarrow{\eta_E}HIE\\
+\downarrow p\qquad\downarrow HIp\\
+B\xrightarrow{\eta_B}HIB
+\end{array}
+$$
 
-**证明.** Trivial covering 按定义由反射子范畴中的对象沿某态射 pullback 得到。再次 pullback 时，由 pullback 的粘合性质，复合 pullback 仍是同一反射对象沿复合态射的 pullback。因此仍 trivial。$\square$
+是 pullback。称 $p$ 为 covering，若存在属于 $\mathcal E$ 的 effective descent morphism $q:B'\to B$，使 $q^*p$ 为 trivial covering。
+
+**命题 51.10.** 在 admissible Galois 结构中，trivial coverings 在沿 $\mathcal E$ 中态射的 pullback 下稳定。
+
+**证明.** Admissibility 给出单位自然性方块与 extension-slice 拉回函子的 Beck--Chevalley 相容性。将定义 51.9 的 pullback 方块再沿 $\mathcal E$ 中态射拉回，pullback 的粘合引理说明所得单位方块仍为 pullback，故拉回后的 extension 仍 trivial。没有 admissibility 时，这一稳定性不由定义自动推出。$\square$
 
 ## 51.5 正规扩张与 Galois groupoid
 
@@ -86,11 +116,11 @@ $$
 
 在 Galois 结构下反射得到的内部 groupoid。
 
-**外部输入定理 51.13.** 在合适 Galois 结构中，normal extensions over $B$ 与相应 Galois groupoids 的 actions 之间存在等价。
+**外部输入定理 51.13（范畴 Galois 基本定理）.** 设 $\Gamma$ 是 admissible Galois 结构，并满足 extension 类所需的 pullback 与复合闭包公理。若 $p:E\to B$ 是 monadic extension，则被 $p$ 分裂的 coverings 所成范畴，等价于 Galois groupoid $\operatorname{Gal}_\Gamma(p)$ 上适当的内部离散纤维化范畴，也可等价地表述为该 groupoid 的内部作用范畴。若 $p$ 还是 normal extension，这个 groupoid 正是由 $p$ 的 kernel pair 经反射得到的定义 51.12 中的 Galois groupoid。
 
 ## 51.6 经典例子
 
-**命题 51.14.** 有限 Galois 扩张 $L/K$ 的 descent datum 等价于带 $\operatorname{Gal}(L/K)$-作用的 $L$-对象。
+**命题 51.14.** 设 $L/K$ 为有限 Galois 扩张，$G=\operatorname{Gal}(L/K)$。$K$-向量空间经标量扩张到 $L$ 后的 descent data，等价于 $L$-向量空间上的半线性 $G$-作用。
 
 **证明.** 对有限 Galois 扩张，
 
@@ -116,7 +146,7 @@ $$
 
 在这些等价下，两个比较函子 $p^*$ 与 $(pe)^*$ 相互对应。因此其中一个为等价当且仅当另一个为等价。$\square$
 
-## 51.7 本章小结
+## 51.7 何时下降数据是有效的
 
 Descent 把对象的局部数据和 cocycle 条件组织成 descent category；effective descent 要求这些数据真正来自全局对象。Barr-Beck 把有效下降与单子性联系起来。范畴 Galois 理论进一步把 covering、normal extension 和 automorphism groupoid 抽象化，统一了经典 Galois 理论、torsor 理论和 topos 中的覆盖下降。
 
@@ -146,7 +176,7 @@ Descent 把对象的局部数据和 cocycle 条件组织成 descent category；e
 
 **练习 51.12.** 定义 Galois groupoid。
 
-**练习 51.13.** 陈述 normal extensions 与 groupoid actions 的关系。
+**练习 51.13.** 陈述范畴 Galois 基本定理，并说明其中 monadicity 的作用。
 
 **练习 51.14.** 解释有限 Galois 扩张中的 descent datum 与群作用。
 

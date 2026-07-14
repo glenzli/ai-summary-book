@@ -1,19 +1,6 @@
 # 第五章：Colored operad、多范畴与带类型代数
 
-## 本章目标
-
-本章把单色 operad 推广到带颜色或带类型的 operad。颜色集合记录对象类型；一个运算不再只有 arity，而是有若干输入颜色和一个输出颜色。核心目标是：
-
-1. 定义 $C$-colored symmetric sequence。
-2. 用允许空纤维的有限集映射定义 colored substitution product。
-3. 把 $C$-colored operad 定义为幺半对象。
-4. 定义 colored endomorphism operad 和 colored algebra。
-5. 说明 colored operad 与 symmetric multicategory 的等价关系。
-6. 给出范畴、带作用集合和代数态射的基本例子。
-
-## 依赖前置知识
-
-需要第一章的有限集口径、对称序列、代入乘积和 endomorphism operad。需要知道范畴由对象、态射、恒等态射和复合组成。
+单色 operad 默认所有输出都能送入所有输入槽，这对许多结构过于宽松。范畴中的箭头只有在源、靶匹配时才能复合；双模上的左作用、右作用和底层乘法也分别具有不同类型。把类型组成颜色集 $C$ 后，一个运算必须记录输入颜色函数 $S\to C$ 与输出颜色，而代入只有在内层输出逐槽匹配外层输入时才有定义。本章把第一章的有限集代入逐字推广到这种带类型轮廓，并比较 colored operad 与 symmetric multicategory。范畴、函子、作用和代数同态会成为可直接验算的例子。
 
 ## 5.1 带颜色的输入轮廓
 
@@ -260,11 +247,11 @@ f(m_A(x,y))=m_B(f(x),f(y)),\qquad f(e_A)=e_B.
 $$
 于是代数正是两个幺半群及一个幺半群同态。
 
-## 本章小结
+## 5.7 颜色把可复合性写进语法
 
-Colored operad 是单色 operad 的带类型版本。颜色约束在代入时要求：内层运算的输出颜色必须等于外层输入槽的颜色。它与 symmetric multicategory 是同一数据。这个语言可以同时编码范畴、函子、带作用集合、代数同态和多对象代数系统；在线性或 enriched 版本中，它还能编码模、双模和双线性结构。因此 colored operad 是第七章 PROP/properad、附录 K enriched colored operad 和第十八章 infinity-operad 的必要中间层。
+颜色把“能否代入”从附加说明变成结构的一部分：有限集映射仍控制输入分块，但每个内层输出还必须等于相应外层输入颜色。由此，普通范畴成为只有一元运算的 colored operad，作用、双模与代数同态则需要真正的多输入轮廓。与 symmetric multicategory 的等价说明这不是另一套对象，而是同一数据的幺半写法和多箭头写法。
 
-Enriched colored operad 的模型结构不由本章定义自动给出；需要附录 G 的模型范畴假设，并需使用警告 K.19 与外部输入定理 K.20 中的 admissibility 边界。
+这套类型系统随后会向两个方向扩张。第六章把每个运算集合线性化；第七章允许一个运算有多个输出。若再进入 enriched 或模型范畴语境，还必须另外验证张量、coinvariants 与 admissibility，不能由本章的集合值构造自动推出。
 
 ## 练习
 

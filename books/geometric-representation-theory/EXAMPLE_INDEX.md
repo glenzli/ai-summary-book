@@ -82,9 +82,16 @@
 | 16.8 | $GL_n$ Hecke modification | [第十六章](16_geometric_langlands_local_global_interface.md) |
 | 16.11 | $GL_1$ abelian geometric Langlands | [第十六章](16_geometric_langlands_local_global_interface.md) |
 | 17.6 | 单顶点无边 quiver variety | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
+| 17.7.1 | 两张坐标图粘合 $T^\ast\mathbb P^1$ | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
+| 17.7.2 | $T^\ast\mathbb P^1\to\mathcal N(\mathfrak{sl}_2)$ 的显式矩阵映射 | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
+| 17.8.1 | $A_1$ quiver 的三个权空间 | [第十七章](17_quiver_varieties_and_nakajima_representations.md) |
 | 18.7 | $\mathfrak{sl}_2$ 的 KLR/nilHecke 情形 | [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
+| 18.8.1 | $R(2)$ 的 divided-difference polynomial representation | [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
+| 18.8.2 | $R(2)\simeq M_2(E[e_1,e_2])$ 的矩阵模型 | [第十八章](18_klr_rouquier_categorification_and_canonical_bases.md) |
 | 19.2 | Springer resolution as conical symplectic resolution | [第十九章](19_symplectic_resolutions_category_o_and_symplectic_duality.md) |
 | 19.4 | $T^\ast\mathbb A^1$ 的 Poisson bracket | [第十九章](19_symplectic_resolutions_category_o_and_symplectic_duality.md) |
+| 19.5.1 | $T^\ast\mathbb P^1$ 的 incidence resolution | [第十九章](19_symplectic_resolutions_category_o_and_symplectic_duality.md) |
+| 19.8.1 | Weyl algebra 的正权点模 | [第十九章](19_symplectic_resolutions_category_o_and_symplectic_duality.md) |
 
 ## 7. Coulomb、Hall、quantum 和前沿
 
@@ -93,6 +100,13 @@
 | 20.5 | $N=0$ 的 BFN pure gauge 退化 | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | 20.5.1 | torus pure gauge Coulomb branch 计算 | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | 20.5.3 | $G=\mathbb C^\times,N=\mathbb C$ 的 regularity 条件 | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
+| 20.5.4 | 权一 matter 分支的消失阶与有限截断 codimension | [第二十章](20_coulomb_branches_bfn_construction_and_quantization.md) |
 | 21.9 | 有限域 vector spaces 的 Hall product | [第二十一章](21_hall_coha_and_donaldson_thomas_interfaces.md) |
+| 21.9.1--21.9.2 | Gaussian Hall 系数与二步旗标结合恒等式 | [第二十一章](21_hall_coha_and_donaldson_thomas_interfaces.md) |
 | 22.6 | $\mathfrak{sl}_2$ crystal | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
-| 23.9 | geometric Langlands 前沿结果进入正文的验证表 | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| 22.7.1--22.7.2 | $A_1$ quiver 的 Grassmannian fibers 与 $B(n)$ incidence graph | [第二十二章](22_quantum_groups_crystals_and_canonical_bases_geometric_models.md) |
+| 23.2 | $GL_1$ 的交换 Hecke 平移 | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| 23.6 | $A$-型 Poisson 曲面的 smooth-locus symplectic form | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| 23.10 | $A_1$ parity sheaves 与无 modular 修正 | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| 23.13 | 同构 $K_0$ 不推出范畴等价的 dual-number 反例 | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |
+| 23.16 | $GL_1$ affine Grassmannian 的 nonreduced family | [第二十三章](23_research_frontier_2026_and_open_problem_map.md) |

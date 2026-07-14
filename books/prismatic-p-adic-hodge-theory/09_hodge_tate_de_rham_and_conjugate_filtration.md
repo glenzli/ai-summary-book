@@ -1,12 +1,6 @@
 # 第九章：Hodge-Tate 与 de Rham specialization 的滤过结构
 
-## 本章目标
-
-本章把第三章中只作为比较接口出现的 Hodge-Tate 和 de Rham specialization 展开为正式教材内容。核心任务是区分三类结构：prismatic complex 本身、Hodge-Tate specialization 的 conjugate filtration、以及 de Rham specialization 的 Hodge filtration。
-
-## 依赖前置知识
-
-依赖第二章的 prismatic site、第三章的 comparison theorem interface、附录 A 的 derived completion 和 cotangent complex 的基本语言。需要熟悉 filtered complexes 和 exterior powers of the cotangent complex。
+第三章给出了 Hodge--Tate 与 de Rham 比较的出口，但两个 specialization 上出现的滤过并非同一对象的两种名称。Hodge--Tate 侧的 conjugate filtration 由 cotangent complex 的外幂控制，de Rham 侧则带 Hodge filtration；它们都来自 prismatic complex，却通过不同换基与完备化获得。本章沿第二章的 site 和第三章的比较态射，逐层构造关联分次、谱序列和低维展开，明确哪一步需要 smoothness、derived completion 或 boundedness。附录 A 提供 cotangent complex 与完备化语言，filtered complex 的操作按导出范畴口径进行。
 
 ## 9.1 Hodge-Tate specialization
 
@@ -47,7 +41,7 @@ $$
 R\Gamma\left(X,\wedge^i\mathbb L_{X/(A/I)}\right)[-i]\{-i\}.
 $$
 若 $X$ smooth，则 $\wedge^i\mathbb L_{X/(A/I)}$ 可替换为 $\Omega^i_{X/(A/I)}$。
-来源为 Bhatt--Scholze, Theorems 4.11、6.3（locator `BS-COMP-HT`）。
+来源为 Bhatt--Scholze, Theorems 4.11、6.3。
 
 **说明 9.5.** 定理 9.4 是外部输入，不在本书中重证。书内使用它时只抽取两个形式后果：perfectness 和 Hodge numbers 的约束。
 
@@ -89,7 +83,7 @@ $$
 R\Gamma_{\mathrm{dR}}(X/(A/I))^{\wedge,L}_p,
 $$
 并且该同构与乘法结构及 pullback functoriality 相容。来源为
-Bhatt--Scholze, Corollary 15.4（locator `BS-COMP-DR`）。这是 unfiltered
+Bhatt--Scholze, Corollary 15.4。这是 unfiltered
 comparison；右侧当然带其 Hodge filtration，但把该 filtration 搬到左侧需要
 relative Nygaard theorem 等额外输入，不能从本定理自动推出。
 
@@ -129,7 +123,7 @@ $$
 
 **证明.** 例 9.13 给出 spectral sequence 的非零项范围。第一列 $i=0$ 贡献次数 $j=0,1$；第二列经 shift 后贡献总次数 $j+1=1,2$。因此目标 cohomology 只可能在 $0,1,2$。证毕。
 
-## 本章小结
+## 9.6 两种滤过的来源与边界
 
 Hodge-Tate specialization 和 de Rham specialization 是 prismatic cohomology 的两个不同出口。前者带 conjugate filtration，其 graded pieces 由 $\Omega^i[-i]\{-i\}$ 描述；后者通过 Frobenius pullback 后 modulo $I$ 得到 de Rham complex，并带 Hodge filtration。正式使用时必须同时标注对象、滤过和 twist convention。
 

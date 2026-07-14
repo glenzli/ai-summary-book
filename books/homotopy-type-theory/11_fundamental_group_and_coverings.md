@@ -1,12 +1,8 @@
 # 第十一章：基本群、覆盖空间与圆的计算
 
-## 本章目标
+“圆有一条生成 loop”并不能单独证明其基本群是 $\mathbb Z$：还必须证明每条 loop 都由唯一整数次幂表示。HoTT 的 encode–decode 方法把这个唯一性问题变成依赖类型计算。先让圆的生成 loop 在整数 fiber 上作用为后继，再把任意路径编码成沿路径 transport 后的整数；反向则把整数解码为 loop 的正幂或负幂。
 
-本章说明如何在 HoTT 中定义基本群、覆盖和圆的基本群。完整证明 $\pi_1(\mathbb S^1)\cong\mathbb Z$ 是 HoTT 的经典案例；本章给出严格路线，并标注外部输入与证明状态。
-
-## 依赖前置知识
-
-本章依赖 HIT、圆、集合截断、商类型、等价和单值性。圆和截断的输入规则见附录 L；整数对象、整数后继自等价和 loop 幂见附录 M；完整 encode-decode 证明核见附录 N。
+这一构造同时调用前面几乎全部工具：圆的 HIT 递归定义覆盖族，单值性把整数后继等价变成宇宙路径，路径归纳定义 encode，依赖消去定义 decode，集合截断最后把 loop space 变成普通群。整数及其群律在附录 M、W 中构造，圆规则在附录 L 中固定，逐项的两侧逆证明位于附录 N。
 
 ## 11.1 Loop space 与基本群
 
@@ -101,7 +97,7 @@ $$
 (\mathsf{base}=\mathsf{base})\simeq\mathbb Z.
 $$
 
-**证明（书内证明核）.** 见附录 N.11。证明使用 encode-decode：附录 N.2-N.3 构造 $\mathsf{code}$ 并计算 loop transport，N.4-N.7 构造 $\mathsf{encode}$ 与 $\mathsf{decode}$，N.8-N.10 证明两侧互逆。仍需注意附录 N.8 登记的全书级义务：准逆相干化、$\mathsf{isOfHLevel}$ 命题性，以及 propositional HIT computation 下的 transport 插入。$\square$
+**证明（书内证明核）.** 见附录 N.11。附录 N.2-N.3 构造 $\mathsf{code}$ 并计算 loop transport，N.4-N.7 构造 $\mathsf{encode}$ 与 $\mathsf{decode}$，N.8-N.10 证明两侧互逆，再由附录 G 中“准逆推出等价”得到所述等价。本书圆规则规定点构造子上的 judgmental 计算和 loop 构造子上的 propositional 计算；附录 N 的端点对齐按这一固定口径进行。$\square$
 
 **推论 11.11.** 基本群 $\pi_1(\mathbb S^1,\mathsf{base})$ 同构于 $\mathbb Z$。
 
@@ -115,9 +111,9 @@ $$
 
 **警告 11.12.** $\pi_1(\mathbb S^1)\cong\mathbb Z$ 的完整证明不是一句“圆有一条环路”即可推出。关键是构造覆盖 $\mathsf{code}$，证明 transport 沿 $\mathsf{loop}$ 是后继，并建立 encode/decode 的逆性。
 
-## 本章小结
+## 11.5 从 loop 数据到群同构
 
-HoTT 中的基本群来自路径空间和截断。圆的基本群计算展示了 HIT、单值性和依赖类型论的协同工作，是合成同伦论的核心范例。
+覆盖族 $\mathsf{code}$ 把圆的几何生成元变成整数后继的可计算作用，encode 与 decode 再证明 loop space 本身等价于整数。集合截断不是证明的替代，而是把已经算出的高阶路径对象送到群所在的集合层；附录 V 额外核对 loop 复合对应整数加法。这个例子给出后续合成同伦论的基本方法：选择能记录路径信息的依赖族，再用消去原则证明编码完备。
 
 ## 练习
 

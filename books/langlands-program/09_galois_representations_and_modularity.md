@@ -1,14 +1,8 @@
 # 第九章：Galois 表示与模性定理
 
-## 本章目标
+第六至八章产生了三种表面不同的对象：Hecke 本征形式、`GL(2)` 自守表示和椭圆曲线。二维 $\ell$-adic Galois 表示提供共同语言，因为 Hecke 本征值与椭圆曲线点数都能写成 Frobenius 的迹。模性不只是两个 L 函数恰好相等，而是断言 Galois 表示来自自守数据；模性提升则研究怎样从残余表示的模性推出某个 $\ell$-adic lift 的模性。本章依次定义分歧、导子、奇性和残余表示，再陈述这些对应的精确范围。
 
-本章把第六章的 Hecke eigenform、第七章的 `GL(2)` 自守表示和第八章的椭圆曲线 Galois 表示放入同一语言：二维 $\ell$-adic Galois 表示。我们定义 ramification、导子、奇性、残余表示和模性，并陈述 Deligne 表示、椭圆曲线模性定理和模性提升定理的接口形式。
-
-## 依赖前置知识
-
-需要第五章的局部参数、第六章的 Deligne 表示、第七章的自守表示和第八章的 Tate module。Galois cohomology、deformation rings、Hecke algebras 和 Taylor-Wiles patching 本章只作为外部输入出现。附录 T 给出 Deligne 表示的模曲线上同调来源；附录 U 给出 p-adic Hodge 和 automorphy lifting 的高维接口。
-
-收口归一化回指：本章是算术 Frobenius、几何 Frobenius、Tate twist、Deligne 表示和自守 Satake 参数的比较点；统一 convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、5、6、7 节。
+Deligne 表示的模曲线上同调来源见附录 T，$p$-adic Hodge 条件与 automorphy lifting 的高维接口见附录 U；Galois cohomology、deformation rings 与 Taylor--Wiles patching 作为外部输入。算术/几何 Frobenius、Tate twist 和自守 Satake 参数之间的转换遵循 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、5、6、7 节。
 
 ## 9.1 $\ell$-adic Galois 表示
 
@@ -225,7 +219,7 @@ $$
 
 因此，椭圆曲线模性是二维 Galois 表示与 `GL(2)` 自守表示对应的核心实例，而模性提升定理是证明这类对应的主要机制之一。
 
-## 9.9 本章小结
+## 9.9 模性作为 Galois--自守对应
 
 本章定义了二维 $\ell$-adic Galois 表示、残余表示、奇性和模性。Deligne 定理从 Hecke eigenform 构造 Galois 表示；椭圆曲线模性定理则反向说明椭圆曲线的 Tate module 表示来自权 $2$ newform。模性提升定理和 $R=T$ 原理提供了证明模性的结构性方法，但本书在此阶段只把它们作为外部输入。
 

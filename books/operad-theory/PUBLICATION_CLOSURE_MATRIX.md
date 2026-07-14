@@ -62,7 +62,7 @@
 | 第十八章 | Lurie-style infinity-operads | active/inert、algebras 已定义 | model comparison 外部 | 基本通过 |
 | 第十九章 | localization/straightening | relative functor 和 derived tensor 示例已闭合 | DK、straightening 外部 | 基本通过 |
 | 第二十章 | factorization/Fukaya | definitions 和接口已闭合 | excision、Dunn、Fukaya gluing 外部 | 基本通过 |
-| 第二十一章 | 前沿研究边界 | 版本表、模型差异和验证流程已闭合 | 前沿定理仍研究边界 | 通过 |
+| 第二十一章 | 开放问题与结构性边界 | 六类问题均给出输入、目标和低阶检验 | 已知特例与一般开放范围严格区分 | 通过 |
 
 ## 3. 附录闭包表
 
@@ -98,7 +98,7 @@
 | B8 | 第一至第七章稳定 label 表 | 登记所有正文声明和练习 label | 已封口 |
 | B9 | 核心附录稳定 label 表 | 登记附录 A/B/H/K/P/U/X 的 107 个正式编号项 | 已封口 |
 | B10 | 散文交叉引用第一轮替换 | 将可直接定位的主体和核心附录散文指称替换为编号引用 | 已封口 |
-| B11 | 第八至第二十一章稳定 label 表 | 登记高级章节的 416 个正式编号项 | 已封口 |
+| B11 | 第八至第二十一章稳定 label 表 | 登记高级章节的 420 个正式编号项 | 已封口 |
 | B12 | 剩余附录稳定 label 表 | 登记附录 C/D/E/F/G/I/J/L/M/N/O/Q/R/S/T/V/W/Y/Z 的 398 个正式编号项 | 已封口 |
 | B13 | 散文交叉引用第二轮替换 | 将可直接定位的高级章节、剩余附录和元文档散文指称替换为编号引用 | 已封口 |
 

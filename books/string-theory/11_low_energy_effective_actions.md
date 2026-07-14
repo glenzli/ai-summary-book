@@ -1,16 +1,12 @@
 # 第十一章：低能有效作用、supergravity 和 alpha-prime 修正
 
-## 本章目标
-
-本章说明弦理论如何在低能极限中产生 gravity、antisymmetric tensor、dilaton、gauge fields 和 supergravity。核心区分是：
-
-1. $\alpha'$ expansion：世界面 sigma model 的短距离或高导数修正；
-2. $g_s$ expansion：按 worldsheet genus 组织的 string loop 修正；
-3. string frame 与 Einstein frame：同一低能物理的不同场变量。
-
-## 依赖前置知识
-
-需要第四章闭弦低能谱、第五章 Weyl anomaly、第八至十章的超弦谱与异常结构。
+弦谱中出现 massless graviton、two-form、dilaton 与 gauge fields，并不自动告诉我们
+它们如何相互作用。另一条信息来自世界面：把这些背景视为 sigma-model couplings
+后，量子 Weyl invariance 要求相应 beta functions 消失。两条路线在低能处汇合成
+supergravity 及其高导数修正，但必须始终区分由 $\alpha' E^2$ 控制的导数展开与由
+$g_s$ 控制的 genus 展开，也要区分 string frame 和 Einstein frame 的场变量。
+以下结合第四章低能谱、第五章 Weyl anomaly 与第八至十章的超弦/heterotic 一致性，
+从 NS--NS 作用量推到 type II、heterotic 接口，并用散射振幅校准首批修正项。
 
 ## 11.1 背景场 sigma model
 
@@ -290,9 +286,11 @@ $$
 Virasoro--Shapiro amplitude 不能替代它。把该 scalar expansion 与完整
 $t_8t_8R^4$ tensor 及其绝对系数匹配，仍属于外部输入 11.13 的边界。$\square$
 
-## 本章小结
-
-低能有效作用是 worldsheet conformal invariance、massless spectrum 和 string perturbation 的共同结果。String frame 直接反映世界面耦合；Einstein frame 适合讨论引力动力学。Supergravity 不是完整 string theory，而是 $g_s$ 和 $\alpha'$ 双重展开中的最低阶。
+四引力子 Gamma factor 的展开最后说明了“低能”究竟意味着什么：massless poles
+由两导数 supergravity 交换产生，解析 contact terms 才编码 $\alpha'$ 修正；loop
+修正则另由 genus 和 $g_s$ 计数。String frame 直接保留 dilaton 的世界面来源，
+Einstein frame 把引力 kinetic term 规范化。因而 supergravity 是双重渐近展开的
+最低阶动力学，而不是把 massive string modes 与全部量子效应都保留下来的完整理论。
 
 ## 练习
 

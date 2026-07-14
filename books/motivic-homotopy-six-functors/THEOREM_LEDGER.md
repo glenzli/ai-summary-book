@@ -2,7 +2,7 @@
 
 本账本登记本书内部证明、外部输入和研究边界。`P0` 表示正文依赖，必须在出版前补精确 locator；`P1` 表示高级章节依赖；`R` 表示研究边界，只能作为前沿说明。
 
-最近核查：2026-07-11。`located` 条目的详细版本与边界见
+最近核查：2026-07-15。`located` 条目的详细版本与边界见
 `P0_REFERENCE_LOCATORS_BATCH_1.md`、`P0_REFERENCE_LOCATORS_BATCH_2.md`、
 `P0_REFERENCE_LOCATORS_BATCH_3.md`。
 
@@ -14,7 +14,7 @@
 | CAT-C.4 | 外部输入 | pointed objects 的 presentable smash product | Cartesian presentable；乘积分变量保小余极限 | Lurie HA 4.8.1.15, 4.8.1.21, 4.8.2.11, 4.8.2.14 | located |
 | CAT-C.8 | 外部输入 | symmetric monoidal object-inversion 与 3-symmetric spectra 比较 | presentably symmetric monoidal；谱模型需 3-symmetry | Robalo 4.10, 4.24, 4.29 | located |
 | MH-1.9 | 内部推论 | `\operatorname{Shv}_{Nis}(\operatorname{Sm}_S)` presentable | `\operatorname{Sm}_S` 为 `\mathbb U`-小站点 | CAT-A.8 | 已证明 |
-| MH-1.13 | 内部命题 | Nisnevich sheaf 条件推出 elementary distinguished square 的拉回条件 | 使用该方块为覆盖生成数据 | Grothendieck topology 定义 | 已证明 |
+| MH-1.13 | 外部输入的形式后果 | Nisnevich sheaf 把 elementary distinguished square 送到同伦拉回 | 有限维 Noetherian 基；space-valued sheaf | Morel--Voevodsky Proposition 1.4；Voevodsky cd-structures；Cisinski--Deglise Theorem 3.3.2 | 由 sheafified representable pushout 与 Yoneda 推出 |
 | MH-2.4 | 内部推论 | `\mathbf H(S)` presentable | `W_{\mathbb A^1}` 为 `\mathbb U`-小态射集 | CAT-A.8, CAT-A.10 | 已证明 |
 | MH-2.6 | 内部命题 | A1-局部对象由 `F(X)\to F(X\times A1)` 检测 | Yoneda + localization | 一般局部化理论 | 已证明 |
 | MH-2.9 | 内部命题 | `X\times A1\to X` 在 `\mathbf H(S)` 中为等价 | 定义 | A1 localization | 已证明 |
@@ -49,6 +49,7 @@
 | HZ-9.9 | 外部输入 | `H^{p,q}\cong CH^q(-,2q-p)` | perfect field；smooth separated scheme | MVW Theorem 19.1, Corollary 19.2 | located |
 | HZ-9.10 | 外部输入 | `H^{n,n}(k)\cong K_n^M(k)` | 任意域 | MVW Theorem 5.1 | located |
 | DM-10.8 | 外部输入 | `DM` 与 `H\mathbb Z`-modules 比较；三角/稳定 infinity 分层 | char 0 for integral triangulated；field and `1/e` for stable infinity | Röndigs-Ostvær Theorem 1.1; Elmanto-Kolderup Theorem 5.2, Corollary 5.3 | located |
+| DM-10.21 | 内部命题 | `H\mathbb Z\otimes-` 保守性的 thick-tensor 充分判据 | `1` 由 `H\mathbb Z` 厚张量生成 | stable tensor calculus | 已证明 |
 | KG-11.1 | 外部输入 | strict commutative Bott model for `KGL` | Noetherian finite-dimensional | Röndigs-Spitzweck-Ostvær Lemma 2.5, Theorems 3.6, 4.1 | located |
 | KG-11.6 | 外部输入 | `KGL` 表示 `KH` | Noetherian finite-dimensional | Cisinski Theorem 2.20 | located |
 | KG-11.7 | 外部输入 | regular case `K\simeq KH` | regular Noetherian ring；quasi-projective regular Noetherian scheme | Weibel K-book IV Corollary 12.3.1, Lemma 12.8(3) | located |
@@ -56,6 +57,7 @@
 | MG-12.4 | 外部输入 | `MGL` orientation universality as monoid-map set bijection | field；homotopy category | Panin-Pimenov-Röndigs Theorem 2.3.1 | located |
 | MG-12.11 | 外部输入 | Hopkins-Morel comparison | essentially smooth over field；invert exponent `c` | Hoyois Theorem 7.12 | located |
 | SL-13.8 | 外部输入 | `s_0(1)\simeq HZ` and slices are `HZ`-modules | characteristic zero field | Voevodsky Theorem 6.6, Introduction pp.106-107 | located |
+| SL-13.6 | 内部命题 | `s_qE` 为 `q`-effective 且右正交于 `(q+1)`-effective 对象 | effective inclusions 有右伴随 | 余反射泛性质 + stable cofiber | 已证明 |
 | TR-14.3 | 外部输入 | finite correspondences form additive category | 本章取 perfect field | MVW Lecture 1, Lemmas 1.4, 1.7, Definition 1.5 | located |
 | TR-14.10 | 外部输入 | Nisnevich sheafification preserves transfers | 任意 field；本章取 perfect | MVW Theorem 13.1 | located |
 | FR-15.x | 外部输入 | framed motivic spaces recognition principle | perfect field；very effective/effective 层级分开 | Elmanto-Hoyois-Khan-Sosnilo-Yakerson Theorems 1.2.3, 3.5.14 | located |
@@ -65,11 +67,17 @@
 | MW-18.2 | 外部输入 | `End(1_k)\cong GW(k)` | perfect field | Morel Corollary 6.43 + Lemma 3.10 | located |
 | MW-18.5 | 外部输入 | stable-range sphere maps are `K_*^{MW}` | perfect field；`n\ge2`, target weight positive | Morel Corollary 6.43 | located |
 | MW-18.7 | 高级外部输入 | Chow-Witt/Milnor-Witt motives、枚举与 Gauss-Bonnet refinements | 模型/field/regularity/orientation 逐项指定 | Fasel, Deglise-Fasel 等 | P1 boundary；不参与 P0 主线 |
-| EQ-19.3 | 外部输入 | quotient stacks 上 equivariant motivic six operations | linearly reductive 等 | Hoyois | P0 |
-| ST-20.x | 外部输入 | scalloped algebraic stacks 上的六操作 | Khan-Ravi 假设 | Khan-Ravi | P0 |
-| LG-21.2 | 外部输入 | log schemes 上的 A1-stable motivic homotopy | fs log schemes | Park | P1 |
-| PF-21.5 | 研究边界 | perfect schemes 上 motivic homotopy | positive characteristic | Dahlhausen-Hekking-Wolters | R |
-| RE-22.4 | 外部输入 | Betti realization | complex bases | Ayoub 等 | P0 |
-| UF-23.2 | 外部输入 | universal six-functor formalism | coefficient systems | Drew-Gallauer | P0 |
+| EQ-19.3 | 外部输入 | quotient stacks 上 equivariant motivic six operations | tame group；G-resolution property 与 G-quasi-projectivity 按各定理保留 | Hoyois Definition 2.26, Proposition 5.7, Theorems 1.1, 6.9, 6.18 | located |
+| ST-20.5/6 | 外部输入 | scalloped derived stacks 上的 stable motivic category 与六操作 | scalloped；`f_!\dashv f^!` 仅对可表有限型态射 | Khan-Ravi Definitions 2.7, 2.9; Theorems 4.5, 4.10, 7.1 | located |
+| ST-20.12 | 外部输入 | torus concentration | connected Noetherian affine base；split torus；Euler localization | Khan-Ravi Theorem 11.2, Corollary 11.3 | located |
+| LG-21.3 | 外部输入 | log schemes 上的 A1-stable motivic homotopy | fs log schemes；strict morphisms 的六操作 | Park | P1/source-verified |
+| UH-21.6 | 外部输入 | universal homeomorphism invariance | 按 Theorem 2.1.1 反演素数；指数特征 `p` 时取 `[1/p]` | Elmanto-Khan Theorem 2.1.1, Corollaries 2.1.5-2.1.7 | located |
+| PF-21.13 | 研究边界 | perfect schemes 上 motivic homotopy | positive characteristic perfect schemes | Dahlhausen-Hekking-Wolters | R |
+| RE-22.4 | 外部输入 | 相对 Betti realization 与六操作 | finite-type complex algebraic setting；原文 motivic category/constructibility 限制 | Ayoub Theorem 3.19 | located |
+| ET-22.5/6 | 外部输入 | unstable pro-etale 与 stable profinite realization | Isaksen 需远离剩余特征完成；Quick 取基域 | Isaksen; Quick | P1/located |
+| RR-22.7 | 外部输入 | `\rho`-local real-etale comparison | finite-dimensional Noetherian scheme | Bachmann Main Theorem | P1/located |
+| UF-23.2 | 外部输入 | `\mathbf{SH}` 在 `\operatorname{CoSy}^c_B` 中初始 | Drew-Gallauer Definition 7.7 的 cocomplete coefficient systems | Drew-Gallauer Theorem 7.14 | located；一般 morphism 不自动交换全部六操作 |
 | RB-24.1 | 研究边界 | pullback formalism 中更强 universal six-functor criterion | Magen 2025 假设 | Magen 2025 | R |
 | RB-24.2 | 研究边界 | complex analytic stacks 的 localization theorem | Magen 2026 假设 | Magen 2026 | R |
+| CMP-24.3 | 内部命题 | 几何函子经层化、区间局部化和稳定化因子化的必要条件 | 定义 24.2 的四项数据 | 三次泛性质 | 已证明 |
+| CMP-24.12 | 内部命题 | realization 与 effective covers 相容时保持 slices | 正合、保余极限并与 `r_q` 交换 | stable cofiber calculus | 已证明 |

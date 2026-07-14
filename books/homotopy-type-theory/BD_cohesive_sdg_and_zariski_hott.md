@@ -121,8 +121,8 @@ $$
 1.  附录 BA 的连续性和紧致性是构造性分析定理；BD 的导数来自 nilpotent infinitesimal 和 Kock-Lawvere 公理。
 2.  附录 Y 的上同调由 EM 型表示；BD 的 de Rham 接口需要微分形式和 cohesive 比较定理。
 3.  附录 AT 给出 modal/cohesive 算子；BD 给出这些算子服务的几何对象。
-4.  若后续加入合成代数几何正文，应新建独立主章，列出环对象、公理、覆盖、gluing 和模型来源。
+4.  合成代数几何结论只有在列出环对象、公理、覆盖、gluing 和模型来源后才能进入内部推导。
 
-## BD.7 本附录关闭的缺口
+## BD.7 几何模型边界
 
-本附录把 cohesive/SDG/SAG 从研究方向名词降为具体数学接口：shape 模态、无穷小对象、Kock-Lawvere 公理、切丛、链式法则、microlinearity、de Rham 接口和 Zariski 覆盖。剩余义务是具体模型、sheaf 语义、de Rham 比较定理和合成代数几何的完整代数展开。
+Shape 模态、无穷小对象、Kock--Lawvere 公理、microlinearity 与 Zariski 覆盖属于特定 cohesive/SDG/SAG 语言。具体模型、sheaf 语义和 de Rham 比较定理均未由基础 HoTT 推出；缺少这些输入时，本附录中的几何陈述只能作为条件化接口，不能作用于第十五章的普通集合族或 simplicial 模型。

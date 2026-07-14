@@ -48,7 +48,7 @@ $$
 形式层；第二卷附录 P、Z 证明连续 splitting 使 boundary 与 cycle quotient 对
 profinite 参数族局部可提升，并由此推出第一个同构。
 
-**外部部分。** CS26 Theorem 2.14、Lemma 2.16 及其逆极限推论给 Fréchet 项的
+**外部部分。** CS26 Theorem 0.2.14、Lemma 0.2.16 及其逆极限推论给 Fréchet 项的
 liquid membership；classical Dolbeault lemma 和 Fredholm-Hodge 定理给连续
 Green/Hodge splitting。不存在单独的笼统“liquid realization exactness”输入。
 

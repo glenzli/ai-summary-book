@@ -1,18 +1,6 @@
 # 第八章：二次 operad 与 Koszul 对偶
 
-## 本章目标
-
-本章建立二次 operad 和 Koszul 对偶的基础语言。完整的 Koszul 判别、bar-cobar 构造和同伦代数应用会在后续章节展开。本章目标是：
-
-1. 定义权重分次自由 operad。
-2. 定义二次数据 $(E,R)$ 和二次 operad $\mathcal P(E,R)$。
-3. 给出非含单位的 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$ 的二次表示。
-4. 定义 Ginzburg-Kapranov 二次对偶 $\mathcal P^!$。
-5. 说明 Koszul 性是一个同调条件，并把大型定理标为外部输入。
-
-## 依赖前置知识
-
-需要定理 4.10 的自由 operad 泛性质、定义 4.13 的生成元关系口径、定义 6.6 的线性 operad 和第六章的经典例子。需要有限维向量空间对偶和群表示的基本知识。
+许多经典线性 operad 都由二元生成元和三输入关系给出：三输入关系对应恰有两个顶点的树，因而具有权重 $2$。一旦自由 operad 按顶点数分次，关系子模 $R\subset\mathbb F(E)^{(2)}$ 就能取正交补；但“存在二次对偶”与“对偶能计算原 operad 的同伦信息”是两件不同的事，后者正是 Koszul 性。本章在 reduced、augmented 和逐 arity 有限维假设下定义二次数据、Ginzburg--Kapranov 对偶与 Koszul complex，并用无幺 $\operatorname{Ass}$、$\operatorname{Com}$、$\operatorname{Lie}$ 检查关系。自由 operad、线性代入和有限维表示对偶是所需的前置工具。
 
 ## 8.1 Reduced 约定与权重
 
@@ -205,9 +193,9 @@ Koszul operad 的意义在于：若 $\mathcal P$ Koszul，则其同伦版本通�
 
 这些陈述需要 dg-operad、cooperad、bar-cobar 和模型范畴语言。下一章会建立这些工具。
 
-## 本章小结
+## 8.7 正交关系何时控制同伦
 
-二次 operad 是由生成元 $E$ 和权重 $2$ 关系 $R$ 给出的 reduced 线性 operad。二次对偶 $\mathcal P^!$ 由对偶生成元 $E^\vee$ 和正交关系 $R^\perp$ 定义。Koszul 性是关于对偶 cooperad 和原 operad 之间 Koszul complex 的同调条件，不是形式定义自动保证的性质。$\operatorname{Ass}$、$\operatorname{Com}$ 和 $\operatorname{Lie}$ 的 Koszul 性是后续 $A_\infty$、$L_\infty$ 和同伦交换代数的基础外部输入。
+二次数据 $(E,R)$ 只使用自由 operad 的权重 $1$ 与 $2$ 部分；对偶数据则把 $R$ 替换为带正确悬挂和符号的正交补。真正有计算力的是 Koszul complex 的无额外同调：只有在这一条件下，二次对偶 cooperad 才能提供原 operad 的有效分解。$\operatorname{Ass}$ 的自对偶以及 $\operatorname{Com}$ 与 $\operatorname{Lie}$ 的互换由外部经典定理保证，不能从符号形式直接推出。下一章将构造不依赖 Koszul 假设也存在的 bar 与 cobar；Koszul 性随后表现为这些普遍构造在特定二次数据上足够精确。
 
 ## 练习
 

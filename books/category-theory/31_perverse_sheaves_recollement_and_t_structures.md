@@ -1,12 +1,8 @@
 # 第三十一章：Perverse sheaves、recollement 与 t-结构
 
-## 本章目标
+普通 cohomological t-structure 不会同时尊重分层空间的维数和 Verdier 对偶。Perverse t-structure 通过每个 strata 上的支撑与余支撑消失条件重新放置 cohomological degrees，其 heart 中的对象才是 perverse sheaves。开闭分解给出的 recollement 允许从开子空间与闭子空间粘合 t-structure，也解释 intermediate extension $j_{!*}$ 的唯一性。本章以复代数簇或合理层化空间的 constructible derived category 为模型，逐步推导这些范畴论结构。
 
-本章把第二十章的 t-结构、第二十八章的六操作和 recollement 结合起来，介绍 perverse sheaves 的范畴论结构。Perverse sheaves 不是普通 sheaf 的简单平移，而是由支撑维数、余支撑维数和开闭粘合控制的 heart。它们是三角范畴、稳定 $\infty$-范畴、sheaf 理论和几何表示论之间最重要的接口之一。
-
-## 依赖前置知识
-
-需要稳定 $\infty$-范畴、t-结构、heart、recollement、六操作、constructible sheaves、Verdier 对偶和基本层化空间语言。本章采用复代数簇或合理层化拓扑空间上的可构造导出范畴作为主要模型。
+所需语言是稳定 $\infty$-范畴、t-structure、heart、六操作和 Verdier 对偶。维数函数、stratification 与 constructibility 假设会在定理处固定；decomposition theorem 等几何深定理只作为外部输入，不从形式 recollement 误推。
 
 ## 31.1 可构造导出范畴与层化
 
@@ -16,7 +12,7 @@ $$
 X=\bigsqcup_{\alpha\in A}S_\alpha.
 $$
 
-设 $\Lambda$ 为系数环或域。可构造导出范畴 $D^b_c(X,\Lambda)$ 是 $D^b(X,\Lambda)$ 中那些对象 $K$，使得每个 cohomology sheaf $H^i(K)$ 在每个 stratum $S_\alpha$ 上局部常值且 stalk 有有限生成同调。
+本章固定系数域 $\Lambda$。可构造导出范畴 $D^b_c(X,\Lambda)$ 是 $D^b(X,\Lambda)$ 中那些对象 $K$，使得每个 cohomology sheaf $H^i(K)$ 在每个 stratum $S_\alpha$ 上局部常值且 stalk 为有限维 $\Lambda$-向量空间。一般 Noetherian 系数环也有相应理论，但 Verdier 对偶和有限性假设需要另行调整。
 
 **定义 31.2.** 对 stratum 嵌入 $i_\alpha:S_\alpha\hookrightarrow X$，称
 
@@ -26,15 +22,15 @@ $$
 
 分别为 $K$ 沿该 stratum 的 restriction 和 corestriction。
 
-**命题 31.3.** 若 $K\simeq0$ 当且仅当所有 $i_\alpha^*K\simeq0$，则 stratum restrictions 联合保守。
+**命题 31.3.** 对有限层化，stratum restrictions $\{i_\alpha^*\}_{\alpha\in A}$ 联合保守。
 
-**证明.** 这正是联合保守的定义。对有限层化，可用开闭分解归纳证明：取开 stratum 并令闭补为 $Z$。若开部限制为零且闭补限制为零，则 recollement 的余纤维序列
+**证明.** 对 strata 数目归纳。取开 stratum $j:U\hookrightarrow X$，令闭补为 $i:Z\hookrightarrow X$。若所有 stratum restrictions 均为零，则 $j^*K\simeq0$，而归纳假设给出 $i^*K\simeq0$。Recollement 的余纤维序列
 
 $$
 j_!j^*K\to K\to i_*i^*K
 $$
 
-两端为零，故 $K\simeq0$。对闭补继续归纳。$\square$
+两端为零，故 $K\simeq0$。这些限制函子正合；对态射取余纤维后还可知它们联合反映等价。$\square$
 
 ## 31.2 标准 t-结构与 perverse t-结构
 
@@ -94,7 +90,7 @@ $$
 D(Z)\rightleftarrows D(X)\rightleftarrows D(U)
 $$
 
-中，给定 $D(Z)$ 和 $D(U)$ 上的 t-结构，在适当相容条件下存在唯一粘合 t-结构。Perverse t-结构可由 stratum 上平移后的标准 t-结构逐层粘合得到。
+中，任给 $D(Z)$ 和 $D(U)$ 上的 t-结构，公式 31.9 定义 $D(X)$ 上唯一的粘合 t-结构；不需另加两侧 t-结构之间的相容条件。Perverse t-结构可由 strata 上按复维数平移的标准 t-结构逐层粘合得到。
 
 **命题 31.11.** 若 $X=U\sqcup Z$ 的 perverse t-结构由 $U,Z$ 粘合，则 $K\in\operatorname{Perv}(X)$ 当且仅当
 
@@ -184,23 +180,25 @@ $$
 
 ## 31.6 Nearby cycles 与 vanishing cycles 入口
 
-**定义 31.18.** 给定函数 $f:X\to\mathbb A^1$，nearby cycles $\psi_f$ 和 vanishing cycles $\phi_f$ 是连接一般纤维、特殊纤维和奇异消失信息的函子。它们通常定义在可构造导出范畴上：
+**定义 31.18.** 设 $f:X\to\mathbb C$ 为复代数或复解析映射，$i:X_0=f^{-1}(0)\hookrightarrow X$，$j:X_\eta=X\setminus X_0\hookrightarrow X$。固定方差为
 
 $$
-\psi_f,\phi_f:D^b_c(X_\eta)\text{ 或 }D^b_c(X)\to D^b_c(X_0).
+R\psi_f:D^b_c(X_\eta,\Lambda)\to D^b_c(X_0,\Lambda),
+\qquad
+R\phi_f:D^b_c(X,\Lambda)\to D^b_c(X_0,\Lambda).
 $$
 
-**外部输入定理 31.19.** 在合适代数或解析语境中，nearby cycles 与 vanishing cycles 与 perverse t-结构相容：适当平移后的 $\psi_f$ 与 $\phi_f$ 把 perverse sheaves 送到 perverse sheaves，并参与标准三角
+**外部输入定理 31.19.** 在上述复代数或复解析可构造语境中，存在标准 distinguished triangle
 
 $$
-i^*K\to \psi_fK\to \phi_fK\to
+i^*K\longrightarrow R\psi_f(j^*K)\longrightarrow R\phi_f(K)\longrightarrow i^*K[1].
 $$
 
-或其变体。
+在 middle perversity 约定下，$R\psi_f[-1]$ 与 $R\phi_f[-1]$ 对 perverse t-结构 t-exact；monodromy 版本还带有典范自同构。
 
 **注 31.20.** 这些函子是六操作、monodromy 和层化奇异性相互作用的入口。完整理论需要 étale 或解析 topology、monodromy action 和 vanishing cycle functor 的构造，本书当前只记录范畴论位置。
 
-## 31.7 本章小结
+## 31.7 分层几何中的 heart
 
 Perverse t-结构由 restriction/corestriction 的维数不等式定义，也可通过 recollement 逐层粘合。其 heart 是阿贝尔范畴，稳定地承载中间延拓、Verdier 对偶、nearby cycles 和 vanishing cycles。范畴论上，perverse sheaves 展示了 t-结构、六操作、局部-整体粘合和对偶性如何共同产生新的 abelian category。
 

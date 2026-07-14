@@ -21,6 +21,21 @@ $$
 $$
 位置空间对应 $J^2/M^2$、$J(-\partial^2)J/M^4$、$J(\partial^2)^2J/M^6$、$J(-\partial^2)^3J/M^8$，符号依 Fourier 约定。
 
+**1.4.** 令 $\Lambda_{\rm ref}'=10\Lambda_{\rm ref}$。维数六情形下命题 1.5 给出
+$C^{(6)\prime}=10^2C^{(6)}=100C^{(6)}$，于是
+$$
+{C^{(6)\prime}\over(\Lambda_{\rm ref}')^2}
+={100C^{(6)}\over100\Lambda_{\rm ref}^2}
+={C^{(6)}\over\Lambda_{\rm ref}^2}.
+$$
+算符前的有量纲系数及作用量均不变。
+
+**1.5.** 对固定 $N$，余项满足
+$|R_N(x)|\le (N+1)!x^{N+1}\to0$（$x\to0^+$），所以有限阶截断受控。对固定
+$x>0$，级数通项的相邻绝对值之比为 $(n+1)x$，最终大于一，且 $n!x^n$ 不趋于零；
+余项上界中的阶数相关常数也按阶乘增长。因此渐近定义中的“先固定 $N$ 再令 $x\to0$”
+不能交换成固定 $x$ 后令 $N\to\infty$。
+
 ## 第 2 章
 
 **2.1.** UV 树图由重标量交换给出；低能展开后领先常数项对应 $\phi^4$ 接触项。
@@ -29,19 +44,53 @@ $$
 
 **2.3.** 若 $\Delta{\cal L}=g^2\phi^4/(8M^2)$，四个相同外线给顶点因子 $i\,4!\,g^2/(8M^2)=i3g^2/M^2$，对应 $s,t,u$ 三个重场交换道的常数项。
 
+**2.4.** 记共同软项为
+$$
+S_{\rm soft}={1\over\epsilon_{\rm IR}}+\log{\mu^2\over-p^2}.
+$$
+若 $\mathcal A_{\rm UV}=S_{\rm soft}+H+R_{\rm UV}$、
+$\mathcal A_{\rm EFT}=S_{\rm soft}+L+R_{\rm EFT}$，则
+$$
+\mathcal A_{\rm UV}-\mathcal A_{\rm EFT}
+=H-L+R_{\rm UV}-R_{\rm EFT}.
+$$
+$S_{\rm soft}$ 完全消去。它含 IR pole 且在 $p^2=0$ 非解析，描述轻自由度的长程传播；
+局域 Wilson 系数只能吸收差值中对外动量解析的 hard 多项式，不能包含该组合。
+
 ## 第 3 章
 
-**3.1.** 常数 $\gamma$ 时 $C(\mu)=C(\Lambda)(\mu/\Lambda)^\gamma$；若含 $16\pi^2$ 则相应放入指数。
+**3.1.** 常数 $\gamma$ 时 $C(\mu)=C(\mu_0)(\mu/\mu_0)^\gamma$；若反常维数的定义中显式抽出 $16\pi^2$，则应把相应因子放入指数。这里 $\mu_0$ 是 RG 初始尺度，不是 Wilson 系数的参考归一化尺度 $\Lambda_{\rm ref}$。
 
 **3.2.** 反常维数矩阵非对角时，运行会诱导其他系数。
 
 **3.3.** Leading-log 下
 $$
-C_1(\mu)=C_1(\Lambda)+(\gamma_1C_1(\Lambda)+aC_2(\Lambda))\log{\mu\over\Lambda},
+C_1(\mu)=C_1(\mu_0)+(\gamma_1C_1(\mu_0)+aC_2(\mu_0))\log{\mu\over\mu_0},
 $$
 $$
-C_2(\mu)=C_2(\Lambda)+\gamma_2C_2(\Lambda)\log{\mu\over\Lambda}.
+C_2(\mu)=C_2(\mu_0)+\gamma_2C_2(\mu_0)\log{\mu\over\mu_0}.
 $$
+
+**3.4.** 总逆尺度次数 $p=4$ 的插入分拆为
+$$
+[8],\qquad[6,6],\qquad[5,7],\qquad[5,5,6],\qquad[5,5,5,5],
+$$
+因为每个维数 $d$ 顶点贡献 $d-4$。若精确选择定则令 $C_5=0$，后三个含维数五
+顶点的分拆消失，只剩一次维数八插入与两次维数六插入。
+
+**3.5.** 对与 $\mu$ 无关的 $B$，由 $C'=B^{-T}C$ 和
+$dC/d\log\mu=\gamma_C C$ 得
+$$
+{dC'\over d\log\mu}=B^{-T}\gamma_CB^T C',
+\qquad
+\gamma_C'=B^{-T}\gamma_CB^T.
+$$
+算符矩阵元按 $M'=BM$ 变换，故
+$$
+C'^TM'=C^TB^{-1}BM=C^TM.
+$$
+又有 $dM'/d\log\mu=-\gamma_C'^TM'$，所以
+$d(C'^TM')/d\log\mu=0$ 到所算阶，与原基中的尺度抵消相同。
 
 ## 第 4 章
 
@@ -55,6 +104,33 @@ $$
 \delta S_0=\epsilon\int d^4x\,\phi^3{\delta S_0\over\delta\phi}.
 $$
 用 ${\delta S_0/\delta\phi}=-(\Box\phi+m^2\phi+\lambda\phi^3/6)$ 的约定，可产生与 $\phi^3\Box\phi$、$\phi^4$、$\phi^6$ 等价的项。
+
+**4.4.** 对例 4.6 的 $S_0$，二阶变分算符为
+$$
+S_{0,\phi\phi}=-\Box-m^2-{\lambda\over2}\phi^2.
+$$
+取 $F=\phi^3$，则
+$$
+{1\over2}F S_{0,\phi\phi}F
+=-{1\over2}\phi^3\Box\phi^3-{m^2\over2}\phi^6-{\lambda\over4}\phi^8.
+$$
+分部积分后第一项为
+$\tfrac12(\partial_\mu\phi^3)^2=\tfrac92\phi^4(\partial_\mu\phi)^2$，差一个边界项。
+若 $\epsilon\sim\Lambda_{\rm ref}^{-2}$，整组结构乘 $\epsilon^2$，属于 $p=4$；这正是
+一阶 EOM 换基在下一逆尺度阶诱导的项。
+
+**4.5.** 按基 $(Q_1,Q_2,E)$ 取列表示像，例如
+$$
+Z_{\rm good}=
+\begin{pmatrix}1&2&0\\0&1&0\\3&4&5\end{pmatrix},
+\qquad
+Z_{\rm bad}=
+\begin{pmatrix}1&0&1\\0&1&0\\0&0&1\end{pmatrix}.
+$$
+前者满足 $Z_{\rm good}(E)=5E\in R$，故在 $V/R$ 上诱导
+$\overline Z=\bigl(\begin{smallmatrix}1&2\\0&1\end{smallmatrix}\bigr)$。后者有
+$Z_{\rm bad}(E)=Q_1+E\notin R$；同一商类可用 $0$ 或 $E$ 表示，但二者的像分别给
+$[0]$ 与 $[Q_1]$，所以不能在商空间上定义映射。
 
 ## 第 5 章
 
@@ -138,7 +214,7 @@ $$
 
 ## 第 11 章
 
-**11.1.** $\mathcal O_{HG}\supset (C_{HG}/\Lambda^2)vhG^2$。
+**11.1.** $\mathcal O_{HG}\supset (C_{HG}/\Lambda_{\rm ref}^2)vhG^2$；真正进入振幅的是有量纲组合 $C_{HG}/\Lambda_{\rm ref}^2$。
 
 **11.2.** 多个 Wilson 系数可同时修正产生、衰变和总宽度，信号强度只给组合。
 
@@ -194,7 +270,11 @@ $A_4^{[6,6]}$，属于振幅本身，并通过
 $2\operatorname{Re}\langle A_0,A_4^{[6,6]}\rangle_0$ 与 SM 干涉；二者不是同一个
 对象。$\square$
 
-**12.2.** 粗略要求 $C s/(16\pi\Lambda^2)\lesssim 1$，具体系数依 partial wave 归一化。
+**12.2.** 若采用 $a_J\sim C s/(16\pi\Lambda_{\rm ref}^2)$ 的量级估计，则在
+$|C|s/(16\pi\Lambda_{\rm ref}^2)\sim1$ 附近可能接近 partial-wave unitarity
+边界，具体数值取决于角动量投影、粒子简并度和振幅归一化。这个条件限制的是给定
+Wilson 插入的微扰大小，并未给出被积掉态的质量或最近物理奇点；因此还必须由 UV
+谱或其他外部输入确定 $M_{\rm gap}$，再用 $\sqrt{s}/M_{\rm gap}$ 检查局域展开。
 
 **12.3.** 许多 positivity 论证约束前向振幅中 $s^2$ 项的符号；在四维 EFT 中这类项常由维数八算符给出，而维数六常对应 $s$ 项或受 crossing/IR subtleties 影响。
 
@@ -224,18 +304,18 @@ $2\operatorname{Re}\langle A_0,A_4^{[6,6]}\rangle_0$ 与 SM 干涉；二者不�
 
 ## 第 16 章
 
-**16.1.** $\mathcal O_{HB}\supset (C_{HB}/\Lambda^2)vhB_{\mu\nu}B^{\mu\nu}$。
+**16.1.** $\mathcal O_{HB}\supset (C_{HB}/\Lambda_{\rm ref}^2)vhB_{\mu\nu}B^{\mu\nu}$。
 
 **16.2.** 使用 $|\mathcal A_0+\delta\mathcal A|^2=|\mathcal A_0|^2+2\mathrm{Re}(\mathcal A_0^\ast\delta\mathcal A)+O(\delta\mathcal A^2)$。
 
-**16.3.** 设 $G=(1+\epsilon)G'$，则 $G^2=(1+2\epsilon)G'^2$。取 $\epsilon=C_{HG}v^2/\Lambda^2$，与原系数 $1-2C_{HG}v^2/\Lambda^2$ 相乘，线性阶为 $1+O(\Lambda^{-4})$。
+**16.3.** 设 $G=(1+\epsilon)G'$，则 $G^2=(1+2\epsilon)G'^2$。取 $\epsilon=C_{HG}v^2/\Lambda_{\rm ref}^2$，与原系数 $1-2C_{HG}v^2/\Lambda_{\rm ref}^2$ 相乘，线性阶为 $1+O(\Lambda_{\rm ref}^{-4})$。
 
 ## 第 17 章
 
 **17.1.** 表格至少含 EFT、基、$\Lambda_{\rm ref}$、Wilson 定义尺度 $\mu$、flavor、
 CP、输入方案、截断、平方项、数据硬尺度 $Q$、条件化的 $M_{\rm gap}$、协方差与
-误差。有效性栏应报告 $Q_{\max}/M_{\rm gap}$；插入层级另报
-$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$，不能把两栏合成
+误差。有效性栏应报告 $\rho_{\rm loc,max}=Q_{\max}/M_{\rm gap}$；插入层级另报
+$\rho_{\rm ins,i}^{(d)}=|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$，不能把两栏合成
 $Q/\Lambda_{\rm ref}$。
 
 **17.2.** 常见隐含假设包括只开一个系数、固定 flavor、忽略 RG、线性截断和固定
@@ -244,9 +324,13 @@ $Q/\Lambda_{\rm ref}$。
 才可再选择 $\Lambda_{\rm ref}=M$；这是模型假设加坐标选择，不是一般 validity
 判据。
 
-**17.3.** 模板应至少含 EFT、基、$\Lambda_{\rm ref}$、$\mu_{\rm match}$、$\mu_{\rm obs}$、
-条件化的 $M_{\rm gap}$、flavor、CP、输入方案、截断、数据、协方差、基于
-$Q/M_{\rm gap}$ 的有效性切割、Wilson 插入层级、工具版本和输出格式。
+**17.3.** 记录应至少含 EFT、算符基、$\Lambda_{\rm ref}$、$\mu_{\rm match}$、
+$\mu_{\rm obs}$、条件化的 $M_{\rm gap}$、flavor、CP、输入方案、截断、数据、
+协方差以及逐 bin 的 $\rho_{\rm loc}$ 与 $\rho_{\rm ins}$。算符基、定义尺度、flavor、
+CP、输入方案、截断和运动学选择都会改变从 Wilson 坐标到 Higgs 信号强度的响应矩阵；
+观测数据、实验协方差及 nuisance-prior 主要改变 likelihood 中各响应方向的权重。实际
+分析中，接受度或系统误差若依赖 EFT 运动学，也会同时改变响应矩阵和权重，不能机械地
+把两类字段完全割裂。
 
 ## 第 18 章
 
@@ -270,8 +354,8 @@ $$
 
 **19.2.** 高 $p_T$ dilepton bin 的硬尺度 $Q$ 可能接近最近遗漏物理奇点
 $M_{\rm gap}$；此时局域展开不受控。因此必须报告 $Q$ 的构造、条件化的
-$M_{\rm gap}$ 与逐 bin 的 $Q/M_{\rm gap}$ cut。Wilson 插入大小
-$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 是另一项检查。
+$M_{\rm gap}$ 与逐 bin 的 $\rho_{\rm loc}=Q/M_{\rm gap}$ cut。Wilson 插入大小
+$\rho_{\rm ins,i}^{(d)}=|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 是另一项检查。
 
 **19.3.** 例如 $b\to s\ell^+\ell^-$：高尺度使用 SMEFT，在电弱尺度匹配到 LEFT/WET，再运行到 $b$ 物理尺度并使用 hadronic matrix elements。
 
@@ -312,10 +396,13 @@ $$
 
 **22.1.** $h\to\gamma\gamma$ 同时受 $hF_{\mu\nu}F^{\mu\nu}$ contact、SM loop 归一化、top/W coupling shift、输入方案和总宽度影响，因此不是单系数观测量。
 
-**22.2.** 至少报告 bin 能区、构造 $Q$ 的 partonic proxy、条件化的
-$M_{\rm gap}$、逐 bin 的 $Q/M_{\rm gap}$ 及 cut、$\Lambda_{\rm ref}$ 与 Wilson 定义
-尺度 $\mu$。另报 $|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 的插入层级、是否保留
-维数六平方项及维数八误差估计；$Q/\Lambda_{\rm ref}$ 单独不是有效性判据。
+**22.2.** 对第 $b$ 个 bin，局域性比率为
+$\rho_{{\rm loc},b}=Q_b/M_{\rm gap}$，所需外部输入是该 bin 的硬尺度代理 $Q_b$ 和
+所假定 UV 谱的最近物理奇点 $M_{\rm gap}$。半轻子维数六插入比率为
+$\rho_{{\rm ins},\ell q,b}=|C_{\ell q}^{(6)}(\mu)|Q_b^2/\Lambda_{\rm ref}^2$，所需输入是
+Wilson 系数、其定义尺度 $\mu$、参考归一化尺度 $\Lambda_{\rm ref}$ 及同一个 $Q_b$。
+前者判断局域展开，后者衡量该 Wilson 插入；$Q_b/\Lambda_{\rm ref}$ 单独不能替代
+$\rho_{{\rm loc},b}$。
 
 **22.3.** Flavor 观测量通常在低于电弱尺度测量；$W,Z,h,t$ 已被积掉。若不做 SMEFT 到 LEFT/WET 匹配，高尺度 Wilson 系数无法与低能 hadronic matrix elements 相连。
 
@@ -343,6 +430,22 @@ $$
 
 **23.3.** 单参数模型只有一个 Wilson 方向，第二个 bin 只增加同一方向的信息量；若两个 bin 误差独立，Fisher 信息相加，误差减小，但参数空间维数不增加。
 
+**23.4.** 两个 bin 的硬尺度分别为 $Q_1=0.5\,\mathrm{TeV}$ 与
+$Q_2=1.0\,\mathrm{TeV}$，因此
+$$
+\rho_{{\rm ins},\ell q,1}=0.2{(0.5\,\mathrm{TeV})^2\over(1\,\mathrm{TeV})^2}=0.05,
+\qquad
+\rho_{{\rm ins},\ell q,2}=0.2{(1.0\,\mathrm{TeV})^2\over(1\,\mathrm{TeV})^2}=0.20,
+$$
+而
+$$
+\rho_{{\rm loc},1}={0.5\over2.5}=0.20,
+\qquad
+\rho_{{\rm loc},2}={1.0\over2.5}=0.40.
+$$
+第二个 bin 同时具有更大的 Wilson 插入和更接近物理谱隙的局域性比率；这两个数值虽都
+增大，来源和物理含义仍不同。
+
 ## 第 24 章
 
 **24.1.** 若 $s^2=0.23$，则 $c^2=0.77$，$c^2-s^2=0.54$。因此
@@ -367,3 +470,11 @@ $$
 $$
 \sigma_c=1/\sqrt{10.25}\simeq0.312.
 $$
+
+**24.4.** 因 $c_{\ell q}^{(6)}=c/\Lambda_{\rm ref}^2$ 保持不变且
+$\Lambda_{\rm ref}'=2\Lambda_{\rm ref}$，新的无量纲坐标为 $c'=4c$。响应系数变为
+$$
+x_b'={s_b\over(\Lambda_{\rm ref}')^2}={x_b\over4},
+$$
+所以 $x_b'c'=x_bc$，每个 bin 的物理预测不变。这个坐标重标度也不改变 $s_b$ 或
+$M_{\rm gap}$，故 $\rho_{{\rm loc},b}=\sqrt{s_b}/M_{\rm gap}$ 同样不变。

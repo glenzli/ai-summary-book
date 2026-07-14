@@ -1,19 +1,13 @@
 # 第九章：Green-Schwarz 形式、type II strings 和 spacetime supersymmetry
 
-## 本章目标
-
-本章把第八章的 RNS 描述转换为 target-space supersymmetry 的语言。核心问题是：
-
-1. type IIA 与 type IIB 如何由左右 Ramond chirality 区分；
-2. massless type II spectrum 如何组织为十维 supergravity multiplets；
-3. Green-Schwarz formalism 如何显式呈现 spacetime supersymmetry；
-4. kappa symmetry 如何移除一半 fermionic degrees of freedom。
-
-本章不把十维 supergravity 完整分类作为独立目标；只保留 string theory 主线所需的谱、对称性和有效理论接口。
-
-## 依赖前置知识
-
-需要第八章 RNS 超弦、附录 E 的十维 spinor 约定，以及第十一章低能有效作用中的 supergravity 接口。
+RNS formalism 让 worldsheet supersymmetry 与量子化透明，却把 target-space
+supersymmetry 藏在 spin fields 和 GSO sectors 之间。Green--Schwarz 形式反过来把
+十维 spinor coordinates 直接放进 target superspace，但为避免多出一倍 fermionic
+自由度，必须引入局部 kappa symmetry。以下先从第八章的左右 Ramond chirality
+辨认 type IIA/IIB 及其 massless NS--NS、NS--R、R--NS、R--R sectors，再构造
+GS 作用量并在 light-cone gauge 中计数八个 bosons 与八个 fermions。十维 Clifford
+algebra 约定见附录 E；这些态与 supergravity fields 的低能动力学到第十一章再验证，
+此处不预先依赖尚未建立的有效作用。
 
 ## 9.1 Type II superstrings
 
@@ -141,9 +135,11 @@ $$
 
 **注 9.15（type IIB self-dual five-form）.** IIB supergravity 的 $F_5=*F_5$ 不能由普通 covariant action 直接无冗余推出。实践中常先写 pseudo-action，再在 equations of motion 层面施加 self-duality constraint。
 
-## 本章小结
-
-Type II strings 的核心区别是左右 Ramond chirality。RNS formalism 给出可量子化的 worldsheet 描述；GS formalism 显式呈现 spacetime supersymmetry，并通过 kappa symmetry 给出正确自由度计数。BPS 结构为 D-branes、duality 和黑洞微观计数提供后续主线。
+Type IIA 与 IIB 的差别最终落在左右 Ramond ground states 的相对 chirality，并由
+R--R form degree 反映到允许的 D-brane parity。RNS 给出协变量子化和顶点算子的
+有效工具，GS 则用 kappa symmetry 显式展示 target supersymmetry；light-cone
+计数确认二者具有相同的物理自由度。Supersymmetry algebra 的正性进一步给出 BPS
+bound，这个受保护结构将连接 brane charge、强弱对偶与黑洞微观态计数。
 
 ## 练习
 

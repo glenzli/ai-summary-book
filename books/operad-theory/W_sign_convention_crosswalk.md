@@ -1,6 +1,6 @@
 # 附录 W：符号、悬挂与总次数交叉核对表
 
-本附录把附录 E 的约定 E.1--说明 E.25、附录 J 的定义 J.1--警告 J.20、附录 L 的定义 L.1--说明 L.20、附录 P 的命题 P.1--说明 P.9 和附录 S 的定义 S.1--说明 S.13 中的符号约定放在同一张检查表中。它不引入新定义；它规定后续最终版如何把文献中的上同调分次、不同 suspension convention 和 Hochschild brace 符号转换为本书的同调分次约定。
+本附录把附录 E 的约定 E.1--说明 E.25、附录 J 的定义 J.1--警告 J.20、附录 L 的定义 L.1--说明 L.20、附录 P 的命题 P.1--说明 P.9 和附录 S 的定义 S.1--说明 S.13 放在同一套符号转换中。它不引入新定义，而是把文献中的上同调分次、不同 suspension convention 和 Hochschild brace 符号统一转换为本书的同调分次约定。
 
 ## W.1 全书默认分次
 
@@ -199,7 +199,7 @@ $$
 |\ell_n|=n-2.
 $$
 
-**说明 W.10.** $q_n$ 在 suspended variables 上 graded symmetric。转回 $V$ 后，$\ell_n$ 满足 graded antisymmetric convention；具体符号由 suspension 和 Koszul braiding 共同产生。最终版若写 unsuspended shuffle 公式，必须从 $q^2=0$ 推出，而不能从记忆中的 cohomological 公式直接搬运。
+**说明 W.10.** $q_n$ 在 suspended variables 上 graded symmetric。转回 $V$ 后，$\ell_n$ 满足 graded antisymmetric convention；具体符号由 suspension 和 Koszul braiding 共同产生。书写 unsuspended shuffle 公式时，必须从 $q^2=0$ 推出，而不能从记忆中的 cohomological 公式直接搬运。
 
 ## W.8 同伦转移符号检查
 

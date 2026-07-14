@@ -1,14 +1,8 @@
 # 第十六章：Trace Formula 与 Endoscopy
 
-## 本章目标
+函子性预测不同群的自守谱之间存在转移，但单个表示往往没有可直接构造的映射。Trace formula 绕开这一困难：同一个测试函数算子的迹既能按自守表示展开为谱侧，也能按共轭类与轨道积分展开为几何侧。若要比较两个群，普通共轭还不够稳定，必须引入 stable conjugacy、transfer factors 和 matching functions；endoscopy 正是组织这些修正的语言。本章从紧商模型出发，再说明截断、稳定化与 fundamental lemma 在一般情形中分别承担什么角色。
 
-本章解释 trace formula 和 endoscopy 在 Langlands 纲领中的作用。第十五章把函子性表述为 L 群同态诱导的自守表示转移；本章说明为什么证明这种转移通常需要比较不同群的 trace formula。Trace formula 的基本形态是：同一个测试函数作用在自守谱上的 trace，可以按表示论谱侧展开，也可以按共轭类几何侧展开。Endoscopy 的作用是稳定化几何侧，并把一个群的稳定谱与另一个群的端oscopic 数据联系起来。
-
-## 依赖前置知识
-
-需要第四章的 Hecke 代数，第十三章的自守表示和自守谱，第十五章的函子性。需要知道局部紧群上的测试函数、orbital integral、parabolic subgroup、Levi subgroup 和稳定共轭的基本概念。本章把 Arthur-Selberg trace formula、稳定 trace formula、transfer factors、fundamental lemma 和端oscopic classification 作为外部输入。
-
-收口归一化回指：本章的测试函数、Haar 测度、transfer factor、匹配 orbital integral 和谱侧 trace 对 convention 极敏感；本书只固定接口，测度与 Satake convention 见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节。
+本章使用 Hecke 代数、自守谱和函子性，Arthur--Selberg trace formula、稳定 trace formula 与 endoscopic classification 作为外部输入。这里每个公式都依赖测试函数空间、Haar 测度和 transfer-factor normalization；相应约定见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4 节，未声明这些数据时不把不同版本的轨道积分公式混用。
 
 ## 16.1 测试函数与卷积算子
 
@@ -217,7 +211,7 @@ $$
 
 **注 16.27.** Arthur-Clozel 的 solvable base change 和 automorphic induction 使用了 twisted trace formula。第十五章把它们作为函子性的例子；本章说明其技术来源。
 
-**收口精修 16.A（trace formula 使用边界）.** 本书不证明稳定 trace formula；引用时必须同时记录以下输入：
+**Trace formula 比较所需数据 16.A.** 稳定 trace formula 作为外部输入使用；每次比较必须同时记录以下数据：
 
 | 输入 | 作用 |
 |---|---|
@@ -227,7 +221,7 @@ $$
 | stable characters 和 packet 参数化 | 把稳定谱分布翻译为自守表示 packets |
 | Arthur、Mok、Arthur-Clozel 等分类结果 | 将 trace formula 比较转成具体函子性或 endoscopic transfer |
 
-## 16.10 本章小结
+## 16.10 谱侧与几何侧的比较机制
 
 Trace formula 把自守表示问题转化为测试函数分布恒等式。谱侧记录自守表示和 Eisenstein series，几何侧记录共轭类、轨道积分和加权轨道积分。Endoscopy 通过稳定共轭、transfer factors、matching functions 和 fundamental lemma 把不同群的 trace formula 连接起来。稳定 trace formula 是 Arthur 分类、classical groups 到 `GL(N)` 的转移、base change 和许多函子性结果的核心工具。
 

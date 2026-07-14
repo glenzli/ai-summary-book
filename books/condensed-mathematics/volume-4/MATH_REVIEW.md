@@ -12,12 +12,12 @@
 6. 投射对象 Ext 消失、两项投射分解公式和维数平移。
 7. Tor 的两项分解公式和平坦消失判别。
 8. solid 张量积的有限层证明和普通张量积反例。
-9. analytic ring 例子的有限/无限 profinite 类型检查。
-10. liquid 函数分析例子的凝聚化证明。
-11. pro-etale 与 condensed site 的边界说明。
-12. 五个附录：形式化蓝图、练习解答、类型检查、pro-etale 对照和 pyknotic/凝聚同伦方向。
+9. analytic ring 的 cone 判别、单点紧化非 Dirac 测度、$p$-进 Cantor 系统和换底失败。
+10. $C^\infty([0,1])$ 的 Fréchet 逆极限、微分积分复形和 $\ell^1\hookrightarrow c_0$ 失败例。
+11. pro-etale 与 condensed site 的有限分支等化子、覆盖检测、分裂 Čech 收缩和无限层边界。
+12. 七个附录：形式化蓝图、练习解答、类型检查、pro-etale 对照、pyknotic/凝聚同伦方向、凝聚基础证明义务和凝聚谱接口。
 13. 凝聚基础的形式化证明义务：站点、sheaf 等化子、可表 sheaf、sheafification exact、ED 投射和 Ext/Tor 接口。
-14. 凝聚谱、pyknotic 接口和谱值 sheaf 稳定性的证明模块。
+14. 循环凝聚谱的 Ext/Tor 计算、Dirac cone 稳定化和六函子下降条件。
 
 ## 数学口径
 

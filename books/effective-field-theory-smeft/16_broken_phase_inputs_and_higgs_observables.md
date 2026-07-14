@@ -1,12 +1,6 @@
 # 第十六章：电弱破缺相、输入参数与 Higgs 可观测量
 
-## 本章目标
-
-本章说明从规范不变 SMEFT 到实际 Higgs 可观测量需要经过电弱破缺、场重定义和输入参数选择。本章给出一个可复核的 $hgg$ 修正推导。
-
-## 依赖前置知识
-
-需要第十一章的 Higgs 入口和第十三章的 $\mathcal O_{HG}$。
+未破缺相中的 $\mathcal O_{HG}=(H^\dagger H)G^2$ 是一个规范不变坐标，实验测到的却是规范归一化后的 gluon 与物理 Higgs 之间的振幅。令 $H$ 取得真空期望值后，同一个算符同时产生 $v^2G^2$、$vhG^2$ 和 $h^2G^2$：第一项改动规范动能，第二项给出接触顶点，二者不能各自孤立解释。通过线性场重定义恢复 canonical normalization，并说明 $g_s$ 与其他顶点如何随之移动，便可把 Wilson 系数接到 $h\to gg$ 的 SM top-loop 振幅上。宽度的首阶修正来自两振幅干涉，而其数值还依赖输入参数方案、运行尺度和 QCD 修正；这个例子具体展示了从 Warsaw 算符到可观测量之间不可省略的破缺相步骤。
 
 ## 16.1 电弱破缺
 
@@ -24,9 +18,9 @@ $$
 $$
 有
 $$
-\frac{C_{HG}}{\Lambda^2}\mathcal O_{HG}
+\frac{C_{HG}}{\Lambda_{\rm ref}^2}\mathcal O_{HG}
 =
-\frac{C_{HG}}{\Lambda^2}
+\frac{C_{HG}}{\Lambda_{\rm ref}^2}
 \left(
 \frac{v^2}{2}+vh+\frac{h^2}{2}
 \right)
@@ -35,18 +29,18 @@ $$
 
 **证明（书内推导）.** 由 $H^\dagger H=(v+h)^2/2$ 直接展开。$\square$
 
-**警告 16.2（规范动能归一化）.** $v^2G^2$ 项修正规范场动能项。严格计算物理振幅前需做场重定义和耦合重定义。在线性 $1/\Lambda^2$ 阶，这些修正可系统吸收到输入参数和 Wilson 系数组合中。
+**警告 16.2（规范动能归一化）.** $v^2G^2$ 项修正规范场动能项。严格计算物理振幅前需做场重定义和耦合重定义。在线性 $1/\Lambda_{\rm ref}^2$ 阶，这些修正可系统吸收到输入参数和 Wilson 系数组合中。
 
 **场重定义 16.3.** 规范动能项变为
 $$
 -{1\over4}G_{\mu\nu}^AG^{A\mu\nu}
-+{C_{HG}v^2\over2\Lambda^2}G_{\mu\nu}^AG^{A\mu\nu}
-=-{1\over4}\left(1-{2C_{HG}v^2\over\Lambda^2}\right)G^2.
++{C_{HG}v^2\over2\Lambda_{\rm ref}^2}G_{\mu\nu}^AG^{A\mu\nu}
+=-{1\over4}\left(1-{2C_{HG}v^2\over\Lambda_{\rm ref}^2}\right)G^2.
 $$
 令
 $$
 G_\mu^A\mapsto
-\left(1+{C_{HG}v^2\over\Lambda^2}\right)G_\mu^A
+\left(1+{C_{HG}v^2\over\Lambda_{\rm ref}^2}\right)G_\mu^A
 $$
 可把动能项恢复到规范形式到线性阶。这个重定义同时移动 $g_s$ 和所有 gluon 顶点，因此实际 Higgs-gluon contact 应与输入方案一起处理。
 
@@ -69,21 +63,21 @@ $$
 =
 \mathcal A_{\mathrm{SM}}^{\mathrm{loop}}
 +
-\frac{C_{HG}}{\Lambda^2}\mathcal A_{HG}^{\mathrm{tree}}
+\frac{C_{HG}}{\Lambda_{\rm ref}^2}\mathcal A_{HG}^{\mathrm{tree}}
 +\cdots.
 $$
 
-**命题 16.7（宽度的线性修正）.** 在线性 $1/\Lambda^2$ 阶，
+**命题 16.7（宽度的线性修正）.** 在线性 $1/\Lambda_{\rm ref}^2$ 阶，
 $$
 \frac{\Gamma(h\to gg)}{\Gamma(h\to gg)_{\mathrm{SM}}}
 =
 1+
 2\,\mathrm{Re}
 \left(
-\frac{C_{HG}}{\Lambda^2}
+\frac{C_{HG}}{\Lambda_{\rm ref}^2}
 \frac{\mathcal A_{HG}^{\mathrm{tree}}}{\mathcal A_{\mathrm{SM}}^{\mathrm{loop}}}
 \right)
-+O(\Lambda^{-4}).
++O(\Lambda_{\rm ref}^{-4}).
 $$
 
 **证明（书内推导）.** 令 $\mathcal A=\mathcal A_0+\delta\mathcal A$。则
@@ -112,9 +106,9 @@ $$
 
 若同时开启 $C_{uH}$ 或 top dipole，步骤 6 的 SM loop 振幅也被修改，因此 $C_{HG}$ 不能从 $h\to gg$ 单独提取。
 
-## 本章小结
+## 16.5 从规范不变量到衰变宽度
 
-规范不变 SMEFT 算符进入可观测量前，必须处理破缺相展开、场归一化、输入参数和振幅干涉。$\mathcal O_{HG}$ 是 Higgs-gluon 物理中最直接的例子。
+$\mathcal O_{HG}$ 的三个破缺相项说明，规范不变算符不能直接等同于一个物理顶点。$v^2G^2$ 先改变场与耦合的归一化，$vhG^2$ 再与 SM 一圈振幅干涉，输入参数方案和其他 Wilson 系数则共同决定最终宽度。在线性 $1/\Lambda_{\rm ref}^2$ 阶，这些位移必须一致展开；若保留接触振幅的平方，就已进入部分 $1/\Lambda_{\rm ref}^4$ 口径，并需重新面对维数八与多次插入误差。
 
 ## 练习
 

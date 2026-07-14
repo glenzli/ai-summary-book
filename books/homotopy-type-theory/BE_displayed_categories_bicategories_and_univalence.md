@@ -114,7 +114,7 @@ $$
 
 **定理 BE.15（total bicategory univalence，外部输入）。** 若基 bicategory univalent，displayed bicategory 满足 displayed local/global univalence，则 total bicategory univalent。
 
-**验证状态.** Ahrens-Frumin-Maggesi-Veltri-van der Weide 的 univalent bicategories 工作给出 displayed bicategory 方法和多个 univalent bicategory 实例。本书把该定理作为外部输入，不在正文逐行重建全部 bicategory coherence。
+**来源与边界.** Ahrens--Frumin--Maggesi--Veltri--van der Weide 的 univalent bicategories 工作给出 displayed bicategory 方法和多个 univalent bicategory 实例。本书把该定理作为外部输入，不在正文逐行重建全部 bicategory coherence。
 
 ## BE.7 典型实例
 
@@ -124,6 +124,6 @@ $$
 
 **例 BE.18（monoidal categories）。** Monoidal category 可作为 displayed bicategory 或 displayed structure over categories 处理。Wullaert-Matthes-Ahrens 的相关工作证明了 univalent monoidal categories 的 bicategory 单值性和 Rezk completion。
 
-## BE.8 本附录关闭的缺口
+## BE.8 一维与二维单值性的分界
 
-本附录把第十四章的单一 Rezk 完备化扩展到 displayed category、displayed fibration、bicategory、displayed bicategory 和 univalent bicategory。剩余义务是具体实例的 displayed univalence 证明、bicategory coherence 的逐行展开和与附录 BB 高阶 Rezk object 的比较。
+Displayed category 可以逐 fiber 组织第十三章的一维结构；bicategory 还需要 associator、unitor 与全部二维 coherence。具体实例只有在 displayed univalence 已证明后才能调用 total univalence；与附录 BB 的高阶 Rezk object 比较还需要额外 nerve 或语义定理，不能由名称相近直接得到。

@@ -1,8 +1,14 @@
 # 第二章：站点、覆盖与 sheaf 条件的计算
 
-## 本章目标
+三个局部截面能否粘合，不由它们分别存在决定，而由它们在每个二重交上的限制决定；
+若要继续计算上同调，三重交又负责保证 Čech 微分平方为零。对凝聚站点，还必须证明
+可表连续映射沿有限联合满射粘合后仍连续，并说明为何只在 profinite 或极不连通对象上
+计算不会丢失 sheaf。等化子、商映射和共同细化正是这三步的可检验机制。
 
-本章把 sheaf 条件从一句定义展开成可检验的等化子、Čech 复形和站点比较命题。为避免隐藏集合论问题，本章默认站点 $\mathcal C$ 是小范畴，具有所需的有限纤维积；凝聚数学中遇到的大站点先通过 universe 或小骨架处理，见第一卷附录 A。
+以下固定小范畴 $\mathcal C$，假设相关有限纤维积存在。大测试站点先在第一卷附录 A
+所定 universe 中取小骨架。每个计算都会给出覆盖与预层作为输入，写出匹配条件和限制
+映射，输出全局截面或比较等价；交对象不存在、覆盖不稳定或共同细化失败时，相应公式
+便没有合法类型或不能重建原 sheaf。
 
 ## 2.1 覆盖的匹配族
 
@@ -52,7 +58,34 @@ $$
 d^0((s_i))=(s_i|_{U_{ij}}-s_j|_{U_{ij}})_{i,j}.
 $$
 
-## 2.2 二元覆盖和三重交
+## 2.2 Worked example 与三重交
+
+先实际执行一次有限凝聚覆盖。令
+
+$$
+S=\{0,1,2\},\qquad
+S_0=\{0,1\},\qquad
+S_1=\{1,2\}
+$$
+
+都带离散拓扑，并取包含映射覆盖 $S$。对紧 Hausdorff 空间 $T$ 的可表预层
+$h_T(A)=\operatorname{Cont}(A,T)$，输入
+
+$$
+f_0=(t_0,t_1)\in h_T(S_0),\qquad
+f_1=(t'_1,t_2)\in h_T(S_1).
+$$
+
+交 $S_0\times_SS_1=\{1\}$，匹配条件正是 $t_1=t'_1$。满足时，逐点粘合输出
+$f=(t_0,t_1,t_2)\in h_T(S)$，并得到
+
+$$
+h_T(S)\cong h_T(S_0)\times_{h_T(\{1\})}h_T(S_1)
+\cong T^2\times_TT^2.
+$$
+
+若 $t_1\ne t'_1$，输入不在等化子中，因而没有全局输出。有限离散性使所有集合映射
+连续；对一般紧 Hausdorff 覆盖，2.3 节的商映射步骤承担同一连续性检查。
 
 对二元覆盖 $\{U_1\to U,U_2\to U\}$，命题 2.1.1 给出
 
@@ -104,7 +137,6 @@ $$
 \begin{aligned}
 (d^1d^0s)_{ijk}
 &=(s_k-s_j)-(s_k-s_i)+(s_j-s_i)\\
-\\
 &=0.
 \end{aligned}
 $$
@@ -161,28 +193,66 @@ F(U)\to \prod_aF(D_a)
 \prod_{a,b}F(D_a\times_U D_b)
 $$
 
-是等化子，$G$ 同理。稳定基假设保证 $D_a\times_UD_b$ 仍在 $\mathcal D$，所以 $\alpha$ 已经在这些交对象上定义；sheaf 的分离性和粘合性使 $\alpha$ 在 $D_a$ 上的定义唯一决定 $\alpha_U:F(U)\to G(U)$。共同细化假设保证不同覆盖的构造相容，所以得到唯一的 $\mathcal C$-态射 $F\to G$。
+是等化子；把同一覆盖代入 $G$ 的 sheaf 条件，则得到以 $G(D_a)$ 与
+$G(D_a\times_UD_b)$ 为两层的对应等化子。稳定基假设保证
+$D_a\times_UD_b$ 仍在 $\mathcal D$，所以 $\alpha$ 已经在这些交对象上定义；
+两个等化子之间因而有唯一诱导映射
+$\alpha_U:F(U)\to G(U)$。共同细化假设保证不同覆盖给出的诱导映射相容，
+所以得到唯一的 $\mathcal C$-态射 $F\to G$。
 
-再证本质满。给定 $\mathcal D$ 上 sheaf $H$，对 $U\in\mathcal C$ 定义
+再证本质满。给定 $\mathcal D$ 上 sheaf $H$，对 $U\in\mathcal C$ 定义右 Kan
+延拓
 
 $$
 \widetilde H(U)=
-\varprojlim_{\{D_a\to U\}}
-\operatorname{Eq}
-\left(
-\prod_aH(D_a)
-\rightrightarrows
-\prod_{a,b}H(D_a\times_UD_b)
-\right),
+\varprojlim_{(D\to U)\in(\mathcal D/U)^{op}}H(D).
 $$
 
-其中极限沿 $\mathcal D$-覆盖及其共同细化取。假设 2 和 3 使索引范畴非空并且共同细化足够多；假设 4 使当 $U\in\mathcal D$ 时此定义还原为 $H(U)$。标准粘合检查给出 $\widetilde H$ 是 $\mathcal C$ 上 sheaf，且 $i^\ast\widetilde H\simeq H$。于是 $i^\ast$ 本质满。证毕。
+若 $v:V\to U$，复合给函子 $\mathcal D/V\to\mathcal D/U$；限制极限 cone 得到
+$\widetilde H(U)\to\widetilde H(V)$。恒等与复合由切片函子的恒等与复合保证，所以
+$\widetilde H$ 先成为预层。
 
-形式化时，最后一步通常拆成三个 lemma：共同细化范畴滤过、构造与覆盖选择无关、扩张后的对象满足 sheaf 条件。参见附录 A。
+现取 $\mathcal C$-覆盖 $\{U_a\to U\}$，再由假设 2 对每个 $U_a$ 取
+$\mathcal D$-覆盖 $\{D_{a\alpha}\to U_a\}$。复合族
+$\{D_{a\alpha}\to U\}$ 是 $U$ 的 $\mathcal D$-覆盖。稳定基假设和共同细化说明，
+上述切片极限可由这个覆盖的等化子计算：
 
-## 2.5 本章小结
+$$
+\widetilde H(U)
+\cong
+\operatorname{Eq}\left(
+\prod_{a,\alpha}H(D_{a\alpha})
+\rightrightarrows
+\prod_{a,b,\alpha,\beta}
+H(D_{a\alpha}\times_UD_{b\beta})
+\right).
+$$
 
-sheaf 计算的核心是等化子；Čech 计算的核心是限制映射的函子性；站点比较的核心是共同细化。凝聚数学中大量“可在 profinite 或 ED 对象上检查”的说法，本质上都依赖本章的比较命题加上第一卷的极不连通对象理论。
+同样地，$\widetilde H(U_a)$ 由固定 $a$ 的那些项计算，而
+$\widetilde H(U_a\times_UU_b)$ 由二重交的 $\mathcal D$-细化计算。把三组等化子展开，
+在 $\{U_a\to U\}$ 上粘合 $\widetilde H$，恰好等价于在复合
+$\mathcal D$-覆盖上粘合 $H$；后者由 $H$ 的 sheaf 条件成立。因此
+$\widetilde H$ 是 $\mathcal C$-sheaf。
+
+若 $U=D\in\mathcal D$，对象 $\operatorname{id}_D$ 在
+$(\mathcal D/D)^{op}$ 中为初对象，故极限由 $H(D)$ 给出，得到
+$i^*\widetilde H\cong H$。反过来，对 $\mathcal C$-sheaf $F$，任取
+$\mathcal D$-覆盖 $\{D_a\to U\}$；$F$ 的 sheaf 条件把 $F(U)$ 识别为该覆盖的
+matching equalizer，而上面的切片极限给出同一个 equalizer，所以
+$\widetilde{i^*F}\cong F$。两个同构与 restriction 相容，给出拟逆的 unit 与
+counit。因此 $i^*$ 全忠实且本质满，故为等价。证毕。
+
+形式化时，最后一步通常拆成三个 lemma：共同细化范畴滤过、构造与覆盖选择无关、扩张
+后的对象满足 sheaf 条件。第一卷[附录 B](../volume-1/B_site_comparison_theorem.md)
+保留同一切片极限构造的逐段版本，本卷附录 A 记录形式化接口。
+
+## 2.5 从局部匹配到较小测试站点
+
+有限覆盖的 matching object 是一个等化子，Čech 微分平方为零来自限制映射的函子性；
+紧 Hausdorff 可表预层的粘合还使用联合满射为 quotient map。稳定基比较再用覆盖、交
+对象和共同细化从 $\mathcal D$ 上数据重建 $\mathcal C$-sheaf。于是“在 profinite 或
+ED 对象上检查”有了明确前提：这些对象必须形成足够覆盖且对交和细化稳定的基。第三章
+将把同样的有限复形计算用于投射分解，并把输出从匹配族换成 Ext 与 Tor。
 
 ## 练习
 

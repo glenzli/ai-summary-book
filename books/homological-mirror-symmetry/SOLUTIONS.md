@@ -99,7 +99,10 @@ $$
 
 **8.3.** $K_0$ 同构只记录对象的加性关系，不记录 morphism complexes 和高阶复合。
 
-**8.4.** 按模板 8.15 列九项；关键是生成对象、endomorphism algebra 和外部输入。
+**8.4.** 依定义 8.15 写镜像几何、系数/分次、两边增强范畴、两组生成对象、
+生成 full subcategories 的全部 $A_\infty$/dg 数据、候选函子、等价强度、
+函子诱导的不变量同构及外部输入边界。前三项确定命题类型；生成性与增强函子
+承担充分性；不变量只给必要检查。
 
 ## 第九章
 
@@ -119,7 +122,11 @@ $$
 
 **10.3.** Laurent variables 可逆，$z_i\partial_i$ 是 torus-invariant vector field 对应的导数。
 
-**10.4.** A-side LG 为 $(\mathbb C^\ast,z+qz^{-1})$，B-side 为 $\operatorname{Perf}(\mathbb P^1)$，生成元为两个 thimbles 与 $(\mathcal O,\mathcal O(1))$。
+**10.4.** A-side LG 为 $(\mathbb C^\ast,z+qz^{-1})$，B-side 为
+$\operatorname{Perf}(\mathbb P^1)$，生成元为两个 thimbles 与
+$(\mathcal O,\mathcal O(1))$。还须声明系数与 grading，比较两个 directed
+full subcategories 的 Kronecker 型增强代数，并分别引用 thimble 与 exceptional
+collection 的生成性；结论强度为相应 Morita HMS。
 
 ## 第十一章
 
@@ -137,9 +144,17 @@ $$
 
 **12.2.** Serre functor 由 category 内部确定，增强等价必须保持；Calabi-Yau 维数由其 shift 检测。
 
-**12.3.** 列 degeneration、A-side category、B-side MF/sheaf category、生成对象、endomorphism algebra、外部输入。
+**12.3.** 镜像几何由 projective Calabi--Yau hypersurface 与其退化镜像给出；
+A-side 使用 relative Fukaya category，branched-cover/orbifold 结构控制 grading
+与几何传递；B-side 使用相应 graded matrix factorizations。Immersed sphere
+及 B-side modules 给出生成对象，Morse--Bott 模型计算其 $A_\infty$ 数据。
+Sheridan 的分析、生成性和 branched-cover 比较均是外部输入，不能由
+endomorphism cohomology 的维数匹配替代。
 
-**12.4.** 核查 polytope 条件、smoothness、coefficient field、category model、generation theorem 和 theorem statement。
+**12.4.** 定理 12.7 的特征范围、dual reflexive polytope 所满足的来源
+admissibility、hypersurface smoothness/compactification、Fukaya 与 B-side
+enhancement 的具体版本及生成性都属于假设。删去其中任一项都会把来源定理
+扩张到未证明的对象类。
 
 ## 第十三章
 
@@ -149,7 +164,14 @@ $$
 
 **13.3.** 它断言 wrapped categories 可由 sectorial pieces 的 homotopy colimit 重建，非形式。
 
-**13.4.** 写 A/B 两个 Cech diagrams，逐点等价并取 homotopy colimit。
+**13.4.** 若两个 pieces 为 $X_1,X_2$、交叠为 $X_{12}$，A-side 图是
+$$
+\mathcal W(X_1)\longleftarrow\mathcal W(X_{12})
+\longrightarrow\mathcal W(X_2),
+$$
+B-side 写成相同方向的协变/localization 图。除三个顶点上的 Morita 等价外，
+还需给出两条箭头方块的可逆自然变换及其 coherence；随后比较两个 derived
+pushouts，而非普通并集。
 
 ## 第十四章
 
@@ -199,7 +221,12 @@ summands 组成的全范畴被 split-generate。
 
 **15.3.** 局部生成对象在 diagram 的 homotopy colimit 中生成 colimit category。
 
-**15.4.** Pair-of-pants pieces 上证明局部 HMS，沿交叠比较，再用 descent。
+**15.4.** 写 B-side 图
+$\mathcal B_1\leftarrow\mathcal B_{12}\to\mathcal B_2$，证明其 derived
+pushout 为全局 $\mathcal B$。局部等价
+$E_i:\mathcal W(X_i)\simeq\mathcal B_i$ 和 $E_{12}$ 必须与两条 inclusion
+functors 通过可逆自然变换相容；此时 homotopy pushout 的函子性才给全局
+Morita 等价。
 
 ## 第十六章
 
@@ -209,7 +236,15 @@ summands 组成的全范畴被 split-generate。
 
 **16.3.** conormal covectors 湮灭 tangent directions；其维数为 $\dim Q$，且 canonical symplectic form 限制为零。
 
-**16.4.** 先用 microlocal equivalence 把 $\mathcal W$ 转成 sheaves，再与 B-side coherent category 比较。
+**16.4.** 复合
+$$
+\mathcal W(M)\xrightarrow{E_1}\operatorname{Sh}_{\mathfrak L}(Q)
+\xrightarrow{E_2}\mathcal B
+$$
+在每个 morphism complex 上由两个 quasi-isomorphisms 复合，并在 perfect
+objects 上本质满，故为 Morita equivalence。若只知道两个 $H^0$ 三角范畴
+等价，则不能恢复 Hochschild、kernel 或高阶 $A_\infty$ 数据，因而不满足
+命题 16.10 的假设。
 
 ## 第十七章
 
@@ -243,10 +278,33 @@ summands 组成的全范畴被 split-generate。
 
 ## 第二十章
 
-**20.1.** 需 theorem statement、假设、证明依赖、符号翻译和 locator。
+**20.1.** 对 $a:i\to j$、$b:j\to k$，要求 $\eta_{ba}$ 等于
+$$
+E_k\mathcal A(b)\mathcal A(a)
+\xRightarrow{\eta_b\,\mathcal A(a)}
+\mathcal B(b)E_j\mathcal A(a)
+\xRightarrow{\mathcal B(b)\,\eta_a}
+\mathcal B(b)\mathcal B(a)E_i
+$$
+与两个图的 composition constraints 复合所得的 $2$-morphism。Morita-invariant
+functor 保持该等式，故命题 20.3 对复合箭头仍自然。
 
-**20.2.** 例如稳定条件跨墙时 spherical twist 作用在 derived category 上。
+**20.2.** 第一组中心荷有
+$\phi(S_2)=1/4<3/4=\phi(S_1)$，而
+$\phi(P_1)$ 严格位于二者之间，所以唯一真子对象 $S_2$ 的相位较小，$P_1$
+稳定。交换后 $\phi(S_2)>\phi(P_1)$，故 $S_2$ destabilizes $P_1$。
 
-**20.3.** BPS category 没有唯一模型，需指定 DT/CoHA/MF/Fukaya 等版本。
+**20.3.** 对 (20.4) 取 $K_0$ 类即得
+$[T_S(E)]=[E]-\chi(S,E)[S]$。取 $E=S$，因
+$\chi(S,S)=1+(-1)^d$，
+$$
+[T_S(S)]=-(-1)^d[S]=(-1)^{d+1}[S],
+$$
+与标准同构 $T_S(S)\simeq S[1-d]$ 的 $K_0$ 类一致。
 
-**20.4.** 例：统一 stopped wrapped categories 与 BPS wall-crossing 的 functorial HMS 框架；障碍是模型和 functor 方向不统一。
+**20.4.** Batyrev 条目比较来源规定的 Fukaya/B-side categories，结论为
+一大类 mirror pairs 的 HMS 等价；Abouzaid--Auroux 使用 fiberwise wrapped
+category，公开结论在此处是 coherent-side quasi-embedding；Lekili--Ueda
+比较 Rabinowitz Fukaya category 与 equivariant matrix factorizations，结论
+为其指定非 Calabi--Yau Brieskorn--Pham 范围的 HMS。第二项缺目标侧
+split-generation/essential surjectivity，名称或论文标题不能补出这一假设。

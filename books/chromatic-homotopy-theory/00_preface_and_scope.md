@@ -1,12 +1,6 @@
 # 序章：范围、严格性标准和资料源
 
-## 本章目标
-
-本章说明本书的对象、约定、资料源和严格性标准。读者在进入第一章前，应当知道本书中“chromatic homotopy theory”默认研究什么，哪些定理属于可在本书内部证明的稳定范畴形式事实，哪些定理属于 Hopkins-Smith/Ravenel/Goerss-Hopkins-Miller 体系的外部输入，哪些内容只是 2026 年前沿边界。
-
-## 依赖前置知识
-
-需要熟悉范畴、函子、自然变换、极限、余极限、三角范畴或稳定 infinity-范畴的基本语言。复 cobordism、形式群、Adams-Novikov 谱序列和 Morava theory 不预设，但后续章节会快速进入严格定义。
+稳定同伦群把许多不同周期的现象叠在同一个对象中，色层同伦论的基本策略是按形式群高度将它们逐层分离。这个策略同时牵涉稳定范畴的形式操作和一组很深的结构定理；若不区分两者，几行局部化公式很容易被误读为 nilpotence、periodicity 或 descent 的书内证明。本序章固定研究对象、素数与证明状态：稳定范畴中的形式后果在书内展开，Hopkins--Smith、Ravenel 和 Goerss--Hopkins--Miller 体系的深结果精确登记为外部输入，2026 年仍在发展的部分只陈述可核验边界。读者应熟悉范畴、极限、张量和稳定 infinity-范畴的基本语言；复 cobordism、形式群与 Morava theory 将从后文定义进入。
 
 ## 0.1 本书研究的对象
 
@@ -33,7 +27,7 @@
 - 复定向和形式群相关命题必须说明坐标、次数和完备化。
 - $K(n)$、$E(n)$、$E_n$ 的系数和高度必须在固定素数 $p$ 下书写。
 - nilpotence、periodicity、thick subcategory theorem、chromatic convergence、Goerss-Hopkins-Miller theorem 和 Devinatz-Hopkins descent 不在正文重证，作为外部输入定理引用。
-- 2023-2026 研究结果除非完成 theorem locator 和假设翻译，只作为研究边界记录。
+- 2023--2026 年的研究结果只有在模型、假设和结论均能精确陈述时才作为外部输入；其余只用于说明研究边界。
 
 **例 0.5.** “$K(n)$ 是高度 $n$ 的场”不是严格陈述。严格写法至少要拆成两部分：
 
@@ -76,13 +70,13 @@ $$
 
 本书将大型结果分成三类。
 
-**外部输入 0.7.** Hopkins-Smith nilpotence/periodicity/thick subcategory theorem、Hopkins-Ravenel chromatic convergence、Goerss-Hopkins-Miller theorem、Devinatz-Hopkins homotopy fixed point theory，是本书的基础外部输入。正文可以使用，但必须在 `THEOREM_LEDGER.md` 中登记。
+**外部输入 0.7.** Hopkins-Smith nilpotence/periodicity/thick subcategory theorem、Hopkins-Ravenel chromatic convergence、Goerss-Hopkins-Miller theorem、Devinatz-Hopkins homotopy fixed point theory，是本书的基础外部输入。正文调用它们时均明确给出所需版本与假设。
 
 **边界 0.8.** Telescope conjecture 在 2023 年之后不能作为假设外的默认事实使用。Burklund-Hahn-Levy-Schlank 的结果表明在每个素数且高度至少 $2$ 的相应层次，telescopic 与 chromatic localization 发生差异。本书会把旧文献中的 telescope conjecture 表述改写为历史命题、条件命题或失败模式。
 
-**边界 0.9.** Redshift、higher semiadditivity、transchromatic character、rational $K(n)$-local sphere 和 2026 年 syntomic/K-theory of $BP\langle n\rangle$ 结果均进入前沿章。除非完成精确定位和假设翻译，不用于证明基础章节命题。
+**边界 0.9.** Redshift、higher semiadditivity、transchromatic character、rational $K(n)$-local sphere 和 2026 年 syntomic/K-theory of $BP\langle n\rangle$ 结果均进入前沿章。未能精确固定假设与结论的版本不用于证明基础章节命题。
 
-## 本章小结
+## 0.5 阅读边界与证明责任
 
 本书把 chromatic homotopy theory 作为稳定同伦论中的严格结构理论处理：先固定谱、局部化和复定向口径，再进入形式群高度、Morava theories、有限谱 type、chromatic tower 和 $K(n)$-局部范畴。大型定理作为外部输入清楚标注；近期前沿纳入资料边界，但不削弱正文证明链。
 

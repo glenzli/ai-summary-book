@@ -1,12 +1,8 @@
 # 第三十九章：Goodwillie calculus、excisive functors 与函子导数
 
-## 本章目标
+普通微积分用多项式逼近函数，Goodwillie calculus 则用 $n$-excisive functors 逼近空间或高阶范畴之间的同伦函子。线性函子把 homotopy pushout 送到 pullback，更高次数由强余 Cartesian cube 的行为刻画；逐次普适逼近形成 Taylor tower，其 homogeneous layers 由带 $\Sigma_n$-作用的谱和 cross-effects 描述。本章从 1-excisive 情形出发，构造 $P_nF$，并说明收敛需要的解析性与连通性条件。
 
-Goodwillie calculus 把同伦函子近似为“多项式函子”。它为 spaces、spectra、稳定 $\infty$-范畴和代数 $K$-理论中的非线性现象提供 Taylor tower。范畴论核心是：用 homotopy pushout cube 与 homotopy pullback cube 定义 excisive functors，用 cross-effects 和 spectra with symmetric group action 描述 homogeneous layers。
-
-## 依赖前置知识
-
-需要 $\infty$-范畴中的有限极限和余极限、稳定 $\infty$-范畴、spectrum、filtered colimit、Bousfield localization、functor categories 和 descent。
+所需工具是 $\infty$-范畴中的有限极限/余极限、稳定化、filtered colimits 和 functor categories。Goodwillie tower 的存在与分类定理作为外部输入；“导数”始终指函子导数的谱数据，不与对象上的普通微分混淆。
 
 ## 39.1 Excisive functors
 
@@ -95,7 +91,7 @@ $$
 **外部输入定理 39.13.** 对从 pointed spaces 到 spectra 的 reduced finitary functor $F$，其 $n$-homogeneous layer 由带 $\Sigma_n$-作用的 spectrum $\partial_nF$ 控制：
 
 $$
-D_nF(X)\simeq \bigl(\partial_nF\wedge X^{\wedge n}\bigr)_{h\Sigma_n}.
+D_nF(X)\simeq \bigl(\partial_nF\wedge (\Sigma^\infty X)^{\wedge n}\bigr)_{h\Sigma_n}.
 $$
 
 谱 $\partial_nF$ 称为 $F$ 的第 $n$ 个 Goodwillie derivative。
@@ -111,20 +107,26 @@ $$
 **证明.** 这是定理 39.13 在 $n=1$ 的特例。此时 $\Sigma_1$ 平凡，公式变为
 
 $$
-D_1F(X)\simeq \partial_1F\wedge X.
+D_1F(X)\simeq \partial_1F\wedge\Sigma^\infty X.
 $$
 
 因 $F$ 已 $1$-homogeneous，$F\simeq D_1F$。令 $E=\partial_1F$，并把 pointed space 先稳定化为 $\Sigma^\infty X$，得到结论。$\square$
 
 ## 39.5 Chain rule 与 operad 结构
 
-**外部输入定理 39.16（Goodwillie chain rule）.** 对合适 reduced finitary functors $F,G$，复合 $F\circ G$ 的 derivatives 由 symmetric sequences 的 composition product 给出：
+**外部输入定理 39.16（Goodwillie chain rule）.** 设 $G:\mathcal B\to\mathcal C$、$F:\mathcal C\to\mathcal D$ 是 pointed spaces 或 spectra 之间的 reduced finitary homotopy functors，并满足导数构造所需的标准可达性条件。一般链式法则是相对 bar construction
 
 $$
-\partial_*(F\circ G)\simeq \partial_*F\circ \partial_*G.
+\partial_*(F\circ G)
+\simeq
+B\bigl(\partial_*F,\partial_*\operatorname{id}_{\mathcal C},\partial_*G\bigr),
 $$
 
-特别地，恒等函子的 derivatives 形成 operad，函子的 derivatives 形成其模。
+其中 $\partial_*\operatorname{id}_{\mathcal C}$ 是 operad，$\partial_*F$ 与 $\partial_*G$ 分别带相应右、左模结构。只有当中间范畴 $\mathcal C$ 稳定、该恒等函子导数 operad 退化为 composition product 的单位时，公式才简化为
+
+$$
+\partial_*(F\circ G)\simeq\partial_*F\circ\partial_*G.
+$$
 
 **注 39.17.** 这说明 Goodwillie calculus 不只是逐层近似；它带有高阶链式法则。该法则把高阶范畴论、operad、stable homotopy 和 functor calculus 连接起来。
 
@@ -138,15 +140,21 @@ $$
 
 为等价，则称 Goodwillie tower 在 $X$ 处收敛。
 
-**外部输入定理 39.19.** Goodwillie tower 的收敛性需要 connectivity 或 analytic 条件。对解析函子，在足够连通输入上 Taylor tower 收敛。
+**外部输入定理 39.19.** 若 $F$ 在 Goodwillie 的定量意义下为 $\rho$-analytic，则对每个 $\rho$-连通输入 $X$，比较映射 $F(X)\to P_nF(X)$ 的连通度随 $n\to\infty$ 趋于无穷，因而
+
+$$
+F(X)\simeq\lim_nP_nF(X).
+$$
+
+特别地，pointed spaces 上恒等函子的 Goodwillie tower 在 $1$-连通空间处收敛。对不满足解析估计或连通性阈值的输入，本定理不保证收敛。
 
 **命题 39.20.** 若 $F\simeq P_NF$ 为 $N$-excisive，则其 Goodwillie tower 从 $N$ 层起稳定，且对所有 $X$ 收敛。
 
 **证明.** 若 $F$ 已 $N$-excisive，则对 $n\ge N$，$P_nF\simeq F$，因为 $F$ 本身满足 $n$-excisive 条件并由 universal property 接收 $F\to P_nF$ 的逆等价。因此塔从第 $N$ 层起常值为 $F$，其极限为 $F$。$\square$
 
-## 39.7 本章小结
+## 39.7 同伦函子的 Taylor 塔
 
-Goodwillie calculus 把同伦函子分解为多项式近似 $P_nF$ 和 homogeneous layers $D_nF$。Cross-effects 提取多变量非线性部分；derivatives 把 homogeneous 层表示为带对称群作用的谱；chain rule 则把函子复合变成 symmetric sequences 的复合。它是稳定化思想在函子范畴中的高阶推广。
+Goodwillie calculus 把同伦函子分解为多项式近似 $P_nF$ 和 homogeneous layers $D_nF$。Cross-effects 提取多变量非线性部分；derivatives 把 homogeneous 层表示为带对称群作用的谱；chain rule 一般把函子复合变成相对于恒等函子导数 operad 的 bar composition，在稳定中间范畴中才退化为 symmetric sequences 的普通复合。
 
 ## 练习
 

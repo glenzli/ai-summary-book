@@ -1,14 +1,8 @@
 # 第七章：adelic 模形式与 `GL(2)` 自守表示
 
-## 本章目标
+经典模形式把无穷位置写得十分清楚，却把有限位置压缩在 Fourier 系数与 Hecke 算子中。Adelic 语言反过来把所有位置置于同一商空间上，使一个本征形式分解为局部表示的 restricted tensor product。这里必须严格区分经典函数 $f$、adelic 自守函数 $\Phi_f$ 与它在右正则作用下生成的不可约表示 $\pi_f$；三者相关，却不属于同一种对象类型。本章建立这三层之间的对应，并从局部 Satake 参数重新得到标准 L 函数。
 
-本章把第六章的经典模形式翻译为 adelic 语言，并定义 `GL(2)` 的自守形式、自守表示、尖点条件、局部分解和标准 L 函数。核心目标是区分三类对象：经典函数 $f:\mathfrak H\to\mathbb C$、adelic 函数 $\Phi:\operatorname{GL}_2(\mathbb Q)\backslash\operatorname{GL}_2(\mathbb A_\mathbb Q)\to\mathbb C$、以及右正则表示生成的不可约自守表示 $\pi_f$。
-
-## 依赖前置知识
-
-需要第一章的 adeles、第四章的光滑表示、第六章的经典模形式和 Hecke 算子。Strong approximation、经典-adelic 对应和 newform theory 在本章作为外部输入使用。
-
-收口归一化回指：本章是 classical normalization 与 automorphic normalization 的主要转换点；Satake roots、unitary normalization、标准 L 函数和平移公式见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、5、8 节。
+本章综合使用第一章的 adeles、第四章的光滑表示和第六章的 Hecke 本征形式。Strong approximation、经典--adelic 对应与 newform theory 作为外部输入。经典、酉自守与 Satake roots 之间的转换统一列在 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 4、5、8 节。
 
 ## 7.1 `GL(2)` 的 adelic 商
 
@@ -190,7 +184,7 @@ $$
 
 **注 7.17.2.** 附录 J 进一步解释 oldforms、newforms、Atkin-Lehner operators 和 local newvectors 的关系；特别地，classical newform 的级对应 $\pi_f$ 的 adelic conductor。
 
-**收口精修 7.A（classical-to-adelic 检查表）.** 后续把经典 newform 送入自守表示时，逐项使用以下翻译：
+**经典形式与 adelic 表示的对应表 7.A.** 把经典 newform 送入自守表示时，各项数据按下表翻译：
 
 | 经典对象 | adelic 对象 | 后续使用 |
 |---|---|---|
@@ -302,7 +296,7 @@ $$
 
 **注 7.23.** 附录 I 在 `GL(n)` 口径下给出 Godement-Jacquet 和 Rankin-Selberg 积分的定义、Euler 分解、非分歧计算和函数方程接口；本章的 `GL(2)` 标准 L 函数是其中 $n=2$ 的特例。
 
-## 7.10 本章小结
+## 7.10 经典形式与自守表示的对应
 
 经典模形式给出 `GL(2)` 自守表示的一个具体模型，但 Langlands 纲领使用的是 adelic 表示语言。Adelic 提升把经典变换律变成左 $G(\mathbb Q)$-不变、右开紧变换和无穷处 $K$-type；尖点条件变成沿 unipotent radical 的常数项积分为零；Hecke 本征值变成非分歧局部分量的 Satake 参数。由此，经典的 $L(f,s)$ 在 algebraic normalization 下是同变量的标准 L 函数；对本书默认的 unitary $\pi_f$，精确关系是 $L(s,\pi_f)=L(f,s+(k-1)/2)$。
 

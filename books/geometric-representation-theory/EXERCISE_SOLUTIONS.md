@@ -181,7 +181,17 @@ $(g_1,g_2,x)\mapsto(g_1h_1^{-1},h_1g_2h_2^{-1},h_2x)$。于是 $g_1g_2x$ 不变�
 
 **17.3.** Hecke correspondence 参数化 $(x,V'\subset V)$，其中 $V/V'$ 在顶点 $i$ 处一维，其余顶点不变，并与 quiver maps 相容。
 
-**17.4.** Grassmannian 的 tangent 为 $\operatorname{Hom}(\ker i,V)$；条件 $ij=0$ 表示 $j$ annihilates 与 quotient 方向相容的 tangent data，即 cotangent covector 条件。
+**17.4.** 令 $K=\ker i$。因为 $i$ 满射，$ij=0$ 当且仅当 $\operatorname{im}j\subset K$，也就是 $j$ 唯一分解为 $V\to K\hookrightarrow W$。而
+$$
+T_{[i]}\operatorname{Gr}(v,W)\simeq\operatorname{Hom}(K,V),
+$$
+trace pairing $\operatorname{Hom}(K,V)\times\operatorname{Hom}(V,K)\to\mathbb C$ 是非退化的，所以这样的 $j$ 正好给出一个 cotangent covector。
+
+**17.5.** 在 $a=1$ 图上，$i=(1,x)$、$j=(-xp,p)^T$。到 $b=1$ 图需用 $t=x^{-1}$ 换基，故 $y=x^{-1}$，而 $j$ 变为 $xj=(-x^2p,xp)^T=(q,-yq)^T$，所以 $q=-x^2p$。并且
+$$
+ji=\begin{pmatrix}-xp&-x^2p\\ p&xp\end{pmatrix},
+$$
+其迹与行列式都为零；也可直接用 $(ji)^2=j(ij)i=0$。
 
 ## 第 18 章
 
@@ -190,6 +200,14 @@ $(g_1,g_2,x)\mapsto(g_1h_1^{-1},h_1g_2h_2^{-1},h_2x)$。于是 $g_1g_2x$ 不变�
 **18.2.** 若 $A,B$ 为有限维代数且有 $(A,B)$-bimodule $M$，则 $M\otimes_B-$ 与 $\operatorname{Hom}_A(M,-)$ 在有限性条件下伴随。
 
 **18.3.** projectives 与 finite-dimensional modules 通过 Euler pairing $\langle[P],[M]\rangle=\dim\operatorname{Hom}(P,M)$ 配对；在 categorification 中对应 canonical/dual canonical duality。
+
+**18.4.** 对 $S=E[e_1,e_2]$ 的基 $(1,x_2)$，由 $x_2^2=e_1x_2-e_2$ 与 $\psi_1(1)=0,\psi_1(x_2)=1$ 得
+$$
+Y=\begin{pmatrix}0&-e_2\\1&e_1\end{pmatrix},
+\qquad
+D=\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+$$
+于是 $D=E_{12}$、$YD=E_{22}$、$DY-e_1D=E_{11}$、$YE_{11}=E_{21}$。四个矩阵单位都在像中，故作用满到 $M_2(S)$；命题 18.8.2 的 normal form 计算给出忠实性。
 
 ## 第 19 章
 
@@ -202,6 +220,13 @@ $(g_1,g_2,x)\mapsto(g_1h_1^{-1},h_1g_2h_2^{-1},h_2x)$。于是 $g_1g_2x$ 不变�
 **19.4.** Liouville 1-form $\theta$ 在 fiber scaling $t$ 下变为 $t\theta$，symplectic form $d\theta$ 也按 $t$ 缩放。
 
 **19.5.** 表 19.13 只是经验对应；定义必须给出两侧空间、categories、functors 和 equivalence/Koszul duality statement。
+
+**19.6.** 由 $x\partial^n\overline1=-n\partial^{n-1}\overline1$ 归纳得
+$$
+x^r\partial^n\overline1=
+(-1)^r\frac{n!}{(n-r)!}\partial^{n-r}\overline1
+$$
+当 $r\le n$，而 $r>n$ 时为零。正权齐次 monomial $x^a\partial^b$ 满足 $a-b>0$，因而把多项式次数至少降低 $a-b$；正权算子的任意足够长乘积最终杀死给定向量，所以 $A_{>0}$ 局部幂零。
 
 ## 第 20 章
 
@@ -216,6 +241,12 @@ $(g_1,g_2,x)\mapsto(g_1h_1^{-1},h_1g_2h_2^{-1},h_2x)$。于是 $g_1g_2x$ 不变�
 **20.5.** 若 $s=\sum a_i z^i$，条件 $z^{-m}s\in\mathbb C[[z]]$ 等价于 $a_i=0$ for $i<m$。$m\le0$ 自动满足；$m>0$ 要求至少 $m$ 阶 vanishing。
 
 **20.6.** $u_0\star u_\lambda=u_{\lambda}$ 因为 $0+\lambda=\lambda$；同理右单位。
+
+**20.7.** 权 $r$ 表示把 $z^m$ 作用成 $z^{rm}$，故 regularity 条件为 $z^{-rm}s\in\mathcal O$。于是 $s\in z^{\max(rm,0)}\mathcal O$。模 $z^d$ 后需要消失的独立系数个数为
+$$
+\min\bigl(\max(rm,0),d\bigr),
+$$
+这就是该线性子空间的 codimension。
 
 ## 第 21 章
 
@@ -234,6 +265,8 @@ $$
 
 **21.4.** $[S]\ast[\mathbb F_q^2]$ 的系数为三维空间中 quotient 或 subobject 类型的计数；未 twisted 情形核心是计算相应一维子空间数，如 $q^2+q+1$。
 
+**21.5.** 先在 $V_{a+b+c}$ 中选 $U_c$ 有 $\binom{a+b+c}{c}_q$ 种，再在商 $V/U_c$ 中选维数为 $b$ 的 $U_{b+c}/U_c$ 有 $\binom{a+b}{b}_q$ 种。反过来，先选 $U_{b+c}$ 再在其中选 $U_c$，分别给出 $\binom{a+b+c}{b+c}_q$ 与 $\binom{b+c}{c}_q$。两者计数同一批二步旗标，故得到推论 21.9.2。
+
 ## 第 22 章
 
 **22.1.** 生成元 $E,F,K^{\pm1}$，关系 $KEK^{-1}=q^2E$，$KFK^{-1}=q^{-2}F$，$[E,F]=(K-K^{-1})/(q-q^{-1})$。
@@ -248,17 +281,29 @@ $$
 
 **22.4.** $B(2)$ 为 $b_0\to b_1\to b_2$，weights $2,0,-2$；$\varepsilon(b_r)=r$，$\varphi(b_r)=2-r$。
 
+**22.5.** $v=0,1,2,3$ 时，$\operatorname{Gr}(v,3)$ 依次为点、$\mathbb P^2$、对偶 $\mathbb P^2$、点，而 kernel 维数依次为 $3,2,1,0$。$Z_v$ 选择相邻 kernels $K_{v+1}\subset K_v$，故给出链
+$$
+c_0\longrightarrow c_1\longrightarrow c_2\longrightarrow c_3,
+$$
+四个权为 $3,1,-1,-3$，与 $B(3)$ 完全一致。
+
 ## 第 23 章
 
-**23.1.** 表格应含作者、版本、精确定理、假设翻译、模型、locator、是否进入证明链。缺任一项则只能作为边界。
+**23.1.** $T_DT_{D'}(L)=L\otimes\mathcal O_C(D')\otimes\mathcal O_C(D)$，线丛张量积给出规范同构 $T_DT_{D'}\simeq T_{D+D'}$，结合性来自 associator。有效除子 monoid 的群化是 divisor group；映射 $D\mapsto\mathcal O_C(D)$ 再经过线性等价得到 $\operatorname{Pic}(C)$。对任意线丛 $M$ 定义 $T_M(L)=L\otimes M$，便得到 Picard group 的平移作用。
 
-**23.2.** 因为 proof series 使用 derived stacks、renormalized D-modules、IndCoh、singular support 和 factorization/Kac-Moody machinery，未建立这些模型前不能作为第十六章内部定理。
+**23.2.** 对 $xy=z^m$ 微分并与 $dz$ 外积：$y\,dx\wedge dz+x\,dy\wedge dz=0$。除以 $xy$ 后即得 $dx\wedge dz/x=-dy\wedge dz/y$。$m=1$ 时 $X_1\simeq\mathbb A^2$，无奇点；$m=2,3$ 时 Jacobian 只在原点消失，所以 singular locus 都是 $\{0\}$。
 
-**23.3.** 需核查 finite type、normality、Poisson/symplectic singularity、是否有 symplectic resolution、quantization、category $\mathcal O$、与 mirror/dual 空间的具体定理。
+**23.3.** 在开 cell 上，$j^*E_{\mathbb P^1}[1]\simeq j^!E_{\mathbb P^1}[1]\simeq E_{\mathbb A^1}[1]$；在闭点上，$i^*E_{\mathbb P^1}[1]\simeq E[1]$、$i^!E_{\mathbb P^1}[1]\simeq E[-1]$。它们都只在奇次数非零，因此是 odd parity；点支撑对象集中在偶次数。两个 Schubert closures 均光滑，计算与系数特征无关，所以 type $A_1$ 没有 $p$-canonical 修正。
 
-**23.4.** characteristic zero 的 IC arguments 依赖 semisimplicity/purity；modular coefficients 下 parity sheaves、torsion 和 $p$-canonical basis 会改变 KL 型结论。
+**23.4.** 令 $R=E[\varepsilon]/(\varepsilon^2)$。简单模 $E=R/(\varepsilon)$ 有周期自由分解
+$$
+\cdots\xrightarrow{\varepsilon}R
+\xrightarrow{\varepsilon}R
+\longrightarrow E\longrightarrow0.
+$$
+施加 $\operatorname{Hom}_R(-,E)$ 后所有微分为零，故 $\operatorname{Ext}^1_R(E,E)\simeq E$；它由命题 23.13 的非分裂扩张生成。有限维向量空间范畴是半单的，所以其中的 $\operatorname{Ext}^1(E,E)$ 为零。
 
-**23.5.** Hecke 情形 $\mathcal C=\mathsf H$，$\mathcal M$ 可为 sheaf category on flag variety；KLR 情形 $\mathcal C$ 为 KLR 2-category 或 projective module category，$\mathcal M$ 为 categorified highest weight representation。
+**23.5.** 例如比较 Nakajima homology 与 cyclotomic KLR projectives 时，除 $K_0$ 外至少要比较：grading shift，它记录 $q$-参数；induction/convolution，它记录量子群乘法；duality，它区分 canonical 与 dual canonical convention。若再比较完整 2-representation，还必须核对 generators 之间的 2-morphisms 与关系。只比较其中一部分不能推出范畴等价。
 
 ## 附录 A
 

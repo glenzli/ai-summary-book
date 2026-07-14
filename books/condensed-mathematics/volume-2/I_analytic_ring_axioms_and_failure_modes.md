@@ -109,11 +109,12 @@ signed Radon measures 确实满足 I.1，却不满足 I.3；Ribe 的非局部凸
 **失败模式 I.11（只检查全局点）.** 只验证
 
 $$
-R\operatorname{Hom}_A(\mathcal M[S],C_\bullet)
-\to R\operatorname{Hom}_A(A[\underline S],C_\bullet)
+R\underline{\operatorname{Hom}}_A(\mathcal M[S],C_\bullet)
+\to R\underline{\operatorname{Hom}}_A(A[\underline S],C_\bullet)
 $$
 
-在单点取值后的等价，弱于 I.3 的内部凝聚 Hom 等价。内部等价须在所有测试对象上成立；
+在单点取值后的等价，弱于 I.3 的内部凝聚 Hom 等价。这里展示的箭头本身是内部 Hom
+箭头；“只检查全局点”指只对它施加 $R\Gamma(*)$ 后验证。内部等价须在所有测试对象上成立；
 忘掉这一区别会遗漏参数族中的失败。
 
 **失败模式 I.12（普通张量已经解析）.** 即使 \(M,N\) 是解析对象，也只有

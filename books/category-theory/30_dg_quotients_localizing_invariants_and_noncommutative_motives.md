@@ -1,12 +1,8 @@
 # 第三十章：dg 商、局部化不变量与非交换 motives
 
-## 本章目标
+对 dg 范畴取商不能只在同伦范畴中删除对象，因为需要保留商后的态射复形和高阶合成。Drinfeld dg quotient 与稳定 $\infty$-范畴的 Verdier quotient 给出相容模型；一个 localizing invariant 应当对 Morita 等价不变，并把这类 exact sequence 送到谱的纤维序列。Algebraic $K$-theory、Hochschild homology 与 $THH$ 因而可以通过一个普适的非交换 motive 范畴统一比较。
 
-本章继续第二十七章的导出 Morita 理论，讨论 dg quotient、稳定范畴的 exact sequence、localizing invariants 和 noncommutative motives。核心思想是：许多同调型不变量并不区分 Morita 等价的 dg 范畴，并且把 Verdier quotient 或 dg quotient 送到纤维序列。非交换 motives 是把所有这类不变量统一表示的范畴论对象。
-
-## 依赖前置知识
-
-需要 dg 范畴、stable $\infty$-categories、Verdier quotient、compact generation、Morita equivalence、Hochschild chains、Bousfield localization 和稳定 presentable $\infty$-范畴的基本语言。
+本章沿用 dg 范畴、稳定 $\infty$-范畴、紧生成、Morita 等价和 Bousfield 局部化。我们会区分 additive 与 localizing invariant、small stable category 与 presentable envelope；非交换 motives 的普适性质作为外部输入，使用时明确目标范畴和所保持的余极限。
 
 ## 30.1 稳定范畴的 exact sequence
 
@@ -46,7 +42,7 @@ $$
 
 这表示 $C$ 中存在 Eilenberg swindle 型无限吸收。
 
-**命题 30.4.** 若 $E$ 是把有限直和送为直和的稳定范畴值不变量，且 $C$ flasque，则 $E(C)\simeq0$。
+**命题 30.4.** 设 $E$ 取值于稳定 $\infty$-范畴，并在函子层面满足 $E(F\oplus G)=E(F)+E(G)$。若 $C$ flasque，则 $E(C)\simeq0$。特别地，该结论适用于定义 30.9 的 additive invariants。
 
 **证明.** 由 $\operatorname{id}_C\oplus T\simeq T$，应用 $E$ 得
 
@@ -64,7 +60,7 @@ $$
 q:\mathcal B\to\mathcal B/\mathcal A
 $$
 
-使 $\mathcal A$ 中对象在导出意义下变为零，并满足相应的 dg Morita 泛性质：任意把 $\mathcal A$ 送为零的 dg 函子从 $\mathcal B$ 唯一因子化经 $\mathcal B/\mathcal A$，唯一性在合适映射空间中理解。
+使 $\mathcal A$ 中对象在导出意义下变为零，并满足导出映射空间的泛性质：对任意 dg 范畴 $\mathcal D$，从 $\mathcal B/\mathcal A$ 到 $\mathcal D$ 的 derived quasi-functors 空间，等价于从 $\mathcal B$ 到 $\mathcal D$ 且把 $\mathcal A$ 中每个对象送为可缩对象的 derived quasi-functors 子空间。
 
 **外部输入定理 30.6（Drinfeld quotient）.** 对全 dg 子范畴 $\mathcal A\subseteq\mathcal B$，存在 dg quotient $\mathcal B/\mathcal A$ 的显式模型：对每个 $a\in\mathcal A$ 添入次数 $-1$ 的闭包收缩元 $\varepsilon_a:a\to a$，满足 $d\varepsilon_a=\operatorname{id}_a$，并按 dg 范畴关系自由扩张。该构造给出同伦意义下的 quotient。
 
@@ -72,13 +68,15 @@ $$
 
 **证明.** 在 Drinfeld quotient 模型中，每个 $a\in\mathcal A$ 有次数 $-1$ 元 $\varepsilon_a:a\to a$ 满足 $d\varepsilon_a=\operatorname{id}_a$。因此 $\operatorname{id}_a$ 在 Hom 复形中为边界，其 $H^0$ 类为零。普通范畴中对象的恒等态射为零意味着该对象是零对象：对任意 $x$，任意态射 $x\to a$ 等于 $\operatorname{id}_a$ 后复合，故为零；任意态射 $a\to x$ 同理。$\square$
 
-**外部输入定理 30.8.** 在合适预三角和幂等完备假设下，
+**外部输入定理 30.8.** 若 $\mathcal B$ 是小的 pretriangulated dg 范畴，$\mathcal A\subseteq\mathcal B$ 是 full pretriangulated dg 子范畴，则有稳定 $\infty$-范畴等价
 
 $$
-N_{\operatorname{dg}}(\mathcal B/\mathcal A)
+\operatorname{Kar}\bigl(N_{\operatorname{dg}}(\mathcal B/\mathcal A)\bigr)
+\simeq
+\operatorname{Kar}\bigl(N_{\operatorname{dg}}(\mathcal B)/N_{\operatorname{dg}}(\mathcal A)\bigr).
 $$
 
-给出稳定 $\infty$-范畴 Verdier quotient 的 dg enhancement。
+若两侧本已幂等完备，可省略 $\operatorname{Kar}$。
 
 ## 30.3 Localizing invariants
 
@@ -114,7 +112,7 @@ $$
 
 由于序列 split，该纤维序列也 split，因此 $E(B)\simeq E(A)\oplus E(C)$。故 $E$ additive。$\square$
 
-**例子 30.12.** 非连通代数 $K$-理论是 additive invariant；非连通 $K$-理论、Hochschild homology、cyclic homology、topological Hochschild homology 和许多 topological cyclic homology 版本是 localizing invariant，在适当基和完备性假设下成立。
+**例子 30.12.** 非连通代数 $K$-理论、Hochschild homology、cyclic homology 与 topological Hochschild homology 是 localizing invariants，因而也是 additive invariants。Topological cyclic homology $TC$ 一般不保持滤过余极限，所以通常不是本节定义下的 localizing invariant；它的若干局部化纤维定理不能与 BGT 的普适局部化性质混同。
 
 **外部输入定理 30.13.** 非连通代数 $K$-理论把 exact sequence of small stable idempotent-complete $\infty$-categories 送到谱的纤维序列：
 
@@ -146,7 +144,7 @@ $$
 
 使得左伴随 $\operatorname{Mot}_{\operatorname{loc}}\to\mathcal D$ 等价于取值于 $\mathcal D$ 的 localizing invariants。
 
-**命题 30.16.** 若两个小稳定幂等完备 $\infty$-范畴 $A,B$ 在 $\operatorname{Mot}_{\operatorname{loc}}$ 中同构，则任意 localizing invariant $E$ 满足 $E(A)\simeq E(B)$。
+**命题 30.16.** 若两个小稳定幂等完备 $\infty$-范畴 $A,B$ 在 $\operatorname{Mot}_{\operatorname{loc}}$ 中等价，则任意 localizing invariant $E$ 满足 $E(A)\simeq E(B)$。
 
 **证明.** 由定理 30.15，$E$ 唯一因子化为
 
@@ -159,15 +157,15 @@ $$
 
 ## 30.5 Trace、Hochschild 同调与局部化
 
-**命题 30.17.** Hochschild chains 对 Morita equivalence 不变。
+**外部输入推论 30.17.** Hochschild chains 对 Morita equivalence 不变。
 
-**证明.** 第二十七章把 Hochschild chains 写作恒等 bimodule 的导出 trace：
+**说明.** 第二十七章把 Hochschild chains 写作恒等 bimodule 的导出 trace：
 
 $$
 HH(\mathcal A)=\mathcal A\otimes^{\mathbb L}_{\mathcal A^{op}\otimes\mathcal A}\mathcal A.
 $$
 
-Morita equivalence 识别导出模范畴及其双模复合结构，因而识别恒等 bimodule 的 trace。严格证明使用导出 Morita 定理和 trace 在 Morita $(\infty,2)$-范畴中的函子性。$\square$
+导出 Morita 定理把 Morita equivalence 提升为 Morita $(\infty,2)$-范畴中的对象等价；trace 的函子性随后识别恒等 bimodule 的 traces。这一步依赖该外部定理，而不是仅由上式形式推出。
 
 **外部输入定理 30.18.** Hochschild homology 和 topological Hochschild homology 是 localizing invariants；因此 exact sequence $A\to B\to C$ 给出纤维序列
 
@@ -233,7 +231,7 @@ $$
 
 这正是通过 perfect modules 解释的 dg 不变量相等。$\square$
 
-## 30.7 本章小结
+## 30.7 从精确序列到普适不变量
 
 dg quotient 和稳定 Verdier quotient 是同一个局部化思想在 dg 增强和稳定 $\infty$-范畴中的表现。Localizing invariants 把 exact sequences 送到纤维序列；noncommutative motives 用普遍性质统一所有 additive 或 localizing invariants。代数 $K$-理论、Hochschild 型不变量和 trace 结构是这一理论的基本例子。
 

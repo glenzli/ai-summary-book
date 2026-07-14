@@ -113,6 +113,6 @@ $$
 
 **HoTT 边界.** 要在 HoTT 中证明该公式，需要构造 $\mathbb RP^\infty$ 的 HIT 或 classifying type $B\mathbb Z/2$，证明其 cohomology ring，并构造 Steenrod squares。
 
-## BN.8 本附录关闭的缺口
+## BN.8 经典计算与内部构造的边界
 
-本附录把 Adams 谱序列的代数端从符号推进到具体结构：Steenrod operations、Steenrod algebra、unstable module、Ext、Adams convergence 和低维检测类。剩余义务是 Steenrod operations 的 HoTT/cubical 构造、Adams resolution 的 spectrum-level 构造、Ext 计算和 Adams differential 的具体例子。
+Steenrod operations、Adams resolution、Ext 与具体 differentials 属于互相依赖的外部计算包。经典 Adams chart 中的检测类不能在尚未构造 spectrum-level resolution 和收敛比较时视为 HoTT 内部结论；本附录的公式只在所列经典输入下使用。

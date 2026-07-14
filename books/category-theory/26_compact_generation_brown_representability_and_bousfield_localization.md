@@ -1,12 +1,8 @@
 # 第二十六章：紧生成、Brown 表示性与 Bousfield 局部化
 
-## 本章目标
+稳定 presentable $\infty$-范畴通常规模巨大，但若由一小族紧对象生成，许多全局问题可以降到这些生成元上的映射谱。Brown 表示性把保持适当余积并满足同调条件的反变函子识别为可表函子，从而导出右伴随的存在。Bousfield 局部化则通过局部对象与 acyclic 对象分解范畴，Verdier quotient 描述把指定态射强制为等价的稳定版本。本章比较这些构造，并说明紧生成在可达性与局部化保持紧对象之间的作用。
 
-本章补充稳定 presentable $\infty$-范畴中的紧生成理论。紧生成把“大”稳定范畴压缩为一小族紧对象控制；Brown 表示性给出伴随和表示对象的存在；Bousfield 局部化和 Verdier quotient 则描述同伦论中“强制某些态射成为等价”的过程。
-
-## 依赖前置知识
-
-需要可表现 $\infty$-范畴、稳定 $\infty$-范畴、映射谱、t-结构、Bousfield localization 和普通三角范畴的基本语言。
+所需语言是 presentable/stable $\infty$-范畴、映射谱和 t-结构。Brown 定理、compact generation 与 telescope 型结论的假设不会混用；每个局部化都会明确其 kernel、local objects、可达性及是否保持紧对象。
 
 ## 26.1 紧对象与紧生成
 
@@ -68,27 +64,27 @@ $$
 
 ## 26.3 Brown 表示性
 
-**定义 26.9.** 设 $C$ 是稳定 $\infty$-范畴。函子
+**定义 26.9.** 设 $C$ 是有小余积的稳定 $\infty$-范畴。函子
 
 $$
-H:C^{op}\to\mathcal S
+H:C^{op}\to\mathbf{Sp}
 $$
 
-称为 cohomological，若它把余纤维序列送到纤维序列，并把小余积送到小积。
+称为精确且满足 wedge axiom，若它把余纤维序列送到纤维序列，并把小余积送到小积。
 
-**外部输入定理 26.10（Brown 表示性）.** 若 $C$ 是 compactly generated stable presentable $\infty$-category，则满足适当集合值或 space 值条件的 cohomological functor
+**外部输入定理 26.10（Brown 表示性）.** 若 $C$ 是 compactly generated stable presentable $\infty$-范畴，则每个精确且满足 wedge axiom 的函子
 
 $$
-H:C^{op}\to\mathcal S
+H:C^{op}\to\mathbf{Sp}
 $$
 
 可由某个对象 $X\in C$ 表示：
 
 $$
-H(-)\simeq\operatorname{Map}_C(-,X).
+H(-)\simeq\operatorname{Map}^{\mathbf{Sp}}_C(-,X).
 $$
 
-等价形式：保持小余积的正合函子 $F:C\to D$ 在广泛条件下有右伴随。
+这里右端是稳定 $\infty$-范畴的映射谱。下一命题关于右伴随的存在性使用 presentable 伴随函子定理，不把它与 Brown 表示性混作同一个陈述。
 
 **命题 26.11.** 若 $F:C\to D$ 是 presentable stable $\infty$-categories 之间保持小余积的正合函子，则 $F$ 有右伴随。
 
@@ -186,7 +182,7 @@ $$
 
 **例子 26.24.** 若 $L$ 是有理化 $H\mathbb Q\wedge-$，则 $f$ 是有理等价，当且仅当 $\operatorname{cofib}(f)$ 的有理化为零。这个表述只使用稳定范畴的余纤维演算，而不依赖具体谱同伦群计算。
 
-## 26.8 本章小结
+## 26.8 生成元、表示性与局部对象
 
 紧生成把稳定 presentable $\infty$-范畴的大小控制在小的 compact objects 上。Brown 表示性和 presentable 伴随函子定理保证许多自然函子有伴随。Bousfield localization、Verdier quotient 和 smashing localization 则描述稳定同伦论和导出范畴中最常见的“局部化计算”。
 

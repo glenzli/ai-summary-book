@@ -63,11 +63,15 @@
 
 | 本书标签 | 定理内容 | 资料源 | 使用位置 | locator 状态 |
 | --- | --- | --- | --- | --- |
-| EQ-19.3 | Equivariant motivic six operations | Hoyois | 第十九章 | source-verified |
-| ST-20.x | Stacks 上六操作 | Khan-Ravi | 第二十章 | source-verified |
-| LG-21.2 | Log motivic homotopy | Park | 第二十一章 | source-verified |
-| PF-21.5 | Perfect schemes motivic homotopy | Dahlhausen-Hekking-Wolters | 第二十一章 | R |
-| RE-22.4 | Betti realization | Ayoub | 第二十二章 | pending |
+| EQ-19.3 | Equivariant motivic six operations | Hoyois | 第十九章 | located: Definition 2.26; Proposition 5.7; Theorems 1.1, 6.9, 6.18 |
+| ST-20.5/6 | Scalloped stacks 上六操作 | Khan-Ravi | 第二十章 | located: Definitions 2.7, 2.9; Theorems 4.5, 4.10, 7.1 |
+| ST-20.12 | Torus concentration | Khan-Ravi | 第二十章 | located: Theorem 11.2; Corollary 11.3 |
+| LG-21.3 | Log motivic homotopy | Park | 第二十一章 | P1/source-verified |
+| UH-21.6 | Universal-homeomorphism invariance | Elmanto-Khan | 第二十一章 | located: Theorem 2.1.1; Corollaries 2.1.5-2.1.7 |
+| PF-21.13 | Perfect schemes motivic homotopy | Dahlhausen-Hekking-Wolters | 第二十一章 | R |
+| RE-22.4 | Relative Betti realization and six operations | Ayoub | 第二十二章 | located: Theorem 3.19 |
+| ET-22.5/6 | Etale realizations | Isaksen; Quick | 第二十二章 | P1/located |
+| RR-22.7 | Real-etale comparison | Bachmann | 第二十二章 | P1/located: Main Theorem |
 | RB-24.1 | Pullback formalism criteria | Magen 2025 | 第二十四章 | R |
 | RB-24.2 | Complex analytic stacks localization | Magen 2026 | 第二十四章 | R |
 
@@ -84,6 +88,6 @@
 
 ## G.7 本附录小结
 
-本附录把外部输入按用途重排。第九至第十八章 P0 教学主线现已定位；
-该范围内仍标 P1 的项目是高级模型或计算边界，不得在未升级并定位前被主线
-证明调用。尚待 P0 定位的工作集中在 equivariant/stacky/realization 扩展。
+本附录把外部输入按用途重排。主线 P0 条目以及 equivariant、stacky、Betti
+扩展现已定位；仍标 P1 的项目是高级模型或比较边界，不得在未升级并核对假设前被
+主线证明调用。

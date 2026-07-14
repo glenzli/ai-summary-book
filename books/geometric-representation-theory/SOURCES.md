@@ -53,6 +53,7 @@
 - Rouquier, Khovanov-Lauda-Rouquier algebras。用途：categorification of quantum groups。分类：核心定理。
 - Kang and Kashiwara, *Categorification of Highest Weight Modules via Khovanov-Lauda-Rouquier Algebras*, arXiv:1102.4677, https://arxiv.org/abs/1102.4677。用途：cyclotomic KLR categorification。分类：核心定理入口。
 - Braden, Proudfoot, Webster, *Quantizations of conical symplectic resolutions I*, arXiv:1208.3863；Braden, Licata, Proudfoot, Webster, *Quantizations of conical symplectic resolutions II*, arXiv:1407.0964。用途：symplectic resolution category $\mathcal O$ 和 symplectic duality。分类：核心定理和研究边界。
+- Slodowy, *Simple Singularities and Simple Algebraic Groups*。用途：type $A$ rational double points、最小分辨率和 exceptional-curve 交叉矩阵（ADE-RES-1）。分类：第二十三章外部输入。
 - Braverman, Finkelberg, Nakajima, *Towards a mathematical definition of Coulomb branches of 3-dimensional $\mathcal N=4$ gauge theories, II*, arXiv:1601.03586, https://arxiv.org/abs/1601.03586。用途：Coulomb branch 的 BFN 构造。分类：研究边界到核心定理之间，进入正文前需补 locator。
 - Braden, Licata, Proudfoot, Webster, symplectic duality。用途：symplectic duality 语言。分类：研究边界，进入正文前需补 locator。
 - Lusztig, *Introduction to Quantum Groups* 及 canonical basis 相关论文。用途：quantum groups、canonical bases、quiver variety/perverse sheaf 模型。分类：核心定理入口。

@@ -1,13 +1,6 @@
 # 附录 R：Rezk 完备化的构造输入
 
-## 目标
-
-本附录把第十四章的 Rezk 完备化从一句“外部输入”改写为精确构造蓝图。函子范畴与预层范畴单值性已在附录 U、X 展开；泛性质证明架构见附录 AA。本附录集中给出 Rezk 完备化构造及其与泛性质的接口：
-
-1.  构造预层范畴 $\widehat{\mathcal C}_{\mathsf{PSh}}=[\mathcal C^{op},\mathsf{Set}]$；
-2.  用 Yoneda 嵌入 $y:\mathcal C\to\widehat{\mathcal C}_{\mathsf{PSh}}$；
-3.  取其本质像作为 Rezk 完备化；
-4.  登记 fully faithful、essentially surjective 和泛性质所需输入。
+Yoneda 嵌入已经把预范畴 $\mathcal C$ 放入单值的预层范畴，但整个预层范畴远大于 $\mathcal C$。只取“仅仅可表”的预层，既保留原来的 Hom，又让对象谓词成为命题；所得 full subcategory 就是本附录采用的 Rezk 完备化。构造、单值性和嵌入的 weak-equivalence 性质在书内证明，向任意单值目标的泛性质则使用附录 AA 的精确外部输入。
 
 ## R.1 预层范畴输入
 
@@ -121,23 +114,17 @@ $$
 
 ## R.4 泛性质
 
-**定理 R.11（Rezk 完备化泛性质，证明架构）.** 若 $\mathcal D$ 是单值范畴，则预合成
+**外部输入定理 R.11（Rezk 完备化泛性质）.** 若 $\mathcal D$ 是单值范畴，则预合成
 $$
 (-)\circ\eta_{\mathcal C}:
-\mathsf{Fun}(\widehat{\mathcal C},\mathcal D)
-\to
-\mathsf{Fun}(\mathcal C,\mathcal D)
+[\widehat{\mathcal C},\mathcal D]
+\longrightarrow
+[\mathcal C,\mathcal D]
 $$
-是合适意义下的等价。
+是预范畴同构，因而其对象函数是类型等价。
 
-**证明架构。** 见附录 AA.12。附录 X 已补上函子范畴、自然同构和单值函子范畴；附录 AA 证明 weak equivalence 的限制函子对单值目标给出等价的标准架构，并把剩余逐行 transport 计算定位在 AA.8-AA.10。
+**来源与应用.** Ahrens--Kapulkin--Shulman 2015, Theorem 8.4；将 R.9-R.10 的 weak equivalence 代入即可。论文 Theorem 8.5 直接给出 Yoneda 本质像构造。完整来源和未重证的代表元、transport、函子律相容计算见附录 AA.8-AA.10。
 
-## R.5 当前状态
+## R.5 构造所得与外部边界
 
-本附录已经精确给出 Rezk 完备化的对象、Hom、嵌入函子和基本性质的证明路线。附录 AA 进一步给出泛性质的证明架构。仍未逐行书内展开的是：
-
-1.  本质像对象的代表元截断消去与扩张构造的逐步相容性；
-2.  fully faithful + essentially surjective 嵌入对单值目标的扩张唯一性；
-3.  AA.8-AA.10 中对象路径 transport、自然性和函子律的全部逐项细节。
-
-因此，第十四章可引用 R.5-R.10 作为构造蓝图，引用 R.11 和附录 AA 作为泛性质证明架构。
+R.5-R.10 已经定义 $\widehat{\mathcal C}$ 并证明它单值，同时证明 $\eta_{\mathcal C}$ fully faithful 且 essentially surjective。这里对命题截断的消去只用于构造另一个命题截断，因此没有选择代表。R.11 的难点不同：它要定义实际扩张函子，必须证明对象和态射候选类型可收缩。该步骤由外部输入定理承担，本附录不再以“证明架构”暗示 transport 细节已经书内完成。

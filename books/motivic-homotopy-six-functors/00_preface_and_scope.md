@@ -1,12 +1,14 @@
 # 序章：范围、严格性标准和资料源
 
-## 本章目标
+动机同伦论从一个看似朴素的问题开始：怎样在代数簇之间谈连续变形，同时又不丢掉
+Nisnevich 局部几何、Tate 扭曲和紧支撑推前？答案不是把拓扑术语逐字搬到概形上，
+而是依次改变所处的范畴：先由光滑概形生成空间值预层，施加 Nisnevich 下降，再反演
+`\mathbb A^1`-投影，最后反演 Tate 球。每一步都有自己的泛性质，也有不能越过的假设。
 
-本章固定本书的数学口径：哪些对象称为 motivic spaces，哪些对象称为 stable motivic homotopy categories，哪些六操作结论属于本书内部形式推导，哪些必须作为外部输入定理使用。本书不把动机同伦论写成代数几何与代数拓扑的意象类比，而是写成一套可检查的范畴论和几何形式主义。
-
-## 依赖前置知识
-
-需要基本范畴论、Grothendieck topology、sheaves、simplicial sets 或 spaces、presentable infinity-categories、Bousfield localization、稳定 infinity-categories、基础概形论中的 smooth、etale、proper、open immersion 和 closed immersion。
+本书假定读者熟悉基本范畴论、Grothendieck 拓扑、层、概形上的 smooth、etale、
+proper 与开闭嵌入；presentable 与稳定 infinity-范畴的技术细节可随附录 A、C、F
+补读。序章先固定宇宙、基概形和定理状态，使后文每个等价都能回答三个问题：对象属于
+哪个范畴，构造依赖什么几何输入，证明是在书内完成还是调用外部定理。
 
 ## 0.1 本书对象
 
@@ -109,7 +111,7 @@ geometric theorems。第五至第八章逐项拆分。
 
 **证明.** 六操作形式主义不是六个函子的裸存在，而是函子、伴随、base-change、projection formula、localization、purity 和复合相干的整体结构。基对象类别改变时，pullback 方块、proper/open/closed 分解和 descent 覆盖都会改变；允许态射类改变时，`f_!` 与 `f^!` 的定义域可能改变；相干结构强度改变时，命题能否迭代使用也会改变。因此三类信息缺一不可。`\square`
 
-## 0.5 本章小结
+## 0.5 从局部化到六操作的共同口径
 
 本书采用 `\mathbf H(S)` 和 `\mathbf{SH}(S)` 的 infinity-categorical 口径，
 把 sheafification、`\mathbb A^1`-localization 和 symmetric monoidal

@@ -1,12 +1,6 @@
 # 第六章：Liouville manifolds、sectors 与 wrapped Fukaya categories
 
-## 本章目标
-
-本章引入非紧 A-side 的标准语言：Liouville manifolds、Liouville sectors、admissible Lagrangians、Hamiltonian chords 和 wrapped Fukaya categories。重点是说明 wrapped category 与 compact Fukaya category 的差异，并为 sectorial descent 和 stop removal 做准备。
-
-## 依赖前置知识
-
-需要第三章的 exact symplectic geometry、第四章的 Fukaya category 和第五章的能量过滤思想。
+在非紧 Liouville 流形中，两条圆锥 Lagrangians 即使没有紧部交点，也可能在无穷远通过 Reeb 动力学产生无限族态射。固定一个 Hamiltonian 斜率只能看到其中有限一层；让斜率趋于无穷又要求 continuation maps 及其高阶相容性。Wrapped Fukaya 范畴正是对这一系统取同伦余极限，而不是把 compact Fukaya 范畴的“紧”字删掉。本章从 Liouville 与 Reeb 几何出发，构造 Hamiltonian chords、telescope 态射复形和 wrapped $A_\infty$ 运算，再引入允许协变嵌入的 Liouville sectors。第三至第五章提供 exact Floer、polygon 与过滤语言。
 
 ## 6.1 Liouville 几何
 
@@ -247,9 +241,7 @@ $\operatorname{End}(\bigoplus H_i)$ 的 $A_\infty$ quasi-isomorphism，但须
 
 **证明.** 这是命题 8.9 的 wrapped 情况。wrapped 性只改变 A-side 的 morphism complexes 和复合定义，不改变 Morita 生成元比较的形式逻辑。证毕。
 
-## 本章小结
-
-wrapped Fukaya category 是非紧 Liouville 几何的 A-side 核心对象。它的 morphisms 来自 Hamiltonian chords，并通过 continuation maps 或 cofinal Hamiltonians 组织。Liouville sectors 使 wrapped categories 具有局部到整体性质，为 sectorial descent、stop removal 和 microlocal sheaf 模型提供技术基础。
+Wrapped 态射现在由一列有限斜率复形的 telescope 给出，因此同时记住紧部 Floer 信息与无穷远 Reeb chords。Liouville sector 条件提供 no-escape 所需的边界几何，并使合适的 sector inclusion 诱导协变函子。这个方向性非常关键：它预示 wrapped 范畴将按 cosheaf 而非 sheaf 的方式胶合。下一章在无穷远加入 stop，考察限制 wrapping 后哪些对象会在移除限制时被局部化掉。
 
 ## 练习
 

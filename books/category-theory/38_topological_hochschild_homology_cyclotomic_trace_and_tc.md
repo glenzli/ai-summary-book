@@ -1,18 +1,14 @@
 # 第三十八章：Topological Hochschild homology、cyclotomic trace 与 $TC$
 
-## 本章目标
-
-本章补充第三十章中 trace methods 的核心。Algebraic $K$-theory 很难直接计算；topological Hochschild homology $THH$、topological cyclic homology $TC$ 和 cyclotomic trace
+Algebraic $K$-theory 对环和稳定范畴高度敏感，往往难以直接计算。Topological Hochschild homology $THH$ 把 Hochschild trace 提升为带圆作用的谱，cyclotomic Frobenius 又把不同固定点信息组织成 $TC$；cyclotomic trace
 
 $$
 K\to TC
 $$
 
-把 $K$-理论问题转化为带圆作用和 Frobenius 结构的谱论问题。本章关注范畴论结构：trace、circle action、cyclotomic spectra、localizing invariants 和纤维序列。
+把 $K$-理论问题转化为圆作用、Tate construction 与 Frobenius 结构的谱论问题。本章从小稳定幂等完备 $\infty$-范畴的 trace 出发，解释 $S^1$-action 的来源，区分 $TC^-$、$TP$ 与 $TC$，并说明 localizing invariance 和纤维序列在计算中的位置。
 
-## 依赖前置知识
-
-需要 stable $\infty$-categories、Morita theory、Hochschild chains、spectra、circle actions、limits/colimits、localizing invariants、noncommutative motives 和 Bousfield localization。
+本章使用稳定 $\infty$-范畴、Morita theory、谱、circle actions、localizing invariants 与非交换 motives。Cyclotomic spectra 的模型和 Nikolaus--Scholze 公式作为外部输入；固定点、homotopy fixed points 与 Tate construction 不会用同一符号混写，并明确区分 localizing invariant $THH$ 与一般不保持滤过余极限的 $TC$。
 
 ## 38.1 $THH$ 作为谱值 trace
 
@@ -60,7 +56,7 @@ $$
 
 满足相干条件。这里 $X^{tC_p}$ 是 Tate construction。
 
-**外部输入定理 38.7.** 对每个合适的小稳定 $\infty$-范畴 $C$，$THH(C)$ 自然提升为 cyclotomic spectrum。
+**外部输入定理 38.7.** 对每个小稳定幂等完备 $\infty$-范畴 $C$，$THH(C)$ 自然提升为 cyclotomic spectrum；该提升对 exact functors 自然。
 
 **命题 38.8.** 忘却 cyclotomic 结构后，$THH(C)$ 仍保留圆作用。
 
@@ -68,16 +64,22 @@ $$
 
 ## 38.3 $TC$ 的定义形式
 
-**定义 38.9.** Topological cyclic homology $TC(X)$ 是 cyclotomic spectrum $X$ 的某个 functorial invariant。Nikolaus-Scholze 公式把 $p$-complete 情形写为 equalizer 或 fiber：
+**定义 38.9.** 对带圆作用的谱 $X$，记
 
 $$
-TC(X;p)=\operatorname{fib}\left(
-X^{h\mathbb T}\xrightarrow{\operatorname{can}-\varphi}
-X^{t\mathbb T}
+TC^-(X)=X^{h\mathbb T},\qquad TP(X)=X^{t\mathbb T}.
+$$
+
+若 $X$ 是 bounded-below cyclotomic spectrum，则 Nikolaus--Scholze 公式在 $p$-完成后给出
+
+$$
+TC(X)^\wedge_p\simeq\operatorname{fib}\left(
+TC^-(X)^\wedge_p\xrightarrow{\operatorname{can}-\varphi_p}
+TP(X)^\wedge_p
 \right)
 $$
 
-在合适 $p$-complete 约定下成立。
+其中 $\operatorname{can}$ 是 homotopy fixed points 到 Tate construction 的典范映射，$\varphi_p$ 由 cyclotomic Frobenius 及 Tate-orbit 识别诱导。无 bounded-below 假设时应使用 cyclotomic spectra 范畴中的原始 equalizer 定义，不能直接套用这一简式。
 
 **定义 38.10.** 对小稳定 $\infty$-范畴 $C$，定义
 
@@ -105,7 +107,7 @@ $$
 K(C)\to THH(C),
 $$
 
-cyclotomic trace 可视为 Dennis trace 加上 cyclotomic refinement 后到 $TC$ 的提升。
+cyclotomic trace 则利用 $THH$ 的 cyclotomic 结构构造。二者相容，但一般不存在自然映射 $THH(C)\to TC(C)$ 使 Dennis trace 按字面因子化为 cyclotomic trace；“refinement”指额外结构，而不是该方向上的函子分解。
 
 **命题 38.14.** 若 $C\simeq D$ Morita equivalent，则 cyclotomic trace 的方块
 
@@ -137,11 +139,11 @@ $$
 
 ## 38.6 Trace methods 的范畴论意义
 
-**命题 38.17.** Trace methods 把 $K$-理论问题因子化为 localizing invariants 和 cyclotomic fixed point constructions 的组合。
+**命题 38.17.** Trace methods 先以 localizing invariant $THH$ 提取 Morita 不变量，再以 cyclotomic fixed-point constructions 形成 $TC$；第二步通常不保持滤过余极限。
 
-**证明.** Cyclotomic trace 是自然变换 $K\to TC$。$TC$ 由 $THH$ 先取 trace 得到 cyclotomic spectrum，再取 homotopy fixed points、Tate construction 和 Frobenius equalizer/fiber 得到。因此 $K$-理论问题可先映到 $THH$ 这类 localizing/Morita invariant，再通过 cyclotomic 结构做固定点计算。$\square$
+**证明.** $THH$ 由定理 38.4 是 localizing invariant。$TC$ 由 cyclotomic $THH$ 取 homotopy fixed points、Tate construction 与 Frobenius 的 equalizer/fiber 得到；这些极限型构造一般不保持滤过余极限，所以 $TC$ 一般不是 Blumberg--Gepner--Tabuada 意义下的 localizing invariant。Cyclotomic trace $K\to TC$ 仍然是自然的 Morita 不变量变换，但这不把 $TC$ 变成 localizing invariant。$\square$
 
-**注 38.18.** 这也是非交换 motives 的一个重要动机：$K$、$THH$、$TC$ 都是稳定范畴的不变量，而非某个环呈现的不变量。它们的自然变换应在 motives 或 localizing invariants 的范畴中理解。
+**注 38.18.** 非交换 motives 直接控制的是满足相应可加性或局部化公理的不变量，例如非连通 $K$-理论与 $THH$。$TC$ 仍是稳定范畴的 Morita 不变量，但因上述余极限问题，不能不加限定地称为 localizing motive 上的函子。
 
 ## 38.7 相对 trace 与形式后果
 
@@ -204,7 +206,7 @@ $$
 
 以及对应的 $TC$ 方块。稳定范畴中，两个可比较态射的源和靶均为等价时，其纤维也等价。因此相对 $K$ 与相对 $TC$ 均被识别。$\square$
 
-## 38.8 本章小结
+## 38.8 从 Hochschild trace 到 cyclotomic trace
 
 $THH$ 是谱值 Hochschild trace，天然带圆作用并提升为 cyclotomic spectrum。$TC$ 从 cyclotomic structure 中提取算术信息。Cyclotomic trace $K\to TC$ 把难计算的代数 $K$-理论连接到更可计算的固定点与 Tate 构造。Dundas-Goodwillie-McCarthy 定理说明在 nilpotent 相对情形中，这种近似是 $p$-完成等价。
 

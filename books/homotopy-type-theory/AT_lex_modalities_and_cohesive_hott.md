@@ -82,7 +82,7 @@ $$
 
 **事实 AT.10（synthetic algebraic geometry 边界）.** 合成代数几何使用特定的 modal/cohesive 或 Zariski-like 类型论结构。其“环对象”“仿射线”“Zariski open”等概念不是第八章集合层代数的直接实例。
 
-**使用规则 AT.11.** 若本书后续加入合成代数几何章节，必须另列：
+**使用规则 AT.11.** 任何合成代数几何结论都必须另列：
 
 1.  基础对象语言；
 2.  所用模态或覆盖结构；
@@ -90,6 +90,6 @@ $$
 4.  是否假设 choice、excluded middle、resizing；
 5.  与 HoTT Book 普通集合层代数的翻译边界。
 
-## AT.6 本附录关闭的缺口
+## AT.6 模态与模型的分界
 
-附录 AJ 处理普通模态、局部化和正交分解；本附录补上 left exactness、open/closed modality、cohesive 算子和 modal induction 的规则接口。剩余不是“概念未定义”，而是具体模型和具体几何理论的展开。
+附录 AJ 的反射模态不自动 left exact，也不自动组成 cohesive adjunction。Open/closed modality、cohesive 算子和 modal induction 只有在相应规则与模型已经给出时可用；具体几何结论还需单独的环对象、覆盖与微局部公理。

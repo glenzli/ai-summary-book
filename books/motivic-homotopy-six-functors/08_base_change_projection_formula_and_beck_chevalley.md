@@ -1,12 +1,15 @@
 # 第八章：Base change、projection formula 与 Beck-Chevalley 相干
 
-## 本章目标
+沿 Cartesian 方块先推前再拉回，与先拉回再推前之间总能写出一个 mate；真正有内容的
+问题是这个 mate 何时可逆。类似地，投影公式的自然映射总可构造，但普通 `f_*` 版本
+只在 properness、dualizability 或其他精确条件下成为等价。把“有交换态射”误写成
+“任意换基等价”，会使后续每一次粘合计算失去依据。
 
-本章系统整理 motivic 六操作中的 base change、projection formula 和 Beck-Chevalley 相干。第四章已经构造了抽象 mate；本章说明在 `\mathbf{SH}(-)` 中哪些 mate 被外部定理保证为等价，并证明若干组合稳定性。
-
-## 依赖前置知识
-
-需要六操作、Cartesian squares、伴随、mate calculus、projection formula、proper/open/smooth morphisms、stable infinity-categories 和 symmetric monoidal structures。
+我们固定一个 Cartesian 方块，分别追踪 ordinary 与 extraordinary exchange map，
+并按竖直态射 proper、换基态射 smooth、或 exceptional 态射 separated 的情形调用
+不同外部定理。第四章和附录 D 提供 mate 与 pasting calculus；本章的任务是把它们
+落实到 `\mathbf{SH}(-)`，证明投影公式、开闭 localization 和 internal Hom 公式在
+复合与换基下如何相容。
 
 ## 8.1 Cartesian 方块与交换变换
 
@@ -209,7 +212,39 @@ dualizability、properness 或 projection formula。`\square`
 `A^\vee\otimes-` 时需要；这一步才与命题 8.7 的 ordinary projection
 formula 联系。
 
-## 8.6 本章小结
+**例子 8.18（换基保留非约化纤维）.** 设 `k` 为域，`n\geq2`，令
+`i:\operatorname{Spec}k\hookrightarrow\mathbb A^1_k` 为原点，令
+`g:\mathbb A^1_k\to\mathbb A^1_k` 由 `t\mapsto t^n` 给出。Cartesian
+拉回不是约化原点，而是
+
+$$
+Z_n=\operatorname{Spec}k[t]/(t^n),
+$$
+
+并得到方块
+
+$$
+\begin{array}{c}
+Z_n\overset{g'}\longrightarrow\operatorname{Spec}k\\
+\downarrow i_n\qquad\downarrow i\\
+\mathbb A^1_k\overset{g}\longrightarrow\mathbb A^1_k.
+\end{array}
+$$
+
+闭嵌入 `i` proper，故定理 8.3(2) 给出对每个
+`E\in\mathbf{SH}(k)` 的等价
+
+$$
+g^*i_*E\simeq i_{n*}g'^*E.
+$$
+
+这里右端由 scheme-theoretic fiber `Z_n` 决定，而不是先把它约化为一个点。
+若随后使用某个 nil-invariance 定理把 `\mathbf{SH}(Z_n)` 与
+`\mathbf{SH}(k)` 比较，那是另一个外部输入；它不属于 proper base change
+本身。这一区分在 excess intersection 中尤其重要，因为非横截换基的厚化会进入
+余法复形或 excess bundle。
+
+## 8.6 可逆 mate 的适用边界
 
 Base change 和 projection formula 是六操作可计算性的核心，但不存在一个
 无条件的“所有 base change、所有普通投影公式”定理。Exceptional base

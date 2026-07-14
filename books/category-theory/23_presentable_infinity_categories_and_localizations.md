@@ -1,12 +1,8 @@
 # 第二十三章：可表现 $\infty$-范畴、可达局部化与 $\operatorname{Pr}^L$
 
-## 本章目标
+大多数高阶范畴不能由对象清单掌握，却常能由一小族 $\kappa$-紧对象经滤过余极限生成。Presentable $\infty$-范畴把这种可达性与全部小余极限结合起来，并可表示为预层 $\infty$-范畴的可达局部化。以保持余极限的函子为态射得到 $\operatorname{Pr}^L$，它为高阶 topos、高阶代数和导出几何提供共同工作环境。本章把第十二章的普通理论提升到映射空间口径，并证明伴随函子与局部化的关键判据。
 
-本章把第十二章的局部可表现范畴推广到 $\infty$-范畴：定义预层 $\infty$-范畴、紧对象、可达 $\infty$-范畴、presentable $\infty$-category、accessible localization 与 $\operatorname{Pr}^L$。这些概念是高阶 topos、高阶代数、稳定同伦论和导出几何的共同基础。
-
-## 依赖前置知识
-
-需要普通可表现范畴、quasi-category、映射空间、极限与余极限、Cartesian fibration 和 $\infty$-topos 的 left exact localization 口径。
+读者需要 quasi-category、映射空间、极限/余极限和 left exact localization。紧性与可达性始终相对于明确的正则基数；凡使用 adjoint functor theorem 或 Ind-completion 的普适性质，都会列出小性与余极限保持条件。
 
 ## 23.1 预层 $\infty$-范畴与 Yoneda
 
@@ -270,7 +266,7 @@ $$
 
 **证明.** 前半由命题 23.28；后半是左伴随保持余极限。$\square$
 
-## 23.8 本章小结
+## 23.8 预层、生成与可达局部化
 
 Presentable $\infty$-categories 是现代高阶范畴论中处理“大”同伦范畴的标准框架。预层 $\infty$-范畴是自由生成对象；accessible localization 把预层范畴裁剪成 sheaves、local objects、稳定局部化和模范畴；$\operatorname{Pr}^L$ 则把这些大范畴及其左伴随组织成高阶代数可操作的环境。
 

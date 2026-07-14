@@ -1,15 +1,14 @@
 # 第十七章：Norm functors、normed spectra 与 multiplicative transfers
 
-## 本章目标
+对一个分裂的有限 etale 覆盖 `\coprod_{r=1}^dS\to S`，普通推前把各分量做有限直和，
+而 norm 把它们做张量积。前者是加性传递，后者是乘法传递；即使在最简单的分裂覆盖上，
+两者也不会混同。一般 finite etale 态射的 norm 正是这一张量模型经下降粘合后的形式。
 
-本章介绍 motivic norm functors。Finite locally free morphisms 在 pointed
-unstable motivic homotopy 中有 norm；本章使用的 stable norm 则限于 finite
-etale morphisms。Normed structures 是 motivic `E_\infty`-ring spectra 的增强，
-并与 additive transfers、framed transfers 和 Galois theory 相互作用，但不能混同。
-
-## 依赖前置知识
-
-需要 finite etale morphisms、symmetric monoidal functors、commutative algebra objects、six operations、finite correspondences、framed transfers、Galois theory、`H\mathbb Z`、`KGL` 和 `MGL`。
+本章先区分 finite locally free 态射上的 pointed unstable norm 与 finite etale 态射上
+可稳定化的 norm，再把 normed spectrum 定义为 span 范畴上的相干 section。第七章的
+additive transfer、第十四章的 finite correspondence 和第十五章的 framed transfer
+提供比较对象；`H\mathbb Z`、`KGL`、`MGL` 的 normed structures 则分别按各自基假设
+引用。读者由此能看出，逐个写下 norm map 远不足以得到 Tambara 型分配律。
 
 ## 17.1 Norm functor
 
@@ -100,10 +99,10 @@ $$
 
 ## 17.3 与 Galois theory 的关系
 
-**高级外部输入 17.7（P1）.** Norm functors 与 finite-etale/Galois
+**高级外部输入 17.7.** Norm functors 与 finite-etale/Galois
 functoriality 及 classical multiplicative transfers 的逐理论比较，需要为所选
-cohomology theory 单独验证。本章 P0 只使用 Proposition 4.5 与 Definition
-7.1 的范畴性 norm package。
+cohomology theory 单独验证。本章后续形式推导只使用 Proposition 4.5 与
+Definition 7.1 的范畴性 norm package。
 
 **命题 17.8.** 若 `L/k` 是 finite separable field extension，则 normed spectrum `E` 给出从 `E(L)` 到 `E(k)` 的 multiplicative norm map。
 
@@ -124,7 +123,7 @@ Definition 17.4 给出。因此所得 operation 是 contravariant restriction
 
 ## 17.4 Norms 与 transfers 的兼容
 
-**高级外部输入 17.9（P1）.** Motivic norms 与 framed/additive transfer
+**高级外部输入 17.9.** Motivic norms 与 framed/additive transfer
 结构的 norm-monoidal 或 Tambara 型 refinement 是额外比较定理，不由 normed
 spectrum 定义自动产生。
 
@@ -170,7 +169,7 @@ $$
 section `n\in H^{0,0}` 的 multiplicative norm 是 `n^d`，不是 additive
 transfer 的 `dn`。对域上的 Chow groups，Bachmann--Hoyois Theorem 14.14
 把 `H\mathbb Z`-norm 与 Fulton--MacPherson norm 比较；`KGL` 与 classical
-algebraic K-theory norm 的进一步识别属于 P1。这个例子具体显示 norm 与
+algebraic K-theory norm 的进一步识别需要额外比较定理。这个例子具体显示 norm 与
 additive pushforward 的 variance 和代数性质不同。
 
 ## 17.6 失败模式
@@ -189,13 +188,13 @@ $$
 
 Normed structure 还要求对每个 finite etale `f:S'\to S` 有跨基的 multiplicative transfer `f_\otimes` 作用和所有复合/base-change/distributivity 相干。这些数据不包含在单个 fiber `E_S` 的交换代数结构中。`\square`
 
-## 17.7 本章小结
+## 17.7 乘法转移所需的全部相干
 
 Norms 是 finite etale stable motivic homotopy 中的乘法转移；finite locally
 free 的一般构造在本章只位于 pointed unstable 层。Normed spectrum 是 span
 category 上带全部 coherence 的 section，不只是 commutative ring spectrum
 加一族 maps。`H\mathbb Z`、`KGL`、`MGL` 的精确基假设分别由 Theorems
-14.5、15.22、16.19 控制；framed/Tambara 兼容留在 P1。
+14.5、15.22、16.19 控制；framed/Tambara 兼容由独立外部输入处理。
 
 ## 练习
 

@@ -109,8 +109,8 @@ $$
 
 **事实 BJ.13（分类接口）。** 在有 EM 型、局部系数和 tower 收敛的口径中，connected types 可由 Postnikov data 重建到相应等价。
 
-**验证状态.** 本书只把该事实作为 obstruction theory 接口。要升级为正文定理，需要完整展开 local coefficient、twisted EM types、tower limit 和 Whitehead principle。
+**外部边界.** 本书只把该事实作为 obstruction theory 接口。其定理身份依赖 local coefficient、twisted EM types、tower limit 和 Whitehead principle 的精确外部版本。
 
-## BJ.6 本附录关闭的缺口
+## BJ.6 塔收敛与分类边界
 
-本附录把 Postnikov tower、同伦群 fiber、Whitehead theorem、obstruction class、$k$-invariant 和 Postnikov classification 纳入教材结构。剩余义务是 EM 型塔的完整构造、局部系数、twisted cohomology、tower convergence 和 Whitehead 原理的逐项证明。
+有限 Postnikov stage 与由全部 stages 重建原类型是不同结论。后者需要 EM 型、局部系数、twisted cohomology、tower convergence 与 Whitehead 原理；本附录没有从基础 HIT 规则构造这些数据，因此只允许在定理逐项列出这些输入后使用分类结论。

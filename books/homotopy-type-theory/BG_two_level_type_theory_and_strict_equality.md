@@ -76,6 +76,6 @@ $$
 
 **关系 BG.15（directed/simplicial type theory）。** 2LTT 与附录 AS/AX 的 simplicial type theory 是不同路线：前者加入 strict 外部层；后者改变对象语言，使 directed hom 和 horn filler 成为内部结构。
 
-## BG.7 本附录关闭的缺口
+## BG.7 两层语言的比较边界
 
-本附录把 strict equality、外部自然数、semisimplicial truncations、Reedy fibrant diagrams 和 strictification 的使用纪律补入教材。剩余义务是选择具体 2LTT 语法和模型，给出 semisimplicial/Rezk 对象的完整定义，并证明与附录 BB 的 synthetic $\infty$-category 接口相容。
+Strict equality、外部自然数和 Reedy 图只有相对于一套具体 2LTT 语法与模型才有确定含义。本附录没有构造无限 semisimplicial/Rezk 对象，也没有给出它与附录 BB 的 synthetic $\infty$-category 语言之间的翻译；缺少该翻译时，两套接口不能互相替代。

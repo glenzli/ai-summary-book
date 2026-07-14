@@ -1,18 +1,14 @@
 # 第二十八章：六操作形式主义、基变换与投影公式
 
-## 本章目标
-
-本章给出六操作形式主义的范畴论骨架。六操作把每个几何对象 $X$ 关联到一个稳定闭幺半 $\infty$-范畴 $\mathcal D(X)$，并为每个态射 $f:X\to Y$ 提供
+几何上的拉回、直接像、紧支撑直接像和异常拉回并非六个互不相关的函子；它们由伴随、基变换、投影公式、局部化与对偶性组成一套相干系统。六操作形式主义把每个几何对象 $X$ 关联到稳定闭幺半 $\infty$-范畴 $\mathcal D(X)$，并为态射 $f:X\to Y$ 提供
 
 $$
 f^*,\quad f_*,\quad f_!,\quad f^!,\quad -\otimes_X-,\quad \underline{\operatorname{Hom}}_X(-,-).
 $$
 
-它的核心不是单个函子的存在，而是这些函子之间的伴随、基变换、投影公式、局部化三角和对偶性相干。本章以抽象公理化形式书写，具体的 sheaf、étale sheaf、motivic sheaf、$D$-module 和 quasi-coherent sheaf 版本作为外部输入例子处理。
+核心不在单个函子的存在，而在这些函子之间的相干性。本章先抽象规定适用的态射类别，再从 mate correspondence 解释基变换，从闭结构推出投影公式的型，并把局部化三角与 Verdier 对偶放进同一框架。Sheaf、etale sheaf、motivic sheaf、$D$-module 和 quasi-coherent sheaf 版本只在来源明确的假设下作为实例。
 
-## 依赖前置知识
-
-需要伴随函子、闭幺半范畴、Kan 延拓、sheaf 与 topos、Cartesian fibration、presentable $\infty$-范畴、stable $\infty$-category、Beck-Chevalley 条件、compact generation 和 dg/导出增强。
+本章汇合伴随、闭幺半结构、Kan 延拓、topos、Cartesian fibration、presentable/stable $\infty$-范畴、Beck--Chevalley 与 dg enhancement。每个公式都会声明方形的性质、态射是否 proper/smooth 及使用 $*$ 还是 $!$，避免把不同几何理论中的六操作无条件合并。
 
 ## 28.1 六操作资料的抽象形式
 
@@ -153,17 +149,21 @@ $$
 
 自然性来自单位、余单位和伪函子相干。$\square$
 
-**命题 28.9.** 非常基变换态射可由 $f_!\dashv f^!$ 和 $f'_!\dashv f'^!$ 的伴随数据自然构造。
-
-**证明.** 构造与命题 28.8 对偶。由单位 $\operatorname{id}\to g'_*g'^*$ 和方块相干，先得到从 $g^*f_!$ 到含 $f'_!g'^*$ 的表达，再用相应余单位消去。等价地，可把所需态射取为右伴随之间比较态射
+**注 28.9.** 与命题 28.8 不同，仅有四个伴随和方块的伪函子相干并不足以强制产生非常基变换态射。一个六操作形式主义还需给出 exchange transformation
 
 $$
-g'^*f^!\to f'^!g^*
+g^*f_!\longrightarrow f'_!g'^*
 $$
 
-的左伴随转置。伴随转置在 $\infty$-范畴中由映射空间等价唯一确定。$\square$
+及其与复合、单位和 mate 对应的相容性。在具体 sheaf 理论中，该态射通常由紧化或支撑条件构造；它何时为等价是几何定理，而非纯形式伴随演算的结论。
 
-**外部输入定理 28.10（基变换定理）.** 在经典可构造 sheaf、étale sheaf、motivic sheaf 和许多 $D$-module 六操作理论中，满足适当有限性、可构造性或 properness 假设的 Cartesian 方块满足相应普通或非常基变换等价。
+**外部输入定理 28.10（两种标准基变换定理）.** 对局部紧、有限维并带有限分层的空间及其可构造 sheaves，若 $f$ proper，则命题 28.8 的比较给出
+
+$$
+g^*Rf_*\simeq Rf'_*g'^*.
+$$
+
+对 scheme 的 étale 导出范畴，若 $f$ proper 且系数为与各剩余特征互素的 torsion ring，则同一 proper base change 等价成立。非常推前 $f_!$、motivic sheaves 与 $D$-modules 各有相应基变换定理，但其可分离有限型、可构造性或特征假设必须按所用形式主义另行陈述；本章不把这些版本合并为一个无条件定理。
 
 ## 28.4 投影公式
 
@@ -378,7 +378,7 @@ $$
 
 在稳定范畴中推出 $K\simeq i_*i^*K$。$\square$
 
-## 28.9 本章小结
+## 28.9 六操作的相干骨架
 
 六操作形式主义由稳定闭幺半 presentable $\infty$-范畴的参数化系统、伴随对、基变换、投影公式、proper compatibility、recollement 和 Verdier 对偶构成。它把 topos 和 sheaf 理论中的局部-整体原则，与稳定同伦论、Morita 理论和高阶 base change 相连。具体几何理论中的六操作存在性是大型外部输入；本章提供的是可检查的抽象结构和相干关系。
 

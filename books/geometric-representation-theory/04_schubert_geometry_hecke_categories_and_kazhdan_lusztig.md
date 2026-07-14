@@ -1,12 +1,6 @@
 # 第四章：Schubert 几何、Hecke categories 与 Kazhdan-Lusztig 基
 
-## 本章目标
-
-本章把第一章的 Schubert 分解和第三章的 equivariant sheaves 结合起来，构造有限型 Hecke category 的基本版本，并说明 Kazhdan-Lusztig 基如何由 intersection complexes 给出。大型几何定理仍作为外部输入。
-
-## 依赖前置知识
-
-需要第一章的 Bruhat decomposition、第三章的 perverse sheaves 和附录 A 的卷积 correspondence。
+Hecke algebra 的乘法把两个 double cosets 合成一个线性组合，但系数本身没有解释为何非负，也看不见 Schubert variety 的奇点。把 $B\backslash G/B$ 上的 constructible complexes 沿乘法 correspondence 卷积，会把每个 basis element 提升成一个对象，把乘法系数提升成分解重数。标准对象记录开 cell 的延拓，IC 层则把闭包奇点纳入其中；两者在 Grothendieck group 中分别对应标准基和 Kazhdan--Lusztig 基。有限秩模型 $SL_2/B\simeq\mathbb P^1$ 将检验单位、二次关系和 IC normalization，而一般 KL 识别仍明确作为 mixed/graded 几何的外部输入。
 
 ## 4.1 Hecke algebra
 
@@ -96,6 +90,8 @@ B\backslash G/B \xleftarrow{\operatorname{id}} B\backslash G/B \xrightarrow{\ope
 $$
 由恒等 correspondence 的 functor 为 identity，得到 $\mathbf 1\star\mathcal F\simeq\mathcal F$ 和 $\mathcal F\star\mathbf 1\simeq\mathcal F$。$\square$
 
+结合性和单位说明这里确有 monoidal category，但还没有看到 Hecke 二次关系。最小 Schubert closure $\overline X_s\simeq\mathbb P^1$ 已经包含开 cell 与闭点两个相对位置，它的二重卷积正好产生第一项 lower contribution。
+
 ## 4.4 标准对象的简单反射计算
 
 **定义 4.10.** 对 simple reflection $s$，记
@@ -134,6 +130,8 @@ $$
 $$
 或在 graded 版本中引入 $v$ 记录 Tate twist/shift。具体 convention 在 mixed sheaf 版本中更自然；本章只记录 decategorification 入口。
 
+未分级 Betti category 会丢掉 $v$ 所记录的权或 grading，因此不能单凭前面的卷积定义识别完整 KL 基。下面的定理恰好补上 mixed/graded 结构与 IC 分解之间的深层联系。
+
 **外部输入定理 4.14.** 在合适的 mixed 或 graded sheaf theory 中，映射
 $$
 \mathcal H_W\longrightarrow K_0(\mathsf H_G)
@@ -141,6 +139,8 @@ $$
 把 Kazhdan-Lusztig basis element $C_w$ 送到 $[\operatorname{IC}_w]$，把标准基送到标准对象类，并与卷积乘法相容。
 
 该定理依赖 purity、decomposition theorem 和 Kazhdan-Lusztig 的 Hecke algebra formalism。当前作为外部输入，不在本章重证。
+
+定理的内容不只是给两个基重新命名：IC stalk 的分次维数成为从标准对象到 self-dual 基的系数，于是代数中的多项式开始测量具体奇点。最低秩时闭包光滑，没有高阶奇点贡献，计算应退化为 $P_{e,s}=1$。
 
 **推论 4.15.** Kazhdan-Lusztig 多项式的系数可解释为 Schubert variety 的 intersection cohomology stalk 维数，具体 shift 和 $v$ convention 由定理 4.14 的 normalization 决定。
 
@@ -161,9 +161,7 @@ $$
 
 **证明.** 第一章例 1.18 给出 Schubert 分层。点和 $\mathbb P^1$ 都光滑，第三章命题 3.11 说明常值 sheaf 按维数 shift 后 perverse。$\overline X_s$ 的 open stratum 为 $\mathbb A^1$，其闭包光滑，middle extension 是整空间上的 shifted constant sheaf。KL polynomial 的值由外部输入定理 4.14 和 IC stalk 无高阶奇点贡献得到。$\square$
 
-## 本章小结
-
-本章构造了有限 Hecke category 的 constructible sheaf 版本，写出卷积 correspondence 并证明卷积的结合性和单位性质。IC sheaves 与 Kazhdan-Lusztig basis 的对应、KL 多项式的 stalk 解释和 positivity 仍是外部输入，后续需要 theorem locator。
+卷积把 double-coset 乘法提升为函子，$SL_2$ 的点与射影直线则显示单位项和简单反射项怎样同时出现。一般 Schubert closure 的奇点使 IC stalk 不再平凡，Kazhdan--Lusztig 多项式由此进入。下一章把同一套 pull--intersect--push 机制移到 nilpotent cone 上；在那里卷积的 top Borel--Moore homology 将产生 Weyl group 本身。
 
 ## 练习
 

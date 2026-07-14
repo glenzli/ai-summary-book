@@ -1,12 +1,6 @@
 # 第十三章：带系数 prismatic cohomology 与非阿贝尔边界
 
-## 本章目标
-
-本章记录带系数 prismatic cohomology、Hodge-Tate prismatic crystals、$q$-Higgs modules 和 non-abelian $p$-adic Hodge theory 的边界。该部分目前仍在快速发展，因此本章以定义接口、风险边界和已核查预印本位置为主。
-
-## 依赖前置知识
-
-依赖第六章 prismatic crystals、第七章 Nygaard/syntomic、第九章 Hodge-Tate specialization。需要 Higgs modules、connections 和 non-abelian Hodge theory 的基本背景。
+常系数 prismatic cohomology 只描述最简单的线性对象；一旦把 crystal $\mathcal E$ 放入 structure sheaf，比较定理必须同时追踪系数的 descent、Frobenius 与滤过。Hodge--Tate crystal 和 $q$-Higgs module 提供线性化接口，而非阿贝尔 $p$-进 Hodge 理论还要处理模空间与高阶同伦，不能由张量范畴类比直接推出。本章从第六章的 crystals、第七章的 Nygaard/syntomic 和第九章的 Hodge--Tate specialization 出发，先给出带系数上同调的精确定义，再列出升级到非阿贝尔方向所缺的结构与已知外部输入。Higgs module、connection 与非阿贝尔 Hodge 的基本语言作为背景。
 
 ## 13.1 带系数 prismatic cohomology
 
@@ -30,7 +24,7 @@ $$
 
 **研究边界 13.4.** Tsuji 2025 年工作研究 smooth $p$-adic formal scheme 上 locally finite free prismatic crystal 的 prismatic cohomology，并与对应 relative Breuil-Kisin-Fargues module 的 $A_{\inf}$-cohomology 比较。其方法使用 $q$-Higgs modules 和 cohomological descent。
 
-**说明 13.5.** 本书把该结果作为带系数理论的重要入口，但不将其写入基础定理链。后续若要升级，必须补齐 crystal category、$q$-Higgs category、descent hypotheses 和 tensor compatibility 的 locator。
+**说明 13.5.** 本书把该结果作为带系数理论的重要入口，但不将其写入基础定理链。若要强化这一结论，必须精确给出 crystal category、$q$-Higgs category、descent hypotheses 与 tensor compatibility，并分别引用承担这些步骤的定理。
 
 ## 13.3 Hodge-Tate prismatic crystals
 
@@ -75,9 +69,9 @@ $$
 
 **证明.** 结构层 $\mathcal O_\Delta$ 满足 crystal transition；有限直和保持 transition isomorphism。Derived global sections 与有限直和相容。证毕。
 
-## 本章小结
+## 13.6 从线性系数到非阿贝尔障碍
 
-带系数和非阿贝尔方向是 prismatic theory 的前沿延伸。本章将其组织为研究边界：普通带系数 cohomology 可以定义，但深层 comparison、Higgs correspondence 和 $v$-bundle restriction 需要严格 hypotheses 和 locator 支撑。
+带系数和非阿贝尔方向是 prismatic theory 的前沿延伸。本章将其组织为研究边界：普通带系数 cohomology 可以定义，但深层 comparison、Higgs correspondence 和 $v$-bundle restriction 需要逐项声明严格假设并引用相应的比较定理。
 
 ## 练习
 

@@ -1,14 +1,8 @@
 # 第十一章：还原群、对偶群和 L 群
 
-## 本章目标
+`GL(n)` 的对偶群仍是另一个 `GL(n)`，这个偶然的自对偶性容易掩盖一般情形的结构。对任意连通还原群 $G$，根与余根必须互换，得到复对偶群 $\widehat G$；若 $G$ 非分裂，Galois 作用还必须与 $\widehat G$ 组成半直积。因而 Langlands 参数的靶不是裸群 $\widehat G$，而是 L 群 ${}^LG$。本章从代数群、极大环面和根资料开始，解释这一构造为何自然，并逐步定义 L 同态、非分歧参数及其局部因子。
 
-本章建立一般 Langlands 纲领所需的代数群语言：connected reductive group、根资料、对偶群、Galois 作用和 L 群。前十章主要围绕 `GL(1)` 与 `GL(2)` 展开；从本章开始，自守表示的对象不再固定为 `GL(n)`，而是任意局部域或整体域上的还原群 $G$。Langlands 参数的靶不应写成普通复群 $\widehat G$，而应写成含有 Galois 或 Weil 作用的 L 群 ${}^LG$。
-
-## 依赖前置知识
-
-需要第一章的局部域和整体域，第四章的局部紧群与光滑表示，第五章的 Weil 群与局部参数。需要基本代数几何中的 affine group scheme、smoothness、base change 和 Lie algebra 权空间分解。本章把 connected reductive groups 的结构定理、根资料分类定理和 pinning 的 Galois 作用作为外部输入。
-
-收口归一化回指：本章 L 群、L 同态、非分歧参数、Satake 参数和 L 群表示给出的局部因子按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、8 节解释。
+读者需要局部域、光滑表示、Weil 群以及 affine group scheme 和权空间分解的基础。还原群结构定理、根资料分类和 pinning 上的 Galois 作用作为外部输入。L 群、Satake 参数和局部 L 因子采用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 2、4、8 节的约定。
 
 ## 11.1 代数群与还原群
 
@@ -545,7 +539,7 @@ $$
 $$
 因此两种记法记录同一组半单共轭数据。$\square$
 
-## 11.10 本章小结
+## 11.10 对偶群为何成为参数空间
 
 一般 Langlands 纲领的基本对象是 connected reductive group $G$，但参数的靶不是 $G$ 本身。先从 $G_{\overline F}$ 的根资料构造复对偶群 $\widehat G$，再把 $F$-结构给出的 Galois 或 Weil 作用加入，得到 L 群
 $$

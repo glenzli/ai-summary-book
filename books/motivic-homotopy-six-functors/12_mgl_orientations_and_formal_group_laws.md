@@ -1,12 +1,15 @@
 # 第十二章：Algebraic cobordism、orientations 与 formal group laws
 
-## 本章目标
+一个上同调理论若能为每个向量丛选择相容的 Thom 类，就可以定义 Chern 类；而线丛
+张量积如何作用于第一 Chern 类，则由一个形式群律记录。`MGL` 把所有这样的定向理论
+汇集到同一个代表谱中，其地位类似拓扑中的复 cobordism，但 motivic 双分次、基概形
+和正特征会给泛性质增加不可省略的条件。
 
-本章引入 algebraic cobordism spectrum `MGL`。它是 motivic homotopy theory 中对应拓扑复 cobordism `MU` 的对象，并通过 orientation 的泛性质控制 oriented motivic ring spectra。本章只证明 orientation 的形式后果，把 `MGL` 的构造、泛性质和 Hopkins-Morel 型定理作为外部输入。
-
-## 依赖前置知识
-
-需要 Thom spaces、Grassmannians、commutative motivic ring spectra、projective bundle formula、Chern classes、formal group laws、`H\mathbb Z`、`KGL` 和 stable motivic homotopy。
+我们先从 tautological bundles 的 Thom 空间说明 `MGL` 的来源，再把其域上同伦范畴
+泛性质作为外部输入。第六章的 Thom twist、第九章的 `H\mathbb Z` 和第十一章的
+`KGL` 随后给出三个不同形式群律的比较。Projective bundle formula、splitting
+principle 与 Hopkins--Morel 定理均按实际使用范围陈述，避免把一个 orientation 类
+误当成完整 Chern 类形式主义。
 
 ## 12.1 MGL 的构造口径
 
@@ -163,7 +166,40 @@ $$
 
 **证明.** Direct sum formula 给出 `\operatorname{Th}(V\oplus W)` 与迭代 Thom space 的等价。Orientation 的 Thom classes 满足乘法性 `u_{V\oplus W}=u_V\cup u_W`。因此先对 `V` 再对 `W` 应用 Thom isomorphism，与对 `V\oplus W` 一次应用给出同一 cup product by Thom class。`\square`
 
-## 12.6 本章小结
+**例子 12.18（加性与乘性坐标的直接计算）.** 对 motivic cohomology 的
+标准 orientation，记 `x(L)=c_1^{H\mathbb Z}(L)`。命题 12.12 给出
+
+$$
+x(L\otimes M)=x(L)+x(M),
+$$
+
+所以其形式群律是 `F_{H\mathbb Z}(x,y)=x+y`。例如在
+`\mathbb P^n` 上令 `h=c_1(\mathcal O(1))`，则
+`c_1(\mathcal O(a))=a h`，从而
+`c_1(\mathcal O(a+b))=(a+b)h`。
+
+对周期 K-theory 取 Bott 元 `\beta`，并选坐标
+
+$$
+x_K(L)=\beta^{-1}(1-[L^\vee]).
+$$
+
+若 `a=[L^\vee]=1-\beta x_K(L)`、
+`b=[M^\vee]=1-\beta x_K(M)`，则
+
+$$
+\begin{aligned}
+x_K(L\otimes M)
+&=\beta^{-1}(1-ab)\\
+&=x_K(L)+x_K(M)-\beta x_K(L)x_K(M).
+\end{aligned}
+$$
+
+因此这个坐标下
+`F_{KGL}(x,y)=x+y-\beta xy`。形式群律的具体公式依赖 orientation 的
+坐标选择；改变坐标会给出严格同构的形式群律，而不是改变底层定向理论。
+
+## 12.6 定向如何控制 Chern 类
 
 `MGL` 的本章泛性质是域上 motivic homotopy category 中 monoid-map 集合的
 分类，不是未加说明的 infinity-categorical mapping-space 等价。Hopkins--Morel

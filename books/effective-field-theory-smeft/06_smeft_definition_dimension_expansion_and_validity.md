@@ -1,12 +1,6 @@
 # 第六章：SMEFT 的定义、维数展开与适用范围
 
-## 本章目标
-
-本章给出 SMEFT 的正式定义、维数展开和有效性条件。
-
-## 依赖前置知识
-
-需要前五章的 EFT 定义、算符基和标准模型场内容。
+把标准模型拉氏量后面写上 $C_i\mathcal O_i/\Lambda_{\rm ref}^2$ 还不足以定义 SMEFT。必须先说明低能谱中没有额外轻态，Higgs 以 $SU(2)_L$ 双重态线性实现，局域算符已经在 IBP、EOM 与代数恒等式下取商，并把 Hermitian 与非 Hermitian 算符族分别处理。更重要的是，作用量按维数列到六并不等于可观测量只含一次维数六插入：Weinberg 算符的多次插入、输入参数位移和平方项会改变逆尺度阶数。以维数五的唯一结构和维数六的 Warsaw 计数为锚点，本章给出 SMEFT、HEFT、LEFT 的分界，并把局域性 $Q/M_{\rm gap}$、Wilson 插入大小和圈/对数展开拆成彼此独立的有效性条件。
 
 ## 6.1 定义
 
@@ -52,7 +46,7 @@ $$
 $$
 其中 $\mathsf C$ 是收缩 Lorentz spinor indices 的 charge-conjugation matrix，且 flavor 系数可取 $C_5^{rs}=C_5^{sr}$。下文对所有有序 $r,s$ 求和，并在拉氏量中放置因子 $1/2$，以免对称 flavor 对重复计数。$(\mathcal O_5)_{rs}$ 携带 $\Delta L=2$，不是自伴算符；其 dagger 携带 $\Delta L=-2$，必须与共轭系数同时出现。它在电弱破缺后产生 Majorana neutrino mass。完整唯一性分类使用外部输入 SMEFT-D5；精确来源为附录 B 所列 Warsaw-classification 论文 Sec. 3、Eq. (3.1)。
 
-**内部核验.** 质量维数为 $2(3/2)+2=5$。两个 lepton 双重态总 hypercharge 为 $-1$，两个 Higgs 双重态总 hypercharge 为 $+1$，所以 $U(1)_Y$ 中性；两个 $\epsilon$ 张量完成 $SU(2)_L$ singlet contraction，且所有场为 color singlet。Fermi statistics 与 $SU(2)$ contraction 给出 flavor 对称性。以上只核验该算符良定义、维数和量子数；“不存在第二个独立等价类”的分类结论依赖完整 Lorentz/规范表示枚举，作为外部输入而不是由量纲计数冒充证明。
+**量纲与量子数检查.** 质量维数为 $2(3/2)+2=5$。两个 lepton 双重态总 hypercharge 为 $-1$，两个 Higgs 双重态总 hypercharge 为 $+1$，所以 $U(1)_Y$ 中性；两个 $\epsilon$ 张量完成 $SU(2)_L$ singlet contraction，且所有场为 color singlet。Fermi statistics 与 $SU(2)$ contraction 给出 flavor 对称性。以上只说明该算符良定义并具有所需量子数；“不存在第二个独立等价类”的分类结论依赖完整 Lorentz/规范表示枚举，作为外部输入而不是由量纲计数冒充证明。
 
 **定义 6.3（作用量保留到 $p=2$）.** 若作用量只保留逆参考尺度次数 $p\le2$，则
 $$
@@ -78,7 +72,7 @@ C_b^{(6)}(\mu)\mathcal O_b^{(6)}(\mu)
 $$
 若假设 exact lepton number，可令 $C_5=0$；若另假设 exact baryon number，还须删除 baryon-number violating dimension-six sector。两个假设必须分别声明。
 
-**内部核验（Weinberg/Warsaw 计数口径）.** “维数五只有一个结构类型”是从非自伴对 $\{\mathcal O_5,\mathcal O_5^\dagger\}$ 中只计一个代表，不是从 Hermitian 拉氏量删除 dagger。Warsaw 的 $59$ 采用同一结构计数口径：在 baryon number 守恒且未展开 flavor 时，第十三章的 $15$ 个纯玻色结构、$7$ 个自伴 current 结构和 $20$ 个自伴 current-current 结构属于 $\mathfrak H_6$，共 $42$ 个；$3$ 个 $\psi^2H^3$、$8$ 个 dipole、$\mathcal O_{Hud}$ 和 $5$ 个 scalar/tensor 四费米子结构给出 $\mathfrak N_6$ 的 $17$ 个代表。因此 $42+17=59$，但构造 Hermitian 拉氏量时每个非自伴代表都必须补上带共轭系数的 dagger。带 flavor 时，自伴算符族的 dagger 还会置换指标，故 $59$ 既不是 flavor 展开后的算符分量数，也不是 Wilson 实参数数。
+**Weinberg/Warsaw 计数口径.** “维数五只有一个结构类型”是从非自伴对 $\{\mathcal O_5,\mathcal O_5^\dagger\}$ 中只计一个代表，不是从 Hermitian 拉氏量删除 dagger。Warsaw 的 $59$ 采用同一结构计数口径：在 baryon number 守恒且未展开 flavor 时，第十三章的 $15$ 个纯玻色结构、$7$ 个自伴 current 结构和 $20$ 个自伴 current-current 结构属于 $\mathfrak H_6$，共 $42$ 个；$3$ 个 $\psi^2H^3$、$8$ 个 dipole、$\mathcal O_{Hud}$ 和 $5$ 个 scalar/tensor 四费米子结构给出 $\mathfrak N_6$ 的 $17$ 个代表。因此 $42+17=59$，但构造 Hermitian 拉氏量时每个非自伴代表都必须补上带共轭系数的 dagger。带 flavor 时，自伴算符族的 dagger 还会置换指标，故 $59$ 既不是 flavor 展开后的算符分量数，也不是 Wilson 实参数数。
 
 **警告 6.3A（拉氏量截断与可观测量截断）.** 即使作用量只列到维数六，振幅的 $p=2$ 项也可能同时含一次维数六插入和两次维数五插入；振幅的 $p=4$ 项还含两次维数六插入。因而“作用量列到维数六”“线性维数六”和“预测到 $1/\Lambda_{\rm ref}^2$”是不同陈述，必须同时声明 lepton-number 假设、插入次数和圈阶。
 
@@ -101,11 +95,11 @@ $$
 至少分别检查：
 
 1.  **局域性：** 存在固定 $\rho<1$ 使 bin 内 $Q/M_{\rm gap}\le\rho$，且没有被遗漏的 pole、threshold 或额外轻态；
-2.  **插入展开：** 对实际参与过程的算符，$\epsilon_i^{(d)}=|C_i^{(d)}|(Q/\Lambda_{\rm ref})^{d-4}$ 连同耦合、helicity 和群论因子满足所声明的层级，并比较相邻非零 $p$ 阶；
+2.  **插入展开：** 对实际参与过程的算符，$\rho_{\rm ins,i}^{(d)}=|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$ 连同耦合、helicity 和群论因子满足所声明的层级，并比较相邻非零 $p$ 阶；
 3.  **圈与对数展开：** 所选耦合的 loop parameter 足够小；若 $\epsilon_{\rm loop}|\log(\mu_{\rm match}/\mu_{\rm obs})|$ 不小，则使用相应 RGE resummation；
 4.  **可观测量阶：** flux、相空间、cuts、输入参数位移和多次插入均按第三章同一 $(p,L)$ 方案展开。
 
-这些是必要的可审计条件，不是对未知 UV 理论的充分收敛定理。
+这些是必要条件，不是对未知 UV 理论的充分收敛定理。
 
 **反例 6.5A（$Q<\Lambda_{\rm ref}$ 不是有效性判据）.** 保持有量纲系数
 $$
@@ -134,7 +128,7 @@ $$
 
 ## 6.5 可计算性条件
 
-一个 SMEFT 问题在教材意义上可计算，至少需给出：
+若要从 SMEFT 得到确定的预测，至少需给出：
 
 1.  过程外态、所有独立硬不变量、bin cuts 和 $Q_{\max}$；
 2.  EFT 自由度、规范实现与是否需要 SMEFT-to-LEFT matching；
@@ -148,9 +142,9 @@ $$
 
 **例 6.7（不完整陈述）.** “限制 $C_{HWB}$”不是完整物理命题。完整说法必须包含：在 baryon-number conserving Warsaw basis、给定 $\Lambda_{\rm ref}$ 与定义尺度 $\mu$、某输入方案、数据集和 $Q_{\max}$、某 flavor/CP 口径及某 $(p,L)$ 截断规则下，限制有量纲组合 $c_{HWB}=C_{HWB}/\Lambda_{\rm ref}^2$ 的某个置信区间；若再给出新物理质量结论，还须声明 $M_{\rm gap}$ 与 UV coupling/matching 假设。
 
-## 本章小结
+## 6.6 一条完整 SMEFT 陈述
 
-SMEFT 是标准模型场内容和线性规范实现下的局域渐近展开。$M_{\rm gap}$ 控制运动学局域性，$\Lambda_{\rm ref}$ 只选择 Wilson 坐标；可信预测还须分别通过插入、圈/对数和可观测量阶数检查。
+例 6.7 表明，单独写出 $C_{HWB}$ 没有确定一个物理问题。SMEFT 先由标准模型场内容和线性规范实现定义，再由算符基、flavor/CP sector、输入方案与 $(p,L)$ 截断选出具体计算。$M_{\rm gap}$ 控制遗漏奇点造成的局域边界，$\Lambda_{\rm ref}$ 只归一化 Wilson 坐标；插入层级、圈展开和大对数还须分别判断。把这些数据补齐后，系数限制才可在 RGE、换基或 SMEFT-to-LEFT 匹配中无歧义传播。
 
 ## 练习
 

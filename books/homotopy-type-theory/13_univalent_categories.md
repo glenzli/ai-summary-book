@@ -1,12 +1,12 @@
 # 第十三章：预范畴、单值范畴与结构等同
 
-## 本章目标
+在普通范畴论中，同构对象常被口头上当作“没有区别”，但替换时仍要携带所选同构及其相干。HoTT 允许对象类型本身具有路径，于是可以追问规范映射
+$$
+\mathsf{idtoiso}_{x,y}:(x=y)\to(x\cong y)
+$$
+是否为等价。肯定回答这一问题的预范畴称为单值范畴；其中对象同构能够被转换成真正的对象路径，普通 transport 因而承担替换工作。
 
-本章在 HoTT 中定义预范畴（precategory）和单值范畴（univalent category），并说明对象相等与同构之间的关系。Displayed categories、displayed univalence 和 univalent bicategories 的高阶扩展见附录 BE。
-
-## 依赖前置知识
-
-本章依赖集合层、等价、单值性和结构等同性原则。默认 Hom 类型是集合，以避免高阶范畴复杂性。预范畴、同构、$\mathsf{idtoiso}$ 和集合范畴单值性的证明核见附录 P；结构附加和高阶范畴论接口的 displayed category 口径见附录 BE。
+本章在集合值 Hom 的一范畴层研究这一现象。集合性保证范畴律和自然性条件是命题，单值性与结构等同性原则则给出集合范畴、群范畴等主要例子。预范畴、$\mathsf{idtoiso}$ 和这些例子的证明核见附录 P；displayed categories 与双范畴的更高接口留在附录 BE，不混入本章的一范畴定义。
 
 ## 13.1 预范畴
 
@@ -50,20 +50,24 @@ $$
 
 ## 13.4 等价范畴与同构范畴
 
-**定义 13.8.** 函子 $F:\mathcal C\to\mathcal D$ 是范畴等价，若它是 fully faithful 且 essentially surjective。这里 essentially surjective 通常使用命题截断：
+**定义 13.8（weak equivalence 与等价结构）.** 函子 $F:\mathcal C\to\mathcal D$ 是 weak equivalence，若它 fully faithful 且 essentially surjective；后者使用命题截断：
 $$
 \prod_{d:\mathcal D}\left\|\sum_{c:\mathcal C}F(c)\cong d\right\|.
 $$
+一个范畴等价结构还实际给出拟逆 $G:\mathcal D\to\mathcal C$、自然同构
+$1_{\mathcal C}\cong GF$、$FG\cong1_{\mathcal D}$ 以及三角相容。因而 weak equivalence 的本质满性只是性质，等价结构则包含选择后的拟逆数据。
 
-**命题 13.9（单值范畴中的等价改进，条件形式）.** 假设附录 AA.11 的 weak-equivalence 限制函子定理已经在选定目标库中完成定义翻译。则在单值范畴之间，范畴等价可提升为合适意义下的范畴同构。
+**外部输入定理 13.9（单值范畴中的 weak equivalence）.** 设 $\mathcal C,\mathcal D$ 都是单值范畴，且函子 $F:\mathcal C\to\mathcal D$ fully faithful 并 essentially surjective。则 $F$ 是范畴等价；进一步，对单值范畴，范畴等价等价于“范畴同构”，后者指 $F$ fully faithful 且对象函数 $F_0:\mathcal C_0\to\mathcal D_0$ 是类型等价。
 
-**验证状态。** 函子范畴单值性见附录 X；Rezk completion 泛性质的书内归约见附录 AA。具体地，weak equivalence $F:\mathcal C\to\mathcal D$ 对任意单值目标 $\mathcal E$ 诱导限制函子等价，取 $\mathcal E=\mathcal C,\mathcal D$ 可构造拟逆函子和双向自然同构。AA.8-AA.10 保留 transport 与代表元相容性的逐项证明义务，见 K.1.4 的文本收口说明。
+**来源与未重证边界。** Ahrens--Kapulkin--Shulman, *Univalent categories and the Rezk completion*, Mathematical Structures in Computer Science 25 (2015), Lemma 6.8 与 Lemma 6.15，DOI `10.1017/S0960129514000486`。Lemma 6.8 用源范畴的单值性证明
+$$
+\sum_{c:\mathcal C}Fc\cong d
+$$
+是命题，从而可合法消去 essentially-surjective 的命题截断；Lemma 6.15 比较范畴等价与对象函数等价。本书不重抄其中函子记录相等和 transport 的逐项证明，后文只按上述精确版本调用。
 
-## 本章小结
+## 13.5 同构何时足以替换对象
 
-预范畴只要求 Hom 是集合；单值范畴进一步要求对象路径等价于对象同构。这样，范畴论中的“同构对象可替换”成为类型论中的 transport 原则。
-
-Displayed categories 和 univalent bicategories 把这一原则扩展到“结构附加”和“2-维态射”场景；本章只给出一范畴核心。
+预范畴只把 Hom 限制为集合，单值范畴再要求对象路径与对象同构等价。集合范畴和群范畴说明这不是抽象口号：类型单值性与 SIP 分别把双射和群同构转成对象路径。外部输入定理 13.9 还解释了命题截断为何不妨碍单值范畴中的本质满性产生拟逆。下一章会用 Yoneda 嵌入把任意预范畴送进一个单值范畴，并讨论这一过程的泛性质。
 
 ## 练习
 

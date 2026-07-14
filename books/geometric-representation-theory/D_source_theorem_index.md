@@ -41,6 +41,7 @@
 | NAK-1 | Nakajima quiver varieties and Kac-Moody actions | 第十七章 | 源级覆盖：Nakajima；精确定位待校 |
 | KLR-1 | Khovanov-Lauda-Rouquier categorification | 第十八章 | 源级覆盖：Khovanov-Lauda、Rouquier、Kang-Kashiwara；精确定位待校 |
 | BLPW-1 | quantized conical symplectic resolutions and category O | 第十九章 | 源级覆盖：BLPW、Losev；精确定位待校 |
+| ADE-RES-1 | type $A_{m-1}$ rational double point 的最小分辨率与交叉矩阵 | 第二十三章 | 源级覆盖：Slodowy；精确定位待校 |
 | BFN-1 | Coulomb branch construction | 第二十章 | 源级覆盖：BFN arXiv 入口；精确定位待校 |
 | COHA-1 | Hall/CoHA/DT interfaces | 第二十一章 | 源级覆盖：Kontsevich-Soibelman、Davison-Meinhardt；精确定位待校 |
 | QG-1 | quantum groups、crystals、canonical/global bases | 第二十二章 | 源级覆盖：Lusztig、Kashiwara；精确定位待校 |

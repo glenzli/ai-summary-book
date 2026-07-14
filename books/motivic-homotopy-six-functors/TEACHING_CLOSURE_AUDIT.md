@@ -1,12 +1,12 @@
 # 教材内容闭合审计
 
-核查日期：2026-07-11
+核查日期：2026-07-15
 
 本审计只判断本书是否作为教材内容本身收口，不判断是否已经达到
 camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题索引和习题
-解答要点；第 09-18 章 P0 主线已完成 theorem/chapter-level locator。出版
-终稿仍需要扩展/realization locator、自动化 labels、排版细校和更完整的
-长篇习题详解。
+解答要点；基础主链、第 09-18 章以及 equivariant、stacky、相对 Betti realization
+的 P0 输入均已完成 theorem/chapter-level locator。出版终稿仍需要自动化 labels、
+排版细校和更完整的长篇习题详解。
 
 ## 审查口径
 
@@ -28,7 +28,7 @@ camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题
 | 引用闭合 | 达到教学标准 | `SOURCES.md`、两个 ledgers 和三批 P0 locator 给出资料源、定理号、稳定 URL、假设层级及不覆盖边界；第 09-18 章 P0 已闭合 |
 | 编号与排版 | 达到教学标准 | `TYPESETTING_AND_NUMBERING.md` 已固定章内编号、附录编号、练习/解答编号、证明格式和交叉引用规范 |
 | 索引 | 达到教学标准 | `INDEX.md` 已给出主题索引，可用于阅读和教学导航 |
-| 习题解答 | 达到教学标准 | `EXERCISE_SOLUTIONS.md` 已覆盖 201 道练习的一版解答要点 |
+| 习题解答 | 达到教学标准 | `EXERCISE_SOLUTIONS.md` 已覆盖 205 道练习的一版解答要点 |
 | 前沿边界 | 达到 | 2025-2026 资料放入研究边界，不作为无条件正文定理 |
 | 出版闭合 | 未要求 | 页码级 locator、自动化交叉引用、最终排版和长篇详解仍可继续增强 |
 
@@ -38,14 +38,14 @@ camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题
 
 | 指标 | 数量 |
 | --- | ---: |
-| 正文和附录教学文件 | 35 |
-| 行数 | 4778 |
-| 定义 | 168 |
-| 命题 | 204 |
-| 定理或外部输入定理 | 93 |
-| 证明段落 | 217 |
-| 例子 | 34 |
-| 练习 | 201 |
+| 正文和附录教学文件 | 33 |
+| 行数 | 6959 |
+| 定义 | 165 |
+| 命题 | 197 |
+| 定理或外部输入定理 | 80 |
+| 证明段落 | 212 |
+| 例子 | 24 |
+| 练习 | 205 |
 
 这些数字不能单独证明数学正确性，但足以排除“只是目录/提纲”的状态。
 
@@ -73,17 +73,19 @@ camera-ready 出版终稿。当前已补一版统一编号/排版规范、主题
 
 按教材标准，引用已经完整：每类外部输入都可追溯到资料源、用途和假设
 边界。第 09-18 章主线已达到定理/章节级 P0 定位；按全书出版标准，仍需
-完成第 19-23 章 extensions/realization 队列并做统一页码终校。
+第 19-23 章中的 P0 extensions/realization 条目已经定位；仍标 P1 或 R 的结果只在
+高级比较或研究边界中出现。出版时尚需统一页码终校。
 
 ## 已完成的出版增强项
 
 - [TYPESETTING_AND_NUMBERING.md](TYPESETTING_AND_NUMBERING.md)：统一章内编号、附录编号、练习/解答编号、证明格式、公式排版和交叉引用口径。
 - [INDEX.md](INDEX.md)：主题索引，覆盖基础范畴论、motivic spaces、六操作、纯性、cohomology、motives、transfers、norms、stacky/log/realization 等主要术语。
-- [EXERCISE_SOLUTIONS.md](EXERCISE_SOLUTIONS.md)：201 道练习均已有一版解答要点，并与正文练习编号一一对应。
+- [EXERCISE_SOLUTIONS.md](EXERCISE_SOLUTIONS.md)：205 道练习均已有一版解答要点，并与正文练习编号一一对应。
 
 ## 不阻塞教材闭合的剩余项
 
-- 为第 19-23 章 extensions/realization 的剩余 P0 外部输入补 theorem/page locator。
+- 若把当前 P1 或 R 的 extensions/realization 结果升级为主线输入，须先补精确
+  theorem/page locator 并重新核对基、系数和态射类别。
 - 把 Markdown 交叉引用进一步自动化为 anchors 或 LaTeX labels。
 - 把解答要点扩展为完整长篇详解。
 - 增加更多计算例子，例如 Gysin excess、slice spectral sequence、Chern character、quadratic Euler characteristic。

@@ -82,6 +82,7 @@
 - $\widehat{\mathfrak g}$：affine Kac-Moody algebra，通常为 $\mathfrak g((z))$ 的中心扩张。
 - $\mathsf H_I$：Iwahori-Hecke category。
 - $\mathfrak M_\theta(v,w)$：Nakajima quiver variety。
+- $\mathfrak L(v,w)$：$\mathfrak M_\theta(v,w)$ 到 affine GIT quotient 的零 fiber；第十七、二十二章使用。
 - $R(\nu)$：Khovanov-Lauda-Rouquier algebra。
 - $R^\Lambda$：cyclotomic KLR algebra。
 - $U_q(\mathfrak g)$：quantum group。

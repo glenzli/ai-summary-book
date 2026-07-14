@@ -1,12 +1,6 @@
 # 序章：范围、严格性标准和资料源
 
-## 本章目标
-
-本章说明本书研究的数学对象、默认约定、严格性标准和资料源边界。读者在进入第一章前，应当知道本书中“geometric representation theory”不是一个单一公理化对象，而是一组把表示范畴转化为几何范畴并用几何操作研究表示的技术。
-
-## 依赖前置知识
-
-需要熟悉基本范畴论、交换代数、代数簇、线性代数群、Lie 代数和有限群表示。导出范畴、perverse sheaves、D-modules、stack 和 infinity category 不预设，会在正文或附录中逐步引入。
+同一个 Weyl group 表示既可能藏在 Springer fiber 的上同调里，也可能由 Steinberg variety 上的卷积产生；同一个 Hecke 代数既能从双陪集写出，又能在 Schubert variety 的层范畴中被范畴化。这些现象并不来自一个包罗万象的定义，而来自一套反复出现的转换：先把代数问题放到带群作用和分层的几何空间上，再以层、D-module、同调或导出范畴读取表示。本书沿这些转换逐层建立对象和函子，并在每次调用大型定理时保留其假设与来源边界。读者需要基本范畴论、交换代数、代数簇、线性代数群、Lie 代数和有限群表示；导出范畴、perverse sheaf、D-module、stack 与高阶范畴所需的部分则随正文引入。
 
 ## 0.1 本书研究的对象
 
@@ -72,11 +66,9 @@ $$
 - BFN Coulomb branch construction；
 - 2024 geometric Langlands proof series。
 
-其中前八类会进入正文定理链，但必须定位来源和假设。最后三类在第一版中主要作为研究边界，除非后续章节补足模型和 locator。
+其中前八类进入后续数学论证时，都以精确陈述的外部输入出现。Nakajima 表示构造、BFN Coulomb branch 与 geometric Langlands 的一般形式需要更重的几何模型；本书只在相应章节已经声明的版本中使用它们，不从方向名称本身推出结论。
 
-## 本章小结
-
-本书把几何表示论处理为一套可检查的对象和 functor，而不是若干漂亮类比。基础章节固定代数群、flag variety、表示范畴和 sheaf theory 约定；高级章节只在外部输入和模型假设明确之后调用大型定理。当前书稿已经进入主体教材化收口阶段，后续目标是完成出版级 locator、交叉引用和模型假设校对。
+于是全书的阅读顺序由对象之间的需要决定：flag variety 提供有限维原型，equivariant sheaf 与 D-module 使几何操作进入表示范畴，仿射 Grassmannian 和卷积把这一结构提升到 loop group，辛几何与范畴化再展示同一机制的其他实现。第一章从最小的一组 Borel 数据出发，把这条路线落实到可以计算的 Schubert 分层。
 
 ## 练习
 

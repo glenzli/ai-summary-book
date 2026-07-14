@@ -1,17 +1,12 @@
 # 第十二章：D-brane 有效理论、DBI 作用量和 Wess-Zumino 耦合
 
-## 本章目标
-
-本章从第七章的 D-brane 边界条件出发，建立 D-brane 的低能有效理论：
-
-1. open-string massless modes 给出 worldvolume gauge fields 与 transverse scalars；
-2. Dirac-Born-Infeld action 组织 $F$ 和 embedding 的非线性 $\alpha'$ 修正；
-3. Wess-Zumino coupling 表示 D-brane 的 R-R charge；
-4. 多个重合 branes 的低能极限给出 nonabelian gauge theory。
-
-## 依赖前置知识
-
-需要第七章 D-brane 定义、第十一章低能有效作用和第九章 type II R-R potentials。
+第七章把 D-brane 识别为开弦的 Dirichlet 边界条件，但一个可运动、可带电的 brane
+还需要自身的世界体动力学。同一条开弦的 massless 极化沿 Neumann 方向成为 gauge
+field，沿 Dirichlet 方向成为 transverse scalar；disk 振幅把它们的低能相互作用
+组织进 Dirac--Born--Infeld determinant，而 R--R charge 则由 Wess--Zumino 项记录。
+以下从第七章边界态、第九章 R--R forms 和第十一章有效作用口径出发，先处理单个
+Abelian D$p$-brane，再讨论 worldvolume flux 诱导的低维 charge，以及重合 branes
+为何只在最低导数阶简化为 nonabelian supersymmetric Yang--Mills。
 
 ## 12.1 Worldvolume fields
 
@@ -167,9 +162,11 @@ $$
 
 **使用边界.** 本书不证明 index theorem 形式的 anomaly inflow，只使用其说明 WZ 曲率修正和 D-brane charge quantization 的必要性。
 
-## 本章小结
-
-D-branes 的低能理论由 open-string massless modes 控制。DBI action 给出 Abelian brane 的非线性电磁和几何响应；WZ action 编码 R-R charge 与 lower brane charges。重合 branes 的最低阶理论是 supersymmetric Yang-Mills，这条主线直接通向 AdS/CFT。
+曲率修正把 WZ coupling 与 anomaly inflow 接上后，D-brane 的三种描述彼此吻合：
+边界 CFT 指定开弦谱，DBI 作用量描述单 brane 的非线性电磁与嵌入响应，WZ 项编码
+R--R 及诱导低维 charges。对 $N$ 个重合 branes，矩阵值 massless modes 在低能给出
+$U(N)$ supersymmetric Yang--Mills；更高阶 nonabelian DBI 并无同样简单的闭式。
+这个受控低能极限正是 brane engineering 与 AdS/CFT 的规范理论入口。
 
 ## 练习
 

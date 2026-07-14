@@ -1,12 +1,6 @@
 # 第八章 Einstein 方程
 
-## 本章目标
-
-本章从 Einstein-Hilbert 作用量推导场方程，说明协变守恒的几何来源，并在完整声明弱场、静态和规范假设后恢复 Newton 的 Poisson 方程。
-
-## 依赖前置知识
-
-需要第五章的变分法和能动张量、第六章的 Levi-Civita 联络与曲率，以及第七章的弱场测地线极限。
+测地线说明物质如何响应给定几何，却没有决定几何如何由物质产生。所需场方程必须同时满足三项约束：由度规及其低阶导数组成，几何侧自动协变守恒，并在静态弱场极限恢复 Poisson 方程。Einstein-Hilbert 作用量把这些要求集中到一个度规变分中。本章使用第五章的变分法与能动张量、第六章的 Levi-Civita 联络和曲率，以及第七章的弱场测地线极限，完整展开边界散度、Newton 匹配和宇宙学常数的角色，而不把 $g_{tt}$ 的单一分量当作全部弱场信息。
 
 ## 8.1 方程应满足什么
 
@@ -87,17 +81,44 @@ $$
 =\nabla_\rho\delta\Gamma^\rho{}_{\mu\nu}
 -\nabla_\nu\delta\Gamma^\rho{}_{\mu\rho}
 $$
-得到
+以及 Levi-Civita 联络的变分公式
+$$
+\delta\Gamma^\rho{}_{\mu\nu}
+=\frac12g^{\rho\sigma}
+\bigl(\nabla_\mu\delta g_{\sigma\nu}
++\nabla_\nu\delta g_{\sigma\mu}
+-\nabla_\sigma\delta g_{\mu\nu}\bigr),
+$$
+可逐项计算
+$$
+g^{\mu\nu}\delta R_{\mu\nu}
+=\nabla_\rho V^\rho,
+\qquad
+V^\rho
+=g^{\mu\nu}\delta\Gamma^\rho{}_{\mu\nu}
+-g^{\rho\nu}\delta\Gamma^\mu{}_{\mu\nu}.
+$$
+若把它完全写成逆度规变分，则
+$$
+V^\rho
+=-\nabla_\mu\delta g^{\rho\mu}
++\nabla^\rho\bigl(g_{\mu\nu}\delta g^{\mu\nu}\bigr).
+$$
+另一方面，$R=g^{\mu\nu}R_{\mu\nu}$ 的乘积法则给出
 $$
 \delta R=R_{\mu\nu}\delta g^{\mu\nu}+\nabla_\rho V^\rho
 $$
-对某个由 $g$ 与 $\nabla\delta g$ 线性构成的向量场 $V^\rho$ 成立。因此
+。因此
 $$
 \delta(\sqrt{-g}R)
 =\sqrt{-g}\,G_{\mu\nu}\delta g^{\mu\nu}
 +\sqrt{-g}\,\nabla_\rho V^\rho.
 $$
-最后一项是边界散度；紧支撑假设使其积分为零。宇宙学常数项由 $\delta\sqrt{-g}$ 贡献 $\Lambda g_{\mu\nu}\delta g^{\mu\nu}$，合并即得命题公式。证毕。
+最后一项是边界散度。由
+$\sqrt{-g}\,\nabla_\rho V^\rho=\partial_\rho(\sqrt{-g}V^\rho)$
+和散度定理，它的积分只依赖边界值；$\delta g^{\mu\nu}$ 紧支撑于
+$U$ 使 $V^\rho$ 在 $\partial U$ 的邻域为零，故该积分消失。宇宙学常数项由
+$\delta\sqrt{-g}$ 贡献 $\Lambda g_{\mu\nu}\delta g^{\mu\nu}$，合并即得命题公式。证毕。
 
 物质部分为
 
@@ -230,6 +251,10 @@ $$
 p_\Lambda=-\rho_\Lambda.
 $$
 
+## 8.7 几何方程的三重检验
+
+Einstein 方程是带明确边界口径的度规变分方程。Bianchi 恒等式保证几何侧协变守恒；Newton 极限还需要静态弱场展开、空间度规扰动和可忽略各向异性应力，不能只凭 $g_{tt}$ 的单个分量判断。
+
 ## 习题
 
 1. 证明 $g^{\mu\nu}G_{\mu\nu}=-R$。
@@ -237,7 +262,3 @@ $$
 3. 从 Killing 方程证明 $J^\mu=T^{\mu\nu}\xi_\nu$ 守恒。
 4. 推导 $\Lambda$ 对应的状态方程 $p=-\rho$。
 5. 说明 Newton 极限如何固定 Einstein 方程右侧系数。
-
-## 本章小结
-
-Einstein 方程是带明确边界口径的度规变分方程。Bianchi 恒等式保证几何侧协变守恒；Newton 极限还需要静态弱场展开、空间度规扰动和可忽略各向异性应力，不能只凭 $g_{tt}$ 的单个分量判断。

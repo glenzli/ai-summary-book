@@ -1,12 +1,8 @@
 # 第二十七章：dg 范畴、稳定增强与导出 Morita 理论
 
-## 本章目标
+三角范畴只记录导出对象和 distinguished triangles，却忘记态射复形及其高阶同伦。Dg 范畴把 Hom 提升为链复形，为三角范畴提供 enhancement；取 dg nerve 又把它与稳定 $\infty$-范畴联系起来。导出 Morita 理论进一步指出，逐 Hom 的 quasi-equivalence 往往过强，真正保留模论与不变量的是导出模范畴的等价。本章从链复形值富结构开始，构造 dg modules、perfect objects 与 bimodule functors，并比较 quasi-equivalence 和 Morita equivalence。
 
-本章把稳定 $\infty$-范畴、富范畴、双模和紧生成理论连接到 dg 范畴。dg 范畴是链复形值富范畴；它们为三角范畴和稳定 $\infty$-范畴提供“增强”。导出 Morita 理论说明，对许多目的而言，dg 范畴的正确等价不是逐 Hom 复形的 quasi-isomorphism，而是导出模范畴的等价。
-
-## 依赖前置知识
-
-需要富范畴、闭幺半范畴、coend、模型范畴、稳定 $\infty$-范畴、compact generation、Morita $\infty$-范畴和 Bousfield localization。除非另说，本章固定一个交换环 $k$，并在链复形范畴 $\operatorname{Ch}(k)$ 中使用同调次数约定。
+固定交换环 $k$，在 $\operatorname{Ch}(k)$ 中采用同调次数约定。所需背景包括富范畴、coend、模型范畴、稳定 $\infty$-范畴和紧生成；任何从 dg quotient 到稳定 localization 的比较都标明预三角、幂等完备或 cofibrancy 条件。
 
 ## 27.1 链复形富化与 dg 范畴
 
@@ -252,7 +248,13 @@ $$
 
 分别保持小余极限。
 
-**外部输入定理 27.26.** 若 $\mathcal A$ small，则 $D(\mathcal A)$ 是 compactly generated $k$-linear stable presentable $\infty$-category，compact objects 为 $\operatorname{Perf}(\mathcal A)$。反过来，在通常代数性假设下，compactly generated $k$-linear stable presentable $\infty$-categories 可由 small dg categories 的导出模范畴建模。
+**外部输入定理 27.26.** 若 $\mathcal A$ 是小 $k$-线性 dg 范畴，则 $D(\mathcal A)$ 是紧生成的 $k$-线性稳定 presentable $\infty$-范畴，其紧对象为 $\operatorname{Perf}(\mathcal A)$。反过来，若紧生成的 $k$-线性稳定 presentable $\infty$-范畴 $C$ 的紧对象子范畴 $C^\omega$ 具有一个 $k$-线性 dg enhancement $\mathcal A$，则
+
+$$
+C\simeq D(\mathcal A).
+$$
+
+没有 dg enhancement 假设时，命题 27.27 仍给出谱富化的 Morita 模型，但不能据此断言存在 dg 模型。
 
 **命题 27.27.** 若 $C$ 是 compactly generated stable presentable $\infty$-category，则 $C\simeq\operatorname{Ind}(C^\omega)$，其中 $C^\omega$ 是 compact objects 的小稳定幂等完备子范畴。
 
@@ -335,7 +337,7 @@ $$
 
 且没有非零边界需要取商。复合在 $H^0$ 上就是原来的 $k$-双线性复合，所以 $H^0(\mathcal A)$ 正是底层 $k$-线性范畴。$\square$
 
-## 27.8 本章小结
+## 27.8 从 dg 增强到 Morita 等价
 
 dg 范畴是链复形富范畴；$H^0$ 给出普通同伦范畴，但会丢失链级和高阶信息。dg 模范畴 $D(\mathcal A)$ 是稳定 presentable $\infty$-范畴，可表模紧生成它，perfect modules 正是紧对象。Quasi-equivalence 强于 Morita equivalence；导出 Morita 理论表明 dg 双模与导出相对张量积才是组织 dg 范畴的自然广义态射。对于紧生成稳定 $k$-线性范畴，dg enhancement 把抽象稳定同伦论连接到显式代数模型。
 

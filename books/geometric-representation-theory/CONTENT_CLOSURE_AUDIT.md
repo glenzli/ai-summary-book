@@ -12,7 +12,7 @@
 2. 每个主体章节都有定义链、核心构造、内部命题证明或外部输入标记、例子和练习。
 3. 本书自行证明的命题均带证明块；大型定理以“外部输入定理”隔离。
 4. 外部输入已经达到源级引用覆盖：每个主要外部输入簇能追溯到 `SOURCES.md`、附录 D 或 P0 locator 批次。
-5. 前沿材料不进入基础证明链，而由第二十三章和附录 J 的验证流程管理。
+5. 前沿材料不进入基础证明链：第二十三章按数学障碍说明研究边界，结果核验与维护流程只保留在附录 J。
 
 因此，若目标是“作为一本研究生级教材的内容闭合稿”，当前版本可以收口。若目标是“出版终稿”，仍需页码级 locator、稳定 label、索引、术语统一和模型分拆。
 
@@ -25,7 +25,7 @@
 | 仿射与 Satake | affine Grassmannian、convolution、geometric Satake、affine flag、Iwahori-Hecke、Kac-Moody、GLanglands 接口 | 收口 |
 | 范畴化与辛几何 | Soergel、KLR/Rouquier、quiver varieties、symplectic resolutions、category $\mathcal O$、symplectic duality | 收口 |
 | Coulomb/Hall/Quantum | BFN Coulomb branches、Hall/CoHA/DT 接口、quantum groups、crystals、canonical bases | 收口 |
-| 前沿管理 | 2024-2026 geometric Langlands、parity/torsion、categorical/spectral representation theory | 收口为边界章 |
+| 研究边界 | geometric Langlands local-to-global、Poisson/symplectic、parity/torsion、范畴比较与 derived models | 以低秩模型和已知障碍组织 |
 
 “收口”在此处表示：章节本身不再只是目录或接口说明，而包含可读的数学对象、公式、证明或外部输入、例子和练习。
 

@@ -27,8 +27,16 @@
 - **8.9**：生成元比较原则。依赖：1.24。
 - **8.12**：quasi-equivalence 保持 Euler pairing。依赖：morphism complexes quasi-isomorphism 与 properness。
 - **9.7**：二维环面中斜率圆交点数为 determinant 绝对值。依赖：代数交数。
+- **9.8**：平直横截斜率圆的 Floer differential 因模 $2$ 次数而消失，
+  Floer 上同调维数等于交点数。依赖：9.7、无 disk bubbling 与 continuation。
 - **10.7**：$\mathbb P^1$ mirror potential 的 Jacobian ring 计算。依赖：Laurent polynomial 商。
+- **10.7A**：$\mathbb P^n$ 势函数的 Jacobian ring、临界点与临界值计算。
+  依赖：Laurent polynomial 消元与 separability。
+- **11.3**：Lefschetz 局部模型中的 vanishing cycle 是 Lagrangian sphere。
+  依赖：复 Morse 局部模型与辛平行移动。
 - **11.11**：Fukaya--Seidel HMS 可归约为 directed generating full subcategories 的 quasi-equivalence；有限 endomorphism algebra 需保持对象 idempotents。依赖：8.9。
+- **11.12A**：$\mathcal O\oplus\mathcal O(1)$ 的 derived endomorphism algebra
+  形式化且为 Kronecker quiver algebra。依赖：$\mathbb P^1$ 线丛上同调与次数。
 - **12.2**：hypersurface canonical bundle 的 adjunction 计算。依赖：adjunction formula。
 - **12.9**：Calabi--Yau hypersurface HMS 由两边 split-generation 与生成 full subcategories 的 quasi-equivalence 推出。依赖：8.9。
 - **12.11**：HMS 保持 Serre functor/Calabi-Yau dimension。依赖：增强等价与 Grothendieck-Serre duality。
@@ -39,11 +47,26 @@
 - **15.5**：sectorial descent 下局部生成元生成全局 category。依赖：外部输入 15.3。
 - **15.9**：sectorial descent diagrams 比较推出全局 HMS。依赖：15.3 与 homotopy colimits。
 - **16.9**：Nadler-Zaslow 等价传递 sheaf 生成性到 conormal branes。依赖：外部输入 16.5。
+- **16.8A**：光滑子流形的 conormal bundle 是余切丛中的 exact
+  Lagrangian。依赖：tautological $1$-form 与维数计算。
+- **16.10**：sheaf 模型给出的两个 Morita 等价可复合为 HMS。依赖：Morita
+  homotopy category 中等价的复合。
 - **17.9**：严格 functorial HMS square 诱导不变量方块交换。依赖：functoriality of invariants。
+- **17.10**：带等价竖边的交换局部化方块把两个 localization kernels
+  等价地对应。依赖：exactness、自然同构与等价的 quasi-inverse。
 - **18.3**：Morita HMS 保持 Hochschild invariants。依赖：外部输入 18.2。
 - **18.6**：HMS 与 HKR 给出 Hodge 维数检查。依赖：外部输入 18.4。
 - **18.11**：Euler pairing 不匹配排除给定对象字典的等价。依赖：quasi-equivalence 保持 morphism cohomology。
 - **19.8**：Rabinowitz HMS 推出 Hochschild homology 同构。依赖：18.2。
+- **19.2A**：Brieskorn--Pham 多项式的 Milnor number 为
+  $\prod_i(a_i-1)$。依赖：Jacobian monomial quotient。
+- **20.3**：函子化 HMS 自然等价经任意 Morita-invariant functor 后仍为
+  图之间的自然等价。依赖：$2$-morphism 的函子性与 coherence。
+- **20.9**：spherical twist 在 $K_0$ 上作用为
+  $[E]\mapsto[E]-\chi(S,E)[S]$。依赖：twist triangle 的加性。
+- **20.12**：兼容 charge lattice 与 central charge 的 Morita 等价传递
+  $K$-theory、Hochschild homology 和中心荷；不自动传递稳定对象或 Hall
+  乘法。依赖：Morita 不变性与 (20.7)。
 - **I.5**：$H^\ast(\mathcal A)$ 中 $\mu^2$ 诱导严格结合复合。依赖：低阶 $A_\infty$ 三输入方程。
 - **I.10**：Maurer-Cartan 方程 $\mu_b^0=0$ 蕴含 $\mu_b^1{}^2=0$。依赖：curved $A_\infty$ 低阶方程。
 - **I.11**：特征不为 $2$ 时，invertible constant 的 matrix factorization 在其 homotopy category 中为零。依赖：endomorphism differential 的显式 contracting homotopy。
@@ -103,31 +126,46 @@
 - **10.12**：Abouzaid toric HMS。
 - **11.6**：Seidel Fukaya-Seidel 构造。
 - **11.8**：Picard-Lefschetz monodromy 为 Dehn twist。
+- **11.9A**：Lagrangian sphere 的 Dehn twist exact triangle。来源：Seidel。
 - **12.5**：Seidel quartic surface HMS。
 - **12.6**：Sheridan projective Calabi-Yau hypersurfaces HMS。
 - **12.7**：Batyrev mirror pairs HMS 近期结果。
-- **13.7**：Abouzaid-Auroux hypersurfaces in $(\mathbb C^\ast)^n$ HMS。
-- **13.9**：higher-dimensional pants categorical resolutions。
+- **13.7**：maximally degenerating hypersurfaces 的 coherent category
+  quasi-embeds 到 mirror 的 fiberwise wrapped Fukaya category；不包含本质满。
+  来源：Abouzaid--Auroux。
+- **13.9**：stopped higher-dimensional pants 对应
+  $\mathrm D^b\operatorname{Coh}(\{x_1\cdots x_{n+1}=0\})$ 的 categorical
+  resolution，移除 stops 后得到 fully wrapped/derived equivalence。来源：
+  Lekili--Polishchuk。
 - **14.6**：exact wrapped open-closed/closed-open、duality 与 Cardy package。来源：Abouzaid、Ganatra、GPS。
 - **14.7**：full subcategory 的 $HH$ 经 $HH(\mathcal W)$ 到 $SH$ 的 composite 命中 global unit，则 split-generates $\mathcal W$。来源：Abouzaid, Theorem 1.1 / equation (1.2)。
 - **15.3**：sectorial descent。
 - **15.6**：wrapped Kunneth 公式。
-- **16.5**：Nadler-Zaslow correspondence。
-- **16.6**：wrapped/microlocal 扩展。来源：GPS。
+- **16.5**：constructible sheaves 到 cotangent Fukaya category 的
+  quasi-embedding 及其 essential-surjectivity 升级。来源：Nadler--Zaslow、
+  Nadler。
+- **16.6**：stopped cotangent wrapped category 等价于 microsupport-bounded
+  unbounded sheaf category 的 compact objects；stable-polarized Weinstein
+  sectors 有相应扩展。来源：GPS。
 - **17.5**：partially wrapped Orlov functor。
 - **17.7**：Viterbo localization/homological epimorphism。
 - **18.2**：Hochschild Morita invariance。
 - **18.4**：HKR theorem。
-- **18.8**：closed-open 同构现象。
-- **19.4**：Orlov singularity/matrix factorization 关系。
+- **18.8**：Ganatra non-degenerate Liouville 情形的 open--closed 与
+  closed--open 同构；不对任意 Weinstein manifold 无条件成立。
+- **19.4**：有限 Krull 维 regular noetherian affine ring 及非零因子下的
+  matrix-factorization/singularity comparison；graded、equivariant、
+  nonaffine 版本不由此自动推出。
 - **19.7**：Lekili-Ueda Rabinowitz HMS。
+- **20.8**：$d$-spherical object 的 twist 是 exact autoequivalence；适当
+  spherical collections 产生 braid-group action。来源：Seidel--Thomas。
 
 ## 研究边界条目
 
-- wrapped Fukaya categories 的 Liouville sector functoriality：GPS 2017。
-- sectorial descent、stop removal、generation：GPS 2018。
-- microlocal Morse theorem：GPS 2018。
-- hypersurfaces in $(\mathbb C^\ast)^n$ 的 HMS：Abouzaid-Auroux 2021。
-- Rabinowitz Fukaya categories of Brieskorn-Pham Milnor fibers：Lekili-Ueda 2024。
-- functorial HMS 的 2025 研究入口：Pasquarella 2025。
-- wall-crossing、BPS categories 与统一 functorial HMS 框架：第二十章研究边界。
+- Pasquarella 2025 提供 functorial HMS 与 BPS/TFT 的研究视角，但其摘要明确
+  指出统一形式主义仍需发展；正文不从中抽取普遍等价定理。
+- 第二十章的“BPS category”只在明确
+  $(\mathcal C,\Gamma_{\mathrm{ch}},v,Z,\mathfrak s)$ 后使用，不宣称跨文献已有统一定义。
+- 已证明的 sectorial descent、stop removal、Batyrev HMS、fiberwise wrapped
+  quasi-embedding 与 Rabinowitz HMS 的方差、完成和结论强度不同；把它们提升为
+  同一范畴值图的自然镜像等价仍是开放问题 20.14。

@@ -1,16 +1,6 @@
 # 第七章：Nygaard filtration、syntomic cohomology 与 Tate twists
 
-## 本章目标
-
-本章固定 Nygaard filtration、syntomic complex 和 $p$-adic Tate twists 的
-prismatic 口径。该部分是 prismatic cohomology 与 motivic/etale 信息交汇
-的技术核心，也是 indexing convention 最容易出错的地方。Bhatt--Scholze
-的 relative Nygaard theorem 与 BMS2 的 syntomic/products/nearby-cycles
-theorems 均按 numbered statements 引用；oriented module 公式只作玩具模型。
-
-## 依赖前置知识
-
-依赖第三章的 Frobenius on prismatic cohomology，第五章的 $A_{\inf}$ 和 $\mu$，第四章的 Tate twists。需要 filtered derived category 和 Frobenius fixed constructions 的基本语言。
+Frobenius 在 prismatic complex 上并非无条件可除，Nygaard filtration 正是记录“除以多少个 prism ideal 后仍保持积分”的层级。Syntomic complex 再把该滤过与 divided Frobenius 的固定点组合起来，从而接近 étale 与 motivic Tate twist。这里最危险的不是计算长度，而是指标、twist 和 fiber 的移位一旦错位，后续乘法与比较都会整体偏移。本章沿第三章的 Frobenius、第五章的 $A_{\inf}$ 与 $\mu$、第四章的 Tate twists 建立统一约定；relative Nygaard 及 BMS2 的 syntomic、products 和 nearby-cycles 定理精确引用，oriented module 公式只作为能逐项核对的模型。
 
 ## 7.1 Nygaard filtration 的基本形式
 
@@ -39,7 +29,7 @@ C^{(1)}\xrightarrow{\widetilde\varphi}
 L\eta_I C\longrightarrow C,
 $$
 其中 $\widetilde\varphi$ 是同构。来源为 Bhatt--Scholze, Theorem 1.16
-（正文 Theorem 15.3；locator `BS-NYG`）。
+（正文 Theorem 15.3）。
 
 **说明 7.4.** Filtration 位于 completed Frobenius twist $C^{(1)}$，graded
 piece 带 $\tau^{\le i}$ 与 $\{i\}$。把它写在未扭曲的 $C$ 上、删除
@@ -77,8 +67,7 @@ $$
 $$
 \mathbf Z/p^r(i)=\mathbf Z_p(i)\otimes_{\mathbf Z_p}^L\mathbf Z/p^r.
 $$
-这是 BMS2, Theorem 1.12 (5) 的 graded $TC$ construction（locator
-`BMS2-SYN`）。在 formal scheme 上须先 sheafify，再取 derived global
+这是 BMS2, Theorem 1.12 (5) 的 graded $TC$ construction。在 formal scheme 上须先 sheafify，再取 derived global
 sections。
 
 **警告 7.6.** 定义 7.5 是 quasisyntomic/Nygaard-complete construction，
@@ -106,8 +95,7 @@ inverse limit，则对这些 compatible maps 取 $R\varprojlim_r$ 得到相应
 $\mathbf Z_p$-level statement；这里不是在 sheaf cohomology groups 上取
 ordinary inverse limit。
 
-来源为 BMS2, Theorem 1.15（mixed-characteristic proof 为 Theorem 10.1；
-locator `BMS2-SYN`）。这里没有 properness 假设，也没有未说明的 torsion
+来源为 BMS2, Theorem 1.15（mixed-characteristic proof 为 Theorem 10.1）。这里没有 properness 假设，也没有未说明的 torsion
 假设；mixed-characteristic target 必须保留 $\tau^{\le i}$。
 
 ## 7.3 Tate twists 的积分问题
@@ -132,7 +120,7 @@ $$
 \mathbf Z_p(i)\otimes_{\mathbf Z_p}^L\mathbf Z_p(j)
 \longrightarrow\mathbf Z_p(i+j).
 $$
-来源为 BMS2, Theorem 1.12 (2), (5)（locator `BMS2-SYN`）。
+来源为 BMS2, Theorem 1.12 (2), (5)。
 
 **说明 7.11.** Bhatt--Scholze 的 $C^{(1)}$、$\tau^{\le i}$、$\{i\}$
 Nygaard formula 与 BMS2 的 fibre/products/nearby-cycles formulas 已分别绑定
@@ -169,7 +157,7 @@ $$
 
 **警告 7.15.** 命题 7.14 只证明 naive 模型中的乘法相容性。Derived Nygaard filtration 的乘法相容需要外部输入或独立 filtered derived category 论证。
 
-## 本章小结
+## 7.7 Divided Frobenius 与 syntomic fiber
 
 Nygaard filtration 是 prismatic cohomology 中控制 Frobenius 可除性和
 syntomic information 的结构。Relative Nygaard filtration 位于 completed

@@ -1,12 +1,6 @@
 # 第三章：Equivariant sheaves、六函子与 perverse t-structure
 
-## 本章目标
-
-本章建立几何表示论的 sheaf-theoretic 语言：equivariant derived categories、constructible complexes、六函子、Verdier duality、perverse t-structure 和 intersection complexes。这里的重点是类型约定和可验证的基本命题，而不是重证 BBD 理论。
-
-## 依赖前置知识
-
-需要附录 A 的商栈和六函子模板，第一章的 flag variety 和 Schubert 分层。
+Schubert variety 往往有奇点，普通局部系统只能描述光滑 stratum，普通上同调又不能在 proper pushforward 后同时保留各层的维数信息。需要一种对象既能沿开、闭嵌入做六函子运算，又把“复维数 $d$ 的光滑层应放在次数 $-d$”编码进心范畴；perverse sheaf 正是这种重新校准后的层。为避免把拓扑层、代数表示和不同系数理论混在一起，以下固定复解析 Betti 模型，并把 equivariance 解释为 quotient stack 上的 coherent descent。这个语言随后会同时承载 Schubert IC 层、Springer sheaf 和 Satake category。
 
 ## 3.1 Constructible derived categories
 
@@ -52,6 +46,8 @@ constructible derived category 对 stack equivalence 不变，故拉回给出所
 
 **类型警告 3.4.1.** 命题 3.4 的右侧是 sheaves on $BK$，不是 algebraic representations of $K$。例如 Betti 模型中若 $K$ 连通，则 $\pi_1(BK)\simeq\pi_0(K)=1$，所以 $BK$ 上的不可约 local system 只有常值秩一对象，而连通 reductive $K$ 通常有许多非平凡代数表示。有限稳定子情形才直接恢复有限群的表示；详见推论 A.9。
 
+Equivariant category 的类型确定以后，几何构造归结为沿映射拉回、推前和取对偶。接下来的六函子定理是这些操作的共同基础；正文只证明由它形式推出的命题，不把整个 formalism 伪装成局部计算。
+
 ## 3.2 六函子和 Verdier duality
 
 **约定 3.5.** 对分离、有限型 morphism $f:X\to Y$，本书把
@@ -64,8 +60,7 @@ $$
 $$
 f^\ast\dashv f_\ast,\qquad f_!\dashv f^!,
 $$
-base change、projection formula、Kunneth compatibility 和 Verdier duality compatibility。若使用 $\ast$-base-change 的 proper 版本，则相应竖直 morphism 必须 proper；$!$-base-change 按六函子 formalism 的版本调用。
-来源定位：`BBD-1` 与 Kashiwara--Schapira；本书不重证六函子 formalism。
+base change、projection formula、Kunneth compatibility 和 Verdier duality compatibility。若使用 $\ast$-base-change 的 proper 版本，则相应竖直 morphism 必须 proper；$!$-base-change 按六函子 formalism 的版本调用。这里采用 BBD 与 Kashiwara--Schapira 的 Betti constructible 版本，不重建六函子 formalism。
 
 **定义 3.7.** Verdier duality 定义为
 $$
@@ -134,6 +129,8 @@ $$
 
 **例 3.12.** 若 $X=\mathbb A^1$，则常值 sheaf $E_X[1]$ 是 perverse sheaf，而 $E_X$ 不是 perverse sheaf。原因是唯一 open stratum 维数为 $1$，perverse normalization 要求局部系统放在 cohomological degree $-1$。
 
+这个一维计算解释了 shift，却没有处理奇点。对一个光滑 stratum 的局部系统，middle extension 在边界处同时排除支撑其上的 subobject 与 quotient，从而给出最小而对偶对称的延拓；intersection complex 由此出现。
+
 **命题 3.13.** 令 $i:Z\hookrightarrow X$ 为复代数簇的闭嵌入。对任意 $\mathcal P\in\operatorname{Perv}(Z,E)$，有
 $$
 i_!\mathcal P\simeq i_\ast\mathcal P\in\operatorname{Perv}(X,E),
@@ -174,6 +171,8 @@ $$
 
 ## 3.5 Decomposition theorem 的边界
 
+IC 层解决了单个奇异闭包上的延拓问题。若再沿 proper map 推前，结果通常不再是单个 IC 层；decomposition theorem 说明它仍可由 semisimple perverse pieces 组成，但其适用对象、系数与 hard Lefschetz 附加条件必须分别陈述。
+
 **外部输入定理 3.18（本书使用的 Betti decomposition package）.** 令 $f:X\to Y$ 为复代数簇之间的 proper algebraic morphism，$E$ 为特征 $0$ 域，$X$ 为不可约复代数簇，$\operatorname{IC}_X$ 取定义 3.14 的 perverse normalization。则在 $D^b_c(Y,E)$ 中存在同构
 $$
 Rf_\ast\operatorname{IC}_X
@@ -196,7 +195,7 @@ $$
 \xrightarrow{\ \sim\ }
 {}^pH^{i}(Rf_\ast\operatorname{IC}_X).
 $$
-若 $X$ 光滑纯维数 $d$，才可把输入改写为 $\operatorname{IC}_X\simeq E_X[d]$。来源定位：`BBD-2`，BBD 6.2.5；semismall 特化见 `BBD-SS-1`。本书不重证这些结论。
+若 $X$ 光滑纯维数 $d$，才可把输入改写为 $\operatorname{IC}_X\simeq E_X[d]$。这一版本见 BBD 6.2.5，semismall 特化采用相应的 semismall decomposition theorem；本书不重证这些结论。
 
 **警告 3.19（不能越过的边界）.** 定理 3.18 不允许作下列替换：
 
@@ -214,9 +213,7 @@ $$
 5. splitting 是否被错误地当作 canonical；
 6. 是否另行使用 purity、weights 或 Frobenius trace 推出正性。
 
-## 本章小结
-
-本章固定了 Betti constructible 模型、equivariant sheaves 的 quotient-stack 口径、forgetful t-structure、六函子符号、perverse normalization 和 IC sheaf。内部证明覆盖齐性空间的 stack 等价、proper 情形下 Verdier duality 的形式推论、光滑簇上的 shift 以及光滑闭包上的 IC 计算；六函子、BBD t-structure、middle extension 和 decomposition package 均明确作为外部输入。特别地，sheaves on $BK$ 不再与正维代数群的 algebraic representations 混同，decomposition 也不再与 projective relative hard Lefschetz 混写。
+现在可以把光滑 stratum 上的局部系统延拓为 IC 层，并在 proper pushforward 后按 perverse cohomology 分解；同时，quotient stack 模型保证群作用没有被压成一个含混的“等变条件”。第四章把这些操作放到 $B\backslash G/B$ 的卷积图中，Schubert IC 层因而从奇点不变量变成 Hecke 代数的范畴化基向量。
 
 ## 练习
 

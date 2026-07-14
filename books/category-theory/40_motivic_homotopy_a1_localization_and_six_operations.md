@@ -1,12 +1,8 @@
 # 第四十章：Motivic homotopy、$\mathbb A^1$-局部化与六操作
 
-## 本章目标
+代数簇上的同伦论必须同时尊重 Grothendieck 拓扑和代数同伦 $X\times\mathbb A^1\to X$。Morel--Voevodsky 构造先在 $\mathrm{Sm}_S$ 上取空间值 sheaves，再作 $\mathbb A^1$-局部化，最后相对于 $\mathbb P^1$ 或 Tate sphere 稳定化得到 $\mathbf{SH}(S)$。这个顺序决定了 motivic sphere 的双重分次，也为基变换、纯性与六操作提供环境。本章只建立其范畴论骨架，并把深层几何定理标为外部输入。
 
-本章介绍 Morel-Voevodsky motivic homotopy theory 的范畴论骨架。Motivic homotopy 把光滑概形上的 presheaves of spaces 先 sheaf 化，再强制仿射直线 $\mathbb A^1$ 成为同伦等价，从而得到 motivic spaces；进一步稳定化得到 stable motivic homotopy category $\mathbf{SH}(S)$。这是把同伦论、代数几何和六操作形式主义统一的核心平台。
-
-## 依赖前置知识
-
-需要站点、sheaf、$\infty$-topos、Bousfield localization、presentable $\infty$-categories、spectra、稳定化、六操作、compact generation 和 derived/spectral 几何基础。
+背景包括站点、$\infty$-topos、可达局部化、稳定化与六操作。本章固定采用 Nisnevich 口径，并逐项声明基概形条件以及 $S^1$ 与 $\mathbb G_m$ 稳定化的关系；不把不同 site 或 effective/stable 范畴的结论直接互换。
 
 ## 40.1 光滑站点与 motivic spaces
 
@@ -82,13 +78,13 @@ $$
 
 ## 40.4 Motivic 六操作
 
-**外部输入定理 40.11.** 对足够一般的基概形，$\mathbf{SH}(-)$ 形成六操作形式主义。对 $f:X\to Y$，存在
+**外部输入定理 40.11.** 在 Noetherian、有限 Krull 维基概形组成的范畴上，$\mathbf{SH}(-)$ 形成六操作形式主义。任意态射 $f:X\to Y$ 有 $f^*\dashv f_*$；若 $f$ separated 且 finite type，则另有 $f_!\dashv f^!$。连同
 
 $$
 f^*,\quad f_*,\quad f_!,\quad f^!,\quad -\otimes-,\quad \underline{\operatorname{Hom}}
 $$
 
-并满足基变换、投影公式、proper compatibility、purity 和 localization triangles。
+这些操作满足适当的基变换、投影公式与 localization triangles；若 $f$ proper，则 $f_!\simeq f_*$。Purity 另要求光滑态射或 regular closed immersion 等几何条件。
 
 **命题 40.12.** 若 $j:U\hookrightarrow X$ 为开嵌入，$i:Z\hookrightarrow X$ 为闭补，则 motivic localization triangle 形如
 
@@ -126,17 +122,27 @@ $$
 
 ## 40.6 Motives 与 Eilenberg-Mac Lane 谱
 
-**外部输入定理 40.16.** 存在 motivic Eilenberg-Mac Lane spectrum $H\mathbb Z$。其模范畴与 Voevodsky motives 或相应 derived category of motives 在合适假设下密切相关：
+**外部输入定理 40.16.** 设 $k$ 为 perfect field，$e$ 为其 characteristic exponent。存在 motivic Eilenberg--Mac Lane spectrum $H\mathbb Z$，并有对称幺半等价
 
 $$
-\operatorname{Mod}_{H\mathbb Z}(\mathbf{SH}(S)).
+\operatorname{Mod}_{H\mathbb Z[1/e]}(\mathbf{SH}(k))
+\simeq
+\mathbf{DM}(k,\mathbb Z[1/e]).
 $$
+
+特征 $0$ 时 $e=1$，无需反演。对一般基概形，模范畴与 motives 的比较需要另行选择 transfers、系数与基底假设。
 
 **注 40.17.** 这把 stable motivic homotopy theory 和 triangulated categories of motives 联系起来。$\mathbf{SH}(S)$ 是更大的稳定同伦范畴，motives 可视为其中由 motivic cohomology 控制的线性化部分。
 
 ## 40.7 Compact generation 与 realization
 
-**外部输入定理 40.18.** 在常见有限性假设下，$\mathbf{SH}(S)$ compactly generated，其紧生成子由 smooth schemes 的悬挂谱及 Tate twists 给出。
+**外部输入定理 40.18.** 若 $S$ Noetherian 且有限 Krull 维，则 $\mathbf{SH}(S)$ compactly generated；一组紧生成子可取
+
+$$
+\Sigma^{p,q}\Sigma^\infty_T X_+,
+$$
+
+其中 $X\in\operatorname{Sm}_S$、$p,q\in\mathbb Z$。更一般基底上的紧性需单独验证。
 
 **命题 40.19（紧生成子检测）.** 设 $C$ 是 compactly generated stable $\infty$-category，$\mathcal G\subseteq C^\omega$ 是一组紧生成子。则对象 $X\in C$ 为零当且仅当
 
@@ -169,7 +175,7 @@ $$
 
 **注 40.20.** 某个 realization functor 是否保守并不能仅由 compact generation 推出；它要求其核中没有非零对象，是额外的几何或同伦论信息。
 
-## 40.8 本章小结
+## 40.8 从代数同伦到 motivic spectra
 
 Motivic homotopy theory 从光滑概形上的 space-valued sheaves 出发，先施加 Nisnevich descent，再施加 $\mathbb A^1$-invariance。稳定化后得到 $\mathbf{SH}(S)$，它既像谱范畴，又保留代数几何的 Tate 方向和六操作。Purity、Thom spaces、motivic cohomology、realization functors 和 compact generation 共同构成现代 motivic homotopy 的范畴论基础。
 

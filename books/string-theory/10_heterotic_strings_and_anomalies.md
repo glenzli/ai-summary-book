@@ -1,17 +1,12 @@
 # 第十章：heterotic strings、current algebra 和 anomaly cancellation
 
-## 本章目标
-
-Heterotic string 把右移动 superstring 与左移动 bosonic string 组合在同一个闭弦理论中。本章目标是说明：
-
-1. 为什么左移动内部 CFT 需要 central charge $16$；
-2. 为什么十维 gauge lattice 被限制为 $E_8\times E_8$ 或 $\operatorname{Spin}(32)/\mathbb Z_2$；
-3. gauge bosons 如何由 current algebra 产生；
-4. Green-Schwarz anomaly cancellation 如何限制十维理论。
-
-## 依赖前置知识
-
-需要第三章 CFT、第八章 RNS 超弦、附录 C 的 Lie algebra 与 anomaly polynomial 语言。
+Heterotic string 把右移动十维 RNS superstring 与左移动 bosonic string 缝成同一个
+闭弦理论。两侧的临界 central charge 不同，因此左侧必须增加 $c=16$ 的内部 CFT；
+level matching 与 genus-one modular invariance 又把任意十六维自由 bosons 收紧为
+even unimodular gauge lattice。这个世界面条件如何产生十维 gauge bosons，并怎样
+与时空 chiral anomaly 的 Green--Schwarz cancellation 相容，是本章要解决的同一
+一致性问题。推导使用第三章 CFT、第八章 RNS sectors，以及附录 C 的 Lie algebra、
+特征类和 anomaly polynomial 约定。
 
 ## 10.1 Heterotic 构造
 
@@ -182,9 +177,12 @@ even self-dual lattice 给出本章 realization 的 genus-one modular 条件，
 $I_{12}=X_4X_8$ 是十维低能局部 anomaly 条件。三者相互支持但逻辑上不同；任意一条
 都不能单独推出完整 perturbative heterotic string 的存在与一致性。
 
-## 本章小结
-
-Heterotic string 的严密主线是 central charge matching、even unimodular lattice、current algebra 和 anomaly cancellation。它不是任意把 gauge theory 加到 closed string 上；十维一致性把 gauge group 强烈限制为 $E_8\times E_8$ 与 $\operatorname{Spin}(32)/\mathbb Z_2$ 对应结构。
+这套构造表明，heterotic gauge sector 不是在闭弦谱外另加的自由选择。Worldsheet
+central charge 先要求十六维内部理论，even unimodular lattice 与 current algebra
+再产生 $E_8\times E_8$ 或 $\operatorname{Spin}(32)/\mathbb Z_2$ 的根与规范玻色子，
+十维 anomaly polynomial 的 factorization 则从低能侧检验同一选择。局部 central
+charge、genus-one modular invariance 与时空 anomaly cancellation 各自必要，不能
+拿其中任何一条代替另外两条。
 
 ## 练习
 

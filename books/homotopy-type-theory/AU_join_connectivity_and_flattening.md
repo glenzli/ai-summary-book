@@ -1,6 +1,6 @@
 # 附录 AU：Join Connectivity、Flattening Lemma 与 Blakers-Massey 证明接口
 
-附录 AL 把 Blakers-Massey 定理列为高级输入，并登记其依赖：fiberwise join、join connectivity 和 flattening lemma。本附录补出这些依赖的证明核，使 Blakers-Massey 的剩余边界更精确。
+附录 AL 把 Blakers--Massey 定理列为精确外部输入。Fiberwise join、join connectivity 和 flattening lemma 解释来源证明为何能把局部 fiber 信息转成连通度估计，但它们并不单独给出一般 pushout 路径空间的完整描述。本附录区分可在书内验证的 pushout 构造、另行采用的 join 连通性定理，以及最终仍由外部来源承担的 Blakers--Massey 结论。
 
 ## AU.1 Join
 
@@ -37,24 +37,13 @@ $$
 \mathsf{isContr}(\|A\|_n).
 $$
 
-**定理 AU.5（join connectivity）.** 若 $A$ 是 $m$-连通，$B$ 是 $n$-连通，则
+**外部输入定理 AU.5（join connectivity）.** 设 $m,n:\mathbb N$。若 $A$ 是 $m$-连通，$B$ 是 $n$-连通，则
 $$
 A\ast B
 $$
 是 $(m+n+2)$-连通。
 
-**证明状态 / 证明核.** 标准 HoTT 证明分为四步：
-
-1.  用 join 的 pushout 递归把映射
-    $$
-    A\ast B\to X
-    $$
-    化为函数 $A\to X$、$B\to X$ 与相干同伦。
-2.  对目标 $X$ 取 $(m+n+2)$-截断目标，使用 $A$ 和 $B$ 的连通性把函数空间降到常值数据。
-3.  关键相干由 $A\times B$ 的连通性提供；若 $A$ 为 $m$-连通且 $B$ 为 $n$-连通，则 $A\times B$ 至少为 $\min(m,n)$-连通，但 join 证明实际使用的是路径空间和 suspension-like 增连通机制。
-4.  对截断目标的映射空间证明可收缩，从而由截断泛性质得到 $\|A\ast B\|_{m+n+2}$ 可收缩。
-
-完整 proof term 较长，通常借助 encode-decode 或 wedge connectivity 的引理库。本书把 AU.5 作为 Blakers-Massey 的标准外部证明核；使用时必须保持编号 convention。
+**来源与边界.** Egbert Rijke, *The join construction*, arXiv:1701.07538, Theorem 6.9；取共同余域为 $\mathbf 1$ 得到上述类型版。该结果依赖单值宇宙及文中列出的 pushout/truncation 输入。本书采用其连通度结论，不把一句“映射到截断目标可收缩”当作证明。
 
 **低维检查 AU.6.** 若 $A$ 和 $B$ 均 merely inhabited，即 $(-1)$-连通，则 $A\ast B$ 是 $0$-连通。直观上，任意 $\mathsf{inl}(a)$ 与 $\mathsf{inr}(b)$ 由 glue 相连，而任意两点可经左右代表和 glue 连接；形式证明需对命题截断代表元消去，目标为集合截断中的连通性命题。
 
@@ -116,9 +105,9 @@ $$
 
 **证明（证明核）.** 从右到左用 pushout 递归：左 total 点 $(b,u)$ 送到 $(\mathsf{inl}(b),u)$，右 total 点送到 $(\mathsf{inr}(c),u)$，glue 相容由 $E$ 沿 pushout glue 的 transport 给出。从左到右对 $p:P$ 作 pushout 依赖消去：若 $p=\mathsf{inl}(b)$，送到左 total；若 $p=\mathsf{inr}(c)$，送到右 total；路径构造子情形由依赖消去的计算规则和相容等价处理。两个复合为恒等由 pushout 依赖消去和 $\Sigma$-路径等价证明。$\square$
 
-## AU.5 Blakers-Massey 的证明架构
+## AU.5 Blakers--Massey 中的作用
 
-**定理 AU.10（Blakers-Massey 架构）.** 对 pushout 方块
+**外部输入定理 AU.10（Blakers--Massey）.** 设 $m,n:\mathbb N$。对 pushout 方块
 $$
 \begin{array}{ccc}
 A&\to&B\\
@@ -130,13 +119,17 @@ $$
 $$
 A\to B\times_PC
 $$
-的 fiber 可由两个相关 fiber 的 join 控制，从而由 AU.5 推出 $(m+n)$-连通性。
+是 $(m+n)$-连通。
 
-**证明核.** 固定 $(b,c,p):B\times_PC$。gap fiber 的点是 $a:A$ 连同路径 $a$ 映到 $b,c$ 且与 $p$ 相容。由 flattening lemma，把 pushout 路径 $p:\mathsf{inl}(b)=\mathsf{inr}(c)$ 的 fiber 表示为两侧输入 fiber 的 join。输入映射的连通性给这些 fiber 的 $m$、$n$ 连通性；AU.5 给 join 的连通性；编号经由 path fiber 与 gap fiber 的一次 loop/截断平移，得到 $(m+n)$-连通。$\square$
+**精确来源.** The Univalent Foundations Program,
+*Homotopy Type Theory: Univalent Foundations of Mathematics*, Theorem 8.10.2；这与 AL.5、AY.5 是同一个采用版本。
 
-**剩余边界 AU.11.** AU.10 仍是证明架构而非完整逐项证明。完整展开需固定：
+**边界 AU.11.** 来源证明使用 flattening 与 join 连通性，但不能把固定
+$(b,c,p):B\times_PC$ 的 gap fiber 直接宣布为两个普通 fibers 的一次 join。若要内部重构 AU.10，还必须给出：
 
 1.  pushout 路径空间的 encode-decode；
 2.  flattening lemma 的 universe 层级；
 3.  join connectivity 的编号 convention；
-4.  gap fiber 与 path-code fiber 的具体等价方向。
+4.  gap fiber 与所构造 path-code fiber 的具体比较及全部 transport 相容。
+
+附录 AY.4 的悬挂二点类型例子说明，单步 span-fiber 一般不等于完整 pushout 路径空间。因此 AU.8-AU.9 可以解释来源机制，却不能代替 AU.10 的外部定理身份。

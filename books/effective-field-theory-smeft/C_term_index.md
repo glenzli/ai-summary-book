@@ -10,7 +10,7 @@
 - **EOM redundancy（运动方程冗余）**：可由场重定义吸收的算符冗余。
 - **evanescent operator**：在 $d_{\rm DR}=4-2\epsilon$ 中独立、四维极限按代数恒等式消失，但可经 $1/\epsilon$ pole 影响有限项的算符。
 - **flavor assumption（味假设）**：对 Wilson flavor 张量的简化假设。
-- **global fit（全局拟合）**：多观测量联合限制 Wilson 系数的统计分析，见第 17、19、22 章。
+- **global fit（全局拟合）**：多观测量联合限制 Wilson 系数的统计分析，见第 17、19、22--24 章。
 - **heat-kernel / determinant matching**：用泛函行列式做一圈匹配的展开方法，见第 18 章。
 - **hard/soft matching**：UV 与 EFT 的共同软非解析部分先相消，只把 hard 局域多项式匹配到 Wilson 系数，见第 2 章。
 - **HEFT**：非线性电弱有效理论，Higgs 不必作为 $SU(2)_L$ 双重态线性实现。
@@ -21,11 +21,13 @@
 - **one-loop matching（一圈匹配）**：在一圈阶计算重自由度阈值贡献并投影为局域算符，见第 18 章。
 - **operator mixing（算符混合）**：重整化下一个算符插入产生另一个算符结构的发散。
 - **parameter counting（参数计数）**：固定 flavor、CP 与 Hermiticity 假设后的 Wilson 实维数，见第 20 章。
-- **response matrix（响应矩阵）**：Wilson 参数到归一化观测量位移的线性映射，见第 8、23 章。
+- **response matrix（响应矩阵）**：Wilson 参数到归一化观测量位移的线性映射，见第 8、23、24 章；二次响应统一记为 $\mathsf Q_{aij}$，以区别硬尺度 $Q$。
 - **power counting（幂计数）**：按小参数排列算符和振幅贡献的规则。
-- **physical gap $M_{\rm gap}$**：低能展开点到最近遗漏重 pole/threshold 的物理尺度，控制局域展开边界，见第 6、8、17、22 章。
+- **physical gap $M_{\rm gap}$**：低能展开点到最近遗漏重 pole/threshold 的物理尺度，控制局域展开边界，见第 6、8、17、22--24 章。
+- **locality ratio $\rho_{\rm loc}$**：$Q/M_{\rm gap}$，衡量给定运动学域离最近遗漏奇点的距离；它不依赖 Wilson 参考尺度，见第 17、22--24 章。
 - **quotient descent（商空间下降）**：重整化映射保持冗余子空间时，在算符商空间上诱导良定义映射，见命题 4.9A。
-- **reference scale $\Lambda_{\rm ref}$**：把 Wilson 系数写成无量纲坐标的约定尺度；连同 $C_i^{(d)}$ 重标度不改变物理，不能单独充当 validity cut，见第 1、6、8、17、22 章。
+- **reference scale $\Lambda_{\rm ref}$**：把 Wilson 系数写成无量纲坐标的约定尺度；连同 $C_i^{(d)}$ 重标度不改变物理，不能单独充当 validity cut，见第 1、6、8、17、22--24 章。
+- **insertion ratio $\rho_{\rm ins,i}^{(d)}$**：$|C_i^{(d)}(\mu)|(Q/\Lambda_{\rm ref})^{d-4}$，粗略衡量一次高维算符插入；过程权重需另加，见第 17、22--24 章。
 - **SMEFT**：以 SM 场和线性电弱对称性为低能自由度的有效理论。
 - **Warsaw basis**：SMEFT 维数六最常用的完整算符基之一。
 - **Wilson coefficient（Wilson 系数）**：乘在有效算符前、编码短程物理的系数。

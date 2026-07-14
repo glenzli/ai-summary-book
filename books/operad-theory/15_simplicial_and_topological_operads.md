@@ -1,11 +1,6 @@
 # 第十五章：Simplicial operad 与 topological operad
 
-本章研究取值于空间型模型范畴的 operad。核心对象有两类：
-
-1. simplicial operads，即 $\mathbf{sSet}$-值 operad；
-2. topological operads，即 $\mathbf{Top}$-值 operad。
-
-二者通过几何实现与奇异复形比较。这个比较是把经典拓扑 operad，例如 little cubes operad，转化为 combinatorial homotopy theory 对象的基本工具。
+Little cubes 的每个 arity 不是集合，而是带连续路径和高阶同伦的配置空间；只取其点集会丢失 operad 最重要的信息。可以直接在紧生成空间中保留这些配置，也可以取奇异复形，把连续同伦转成 simplicial 方向的组合数据。几何实现与奇异复形虽给出 Quillen equivalence，但要把它们逐 arity 提升到 operad，还需确认有限积、单位和 transferred 模型结构相容。本章沿这条比较研究 topological 与 simplicial operad，并以 little cubes、chains 以及只有一元运算的 simplicial categories 检查各层结构实际保留了什么。
 
 ## 15.1 空间型底范畴
 
@@ -147,7 +142,7 @@ $$
 $$
 |-|:\operatorname{Op}(\mathbf{sSet})\rightleftarrows \operatorname{Op}(\mathbf{Top}):\operatorname{Sing}
 $$
-这个构造只给出底层伴随。要断言它在定理 15.9 与 15.15 的 transferred 模型结构间为 Quillen equivalence，还需要一个明确的 operad-category change-of-base theorem，并核对单位、cofibrancy 和 monoidal comparison。PSAR-6 主要控制 transported operads 的 algebra categories，不能在此未经翻译替代 operad-category 比较。本书尚未登记这条提升的精确 locator，故 15.18 不进入证明链；底范畴的 Quillen equivalence 仍由外部输入定理 15.3 单独使用。
+这个构造只给出底层伴随。要断言它在定理 15.9 与 15.15 的 transferred 模型结构间为 Quillen equivalence，还需要 operad-category 的 change-of-base theorem，并核对单位、cofibrancy 和 monoidal comparison。控制 transported operads 之代数范畴的结果不能未经翻译替代 operad-category 比较；因此本节只使用外部输入定理 15.3 的底范畴 Quillen equivalence，不声称上述 operad-level 伴随已经是 Quillen equivalence。
 
 ## 15.4 Little cubes operad
 
@@ -264,9 +259,9 @@ Operad 的单位和 unary composition 给出 enriched category 的单位和复�
 
 **说明 15.28.** 因此 simplicial categories 是 colored simplicial operads 的一维特例。后续 dendroidal sets 把 simplicial sets 视为“线性树”上的 presheaves，并把 operads 视为“所有树”上的 presheaves；这就是从 category nerve 到 dendroidal nerve 的动机。
 
-## 15.7 本章小结
+## 15.7 三种实现各自保留的结构
 
-Simplicial operads 和 topological operads 是 operad 同伦理论的空间型模型。$\operatorname{Sing}$ 和 $|-|$ 允许在两者之间移动，并在 transferred 模型结构下给出 Quillen equivalence。Little cubes operad 是拓扑 operad 的核心例子；取 singular complex 得到 simplicial operad，取 chains 得到 dg-operad。Simplicial categories 作为 unary colored simplicial operads，提供了通往 dendroidal sets 和 infinity-operads 的一维入口。
+Little cubes 的拓扑 operad保留真实配置空间，$\operatorname{Sing}$ 把它转为 simplicial operation spaces，chains 再把空间同伦压到 dg 层。前两者在相应 transferred 模型结构与幺半相容假设下由 Quillen 理论比较；chains 通常只给弱幺半或派生层面的信息，不能无条件反向恢复拓扑。只有一元运算的 simplicial operad正是 simplicial category，这条一维特例提示下一章的推广：把线性字符串换成有根树，便能同时记录任意多输入复合。
 
 ## 练习
 

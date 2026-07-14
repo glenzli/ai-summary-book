@@ -37,7 +37,7 @@
 | 第 20 章 | 主体收口 | BFN construction、finite type、quantization 页码级 locator |
 | 第 21 章 | 主体收口 | KS/Davison-Meinhardt locator；critical/ordinary convention |
 | 第 22 章 | 主体收口 | Lusztig/Kashiwara locator；canonical/dual canonical convention |
-| 第 23 章 | 主体收口 | 与附录 J、前沿审计、P0/P1 locator 交叉闭合 |
+| 第 23 章 | 主体收口 | 保持五类数学障碍边界；时效性结果与核验流程只交叉到附录 J 和 locator 记录 |
 
 ## 2. 内部闭合最小标准
 

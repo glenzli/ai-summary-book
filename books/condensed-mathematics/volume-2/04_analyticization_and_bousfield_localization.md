@@ -1,20 +1,20 @@
 # 第四章：解析化与 Bousfield localization
 
-## 本章目标
-
-本章解释解析化函子如何作为 Bousfield localization 出现。核心思想是：解析化强制所有 Dirac-to-measure 映射
+解析模把普通自由 Dirac 组合和允许测度视作同一种测试数据。要把任意 $A$-模送到最接近
+它的解析对象，就应强制所有映射
 
 $$
 A[\underline S]\to\mathcal M[S]
 $$
 
-在派生范畴中变成同构。
+在局部化后成为同构。等价地，它们的 cofiber $K_S^{\mathcal M}$ 必须被杀掉，而局部
+对象恰是对全部 $K_S^{\mathcal M}$ 右正交的复形。这把第三章的 Hom 公理转化成一个
+可以用反射泛性质操作的 Bousfield localization。
 
-幺半 Bousfield localization、核为张量理想的判别和相对张量积下降公式见附录 K。
-
-## 依赖
-
-需要第三章的预解析环与解析复形。
+以下固定第三章的 analytic ring $(A,\mathcal M)$，区分局部对象、零化对象与反射函子，
+并证明接受反射存在性后得到的基本形式结论。幺半相容性不是任意 Bousfield localization
+自动具有的性质；核为张量理想的判别和相对张量下降在附录 K 展开，正文只调用精确的
+Scholze 输入定理来定义 analytic tensor。
 
 ## 4.1 局部对象与零化对象
 
@@ -156,15 +156,19 @@ $$
 
 于是解析化就是派生 solidification，解析张量积就是派生 solid 张量积。
 
-## 4.6 本章小结
+## 4.6 杀掉 Dirac 与测度的差
 
-解析化是通过杀掉
+解析化反射恰好杀掉
 
 $$
 \operatorname{cofib}(A[\underline S]\to\mathcal M[S])
 $$
 
-来实现的 localization。这个观点统一解释了 solidification、analytic modules 和后续 liquid 结构。
+生成的局部化核，因而其局部对象正是解析复形。核的张量理想性允许普通派生张量在反射
+后下降为 analytic tensor；在 $(\mathbb Z,\mathbb Z^\square)$ 情形，这一构造就是
+solidification。第五章将更换底环与测度为
+$(\underline{\mathbb R},\mathcal M_{<p})$，并检验经典函数空间何时真正落入相应局部
+对象，而不是只在名称上被称作 liquid。
 
 ## 练习
 

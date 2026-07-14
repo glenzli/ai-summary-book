@@ -1,12 +1,6 @@
 # 第二章：复定向、形式群律与 Brown-Peterson theory
 
-## 本章目标
-
-本章说明 chromatic height 的来源。我们从复定向同调理论得到形式群律，再通过 $p$-typical 化进入 $BP$、Hazewinkel generators、Johnson-Wilson theories 和 Morava K-theories 的系数形式。
-
-## 依赖前置知识
-
-需要熟悉 $\mathbb CP^\infty$、线丛的 classifying space、幂级数环和一维形式群律的基本定义。复杂的 Lazard theorem 和 Quillen theorem 作为外部输入。
+第一章只说明怎样相对于一个同调理论局部化，却没有解释“高度”从何而来。复定向提供缺失的代数坐标：线丛的张量积在 $E^*(\mathbb CP^\infty)$ 上诱导一维形式群律，而在固定素数处，$p$-级数的首个非零层正好记录高度。沿这条链可以从 $MU$ 进入 $BP$、Hazewinkel 生成元、Johnson--Wilson 理论和 Morava $K$-理论的系数环。本章假定读者熟悉 $\mathbb CP^\infty$、线丛分类空间与幂级数环；Lazard 分类和 Quillen 对 $MU$ 的识别作为精确外部输入，后续只使用其明确陈述。
 
 ## 2.1 复定向
 
@@ -210,7 +204,7 @@ $$
 
 **警告 2.23.** 不能把 $[p]_F(x)=px+v_1x^p+\cdots$ 当作普通幂级数加法下的恒等式而忽略 $+_F$。许多低阶计算可在指定坐标中化简，但必须声明 convention。
 
-## 本章小结
+## 2.8 从复定向到色层高度
 
 复定向把稳定同伦论连接到形式群律。Quillen theorem 说明 $MU$ 表示 universal formal group law；$BP$ 抽取 $p$-typical 信息；$E(n)$ 和 $K(n)$ 则把高度 $\le n$ 和高度 $n$ 的信息分别变成同调理论。这一章给出系数和定义，深层存在性和 universal property 已登记为外部输入。
 

@@ -1,12 +1,6 @@
 # 第五章：$A_{\inf}$、Breuil-Kisin theory 与 BMS 积分比较
 
-## 本章目标
-
-本章说明 Bhatt-Morrow-Scholze integral $p$-adic Hodge theory 在 prismatic theory 出现前解决的问题：构造 $A_{\inf}$-cohomology 和 Breuil-Kisin 型上同调，使同一个积分对象同时控制 de Rham、crystalline 和 etale specialization。Prismatic cohomology 后来把这些对象解释为特定 prism 上的 cohomology。
-
-## 依赖前置知识
-
-依赖第一章的 perfectoid interface、第二章的 perfect prism 与 Breuil-Kisin prism，以及第四章的 classical comparison interface。需要熟悉 derived category、almost mathematics 和 pro-etale site 的基本语言；大型构造作为外部输入。
+有理周期环比较会丢掉 torsion 与格信息，而积分 $p$-进 Hodge 理论要用同一个对象同时保留 de Rham、crystalline 和 étale 出口。Bhatt--Morrow--Scholze 的 $A_{\inf}$-cohomology 以及 Breuil--Kisin 型上同调实现了这种控制，$L\eta$ 则负责剔除特定 torsion 而不粗暴反演元素。棱柱理论随后把这些构造识别为特殊 prism 上的 cohomology。本章从第一章的 perfectoid interface、第二章的 perfect/Breuil--Kisin prism 与第四章的经典比较目标出发，展开 $A_{\inf}$ 对象、四个 specialization 和 torsion 门槛；大型存在定理按外部输入处理。
 
 ## 5.1 Fontaine's $A_{\inf}$
 
@@ -71,7 +65,7 @@ completeness，但一般不与另一个理想的 completion 交换。
    $J$-completion 交换；当 $J=I$ 且 $I$ invertible 时，它与 derived
    $I$-completion 交换（Lemma 6.20）。
 
-这些结果的 locator 为 `BMS1-LETA`。$A\Omega$ 上的 Frobenius 还使用 BMS
+$A\Omega$ 上的 Frobenius 还使用 BMS
 构造中的额外 comparison maps，不能把它说成任意 $L\eta_f$ 的形式性质。
 
 ## 5.3 BMS 的 $A_{\inf}$-cohomology
@@ -101,7 +95,7 @@ sheaves 和 $L\eta_\mu$ 构造；来源为 `BMS1-AINF`。
 
 **外部输入定理 5.8（BMS integral comparison）.** 在定义 5.7 的假设
 下，令 $C_{A_{\inf}}=R\Gamma_{A_{\inf}}(\mathfrak X)$。BMS1, Theorem
-1.8（正式证明汇总为 Theorem 14.3；locator `BMS1-AINF`）给出：
+1.8（正式证明汇总为 Theorem 14.3）给出：
 
 1. **crystalline specialization**：
    $$
@@ -148,8 +142,7 @@ R\Gamma_{A_{\inf}}(\mathfrak X)
 \phi_{A_{\inf}}^\ast
 R\Gamma_\Delta(\mathfrak X/A_{\inf}).
 $$
-来源为 Bhatt-Scholze, Theorem 17.2 与其全局化（locator
-`BS-COMP-AINF`）。因 $A_{\inf}$ perfect，$\phi_{A_{\inf}}$ 是同构，故
+来源为 Bhatt-Scholze, Theorem 17.2 与其全局化。因 $A_{\inf}$ perfect，$\phi_{A_{\inf}}$ 是同构，故
 $\phi^*$ 是 autoequivalence；但它改变 $A_{\inf}$-module structure，不能
 从公式中删去。
 
@@ -236,7 +229,7 @@ $$
 §15.2 末段的 Breuil--Kisin/prismatic identification；locators 为
 `BMS2-BK`、`BMS2-BKLOCAL` 和 `BS-COMP-BK`。
 
-**说明 5.15.** 这说明 prismatic site 不是只重写 $A_{\inf}$ 情形，而是把 crystalline prism、perfect prism、Breuil-Kisin prism 和 $q$-crystalline prism 放入同一形式。BMS2 的 THH construction 还解释了 Nygaard filtration、syntomic sheaves 和 Breuil-Kisin twists 的来源；这些结构在第七章和第十一章中通过 BMS2-SYN locator 使用。
+**说明 5.15.** 这说明 prismatic site 不是只重写 $A_{\inf}$ 情形，而是把 crystalline prism、perfect prism、Breuil-Kisin prism 和 $q$-crystalline prism 放入同一形式。BMS2 的 THH construction 还解释了 Nygaard filtration、syntomic sheaves 和 Breuil-Kisin twists 的来源；第七章和第十一章将分别调用相应的构造与比较定理。
 
 ## 5.6 积分结构与 torsion 控制
 
@@ -296,7 +289,7 @@ base change 交换。
 
 **证明.** $A_{\inf}$-cohomology 的作用是同时控制 de Rham、crystalline、etale 和 integral lattice 信息。只给出 de Rham 出口会遗忘 Frobenius、torsion 和 etale comparison 所需的结构。因此它不能替代完整对象。证毕。
 
-## 本章小结
+## 5.8 积分对象与四个出口
 
 BMS 理论在 prismatic theory 前已经构造了强大的积分 cohomology object。BMS1 给出 $A_{\inf}$-cohomology 和 $A\Omega$，BMS2 用 THH/TC refinement 产生 Breuil-Kisin cohomology、Nygaard filtration 和 syntomic sheaves。Prismatic theory 的作用不是废弃 BMS，而是把 $A_{\inf}$ 和 Breuil-Kisin cohomology 解释为特定 prism 上的统一 cohomology，并把 comparison theorem 放入一个 site-theoretic 框架。
 

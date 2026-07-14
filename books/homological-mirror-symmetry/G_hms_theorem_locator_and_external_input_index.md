@@ -40,7 +40,10 @@
 - Ganatra-Pardon-Shende, *Covariantly functorial wrapped Floer theory on Liouville sectors*：Liouville sectors、wrapped functoriality。
 - Ganatra-Pardon-Shende, *Sectorial descent for wrapped Fukaya categories*：descent、stop removal、generation、Kunneth。
 - Ganatra-Pardon-Shende, *Microlocal Morse theory of wrapped Fukaya categories*：microlocal sheaf 模型。
-- Nadler-Zaslow, *Constructible Sheaves and the Fukaya Category*：cotangent Fukaya categories 与 constructible sheaves。
+- Nadler--Zaslow, *Constructible Sheaves and the Fukaya Category*：constructible
+  sheaves 到 cotangent Fukaya category 的 quasi-embedding；Nadler,
+  *Microlocal branes are constructible sheaves*：essential surjectivity 与
+  quasi-equivalence。
 - Sylvan, *Orlov and Viterbo functors in partially wrapped Fukaya categories*：Orlov/Viterbo functors。
 
 ## G.5 标准 HMS 例子
@@ -48,12 +51,24 @@
 - Kontsevich, *Homological Algebra of Mirror Symmetry*：原始 HMS 断言。
 - Polishchuk-Zaslow, *Categorical Mirror Symmetry: The Elliptic Curve*：椭圆曲线 HMS。
 - Abouzaid, *Morse Homology, Tropical Geometry, and Homological Mirror Symmetry for Toric Varieties*：toric varieties HMS。
-- Sheridan, *Homological Mirror Symmetry for Calabi-Yau hypersurfaces in projective space*：projective hypersurfaces。
-- Abouzaid-Auroux, *Homological mirror symmetry for hypersurfaces in $(\mathbb C^\ast)^n$*：torus hypersurfaces。
+- Seidel, *Homological mirror symmetry for the quartic surface*：quartic K3 HMS。
+- Sheridan, *Homological Mirror Symmetry for Calabi-Yau hypersurfaces in projective space*：维数 $d>2$ 的 projective Calabi--Yau hypersurfaces。
+- Abouzaid--Auroux, *Homological mirror symmetry for hypersurfaces in $(\mathbb C^\ast)^n$*：maximally degenerating torus hypersurfaces 到 fiberwise wrapped category 的 quasi-embedding。
+- Lekili--Polishchuk, *Homological mirror symmetry for higher dimensional
+  pairs of pants*：stopped categorical resolution 与 fully wrapped localization。
 - Lekili-Ueda, Rabinowitz Fukaya categories of Brieskorn-Pham singularities：Rabinowitz/奇点边界。
 - Ganatra-Hanlon-Hicks-Pomerleano-Sheridan, Batyrev mirror pairs：2024 近期证明型边界。
 
-## G.6 在线教材收口判定
+## G.6 稳定性与 twists
+
+- Bridgeland, *Stability conditions on triangulated categories*：stability
+  conditions、slicings 与 Harder--Narasimhan filtrations。
+- Seidel--Thomas, *Braid group actions on derived categories of coherent
+  sheaves*：spherical twists 与 braid-group actions。
+- Pasquarella, *Advancements in Functorial Homological Mirror Symmetry*：
+  functorial HMS/BPS 研究视角；不作为统一等价定理。
+
+## G.7 在线教材收口判定
 
 当前已完成在线教材所需的最低 theorem locator：
 

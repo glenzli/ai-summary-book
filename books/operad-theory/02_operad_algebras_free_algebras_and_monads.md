@@ -1,18 +1,6 @@
 # 第二章：Operad 代数、自由代数与单子
 
-## 本章目标
-
-本章把第一章的“到 endomorphism operad 的 morphism”推进为代数范畴和自由代数理论。核心目标是：
-
-1. 定义 $\mathcal O$-代数同态和范畴 $\operatorname{Alg}_{\mathcal O}(\mathbf{Set})$。
-2. 构造 operad morphism 诱导的限制标量函子。
-3. 给出集合值自由 $\mathcal O$-代数的显式商公式。
-4. 证明自由-遗忘伴随。
-5. 把 $\mathcal O$-代数识别为一个 finitary monad 的代数。
-
-## 依赖前置知识
-
-需要第一章的对称 operad、endomorphism operad 和 operad 代数定义，以及范畴、函子、伴随和 monad 的基本语言。
+第一章把一个 $\mathcal O$-代数写成 operad morphism $\mathcal O\to\operatorname{End}_A$，但这个定义还没有回答最基本的构造问题：给定集合 $A$，由 $A$ 生成的所有形式 $\mathcal O$-表达式究竟是什么。候选元素可写成 $[o;(a_s)_{s\in S}]$；若改变输入集的名字，所得表达式不应改变，而两层表达式又必须按 operad 代入压成一层。把这两种识别写成显式商，便同时产生自由代数、自由-遗忘伴随和一个 finitary monad。以下只使用第一章的 operad 与代数定义，以及伴随和 monad 的通常范畴论语言。
 
 ## 2.1 代数同态
 
@@ -439,9 +427,9 @@ $$
 $$
 与有限列表集合双射。$\operatorname{Ass}$ 的代入是全序字代入，所以自由代数乘法是列表连接。$\square$
 
-## 本章小结
+## 2.8 自由表达式的计算接口
 
-本章证明了集合值 operad 不只是编码运算符号；它给出集合范畴上的 finitary monad。自由 $\mathcal O$-代数由公式
+集合值 operad 不只列出运算符号，它还在集合范畴上给出 finitary monad。自由 $\mathcal O$-代数由公式
 $$
 \mathbb T_{\mathcal O}(A)
 =
@@ -454,6 +442,8 @@ $$
 \right)\big/\Sigma_n\text{兼容关系}.
 $$
 商关系正是“输入重标号不改变形式运算值”。$\operatorname{Com}$ 和 $\operatorname{Ass}$ 的自由代数分别是有限重集和有限列表。
+
+这个结论也给出以后反复使用的检验法：先写出生成表达式，再检查对称群 coinvariants，最后检查 monad 乘法是否正是树的压平。第三章将暂时去掉对称重标号，把这一步拆成单槽偏复合；这样，代入结合律会显露为一棵树按不同次序收缩所得结果相同。
 
 ## 练习
 

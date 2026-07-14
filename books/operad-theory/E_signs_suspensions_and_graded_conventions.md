@@ -161,7 +161,7 @@ $$
 f(a_1,\ldots,a_{i-1},g(a_i,\ldots,a_{i+q-1}),a_{i+q},\ldots).
 $$
 
-**说明 E.15.** 定义 E.14 只记录内部次数穿过插入位置左侧输入时产生的 Koszul 符号。若使用 suspended Hochschild complex，还会出现由 arity suspension 产生的额外符号。定义 E.18--定义 E.23 给出 suspended brace 的统一算法；最终出版若展开 graded Deligne conjecture，需要把该算法与所选链级 $E_2$ 模型逐项对照。
+**说明 E.15.** 定义 E.14 只记录内部次数穿过插入位置左侧输入时产生的 Koszul 符号。若使用 suspended Hochschild complex，还会出现由 arity suspension 产生的额外符号。定义 E.18--定义 E.23 给出 suspended brace 的统一算法；展开 graded Deligne conjecture 时，需要把该算法与所选链级 $E_2$ 模型逐项对照。
 
 **定义 E.16.** Graded cup product 可取为
 $$

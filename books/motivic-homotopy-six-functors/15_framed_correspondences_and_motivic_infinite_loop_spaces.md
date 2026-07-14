@@ -1,12 +1,15 @@
 # 第十五章：Framed correspondences 与 motivic infinite loop spaces
 
-## 本章目标
+有限对应记录循环的加性传递，却没有记录一个有限 lci 映射的法向方向。Framed
+correspondence 在 finite syntomic 态射上加入 cotangent complex 的稳定平凡化，
+使相应 Gysin 扭曲被消去。这个额外数据恰好足以把几何 correspondence 与 motivic
+谱的 infinite loop structure 联系起来。
 
-本章介绍 framed correspondences。它们是现代 motivic homotopy theory 中描述 `\mathbb P^1`-infinite loop spaces 的核心工具，可视为 motivic 世界中对应 `E_\infty`-spaces 的几何结构。本章只给出严格口径和主要外部输入，不重建完整 framed correspondence 模型。
-
-## 依赖前置知识
-
-需要 finite syntomic morphisms、cotangent complex、K-theory trivializations、motivic spaces、group completion、infinite loop spaces、`H\mathbb Z`、`MGL` 和 suspension spectra。
+完整 framed 模型涉及多种等价呈现，本章不重建其全部技术，而是固定每种陈述所需的
+数据和范畴层级。我们从 finite syntomic 与 stable framing 入手，解释 Nisnevich
+层化、`\mathbb A^1`-局部化和 group completion 为何缺一不可，再精确引用 perfect
+field 上的 recognition theorem。第十四章的 finite transfers、第十六章的
+fundamental classes 与第十七章的 norms 将由具体输入和相干性质逐一比较。
 
 ## 15.1 Framed correspondences 的口径
 
@@ -39,7 +42,7 @@ Nisnevich localization 和 `\mathbb A^1`-localization 都是定理输入的一�
 
 **精确来源与边界.** Elmanto--Hoyois--Khan--Sosnilo--Yakerson, *Motivic
 infinite loop spaces*, Theorem 1.2.3 and Theorem 3.5.14，
-`https://arxiv.org/abs/1711.05248`。P0 版本限于 perfect field；本章不把它
+`https://arxiv.org/abs/1711.05248`。此处采用的版本限于 perfect field；本章不把它
 写成任意基上的 recognition theorem。
 
 **命题 15.5.** 定理 15.4 说明 framed transfers 是稳定化信息，而不是普通 presheaf 的附加加性结构。
@@ -53,7 +56,7 @@ grouplike 条件。`S^1`-稳定化后的第二条等价进一步给出 effective
 
 ## 15.3 Sphere spectrum 的几何模型
 
-**高级外部输入 15.6（P1）.** 在域上并采用论文指定的 stabilization 与
+**高级外部输入 15.6.** 在域上并采用论文指定的 stabilization 与
 group-completion 口径时，motivic sphere 和 algebraic cobordism 的若干
 infinite loop spaces 可由 framed finite-syntomic moduli/Hilbert-scheme
 模型表示。
@@ -61,13 +64,13 @@ infinite loop spaces 可由 framed finite-syntomic moduli/Hilbert-scheme
 **精确来源与边界.** Bachmann--Elmanto--Hoyois--Khan--Sosnilo--Yakerson,
 *On the infinite loop spaces of algebraic cobordism and the motivic sphere*,
 Theorems 1.1 and 1.4，`https://arxiv.org/abs/1911.02262`。该几何模型不参与
-定理 15.4 的 P0 教学证明。
+定理 15.4 的证明链。
 
 **注 15.7.** 该定理是现代 motivic homotopy 的强几何化结果。由于模型依赖精细 moduli 构造，本书在基础部分只将其作为外部输入。
 
 ## 15.4 与 fundamental classes 的联系
 
-**高级外部输入 15.8（P1）.** 在文献指定的 tangentially framed
+**外部输入定理 15.8（P1）.** 在文献指定的 tangentially framed
 correspondence 和 motivic coefficient-system 假设下，framed transfers 可与
 motivic fundamental classes 所产生的 finite-syntomic Gysin transfers 比较。
 
@@ -75,8 +78,8 @@ motivic fundamental classes 所产生的 finite-syntomic Gysin transfers 比较�
 transfers and motivic fundamental classes*, Section 3，
 `https://arxiv.org/abs/1809.10666`；fundamental-class 端见
 Deglise--Jin--Khan Theorems 3.3.2 and 4.2.1，
-`https://arxiv.org/abs/1805.05920`。全相容属于 P1，不作为 recognition 的
-P0 前提。
+`https://arxiv.org/abs/1805.05920`。这一全相容定理不是 recognition theorem
+的前提，使用时须独立核对其系数与态射假设。
 
 **命题 15.9.** 若一个 cohomology theory 同时来自 motivic spectrum `E` 且有 framed transfers，则其 finite syntomic Gysin maps 必须与 `E` 的 fundamental class formalism 相容，才能在 framed recognition 与六操作之间一致。
 
@@ -152,12 +155,12 @@ and Theorem 3.5.14，同定理 15.4 的 URL。这里说的是 infinity-category 
 
 **证明.** Recognition 定理把某类 grouplike framed motivic spaces 与由 suspension spectra 在 colimits 下生成的谱对象联系起来。Colimits、cofibers、localizations 和 retracts 产生的谱一般不是单个 `\Sigma^\infty X_+`。因此定理说明生成和识别机制，而不是把每个谱压缩成单个光滑概形。`\square`
 
-## 15.9 本章小结
+## 15.9 Framing 编码的稳定信息
 
 Framed correspondences 把 finite syntomic 数据及 `L_{Z/X}` 的 K-theory
-平凡化连接到 motivic infinite loop structures。P0 recognition 精确限于
-perfect field，并由 Theorems 1.2.3 and 3.5.14 定位；Hilbert-scheme 模型和
-与 fundamental classes 的全相容均明确留在 P1。Finite syntomic 的正确
+平凡化连接到 motivic infinite loop structures。此处的 recognition theorem 精确
+限于 perfect field，并由 Theorems 1.2.3 and 3.5.14 定位；Hilbert-scheme 模型和
+与 fundamental classes 的全相容是另外的高级外部输入。Finite syntomic 的正确
 cotangent 振幅是 `[-1,0]`。
 
 ## 练习

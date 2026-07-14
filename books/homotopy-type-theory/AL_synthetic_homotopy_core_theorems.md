@@ -1,6 +1,6 @@
 # 附录 AL：Blakers-Massey、Freudenthal 与 Hopf Fibration
 
-本附录补入合成同伦论的核心定理形态。它不把全部高阶相干压进正文，但每个结果都给出精确类型论陈述、使用的输入和证明骨架，避免把第十二章停留在“研究方向”层面。
+本附录固定合成同伦论中两个大型连通性定理的采用版本，并区分定理结论与来源证明机制。Blakers--Massey 和 Freudenthal 均作为精确外部输入；join、flattening 与 path-code 的说明帮助读者理解假设如何进入，但不代替来源中的完整高阶相干证明。
 
 ## AL.1 连通性约定
 
@@ -35,7 +35,7 @@ $$
 
 ## AL.2 Blakers-Massey 定理
 
-**定理 AL.5（Blakers-Massey，HoTT 形式）.** 若方块是 pushout 方块，且
+**外部输入定理 AL.5（Blakers--Massey，HoTT 形式）.** 设 $m,n:\mathbb N$。若方块是 pushout 方块，且
 $$
 f:A\to B
 $$
@@ -51,17 +51,19 @@ A\to B\times_{B\sqcup_A C}C
 $$
 是 $(m+n)$-连通。
 
-**证明状态.** 这是合成同伦论核心定理。HoTT 证明使用 flattening lemma、fiberwise join、connectedness of joins 和 pushout 的依赖消去。附录 AU 给出这些依赖的证明核和 Blakers-Massey 证明架构；Wei 2024 的 synthetic homotopy theory 文献给出 Hopf、Blakers-Massey、Freudenthal 的统一路线。本书仍把完整逐项证明作为外部义务。
+**精确来源与边界.** 这是 The Univalent Foundations Program,
+*Homotopy Type Theory: Univalent Foundations of Mathematics*, Theorem 8.10.2
+按定义 AL.1-AL.3 的转写。来源证明使用 flattening lemma、fiberwise join、join 连通性和 pushout 依赖消去；本书采用定理结论，不声称附录 AU、AY 已内部重构该证明。
 
-**证明核 AL.6（证明分解）.** 证明 AL.5 可分为以下可检查子义务：
+**来源机制 AL.6（证明分解）.** 来源证明可按下列数学步骤理解：
 
-1.  对 pushout $P\coloneqq B\sqcup_A C$，把 gap map fiber 在 $(b,c,p)$ 处的 fiber 化为某个 join 型；
+1.  对 pushout $P\coloneqq B\sqcup_A C$ 和 $(b,c,p):B\times_PC$ 构造依赖 code 与比较映射，使所需连通性归约到相关 fibers 的 join；这一步不是把一般 pushout 路径类型直接等同于一次 join；
 2.  证明若 $X$ 为 $m$-连通、$Y$ 为 $n$-连通，则 join $X\ast Y$ 为 $(m+n+2)$-连通，具体编号依赖本书连通性 convention；
 3.  用 flattening lemma 把 pushout 上的依赖族拉回到原方块数据；
 4.  用截断归纳关闭 connectedness 证明；
 5.  检查编号平移，确保 AL.5 的 $(m+n)$ 与文献使用的 $m+n+2$ convention 对齐。
 
-**边界.** 本书采用 AL.5 的定理陈述，不把子义务 1-4 全部重写为数十页路径代数。完整展开应固定 pushout/join 证明口径并逐项给出相干计算。
+这些步骤只解释 Theorem 8.10.2 的结构。若要把 AL.5 升级为书内定理，必须固定 pushout/join 的具体语法并给出每一步相干计算；目前任何后续调用都以 AL.5 的外部输入身份为准。
 
 ## AL.3 Freudenthal 悬挂定理
 
@@ -74,25 +76,25 @@ $$
 \eta_X(x)\coloneqq \mathsf{merid}(x)\cdot\mathsf{merid}(x_0)^{-1}.
 $$
 
-**定理 AL.8（Freudenthal，HoTT 形式）.** 若 $X$ 是 $n$-连通 pointed 类型，且 $n\ge0$，则
+**外部输入定理 AL.8（Freudenthal，HoTT 形式）.** 若 $X$ 是 $n$-连通 pointed 类型，且 $n\ge0$，则
 $$
 \eta_X:X\to\Omega\Sigma X
 $$
-是 $(2n+1)$-连通。
+是 $2n$-连通。
 
-**证明（由 Blakers-Massey 的证明核）.** 考虑悬挂作为 pushout
+**来源与关系.** 本书采用 HoTT Book, Theorem 8.6.4。该结论也可由 Blakers--Massey 路线解释：考虑悬挂作为 pushout
 $$
 \mathbf 1\leftarrow X\to\mathbf 1.
 $$
-两条映射 $X\to\mathbf 1$ 的 fiber 等价于 $X$，故均为 $n$-连通。对该 pushout 方块应用 AL.5，得到相应 gap map 的连通性。把 gap map 展开并识别为悬挂单位 $\eta_X$ 的连通性陈述；编号由两次 loop/suspension 的 convention 调整给出 $(2n+1)$。$\square$
+两条映射 $X\to\mathbf 1$ 的 fiber 等价于 $X$，故均为 $n$-连通。对该 pushout 方块应用 AL.5，并把 gap map 与悬挂单位比较，得到 $2n$-连通性。完整的比较与相干由来源定理承担。
 
-**推论 AL.9（稳定范围内同伦群同构）.** 在 AL.8 条件下，悬挂诱导
+**条件化推论 AL.9（稳定范围内同伦群同构）.** 另假设标准的连通映射作用定理：若 $f$ 为 $r$-连通，则 $\pi_k(f)$ 在 $k\le r$ 为同构，并在 $k=r+1$ 为满射。在此输入下，AL.8 的悬挂诱导
 $$
 \pi_k(X)\to\pi_{k+1}(\Sigma X)
 $$
 在 $k\le 2n$ 范围内为同构，并在 $k=2n+1$ 为满射。
 
-**证明状态.** 由 $r$-连通映射对低阶同伦群的影响推出。证明需要一般命题：若 $f$ 为 $r$-连通，则 $\pi_k(f)$ 在 $k<r$ 为同构、$k=r$ 为满射。该命题本书未完全展开，作为同伦群连通性标准引理登记。
+**推导.** 对 $\eta_X$ 应用所列标准输入，并代入 $r=2n$。悬挂诱导与 $\eta_X$ 在 loop 后的映射相同，故得到所述范围。$\square$
 
 ## AL.4 Hopf fibration
 

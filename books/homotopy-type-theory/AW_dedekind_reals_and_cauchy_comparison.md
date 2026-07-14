@@ -109,6 +109,6 @@ $$
 
 **证明架构.** 从 Cauchy 到 Dedekind 用 AW.6；从 Dedekind 到 Cauchy 用 AW.10 和 AK.9 取极限。两个复合在 Dedekind 侧由 cut extensionality AW.2 和有理近似密度证明；在 Cauchy 侧由 Cauchy 完备性和极限唯一性 AK.8 证明。代数和序保持逐项由有理近似和极限唯一性推出。$\square$
 
-## AW.6 本附录关闭的缺口
+## AW.6 两种实数对象的比较边界
 
 Cauchy 实数适合计算和 HIIT 构造；Dedekind 实数适合序和上确界。两者等价不是无条件的集合论事实，而依赖 locatedness 与选择原则。本附录把这部分依赖显式化。

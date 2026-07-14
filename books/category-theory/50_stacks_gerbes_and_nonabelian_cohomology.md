@@ -1,12 +1,8 @@
 # 第五十章：Stacks、Gerbes 与非阿贝尔上同调
 
-## 本章目标
+集合值 sheaf 的粘合只要求元素相等；几何对象往往只有局部同构，且同构本身还要满足 cocycle 相干。Groupoid-valued stack 保留这一级自同构，higher stack 则继续保留更高同伦。Torsor 由 classifying stack $BG$ 分类，gerbe 可视为局部非空、局部连通的 stack，并在适当交换或带带状结构下对应二阶上同调。本章从 fibered category 与 descent data 开始，逐步走向非阿贝尔上同调的类型正确陈述。
 
-本章把 sheaf 条件从集合提升到 groupoids 和 higher groupoids。Stacks 是满足 descent 的范畴值或空间值预层；gerbes 是局部非空且局部连通的 stacks；非阿贝尔上同调用 torsors、gerbes 和 classifying stacks 组织。它们是几何、数论和高阶范畴论中“对象可局部给出并带同构粘合”的基本语言。
-
-## 依赖前置知识
-
-需要 Grothendieck topology、sheaf、fibered category、groupoid、2-categories、Cech nerve、descent、classifying stack、higher topos 和基本群对象。
+背景包括 Grothendieck topology、Cech nerve、2-categories 与 higher topoi。我们会区分 prestack、stack、hyperstack 和 gerbe，并明确 $H^1$ 是 pointed set、$H^2$ 需要何种系数结构；不把非阿贝尔上同调写成普通群。
 
 ## 50.1 预 Stack 与 Stack
 
@@ -72,13 +68,13 @@ $$
 
 **定义 50.11.** 若 $A$ 为 abelian sheaf of groups，$A$-banded gerbe 是每个对象的 automorphism sheaf 与 $A$ 相容识别的 gerbe。
 
-**外部输入定理 50.12.** $A$-banded gerbes 的等价类由非阿贝尔上同调中的
+**外部输入定理 50.12.** 若 $A$ 是 abelian sheaf of groups，则 $A$-banded gerbes 的等价类由通常的 sheaf cohomology group
 
 $$
 H^2(U,A)
 $$
 
-分类；更一般的非阿贝尔 gerbes 由 crossed modules 或 higher stacks 控制。
+分类。这里的 $H^2(U,A)$ 是阿贝尔上同调；只有把 band 推广为非交换群、crossed module 或更高群对象后，才进入相应的非阿贝尔 $H^2$ 型分类。
 
 ## 50.5 Cech cocycles
 
@@ -106,9 +102,9 @@ $$
 F:\mathcal C^{op}\to\mathcal S.
 $$
 
-**命题 50.15.** 1-stacks 嵌入 higher stacks。
+**命题 50.15.** Groupoid-valued stacks 经 nerve 全忠实嵌入 hypercomplete space-valued stacks 的 $1$-截断部分。
 
-**证明.** Groupoid 的 nerve 是 1-truncated space。把 groupoid-valued stack $F$ 逐点取 nerve，得到 space-valued presheaf $NF$。Groupoid descent 等价在 nerve 后变为 1-truncated spaces 的 descent 等价，因此 $NF$ 是 higher stack。$\square$
+**证明.** Groupoid 的 nerve 是 1-truncated space。把 groupoid-valued stack $F$ 逐点取 nerve，得到 space-valued presheaf $NF$。Groupoid descent 等价在 nerve 后变为 1-truncated spaces 的 descent 等价。$\infty$-topos 中每个 $n$-截断对象都 hypercomplete，所以 $NF$ 自动满足 hyperdescent；nerve 在 groupoids 上全忠实，故得到所述嵌入。$\square$
 
 **命题 50.16.** 若 $F$ 是 groupoid-valued stack，则任意两个对象 $x,y\in F(U)$ 的 isomorphism presheaf
 
@@ -126,7 +122,7 @@ $$
 
 是 groupoids 的等价，特别是完全忠实。对覆盖 $\{U_i\to U\}$，一族局部同构 $\alpha_i:x|_{U_i}\to y|_{U_i}$ 若在重叠上相容，就给出 descent groupoid 中从 $x$ 的 descent datum 到 $y$ 的 descent datum 的态射。完全忠实性给出唯一全局同构 $\alpha:x\to y$ 粘合这些 $\alpha_i$。这正是 isomorphism presheaf 的 sheaf 条件。$\square$
 
-## 50.7 本章小结
+## 50.7 从同构粘合到非阿贝尔上同调
 
 Stacks 把 sheaf 条件从元素提升到对象和同构；torsors 由 classifying stacks 表示；gerbes 是高一阶的局部对象粘合结构；非阿贝尔上同调用 cocycles、torsors、gerbes 和 higher stacks 统一描述局部到整体的 obstruction。它是 descent、几何栈和高阶 topos 的核心桥梁。
 

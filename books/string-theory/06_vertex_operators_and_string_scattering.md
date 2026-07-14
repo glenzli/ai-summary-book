@@ -1,18 +1,12 @@
 # 第六章：顶点算子和弦散射振幅
 
-## 本章目标
-
-本章建立三件事：
-
-1. target-space 粒子态怎样表示为 worldsheet vertex operators；
-2. on-shell 条件怎样由 conformal weight 或 BRST closedness 给出；
-3. tree-level scattering amplitude 怎样化为 CFT correlator 在 puncture moduli 上的积分。
-
-本章只处理平坦背景、tree-level、最低若干态的公式。高 genus measure 和 modular invariance 放在第十五章。
-
-## 依赖前置知识
-
-需要第三章 CFT、第四章谱公式和第五章 BRST 量子化。OPE 归一化固定为
+量子态若只停留在 Fock space 中，还不能参与可观测的散射过程。径向量子化把一个
+渐近态放到 puncture 处，state--operator correspondence 将它变成局部顶点算子；
+算子的 conformal weight 重现质量壳条件，BRST closedness 施加横向约束，而 exact
+方向实现 gauge equivalence。把若干 punctures 放在 sphere 或 disk 上并除去残余
+conformal Killing group，CFT correlator 才成为 target-space 的 tree amplitude。
+以下使用第三章 OPE、第四章谱公式和第五章 BRST complex，在平坦背景中计算最低若干
+外态；高 genus measure 与 modular invariance 留到第十五章。统一 OPE 归一化为
 $$
 X^\mu(z,\bar z)X^\nu(w,\bar w)
 \sim
@@ -374,9 +368,11 @@ determinant regulator 或局部 counterterms，因而不是一个自动收敛的
 
 **注 6.18（unitarity 与 modular invariance）.** Loop amplitude 的一致性同时依赖 degeneration factorization 和 modular invariance。前者控制 unitarity，后者避免同一 worldsheet complex structure 被重复计数。
 
-## 本章小结
-
-顶点算子把 BRST cohomology 类翻译为 worldsheet 插入。Tree-level 振幅由 CFT correlator、ghost zero mode 吸收和 puncture moduli 积分组成。Veneziano 与 Virasoro-Shapiro 振幅的极点精确再现 string spectrum，这是 string theory 作为散射理论的基本一致性检验。
+于是，一个 tree amplitude 同时保留了三类信息：顶点算子的 BRST 类指定外态，
+ghost zero modes 决定哪些 punctures 可以固定，剩余位置积分产生 Beta/Gamma
+函数。Veneziano 与 Virasoro--Shapiro 振幅的 pole 正好落在第四章的弦质量层级上，
+其退化极限又把 residue 分解为低点振幅与中间物理态之和。到了 loop order，同一
+因子化机制必须与 modular invariance 一起放到 Riemann surface moduli space 上处理。
 
 ## 练习
 

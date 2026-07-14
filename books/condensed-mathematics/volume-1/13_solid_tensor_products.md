@@ -1,12 +1,15 @@
 # 第十三章：固体张量积
 
-## 本章目标
+两个 solid 对象在 $\mathbf{CondAb}$ 中取普通张量后，不必仍满足测度延拓条件；换言之，
+solid 子范畴对旧张量并非先验闭合。若希望在其中谈环、模和派生代数，乘法必须先使用
+第九、十一章的普通或派生张量，再施加第十二章的固化反射。这个“张量后局部化”的
+次序由泛性质决定，不能用逐点无限乘积的张量公式替代。
 
-本章定义固体阿贝尔群上的完备张量积，并说明它为何比普通凝聚张量积更适合处理完备拓扑代数对象。
-
-## 依赖前置知识
-
-需要第九章的张量积、第十一章的派生张量积、第十二章的固化函子。
+我们据此定义 $M\otimes^\square N$ 与
+$M\otimes^{L,\square}_{\mathbb Z}N$，并精确标出对称幺半结构和自由 solid 对象乘法
+公式所依赖的 Scholze 输入定理。有限离散空间提供可直接核对的模型，固体环与固体模
+则展示该结构的代数用途；实分析为何仍超出 solid 完成化，将成为第十四章引入 analytic
+ring 的动机。
 
 ## 13.1 完备张量积
 
@@ -60,7 +63,7 @@ $$
 
 当 $S,T$ 极不连通时，这个同构尤其像“测度的外积”。
 
-**定理 13.4.** 对集合 $I,J$，有
+**定理 13.4（Scholze）.** 在本卷固定的宇宙中，对任意集合 $I,J$，有
 
 $$
 \left(\prod_I\underline{\mathbb Z}\right)
@@ -70,7 +73,12 @@ $$
 \prod_{I\times J}\underline{\mathbb Z}.
 $$
 
-**证明说明.** 由第十二章，$\prod_I\mathbb Z$ 可由某个 $\mathbb Z^\square[S]$ 型对象控制。Scholze 讲义第六讲证明了该公式；它是固体张量积行为良好的核心例子。
+**证明说明.** Scholze 的乘积公式直接给出这一结论。其证明不是把
+$\prod_I\underline{\mathbb Z}$ 与某个自由 solid 对象含混地等同，而是先把所需乘积
+写成适当自由 solid 对象的 retract，再利用
+$\mathbb Z^\square[S]\otimes^{L,\square}\mathbb Z^\square[T]
+\simeq\mathbb Z^\square[S\times T]$，最后令 retract 在张量下分裂。固定宇宙（或等价地
+固定基数界）保证这里的集合、profinite 测试对象和生成族都落在同一大小约定中。
 
 ## 13.4 固体环与固体模
 
@@ -105,14 +113,14 @@ $$
 - 对非阿基米德或代数型完备对象，solid 结构是自然的。
 - 对实数和泛函分析对象，solid 只是入口，后续需要 analytic ring。
 
-## 13.6 本章小结
+## 13.6 张量后再固化
 
-本章建立了 solid 代数的张量结构：
-
-1. 固体张量积定义为普通张量积后的固化。
-2. 自由固体对象满足良好的乘法公式。
-3. 固体环和固体模是 solid 范畴中的环对象和模对象。
-4. solid 完备化不是所有拓扑完备化的统一替代品，analytic rings 会进一步修正这个框架。
+公式 $M\otimes^\square N=(M\otimes N)^\square$ 保证乘积重新落回 solid 范畴；在
+派生层，输入定理进一步给出自由对象的乘法
+$\mathbb Z^\square[S]\otimes^{L,\square}\mathbb Z^\square[T]
+\simeq\mathbb Z^\square[S\times T]$。因此 solid 环和模可以作为该幺半范畴中的
+内部代数对象处理。这个反射只编码特定整值测度条件，并不等同于 Hausdorff 或 Banach
+完备化；要改变允许的测度，就必须扩大到下一章的 analytic ring 数据。
 
 ## 练习
 

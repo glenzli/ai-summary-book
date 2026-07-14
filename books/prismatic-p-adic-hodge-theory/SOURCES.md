@@ -68,7 +68,7 @@
 - 第十二章的 Breuil-Kisin、Breuil-Kisin-Fargues modules 和 lattices 主要依赖 BMS、Fargues 和 Bhatt-Scholze prismatic $F$-crystals。
 - 第十三章的 coefficients and non-abelian boundary 主要依赖 2025 Tsuji 与 2025/2026 Qu-Yu；只作为研究边界。
 - 第十四章的 Artin stacks、Shimura varieties、Brauer applications 和 finite flat groups 主要依赖 Kubrak-Prikhodko、Imai-Kato-Youcis、Carmeli-Feng、Ambrosi-Newton-Pagano、Mondal-Olsson；只作为应用边界或外部输入。
-- 第十五章不新增数学定理；它收口错误模式、开放问题和正式教材剩余工作。
+- 第十五章不新增深层比较定理；它整理错误模式、理论边界和开放问题。
 
 ## 引用边界
 

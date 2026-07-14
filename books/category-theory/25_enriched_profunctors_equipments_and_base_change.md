@@ -1,12 +1,8 @@
 # 第二十五章：富 Profunctor、Equipment 与 Beck-Chevalley 条件
 
-## 本章目标
+当 Hom 本身取值于闭幺半范畴 $\mathcal V$ 时，profunctor 的值也应在 $\mathcal V$ 中，复合则由富 coend 给出。Equipment 把垂直的富函子、水平的富 profunctor 和它们之间的二重胞腔放进同一双范畴，使 companion、conjoint 与 mate correspondence 可以统一表达。Beck--Chevalley 条件由此不再是孤立的基变换公式，而是某个 mate 可逆的结构陈述。
 
-本章把第二十四章的 profunctor 推广到富范畴，并引入 equipment：一种同时记录垂直函子、水平 profunctor 和二重胞腔的双范畴结构。Equipment 是 indexed categories、base change、Beck-Chevalley 条件、双模复合和高阶 correspondence 的共同形式。
-
-## 依赖前置知识
-
-需要富范畴、coend、双范畴、profunctor、Cartesian fibration 和 presentable $\infty$-category 的基本语言。
+本章沿用富范畴、coend、双范畴、Cartesian fibration 与 presentable $\infty$-category。我们会先在普通富 setting 中建立复合，再解释 indexed categories 和高阶 correspondence 的类比；所有 base-change 可逆性都附带 exact square 或伴随存在等假设。
 
 ## 25.1 富 profunctor
 
@@ -260,7 +256,7 @@ $$
 
 **例子 25.20.** 恒等拉回方块的 Beck-Chevalley 比较是恒等同构。复合两个满足 Beck-Chevalley 的方块时，外矩形的比较是两个比较同构的复合；因此 exact squares 对水平和垂直粘合封闭，这是六操作中基变换相干的低维原型。
 
-## 25.9 本章小结
+## 25.9 Equipment 中的基变换
 
 富 profunctor 把第二十四章的广义态射推广到富环境。Equipment 同时记录垂直函子和水平 profunctor，使 companion、conjoint、base change 与 Beck-Chevalley 条件成为统一语言。它是从 ordinary indexed categories 过渡到 Cartesian fibrations、correspondences 和 Morita $(\infty,2)$-范畴的关键桥梁。
 

@@ -6,7 +6,7 @@
 
 ## 0. 当前状态判断
 
-截至本文件当前核查时，本书已经具备序章、二十一章主体章节、附录 A-Z、资料源索引、数学审查记录、前沿审计、定理账本、完本闭包矩阵、引用定位账本和全书依赖图。当前基本完本严格草稿覆盖了普通 operad、colored operad、线性 operad、Koszul 对偶、bar-cobar、同伦代数、模型范畴中的 operad、simplicial/topological operads、dendroidal sets、Lurie-style infinity-operads、模型比较、factorization algebra、Fukaya category 入口和 2025-2026 研究边界。
+截至本文件当前核查时，本书已经具备序章、二十一章主体章节、附录 A-Z、资料源索引、数学审查记录、前沿审计、定理账本、完本闭包矩阵、引用定位账本和全书依赖图。当前基本完本严格草稿覆盖了普通 operad、colored operad、线性 operad、Koszul 对偶、bar-cobar、同伦代数、模型范畴中的 operad、simplicial/topological operads、dendroidal sets、Lurie-style infinity-operads、模型比较、factorization algebra、Fukaya category 接口和按结构障碍组织的开放问题。
 
 这已经达到基本完本严格草稿态；结合 [FINAL_OPERAD_THEORY_CLOSURE.md](FINAL_OPERAD_THEORY_CLOSURE.md)，也已经达到 operad theory 数学收口态。但它仍不是 camera-ready 出版教材。原因如下：
 
@@ -150,6 +150,6 @@
 
 1. 新主题是为修复现有证明缺口所必需。
 2. 新主题是某个外部输入定理的前置定义。
-3. 新主题是为了把 2025-2026 研究边界准确放入已有逻辑地图。
+3. 新主题是为了解释一个已经明确陈述的结构性开放问题。
 
 否则，新材料应进入“后续版本候选”，不得插入核心定理链。

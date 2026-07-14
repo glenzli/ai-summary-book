@@ -1,133 +1,209 @@
 # 第二十二章：Betti、etale、real etale 与 analytic realization
 
-## 本章目标
+Realization 把 motivic 对象送入另一套同伦论，使几何问题可以由拓扑、Galois 作用或
+层论不变量检测。不同 realization 忘掉的信息并不相同：复点不再区分 motivic weight，
+etale homotopy type 必须保留逆系统，实点与带复共轭的复点又落入不同目标范畴。因此
+“存在一个 realization”从不等于“它保守”，也不自动包含六操作相容性。
 
-本章讨论 realization functors。Realization 把 motivic objects 送到拓扑、pro-etale、real etale 或 analytic contexts 中，是比较定理和计算的重要工具。本章强调 realization 的构造必须同时检查 descent、`\mathbb A^1`-invariance、stabilization 和六操作相容。
+构造 realization 时有三道独立门槛。首先，几何函子要满足所选拓扑的下降；其次，它
+必须反演 `\mathbb A^1`-投影；最后，稳定 realization 必须把 Tate sphere 送到可逆
+对象。本章先用泛性质分离这三步，再逐一说明各经典构造的定义域、目标与局部化。
 
-## 依赖前置知识
+## 22.1 从几何函子到稳定 realization
 
-需要 Betti topology、complex/real points、etale homotopy type、pro-spaces、real etale topology、analytic spaces、symmetric monoidal functors、six operations 和 stable homotopy theory。
-
-## 22.1 Realization 的泛性质
-
-**定义 22.1.** 一个 realization functor 是从 motivic homotopy category 到另一同伦论环境的 functor，例如
-
-$$
-R:\mathbf{SH}(S)\to\mathcal C,
-$$
-
-其中 `\mathcal C` 可以是 spectra、pro-spectra、derived categories 或 analytic motivic categories。
-
-**命题 22.2.** 若 `R` 从 `\mathbf H(S)` 构造，则它必须反演 `X\times\mathbb A^1\to X`。
-
-**证明.** `\mathbf H(S)` 是 Nisnevich sheaves 关于这些投影的局部化。由第二章命题 2.11，任何从 `\mathbf H(S)` 因子化的 functor，在局部化前都必须把这些投影送为等价。`\square`
-
-**命题 22.3.** 若 `R` 从 `\mathbf{SH}(S)` 构造，则还必须把 Tate sphere `T` 的像变为可逆对象。
-
-**证明.** `\mathbf{SH}(S)` 是 `T`-稳定化。由稳定化泛性质，从 `\mathbf H_*(S)` 到 stable target 的 functor 要通过 `\mathbf{SH}(S)` 因子化，必须使 `T` 的像可逆。`\square`
-
-## 22.2 Betti realization
-
-**外部输入定理 22.4.** 对 `S=\operatorname{Spec}\mathbb C` 或合适复基，复点 functor 诱导 Betti realization
+**命题 22.1（因子化判据）.** 设 `\mathcal C` 是 presentable infinity-category，
+`F:\operatorname{Sm}_S\to\mathcal C` 为函子。若 `F` 满足 Nisnevich descent 且
 
 $$
-Re_B:\mathbf{SH}(S)\to\mathbf{Sp}
+F(X\times\mathbb A^1)\longrightarrow F(X)
 $$
 
-并与对称幺半结构和若干六操作相容。
+为等价，则 `F` 唯一地通过 unstable motivic category `\mathbf H(S)` 因子化。若
+`\mathcal C` 还是稳定对称幺半范畴、该因子化保持相应余极限与幺半结构，并且
+`F(T)` 可逆，则它进一步唯一地通过 `\mathbf{SH}(S)` 因子化。
 
-**依赖源.** Morel-Voevodsky 基础、Ayoub 的 Betti realization 和六操作相容结果、后续 infinity-categorical formulations。
+**证明.** 第一项先使用 Nisnevich 层化的泛性质，再使用 `\mathbb A^1`-Bousfield
+局部化的泛性质。第二项使用 pointed category 中对 Tate sphere `T` 的对称幺半反演
+泛性质。每一步的唯一性均指相应函子 infinity-groupoid 可缩。`\square`
 
-**命题 22.5.** 复 Betti realization 反演 `\mathbb A^1`-投影的原因是 `\mathbb C` 的仿射直线拓扑上可缩。
+**注 22.2.** 命题 22.1 只构造单个基 `S` 上的函子。要得到随 `S` 变化并与
+`f_*`、`f_!` 或 `f^!` 交换的系统，还必须验证 mate transformations；这些不由局部化
+泛性质给出。
 
-**证明.** 对光滑复概形 `X`，复点满足
+## 22.2 复 Betti realization
+
+对光滑复概形 `X`，取解析拓扑空间 `X(\mathbb C)`。Nisnevich distinguished square
+在复点上给出拓扑 excision，而
 
 $$
-(X\times\mathbb A^1)(\mathbb C)\simeq X(\mathbb C)\times\mathbb C.
+(X\times\mathbb A^1)(\mathbb C)
+=X(\mathbb C)\times\mathbb C\simeq X(\mathbb C).
 $$
 
-拓扑空间 `\mathbb C` 可缩，因此投影到 `X(\mathbb C)` 是弱同伦等价。故复点 functor 把 `\mathbb A^1`-投影送为等价。`\square`
+此外
+
+$$
+\operatorname{Re}_{B}(T)\simeq
+\operatorname{hocofib}\bigl(\mathbb C^*\longrightarrow\mathbb C\bigr)
+\simeq S^2.
+$$
+
+这里取的是 pointed spaces 中的 homotopy cofiber，而不是集合论商空间；其同伦型
+等价于复直线在原点处的 Thom space。
+
+因此命题 22.1 给出对称幺半复 Betti realization
+
+$$
+\operatorname{Re}_{B}:\mathbf{SH}(\mathbb C)\longrightarrow\mathbf{Sp},
+\qquad
+\Sigma_T^\infty X_+\longmapsto\Sigma^\infty X(\mathbb C)_+.
+$$
+
+**例子 22.3.** `\mathbb P^1(\mathbb C)\cong S^2`，故 pointed
+`\mathbb P^1` 的 motivic suspension 在 Betti realization 下成为二重拓扑 suspension。
+这同时核对了 `T\simeq(\mathbb P^1,\infty)` 的像。
+
+绝对构造与相对六操作相容性必须分开陈述。
+
+**外部输入定理 22.4（Ayoub）.** 对有限型复代数概形的相对 motivic categories，
+Ayoub 构造到相应复解析层论范畴的 Betti realization system，并证明它与
+Grothendieck 六操作及 nearby-cycle formalism 相容。这里引用的是
+*Note sur les operations de Grothendieck et la realisation de Betti*, J. Inst. Math.
+Jussieu 9 (2010), Theorem 3.19 及该文的主相容性结论。其对象模型和 constructibility
+假设应按原文保留；这项定理不能被改写为“任意复栈上的 `\mathbf{SH}` realization
+无条件交换所有六操作”。
 
 ## 22.3 Etale realization
 
-**外部输入定理 22.6.** Etale homotopy type 构造诱导从 motivic homotopy theory 到 pro-spaces 或 pro-spectra 的 realization functor；适当完成或反演 residue characteristics 后与 `\mathbb A^1`-localization 相容。
+Etale covers 形成的是一个余过滤近似系统；把它压成单一空间通常会忘掉 fundamental
+group 的有限商与高阶 etale cohomology。因此 etale realization 的自然目标是
+pro-spaces、profinite spaces 或相应稳定范畴。
 
-**依赖源.** Artin-Mazur、Friedlander、Isaksen 等 etale realization 文献。
+**外部输入定理 22.5（Isaksen）.** 设 `S` 为概形。Etale topological type 给出从
+etale site 上 simplicial presheaves 到 pro-spaces 的同伦不变函子。完成于
+`S` 的各剩余域特征之外以后，它通过 Morel--Voevodsky 的 unstable
+`\mathbb A^1`-homotopy category 因子化。来源为 Isaksen,
+*Etale realization on the A1-homotopy theory of schemes*, arXiv:math/0106158。
 
-**注 22.7.** Etale realization 的 target 通常不是 ordinary spaces，而是 pro-objects 或 profinite/pro-`l` completions。忽略 pro-结构会丢失 Galois 和 arithmetic 信息。
+**外部输入定理 22.6（Quick）.** 对任意特征的基域，存在稳定 profinite homotopy
+theory，以及从光滑概形的 stable motivic homotopy theory 到该理论的 etale
+topological realization。来源为 Quick,
+*Stable etale realization and etale cobordism*, arXiv:math/0608313。
 
-## 22.4 Real etale 与实 realization
+这两个定理的目标和假设不同：前者明确给出完成后的 unstable pro-space 构造；后者
+使用 profinite stable target。不能把它们合并成一个取值于 ordinary spectra 的
+无条件函子。Ayoub 的 etale motives realization 还具有六操作相容结果，但那是另一
+套系数与目标范畴，也须单独引用。
 
-**外部输入定理 22.8.** 在实闭或有序域相关语境中，real realization 和 real etale motivic homotopy 与 classical equivariant/topological information 有比较定理。
+## 22.4 两种实 realization 与 real-etale 局部化
 
-**依赖源.** Bachmann 的 real etale stable homotopy、Morel 和后续实 realization 文献。
+对 `\mathbb R` 上的概形至少有两种拓扑输入：
 
-**命题 22.9.** Real realization 不等同于 complex Betti realization 的限制。
+1. `X(\mathbb R)` 给出非等变 real-points realization；
+2. `X(\mathbb C)` 带复共轭作用，给出取值于 genuine `C_2`-spectra 的 equivariant
+   Betti realization。
 
-**证明.** 实点 functor 记录 `X(\mathbb R)` 的拓扑，而复 Betti realization 记录 `X(\mathbb C)` 的拓扑及可带有复共轭作用。两者目标和保留的信息不同；例如无实点的实概形仍可能有非空复点。因此不能把 real realization 当作 complex realization 的简单限制。`\square`
+二者不能互换。例如 `X=\operatorname{Spec}\mathbb C` 作为实概形没有实点，但
+`X(\mathbb C)` 非空且带交换两个嵌入的 `C_2`-作用。
 
-## 22.5 Analytic stacks
+Real-etale theory 又是第三种构造。记
+`\rho:\mathbb 1\to\mathbb G_m` 为由单位 `-1` 给出的稳定 motivic 类（符号按
+Bachmann 的约定）。
 
-**研究边界 22.10.** 2025-2026 年的 pullback formalism 和 complex analytic stacks 工作声称构造 analytic motivic homotopy theory、localization theorem 和与六操作相容的 analytification/Betti realization。
-
-**依赖源.** Roy Magen 2025/2026 预印本。按 `FRONTIER_SOURCE_AUDIT_2026_07_08.md`，本书暂列研究边界。
-
-## 22.6 Compatibility with six operations
-
-**定义 22.11.** Realization functor `R:\mathbf{SH}(S)\to\mathcal C` 称为与六操作相容，若对相关态射 `f:X\to Y` 有自然等价
-
-$$
-R_Xf^*\simeq f^*R_Y,\qquad
-R_Yf_*\simeq f_*R_X,\qquad
-R_Yf_!\simeq f_!R_X,
-$$
-
-并且与 `f^!`、张量、internal Hom、base change 和 projection formula 相容。
-
-**命题 22.12.** 与 `f^*` 相容不自动推出与 `f_!` 相容。
-
-**证明.** `f_!` 涉及 compact support、proper compactification 或 exceptional pushforward。一个 functor 可以保持 pullback squares，却不保持 compact support 条件或相应 mate transformations。与 `f_!` 相容需要额外的 proper/open gluing 和 base-change 控制。`\square`
-
-**命题 22.13.** 若 realization 与 localization recollement 相容，则它把 motivic localization cofiber sequence 送到目标理论的 localization cofiber sequence。
-
-**证明.** Motivic localization 给出
+**外部输入定理 22.7（Bachmann）.** 若 `S` 是有限维 Noetherian 概形，则有典范等价
 
 $$
-j_!j^*E\to E\to i_*i^*E.
+\mathbf{SH}(S)[\rho^{-1}]
+\simeq
+\mathbf{SH}(S_{\mathrm{ret}}),
 $$
 
-对 `R` 作用，若 `R` 与 `j_!,j^*,i_*,i^*` 相容且 exact，则得到
+右端是小 real-etale site 上的局部 stable homotopy category。特别地，
 
 $$
-j_!j^*R(E)\to R(E)\to i_*i^*R(E),
+\mathbf{SH}(\mathbb R)[\rho^{-1}]\simeq\mathbf{Sp}.
 $$
 
-即目标理论中的 localization cofiber sequence。`\square`
+来源为 Bachmann, *Motivic and real etale stable homotopy theory*, 主定理。结论是
+`\rho`-局部化后的范畴等价，不是 integral `\mathbf{SH}(S)` 与普通拓扑谱范畴的等价。
 
-## 22.7 Conservativity
+## 22.5 六操作相容意味着什么
 
-**命题 22.14.** Realization functor 的存在不推出其保守。
+设 `R_X:\mathcal D(X)\to\mathcal E(X^{\mathrm{an}})` 随 `X` 变化。称 `R` 与指定
+六操作相容，是指在允许的态射类上给出相干等价，例如
 
-**证明.** Functor `R:\mathbf{SH}(S)\to\mathcal C` 保守要求 `R(E)\simeq0` 蕴含 `E\simeq0`。构造 realization 只需满足 descent、`\mathbb A^1`-invariance、stabilization 和相干；这些条件不排除非零对象落入 kernel。因此保守性是额外定理。`\square`
+$$
+R_Xf^*\simeq(f^{\mathrm{an}})^*R_Y,
+\qquad
+R_Yf_!\simeq(f^{\mathrm{an}})_!R_X,
+$$
 
-**例子 22.15.** 复 Betti realization 通常会忘记 arithmetic Tate twist 中的部分信息。即使它在某些 cellular 或完成子范畴上有检测力，也不能在整个 `\mathbf{SH}(S)` 上默认保守。
+以及与 `f_*`、`f^!`、tensor、internal Hom、base change 和 projection formula
+对应的等价。右伴随相容还可能只在 constructible objects 上成立，必须保留来源中的
+限制。
 
-## 22.8 本章小结
+**命题 22.8.** 与 inverse image 相容不推出与 exceptional pushforward 相容。
 
-Realization 是 motivic theory 与 topology/arithmetic/analysis 的桥梁。Betti、etale、real etale 和 analytic realization 的 target、完成、保守性和六操作相容性各不相同。严格使用时必须写明 target category、局部化、系数和相容结构。
+**证明.** `f^*` 的相容可由几何 pullback 直接产生；`f_!` 还编码 compact support、
+开浸入延零和 proper compactification。即使 `R_Xf^*\simeq(f^{\mathrm{an}})^*R_Y`，
+其伴随 mate 也只有在 `R` 保持相应伴随、紧支撑与粘合数据时才可逆。因此需要像定理
+22.4 那样的独立相容性定理。`\square`
+
+**命题 22.9.** 若 `R` 正合，并与闭开对 `(i,j)` 的 `j_!,j^*,i_*,i^*` 相容，则它把
+motivic localization cofiber sequence 送到目标理论的 localization sequence。
+
+**证明.** 对
+
+$$
+j_!j^*E\longrightarrow E\longrightarrow i_*i^*E
+$$
+
+施加正合函子 `R`，再用四个相容等价逐项替换，即得到
+
+$$
+j_!j^*R(E)\longrightarrow R(E)\longrightarrow i_*i^*R(E).
+$$
+
+正合性保证它仍为 cofiber sequence。`\square`
+
+## 22.6 目标、局部化与可见信息
+
+| 构造 | 典型目标 | 必要修正 | 主要保留的信息 |
+| --- | --- | --- | --- |
+| complex Betti | `\mathbf{Sp}` 或解析层论 | 复嵌入/相对有限型假设 | 复点拓扑 |
+| equivariant Betti over `\mathbb R` | `\mathbf{Sp}^{C_2}` | 保留复共轭 | 实结构与共轭固定点 |
+| Isaksen etale | pro-spaces | 远离剩余特征完成 | etale homotopy type |
+| Quick stable etale | profinite spectra | profinite 模型 | 稳定 etale 信息 |
+| real-etale | `\mathbf{SH}(S_{\mathrm{ret}})` | 反演 `\rho` | 排序与实谱信息 |
+
+表中的每一行都压缩了一部分 motivic 信息。例如 complex Betti 把 motivic bigrading 的
+weight 方向折叠进普通拓扑分次。由此可以看出 realization 不可能仅凭存在性就允许
+从目标完整重建源；真正的 conservativity 只能在明确子范畴、完成或附加假设下另证。
+
+## 22.7 Analytic stacks 的新进展
+
+**研究边界 22.10.** Magen 2025/2026 的 pullback-formalism 与 complex analytic
+stacks 预印本构造 analytic motivic homotopy theory，并讨论 localization 及
+Betti/analytification maps 的六操作相容性。本书只在第二十四章登记其已核查版本；
+在这些新定理完成独立比较之前，不用它们扩张定理 22.4 的定义域。
+
+Betti、etale 与 real-etale realization 因而不是同一函子的不同名字。一个严格的比较
+定理至少要写明源范畴、目标范畴、基、完成或局部化、允许态射以及所保持的操作；缺少
+其中任一项，陈述都不足以用于后续证明。
 
 ## 练习
 
-**练习 22.1.** 用局部化泛性质证明 realization 必须反演 `\mathbb A^1`。
+**练习 22.1.** 用三次泛性质证明命题 22.1。
 
-**练习 22.2.** 说明 Betti realization 中 `\mathbb C` 可缩的作用。
+**练习 22.2.** 计算 `T(\mathbb C)` 的同伦型，并核对例子 22.3。
 
-**练习 22.3.** 为什么 etale realization 通常取值于 pro-objects？
+**练习 22.3.** 解释为什么 Isaksen 的目标是 pro-spaces 而非 ordinary spaces。
 
-**练习 22.4.** 比较 real realization 与 complex Betti realization。
+**练习 22.4.** 用 `\operatorname{Spec}\mathbb C` 比较 real-points 与
+`C_2`-equivariant Betti realization。
 
-**练习 22.5.** 解释 realization 保守性为何是额外性质。
+**练习 22.5.** 写出定理 22.7 的全部基假设与局部化元素。
 
-**练习 22.6.** 写出 realization 与 `f_!` 相容所需的自然等价。
+**练习 22.6.** 证明命题 22.8，并指出单靠伴随唯一性还缺少什么条件。
 
-**练习 22.7.** 证明命题 22.13。
+**练习 22.7.** 证明命题 22.9。

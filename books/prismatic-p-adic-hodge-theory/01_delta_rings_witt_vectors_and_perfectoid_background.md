@@ -1,12 +1,6 @@
 # 第一章：$\delta$-环、Witt vectors 与 perfectoid 背景
 
-## 本章目标
-
-本章建立 prism 定义所需的算术微积分语言：$\delta$-环、Frobenius lift、distinguished elements、Witt vectors 和 perfectoid interface。重点是把 $\delta$-结构写成可检查的代数公理，而不是把它当作 Frobenius 的直觉替身。
-
-## 依赖前置知识
-
-需要交换代数、模、理想、完备化和 Witt vectors 的基本背景。Witt vectors 的完整构造不在本章重建，只固定本书使用的符号和外部输入。
+在特征 $p$ 中，$x\mapsto x^p$ 是环同态；回到混合特征后，这个公式失去加法性，必须记录其除以 $p$ 后的一阶偏差。$\delta$-结构正是这种 Frobenius lift 的可计算编码，也是 prism 定义中最容易被“像 Frobenius”这一口号掩盖的部分。本章从 $p$-derivation 的加法与乘法公式出发，检查 distinguished element、Witt vector 初始性和 perfectoid 倾斜怎样进入后续例子，并给出低阶 $\delta$ 计算。交换代数、理想与完备化是前置语言；Witt vectors 的完整构造不重建，但所用泛性质和符号会明确登记。
 
 ## 1.1 $\delta$-环
 
@@ -175,7 +169,7 @@ $$
 $$
 展开可见右侧每项均含足够 $p$-幂，因此该公式在 $p$-adic 完备计算中控制 Frobenius 迭代的可整性。
 
-## 本章小结
+## 1.7 从 Frobenius 偏差到 prism 数据
 
 本章建立了 $\delta$-环的可检查公理，证明了 $\delta$-结构与 Frobenius lift 的基本关系，说明 distinguished element 如何产生 prism 条件中的 $p\in I+\phi(I)A$，并固定了 Witt vectors、perfectoid interface 和 Breuil-Kisin 型 Frobenius lift 的符号。
 

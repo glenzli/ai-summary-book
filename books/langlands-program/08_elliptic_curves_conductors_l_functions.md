@@ -1,14 +1,8 @@
 # 第八章：椭圆曲线、导子和 Hasse-Weil L 函数
 
-## 本章目标
+模形式的 Fourier 系数看似来自解析函数，椭圆曲线的点数则来自代数几何；模性定理断言这两组数据可以完全相同。要精确表达这一点，必须先从 Weierstrass 模型提取判别式和约化类型，再由 Tate module 得到 Galois 表示，并把各素数处的 Frobenius 特征多项式装配成 Hasse--Weil L 函数。导子在其中记录分歧程度，也决定应与哪一级的 newform 比较。
 
-本章定义 $\mathbb Q$ 上椭圆曲线的 Weierstrass 模型、约化类型、导子、Tate module、Galois 表示和 Hasse-Weil L 函数。目标是把第六章和第七章的模形式/自守表示语言与椭圆曲线的算术对象连接起来，为第九章的模性定理和第九十章的费马大定理应用做准备。
-
-## 依赖前置知识
-
-需要基本代数几何、有限域上曲线、局部域、Galois 表示和第六章的 Hecke eigenform L 函数。本章把 Neron 模型、Tate 算法、Neron-Ogg-Shafarevich 判别准则和导子公式作为外部输入。附录 AD 集中给出 Neron 模型、Kodaira 符号、Ogg conductor formula、Tate algorithm 和 Frey 曲线局部导子的技术接口。
-
-收口归一化回指：本章点计数 Frobenius、Tate module、Hasse-Weil Euler factor、导子和模形式比较均需使用 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 6、7、8 节。
+本章假定有限域上曲线、局部域与基本 Galois 表示知识。Neron 模型、Tate 算法、Neron--Ogg--Shafarevich 判别和导子公式作为外部输入，其详细接口集中在附录 AD。点计数 Frobenius、Tate module 与 Euler 因子的归一化按 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 6、7、8 节处理。
 
 ## 8.1 椭圆曲线和 Weierstrass 方程
 
@@ -250,7 +244,7 @@ $$
 
 **注 8.27.** Wiles 和 Taylor-Wiles 首先证明了半稳定情形中足以推出费马大定理的模性；完整有理数域上椭圆曲线模性后来由 Breuil-Conrad-Diamond-Taylor 等工作完成。本书在费马应用章只需要半稳定模性。
 
-**收口精修 8.A（椭圆曲线到 `GL(2)` 接口表）.** 后续只从本章提取以下数据：
+**椭圆曲线的算术输出 8.A.** 与 `GL(2)` 自守数据比较时，需要从椭圆曲线提取以下对象：
 
 | 椭圆曲线侧 | Langlands 侧 | 使用位置 |
 |---|---|---|
@@ -272,7 +266,7 @@ $$
 
 因此，椭圆曲线模性是 `GL(2)/\mathbb Q` Langlands 对应的一个具体实例：几何对象产生的二维 Galois 表示对应自守侧的 cuspidal representation。
 
-## 8.10 本章小结
+## 8.10 椭圆曲线的局部与整体数据
 
 椭圆曲线的局部约化决定 Hasse-Weil L 函数的局部因子和导子。Tate module 给出二维 $\ell$-adic Galois 表示，其好约化处 Frobenius 多项式为 $X^2-a_p(E)X+p$。模性定理断言这些数据来自权 $2$ newform，从而把椭圆曲线放入 `GL(2)` Langlands 框架。
 

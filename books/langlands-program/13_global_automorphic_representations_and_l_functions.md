@@ -1,18 +1,8 @@
 # 第十三章：全局自守表示和标准 L 函数
 
-## 本章目标
+局部参数只有在能够同时装配到所有位置时，才会产生全局算术信息。自守表示 $\pi=\bigotimes_v'\pi_v$ 正是这种装配：几乎所有 $\pi_v$ 非分歧，其 Satake 参数与 L 群表示 $r$ 共同定义局部 Euler 因子，继而形成部分 L 函数。这里必须把形式上的 Euler 乘积与解析延拓、函数方程和有界性分开；前者由局部数据定义，后者在一般群上属于深定理或猜想。本章从自守商和尖点条件出发，直到完整 L 函数及其解析问题。
 
-本章把局部 Langlands 参数和 L 群表示接入全局自守表示。第十二章说明局部表示 $\pi_v$ 应有局部参数
-$$
-\varphi_{\pi_v}:W_{K_v}'\to{}^LG.
-$$
-本章定义整体自守商、尖点自守表示、restricted tensor product 分解、非分歧局部因子、部分 Euler 乘积和完全 L 函数。重点是区分两件事：Euler 乘积的形式定义来自局部参数和 Satake 参数；解析延拓与函数方程在一般还原群上属于深定理或 Langlands 解析猜想。
-
-## 依赖前置知识
-
-需要第一章的 adeles，第七章的 `GL(2)` 自守表示，第十一章的 L 群和 Satake 参数，第十二章的局部 Langlands 参数。需要知道局部紧群表示、restricted tensor product、抛物子群、Levi 分解和 cuspidal constant term。本章把自守表示的离散谱分解、张量积分解、强重数一、Godement-Jacquet 理论、Langlands-Shahidi 方法、Rankin-Selberg 方法和一般 Langlands 解析性质作为外部输入或猜想。
-
-收口归一化回指：本章采用 automorphic normalization；非分歧局部因子、Satake 参数、Haar 测度和与 classical modular form normalization 的变量平移见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、5、8 节。
+所需的 adelic、L 群和局部参数语言已经在第一、十一、十二章建立。离散谱分解、强重数一、Godement--Jacquet、Langlands--Shahidi 与 Rankin--Selberg 方法均按外部输入标记。本文采用 automorphic normalization；Haar 测度、Satake 参数和经典模形式变量之间的转换见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md) 第 3、4、5、8 节。
 
 ## 13.1 自守商与中心特征
 
@@ -314,7 +304,7 @@ $$
 
 **注 13.35.** 对一般 reductive groups，强重数一可能失败或需要以 packet、稳定迹和端oscopic 数据修正。后续 trace formula 与 endoscopy 章节会解释这种失败如何与 functoriality 相连。
 
-## 13.10 本章小结
+## 13.10 局部因子如何组成全局 L 函数
 
 全局自守表示 $\pi$ 是 $G(\mathbb A_K)$ 在自守形式空间中出现的不可约表示，并分解为局部分量
 $$

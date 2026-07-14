@@ -2,13 +2,13 @@
 
 ## Z.0 目的和边界
 
-本附录处理版本表 21.3 和流程 21.16 中另外三类前沿方向：
+本附录展开第二十一章的三类开放问题：
 
 1. operadic categories、wreath product 和 operadic nerve；
 2. relative dendroidal Rezk nerve 与 operadic localization；
 3. Fukaya categories 的高阶 operadic 或多范畴结构。
 
-这些方向目前均保持研究边界状态。本附录只给出本书可以内部验证的接口定义、低阶检查和条件性命题；凡涉及近期预印本的主定理、Rezk nerve 完整模型结构、Fukaya category 的分析构造或 gluing theorem，均仍为外部输入或研究边界。
+这些方向目前均保持研究边界状态。本附录给出可在书内验证的接口定义、低阶计算和条件性命题。Operadic nerve 的完整比较、relative Rezk 模型结构、Fukaya category 的分析构造和 gluing theorem 仍需各自的外部输入；这里的接口不会把它们合并成一个无假设结论。
 
 ## Z.1 Operadic category 的数据包
 
@@ -45,7 +45,7 @@ $$
 
 **命题 Z.1.3.** 在例 Z.1.2 中，fiber 对复合的公式与定义 1.5 的代入乘积中的有限集分块拉平相同。
 
-**证明.** 定义 1.5 的代入乘积使用有限集 $I$ 的分块 $\pi:I\twoheadrightarrow J$，再对每个块 $I_j$ 继续分块。把 $\pi$ 记为函数 $f:I\to J$，第二层分块记为 $g:J\to K$，则 $K$ 的一个元素 $k$ 的总 fiber 是
+**证明.** 定义 1.5 的代入乘积使用任意有限集映射 $f:I\to J$，包括具有空 fiber 的非满射，再以 $g:J\to K$ 组织第二层代入。于是 $K$ 的一个元素 $k$ 的总 fiber 是
 $$
 (g f)^{-1}(k)=\coprod_{j\in g^{-1}(k)}f^{-1}(j).
 $$
@@ -57,11 +57,17 @@ $$
 
 ## Z.2 Boardman--Vogt tensor product 与 wreath product 的接口
 
-**定义 Z.2.1.** 设 $\mathcal P,\mathcal Q$ 是同一对称幺半底范畴中的 operads。若存在 operad $\mathcal P\otimes_{BV}\mathcal Q$，使得对任意 $\mathcal C$ 中对象 $A$，
+**定义 Z.2.1.** 设 $\mathcal P,\mathcal Q$ 是同一对称幺半底范畴中的 operads。对任意 operad $\mathcal R$，记
 $$
-(\mathcal P\otimes_{BV}\mathcal Q)\text{-Alg}(A)
+\operatorname{Int}(\mathcal P,\mathcal Q;\mathcal R)
 $$
-等价于“$\mathcal P$-algebra object in $\mathcal Q$-algebras”或等价地“$\mathcal P$ 与 $\mathcal Q$ 的 operations 在 $A$ 上满足 interchange laws”，则称它为 Boardman--Vogt tensor product。
+为 operad maps $f:\mathcal P\to\mathcal R$、$g:\mathcal Q\to\mathcal R$ 的二元组所成集合，其中 $f(p)$ 与 $g(q)$ 对所有 operations $p,q$ 满足带相应块置换的 interchange law。若 operad $\mathcal P\otimes_{BV}\mathcal Q$ 表示该函子，即存在对 $\mathcal R$ 自然的双射
+$$
+\operatorname{Operad}(\mathcal P\otimes_{BV}\mathcal Q,\mathcal R)
+\cong
+\operatorname{Int}(\mathcal P,\mathcal Q;\mathcal R),
+$$
+则称它为 Boardman--Vogt tensor product。由此，$(\mathcal P\otimes_{BV}\mathcal Q)$-algebra 等价于 $\mathcal P$-operations 与 $\mathcal Q$-operations 在同一对象上满足 interchange；在适当 enriched 语境中也可表述为 $\mathcal P$-algebra object in $\mathcal Q$-algebras。
 
 **命题 Z.2.2（interchange 的低阶形式）.** 若 $\mu\in\mathcal P(2)$，$\nu\in\mathcal Q(2)$，则 $\mathcal P\otimes_{BV}\mathcal Q$-algebra 上的二元运算必须满足
 $$
@@ -79,48 +85,48 @@ $$
 
 **定义 Z.3.1.** 一个 operadic nerve interface 是把 operadic category datum $\mathcal O$ 送到某种 higher nerve object $N_{\mathrm{op}}(\mathcal O)$ 的构造候选，并要求：
 
-1. $0$-simplices 或 colors 记录 local terminal/local color data；
-2. $1$-simplices 记录 morphisms in $\mathcal O$；
-3. higher simplices 记录 fiber 对复合的相干性；
+1. 有一个线性限制，其 $0$-与 $1$-simplices 分别记录 $\mathcal O$ 的对象与态射；
+2. 该线性限制上的 $2$-simplices 记录 ordinary composition；
+3. 非线性或更高 simplices 记录 fiber 对复合的相干性；
 4. Segal 型条件恢复“复合由 fiber 拉平控制”的事实。
 
-本定义只是本书的接口，不等同于 Batanin--Kock--Weber 预印本中的 operadic nerve。
+本定义只规定本书需要比较的接口，不把任何具体 higher nerve 构造预先识别为它。
 
-**命题 Z.3.2.** 任何 operadic nerve 若满足定义 Z.3.1 的四条要求，则其一维截断至少恢复 $\mathcal O$ 的 underlying category。
+**命题 Z.3.2.** 若定义 Z.3.1 的 operadic nerve 之线性限制同构于 ordinary nerve $N(\mathcal O)$，则该线性限制的 $2$-skeleton 唯一恢复 $\mathcal O$ 的 underlying category。
 
-**证明.** 一维截断包含 $0$-simplices 和 $1$-simplices。由要求 1，$0$-simplices 至少记录对象的 local component 数据；由要求 2，$1$-simplices 记录 $\mathcal O$ 中 morphisms。要求 3 在 $2$-simplices 层记录 composable morphisms 的复合相干性，因此一维截断连同 $2$-simplex 的合成边恢复 ordinary nerve 中的 category composition。故 underlying category 被恢复到 nerve 所允许的等价精度。$\square$
+**证明.** Ordinary nerve 的 $0$-simplices 是对象，$1$-simplices 是态射。每对可复合态射 $x\xrightarrow f y\xrightarrow g z$ 对应唯一的 $2$-simplex，其第三条边是 $gf$；degenerate $1$-simplices 给出恒等态射。因此 $2$-skeleton 恢复对象、态射、恒等态射和复合。结合律由 ordinary nerve 的 $3$-simplices 保证，而这里已知线性限制就是某个范畴的 nerve，所以恢复的复合继承该结合律。$\square$
 
 **警告 Z.3.3.** Dendroidal nerve $N_d(\mathcal P)$、category of operators nerve 和 operadic category 的 operadic nerve 是三种不同构造。它们可以比较，但不能在定义层面互相替换。
 
 ## Z.4 Relative dendroidal object 与 Rezk nerve 接口
 
-**定义 Z.4.1.** 一个 relative dendroidal object 是二元组 $(X,W)$，其中 $X$ 是 dendroidal set，$W$ 是 $i^\*X$ 中一类 $1$-simplices，满足：
+**定义 Z.4.1.** 一个 relative dendroidal infinity-operad 是二元组 $(X,W)$，其中 $X$ 是 inner Kan dendroidal set，$i^\*X$ 因命题 17.4 是 quasi-category，而 $W$ 是 $i^\*X$ 中一类 $1$-simplices，满足：
 
 1. $i:\Delta\hookrightarrow\Omega$ 是线性树嵌入；
-2. $i^\*X$ 是 $X$ 的线性限制；
-3. $W$ 包含所有 degenerate $1$-simplices；
-4. 若 $i^\*X$ 中存在两个 $W$-morphisms 的复合，则复合仍在 $W$ 中。
+2. $W$ 包含所有 degenerate $1$-simplices；
+3. 若两条边在 homotopy category $\operatorname{Ho}(i^\*X)$ 中表示同一态射，则其中一条属于 $W$ 当且仅当另一条属于 $W$；
+4. $W$ 在 $\operatorname{Ho}(i^\*X)$ 中的像含所有对象并对复合封闭。
 
-把 $W$ 中的 $1$-simplices 称为 weak unary equivalences。
+把 $W$ 中的 $1$-simplices 称为指定的 weak unary morphisms。只有当其像在局部化中可逆时才称为 equivalences；定义本身不预设它们已在 $i^\*X$ 中可逆。
 
 **例 Z.4.2.** 设 $\mathcal P$ 是 strict colored operad。选择其 unary part $\mathcal P(1)$ 中一类 morphisms $W$，包含单位并对复合封闭。则
 $$
 (N_d(\mathcal P),W)
 $$
-是 relative dendroidal object。
+是 relative dendroidal infinity-operad。
 
-**证明.** 线性限制 $i^\*N_d(\mathcal P)$ 是由 $\mathcal P$ 的 unary operations 构成的 simplicial nerve 型对象。单位 unary operations 给出 degenerate $1$-simplices。若 $W$ 对 operad 的 unary composition 封闭，则在 $i^\*N_d(\mathcal P)$ 中可复合的 $W$-边复合仍在 $W$ 中。故满足定义 Z.4.1。$\square$
+**证明.** 线性限制 $i^\*N_d(\mathcal P)$ 是 $\mathcal P$ 的 unary category 的 ordinary nerve，故是 quasi-category；其 homotopy category 就是该 unary category。单位 unary operations 给出 degenerate $1$-simplices。Ordinary nerve 的边不存在非平凡 simplicial homotopy 歧义，而 $W$ 含单位并对 unary composition 封闭，所以其像构成 wide subcategory。故满足定义 Z.4.1。$\square$
 
-**定义 Z.4.3.** 一个 dendroidal Rezk nerve construction 应把 relative dendroidal object $(X,W)$ 送到某种 complete Segal / Rezk 型对象，使得：
+**定义 Z.4.3.** 一个 dendroidal Rezk nerve construction 应把 relative dendroidal infinity-operad $(X,W)$ 送到某种 complete Segal / Rezk 型对象，使得：
 
 1. dendroidal Segal 条件编码多输入复合；
 2. Rezk completeness 条件编码 $W$ 中的一元弱等价；
 3. 对线性树的限制退化为 ordinary relative category 的 Rezk nerve；
 4. localization 的 universal property 只在指定模型结构中陈述。
 
-**命题 Z.4.4.** 若 $X$ 的所有非线性树值被忽略，则 relative dendroidal object $(X,W)$ 的线性部分给出 ordinary relative simplicial object。
+**命题 Z.4.4.** 忽略 $X$ 的所有非线性树值后，定义 Z.4.1 的线性部分是 relative infinity-category $(i^\*X,W)$。
 
-**证明.** 线性嵌入 $i:\Delta\hookrightarrow\Omega$ 把 $X$ 限制为 simplicial set $i^\*X$。定义 Z.4.1 中的 $W$ 正是该 simplicial set 的一类 $1$-simplices，包含退化边并对可定义复合封闭。因此线性部分只记录 ordinary categorical direction 上的 weak morphisms，而不记录多输入顶点。$\square$
+**证明.** 命题 17.4 给出 $i^\*X$ 是 quasi-category。定义 Z.4.1 的条件 2--4 使 $W$ 在 homotopy category 中确定一个 wide subcategory，正是 relative infinity-category 所需的指定弱态射类。限制到线性树后没有任何非线性 corolla，故不再记录多输入顶点。$\square$
 
 **警告 Z.4.5.** Relative dendroidal Rezk nerve 的完整理论不能由定义 Z.4.3 推出；它需要模型结构、fibrancy、localization universal property 和与已有 infinity-operad 模型的比较。
 
@@ -176,10 +182,12 @@ $$
 **失败模式 Z.6.3.** 把 Fukaya gluing 当作纯 operad 公理。
 修正：operad 公理只表达 gluing 的代数后果；gluing 的几何成立依赖 compactness、transversality 和 orientation。
 
-**失败模式 Z.6.4.** 把 2026 预印本作为已验证教材定理。
-修正：必须先通过流程 21.16 和定义 D.0.2 的引用包登记。
+**失败模式 Z.6.4.** 把开放问题的背景结果直接写成无条件定理。
+修正：先固定模型与全部假设；若调用外部结果，按定义 D.0.2 给出精确陈述、来源定位和未重证边界。
 
-## Z.7 进入正文的检查表
+## Z.7 接口能够承载定理所需的数据
+
+前五节的接口只隔离了对象类型。要在这些接口上陈述可判真假的比较或几何定理，还分别需要下列数据；缺少其中一项时，结论的源、靶或等价类型尚未确定。
 
 ### Operadic categories
 
@@ -187,7 +195,7 @@ $$
 2. 固定 cardinality functor、fiber functor 和 local terminal convention。
 3. 说明与 colored operad 或 multicategory 的关系。
 4. 对 operadic nerve，给出 simplicial 或 pseudo-simplicial 相干性数据。
-5. 标记 Boardman--Vogt tensor product 与 wreath product 的精确定理来源。
+5. 对拟调用的 Boardman--Vogt tensor product 与 wreath product 关系，给出精确定理及其假设。
 
 ### Relative dendroidal Rezk nerve
 
@@ -203,7 +211,7 @@ $$
 2. 记录 brane data、grading、Pin/spin、orientation 和 coefficient choices。
 3. 说明 transversality 和 compactness 输入。
 4. 写出 operations 的 degree 和 signs，并与定义 E.18--定义 E.23 和检查 W.1--检查 W.11 对齐。
-5. 把 gluing theorem、sectorial descent 或 higher operad structure 标为外部输入。
+5. 区分由形式 operad 公理推出的关系与外部 gluing、sectorial descent 定理。
 
 ## 练习
 
