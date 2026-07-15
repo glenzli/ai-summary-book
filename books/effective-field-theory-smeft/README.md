@@ -1,13 +1,13 @@
 # 有效场论与标准模型有效场论
 
 作者：Dr. Stochastic Parrot
-状态：第一版内部收口稿
+状态：第一版内部收口稿；后续维护限于出版校对、外部工具接口和非阻塞参考手册扩展
 最近资料核查：2026-07-08
 主资料源：Burgess EFT 综述、Weinberg/Georgi EFT 思想、Warsaw basis 原始论文、SMEFT RGE 文献、现代 SMEFT 综述、2025 SMEFT ATLAS 和 Snowmass 理论前沿资料；详见 [SOURCES.md](SOURCES.md)。
 
 本书目标是写成一部数学结构明确、物理计算可复核的中文 EFT/SMEFT 教材。正文从尺度分离和局域有效作用量开始，进入路径积分匹配、Wilson 系数、幂计数、重整化群、算符冗余、标准模型场内容、SMEFT 维数展开、Warsaw basis、匹配、运行、破缺相、现代 SMEFT 应用和实验解释。
 
-写作约束见 [SKILL.md](SKILL.md)。符号约定见 [NOTATION.md](NOTATION.md)，来源见 [SOURCES.md](SOURCES.md)，剩余义务见 [K_remaining_obligations.md](K_remaining_obligations.md)，数学和物理审查见 [MATH_REVIEW.md](MATH_REVIEW.md)。
+写作约束见 [SKILL.md](SKILL.md)。符号约定见 [NOTATION.md](NOTATION.md)，术语入口见 [GLOSSARY.md](GLOSSARY.md)，习题解题入口见 [SOLUTIONS.md](SOLUTIONS.md)，来源见 [SOURCES.md](SOURCES.md)，剩余义务见 [K_remaining_obligations.md](K_remaining_obligations.md)，数学和物理审查见 [MATH_REVIEW.md](MATH_REVIEW.md)。
 
 ## 建议阅读顺序
 
@@ -43,6 +43,8 @@
 - [附录 B：外部输入与计算索引](B_external_input_index.md)
 - [附录 C：术语索引](C_term_index.md)
 - [附录 D：练习解题路线](D_exercise_solutions.md)
+- [术语表入口](GLOSSARY.md)
+- [习题解题入口](SOLUTIONS.md)
 - [附录 E：基变换与接口台账](E_basis_conversion_ledger.md)
 - [附录 F：基变换细表](F_basis_conversion_tables.md)
 - [附录 G：Warsaw flavor/Fierz 计数审计](G_warsaw_flavor_fierz_audit.md)

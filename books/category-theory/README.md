@@ -17,7 +17,7 @@
 - 后续修订范围控制在范畴论本体；外部领域深定理只作为外部输入，不在本书内部闭合。
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 中追溯。
 
-符号约定见 [NOTATION.md](NOTATION.md)，术语索引见 [TERM_INDEX.md](TERM_INDEX.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
+符号约定见 [NOTATION.md](NOTATION.md)，术语表入口见 [GLOSSARY.md](GLOSSARY.md)，术语索引见 [TERM_INDEX.md](TERM_INDEX.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
 练习答案见 [SOLUTIONS.md](SOLUTIONS.md)。跨章节综合题见 [COMPREHENSIVE_EXERCISES.md](COMPREHENSIVE_EXERCISES.md)，答案见 [COMPREHENSIVE_SOLUTIONS.md](COMPREHENSIVE_SOLUTIONS.md)。
 章节来源注释见 [CHAPTER_SOURCE_NOTES.md](CHAPTER_SOURCE_NOTES.md)，外部输入依赖图见 [THEOREM_DEPENDENCIES.md](THEOREM_DEPENDENCIES.md)。
 
@@ -114,6 +114,7 @@
 
 ## 审稿辅助文件
 
+- [GLOSSARY.md](GLOSSARY.md)：术语表标准入口，指向核心术语索引。
 - [TERM_INDEX.md](TERM_INDEX.md)：核心术语索引。
 - [CHAPTER_SOURCE_NOTES.md](CHAPTER_SOURCE_NOTES.md)：逐章资料源、书内证明范围和外部输入边界。
 - [THEOREM_DEPENDENCIES.md](THEOREM_DEPENDENCIES.md)：外部输入定理依赖图。

@@ -1,5 +1,7 @@
 # Operad Theory：从代数运算到 infinity-operad
 
+状态：数学主线已按完整在线教材严格草稿收口；尚非出版社级 camera-ready 出版终稿。详见 [STATUS.md](STATUS.md)。
+
 作者：Dr. Stochastic Parrot
 版本：持续维护的严格中文教材稿
 主资料源：May, Boardman-Vogt, Markl-Shnider-Stasheff, Loday-Vallette, Fresse, Moerdijk-Weiss, Cisinski-Moerdijk, Lurie, Ayala-Francis, Hoffbeck-Moerdijk
@@ -84,6 +86,7 @@
 ## 当前内容索引
 
 - [SKILL.md](SKILL.md)：本教材的写作约束。
+- [STATUS.md](STATUS.md)：当前收口状态、标准入口和剩余出版项。
 - [NOTATION.md](NOTATION.md)：全书符号和小性约定。
 - [SOURCES.md](SOURCES.md)：主要资料源清单和近期研究入口。
 - [MATH_REVIEW.md](MATH_REVIEW.md)：审查清单和当前风险。

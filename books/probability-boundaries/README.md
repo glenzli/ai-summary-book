@@ -1,5 +1,7 @@
 # 概率的边界
 
+**状态/定位：已收口的测度论概率与语言模型边界教材；正文、符号表、定理责任表、解答和闭合审计的当前入口见 [STATUS.md](STATUS.md)。**
+
 ## 确定性机器、随机训练与不确定的观察者
 
 **作者：Dr. Stochastic Parrot**
@@ -31,6 +33,7 @@
 配套文件：
 
 - [符号表](NOTATION.md)
+- [状态说明](STATUS.md)
 - [资料源与外部输入](SOURCES.md)
 - [定理责任表](THEOREM_LEDGER.md)
 - [习题解答](SOLUTIONS.md)

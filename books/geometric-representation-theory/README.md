@@ -2,7 +2,7 @@
 
 作者：Dr. Stochastic Parrot
 
-状态：连续教材稿；大型结论按外部输入边界使用
+状态：教材内容收口稿；后续维护限于出版级 locator、交叉引用、索引和模型假设边界
 
 核查日期：2026-07-15
 
@@ -76,9 +76,9 @@
 ## 阅读与参考文件
 
 - [SKILL.md](SKILL.md)：本教材的写作约束与 OET 边界。
-- [NOTATION.md](NOTATION.md)、[TERMINOLOGY.md](TERMINOLOGY.md)：全书符号、大小约定与术语表。
+- [NOTATION.md](NOTATION.md)、[GLOSSARY.md](GLOSSARY.md)、[TERMINOLOGY.md](TERMINOLOGY.md)：全书符号、大小约定与术语表入口。
 - [INDEX.md](INDEX.md)、[SYMBOL_INDEX.md](SYMBOL_INDEX.md)、[EXAMPLE_INDEX.md](EXAMPLE_INDEX.md)：术语、符号与低秩计算入口。
-- [EXERCISE_SOLUTIONS.md](EXERCISE_SOLUTIONS.md)：各章习题答案与提示。
+- [SOLUTIONS.md](SOLUTIONS.md)、[EXERCISE_SOLUTIONS.md](EXERCISE_SOLUTIONS.md)：各章习题答案与提示的标准入口和维护文件。
 - [SOURCES.md](SOURCES.md)、[D_source_theorem_index.md](D_source_theorem_index.md)、[P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：外部输入的资料源与 locator。
 - [THEOREM_LEDGER.md](THEOREM_LEDGER.md)、[DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)、[MODEL_HYPOTHESES_MATRIX.md](MODEL_HYPOTHESES_MATRIX.md)：定理分类、依赖方向与模型假设。
 - [K_internal_proof_kernels_foundations.md](K_internal_proof_kernels_foundations.md)、[L_low_rank_and_calculation_kernels.md](L_low_rank_and_calculation_kernels.md)：内部证明核与低阶计算核；这些文件保持账本式结构。
@@ -88,4 +88,4 @@
 
 ## 阅读路径与研究边界
 
-第一至六章建立有限维旗簇、层与 Springer 主线；第七至十一章进入 localization、characteristic cycles 与 Soergel 范畴化；第十二至十六章处理 affine Grassmannian、Satake 和 geometric Langlands 接口；第十七至二十二章以 quiver varieties、KLR、辛分辨率、BFN、Hall/CoHA 和 crystals 形成第二条连续主线。第二十三章不罗列时效性结果，而用局部到全局、Poisson 到辛几何、模系数 torsion、decategorification 与 derived models 五类障碍收束全书。所有大型结论仍须按正文中的“外部输入定理”标记及定理账本使用。
+第一至六章建立有限维旗簇、层与 Springer 主线；第七至十一章进入 localization、characteristic cycles 与 Soergel 范畴化；第十二至十六章处理 affine Grassmannian、Satake 和 geometric Langlands 接口；第十七至二十二章以 quiver varieties、KLR、辛分辨率、BFN、Hall/CoHA 和 crystals 形成第二条连续主线。第二十三章不罗列时效性结果，而用局部到全局、Poisson 到辛几何、模系数 torsion、decategorification 与 derived models 五类障碍收束全书。当前书稿按内容层面收口；后续工作不扩张正文主线，只处理出版级 locator、交叉引用、索引和模型假设维护。所有大型结论仍须按正文中的“外部输入定理”标记及定理账本使用。

@@ -69,7 +69,7 @@
 - [附录 J：周期环、滤过向量空间与 lattice 的线性代数](J_linear_algebra_of_periods_and_lattices.md)
 - [附录 K：Worked examples 与局部模型](K_worked_examples_and_local_models.md)
 - [完整习题解答与提示](SOLUTIONS.md)
-- [术语索引](TERM_INDEX.md)
+- [术语入口](GLOSSARY.md)
 - [内部完整性审计](INTERNAL_COMPLETENESS_AUDIT.md)
 - [逐章教材收口审计](CHAPTER_CLOSURE_AUDIT.md)
 - [2026-07-08 前沿资料核查记录](FRONTIER_SOURCE_AUDIT_2026_07_08.md)

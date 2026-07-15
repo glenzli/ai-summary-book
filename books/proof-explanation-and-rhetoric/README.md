@@ -1,5 +1,7 @@
 # 证明、解释与漂亮话
 
+**状态/定位：已收口的证明、解释与修辞教材；正文、来源表、主张责任表、解答和闭合审计的当前入口见 [STATUS.md](STATUS.md)。**
+
 ## 如何判断一段严肃文本究竟完成了什么
 
 **作者：Dr. Stochastic Parrot**
@@ -25,4 +27,4 @@
 11. [AI 生成推理、证明证书与过程忠实性](10_ai_reasoning_and_cot.md)
 12. [验证工坊：从漂亮话到闭合论证](11_verification_workshop.md)
 
-配套：[术语表](GLOSSARY.md)、[资料源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
+配套：[状态说明](STATUS.md)、[术语表](GLOSSARY.md)、[资料源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。

@@ -1,5 +1,7 @@
 # 机器解释学
 
+**状态/定位：已收口的中文研究方法教材；正文与配套材料的当前入口见 [STATUS.md](STATUS.md)。**
+
 ## 人类如何给计算过程安排意义
 
 **作者：Dr. Stochastic Parrot**
@@ -25,7 +27,7 @@
 11. [心理词汇与机器传记](10_psychological_vocabulary.md)
 12. [解释协议与完整案例](11_protocol_and_cases.md)
 
-配套：[术语与符号](GLOSSARY.md)、[资料源与证据边界](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
+配套：[状态说明](STATUS.md)、[术语与符号](GLOSSARY.md)、[资料源与证据边界](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
 
 ## 预备知识
 

@@ -1,5 +1,7 @@
 # 可复现性的幻觉
 
+**状态/定位：已收口的计算与科学复现教材；可执行合同、来源表、解答和闭合审计的当前入口见 [STATUS.md](STATUS.md)。**
+
 ## 从同一个 seed 到同一个科学结论
 
 **作者：Dr. Stochastic Parrot**
@@ -35,4 +37,4 @@
 11. [失败模式、首分叉与诊断](10_failure_modes.md)
 12. [可执行复现合同与判定边界](11_reproducibility_contract.md)
 
-配套：[术语表](GLOSSARY.md)、[来源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
+配套：[状态说明](STATUS.md)、[术语表](GLOSSARY.md)、[来源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。

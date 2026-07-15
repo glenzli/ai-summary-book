@@ -1,7 +1,7 @@
 # 同伦类型论与单值基础
 
 作者：Dr. Stochastic Parrot
-状态：连续教材修订版
+状态：教材内容收口稿（第 0--17 章与附录 A--BO；证明身份和外部输入边界固定）
 最近资料核查：2026-07-15
 主资料源：*Homotopy Type Theory: Univalent Foundations of Mathematics*；Egbert Rijke, *Introduction to Homotopy Type Theory*；cubical type theory、simplicial model、单值范畴论、合成同伦论和经典代数拓扑文献。
 
@@ -9,7 +9,7 @@
 
 本书采用严格教材口径：每个核心定义必须有规则或精确定义；每个非平凡断言必须具有书内定理、条件化推导、精确外部输入或研究边界之一的身份；解释证明思路的文字本身不算证明。
 
-资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，证明身份规则见 [B_proof_status_blueprints.md](B_proof_status_blueprints.md)，关键依赖边界见 [K_remaining_obligations.md](K_remaining_obligations.md)，出版审计见 [PUBLICATION_CLOSURE_AUDIT.md](PUBLICATION_CLOSURE_AUDIT.md)。
+书籍状态见 [STATUS.md](STATUS.md)。资料源见 [SOURCES.md](SOURCES.md)，符号约定见 [NOTATION.md](NOTATION.md)，证明身份规则见 [B_proof_status_blueprints.md](B_proof_status_blueprints.md)，关键依赖边界见 [K_remaining_obligations.md](K_remaining_obligations.md)，出版审计见 [PUBLICATION_CLOSURE_AUDIT.md](PUBLICATION_CLOSURE_AUDIT.md)。
 
 本地验收入口为 [`validate.py`](validate.py)；它检查第 0-17 章导言、旧模板回归、Banach/Rezk 关键边界，并调用严格叙事审计、严格 OET 审计与 `git diff --check`。
 
@@ -110,6 +110,7 @@
 ## 收口文件
 
 - [收口范围与封稿门槛](CLOSURE_SCOPE.md)
+- [书籍状态与维护边界](STATUS.md)
 - [依赖分层与外部输入边界](DEPENDENCY_LAYERS.md)
 - [数学审查记录](MATH_REVIEW.md)
 - [出版收口审计](PUBLICATION_CLOSURE_AUDIT.md)

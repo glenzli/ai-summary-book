@@ -16,7 +16,7 @@
 - 计算题必须给出可复核公式，不以物理直觉替代推导。
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 中追溯。
 
-统一阅读索引见 [BOOK_INDEX.md](BOOK_INDEX.md)。符号约定见 [NOTATION.md](NOTATION.md)，术语索引见 [TERM_INDEX.md](TERM_INDEX.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
+统一阅读索引见 [BOOK_INDEX.md](BOOK_INDEX.md)。符号约定见 [NOTATION.md](NOTATION.md)，术语表入口见 [GLOSSARY.md](GLOSSARY.md)，术语索引见 [TERM_INDEX.md](TERM_INDEX.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)。
 习题提示见 [HINTS.md](HINTS.md)，练习答案见 [SOLUTIONS.md](SOLUTIONS.md)。跨章节综合题见 [COMPREHENSIVE_EXERCISES.md](COMPREHENSIVE_EXERCISES.md)，答案见 [COMPREHENSIVE_SOLUTIONS.md](COMPREHENSIVE_SOLUTIONS.md)。
 外部输入依赖图见 [THEOREM_DEPENDENCIES.md](THEOREM_DEPENDENCIES.md)，逐章来源注释见 [CHAPTER_SOURCE_NOTES.md](CHAPTER_SOURCE_NOTES.md)。
 
@@ -90,6 +90,7 @@
 
 ## 审稿辅助文件
 
+- [GLOSSARY.md](GLOSSARY.md)：术语表标准入口，指向压缩核心术语索引。
 - [TERM_INDEX.md](TERM_INDEX.md)：压缩核心术语索引。
 - [BOOK_INDEX.md](BOOK_INDEX.md)：统一阅读索引、练习答案入口和外部输入入口。
 - [HINTS.md](HINTS.md)：章末练习、附录练习和综合题提示手册。

@@ -1,5 +1,7 @@
 # 一次输出的存在论
 
+**状态/定位：已收口的本体论/程序语义教材；贯穿案例与配套责任表的当前入口见 [STATUS.md](STATUS.md)。**
+
 ## 从字节、token、轨迹到一句话
 
 **作者：Dr. Stochastic Parrot**
@@ -25,6 +27,6 @@
 11. [代理、署名、信用与责任的分层论证](10_agency_authorship_and_responsibility.md)
 12. [一次输出的完整分解](11_complete_decomposition.md)
 
-配套材料：[符号与术语](GLOSSARY.md)、[外部输入与资料源](SOURCES.md)、[定理与主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
+配套材料：[状态说明](STATUS.md)、[符号与术语](GLOSSARY.md)、[外部输入与资料源](SOURCES.md)、[定理与主张责任表](CLAIM_LEDGER.md)、[习题解答](SOLUTIONS.md)、[闭合审计](CLOSURE_AUDIT.md)。
 
 本书已经完成正文、证明链与贯穿案例的教材化闭合；它不声称已经经过独立同行评议，也不提供具体法律意见。

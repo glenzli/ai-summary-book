@@ -1,5 +1,7 @@
 # Homological Mirror Symmetry：Fukaya 范畴、导出几何与镜像等价
 
+状态：内容本体已按完整在线教材收口；尚非出版社级 camera-ready 出版终稿。详见 [STATUS.md](STATUS.md)。
+
 作者：Dr. Stochastic Parrot
 
 版本：在线阅读稿，2026-07-15 校订
@@ -29,7 +31,7 @@ equivalence；熟悉辛几何的读者也应从第三章开始核对本书采用
 - 深定理的引用给出本书实际使用的结论范围；来源只证明 fully faithful 或
   quasi-embedding 时，正文不会把它改写成等价。
 
-完整写作约束见 [SKILL.md](SKILL.md)，练习答案见 [SOLUTIONS.md](SOLUTIONS.md)。
+完整写作约束见 [SKILL.md](SKILL.md)，当前状态见 [STATUS.md](STATUS.md)，练习答案见 [SOLUTIONS.md](SOLUTIONS.md)。
 
 ## 目录
 

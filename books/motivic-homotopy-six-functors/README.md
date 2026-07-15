@@ -1,5 +1,7 @@
 # Motivic Homotopy and Six Functors：从 `\mathbb A^1`-局部化到 Grothendieck 六操作
 
+状态：完整教材可读版和学术教学闭合草稿；尚非出版社级 camera-ready 出版终稿。详见 [STATUS.md](STATUS.md)。
+
 作者：Dr. Stochastic Parrot
 
 本书从一个具体问题展开：怎样把代数几何中的局部粘合、仿射直线同伦、Tate 悬挂和
@@ -87,8 +89,9 @@ stacky、log、perfect 和 analytic 扩展，并把已知比较与开放问题�
 ## 阅读辅助与资料
 
 - [NOTATION.md](NOTATION.md)：全书符号、宇宙与小性约定。
+- [STATUS.md](STATUS.md)：当前收口状态、标准入口和剩余出版项。
 - [INDEX.md](INDEX.md)：主题索引。
-- [EXERCISE_SOLUTIONS.md](EXERCISE_SOLUTIONS.md)：习题解答与证明提示。
+- [SOLUTIONS.md](SOLUTIONS.md)：习题解答标准入口，指向既有解答要点。
 - [SOURCES.md](SOURCES.md)：主要一手资料及其用途。
 - [THEOREM_LEDGER.md](THEOREM_LEDGER.md)：内部证明、外部输入与研究边界。
 - [REFERENCE_LOCATOR_LEDGER.md](REFERENCE_LOCATOR_LEDGER.md)：外部定理的版本和精确定位。

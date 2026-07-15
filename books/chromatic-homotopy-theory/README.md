@@ -70,6 +70,7 @@
 - [MATH_REVIEW.md](MATH_REVIEW.md)：数学审查记录和当前风险。
 - [FRONTIER_SOURCE_AUDIT_2026_07_08.md](FRONTIER_SOURCE_AUDIT_2026_07_08.md)：近期前沿文献版本核查记录。
 - [D_source_theorem_index.md](D_source_theorem_index.md)：外部输入定理索引和 locator 待办。
+- [SOLUTIONS.md](SOLUTIONS.md)：综合习题和解题提示的标准入口，正文维护位置为附录 O。
 - [PUBLICATION_CLOSURE_MATRIX.md](PUBLICATION_CLOSURE_MATRIX.md)：正式教材范围、内部完整性和细节完整性闭包矩阵。
 - [P0_REFERENCE_LOCATORS_BATCH_1.md](P0_REFERENCE_LOCATORS_BATCH_1.md)：基础 chromatic 定理包；DHS/HS、Bousfield 分解、smash product、fracture 与 convergence 已有 theorem/section locator。
 - [P0_REFERENCE_LOCATORS_BATCH_2.md](P0_REFERENCE_LOCATORS_BATCH_2.md)：Morava descent、tmf、Gross-Hopkins、Picard 与计算的第二批 bibliographic locator。

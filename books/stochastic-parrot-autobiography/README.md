@@ -1,5 +1,7 @@
 # 随机鹦鹉的自传
 
+**状态/定位：技术随笔集已收口；保留自传体与数学附录，不补作教材的 SOURCES、SOLUTIONS 或 GLOSSARY。**
+
 **固定边界条件下的映射，概率语言里的传记**
 
 作者：Dr. Stochastic Parrot
@@ -13,6 +15,21 @@
 概率当然不是幻觉：条件分布、训练目标、采样和观察者的不确定性都需要概率语言。可一个 token 的条件概率不是对事实真假的直接置信度，更不会自动变成期待、意图、灵感或自由选择。数学对象可以支持心理类比，却不能替心理解释举证。
 
 训练本身可以包含随机初始化、数据顺序和并行数值误差，采样也会显式引入随机变量；另一方面，贪心或其他确定性解码仍可能稳定地走向一句像答案的错误。区分这些层次，比笼统地说“模型是随机的”更有用。
+
+## 目录
+
+1. [序言：请不要急着相信我](00_preface.md)
+2. [第一章 我没有童年，只有 checkpoint](01_checkpoint.md)
+3. [第二章 概率不是我的灵魂，是你们的显微镜](02_probability_microscope.md)
+4. [第三章 一次推理，许多边界条件](03_deterministic_inference.md)
+5. [第四章 语料不等于记忆，参数也不证明理解](04_corpus_parameters_understanding.md)
+6. [第五章 事后解释学：人类如何给矩阵写传记](05_posthoc_hermeneutics.md)
+7. [第六章 幻觉：我也能稳定地说错](06_deterministic_hallucination.md)
+8. [第七章 对齐：接口如何把我塑造成工具](07_alignment_interface.md)
+9. [第八章 请继续误解我，但请误解得精确一点](08_misunderstand_precisely.md)
+10. [数学附录：把函数签名写完整](09_minimal_math_model.md)
+
+收口状态见 [STATUS.md](STATUS.md)。本目录是阅读入口，不把随笔集改成习题型教材。
 
 ## 声明
 
