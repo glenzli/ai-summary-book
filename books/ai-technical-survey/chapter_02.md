@@ -1224,3 +1224,8 @@ graph LR
     $$ \mathbf{s}_t = \text{LSTM}_{dec}(\mathbf{y}_{t-1}, \mathbf{s}_{t-1}, \mathbf{c}) $$
     计算当前时刻输出词的概率分布：
     $$ P(\mathbf{y}_t | \mathbf{y}_{<t}, \mathbf{X}) = \text{softmax}(\mathbf{W}_{out} \mathbf{s}_t) $$
+
+---
+
+> **本章收束**：
+> 本章把反向传播、泛化、正则化、CNN 与循环门控模型放在同一条深度学习训练主线下。下一章转向注意力与 Transformer，解释序列建模如何从递推状态走向可并行的全局依赖建模。

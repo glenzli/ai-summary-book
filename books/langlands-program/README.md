@@ -1,7 +1,7 @@
 # Langlands 纲领：从 `GL(1)` 到几何 Langlands
 
 作者：Dr. Stochastic Parrot
-状态：严格教材，审定前闭合版，待出版级审定
+状态：严格教材，审定前闭合版；尚非最终出版审定版
 主资料源：Tate, Weil, Langlands, Gelbart, Bump, Goldfeld-Hundley, Jacquet-Langlands, Godement-Jacquet, Arthur, Milne, Serre, Silverman, Diamond-Shurman, Cornell-Silverman-Stevens, Bushnell-Henniart, Frenkel, Gaitsgory
 
 本书目标是写成一部数学化、专业化、成体系的 Langlands 纲领教材，而不是导览文章。正文从整体域、局部域、adeles 和 Tate thesis 开始，逐步进入类域论、`GL(1)` Langlands、模形式和椭圆曲线、`GL(n)` 自守表示、Galois 表示、L 群、函子性和几何 Langlands。费马大定理的证明作为单独应用章处理。
@@ -17,13 +17,13 @@
 - 资料源必须能在 [SOURCES.md](SOURCES.md) 中追溯。
 - 外部定理按“核心结构、支撑接口、卫星理论”分级；只有直接服务 Langlands 对象、参数、L 因子、Hecke 作用、局部-整体相容或应用链闭环的内容才在本书展开，其他深层理论保留为外部输入或另卷。
 
-符号约定见 [NOTATION.md](NOTATION.md)，归一化总表见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，概念审定见 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，逐章收口台账见 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，编号审计见 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，收口标准见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。主要定理状态见 [THEOREM_INDEX.md](THEOREM_INDEX.md)，章节依赖见 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)，主线最短证明链见 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)，核心习题解答见 [SOLUTIONS.md](SOLUTIONS.md)，习题覆盖审查见 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)。
+符号约定见 [NOTATION.md](NOTATION.md)，归一化总表见 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)，审定前概念口径见 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，数学审查记录见 [MATH_REVIEW.md](MATH_REVIEW.md)，逐章收口台账见 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，编号审计见 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，收口标准见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。主要定理状态见 [THEOREM_INDEX.md](THEOREM_INDEX.md)，章节依赖见 [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)，主线最短证明链见 [MAINLINE_PROOF_CHAINS.md](MAINLINE_PROOF_CHAINS.md)，核心习题解答见 [SOLUTIONS.md](SOLUTIONS.md)，习题覆盖审查见 [EXERCISE_COVERAGE.md](EXERCISE_COVERAGE.md)。
 
 ## 当前收口判定
 
 本书已经达到主线广度基本固定：`GL(1)`、`GL(2)` 与费马应用、一般算术 Langlands、几何 Langlands 四条路径均已建立，附录 A-AE 已承担主要支撑接口。
 
-本书已经进入审定前闭合版。第一轮收口完成高风险主章的归一化回指，并建立主线最短证明链和习题覆盖表；第二轮收口完成索引一致性审计和高风险附录的归一化回指；第三轮收口完成逐章风险清理并建立收口缺口台账；第四轮收口完成重点外部输入来源拆分；第五轮收口完成编号和交叉引用审计；第六轮补入第 3、7、10、14、16、19、22、90 章的接口检查表和最小模型说明；第七轮补入第 1、2、5、8、12、17 章的使用边界表并完成附录层精校状态审稿；第八轮修正 $\ell$-adic 记法、旧状态措辞和若干接口表述；第九轮收紧主体章节的高风险假设、归一化和版本选择；第十轮收紧主体证明链直接引用的附录接口，并抽查外部输入索引和资料源索引；第十一轮统一最终收口口径；第十二轮完成最终概念审定；第十三轮完成出版前文字、排版和局部数学口径维护。当前剩余工作不应继续横向扩张新理论分支，而应集中在来源页码、排版审稿和终校索引维护。判据和任务分级见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。
+本书已经进入审定前闭合版，尚未进入最终出版审定版。第一轮收口完成高风险主章的归一化回指，并建立主线最短证明链和习题覆盖表；第二轮收口完成索引一致性审计和高风险附录的归一化回指；第三轮收口完成逐章风险清理并建立收口缺口台账；第四轮收口完成重点外部输入来源拆分；第五轮收口完成编号和交叉引用审计；第六轮补入第 3、7、10、14、16、19、22、90 章的接口检查表和最小模型说明；第七轮补入第 1、2、5、8、12、17 章的使用边界表并完成附录层精校状态审稿；第八轮修正 $\ell$-adic 记法、旧状态措辞和若干接口表述；第九轮收紧主体章节的高风险假设、归一化和版本选择；第十轮收紧主体证明链直接引用的附录接口，并抽查外部输入索引和资料源索引；第十一轮统一审定前收口口径；第十二轮固定审定前概念边界；第十三轮完成出版前文字、排版和局部数学口径维护。当前剩余工作不应继续横向扩张新理论分支，而应集中在来源页码、排版审稿和出版前索引维护。判据和任务分级见 [CLOSURE_STATUS.md](CLOSURE_STATUS.md)。
 
 ## 建议总目录
 
@@ -102,7 +102,7 @@
 - [SKILL.md](SKILL.md)：本教材的写作约束。
 - [NOTATION.md](NOTATION.md)：全书符号和局部-整体约定。
 - [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)：Frobenius、reciprocity、Haar/Fourier、Satake、Galois 表示和 L 函数变量归一化总表。
-- [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)：最终概念审定，固定参数、表示、L 函数、函子性、几何 Langlands 和费马应用的概念边界。
+- [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)：审定前概念口径，固定参数、表示、L 函数、函子性、几何 Langlands 和费马应用的概念边界。
 - [SOURCES.md](SOURCES.md)：主要资料源清单。
 - [MATH_REVIEW.md](MATH_REVIEW.md)：审查清单和逐章收口状态。
 - [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)：逐章收口缺口审查台账。
@@ -176,6 +176,6 @@
 - 核心习题解答已覆盖第 1 至 5 章、若干 `GL(2)` 计算、一般 Langlands 基础、几何 Langlands 入门和费马应用章。
 - 附录 A-D、F-AE 已从接口复习扩展为带关键证明、Fourier/Poisson 计算、积分接口、谱分解接口、局部 packet 例子、几何范畴技术层、`GL(n)` 局部分类、`GL(2)` 局部 LLC 例子、trace formula 稳定化、函数域 shtuka 接口、模曲线上同调、p-adic Hodge/Shimura 接口、class formation、Atkin-Lehner-Li、Arthur 分类、factorization/BD Grassmannian、局部调和分析、Bruhat-Tits、derived stacks、Fargues-Fontaine 和椭圆曲线局部约化接口的参考附录；这些附录已达到主体可引用接口深度，但仍不是可替代专著的完整证明卷。
 
-## 最终收口型审定结论
+## 审定前闭合结论
 
-本书当前状态为审定前闭合版：四条主线、应用链、概念边界、外部输入边界、编号索引、交叉引用、习题回指和资料源大类均已闭合。后续进入出版前审定时，只应接受数学错误修正、来源补强、排版统一、术语统一和索引维护；新增大块理论、附录群或第五条主线应另列为新版本或另卷目标。
+本书当前状态为审定前闭合版，而不是最终出版审定版：四条主线、应用链、概念边界、外部输入边界、编号索引、交叉引用、习题回指和资料源大类均已形成可审查闭环。后续进入出版前审定时，只应接受数学错误修正、来源补强、排版统一、术语统一和索引维护；新增大块理论、附录群或第五条主线应另列为新版本或另卷目标。

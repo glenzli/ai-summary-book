@@ -1,6 +1,6 @@
 # 收口标准与当前状态
 
-本文档给出本书进入收口阶段的判据、当前判定和后续准入规则。这里的“收口”不表示把所有相关外部理论重写成完整专著，而表示 Langlands 主线已经闭合到可阅读、可追溯、可审查的教材形态。
+本文档给出本书进入收口阶段的判据、当前判定和后续准入规则。这里的“收口”不表示把所有相关外部理论重写成完整专著，也不表示已经完成最终出版审定；它只表示 Langlands 主线已经闭合到可阅读、可追溯、可审查的教材形态。
 
 ## 基本收口标准
 
@@ -17,7 +17,7 @@
 
 若上述条件有一项缺失，本书不能视为基本收口版本。
 
-## 当前判定
+## 当前判定：审定前闭合
 
 截至第十三轮出版前维护，本书已经进入审定前闭合版。这里的“审定前闭合”表示四条主线、关键归一化、索引一致性、概念边界、局部主线小补、主体与附录接口、来源索引和应用链均已形成可审查闭环；它不表示最终出版审定版，也不表示外部输入理论已在本书内完整证明。
 
@@ -32,7 +32,7 @@
 | 一般算术 Langlands | 对象链、最短证明链、trace formula/endoscopy/Arthur/functoriality 的状态边界已集中说明 | 对象链闭合 |
 | 几何 Langlands | 主线入口、几何 Satake、Hecke eigensheaf、谱侧范畴和函数域桥梁均已形成接口链 | 接口闭合 |
 
-结论：本书不应继续横向扩张新的大方向。逐章风险清理已转写为 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，重点外部输入来源已在 [E_external_input_theorem_index.md](E_external_input_theorem_index.md) 拆细，编号与交叉引用审计已记录于 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，概念边界已记录于 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，第六、七轮主线小补已补入正文，第八至十轮审定前通读已完成主体和附录接口严格化；后续工作是出版前审定维护：修正局部证明细节、措辞、来源标注、索引和排版。
+结论：本书不应继续横向扩张新的大方向。逐章风险清理已转写为 [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)，重点外部输入来源已在 [E_external_input_theorem_index.md](E_external_input_theorem_index.md) 拆细，编号与交叉引用审计已记录于 [NUMBERING_CROSSREF_AUDIT.md](NUMBERING_CROSSREF_AUDIT.md)，审定前概念边界已记录于 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，第六、七轮主线小补已补入正文，第八至十轮审定前通读已完成主体和附录接口严格化；后续工作是出版前审定维护：修正局部证明细节、措辞、来源标注、索引和排版。
 
 ## 是否还需主线扩张
 

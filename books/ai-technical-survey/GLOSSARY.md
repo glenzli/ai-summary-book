@@ -1,0 +1,35 @@
+# 术语与缩略语表 (Glossary)
+
+本表用于统一本书中的核心术语。它给出阅读口径，不替代正文中的机制解释、数学推导或参考文献。
+
+| 缩写 / 术语 | 全称 | 中文口径 | 本书中的使用边界 |
+| :--- | :--- | :--- | :--- |
+| AI | Artificial Intelligence | 人工智能，研究让机器表现出感知、推理、学习、规划或行动能力的技术总称。 | 是总领域名，不等同于某一种模型或产品。 |
+| ML | Machine Learning | 机器学习，从数据中估计规则、表示或决策函数的方法族。 | 是 AI 的重要分支，但 AI 还包括搜索、规划、知识表示等路线。 |
+| DL | Deep Learning | 深度学习，使用多层可微模型学习表示与任务映射。 | 是 ML 的一个主要分支，不覆盖所有机器学习方法。 |
+| Neural Network | Neural Network | 神经网络，由参数化层、非线性和训练目标组成的函数近似器。 | 本书关注其工程与数学机制，不把它解释为生物神经系统的等同物。 |
+| Foundation Model | Foundation Model | 基座模型，经过大规模预训练后可迁移到多任务的模型。 | 需要后训练、工具、检索和系统约束后，才可能成为稳定应用。 |
+| LLM | Large Language Model | 大语言模型，主要在文本或 token 序列上训练的大规模生成模型。 | “语言模型”不自动意味着事实可靠、可行动或已对齐。 |
+| Token | Token | 模型处理的离散基本单元，可以是词、子词、字符片段或多模态 patch。 | token 数不是语义长度的直接等价物。 |
+| Embedding | Embedding | 将离散对象映射为连续向量的表示。 | 向量相近通常表示训练目标下的统计相似，不保证人类语义完全一致。 |
+| Transformer | Transformer | 以注意力、前馈层、残差连接和归一化为核心的序列架构。 | 不是所有现代模型都只用标准 Transformer，长序列和多模态系统常有变体。 |
+| Attention | Attention | 通过 query-key 匹配对 value 加权汇聚的信息选择机制。 | “注意力权重”可辅助解释，但不能直接当作完整因果解释。 |
+| KV Cache | Key-Value Cache | 自回归推理中缓存历史 key/value，以避免重复计算。 | 降低生成成本，但会占用显存并影响长上下文服务设计。 |
+| MoE | Mixture of Experts | 混合专家，让路由器为每个 token 或样本选择部分专家子网络。 | 总参数量与每次激活参数量不同；MoE 不等同于免费提升能力。 |
+| SSM | State Space Model | 状态空间模型，用隐状态递推描述序列动力学的一类模型。 | Mamba 等方法提供注意力之外的长序列路线，但适用性取决于任务与实现。 |
+| RAG | Retrieval-Augmented Generation | 检索增强生成，先从外部语料取回证据，再把证据交给生成模型。 | 不能保证正确引用；仍需检索质量、证据约束和输出验证。 |
+| SFT | Supervised Fine-Tuning | 监督微调，用示范输入输出训练模型遵循任务格式或指令。 | 能改善行为接口，但不能单独解决偏好、安全和事实性问题。 |
+| RLHF | Reinforcement Learning from Human Feedback | 基于人类反馈的强化学习，通常用偏好数据训练奖励模型，再优化策略。 | 学到的是标注口径下的偏好近似，不是完整价值函数。 |
+| PPO | Proximal Policy Optimization | 近端策略优化，RLHF 中常见的策略优化算法。 | 是一种优化方法，不等同于 RLHF 全流程。 |
+| DPO | Direct Preference Optimization | 直接偏好优化，用成对偏好直接约束策略相对参考模型的概率。 | 常作为 RLHF/PPO 的替代或补充；效果依赖偏好数据质量和参考模型。 |
+| PEFT | Parameter-Efficient Fine-Tuning | 参数高效微调，只训练少量新增或低秩参数。 | 降低适配成本，但容量、兼容性和安全边界仍需单独评估。 |
+| LoRA | Low-Rank Adaptation | 低秩适配，在权重旁加入可训练低秩更新。 | 是 PEFT 的一种常见实现，不保证只学习风格或总能保留底模能力。 |
+| Quantization | Quantization | 量化，用较低比特表示权重、激活或 KV Cache。 | 可降低成本，但会引入精度、稳定性和任务退化风险。 |
+| Agent | Agent | 智能体，在目标、状态、工具和环境反馈之间形成行动闭环的软件系统。 | 不只是“提示词 + LLM”；权限、运行时、记忆、审批和评测同样重要。 |
+| Tool Calling | Tool / Function Calling | 工具调用，让模型产生结构化请求，由系统执行外部函数或 API。 | 模型建议调用，真实副作用应由运行时权限和审批控制。 |
+| MCP | Model Context Protocol | 模型上下文协议，用于连接 LLM 应用与外部工具、资源、提示模板等上下文。 | 主要解决模型应用到工具/数据的接口标准化，不直接提升模型智能。 |
+| A2A | Agent2Agent / Agent-to-Agent | Agent 间通信与任务协作协议，用于描述能力、任务状态、消息和 artifact。 | 主要解决跨 Agent 协调，不替代 MCP 这类工具上下文协议。 |
+| World Model | World Model | 世界模型，学习环境状态及其随时间、行动变化的模型。 | 高保真视频生成可能相关，但不能单独证明模型具备可规划的行动后果预测。 |
+| Multimodal Model | Multimodal Model | 多模态模型，处理文本、图像、音频、视频或动作等多种信号。 | 模态输入丰富不等于行动可靠，也不等于具备世界模型。 |
+| Alignment | Alignment | 对齐，使模型行为更符合人类意图、规则、偏好和安全边界的训练与系统过程。 | 既包括训练，也包括产品策略、权限控制、监控和评测。 |
+| Benchmark | Benchmark / Evaluation | 基准与评测，用固定任务或数据集衡量模型行为。 | 单一分数不能代表完整能力；要结合任务、数据污染、成本和部署约束阅读。 |

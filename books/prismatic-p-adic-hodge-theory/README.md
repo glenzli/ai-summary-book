@@ -1,11 +1,16 @@
 # Prismatic / p-adic Hodge Theory：从 Fontaine 周期环到棱柱上同调
 
 作者：Dr. Stochastic Parrot
-状态：在线教材版；核心定理来源、BMS2 基础 syntomic 公式和习题解答已经纳入，精细文献定位与文字校对仍在继续
+状态：逐章教材收口草稿；可作为在线教材阅读使用，但尚非 `Math-Closed` 或 `Camera-Ready`
 核查日期：2026-07-08
+技术状态校准：2026-07-15；本次校准未联网，未重新核验最新外部文献
 主资料源：Fontaine, Faltings, Tsuji, Brinon-Conrad, Berger, Kedlaya-Liu, Scholze, Bhatt-Morrow-Scholze, Bhatt-Scholze, Bhatt-Lurie
 
 这是一本严格的中文 Prismatic / p-adic Hodge Theory 教材，而不是主题导览。正文从 $\delta$-环、Frobenius lift、Witt vectors 和完备化开始，进入 Bhatt--Scholze 的 prism 与 prismatic site，再回收 de Rham、crystalline、etale、$A_{\inf}$、Breuil--Kisin、Nygaard、syntomic 和经典 Fontaine 比较理论，最后讨论 prismatic $F$-crystals、prismatization、带系数理论、Artin stacks、Shimura varieties、Brauer 群应用以及 2025--2026 年的研究边界。
+
+## 技术状态校准
+
+当前文本的诚实状态是“逐章教材收口草稿”。正文主线、定义边界、依赖账本和核心 prismatic/Nygaard/BMS1/BMS2/$L\eta$/$F$-crystal locators 已经稳定，读者可以把正文作为在线教材使用。仍然阻止 `Math-Closed` / `Camera-Ready` 的项目是：classical comparison 的最终源选择，Bhatt--Lurie preliminary 接口的出版前定位，Nygaard/Tate twist normalization 的跨文献复核，以及全书 copy-editing、编号、断行和参考格式校对。详见 [TECHNICAL_CLOSURE_REVIEW.md](TECHNICAL_CLOSURE_REVIEW.md)。
 
 ## 写作约束
 
@@ -78,6 +83,7 @@
 - [DEPENDENCY_GRAPH.md](DEPENDENCY_GRAPH.md)：全书定义、证明和外部输入依赖图。
 - [THEOREM_LEDGER.md](THEOREM_LEDGER.md)：内部证明、外部输入和研究边界账本。
 - [PUBLICATION_CLOSURE_MATRIX.md](PUBLICATION_CLOSURE_MATRIX.md)：正式教材状态、数学闭包和出版校对状态矩阵。
+- [TECHNICAL_CLOSURE_REVIEW.md](TECHNICAL_CLOSURE_REVIEW.md)：本轮未联网技术状态校准和剩余阻塞项。
 - [INTERNAL_COMPLETENESS_AUDIT.md](INTERNAL_COMPLETENESS_AUDIT.md)：正式教材内部完整性判定。
 - [CHAPTER_CLOSURE_AUDIT.md](CHAPTER_CLOSURE_AUDIT.md)：逐章正文密度和教材收口判定。
 - [FORMAL_TEXTBOOK_EXPANSION_AUDIT.md](FORMAL_TEXTBOOK_EXPANSION_AUDIT.md)：本轮正式教材扩展审计。
@@ -87,4 +93,4 @@
 
 ## 版本说明
 
-当前版本已经形成从基础定义到比较定理、表示论和算术应用的连续学习路径，并配有技术基础附录、worked examples、术语索引和习题解答。核心 prismatic、BMS2 与 prismatization 文献已经定位到源码标签；BMS2 syntomic/Tate twist 的基础 fiber 公式见第七章和第十一章。仍需持续维护的部分主要是精细化文献页码、区分更多 syntomic 变体，以及统一中英文术语和排印细节。
+当前版本已经形成从基础定义到比较定理、表示论和算术应用的连续学习路径，并配有技术基础附录、worked examples、术语索引和习题解答。核心 prismatic、BMS1/BMS2、Nygaard/syntomic 与 $F$-crystal 主线已经有稳定 locator；prismatization 保持研究边界口径。BMS2 syntomic/Tate twist 的基础 fiber 公式见第七章和第十一章。仍需持续维护的部分主要是 classical comparison 源选择、Bhatt--Lurie preliminary 接口、Nygaard/Tate twist normalization、精细化文献页码、区分更多 syntomic 变体，以及统一中英文术语和排印细节。

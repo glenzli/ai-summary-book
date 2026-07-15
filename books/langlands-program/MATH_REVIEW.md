@@ -1,21 +1,23 @@
 # 数学审查记录
 
-本文档记录《Langlands 纲领》审定前闭合版的审查清单、逐章收口状态和出版前维护任务。
+本文档记录《Langlands 纲领》审定前闭合版的核查清单、逐章收口状态和出版前维护任务。本文档中的“闭合”均指审定前闭合，不表示最终出版审定已经完成。
 
-## 全书审查清单
+## 全书审定前闭合核查清单
 
-- [ ] 每章是否列出本章目标和依赖前置知识。
-- [ ] 每个新定义是否包含完整数据和公理。
-- [ ] 每个非平凡命题是否给出证明、外部输入的证明路线或“外部输入定理”标记。
-- [ ] 每个外部输入定理是否能在 `SOURCES.md` 中追溯。
-- [ ] 是否避免把 Langlands 对应写成无条件的一一对应；是否说明已知情形、猜想情形和归一化。
-- [ ] 是否区分局部对象和整体对象。
-- [ ] 是否区分 classical modular forms、adelic automorphic forms 和 automorphic representations。
-- [ ] 是否区分 complex representations、$\ell$-adic representations、mod $p$ representations。
-- [ ] 是否说明 Frobenius 归一化。
-- [ ] 是否说明 Haar 测度和 Fourier 变换归一化。
-- [ ] 跨章节比较参数、L 因子、Hecke 本征值或 Galois 表示时，是否回指 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
-- [ ] 每个外部输入是否已按“核心结构、支撑接口、卫星理论”分级；是否避免把非主线外部理论无节制并入本书。
+下列项目已经作为审定前闭合核查通过；后续若改动正文或附录，应把它们作为维护核查项重新检查。
+
+- [x] 每章列出本章目标和依赖前置知识。
+- [x] 每个新定义包含完整数据和公理。
+- [x] 每个非平凡命题给出证明、外部输入的证明路线或“外部输入定理”标记。
+- [x] 每个外部输入定理能在 `SOURCES.md` 或 [E_external_input_theorem_index.md](E_external_input_theorem_index.md) 中追溯。
+- [x] 避免把 Langlands 对应写成无条件的一一对应，并说明已知情形、猜想情形和归一化。
+- [x] 区分局部对象和整体对象。
+- [x] 区分 classical modular forms、adelic automorphic forms 和 automorphic representations。
+- [x] 区分 complex representations、$\ell$-adic representations、mod $p$ representations。
+- [x] 说明 Frobenius 归一化。
+- [x] 说明 Haar 测度和 Fourier 变换归一化。
+- [x] 跨章节比较参数、L 因子、Hecke 本征值或 Galois 表示时，回指 [NORMALIZATION_TABLE.md](NORMALIZATION_TABLE.md)。
+- [x] 每个外部输入已按“核心结构、支撑接口、卫星理论”分级，并避免把非主线外部理论无节制并入本书。
 
 ## 外部输入分级审查规则
 
@@ -112,15 +114,15 @@
 - 已抽查外部输入索引和资料源索引；本轮触及的外部输入均已能在 E 索引和 SOURCES 中定位，无需新增资料源。
 - 本轮未新增主线章节、外部大理论或定理编号；附录仍按“主体可引用接口”维护，不扩写为独立专著。
 
-## 第十一轮最终收口型审定记录
+## 第十一轮审定前收口口径记录
 
 - 已统一 README、CLOSURE_STATUS、CHAPTER_CLOSURE_AUDIT、INDEX_CONSISTENCY_AUDIT 与本审查记录的结论口径：当前版本为审定前闭合版，而非最终出版审定版。
 - 已明确后续准入规则：只接受数学错误修正、来源补强、排版统一、术语统一、索引维护和归一化维护；新增大块理论、附录群或第五条主线应另列为新版本或另卷目标。
 - 已将状态文档中停留在第七或第八轮的表述更新到第十轮通读后的状态，避免把已完成的主体和附录接口严格化继续列为待办。
 
-## 第十二轮最终概念审定记录
+## 第十二轮审定前概念口径记录
 
-- 已新增 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，固定参数、表示、L 函数、函子性、trace formula、几何 Langlands、函数域桥梁和费马应用的最终概念边界。
+- 已新增 [CONCEPTUAL_AUDIT.md](CONCEPTUAL_AUDIT.md)，固定参数、表示、L 函数、函子性、trace formula、几何 Langlands、函数域桥梁和费马应用的审定前概念边界。
 - 已把 `GL(1)` 主线口径从“类域论和 Tate thesis 的组合”等口号式说法收紧为：类域论给出参数对应，Tate thesis 给出 L 函数解析接口。
 - 已明确禁止误读：一般 reductive group LLC 不是普通双射，数域完整全局 Langlands 不是已证定理，几何 Langlands 不是数论 Langlands 的简单翻译，费马应用不是完整 Langlands 纲领的直接推论。
 
