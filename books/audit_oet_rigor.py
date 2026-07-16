@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent
 BOOKS = (
     "category-theory",
     "chromatic-homotopy-theory",
+    "computation-types-semantics",
     "condensed-mathematics",
     "effective-field-theory-smeft",
     "geometric-representation-theory",
@@ -29,15 +30,18 @@ BOOKS = (
     "illusion-of-reproducibility",
     "langlands-program",
     "machine-hermeneutics",
+    "mathematical-physics-foundations",
     "motivic-homotopy-six-functors",
     "ontology-of-an-output",
     "operad-theory",
     "prismatic-p-adic-hodge-theory",
     "probability-boundaries",
+    "probability-stochastic-information",
     "proof-explanation-and-rhetoric",
     "quantum-mechanics",
     "relativity",
     "string-theory",
+    "textbook-writing-methodology",
 )
 
 THEOREM = re.compile(r"^\s*(?:>\s*)?\*\*(?:定理|命题|引理|推论)(?:\s|\.|：|:)")
