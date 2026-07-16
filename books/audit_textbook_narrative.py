@@ -47,6 +47,8 @@ TEMPLATEISH_HEADING = re.compile(
     r"章节路线|阅读路线|路线图|总结|小结|回顾)$"
 )
 H2 = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
+HEADING = re.compile(r"^#{2,6}\s+(.+?)\s*$", re.MULTILINE)
+SECTION_PREFIX = re.compile(r"^(?:\d+|[SPRMV]\d+|[A-Z])(?:\.\d+)*\s+")
 
 
 @dataclass(frozen=True)
@@ -88,7 +90,25 @@ def normalized_intro(text: str) -> str:
 
 
 def section_titles(text: str) -> list[str]:
-    return [re.sub(r"^\d+(?:\.\d+)*\s*", "", title).strip() for title in H2.findall(text)]
+    return [SECTION_PREFIX.sub("", title).strip() for title in H2.findall(text)]
+
+
+def requires_exercises(book: str, path: Path) -> bool:
+    if book in NON_EXERCISE_BOOKS:
+        return False
+    if book != "after-output":
+        return True
+
+    relative = path.relative_to(ROOT / book)
+    # Volume I is a historical survey, Volume VI is an essay/autobiography, and
+    # the last two chapters of Volume V are reference forms rather than lessons.
+    if relative.parts[0] == "vol-06":
+        return False
+    if relative.parts[0] == "vol-01" and re.match(r"ch0[0-6]_", relative.name):
+        return False
+    if relative.parts[0] == "vol-05" and re.match(r"ch0[56]_", relative.name):
+        return False
+    return True
 
 
 def chapter_paths(book: str, root: Path) -> list[Path]:
@@ -96,6 +116,10 @@ def chapter_paths(book: str, root: Path) -> list[Path]:
         paths = sorted(root.glob("chapter_*.md"))
         introduction = root / "introduction.md"
         return ([introduction] if introduction.is_file() else []) + paths
+    if book == "after-output":
+        preface = root / "00_preface_and_scope.md"
+        chapters = sorted(root.glob("vol-*/ch[0-9][0-9]_*.md"))
+        return ([preface] if preface.is_file() else []) + chapters
     if book == "condensed-mathematics":
         return sorted(root.rglob("[0-9][0-9]_*.md"))
     return sorted(root.glob("[0-9][0-9]_*.md"))
@@ -161,17 +185,18 @@ def audit_book(book: str) -> list[Finding]:
             )
 
         raw_titles = [title.strip() for title in H2.findall(text)]
-        titles = [re.sub(r"^\d+(?:\.\d+)*\s*", "", title).strip() for title in raw_titles]
+        titles = [SECTION_PREFIX.sub("", title).strip() for title in raw_titles]
+        all_heading_titles = [
+            SECTION_PREFIX.sub("", title.strip()).strip() for title in HEADING.findall(text)
+        ]
         exercise_titles = {"练习", "习题"}
-        if book not in NON_EXERCISE_BOOKS and not exercise_titles.intersection(titles):
+        if requires_exercises(book, path) and not exercise_titles.intersection(all_heading_titles):
             findings.append(Finding("ERROR", path, "missing exercise section"))
 
         exercise_index = next(
             (index for index, title in enumerate(titles) if title in exercise_titles), -1
         )
-        if exercise_index > 0 and not re.match(
-            r"^\d+(?:\.\d+)*\s+", raw_titles[exercise_index - 1]
-        ):
+        if exercise_index > 0 and not SECTION_PREFIX.match(raw_titles[exercise_index - 1]):
             unnumbered_preexercise.append(path)
 
         for title in set(section_titles(text)):

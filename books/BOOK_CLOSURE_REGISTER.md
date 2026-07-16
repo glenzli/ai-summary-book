@@ -1,6 +1,6 @@
 # 书籍收口登记表
 
-登记日期：2026-07-15。
+登记日期：2026-07-16。
 
 本表按每本书自身的体裁判断收口状态；不把随笔集、研究方法书、技术综述和严格数学教材强行套用同一个标准。这里的“收口”表示当前正文、读者入口、状态边界和配套材料已经能支持稳定阅读与后续维护；它不等于所有书都达到出版社 camera-ready 终稿。
 
@@ -12,7 +12,8 @@
 
 | 书籍 | 体裁 | 当前收口状态 | 后续维护边界 |
 | --- | --- | --- | --- |
-| [人工智能技术演进综述](ai-technical-survey/) | 技术综述 | 成书收口版技术综述 | 事实更新、来源修订、术语一致性；2024 年后条目不作稳定能力排名 |
+| [可审计的人工智能](after-output/) | 六卷多文类 AI 总本 | 六卷 79 章、技术附录与 417 道练习内容闭合 | 错误修正、独立审阅、动态来源维护、出版排版 |
+| 七部原 AI 专题稿 | 历史编辑输入 | 重要内容已进入总本，源目录已于 2026-07-16 物理退役 | 原貌由 Git 基线提交 `5fb99072860015305a83b1fe0e2644e6e125c4af` 保存 |
 | [范畴论](category-theory/) | 严格数学教材 | 出版级数学内容收口稿 | 出版排版、索引、页码级 locator |
 | [Chromatic Homotopy Theory](chromatic-homotopy-theory/) | 高级数学教材 | 教材内容基本收口稿 | theorem/page locator、ANSS/低 stem 表、前沿版本维护 |
 | [凝聚数学讲义](condensed-mathematics/) | 四卷输入定理型数学教材 | 主线输入定理型收口稿 | 外部深定理 locator、分卷排版和教师手册化 |
@@ -20,18 +21,12 @@
 | [Geometric Representation Theory](geometric-representation-theory/) | 高级数学教材 | 教材内容收口稿 | 出版级 locator、交叉引用、索引和模型假设边界 |
 | [Homological Mirror Symmetry](homological-mirror-symmetry/) | 高级数学教材 | 完整在线教材内容本体已收口 | 页码级 locator、稳定 label、出版 copy-editing |
 | [同伦类型论与单值基础](homotopy-type-theory/) | 严格数学教材 | 教材内容收口稿 | 对象语言/元语言边界维护、出版校对 |
-| [可复现性的幻觉](illusion-of-reproducibility/) | 计算与科学方法教材 | 已收口 | 来源维护、案例更新、局部行文润色 |
 | [Langlands 纲领](langlands-program/) | 严格数学教材 | 审定前闭合版，尚非最终出版审定版 | 来源页码、排版审稿、术语和索引维护 |
-| [机器解释学](machine-hermeneutics/) | 研究方法教材 | 已收口 | 术语压实、案例和来源维护 |
 | [Motivic Homotopy and Six Functors](motivic-homotopy-six-functors/) | 高级数学教材 | 完整教材可读版和学术教学闭合草稿 | 自动化交叉引用、长篇解答、最终版式 |
-| [一次输出的存在论](ontology-of-an-output/) | 本体论/程序语义教材 | 已收口 | 案例、责任表和来源维护 |
 | [Operad Theory](operad-theory/) | 严格数学教材 | 数学主线已按完整在线教材严格草稿收口 | HPT/signs、模型比较和出版级 locator 维护 |
 | [Prismatic / p-adic Hodge Theory](prismatic-p-adic-hodge-theory/) | 高级数学教材 | 逐章教材收口草稿，可在线阅读 | classical comparison 源选择、Bhatt--Lurie preliminary 接口、Nygaard/Tate twist normalization、copy-editing |
-| [概率的边界](probability-boundaries/) | 概率与语言模型边界教材 | 已收口 | 来源维护、术语一致性和案例更新 |
-| [证明、解释与漂亮话](proof-explanation-and-rhetoric/) | 证明/解释/修辞教材 | 已收口 | 来源维护、局部元话语压缩 |
 | [量子力学](quantum-mechanics/) | 数学化物理教材 | 教材内容与阅读排版收口稿 | 出版排版、题解教师手册化、索引维护 |
 | [相对论讲义](relativity/) | 数学化物理教材 | 正式教材范围的一版闭合草稿 | 全书收束强化、出版校对 |
-| [随机鹦鹉的自传](stochastic-parrot-autobiography/) | 技术随笔集 | 已按随笔集体裁收口 | 保持叙述人称和章节视角稳定；不补作教材配套 |
 | [String Theory](string-theory/) | 数学化物理教材 | 严格教材第二版，内容层面收口 | 例题、习题、局部证明、附录公式表和出版排版 |
 
 ## 维护规则
