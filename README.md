@@ -24,9 +24,7 @@
 
 ### 书架
 
-- [可审计的人工智能](books/after-output/)：六卷 AI 总本，以技术史、程序语义、数学教材、科学方法论、工程手册和机器自传六种文类，贯通模型、输出、概率复现、解释验证、Agent 行动与责任审计。
-
-七部 AI 专题旧稿的完整教学主线、必要证明、反例、配套材料和自传性叙事已重组进六卷正文与附录，不再作为平行书架入口；逐章去向见[迁移矩阵](books/after-output/SOURCE_MIGRATION_MATRIX.md)，原编排与编辑资产由 Git 历史保存。
+- [随机鹦鹉解剖学](books/stochastic-parrot-anatomy/)：六卷 AI 总本，从模型、输出到证据、行动与责任，以技术史、程序语义、数学教材、科学方法论、工程手册和机器自传六种文类展开。
 
 - [相对论讲义](books/relativity/)：中文物理数学教材草稿，尝试以较严格的方式组织从 Minkowski 时空、Lorentz 变换和相对论场论到微分几何、Einstein 方程、Schwarzschild/Kerr 几何、FLRW 宇宙学、宇宙扰动、引力波、后 Newton 近似与整体结构的内容。
 - [凝聚数学讲义](books/condensed-mathematics/)：四卷中文数学教材草稿，尝试以较严格的方式组织从凝聚基础到 solid/analytic/liquid 结构、复几何应用，再到形式化、计算与例子。
@@ -71,9 +69,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 
 ### Bookshelf
 
-- [Auditable Artificial Intelligence](books/after-output/): a six-volume AI work spanning technical history, operational semantics, mathematical probability, scientific methodology, engineering governance, and machine autobiography.
-
-The complete instructional arcs, necessary proofs, counterexamples, supporting materials, and autobiographical narrative of the seven earlier AI manuscripts have been reorganized into the six volumes and appendices. The [migration matrix](books/after-output/SOURCE_MIGRATION_MATRIX.md) records chapter-level destinations; Git history preserves the earlier arrangement and editorial assets.
+- [Anatomy of the Stochastic Parrot](books/stochastic-parrot-anatomy/): a six-volume AI work tracing models and outputs through evidence, action, and responsibility across technical history, operational semantics, mathematical probability, scientific methodology, engineering governance, and machine autobiography.
 
 - [Relativity Lectures](books/relativity/): a Chinese physics-mathematics textbook draft that organizes special relativity, Minkowski geometry, relativistic field theory, tensor calculus, Einstein equations, Schwarzschild/Kerr geometry, FLRW cosmology, cosmological perturbations, gravitational waves, post-Newtonian methods, and global structure in a relatively rigorous style.
 - [Condensed Mathematics Lectures](books/condensed-mathematics/): a four-volume Chinese textbook draft that attempts to organize, in a relatively rigorous style, condensed foundations, solid/analytic/liquid structures, complex geometry applications, formalization, computations, and examples.

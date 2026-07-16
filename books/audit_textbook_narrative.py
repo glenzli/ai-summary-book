@@ -13,22 +13,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_BOOKS = (
-    "probability-boundaries",
-    "machine-hermeneutics",
-    "illusion-of-reproducibility",
-    "ontology-of-an-output",
-    "proof-explanation-and-rhetoric",
-)
+DEFAULT_BOOKS = ("stochastic-parrot-anatomy",)
 
 ALL_BOOKS = tuple(
     sorted(path.name for path in ROOT.iterdir() if path.is_dir() and (path / "README.md").is_file())
 )
-
-NON_EXERCISE_BOOKS = {
-    "ai-technical-survey",
-    "stochastic-parrot-autobiography",
-}
 
 FORBIDDEN_HEADING = re.compile(
     r"^#{2,6}\s+(?:\d+(?:\.\d+)*\s+)?"
@@ -94,9 +83,7 @@ def section_titles(text: str) -> list[str]:
 
 
 def requires_exercises(book: str, path: Path) -> bool:
-    if book in NON_EXERCISE_BOOKS:
-        return False
-    if book != "after-output":
+    if book != "stochastic-parrot-anatomy":
         return True
 
     relative = path.relative_to(ROOT / book)
@@ -112,11 +99,7 @@ def requires_exercises(book: str, path: Path) -> bool:
 
 
 def chapter_paths(book: str, root: Path) -> list[Path]:
-    if book == "ai-technical-survey":
-        paths = sorted(root.glob("chapter_*.md"))
-        introduction = root / "introduction.md"
-        return ([introduction] if introduction.is_file() else []) + paths
-    if book == "after-output":
+    if book == "stochastic-parrot-anatomy":
         preface = root / "00_preface_and_scope.md"
         chapters = sorted(root.glob("vol-*/ch[0-9][0-9]_*.md"))
         return ([preface] if preface.is_file() else []) + chapters
@@ -189,7 +172,7 @@ def audit_book(book: str) -> list[Finding]:
         all_heading_titles = [
             SECTION_PREFIX.sub("", title.strip()).strip() for title in HEADING.findall(text)
         ]
-        exercise_titles = {"练习", "习题"}
+        exercise_titles = {"练习", "习题", "综合练习"}
         if requires_exercises(book, path) and not exercise_titles.intersection(all_heading_titles):
             findings.append(Finding("ERROR", path, "missing exercise section"))
 
