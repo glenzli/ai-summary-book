@@ -45,8 +45,8 @@ $$
 副作用的规范强度不只由技术可逆性决定。设影响向量
 
 $$
-\eta=(h_{mathrm{privacy}},h_{mathrm{integrity}},h_{mathrm{economic}},
-h_{mathrm{reputation}},h_{mathrm{access}}),
+\eta=(h_{\mathrm{privacy}},h_{\mathrm{integrity}},h_{\mathrm{economic}},
+h_{\mathrm{reputation}},h_{\mathrm{access}}),
 $$
 
 分别描述隐私、完整性、经济、声誉和机会/访问影响。风险评估至少考虑严重度、发生概率、受影响人数、分布不均和补救难度。单一平均损失可能掩盖小群体承受的集中伤害。

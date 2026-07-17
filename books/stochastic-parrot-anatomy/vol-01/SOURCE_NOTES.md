@@ -93,6 +93,8 @@
 *   **[DeepSeek, 2026]** [*DeepSeek API Change Log*](https://api-docs.deepseek.com/updates) 与 [*Models and Pricing*](https://api-docs.deepseek.com/quick_start/pricing). (`deepseek-v4-pro` / `deepseek-v4-flash` 官方 API 标识；核验于 2026-07-12)
 *   **[Hinton et al., 2015]** [*Distilling the Knowledge in a Neural Network*](https://arxiv.org/abs/1503.02531). (知识蒸馏)
 *   **[Wang et al., 2022]** [*Self-Instruct: Aligning Language Models with Self-Generated Instructions*](https://arxiv.org/abs/2212.10560). (合成指令数据)
+<a id="ref-tofu-unlearning-2024"></a>
+*   **[Maini et al., 2024]** [*TOFU: A Task of Fictitious Unlearning for LLMs*](https://openreview.net/forum?id=q0eyIBnE2t). (面向个体虚构资料的遗忘集/保留集、多指标评测与重训参照；基准结果不证明任意观察下的精确遗忘)
 *   **[Bai et al., 2022]** [*Constitutional AI: Harmlessness from AI Feedback*](https://arxiv.org/abs/2212.08073). (AI 反馈与安全后训练)
 *   **[Korbak et al., 2025]** [*Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety*](https://arxiv.org/abs/2507.11473). (CoT 监控与安全训练风险)
 *   **[Wortsman et al., 2022]** [*Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time*](https://arxiv.org/abs/2203.05482). (权重平均与模型合并)
@@ -137,6 +139,10 @@
 *   **[Assran et al., 2023]** [*Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture*](https://arxiv.org/abs/2301.08243). (I-JEPA)
 <a id="ref-bruce-genie-2024"></a>
 *   **[Bruce et al., 2024]** [*Genie: Generative Interactive Environments*](https://arxiv.org/abs/2402.15391). (从视频学习可交互环境)
+<a id="ref-rt2-2023"></a>
+*   **[Zitkovich et al., 2023]** [*RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*](https://proceedings.mlr.press/v229/zitkovich23a.html). (把视觉、语言和机器人动作接入同一 VLA 接口；具体实验不外推为开放环境安全保证)
+<a id="ref-gemini-robotics-2025"></a>
+*   **[Google DeepMind et al., 2025]** [*Gemini Robotics: Bringing AI into the Physical World*](https://arxiv.org/abs/2503.20020). (VLA 通用模型、机器人形态适配与物理行动研究入口)
 <a id="ref-wei-cot-2022"></a>
 *   **[Wei et al., 2022]** [*Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*](https://arxiv.org/abs/2201.11903). (CoT)
 <a id="ref-kojima-2022"></a>

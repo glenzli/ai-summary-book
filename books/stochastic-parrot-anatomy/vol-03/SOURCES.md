@@ -103,6 +103,12 @@
 - E. L. Lehmann and Joseph P. Romano, *Testing Statistical Hypotheses*, 3rd ed., Springer, 2005, DOI `10.1007/0-387-27605-X`。复合假设、检验大小、枢轴与多重检验的标准专著定位；正文只在列明模型下使用这些结论。
 - George Casella and Roger L. Berger, *Statistical Inference*, 2nd ed., Duxbury, 2002, Chapter 5。外部输入 9.A 的正态样本均值、样本方差与 Student-$t$ 枢轴定位；本书直接陈述所用的一样本/配对差版本。
 
+### 现代模型评测
+
+- Lianmin Zheng et al., [*Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html), NeurIPS 2023。第十五章 S10.4.1--S10.4.2 用其定位学习型裁判、人类偏好一致性和候选呈现偏差；命题 S10.2 的 logistic 双顺序模型由正文完整声明并证明，不归因于该论文。
+- Colin White et al., [*LiveBench: A Challenging, Contamination-Free LLM Benchmark*](https://arxiv.org/abs/2406.19314), 2024。用于第十五章动态题库、频繁更新和客观评分的设计背景；正文另行指出时间隔离、近重复检查、访问控制和退役规则各自只能关闭部分污染义务。
+- Vidhisha Balachandran et al., [*Inference-Time Scaling for Complex Tasks: Where We Stand and What Lies Ahead*](https://arxiv.org/abs/2504.00294), 2025。用于 S10.7.1 中推理时扩展依任务、反馈和验证器而变化的协议内经验结论；预算向量、能力诱导包络和最大值选择偏差由正文自行承担。
+
 ### 可计算性
 
 - Alan M. Turing, [*On Computable Numbers, with an Application to the Entscheidungsproblem*](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf), *Proceedings of the London Mathematical Society* s2-42(1), 1936, DOI `10.1112/plms/s2-42.1.230`。第十六章外部输入 11.A 给出停机不可判定边界；正文给出全域程序等价不可判定的归约。

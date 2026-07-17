@@ -25,11 +25,13 @@
 | PEFT | Parameter-Efficient Fine-Tuning | 参数高效微调，只训练少量新增或低秩参数。 | 降低适配成本，但容量、兼容性和安全边界仍需单独评估。 |
 | LoRA | Low-Rank Adaptation | 低秩适配，在权重旁加入可训练低秩更新。 | 是 PEFT 的一种常见实现，不保证只学习风格或总能保留底模能力。 |
 | Quantization | Quantization | 量化，用较低比特表示权重、激活或 KV Cache。 | 可降低成本，但会引入精度、稳定性和任务退化风险。 |
+| Machine Unlearning | Machine Unlearning | 机器遗忘，使模型相对于指定遗忘集接近未使用该数据训练的参考模型。 | 必须声明参考重训、观察族、保留集和攻击者；有限基准通过不等于精确遗忘。 |
 | Agent | Agent | 智能体，在目标、状态、工具和环境反馈之间形成行动闭环的软件系统。 | 不只是“提示词 + LLM”；权限、运行时、记忆、审批和评测同样重要。 |
 | Tool Calling | Tool / Function Calling | 工具调用，让模型产生结构化请求，由系统执行外部函数或 API。 | 模型建议调用，真实副作用应由运行时权限和审批控制。 |
 | MCP | Model Context Protocol | 模型上下文协议，用于连接 LLM 应用与外部工具、资源、提示模板等上下文。 | 主要解决模型应用到工具/数据的接口标准化，不直接提升模型智能。 |
 | A2A | Agent2Agent / Agent-to-Agent | Agent 间通信与任务协作协议，用于描述能力、任务状态、消息和 artifact。 | 主要解决跨 Agent 协调，不替代 MCP 这类工具上下文协议。 |
 | World Model | World Model | 世界模型，学习环境状态及其随时间、行动变化的模型。 | 高保真视频生成可能相关，但不能单独证明模型具备可规划的行动后果预测。 |
 | Multimodal Model | Multimodal Model | 多模态模型，处理文本、图像、音频、视频或动作等多种信号。 | 模态输入丰富不等于行动可靠，也不等于具备世界模型。 |
+| VLA | Vision-Language-Action Model | 视觉—语言—动作模型，把感知和语言目标映射到机器人动作接口。 | 真实动作仍经过规划器、控制器、安全门和执行器，不能把模型输出等同于物理结果。 |
 | Alignment | Alignment | 对齐，使模型行为更符合人类意图、规则、偏好和安全边界的训练与系统过程。 | 既包括训练，也包括产品策略、权限控制、监控和评测。 |
 | Benchmark | Benchmark / Evaluation | 基准与评测，用固定任务或数据集衡量模型行为。 | 单一分数不能代表完整能力；要结合任务、数据污染、成本和部署约束阅读。 |

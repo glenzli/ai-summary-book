@@ -27,6 +27,7 @@
 - Patrick Lewis et al., [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://arxiv.org/abs/2005.11401), NeurIPS 2020。用于 RAG 的检索-生成接口。
 - Woosuk Kwon et al., [*Efficient Memory Management for Large Language Model Serving with PagedAttention*](https://arxiv.org/abs/2309.06180), SOSP 2023。用于服务端 KV cache 与批处理背景。
 - Albert Gu, Tri Dao, [*Mamba: Linear-Time Sequence Modeling with Selective State Spaces*](https://arxiv.org/abs/2312.00752), 2023。用于注意力之外的选择性状态空间路线；不将单篇结果推广到全部长序列任务。
+- Pratyush Maini et al., [*TOFU: A Task of Fictitious Unlearning for LLMs*](https://openreview.net/forum?id=q0eyIBnE2t), DPFM 2024。用于卷一第 7 章的机器遗忘任务、重训参照、遗忘集/保留集和多指标评测背景；书中不把基准通过解释为任意观察下的精确遗忘。
 
 ## 二、生成模型、多模态与世界模型
 
@@ -39,6 +40,8 @@
 - Robin Rombach et al., [*High-Resolution Image Synthesis with Latent Diffusion Models*](https://arxiv.org/abs/2112.10752), CVPR 2022。用于潜空间扩散和制品生成接口。
 - David Ha, Jurgen Schmidhuber, [*World Models*](https://arxiv.org/abs/1803.10122), 2018。用于潜在动力学与控制的世界模型路线。
 - Danijar Hafner et al., [*Dream to Control: Learning Behaviors by Latent Imagination*](https://arxiv.org/abs/1912.01603), ICLR 2020。用于潜在轨迹规划和闭环评测背景。
+- Brianna Zitkovich et al., [*RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*](https://proceedings.mlr.press/v229/zitkovich23a.html), CoRL 2023。用于卷五具身案例的 VLA 接口来源；案例不继承其具体任务上的经验性能。
+- Google DeepMind et al., [*Gemini Robotics: Bringing AI into the Physical World*](https://arxiv.org/abs/2503.20020), 2025。用于视觉、语言与机器人动作联合建模的后续研究入口；实验结论不外推为开放环境中的一般安全保证。
 
 ## 三、输出对象、语义与 provenance
 
@@ -65,6 +68,9 @@
 - Sture Holm, *A Simple Sequentially Rejective Multiple Test Procedure*, *Scandinavian Journal of Statistics* 6(2), 1979, DOI `10.2307/4615733`。附录 F 的 Holm step-down 来源；任意依赖下的有限 FWER 结论由附录完整证明。
 - Percy Liang et al., [*Holistic Evaluation of Language Models*](https://arxiv.org/abs/2211.09110), TMLR 2023。用于多维语言模型评测背景；正文不继承其全部指标体系。
 - Rishi Bommasani et al., [*On the Opportunities and Risks of Foundation Models*](https://arxiv.org/abs/2108.07258), 2021。用于基座模型、能力与社会技术系统边界的背景来源。
+- Lianmin Zheng et al., [*Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html), NeurIPS 2023。用于卷三第 15 章学习型裁判、候选顺序与人类偏好一致性研究背景；正文的二参数识别命题是书内条件模型，不由该论文外引。
+- Colin White et al., [*LiveBench: A Challenging, Contamination-Free LLM Benchmark*](https://arxiv.org/abs/2406.19314), 2024。用于动态题库、客观评分和污染缓解的经验设计入口；“动态”不被解释为逻辑上排除所有训练或查询泄露。
+- Vidhisha Balachandran et al., [*Inference-Time Scaling for Complex Tasks: Where We Stand and What Lies Ahead*](https://arxiv.org/abs/2504.00294), 2025。用于推理预算收益依任务和验证反馈变化的经验边界；书内预算向量与选择偏差不等式由正文自行定义和证明。
 
 ## 五、解释与机制证据
 
@@ -97,6 +103,8 @@
 - Shunyu Yao et al., [*ReAct: Synergizing Reasoning and Acting in Language Models*](https://arxiv.org/abs/2210.03629), ICLR 2023。卷五第 1 章观察-行动循环的历史来源；正文将其实现为类型化运行时而非心理模型。
 - Jerome H. Saltzer, Michael D. Schroeder, [*The Protection of Information in Computer Systems*](https://doi.org/10.1109/PROC.1975.9939), Proceedings of the IEEE 63(9), 1975。用于最小权限、完全检查和保护设计原则。
 - Kai Greshake et al., [*Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*](https://arxiv.org/abs/2302.12173), 2023。用于间接 prompt injection 与工具数据污染的经验来源。
+- Edoardo Debenedetti et al., [*AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents*](https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html), NeurIPS 2024。用于工具型 Agent 的正常任务、攻击目标和防御评测背景；基准结果不构成任意工具系统的安全证明。
+- Eric Wallace et al., [*The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions*](https://arxiv.org/abs/2404.13208), 2024。用于模型侧指令优先级训练的经验来源；卷五明确把它与运行时认证、授权、能力和信息流控制分开。
 - NIST, [*Artificial Intelligence Risk Management Framework, AI RMF 1.0*](https://doi.org/10.6028/NIST.AI.100-1), 2023。用于风险治理的组织级背景；本书的责任链不是该框架的替代实现。
 - Model Context Protocol, [*Specification 2025-11-25*](https://modelcontextprotocol.io/specification/2025-11-25)。用于卷五第 1 章工具、资源和上下文协议的固定版本例子；正文原则不依赖该协议为唯一实现。
 

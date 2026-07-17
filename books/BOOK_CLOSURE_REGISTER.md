@@ -12,7 +12,7 @@
 
 | 书籍 | 体裁 | 当前收口状态 | 后续维护边界 |
 | --- | --- | --- | --- |
-| [随机鹦鹉解剖学](stochastic-parrot-anatomy/) | 六卷多文类 AI 总本 | 总导论、六卷 78 章、技术附录与 417 道练习内容闭合 | 错误修正、独立审阅、动态来源维护、出版排版 |
+| [随机鹦鹉解剖学](stochastic-parrot-anatomy/) | 六卷多文类 AI 总本 | 总导论、六卷 78 章、技术附录与 429 道练习内容闭合 | 错误修正、独立审阅、动态来源维护、出版排版 |
 | 七部原 AI 专题稿 | 历史编辑输入 | 重要内容已进入总本，源目录已于 2026-07-16 物理退役 | 原貌由 Git 基线提交 `5fb99072860015305a83b1fe0e2644e6e125c4af` 保存 |
 | [范畴论](category-theory/) | 严格数学教材 | 出版级数学内容收口稿 | 出版排版、索引、页码级 locator |
 | [Chromatic Homotopy Theory](chromatic-homotopy-theory/) | 高级数学教材 | 教材内容基本收口稿 | theorem/page locator、ANSS/低 stem 表、前沿版本维护 |
