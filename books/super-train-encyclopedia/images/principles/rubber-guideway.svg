@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">胶轮列车沿导向路面行驶</title>
+  <desc id="desc">正面剖面图中，绿色列车用四只大橡胶轮压在两条平整走行面上，两侧的小导向轮贴着竖直导向面。</desc>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M60 600h1080" stroke="#d8c5a9" stroke-width="80" stroke-linecap="round"/>
+  <path d="M128 559h295M777 559h295" stroke="#b9c4cd" stroke-width="42" stroke-linecap="round"/>
+  <path d="M102 352v226M1098 352v226" stroke="#b9c4cd" stroke-width="46" stroke-linecap="round"/>
+  <path d="M203 485V229c0-112 91-203 203-203h388c112 0 203 91 203 203v256Z" fill="#55b68b" stroke="#25364a" stroke-width="11"/>
+  <path d="M303 230c0-70 57-127 127-127h340c70 0 127 57 127 127v54H303Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M453 104v180M600 104v180M747 104v180" stroke="#25364a" stroke-width="7"/>
+  <rect x="280" y="409" width="640" height="77" rx="30" fill="#25364a"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="9">
+    <circle cx="330" cy="520" r="83"/><circle cx="492" cy="520" r="83"/><circle cx="708" cy="520" r="83"/><circle cx="870" cy="520" r="83"/>
+    <circle cx="154" cy="429" r="55"/><circle cx="1046" cy="429" r="55"/>
+  </g>
+  <g fill="#ffd166" stroke="#25364a" stroke-width="7">
+    <circle cx="330" cy="520" r="25"/><circle cx="492" cy="520" r="25"/><circle cx="708" cy="520" r="25"/><circle cx="870" cy="520" r="25"/>
+    <circle cx="154" cy="429" r="18"/><circle cx="1046" cy="429" r="18"/>
+  </g>
+  <path d="M157 430h117M926 430h117" stroke="#ef6a5b" stroke-width="15" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">道岔把车轮引向一条支路</title>
+  <desc id="desc">俯视图中，一列车从左边驶来，两根可移动尖轨贴向弯曲路线，红色箭头沿弯道指向右上方。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <g fill="none" stroke="#667687" stroke-width="20" stroke-linecap="round">
+    <path d="M70 285H1130"/><path d="M70 415H1130"/>
+    <path d="M496 285c171 0 214-139 334-189 84-35 184-37 300-37"/>
+    <path d="M496 415c170 0 238-139 370-183 73-24 161-27 264-27"/>
+  </g>
+  <g stroke="#d8e0e7" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M70 279H1130"/><path d="M70 409H1130"/><path d="M496 279c171 0 214-139 334-189 84-35 184-37 300-37"/><path d="M496 409c170 0 238-139 370-183 73-24 161-27 264-27"/>
+  </g>
+  <g stroke="#9a7558" stroke-width="15" stroke-linecap="round">
+    <path d="M134 245v210M245 245v210M356 245v210M467 245v210M582 250v190M700 216v154M813 160v145M925 105v137M1037 74v150"/>
+  </g>
+  <path d="M450 293c150 3 207-74 295-137" fill="none" stroke="#ffd166" stroke-width="13" stroke-linecap="round"/>
+  <path d="M450 407c154-4 226-79 337-139" fill="none" stroke="#ffd166" stroke-width="13" stroke-linecap="round"/>
+  <path d="M270 350c223 1 348-14 462-108 94-77 190-111 304-111" fill="none" stroke="#ef6a5b" stroke-width="17" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <g transform="translate(170 350)">
+    <rect x="-106" y="-70" width="212" height="140" rx="48" fill="#4f9bd8" stroke="#25364a" stroke-width="9"/>
+    <path d="M-48-36h96v72h-96z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+  </g>
+</svg>

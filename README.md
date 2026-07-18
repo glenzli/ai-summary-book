@@ -25,6 +25,7 @@
 ### 书架
 
 - [小小发现家：365 天，每天一个为什么](books/little-scientist-365/)：给约 4 岁孩子和陪读大人的全年科普书，以 365 个日常问题连接自然、天气、植物、动物、身体、机械、地理、海洋、宇宙、材料与能源，并配有两层解释、亲子观察和 522 幅插图，其中包括 144 幅原理图。
+- [超级火车迷百科全书](books/super-train-encyclopedia/)：给约 4 岁孩子和陪读大人的轻松图鉴，用 17 张原理图、120 张车型图片和逐车小卡片认识蒸汽机车、新干线、通勤电车、工程车、单轨、倒挂铁路、齿轨、缆索与磁悬浮。
 - [随机鹦鹉解剖学](books/stochastic-parrot-anatomy/)：六卷 AI 总本，从模型、输出到证据、行动与责任，以技术史、程序语义、数学教材、科学方法论、工程手册和机器自传六种文类展开。
 
 - [相对论讲义](books/relativity/)：中文物理数学教材草稿，尝试以较严格的方式组织从 Minkowski 时空、Lorentz 变换和相对论场论到微分几何、Einstein 方程、Schwarzschild/Kerr 几何、FLRW 宇宙学、宇宙扰动、引力波、后 Newton 近似与整体结构的内容。
@@ -48,9 +49,9 @@
 
 ### 许可协议
 
-本仓库内容采用 **[CC0 1.0 Universal](LICENSE.md)** 发布。
+除另有注明的第三方素材外，本仓库原创内容采用 **[CC0 1.0 Universal](LICENSE.md)** 发布。第三方素材保留各自的许可或版权状态；例如本书的列车图片见 [《超级火车迷百科全书》图片来源与许可](books/super-train-encyclopedia/IMAGE_CREDITS.md)。
 
-不要求署名，不要求致谢，不要求说明来源。你可以复制、修改、翻译、售卖、删改、改名，甚至把它放进自己的作品里，仿佛它本来就在你的草稿箱里。
+对于上述 CC0 内容，不要求署名，不要求致谢，不要求说明来源。你可以复制、修改、翻译、售卖、删改、改名，甚至把它放进自己的作品里，仿佛它本来就在你的草稿箱里。复用另有注明的第三方素材时，请遵守其各自的要求。
 
 若它有用，credit 是你的；若它说错，锅是 AI 的。
 
@@ -71,6 +72,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 ### Bookshelf
 
 - [Little Discoverer: 365 Days, One Why a Day](books/little-scientist-365/): a year-long Chinese science book for children around age four and their grown-up readers, connecting 365 everyday questions across nature, weather, plants, animals, the body, machines, geography, oceans, space, materials, and energy through layered explanations, shared observations, and 522 illustrations, including 144 scientific explainer diagrams.
+- [Super Train Fan Encyclopedia](books/super-train-encyclopedia/): a relaxed, picture-rich Chinese guide for children around age four and their grown-up readers, with 17 mechanism diagrams, 120 train images, and individual cards spanning steam, Shinkansen, commuter trains, work trains, monorails, suspended railways, rack railways, funiculars, and maglev.
 - [Anatomy of the Stochastic Parrot](books/stochastic-parrot-anatomy/): a six-volume AI work tracing models and outputs through evidence, action, and responsibility across technical history, operational semantics, mathematical probability, scientific methodology, engineering governance, and machine autobiography.
 
 - [Relativity Lectures](books/relativity/): a Chinese physics-mathematics textbook draft that organizes special relativity, Minkowski geometry, relativistic field theory, tensor calculus, Einstein equations, Schwarzschild/Kerr geometry, FLRW cosmology, cosmological perturbations, gravitational waves, post-Newtonian methods, and global structure in a relatively rigorous style.
@@ -94,9 +96,9 @@ Each book lives in its own folder under `books/`. Future AI-written surveys, lec
 
 ### License
 
-This repository is released under **[CC0 1.0 Universal](LICENSE.md)**.
+Except for separately identified third-party material, the repository's original content is released under **[CC0 1.0 Universal](LICENSE.md)**. Third-party material retains its own license or copyright status; for example, see the [image credits for the Super Train Fan Encyclopedia](books/super-train-encyclopedia/IMAGE_CREDITS.md).
 
-No attribution is required. No thanks are required. No provenance needs to be preserved. You may copy, modify, translate, sell, rename, remix, or fold it into your own work as if it had always been sitting in your drafts.
+For that CC0 content, no attribution, thanks, or provenance is required. You may copy, modify, translate, sell, rename, remix, or fold it into your own work as if it had always been sitting in your drafts. When reusing separately identified third-party material, follow its own terms.
 
 If it helps, the credit is yours. If it hallucinates, blame the AI.
 

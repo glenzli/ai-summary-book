@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">集电靴从第三轨取电</title>
+  <desc id="desc">电车侧面下方有一只集电靴，贴着带黄色保护罩的轨旁供电轨，蓝色箭头表示电流进入列车。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <ellipse cx="590" cy="580" rx="520" ry="47" fill="#eadfcb"/>
+  <path d="M80 545h1030" stroke="#667687" stroke-width="24" stroke-linecap="round"/>
+  <path d="M151 470V259c0-67 55-122 122-122h596c103 0 171 64 194 163l22 99v71Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11"/>
+  <path d="M259 179h558c68 0 116 40 139 105H227c8-66 18-105 32-105Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M435 179v105M643 179v105M825 181l-25 102" stroke="#25364a" stroke-width="7"/>
+  <rect x="218" y="382" width="710" height="63" rx="24" fill="#25364a"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="9"><circle cx="330" cy="479" r="70"/><circle cx="845" cy="479" r="70"/></g>
+  <g fill="#ffd166" stroke="#25364a" stroke-width="7"><circle cx="330" cy="479" r="24"/><circle cx="845" cy="479" r="24"/></g>
+  <path d="M956 442v91h120" fill="none" stroke="#25364a" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1022" y="516" width="116" height="36" rx="14" fill="#4f9bd8" stroke="#25364a" stroke-width="8"/>
+  <rect x="977" y="562" width="181" height="50" rx="12" fill="#ffd166" stroke="#25364a" stroke-width="9"/>
+  <path d="M1066 505c-3-85-73-103-128-131" fill="none" stroke="#4f9bd8" stroke-width="15" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="m1008 385 46-84 22 52 49-11-51 89-20-54Z" fill="#ffd166" stroke="#25364a" stroke-width="7" stroke-linejoin="round"/>
+</svg>

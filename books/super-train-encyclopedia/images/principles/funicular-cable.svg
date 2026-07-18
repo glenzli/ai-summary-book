@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">两辆缆索铁路车一上一下</title>
+  <desc id="desc">两辆山坡缆车由越过山顶滑轮的缆索连接，左边车辆沿坡上升，右边车辆沿坡下降，箭头方向相反。</desc>
+  <defs>
+    <marker id="upArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+    <marker id="downArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M28 642 547 121M1172 642 653 121" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+  <path d="M600 117C391 120 312 407 183 536" fill="none" stroke="#25364a" stroke-width="10"/>
+  <path d="M600 117c209 3 288 290 417 419" fill="none" stroke="#25364a" stroke-width="10"/>
+  <circle cx="600" cy="117" r="70" fill="#ffd166" stroke="#25364a" stroke-width="10"/>
+  <circle cx="600" cy="117" r="24" fill="#fff9ed" stroke="#25364a" stroke-width="8"/>
+  <path d="M514 116h172" stroke="#25364a" stroke-width="9" stroke-linecap="round"/>
+  <g transform="translate(313 424) rotate(-45)">
+    <path d="M-122 59v-132c0-47 38-85 85-85H74c47 0 85 38 85 85V59Z" fill="#ef6a5b" stroke="#25364a" stroke-width="9"/>
+    <path d="M-65-119h83v73h-83zm107 0h66v73H42z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+    <g fill="#465d73" stroke="#25364a" stroke-width="7"><circle cx="-72" cy="70" r="39"/><circle cx="106" cy="70" r="39"/></g>
+  </g>
+  <g transform="translate(887 424) rotate(45)">
+    <path d="M-159 59v-132c0-47 38-85 85-85H37c47 0 85 38 85 85V59Z" fill="#4f9bd8" stroke="#25364a" stroke-width="9"/>
+    <path d="M-108-119h66v73h-66zm90 0h83v73h-83z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+    <g fill="#465d73" stroke="#25364a" stroke-width="7"><circle cx="-106" cy="70" r="39"/><circle cx="72" cy="70" r="39"/></g>
+  </g>
+  <path d="M120 540 300 360" stroke="#ef6a5b" stroke-width="16" stroke-linecap="round" marker-end="url(#upArrow)"/>
+  <path d="M900 360 1080 540" stroke="#4f9bd8" stroke-width="16" stroke-linecap="round" marker-end="url(#downArrow)"/>
+  <path d="M520 191 600 121l80 70" fill="none" stroke="#55b68b" stroke-width="29" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/>
+</svg>

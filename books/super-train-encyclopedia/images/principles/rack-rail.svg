@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">齿轮咬住齿轨爬山</title>
+  <desc id="desc">红色山地列车沿陡坡向右上方行驶，车底黄色齿轮咬住两根普通钢轨中间像拉链一样的齿条。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M50 611 1150 135" stroke="#667687" stroke-width="27" stroke-linecap="round"/>
+  <path d="M74 655 1174 179" stroke="#667687" stroke-width="27" stroke-linecap="round"/>
+  <path d="M57 634 1157 158" stroke="#9a7558" stroke-width="13" stroke-dasharray="5 25"/>
+  <path d="M61 632 1161 156" stroke="#ffd166" stroke-width="17" stroke-dasharray="22 10"/>
+  <g transform="translate(600 360) rotate(-23.4)">
+    <path d="M-350 65v-172c0-55 45-100 100-100h405c89 0 160 62 181 148l30 124Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11"/>
+    <path d="M-244-164h375c59 0 107 31 133 91h-541c8-55 18-91 33-91Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+    <path d="M-90-164v91M78-164v91" stroke="#25364a" stroke-width="7"/>
+    <g fill="#465d73" stroke="#25364a" stroke-width="9"><circle cx="-218" cy="72" r="69"/><circle cx="225" cy="72" r="69"/></g>
+    <g fill="#ffd166" stroke="#25364a" stroke-width="8"><circle cx="-218" cy="72" r="23"/><circle cx="225" cy="72" r="23"/></g>
+    <g transform="translate(5 105)" fill="#ffd166" stroke="#25364a" stroke-width="7">
+      <circle r="62"/><circle r="21" fill="#fff9ed"/>
+      <path d="M0-86v38M0 48v38M-86 0h38M48 0h38M-61-61l27 27M34 34l27 27M61-61 34-34M-34 34l-27 27"/>
+    </g>
+  </g>
+  <path d="M716 105 945 7" stroke="#ef6a5b" stroke-width="16" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>

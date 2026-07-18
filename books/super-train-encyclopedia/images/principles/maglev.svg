@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">磁力让列车浮起并前进</title>
+  <desc id="desc">流线形列车与导轨之间留有明显小空隙，成对磁铁隔空相对，蓝色箭头向上支撑车身，红色箭头指向前方。</desc>
+  <defs>
+    <marker id="upArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
+    <marker id="rightArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M90 548h1020v110H90Z" fill="#b9c4cd" stroke="#25364a" stroke-width="10"/>
+  <path d="M135 548v-79h930v79" fill="none" stroke="#667687" stroke-width="29" stroke-linejoin="round"/>
+  <path d="M105 388V238c0-79 64-143 143-143h521c108 0 196 38 271 116l111 116c30 31 8 83-35 83H105Z" fill="#4f9bd8" stroke="#25364a" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M240 141h489c82 0 145 19 200 66H202c8-38 20-66 38-66Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M414 141v66M612 141v66M788 153l-30 54" stroke="#25364a" stroke-width="7"/>
+  <path d="M177 376h784" stroke="#25364a" stroke-width="35" stroke-linecap="round"/>
+  <g stroke="#25364a" stroke-width="7">
+    <path d="M232 394h124v52H232zM424 394h124v52H424zM616 394h124v52H616zM808 394h124v52H808z" fill="#ef6a5b"/>
+    <path d="M232 484h124v52H232zM424 484h124v52H424zM616 484h124v52H616zM808 484h124v52H808z" fill="#ffd166"/>
+  </g>
+  <g stroke="#4f9bd8" stroke-width="14" stroke-linecap="round" marker-end="url(#upArrow)">
+    <path d="M294 482v-27M486 482v-27M678 482v-27M870 482v-27"/>
+  </g>
+  <path d="M617 63h373" stroke="#ef6a5b" stroke-width="17" stroke-linecap="round" marker-end="url(#rightArrow)"/>
+  <path d="M102 453h1010" stroke="#55b68b" stroke-width="5" stroke-dasharray="13 16" opacity=".7"/>
+</svg>

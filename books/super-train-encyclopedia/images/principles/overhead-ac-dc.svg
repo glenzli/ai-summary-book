@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">架空线可以输送交流电或直流电</title>
+  <desc id="desc">画面分成左右两半，两列电车都从头顶电线取电；左上方波浪箭头来回，右上方箭头朝同一方向。</desc>
+  <defs>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
+    <marker id="redArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M600 60v555" stroke="#d8c5a9" stroke-width="5" stroke-dasharray="18 18"/>
+  <g transform="translate(0)">
+    <path d="M82 177h436" stroke="#25364a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M136 113c43-54 86 54 129 0s86 54 129 0 86 54 129 0" fill="none" stroke="#4f9bd8" stroke-width="14" stroke-linecap="round" marker-start="url(#blueArrow)" marker-end="url(#blueArrow)"/>
+    <path d="M210 324 295 206l86 118M254 263h85" fill="none" stroke="#25364a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M95 334h390c37 0 67 30 67 67v105H95Z" fill="#4f9bd8" stroke="#25364a" stroke-width="10"/>
+    <path d="M142 366h322c25 0 45 20 45 45v25H142Z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+    <g fill="#465d73" stroke="#25364a" stroke-width="8"><circle cx="190" cy="510" r="58"/><circle cx="455" cy="510" r="58"/></g>
+  </g>
+  <g transform="translate(600)">
+    <path d="M82 177h436" stroke="#25364a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M126 112h365" stroke="#ef6a5b" stroke-width="14" stroke-linecap="round" marker-end="url(#redArrow)"/>
+    <path d="M210 324 295 206l86 118M254 263h85" fill="none" stroke="#25364a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M95 334h390c37 0 67 30 67 67v105H95Z" fill="#ef6a5b" stroke="#25364a" stroke-width="10"/>
+    <path d="M142 366h322c25 0 45 20 45 45v25H142Z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+    <g fill="#465d73" stroke="#25364a" stroke-width="8"><circle cx="190" cy="510" r="58"/><circle cx="455" cy="510" r="58"/></g>
+  </g>
+  <path d="M65 566h1070" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+</svg>

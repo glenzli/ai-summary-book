@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">刹车时把部分能量送回电网</title>
+  <desc id="desc">正在减速的电车车轮带动电动机，蓝色箭头从车轮经过闪电符号向上回到架空线，前方红箭头逐渐变短。</desc>
+  <defs>
+    <marker id="energyArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
+    <marker id="motionArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M74 104h1052" stroke="#25364a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M135 433V270c0-64 52-116 116-116h569c99 0 174 57 215 151l55 128Z" fill="#55b68b" stroke="#25364a" stroke-width="11"/>
+  <path d="M247 195h545c66 0 116 34 149 99H213c9-61 17-99 34-99Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M429 195v99M637 195v99M820 199l-34 95" stroke="#25364a" stroke-width="7"/>
+  <rect x="203" y="383" width="735" height="65" rx="25" fill="#25364a"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="10"><circle cx="340" cy="480" r="82"/><circle cx="834" cy="480" r="82"/></g>
+  <g fill="#4f9bd8" stroke="#25364a" stroke-width="8"><circle cx="340" cy="480" r="31"/><circle cx="834" cy="480" r="31"/></g>
+  <path d="M812 452c-96-79-215-40-218-151-2-70 52-102 52-171" fill="none" stroke="#4f9bd8" stroke-width="18" stroke-linecap="round" marker-end="url(#energyArrow)"/>
+  <path d="m553 351 55-107h55l-39 74h52l-101 118 28-85Z" fill="#ffd166" stroke="#25364a" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M718 132h-19M671 132h-39M597 132h-65" stroke="#4f9bd8" stroke-width="15" stroke-linecap="round" marker-end="url(#energyArrow)"/>
+  <path d="M1048 250h80M1059 296h57M1067 342h38" stroke="#ef6a5b" stroke-width="15" stroke-linecap="round" marker-end="url(#motionArrow)"/>
+  <path d="M80 574h1050" stroke="#667687" stroke-width="24" stroke-linecap="round"/>
+</svg>

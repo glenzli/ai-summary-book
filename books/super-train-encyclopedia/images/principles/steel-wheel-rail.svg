@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">钢轮在钢轨上滚动</title>
+  <desc id="desc">两只深蓝色钢轮托着红色车身，在两根灰色钢轨上向右滚动，圆箭头表示车轮旋转。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <ellipse cx="600" cy="582" rx="510" ry="45" fill="#eadfcb"/>
+  <g fill="#9a7558">
+    <rect x="120" y="535" width="170" height="24" rx="10" transform="rotate(-3 120 535)"/>
+    <rect x="340" y="524" width="170" height="24" rx="10" transform="rotate(-3 340 524)"/>
+    <rect x="560" y="513" width="170" height="24" rx="10" transform="rotate(-3 560 513)"/>
+    <rect x="780" y="502" width="170" height="24" rx="10" transform="rotate(-3 780 502)"/>
+    <rect x="990" y="491" width="110" height="24" rx="10" transform="rotate(-3 990 491)"/>
+  </g>
+  <path d="M78 507 1100 454" fill="none" stroke="#667687" stroke-width="27" stroke-linecap="round"/>
+  <path d="M101 565 1124 512" fill="none" stroke="#667687" stroke-width="27" stroke-linecap="round"/>
+  <path d="M78 500 1100 447" fill="none" stroke="#d8e0e7" stroke-width="7" stroke-linecap="round"/>
+  <path d="M101 558 1124 505" fill="none" stroke="#d8e0e7" stroke-width="7" stroke-linecap="round"/>
+  <path d="M272 220h597c80 0 139 50 162 127l17 57H197l20-104c9-47 22-80 55-80Z" fill="#ef6a5b" stroke="#25364a" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M373 240h373c53 0 93 30 112 83l13 36H331l12-64c6-32 15-55 30-55Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M506 240v119M687 240v119" stroke="#25364a" stroke-width="7"/>
+  <rect x="267" y="389" width="680" height="49" rx="20" fill="#25364a"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="10">
+    <circle cx="390" cy="448" r="82"/>
+    <circle cx="824" cy="426" r="82"/>
+  </g>
+  <g fill="#ffd166" stroke="#25364a" stroke-width="8">
+    <circle cx="390" cy="448" r="28"/>
+    <circle cx="824" cy="426" r="28"/>
+  </g>
+  <path d="M340 410a69 69 0 0 1 100-5" fill="none" stroke="#ef6a5b" stroke-width="13" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M774 388a69 69 0 0 1 100-5" fill="none" stroke="#ef6a5b" stroke-width="13" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M400 155h390" fill="none" stroke="#ef6a5b" stroke-width="17" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">悬挂式单轨的轮子藏在上方</title>
+  <desc id="desc">剖开的高架轨道箱内有承重轮和导向轮，一根坚固吊架从箱体开口伸下，连接下面的红色车厢。</desc>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M143 34h914v247H143Z" fill="#b9c4cd" stroke="#25364a" stroke-width="11"/>
+  <path d="M210 96h780v126H210Z" fill="#fff9ed" stroke="#25364a" stroke-width="9"/>
+  <path d="M242 219h282M676 219h282" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="9">
+    <circle cx="428" cy="180" r="66"/><circle cx="772" cy="180" r="66"/>
+    <circle cx="515" cy="123" r="43"/><circle cx="685" cy="123" r="43"/>
+  </g>
+  <g fill="#ffd166" stroke="#25364a" stroke-width="7"><circle cx="428" cy="180" r="20"/><circle cx="772" cy="180" r="20"/><circle cx="515" cy="123" r="15"/><circle cx="685" cy="123" r="15"/></g>
+  <path d="M548 136h104v248H548Z" fill="#55b68b" stroke="#25364a" stroke-width="10"/>
+  <path d="M413 359h374l76 83v142c0 50-41 91-91 91H428c-50 0-91-41-91-91V442Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M427 420h346l35 43H392Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M489 421v42M600 421v42M711 421v42" stroke="#25364a" stroke-width="7"/>
+  <circle cx="432" cy="570" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/><circle cx="768" cy="570" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/>
+</svg>

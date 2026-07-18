@@ -13,5 +13,14 @@ and without giving attribution.
 
 The work is provided as-is, without warranties or liability.
 
+## Scope exception
+
+This dedication covers the repository's original content only. Separately
+identified third-party material is excluded from CC0 and retains its stated
+license or copyright status. In particular, the train images under
+`books/super-train-encyclopedia/images/trains/` are governed by the per-file
+terms recorded in
+[`books/super-train-encyclopedia/IMAGE_CREDITS.md`](books/super-train-encyclopedia/IMAGE_CREDITS.md).
+
 Full legal code:
 https://creativecommons.org/publicdomain/zero/1.0/legalcode

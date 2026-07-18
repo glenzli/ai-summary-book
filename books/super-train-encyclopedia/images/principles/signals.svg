@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">信号把线路消息告诉列车</title>
+  <desc id="desc">轨旁信号机有红黄绿三盏灯，绿色灯亮起，三道光线指向驶来的蓝色列车，远处轨道保持清空。</desc>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+  <path d="M450 612 570 76M1011 612 650 76" fill="none" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+  <g stroke="#9a7558" stroke-width="15" stroke-linecap="round">
+    <path d="M455 565h524M475 478h446M494 392h390M512 312h329M531 227h257M549 145h198"/>
+  </g>
+  <path d="M176 594V185" stroke="#25364a" stroke-width="24"/>
+  <path d="M123 594h107" stroke="#25364a" stroke-width="28" stroke-linecap="round"/>
+  <rect x="82" y="70" width="188" height="360" rx="78" fill="#465d73" stroke="#25364a" stroke-width="10"/>
+  <g stroke="#25364a" stroke-width="8"><circle cx="176" cy="156" r="49" fill="#ef6a5b"/><circle cx="176" cy="250" r="49" fill="#ffd166"/><circle cx="176" cy="344" r="56" fill="#55b68b"/></g>
+  <circle cx="176" cy="344" r="76" fill="none" stroke="#55b68b" stroke-width="11" opacity=".55"/>
+  <path d="M247 324 602 247M247 344 602 344M247 364 602 441" stroke="#55b68b" stroke-width="8" stroke-linecap="round" opacity=".45"/>
+  <path d="M545 604V393c0-108 87-195 195-195h46c108 0 195 87 195 195v211Z" fill="#4f9bd8" stroke="#25364a" stroke-width="11"/>
+  <path d="M620 393c0-69 56-125 125-125h36c69 0 125 56 125 125v49H620Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M763 270v172" stroke="#25364a" stroke-width="8"/>
+  <circle cx="644" cy="532" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/><circle cx="879" cy="532" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/>
+</svg>
