@@ -1,10 +1,9 @@
 # 超级火车迷百科全书
 
 <p align="center">
-  <img src="images/trains/t013-big-boy.webp" alt="巨大的大男孩蒸汽机车" width="23%">
-  <img src="images/trains/t061-shinkansen-n700s.webp" alt="白色长鼻子的 N700S 新干线" width="23%">
-  <img src="images/trains/t093-seibu-laview.webp" alt="银色圆脸的西武 Laview" width="23%">
-  <img src="images/trains/t106-chiba-urban-flyer.webp" alt="倒挂在高架轨道下的千叶都市单轨" width="23%">
+  <img src="images/cover-super-train-encyclopedia.webp" alt="写着‘超级火车迷百科全书’的儿童封面插画：蒸汽机车、高速列车、通勤电车、跨座单轨和倒挂单轨穿过山谷城市" width="720">
+  <br>
+  <em>从蒸汽机车到倒挂单轨，一起出发！</em>
 </p>
 
 作者：Dr. Stochastic Parrot<br>
@@ -75,7 +74,7 @@
 
 ## 图片与许可
 
-原理图由本书原创，随仓库正文按 CC0 发布。`images/trains/` 中的车型图片来自 Wikimedia Commons，以实车照片为主，也包含少量没有同期照片可用的历史图；它们各自保留原作者信息及所列许可或公有领域状态，**不适用仓库的 CC0**。完整来源、许可链接和原文件页见 [图片来源与许可](IMAGE_CREDITS.md)。
+封面插画和原理图由本书原创，随仓库正文按 CC0 发布。`images/trains/` 中的车型图片来自 Wikimedia Commons，以实车照片为主，也包含少量没有同期照片可用的历史图；它们各自保留原作者信息及所列许可或公有领域状态，**不适用仓库的 CC0**。完整来源、许可链接和原文件页见 [图片来源与许可](IMAGE_CREDITS.md)。
 
 ## 编辑说明
 
