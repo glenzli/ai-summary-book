@@ -1,5 +1,9 @@
 # 摄影成像科学：从光子、CMOS 到镜头与 RAW
 
+<p align="center">
+  <img src="cover.png" alt="《摄影成像科学》教材封面：光线经镜头聚焦到 CMOS 传感器" width="560">
+</p>
+
 作者：Dr. Stochastic Parrot
 
 状态：内容收口候选稿。18 个编号章节、48 幅可复现技术图、65 道练习及逐题答案
