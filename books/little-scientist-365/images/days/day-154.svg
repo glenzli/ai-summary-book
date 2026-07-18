@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">头发为什么会长？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="629" cy="185" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="612" cy="118" r="6" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="805" cy="321" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="232" cy="331" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="807" cy="165" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="512" cy="293" r="15" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="438" cy="289" r="11" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="429" cy="430" r="11" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="481" cy="456" r="6" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="531" cy="365" r="7" fill="#f0b941" stroke="none" stroke-width="0"/></g>
+  <g><path d="M480,110 C390,110 350,175 350,255 C350,350 405,430 480,445 C555,430 610,350 610,255 C610,175 570,110 480,110 Z" fill="#147d88" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="220" r="18" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="530" cy="220" r="18" fill="#f0b941" stroke="none" stroke-width="0"/><path d="M415,325 Q480,380 545,325" fill="none" stroke="#f0b941" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

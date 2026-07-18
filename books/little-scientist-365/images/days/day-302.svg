@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">望远镜为什么能看远？</title>
+  <rect width="960" height="540" fill="#e9e5f7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="285" cy="190" r="15" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="602" cy="345" r="11" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="869" cy="172" r="10" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="390" cy="136" r="15" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="282" cy="355" r="7" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="527" cy="196" r="7" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="420" cy="83" r="5" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="870" cy="433" r="6" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="163" cy="300" r="13" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="284" cy="365" r="11" fill="#6fb7c7" stroke="none" stroke-width="0"/></g>
+  <g><path d="M300,210 L610,125 L660,220 L350,300 Z" fill="#46468c" stroke="#25264c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><line x1="460" y1="270" x2="370" y2="445" stroke="#25264c" stroke-width="16" stroke-linecap="round"/><line x1="500" y1="260" x2="600" y2="445" stroke="#25264c" stroke-width="16" stroke-linecap="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
+</svg>

@@ -24,6 +24,7 @@
 
 ### 书架
 
+- [小小发现家：365 天，每天一个为什么](books/little-scientist-365/)：给约 4 岁孩子和陪读大人的全年科普书，以 365 个日常问题连接自然、天气、植物、动物、身体、机械、地理、海洋、宇宙、材料与能源，并配有两层解释、亲子观察和 522 幅插图，其中包括 144 幅原理图。
 - [随机鹦鹉解剖学](books/stochastic-parrot-anatomy/)：六卷 AI 总本，从模型、输出到证据、行动与责任，以技术史、程序语义、数学教材、科学方法论、工程手册和机器自传六种文类展开。
 
 - [相对论讲义](books/relativity/)：中文物理数学教材草稿，尝试以较严格的方式组织从 Minkowski 时空、Lorentz 变换和相对论场论到微分几何、Einstein 方程、Schwarzschild/Kerr 几何、FLRW 宇宙学、宇宙扰动、引力波、后 Newton 近似与整体结构的内容。
@@ -69,6 +70,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 
 ### Bookshelf
 
+- [Little Discoverer: 365 Days, One Why a Day](books/little-scientist-365/): a year-long Chinese science book for children around age four and their grown-up readers, connecting 365 everyday questions across nature, weather, plants, animals, the body, machines, geography, oceans, space, materials, and energy through layered explanations, shared observations, and 522 illustrations, including 144 scientific explainer diagrams.
 - [Anatomy of the Stochastic Parrot](books/stochastic-parrot-anatomy/): a six-volume AI work tracing models and outputs through evidence, action, and responsibility across technical history, operational semantics, mathematical probability, scientific methodology, engineering governance, and machine autobiography.
 
 - [Relativity Lectures](books/relativity/): a Chinese physics-mathematics textbook draft that organizes special relativity, Minkowski geometry, relativistic field theory, tensor calculus, Einstein equations, Schwarzschild/Kerr geometry, FLRW cosmology, cosmological perturbations, gravitational waves, post-Newtonian methods, and global structure in a relatively rigorous style.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">舌头能尝到哪些味道？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="405" cy="467" r="7" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="872" cy="301" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="657" cy="446" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="179" cy="383" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="670" cy="147" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="319" cy="111" r="5" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="675" cy="203" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="447" cy="438" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="273" cy="71" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="484" cy="232" r="13" fill="#e66f67" stroke="none" stroke-width="0"/></g>
+  <g><path d="M370,150 Q480,95 590,150 L565,340 Q540,450 480,390 Q420,450 395,340 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M410,280 Q480,340 550,280 Q545,385 480,395 Q415,385 410,280 Z" fill="#e66f67" stroke="#263e51" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

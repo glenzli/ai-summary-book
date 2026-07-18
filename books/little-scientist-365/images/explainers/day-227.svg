@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">原理图：为什么世界地图上的地方会变形？</title>
+  <desc id="desc">球面无法无变形地铺成平面；不同投影会分别改变面积、形状或距离。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#35402f"/></marker>
+  </defs>
+  <rect width="1200" height="680" fill="#f2f5ed"/>
+  <path d="M0,615 Q260,560 520,615 T1040,615 T1300,615 V680 H0 Z" fill="#667d42" opacity="0.09"/>
+  <text x="65" y="64" fill="#35402f" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="750">比较图</text>
+  <text x="1135" y="64" text-anchor="end" fill="#35402f" opacity="0.72" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="21">示意图 · 不按比例</text>
+  <rect x="170.0" y="137.5" width="360" height="395" rx="8" fill="#ffffff" stroke="#35402f" stroke-width="2.5"/><circle cx="350" cy="300" r="64.8" fill="#667d42" stroke="#35402f" stroke-width="4.5"/><path d="M303.2,268.5 Q336.5,237.0 357.2,271.2 L345.5,303.6 L305.0,310.8 Z M366.2,310.8 Q408.5,292.8 399.5,340.5 L360.8,352.2 Z" fill="#c47a45" stroke="#35402f" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/><text x="350" y="440" text-anchor="middle" fill="#35402f" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="650"><tspan x="350" dy="0">球形地球</tspan></text><rect x="670.0" y="137.5" width="360" height="395" rx="8" fill="#ffffff" stroke="#35402f" stroke-width="2.5"/><rect x="785.2" y="217.2" width="129.6" height="165.6" rx="4.5" fill="#f2f5ed" stroke="#35402f" stroke-width="4.5"/><line x1="800.5" y1="250.5" x2="890.5" y2="340.5" stroke="#667d42" stroke-width="5.4" stroke-linecap="round"/><text x="850" y="440" text-anchor="middle" fill="#35402f" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="650"><tspan x="850" dy="0">平面地图必有变形</tspan></text><line x1="600.0" y1="170" x2="600.0" y2="500" stroke="#35402f" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 12"/><text x="600" y="570" text-anchor="middle" fill="#35402f" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="500"><tspan x="600" dy="0">并排比较：结构或</tspan><tspan x="600" dy="31">条件不同，结果也会不同</tspan></text>
+  <rect x="12" y="12" width="1176" height="656" rx="8" fill="none" stroke="#35402f" stroke-width="3" opacity="0.22"/>
+</svg>

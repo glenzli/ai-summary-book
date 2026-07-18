@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">火山为什么会喷发？</title>
+  <rect width="960" height="540" fill="#f4ead7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#357761" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="229" cy="498" r="11" fill="#2f78a6" stroke="none" stroke-width="0"/><circle cx="767" cy="59" r="13" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="614" cy="222" r="14" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="693" cy="164" r="7" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="539" cy="353" r="9" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="516" cy="252" r="13" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="408" cy="389" r="10" fill="#2f78a6" stroke="none" stroke-width="0"/><circle cx="63" cy="226" r="13" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="255" cy="335" r="13" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="121" cy="301" r="10" fill="#d7984c" stroke="none" stroke-width="0"/></g>
+  <g><polygon points="170,410 400,125 600,410" fill="#357761" stroke="#3f3a32" stroke-width="8" stroke-linejoin="round"/><polygon points="385,145 400,125 485,230 430,210" fill="#d7984c" stroke="none" stroke-width="0" stroke-linejoin="round"/><path d="M410,145 Q480,80 540,145" fill="none" stroke="#2f78a6" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/><path d="M430,145 L520,390" fill="none" stroke="#2f78a6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#3f3a32" stroke-width="5" opacity="0.18"/>
+</svg>

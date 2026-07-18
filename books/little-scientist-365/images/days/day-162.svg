@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">为什么会打嗝？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="189" cy="234" r="11" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="565" cy="324" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="265" cy="250" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="815" cy="423" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="366" cy="353" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="572" cy="41" r="13" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="576" cy="85" r="6" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="846" cy="361" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="403" cy="471" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="783" cy="59" r="14" fill="#e66f67" stroke="none" stroke-width="0"/></g>
+  <g><line x1="480" y1="120" x2="480" y2="220" stroke="#263e51" stroke-width="22" stroke-linecap="round"/><path d="M462,205 C380,165 300,220 305,340 C310,430 410,430 455,365 Z" fill="#147d88" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M498,205 C580,165 660,220 655,340 C650,430 550,430 505,365 Z" fill="#e66f67" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

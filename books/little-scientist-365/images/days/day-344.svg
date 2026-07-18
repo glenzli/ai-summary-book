@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">帆船怎样迎着风前进？</title>
+  <rect width="960" height="540" fill="#e8f1e2"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2f7863" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="181" cy="372" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="122" cy="43" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="267" cy="183" r="14" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="425" cy="146" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="837" cy="236" r="13" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="282" cy="227" r="12" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="369" cy="367" r="15" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="186" cy="268" r="11" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="233" cy="144" r="11" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="790" cy="424" r="13" fill="#3276a2" stroke="none" stroke-width="0"/></g>
+  <g><path d="M230,310 H720 L660,405 H300 Z" fill="#2f7863" stroke="#33413d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><polygon points="455,305 455,120 610,290" fill="#e3b33e" stroke="#33413d" stroke-width="7" stroke-linejoin="round"/><path d="M160,430 Q280,385 400,430 T640,430 T880,430" fill="none" stroke="#3276a2" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#33413d" stroke-width="5" opacity="0.18"/>
+</svg>

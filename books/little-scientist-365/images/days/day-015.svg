@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">白天和夜晚怎样轮流来？</title>
+  <rect width="960" height="540" fill="#dff3ff"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2864b7" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="592" cy="92" r="8" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="123" cy="279" r="10" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="580" cy="423" r="6" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="282" cy="434" r="12" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="501" cy="227" r="13" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="443" cy="303" r="12" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="705" cy="464" r="15" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="299" cy="92" r="11" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="416" cy="476" r="7" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="533" cy="118" r="6" fill="#f5c84c" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="480" cy="270" r="135" fill="#2864b7" stroke="#172d4d" stroke-width="8"/><ellipse cx="480" cy="270" rx="245" ry="80" fill="none" stroke="#f5c84c" stroke-width="18"/><circle cx="690" cy="218" r="28" fill="#ffffff" stroke="#172d4d" stroke-width="5"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#172d4d" stroke-width="5" opacity="0.18"/>
+</svg>

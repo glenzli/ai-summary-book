@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">鼻子怎样闻到香味？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="177" cy="51" r="14" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="642" cy="458" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="784" cy="60" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="112" cy="138" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="225" cy="228" r="9" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="356" cy="388" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="369" cy="481" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="756" cy="280" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="378" cy="306" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="845" cy="453" r="8" fill="#f0b941" stroke="none" stroke-width="0"/></g>
+  <g><path d="M370,150 Q480,95 590,150 L565,340 Q540,450 480,390 Q420,450 395,340 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M410,280 Q480,340 550,280 Q545,385 480,395 Q415,385 410,280 Z" fill="#e66f67" stroke="#263e51" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

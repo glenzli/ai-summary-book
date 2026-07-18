@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">蜗牛为什么走过会亮亮的？</title>
+  <rect width="960" height="540" fill="#f4f5d7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#6d913d" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="586" cy="197" r="12" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="696" cy="398" r="11" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="741" cy="164" r="6" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="661" cy="83" r="15" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="542" cy="58" r="14" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="752" cy="300" r="9" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="727" cy="360" r="11" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="113" cy="243" r="6" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="430" cy="131" r="5" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="248" cy="206" r="14" fill="#db704d" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="440" cy="260" r="95" fill="#db704d" stroke="#344525" stroke-width="8"/><path d="M440,260 Q440,205 495,215 Q555,235 535,300 Q510,350 440,330" fill="none" stroke="#f4c84a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M330,350 Q480,290 650,355" fill="none" stroke="#6d913d" stroke-width="55" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#344525" stroke-width="5" opacity="0.18"/>
+</svg>

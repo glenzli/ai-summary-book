@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">原理图：冰为什么能浮在水上？</title>
+  <desc id="desc">冰排开水获得向上的浮力；浮力与重量平衡时，冰便浮着。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#18324a"/></marker>
+  </defs>
+  <rect width="1200" height="680" fill="#eef7ff"/>
+  <path d="M0,615 Q260,560 520,615 T1040,615 T1300,615 V680 H0 Z" fill="#2d6fbb" opacity="0.09"/>
+  <text x="65" y="64" fill="#18324a" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="750">方向与受力图</text>
+  <text x="1135" y="64" text-anchor="end" fill="#18324a" opacity="0.72" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="21">示意图 · 不按比例</text>
+  <rect x="425.0" y="180.0" width="350" height="300" rx="8" fill="#ffffff" stroke="#18324a" stroke-width="2.5"/><polygon points="537.0,251.8 640.5,236.5 670.2,338.2 556.8,359.8" fill="#eef7ff" stroke="#2d6fbb" stroke-width="5.4" stroke-linejoin="round"/><line x1="537.0" y1="251.8" x2="556.8" y2="359.8" stroke="#18324a" stroke-width="2.7" stroke-linecap="round"/><text x="600" y="435" text-anchor="middle" fill="#18324a" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="650"><tspan x="600" dy="0">浮在水面的冰</tspan></text><line x1="520" y1="245" x2="520" y2="115" stroke="#2d6fbb" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/><text x="500" y="88" text-anchor="middle" fill="#18324a" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="650"><tspan x="500" dy="0">水的浮力向上</tspan></text><line x1="680" y1="415" x2="680" y2="545" stroke="#f2b84b" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/><text x="700" y="585" text-anchor="middle" fill="#18324a" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="650"><tspan x="700" dy="0">冰的重量向下</tspan></text><rect x="80" y="215" width="215" height="225" rx="8" fill="#eef7ff" stroke="#18324a" stroke-width="2.5"/><text x="187" y="280" text-anchor="middle" fill="#18324a" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="600"><tspan x="187" dy="0">箭头表示力</tspan><tspan x="187" dy="32">或运动方向</tspan></text><path d="M135,385 H240" fill="none" stroke="#2d6fbb" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="12" y="12" width="1176" height="656" rx="8" fill="none" stroke="#18324a" stroke-width="3" opacity="0.22"/>
+</svg>

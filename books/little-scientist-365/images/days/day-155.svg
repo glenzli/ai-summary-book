@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">骨头是空心的吗？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="313" cy="358" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="574" cy="449" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="53" cy="113" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="512" cy="221" r="9" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="294" cy="140" r="7" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="87" cy="473" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="722" cy="477" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="462" cy="113" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="150" cy="263" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="172" cy="353" r="6" fill="#e66f67" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="355" cy="160" r="38" fill="#f0b941" stroke="#263e51" stroke-width="7"/><circle cx="605" cy="380" r="38" fill="#f0b941" stroke="#263e51" stroke-width="7"/><line x1="380" y1="185" x2="580" y2="355" stroke="#f0b941" stroke-width="62" stroke-linecap="round"/><line x1="380" y1="185" x2="580" y2="355" stroke="#263e51" stroke-width="8" stroke-linecap="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

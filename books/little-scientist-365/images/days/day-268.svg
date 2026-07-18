@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">海藻为什么不算真正的植物？</title>
+  <rect width="960" height="540" fill="#dff4f5"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#176f8c" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="721" cy="326" r="8" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="894" cy="199" r="9" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="727" cy="243" r="5" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="478" cy="480" r="9" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="833" cy="158" r="7" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="701" cy="216" r="12" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="201" cy="360" r="5" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="423" cy="172" r="15" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="320" cy="106" r="11" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="104" cy="113" r="9" fill="#f4c74e" stroke="none" stroke-width="0"/></g>
+  <g><path d="M120,420 Q240,355 360,420 T600,420 T840,420" fill="none" stroke="#176f8c" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M359.0,330.5 C370.0,171.0 568.0,138.0 606.5,209.5 C584.5,341.5 458.0,391.0 359.0,330.5 Z" fill="#ef745f" stroke="#163c59" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="397.5" y1="325.0" x2="562.5" y2="209.5" stroke="#163c59" stroke-width="6" stroke-linecap="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#163c59" stroke-width="5" opacity="0.18"/>
+</svg>

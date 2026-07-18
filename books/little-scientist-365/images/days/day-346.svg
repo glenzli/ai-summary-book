@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">直升机为什么能停在空中？</title>
+  <rect width="960" height="540" fill="#e8f1e2"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2f7863" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="517" cy="126" r="15" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="190" cy="122" r="15" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="665" cy="470" r="12" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="901" cy="309" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="492" cy="231" r="5" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="54" cy="321" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="566" cy="45" r="13" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="737" cy="338" r="15" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="192" cy="451" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="577" cy="196" r="15" fill="#3276a2" stroke="none" stroke-width="0"/></g>
+  <g><ellipse cx="485" cy="290" rx="145" ry="92" fill="#e3b33e" stroke="#33413d" stroke-width="8"/><rect x="330" y="265" width="145" height="45" rx="12" fill="#3276a2" stroke="#33413d" stroke-width="7"/><line x1="480" y1="195" x2="480" y2="130" stroke="#33413d" stroke-width="12" stroke-linecap="round"/><line x1="250" y1="130" x2="710" y2="130" stroke="#33413d" stroke-width="13" stroke-linecap="round"/><line x1="615" y1="280" x2="740" y2="230" stroke="#33413d" stroke-width="22" stroke-linecap="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#33413d" stroke-width="5" opacity="0.18"/>
+</svg>

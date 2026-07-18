@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">乳牙为什么会掉？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="340" cy="283" r="14" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="681" cy="469" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="535" cy="461" r="13" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="335" cy="312" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="195" cy="69" r="7" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="412" cy="254" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="237" cy="289" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="548" cy="451" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="670" cy="311" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="876" cy="404" r="7" fill="#f0b941" stroke="none" stroke-width="0"/></g>
+  <g><path d="M370,150 Q480,95 590,150 L565,340 Q540,450 480,390 Q420,450 395,340 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M410,280 Q480,340 550,280 Q545,385 480,395 Q415,385 410,280 Z" fill="#e66f67" stroke="#263e51" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

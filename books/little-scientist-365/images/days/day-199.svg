@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">电动机为什么会转？</title>
+  <rect width="960" height="540" fill="#fff1df"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f6f99" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="357" cy="301" r="11" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="422" cy="441" r="11" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="728" cy="356" r="6" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="669" cy="323" r="15" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="75" cy="388" r="12" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="155" cy="202" r="7" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="501" cy="363" r="12" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="835" cy="159" r="6" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="421" cy="321" r="11" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="257" cy="380" r="12" fill="#dd7444" stroke="none" stroke-width="0"/></g>
+  <g><rect x="300" y="190" width="150" height="160" rx="24" fill="#3f6f99" stroke="#303d4c" stroke-width="8"/><rect x="335" y="155" width="80" height="38" rx="8" fill="#dd7444" stroke="#303d4c" stroke-width="6"/><path d="M450,270 C540,270 535,145 640,160 C735,175 700,365 590,360 C520,355 535,320 450,320" fill="none" stroke="#303d4c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="590" cy="360" r="42" fill="#dd7444" stroke="#303d4c" stroke-width="7"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#303d4c" stroke-width="5" opacity="0.18"/>
+</svg>

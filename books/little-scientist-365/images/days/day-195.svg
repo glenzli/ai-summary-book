@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">指南针为什么会指南北？</title>
+  <rect width="960" height="540" fill="#fff1df"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f6f99" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="787" cy="142" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="849" cy="385" r="14" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="478" cy="152" r="9" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="511" cy="221" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="911" cy="309" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="56" cy="48" r="10" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="459" cy="437" r="10" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="759" cy="308" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="676" cy="272" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="775" cy="139" r="13" fill="#dd7444" stroke="none" stroke-width="0"/></g>
+  <g><path d="M315,145 V300 C315,430 645,430 645,300 V145 H555 V300 C555,330 405,330 405,300 V145 Z" fill="#3f6f99" stroke="#303d4c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="315" y="145" width="90" height="90" rx="0" fill="#dd7444" stroke="#303d4c" stroke-width="5"/><rect x="555" y="145" width="90" height="90" rx="0" fill="#f2b544" stroke="#303d4c" stroke-width="5"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#303d4c" stroke-width="5" opacity="0.18"/>
+</svg>

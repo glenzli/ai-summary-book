@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">八颗行星怎样排队？</title>
+  <rect width="960" height="540" fill="#e9e5f7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="866" cy="354" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="359" cy="450" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="355" cy="455" r="9" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="328" cy="247" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="207" cy="500" r="9" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="906" cy="333" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="541" cy="443" r="6" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="360" cy="122" r="6" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="573" cy="46" r="5" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="868" cy="386" r="9" fill="#f0b84b" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="480" cy="270" r="135" fill="#46468c" stroke="#25264c" stroke-width="8"/><ellipse cx="480" cy="270" rx="245" ry="80" fill="none" stroke="#f0b84b" stroke-width="18"/><circle cx="690" cy="218" r="28" fill="#6fb7c7" stroke="#25264c" stroke-width="5"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
+</svg>

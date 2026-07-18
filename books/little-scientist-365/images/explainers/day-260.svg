@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">原理图：章鱼怎样一下子换颜色？</title>
+  <desc id="desc">色素细胞伸展或收缩改变色块，反射细胞还会选择性加强某些波长。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#244354"/></marker>
+  </defs>
+  <rect width="1200" height="680" fill="#edf7f8"/>
+  <path d="M0,615 Q260,560 520,615 T1040,615 T1300,615 V680 H0 Z" fill="#217d92" opacity="0.09"/>
+  <text x="65" y="64" fill="#244354" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="750">结构图</text>
+  <text x="1135" y="64" text-anchor="end" fill="#244354" opacity="0.72" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="21">示意图 · 不按比例</text>
+  <ellipse cx="480" cy="335" rx="255" ry="190" fill="#edf7f8" stroke="#244354" stroke-width="4"/><ellipse cx="480" cy="335" rx="180" ry="132" fill="#ffffff" stroke="#217d92" stroke-width="4"/><ellipse cx="480" cy="335" rx="105" ry="78" fill="#edf7f8" stroke="#e07955" stroke-width="4"/><ellipse cx="480" cy="335" rx="46.8" ry="28.799999999999997" fill="#217d92" stroke="#244354" stroke-width="3.0"/><polygon points="435.0,335 405.0,303.8 405.0,366.2" fill="#e07955" stroke="#244354" stroke-width="2.4" stroke-linejoin="round"/><circle cx="507.0" cy="327.8" r="4.8" fill="#244354" stroke="none" stroke-width="0"/><line x1="650" y1="250" x2="795" y2="190" stroke="#244354" stroke-width="4" stroke-linecap="round"/><text x="815" y="182" text-anchor="start" fill="#244354" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="650"><tspan x="815" dy="0">章鱼皮肤</tspan></text><line x1="590" y1="298" x2="795" y2="315" stroke="#217d92" stroke-width="4" stroke-linecap="round"/><text x="815" y="307" text-anchor="start" fill="#244354" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="650"><tspan x="815" dy="0">色素囊伸缩</tspan></text><line x1="530" y1="346" x2="795" y2="440" stroke="#e07955" stroke-width="4" stroke-linecap="round"/><text x="815" y="432" text-anchor="start" fill="#244354" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="650"><tspan x="815" dy="0">反射细胞改变亮色</tspan></text><text x="480" y="575" text-anchor="middle" fill="#244354" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="500"><tspan x="480" dy="0">由外到内或由</tspan><tspan x="480" dy="31">整体到细部</tspan></text>
+  <rect x="12" y="12" width="1176" height="656" rx="8" fill="none" stroke="#244354" stroke-width="3" opacity="0.22"/>
+</svg>

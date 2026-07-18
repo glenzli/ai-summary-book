@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">月食时月亮为什么变红？</title>
+  <rect width="960" height="540" fill="#e9e5f7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="124" cy="212" r="15" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="623" cy="362" r="14" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="96" cy="377" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="71" cy="455" r="6" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="569" cy="95" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="525" cy="164" r="11" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="224" cy="423" r="8" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="477" cy="140" r="10" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="189" cy="74" r="15" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="444" cy="162" r="12" fill="#6fb7c7" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="510" cy="270" r="145" fill="#6fb7c7" stroke="#25264c" stroke-width="8"/><circle cx="450" cy="230" r="28" fill="#46468c" stroke="none" stroke-width="0"/><circle cx="565" cy="330" r="38" fill="#46468c" stroke="none" stroke-width="0"/><circle cx="575" cy="195" r="17" fill="#46468c" stroke="none" stroke-width="0"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
+</svg>

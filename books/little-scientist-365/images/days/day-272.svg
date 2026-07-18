@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">塑料到了海里会消失吗？</title>
+  <rect width="960" height="540" fill="#dff4f5"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#176f8c" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="483" cy="73" r="13" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="650" cy="133" r="14" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="49" cy="179" r="8" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="188" cy="327" r="10" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="282" cy="318" r="13" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="776" cy="403" r="5" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="754" cy="40" r="9" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="164" cy="267" r="14" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="393" cy="184" r="15" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="499" cy="351" r="12" fill="#f4c74e" stroke="none" stroke-width="0"/></g>
+  <g><path d="M410,120 H550 L535,180 L585,245 V445 H375 V245 L425,180 Z" fill="#f4c74e" stroke="#163c59" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="430" y="85" width="100" height="45" rx="8" fill="#ef745f" stroke="#163c59" stroke-width="5"/><path d="M105,455 Q240,400 375,455 T645,455 T915,455" fill="none" stroke="#176f8c" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#163c59" stroke-width="5" opacity="0.18"/>
+</svg>

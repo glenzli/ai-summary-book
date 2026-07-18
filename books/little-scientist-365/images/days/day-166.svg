@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">瞳孔为什么会变大变小？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="308" cy="319" r="12" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="105" cy="205" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="486" cy="167" r="15" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="845" cy="378" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="88" cy="366" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="736" cy="187" r="10" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="323" cy="265" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="679" cy="156" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="735" cy="251" r="7" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="747" cy="59" r="11" fill="#e66f67" stroke="none" stroke-width="0"/></g>
+  <g><path d="M275,270 Q480,90 685,270 Q480,450 275,270 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="480" cy="270" r="92" fill="#147d88" stroke="#263e51" stroke-width="7"/><circle cx="480" cy="270" r="38" fill="#263e51" stroke="none" stroke-width="0"/><circle cx="450" cy="235" r="13" fill="#f0b941" stroke="none" stroke-width="0"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

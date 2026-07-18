@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">闭眼站立为什么更容易晃？</title>
+  <rect width="960" height="540" fill="#e8f5f0"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="81" cy="103" r="13" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="910" cy="113" r="7" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="838" cy="153" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="368" cy="311" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="239" cy="246" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="589" cy="151" r="10" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="252" cy="291" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="748" cy="57" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="155" cy="120" r="9" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="846" cy="224" r="11" fill="#f0b941" stroke="none" stroke-width="0"/></g>
+  <g><path d="M500,120 C350,90 300,210 350,300 C385,355 420,330 420,410 C420,465 520,455 520,372 C520,290 455,298 455,240 C455,195 540,185 555,255" fill="none" stroke="#263e51" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M500,195 C425,180 410,250 455,270" fill="none" stroke="#e66f67" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
+</svg>

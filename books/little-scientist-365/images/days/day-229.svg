@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">手机怎样知道自己在哪里？</title>
+  <rect width="960" height="540" fill="#f4ead7"/>
+  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#357761" opacity="0.13"/>
+  <g opacity="0.38"><circle cx="643" cy="490" r="13" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="651" cy="184" r="5" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="621" cy="68" r="8" fill="#2f78a6" stroke="none" stroke-width="0"/><circle cx="151" cy="468" r="6" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="270" cy="313" r="7" fill="#2f78a6" stroke="none" stroke-width="0"/><circle cx="626" cy="439" r="15" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="419" cy="404" r="12" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="849" cy="215" r="10" fill="#2f78a6" stroke="none" stroke-width="0"/><circle cx="665" cy="394" r="7" fill="#d7984c" stroke="none" stroke-width="0"/><circle cx="728" cy="107" r="11" fill="#d7984c" stroke="none" stroke-width="0"/></g>
+  <g><circle cx="480" cy="270" r="165" fill="#357761" stroke="#3f3a32" stroke-width="9"/><path d="M365,150 Q420,115 470,165 L455,235 L385,250 L340,210 Z M515,255 Q620,205 640,285 L590,360 L510,345 L475,300 Z" fill="#2f78a6" stroke="#3f3a32" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M315,270 H645 M480,105 V435 M345,175 Q480,235 615,175 M345,365 Q480,305 615,365" fill="none" stroke="#d7984c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#3f3a32" stroke-width="5" opacity="0.18"/>
+</svg>
