@@ -24,7 +24,7 @@
 
 ### 书架
 
-- [小小发现家：365 天，每天一个为什么](books/little-scientist-365/)：给约 4 岁孩子和陪读大人的全年科普书，以 365 个日常问题连接自然、天气、植物、动物、身体、机械、地理、海洋、宇宙、材料与能源，并配有两层解释、亲子观察和 522 幅插图，其中包括 144 幅原理图。
+- [小小发现家：365 天，每天一个为什么](books/little-scientist-365/)：给约 4 岁孩子和陪读大人的全年科普书，以 365 个日常问题连接自然、天气、植物、动物、身体、机械、地理、海洋、宇宙、材料与能源，并配有两层解释、亲子观察和 558 幅插图，其中包括 180 幅原理图。
 - [超级火车迷百科全书](books/super-train-encyclopedia/)：给约 4 岁孩子和陪读大人的轻松图鉴，用 17 张原理图、120 张车型图片和逐车小卡片认识蒸汽机车、新干线、通勤电车、工程车、单轨、倒挂铁路、齿轨、缆索与磁悬浮。
 - [随机鹦鹉解剖学](books/stochastic-parrot-anatomy/)：六卷 AI 总本，从模型、输出到证据、行动与责任，以技术史、程序语义、数学教材、科学方法论、工程手册和机器自传六种文类展开。
 
@@ -71,7 +71,7 @@ So this repository does not pretend to be an authoritative textbook, nor does it
 
 ### Bookshelf
 
-- [Little Discoverer: 365 Days, One Why a Day](books/little-scientist-365/): a year-long Chinese science book for children around age four and their grown-up readers, connecting 365 everyday questions across nature, weather, plants, animals, the body, machines, geography, oceans, space, materials, and energy through layered explanations, shared observations, and 522 illustrations, including 144 scientific explainer diagrams.
+- [Little Discoverer: 365 Days, One Why a Day](books/little-scientist-365/): a year-long Chinese science book for children around age four and their grown-up readers, connecting 365 everyday questions across nature, weather, plants, animals, the body, machines, geography, oceans, space, materials, and energy through layered explanations, shared observations, and 558 illustrations, including 180 scientific explainer diagrams.
 - [Super Train Fan Encyclopedia](books/super-train-encyclopedia/): a relaxed, picture-rich Chinese guide for children around age four and their grown-up readers, with 17 mechanism diagrams, 120 train images, and individual cards spanning steam, Shinkansen, commuter trains, work trains, monorails, suspended railways, rack railways, funiculars, and maglev.
 - [Anatomy of the Stochastic Parrot](books/stochastic-parrot-anatomy/): a six-volume AI work tracing models and outputs through evidence, action, and responsibility across technical history, operational semantics, mathematical probability, scientific methodology, engineering governance, and machine autobiography.
 

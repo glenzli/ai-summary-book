@@ -29,7 +29,7 @@ EXPLAINER_RE = re.compile(
 )
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 EXPECTED_MONTH_COUNTS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-EXPECTED_EXPLAINERS_PER_MONTH = 12
+EXPECTED_EXPLAINERS_PER_MONTH = 15
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -104,6 +104,12 @@ def main() -> int:
             fail(errors, f"{path.name}: principle layer is too short on day {day:03d}")
         if len(re.sub(r"\s+", "", activity)) < 10:
             fail(errors, f"{path.name}: activity is too short on day {day:03d}")
+        first_sentence_count = len(re.findall(r"[。！？]", first))
+        principle_sentence_count = len(re.findall(r"[。！？]", principle))
+        if not 3 <= first_sentence_count <= 5:
+            fail(errors, f"{path.name}: first explanation needs 3--5 sentences on day {day:03d}")
+        if not 2 <= principle_sentence_count <= 4:
+            fail(errors, f"{path.name}: principle layer needs 2--4 sentences on day {day:03d}")
     if len(first_layers) != len(set(first_layers)):
         fail(errors, "duplicate first-layer explanations found")
     if len(principle_layers) != len(set(principle_layers)):
@@ -111,8 +117,9 @@ def main() -> int:
     if len(activities) != len(set(activities)):
         fail(errors, "duplicate activities found")
 
-    if len(explainer_days) != 144:
-        fail(errors, f"expected exactly 144 linked explainers, found {len(explainer_days)}")
+    expected_explainers = 12 * EXPECTED_EXPLAINERS_PER_MONTH
+    if len(explainer_days) != expected_explainers:
+        fail(errors, f"expected exactly {expected_explainers} linked explainers, found {len(explainer_days)}")
     if len(explainer_days) != len(set(explainer_days)):
         fail(errors, "duplicate explainer day links found")
 
@@ -135,8 +142,8 @@ def main() -> int:
                 fail(errors, f"unparseable SVG {expected.name}: {exc}")
 
     explainer_art = sorted((ROOT / "images" / "explainers").glob("day-*.svg"))
-    if len(explainer_art) != 144:
-        fail(errors, f"expected exactly 144 explainer SVG files, found {len(explainer_art)}")
+    if len(explainer_art) != expected_explainers:
+        fail(errors, f"expected exactly {expected_explainers} explainer SVG files, found {len(explainer_art)}")
     linked_explainer_names = {f"day-{day:03d}.svg" for day in explainer_days}
     actual_explainer_names = {path.name for path in explainer_art}
     if linked_explainer_names != actual_explainer_names:
@@ -196,7 +203,7 @@ def main() -> int:
 
     print("VALIDATION OK")
     print(f"months={len(MONTHS)} days={len(entries)} principles={len(entries)} activities={len(entries)}")
-    print("daily_art=365 explainer_art=144 cover=1 month_plates=12 local_links=OK")
+    print(f"daily_art=365 explainer_art={expected_explainers} cover=1 month_plates=12 local_links=OK")
     return 0
 
 
