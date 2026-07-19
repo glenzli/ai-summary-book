@@ -1,134 +1,139 @@
-# 附录 A.2 感知机收敛性定理 (Perceptron Convergence Theorem)
+# 附录 A.2 感知机收敛定理
 
-本附录为[卷一 1.2 节](../../vol-01/ch01_early_ai_perceptron_connectionism.md#section-1-2)中的感知机学习算法 (PLA) 给出收敛性证明。
+本附录证明[卷一 1.2 节](../../vol-01/ch01_early_ai_perceptron_connectionism.md#section-1-2)使用的错误次数界。定理只针对具有正间隔的线性可分数据；它不适用于 XOR，不保证最大间隔，也不说明非可分数据上的平均表现。
 
-Novikoff (1962) 给出了这一经典证明。在下面的有界性、正间隔、更新规则与初始化条件下，感知机在有限次错误更新后得到一个正确分类训练集的超平面。
+## A.2.1 设定与更新约定
 
----
+令训练集
 
-## A.2.1 定理前置假设 (Assumptions)
+$$
+D=\{(x_i,y_i)\}_{i=1}^N,
+\qquad x_i\in\mathbb R^d,
+\quad y_i\in\{-1,+1\}.
+$$
 
-在开始证明之前，我们需要对问题进行严格的数学定义。
+若模型含偏置 $b$，可使用增广向量
 
-### 1. 线性可分性 (Linear Separability)
-假设训练数据集 $D = \{(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), ..., (\mathbf{x}_N, y_N)\}$ 是线性可分的。为纳入偏置，定义增广向量 $\tilde{\mathbf x}_i=(\mathbf x_i,1)$ 与 $\tilde{\mathbf w}=(\mathbf w,b)$。下文为简化记号，把这些增广向量仍写成 $\mathbf x_i,\mathbf w$；因此范数、半径和间隔都在**增广空间**中计算。
+$$
+\widetilde x_i=(x_i,1),
+\qquad
+\widetilde w=(w,b).
+$$
 
-线性可分意味着存在 $\mathbf{w}^*$，使得对所有样本 $i=1,\ldots,N$：
+下文仍将增广后的向量记作 $x_i,w$。因此 $R$ 与 $\gamma$ 都在同一个增广欧氏空间中计算；它们不能一个在原输入空间、另一个在增广空间。
 
-$$ y_i (\mathbf{w}^{*T} \mathbf{x}_i) > 0 $$
+感知机从 $w_0=0$ 开始。每当呈现样本 $(x_i,y_i)$ 且
 
-为了方便后续计算，我们可以缩放 $\mathbf{w}^*$ 使得其模长 $\|\mathbf{w}^*\| = 1$，且满足：
+$$
+y_iw_t^\mathsf Tx_i\le0,
+\tag{A.2.1}
+$$
 
-$$ y_i (\mathbf{w}^{*T} \mathbf{x}_i) \ge \gamma $$
+就更新
 
-其中 $\gamma>0$ 是在 $\|\mathbf w^*\|=1$ 归一化下的**增广空间间隔**。它等于增广样本到增广空间决策超平面的欧氏距离下界；当偏置通过常数坐标并入时，不能不加说明地把它称为原输入空间中的几何距离。
+$$
+w_{t+1}=w_t+\eta y_ix_i,
+\qquad \eta>0.
+\tag{A.2.2}
+$$
+
+条件 (A.2.1) 明确规定落在决策边界上的样本也触发更新。下文用 $k$ 只计更新次数，而不是扫描过的样本数。
+
+## A.2.2 Novikoff 错误次数界
+
+**定理 A.2.1（感知机错误次数界）** 假设存在单位向量 $u$、常数 $\gamma>0$ 与 $R<\infty$，使对所有训练样本
+
+$$
+y_i u^\mathsf Tx_i\ge\gamma,
+\qquad
+\|x_i\|\le R.
+\tag{A.2.3}
+$$
+
+则无论这些样本以何种顺序呈现，按 (A.2.1)--(A.2.2) 更新的总次数 $k$ 满足
+
+$$
+k\le\left(\frac R\gamma\right)^2.
+\tag{A.2.4}
+$$
+
+特别地，若算法反复完整扫描有限训练集，直到某一轮没有更新，则它会在有限次更新后得到一个正确分类全部训练样本的参数。
+
+**证明** 将第 $r$ 次触发更新的样本记作 $(x^{(r)},y^{(r)})$，更新后的参数记作 $w_r$。由 (A.2.3)，
+
+$$
+\begin{aligned}
+u^\mathsf Tw_r
+&=u^\mathsf Tw_{r-1}+\eta y^{(r)}u^\mathsf Tx^{(r)}\\
+&\ge u^\mathsf Tw_{r-1}+\eta\gamma.
+\end{aligned}
+$$
+
+从 $w_0=0$ 归纳得到
+
+$$
+u^\mathsf Tw_k\ge k\eta\gamma.
+\tag{A.2.5}
+$$
+
+另一方面，触发更新意味着
+$y^{(r)}w_{r-1}^\mathsf Tx^{(r)}\le0$，故
+
+$$
+\begin{aligned}
+\|w_r\|^2
+&=\|w_{r-1}+\eta y^{(r)}x^{(r)}\|^2\\
+&=\|w_{r-1}\|^2
++2\eta y^{(r)}w_{r-1}^\mathsf Tx^{(r)}
++\eta^2\|x^{(r)}\|^2\\
+&\le\|w_{r-1}\|^2+\eta^2R^2.
+\end{aligned}
+$$
+
+因此
+
+$$
+\|w_k\|^2\le k\eta^2R^2.
+\tag{A.2.6}
+$$
+
+由 Cauchy--Schwarz、$\|u\|=1$ 及 (A.2.5)--(A.2.6)，当 $k>0$ 时
+
+$$
+k^2\eta^2\gamma^2
+\le(u^\mathsf Tw_k)^2
+\le\|w_k\|^2
+\le k\eta^2R^2.
+$$
+
+消去 $k\eta^2$ 即得 (A.2.4)。若反复扫描训练集，超过该上界后不可能再触发更新；下一轮完整扫描因而无更新并终止。$\square$
 
 <img src="images/margin_gamma_comparison.png" width="100%" />
 
-### 2. 数据有界性 (Bounded Data)
-假设所有输入向量的模长是有界的，即存在一个常数 $R$，使得对所有的样本 $i$：
+## A.2.3 这个界说明什么
 
-$$ \|\mathbf{x}_i\| \le R $$
-
----
-
-## A.2.2 Novikoff 定理 (Novikoff's Theorem)
-
-**定理内容**：
-对于线性可分的数据集，感知机学习算法 (PLA) 在从零向量 $\mathbf{w}_0 = \mathbf{0}$ 开始训练时，发生误分类（即权重更新）的总次数 $k$ 满足以下上界：
-
-$$ k \le \left( \frac{R}{\gamma} \right)^2 $$
-
-在上述线性可分、有界增广输入、单位学习率和从零初始化等条件下，算法会在有限次错误更新后停止。上界显式依赖 $R/\gamma$，没有单独的 $N$ 项；数据集规模仍可通过可达到的间隔和半径间接影响该比值。
-
----
-
-## A.2.3 证明过程 (Proof)
-
-我们通过分析权重向量 $\mathbf{w}_k$ 的两个性质来完成证明。假设第 $k$ 次误分类发生由于样本 $(\mathbf{x}, y)$，我们有更新规则（设学习率 $\eta=1$）：
-
-$$ \mathbf{w}_{k} = \mathbf{w}_{k-1} + y\mathbf{x} $$
-
-### 步骤 1: 寻找 $\mathbf{w}_k$ 与理想向量 $\mathbf{w}^*$ 内积的下界
-
-我们考察 $\mathbf{w}_k$ 在理想方向 $\mathbf{w}^*$ 上的投影长度：
-
-$$
-\begin{aligned}
-\mathbf{w}_k^T \mathbf{w}^* &= (\mathbf{w}_{k-1} + y\mathbf{x})^T \mathbf{w}^* \\
-&= \mathbf{w}_{k-1}^T \mathbf{w}^* + y (\mathbf{x}^T \mathbf{w}^*)
-\end{aligned}
-$$
-
-根据假设 $y (\mathbf{x}^T \mathbf{w}^*) \ge \gamma$，所以：
-
-$$ \mathbf{w}_k^T \mathbf{w}^* \ge \mathbf{w}_{k-1}^T \mathbf{w}^* + \gamma $$
-
-这是一个递推公式。由于初始权重 $\mathbf{w}_0 = \mathbf{0}$，经过 $k$ 次更新后：
-
-$$ \mathbf{w}_k^T \mathbf{w}^* \ge k \gamma $$
-
-这说明：随着更新次数增加，$\mathbf{w}_k$ 在理想方向上的分量**至少以线性速度增长**。
-
-### 步骤 2: 寻找 $\mathbf{w}_k$ 模长平方的上界
-
-我们考察 $\mathbf{w}_k$ 自身长度的增长情况：
-
-$$
-\begin{aligned}
-\|\mathbf{w}_k\|^2 &= \|\mathbf{w}_{k-1} + y\mathbf{x}\|^2 \\
-&= \|\mathbf{w}_{k-1}\|^2 + \|y\mathbf{x}\|^2 + 2y(\mathbf{w}_{k-1}^T \mathbf{x})
-\end{aligned}
-$$
-
-这里有两个关键点：
-1.  由于是误分类样本，根据定义，预测结果与真实标签相反，即 $y(\mathbf{w}_{k-1}^T \mathbf{x}) \le 0$。因此 $2y(\mathbf{w}_{k-1}^T \mathbf{x}) \le 0$。
-2.  $\|y\mathbf{x}\|^2 = y^2 \|\mathbf{x}\|^2 = \|\mathbf{x}\|^2 \le R^2$（因为 $y \in \{+1, -1\}$）。
-
-代入不等式：
-
-$$ \|\mathbf{w}_k\|^2 \le \|\mathbf{w}_{k-1}\|^2 + R^2 $$
-
-同样是一个递推公式。从 $\mathbf{w}_0 = \mathbf{0}$ 开始，经过 $k$ 次更新：
-
-$$ \|\mathbf{w}_k\|^2 \le k R^2 $$
-
-这说明 $\|\mathbf w_k\|^2$ 至多按 $k$ 线性增长，等价地 $\|\mathbf w_k\|\le\sqrt{k}\,R$，所以权重向量的**长度**至多按 $\sqrt{k}$ 增长。
-
-### 步骤 3: 结合两式得出结论
-
-现在我们利用柯西-施瓦茨不等式 (Cauchy-Schwarz Inequality)：
-
-$$ (\mathbf{w}_k^T \mathbf{w}^*)^2 \le \|\mathbf{w}_k\|^2 \|\mathbf{w}^*\|^2 $$
-
-因为我们设定了 $\|\mathbf{w}^*\| = 1$，所以：
-
-$$ (\mathbf{w}_k^T \mathbf{w}^*)^2 \le \|\mathbf{w}_k\|^2 $$
-
-将上面的投影下界与范数上界合并：
-
-$$ (k \gamma)^2 \le \|\mathbf{w}_k\|^2 \le k R^2 $$
-
-$$ k^2 \gamma^2 \le k R^2 $$
-
-两边消去 $k$（假设 $k>0$）：
-
-$$ k \gamma^2 \le R^2 $$
-
-$$ k \le \frac{R^2}{\gamma^2} = \left( \frac{R}{\gamma} \right)^2 $$
-
-**证毕 (Q.E.D.)**
-
----
-
-## A.2.4 界的解释
-
-错误次数界由无量纲比值 $R/\gamma$ 决定：相对于样本半径更大的分离间隔会给出更紧的上界。不能把 $R$ 和 $\gamma$ 当作彼此独立、可由统一缩放单独改善的量。
-
-1.  **相对间隔**：在半径 $R$ 固定时，更大的可分间隔 $\gamma$ 给出更小的最坏情形错误次数上界；这只是上界，不要求实际运行恰好达到该次数。
+1. **它是顺序无关的最坏情形界。** 样本顺序会影响实际更新数和最终分隔面，但不会破坏 (A.2.4)。
+2. **它由相对间隔决定。** 统一缩放全部 $x_i$ 会同时缩放 $R$ 与 $\gamma$，比值不变。非均匀特征缩放会改变所用几何，可能增大也可能减小该比值。
+3. **它不是样本复杂度界。** $N$ 没有显式出现，但增加样本可能缩小可达到的间隔。
+4. **它不选择最大间隔解。** 定理只保证找到某个训练集分隔面；SVM 的优化目标不同。
 
 <img src="images/convergence_speed_gamma.png" width="100%" />
 
-2.  **尺度不变性**：若把定理中的所有增广样本统一乘以 $c>0$，则 $R$ 与 $\gamma$ 都乘以 $c$，所以 $R/\gamma$ 和错误次数上界不变。数据归一化或标准化可能改善数值条件、不同坐标尺度和其他优化算法的行为；非均匀特征变换也可能改变间隔比，但不能用“只减小 $R$”从该感知机界推出必然加速。
+## A.2.4 假设失败时的反例
 
-<img src="images/data_radius_normalization.png" width="100%" />
+取一维两个样本
+
+$$
+(x_1,y_1)=(1,+1),
+\qquad
+(x_2,y_2)=(1,-1).
+$$
+
+它们不可能被同一个齐次线性分类器正确分类。令 $\eta=1$ 并按 $x_1,x_2,x_1,x_2,\ldots$ 循环呈现：从 $w=0$ 出发，$x_1$ 使 $w$ 更新为 $1$，随后 $x_2$ 使 $w$ 更新回 $0$，过程永久循环。这里不是证明失效而算法仍应收敛，而是正间隔假设本身不成立。
+
+有限数据若严格线性可分，则归一化某个分隔向量后，有限个正数 $y_i u^\mathsf Tx_i$ 的最小值自动给出 $\gamma>0$。对无限数据流，仅逐点严格为正并不保证存在统一正间隔。
+
+## A.2.5 来源
+
+- Novikoff, [*On Convergence Proofs for Perceptrons*](https://cs.uwaterloo.ca/~y328yu/classics/novikoff.pdf), 1962。
+- Rosenblatt, [*The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain*](https://doi.org/10.1037/h0042519), 1958。

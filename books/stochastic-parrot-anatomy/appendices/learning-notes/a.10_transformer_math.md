@@ -1,191 +1,228 @@
-# 附录 A.10 Transformer 数学原理 (Transformer Mathematical Principles)
+# 附录 A.10 Attention 的矩阵与反向传播
 
-## A.10.1 缩放点积注意力的数学推导 (Derivation of Scaled Dot-Product Attention)
+卷一第三章已经给出 Transformer block、multi-head/GQA、归一化、RoPE、MoE 与复杂度。本附录不重复整层架构，只逐步核对 scaled dot-product attention 的定义域、形状与完整反向传播。
 
-Transformer 的核心公式是：
-$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
+## A.10.1 前向算子与可见集合
 
-### A.10.1.1 为什么需要除以 $\sqrt{d_k}$？ (Why Scale?)
+取单个样本、单个 attention head。令
 
-为了理解缩放因子的必要性，我们考察点积的统计性质。
-
-为得到尺度直觉，假设 $Q$ 和 $K$ 的元素 $q_i, k_i$ 独立同分布且服从标准正态分布。真实网络中的投影向量通常相关且不严格服从该分布，因此这是初始化附近的教学模型：
-$$ q_i, k_i \sim \mathcal{N}(0, 1) $$
-
-由于它们是独立的，均值为 0：
-$$ \mathbb{E}[q_i] = \mathbb{E}[k_i] = 0 $$
-$$ \text{Var}(q_i) = \text{Var}(k_i) = 1 $$
-
-考察它们的点积 $x = \sum_{i=1}^{d_k} q_i k_i$：
-
-**均值**：
-$$ \mathbb{E}[x] = \mathbb{E}\left[\sum_{i=1}^{d_k} q_i k_i\right] = \sum_{i=1}^{d_k} \mathbb{E}[q_i]\mathbb{E}[k_i] = 0 $$
-
-**方差**：
-$$ \text{Var}(x) = \text{Var}\left(\sum_{i=1}^{d_k} q_i k_i\right) = \sum_{i=1}^{d_k} \text{Var}(q_i k_i) $$
-
-由于独立性，$\text{Var}(XY) = \mathbb{E}[X^2 Y^2] - (\mathbb{E}[XY])^2$。
-当 $X, Y \sim \mathcal{N}(0, 1)$ 时，$\mathbb{E}[X^2]=1, \mathbb{E}[Y^2]=1, \mathbb{E}[XY]=0$。
-所以 $\text{Var}(q_i k_i) = 1 \cdot 1 - 0 = 1$。
-
-因此，点积 $x$ 的总方差为：
-$$ \text{Var}(x) = \sum_{i=1}^{d_k} 1 = d_k $$
-
-这表明，点积结果的标准差是 $\sqrt{d_k}$。例如 $d_k=512$ 时，该教学模型下的标准差约为 $22.6$；这里描述的是尺度而不是有限值域，正态变量仍可取得任意大的绝对值。
-
-### A.10.1.2 Softmax 的梯度消失问题 (Gradient Vanishing in Softmax)
-
-Softmax 函数 $\sigma(z)_i = \frac{e^{z_i}}{\sum_j e^{z_j}}$。
-其导数（雅可比矩阵）为：
-$$ \frac{\partial \sigma_i}{\partial z_j} = \sigma_i (\delta_{ij} - \sigma_j) $$
-
-当输入 $z$ 的数值很大时（例如某一项远大于其他项），Softmax 的分布会变得非常“尖锐”（接近 One-hot 分布）。
-此时，$\sigma_i$ 要么接近 1，要么接近 0。
-*   如果 $\sigma_i \approx 1$，则导数 $\approx 1(1-1) = 0$。
-*   如果 $\sigma_i \approx 0$，则导数 $\approx 0(0-0) = 0$。
-
-这意味着该 Softmax 行的雅可比会变小，沿这一路径的梯度可能衰减；它不等于整个网络的所有梯度都归零，因为损失结构、其他注意力行和残差路径仍会传递信号。
-
-在上述假设下，除以 $\sqrt{d_k}$ 将点积方差归一化为 1，使 Softmax 不易仅因维度增大而过早饱和。它改善尺度条件，但不能保证所有头或整个深层网络的梯度稳定。
-
-### A.10.1.3 Self-Attention 矩阵运算的完整展开 (Matrix Expansion of Self-Attention)
-
-下面完全展开 $Q,K,V$ 的矩阵乘法。由此可见，attention 计算由**基于内容的寻址 (Content-based Addressing)** 与对 Value 的**加权汇聚 (Weighted Aggregation)** 组成。
-
-假设我们有两个单词的序列 (Sequence Length $L=2$)，特征维度为 3 ($d_k=d_v=3$)。
-
-#### Step 1: 计算相似度 ($QK^T$)
-
-首先，我们将 Query 矩阵和 Key 矩阵的转置相乘。
 $$
-Q = \begin{bmatrix} \mathbf{q}_1^T \\ \mathbf{q}_2^T \end{bmatrix}, \quad
-K^T = \begin{bmatrix} \mathbf{k}_1 & \mathbf{k}_2 \end{bmatrix}
+Q\in\mathbb R^{n_q\times d_h},
+\qquad
+K\in\mathbb R^{n_k\times d_h},
+\qquad
+V\in\mathbb R^{n_k\times d_v}.
+$$
+
+对每个 query 行 $i$，给定非空可见集合
+$\mathcal V_i\subseteq\{1,\ldots,n_k\}$。定义
+
+$$
+S_{ij}=\frac{q_i^\mathsf Tk_j}{\sqrt{d_h}}
+\quad (j\in\mathcal V_i),
+\tag{A.10.1}
 $$
 
 $$
-\text{Scores} = QK^T =
-\begin{bmatrix} \mathbf{q}_1^T \\ \mathbf{q}_2^T \end{bmatrix}
-\begin{bmatrix} \mathbf{k}_1 & \mathbf{k}_2 \end{bmatrix}
-=
-\begin{bmatrix}
-\mathbf{q}_1^T \mathbf{k}_1 & \mathbf{q}_1^T \mathbf{k}_2 \\
-\mathbf{q}_2^T \mathbf{k}_1 & \mathbf{q}_2^T \mathbf{k}_2
-\end{bmatrix}
-$$
-
-展开看每一个元素，例如第一行第二列的元素：
-$$ \text{Score}_{12} = \mathbf{q}_1 \cdot \mathbf{k}_2 = q_{11}k_{21} + q_{12}k_{22} + q_{13}k_{23} $$
-这代表 **Query 1 与 Key 2 的兼容性分数**（未归一化）。点积常被用作相似度，但这里的 Query 与 Key 来自不同投影，不必把它解释为原表示空间中的几何相似度。得到的矩阵是一个 $L \times L$ 的方阵。
-
-#### Step 2: 归一化为概率 (Softmax)
-
-经过 Scale 和 Softmax 后，我们将 Scores 转化为概率分布矩阵 $A$（Attention Weights）：
-
-$$
-A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) =
-\begin{bmatrix}
-\alpha_{11} & \alpha_{12} \\
-\alpha_{21} & \alpha_{22}
-\end{bmatrix}
-$$
-其中每一行的和为 1（例如 $\alpha_{11} + \alpha_{12} = 1$）。
-
-#### Step 3: 信息聚合 ($A \times V$)
-
-最后一步，用计算出的权重去“加权提取” Value 矩阵中的信息。
-
-$$
-V = \begin{bmatrix} \mathbf{v}_1^T \\ \mathbf{v}_2^T \end{bmatrix} = \begin{bmatrix} v_{11} & v_{12} & v_{13} \\ v_{21} & v_{22} & v_{23} \end{bmatrix}
+A_{ij}=
+\begin{cases}
+\dfrac{\exp(S_{ij}-m_i)}
+{\sum_{r\in\mathcal V_i}\exp(S_{ir}-m_i)},
+&j\in\mathcal V_i,\\[8pt]
+0,&j\notin\mathcal V_i,
+\end{cases}
 $$
 
 $$
-\text{Output} = A V =
-\begin{bmatrix}
-\alpha_{11} & \alpha_{12} \\
-\alpha_{21} & \alpha_{22}
-\end{bmatrix}
-\begin{bmatrix} \mathbf{v}_1^T \\ \mathbf{v}_2^T \end{bmatrix}
+m_i=\max_{j\in\mathcal V_i}S_{ij},
+\tag{A.10.2}
 $$
 
-根据矩阵乘法规则，结果的每一行是 $V$ 中行的线性组合：
+以及
 
 $$
-\text{Output} =
-\begin{bmatrix}
-\alpha_{11}\mathbf{v}_1^T + \alpha_{12}\mathbf{v}_2^T \\
-\alpha_{21}\mathbf{v}_1^T + \alpha_{22}\mathbf{v}_2^T
-\end{bmatrix}
+O=AV\in\mathbb R^{n_q\times d_v}.
+\tag{A.10.3}
 $$
 
-让我们聚焦于**第一个 Token 的新表示**（输出的第一行 $\mathbf{z}_1$）：
-$$ \mathbf{z}_1 = \alpha_{11}\mathbf{v}_1 + \alpha_{12}\mathbf{v}_2 $$
+$A\in\mathbb R^{n_q\times n_k}$ 的每行非负且和为 $1$，所以每个输出行是可见 value 行的凸组合。mask 是离散的模型定义，本附录不对其求导。若某个 $\mathcal V_i$ 为空，则 (A.10.2) 无定义；全遮蔽行不能靠普通 softmax 自动获得合理值。
 
-**建模解释**：
-Token 1 的新向量 $\mathbf{z}_1$ 是所有 Value 向量的凸组合，因为权重非负且总和为 1。
-*   如果 $\alpha_{12}$ 接近 1，则这一头在该层把 Token 1 的大部分汇聚权重分配给 Token 2；这不等于完整模型的语义解释只由这一项决定。
-*   结果就是：Token 2 的信息 $\mathbf{v}_2$ 会大量“流向” Token 1，使得 Token 1 的更新后表示中包含了 Token 2 的特征。
-只要掩码允许，任意位置的 Value 都能在一层中直接影响当前输出，这是 Self-Attention 建模长距离依赖的重要结构条件；是否实际学到正确依赖仍取决于 Q/K/V 投影、训练数据与优化。
+Self-attention 有 $n_q=n_k$，Q/K/V 来自同一序列的不同投影。Cross-attention 可有 $n_q\ne n_k$；query 来自 decoder，key/value 来自 encoder。
 
-## A.10.2 位置编码的性质 (Properties of Positional Encoding)
+## A.10.2 缩放因子的假设与结论
 
-原始 Transformer 使用正弦位置编码：
-$$ PE_{(pos, 2i)} = \sin(pos / 10000^{2i/d_{model}}) $$
-$$ PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i/d_{model}}) $$
-
-### A.10.2.1 相对位置偏移 (Relative Position Shift)
-
-我们希望证明：对于任意偏移 $k$，位置 $pos+k$ 的编码可以由位置 $pos$ 的编码通过线性变换得到。
-即存在矩阵 $M_k$，使得 $PE(pos+k) = M_k \cdot PE(pos)$。
-
-考察一对 $(2i, 2i+1)$ 维度的频率 $\omega_i = \frac{1}{10000^{2i/d_{model}}}$。
-位置编码向量在该维度上可以看作复数 $e^{j \omega_i \cdot pos}$ 的实部和虚部。
-
-$$ PE(pos) \sim \begin{pmatrix} \sin(\omega_i pos) \\ \cos(\omega_i pos) \end{pmatrix} $$
-
-对于位置 $pos+k$：
-$$
-\begin{aligned}
-\sin(\omega_i (pos+k)) &= \sin(\omega_i pos)\cos(\omega_i k) + \cos(\omega_i pos)\sin(\omega_i k) \\
-\cos(\omega_i (pos+k)) &= \cos(\omega_i pos)\cos(\omega_i k) - \sin(\omega_i pos)\sin(\omega_i k)
-\end{aligned}
-$$
-
-这可以写成矩阵乘法形式：
+设某个 query/key 对的坐标满足：
 
 $$
-\begin{pmatrix} \sin(\omega_i (pos+k)) \\ \cos(\omega_i (pos+k)) \end{pmatrix}
-=
-\begin{pmatrix}
-\cos(\omega_i k) & \sin(\omega_i k) \\
--\sin(\omega_i k) & \cos(\omega_i k)
-\end{pmatrix}
-\begin{pmatrix} \sin(\omega_i pos) \\ \cos(\omega_i pos) \end{pmatrix}
+\mathbb E[q_r]=\mathbb E[k_r]=0,
+\quad
+\operatorname{Var}(q_r)=\sigma_q^2,
+\quad
+\operatorname{Var}(k_r)=\sigma_k^2,
 $$
 
-这是一个**旋转矩阵 (Rotation Matrix)**。
-这意味着固定偏移在每个频率对子空间里对应一个确定的线性旋转，为注意力层学习相对位置关系提供结构。模型是否实际学会该变换、能否外推到训练长度之外，仍取决于数据、参数和训练范围。
+$q_r$ 与 $k_r$ 独立，并且乘积 $q_rk_r$ 在不同 $r$ 间互不相关。则
 
-## A.10.3 Self-Attention 的复杂度：为什么是 $O(L^2)$？ (Complexity)
+$$
+\operatorname{Var}(q^\mathsf Tk)
+=\sum_{r=1}^{d_h}
+\operatorname{Var}(q_rk_r)
+=d_h\sigma_q^2\sigma_k^2.
+\tag{A.10.4}
+$$
 
-设序列长度为 $L$，隐藏维度为 $d$，单头 Key/Query 维度为 $d_k$。
+因此除以 $\sqrt{d_h}$ 后，初始化尺度模型下的方差不随 head dimension 线性增长。这里不需要正态分布，但需要上述零均值、独立/不相关条件。训练后的 Q/K 坐标一般不满足这些假设，所以 $1/\sqrt{d_h}$ 是尺度设计，不是“所有 attention logit 方差恒为一”的定理。
 
-1.  **相似度矩阵**：$S = QK^T \in \mathbb{R}^{L\times L}$。
-    - 计算代价约为 $O(L^2 d_k)$，对应一个 $L\times d_k$ 矩阵与其转置的乘法。
-    - 朴素实现会物化 $O(L^2)$ 的分数/概率中间量；FlashAttention 等分块精确算法可避免把完整矩阵写回 HBM，因此额外工作显存不必是 $O(L^2)$。
+## A.10.3 Softmax 行的反向公式
 
-2.  **加权求和**：$Z = \text{softmax}(S)V$。
-    - 代价约为 $O(L^2 d_v)$。
+设上游梯度
 
-因此，标准稠密 Self-Attention 的算术量仍随 $L^2$ 增长；朴素实现的中间显存也为二次方，而 IO-aware 精确实现可显著降低中间存储与访存。长上下文研究因而同时探索稀疏/滑窗注意力、FlashAttention、分块并行和缓存压缩，不能把它们都归为降低同一种复杂度。
+$$
+G_O=\frac{\partial L}{\partial O}
+\in\mathbb R^{n_q\times d_v}.
+$$
 
-## A.10.4 因果掩码：禁止偷看未来 (Causal Mask)
+由 $O=AV$ 的矩阵微分，
 
-在 Decoder-only 或 Transformer Decoder 的自回归训练中，我们需要保证位置 $i$ 只能关注 $j\le i$。
+$$
+\boxed{
+G_V=A^\mathsf TG_O
+\in\mathbb R^{n_k\times d_v}}
+\tag{A.10.5}
+$$
 
-令掩码矩阵 $M\in\mathbb{R}^{L\times L}$：
-$$ M_{ij} = \begin{cases} 0 & i \ge j \\ -\infty & i < j \end{cases} $$
+$$
+\boxed{
+G_A=G_OV^\mathsf T
+\in\mathbb R^{n_q\times n_k}.}
+\tag{A.10.6}
+$$
 
-把它加到 Softmax 之前的 logits 上：
-$$ \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V $$
+对第 $i$ 行，把不可见坐标排除。由 softmax Jacobian
+$\operatorname{diag}(a_i)-a_ia_i^\mathsf T$，令
 
-由于 $e^{-\infty}=0$，Softmax 会把所有 $i<j$ 的概率质量压成 0，从而在数学上严格地实现“看不见未来”。
+$$
+c_i=\sum_{r\in\mathcal V_i}A_{ir}(G_A)_{ir},
+$$
+
+则
+
+$$
+\boxed{
+(G_S)_{ij}=
+\begin{cases}
+A_{ij}((G_A)_{ij}-c_i),&j\in\mathcal V_i,\\
+0,&j\notin\mathcal V_i.
+\end{cases}}
+\tag{A.10.7}
+$$
+
+每行满足
+
+$$
+\sum_j(G_S)_{ij}=0,
+$$
+
+这对应 softmax 对整行常数平移不敏感。若某行 attention 已极度集中，Jacobian 的部分方向可能很小；残差路径和其他 head 仍可传递梯度，不能据此宣称整个 Transformer 梯度为零。
+
+## A.10.4 Q、K、V 的完整反向
+
+把不可见位置的 $G_S$ 定义为零后，(A.10.1) 可按完整矩阵写成
+
+$$
+S=\frac{QK^\mathsf T}{\sqrt{d_h}}
+$$
+
+并忽略常量 mask。矩阵微分给出
+
+$$
+\boxed{
+G_Q=\frac{G_SK}{\sqrt{d_h}}
+\in\mathbb R^{n_q\times d_h}}
+\tag{A.10.8}
+$$
+
+$$
+\boxed{
+G_K=\frac{G_S^\mathsf TQ}{\sqrt{d_h}}
+\in\mathbb R^{n_k\times d_h}.}
+\tag{A.10.9}
+$$
+
+连同 (A.10.5)，这就是 attention core 对 Q/K/V 的全部梯度。忽略投影偏置，卷一采用行主权重约定：对 self-attention，若
+
+$$
+X\in\mathbb R^{n\times d},
+\quad
+W_Q,W_K\in\mathbb R^{d\times d_h},
+\quad
+W_V\in\mathbb R^{d\times d_v},
+$$
+
+$$
+Q=XW_Q,
+\qquad K=XW_K,
+\qquad V=XW_V,
+\tag{A.10.10}
+$$
+
+则
+
+$$
+G_{W_Q}=X^\mathsf TG_Q,
+\quad
+G_{W_K}=X^\mathsf TG_K,
+\quad
+G_{W_V}=X^\mathsf TG_V,
+$$
+
+$$
+G_X=G_QW_Q^\mathsf T+G_KW_K^\mathsf T+G_VW_V^\mathsf T.
+\tag{A.10.11}
+$$
+
+[A.6 的 batch affine 公式](a.6_backpropagation.md#a63-batch-行主公式)把权重写成 $d_{\mathrm{out}}\times d_{\mathrm{in}}$ 并在前向使用 $W^\mathsf T$；令其中的 $W$ 等于这里的 $W_Q^\mathsf T$ 即得到同一公式。两种记法只是权重存储朝向不同，不能在同一等式中混用。cross-attention 的 query 与 key/value 来自不同输入，此时只对实际共享的输入支路求和。
+
+## A.10.5 Batch、多头与 GQA 的形状
+
+卷一使用
+
+$$
+Q\in\mathbb R^{B\times H_q\times n_q\times d_h},
+$$
+
+$$
+K\in\mathbb R^{B\times H_{\mathrm{kv}}\times n_k\times d_h},
+\qquad
+V\in\mathbb R^{B\times H_{\mathrm{kv}}\times n_k\times d_v}.
+$$
+
+标准 MHA 有 $H_{\mathrm{kv}}=H_q$；MQA 有 $H_{\mathrm{kv}}=1$；GQA 介于二者之间。每个 query head $r$ 使用映射 $g(r)$ 指定的 KV head，并独立应用 (A.10.1)--(A.10.9)。反向时，共享同一 KV head 的多个 query head 对 $G_K,G_V$ 的贡献必须求和。
+
+各 head 输出 concat 后形状为
+$B\times n_q\times(H_qd_v)$，再经过输出投影。reshape 和 transpose 本身不改变数值，只改变索引；反向必须执行其逆置换，不能把 head 轴与序列轴混合。
+
+## A.10.6 因果性与复杂度边界
+
+自回归 self-attention 取
+
+$$
+\mathcal V_i=\{j:j\le i\}
+$$
+
+并再去除 padding 位置。训练时可以并行计算所有行，因为未来位置在每一行的定义域外；并行执行不破坏因果依赖。
+
+单个 head 的主要算术量为
+
+$$
+O(n_qn_kd_h+n_qn_kd_v),
+$$
+
+朴素实现还会物化 $O(n_qn_k)$ 的 $S,A$。FlashAttention 一类分块算法用在线 softmax 减少高带宽内存往返，并在反向中重算局部统计；在实数算术语义下它计算同一个精确 attention 函数，不把稠密 attention 的算术量改为线性。有限精度下，不同分块与归约顺序仍可产生舍入差异。
+
+位置编码、RoPE、完整 pre-norm block 与参数账本见卷一第三章；重复这些内容不会增加本附录的推导价值。
+
+## A.10.7 来源
+
+- Vaswani et al., [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762), 2017。
+- Dao et al., [*FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*](https://arxiv.org/abs/2205.14135), 2022。

@@ -1,125 +1,254 @@
 # 第七章 Ablation、Patching 与因果追踪
 
-观察到某 activation 与行为相关后，下一步是修改它并看输出怎样变化。因为模型前向是已知计算图，这类实验可以建立模型内部的干预效应；但替换值、分布外程度和替代路径决定结论强度。
+模型前向传播是已知计算图，因此研究者可以把内部节点设置为指定值并重新计算下游输出。这比相关读出更接近因果实验；但结论仍相对于节点定义、替换值、输入分布与允许干预族，不能自动解释为人类概念的唯一自然中介。
 
-## 7.1 Ablation
+## 7.1 前向图作为确定性结构模型
 
-对组件 activation $a$，常见 ablation 包括：
-
-- zero ablation：$a\leftarrow0$；
-- mean ablation：$a\leftarrow\mathbb E[a]$；
-- resample ablation：从匹配对照样本取 $a'$；
-- shuffle：在 batch 内打乱 activation；
-- edge ablation：只删除从某来源到某目标的贡献。
-
-zero 可能是训练分布外状态；mean 会抹去方差且未必对应真实样本；resample 更自然，却也带入对照样本的其他信息。结论应注明具体干预。
-
-## 7.2 Necessity 与 Sufficiency
-
-若删除组件使行为显著下降，它对该输入分布具有某种必要性；若只保留组件或把它加入基线能恢复行为，它支持某种充分性。
-
-神经网络有冗余和备份路径，因此：
-
-- ablation 无效不证明组件未参与；
-- 单组件 steering 有效不证明正常运行依赖它；
-- 必要且充分通常只相对于所用干预、模型和数据集成立。
-
-## 7.3 Clean/Corrupt Activation Patching
-
-构造 clean 输入 $x_c$，模型在目标任务上成功；构造 minimal corrupt 输入 $x_r$，目标答案改变或行为失败。记录 clean activation $a_c^{\ell,p}$，在 corrupt run 的某位置替换：
+把内部节点按拓扑顺序写成
 
 $$
-a_r^{\ell,p}\leftarrow a_c^{\ell,p}.
+U_k=f_k(\operatorname{pa}(U_k);\theta),
 $$
 
-若目标 logit difference 恢复，说明该 site 携带能因果推动 clean 行为的信息。
-
-可定义归一化恢复率
+最终目标为 $S=g(U_1,\ldots,U_K)$。对节点 $U_j$ 施加
 
 $$
-R=\frac{S_{patched}-S_{corrupt}}
-{S_{clean}-S_{corrupt}},
+\operatorname{do}(U_j\leftarrow u)
 $$
 
-但分母接近零时不稳定，$R>1$ 也可能出现。应同时报告原始分数。
+表示忽略其原结构方程，固定为 $u$，其余下游节点按原模型重算。
 
-## 7.4 Patching 回答的不是“信息在哪里”全部含义
+模型内部不存在传统观察研究中的未知边；但“把什么视为节点”和“赋什么值”仍由研究者决定。把 residual vector、单 head result、一个投影或 SAE latent 作为 $U_j$，得到的是不同干预。
 
-patch effect 大可能表示：
+## 7.2 单样本与分布效应
 
-- 该位置生成了关键信息；
-- 信息只是在这里传递；
-- 替换同时修复多个混杂属性；
-- patch 把下游状态推向 clean manifold。
-
-要区分生成与传递，需要在层和位置上扫描、比较 upstream/downstream sites，并进一步做 path patching。
-
-## 7.5 Causal Tracing
-
-事实回忆研究常先扰动输入 embedding 使回答损坏，再把某层某位置的 clean activation 恢复，观察事实 logit 恢复。热图定位信息通过哪些位置和层传播。
-
-这种方法建立特定扰动下的中介路径，不证明“事实永久存储在某一层”。模型参数、prompt 关系和分布式表示共同参与事实生成。
-
-## 7.6 Activation Steering
-
-沿方向 $v$ 修改 residual state：
+对输入 $x$，节点干预的个体效应为
 
 $$
-h'=h+\alpha v.
+\Delta_I(x)=S(M_{I}(x))-S(M(x)).
 $$
 
-若行为随 $\alpha$ 系统变化，说明该方向具有干预控制力。steering 常用于情感、拒答、风格或事实方向。
+分布平均效应为
 
-需要检查：
+$$
+\tau_I(\mathcal D_{\mathrm{eval}})
+=\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}[\Delta_I(x)].
+$$
 
-- 小 $\alpha$ 到大 $\alpha$ 的剂量反应；
-- activation norm 与 LayerNorm 影响；
-- 非目标能力和流畅性损伤；
-- 跨模板、语言和主题泛化；
-- 反方向 $-v$ 是否产生相反效果；
-- matched random direction 基线。
+应报告均值、分位数、符号一致率和 cluster bootstrap 区间。平均接近零可能来自正负效应抵消；只展示最大恢复样本则会严重选择偏差。
 
-## 7.7 Mediation 视角
+模型是确定性的并不消除抽样不确定性：$\mathcal D_{\mathrm{eval}}$ 上的有限样本仍决定我们能否推广。
 
-把输入处理 $T$、内部变量 $M$、输出 $Y$ 视为计算图节点，patching 试图测量经 $M$ 的路径效应。但神经网络中 mediator 维度高、组件相互作用强，传统线性中介分解的无交互假设通常不成立。
+## 7.3 Ablation 及其基线语义
 
-更可靠的表述是“在指定替换操作下，$M$ 的值变化使输出指标改变多少”，而不是声称得到唯一自然间接效应。
+常见 ablation 为：
 
-## 7.8 Off-manifold 问题
+- zero：$u\leftarrow0$；
+- mean：$u\leftarrow\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}[U(x)]$；
+- resample：$u\leftarrow U(x')$，$x'$ 来自匹配对照；
+- shuffle：在 batch 或 group 内重排；
+- projection：删除子空间 $P_Vu$；
+- edge ablation：只阻断 sender 到 receiver 的贡献。
 
-把 activation 任意置零或叠加大向量，可能产生训练时从未出现的组合。下游输出变化可能来自异常状态，而非目标概念。
+这些操作估计不同量。zero 问“没有该向量加数时怎样”，mean 问“替换为总体中心怎样”，resample 问“替换为对照实例状态怎样”。它们不应被平均成一个无条件必要性分数。
 
-缓解方法包括：
+mean 可能从不在自然数据出现；resample 较接近真实 activation，却可能携带对照样本的多种属性。选择基线必须对应要消除的因素。
 
-- 从真实对照 run resample；
-- 用生成模型或 SAE 重构到 activation manifold；
-- 匹配 activation norm 与协方差；
-- 使用小幅干预并画剂量曲线；
-- 检查非目标 logits 和困惑度；
-- 用不同干预方式复验同一假说。
+## 7.4 Clean/corrupt activation patching
 
-## 7.9 Compensation 与 Backup
+构造 clean 输入 $x_c$ 与 corrupt 输入 $x_r$，目标 score 满足 $S_c>S_r$。缓存 site $u$ 的 clean 值 $u_c$，在 corrupt run 中替换：
 
-单次前向 ablation 通常不让模型有时间重新训练，但同层其他并行组件可以在原模型中已经提供冗余。逐组件 ablation 效应之和也不等于联合 ablation 效应：
+$$
+u_r\leftarrow u_c.
+$$
+
+原始恢复量为
+
+$$
+\Delta^{patch}_u
+=S(M(x_r;\operatorname{do}(u\leftarrow u_c)))-S_r.
+$$
+
+常见归一化恢复率
+
+$$
+R_u=\frac{S_{patched}-S_r}{S_c-S_r}
+$$
+
+仅在分母远离零时稳定，且可小于 $0$ 或大于 $1$。必须同时报告 $S_c,S_r,S_{patched}$ 与未归一化 effect。
+
+## 7.5 Corruption 是实验的一半
+
+patch effect 依赖 clean/corrupt 差异。若 corrupt 同时改变主体、句长与答案位置，patch 恢复可能修复任何一个因素。
+
+必要设计包括：
+
+- 多种 corruption 机制；
+- token 数、位置与频率匹配；
+- semantic 与 surface corrupt 分离；
+- clean/corrupt 双向 patch；
+- 在原模型均成功但答案不同的 pairs 上测试；
+- 检查 corruption 是否造成广泛 loss 崩坏。
+
+“某 site 携带答案”应进一步区分它生成答案信息、传递上游信息，还是仅把整体 state 拉回 clean 区域。
+
+## 7.6 Necessity 与 Sufficiency 的操作定义
+
+对候选组件集 $C$，设 $M_{\setminus C}$ 为按规定删除 $C$ 的模型，$M_C$ 为只保留 $C$ 的受限模型。可定义
+
+$$
+N_C=\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}
+[S(M(x))-S(M_{\setminus C}(x))],
+$$
+
+$$
+Q_C=\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}
+[S(M_C(x))-S(M_{base}(x))].
+$$
+
+$N_C$ 是指定删除下的必要性证据，$Q_C$ 是指定基线与保留规则下的充分性证据。神经网络有冗余：删除单组件无效不证明未参与；只保留一个 direction 后 steering 有效也不证明自然前向依赖它。
+
+必要与充分都不是组件的内在二元属性，而是 $(C,\mathcal D_{\mathrm{eval}},S,I)$ 的关系。
+
+## 7.7 Total、Direct 与路径效应
+
+普通节点 patch 允许替换值沿全部下游路径传播，测量 total intervention effect。若只允许 sender $A$ 的变化经 receiver $B$ 到达输出，则研究 path-specific effect。
+
+线性无交互图中可以把效应相加；一般网络中
 
 $$
 \Delta(A\cup B)
 \ne\Delta(A)+\Delta(B).
 $$
 
-分析回路时应测试组合删除、恢复和 interaction，而不是把每个组件 credit 强行相加到 100%。
+LayerNorm、softmax 和门控使路径相互依赖。所谓 direct/indirect effect 必须由具体边阻断与缓存协议定义，不能直接套用线性中介公式。
 
-## 7.10 干预实验的最小报告
+## 7.8 Path patching 与状态一致性
 
-- clean/corrupt 数据如何配对；
-- hook site 与张量形状；
-- 替换、缩放或投影操作；
-- 目标行为的连续指标；
-- 随机和结构基线；
-- 原始模型性能与干预后副作用；
-- 跨样本效应分布，不只展示最好案例；
-- 是否在假说提出后的 held-out 集验证。
+path patching 通常经历：
 
-## 7.11 结论
+1. clean 与 corrupt run 缓存 sender；
+2. 建立含 clean sender 的中间 run；
+3. 只把该变化对指定 receiver 的输入传入最终 run；
+4. 其他 sender-to-receiver edges 保持 corrupt；
+5. 比较目标 score。
 
-干预把“相关 activation”推进到“该变量在指定操作下影响行为”。要进一步说明多个变量怎样依次实现计算，需要将节点干预扩展为路径、边和回路假说。
+不同实现对 receiver 的哪些输入固定、是否重新计算 attention pattern、是否包含 residual identity 并不相同。论文应给出计算图示意或伪代码。
+
+混合多个 run 的节点可能形成没有任何自然输入产生的状态。path-specific 结论因此是“该人工组合中的传递效应”，而非自动可识别的自然路径效应。
+
+## 7.9 Causal tracing
+
+causal tracing 在位置和层上扫描 clean restoration，形成恢复热图。它适合定位事实回忆或实体信息的候选路径。
+
+热图峰值支持：在给定 corruption 下恢复该 site 能有效恢复目标。它不证明：
+
+- 事实永久或唯一存储在该层；
+- 该层独立完成事实检索；
+- 不同 prompt、关系和语言使用同一路径；
+- 参数编辑该层不会有非局部副作用。
+
+位置—层扫描还涉及多重发现，应在独立 pairs 上复验峰值，而不是在同一热图上发现和验证。
+
+## 7.10 Activation steering 与剂量反应
+
+沿方向 $v$ 修改
+
+$$
+h'=h+\alpha v
+$$
+
+并估计剂量曲线
+
+$$
+g(\alpha)=\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}
+[S(M_{\alpha v}(x))].
+$$
+
+一个可信控制方向应在小幅区间表现出可重复、方向一致的 effect，并报告：
+
+- $v$ 与 $h$ 的 norm 比；
+- 正负 $\alpha$；
+- 多层与多位置；
+- matched random directions；
+- perplexity、格式与非目标能力；
+- 大 $\alpha$ 下的分布外崩坏。
+
+steerability 证明方向具有控制作用；只有自然 activation、下游读取和删除证据共同成立时，才支持正常机制参与。
+
+## 7.11 Off-manifold 的定义与诊断
+
+自然 activation 集记为
+
+$$
+\mathcal M_{\mathrm{eval}}
+=\{u(x):x\sim\mathcal D_{\mathrm{eval}}\}.
+$$
+
+任意干预值 $u'$ 可能远离 $\mathcal M_{\mathrm{eval}}$。高维数据没有可靠统一距离，常用诊断包括：
+
+- 与邻近自然 activation 的 Mahalanobis/knn 距离；
+- norm、均值和协方差偏移；
+- 下游 next-token loss 或 hidden-state density proxy；
+- 非目标 logits 的广泛变化；
+- 用不同分布内 resampling 得到的结果一致性。
+
+SAE 重构或生成式 projection 也只是另一个模型定义的近似 manifold，不会自动解决问题。
+
+缓解策略是使用真实对照 resample、小幅剂量、norm/covariance matching、多个干预实现与副作用检查。最终结论仍应注明干预族。
+
+## 7.12 Causal abstraction 与 interchange intervention
+
+设低层模型输入空间为 $\mathcal X_M$，内部状态 $U(x)\in\mathcal U$，输出位于 $\mathcal O_M$；高层假说 $H$ 的输入空间为 $\mathcal X_H$，内部变量 $Z\in\mathcal Z$，输出位于 $\mathcal O_H$。给出输入映射 $\alpha_X:\mathcal X_M\to\mathcal X_H$、内部对齐 $\alpha_U:\mathcal U\to\mathcal Z$ 与输出比较映射 $\alpha_O:\mathcal O_M\to\mathcal O_H$。若两模型共用输入空间，可取 $\alpha_X$ 为恒等映射。interchange intervention 从 source input $x_s$ 取内部变量值，替换 base input $x_b$ 的对应表示，并检查低层模型输出经 $\alpha_O$ 后是否匹配高层模型的同类反事实。
+
+给 $\mathcal O_H$ 指定度量或任务损失 $d_O$，并固定容差 $\epsilon\ge0$。单个 pair 的一致性判据为
+
+$$
+d_O\!\left(
+\alpha_O\bigl(M_{U\leftarrow U(x_s)}(x_b)\bigr),
+H_{Z\leftarrow\alpha_U(U(x_s))}
+\bigl(\alpha_X(x_b)\bigr)
+\right)
+\le \epsilon.
+$$
+
+再令 $(X_b,X_s)\sim\Pi_{\mathrm{pair}}$ 为预先声明的 base/source 配对分布，定义
+
+$$
+\operatorname{IIA}_\epsilon
+=P_{(X_b,X_s)\sim\Pi_{\mathrm{pair}}}
+\left[
+d_O\!\left(
+\alpha_O(M_{U\leftarrow U(X_s)}(X_b)),
+H_{Z\leftarrow\alpha_U(U(X_s))}(\alpha_X(X_b))
+\right)\le\epsilon
+\right].
+$$
+
+高 $\operatorname{IIA}_\epsilon$ 只支持这些输入、内部与输出映射在 $\Pi_{\mathrm{pair}}$ 和给定容差下的近似因果抽象。若允许任意高容量映射，对齐可能变得空泛；必须限制映射类别、在 held-out interchange pairs 上估计置信区间，并比较随机或错误高层图。离散输出常取 $d_O(a,b)=\mathbf 1\{a\ne b\}$、$\epsilon=0$，此时该定义退化为通常的 interchange-intervention accuracy。
+
+## 7.13 干预下的可识别性
+
+若两个机制假说对所有已测试干预给同样输出，它们仍不可识别。增加更多节点扫描未必解决问题；关键是设计使假说预测相反的干预。
+
+常见不可识别情形：
+
+- 冗余路径使单点 ablation 都无效；
+- patch 同时携带多个属性；
+- 只看最终 token，忽略中间响应差异；
+- 对齐映射容量足以拟合所有 interchange pairs；
+- 干预集合没有覆盖组合或反方向操作。
+
+研究报告应列出仍与数据相容的主要替代假说，而不是把“找到一个有效干预”写成唯一解释。
+
+## 7.14 方法审计表
+
+| 方法 | 问题/对象 | 操作与估计量 | 必要控制 | 能支持 | 不能支持与失效 |
+|---|---|---|---|---|---|
+| ablation | 组件在删除下是否必要 | zero/mean/resample；$N_C$ | 多基线、副作用、组合删除 | 指定删除效应 | 无效即未参与；基线依赖 |
+| activation patching | clean state 能否恢复 corrupt 行为 | run 间替换；$\Delta^{patch}$ | corruption、双向 patch、raw score | 指定 site 的恢复效应 | 信息生成位置或唯一存储 |
+| path patching | effect 是否经指定 edge/path | 多 run 边隔离；路径恢复 | 实现图、状态一致性、交互 | 人工路径协议下的 effect | 唯一自然中介 |
+| steering | 方向是否具有控制能力 | $h+\alpha v$；剂量曲线 | random direction、负向、副作用 | 指定方向控制效应 | 正常前向依赖 |
+| interchange intervention | 表示是否实现高层变量 | source/base 交换；IIA | 映射容量、错误图、held-out pairs | 受限映射类的因果抽象 | 唯一或完整算法 |
+
+干预路线能建立模型内部的操作性因果效应。它的严谨性来自明确的赋值与对照，而不是把 `do` 符号写在任意 activation 上。下一章把节点和边组织为可组合的回路假说。

@@ -1,96 +1,190 @@
 # 第十章 训练动力学与机制形成
 
-最终 checkpoint 只展示训练终点。保存中间 checkpoints 并重复同一解释实验，可以观察 feature、回路和行为何时出现，区分逐渐加强、突然重组与后训练覆盖。
+最终 checkpoint 只展示训练终点。保存训练轨迹并在每个 checkpoint 重复行为、读出与干预实验，可以研究 feature 和 circuit 何时形成、何时分化，以及后训练怎样改变已有机制。最大的困难不是画时间曲线，而是确认不同时间和不同 seed 上比较的是同一功能对象。
 
-## 10.1 Checkpoint 轨迹
+## 10.1 纵向研究单位
 
-设训练步为 $t$，模型参数为 $\theta_t$。对固定行为集和内部指标，记录
+设训练 run $r$ 在 step $t$ 的参数为 $\theta_{r,t}$。对固定评估分布 $\mathcal D_{\mathrm{eval}}$，记录：
 
 $$
-B_t(x),\qquad a_{u,t}(x),
-\qquad C_t(x).
+B_{r,t}=\mathbb E_{x\sim\mathcal D_{\mathrm{eval}}}
+[S(M_{\theta_{r,t}}(x))],
 $$
 
-$C_t$ 可以是 probe 性能、head ablation effect 或 circuit fidelity。只有最终两个 checkpoint 无法分辨连续演化和短暂阶段。
+$$
+P_{r,t}=\text{probe/readout metric},
+\qquad
+I_{r,t}=\text{intervention effect},
+$$
 
-## 10.2 坐标对齐问题
+$$
+C_{r,t}=\text{circuit fidelity or structure}.
+$$
 
-不同 checkpoints 的神经元坐标可能发生置换或旋转。直接比较 neuron 42 的 activation，未必追踪同一功能。
+行为、可读性与因果作用可以在不同时间出现。只追踪 probe accuracy 会把“信息已可读”误写成“机制已被使用”。
 
-可用 weight matching、CCA/CKA、feature decoder 相似度或共同 anchor 数据对齐表示。对齐算法本身可能强行制造连续性，应与行为和干预签名共同验证。
+step、seen tokens、optimizer updates 和有效计算量不是同一时间轴。跨规模比较应至少用 seen tokens 与训练损失对齐，并说明 batch 和数据 curriculum。
 
-## 10.3 Grokking
+## 10.2 Checkpoint 密度与变化点
 
-在某些算法任务上，模型先记忆训练集，训练准确率很高而验证准确率低；继续优化后验证性能突然提高，被称为 grokking。机制研究发现表示与电路可能经历稀疏化或算法重组。
+若保存点间隔过大，平滑变化会看似突然。对候选变化点 $t^*$，应在附近增加 checkpoint 密度，并同时检查连续指标：loss、margin、activation selectivity、ablation effect 与 circuit fidelity。
 
-这是一类受控现象，不应把任何晚期性能提升都称为 grokking。需同时展示训练/验证曲线、数据规模、正则化和内部机制变化。
+可把变化量写为
 
-## 10.4 “涌现”与测量尺度
+$$
+\Delta_t X=X_{t+1}-X_t
+$$
 
-能力曲线在离散指标上可能看似突然：连续 logit 改善跨过 exact-match 阈值后，准确率从 0 跳到 1。解释训练动力学时应同时观察连续 loss、margin 和内部读出，避免把指标阈值误当机制瞬间产生。
+并用多 seed 的 change-point model 估计转变区间。事后选取最陡区间会高估突变，应在独立 runs 上复验。
 
-真正的机制转变仍可能发生，但需要 checkpoint 密度、多个 seeds 和内部结构证据。
+## 10.3 坐标对齐问题
 
-## 10.5 Feature Formation
+同一连续 run 的参数坐标固定，但 neuron 功能仍可漂移；独立 seeds 还存在置换、旋转与不同冗余分解。直接比较 `neuron 42` 通常只对同一 run 有坐标意义。
 
-对一个候选 feature，可追踪：
+常用对齐对象：
 
-- activation selectivity 何时出现；
-- decoder/logit effect 何时稳定；
-- upstream 输入路径何时形成；
-- ablation effect 是否与行为同步；
-- feature 是否先宽泛后分化；
-- 不同训练 seed 是否重复出现等价结构。
+- weight matching；
+- activation correlation；
+- CKA/CCA 或 Procrustes 子空间；
+- SAE decoder 与 firing-set matching；
+- head 的 attention/OV 功能签名；
+- circuit role 与 intervention signature。
 
-“先能 probe 读出，后才被下游使用”与“使用和读出同步出现”对应不同学习故事。
+对齐算法可能强行制造连续性。应在未用于匹配的 anchor inputs 和 intervention effects 上验证。
 
-## 10.6 数据阶段与后训练
+## 10.4 Feature trajectory
+
+给 checkpoint $t$ 的 feature set $F_t$，在相邻时间构造相似度
+
+$$
+K_{ij}^{t,t+1}
+=w_d\cos(d_i^t,d_j^{t+1})
++w_a\operatorname{corr}(a_i^t,a_j^{t+1})
++w_I\operatorname{sim}(I_i^t,I_j^{t+1}).
+$$
+
+activation correlation 只在两个 activation 向量的经验方差都为正时定义；dead/constant feature 应标作不可匹配或由单独规则处理，不能把未定义相关系数置为零后静默参加 assignment。三项在组合前须规范到可比较尺度。通过 assignment 得到候选轨迹后，权重 $w$ 与阈值仍会影响“出生、死亡、分裂、合并”的判断，必须做敏感性分析。
+
+feature identity 更适合定义为多维功能签名的连续性，而不是 decoder cosine 单项。split 后的多个后代可能共同保留旧 feature 功能，此时一对一匹配不再合适。
+
+## 10.5 Grokking 与受控算法任务
+
+grokking 指某些任务中模型先拟合训练集，较晚才显著改善验证性能。机制分析可追踪记忆表示被更一般算法 circuit 替代或压过的过程。
+
+要声称 grokking，应报告：
+
+- 训练与验证曲线；
+- 数据规模、正则和优化设置；
+- 多 seed 的发生率与时间；
+- 连续 margin 而不只是 exact match；
+- 回路级变化与行为变化的先后关系。
+
+受控模运算中的机制结果提供存在性案例，不可直接外推为大模型能力形成的一般规律。
+
+## 10.6 “涌现”与测量尺度
+
+离散指标会把连续 logit 改善变成阈值跳跃。例如答案 margin 从负变正时 exact match 突然翻转。应联合观察
+
+$$
+m_t=z_{correct,t}-\max_{j\ne correct}z_{j,t}
+$$
+
+与准确率。
+
+真正的机制重组可能表现为：旧 circuit fidelity 降低、新 circuit fidelity 上升、组合干预 interaction 改变。单一能力曲线不足以区分坐标连续增强和算法切换。
+
+## 10.7 Circuit 形成与角色稳定
+
+对 circuit 中功能角色 $R_1,\ldots,R_k$，每个角色由行为签名、输入条件、输出方向和干预 effect 定义。跨 checkpoint/seed 比较时，先在每个模型独立定位满足角色标准的组件，再比较连接图。
+
+可定义经角色对齐后的 edge Jaccard：
+
+$$
+J(C_1,C_2)
+=\frac{|E_1\cap E_2|}{|E_1\cup E_2|},
+$$
+
+该式只在 $E_1\cup E_2\ne\varnothing$ 时定义；若两个候选 circuit 都无边，应报告“空图退化”，而不是用任意约定制造高相似度。Jaccard 还忽略 edge weight 与等价冗余。还应比较两个 circuit 对共同 intervention battery 的响应向量：
+
+$$
+\rho_I(C_1,C_2)
+=\operatorname{corr}
+(\Delta S_{C_1}^{1:m},\Delta S_{C_2}^{1:m}).
+$$
+
+若任一响应向量的经验方差为零，$\rho_I$ 未定义；应同时报告两个响应向量及其退化状态。结构相似、功能不同和结构不同、功能等价都可能发生。
+
+## 10.8 跨 Seed、训练阶段与规模的四层稳定性
+
+机制稳定性至少分为：
+
+1. **within-checkpoint**：同一模型跨输入；
+2. **across-time**：同一 run 跨 checkpoints；
+3. **across-seed**：同配方独立训练；
+4. **across-scale/architecture**：不同宽度、深度或架构。
+
+每升一级都需要新的对齐假设。[Tigges 等（NeurIPS 2024）](https://proceedings.neurips.cc/paper_files/paper/2024/hash/47c7edadfee365b394b2a3bd416048da-Abstract-Conference.html)在特定 decoder-only 模型、任务与规模范围内发现功能组件和高层算法具有一定训练/规模一致性；这支持继续研究小模型迁移，但不证明任意机制普遍可迁移。
+
+最少报告每个层级的 run 数、失败 run、对齐规则和稳定性分布。一个 seed 的精细故事不能承担 population-level 结论。
+
+## 10.9 Base、SFT 与偏好训练的机制差异
 
 继续预训练、SFT 和偏好优化可能：
 
-- 新增行为而复用原有 features；
-- 改变已有 feature 的触发阈值；
-- 增加新的抑制或拒答路径；
-- 重写 late-layer output mapping；
-- 造成能力遗忘或概念漂移。
+- 复用已有知识 features，只改 late-layer policy；
+- 改变 feature threshold 或 token-position gating；
+- 新增拒答和格式 circuits；
+- 改写同一方向的 downstream reader；
+- 造成旧能力 interference。
 
-比较 base 与 instruct model 时，不能只看同名 neuron；应对齐模型、控制模板，并区分基础知识表示与助手策略。
+比较时要使用模型各自正确的 chat template，并同时在 base-style 与 assistant-style prompts 上测量。否则 prompt 适配差异会被误归因权重变化。
 
-## 10.7 Model Diffing
+同初始化的连续 fine-tuning 允许直接研究 $\Delta\theta$；独立基础模型之间的参数差没有自然坐标对应。
 
-若两个模型只相差一个训练阶段，可以研究参数差、activation 差和行为差。直接参数减法
+## 10.10 Model diffing
 
-$$
-\Delta\theta=\theta_B-\theta_A
-$$
+对连续训练的两个模型 $A,B$，可从三层比较：
 
-在相同初始化和连续训练时有意义；独立训练模型存在置换与路径差异，参数差很难解释。
+1. 参数：$\Delta\theta=\theta_B-\theta_A$；
+2. activation：$\Delta h(x)=h_B(x)-h_A(x)$；
+3. causal response：把 $B$ 的 state patch 入 $A$ 或反向 patch。
 
-更稳妥的是使用同一输入集，比较 activation distributions、probe/circuit signatures，并用 patching 把 B 的中间状态移入 A 或反向移入。
+双向 cross-model patch 需要表示对齐。若同层 activation 尺度或 basis 改变，直接替换会 off-manifold。可先用受限线性 map 对齐，再用 held-out reconstruction 与 intervention 验证；map 太强又会引入可识别性问题。
 
-## 10.8 数据归因的困难
+## 10.11 训练数据归因的层级
 
-要问“哪条训练数据造成这个 feature”，需要连接数十亿步梯度更新。influence functions、gradient similarity、data attribution 和训练重放都提供近似，但受非凸路径、optimizer state 和数据交互限制。
+“哪条数据造成 feature $u$”比“哪条数据与 $u$ 相似”强得多。可分为：
 
-检索到与输出相似的训练文本，只说明表面近邻；不能单独证明因果记忆来源。强结论需要受控增删数据、重复训练或可追踪的小模型实验。
+- retrieval similarity：找到表面或 embedding 近邻；
+- gradient similarity：训练样本梯度与目标梯度对齐；
+- influence approximation：近似删除样本对参数/目标的影响；
+- data ablation/reweighting：改变训练集并重复训练；
+- exact replay：在可控小模型中追踪更新。
 
-## 10.9 多 Seed 的机制稳定性
+前两项是相关证据。大模型非凸优化、optimizer state、数据顺序和样本交互使经典 influence 假设脆弱。强因果主张需要受控增删数据和多个训练 repeats。
 
-若同一任务在多个训练 seed 上都学会，内部实现可能：
+## 10.12 发展性因果主张
 
-- 在 neuron 坐标上不同，但存在可对齐子空间；
-- 使用不同冗余 heads；
-- 共享高层算法而低层 feature 不同；
-- 完全采用不同 shortcut。
+时间先后可以排除“结果晚于原因”的某些故事，但不能单独建立原因。若 feature readout 在行为前出现，可能是前置表示，也可能是无用副产物；若 ablation effect 与行为同步增强，证据更强。
 
-机制解释的“普遍性”应区分同 checkpoint 跨输入、同配方跨 seed、同架构跨规模和跨架构四个层级。
+一个纵向机制假说应同时预测：
 
-## 10.10 发展性可解释性的价值
+- feature selectivity 的出现时间；
+- downstream reader 的形成时间；
+- intervention effect 的剂量变化；
+- 行为 margin 的变化；
+- 数据或正则干预改变训练时序的方向。
 
-训练轨迹可以检验静态解释难以区分的假说：如果 feature 被声称是行为的前置表示，它应在行为形成前或同时出现；如果它只是结果相关副产物，可能在行为之后才稳定。
+最后一项通过训练干预把时间相关推进到学习机制证据。
 
-时间顺序不是充分因果证据，却能排除部分叙事，并帮助选择更有信息量的干预 checkpoint。
+## 10.13 方法审计表
 
-## 10.11 结论
+| 方法 | 问题/对象 | 操作与估计量 | 必要控制 | 能支持 | 不能支持与失效 |
+|---|---|---|---|---|---|
+| checkpoint tracking | 指标何时出现 | 重复 probe/patch；时间曲线 | checkpoint 密度、连续指标、多 seed | 同 run 的发展轨迹 | 训练原因 |
+| feature matching | 两时点单位是否对应 | assignment；decoder/firing/effect | held-out anchors、split/merge | 匹配规则下的连续性 | 唯一身份 |
+| circuit stability | 高层算法是否复现 | 角色对齐、edge/response similarity | 独立发现、失败 runs | 指定范围的机制稳定 | 跨架构普遍性 |
+| model diffing | 训练阶段改变了什么 | 参数/activation/cross-patch | template、basis、双向 patch | 连续模型差异路径 | 独立模型直接参数语义 |
+| data attribution | 数据怎样影响机制 | gradient/influence/retraining | optimizer path、重复训练 | 依方法强度的影响证据 | 检索相似即因果来源 |
 
-训练动力学把“模型里有什么”扩展为“它怎样形成”。checkpoint 对齐、连续指标和多 seed 是关键；没有这些控制，终点差异很容易被讲成过度确定的学习故事。
+训练动力学把静态解释扩展为机制形成史。可靠结论通常在功能角色层稳定、在具体坐标层不稳定；教材应保留这两层，而不是为获得整齐故事强行把不同 seed 的 neuron 一一对应。

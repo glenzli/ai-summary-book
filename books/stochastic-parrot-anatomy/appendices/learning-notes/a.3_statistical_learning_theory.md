@@ -1,212 +1,57 @@
-# 附录 A.3 统计学习理论 (Statistical Learning Theory)
+# 附录 A.3 统计学习：偏差、容量与一致收敛
 
-本附录补充平方损失下的偏差-方差分解，以及二分类假设类的 VC 维与一致收敛界。两部分的概率空间、损失函数和适用范围不同，不应把后一部分的结论直接套用于任意回归或生成任务。
+本附录补足卷一第二章使用的两个经典结果：平方损失回归的偏差--方差分解，以及二分类假设类的 VC 一致收敛界。两者使用不同损失和概率空间；VC 结论不能直接替代语言模型交叉熵或生成分布的专门分析。
 
-## A.3.1 偏差-方差分解 (Bias-Variance Decomposition) 的完整推导
+## A.3.1 平方损失的偏差--方差分解
 
-我们在正文中提到了泛化误差可以分解为偏差、方差和噪音。这里给出严格的推导。
-
-### 1. 问题设定
-假设真实数据生成模型为 $y=f(\mathbf{x})+\epsilon$，其中噪声满足 $\mathbb E[\epsilon\mid\mathbf x]=0$、$\operatorname{Var}(\epsilon\mid\mathbf x)=\sigma^2$（为简化取同方差）。训练集 $\mathcal D$ 自身包含独立采样的训练噪声，并据此得到模型 $\hat f(\mathbf x;\mathcal D)$。在固定测试输入 $\mathbf x$ 处，令独立测试标签为 $y^*=f(\mathbf x)+\epsilon^*$，其中 $\epsilon^*$ 与 $\mathcal D$ 独立。
+固定测试输入 $x$。设测试标签
 
 $$
-\operatorname{Error}(\mathbf{x})
-=\mathbb{E}_{\mathcal{D},\epsilon^*}
-\left[(y^*-\hat f(\mathbf{x};\mathcal D))^2\right].
+Y^*=f(x)+\varepsilon^*,
+\qquad
+\mathbb E[\varepsilon^*\mid x]=0,
+\quad
+\operatorname{Var}(\varepsilon^*\mid x)=\sigma^2(x).
 $$
 
-### 2. 推导步骤
-为了简化符号，简写 $\hat{f}(\mathbf{x}; \mathcal{D})$ 为 $\hat{f}$。
-利用 $y^*=f+\epsilon^*$，展开平方项：
+训练集 $\mathcal D$ 独立于测试噪声，并由学习算法产生预测 $\widehat f_{\mathcal D}(x)$。记
 
 $$
-\begin{aligned}
-\operatorname{Error}(\mathbf{x})
-&= \mathbb{E}_{\mathcal{D},\epsilon^*}
-\left[(f + \epsilon^* - \hat{f})^2\right] \\
-&= \mathbb{E}_{\mathcal{D},\epsilon^*}
-\left[(f - \hat{f})^2 + (\epsilon^*)^2 + 2\epsilon^*(f - \hat{f})\right]
-\end{aligned}
+\overline f(x)=\mathbb E_{\mathcal D}[\widehat f_{\mathcal D}(x)].
 $$
 
-由于 $\epsilon^*$ 与 $\mathcal D$ 独立且条件均值为 0，交叉项期望为 0：
-$$
-\mathbb E_{\mathcal D,\epsilon^*}[2\epsilon^*(f-\hat f)]
-=2\mathbb E_{\epsilon^*}[\epsilon^*]\,
-\mathbb E_{\mathcal D}[f-\hat f]=0,
-$$
-且 $\mathbb E[(\epsilon^*)^2]=\sigma^2$。
-
-现在关注主要项 $\mathbb{E}_{\mathcal{D}} \left[ (f - \hat{f})^2 \right]$。
-这是一个关于随机变量 $\hat{f}$ 的二阶矩。我们利用恒等式 $\mathbb{E}[X^2] = (\mathbb{E}[X])^2 + \text{Var}(X)$ 的变体。
-在此，我们在公式中人为引入 $\mathbb{E}_{\mathcal{D}}[\hat{f}]$（记为 $\bar{f}$，即模型的平均预测）：
+**命题 A.3.1** 若上述二阶矩有限，则
 
 $$
 \begin{aligned}
-\mathbb{E}_{\mathcal{D}} \left[ (f - \hat{f})^2 \right] &= \mathbb{E}_{\mathcal{D}} \left[ (f - \bar{f} + \bar{f} - \hat{f})^2 \right] \\
-&= \mathbb{E}_{\mathcal{D}} \left[ (f - \bar{f})^2 + (\bar{f} - \hat{f})^2 + 2(f - \bar{f})(\bar{f} - \hat{f}) \right]
+\mathbb E_{\mathcal D,\varepsilon^*}
+[(Y^*-\widehat f_{\mathcal D}(x))^2]
+={}&(f(x)-\overline f(x))^2\\
+&+\mathbb E_{\mathcal D}
+[(\widehat f_{\mathcal D}(x)-\overline f(x))^2]
++\sigma^2(x).
 \end{aligned}
+\tag{A.3.1}
 $$
 
-*   第一项 $(f - \bar{f})^2$ 是常数（相对于 $\mathcal{D}$），即 **偏差平方 ($\text{Bias}^2$)**。
-*   第二项 $\mathbb{E}_{\mathcal{D}}[(\bar{f} - \hat{f})^2]$ 正是 $\hat{f}$ 的方差，即 **方差 (Variance)**。
-*   第三项交叉项：$2(f - \bar{f}) \mathbb{E}_{\mathcal{D}}[\bar{f} - \hat{f}] = 2(f - \bar{f})(\bar{f} - \bar{f}) = 0$。
+**证明** 写成
 
-### 3. 最终结果
-将所有项合并：
 $$
-\operatorname{Error}(\mathbf{x})
-=\underbrace{\left(f(\mathbf{x})-\mathbb E_{\mathcal D}[\hat f(\mathbf{x};\mathcal D)]\right)^2}_{\text{Bias}^2}
-+\underbrace{\mathbb E_{\mathcal D}\!\left[\left(\hat f(\mathbf{x};\mathcal D)-\mathbb E_{\mathcal D}[\hat f(\mathbf{x};\mathcal D)]\right)^2\right]}_{\text{Variance}}
-+\underbrace{\sigma^2}_{\text{Independent test noise}}.
+Y^*-\widehat f_{\mathcal D}
+=(f-\overline f)
++(\overline f-\widehat f_{\mathcal D})
++\varepsilon^*.
 $$
 
-这一分解定义了平方损失回归中的偏差、方差与不可约测试噪声。在部分经典模型族中，增加复杂度常降低偏差并提高方差；现代过参数化模型可能出现双下降等不同现象，因此下图只是概念性曲线。
+平方展开后，$\mathbb E_{\mathcal D}[\overline f-\widehat f_{\mathcal D}]=0$；测试噪声与训练集独立且条件均值为零，所以另外两个交叉项期望也为零。三个平方项分别给出 (A.3.1)。$\square$
+
+第一项是点态偏差平方，第二项是训练集随机性引起的点态方差，第三项是该输入处的测试噪声。若再对 $X$ 积分，需要明确测试输入分布。该恒等式不证明“模型越大，方差必然越大”；双下降等现象也不与恒等式矛盾。
 
 <img src="../../vol-01/chapter_02/images/bias_variance_tradeoff.png" width="80%" />
 
----
+## A.3.2 从固定假设到数据依赖选择
 
-## A.3.2 VC 维与泛化界 (Statistical Learning Theory: VC Dimension & Generalization Bounds)
-
-为什么在训练集上表现好 ($E_{in} \approx 0$)，就意味着在测试集上也表现好 ($E_{out} \approx 0$)？这并非理所当然。统计学习理论（Statistical Learning Theory, SLT）通过引入 **VC 维** 回答了这个问题。
-
-### 1. 学习的可行性：从霍夫丁不等式开始
-
-对于一个 **固定** 的假设模型 $h$，**霍夫丁不等式 (Hoeffding's Inequality)** 告诉我们，训练误差 $E_{in}(h)$ 和泛化误差 $E_{out}(h)$ 之间的差距大于 $\epsilon$ 的概率是非常小的：
-
-$$ P(|E_{in}(h) - E_{out}(h)| > \epsilon) \le 2 \exp(-2N\epsilon^2) $$
-
-这意味着对于单个模型，只要样本量 $N$ 足够大，$E_{in}$ 就是 $E_{out}$ 的良好估计。
-
-但是，学习算法会根据同一训练样本从假设类 $\mathcal H$ 中选择 $h$。固定假设的界不能直接控制这种数据依赖选择；需要同时控制所有 $h\in\mathcal H$ 的经验误差与总体误差。
-
-### 2. 增长函数与打散 (Growth Function & Shattering)
-
-VC 理论把无限参数集合在有限样本上的行为压缩为有限个二分：**即使参数集合不可数，模型对 $N$ 个给定点产生的二元标记仍至多有 $2^N$ 种。**
-
-对于二分类问题，N 个数据点最多有 $2^N$ 种标签组合。
-定义 **增长函数 (Growth Function)** $m_{\mathcal{H}}(N)$：假设空间 $\mathcal{H}$ 在 $N$ 个数据点上能产生的 **最大不同二分（分类组合）数量**。
-
-*   **打散 (Shattering)**：如果 $\mathcal{H}$ 能对 $N$ 个点的 **所有** $2^N$ 种可能性都进行分类，我们称 $\mathcal{H}$ 能 **打散** 这 $N$ 个点。此时 $m_{\mathcal{H}}(N) = 2^N$。
-
-### 3. VC 维 (VC Dimension) 的定义
-
-**VC 维 ($d_{VC}$)** 是衡量假设空间 $\mathcal{H}$ 容量（复杂度）的核心指标。
-
-> **定义**：$d_{VC}=\sup\{N\in\mathbb N:m_{\mathcal H}(N)=2^N\}$，取值于 $\mathbb N\cup\{\infty\}$。
-> 当该值有限时，它是某个样本集能够被完全打散的最大规模。
-
-*   如果 $N \le d_{VC}$，模型有可能打散这 $N$ 个点。
-*   如果 $N > d_{VC}$，模型 **一定** 无法打散这 $N$ 个点（即总存在某种标签组合，模型学不会）。
-
-**经典案例：仿射线性分类器的 VC 维**
-
-这里必须先排除一个常见但错误的上界证明。画出正方形四角并赋予 XOR 标签，只能说明**这一组四点在这一种标记下**不可线性分；VC 维的上界要求证明任意 $d+2$ 点都存在某种无法实现的标记。下面用 Radon 分割完成全部量词。
-
-令 $\mathcal H_d$ 是 $\mathbb R^d$ 上带偏置的仿射半空间类：
-
-$$
-h_{\mathbf w,b}(\mathbf x)
-=
-\begin{cases}
-+1, & \mathbf w^\mathsf T\mathbf x+b\ge 0,\\
--1, & \mathbf w^\mathsf T\mathbf x+b<0.
-\end{cases}
-$$
-
-**命题**：$\operatorname{VCdim}(\mathcal H_d)=d+1$。
-
-**证明（下界）**：取 $d+1$ 个仿射独立点 $\mathbf x_1,\ldots,\mathbf x_{d+1}$。仿射独立等价于增广向量
-
-$$
-\widetilde{\mathbf x}_i=(\mathbf x_i,1)\in\mathbb R^{d+1}
-$$
-
-线性独立，因此它们构成 $\mathbb R^{d+1}$ 的一组基。对任意标签 $y_i\in\{-1,+1\}$，线性方程组
-
-$$
-\mathbf w^\mathsf T\mathbf x_i+b=y_i,
-\qquad i=1,\ldots,d+1,
-$$
-
-都有唯一解 $(\mathbf w,b)$。因为右侧严格等于 $\pm1$，所得分类器在每个点上实现指定标签。于是这 $d+1$ 个点被打散，故 $\operatorname{VCdim}(\mathcal H_d)\ge d+1$。
-
-**Radon 分割（书内证明）**：任取 $d+2$ 个点 $\mathbf x_1,\ldots,\mathbf x_{d+2}\in\mathbb R^d$。它们的 $d+2$ 个增广向量位于 $d+1$ 维空间，必线性相关，所以存在不全为零的系数 $\lambda_i$ 使
-
-$$
-\sum_{i=1}^{d+2}\lambda_i\mathbf x_i=0,
-\qquad
-\sum_{i=1}^{d+2}\lambda_i=0.
-$$
-
-令 $I=\{i:\lambda_i>0\}$、$J=\{j:\lambda_j<0\}$。两者都非空，并且
-
-$$
-A:=\sum_{i\in I}\lambda_i
-=-\sum_{j\in J}\lambda_j>0.
-$$
-
-归一化后得到
-
-$$
-\sum_{i\in I}\frac{\lambda_i}{A}\mathbf x_i
-=
-\sum_{j\in J}\frac{-\lambda_j}{A}\mathbf x_j.
-$$
-
-等式两侧都是凸组合，故 $\operatorname{conv}\{\mathbf x_i:i\in I\}$ 与 $\operatorname{conv}\{\mathbf x_j:j\in J\}$ 相交。系数为零的点可任意归入一侧，不影响这个交点。
-
-**证明（上界）**：对任意 $d+2$ 点取上述 Radon 分割，把 $I$ 一侧标为 $+1$，把 $J$ 一侧标为 $-1$，其余零系数点任意标记。假设某个仿射分类器实现了这些标签，并令两凸包的公共点为 $\mathbf z$。由 $I$ 侧的凸组合和仿射性，
-
-$$
-\mathbf w^\mathsf T\mathbf z+b
-=
-\sum_{i\in I}\frac{\lambda_i}{A}
-(\mathbf w^\mathsf T\mathbf x_i+b)
-\ge 0.
-$$
-
-由 $J$ 侧的凸组合，每一项都严格小于零，所以
-
-$$
-\mathbf w^\mathsf T\mathbf z+b
-=
-\sum_{j\in J}\frac{-\lambda_j}{A}
-(\mathbf w^\mathsf T\mathbf x_j+b)
-<0,
-$$
-
-矛盾。因此任意 $d+2$ 点都不能被打散，$\operatorname{VCdim}(\mathcal H_d)\le d+1$。结合下界即得结论。$\square$
-
-在 $d=2$ 时，这个证明覆盖所有四点构型。若四点处于凸位置，Radon 分割由相交的两条对角线给出；同一条对角线的两个端点同色、两条对角线异色，正是常见的 XOR 图。若一点落在另外三点的三角形内，则把内部点标成一类、三个顶点标成另一类，同样无法由直线分开。共线、重合等退化情形也已包含在增广向量的线性相关论证中。因此，下面的 XOR 图是上界证明的一个可视化实例，而不是证明的全部。
-
-<img src="images/vc_dimension.png" width="90%" />
-
-### 4. 关键引理：Sauer's Lemma
-
-我们已经知道，当 $N \le d_{VC}$ 时，$m_{\mathcal{H}}(N) = 2^N$。那么当 $N > d_{VC}$ 时，增长函数会发生什么变化呢？
-
-**Sauer's Lemma** 给出了增长函数的上界。若 $d_{VC}=d<\infty$，则
-
-$$
-m_{\mathcal H}(N)
-\le \sum_{i=0}^{d}\binom Ni.
-$$
-
-当 $N\ge d\ge1$ 时，进一步有标准估计
-
-$$
-m_{\mathcal H}(N)\le\left(\frac{eN}{d}\right)^d.
-$$
-
-这意味着：
-1.  **Break Point**：一旦样本规模超过首个不能被打散的规模，增长函数不再保持 $2^N$，并被关于 $N$ 的 $d$ 次多项式控制。
-2.  **意义**：这一性质至关重要。因为在霍夫丁不等式中，右边是 $M \cdot \exp(-N)$。如果 $M$ 是指数级增长的 ($2^N$)，它会抵消掉 $\exp(-N)$ 的衰减，导致误差界无法收敛。但如果是多项式级增长，$\exp(-N)$ 最终会战胜 $N^{d_{VC}}$，保证概率收敛到 0。
-
-### 5. 泛化误差界的一种保守形式
-
-令 $Z_1,\ldots,Z_N$ 独立同分布，$\ell_h(Z)\in\{0,1\}$，并定义
+令 $Z_1,\ldots,Z_N$ 独立同分布，二分类损失 $\ell_h(Z)\in\{0,1\}$，并定义
 
 $$
 R(h)=\mathbb E[\ell_h(Z)],
@@ -214,46 +59,187 @@ R(h)=\mathbb E[\ell_h(Z)],
 \widehat R_N(h)=\frac1N\sum_{i=1}^N\ell_h(Z_i).
 $$
 
-在通常的可测性条件下，一个常见且保守的 VC 不等式是
+对训练前固定的 $h$，Hoeffding 不等式给出
 
 $$
-\Pr\!\left(
+\Pr\bigl(|R(h)-\widehat R_N(h)|>\epsilon\bigr)
+\le2e^{-2N\epsilon^2}.
+\tag{A.3.2}
+$$
+
+学习算法却会用同一批数据选择 $h$，所以不能在训练后把随机输出 $\widehat h(Z_{1:N})$ 当作预先固定的 $h$ 套用 (A.3.2)。极端例子是连续输入上的随机标签：记忆全部训练点、在其他点恒输出 $0$ 的规则有零训练误差，但独立测试误差仍为 $1/2$。控制数据依赖选择需要假设类上的统一界或算法稳定性等其他工具。
+
+## A.3.3 增长函数与 VC 维
+
+令 $\mathcal H\subseteq\{-1,+1\}^{\mathcal X}$。对有限点集 $S=\{x_1,\ldots,x_N\}$，定义限制集
+
+$$
+\mathcal H|_S
+=\{(h(x_1),\ldots,h(x_N)):h\in\mathcal H\},
+$$
+
+以及增长函数
+
+$$
+m_{\mathcal H}(N)
+=\max_{|S|=N}\lvert\mathcal H|_S\rvert.
+$$
+
+若 $\lvert\mathcal H|_S\rvert=2^N$，称 $\mathcal H$ 打散 $S$。VC 维定义为
+
+$$
+\operatorname{VCdim}(\mathcal H)
+=\sup\{|S|:S\text{ 可被 }\mathcal H\text{ 打散}\},
+$$
+
+并允许取 $\infty$。
+
+### 仿射半空间的 VC 维
+
+令 $\mathcal H_d$ 为 $\mathbb R^d$ 上的仿射半空间分类器，约定分数非负时输出 $+1$。
+
+**命题 A.3.2** $\operatorname{VCdim}(\mathcal H_d)=d+1$。
+
+**证明（下界）** 取 $d+1$ 个仿射独立点 $x_i$。其增广向量 $\widetilde x_i=(x_i,1)$ 构成 $\mathbb R^{d+1}$ 的一组基。对任意标签 $y_i\in\{-1,+1\}$，线性方程
+
+$$
+w^\mathsf Tx_i+b=y_i,
+\qquad i=1,\ldots,d+1,
+$$
+
+有唯一解，故这些点被打散。
+
+**证明（上界）** 任取 $d+2$ 个点。其增广向量线性相关，故存在不全为零的 $\lambda_i$ 使
+
+$$
+\sum_i\lambda_ix_i=0,
+\qquad
+\sum_i\lambda_i=0.
+$$
+
+令 $I=\{i:\lambda_i>0\}$、$J=\{i:\lambda_i<0\}$，并以正负系数和归一化，得到两个凸包的公共点 $z$。把 $I$ 标为 $+1$、$J$ 标为 $-1$，对 $\lambda_i=0$ 的点任意赋标。若某仿射分类器实现该标记，则从 $I$ 一侧的凸组合得到 $w^\mathsf Tz+b\ge0$，从 $J$ 一侧得到 $w^\mathsf Tz+b<0$，矛盾。故任意 $d+2$ 点都不能被打散。$\square$
+
+这个 Radon 分割证明覆盖凸位置、内点、共线和重合等情形。只画正方形的一种 XOR 标记不能单独证明上界，因为上界含有“任意点集”的量词。
+
+<img src="images/vc_dimension.png" width="90%" />
+
+## A.3.4 Sauer--Shelah 引理
+
+**引理 A.3.3** 若 $d=\operatorname{VCdim}(\mathcal H)<\infty$，则
+
+$$
+m_{\mathcal H}(N)
+\le\sum_{j=0}^{\min(d,N)}\binom Nj.
+\tag{A.3.3}
+$$
+
+特别地，当 $N\ge d\ge1$ 时，
+
+$$
+m_{\mathcal H}(N)\le\left(\frac{eN}{d}\right)^d.
+\tag{A.3.4}
+$$
+
+**证明** 对 $N$ 归纳。固定 $N$ 个点，把最后一个坐标删除。令 $A$ 为至少能以一种末位标签出现的前缀集合，$B$ 为两种末位标签都能出现的前缀集合。每个前缀贡献一种末位标记，若属于 $B$ 再多贡献一种，所以
+
+$$
+\lvert\mathcal H|_S\rvert=|A|+|B|.
+$$
+
+$A$ 的 VC 维至多为 $d$。若 $B$ 能打散 $d$ 个前缀点，则加上末位点可打散 $d+1$ 个点，故 $B$ 的 VC 维至多为 $d-1$。由归纳假设与 Pascal 恒等式，
+
+$$
+|A|+|B|
+\le\sum_{j=0}^d\binom{N-1}{j}
++\sum_{j=0}^{d-1}\binom{N-1}{j}
+=\sum_{j=0}^d\binom Nj.
+$$
+
+基例 $N=0$ 或 $d=0$ 直接成立，得到 (A.3.3)；(A.3.4) 是标准二项式和估计。$\square$
+
+## A.3.5 一致收敛界与 ERM 推论
+
+令损失类 $\mathcal G=\{(x,y)\mapsto\mathbf 1\{h(x)\ne y\}:h\in\mathcal H\}$。下文假设它是点态可测的：存在可数子类 $\mathcal G_0$，使每个 $g\in\mathcal G$ 都是 $\mathcal G_0$ 中某序列的逐点极限。这样所有上确界可约化到可数类；有限或可数假设类是直接特例。若不作此类可测性假设，定理需改用外概率表述。
+
+**定理 A.3.4（一个保守的 VC 界）** 对任意 $\epsilon>0$，
+
+$$
+\Pr\left(
 \sup_{h\in\mathcal H}|R(h)-\widehat R_N(h)|>\epsilon
 \right)
 \le
-8\,m_{\mathcal H}(2N)
-\exp\!\left(-\frac{N\epsilon^2}{32}\right).
-\tag{A.3.1}
+4m_{\mathcal H}(2N)
+\exp\left(-\frac{N\epsilon^2}{8}\right).
+\tag{A.3.5}
 $$
 
-其证明框架由三步组成：先引入一个独立同分布的幽灵样本，把总体风险与经验风险之差对称化为两份经验风险之差；再条件于合并后的 $2N$ 个观测，此时 $\mathcal H$ 至多诱导 $m_{\mathcal H}(2N)$ 个二分；最后对每个固定二分应用 Hoeffding 型界并取联合界。式 (A.3.1) 采用宽松常数，以避免把不同版本的对称化常数混在一起。
+**证明** 取独立同分布的幽灵样本 $Z'_1,\ldots,Z'_N$，相应经验风险记作 $\widehat R'_N$。若 $N\epsilon^2<2$，(A.3.5) 的右侧大于 $1$，结论平凡。以下设 $N\epsilon^2\ge2$。
 
-若 $d=\operatorname{VCdim}(\mathcal H)$ 且 $N\ge d\ge1$，Sauer 引理给出
+点态可测性与损失有界性使风险及经验风险都可由同一可数子类 $\mathcal G_0$ 逐点逼近，因此上确界事件可写成可数并。固定枚举 $\mathcal G_0=(g_j)_{j\ge1}$；在上确界严格超过 $\epsilon$ 的事件上，令 $j^*$ 为第一个满足相应偏差严格超过 $\epsilon$ 的索引。这样得到的见证是原样本的可测函数，并不要求上确界实际取到。条件于原样本后，$\widehat R'_N(g_{j^*})$ 的方差至多为 $1/(4N)$。Chebyshev 不等式给出
 
 $$
-m_{\mathcal H}(2N)
-\le\left(\frac{2eN}{d}\right)^d.
+\Pr\left(
+|\widehat R'_N(g_{j^*})-R(g_{j^*})|\le\epsilon/2
+\mid Z_{1:N}
+\right)\ge\frac12.
 $$
 
-因此，对任意 $\delta\in(0,1)$，以至少 $1-\delta$ 的概率，
+因此标准对称化步骤得到
+
+$$
+\Pr\left(\sup_h|R(h)-\widehat R_N(h)|>\epsilon\right)
+\le2\Pr\left(
+\sup_h|\widehat R_N(h)-\widehat R'_N(h)|>\epsilon/2
+\right).
+\tag{A.3.5a}
+$$
+
+条件于合并后的 $2N$ 个观测，并对每对 $(Z_i,Z'_i)$ 独立随机交换。令 $\xi_i$ 为相应 Rademacher 符号；对固定 $h$，经验风险差与
+
+$$
+\frac1N\sum_{i=1}^N
+\xi_i\bigl(\ell_h(Z_i)-\ell_h(Z'_i)\bigr)
+$$
+
+同分布。每个括号属于 $\{-1,0,1\}$，故 Hoeffding 不等式给出
+
+$$
+\Pr_\xi\left(
+\left|\frac1N\sum_i\xi_i
+(\ell_h(Z_i)-\ell_h(Z'_i))\right|>\epsilon/2
+\right)
+\le2e^{-N\epsilon^2/8}.
+$$
+
+$\mathcal G$ 在这 $2N$ 个带标签观测上产生的不同损失向量不超过 $m_{\mathcal H}(2N)$ 个。对这些向量取联合界，再代入 (A.3.5a)，即得 (A.3.5)。$\square$
+
+若 $d=\operatorname{VCdim}(\mathcal H)$ 且 $N\ge d\ge1$，则对任意 $\delta\in(0,1)$，以至少 $1-\delta$ 的概率，
 
 $$
 \sup_{h\in\mathcal H}|R(h)-\widehat R_N(h)|
 \le
-\min\!\left\{
-1,
-\sqrt{\frac{32}{N}
-\left(
-d\log\frac{2eN}{d}+\log\frac8\delta
-\right)}
+\min\left\{1,
+\sqrt{\frac{8}{N}
+\left(d\log\frac{2eN}{d}+\log\frac4\delta\right)}
 \right\}.
-\tag{A.3.2}
+\tag{A.3.6}
 $$
 
-常数可以通过更精细的经验过程工具改善；这里重要的是量级
-$O\!\left(\sqrt{(d\log(N/d)+\log(1/\delta))/N}\right)$，而不是把某组常数误当成唯一的“VC 界”。
+令右侧为 $\varepsilon_N$，并令经验风险最小化器
+$\widehat h\in\arg\min_{h\in\mathcal H}\widehat R_N(h)$ 存在。对任意 $h^*\in\arg\min_{h\in\mathcal H}R(h)$，在同一事件上
 
-**适用域内的核心结论**：
-对二分类假设类，在分布无关 PAC 学习框架及适当可测性条件下，有限 VC 维与该类的 PAC 可学习性相对应；相应的 agnostic/一致收敛版本也以有限 VC 维刻画容量。这不是关于回归、结构化预测、分布依赖学习或“所有机器学习”的充要条件。
+$$
+R(\widehat h)
+\le\widehat R_N(\widehat h)+\varepsilon_N
+\le\widehat R_N(h^*)+\varepsilon_N
+\le R(h^*)+2\varepsilon_N.
+\tag{A.3.7}
+$$
 
-有限 $d_{VC}$ 使统一泛化罚项随 $N$ 增大而趋于 0，从而以高概率控制所有 $h\in\mathcal H$ 的经验风险与总体风险差距。要得到低总体风险，还需要假设类中存在足够好的预测器并由学习算法找到低经验风险解；泛化界本身不保证近似误差或优化误差很小。
+这才把统一偏差控制转化为学习器的风险界。它仍不保证优化器找到 ERM，也不控制假设类外的近似误差。在标准分布无关二分类 PAC 框架及适当可测性条件下，有限 VC 维刻画可学习性；该结论不是任意回归、结构化预测或生成任务的充要条件。
+
+## A.3.6 来源
+
+- Hoeffding, [*Probability Inequalities for Sums of Bounded Random Variables*](https://doi.org/10.1080/01621459.1963.10500830), 1963。
+- Vapnik & Chervonenkis, [*On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities*](https://doi.org/10.1137/1116025), 1971。
+- Sauer, [*On the Density of Families of Sets*](https://doi.org/10.1016/0097-3165(72)90019-2), 1972。

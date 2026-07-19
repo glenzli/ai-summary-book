@@ -1,99 +1,199 @@
-# 附录 A.9 CNN 反向传播原理 (CNN Backpropagation Principles)
+# 附录 A.9 CNN：互相关算子及其反向传播
 
-在正文中我们提到，在特定索引约定下，卷积层对输入的梯度 $\nabla_X \mathcal{L}$ 可写成 **误差项 $\boldsymbol{\delta}$ 与翻转卷积核的互相关**。本附录先在简化条件下证明该式，再说明一般 Conv2D 的扩展。
+卷一第二章给出 Conv2D 的前向索引。本附录把该索引视为线性算子，逐项推导对 bias、kernel 和 input 的梯度。深度学习库通常把前向算子称为 convolution，但实际计算的是不翻转 kernel 的互相关。
 
-## A.9.1 证明目标
+## A.9.1 前向定义与输出形状
 
-证明单位步幅情形下：
-
-$$
-\nabla_X\mathcal L
-=\delta *_{math} K
-=\delta\star\operatorname{rot180}(K),
-$$
-
-其中 $*_{math}$ 表示数学卷积，$\star$ 表示深度学习框架常用的互相关。
-
-## A.9.2 定义
-
-以下 A.9.2-A.9.5 主体推导采用这些假设：单个样本、单输入通道、单输出通道、`stride=1`、`dilation=1`、无 groups，并省略 bias 与后续非线性。为简化变元替换，核用以 0 为中心的有限整数 offset 记号；0-based 数组中的 `rot180` 对应 $k_{K_h-1-m,K_w-1-n}$。输入按前向 padding 规则在边界外补 0，$\delta_{i,j}$ 也在有效输出下标外视为 0。对于 `valid` 前向卷积，最终输入梯度对应 full 形状；对于显式 padding，还需按原输入区域裁剪。没有这些边界约定，下面的求和范围与输出形状并不完整。
-
-*   **前向互相关 (Cross-Correlation)**：这是深度学习中 Conv2D 的标准实现。
-    $$ y_{i,j} = (X \star K)_{i,j} = \sum_{m} \sum_{n} x_{i+m, j+n} \cdot k_{m,n} $$
-    *(注意：这里的下标是 $i+m$, $j+n$)*
-
-*   **数学卷积 (Convolution)**：
-    $$ (A * B)_{i,j} = \sum_{m} \sum_{n} A_{i-m, j-n} \cdot B_{m,n} $$
-    *(注意：这里的下标是 $i-m$, $j-n$)*
-
-## A.9.3 证明过程
-
-假设我们已经从 **后端 MLP** 或后续层接收到了误差梯度矩阵 $\boldsymbol{\delta}$（其中 $\delta_{i,j} = \frac{\partial \mathcal{L}}{\partial y_{i,j}}$）。我们需要计算 Loss 对当前层输入像素 $x_{a,b}$ 的梯度。
-
-根据链式法则：
-$$ \frac{\partial \mathcal{L}}{\partial x_{a,b}} = \sum_{i,j} \frac{\partial \mathcal{L}}{\partial y_{i,j}} \frac{\partial y_{i,j}}{\partial x_{a,b}} = \sum_{i,j} \delta_{i,j} \frac{\partial y_{i,j}}{\partial x_{a,b}} $$
-
-考察前向公式 $y_{i,j} = \sum_{m,n} x_{i+m, j+n} k_{m,n}$。
-只有当 $i+m=a$ 且 $j+n=b$ 时，这一项才包含 $x_{a,b}$。
-这意味着 $i = a-m$ 且 $j = b-n$。
-
-我们将 $i, j$ 替换为 $a, b, m, n$ 的表达式，代入求和公式：
-$$ \frac{\partial \mathcal{L}}{\partial x_{a,b}} = \sum_{m} \sum_{n} \delta_{a-m, b-n} \cdot k_{m,n} $$
-
-观察这个式子：
-$$ \sum_{m} \sum_{n} \delta_{a-m, b-n} \cdot k_{m,n} $$
-这正是 $\delta$ 和 $K$ 的**数学卷积**公式（形式为 $A_{a-m} B_{m}$）。
-即：
-$$ \nabla_X \mathcal{L} = \delta *_{math} K $$
-
-## A.9.4 与 rot180 的关系
-
-由于深度学习框架（如 PyTorch/TensorFlow）通常只提供**互相关**算子 (conv2d)，我们需要用互相关算子来实现数学卷积。
-互相关公式是 $A_{a+m} B_m$。
-为了凑出 $A_{a-m} B_m$，我们需要将 $B$ 的下标符号取反。
-令 $K'_{m,n} = K_{-m, -n}$（即旋转 180 度），代入互相关公式：
-$$ (\delta \star K')_{a,b} = \sum_{m,n} \delta_{a+m, b+n} K'_{m,n} = \sum_{m,n} \delta_{a+m, b+n} K_{-m,-n} $$
-令 $p = -m, q = -n$，则：
-$$ = \sum_{p,q} \delta_{a-p, b-q} K_{p,q} $$
-这恰好回到了数学卷积的形式。
-
-## A.9.5 结论
-
-因此，在上述单通道、单位 stride/dilation 与补零约定下：
-$$ \nabla_X \mathcal{L} = \delta *_{math} K \equiv \text{Conv2D}(\text{input}=\delta, \text{kernel}=\text{rot180}(K)) $$
-即：**输入梯度等于误差图与翻转后卷积核的互相关**，并按前向 padding 约定取相应区域。
-
-## A.9.6 多通道与一般 Conv2D
-
-多输入/输出通道时，前向互相关为
+先取 `groups=1`。令
 
 $$
-y_{o,i,j}=\sum_c\sum_{m,n}x_{c,i+m,j+n}\,k_{o,c,m,n},
+X\in\mathbb R^{B\times C_{\mathrm{in}}\times H\times W},
 $$
 
-所以还要对所有输出通道求和：
-
 $$
-\frac{\partial\mathcal L}{\partial x_{c,a,b}}
-=\sum_o\sum_{m,n}\delta_{o,a-m,b-n}\,k_{o,c,m,n}.
-$$
-
-对一般步幅 $s_h,s_w$、膨胀 $d_h,d_w$ 和 padding $p_h,p_w$，更稳妥的前向索引是
-
-$$
-y_{o,i,j}
-=\sum_c\sum_{m,n}
-x_{c,\,i s_h-p_h+m d_h,\,j s_w-p_w+n d_w}
-k_{o,c,m,n}.
+K\in\mathbb R^{C_{\mathrm{out}}\times C_{\mathrm{in}}\times K_h\times K_w},
+\qquad
+b\in\mathbb R^{C_{\mathrm{out}}}.
 $$
 
-对应输入梯度可写成
+步幅、padding 和 dilation 分别为
+$(s_h,s_w)$、$(p_h,p_w)$、$(d_h,d_w)$，其中步幅与 dilation 是正整数，padding 是非负整数，并假定下式给出的输出尺寸为正。越界输入按零处理。前向互相关是
 
 $$
-\frac{\partial\mathcal L}{\partial x_{c,a,b}}
-=\sum_{o,i,j,m,n}\delta_{o,i,j}k_{o,c,m,n}
-\,\mathbf 1\!\left[a=i s_h-p_h+m d_h,\;
-b=j s_w-p_w+n d_w\right].
+Y_{n,o,i,j}
+=b_o+
+\sum_{c=0}^{C_{\mathrm{in}}-1}
+\sum_{u=0}^{K_h-1}
+\sum_{v=0}^{K_w-1}
+K_{o,c,u,v}
+X_{n,c,\,is_h-p_h+ud_h,\,js_w-p_w+vd_w}.
+\tag{A.9.1}
 $$
 
-框架通常用 **transposed convolution** 式索引实现这一步：按 stride 在误差图位置间插入对应间隔，按 dilation 访问核元素，再处理 padding、output padding 与裁剪。此时不能把单位步幅下的同形状公式无条件套用到所有 Conv2D 配置。
+输出空间尺寸为
+
+$$
+H_{\mathrm{out}}
+=\left\lfloor
+\frac{H+2p_h-d_h(K_h-1)-1}{s_h}
+\right\rfloor+1,
+$$
+
+$$
+W_{\mathrm{out}}
+=\left\lfloor
+\frac{W+2p_w-d_w(K_w-1)-1}{s_w}
+\right\rfloor+1.
+\tag{A.9.2}
+$$
+
+若 padding 左右不对称，应在 (A.9.2) 中分别使用两侧 padding 总和；不能只套对称公式。
+
+## A.9.2 三类梯度
+
+设标量损失为 $L$，上游梯度
+
+$$
+\Delta_{n,o,i,j}
+=\frac{\partial L}{\partial Y_{n,o,i,j}}
+$$
+
+与 $Y$ 同形。若卷积后接逐元素激活 $A=\phi(Y)$，这里的 $\Delta$ 应先由
+$\Delta_Y=\Delta_A\odot\phi'(Y)$ 得到。
+
+### Bias 梯度
+
+同一个 $b_o$ 被全部样本和空间位置共享，因此
+
+$$
+\boxed{
+\frac{\partial L}{\partial b_o}
+=\sum_{n=0}^{B-1}
+\sum_{i=0}^{H_{\mathrm{out}}-1}
+\sum_{j=0}^{W_{\mathrm{out}}-1}
+\Delta_{n,o,i,j}.}
+\tag{A.9.3}
+$$
+
+### Kernel 梯度
+
+由 (A.9.1)，
+
+$$
+\frac{\partial Y_{n,o,i,j}}
+{\partial K_{o,c,u,v}}
+=X_{n,c,\,is_h-p_h+ud_h,\,js_w-p_w+vd_w}.
+$$
+
+对所有使用同一 kernel 参数的位置求和：
+
+$$
+\boxed{
+\frac{\partial L}{\partial K_{o,c,u,v}}
+=\sum_{n,i,j}
+\Delta_{n,o,i,j}
+X_{n,c,\,is_h-p_h+ud_h,\,js_w-p_w+vd_w}.}
+\tag{A.9.4}
+$$
+
+这说明 kernel 梯度是输入 patch 与输出误差之间的相关求和；batch 求均值还是求和由 $\Delta$ 中是否已含归一化决定。
+
+### Input 梯度
+
+固定输入位置 $(n,c,r,s)$。它只影响满足
+
+$$
+r=is_h-p_h+ud_h,
+\qquad
+s=js_w-p_w+vd_w
+$$
+
+的输出项。因此
+
+$$
+\boxed{
+\frac{\partial L}{\partial X_{n,c,r,s}}
+=\sum_{o,i,j,u,v}
+\Delta_{n,o,i,j}K_{o,c,u,v}
+\mathbf 1\!\left[
+\begin{array}{l}
+r=is_h-p_h+ud_h,\\
+s=js_w-p_w+vd_w
+\end{array}
+\right].}
+\tag{A.9.5}
+$$
+
+(A.9.5) 对 stride、dilation 和 padding 都有效，也明确给出了边界裁剪所需的索引条件。
+
+## A.9.3 单位步幅下的翻转关系
+
+为看清常见的 `rot180` 说法，取单样本、单输入/输出通道、$s_h=s_w=d_h=d_w=1$，并用以零为中心的有限 offset 表示 kernel：
+
+$$
+Y_{i,j}=\sum_{u,v}X_{i+u,j+v}K_{u,v}.
+$$
+
+由 (A.9.5)，
+
+$$
+\frac{\partial L}{\partial X_{a,b}}
+=\sum_{u,v}\Delta_{a-u,b-v}K_{u,v}.
+\tag{A.9.6}
+$$
+
+若数学卷积定义为
+
+$$
+(A*B)_{a,b}=\sum_{u,v}A_{a-u,b-v}B_{u,v},
+$$
+
+则 (A.9.6) 是
+
+$$
+\nabla_XL=\Delta*K.
+$$
+
+若仍用前向互相关算子 $\star$ 表示，则
+
+$$
+\nabla_XL
+=\Delta\star\operatorname{rot180}(K),
+\tag{A.9.7}
+$$
+
+并按前向 padding 选择 full 结果中的原输入区域。数组下标下的
+$\operatorname{rot180}(K)_{u,v}=K_{K_h-1-u,K_w-1-v}$；只有在先固定边界和 offset 约定后，(A.9.7) 才不会产生一格偏移。
+
+## A.9.4 Transposed convolution 是伴随，不是逆
+
+固定 kernel 后，(A.9.1) 对 $X$ 是线性映射 $\mathcal C_K:X\mapsto Y-b$。按 Frobenius 内积，输入梯度满足
+
+$$
+\langle\Delta,\mathcal C_K(X)\rangle_F
+=\langle\mathcal C_K^*(\Delta),X\rangle_F,
+$$
+
+所以
+
+$$
+\nabla_XL=\mathcal C_K^*(\Delta).
+\tag{A.9.8}
+$$
+
+框架的 transposed convolution 实现的正是这种伴随索引：stride 大于一时把误差放回相应格点，dilation 决定 kernel offset，再处理 padding、`output_padding` 和裁剪。伴随一般不是逆；stride、边界与通道混合会丢失信息，`output_padding` 只解决输出形状歧义，不恢复被丢弃的输入。
+
+## A.9.5 多通道、groups 与 depthwise 情形
+
+(A.9.3)--(A.9.5) 已包含普通多输入/输出通道。若 `groups=G`，要求 $G$ 同时整除 $C_{\mathrm{in}}$ 和 $C_{\mathrm{out}}$，每个输出通道只连接对应组内的 $C_{\mathrm{in}}/G$ 个输入通道；上述对 $c$ 或 $o$ 的求和必须限制在连接集合内，kernel 形状变为
+
+$$
+C_{\mathrm{out}}\times(C_{\mathrm{in}}/G)\times K_h\times K_w.
+$$
+
+当 $G=C_{\mathrm{in}}=C_{\mathrm{out}}$ 时得到 depthwise convolution，每个输出通道只使用一个输入通道。若有 depth multiplier，则每个输入通道可对应多个输出通道，仍按连接集合求和。
+
+## A.9.6 来源
+
+- LeCun et al., [*Gradient-Based Learning Applied to Document Recognition*](https://doi.org/10.1109/5.726791), 1998。
+- Dumoulin & Visin, [*A Guide to Convolution Arithmetic for Deep Learning*](https://arxiv.org/abs/1603.07285), 2016。

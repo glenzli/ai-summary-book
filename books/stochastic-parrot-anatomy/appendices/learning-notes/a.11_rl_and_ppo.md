@@ -1,120 +1,286 @@
-# 附录 A.11 强化学习与 PPO 原理 (RL & PPO Principles)
+# 附录 A.11 策略梯度、PPO 与 DPO
 
-## A.11.1 强化学习基础 (RL Basics)
+卷一第五章说明后训练流水线。本附录只推导三个数学接口：策略梯度估计量、PPO clipped surrogate，以及 KL 正则化最优策略到 DPO 损失的变换。三者依赖的策略与数据分布不同，不能仅因公式都含 log probability 就混为一个算法。
 
-在 RLHF 中，我们将大模型微调建模为一个 RL 问题：
-*   **Agent**: LLM (Policy $\pi_\theta$).
-*   **State/Environment**: Prompt、已生成前缀以及生成终止规则；奖励模型、验证器和系统约束在轨迹结束或中间步骤提供反馈。
-*   **Action**: 生成下一个 Token。
-*   **Reward**: 可以来自奖励模型、人类偏好代理、规则或可执行验证器，不限于单一 RM 分数。
+## A.11.1 自回归生成作为有限时域决策过程
 
-我们的目标是最大化期望累积奖励：
-$$ J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} [R(\tau)] $$
-
-## A.11.2 策略梯度 (Policy Gradient)
-
-最直接的方法是使用策略梯度定理：
-$$ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t} \nabla_\theta \log \pi_\theta(a_t | s_t) A_t \right] $$
-其中 $A_t$ 是优势函数 (Advantage Function)，衡量当前动作比平均水平好多少。
-
-朴素 Monte Carlo policy-gradient 估计通常方差较高，更新也可能迅速偏离采样策略：
-1.  **步长难以确定**: 更新太小收敛慢，更新太大导致策略崩溃。
-2.  **数据效率受限**: 朴素 on-policy 更新只能在策略尚未偏离采样策略太远时复用轨迹。
-
-## A.11.3 PPO: 近端策略优化 (Proximal Policy Optimization)
-
-PPO 的核心思想是：**限制策略更新的幅度，防止新策略偏离旧策略太远。**
-
-### A.11.3.1 重要性采样 (Importance Sampling)
-
-为了复用旧策略 $\pi_{old}$ 采样的数据来更新新策略 $\pi_\theta$，我们引入重要性采样比率 $r_t(\theta)$：
-$$ r_t(\theta) = \frac{\pi_\theta(a_t | s_t)}{\pi_{old}(a_t | s_t)} $$
-
-当 $\theta = \theta_{old}$ 时，$r_t = 1$。
-
-### A.11.3.2 截断目标函数 (Clipped Objective)
-
-PPO 的 clipped surrogate 由两部分取最小值构成，对会把概率比率推得过远的有利更新截平：
-
-$$ L^{CLIP}(\theta) = \mathbb{E}_t \left[ \min(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) A_t) \right] $$
-
-*   $\epsilon$: 超参数，通常为 0.1 或 0.2。
-*   **第一项** $r_t(\theta) A_t$: 标准的 TRPO 代理目标。
-*   **第二项** $\text{clip}(\dots) A_t$: 截断该样本对代理目标的贡献；它不会把实际策略比率硬性约束在 $[1-\epsilon, 1+\epsilon]$ 内。
-
-**直观理解**：
-1.  如果 $A_t > 0$（动作很好）：我们希望增加该动作的概率 ($r_t > 1$)。但为了稳定，如果 $r_t > 1+\epsilon$，就不再给予额外的奖励梯度。
-2.  如果 $A_t < 0$（动作很差）：我们希望减少该动作的概率 ($r_t < 1$)。但为了稳定，如果 $r_t < 1-\epsilon$，就不再给予额外的惩罚梯度。
-
-这种机制通常提高更新稳定性，但 PPO clipping 不提供 TRPO 式的严格单调改进保证，实际结果仍取决于优势估计、学习率、epoch 数和 KL 漂移。
-
-## A.11.4 KL 散度与 RLHF (KL Divergence in RLHF)
-
-在一种常见的 KL 正则化表述中，优化目标是
+对 prompt $x$，令状态
 
 $$
-J(\pi)
-=\mathbb E_{x\sim\mathcal D}\left[
-\mathbb E_{y\sim\pi(\cdot\mid x)}r(x,y)
--\beta D_{KL}\!\left(
-\pi(\cdot\mid x)\,\|\,\pi_{ref}(\cdot\mid x)
-\right)
+s_t=(x,y_{<t}),
+$$
+
+动作 $a_t=y_t$ 是下一个 token，策略为
+
+$$
+\pi_\theta(a_t\mid s_t).
+$$
+
+状态转移在给定 token 后通常是确定的前缀追加，直到 EOS 或长度上限。奖励可以只在终止时给出，也可以包含逐 token KL、格式或过程反馈。以下策略梯度推导假定用于更新时 reward 函数固定，不显式依赖 $\theta$；若 reward 与策略参数共享并参与求导，还会出现额外导数项。
+
+轨迹概率可分解为
+
+$$
+p_\theta(\tau)
+=p(x)\prod_{t=0}^{T-1}
+\pi_\theta(a_t\mid s_t)
+p(s_{t+1}\mid s_t,a_t).
+\tag{A.11.1}
+$$
+
+只有策略因子依赖 $\theta$。
+
+## A.11.2 Likelihood-ratio 策略梯度
+
+令总回报为 $R(\tau)$，目标
+
+$$
+J(\theta)=\mathbb E_{\tau\sim p_\theta}[R(\tau)].
+$$
+
+在可交换微分与积分且轨迹支持不随参数突变等条件下，
+
+$$
+\begin{aligned}
+\nabla_\theta J(\theta)
+&=\mathbb E_{\tau\sim p_\theta}
+[R(\tau)\nabla_\theta\log p_\theta(\tau)]\\
+&=\mathbb E
+\left[
+R(\tau)\sum_t
+\nabla_\theta\log\pi_\theta(a_t\mid s_t)
+\right].
+\end{aligned}
+\tag{A.11.2}
+$$
+
+若逐步 reward 为 $r_t$、折扣因子为 $\gamma\in[0,1]$，并且
+
+$$
+R(\tau)=\sum_{k=0}^{T-1}\gamma^kr_k,
+$$
+
+定义从 $t$ 开始、重新以零次幂计数的 return
+
+$$
+G_t=\sum_{k=t}^{T-1}\gamma^{k-t}r_k.
+$$
+
+由因果性，动作 $a_t$ 之前的 reward 已由历史决定；它们与该步 score 项相乘后的条件期望为零，故精确的有限时域 likelihood-ratio 梯度为
+
+$$
+\nabla_\theta J(\theta)
+=\mathbb E\left[
+\sum_{t=0}^{T-1}\gamma^tG_t
+\nabla_\theta\log\pi_\theta(a_t\mid s_t)
 \right].
 $$
 
-这里第一项是样本级奖励的期望，第二项是给定 prompt 后两个完整输出分布之间的 KL，二者不能在记号上混为同一个 $R(x,y)$。实现时也常对采样输出使用整形分数
+当 $\gamma=1$ 时外部因子消失。某些实现改用折扣占用分布采样状态，或直接优化按时间步平均的 surrogate，因而不显式写 $\gamma^t$；那是目标与采样测度的约定，不是从上述轨迹目标中代数消去该因子。
+
+对任意只依赖状态、在 actor 求导时视为 stop-gradient 的 baseline $b(s_t)$，
 
 $$
-\widetilde r(x,y)
-=r(x,y)-\beta\log\frac{\pi(y\mid x)}{\pi_{ref}(y\mid x)},
+\mathbb E_{a_t\sim\pi_\theta}
+[b(s_t)\nabla_\theta\log\pi_\theta(a_t\mid s_t)]
+=b(s_t)\nabla_\theta\sum_a\pi_\theta(a\mid s_t)=0.
 $$
 
-因为对 $y\sim\pi(\cdot\mid x)$ 取期望正好恢复上述 KL 项。
-
-### A.11.4.1 为什么要减去 KL？
-
-从正则化角度看，这相当于在最大化奖励的同时，用参考策略 $\pi_{ref}$ 限制策略漂移。在控制即推断等特定表述中，参考策略也可承担先验的角色；一般情况下直接称其为参考分布更准确。
-
-对离散输出空间，KL 项展开为
+故把 $G_t$ 替换为 $G_t-b(s_t)$ 不改变上述估计量期望，并可能降低方差。常用选择是
 
 $$
-D_{KL}\!\left(\pi\|\pi_{ref}\right)
-=\sum_y\pi(y\mid x)
-\log\frac{\pi(y\mid x)}{\pi_{ref}(y\mid x)}.
+V^\pi(s_t)=\mathbb E[G_t\mid s_t],
+\qquad
+A^\pi(s_t,a_t)=Q^\pi(s_t,a_t)-V^\pi(s_t).
 $$
 
-如果完全忽略奖励并只最小化该 KL，最优点是 $\pi=\pi_{ref}$。
-如果完全忽略 KL，策略偏移缺少这一锚定，更可能利用奖励模型漏洞；是否发生以及表现为何种模式取决于奖励与优化过程。
-
-该项是在**优化外部奖励**与**保持接近参考策略**之间做正则化权衡；这不同于强化学习中通常所说的 exploration-exploitation 权衡。
-
-## A.11.5 DPO：绕过显式 RL 的偏好优化 (Direct Preference Optimization)
-
-上一节把偏好优化写成期望奖励减去分布级 KL 正则项。
-
-DPO 的关键观察是：在很多工程实践里，我们并不一定要显式地训练 $R_{RM}$、也不一定要跑 PPO。只要我们有偏好数据 $(x, y_w, y_l)$，就可以把“胜者应该比败者更像人类喜欢”的约束，直接写成一个可优化的对数似然目标。
-
-### A.11.5.1 从 Bradley-Terry 偏好模型到优化目标
-
-一个常见假设是：人类偏好服从 Bradley-Terry / Logit 模型，即“胜者胜出概率”由一个打分差决定：
-$$ P(y_w \succ y_l \mid x) = \sigma(\Delta(x, y_w, y_l)) $$
-
-对 KL 正则化奖励最优化问题，其最优策略满足
+但 value function 不是对所有参数化都严格最小化梯度估计方差的标量 baseline。若记 $z_t=\nabla_\theta\log\pi_\theta(a_t\mid s_t)$，条件二阶矩有限且分母非零，则最小化 $\mathbb E[\|z_t(G_t-b)\|^2\mid s_t]$ 的值是
 
 $$
-r(x,y)=\beta\log\frac{\pi^*(y\mid x)}{\pi_{ref}(y\mid x)}+\beta\log Z(x),
+b^*(s_t)
+=\frac{\mathbb E[G_t\|z_t\|^2\mid s_t]}
+{\mathbb E[\|z_t\|^2\mid s_t]}.
 $$
 
-其中 $Z(x)$ 与候选输出 $y$ 无关。把这个关系代入 Bradley-Terry 模型时，两个候选共享的 $\beta\log Z(x)$ 抵消，得到打分差
-$$ \Delta(x, y_w, y_l) = \beta\Big[(\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)) - (\log \pi_{ref}(y_w|x) - \log \pi_{ref}(y_l|x))\Big] $$
+$V^\pi$ 是稳定且易估计的标准选择；只有在相应加权不改变条件均值时才与 $b^*$ 相同。
 
-那么对偏好数据最大化对数似然，得到的就是 DPO 损失：
-$$ \mathcal{L}_{\text{DPO}} = -\log \sigma\big(\Delta(x, y_w, y_l)\big) $$
+## A.11.3 Value critic 与 GAE
 
-### A.11.5.2 直观理解：为什么它像“带锚的策略梯度”？
+令 critic 为 $V_\phi(s)$，TD residual 为
 
-- **胜者/败者差分**：只关心 $\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)$，等价于“相对偏好”的学习信号。
-- **参考策略锚定**：减去 $\log \pi_{ref}(\cdot)$，会惩罚那些虽然能赢，但会把策略分布推得过远的更新方向（这与 RLHF 里 KL Penalty 的角色一致）。
-- **$\beta$ 的作用**：它缩放策略相对参考策略的对数比，并在 DPO 的理论来源中对应 KL 正则系数/温度。较大的 KL 系数意味着最优策略更受参考模型约束；在有限数据和具体优化器下，不能只看损失中的乘法位置就断言“$\beta$ 越大越激进”。
+$$
+\delta_t
+=r_t+\gamma V_\phi(s_{t+1})-V_\phi(s_t),
+\tag{A.11.3}
+$$
 
-DPO 不需要在线采样循环、显式奖励模型训练和 critic，因此实现链路通常比 PPO-RLHF 短；稳定性与最终效果仍取决于偏好数据、参考模型、$\beta$ 和分布偏移。
+终止状态取 $V_\phi=0$。Generalized Advantage Estimation 的截断形式为
+
+$$
+\widehat A_t^{\mathrm{GAE}(\gamma,\lambda)}
+=\sum_{l=0}^{T-t-1}(\gamma\lambda)^l\delta_{t+l},
+\qquad \lambda\in[0,1].
+\tag{A.11.4}
+$$
+
+$\lambda$ 较小通常更依赖 critic bootstrap、方差较低而偏差可能较大；$\lambda$ 接近 $1$ 更接近 Monte Carlo return。这个说法依赖 critic 误差和轨迹长度，不是单调性能定理。对只有终止 reward 的语言模型，早期 token 的 advantage 主要通过回报传播和 critic 基线形成。
+
+## A.11.4 PPO clipped surrogate
+
+用冻结的旧策略 $\pi_{\mathrm{old}}$ 采样轨迹，取 $0<\epsilon<1$，并在这些样本上定义
+
+$$
+r_t(\theta)
+=\frac{\pi_\theta(a_t\mid s_t)}
+{\pi_{\mathrm{old}}(a_t\mid s_t)}.
+\tag{A.11.5}
+$$
+
+分母必须在已采样动作上为正。PPO 的 clipped surrogate 是
+
+$$
+L^{\mathrm{clip}}(\theta)
+=\mathbb E_t\left[
+\min\left(
+r_t(\theta)\widehat A_t,
+\operatorname{clip}(r_t(\theta),1-\epsilon,1+\epsilon)
+\widehat A_t
+\right)
+\right].
+\tag{A.11.6}
+$$
+
+符号分情况解释：
+
+- 若 $\widehat A_t>0$，增大动作概率有利；当 $r_t>1+\epsilon$ 时，第二项把进一步增益截平。
+- 若 $\widehat A_t<0$，减小动作概率有利；当 $r_t<1-\epsilon$ 时，第二项把进一步增益截平。
+
+在另外两个方向上，`min` 不会截平纠错梯度。因此 (A.11.6) **不是**硬约束
+$r_t\in[1-\epsilon,1+\epsilon]$，也不保证每次更新后的 KL 小于某阈值。
+
+一种常见联合最大化目标为
+
+$$
+L^{\mathrm{clip}}
+-c_v\mathbb E_t[(V_\phi(s_t)-\widehat V_t)^2]
++c_H\mathbb E_t[H(\pi_\theta(\cdot\mid s_t))],
+\tag{A.11.7}
+$$
+
+并可另加到参考策略的 KL 控制。实际算法还由 rollout batch、每批 epoch 数、mini-batch 顺序、advantage 标准化、value clipping 和 early stopping 共同定义。PPO 原论文给出实用 surrogate，而不是 TRPO 式严格单调改进保证。
+
+## A.11.5 参考策略与旧策略不是同一个对象
+
+$\pi_{\mathrm{old}}$ 是产生当前 rollout 的行为策略，用在 (A.11.5) 的重要性比率中；每轮通常更新。
+
+$\pi_{\mathrm{ref}}$ 是 RLHF 目标中的正则化锚点，常在一段训练中冻结。分布级目标写作
+
+$$
+J(\pi)
+=\mathbb E_{x\sim\mathcal D}
+\left[
+\mathbb E_{y\sim\pi(\cdot\mid x)}r(x,y)
+-\beta D_{\mathrm{KL}}
+(\pi(\cdot\mid x)\|\pi_{\mathrm{ref}}(\cdot\mid x))
+\right].
+\tag{A.11.8}
+$$
+
+二者有时初始化为同一 checkpoint，但承担的数学角色不同。
+
+## A.11.6 KL 正则化最优策略
+
+固定 $x$，记 $q_y=\pi_{\mathrm{ref}}(y\mid x)$。假设输出空间有限或求和绝对收敛，reward 有限，并只在 $q_y>0$ 的支持上优化。考虑
+
+$$
+\max_{\pi\in\Delta}
+\sum_y\pi_yr_y
+-\beta\sum_y\pi_y\log\frac{\pi_y}{q_y},
+\qquad \beta>0.
+\tag{A.11.9}
+$$
+
+目标对支持内部的 $\pi$ 严格凹。加入约束 $\sum_y\pi_y=1$ 的乘子 $\lambda$，驻点满足
+
+$$
+r_y-\beta\left(\log\frac{\pi_y}{q_y}+1\right)+\lambda=0.
+$$
+
+整理并归一化得到唯一最优解
+
+$$
+\boxed{
+\pi^*(y\mid x)
+=\frac{1}{Z(x)}
+\pi_{\mathrm{ref}}(y\mid x)
+\exp\left(\frac{r(x,y)}{\beta}\right)}
+\tag{A.11.10}
+$$
+
+$$
+Z(x)=\sum_y\pi_{\mathrm{ref}}(y\mid x)e^{r(x,y)/\beta}.
+$$
+
+若参考策略对某输出概率为零，任何给它正概率的策略都有无限 forward KL；(A.11.10) 不会创造参考支持之外的概率质量。
+
+## A.11.7 从 Bradley--Terry 到 DPO
+
+假设同一 prompt 下的偏好概率满足 Bradley--Terry 模型
+
+$$
+P(y^+\succ y^-\mid x)
+=\sigma(r(x,y^+)-r(x,y^-)).
+\tag{A.11.11}
+$$
+
+由 (A.11.10) 反解
+
+$$
+r(x,y)
+=\beta\log\frac{\pi^*(y\mid x)}
+{\pi_{\mathrm{ref}}(y\mid x)}
++\beta\log Z(x).
+$$
+
+同一 $x$ 的 $\log Z(x)$ 在 reward 差中抵消。用待训练策略 $\pi_\theta$ 参数化 $\pi^*$，定义
+
+$$
+\Delta_\theta
+=\beta\left[
+\log\frac{\pi_\theta(y^+\mid x)}
+{\pi_{\mathrm{ref}}(y^+\mid x)}
+-
+\log\frac{\pi_\theta(y^-\mid x)}
+{\pi_{\mathrm{ref}}(y^-\mid x)}
+\right].
+\tag{A.11.12}
+$$
+
+假设观测偏好对上的 $\pi_\theta$ 与 $\pi_{\mathrm{ref}}$ 序列概率均为正。对偏好对的负对数似然就是
+
+$$
+\boxed{
+L_{\mathrm{DPO}}(\theta)
+=-\mathbb E_{(x,y^+,y^-)}
+[\log\sigma(\Delta_\theta)].}
+\tag{A.11.13}
+$$
+
+自回归序列概率必须包含全部被建模 token：
+
+$$
+\log\pi_\theta(y\mid x)
+=\sum_{t=1}^{|y|}
+\log\pi_\theta(y_t\mid x,y_{<t}).
+\tag{A.11.14}
+$$
+
+因此 EOS、截断和长度进入标准 DPO 目标。擅自改为 token 平均会定义不同的隐式 reward。DPO 的推导依赖 (A.11.8) 的 forward-KL 目标、Bradley--Terry 偏好模型和参考支持；它不等价于任意 reward、任意偏好噪声或任意 PPO-RLHF 实现。离线偏好数据若不能覆盖训练后策略常见输出，分类损失也不会自动修复这一分布缺口。
+
+## A.11.8 来源
+
+- Williams, [*Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning*](https://doi.org/10.1007/BF00992696), 1992。
+- Schulman et al., [*High-Dimensional Continuous Control Using Generalized Advantage Estimation*](https://arxiv.org/abs/1506.02438), 2016。
+- Schulman et al., [*Proximal Policy Optimization Algorithms*](https://arxiv.org/abs/1707.06347), 2017。
+- Ouyang et al., [*Training Language Models to Follow Instructions with Human Feedback*](https://arxiv.org/abs/2203.02155), 2022。
+- Rafailov et al., [*Direct Preference Optimization: Your Language Model Is Secretly a Reward Model*](https://arxiv.org/abs/2305.18290), 2023。

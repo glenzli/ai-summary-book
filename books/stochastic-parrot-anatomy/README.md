@@ -13,7 +13,7 @@
 ## 全书结构
 
 0. [导论：为什么要解剖一只随机鹦鹉](00_preface_and_scope.md)
-1. [卷一：模型、训练与系统](vol-01/README.md)：从 AI 技术史进入神经网络、Transformer、预训练、后训练、推理服务、多模态、生成媒体、世界模型、RAG、Agent 与模型生命周期。
+1. [卷一：模型与系统](vol-01/README.md)：从 AI 技术史进入神经网络、Transformer、预训练、后训练、推理服务、多模态、生成媒体、世界模型、RAG、Agent 与模型生命周期。
 2. [卷二：一次生成如何发生](vol-02/README.md)：沿真实运行时间线追踪文本、token、prefill、logits、逐 token 解码、扩散/流生成和工具执行边界。
 3. [卷三：模型中的概率从何而来](vol-03/README.md)：从世界与数据的非唯一性进入交叉熵、序列概率、解码变换、训练差异、熵、校准和实验分析。
 4. [卷四：模型可解释性的研究路线](vol-04/README.md)：区分行为、梯度、attention、probe、feature、patching、circuit、SAE、训练动力学和 CoT 监测所支持的不同主张。

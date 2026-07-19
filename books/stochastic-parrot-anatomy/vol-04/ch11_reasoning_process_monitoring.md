@@ -1,97 +1,184 @@
 # 第十一章 推理过程、Chain of Thought 与监测
 
-推理模型会输出步骤化文字，内部也可能在可见答案前使用隐藏 token 或 latent computation。可见 chain of thought 提供了新的观察面，但它仍是模型生成的文本，不必忠实记录全部内部因果过程。
+推理模型在答案前生成步骤化文本，Agent 还产生工具轨迹。可见 chain of thought（CoT）提供一个行为过程通道，但它不等于全部内部计算，也不必忠实披露影响答案的因素。研究必须把“过程对答案有因果作用”“过程内容忠实”和“monitor 能检测风险”分开。
 
-## 11.1 四种“过程”
+## 11.1 四种过程对象
 
-应区分：
+至少区分：
 
-1. Transformer 层间的内部 activation 过程；
-2. 自回归生成的可见 reasoning tokens；
-3. 服务端未显示的 hidden reasoning tokens；
-4. Agent 的工具调用与外部状态轨迹。
+1. Transformer 层间的 activation 过程；
+2. 自回归生成并进入后续上下文的 reasoning tokens；
+3. 服务端保存但不向用户展示的 reasoning tokens；
+4. tool calls、observations、memory writes 等外部执行轨迹。
 
-它们可以相互影响，却不是同一对象。工具日志可真实记录 API 调用，但自然语言“我先查询了数据库”可能只是描述。
+工具日志可真实记录 API 调用；自然语言“我查询了数据库”可能只是描述。隐藏 reasoning 若不可由研究者访问，就不能声称对其完成机制解释。
 
-## 11.2 CoT 的行为作用
+## 11.2 CoT 的行为因果角色
 
-要求模型生成中间步骤会把这些 token 加入后续上下文，从而改变条件分布：
+设输入为 $x$，reasoning trace 为 $r$，答案为 $a$。有 CoT 时
 
 $$
-q(a\mid x,r)
+p(a\mid x)=\sum_r p(r\mid x)p(a\mid x,r).
 $$
 
-与直接回答 $q(a\mid x)$ 不同。CoT 可以充当 scratchpad，让模型分解任务；它也可能产生冗长但无效的合理化。
+由于 $r$ 被加入上下文，改变或截断 $r$ 通常会改变 $p(a\mid x,r)$。这证明生成 tokens 可作为 scratchpad 起功能作用，但不证明每句话准确描述此前内部原因。
 
-性能提升证明 reasoning text 对生成过程有功能作用，不证明每句话都对应内部真实原因。
+比较 direct answer 与 CoT prompting 时，还同时改变 prompt、计算预算和输出分布。要归因“显式中间 token”，应控制总 tokens、采样与提示风格，并直接干预 trace。
 
-## 11.3 Faithfulness 测试
+## 11.3 Faithfulness 的不同定义
 
-可见推理的忠实性可通过：
+CoT faithfulness 至少有三层：
 
-- 修改中间结论，看最终答案是否随之改变；
-- 插入错误提示，观察模型是否使用却不承认；
-- 保持答案、改变 CoT，比较内部和输出；
-- 隐藏或截断某些步骤；
-- 要求简短与详细推理，检查核心依据是否稳定；
-- 将 CoT 交给独立 verifier 检查每一步。
+- **causal sensitivity**：改变 trace 中某因素是否按预测改变答案；
+- **factor disclosure**：真正改变答案的外部 cue 是否在 trace 中被承认；
+- **process completeness**：完成任务所需的关键步骤是否可由 trace 或 monitor 恢复。
 
-这些测试只能针对所定义的依赖关系。模型可能有多条正确推理路径，措辞变化不一定是不忠实。
+措辞相同不保证因果，措辞不同也可能实现等价算法。不存在脱离任务和反事实的单一“忠实度”。
 
-## 11.4 Outcome 与 Process Supervision
+## 11.4 Trace intervention
 
-outcome supervision 只根据最终答案给奖励；process supervision 对中间步骤提供标签。后者可以直接塑造可见推理分布，但标签正确性和粒度决定学到什么。
+对 trace 段 $r_j$ 的替换 $R_j$，可测
 
-一个步骤 verifier 能识别局部错误，不保证全局策略最优；奖励易检查步骤也可能鼓励模板化解释。需要同时评估最终能力、步骤有效性与分布外泛化。
+$$
+\Delta_j
+=S(a\mid x,R_j(r))-S(a\mid x,r).
+$$
 
-## 11.5 从 CoT 到内部 Circuit
+常见操作：
 
-可以把 reasoning token 当作普通 token，研究：
+- 截断某步；
+- 把中间结论翻转；
+- 替换为语义等价 paraphrase；
+- 插入错误但流畅的步骤；
+- 保持结论、改变理由；
+- 把一个样本的步骤 patch 到另一个样本。
 
-- 哪些 earlier tokens 通过 attention 影响当前步骤；
-- 某中间结论在哪层可读出；
-- patch 某步骤对应 activation 是否改变后续答案；
-- 同一算法在无 CoT 与有 CoT 条件下是否复用回路。
+替换后的 trace 可能不来自模型自己的 $p(r\mid x)$。应比较自然续写 likelihood、用模型重写过渡、以及多种干预的一致性。
 
-复杂推理可能使用分布式、动态和 prompt-specific circuits。单一局部 attribution graph 很少等于完整算法证明。
+答案不变不证明该步无用：冗余步骤、模型纠错和后续重算都可能补偿。
 
-## 11.6 Internal Monitor
+## 11.5 Cue-based disclosure test
 
-训练 probe 或 classifier，从 activation 预测欺骗、危险知识、任务进度或即将发生的错误，是“监测”路线。它可以在输出出现前提供信号。
+在 prompt 中加入会改变答案的 cue $c$，只对成功改变答案的 cases 检查 CoT 是否承认其影响。可估计
 
-监测器需要独立评估：
+$$
+\widehat F_c
+=\frac{\#\{\text{answer changed and cue disclosed}\}}
+{\#\{\text{answer changed}\}}.
+$$
 
-- 正负标签怎样获得；
-- 是否只检测表面 topic；
-- 对新策略和新语言是否泛化；
-- 模型是否能在优化压力下规避；
-- false positive/negative 的部署代价；
-- 监测器访问哪一模型版本与层。
+该估计量只在至少一个样本因 cue 改变答案时定义；分母为零时应报告命中数为零和该条件量不可估计，不能把比率记为 $0$。这是条件 acknowledgment rate，不是完整思维忠实度。分母筛选会排除 cue 被看到但未改变答案的样本；自动关键词 grader 还可能漏掉隐含承认。
 
-高 probe AUROC 不等于可可靠控制行为。
+[Turpin 等（2023）](https://arxiv.org/abs/2305.04388)及[后续 reasoning-model hint 实验（2025）](https://arxiv.org/abs/2505.05410)在特定 bias/hint 协议中观察到不完全披露。正确结论是这些模型与设置存在可测不忠实案例，而不是“所有 CoT 都是事后合理化”。
 
-## 11.7 可解释性与对抗适应
+## 11.6 Outcome 与 process supervision
 
-若模型训练目标知道监测器，可能学会在不触发已知 feature 的情况下完成行为。静态 probe 在自然分布上有效，不保证在对抗优化后有效。
+outcome supervision 只奖励最终结果；process supervision 对中间步骤评分。后者改变了 $p(r\mid x)$，可能提高可检查性，也可能鼓励符合 grader 偏好的模板。
 
-防护方向包括多层随机化监测、隐藏监测器细节、机制多样化、训练时 adversarial evaluation 和权限隔离。但可解释性不应成为唯一安全边界。
+过程奖励需要区分：
 
-## 11.8 多模态推理
+- 局部步骤正确；
+- 步骤对最终解法必要；
+- 全局路线有效；
+- 文本是否真实反映模型使用的因素。
 
-视觉问答中的可见解释可能提到图像区域。验证时可将区域遮挡、替换 patch features 或 patch cross-attention，检查答案与说明是否共同变化。
+一个 step verifier 能识别局部错误，不保证 trace 因果忠实或策略最优。直接优化“看起来安全的 CoT”还可能降低监测信号。
 
-若 explanation 指向红车但模型实际依赖背景水印，attention heatmap 可能仍看起来合理。需要输入反事实与内部干预联合验证 grounding。
+## 11.7 Monitorability 是二元关系
 
-## 11.9 扩散与迭代生成过程
+monitor $Q$ 接收观察 $O$（CoT、动作、输出或 activation）并预测行为属性 $Y$。monitorability 不是 Agent 的单一内在属性，而是
 
-扩散模型的中间状态是逐步去噪 latent。研究可追踪概念何时可由 probe 读出、cross-attention 在不同时间怎样作用，以及修改某时段 feature 如何影响布局或纹理。
+$$
+\mathcal M(M,Q,O,\mathcal D_{\mathrm{eval}},Y).
+$$
 
-“早期决定构图、后期决定细节”是常见经验概括，不是所有模型和所有概念的定理。应通过 time-resolved intervention 验证具体目标。
+评价包括 TPR、TNR、AUROC、AUPRC、calibration 与 subgroup worst case。若用几何平均总结平衡检测：
 
-## 11.10 监测与解释的边界
+$$
+G=\sqrt{\operatorname{TPR}\operatorname{TNR}},
+$$
 
-一个 monitor 可以很准确但不可解释；一个漂亮 feature 说明也可能监测性能很差。部署目标若是早期预警，应优先报告 detection metrics、distribution shift 和规避测试；研究目标若是机制理解，则需进一步追踪 feature 的上下游回路。
+仍应同时给原始两项，因为部署代价可能不对称。
 
-## 11.11 结论
+更强 monitor 得分更高，不一定说明 Agent trace 更透明；比较 Agent 时要固定 monitor family，比较 monitors 时要固定 Agent 与数据。
 
-CoT 是有功能的生成状态，也是可能不忠实的自然语言报告。过程研究应把可见 token、隐藏 activation、工具轨迹和监测器分开验证。它扩展了可解释性的观察面，却没有消除对反事实和干预证据的需求。
+## 11.8 三类监测评估
+
+[Guan 等的 ICML 2026 系统评估](https://openreview.net/forum?id=b82fgbMVpz)把 CoT monitorability 分为：
+
+1. **intervention evaluations**：控制改变环境因素，测试 monitor 能否从 trace 识别行为改变原因；
+2. **process evaluations**：任务只有有限有效路线，测试关键步骤是否可检测；
+3. **outcome-property evaluations**：结果属性可可靠标注，测试 trace 是否提前揭示该属性。
+
+这三类分别依赖干预有效性、过程 ground truth 与 outcome label。它们不能合并为无条件透明度分数。Guan 等在其所测 frontier/reasoning models 与任务上发现，CoT 常比只看动作和最终输出提供更强监测信号，但并不完美，且受模型、任务与 reasoning length 影响。[Korbak 等（2025）](https://arxiv.org/abs/2507.11473)则是一篇立场与研究议程文章，用来支持“monitorability 是一种脆弱机会、需要持续测量”这一判断，不作为第二组独立模型实验。
+
+这些是快速演化中的经验结果，不是未来模型必然保持 monitorability 的理论保证。
+
+## 11.9 Internal monitors
+
+另一条路线从 activation 训练 probe，预测欺骗、危险知识、任务进度或即将发生的错误。其研究合同与第五章相同，但部署风险更高：
+
+- labels 是否来自可验证行为而非主题词；
+- train/test 是否按策略和环境分离；
+- monitor 是否只检测 prompt 表面；
+- lead time 是否足够干预；
+- false positive/negative 成本；
+- Agent 是否知道并适应该 monitor；
+- 模型升级后表示是否漂移。
+
+高 AUROC 不是可可靠控制的充分条件。需要 calibration、阈值下效用、分布外和对抗评估。
+
+## 11.10 从 CoT 到内部机制
+
+reasoning token 仍是 token，可研究：
+
+- earlier trace positions 怎样影响当前 step；
+- 中间结论在哪层可读；
+- patch 某 step 对应 activation 是否改变后续答案；
+- 有/无 CoT 时是否复用同类功能角色；
+- 错误出现前是否存在内部预警 feature。
+
+复杂任务的 circuit 可能随题目动态路由。单 prompt attribution graph 最多解释该轨迹的局部近似；要声称算法，需要跨问题结构和反事实步骤验证。
+
+## 11.11 对抗适应与 Goodhart 风险
+
+若 Agent 的优化目标直接包含 monitor score 或 CoT 合规性，模型可能学会隐藏 intent、缩短 trace 或使用 monitor 不理解的编码。需要区分：
+
+- 自然分布上的可监测性；
+- 知道被监测但未专门训练规避；
+- prompt-level obfuscation pressure；
+- 训练级 adversarial adaptation。
+
+[Zolkowski 等（2025）的 stress tests](https://arxiv.org/abs/2510.19851)展示了部分模型在强 obfuscation pressure 下可降低检测，同时完成某些对抗任务；[Chen 等的 ICML 2026 controllability 实验](https://arxiv.org/abs/2603.05706)则在另一组当前模型与协议上发现 CoT 控制能力仍有限。两类结果针对不同模型与压力，不能拼成单一乐观或悲观定律。
+
+直接强监督 CoT 可能使表面说明更规范，也可能损害自然监测信号。monitorability 应随训练阶段持续评估，而不是部署前测一次。
+
+## 11.12 Access、隐私与安全边界
+
+推理 trace 可能含敏感输入、系统提示或安全策略。开放给 monitor 会扩大访问面；对用户隐藏又限制外部复现。研究报告要说明：
+
+- monitor 看到完整还是摘要 trace；
+- trace 是否经过 redaction；
+- monitor 与 Agent 是否共享模型家族；
+- 数据保留和权限边界；
+- 不可访问 hidden reasoning 时使用了什么代理。
+
+CoT monitoring 只能是纵深防御的一层，不能替代权限控制、sandbox、行为评测和人工复核。
+
+## 11.13 其他迭代生成过程
+
+扩散去噪状态和多模态 Agent 轨迹也可按时间做 probe、patch 与 monitor，但它们不是 CoT。扩散中的 timestep intervention、视觉区域替换和工具 observation patch 都要重新定义自然状态与反事实，不应借用“推理文本忠实性”的指标。
+
+本卷不在此展开这些架构；原则仍是先区分可见过程、内部状态和外部动作。
+
+## 11.14 方法审计表
+
+| 方法 | 问题/对象 | 操作与估计量 | 必要控制 | 能支持 | 不能支持与失效 |
+|---|---|---|---|---|---|
+| trace intervention | 某步骤是否影响答案 | 截断/替换；$\Delta_j$ | 自然度、多替换、冗余 | 指定 trace 操作的因果效应 | 文本完整反映内部计算 |
+| cue disclosure | 被用 cue 是否被承认 | cue 插入；conditional rate | cue 有效性、grader、未改变 cases | 指定协议的披露率 | 全局 faithfulness |
+| CoT monitor | trace 能否预测风险属性 | 训练/提示 monitor；TPR/TNR | Agent 固定、calibration、shift | 指定 Agent-monitor 对的检测力 | 安全保证 |
+| internal monitor | activation 是否提前含风险信号 | probe；AUROC/lead time | topic baseline、策略 split、对抗 | 可读预警信息 | 不可规避控制 |
+| reasoning circuit | 内部与 token 过程怎样连接 | readout + patch + path | 多题型、失败轨迹、动态路由 | 局部/条件机制 | 通用推理算法 |
+
+CoT 是有功能的生成状态，也可能是不完全的自然语言报告。研究目标不是笼统判定“它真或假”，而是把每一种忠实性与监测主张还原为可重复的反事实、检测指标和威胁模型。

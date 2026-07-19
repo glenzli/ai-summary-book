@@ -2,7 +2,9 @@
 
 | 术语 | 本书口径 |
 |---|---|
-| 模型 / checkpoint | 一组固定参数及其架构约定；不自动包含工具、记忆和产品策略 |
+| 模型 | 在声明架构、参数与运行约定后得到的参数化映射；使用时应说明是模型族、数学函数还是发布对象 |
+| checkpoint | 某一训练步保存的参数快照；训练 checkpoint 还可能包含优化器与随机状态，推理 checkpoint 通常不含 |
+| 模型工件 | 可加载的权重、架构配置、tokenizer、模板、adapter、精度约定与依赖 manifest |
 | 系统 | 模型、上下文构造、解码、运行时、工具、权限和外部服务的组合 |
 | tokenizer | 文本/字节与 token IDs 之间的版本化编码接口 |
 | context | 模板、历史、检索与多模态信息组装后实际送入模型的条件 |
@@ -16,7 +18,7 @@
 | decoding | 把 logits 分布转成 token 路径的 greedy、sampling、search 或约束策略 |
 | KV cache | 自回归推理中缓存历史 attention key/value 的张量 |
 | diffusion | 从受扰状态经多步去噪生成整体样本的方法族 |
-| flow matching | 学习时间相关向量场并用 ODE/SDE 路径运输样本的方法族 |
+| flow matching | 回归时间相关速度场，并通过 ODE 数值积分把基分布输运到数据分布的方法族 |
 | multimodal model | 联合处理文本、图像、音频、视频或其他模态的模型 |
 | world model | 对环境状态转移和观测进行预测的模型；“世界”由接口和数据限定 |
 | RAG | 检索资料并把结果组装进生成上下文的系统模式 |
@@ -45,4 +47,4 @@
 | alignment | 通过训练、规则和系统设计使行为更符合指定目标与约束的过程 |
 | 第一人称接口 | 助手用“我”进行协作的语言设计；不自动证明主体性 |
 
-更细术语分别见卷一[术语表](vol-01/GLOSSARY.md)、卷二[术语表](vol-02/GLOSSARY.md)、卷三[术语表](vol-03/REFERENCE.md)与卷四[术语表](vol-04/GLOSSARY.md)。
+更细术语分别见卷一[术语表](vol-01/GLOSSARY.md)、卷二[术语表](vol-02/GLOSSARY.md)、卷三[术语表](vol-03/REFERENCE.md)、卷四[术语表](vol-04/GLOSSARY.md)与卷五[概念表](vol-05/GLOSSARY.md)。

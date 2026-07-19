@@ -81,15 +81,27 @@
 <a id="ref-vaswani-2017"></a>
 *   **[Vaswani et al., 2017]** [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762). (Transformer 架构)
 *   **[Ba, Kiros & Hinton, 2016]** [*Layer Normalization*](https://arxiv.org/abs/1607.06450). (LayerNorm)
+<a id="ref-zhang-rmsnorm-2019"></a>
+*   **[Zhang & Sennrich, 2019]** [*Root Mean Square Layer Normalization*](https://arxiv.org/abs/1910.07467). (RMSNorm)
+<a id="ref-shazeer-glu-2020"></a>
+*   **[Shazeer, 2020]** [*GLU Variants Improve Transformer*](https://arxiv.org/abs/2002.05202). (GLU、GEGLU 与 SwiGLU 变体)
+<a id="ref-shazeer-mqa-2019"></a>
 *   **[Shazeer, 2019]** [*Fast Transformer Decoding: One Write-Head is All You Need*](https://arxiv.org/abs/1911.02150). (Multi-Query Attention)
+<a id="ref-ainslie-gqa-2023"></a>
 *   **[Ainslie et al., 2023]** [*GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints*](https://arxiv.org/abs/2305.13245). (Grouped-Query Attention)
+<a id="ref-su-rope-2021"></a>
 *   **[Su et al., 2021]** [*RoFormer: Enhanced Transformer with Rotary Position Embedding*](https://arxiv.org/abs/2104.09864). (RoPE)
 *   **[Chen et al., 2023]** [*Extending Context Window of Large Language Models via Positional Interpolation*](https://arxiv.org/abs/2306.15595). (位置插值与上下文扩展)
 *   **[Liu et al., 2023]** [*Ring Attention with Blockwise Transformers for Near-Infinite Context*](https://arxiv.org/abs/2310.01889). (分布式长上下文注意力)
 *   **[Child et al., 2019]** [*Generating Long Sequences with Sparse Transformers*](https://arxiv.org/abs/1904.10509). (稀疏注意力与长序列生成)
+<a id="ref-dao-flashattention-2022"></a>
 *   **[Dao et al., 2022]** [*FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*](https://arxiv.org/abs/2205.14135). (IO-aware 精确注意力)
 *   **[Dao, 2023]** [*FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning*](https://arxiv.org/abs/2307.08691). (更高并行度的注意力 kernel)
+<a id="ref-switch-transformer-2021"></a>
+*   **[Fedus, Zoph & Shazeer, 2021]** [*Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity*](https://arxiv.org/abs/2101.03961). (稀疏专家、容量与路由均衡)
+<a id="ref-gu-mamba-2023"></a>
 *   **[Gu & Dao, 2023]** [*Mamba: Linear-Time Sequence Modeling with Selective State Spaces*](https://arxiv.org/abs/2312.00752). (选择性状态空间模型)
+<a id="ref-dao-gu-mamba2-2024"></a>
 *   **[Dao & Gu, 2024]** [*Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality*](https://arxiv.org/abs/2405.21060). (Mamba-2 与 SSM/Attention 统一视角)
 <a id="ref-devlin-2018"></a>
 *   **[Devlin et al., 2018]** [*BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*](https://arxiv.org/abs/1810.04805). (BERT)
@@ -105,6 +117,12 @@
 *   **[Raffel et al., 2020]** [*Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer*](https://arxiv.org/abs/1910.10683). (T5)
 <a id="ref-lewis-bart-2019"></a>
 *   **[Lewis et al., 2019]** [*BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension*](https://arxiv.org/abs/1910.13461). (BART)
+<a id="ref-kudo-sentencepiece-2018"></a>
+*   **[Kudo & Richardson, 2018]** [*SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing*](https://aclanthology.org/D18-2012/). (从原始句子训练的子词 tokenizer)
+<a id="ref-loshchilov-adamw-2019"></a>
+*   **[Loshchilov & Hutter, 2019]** [*Decoupled Weight Decay Regularization*](https://arxiv.org/abs/1711.05101). (AdamW 与解耦 weight decay)
+<a id="ref-lee-dedup-2022"></a>
+*   **[Lee et al., 2022]** [*Deduplicating Training Data Makes Language Models Better*](https://aclanthology.org/2022.acl-long.577/). (训练语料与 train-test 重复)
 
 ## 5. 大模型对齐与优化 (Alignment & Optimization)
 
@@ -118,14 +136,19 @@
 *   **[Rafailov et al., 2023]** [*Direct Preference Optimization: Your Language Model is Secretly a Reward Model*](https://arxiv.org/abs/2305.18290). (DPO)
 *   **[Li & Liang, 2021]** [*Prefix-Tuning: Optimizing Continuous Prompts for Generation*](https://arxiv.org/abs/2101.00190). (每层 prefix 参数)
 *   **[Lester, Al-Rfou & Constant, 2021]** [*The Power of Scale for Parameter-Efficient Prompt Tuning*](https://arxiv.org/abs/2104.08691). (输入层 soft prompt)
-*   **[Hu et al., 2021]** *LoRA: Low-Rank Adaptation of Large Language Models*. (LoRA)
-*   **[Dettmers et al., 2023]** *QLoRA: Efficient Finetuning of Quantized LLMs*. (QLoRA)
+<a id="ref-hu-lora-2021"></a>
+*   **[Hu et al., 2021]** [*LoRA: Low-Rank Adaptation of Large Language Models*](https://arxiv.org/abs/2106.09685). (LoRA)
+<a id="ref-dettmers-qlora-2023"></a>
+*   **[Dettmers et al., 2023]** [*QLoRA: Efficient Finetuning of Quantized LLMs*](https://arxiv.org/abs/2305.14314). (QLoRA)
 *   **[Frantar et al., 2022]** [*GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers*](https://arxiv.org/abs/2210.17323). (GPTQ 权重量化)
 *   **[Xiao et al., 2022]** [*SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*](https://arxiv.org/abs/2211.10438). (激活/权重量化平滑)
 *   **[Lin et al., 2023]** [*AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration*](https://arxiv.org/abs/2306.00978). (AWQ 混合/保护式量化)
 <a id="ref-kaplan-2020"></a>
 *   **[Kaplan et al., 2020]** [*Scaling Laws for Neural Language Models*](https://arxiv.org/abs/2001.08361). (缩放定律)
-*   **[Kwon et al., 2023]** *Efficient Memory Management for Large Language Model Serving with PagedAttention*. (vLLM)
+<a id="ref-hoffmann-2022"></a>
+*   **[Hoffmann et al., 2022]** [*Training Compute-Optimal Large Language Models*](https://arxiv.org/abs/2203.15556). (固定计算预算下的模型规模与训练 token 配置)
+<a id="ref-kwon-pagedattention-2023"></a>
+*   **[Kwon et al., 2023]** [*Efficient Memory Management for Large Language Model Serving with PagedAttention*](https://arxiv.org/abs/2309.06180). (PagedAttention 与 vLLM)
 *   **[DeepSeek-AI, 2024]** [*DeepSeek-V3 Technical Report*](https://arxiv.org/abs/2412.19437). (MLA、MoE 与高效训练)
 *   **[DeepSeek-AI, 2025]** [*Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention*](https://arxiv.org/abs/2502.11089). (NSA: 硬件对齐、可训练稀疏注意力)
 *   **[DeepSeek-AI, 2025]** [*DeepSeek-V3.2-Exp: Boosting Long-Context Efficiency with DeepSeek Sparse Attention*](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp). (DSA 实验性长上下文效率模型)
@@ -145,13 +168,20 @@
 *   **[Wang et al., 2022]** [*Self-Instruct: Aligning Language Models with Self-Generated Instructions*](https://arxiv.org/abs/2212.10560). (合成指令数据)
 <a id="ref-tofu-unlearning-2024"></a>
 *   **[Maini et al., 2024]** [*TOFU: A Task of Fictitious Unlearning for LLMs*](https://openreview.net/forum?id=q0eyIBnE2t). (面向个体虚构资料的遗忘集/保留集、多指标评测与重训参照；基准结果不证明任意观察下的精确遗忘)
+<a id="ref-guo-certified-removal-2020"></a>
+*   **[Guo et al., 2020]** [*Certified Data Removal from Machine Learning Models*](https://proceedings.mlr.press/v119/guo20c.html). (以重训输出分布为参照的 certified removal 定义及线性分类器机制)
+<a id="ref-mitchell-model-cards-2019"></a>
+*   **[Mitchell et al., 2019]** [*Model Cards for Model Reporting*](https://arxiv.org/abs/1810.03993). (模型用途、评测条件、群体差异与限制的结构化发布文档)
+<a id="ref-gebru-datasheets-2021"></a>
+*   **[Gebru et al., 2021]** [*Datasheets for Datasets*](https://arxiv.org/abs/1803.09010). (数据动机、组成、收集、处理、用途和维护的结构化文档框架)
 *   **[Bai et al., 2022]** [*Constitutional AI: Harmlessness from AI Feedback*](https://arxiv.org/abs/2212.08073). (AI 反馈与安全后训练)
 *   **[Korbak et al., 2025]** [*Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety*](https://arxiv.org/abs/2507.11473). (CoT 监控与安全训练风险)
 *   **[Wortsman et al., 2022]** [*Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time*](https://arxiv.org/abs/2203.05482). (权重平均与模型合并)
 *   **[Ilharco et al., 2022]** [*Editing Models with Task Arithmetic*](https://arxiv.org/abs/2212.04089). (任务向量与模型编辑)
 *   **[Yadav et al., 2023]** [*TIES-Merging: Resolving Interference When Merging Models*](https://arxiv.org/abs/2306.01708). (模型合并干扰处理)
 *   **[Yu et al., 2023]** [*Language Models are Super Mario: Absorbing Abilities from Homologous Models as a Free Lunch*](https://arxiv.org/abs/2311.03099). (DARE 与模型合并)
-*   **[Leviathan et al., 2023]** [*Fast Inference from Transformers via Speculative Decoding*](https://arxiv.org/abs/2211.17192). (投机解码)
+<a id="ref-leviathan-speculative-2023"></a>
+*   **[Leviathan et al., 2023]** [*Fast Inference from Transformers via Speculative Decoding*](https://arxiv.org/abs/2211.17192). (保持目标分布的投机解码)
 *   **[Cai et al., 2024]** [*Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads*](https://arxiv.org/abs/2401.10774). (多解码头推理加速)
 *   **[Li et al., 2024]** [*EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty*](https://arxiv.org/abs/2401.15077). (特征级投机解码)
 
@@ -165,12 +195,34 @@
 *   **[van den Oord, Li & Vinyals, 2018]** [*Representation Learning with Contrastive Predictive Coding*](https://arxiv.org/abs/1807.03748). (InfoNCE 与对比预测编码)
 <a id="ref-liu-llava-2023"></a>
 *   **[Liu et al., 2023]** [*Visual Instruction Tuning*](https://arxiv.org/abs/2304.08485). (LLaVA)
+<a id="ref-alayrac-flamingo-2022"></a>
+*   **[Alayrac et al., 2022]** [*Flamingo: a Visual Language Model for Few-Shot Learning*](https://arxiv.org/abs/2204.14198). (冻结视觉与语言组件之间的 Perceiver Resampler、门控交叉注意力及交错图文训练)
+<a id="ref-li-blip2-2023"></a>
+*   **[Li et al., 2023]** [*BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models*](https://arxiv.org/abs/2301.12597). (Q-Former 作为冻结图像编码器与语言模型之间的查询瓶颈)
+<a id="ref-radford-whisper-2022"></a>
+*   **[Radford et al., 2022]** [*Robust Speech Recognition via Large-Scale Weak Supervision*](https://arxiv.org/abs/2212.04356). (Whisper 的 log-Mel 输入、编码器—解码器结构与多任务语音训练)
+<a id="ref-kingma-vae-2013"></a>
+*   **[Kingma & Welling, 2013]** [*Auto-Encoding Variational Bayes*](https://arxiv.org/abs/1312.6114). (证据下界、重参数化估计与变分自编码器)
+<a id="ref-goodfellow-gan-2014"></a>
+*   **[Goodfellow et al., 2014]** [*Generative Adversarial Nets*](https://arxiv.org/abs/1406.2661). (原始 GAN 极小极大目标、最优判别器与 Jensen--Shannon 散度分析)
+<a id="ref-ho-ddpm-2020"></a>
+*   **[Ho, Jain & Abbeel, 2020]** [*Denoising Diffusion Probabilistic Models*](https://arxiv.org/abs/2006.11239). (离散高斯前向过程、反向模型与简化噪声预测目标)
+<a id="ref-song-ddim-2020"></a>
+*   **[Song, Meng & Ermon, 2020]** [*Denoising Diffusion Implicit Models*](https://arxiv.org/abs/2010.02502). (与 DDPM 共享训练目标的非 Markov 采样过程及确定性极限)
+<a id="ref-song-score-sde-2021"></a>
+*   **[Song et al., 2021]** [*Score-Based Generative Modeling through Stochastic Differential Equations*](https://arxiv.org/abs/2011.13456). (反向时间 SDE、概率流 ODE 与连续时间 score 模型)
+<a id="ref-austin-d3pm-2021"></a>
+*   **[Austin et al., 2021]** [*Structured Denoising Diffusion Models in Discrete State-Spaces*](https://arxiv.org/abs/2107.03006). (D3PM 的离散转移矩阵与反向去噪)
 <a id="ref-rombach-2022"></a>
 *   **[Rombach et al., 2022]** [*High-Resolution Image Synthesis with Latent Diffusion Models*](https://arxiv.org/abs/2112.10752). (Latent Diffusion / Stable Diffusion 基础)
 <a id="ref-peebles-xie-2023"></a>
 *   **[Peebles & Xie, 2023]** [*Scalable Diffusion Models with Transformers*](https://arxiv.org/abs/2212.09748). (DiT)
 <a id="ref-lipman-2022"></a>
 *   **[Lipman et al., 2022]** [*Flow Matching for Generative Modeling*](https://arxiv.org/abs/2210.02747). (Flow Matching 与连续生成路径)
+<a id="ref-heusel-fid-2017"></a>
+*   **[Heusel et al., 2017]** [*GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium*](https://arxiv.org/abs/1706.08500). (Fréchet Inception Distance 的提出及其特征高斯矩定义)
+<a id="ref-binkowski-kid-2018"></a>
+*   **[Bińkowski et al., 2018]** [*Demystifying MMD GANs*](https://arxiv.org/abs/1801.01401). (Kernel Inception Distance、无偏 MMD 估计及有限样本比较)
 *   **[Betker et al., 2023]** [*Improving Image Generation with Better Captions*](https://cdn.openai.com/papers/dall-e-3.pdf). (DALL-E 3 与高质量图文描述)
 <a id="ref-openai-gpt4o-2024"></a>
 *   **[OpenAI, 2024]** [*GPT-4o System Card*](https://cdn.openai.com/gpt-4o-system-card.pdf). (文本、视觉、音频的端到端多模态评测与安全分析)
@@ -187,12 +239,20 @@
 *   **[Ha & Schmidhuber, 2018]** [*World Models*](https://arxiv.org/abs/1803.10122). (世界模型经典工作)
 <a id="ref-hafner-2019"></a>
 *   **[Hafner et al., 2019]** [*Dream to Control: Learning Behaviors by Latent Imagination*](https://arxiv.org/abs/1912.01603). (Dreamer 与潜在想象)
+<a id="ref-hafner-dreamerv3-2023"></a>
+*   **[Hafner et al., 2023]** [*Mastering Diverse Domains through World Models*](https://arxiv.org/abs/2301.04104). (DreamerV3 的 RSSM、想象 actor--critic 与跨域训练配方)
+<a id="ref-hansen-tdmpc2-2024"></a>
+*   **[Hansen et al., 2024]** [*TD-MPC2: Scalable, Robust World Models for Continuous Control*](https://arxiv.org/abs/2310.16828). (潜空间局部模型、价值学习与基于 CEM 的模型预测控制)
 <a id="ref-assran-ijepa-2023"></a>
 *   **[Assran et al., 2023]** [*Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture*](https://arxiv.org/abs/2301.08243). (I-JEPA)
 <a id="ref-bruce-genie-2024"></a>
 *   **[Bruce et al., 2024]** [*Genie: Generative Interactive Environments*](https://arxiv.org/abs/2402.15391). (从视频学习可交互环境)
 <a id="ref-rt2-2023"></a>
 *   **[Zitkovich et al., 2023]** [*RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*](https://proceedings.mlr.press/v229/zitkovich23a.html). (把视觉、语言和机器人动作接入同一 VLA 接口；具体实验不外推为开放环境安全保证)
+<a id="ref-kim-openvla-2024"></a>
+*   **[Kim et al., 2024]** [*OpenVLA: An Open-Source Vision-Language-Action Model*](https://arxiv.org/abs/2406.09246). (开放 VLA 模型、动作 token 化与跨机器人数据训练)
+<a id="ref-chi-diffusion-policy-2023"></a>
+*   **[Chi et al., 2023]** [*Diffusion Policy: Visuomotor Policy Learning via Action Diffusion*](https://arxiv.org/abs/2303.04137). (用条件 diffusion 生成连续动作序列与 receding-horizon 执行)
 <a id="ref-gemini-robotics-2025"></a>
 *   **[Google DeepMind et al., 2025]** [*Gemini Robotics: Bringing AI into the Physical World*](https://arxiv.org/abs/2503.20020). (VLA 通用模型、机器人形态适配与物理行动研究入口)
 <a id="ref-wei-cot-2022"></a>
@@ -201,8 +261,24 @@
 *   **[Kojima et al., 2022]** [*Large Language Models are Zero-Shot Reasoners*](https://arxiv.org/abs/2205.11916). (Zero-shot CoT)
 <a id="ref-yao-react-2022"></a>
 *   **[Yao et al., 2022]** [*ReAct: Synergizing Reasoning and Acting in Language Models*](https://arxiv.org/abs/2210.03629). (ReAct 框架)
+<a id="ref-schick-toolformer-2023"></a>
+*   **[Schick et al., 2023]** [*Toolformer: Language Models Can Teach Themselves to Use Tools*](https://arxiv.org/abs/2302.04761). (在语言建模训练中学习 API 调用位置、工具与参数)
+<a id="ref-zhou-webarena-2024"></a>
+*   **[Zhou et al., 2024]** [*WebArena: A Realistic Web Environment for Building Autonomous Agents*](https://arxiv.org/abs/2307.13854). (可重置网站环境、长程任务和功能正确性评测；结果受其网站与任务快照约束)
+<a id="ref-greshake-indirect-injection-2023"></a>
+*   **[Greshake et al., 2023]** [*Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*](https://arxiv.org/abs/2302.12173). (攻击者控制的外部数据通过有权限应用触发间接 prompt injection)
 <a id="ref-lewis-rag-2020"></a>
 *   **[Lewis et al., 2020]** [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://arxiv.org/abs/2005.11401). (RAG)
+<a id="ref-robertson-bm25-2009"></a>
+*   **[Robertson & Zaragoza, 2009]** [*The Probabilistic Relevance Framework: BM25 and Beyond*](https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf). (BM25 的概率相关性框架、词频饱和与文档长度归一化)
+<a id="ref-karpukhin-dpr-2020"></a>
+*   **[Karpukhin et al., 2020]** [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906). (DPR 双编码器、困难负例与最大内积检索)
+<a id="ref-khattab-colbert-2020"></a>
+*   **[Khattab & Zaharia, 2020]** [*ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT*](https://arxiv.org/abs/2004.12832). (token 级 MaxSim 晚交互与可预计算文档表示)
+<a id="ref-malkov-hnsw-2018"></a>
+*   **[Malkov & Yashunin, 2018]** [*Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs*](https://arxiv.org/abs/1603.09320). (HNSW 图索引与近似最近邻的延迟—召回折中)
+<a id="ref-liu-lost-middle-2023"></a>
+*   **[Liu et al., 2023]** [*Lost in the Middle: How Language Models Use Long Contexts*](https://arxiv.org/abs/2307.03172). (多文档问答与键值检索中的证据位置效应；结论受模型和任务协议约束)
 <a id="ref-mcp-2025-11-25"></a>
 *   **[Model Context Protocol, 2025-11-25]** [*Specification*](https://modelcontextprotocol.io/specification/2025-11-25). (模型应用与工具、资源、提示模板等上下文集成；`latest` 核验于 2026-07-12)
 <a id="ref-a2a-2026"></a>

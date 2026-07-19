@@ -1,195 +1,196 @@
-# 附录 A.6 反向传播 (Backpropagation) 的数学推导
+# 附录 A.6 反向传播：微分、形状与批量公式
 
-反向传播（Backpropagation）是深度学习中计算梯度的核心算法。本附录从计算图的局部视角出发，推导全连接层及多层网络的梯度递推；卷积层的索引推导另见[附录 A.9](a.9_cnn_backpropagation.md)。
+反向传播是标量损失对计算图执行反向模式自动微分。卷一第二章解释其历史与作用；本附录只固定导数约定，并推导 affine 层和逐元素激活的 batch 公式。卷积与 attention 的专用伴随算子分别见 [A.9](a.9_cnn_backpropagation.md) 和 [A.10](a.10_transformer_math.md)。
 
-## A.6.1 链式法则的局部视角 (The Local View)
+## A.6.1 导数约定与反向模式
 
-反向传播是 **链式法则 (Chain Rule)** 在计算图上的递归应用。
+标量损失记作 $L$。对向量 $x\in\mathbb R^n$，梯度 $\nabla_xL\in\mathbb R^n$ 是列向量，并满足
 
-### 1. 局部梯度与上游梯度
-想象计算图中的任何一个节点 $f$，它接收输入 $x, y$，输出 $z$。
-在反向传播过程中，我们的最终目标是求 Loss $L$ 对输入 $x, y$ 的导数。
+$$
+dL=(\nabla_xL)^\mathsf Tdx.
+\tag{A.6.1}
+$$
+
+若 $z=f(x)$，Jacobian 采用
+
+$$
+J_f(x)=\frac{\partial z}{\partial x}
+\in\mathbb R^{\dim z\times\dim x},
+$$
+
+则链式法则为
+
+$$
+\nabla_xL=J_f(x)^\mathsf T\nabla_zL.
+\tag{A.6.2}
+$$
+
+反向传播计算的是 Jacobian 转置与上游梯度的乘积，而不是显式物化完整 Jacobian。若一个节点向多个后继分叉，损失微分中会出现各路径贡献之和，所以回到该节点的梯度必须相加。
 
 <img src="images/backprop_node.png" width="60%" />
 
-当我们在这个节点 $f$ 处进行计算时，我们只需要关注两件事：
-1.  **上游梯度 (Upstream Gradient)**：$\frac{\partial L}{\partial z}$。这是从终点 $L$ 一路传回来的，告诉我们 $z$ 的变化会如何影响 $L$。对于当前节点来说，这是一个**已知量**。
-2.  **局部梯度 (Local Gradient)**：$\frac{\partial z}{\partial x}$ 和 $\frac{\partial z}{\partial y}$。这是当前节点 $f$ 自身的导数性质（例如，如果 $z=x+y$，则局部梯度为 1；如果 $z=xy$，则局部梯度为 $y$）。
+## A.6.2 单样本 affine 层
 
-根据链式法则，**下游梯度 (Downstream Gradient)** 等于：
-$$ \frac{\partial L}{\partial x} = \underbrace{\frac{\partial L}{\partial z}}_{\text{Upstream}} \cdot \underbrace{\frac{\partial z}{\partial x}}_{\text{Local}} $$
-
-这意味着：**每个节点把上游梯度与自身的局部导数复合，再把结果传给它的输入节点。** 这种局部递推使复杂计算图能够复用同一套求导规则。
-
-### 2. 常见门的梯度行为 (Gradient Flow in Gates)
-通过上述视角，我们可以总结出常用运算节点的梯度行为（如上图右侧所示）：
-
-*   **加法门 (Add Gate)**：$z = x + y$。局部梯度 $\frac{\partial z}{\partial x} = 1$。
-    *   **行为**：**梯度分发器 (Distributor)**。它将上游梯度原封不动地复制给所有输入分支。
-*   **乘法门 (Mul Gate)**：$z = x \cdot y$。局部梯度 $\frac{\partial z}{\partial x} = y$。
-    *   **行为**：$x$ 的梯度被缩放 $y$ 倍，$y$ 的梯度被缩放 $x$ 倍。许多此类 Jacobian 连乘时，尺度才可能随深度放大或衰减。
-*   **ReLU 门 (ReLU Gate)**：$z = \max(0, x)$。
-    *   **行为**：**梯度开关 (Filter)**。若 $x>0$，局部导数为 1；若 $x<0$，为 0；在 $x=0$ 处不可导，框架通常选取 0 等约定次梯度。
-
-<img src="images/backprop_gates.png" width="100%" />
-
----
-
-## A.6.2 全连接层的矩阵推导 (Matrix Derivation)
-
-掌握了局部视角后，我们现在来推导全连接层（Linear + Activation）的完整矩阵公式。
-
-### 1. 符号定义
-*   **输入**：$\mathbf{x}$ (维度 $D_{in} \times 1$)
-*   **权重**：$\mathbf{W}$ (维度 $D_{out} \times D_{in}$)
-*   **偏置**：$\mathbf{b}$ (维度 $D_{out} \times 1$)
-*   **线性输出**：$\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}$ (维度 $D_{out} \times 1$)
-*   **激活输出**：$\mathbf{a} = \sigma(\mathbf{z})$ (维度 $D_{out} \times 1$)
-*   **最终标量损失**：$L$
-
-### 2. 目标
-我们需要计算 $L$ 对 $\mathbf{W}, \mathbf{b}, \mathbf{x}$ 的梯度。
-假设我们已经知道了从后面层传回来的关于 $\mathbf{z}$ 的梯度，记为 **误差项 $\boldsymbol{\delta}$**：
-$$
-\boldsymbol{\delta}=\nabla_{\mathbf z}L
-=\begin{bmatrix}\partial L/\partial z_1&\cdots&\partial L/\partial z_{D_{out}}\end{bmatrix}^{\mathsf T}
-\quad (\text{Shape: }D_{out}\times1).
-$$
-本附录统一把标量函数对向量的梯度写成列向量。
-
-### 3. 推导步骤
-
-**Step 1: 偏置梯度 $\frac{\partial L}{\partial \mathbf{b}}$**
-由于 $\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}$，逐分量有 $\partial z_i/\partial b_j=\delta_{ij}$，所以 $\frac{\partial \mathbf{z}}{\partial \mathbf{b}}$ 是单位矩阵 $\mathbf{I}$。
-根据链式法则：
-$$ \nabla_{\mathbf b}L=I^{\mathsf T}\boldsymbol\delta=\boldsymbol\delta. $$
-结论：**偏置的梯度直接等于该层的误差项。**
-
-**Step 2: 权重梯度 $\frac{\partial L}{\partial \mathbf{W}}$**
-这是一个标量对矩阵的求导。我们可以看其中一个元素 $W_{ij}$。
-前向公式中，$z_i = \sum_k W_{ik} x_k + b_i$。
-只有 $z_i$ 这一项包含了 $W_{ij}$ (当 $k=j$ 时)。
-$$ \frac{\partial z_i}{\partial W_{ij}} = x_j $$
-链式法则：
-$$ \frac{\partial L}{\partial W_{ij}} = \frac{\partial L}{\partial z_i} \cdot \frac{\partial z_i}{\partial W_{ij}} = \delta_i \cdot x_j $$
-将所有元素组合回矩阵形式，这就相当于列向量 $\boldsymbol{\delta}$ 与行向量 $\mathbf{x}^T$ 的 **外积 (Outer Product)**：
-$$
-\frac{\partial L}{\partial \mathbf{W}} =
-\begin{bmatrix}
-\delta_1 \\ \delta_2 \\ \vdots \\ \delta_m
-\end{bmatrix}
-\begin{bmatrix} x_1 & x_2 & \dots & x_n \end{bmatrix}
-=
-\begin{bmatrix}
-\delta_1 x_1 & \delta_1 x_2 & \dots & \delta_1 x_n \\
-\delta_2 x_1 & \delta_2 x_2 & \dots & \delta_2 x_n \\
-\vdots & \vdots & \ddots & \vdots \\
-\delta_m x_1 & \delta_m x_2 & \dots & \delta_m x_n
-\end{bmatrix}
-= \boldsymbol{\delta} \mathbf{x}^T
-$$
-*(维度检查：$D_{out} \times 1$ 乘 $1 \times D_{in}$ 得到 $D_{out} \times D_{in}$，与 $\mathbf{W}$ 维度一致，正确)*
-
-**Step 3: 输入梯度 $\frac{\partial L}{\partial \mathbf{x}}$ (即传给上一层的误差)**
-
-我们需要求 $\frac{\partial L}{\partial \mathbf{x}}$ 以便继续向前传播。
-同样看 $x_j$，它通过权重矩阵连接到了所有的下一层神经元 $z_i$ ($i=1 \dots m$)。根据多元复合函数的链式法则，我们需要将所有路径的贡献累加：
-
-$$ \frac{\partial L}{\partial x_j} = \sum_{i=1}^{m} \frac{\partial L}{\partial z_i} \cdot \frac{\partial z_i}{\partial x_j} $$
-
-已知 $\frac{\partial L}{\partial z_i} = \delta_i$，且 $z_i = \sum_k W_{ik} x_k + b_i$，故 $\frac{\partial z_i}{\partial x_j} = W_{ij}$。代入得：
-
-$$ \frac{\partial L}{\partial x_j} = \sum_{i=1}^{m} \delta_i W_{ij} = \delta_1 W_{1j} + \delta_2 W_{2j} + \dots + \delta_m W_{mj} $$
-
-为了看清这是矩阵乘法的哪一部分，我们将完整的梯度向量 $\frac{\partial L}{\partial \mathbf{x}}$ 展开：
+取
 
 $$
-\frac{\partial L}{\partial \mathbf{x}} =
-\begin{bmatrix} \frac{\partial L}{\partial x_1} \\ \vdots \\ \frac{\partial L}{\partial x_n} \end{bmatrix} =
-\begin{bmatrix}
-\sum_i W_{i1} \delta_i \\
-\vdots \\
-\sum_i W_{in} \delta_i
-\end{bmatrix}
+x\in\mathbb R^{d_{\mathrm{in}}},
+\quad
+W\in\mathbb R^{d_{\mathrm{out}}\times d_{\mathrm{in}}},
+\quad
+b,z\in\mathbb R^{d_{\mathrm{out}}},
 $$
 
-观察 $\mathbf{W}^T \boldsymbol{\delta}$ 的运算过程：
-$\mathbf{W}$ 为 $m \times n$ 矩阵，$\mathbf{W}^T$ 为 $n \times m$ 矩阵。
+并令
+
 $$
-\mathbf{W}^T \boldsymbol{\delta} =
-\begin{bmatrix}
-W_{11} & W_{21} & \dots & W_{m1} \\
-W_{12} & W_{22} & \dots & W_{m2} \\
-\vdots & \vdots & \ddots & \vdots \\
-W_{1n} & W_{2n} & \dots & W_{mn}
-\end{bmatrix}
-\begin{bmatrix} \delta_1 \\ \delta_2 \\ \vdots \\ \delta_m \end{bmatrix}
-=
-\begin{bmatrix}
-W_{11}\delta_1 + W_{21}\delta_2 + \dots + W_{m1}\delta_m \\
-W_{12}\delta_1 + W_{22}\delta_2 + \dots + W_{m2}\delta_m \\
-\vdots \\
-W_{1n}\delta_1 + W_{2n}\delta_2 + \dots + W_{mn}\delta_m
-\end{bmatrix}
+z=Wx+b.
 $$
 
-这与我们逐元素推导的结果完全一致。
-结论：
-$$ \frac{\partial L}{\partial \mathbf{x}} = \mathbf{W}^T \boldsymbol{\delta} $$
+已知上游梯度 $\delta=\nabla_zL\in\mathbb R^{d_{\mathrm{out}}}$。微分为
 
----
+$$
+dz=(dW)x+W(dx)+db.
+$$
 
-## A.6.3 误差项 $\boldsymbol{\delta}$ 的递推 (Error Term Recurrence)
+代入 $dL=\delta^\mathsf Tdz$：
 
-### 1. 符号与设定 (Notation & Setup)
-为了将上述单层推导扩展到多层网络，我们需要引入层索引 $l$ 来明确各个变量的定义：
+$$
+dL
+=\delta^\mathsf T(dW)x
++\delta^\mathsf TW(dx)
++\delta^\mathsf Tdb.
+$$
 
-*   **层索引**：用 $l$ 表示当前层数，范围 $l=1, 2, \dots, L$（$L$ 为输出层）。
-*   **权重矩阵 $\mathbf{W}^{(l)}$**：连接第 $l-1$ 层到第 $l$ 层的权重。
-*   **偏置向量 $\mathbf{b}^{(l)}$**：第 $l$ 层的偏置。
-*   **线性输入 (Pre-activation) $\mathbf{z}^{(l)}$**：第 $l$ 层未经过激活函数的加权和。
-    $$ \mathbf{z}^{(l)} = \mathbf{W}^{(l)}\mathbf{a}^{(l-1)} + \mathbf{b}^{(l)} $$
-*   **激活输出 (Activation) $\mathbf{a}^{(l)}$**：第 $l$ 层经过激活函数后的输出。其中 $\mathbf{a}^{(0)}$ 即为网络输入 $\mathbf{x}$。
-    $$ \mathbf{a}^{(l)} = \sigma(\mathbf{z}^{(l)}) $$
+利用迹恒等式
+$\delta^\mathsf T(dW)x=\operatorname{tr}((\delta x^\mathsf T)^\mathsf TdW)$，逐项读取梯度：
 
-### 2. 递推公式推导
-现在我们只差最后一步：如何计算当前层的 $\boldsymbol{\delta}^{(l)}$？
-根据定义：
-$$ \boldsymbol{\delta}^{(l)} = \frac{\partial L}{\partial \mathbf{z}^{(l)}} = \frac{\partial L}{\partial \mathbf{a}^{(l)}} \cdot \frac{\partial \mathbf{a}^{(l)}}{\partial \mathbf{z}^{(l)}} $$
-1.  $\frac{\partial L}{\partial \mathbf{a}^{(l)}}$ 其实就是下一层传回来的“对输入的梯度”，即我们刚才推导的 Step 3 结果：$(\mathbf{W}^{(l+1)})^T \boldsymbol{\delta}^{(l+1)}$。
-2.  $\frac{\partial \mathbf{a}^{(l)}}{\partial \mathbf{z}^{(l)}}$ 是激活函数的 Jacobian 矩阵。
-    由于激活函数 $\mathbf{a} = \sigma(\mathbf{z})$ 是逐元素 (Element-wise) 运算，$a_i$ 只与 $z_i$ 有关，与其他 $z_k (k \ne i)$ 无关。
-    这意味着 Jacobian 矩阵是一个 **对角矩阵 (Diagonal Matrix)**：
-    $$
-    \mathbf{J} = \frac{\partial \mathbf{a}}{\partial \mathbf{z}} =
-    \begin{bmatrix}
-    \sigma'(z_1) & 0 & \dots & 0 \\
-    0 & \sigma'(z_2) & \dots & 0 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & \dots & \sigma'(z_m)
-    \end{bmatrix}
-    $$
+$$
+\boxed{
+\nabla_WL=\delta x^\mathsf T,
+\qquad
+\nabla_bL=\delta,
+\qquad
+\nabla_xL=W^\mathsf T\delta.}
+\tag{A.6.3}
+$$
 
-    现在应用链式法则：
-    $$ \boldsymbol{\delta}^{(l)} = \mathbf{J}^T \cdot \left( \frac{\partial L}{\partial \mathbf{a}^{(l)}} \right) $$
-    这里 $\frac{\partial L}{\partial \mathbf{a}^{(l)}}$ 是一个列向量（来自 Step 3 的反传梯度）。
-    对角矩阵与向量相乘，在数学上等价于向量的 **逐元素乘积 (Hadamard Product)**，记作 $\odot$。
+形状分别为 $d_{\mathrm{out}}\times d_{\mathrm{in}}$、$d_{\mathrm{out}}$ 和 $d_{\mathrm{in}}$。任何与这些形状不一致的转置都不能由 broadcasting 自动修正。
 
-    $$
-    \begin{bmatrix}
-    \sigma'(z_1) & 0 & \dots \\
-    0 & \sigma'(z_2) & \dots \\
-    \vdots & \vdots & \ddots
-    \end{bmatrix}
-    \begin{bmatrix} v_1 \\ v_2 \\ \vdots \end{bmatrix}
-    =
-    \begin{bmatrix} \sigma'(z_1) v_1 \\ \sigma'(z_2) v_2 \\ \vdots \end{bmatrix}
-    = \sigma'(\mathbf{z}) \odot \mathbf{v}
-    $$
+## A.6.3 Batch 行主公式
 
-    合并 Step 3 的结果 $\mathbf{v} = (\mathbf{W}^{(l+1)})^T \boldsymbol{\delta}^{(l+1)}$，即得到**BP 核心递推公式**：
-    $$ \boldsymbol{\delta}^{(l)} = \left[ (\mathbf{W}^{(l+1)})^T \boldsymbol{\delta}^{(l+1)} \right] \odot \sigma'(\mathbf{z}^{(l)}) $$
+为与卷一 Transformer 章一致，把 batch 或 token 位置放在行上。令
 
-这给出了逐元素激活网络中误差项的递推公式。
+$$
+X\in\mathbb R^{B\times d_{\mathrm{in}}},
+\qquad
+Z=XW^\mathsf T+\mathbf 1_Bb^\mathsf T
+\in\mathbb R^{B\times d_{\mathrm{out}}}.
+\tag{A.6.4}
+$$
 
-*(关于 Softmax 与 Cross-Entropy 的详细梯度推导，由于篇幅较长，请移步 **[附录 A.7](a.7_softmax_crossentropy.md)**)*
+令 $G_Z=\partial L/\partial Z$ 与 $Z$ 同形。对 Frobenius 内积
+$\langle A,B\rangle_F=\operatorname{tr}(A^\mathsf TB)$，有
+
+$$
+dL=\langle G_Z,dZ\rangle_F.
+$$
+
+展开 $dZ=(dX)W^\mathsf T+X(dW)^\mathsf T+\mathbf 1_B(db)^\mathsf T$，得到
+
+$$
+\boxed{
+G_X=G_ZW,
+\qquad
+G_W=G_Z^\mathsf TX,
+\qquad
+G_b=G_Z^\mathsf T\mathbf 1_B.}
+\tag{A.6.5}
+$$
+
+形状核对如下。
+
+| 量 | 形状 |
+| --- | --- |
+| $X,G_X$ | $B\times d_{\mathrm{in}}$ |
+| $Z,G_Z$ | $B\times d_{\mathrm{out}}$ |
+| $W,G_W$ | $d_{\mathrm{out}}\times d_{\mathrm{in}}$ |
+| $b,G_b$ | $d_{\mathrm{out}}$ |
+
+$G_b$ 对 batch 行求和，因为同一个偏置被所有行共享。若 $L$ 是 batch **均值**，$1/B$ 已包含在 $G_Z$ 中；反传公式本身不应再擅自除一次 $B$。
+
+## A.6.4 逐元素激活与多层递推
+
+设
+
+$$
+A^{(0)}=X,
+$$
+
+$$
+Z^{(\ell)}
+=A^{(\ell-1)}(W^{(\ell)})^\mathsf T
++\mathbf 1_B(b^{(\ell)})^\mathsf T,
+\qquad
+A^{(\ell)}=\sigma_\ell(Z^{(\ell)}),
+\tag{A.6.6}
+$$
+
+其中激活逐元素作用。给定 $G_{A^{(\ell)}}$，激活的反传是
+
+$$
+G_{Z^{(\ell)}}
+=G_{A^{(\ell)}}\odot
+\sigma_\ell'(Z^{(\ell)}).
+\tag{A.6.7}
+$$
+
+再由 (A.6.5)，
+
+$$
+G_{W^{(\ell)}}
+=(G_{Z^{(\ell)}})^\mathsf TA^{(\ell-1)},
+$$
+
+$$
+G_{b^{(\ell)}}
+=(G_{Z^{(\ell)}})^\mathsf T\mathbf 1_B,
+$$
+
+$$
+G_{A^{(\ell-1)}}
+=G_{Z^{(\ell)}}W^{(\ell)}.
+\tag{A.6.8}
+$$
+
+若第 $\ell-1$ 层还通过残差支路直接影响后续节点，则 (A.6.8) 只是其中一条路径的贡献，必须与残差支路的梯度相加。
+
+对 ReLU，$\sigma'(z)=1$ 当 $z>0$，为 $0$ 当 $z<0$；$z=0$ 不可微，其凸次微分为区间 $[0,1]$。软件必须在该点选择反传约定，常见选择是 $0$；选取区间内的值给出一个次梯度，但不把 ReLU 变成处处可微函数。
+
+<img src="images/backprop_gates.png" width="100%" alt="加法、乘法与 ReLU 标量节点的局部反向传播公式" />
+
+图中标量节点只是在局部写出向量--Jacobian 乘积；同一变量经多条支路影响损失时，各支路贡献仍须相加。
+
+## A.6.5 保存、重算与停止梯度
+
+反向公式依赖前向量 $X,Z$ 或 $A$。训练系统可以保存它们，也可以用 gradient checkpointing 在反向时重算；这改变内存与计算量，不改变理想实数算术下的链式法则。
+
+以下操作会改变计算图本身：
+
+- `detach` 或 stop-gradient 把指定路径的 Jacobian 设为零；
+- 原地修改若覆盖反向所需的前向值，会使公式失去对应数据；
+- 混合精度、量化和非确定性 kernel 会使数值梯度偏离精确实数结果；
+- 对广播参数，反向必须沿被广播的轴求和。
+
+有限差分
+
+$$
+\frac{L(\theta+he_j)-L(\theta-he_j)}{2h}
+$$
+
+可用于小模型梯度核对，但 $h$ 过大有截断误差，过小有浮点消减误差；ReLU 折点附近也不能期待普通中心差分稳定匹配某个软件次梯度约定。
+
+## A.6.6 来源
+
+- Linnainmaa, [*The Representation of the Cumulative Rounding Error of an Algorithm as a Taylor Expansion of the Local Rounding Errors*](https://doi.org/10.1093/comjnl/19.2.171), 1976。反向模式自动微分的早期系统表述。
+- Rumelhart, Hinton & Williams, [*Learning Representations by Back-Propagating Errors*](https://doi.org/10.1038/323533a0), 1986。

@@ -1,60 +1,201 @@
-# 附录 A.12 对比学习与 InfoNCE (Contrastive Learning & InfoNCE)
+# 附录 A.12 对比学习、InfoNCE 与互信息边界
 
-## A.12.1 问题设定：从“匹配”到“区分” (From Matching to Discrimination)
+本附录为卷一第七章的双编码器目标补足三个细节：batch 内分类形式、表示梯度，以及互信息下界成立所需的负样本采样假设。InfoNCE 是一个目标族；并非任意“拉近正样本、推远负样本”的损失都满足同一个信息论结论。
 
-在多模态（如 CLIP）或自监督表征学习中，我们常见的数据形式是“配对样本” $(x_i, y_i)$：
-- $x_i$：图像、语音、文本片段等
-- $y_i$：与之匹配的另一模态描述/视图
+## A.12.1 配对 batch 与相似度
 
-目标不是预测一个固定类别，而是让模型学会一个相似度函数，使得“正确配对”更相似，“错误配对”更不相似。
+令 $(x_i,y_i)_{i=1}^B$ 为独立同分布配对样本。两个编码器输出非零向量，再归一化为
 
-## A.12.2 InfoNCE：把相似度矩阵变成交叉熵 (InfoNCE as Cross-Entropy)
+$$
+u_i=\frac{f_\theta(x_i)}{\|f_\theta(x_i)\|},
+\qquad
+v_i=\frac{g_\phi(y_i)}{\|g_\phi(y_i)\|}.
+\tag{A.12.1}
+$$
 
-设一批样本大小为 $N$，编码器给出归一化向量（或任意可比较向量）：
-- $\mathbf{u}_i = f(x_i)$
-- $\mathbf{v}_j = g(y_j)$
+取温度 $\tau>0$，定义
 
-定义相似度（以点积/余弦为例）并引入温度系数 $\tau$：
-$$ s_{ij} = \frac{\mathbf{u}_i^T\mathbf{v}_j}{\tau} $$
+$$
+s_{ij}=\frac{u_i^\mathsf Tv_j}{\tau}.
+\tag{A.12.2}
+$$
 
-### A.12.2.1 单向 InfoNCE（以 $x$ 预测匹配的 $y$）
+归一化后 $u_i^\mathsf Tv_j\in[-1,1]$；若不做归一化，表示范数也会改变 logit 尺度，此时 $\tau$ 不能单独解释尖锐程度。
 
-对固定的 $x_i$，把 $\{y_j\}_{j=1}^N$ 看作 $N$ 类分类问题：训练配对 $y_i$ 是指定正类，其余为 batch 内候选。后者在损失中充当 negatives，但现实数据中可能存在语义等价或多重正确配对（false negatives）。
+## A.12.2 单向与双向 InfoNCE
 
-于是我们可以定义一个“行 Softmax”：
-$$ P(j\mid i) = \frac{\exp(s_{ij})}{\sum_{k=1}^{N}\exp(s_{ik})} $$
+从 $x$ 检索 $y$ 的行 softmax 为
 
-最大化正类概率等价于最小化交叉熵：
-$$ \mathcal{L}_{x\to y} = -\frac{1}{N}\sum_{i=1}^{N} \log P(i\mid i) = -\frac{1}{N}\sum_{i=1}^{N}\log \frac{\exp(s_{ii})}{\sum_{j=1}^{N}\exp(s_{ij})} $$
+$$
+p_{ij}^{x\to y}
+=\frac{e^{s_{ij}}}{\sum_{k=1}^Be^{s_{ik}}}.
+$$
 
-### A.12.2.2 双向 InfoNCE（CLIP 常用）
+单向损失是
 
-同理也可以反过来，用 $y$ 去“检索” $x$：
-$$ \mathcal{L}_{y\to x} = -\frac{1}{N}\sum_{i=1}^{N}\log \frac{\exp(s_{ii})}{\sum_{j=1}^{N}\exp(s_{ji})} $$
+$$
+L_{x\to y}
+=-\frac1B\sum_{i=1}^B
+\log p_{ii}^{x\to y}.
+\tag{A.12.3}
+$$
 
-CLIP 常用双向损失的平均：
-$$ \mathcal{L}_{\text{CLIP}} = \frac{1}{2}(\mathcal{L}_{x\to y} + \mathcal{L}_{y\to x}) $$
+反方向使用列 softmax：
 
-## A.12.3 温度系数 $\tau$：控制“分布尖锐度” (Role of Temperature)
+$$
+L_{y\to x}
+=-\frac1B\sum_{j=1}^B
+\log
+\frac{e^{s_{jj}}}{\sum_{i=1}^Be^{s_{ij}}}.
+\tag{A.12.4}
+$$
 
-把 $\tau$ 看成 Softmax logits 的缩放因子：
-- $\tau$ 越小，logits 的绝对尺度增大，Softmax 通常更尖锐，梯度尺度也会改变。
-- $\tau$ 越大，分布通常更平滑；具体训练效果仍取决于特征归一化、batch negatives 与优化器。
+CLIP 使用两者平均的一种对称形式：
 
-在实践中，$\tau$ 可以固定，也可以通过受约束的 logit scale 学习；并非所有 InfoNCE 实现都学习温度。
+$$
+L_{\mathrm{sym}}
+=\frac12(L_{x\to y}+L_{y\to x}).
+\tag{A.12.5}
+$$
 
-## A.12.4 一个常见直觉：对角线最大化 (Maximizing the Diagonal)
+每个分母都应使用 log-sum-exp 稳定计算。分布式训练若把其他设备样本 `all-gather` 为 negatives，分母、有效 batch 大小和梯度是否穿过 gather 都属于目标实现的一部分。
 
-把 $S=[s_{ij}]$ 看作一个 $N\times N$ 相似度矩阵：
-- 对角线 $s_{ii}$：正确配对
-- 非对角线 $s_{ij}$：错误配对
+## A.12.3 Logit 与表示梯度
 
-InfoNCE 的训练效果可以直观理解为提高对角配对相对于同一行/列候选的 log-softmax 概率。它优化相对差值，不要求每个非对角元素分别降到某个绝对值；false negatives 也会使“所有非对角都应拉低”的说法失效。
+对 (A.12.3)，
 
-这就是为什么在论文/工程里，经常用“相似度矩阵热力图”来肉眼检查训练是否正常：训练良好时，热力图会在对角线附近出现明显亮带。
+$$
+\boxed{
+\frac{\partial L_{x\to y}}{\partial s_{ij}}
+=\frac1B(p_{ij}^{x\to y}-\mathbf 1\{i=j\}).}
+\tag{A.12.6}
+$$
 
-## A.12.5 与“互信息下界”的关系（可选） (Optional: MI Lower Bound)
+由 $s_{ij}=u_i^\mathsf Tv_j/\tau$，
 
-在特定联合/边缘采样方案与 critic 假设下，InfoNCE 可导出形如 $I(X;Y)\ge \log N-\mathcal L_{\mathrm{NCE}}$ 的互信息下界。有限 $N$ 会限制该界，负样本相关、false negatives 和具体 batch 构造也会影响解释，因此不能把任意对比损失值直接当成互信息估计。
+$$
+\boxed{
+\nabla_{u_i}L_{x\to y}
+=\frac1{B\tau}
+\left(\sum_jp_{ij}^{x\to y}v_j-v_i\right).}
+\tag{A.12.7}
+$$
 
-这条解释对理解“为什么对比学习能学到语义表征”很有帮助，但严格证明需要更长的概率论推导，这里不展开。
+所以梯度提高正配对相对于当前 softmax 加权候选均值的相似度；它不是给每个非对角元素施加相同大小的排斥力。$v_j$ 的梯度还会累加所有把它当候选的行。对称损失再加入列方向的对应贡献。
+
+若未归一化表示为 $h\ne0$、$u=h/\|h\|$，则
+
+$$
+\frac{\partial u}{\partial h}
+=\frac1{\|h\|}(I-uu^\mathsf T),
+\tag{A.12.8}
+$$
+
+所以回到 $h$ 的梯度位于球面的切空间，与 $u$ 正交。实现为避免零范数而加入 $\epsilon$ 时，精确 Jacobian 会随所用归一化公式变化。
+
+较小 $\tau$ 放大 logits，也在 (A.12.7) 中显式放大局部梯度尺度；它同时改变 softmax 权重，不能只把温度理解为一个独立学习率。
+
+## A.12.4 Negatives 的统计含义
+
+对固定 $x_i$，其他独立配对中的 $y_j$ 在理想 iid batch 下来自边缘分布 $p_Y$，并与 $x_i$ 独立，因此可作为 noise candidates。这个结论在以下情形会改变：
+
+- batch 按类别、用户或时间分层而非 iid 抽样；
+- 多个 $y_j$ 都是 $x_i$ 的有效描述，形成 false negatives；
+- 同一实体或近重复样本同时出现；
+- negatives 来自队列或旧编码器，产生时滞分布；
+- 数据增强使同一源样本的多个 view 相关。
+
+损失仍可计算，但“分母近似边缘分布”的理论解释必须按实际采样方案重写。false negative 也不表示代码出错，而是训练配对定义没有表达多重正确匹配。
+
+## A.12.5 InfoNCE 互信息下界
+
+下面陈述的是**总体期望损失**的结论，不是单个有限 batch 的无偏互信息估计。
+
+**定理 A.12.1（InfoNCE 下界）** 假设 $I(X;Y)<\infty$，并取整数 $N\ge2$。令 $I$ 在 $\{1,\ldots,N\}$ 上均匀分布。先采样 $X\sim p_X$；条件于 $(X,I)$，令
+
+$$
+Y_I\sim p_{Y\mid X}(\cdot\mid X),
+$$
+
+其余 $Y_j$ 独立采自 $p_Y$。对任意正 critic $f(x,y)>0$，定义
+
+$$
+q_f(i\mid x,y_{1:N})
+=\frac{f(x,y_i)}{\sum_{j=1}^Nf(x,y_j)},
+$$
+
+$$
+L_N(f)
+=\mathbb E[-\log q_f(I\mid X,Y_{1:N})].
+\tag{A.12.9}
+$$
+
+若 $L_N(f)<\infty$，则
+
+$$
+\boxed{
+I(X;Y)\ge\log N-L_N(f).}
+\tag{A.12.10}
+$$
+
+**证明** 记 $Z=(X,Y_{1:N})$，上述生成分布为 $P_{I,Z}$。令 $Q_{I,Z}$ 是如下完全独立的参照分布：$I$ 仍均匀，$X\sim p_X$，且所有 $Y_j$ 独立采自 $p_Y$，并与 $(I,X)$ 独立。固定 $I=i$ 时，$P_{Z\mid I=i}$ 与 $Q_Z$ 的唯一区别是 $(X,Y_i)$ 在前者服从联合分布而在后者服从边缘乘积，故
+
+$$
+D_{\mathrm{KL}}(P_{Z\mid I=i}\|Q_Z)=I(X;Y).
+$$
+
+$P_I=Q_I$，所以 KL 的条件分解给出
+
+$$
+D_{\mathrm{KL}}(P_{I,Z}\|Q_{I,Z})=I(X;Y).
+\tag{A.12.11}
+$$
+
+另一方面，先对 $Z$ 分解同一个 KL。由于 $Q_{I\mid Z}=Q_I$ 是均匀分布，
+
+$$
+\begin{aligned}
+D_{\mathrm{KL}}(P_{I,Z}\|Q_{I,Z})
+&=D_{\mathrm{KL}}(P_Z\|Q_Z)
++\mathbb E_{P_Z}
+D_{\mathrm{KL}}(P_{I\mid Z}\|Q_I)\\
+&=D_{\mathrm{KL}}(P_Z\|Q_Z)+I_P(I;Z)\\
+&\ge I_P(I;Z).
+\end{aligned}
+\tag{A.12.12}
+$$
+
+因此 $I_P(I;Z)\le I(X;Y)$。对索引分类问题，交叉熵还可分解为
+
+$$
+L_N(f)
+=H_P(I\mid Z)
++\mathbb E_{P_Z}
+D_{\mathrm{KL}}(P_{I\mid Z}\|q_f(\cdot\mid Z))
+\ge H_P(I\mid Z).
+\tag{A.12.13}
+$$
+
+由于 $I$ 均匀，$H(I)=\log N$，于是
+
+$$
+\log N-L_N(f)
+\le\log N-H_P(I\mid Z)
+=I_P(I;Z).
+$$
+
+再结合 (A.12.12) 即得 (A.12.10)。在联合分布对边缘乘积绝对连续时，Bayes 最优索引分类器的 score 与 Radon--Nikodym 密度比 $dP_{Y\mid X=x}/dP_Y(y)$ 成比例；一般神经 critic 只给出相应变分下界。Poole 等人给出了这一精确多样本下界的系统推导。CPC 原附录的早期论证含有大 $N$ 近似，因此这里使用上面的精确 KL 分解。$\square$
+
+该界还有三个直接边界：
+
+1. 因为 $L_N(f)\ge0$，证书不超过 $\log N$；高互信息时有限 negatives 会使界饱和。
+2. 实际 batch loss 是 (A.12.9) 的 Monte Carlo 量，单批的 $\log N-L$ 不必低于真实互信息。
+3. 若 negatives 不来自边缘分布或与 $X$ 不独立，(A.12.10) 不能原样引用；需要针对新采样分布重新推导。
+
+因此 InfoNCE 可作为有理论背景的表示学习目标，但低损失不等于“模型已经理解语义”，也不等于相似度可直接解释为事实概率。
+
+## A.12.6 来源
+
+- van den Oord, Li & Vinyals, [*Representation Learning with Contrastive Predictive Coding*](https://arxiv.org/abs/1807.03748), 2018。
+- Poole et al., [*On Variational Bounds of Mutual Information*](https://proceedings.mlr.press/v97/poole19a.html), 2019。
+- Radford et al., [*Learning Transferable Visual Models From Natural Language Supervision*](https://arxiv.org/abs/2103.00020), 2021。

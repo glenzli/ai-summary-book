@@ -10,21 +10,43 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 VOLUMES = tuple(ROOT / f"vol-{number:02d}" for number in range(1, 6))
+VOLUME_COMPANIONS = {
+    "vol-01": ("SOURCE_NOTES.md", "GLOSSARY.md"),
+    "vol-02": ("SOURCES.md", "GLOSSARY.md"),
+    "vol-03": ("SOURCES.md", "REFERENCE.md", "APPENDIX_PROBABILITY.md"),
+    "vol-04": ("SOURCES.md", "GLOSSARY.md"),
+    "vol-05": ("SOURCES.md", "GLOSSARY.md"),
+}
+ROOT_COMPANIONS = ("NOTATION.md", "GLOSSARY.md", "SOURCES.md")
 LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 LABELED_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 HTML_IMAGE = re.compile(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", re.IGNORECASE)
 HEADING = re.compile(r"^(#{1,6})\s+")
+H1 = re.compile(r"^#\s+", re.MULTILINE)
 HEADING_TEXT = re.compile(r"^#{1,6}\s+(.+?)\s*$", re.MULTILINE)
+EMPTY_HEADING = re.compile(r"^#{1,6}\s*$", re.MULTILINE)
 EXPLICIT_ANCHOR = re.compile(r"<a\s+(?:id|name)=[\"']([^\"']+)[\"']", re.IGNORECASE)
+PANDOC_HEADING_ID = re.compile(r"\{#([A-Za-z][A-Za-z0-9_.:-]*)[^}]*\}\s*$")
 FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
 DISPLAY_MATH = re.compile(r"(?<!\\)\$\$")
 DISPLAY_MATH_BLOCK = re.compile(r"(?s)(?<!\\)\$\$(.*?)(?<!\\)\$\$")
 INLINE_MATH = re.compile(r"(?<![\\$])\$(?!\$)(.+?)(?<!\\)\$(?!\$)")
+EQUATION_TAG = re.compile(r"\\tag\{([^}]+)\}")
+EMPTY_LINK = re.compile(r"\[[^\]]+\]\(\s*\)")
 CONTROL_CHARACTER = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 MALFORMED_LATEX_COMMAND = re.compile(
     r"(?<![A-Za-z\\])(?:operatorname|frac|sqrt|mathbb|mathbf|mathrm|text|begin|end)\{"
     r"|(?<![A-Za-z\\])(?:sum|prod|int|nabla|partial|Delta|Theta|alpha|beta|gamma|"
     r"sigma|varepsilon|epsilon|infty|odot|approx|leq|geq|mid)(?:_|\()"
+    r"|(?<![A-Za-z\\])(?:qquad|quad|cdot|times|neq|equiv|propto|rightarrow|"
+    r"leftarrow|mapsto|subseteq|supseteq)(?![A-Za-z])"
+)
+NONCANONICAL_NOTATION = re.compile(
+    r"P_\{\\theta,D\}|P_(?:train|\{train\})|D_(?:KL|\{KL\})|(?<![A-Za-z])n_(?:eff|\{eff\})|"
+    r"\\tau_(?:int|\{int\})|\\mathbf1|\\overset\{iid\}"
+)
+LEGACY_VOL4_DISTRIBUTION = re.compile(
+    r"\\mathbb E_D|\\sim D(?:\b|\})|\\operatorname\{supp\}\(D\)"
 )
 CHAPTER_TITLE_PREFIX = re.compile(
     r"^(?:第[零一二三四五六七八九十百0-9]+章|导论|序章|序言)\s*"
@@ -133,6 +155,10 @@ def markdown_anchor_ids(text: str) -> set[str]:
     anchors = set(EXPLICIT_ANCHOR.findall(text))
     occurrences: dict[str, int] = {}
     for heading in HEADING_TEXT.findall(text):
+        explicit_id = PANDOC_HEADING_ID.search(heading)
+        if explicit_id is not None:
+            anchors.add(explicit_id.group(1))
+            continue
         normalized = re.sub(r"<[^>]+>", "", heading)
         normalized = re.sub(r"[`*_~]", "", normalized).strip().lower()
         normalized = "".join(
@@ -154,6 +180,13 @@ def validate_volume(volume: Path, errors: list[str]) -> int:
         return 0
 
     readme = readme_path.read_text(encoding="utf-8")
+    for companion in VOLUME_COMPANIONS[volume.name]:
+        companion_path = volume / companion
+        if not companion_path.is_file():
+            fail(f"missing volume companion: {volume.name}/{companion}", errors)
+        elif f"({companion})" not in readme:
+            fail(f"volume README omits companion: {volume.name}/{companion}", errors)
+
     linked_chapters = {
         target: label
         for label, target in LABELED_LINK.findall(readme)
@@ -203,6 +236,11 @@ def main() -> int:
 
     if "(00_preface_and_scope.md)" not in root_readme:
         fail("root README does not link the book introduction", errors)
+    for companion in ROOT_COMPANIONS:
+        if not (ROOT / companion).is_file():
+            fail(f"missing root companion: {companion}", errors)
+        elif f"({companion})" not in root_readme:
+            fail(f"root README omits companion: {companion}", errors)
 
     chapter_count = 0
     for volume in VOLUMES:
@@ -226,11 +264,26 @@ def main() -> int:
         reader_facing = "editorial" not in path.parts
 
         if reader_facing:
+            h1_count = len(H1.findall(text))
+            if h1_count != 1:
+                fail(f"reader file must contain exactly one H1: {relative}", errors)
+            if EMPTY_HEADING.search(text):
+                fail(f"empty heading remains: {relative}", errors)
+            if EMPTY_LINK.search(text):
+                fail(f"empty Markdown link remains: {relative}", errors)
             if NUMBERED_EXERCISE.search(text):
                 fail(f"numbered exercise remains: {relative}", errors)
             for name, pattern in RETIRED_READER_PATTERNS.items():
                 if pattern.search(text):
                     fail(f"retired {name} reference remains: {relative}", errors)
+
+        equation_tags = EQUATION_TAG.findall(text)
+        for tag in sorted(set(equation_tags)):
+            if equation_tags.count(tag) > 1:
+                fail(f"duplicate equation tag in file: {relative} ({tag})", errors)
+
+        if "vol-04" in path.parts and LEGACY_VOL4_DISTRIBUTION.search(text):
+            fail(f"legacy vol-04 input-distribution notation remains: {relative}", errors)
 
         for match in CONTROL_CHARACTER.finditer(text):
             line_number = text.count("\n", 0, match.start()) + 1
@@ -241,6 +294,25 @@ def main() -> int:
                 f"({command})",
                 errors,
             )
+        for match in NONCANONICAL_NOTATION.finditer(text):
+            line_number = text.count("\n", 0, match.start()) + 1
+            fail(
+                f"noncanonical cross-volume notation: {relative}:{line_number} "
+                f"({match.group(0)})",
+                errors,
+            )
+
+        pandoc_heading_anchors = [
+            match.group(1)
+            for heading in HEADING_TEXT.findall(text)
+            if (match := PANDOC_HEADING_ID.search(heading)) is not None
+        ]
+        explicit_anchors = EXPLICIT_ANCHOR.findall(text) + pandoc_heading_anchors
+        duplicate_anchors = sorted(
+            anchor for anchor in set(explicit_anchors) if explicit_anchors.count(anchor) > 1
+        )
+        for anchor in duplicate_anchors:
+            fail(f"duplicate explicit anchor: {relative}#{anchor}", errors)
 
         for issue in markup_balance_issues(text):
             fail(f"{issue}: {relative}", errors)
