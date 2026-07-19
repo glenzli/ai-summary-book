@@ -1,6 +1,6 @@
 # 第一章：火车怎样跑起来？
 
-[← 给一起看书的大人](00_for_grownups.md) · [🏠 全书首页](README.md) · [蒸汽先锋 →](02_steam_pioneers.md) · [🎲 观察游戏](10_spotter_games.md)
+[← 给一起看书的大人](00_for_grownups.md) · [🏠 全书首页](README.md) · [蒸汽火车的诞生 →](02_steam_origins.md) · [🎲 观察游戏](13_spotter_games.md)
 
 火车没有一种唯一的跑法。有的喝水烧火，有的喝柴油，有的从电线取电。不过，每一种铁路都要回答三个问题：力从哪里来？怎样沿着固定路线走？怎样安全停下来？
 
@@ -263,4 +263,4 @@
 
 ---
 
-[← 给一起看书的大人](00_for_grownups.md) · [🏠 全书首页](README.md) · [蒸汽先锋 →](02_steam_pioneers.md) · [🎲 观察游戏](10_spotter_games.md)
+[← 给一起看书的大人](00_for_grownups.md) · [🏠 全书首页](README.md) · [蒸汽火车的诞生 →](02_steam_origins.md) · [🎲 观察游戏](13_spotter_games.md)

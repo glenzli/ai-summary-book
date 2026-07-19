@@ -1,49 +1,40 @@
 # 按国家与铁路公司找车
 
-[🏠 全书首页](README.md) · [火车词语小字典](GLOSSARY.md) · [🎲 观察游戏](10_spotter_games.md)
+[🏠 全书首页](README.md) · [日本列车专题导航](JAPAN_TRAIN_GUIDE.md) · [🎲 观察游戏](13_spotter_games.md)
 
-记不住卡号也没关系。先从去过的地方、坐过的铁路公司，或者车身上的标志开始找。这里列的是常用入口，不是考试清单。
+主目录按照火车的工作和运行方式分章。这一页换一张地图来找车：从去过的地方、铁路公司或车身标志出发，再回到各主题章节。这里是旅行入口，不是考试清单。
 
 ## 日本
 
-- **新干线：** [第五章：新干线大家族](05_shinkansen_family.md)（042—062）。
-- **JR 的城市与地方列车：** [第六章](06_japan_everyday.md) 与 [第十一章](11_more_trains.md)，包括 103、E231、E233、E235、315、733、227、821、YC1、H100 等。
-- **JR 的特急与观光列车：** [第七章](07_japan_special_trains.md)，包括 Sunrise、Sonic、七星、E353、HC85 等。
-- **南海电铁：** 先看第十一章的 [133 Rapi:t](11_more_trains.md)，再到 [第十二章](12_nankai_trains.md)认识 Southern、高野山列车和加太线小鱼电车。
-- **近铁：** 第七章的岛风、火之鸟，以及第十一章的 8A 系。
-- **阪急：** 第六章的 9300 系与第十一章的第二代 2300 系。
-- **小田急：** 第七章的 NSE、VSE、GSE，以及第十一章的第二代 5000 形。
-- **东京与大阪的地铁：** 第六章的东京 Metro 1000、大江户线 12-000、大阪 Metro 400；第九章还有札幌 9000 与大阪 80 系。
-- **单轨与特别轨道：** [第九章](09_unusual_railways.md)，包括东京、千叶、湘南单轨，Linimo、箱根登山与高野山缆车。
+本书的日本车辆很多，已经可以组成几条完整路线。新干线家谱、JR 与私铁、南海电铁旅行线，以及单轨和山地铁路，都集中在 [日本列车专题导航](JAPAN_TRAIN_GUIDE.md)。
 
 ## 中国
 
-- **中国高铁的早期代表：** [第四章](04_world_high_speed.md)里的 037 CRH2、038 CRH380A 与 041 复兴号 CR400AF/BF。
-- **高速、普速、城际与城市轨道：** [第十三章：中国列车大家族](13_china_trains.md)，继续认识 CRH3C、CRH5A、CR300AF、CR200J、DF4B、HXD3D、CRH6A、重庆单轨、长沙磁浮与北京全自动地铁。
-- **上海高速磁浮：** [第九章](09_unusual_railways.md)的 109 上海磁浮 Transrapid。
-- **台湾高铁：** [第四章](04_world_high_speed.md)的 036 台湾高铁 700T。
+- **高速铁路：** 037 CRH2、038 CRH380A、150 CRH3C、151 CRH5A 在[高速成长](04_high_speed_pioneers.md)；041 CR400AF/BF 和 152 CR300AF 在[高速绝招](05_high_speed_specialists.md)。
+- **普速、城际与机车：** 156 CRH6A 在[地方与区域列车](07_regional_trains.md)，153 CR200J 在[机场与远方特急](08_express_airport.md)，154 DF4B 与 155 HXD3D 在[火车头和工作队](10_work_trains.md)。
+- **城市轨道与特别导轨：** 159 北京燕房线在[城市列车](06_city_trains.md)；109 上海磁浮、157 重庆单轨、158 长沙磁浮在[特别的导轨列车](11_unusual_guideways.md)。
+- **中国台湾：** 036 台湾高铁 700T 在[高速成长](04_high_speed_pioneers.md)。
 
 ## 亚洲其他地方
 
-- **韩国：** 第四章的 034 KTX-I。
-- **印度：** 第三章的 WAP-7 电力机车与第十一章的 Vande Bharat。
+- **韩国：** 034 KTX-I 在[高速成长](04_high_speed_pioneers.md)。
+- **印度：** 026 WAP-7 在[火车头和工作队](10_work_trains.md)，140 Vande Bharat 在[机场与远方特急](08_express_airport.md)。
 
 ## 欧洲
 
-- **英国：** 蒸汽先锋、伦敦地铁 1938 Stock、InterCity 125、Eurostar、伦敦 Class 345。
-- **法国：** TGV Sud-Est 与巴黎地铁 MP14。
-- **德国：** Adler、飞行的汉堡人、ICE 1 与伍珀塔尔悬挂铁路。
-- **西班牙：** AVE S-100 与 Talgo 350。
-- **意大利：** Italo AGV 与 Frecciarossa 1000。
-- **瑞士：** 鳄鱼电力机车、冰川快车、Stoosbahn 与 SBB FLIRT。
-
-这些车辆分散在 [蒸汽先锋](02_steam_pioneers.md)、[电力与柴油](03_electric_diesel_streamliners.md)、[世界高速列车](04_world_high_speed.md)、[特别轨道](09_unusual_railways.md)和[更多日常列车](11_more_trains.md)中。
+- **英国：** 蒸汽先锋在[第二章](02_steam_origins.md)；早期电气地铁、InterCity 125、Eurostar、伦敦 Class 345 和悬挂铁路伙伴分散在动力、高速、城市与特别导轨章节。
+- **法国、德国、西班牙与意大利：** TGV、ICE、AVE、Talgo、Italo AGV 和 Frecciarossa 分别在[高速成长](04_high_speed_pioneers.md)与[高速绝招](05_high_speed_specialists.md)。
+- **瑞士：** 鳄鱼电力机车在[火车头和工作队](10_work_trains.md)，SBB FLIRT 在[地方列车](07_regional_trains.md)，冰川快车和 Stoosbahn 在[爬山的火车](12_mountain_railways.md)。
 
 ## 美洲与大洋洲
 
-- **美国：** John Bull、Big Boy、GG1、EMD F7、PCC、Acela 与纽约 R211T。
-- **澳大利亚：** Garratt 蒸汽机车与悉尼 Waratah 双层通勤电车。
+- **美国：** John Bull、Big Boy、GG1、EMD F7、PCC、Acela 与纽约 R211T，分别可以在蒸汽、工作、高速和城市章节找到。
+- **澳大利亚：** Garratt 蒸汽机车在[第二章](02_steam_origins.md)，悉尼 Waratah 双层通勤电车在[城市列车](06_city_trains.md)。
+
+## 还没有驶入的地图
+
+这一版还没有来自非洲和南美洲的车型，东南亚、中东、加拿大与墨西哥也仍是空白。以后扩写时，会优先从这些地方以及货运、救援和工程车辆中寻找新伙伴，而不是只沿着已经很热闹的线路继续加车。
 
 ---
 
-[🏠 返回全书首页](README.md)
+[🏠 全书首页](README.md) · [日本列车专题导航](JAPAN_TRAIN_GUIDE.md) · [🎲 观察游戏](13_spotter_games.md)

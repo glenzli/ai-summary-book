@@ -1,6 +1,6 @@
-# 第十章：今天你是小小火车观察员
+# 第十三章：今天你是小小火车观察员
 
-[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md) · [更多日常列车 →](11_more_trains.md)
+[← 爬山的火车](12_mountain_railways.md) · [🏠 全书首页](README.md)
 
 这一章不用认识很多型号。
 
@@ -157,7 +157,7 @@
 
 ## 游戏七：轨道到底在哪里？
 
-**在哪里玩：** [第九章](09_unusual_railways.md)的照片。
+**在哪里玩：** [第十一章](11_unusual_guideways.md)的照片。
 
 先别急着叫它“倒挂火车”。
 看看车轮和轨道藏在哪里。
@@ -300,4 +300,4 @@ Linimo 也看起来贴着专用轨道，却是低速磁悬浮。
 
 ---
 
-[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md) · [更多日常列车 →](11_more_trains.md)
+[← 爬山的火车](12_mountain_railways.md) · [🏠 全书首页](README.md)

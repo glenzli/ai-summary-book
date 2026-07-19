@@ -479,7 +479,7 @@ def main() -> int:
     for index, target in enumerate(targets, start=1):
         output = OUTPUT_DIR / f'{target["id"]}.webp'
         if output.exists() and target["id"] in previous and not args.refresh:
-            records.append(previous[target["id"]])
+            records.append({**previous[target["id"]], **target})
             print(f"[{index}/{len(targets)}] keep {target['id']}")
             continue
 

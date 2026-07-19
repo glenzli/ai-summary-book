@@ -7,6 +7,7 @@
 - 同一车型可能有不同批次、编组和改造；速度、运行区间、票制与运营状态也会改变。出行前请再查运营方当天公告。
 - 章节中的句子是面向 4 岁孩子的转述，不是对来源原文的逐字翻译。
 - 本页只说明**事实依据**。照片的作者、许可和原文件页另见 [图片来源与许可](IMAGE_CREDITS.md)；书中图片不能因为正文采用 CC0 就自动变成 CC0。
+- 车型正文已经按照用途和运行方式重新分章；本页仍按稳定的卡号段保存来源，方便在卡片移动后继续核查。
 
 ## 第零、第一章：怎样读，以及火车怎样跑
 
@@ -26,7 +27,7 @@
 - [铁道综合技术研究所（RTRI）：高速列车车头形状优化](https://www.rtri.or.jp/eng/rd/seika/2019/03_19.html) — 车头形状与隧道微气压波的关系，说明气动设计不是单看鼻子长度。
 - [铁道综合技术研究所（RTRI）：隧道微气压波](https://www.rtri.or.jp/rd/division/rd51/rd5120/rd51200101.html) — 高速列车进入隧道时的压缩波、传播与洞口微气压波。
 
-## 第二章：001—014 蒸汽先驱
+## 卡片 001—014：蒸汽先驱
 
 - [威尔士国家博物馆：Trevithick and the Penydarren Locomotive](https://museum.wales/media/60169/Birth-of-the-Railway-Locomotive--Trevithick-and-the-Penydarren-Locomotive-min_11zon.pdf) — 001 潘尼达伦号。
 - [Science Museum Group：Puffing Billy](https://collection.sciencemuseumgroup.org.uk/objects/co26701) — 002 喷气比利。
@@ -42,7 +43,7 @@
 - [英国国家铁路博物馆：Mallard](https://www.railwaymuseum.org.uk/whats-on/mallard-worlds-fastest-steam-locomotive) — 012 野鸭号及蒸汽机车速度纪录。
 - [Union Pacific：Big Boy No. 4014](https://www.up.com/about-us/history/steam/big-boy-4014) — 013 大男孩的结构、修复和运行资料。
 
-## 第三章：015—028 电力、柴油与流线型
+## 卡片 015—028：早期电力、柴油、流线车与名车
 
 - [UIC：High-Speed Rail History](https://uic.org/passenger/highspeed/article/high-speed-rail-history) — 015 西门子-哈尔斯克电气铁路及电气铁路早期时间线。
 - [Orient Express：品牌与列车历史](https://www.orient-express.com/en/about-orient-express) — 016 东方快车的 1883 年首航与卧铺旅行文化。
@@ -56,10 +57,10 @@
 - [Russian Railway Museum](https://rzd-museum.ru/en/) — 024 苏联／俄罗斯铁路车辆史与 VL80 家族。
 - [英国国家铁路博物馆：InterCity 125](https://www.railwaymuseum.org.uk/whats-on/intercity-125-sir-kenneth-grange) — 025 InterCity 125 的设计与柴油列车速度纪录。
 - [Chittaranjan Locomotive Works（印度铁路）](https://clw.indianrailways.gov.in/) — 026 WAP-7 电力机车的制造方资料入口。
-- [Glacier Express：History](https://www.glacierexpress.ch/en/history) — 027 冰川快车的线路与全景客车发展。
+- [Glacier Express：History](https://www.glacierexpress.ch/en/history) 与 [2026 Sales Manual](https://www.glacierexpress.ch/server/uploads/ap-uploads/a098a48a31a49a5cc14fac39963f1cd5.pdf) — 027 冰川快车的线路、全景客车发展，以及部分区间使用齿轨。
 - [Illinois Railway Museum：Chicago PCC 4391](https://www.irm.org/player/cta4391/) — 028 PCC 设计目标、结构和传播。
 
-## 第四章：029—041 世界高速列车
+## 卡片 029—041：世界高速列车
 
 - [UIC：High-Speed Rail History](https://uic.org/passenger/highspeed/article/high-speed-rail-history) — 各国高速铁路开通时间与技术发展总览。
 - [SNCF Archives：Le TGV](https://www.archives.sncf.com/theme/le-tgv/) — 029 TGV Sud-Est 的历史档案。
@@ -76,7 +77,7 @@
 - [FS Italiane：Frecciarossa 1000](https://www.fsitaliane.it/en/innovation/transport-technology/frecciarossa-1000.html) — 040 Frecciarossa 1000。
 - [CRRC：Fuxing CR400AF/BF](https://www.crrcgc.cc/en/2017-07/31/article_A07BE1616CF64325B1EB68C366155945.html) — 041 复兴号 CR400AF/BF。
 
-## 第五章：042—062 日本新干线
+## 卡片 042—062：日本新干线
 
 - [JR 东海：About the Shinkansen](https://global.jr-central.co.jp/en/company/about_shinkansen/) — 东海道新干线历史、安全与系统概览。
 - [JR 东海：SCMAGLEV and Railway Park 展示理念](https://museum.jr-central.co.jp/en/concept/) — 0 系、100 系、300 系、700 系等历史车辆。
@@ -93,7 +94,7 @@
 - [JR 九州：800 Series Shinkansen](https://www.jrkyushu.co.jp/english/train/800series.html) — 054 800 系及车内设计。
 - [京都铁道博物馆：车辆列表](https://www.kyotorailwaymuseum.jp/en/vehicle/) — 0 系、100 系、500 系等保存车辆。
 
-## 第六章：063—075 日本日常电车
+## 卡片 063—075：日本城市与日常电车
 
 - [JR 东日本：Rolling Stock List 2024](https://www.jreast.co.jp/e/order/procurement/pdf/2024_list-of-rollingstock.pdf) — 064 E231、065 E233、066 E235 的车辆规格。
 - [JR 东日本：E233 Series](https://www.jreast.co.jp/en/train/local/e233.html) — E233 的线路与车内信息。
@@ -107,7 +108,7 @@
 - [西武铁道：S-TRAIN 与 40000 系](https://www.seiburailway.jp/cs/faq/reservedtrain/) — 074 40000 系的跨线路座席列车服务。
 - [广岛电铁：5100 型 Green Mover Max](https://www.hiroden.co.jp/train/train-list/gm5100.html) — 075 低地板有轨电车。
 
-## 第七章：076—097 日本特急、观光车与移动旅馆
+## 卡片 076—097：日本特急、观光车与移动旅馆
 
 - [JR 东日本大宫铁道博物馆](https://www.railway-museum.jp/e/) — 国铁特急的发展脉络与保存车辆，用于 076、079 的家族史交叉核查。
 - [JR 东海：SCMAGLEV and Railway Park](https://museum.jr-central.co.jp/en/facilities/) — 077 KiHa 82、080 381 系等历史车辆。
@@ -127,7 +128,7 @@
 - [JR 东海：Integrated Report 2025](https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2025.pdf) — 096 HC85 系混合动力特急。
 - [东武铁道：SPACIA X](https://www.tobu.co.jp/spaciax/en/) — 097 N100 系的车辆与座席空间。
 
-## 第八章：098—102 搬货、除雪与修铁路
+## 卡片 098—102：搬货、除雪与修铁路
 
 - [JR 北海道：DE15 除雪机车资料](https://www.jrhokkaido.co.jp/CM/Info/press/pdf/20211110_KO_291.pdf) — 098 DE15 的使用与保存背景。
 - [JR Freight：Corporate Overview and Milestones](https://www.jrfreight.co.jp/en/corporate-overview.html) — 099 EF66、100 EH500、101 M250 的发展时间线。
@@ -136,7 +137,7 @@
 - [Plasser & Theurer：捣固机怎样工作](https://technology.plassertheurer.com/en/stopfen/wie-wird-mit-einer-stopfmaschine-gearbeitet) — 102 现代捣固车的抬轨、拨轨与捣固步骤。
 - [Plasser & Theurer：Track Tamping Machines](https://www.plassertheurer.com/en/machine/track-tamping-machines/overview) — 捣固车种类与用途总览。
 
-## 第九章：103—120 特别的轨道系统
+## 卡片 103—120：特别导轨与山地系统
 
 - [Wuppertaler Schwebebahn：Vehicles](https://schwebebahn.de/en/fahrzeuge) — 103 GTW 15 悬挂铁路车辆及前代车型。
 - [Tokyo Monorail](https://www.tokyo-monorail.co.jp/english/index.html) — 104 东京单轨及 10000 型运营资料入口。
@@ -161,7 +162,7 @@
 - [广岛市：Skyrail 相关会议记录](https://www.city.hiroshima.lg.jp/_res/projects/default_project/_page_/001/017/801/dai74kaigijiroku.pdf) — Skyrail 停运与替代交通背景。
 - [Stoos：World-record Funicular](https://www.stoos.ch/en/stories/weltrekord) — 120 Stoos 桶形车厢缆索铁路。
 
-## 第十章与词典：观察、安全和术语
+## 观察游戏与词典：安全和术语
 
 - [札幌市交通局：地铁安全指南](https://www.city.sapporo.jp/st/anzenguide.html) — 站台、车门、紧急情况和儿童乘车安全。
 - [Network Rail：Signals explained](https://www.networkrail.co.uk/stories/signals-explained/) — 游戏中不让孩子自行解释信号放行的依据。
@@ -171,7 +172,7 @@
 - [Linimo](https://www.linimo.jp/language/en/about/) 与 [Yurikamome](https://www.yurikamome.co.jp/en/ride-guidance/guide.html) — 区分磁悬浮、AGT／新交通系统。
 - [Chiba Urban Monorail](https://www.chiba-monorail.co.jp/english/) 与 [Shonan Monorail](https://www.shonan-monorail.co.jp/fun/monorail5000.html) — 区分悬挂式单轨与跨座式单轨。
 
-## 第十一章：121—142 更多每天见面的火车
+## 卡片 121—142：新能源、地方车与世界日常列车
 
 - [JR 九州：蓄电池与混合动力车辆](https://www.jrkyushu.co.jp/company/esg/environment/report/effort3.html) — 121 BEC819 是可在交流电气化区间充电、再进入非电气化区间行驶的蓄电池电车；127 YC1 会储存并再利用制动能量。
 - [JR 东日本：FV-E991 系 HYBARI 研发](https://www.jreast.co.jp/company/innovation/r-and-d/case_study/energy/fve991/) — 122 HYBARI 自 2022 年起进行氢燃料电池混合动力试验；它是试验车辆，不写成已投入载客营业。
@@ -195,7 +196,7 @@
 - [Transport for NSW：Waratah trains](https://transportnsw.info/travel-info/ways-to-get-around/train/fleet-facilities/waratah-trains) — 141 八辆编组、双层的 Waratah A set 于 2011 年投入使用；2018 年登场的 Series 2 是 B set。
 - [SBB：FLIRT 列车](https://www.sbb.ch/en/travel-information/services-on-train/our-trains/flirt.html) — 142 SBB 的 FLIRT 家族自 2004 年投入使用，采用低地板设计，最高速度可达 160 km/h；本卡以 RABe 523 为观察对象，不把全部 FLIRT 都称作 523 型。
 
-## 第十二章：143—149 南海电铁列车
+## 卡片 143—149：南海电铁列车
 
 - [南海电铁：车辆博物馆](https://www.nankai.co.jp/traffic/museum/muse/ji0003.html) — 143—146 的基础车型资料：12000 系于 2011 年、10000 系于 1985 年、30000 系于 1983 年、31000 系于 1999 年登场；并说明 Southern 的指定席／一般车组合及高野线特急车型的连挂关系。
 - [南海电铁：Southern 12000 系](https://www.nankai.co.jp/traffic/info/southern12000.html) — 143 Southern 12000 系的外观、指定席设备与服务资料。
@@ -208,7 +209,7 @@
 - [南海电铁：第五列めでたいでんしゃ登场](https://www.nankai.co.jp/news/240426.html) 与 [140 周年历史](https://www.nankai.co.jp/contents/140th/history/) — 149 家族始于 2016 年；さち、かい、なな、かしら由 7100 系改造，2024 年加入的かなた首次改造自 2000 系。
 - **名称边界：** Southern、Koya、Rinkan、泉北 Liner 是列车服务名；“Southern Premium”特指担当 Southern 的 12000 系服务品牌；“天空／GRAN 天空”和“めでたいでんしゃ”是观光列车名称，不能不加区分地当成底盘车型名。
 
-## 第十三章：150—159 中国铁路与城市轨道列车
+## 卡片 150—159：中国铁路与城市轨道列车
 
 - [中国中车：CRH3 型高速动车组](https://www.crrcgc.cc/en/2016-02/24/article_BBFE506272C04633831BEDC58E19C694.html) 与 [国家铁路局：京津城际](https://www.nra.gov.cn/ztzl/hy/gcjs2023/xmjj/jjjj/201409/t20140928_344148.shtml) — 150 CRH3C 为八辆、4 动 4 拖、350 km/h 等级动车组，2008 年随京津城际投入运营；等级数字不等于每趟车都以该速度行驶。
 - [中国中车长春轨道客车：CRH5A](https://www.crrcgc.cc/ckgf/2016-04/12/article_B968DD7811F04681B71808596FB94386.html) 与 [国家铁路局：CRH5 技术开发及应用](https://www.nra.gov.cn/ztzl/hd/cxdh/cxcg/tkjj/201705/t20170502_146750.shtml) — 151 CRH5A 于 2007 年起投入运用，常见为八辆、5 动 3 拖的 200 km/h 等级动车组；严寒能力应限定到经过相应适应性改进的批次或衍生型，不能概括整个 CRH5 家族。

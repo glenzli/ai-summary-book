@@ -17,20 +17,20 @@ ROOT = Path(__file__).resolve().parent
 NUMBERED_CHAPTERS = (
     "00_for_grownups.md",
     "01_how_trains_move.md",
-    "02_steam_pioneers.md",
-    "03_electric_diesel_streamliners.md",
-    "04_world_high_speed.md",
-    "05_shinkansen_family.md",
-    "06_japan_everyday.md",
-    "07_japan_special_trains.md",
-    "08_work_trains.md",
-    "09_unusual_railways.md",
-    "10_spotter_games.md",
-    "11_more_trains.md",
-    "12_nankai_trains.md",
-    "13_china_trains.md",
+    "02_steam_origins.md",
+    "03_power_revolution.md",
+    "04_high_speed_pioneers.md",
+    "05_high_speed_specialists.md",
+    "06_city_trains.md",
+    "07_regional_trains.md",
+    "08_express_airport.md",
+    "09_sleeper_scenic.md",
+    "10_work_trains.md",
+    "11_unusual_guideways.md",
+    "12_mountain_railways.md",
+    "13_spotter_games.md",
 )
-CARD_CHAPTERS = NUMBERED_CHAPTERS[2:10] + NUMBERED_CHAPTERS[11:]
+CARD_CHAPTERS = NUMBERED_CHAPTERS[2:-1]
 EXPECTED_CARD_NUMBERS = {f"{number:03d}" for number in range(1, 160)}
 
 ATX_HEADING_RE = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+|$)")
@@ -282,6 +282,27 @@ def check_chapters(
                 f"must contain exactly one H1 heading (found {len(h1_lines)}; lines: {detail})",
             )
 
+    for index, chapter_name in enumerate(NUMBERED_CHAPTERS):
+        chapter = ROOT / chapter_name
+        if chapter not in texts:
+            continue
+        linked_files = {
+            reference.resolved
+            for reference in references.get(chapter, [])
+            if reference.resolved is not None
+        }
+        neighbours: list[tuple[str, str]] = []
+        if index > 0:
+            neighbours.append(("previous", NUMBERED_CHAPTERS[index - 1]))
+        if index + 1 < len(NUMBERED_CHAPTERS):
+            neighbours.append(("next", NUMBERED_CHAPTERS[index + 1]))
+        for direction, neighbour_name in neighbours:
+            if (ROOT / neighbour_name).resolve() not in linked_files:
+                reporter.add(
+                    chapter,
+                    f"does not link {direction} numbered chapter {neighbour_name}",
+                )
+
 
 def line_at(text: str, offset: int) -> int:
     return text.count("\n", 0, offset) + 1
@@ -424,6 +445,47 @@ def load_json_ids(path: Path, label: str, reporter: Reporter) -> tuple[set[str],
     return set(ids), True
 
 
+def check_json_chapters(
+    path: Path,
+    label: str,
+    cards: list[Card],
+    reporter: Reporter,
+) -> None:
+    text = read_utf8(path, reporter)
+    if text is None:
+        return
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return
+    if not isinstance(data, list):
+        return
+
+    chapter_numbers = {
+        chapter_name: f"{index + 2:02d}"
+        for index, chapter_name in enumerate(CARD_CHAPTERS)
+    }
+    expected = {
+        card.image_id: chapter_numbers[card.path.name]
+        for card in cards
+        if card.image_id is not None
+    }
+    for index, record in enumerate(data):
+        if not isinstance(record, dict):
+            continue
+        identifier = record.get("id")
+        if not isinstance(identifier, str) or identifier not in expected:
+            continue
+        actual_chapter = record.get("chapter")
+        expected_chapter = expected[identifier]
+        if actual_chapter != expected_chapter:
+            reporter.add(
+                path,
+                f"{label} item {index + 1} ({identifier}) has chapter "
+                f"{actual_chapter!r}; expected {expected_chapter!r}",
+            )
+
+
 def compare_ids(
     reporter: Reporter,
     path: Path | str,
@@ -464,6 +526,7 @@ def check_image_inventory(cards: list[Card], reporter: Reporter) -> int:
             "image_targets.json",
             "train cards",
         )
+        check_json_chapters(targets_path, "image target", cards, reporter)
     inventory_ids = target_ids if targets_loaded else card_ids
 
     metadata_path = ROOT / "image_metadata.json"
@@ -477,6 +540,7 @@ def check_image_inventory(cards: list[Card], reporter: Reporter) -> int:
             "image metadata",
             "image targets",
         )
+        check_json_chapters(metadata_path, "image metadata", cards, reporter)
 
     train_dir = ROOT / "images" / "trains"
     files: list[Path] = []
