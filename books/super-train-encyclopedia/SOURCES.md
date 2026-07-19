@@ -209,7 +209,7 @@
 - [南海电铁：第五列めでたいでんしゃ登场](https://www.nankai.co.jp/news/240426.html) 与 [140 周年历史](https://www.nankai.co.jp/contents/140th/history/) — 149 家族始于 2016 年；さち、かい、なな、かしら由 7100 系改造，2024 年加入的かなた首次改造自 2000 系。
 - **名称边界：** Southern、Koya、Rinkan、泉北 Liner 是列车服务名；“Southern Premium”特指担当 Southern 的 12000 系服务品牌；“天空／GRAN 天空”和“めでたいでんしゃ”是观光列车名称，不能不加区分地当成底盘车型名。
 
-## 卡片 150—159：中国铁路与城市轨道列车
+## 卡片 150—160：中国铁路与城市轨道列车
 
 - [中国中车：CRH3 型高速动车组](https://www.crrcgc.cc/en/2016-02/24/article_BBFE506272C04633831BEDC58E19C694.html) 与 [国家铁路局：京津城际](https://www.nra.gov.cn/ztzl/hy/gcjs2023/xmjj/jjjj/201409/t20140928_344148.shtml) — 150 CRH3C 为八辆、4 动 4 拖、350 km/h 等级动车组，2008 年随京津城际投入运营；等级数字不等于每趟车都以该速度行驶。
 - [中国中车长春轨道客车：CRH5A](https://www.crrcgc.cc/ckgf/2016-04/12/article_B968DD7811F04681B71808596FB94386.html) 与 [国家铁路局：CRH5 技术开发及应用](https://www.nra.gov.cn/ztzl/hd/cxdh/cxcg/tkjj/201705/t20170502_146750.shtml) — 151 CRH5A 于 2007 年起投入运用，常见为八辆、5 动 3 拖的 200 km/h 等级动车组；严寒能力应限定到经过相应适应性改进的批次或衍生型，不能概括整个 CRH5 家族。
@@ -221,7 +221,8 @@
 - [中国中车：重庆 QKZ2 跨座式单轨车](https://www.crrcgc.cc/en/2016-08/02/article_9E8AEDEA0EB64300B15367B4DD38B042.html)、[日立：重庆单轨合同](https://www.hitachi.com/New/cnews/E/2002/1107/index.html) 与 [重庆市政府：2 号线资料](https://www.cq.gov.cn/ywdt/bmts/202110/t20211027_9896178.html) — 157 QKZ2 是重庆 2 号线早期四辆编组车型，胶轮跨坐在轨道梁上，设计速度 80 km/h；2 号线后来还有其他车型和八辆编组，不能把全线所有车辆都称作 QKZ2。
 - [中国中车：长沙中低速磁浮试运行](https://www.crrcgc.cc/crrcgc/2015-12/28/article_F08C9D158ADB4A5CB77E124060D6951D.html) 与 [湖南省交通运输厅：开通载客](https://jtt.hunan.gov.cn/xxgk/gzdt/jtyw1/201605/t20160509_3753359.html) — 158 原始列车为三辆固定编组、100 km/h 等级，正常悬浮间隙约 8 mm；长沙磁浮快线于 2016 年 5 月 6 日开始载客。2021 年后的 110／140 km/h 提速车辆不与原始车型混写。
 - [中国中车：燕房线“海豚号”列车](https://www.crrcgc.cc/crrcgc/2014-12/02/article_17E523FABD30491EB35E7C65A97F9AF5.html)、[北京市交通委：燕房线开通](https://jtw.beijing.gov.cn/xxgk/xwfbh/201912/t20191209_1007565.html) 与 [GoA4 自动运行说明](https://jtw.beijing.gov.cn/xxgk/dtxx/201912/t20191231_1548193.html) — 159 DKZ76 是四辆、2 动 2 拖、B 型、80 km/h 等级的 GoA4 列车，2017 年 12 月 30 日随燕房线投入运营。“海豚号”是昵称；全自动运行仍有控制中心、监测系统与工作人员保障安全。
-- **名称边界：** CRH／CR 型号中的速度数字表示产品等级而非每趟车的承诺速度；“绿巨人”“海豚号”是特定列车的常见昵称；QKZ2、DKZ76 是具体车辆型号，不是线路上所有列车的统称。
+- [中国中车：CR450 动车组样车发布](https://www.crrcgc.cc/crrcgc/2025-01/13/article_2025011318412246025.html)、[中国铁道科学研究院：样车试验纪录与运用考核](https://www.rails.cn/content.php?contentid=67438&page=2) 与 [国家科技创新中心：2026 年考核进展](https://www.ncsti.gov.cn/kjdt/kjrd/qtrd_kjrd/202603/t20260305_239863.html) — 160 CR450 样车包括 CR450AF 与 CR450BF，2024 年 12 月 29 日发布，均为八辆、4 动 4 拖；试验速度口径为 450 km/h，目标商业运营速度为 400 km/h。2025 年样车单列试验达到 453 km/h，两列相对交会达到 896 km/h；截至 2026 年 3 月已通过全部型式试验并完成约 30 万公里运用考核，不能写成已经正式载客运营。
+- **名称边界：** CRH／CR 型号中的速度数字表示产品等级而非每趟车的承诺速度；CR450 的 453 km/h 是试验纪录，400 km/h 是目标商业运营速度；“绿巨人”“海豚号”是特定列车的常见昵称；QKZ2、DKZ76 是具体车辆型号，不是线路上所有列车的统称。
 
 ## 编辑时怎样继续核查？
 

@@ -10,7 +10,7 @@
 
 ## 中国
 
-- **高速铁路：** 037 CRH2、038 CRH380A、150 CRH3C、151 CRH5A 在[高速成长](04_high_speed_pioneers.md)；041 CR400AF/BF 和 152 CR300AF 在[高速绝招](05_high_speed_specialists.md)。
+- **高速铁路：** 037 CRH2、038 CRH380A、150 CRH3C、151 CRH5A 在[高速成长](04_high_speed_pioneers.md)；041 CR400AF/BF、152 CR300AF 和 160 CR450 样车在[高速绝招](05_high_speed_specialists.md)。
 - **普速、城际与机车：** 156 CRH6A 在[地方与区域列车](07_regional_trains.md)，153 CR200J 在[机场与远方特急](08_express_airport.md)，154 DF4B 与 155 HXD3D 在[火车头和工作队](10_work_trains.md)。
 - **城市轨道与特别导轨：** 159 北京燕房线在[城市列车](06_city_trains.md)；109 上海磁浮、157 重庆单轨、158 长沙磁浮在[特别的导轨列车](11_unusual_guideways.md)。
 - **中国台湾：** 036 台湾高铁 700T 在[高速成长](04_high_speed_pioneers.md)。

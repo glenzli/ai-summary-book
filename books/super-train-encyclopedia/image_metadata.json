@@ -3431,5 +3431,28 @@
     "local_height": 853,
     "sha256": "822a21db8966a38218c3b8d02e7a8199975098d416e4487972622660b3a9eba4",
     "technical_changes": "resized proportionally and converted to WebP; not cropped"
+  },
+  {
+    "id": "t160-cr450",
+    "subject": "中国 CR450BF 高速动车组样车（CR450 家族）",
+    "chapter": "05",
+    "article": "China Railway CR450BF",
+    "search": "China Railway CR450BF prototype high-speed train",
+    "commons_file": "CR450BF-0501 at Dongguantou Nanqiao (20250704143455).jpg",
+    "file_title": "File:CR450BF-0501 at Dongguantou Nanqiao (20250704143455).jpg",
+    "description_url": "https://commons.wikimedia.org/wiki/File:CR450BF-0501_at_Dongguantou_Nanqiao_(20250704143455).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/CR450BF-0501_at_Dongguantou_Nanqiao_%2820250704143455%29.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/CR450BF-0501_at_Dongguantou_Nanqiao_%2820250704143455%29.jpg/1280px-CR450BF-0501_at_Dongguantou_Nanqiao_%2820250704143455%29.jpg",
+    "selection": "exact Commons file",
+    "artist": "N509FZ",
+    "credit": "Own work",
+    "attribution": "N509FZ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date_time_original": "2025-07-04 14:34:55",
+    "local_width": 1280,
+    "local_height": 853,
+    "sha256": "3a9b71d5cdd43fa4287d3651afcf1d78121ca490e2df409fcd5e5926020663fe",
+    "technical_changes": "resized proportionally and converted to WebP; not cropped"
   }
 ]

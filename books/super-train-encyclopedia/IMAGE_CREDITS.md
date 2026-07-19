@@ -172,6 +172,7 @@
 | <a id="img-t157-chongqing-qkz2-monorail"></a>t157-chongqing-qkz2-monorail | 重庆轨道交通 2 号线 QKZ2 跨座式单轨列车 | N509FZ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File:02003 and 02045 near Niujiaotuo (20191224155744).jpg](https://commons.wikimedia.org/wiki/File:02003_and_02045_near_Niujiaotuo_(20191224155744).jpg) | `images/trains/t157-chongqing-qkz2-monorail.webp` |
 | <a id="img-t158-changsha-maglev"></a>t158-changsha-maglev | 长沙磁浮快线初代 100 km/h 中低速磁浮列车 | Baycrest | [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5) | [File:Changsha Maglev Express Train.jpg](https://commons.wikimedia.org/wiki/File:Changsha_Maglev_Express_Train.jpg) | `images/trains/t158-changsha-maglev.webp` |
 | <a id="img-t159-beijing-dkz76"></a>t159-beijing-dkz76 | 北京地铁燕房线 DKZ76 海豚号全自动列车 | TONY LU | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File:YF009 entering Raole Fu.jpg](https://commons.wikimedia.org/wiki/File:YF009_entering_Raole_Fu.jpg) | `images/trains/t159-beijing-dkz76.webp` |
+| <a id="img-t160-cr450"></a>t160-cr450 | 中国 CR450BF 高速动车组样车（CR450 家族） | N509FZ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File:CR450BF-0501 at Dongguantou Nanqiao (20250704143455).jpg](https://commons.wikimedia.org/wiki/File:CR450BF-0501_at_Dongguantou_Nanqiao_(20250704143455).jpg) | `images/trains/t160-cr450.webp` |
 
 ## 构建说明
 

@@ -31,7 +31,7 @@ NUMBERED_CHAPTERS = (
     "13_spotter_games.md",
 )
 CARD_CHAPTERS = NUMBERED_CHAPTERS[2:-1]
-EXPECTED_CARD_NUMBERS = {f"{number:03d}" for number in range(1, 160)}
+EXPECTED_CARD_NUMBERS = {f"{number:03d}" for number in range(1, 161)}
 
 ATX_HEADING_RE = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+|$)")
 CARD_HEADING_RE = re.compile(

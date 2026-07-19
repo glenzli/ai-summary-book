@@ -105,7 +105,7 @@ CHAPTERS = (
             Station("雪国与长隧道", (49, 56, 58, 59)),
             Station("高速也有不同长相", (35, 39, 40, 55)),
             Station("新一代高速伙伴", (41, 61, 152)),
-            Station("医生和试验车", (53, 60)),
+            Station("医生、样车和试验车", (53, 60, 160)),
         ),
     ),
     Chapter(
@@ -224,7 +224,7 @@ def extract_cards() -> dict[int, str]:
                 raise RuntimeError(f"card {number:03d} has conflicting copies")
             cards[number] = block
 
-    expected = set(range(1, 160))
+    expected = set(range(1, 161))
     actual = set(cards)
     if actual != expected:
         missing = sorted(expected - actual)
@@ -244,7 +244,7 @@ def validate_mapping() -> dict[int, int]:
                 )
             card_to_chapter[number] = chapter.number
 
-    expected = set(range(1, 160))
+    expected = set(range(1, 161))
     actual = set(card_to_chapter)
     if actual != expected:
         missing = sorted(expected - actual)
@@ -345,8 +345,8 @@ def update_metadata(card_to_chapter: dict[int, int]) -> None:
         r'\d+(?P<suffix>")'
     )
     targets, count = target_re.subn(replace_target, targets)
-    if count != 159:
-        raise RuntimeError(f"updated {count} image targets instead of 159")
+    if count != 160:
+        raise RuntimeError(f"updated {count} image targets instead of 160")
     targets_path.write_text(targets, encoding="utf-8")
 
 
@@ -376,7 +376,7 @@ def main() -> None:
     counts = ", ".join(
         f"{chapter.number:02d}:{len(chapter.cards)}" for chapter in CHAPTERS
     )
-    print(f"Reorganized 159 cards across 11 chapters ({counts}).")
+    print(f"Reorganized 160 cards across 11 chapters ({counts}).")
 
 
 if __name__ == "__main__":
