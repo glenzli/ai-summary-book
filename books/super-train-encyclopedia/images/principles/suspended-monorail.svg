@@ -1,18 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">悬挂式单轨的轮子藏在上方</title>
-  <desc id="desc">剖开的高架轨道箱内有承重轮和导向轮，一根坚固吊架从箱体开口伸下，连接下面的红色车厢。</desc>
+  <desc id="desc">轨道梁像一个底部留缝的盒子。承重轮在盒内的走行面上滚动，吊架从底部开口伸下来，把车厢悬挂在轨道下方。</desc>
   <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
-  <path d="M143 34h914v247H143Z" fill="#b9c4cd" stroke="#25364a" stroke-width="11"/>
-  <path d="M210 96h780v126H210Z" fill="#fff9ed" stroke="#25364a" stroke-width="9"/>
-  <path d="M242 219h282M676 219h282" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- 箱形轨道梁，中央底部明确留出开口。 -->
+  <path d="M125 35H1075V292H670V230H530V292H125Z" fill="#b9c4cd" stroke="#25364a" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M205 96H995V226H670V178H530V226H205Z" fill="#fff9ed" stroke="#25364a" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M225 222H520M680 222H975" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- 轮子留在梁内，吊架只从开口穿过。 -->
   <g fill="#465d73" stroke="#25364a" stroke-width="9">
-    <circle cx="428" cy="180" r="66"/><circle cx="772" cy="180" r="66"/>
-    <circle cx="515" cy="123" r="43"/><circle cx="685" cy="123" r="43"/>
+    <circle cx="420" cy="166" r="58"/><circle cx="780" cy="166" r="58"/>
+    <circle cx="520" cy="122" r="36"/><circle cx="680" cy="122" r="36"/>
   </g>
-  <g fill="#ffd166" stroke="#25364a" stroke-width="7"><circle cx="428" cy="180" r="20"/><circle cx="772" cy="180" r="20"/><circle cx="515" cy="123" r="15"/><circle cx="685" cy="123" r="15"/></g>
-  <path d="M548 136h104v248H548Z" fill="#55b68b" stroke="#25364a" stroke-width="10"/>
-  <path d="M413 359h374l76 83v142c0 50-41 91-91 91H428c-50 0-91-41-91-91V442Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11" stroke-linejoin="round"/>
-  <path d="M427 420h346l35 43H392Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
-  <path d="M489 421v42M600 421v42M711 421v42" stroke="#25364a" stroke-width="7"/>
+  <g fill="#ffd166" stroke="#25364a" stroke-width="7">
+    <circle cx="420" cy="166" r="18"/><circle cx="780" cy="166" r="18"/>
+    <circle cx="520" cy="122" r="13"/><circle cx="680" cy="122" r="13"/>
+  </g>
+  <path d="M560 145H640V385H560Z" fill="#55b68b" stroke="#25364a" stroke-width="10"/>
+  <path d="M545 293H655" stroke="#3e9a78" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <text x="755" y="340" font-family="sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#25364a">下方开口</text>
+
+  <path d="M408 365H792L866 448V582Q866 675 773 675H427Q334 675 334 582V448Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M428 421H772L809 465H391Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M490 422V465M600 422V465M710 422V465" stroke="#25364a" stroke-width="7"/>
   <circle cx="432" cy="570" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/><circle cx="768" cy="570" r="25" fill="#fff1a8" stroke="#25364a" stroke-width="7"/>
 </svg>

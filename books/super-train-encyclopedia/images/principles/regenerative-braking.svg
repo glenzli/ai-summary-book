@@ -1,21 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">刹车时把部分能量送回电网</title>
-  <desc id="desc">正在减速的电车车轮带动电动机，蓝色箭头从车轮经过闪电符号向上回到架空线，前方红箭头逐渐变短。</desc>
+  <title id="title">刹车时收回一部分能量</title>
+  <desc id="desc">列车减速时，车轮带动电动机发电。蓝色编号路线从车轮经过电动机和电力设备，再通向架空供电系统；具体列车也可能把能量存在车上。</desc>
   <defs>
-    <marker id="energyArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
-    <marker id="motionArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+    <marker id="energyArrow" viewBox="0 0 20 20" refX="18" refY="10" markerWidth="30" markerHeight="30" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 2 18 10 2 18Z" fill="#3b82c4"/></marker>
+    <marker id="motionArrow" viewBox="0 0 20 20" refX="18" refY="10" markerWidth="30" markerHeight="30" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 2 18 10 2 18Z" fill="#d95d4f"/></marker>
   </defs>
   <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
-  <path d="M74 104h1052" stroke="#25364a" stroke-width="13" stroke-linecap="round"/>
-  <path d="M135 433V270c0-64 52-116 116-116h569c99 0 174 57 215 151l55 128Z" fill="#55b68b" stroke="#25364a" stroke-width="11"/>
-  <path d="M247 195h545c66 0 116 34 149 99H213c9-61 17-99 34-99Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
-  <path d="M429 195v99M637 195v99M820 199l-34 95" stroke="#25364a" stroke-width="7"/>
-  <rect x="203" y="383" width="735" height="65" rx="25" fill="#25364a"/>
-  <g fill="#465d73" stroke="#25364a" stroke-width="10"><circle cx="340" cy="480" r="82"/><circle cx="834" cy="480" r="82"/></g>
-  <g fill="#4f9bd8" stroke="#25364a" stroke-width="8"><circle cx="340" cy="480" r="31"/><circle cx="834" cy="480" r="31"/></g>
-  <path d="M812 452c-96-79-215-40-218-151-2-70 52-102 52-171" fill="none" stroke="#4f9bd8" stroke-width="18" stroke-linecap="round" marker-end="url(#energyArrow)"/>
-  <path d="m553 351 55-107h55l-39 74h52l-101 118 28-85Z" fill="#ffd166" stroke="#25364a" stroke-width="8" stroke-linejoin="round"/>
-  <path d="M718 132h-19M671 132h-39M597 132h-65" stroke="#4f9bd8" stroke-width="15" stroke-linecap="round" marker-end="url(#energyArrow)"/>
-  <path d="M1048 250h80M1059 296h57M1067 342h38" stroke="#ef6a5b" stroke-width="15" stroke-linecap="round" marker-end="url(#motionArrow)"/>
-  <path d="M80 574h1050" stroke="#667687" stroke-width="24" stroke-linecap="round"/>
+  <path d="M70 105H1130" stroke="#25364a" stroke-width="13" stroke-linecap="round"/>
+
+  <path d="M125 430V276Q125 158 243 158H820Q961 158 1034 306L1095 430Z" fill="#55b68b" stroke="#25364a" stroke-width="11"/>
+  <path d="M245 198H798Q887 198 939 294H207Q220 224 245 198Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
+  <path d="M430 198V294M645 198V294M820 202L790 294" stroke="#25364a" stroke-width="7"/>
+  <rect x="194" y="382" width="760" height="66" rx="24" fill="#25364a"/>
+  <g fill="#465d73" stroke="#25364a" stroke-width="10">
+    <circle cx="330" cy="495" r="78"/>
+    <circle cx="865" cy="495" r="78"/>
+  </g>
+  <g fill="#dff2fb" stroke="#25364a" stroke-width="8"><circle cx="330" cy="495" r="29"/><circle cx="865" cy="495" r="29"/></g>
+
+  <!-- 1 车轮 -> 2 电机 -> 3 供电系统：方向始终一致。 -->
+  <path d="M848 478C798 458 763 452 724 452" fill="none" stroke="#3b82c4" stroke-width="10" stroke-linecap="round" marker-end="url(#energyArrow)"/>
+  <circle cx="675" cy="443" r="55" fill="#ffd166" stroke="#25364a" stroke-width="9"/>
+  <text x="675" y="459" font-family="sans-serif" font-size="44" font-weight="700" text-anchor="middle" fill="#25364a">M</text>
+  <path d="M626 416C571 389 541 353 536 313" fill="none" stroke="#3b82c4" stroke-width="10" stroke-linecap="round" marker-end="url(#energyArrow)"/>
+  <path d="m499 317 49-95h51l-34 66h46l-91 105 25-76Z" fill="#ffd166" stroke="#25364a" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M539 222C526 172 486 147 447 128" fill="none" stroke="#3b82c4" stroke-width="10" stroke-linecap="round" marker-end="url(#energyArrow)"/>
+  <path d="M415 105l45-89 45 89" fill="none" stroke="#25364a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#25364a">
+    <text x="864" y="613">① 车轮</text>
+    <text x="675" y="535">② 电机</text>
+    <text x="420" y="164">③ 供电</text>
+  </g>
+  <path d="M940 238H1110" fill="none" stroke="#d95d4f" stroke-width="10" stroke-linecap="round" marker-end="url(#motionArrow)"/>
+  <text x="1024" y="210" font-family="sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#25364a">减速</text>
+  <path d="M70 590H1130" stroke="#667687" stroke-width="24" stroke-linecap="round"/>
 </svg>

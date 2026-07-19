@@ -26,9 +26,12 @@ NUMBERED_CHAPTERS = (
     "08_work_trains.md",
     "09_unusual_railways.md",
     "10_spotter_games.md",
+    "11_more_trains.md",
+    "12_nankai_trains.md",
+    "13_china_trains.md",
 )
-CARD_CHAPTERS = NUMBERED_CHAPTERS[2:10]
-EXPECTED_CARD_NUMBERS = {f"{number:03d}" for number in range(1, 121)}
+CARD_CHAPTERS = NUMBERED_CHAPTERS[2:10] + NUMBERED_CHAPTERS[11:]
+EXPECTED_CARD_NUMBERS = {f"{number:03d}" for number in range(1, 160)}
 
 ATX_HEADING_RE = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+|$)")
 CARD_HEADING_RE = re.compile(
@@ -372,18 +375,18 @@ def collect_cards(texts: dict[Path, str], reporter: Reporter) -> list[Card]:
     unexpected_numbers = sorted(found_numbers - EXPECTED_CARD_NUMBERS)
     if missing_numbers:
         reporter.add(
-            "02-09 chapters",
+            "train-card chapters",
             "missing train card numbers: " + ", ".join(missing_numbers),
         )
     if unexpected_numbers:
         reporter.add(
-            "02-09 chapters",
+            "train-card chapters",
             "unexpected train card numbers: " + ", ".join(unexpected_numbers),
         )
     for number, locations in sorted(number_locations.items()):
         if len(locations) != 1:
             reporter.add(
-                "02-09 chapters",
+                "train-card chapters",
                 f"train card {number} occurs {len(locations)} times: " + ", ".join(locations),
             )
 

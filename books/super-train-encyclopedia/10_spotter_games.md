@@ -1,10 +1,10 @@
 # 第十章：今天你是小小火车观察员
 
-[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md)
+[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md) · [更多日常列车 →](11_more_trains.md)
 
 这一章不用认识很多型号。
 
-翻翻前面的照片，或者带上旅行照片。
+翻翻书里的照片，或者带上旅行照片。
 你也可以在车厢里、博物馆里玩。
 
 每发现一个小秘密，就说：“找到啦！”
@@ -298,4 +298,4 @@ Linimo 也看起来贴着专用轨道，却是低速磁悬浮。
 
 ---
 
-[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md)
+[← 特别的轨道](09_unusual_railways.md) · [🏠 全书首页](README.md) · [更多日常列车 →](11_more_trains.md)

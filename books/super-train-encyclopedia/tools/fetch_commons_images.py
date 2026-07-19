@@ -374,7 +374,7 @@ def write_credits(records: list[dict[str, Any]], failures: list[dict[str, Any]])
     lines = [
         "# 图片来源与许可",
         "",
-        "本书正文与原创 SVG 原理图按仓库的 CC0 许可发布。",
+        "本书正文、`images/cover-super-train-encyclopedia.webp` 封面插画与原创 SVG 原理图按仓库的 CC0 许可发布。",
         "`images/trains/` 中的车型图片**不适用仓库的 CC0**；每张图片保留",
         "下表所列的原作者信息及许可或公有领域状态。需要署名的图片须按其许可署名。",
         "图片只做了等比例缩小与 WebP 格式转换，",

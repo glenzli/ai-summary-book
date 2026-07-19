@@ -1,21 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">受电弓顶住架空电线</title>
-  <desc id="desc">电车车顶的菱形受电弓向上伸展，顶端滑板贴着水平电线，向上箭头表示弹力，向右箭头表示列车行进。</desc>
+  <title id="title">受电弓滑板贴住架空接触线</title>
+  <desc id="desc">侧视图中，两根交叉臂通过中央铰点伸展，顶端短连杆托起蓝色滑板并使它贴住水平接触线；小箭头分别表示向上顶力和列车向右行进。</desc>
   <defs>
-    <marker id="upArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f9bd8"/></marker>
-    <marker id="rightArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ef6a5b"/></marker>
+    <marker id="upArrow" viewBox="0 0 28 28" refX="26" refY="14" markerWidth="28" markerHeight="28" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M2 2 26 14 2 26Z" fill="#3b82c4"/>
+    </marker>
+    <marker id="motionArrow" viewBox="0 0 28 28" refX="26" refY="14" markerWidth="28" markerHeight="28" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M2 2 26 14 2 26Z" fill="#d95d4f"/>
+    </marker>
   </defs>
   <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
-  <path d="M70 125h1060" stroke="#25364a" stroke-width="13" stroke-linecap="round"/>
-  <g fill="none" stroke="#25364a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M385 451 585 151 806 451"/>
-    <path d="M385 451 637 151 806 451"/>
-  </g>
-  <path d="M517 126h245" stroke="#4f9bd8" stroke-width="23" stroke-linecap="round"/>
-  <circle cx="385" cy="451" r="24" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
-  <circle cx="806" cy="451" r="24" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
-  <path d="M600 422V217" stroke="#4f9bd8" stroke-width="16" stroke-linecap="round" marker-end="url(#upArrow)"/>
-  <path d="M137 481h926c44 0 80 36 80 80v51H57v-51c0-44 36-80 80-80Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11"/>
-  <path d="M150 516h234v66H120v-36c0-17 13-30 30-30Zm666 0h234c17 0 30 13 30 30v36H816Z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
-  <path d="M165 390h235" stroke="#ef6a5b" stroke-width="16" stroke-linecap="round" marker-end="url(#rightArrow)"/>
+  <text x="70" y="79" font-family="system-ui, sans-serif" font-size="34" font-weight="750" fill="#25364a">滑板贴线</text>
+
+  <path d="M70 125h1060" stroke="#25364a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M470 125h260" stroke="#4f9bd8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M500 158v-33M700 158v-33" stroke="#25364a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M350 480 700 158M850 480 500 158" fill="none" stroke="#25364a" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="600" cy="250" r="19" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
+  <circle cx="350" cy="480" r="23" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
+  <circle cx="850" cy="480" r="23" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
+  <path d="M300 472V285" stroke="#3b82c4" stroke-width="9" stroke-linecap="round" marker-end="url(#upArrow)"/>
+  <path d="M900 345h180" stroke="#d95d4f" stroke-width="9" stroke-linecap="round" marker-end="url(#motionArrow)"/>
+
+  <path d="M135 500h930c44 0 80 36 80 80v48H55v-48c0-44 36-80 80-80Z" fill="#ef6a5b" stroke="#25364a" stroke-width="11"/>
+  <path d="M148 535h255v63H116v-31c0-18 14-32 32-32Zm649 0h255c18 0 32 14 32 32v31H797Z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+  <path d="M300 480h600" stroke="#25364a" stroke-width="12" stroke-linecap="round"/>
 </svg>

@@ -9,9 +9,8 @@
   <path d="M176 594V185" stroke="#25364a" stroke-width="24"/>
   <path d="M123 594h107" stroke="#25364a" stroke-width="28" stroke-linecap="round"/>
   <rect x="82" y="70" width="188" height="360" rx="78" fill="#465d73" stroke="#25364a" stroke-width="10"/>
-  <g stroke="#25364a" stroke-width="8"><circle cx="176" cy="156" r="49" fill="#ef6a5b"/><circle cx="176" cy="250" r="49" fill="#ffd166"/><circle cx="176" cy="344" r="56" fill="#55b68b"/></g>
+  <g stroke="#25364a" stroke-width="8"><circle cx="176" cy="156" r="49" fill="#7b5653"/><circle cx="176" cy="250" r="49" fill="#83764e"/><circle cx="176" cy="344" r="56" fill="#55b68b"/></g>
   <circle cx="176" cy="344" r="76" fill="none" stroke="#55b68b" stroke-width="11" opacity=".55"/>
-  <path d="M247 324 602 247M247 344 602 344M247 364 602 441" stroke="#55b68b" stroke-width="8" stroke-linecap="round" opacity=".45"/>
   <path d="M545 604V393c0-108 87-195 195-195h46c108 0 195 87 195 195v211Z" fill="#4f9bd8" stroke="#25364a" stroke-width="11"/>
   <path d="M620 393c0-69 56-125 125-125h36c69 0 125 56 125 125v49H620Z" fill="#dff2fb" stroke="#25364a" stroke-width="8"/>
   <path d="M763 270v172" stroke="#25364a" stroke-width="8"/>

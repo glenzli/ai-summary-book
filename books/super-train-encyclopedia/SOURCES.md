@@ -163,6 +163,57 @@
 - [Linimo](https://www.linimo.jp/language/en/about/) 与 [Yurikamome](https://www.yurikamome.co.jp/en/ride-guidance/guide.html) — 区分磁悬浮、AGT／新交通系统。
 - [Chiba Urban Monorail](https://www.chiba-monorail.co.jp/english/) 与 [Shonan Monorail](https://www.shonan-monorail.co.jp/fun/monorail5000.html) — 区分悬挂式单轨与跨座式单轨。
 
+## 第十一章：121—142 更多每天见面的火车
+
+- [JR 九州：蓄电池与混合动力车辆](https://www.jrkyushu.co.jp/company/esg/environment/report/effort3.html) — 121 BEC819 是可在交流电气化区间充电、再进入非电气化区间行驶的蓄电池电车；127 YC1 会储存并再利用制动能量。
+- [JR 东日本：FV-E991 系 HYBARI 研发](https://www.jreast.co.jp/company/innovation/r-and-d/case_study/energy/fve991/) — 122 HYBARI 自 2022 年起进行氢燃料电池混合动力试验；它是试验车辆，不写成已投入载客营业。
+- [JR 北海道：2020 年时刻表调整](https://www.jrhokkaido.co.jp/CM/Info/press/pdf/20191213_KO_kaisei.pdf) — 123 H100 型于 2020 年 3 月开始营业运行。
+- [JR 北海道：733 系投入使用](https://www.jrhokkaido.co.jp/press/2012/120509-2.pdf) — 124 733 系于 2012 年开始载客；不同番台和编组的用途、内装并不完全相同。
+- [JR 西日本：227 系开始营业运行](https://www.westjr.co.jp/press/article/2015/03/page_6919.html) — 125 227 系于 2015 年 3 月在广岛地区投入使用。
+- [JR 九州：公司历史 2017—2021](https://www.jrkyushu.co.jp/company/info/history/history07.html) — 126 821 系于 2019 年 3 月、127 YC1 系于 2020 年 3 月投入营业运行。
+- [JR 四国：车辆介绍](https://www.jr-shikoku.co.jp/global/tc/trainbus/syaryou.html) — 128 1500 型于 2006 年 5 月投入使用，并采用降低氮氧化物排放和无障碍设计。
+- [江之电：300 形车辆介绍](https://www.enoden.co.jp/fan/museum/vehicle/300/) — 129 300 形各编组于 1956—1968 年陆续登场；现存并运行的是 305—355 编组，不能把所有旧编组都写成现役。
+- [东急：2020 系投入运营](https://www.tokyu.co.jp/history/chapter09_2_1/) — 130 2020 系于 2018 年 3 月开始载客运行。
+- [小田急：新型通勤车辆 5000 形](https://www.odakyu.jp/news/o5oaa1000001oq68-att/o5oaa1000001oq6f.pdf) — 131 第二代 5000 形于 2020 年 3 月 26 日开始营业运行；不要与 1969 年登场的旧 5000 形混同。
+- [京成电铁：车辆介绍](https://new-www.keisei.co.jp/keisei/tetudou/accessj/sharyou.php) — 132 第二代 AE 形 Skyliner 于 2010 年 7 月 17 日投入使用，为 8 辆编组，最高营业速度 160 km/h。
+- [南海电铁：50000 系 Rapi:t](https://www.nankai.co.jp/traffic/museum/muse/ji0003.html) — 133 50000 系于 1994 年登场，用于机场特急 Rapi:t。
+- [近畿日本铁道：8A 系新型一般车辆](https://www.kintetsu.co.jp/all_news/news_info/sinngatasyaryou.pdf) — 134 8A 系于 2024 年秋投入使用。
+- [阪急电铁：第二代 2300 系与 PRiVACE](https://www.hankyu.co.jp/railfan/news_event/2024/013240.html) — 135 第二代 2300 系及其 PRiVACE 指定座席服务于 2024 年 7 月 21 日开始运行；不要与旧 2300 系混同。
+- [三陆铁道：车辆介绍](https://www.sanrikutetsudou.com/%E4%B8%89%E9%99%B8%E9%89%84%E9%81%93%E3%81%AE%E8%BB%8A%E4%B8%A1%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B%E3%83%BB%E5%88%97%E8%BB%8A%E3%81%94%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85/) — 136 36-700 型于 2013 年登场，是三陆沿岸地方线路使用的单节柴油车。
+- [Transport for London：Class 345 首次载客](https://tfl.gov.uk/info-for/media/press-releases/2017/june/the-future-of-cross-london-travel-arriv) — 137 Class 345 于 2017 年 6 月 22 日首次载客，后来成为伊丽莎白线列车。
+- [Alstom：MP14 投入商业运营](https://www.alstom.com/press-releases-news/2020/10/alstoms-mp14-metro-enters-commercial-service-paris) — 138 自动驾驶、胶轮、8 辆编组的 MP14 于 2020 年 10 月 12 日在巴黎地铁 14 号线投入运营；其他线路采用的版本和编组可能不同。
+- [纽约大都会运输署：开放贯通 R211T 上线](https://www.mta.info/document/170976) — 139 R211T 开放贯通试验列车于 2024 年开始载客；R211 家族的普通 R211A 已于 2023 年先行投入使用，两者首年不要混写。
+- [印度铁路：Vande Bharat 发展资料](https://scr.indianrailways.gov.in/view_detail.jsp?dcd=22244&did=1726389953790699F7AFB90645D774C1ED19377906C87&id=0%2C5%2C268&lang=0) — 140 最初的座席版 Vande Bharat 于 2019 年投入运营；本卡不把后续卧铺版等不同产品混为同一车型。
+- [Transport for NSW：Waratah trains](https://transportnsw.info/travel-info/ways-to-get-around/train/fleet-facilities/waratah-trains) — 141 八辆编组、双层的 Waratah A set 于 2011 年投入使用；2018 年登场的 Series 2 是 B set。
+- [SBB：FLIRT 列车](https://www.sbb.ch/en/travel-information/services-on-train/our-trains/flirt.html) — 142 SBB 的 FLIRT 家族自 2004 年投入使用，采用低地板设计，最高速度可达 160 km/h；本卡以 RABe 523 为观察对象，不把全部 FLIRT 都称作 523 型。
+
+## 第十二章：143—149 南海电铁列车
+
+- [南海电铁：车辆博物馆](https://www.nankai.co.jp/traffic/museum/muse/ji0003.html) — 143—146 的基础车型资料：12000 系于 2011 年、10000 系于 1985 年、30000 系于 1983 年、31000 系于 1999 年登场；并说明 Southern 的指定席／一般车组合及高野线特急车型的连挂关系。
+- [南海电铁：Southern 12000 系](https://www.nankai.co.jp/traffic/info/southern12000.html) — 143 Southern 12000 系的外观、指定席设备与服务资料。
+- [南海电铁：10000 系复刻涂装公告](https://www.nankai.co.jp/lib/company/news/pdf/250512.pdf) — 144 其中一个四辆编组于 2025 年恢复早期深浅绿色涂装；不同照片出现银蓝色或绿色都可能正确。
+- [南海电铁：Koya／Rinkan](https://www.nankai.co.jp/traffic/express/kouya.html?kouya=2) — 145—146 Koya 连接难波与极乐桥，Rinkan 连接难波与桥本；30000 系和 31000 系都可能担当这些服务。
+- [南海电铁：GRAN 天空](https://www.nankai.co.jp/traffic/kankoutrain/grantenku/index.html) 与 [车辆设计公告](https://www.nankai.co.jp/lib/traffic/information/pdf/260216.pdf) — 147 于 2026 年 4 月 24 日开始连接难波与极乐桥，采用 2000 系改造的四辆编组，车身以深红和金色为主。
+- [南海电铁：天空列车历史](https://www.nankai.co.jp/traffic/kankoutrain/grantenku/history/index.html) 与 [旧“天空”告别公告](https://www.nankai.co.jp/lib/company/news/pdf/260311_1.pdf) — 旧“天空”是绿色 2200 系两辆编组，2026 年 3 月 20 日结束定期运行；不能把它的照片当作 147 GRAN 天空。
+- [南海电铁：泉北 Liner](https://www.nankai.co.jp/traffic/express/senbokuliner.html) 与 [泉北高速铁道沿革](https://www.nankai.co.jp/library/groupinfo/news/pdf/210122.pdf) — 148 金色 12000 系于 2017 年 1 月 27 日开始担当泉北 Liner；服务本身始于 2015 年，也会由 11000 系担当。
+- [南海电铁：Southern 12000／泉北 Liner 12000 乘车说明](https://www.nankai.co.jp/traffic/support_sazan12000.html) — 官方将“Southern 12000 系（Southern Premium）”和“泉北 Liner 12000 系”分开表述：两者同属 12000 系技术家族，但涂装、服务与名称不可互换。
+- [南海电铁：第五列めでたいでんしゃ登场](https://www.nankai.co.jp/news/240426.html) 与 [140 周年历史](https://www.nankai.co.jp/contents/140th/history/) — 149 家族始于 2016 年；さち、かい、なな、かしら由 7100 系改造，2024 年加入的かなた首次改造自 2000 系。
+- **名称边界：** Southern、Koya、Rinkan、泉北 Liner 是列车服务名；“Southern Premium”特指担当 Southern 的 12000 系服务品牌；“天空／GRAN 天空”和“めでたいでんしゃ”是观光列车名称，不能不加区分地当成底盘车型名。
+
+## 第十三章：150—159 中国铁路与城市轨道列车
+
+- [中国中车：CRH3 型高速动车组](https://www.crrcgc.cc/en/2016-02/24/article_BBFE506272C04633831BEDC58E19C694.html) 与 [国家铁路局：京津城际](https://www.nra.gov.cn/ztzl/hy/gcjs2023/xmjj/jjjj/201409/t20140928_344148.shtml) — 150 CRH3C 为八辆、4 动 4 拖、350 km/h 等级动车组，2008 年随京津城际投入运营；等级数字不等于每趟车都以该速度行驶。
+- [中国中车长春轨道客车：CRH5A](https://www.crrcgc.cc/ckgf/2016-04/12/article_B968DD7811F04681B71808596FB94386.html) 与 [国家铁路局：CRH5 技术开发及应用](https://www.nra.gov.cn/ztzl/hd/cxdh/cxcg/tkjj/201705/t20170502_146750.shtml) — 151 CRH5A 于 2007 年起投入运用，常见为八辆、5 动 3 拖的 200 km/h 等级动车组；严寒能力应限定到经过相应适应性改进的批次或衍生型，不能概括整个 CRH5 家族。
+- [中国中车浦镇：CR300AF 交付](https://www.crrcgc.cc/pz/2021-09/01/article_C31B0F5F33FA44ED87F2CF36D7EE9F83.html) 与 [海南省政府：CR300AF 投入载客](https://www.ehainan.gov.cn/2021-02/03/c_587390.htm) — 152 CR300AF 于 2021 年投入载客，常见八辆 4 动 4 拖，属于 250 km/h 等级；型号等级不是每一段线路的实际行驶速度。
+- [中国中车株洲电力机车：CR200J 首次载客](https://www.crrcgc.cc/zzs/2019-02/01/article_E2EF3A3A6B8D45FD81E5CFBC9237A3FB.html) 与 [动力车产品页](https://www.crrcgc.cc/dl/2017-11/07/article_3538DFBECD194C708F3392372048462F.html) — 153 CR200J 于 2019 年开始载客，是 160 km/h 等级的动力集中型动车组；编组和车辆配置有不同版本。“绿巨人”是常见昵称，不是所有绿色客车的正式型号。
+- [中国中车大连公司：机车发展史](https://www.crrcgc.cc/dl/2017-02/18/article_6AB7575381424C889EA968A36A141DD3.html) 与 [DF4B 产品页](https://www.crrcgc.cc/crrcgc/2016-01/19/article_4C95B52EDBE44C5AB141FF3A7BC30580.html) — 154 DF4B 于 1984 年开始批量制造；它采用电传动，柴油机发电后由牵引电动机驱动车轮。
+- [中国中车：HXD3D 产品页](https://www.crrcgc.cc/crrcgc/2016-01/19/article_BA28BFAC686B41E0AF63C7A4F8B8D0E6.html) 与 [首批上线公告](https://www.crrcgc.cc/dl/2014-01/13/article_68733BEA40F146AF9041CBA4B39F4B63.html) — 155 HXD3D 于 2014 年投入客运，是六轴、7200 kW、160 km/h 等级的电力机车。
+- [中国中车四方：CRH6A 运用考核](https://www.crrcgc.cc/sfgf/2015-05/06/article_B52E96836CE445AAB0EB20D291D82C74.html) 与 [CRH6 城际动车组](https://www.crrcgc.cc/pz/2013-12/28/article_0C37D1973CFB4C6382B32FD53F5A40B5.html) — 156 CRH6A 在 2013—2014 年经历空载、模拟载客和载客运行考核，属于 200 km/h 等级的城际动车组；多车门、快起快停适合城际通勤，但不等于普通地铁列车。
+- [中国中车：重庆 QKZ2 跨座式单轨车](https://www.crrcgc.cc/en/2016-08/02/article_9E8AEDEA0EB64300B15367B4DD38B042.html)、[日立：重庆单轨合同](https://www.hitachi.com/New/cnews/E/2002/1107/index.html) 与 [重庆市政府：2 号线资料](https://www.cq.gov.cn/ywdt/bmts/202110/t20211027_9896178.html) — 157 QKZ2 是重庆 2 号线早期四辆编组车型，胶轮跨坐在轨道梁上，设计速度 80 km/h；2 号线后来还有其他车型和八辆编组，不能把全线所有车辆都称作 QKZ2。
+- [中国中车：长沙中低速磁浮试运行](https://www.crrcgc.cc/crrcgc/2015-12/28/article_F08C9D158ADB4A5CB77E124060D6951D.html) 与 [湖南省交通运输厅：开通载客](https://jtt.hunan.gov.cn/xxgk/gzdt/jtyw1/201605/t20160509_3753359.html) — 158 原始列车为三辆固定编组、100 km/h 等级，正常悬浮间隙约 8 mm；长沙磁浮快线于 2016 年 5 月 6 日开始载客。2021 年后的 110／140 km/h 提速车辆不与原始车型混写。
+- [中国中车：燕房线“海豚号”列车](https://www.crrcgc.cc/crrcgc/2014-12/02/article_17E523FABD30491EB35E7C65A97F9AF5.html)、[北京市交通委：燕房线开通](https://jtw.beijing.gov.cn/xxgk/xwfbh/201912/t20191209_1007565.html) 与 [GoA4 自动运行说明](https://jtw.beijing.gov.cn/xxgk/dtxx/201912/t20191231_1548193.html) — 159 DKZ76 是四辆、2 动 2 拖、B 型、80 km/h 等级的 GoA4 列车，2017 年 12 月 30 日随燕房线投入运营。“海豚号”是昵称；全自动运行仍有控制中心、监测系统与工作人员保障安全。
+- **名称边界：** CRH／CR 型号中的速度数字表示产品等级而非每趟车的承诺速度；“绿巨人”“海豚号”是特定列车的常见昵称；QKZ2、DKZ76 是具体车辆型号，不是线路上所有列车的统称。
+
 ## 编辑时怎样继续核查？
 
 1. 先确认车辆是一个型号、一个家族，还是某次涂装。
