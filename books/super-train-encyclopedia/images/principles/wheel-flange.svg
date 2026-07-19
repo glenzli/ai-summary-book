@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">轮缘怎样帮助车轮留在轨道上</title>
-  <desc id="desc">两幅正面剖面图。车轮居中时两边轮缘都和钢轨留有小缝；轮对偏向右边时，右侧轮缘靠近钢轨，帮助车轮回到合适位置。</desc>
+  <desc id="desc">两幅正面剖面图。车轮居中时两边轮缘都和钢轨留有小缝；轮对偏得过多时，右侧轮缘靠近钢轨并帮助限制继续偏移。轮轨踏面轮廓才是日常导向的重要部分。</desc>
   <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
   <path d="M600 70V610" stroke="#d8c5a9" stroke-width="6" stroke-dasharray="18 18"/>
 

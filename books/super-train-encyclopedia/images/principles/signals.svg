@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">信号把线路消息告诉列车</title>
-  <desc id="desc">轨旁信号机有红黄绿三盏灯，绿色灯亮起，三道光线指向驶来的蓝色列车，远处轨道保持清空。</desc>
+  <title id="title">一种轨旁信号向司机显示行车信息</title>
+  <desc id="desc">简化示意图中，轨旁信号机有三盏灯，一盏绿色灯亮起，蓝色列车的司机按这条线路的规则识别显示。信号灯不是用光束探测或遥控列车。</desc>
   <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
   <path d="M450 612 570 76M1011 612 650 76" fill="none" stroke="#667687" stroke-width="22" stroke-linecap="round"/>
   <g stroke="#9a7558" stroke-width="15" stroke-linecap="round">

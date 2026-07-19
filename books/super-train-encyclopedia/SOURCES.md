@@ -17,6 +17,14 @@
 - [Linimo：列车与磁悬浮方式简介](https://www.linimo.jp/language/en/about/) — 低速常导磁悬浮的悬浮、导向和推进。
 - [JR 东海：Superconducting Maglev 说明书](https://global.jr-central.co.jp/en/company/_pdf/superconducting_maglev.pdf) — 超导磁悬浮、线性电机与导向方式。
 - [UIC：High-Speed Rail History](https://uic.org/passenger/highspeed/article/high-speed-rail-history) — 电气铁路和高速铁路发展的国际时间线。
+- [Network Rail：Track](https://www.networkrail.co.uk/our-work/looking-after-the-railway/track/) — 钢轨、轨枕、道砟和下部结构如何支承轨道并维持几何位置。
+- [美国联邦铁路管理局（FRA）：PTC Braking Algorithm，Appendix F](https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/3328/Appendix%20F_%20TO%20242%20PTC%20Braking%20Algorithm_final.pdf) — 制动管、控制阀、储风缸、制动缸及空气制动指令传播的术语依据。
+- [日本制钢所：Draft Gears](https://www.jsw.co.jp/en/product/business/industrial_machinery/im_0850/) — 车钩后的牵引缓冲装置如何减小起步、停车和加减速产生的冲击。
+- [美国联邦铁路管理局（FRA）：Superelevation Guidance](https://railroads.dot.gov/sites/fra.dot.gov/files/2024-10/Superelevation%20Guidance_0.pdf) — 外轨超高、曲线半径、速度和向心力的关系。
+- [Alstom：Dispen Dampers](https://www.alstom.com/solutions/components/dispen-dampers-enhancing-our-passengers-journey) — 一级、二级悬挂及各类减振器对车辆动态和舒适性的作用。
+- [铁道综合技术研究所（RTRI）：轮轨黏着不足时的非黏着制动研究](https://www.rtri.or.jp/eng/rd/seika/2018/4-22.html) — 雨雪会降低轮轨黏着，以及制动力不能超过可用黏着条件的研究背景。
+- [铁道综合技术研究所（RTRI）：高速列车车头形状优化](https://www.rtri.or.jp/eng/rd/seika/2019/03_19.html) — 车头形状与隧道微气压波的关系，说明气动设计不是单看鼻子长度。
+- [铁道综合技术研究所（RTRI）：隧道微气压波](https://www.rtri.or.jp/rd/division/rd51/rd5120/rd51200101.html) — 高速列车进入隧道时的压缩波、传播与洞口微气压波。
 
 ## 第二章：001—014 蒸汽先驱
 

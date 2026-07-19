@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">车轮怎样抓住钢轨向前走</title>
+  <desc id="desc">放大的驱动轮顺时针转动。轮轨接触处的黏着力把电机的转动力变成向前的力；雨雪天可以在轮前撒砂，帮助车轮减少打滑。</desc>
+  <defs>
+    <marker id="redArrow" viewBox="0 0 24 24" refX="22" refY="12" markerWidth="26" markerHeight="26" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M2 2 22 12 2 22Z" fill="#d95d4f"/>
+    </marker>
+    <marker id="greenArrow" viewBox="0 0 24 24" refX="22" refY="12" markerWidth="26" markerHeight="26" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M2 2 22 12 2 22Z" fill="#3e9a78"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="#fff9ed"/>
+
+  <!-- 车身和驱动轮的侧面放大图。 -->
+  <path d="M105 346V245Q105 178 177 178H946Q1038 178 1092 264L1140 346Z" fill="#ef8a7d" stroke="#25364a" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M176 220H865Q936 220 979 292H160Q161 247 176 220Z" fill="#dff2fb" stroke="#25364a" stroke-width="7"/>
+  <path d="M355 220V292M572 220V292M790 220V292" stroke="#25364a" stroke-width="6"/>
+  <rect x="150" y="323" width="870" height="58" rx="24" fill="#25364a"/>
+
+  <circle cx="554" cy="435" r="138" fill="#52687c" stroke="#25364a" stroke-width="11"/>
+  <circle cx="554" cy="435" r="88" fill="#d8e0e7" stroke="#25364a" stroke-width="9"/>
+  <circle cx="554" cy="435" r="31" fill="#ffd166" stroke="#25364a" stroke-width="8"/>
+  <path d="M554 404V349M525 452l-49 29M583 452l49 29" stroke="#667687" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- 电机把转矩送到车轴。 -->
+  <circle cx="315" cy="400" r="70" fill="#ffd166" stroke="#25364a" stroke-width="9"/>
+  <text x="315" y="418" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#25364a">M</text>
+  <path d="M385 414H498" stroke="#25364a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M431 499A154 154 0 1 1 695 384" fill="none" stroke="#d95d4f" stroke-width="8" stroke-linecap="round" marker-end="url(#redArrow)"/>
+  <text x="374" y="118" font-family="system-ui, sans-serif" font-size="33" font-weight="750" text-anchor="middle" fill="#25364a">电机让车轮转起来</text>
+  <path d="M250 135C281 163 332 184 389 190" fill="none" stroke="#d95d4f" stroke-width="7" stroke-linecap="round" marker-end="url(#redArrow)"/>
+
+  <!-- 轨道和接触点。 -->
+  <ellipse cx="600" cy="615" rx="535" ry="30" fill="#eadfcb"/>
+  <path d="M65 564H1135" stroke="#667687" stroke-width="30" stroke-linecap="round"/>
+  <path d="M65 555H1135" stroke="#d8e0e7" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="554" cy="552" rx="58" ry="18" fill="#ffd166" opacity=".78"/>
+  <circle cx="554" cy="552" r="12" fill="#25364a"/>
+
+  <!-- 黏着力沿轨道向前，箭头保持细长。 -->
+  <path d="M578 522C713 492 880 492 1080 492" fill="none" stroke="#3e9a78" stroke-width="8" stroke-linecap="round" marker-end="url(#greenArrow)"/>
+  <text x="835" y="457" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="800" fill="#25364a">轨道推车轮向前</text>
+  <g transform="translate(650 584)">
+    <rect width="322" height="55" rx="27" fill="#fff" stroke="#3e9a78" stroke-width="5"/>
+    <text x="161" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" font-weight="750" fill="#25364a">接触处“抓住”＝黏着</text>
+  </g>
+
+  <!-- 撒砂管把砂送到车轮前方。 -->
+  <path d="M746 343 787 343 755 483 719 483Z" fill="#9a7558" stroke="#25364a" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="#c89a55">
+    <circle cx="730" cy="498" r="7"/><circle cx="746" cy="507" r="6"/><circle cx="761" cy="515" r="7"/>
+    <circle cx="719" cy="518" r="5"/><circle cx="739" cy="530" r="6"/><circle cx="776" cy="529" r="5"/>
+  </g>
+  <path d="M874 337C842 361 811 390 783 425" fill="none" stroke="#9a7558" stroke-width="7" stroke-linecap="round" marker-end="url(#redArrow)"/>
+  <text x="959" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="750" fill="#25364a">湿滑时撒一点砂</text>
+  <text x="959" y="362" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" fill="#52687c">帮助车轮少打滑</text>
+</svg>

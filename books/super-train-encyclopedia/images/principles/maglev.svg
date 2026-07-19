@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">磁力让列车浮起并前进</title>
-  <desc id="desc">简化示意图中，流线形列车和导向轨之间留着可见空隙。两支蓝色长箭头表示磁力托起列车，一支红色长箭头表示列车向右前进。</desc>
+  <desc id="desc">简化示意图中，流线形列车和导向轨之间留着为便于观察而放大的空隙。两支蓝色长箭头表示磁力托起列车，一支红色长箭头表示列车向右前进；真实系统的间隙和低速支撑方式各不相同。</desc>
   <defs>
     <marker id="upArrow" viewBox="0 0 20 20" refX="18" refY="10" markerWidth="30" markerHeight="30" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 2 18 10 2 18Z" fill="#3b82c4"/></marker>
     <marker id="rightArrow" viewBox="0 0 20 20" refX="18" refY="10" markerWidth="30" markerHeight="30" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 2 18 10 2 18Z" fill="#d95d4f"/></marker>
