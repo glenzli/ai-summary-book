@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural validation for the six-volume Stochastic Parrot Anatomy."""
+"""Structural validation for the five-volume Stochastic Parrot Anatomy."""
 
 from __future__ import annotations
 
@@ -9,72 +9,62 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-VOLUMES = tuple(ROOT / f"vol-{number:02d}" for number in range(1, 7))
+VOLUMES = tuple(ROOT / f"vol-{number:02d}" for number in range(1, 6))
 LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 LABELED_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 HTML_IMAGE = re.compile(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", re.IGNORECASE)
-EXERCISE = re.compile(r"^\*\*练习 ([A-Z]+\d*(?:\.\d+)+|\d+\.\d+)\.\*\*", re.MULTILINE)
-SOLUTION_FILES = {
-    "root": ROOT / "SOLUTIONS.md",
-    "vol2": ROOT / "vol-02" / "SOLUTIONS.md",
-    "P": ROOT / "vol-03" / "SOLUTIONS.md",
-    "R": ROOT / "vol-03" / "SOLUTIONS.md",
-    "M": ROOT / "vol-04" / "SOLUTIONS.md",
-    "V": ROOT / "vol-04" / "SOLUTIONS.md",
-}
-
-LOCATOR_HEADING = re.compile(
-    r"^#{2,6} ((?:[SPRMV][0-9]+|[C-H])\.[0-9]+(?:\.[0-9]+)*)",
-    re.MULTILINE,
-)
-INTERNAL_LOCATOR = re.compile(
-    r"\b(?:[SPRMV]|[C-H])[0-9]+\.[0-9]+(?:\.[0-9]+)*\b"
-)
-LOCATOR_DEFINITION = re.compile(
-    r"^(?:#{2,6}\s+|\*\*(?:定义|定理|命题|引理|推论|反例|"
-    r"外部输入(?:定理)?|练习)\s+)"
-    r"((?:[SPRMV]|[C-H])[0-9]+\.[0-9]+(?:\.[0-9]+)*)",
-    re.MULTILINE,
-)
 HEADING = re.compile(r"^(#{1,6})\s+")
 HEADING_TEXT = re.compile(r"^#{1,6}\s+(.+?)\s*$", re.MULTILINE)
 EXPLICIT_ANCHOR = re.compile(r"<a\s+(?:id|name)=[\"']([^\"']+)[\"']", re.IGNORECASE)
 FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
 DISPLAY_MATH = re.compile(r"(?<!\\)\$\$")
+DISPLAY_MATH_BLOCK = re.compile(r"(?s)(?<!\\)\$\$(.*?)(?<!\\)\$\$")
+INLINE_MATH = re.compile(r"(?<![\\$])\$(?!\$)(.+?)(?<!\\)\$(?!\$)")
+CONTROL_CHARACTER = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+MALFORMED_LATEX_COMMAND = re.compile(
+    r"(?<![A-Za-z\\])(?:operatorname|frac|sqrt|mathbb|mathbf|mathrm|text|begin|end)\{"
+    r"|(?<![A-Za-z\\])(?:sum|prod|int|nabla|partial|Delta|Theta|alpha|beta|gamma|"
+    r"sigma|varepsilon|epsilon|infty|odot|approx|leq|geq|mid)(?:_|\()"
+)
 CHAPTER_TITLE_PREFIX = re.compile(
-    r"^(?:第[零一二三四五六七八九十百0-9]+章|"
-    r"卷[一二三四五六]导论|导论|序章|序言)\s*"
+    r"^(?:第[零一二三四五六七八九十百0-9]+章|导论|序章|序言)\s*"
+)
+NUMBERED_EXERCISE = re.compile(
+    r"^(?:#{2,6}\s+(?:练习|习题|综合练习)\b|"
+    r"\*\*(?:练习|习题)\s+[A-Z0-9]+(?:\.[0-9]+)+\.)",
+    re.MULTILINE,
 )
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp"}
+RETIRED_READER_PATTERNS = {
+    "vol-06": re.compile(r"vol-06|卷六"),
+    "solutions": re.compile(r"\bSOLUTIONS\.md\b|习题解答"),
+    "claim ledger": re.compile(r"\bCLAIM_LEDGER\.md\b|主张责任表"),
+    "proof kernels": re.compile(r"app-[c-h]_[^)\s]+\.md"),
+}
 
 
 def fail(message: str, errors: list[str]) -> None:
     errors.append(message)
 
 
-def exercise_group(label: str) -> str:
-    if label[0].isdigit():
-        return "vol2"
-    if label.startswith("P"):
-        return "P"
-    if label.startswith("R"):
-        return "R"
-    if label.startswith("M"):
-        return "M"
-    if label.startswith("V"):
-        return "V"
-    return "root"
-
-
 def heading_level_skips(text: str) -> list[tuple[int, int, int]]:
     skips: list[tuple[int, int, int]] = []
     previous_level = 0
-    in_fence = False
+    fence_character: str | None = None
+    fence_length = 0
+
     for line_number, line in enumerate(text.splitlines(), 1):
-        if line.startswith("```") or line.startswith("~~~"):
-            in_fence = not in_fence
+        match = FENCE.match(line)
+        if match is not None:
+            marker = match.group(1)
+            if fence_character is None:
+                fence_character = marker[0]
+                fence_length = len(marker)
+            elif marker[0] == fence_character and len(marker) >= fence_length:
+                fence_character = None
+                fence_length = 0
             continue
-        if in_fence:
+        if fence_character is not None:
             continue
         match = HEADING.match(line)
         if match is None:
@@ -84,19 +74,6 @@ def heading_level_skips(text: str) -> list[tuple[int, int, int]]:
             skips.append((line_number, previous_level, level))
         previous_level = level
     return skips
-
-
-def nonterminal_exercise_sections(text: str) -> list[int]:
-    h2: list[tuple[int, str]] = []
-    in_fence = False
-    for line_number, line in enumerate(text.splitlines(), 1):
-        if line.startswith("```") or line.startswith("~~~"):
-            in_fence = not in_fence
-            continue
-        if not in_fence and line.startswith("## "):
-            h2.append((line_number, line[3:].strip()))
-    exercise_titles = {"练习", "习题", "综合练习"}
-    return [line_number for line_number, title in h2[:-1] if title in exercise_titles]
 
 
 def markup_balance_issues(text: str) -> list[str]:
@@ -129,6 +106,24 @@ def markup_balance_issues(text: str) -> list[str]:
     return issues
 
 
+def malformed_latex_issues(text: str) -> list[tuple[int, str]]:
+    issues: list[tuple[int, str]] = []
+
+    for block in DISPLAY_MATH_BLOCK.finditer(text):
+        content = block.group(1)
+        content_start = block.start(1)
+        for match in MALFORMED_LATEX_COMMAND.finditer(content):
+            line_number = text.count("\n", 0, content_start + match.start()) + 1
+            issues.append((line_number, match.group(0)))
+
+    for line_number, line in enumerate(text.splitlines(), 1):
+        for fragment in INLINE_MATH.finditer(line):
+            for match in MALFORMED_LATEX_COMMAND.finditer(fragment.group(1)):
+                issues.append((line_number, match.group(0)))
+
+    return issues
+
+
 def chapter_display_title(text: str) -> str:
     first_line = text.splitlines()[0].removeprefix("# ").strip()
     return CHAPTER_TITLE_PREFIX.sub("", first_line).strip()
@@ -152,80 +147,109 @@ def markdown_anchor_ids(text: str) -> set[str]:
     return anchors
 
 
+def validate_volume(volume: Path, errors: list[str]) -> int:
+    readme_path = volume / "README.md"
+    if not readme_path.is_file():
+        fail(f"missing volume README: {volume.relative_to(ROOT)}", errors)
+        return 0
+
+    readme = readme_path.read_text(encoding="utf-8")
+    linked_chapters = {
+        target: label
+        for label, target in LABELED_LINK.findall(readme)
+        if re.fullmatch(r"ch[0-9][0-9]_[^)]+\.md", target)
+    }
+    chapters = sorted(volume.glob("ch[0-9][0-9]_*.md"))
+    if not chapters:
+        fail(f"volume has no chapter files: {volume.relative_to(ROOT)}", errors)
+        return 0
+
+    numbers = [int(chapter.name[2:4]) for chapter in chapters]
+    expected = list(range(numbers[-1] + 1))
+    if numbers != expected:
+        fail(
+            f"non-contiguous chapter numbering in {volume.relative_to(ROOT)}: "
+            f"found={numbers} expected={expected}",
+            errors,
+        )
+
+    for chapter in chapters:
+        text = chapter.read_text(encoding="utf-8")
+        if not text.startswith("# "):
+            fail(f"chapter lacks leading H1: {chapter.relative_to(ROOT)}", errors)
+            continue
+        if chapter.name not in linked_chapters:
+            fail(f"volume README omits chapter: {chapter.relative_to(ROOT)}", errors)
+        elif linked_chapters[chapter.name] != chapter_display_title(text):
+            fail(
+                f"volume README title differs from chapter H1: {chapter.relative_to(ROOT)}",
+                errors,
+            )
+
+    for target in linked_chapters:
+        if not (volume / target).is_file():
+            fail(f"volume README links missing chapter: {volume.name}/{target}", errors)
+    return len(chapters)
+
+
 def main() -> int:
     errors: list[str] = []
+    root_readme_path = ROOT / "README.md"
+    if not root_readme_path.is_file():
+        fail("missing root README", errors)
+        root_readme = ""
+    else:
+        root_readme = root_readme_path.read_text(encoding="utf-8")
 
-    root_readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if "(00_preface_and_scope.md)" not in root_readme:
-        fail("root README does not link the book preface", errors)
+        fail("root README does not link the book introduction", errors)
 
+    chapter_count = 0
     for volume in VOLUMES:
         if not volume.is_dir():
             fail(f"missing volume directory: {volume.relative_to(ROOT)}", errors)
             continue
-        volume_readme_path = volume / "README.md"
-        if not volume_readme_path.is_file():
-            fail(f"missing volume README: {volume.relative_to(ROOT)}", errors)
-            volume_readme = ""
-        else:
-            volume_readme = volume_readme_path.read_text(encoding="utf-8")
-        readme_chapter_labels = {
-            target: label
-            for label, target in LABELED_LINK.findall(volume_readme)
-            if re.fullmatch(r"ch[0-9][0-9]_[^)]+\.md", target)
-        }
-        chapters = sorted(volume.glob("ch[0-9][0-9]_*.md"))
-        if not chapters:
-            fail(f"volume has no chapter files: {volume.relative_to(ROOT)}", errors)
-        for chapter in chapters:
-            text = chapter.read_text(encoding="utf-8")
-            if not text.startswith("# "):
-                fail(f"chapter lacks leading H1: {chapter.relative_to(ROOT)}", errors)
-            for line_number in nonterminal_exercise_sections(text):
-                fail(
-                    f"nonterminal H2 exercise section: {chapter.relative_to(ROOT)}:{line_number}",
-                    errors,
-                )
-            if f"({chapter.name})" not in volume_readme:
-                fail(
-                    f"volume README omits chapter: {chapter.relative_to(ROOT)}",
-                    errors,
-                )
-            elif readme_chapter_labels.get(chapter.name) != chapter_display_title(text):
-                fail(
-                    "volume README title differs from chapter H1: "
-                    f"{chapter.relative_to(ROOT)}",
-                    errors,
-                )
+        if f"({volume.name}/README.md)" not in root_readme:
+            fail(f"root README does not link {volume.name}", errors)
+        chapter_count += validate_volume(volume, errors)
 
-    legacy_body = sorted(ROOT.glob("[0-9][0-9]*_volume_*.md"))
-    if legacy_body:
-        fail(f"legacy flat body files remain: {legacy_body}", errors)
+    if (ROOT / "vol-06").exists():
+        fail("retired vol-06 directory still exists", errors)
 
     markdown_files = sorted(ROOT.rglob("*.md"))
-    locators: dict[str, list[str]] = {}
-    defined_locators: set[str] = set()
-    referenced_locators: dict[str, set[str]] = {}
     anchor_cache: dict[Path, set[str]] = {}
     referenced_assets: set[Path] = set()
+
     for path in markdown_files:
         text = path.read_text(encoding="utf-8")
-        if "editorial" not in path.parts:
-            defined_locators.update(LOCATOR_DEFINITION.findall(text))
-            for locator in INTERNAL_LOCATOR.findall(text):
-                referenced_locators.setdefault(locator, set()).add(
-                    str(path.relative_to(ROOT))
-                )
-            for issue in markup_balance_issues(text):
-                fail(f"{issue}: {path.relative_to(ROOT)}", errors)
-            for line_number, previous, current in heading_level_skips(text):
-                fail(
-                    "heading level skip: "
-                    f"{path.relative_to(ROOT)}:{line_number} H{previous} -> H{current}",
-                    errors,
-                )
-            for locator in LOCATOR_HEADING.findall(text):
-                locators.setdefault(locator, []).append(str(path.relative_to(ROOT)))
+        relative = path.relative_to(ROOT)
+        reader_facing = "editorial" not in path.parts
+
+        if reader_facing:
+            if NUMBERED_EXERCISE.search(text):
+                fail(f"numbered exercise remains: {relative}", errors)
+            for name, pattern in RETIRED_READER_PATTERNS.items():
+                if pattern.search(text):
+                    fail(f"retired {name} reference remains: {relative}", errors)
+
+        for match in CONTROL_CHARACTER.finditer(text):
+            line_number = text.count("\n", 0, match.start()) + 1
+            fail(f"control character in Markdown: {relative}:{line_number}", errors)
+        for line_number, command in malformed_latex_issues(text):
+            fail(
+                f"possible missing LaTeX backslash: {relative}:{line_number} "
+                f"({command})",
+                errors,
+            )
+
+        for issue in markup_balance_issues(text):
+            fail(f"{issue}: {relative}", errors)
+        for line_number, previous, current in heading_level_skips(text):
+            fail(
+                f"heading level skip: {relative}:{line_number} H{previous} -> H{current}",
+                errors,
+            )
+
         for target in LINK.findall(text):
             target = target.strip().removeprefix("<").removesuffix(">")
             if target.startswith(("http://", "https://", "mailto:")):
@@ -233,7 +257,7 @@ def main() -> int:
             target_path, separator, fragment = target.partition("#")
             resolved = (path.parent / target_path).resolve() if target_path else path.resolve()
             if not resolved.exists():
-                fail(f"broken local link: {path.relative_to(ROOT)} -> {target_path}", errors)
+                fail(f"broken local link: {relative} -> {target_path}", errors)
                 continue
             if resolved.suffix.lower() in IMAGE_SUFFIXES:
                 referenced_assets.add(resolved)
@@ -243,16 +267,14 @@ def main() -> int:
                         resolved.read_text(encoding="utf-8")
                     )
                 if fragment not in anchor_cache[resolved]:
-                    fail(
-                        f"broken local anchor: {path.relative_to(ROOT)} -> {target}",
-                        errors,
-                    )
+                    fail(f"broken local anchor: {relative} -> {target}", errors)
+
         for target in HTML_IMAGE.findall(text):
             if target.startswith(("http://", "https://", "data:")):
                 continue
             resolved = (path.parent / target.split("#", 1)[0]).resolve()
             if not resolved.exists():
-                fail(f"broken HTML image: {path.relative_to(ROOT)} -> {target}", errors)
+                fail(f"broken HTML image: {relative} -> {target}", errors)
             else:
                 referenced_assets.add(resolved)
 
@@ -264,56 +286,16 @@ def main() -> int:
     for orphan in sorted(image_assets - referenced_assets):
         fail(f"orphan image asset: {orphan.relative_to(ROOT)}", errors)
 
-    for locator, paths in sorted(locators.items()):
-        if len(paths) > 1:
-            fail(f"duplicate heading locator {locator}: {paths}", errors)
-
-    for locator in sorted(set(referenced_locators) - defined_locators):
-        fail(
-            f"unresolved internal locator {locator}: "
-            f"{sorted(referenced_locators[locator])}",
-            errors,
-        )
-
-    content_labels: dict[str, list[str]] = {key: [] for key in SOLUTION_FILES}
-    for path in markdown_files:
-        if path in SOLUTION_FILES.values() or path.name.endswith("SOLUTIONS.md"):
-            continue
-        for label in EXERCISE.findall(path.read_text(encoding="utf-8")):
-            content_labels[exercise_group(label)].append(label)
-
-    for group, solution_path in SOLUTION_FILES.items():
-        if not solution_path.is_file():
-            fail(f"missing solution file for {group}: {solution_path.relative_to(ROOT)}", errors)
-            continue
-        solutions = [
-            label
-            for label in EXERCISE.findall(solution_path.read_text(encoding="utf-8"))
-            if exercise_group(label) == group
-        ]
-        content = content_labels[group]
-        if len(content) != len(set(content)):
-            fail(f"duplicate exercise locator in {group}", errors)
-        if len(solutions) != len(set(solutions)):
-            fail(f"duplicate solution locator in {group}", errors)
-        missing = sorted(set(content) - set(solutions))
-        extra = sorted(set(solutions) - set(content))
-        if missing:
-            fail(f"missing solutions in {group}: {missing}", errors)
-        if extra:
-            fail(f"orphan solutions in {group}: {extra}", errors)
-
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
         print(f"stochastic-parrot-anatomy validation failed: {len(errors)} error(s)")
         return 1
 
-    exercise_count = sum(len(labels) for labels in content_labels.values())
-    chapter_count = sum(len(list(volume.glob("ch[0-9][0-9]_*.md"))) for volume in VOLUMES)
     print(
         "stochastic-parrot-anatomy validation passed: "
-        f"volumes={len(VOLUMES)} chapters={chapter_count} exercises={exercise_count}"
+        f"volumes={len(VOLUMES)} chapters={chapter_count} "
+        f"markdown_files={len(markdown_files)} images={len(image_assets)}"
     )
     return 0
 

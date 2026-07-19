@@ -42,7 +42,7 @@ $$ S = \text{span} \{ \sigma(\mathbf{w}^T \mathbf{x} + b) \mid \mathbf{w} \in \m
 根据泛函分析中的推论，如果 $\bar{S} \neq C(K)$，那么一定存在一个非零的**有界线性泛函 (Bounded Linear Functional)** $L$，使得 $L$ 在子空间 $S$ 上的作用全为 0，但 $L$ 本身不为 0（即存在某个 $f$ 使 $L(f) \neq 0$）。
 这利用了 Hahn-Banach 定理的一个推论。
 
-根据 **Riesz 表示定理 (Riesz Representation Theorem)**，在紧致集 $K$ 上的连续函数空间 $C(K)$ 上的任意有界线性泛函 $L$，都可以表示为一个正则波莱尔测度 (Regular Borel Measure) $\mu$ 的积分：
+根据 **Riesz 表示定理 (Riesz Representation Theorem)**，在紧致 Hausdorff 空间 $K$ 上，$C(K)$ 的任意有界线性泛函 $L$ 都可以表示为一个有限正则符号 Borel 测度 $\mu$ 的积分：
 $$ L(h) = \int_K h(\mathbf{x}) d\mu(\mathbf{x}) $$
 
 因此，我们的假设等价于：存在一个非零测度 $\mu$，使得对于所有 $h \in S$，都有：
@@ -58,8 +58,7 @@ $$ \int_K \sigma(\mathbf{w}^T \mathbf{x} + b) d\mu(\mathbf{x}) = 0 $$
 证明利用缩放后的 sigmoidal 函数逼近由超平面定义的阶跃，并据此表明该有限符号测度在相应半空间族上为零，最终推出 $\mu=0$。这里不是声称单个 sigmoid 能逼近任意示性函数，而是说明该函数族足以分离非零测度。
 
 ### 4. 矛盾
-如果你能证明 $\mu = 0$，这就与“存在非零泛函 $L$”矛盾了。
-因此，假设不成立，$S$ 在 $C(K)$ 中是稠密的。证毕。
+判别性迫使 $\mu=0$，这与 Hahn-Banach 分离得到的非零泛函矛盾。因此 $S$ 在 $C(K)$ 中稠密。这里完整性依赖上一节所述的 discriminatory 引理；本节给出的是 Cybenko 证明的结构，而不是重新证明该引理的全部测度论细节。
 
 ---
 

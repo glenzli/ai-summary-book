@@ -31,7 +31,7 @@ $$ \text{Var}(x) = \text{Var}\left(\sum_{i=1}^{d_k} q_i k_i\right) = \sum_{i=1}^
 因此，点积 $x$ 的总方差为：
 $$ \text{Var}(x) = \sum_{i=1}^{d_k} 1 = d_k $$
 
-这表明，点积结果的标准差是 $\sqrt{d_k}$。当 $d_k$ 很大（如 512）时，点积的值域范围会非常大（例如 $\pm 20$ 甚至更大）。
+这表明，点积结果的标准差是 $\sqrt{d_k}$。例如 $d_k=512$ 时，该教学模型下的标准差约为 $22.6$；这里描述的是尺度而不是有限值域，正态变量仍可取得任意大的绝对值。
 
 ### A.10.1.2 Softmax 的梯度消失问题 (Gradient Vanishing in Softmax)
 
@@ -50,7 +50,7 @@ $$ \frac{\partial \sigma_i}{\partial z_j} = \sigma_i (\delta_{ij} - \sigma_j) $$
 
 ### A.10.1.3 Self-Attention 矩阵运算的完整展开 (Matrix Expansion of Self-Attention)
 
-为了让大家脑海中“跑通”整个过程，我们将 $Q, K, V$ 的矩阵乘法完全展开。这有助于理解为什么 Attention 本质上是一个**基于内容的寻址 (Content-based Addressing)** 和**加权平均 (Weighted Averaging)** 过程。
+下面完全展开 $Q,K,V$ 的矩阵乘法。由此可见，attention 计算由**基于内容的寻址 (Content-based Addressing)** 与对 Value 的**加权汇聚 (Weighted Aggregation)** 组成。
 
 假设我们有两个单词的序列 (Sequence Length $L=2$)，特征维度为 3 ($d_k=d_v=3$)。
 
@@ -75,7 +75,7 @@ $$
 
 展开看每一个元素，例如第一行第二列的元素：
 $$ \text{Score}_{12} = \mathbf{q}_1 \cdot \mathbf{k}_2 = q_{11}k_{21} + q_{12}k_{22} + q_{13}k_{23} $$
-这代表了 **Query 1 与 Key 2 的相似度**（未归一化）。得到的矩阵是一个 $L \times L$ 的方阵。
+这代表 **Query 1 与 Key 2 的兼容性分数**（未归一化）。点积常被用作相似度，但这里的 Query 与 Key 来自不同投影，不必把它解释为原表示空间中的几何相似度。得到的矩阵是一个 $L \times L$ 的方阵。
 
 #### Step 2: 归一化为概率 (Softmax)
 
@@ -121,8 +121,8 @@ $$
 $$ \mathbf{z}_1 = \alpha_{11}\mathbf{v}_1 + \alpha_{12}\mathbf{v}_2 $$
 
 **建模解释**：
-Token 1 的新向量 $\mathbf{z}_1$，本质上就是所有 Value 向量的**加权平均**。
-*   如果 $\alpha_{12}$ 很大（接近 1），说明 Token 1 极其关注 Token 2。
+Token 1 的新向量 $\mathbf{z}_1$ 是所有 Value 向量的凸组合，因为权重非负且总和为 1。
+*   如果 $\alpha_{12}$ 接近 1，则这一头在该层把 Token 1 的大部分汇聚权重分配给 Token 2；这不等于完整模型的语义解释只由这一项决定。
 *   结果就是：Token 2 的信息 $\mathbf{v}_2$ 会大量“流向” Token 1，使得 Token 1 的更新后表示中包含了 Token 2 的特征。
 只要掩码允许，任意位置的 Value 都能在一层中直接影响当前输出，这是 Self-Attention 建模长距离依赖的重要结构条件；是否实际学到正确依赖仍取决于 Q/K/V 投影、训练数据与优化。
 
@@ -170,7 +170,7 @@ $$
 设序列长度为 $L$，隐藏维度为 $d$，单头 Key/Query 维度为 $d_k$。
 
 1.  **相似度矩阵**：$S = QK^T \in \mathbb{R}^{L\times L}$。
-    - 计算代价约为 $O(L^2 d_k)$（本质是矩阵乘法）。
+    - 计算代价约为 $O(L^2 d_k)$，对应一个 $L\times d_k$ 矩阵与其转置的乘法。
     - 朴素实现会物化 $O(L^2)$ 的分数/概率中间量；FlashAttention 等分块精确算法可避免把完整矩阵写回 HBM，因此额外工作显存不必是 $O(L^2)$。
 
 2.  **加权求和**：$Z = \text{softmax}(S)V$。

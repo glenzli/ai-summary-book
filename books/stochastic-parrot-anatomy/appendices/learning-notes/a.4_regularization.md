@@ -152,7 +152,7 @@ $$ -\log P(\mathbf{w}) \propto \|\mathbf{w}\|_1 $$
 
 ## A.4.3 优化视角：权重衰减与梯度更新 (Weight Decay in Optimization)
 
-在正文 2.1.2 节中，我们提到了工程上常用的 **Weight Decay**。本节推导普通、未预条件 SGD 下 L2 penalty 与比例权重衰减的代数对应；对 Adam 等自适应方法，这一等价关系一般不成立。
+本节推导普通、未预条件 SGD 下 L2 penalty 与比例权重衰减的代数对应；对 Adam 等自适应方法，这一等价关系一般不成立。
 
 ### 1. L2 正则化 $\Leftrightarrow$ 权重比例衰减 (Proportional Decay)
 假设目标函数包含 L2 正则项：
@@ -206,7 +206,7 @@ $$
 
 ## A.4.4 Dropout 的数学机制详解 (Mathematics of Dropout)
 
-本节详细拆解 Dropout 在前向传播、反向传播及测试阶段的数学细节，帮助理解“掩码”与“缩放”的本质。
+本节拆解 Dropout 在前向传播、反向传播及测试阶段的数学细节，说明掩码与缩放各自承担的作用。
 
 ### 1. 伯努利掩码 (Bernoulli Mask)
 在 Dropout 中，核心操作是生成一个 **掩码向量 (Mask Vector)** $\mathbf{r} \in \{0, 1\}^d$。这个向量的每一个元素 $r_j$ 都是独立从伯努利分布中采样的：
@@ -242,7 +242,7 @@ $$ \mathbb{E}[\tilde{h}_i] = \mathbb{E}[r_i \cdot h_i] = P(r_i=1) h_i + P(r_i=0)
 
 这意味着，下一层神经元接收到的信号总强度（期望值）只有原来的 $(1-p)$ 倍。
 如果测试时我们全开（所有神经元都工作），信号强度会恢复为 $1$ 倍（$h_i$）。
-这种 **训练/测试时的信号强度不匹配** 会导致网络预测失效。
+若训练过程不补偿这种尺度变化，训练期与测试期的激活统计会出现系统性不匹配。
 
 **解决方案：Inverted Dropout**
 为了避免在测试时修改代码，现代框架（如 PyTorch）通常采用 **Inverted Dropout**：**在训练时就提前把信号放大**。

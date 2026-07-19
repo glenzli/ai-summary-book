@@ -1,45 +1,23 @@
-# 卷四 解释、证明与验证
+# 卷四 模型可解释性的研究路线
 
-本卷把机制解释与论证验证放在同一证据框架中。解释篇研究从行为、归因到电路的识别边界；验证篇研究从命题、证明到来源与 CoT 的支持义务；卷末综合把两者重新接到 AI 系统审计。
+前两卷说明模型怎样建成、一次输出怎样执行；卷三解释概率怎样形成。本卷转向内部机制，但不假装可解释性已经是一门闭合理论。不同方法看到不同对象，也支持不同强度的结论。
 
-## 总览
+本卷按当前研究路线展开：先定义行为和内部张量，再从相关读出走向显式干预、回路与稀疏特征，最后讨论训练动力学、推理过程和方法评估。
 
-- [从机制解释到论证验证](ch00_volume_overview.md)
+0. [可解释性究竟在研究什么](ch00_what_interpretability_studies.md)
+1. [我们在模型内部看什么](ch01_internal_objects.md)
+2. [行为与反事实：先确认模型做了什么](ch02_behavior_counterfactuals.md)
+3. [梯度与输入归因](ch03_gradients_saliency.md)
+4. [Attention、Residual 与 Logit Lens](ch04_attention_residual_readout.md)
+5. [Probes 与表示几何](ch05_probes_representation_geometry.md)
+6. [神经元、Feature 与自动解释](ch06_neurons_features_automated_explanations.md)
+7. [Ablation、Patching 与因果追踪](ch07_interventions_patching.md)
+8. [Circuits、路径与 Attribution Graphs](ch08_circuits_paths.md)
+9. [Superposition、SAE 与稀疏表示](ch09_superposition_sparse_features.md)
+10. [训练动力学与机制形成](ch10_training_dynamics.md)
+11. [推理过程、Chain of Thought 与监测](ch11_reasoning_process_monitoring.md)
+12. [评估、案例与开放问题](ch12_evaluation_case_studies_open_problems.md)
 
-## 解释篇
+辅助材料：[符号与术语](GLOSSARY.md) · [资料源](SOURCES.md)
 
-1. [解释的对象与责任](ch01_interpretability_scope.md)
-2. [解释层次与主张类型](ch02_interpretability_levels_and_claims.md)
-3. [行为证据、对照与识别](ch03_interpretability_behavior_and_identification.md)
-4. [梯度、积分梯度与路径归因](ch04_interpretability_gradient_attribution.md)
-5. [注意力权重与归因边界](ch05_interpretability_attention_and_attribution.md)
-6. [探针、可解码性与表示](ch06_interpretability_probes_and_representation.md)
-7. [干预、activation patching 与因果追踪](ch07_interpretability_interventions_and_patching.md)
-8. [电路、稀疏特征与 SAE](ch08_interpretability_circuits_and_sparse_features.md)
-9. [稳健性、欠定与解释评估](ch09_interpretability_robustness_and_underdetermination.md)
-10. [涌现、基准与尺度叙事](ch10_interpretability_emergence_and_benchmarks.md)
-11. [心理词汇、机器传记与过程报告](ch11_interpretability_psychological_vocabulary.md)
-12. [完整解释协议与案例](ch12_interpretability_protocol_and_cases.md)
-
-## 验证篇
-
-13. [真、证明、解释、证据与说服](ch13_verification_scope.md)
-14. [命题、论证与证明义务](ch14_verification_claims_arguments_and_obligations.md)
-15. [有效性、反模型与逻辑形式](ch15_verification_validity_and_countermodels.md)
-16. [定义、类型、量词与边界](ch16_verification_definitions_types_and_quantifiers.md)
-17. [证明方法、归纳与极限论证](ch17_verification_proof_methods.md)
-18. [形式证明、证书与可信计算基](ch18_verification_formal_and_informal_proof.md)
-19. [证明与数学解释](ch19_verification_proof_and_mathematical_explanation.md)
-20. [科学解释、因果与统计证据](ch20_verification_scientific_explanation_and_evidence.md)
-21. [图示、类比、叙事与修辞](ch21_verification_diagrams_analogies_and_rhetoric.md)
-22. [引用、来源与外部输入](ch22_verification_citation_and_sources.md)
-23. [AI 推理、CoT、证书与过程忠实](ch23_verification_ai_reasoning_and_cot.md)
-24. [验证工坊](ch24_verification_verification_workshop.md)
-
-## 卷内综合
-
-25. [综合工坊：从解释报告到闭合论证](ch25_interpretability_synthesis.md)
-
-## 卷内配套
-
-解释篇与验证篇按材料类型共用四个入口，文件内部保留 `M`/`V` 分区：[来源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[术语](GLOSSARY.md)、[习题解答](SOLUTIONS.md)。本卷文件解答 `M`/`V` 习题；编号为 `S` 的综合题统一在[全书解答](../SOLUTIONS.md)中处理。可逐步判分的强化证明与案例见[附录 G、H](../appendices/README.md)。
+本卷的基本纪律是：activation pattern 不是概念证明，probe 不是使用证明，steering 不是正常机制证明，局部 circuit 也不是全局完整解剖。可信解释需要行为、预测和干预证据相互校验。

@@ -1,8 +1,8 @@
 # 附录 A.2 感知机收敛性定理 (Perceptron Convergence Theorem)
 
-本附录为 **[Chapter 1.2](../../vol-01/ch01_early_ai_perceptron_connectionism.md#section-1-2)** 中提到的感知机学习算法 (PLA) 的收敛性提供严格的数学证明。
+本附录为[卷一 1.2 节](../../vol-01/ch01_early_ai_perceptron_connectionism.md#section-1-2)中的感知机学习算法 (PLA) 给出收敛性证明。
 
-这一著名的证明由 **Novikoff (1962)** 提出。它从数学上保证了：只要数据是线性可分的，感知机算法就会在有限次错误更新后停下来，找到一个能正确分类训练样本的超平面。
+Novikoff (1962) 给出了这一经典证明。在下面的有界性、正间隔、更新规则与初始化条件下，感知机在有限次错误更新后得到一个正确分类训练集的超平面。
 
 ---
 
@@ -37,7 +37,6 @@ $$ \|\mathbf{x}_i\| \le R $$
 **定理内容**：
 对于线性可分的数据集，感知机学习算法 (PLA) 在从零向量 $\mathbf{w}_0 = \mathbf{0}$ 开始训练时，发生误分类（即权重更新）的总次数 $k$ 满足以下上界：
 
-<span style="background-color: #DAE8FC; color: black; padding: 2px 4px; border-radius: 4px;">Conclusion</span>
 $$ k \le \left( \frac{R}{\gamma} \right)^2 $$
 
 在上述线性可分、有界增广输入、单位学习率和从零初始化等条件下，算法会在有限次错误更新后停止。上界显式依赖 $R/\gamma$，没有单独的 $N$ 项；数据集规模仍可通过可达到的间隔和半径间接影响该比值。
@@ -67,7 +66,6 @@ $$ \mathbf{w}_k^T \mathbf{w}^* \ge \mathbf{w}_{k-1}^T \mathbf{w}^* + \gamma $$
 
 这是一个递推公式。由于初始权重 $\mathbf{w}_0 = \mathbf{0}$，经过 $k$ 次更新后：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Eq. 1</span>
 $$ \mathbf{w}_k^T \mathbf{w}^* \ge k \gamma $$
 
 这说明：随着更新次数增加，$\mathbf{w}_k$ 在理想方向上的分量**至少以线性速度增长**。
@@ -93,7 +91,6 @@ $$ \|\mathbf{w}_k\|^2 \le \|\mathbf{w}_{k-1}\|^2 + R^2 $$
 
 同样是一个递推公式。从 $\mathbf{w}_0 = \mathbf{0}$ 开始，经过 $k$ 次更新：
 
-<span style="background-color: #FFF2CC; color: black; padding: 2px 4px; border-radius: 4px;">Eq. 2</span>
 $$ \|\mathbf{w}_k\|^2 \le k R^2 $$
 
 这说明 $\|\mathbf w_k\|^2$ 至多按 $k$ 线性增长，等价地 $\|\mathbf w_k\|\le\sqrt{k}\,R$，所以权重向量的**长度**至多按 $\sqrt{k}$ 增长。
@@ -108,7 +105,7 @@ $$ (\mathbf{w}_k^T \mathbf{w}^*)^2 \le \|\mathbf{w}_k\|^2 \|\mathbf{w}^*\|^2 $$
 
 $$ (\mathbf{w}_k^T \mathbf{w}^*)^2 \le \|\mathbf{w}_k\|^2 $$
 
-将之前的 **Eq. 1** 和 **Eq. 2** 代入：
+将上面的投影下界与范数上界合并：
 
 $$ (k \gamma)^2 \le \|\mathbf{w}_k\|^2 \le k R^2 $$
 
@@ -124,11 +121,11 @@ $$ k \le \frac{R^2}{\gamma^2} = \left( \frac{R}{\gamma} \right)^2 $$
 
 ---
 
-## A.2.4 物理意义与洞察
+## A.2.4 界的解释
 
 错误次数界由无量纲比值 $R/\gamma$ 决定：相对于样本半径更大的分离间隔会给出更紧的上界。不能把 $R$ 和 $\gamma$ 当作彼此独立、可由统一缩放单独改善的量。
 
-1.  **间隔 $\gamma$ 要大**：如果数据分得越开，两类之间有一条宽宽的大河，模型就能很容易找到分界线，很快收敛。如果两类数据挤在一起（$\gamma$ 很小），模型就要反复微调，收敛很慢。
+1.  **相对间隔**：在半径 $R$ 固定时，更大的可分间隔 $\gamma$ 给出更小的最坏情形错误次数上界；这只是上界，不要求实际运行恰好达到该次数。
 
 <img src="images/convergence_speed_gamma.png" width="100%" />
 

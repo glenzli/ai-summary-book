@@ -1,17 +1,18 @@
-# 卷二 输出对象与运行语义
+# 卷二 一次生成如何发生
 
-本卷从“一句话不是一个对象”开始，把输出逐层分解为字节、文本、token、状态、事件、轨迹、制品、现实副作用与规范记录。数字 locator 标记卷内定义和练习，`S…` locator 标记可被其余各卷调用的审计接口。
+卷一从历史与系统结构解释模型；本卷把镜头收紧到一次请求。我们沿着真实执行顺序观察文本怎样变成 token，Transformer 怎样完成 prefill，自回归解码怎样逐步产生文本，扩散与流模型怎样迭代整个状态，以及工具调用在哪里越过模型与外部世界的边界。
 
-0. [为什么一句话不是一个对象](ch00_scope.md)
-1. [字节、字符串、Unicode、字形与 token](ch01_bytes_text_and_tokens.md)
-2. [函数、部分函数、关系与交互接口](ch02_functions_relations_and_partiality.md)
-3. [状态、事件、轨迹与观察等价](ch03_states_events_and_traces.md)
-4. [自回归生成的小步语义](ch04_operational_semantics_of_generation.md)
-5. [概率核、实现映射与轨迹分布](ch05_probabilistic_generation.md)
-6. [工具、外部世界与副作用提交](ch06_tools_and_external_world.md)
-7. [并发、流式输出、取消与提交边界](ch07_concurrency_and_streaming.md)
-8. [制品身份、provenance 与可验证声明](ch08_provenance_and_identity.md)
-9. [表达式、指称、真值与核验状态](ch09_reference_and_truth.md)
-10. [代理、署名、信用与责任的分层论证](ch10_agency_authorship_and_responsibility.md)
-11. [一次输出的完整分解](ch11_complete_decomposition.md)
-卷内配套：[来源](SOURCES.md)、[主张责任表](CLAIM_LEDGER.md)、[术语表](GLOSSARY.md)、[习题解答](SOLUTIONS.md)。
+本卷只保留能澄清执行过程的数学。公式用于标明张量、条件分布和状态更新，不把一次普通生成包装成一套额外的形式逻辑。
+
+0. [从输入到输出：一张执行地图](ch00_from_input_to_output.md)
+1. [文本、Token 与实际上下文](ch01_text_tokens_context.md)
+2. [Prefill：一次 Transformer 前向](ch02_prefill_forward_pass.md)
+3. [从 Logits 到下一个 Token](ch03_logits_and_next_token.md)
+4. [解码循环与流式输出](ch04_decode_loop_streaming.md)
+5. [不止自回归：迭代生成的几种形态](ch05_iterative_generation.md)
+6. [工具调用与运行时边界](ch06_tools_runtime_boundary.md)
+7. [三条完整执行轨迹](ch07_end_to_end_traces.md)
+
+辅助材料：[符号与术语](GLOSSARY.md) · [资料源](SOURCES.md)
+
+读完本卷，读者应当能够区分模型计算、解码策略、服务调度、界面显示和外部工具执行，并能沿时间线定位两次输出第一次发生分歧的位置。下一卷将从执行中的概率数值出发，追问它们如何由数据、目标函数与条件信息形成。

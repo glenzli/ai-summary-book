@@ -4,25 +4,72 @@
 
 ## 1. 基础理论 (Foundations)
 
+<a id="ref-mcculloch-pitts-1943"></a>
 *   **[McCulloch & Pitts, 1943]** *A Logical Calculus of the Ideas Immanent in Nervous Activity*. (M-P 神经元模型的提出)
+<a id="ref-turing-1950"></a>
 *   **[Turing, 1950]** *Computing Machinery and Intelligence*. (图灵测试)
+<a id="ref-dartmouth-1955"></a>
+*   **[McCarthy et al., 1955]** [*A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence*](http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html). (人工智能夏季研究项目提案)
+<a id="ref-rosenblatt-1958"></a>
 *   **[Rosenblatt, 1958]** *The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain*. (感知机)
-*   **[Minsky & Papert, 1969]** *Perceptrons*. (指出了感知机的 XOR 局限性)
-*   **[Rumelhart, Hinton & Williams, 1986]** *Learning representations by back-propagating errors*. (反向传播算法的复兴)
+<a id="ref-novikoff-1962"></a>
+*   **[Novikoff, 1962]** [*On Convergence Proofs for Perceptrons*](https://cs.uwaterloo.ca/~y328yu/classics/novikoff.pdf). (感知机错误次数界的经典证明)
+<a id="ref-minsky-papert-1969"></a>
+*   **[Minsky & Papert, 1969]** *Perceptrons*. (单层感知机能力边界及相关分析)
+<a id="ref-rumelhart-1986"></a>
+*   **[Rumelhart, Hinton & Williams, 1986]** *Learning representations by back-propagating errors*. (反向传播的经典应用)
+<a id="ref-cybenko-1989"></a>
 *   **[Cybenko, 1989]** [*Approximation by Superpositions of a Sigmoidal Function*](https://doi.org/10.1007/BF02551274). (连续 sigmoidal/discriminatory 激活的一致逼近定理)
+<a id="ref-hornik-1991"></a>
 *   **[Hornik, 1991]** [*Approximation Capabilities of Multilayer Feedforward Networks*](https://doi.org/10.1016/0893-6080(91)90009-T). (前馈网络逼近能力的推广)
+<a id="ref-leshno-1993"></a>
 *   **[Leshno et al., 1993]** [*Multilayer Feedforward Networks with a Nonpolynomial Activation Function Can Approximate Any Function*](https://doi.org/10.1016/S0893-6080(05)80131-5). (非多项式激活条件的刻画)
+<a id="ref-cortes-vapnik-1995"></a>
+*   **[Cortes & Vapnik, 1995]** [*Support-Vector Networks*](https://doi.org/10.1007/BF00994018). (软间隔支持向量机)
+<a id="ref-breiman-2001"></a>
+*   **[Breiman, 2001]** [*Random Forests*](https://doi.org/10.1023/A:1010933404324). (随机森林)
+<a id="ref-friedman-2001"></a>
+*   **[Friedman, 2001]** [*Greedy Function Approximation: A Gradient Boosting Machine*](https://doi.org/10.1214/aos/1013203451). (梯度提升)
+
+### 1.1 统计学习与随机逼近
+
+<a id="ref-robbins-monro-1951"></a>
+*   **[Robbins & Monro, 1951]** [*A Stochastic Approximation Method*](https://doi.org/10.1214/aoms/1177729586). (随机逼近与衰减步长框架)
+<a id="ref-hoeffding-1963"></a>
+*   **[Hoeffding, 1963]** [*Probability Inequalities for Sums of Bounded Random Variables*](https://doi.org/10.1080/01621459.1963.10500830). (有界独立随机变量的集中不等式)
+<a id="ref-vapnik-chervonenkis-1971"></a>
+*   **[Vapnik & Chervonenkis, 1971]** [*On the Uniform Convergence of Relative Frequencies of Events to Their Probabilities*](https://doi.org/10.1137/1116025). (VC 维与一致收敛)
+<a id="ref-sauer-1972"></a>
+*   **[Sauer, 1972]** [*On the Density of Families of Sets*](https://doi.org/10.1016/0097-3165(72)90019-2). (增长函数的组合上界)
+
+### 1.2 优化、初始化与正则化
+
+<a id="ref-glorot-bengio-2010"></a>
+*   **[Glorot & Bengio, 2010]** [*Understanding the difficulty of training deep feedforward neural networks*](https://proceedings.mlr.press/v9/glorot10a.html). (Xavier 初始化与信号尺度)
+<a id="ref-he-initialization-2015"></a>
+*   **[He et al., 2015]** [*Delving Deep into Rectifiers*](https://arxiv.org/abs/1502.01852). (适配 rectifier 的初始化)
+<a id="ref-dropout-2014"></a>
+*   **[Srivastava et al., 2014]** [*Dropout: A Simple Way to Prevent Neural Networks from Overfitting*](https://jmlr.org/papers/v15/srivastava14a.html). (dropout)
+<a id="ref-adam-2014"></a>
+*   **[Kingma & Ba, 2014]** [*Adam: A Method for Stochastic Optimization*](https://arxiv.org/abs/1412.6980). (Adam)
+<a id="ref-adamw-2019"></a>
+*   **[Loshchilov & Hutter, 2019]** [*Decoupled Weight Decay Regularization*](https://arxiv.org/abs/1711.05101). (AdamW 与解耦 weight decay)
 
 ## 2. 卷积神经网络 (CNNs)
 
+<a id="ref-lecun-1998"></a>
 *   **[LeCun et al., 1998]** *Gradient-based learning applied to document recognition*. (LeNet-5)
-*   **[Krizhevsky et al., 2012]** *ImageNet Classification with Deep Convolutional Neural Networks*. (AlexNet: 深度学习爆发的原点)
+<a id="ref-krizhevsky-2012"></a>
+*   **[Krizhevsky et al., 2012]** *ImageNet Classification with Deep Convolutional Neural Networks*. (AlexNet)
 *   **[Simonyan & Zisserman, 2014]** *Very Deep Convolutional Networks for Large-Scale Image Recognition*. (VGGNet)
+<a id="ref-he-resnet-2016"></a>
 *   **[He et al., 2016]** *Deep Residual Learning for Image Recognition*. (ResNet: 残差连接)
 
 ## 3. 序列模型与 RNN (Sequence Models)
 
+<a id="ref-lstm-1997"></a>
 *   **[Hochreiter & Schmidhuber, 1997]** *Long Short-Term Memory*. (LSTM 的提出)
+<a id="ref-cho-gru-2014"></a>
 *   **[Cho et al., 2014]** *Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation*. (GRU 与 Seq2Seq)
 *   **[Bahdanau, Cho & Bengio, 2014]** [*Neural Machine Translation by Jointly Learning to Align and Translate*](https://arxiv.org/abs/1409.0473). (加性注意力)
 *   **[Luong, Pham & Manning, 2015]** [*Effective Approaches to Attention-based Neural Machine Translation*](https://arxiv.org/abs/1508.04025). (乘性注意力)
@@ -31,6 +78,7 @@
 
 ## 4. Transformer 与预训练语言模型 (Transformer & PLMs)
 
+<a id="ref-vaswani-2017"></a>
 *   **[Vaswani et al., 2017]** [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762). (Transformer 架构)
 *   **[Ba, Kiros & Hinton, 2016]** [*Layer Normalization*](https://arxiv.org/abs/1607.06450). (LayerNorm)
 *   **[Shazeer, 2019]** [*Fast Transformer Decoding: One Write-Head is All You Need*](https://arxiv.org/abs/1911.02150). (Multi-Query Attention)
@@ -63,9 +111,11 @@
 *   **[Wei et al., 2021]** *Finetuned Language Models Are Zero-Shot Learners*. (FLAN: 指令微调)
 <a id="ref-ouyang-2022"></a>
 *   **[Ouyang et al., 2022]** [*Training language models to follow instructions with human feedback*](https://arxiv.org/abs/2203.02155). (InstructGPT: RLHF 的应用)
-*   **[Schulman et al., 2017]** *Proximal Policy Optimization Algorithms*. (PPO 算法)
+<a id="ref-schulman-ppo-2017"></a>
+*   **[Schulman et al., 2017]** [*Proximal Policy Optimization Algorithms*](https://arxiv.org/abs/1707.06347). (PPO 算法)
 *   **[Amodei et al., 2016]** [*Concrete Problems in AI Safety*](https://arxiv.org/abs/1606.06565). (reward hacking、负副作用与安全问题)
-*   **[Rafailov et al., 2023]** *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. (DPO)
+<a id="ref-rafailov-dpo-2023"></a>
+*   **[Rafailov et al., 2023]** [*Direct Preference Optimization: Your Language Model is Secretly a Reward Model*](https://arxiv.org/abs/2305.18290). (DPO)
 *   **[Li & Liang, 2021]** [*Prefix-Tuning: Optimizing Continuous Prompts for Generation*](https://arxiv.org/abs/2101.00190). (每层 prefix 参数)
 *   **[Lester, Al-Rfou & Constant, 2021]** [*The Power of Scale for Parameter-Efficient Prompt Tuning*](https://arxiv.org/abs/2104.08691). (输入层 soft prompt)
 *   **[Hu et al., 2021]** *LoRA: Low-Rank Adaptation of Large Language Models*. (LoRA)
@@ -111,6 +161,8 @@
 *   **[Dosovitskiy et al., 2020]** [*An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale*](https://arxiv.org/abs/2010.11929). (ViT)
 <a id="ref-radford-clip-2021"></a>
 *   **[Radford et al., 2021]** [*Learning Transferable Visual Models From Natural Language Supervision*](https://arxiv.org/abs/2103.00020). (CLIP)
+<a id="ref-van-den-oord-2018"></a>
+*   **[van den Oord, Li & Vinyals, 2018]** [*Representation Learning with Contrastive Predictive Coding*](https://arxiv.org/abs/1807.03748). (InfoNCE 与对比预测编码)
 <a id="ref-liu-llava-2023"></a>
 *   **[Liu et al., 2023]** [*Visual Instruction Tuning*](https://arxiv.org/abs/2304.08485). (LLaVA)
 <a id="ref-rombach-2022"></a>

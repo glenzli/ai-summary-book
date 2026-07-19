@@ -1,6 +1,6 @@
 # 附录 A.1 优化理论基础：从梯度到 SGD
 
-在正文中，我们多次提到了“梯度下降”这一核心概念。本附录将为不熟悉微积分或最优化理论的读者提供一个严谨而直观的数学补遗。我们将解释什么是梯度，为什么沿着负梯度方向走能让函数值减小，以及随机梯度下降（SGD）为何能工作。
+本附录为不熟悉微积分或最优化理论的读者补充梯度、下降引理与随机梯度下降。SGD 的收敛结论只在明确的目标几何、噪声和步长条件下成立。
 
 ## A.1.1 梯度的几何意义 (Geometric Interpretation of Gradient)
 
@@ -15,17 +15,17 @@
 $$ \nabla f(\mathbf{x}) = \left[ \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots, \frac{\partial f}{\partial x_n} \right]^T $$
 
 **核心性质**：
-1.  **方向**：梯度 $\nabla f(\mathbf{x})$ 总是指向函数值 **增长最快** 的方向。
-2.  **大小**：梯度的模长 $\|\nabla f(\mathbf{x})\|$ 表示该方向上的最大变化率。
+1.  **方向**：在欧氏范数下且梯度非零时，单位向量 $\nabla f(\mathbf x)/\|\nabla f(\mathbf x)\|$ 使一阶方向导数最大。
+2.  **大小**：该最大一阶变化率等于 $\|\nabla f(\mathbf x)\|$。改变参数空间的范数或几何后，最陡方向也会改变。
 
 ---
 
 ## A.1.2 为什么是“负”梯度？(Why Negative Gradient?)
 
-我们希望 **最小化** 损失函数 $L(\mathbf{\theta})$。既然梯度指向增长最快的方向，那么逻辑上，**负梯度** $-\nabla L(\mathbf{\theta})$ 就指向 **下降最快** 的方向（Steepest Descent）。
+我们希望最小化损失函数 $L(\boldsymbol\theta)$。在欧氏单位步长约束下，**负梯度** $-\nabla L(\boldsymbol\theta)$ 给出一阶近似中的最陡下降方向。
 
-**严谨推导（一阶泰勒展开）**：
-根据泰勒级数，函数 $L$ 在点 $\mathbf{\theta}$ 附近的微小位移 $\Delta \mathbf{\theta}$ 后的值为：
+**局部推导（一阶 Taylor 展开）**：
+若 $L$ 可微，则在 $\Delta\boldsymbol\theta\to0$ 时：
 $$ L(\mathbf{\theta} + \Delta \mathbf{\theta}) \approx L(\mathbf{\theta}) + \nabla L(\mathbf{\theta})^T \Delta \mathbf{\theta} $$
 我们希望 $L(\mathbf{\theta} + \Delta \mathbf{\theta}) < L(\mathbf{\theta})$，即要求：
 $$ \nabla L(\mathbf{\theta})^T \Delta \mathbf{\theta} < 0 $$
@@ -52,8 +52,8 @@ $$ L(\mathbf{\theta}) = \frac{1}{N} \sum_{i=1}^N \ell_i(\mathbf{\theta}, \mathbf
 ### 1. 批量梯度下降 (Batch Gradient Descent, BGD)
 每次更新都计算**所有** $N$ 个样本的梯度平均值：
 $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \frac{1}{N} \sum_{i=1}^N \nabla \ell_i $$
-*   **优点**：方向准确，收敛平稳。
-*   **缺点**：当 $N$ 很大（如百万级）时，算一次梯度极慢，且极其消耗内存。
+*   **性质**：对固定参数，它给出完整经验风险的精确梯度，不含样本抽取噪声。
+*   **代价**：每次更新需要处理全部 $N$ 个样本。梯度可以分块累积而不必把全部样本同时放入内存，但更新频率和单步计算量仍受 $N$ 限制。
 
 ### 2. 随机梯度下降 (Stochastic Gradient Descent, SGD)
 每次更新只随机抽取 **一个** 样本 $(\mathbf{x}_i, y_i)$ 计算梯度：
@@ -62,11 +62,9 @@ $$ \mathbf{\theta} \leftarrow \mathbf{\theta} - \eta \nabla \ell_i $$
 *   **数学合理性（无偏估计）**：
     虽然单个样本的梯度 $\nabla \ell_i$ 可能与总梯度 $\nabla L$ 方向不同（甚至相反），但其**数学期望**等于总梯度：
     $$ \mathbb{E}_{i \sim U(1,N)} [\nabla \ell_i] = \sum_{i=1}^N \frac{1}{N} \nabla \ell_i = \nabla L(\mathbf{\theta}) $$
-    这意味着，虽然每一步走得歪歪扭扭（震荡），但 **平均来看**，我们是在朝着正确的方向前进。
+    这意味着在给定当前参数时，随机方向的条件期望等于完整经验梯度；它不保证每一步都下降。
 
-*   **优点**：
-    *   **速度极快**：算一个样本就能更新一次。
-    *   **非凸地形中的扰动**：随机梯度噪声在某些条件下可能帮助离开严格鞍点或浅而平坦的盆地，但不保证逃离一般局部极小值；噪声也可能增加稳态误差。
+*   **性质**：单次更新成本较低，可以更频繁地更新参数。随机梯度噪声在某些条件下可能帮助离开严格鞍点或浅而平坦的盆地，但不保证逃离一般局部极小值，也可能增加稳态误差。
 
 ### 3. 小批量梯度下降 (Mini-batch SGD)
 实际中最常用的是折中方案：每次取一小批样本（如 Batch Size = 32 或 64）。
@@ -84,7 +82,7 @@ SGD 的收敛结论依赖目标几何、梯度估计、噪声矩与步长等假�
 在凸/强凸目标、无偏随机梯度与适当矩界等附加条件下，常用的步长充分条件是：
 
 1.  **发散和条件**：$\sum_{t=1}^{\infty} \eta_t = \infty$
-    *   **直觉**：只要时间足够长，步长累积起来必须能到达参数空间的任何位置。如果步长衰减太快（比如 $\eta_t = 1/2^t$），蚂蚁可能还没走到谷底就因为步长趋近于 0 而停在半山腰了。
+    *   **作用**：确定性的下降信号不会因总步长有限而过早失去全部影响；这不表示迭代能够到达参数空间中的任意位置。
 2.  **平方收敛条件**：$\sum_{t=1}^{\infty} \eta_t^2 < \infty$
     *   **直觉**：平方步长可和使有界二阶矩噪声的累计加权影响可控；它本身不等于证明随机梯度方差随 $t$ 自动趋于 0。
 
@@ -97,10 +95,21 @@ $$ \eta_t=t^{-\alpha},\qquad \frac{1}{2}<\alpha\le 1. $$
 ### 2. 收敛性推导 (Convex Case)
 假设目标函数 $L(\theta)$ 是 $\mu$-强凸的，梯度适当光滑，随机梯度无偏，并满足有界二阶矩 $\mathbb{E}[\|g_t\|^2\mid\theta_t]\le G^2$。这里是**二阶矩**界，不应称为方差界；方差界会写成 $\mathbb E[\|g_t-\nabla L(\theta_t)\|^2\mid\theta_t]\le\sigma^2$。
 
-考虑参数与最优解 $\theta^*$ 的距离平方的期望：
-$$ \mathbb{E}[\|\theta_{t+1} - \theta^*\|^2] = \mathbb{E}[\|\theta_t - \eta_t g_t - \theta^*\|^2] $$
-其中 $g_t$ 是随机梯度。展开后利用无偏性 $\mathbb{E}[g_t] = \nabla L(\theta_t)$：
-$$ \le (1 - 2\eta_t \mu) \mathbb{E}[\|\theta_t - \theta^*\|^2] + \eta_t^2 G^2 $$
+给定当前迭代点 $\theta_t$，展开参数与最优解 $\theta^*$ 的距离平方：
+
+$$
+\begin{aligned}
+\mathbb E_t\|\theta_{t+1}-\theta^*\|^2
+&=\|\theta_t-\theta^*\|^2
+-2\eta_t\langle\nabla L(\theta_t),\theta_t-\theta^*\rangle
++\eta_t^2\mathbb E_t\|g_t\|^2\\
+&\le(1-2\mu\eta_t)\|\theta_t-\theta^*\|^2
++\eta_t^2G^2.
+\end{aligned}
+$$
+
+这里 $\mathbb E_t[\cdot]=\mathbb E[\cdot\mid\theta_t]$，最后一步使用无偏性与强凸函数的
+$\langle\nabla L(\theta),\theta-\theta^*\rangle\ge\mu\|\theta-\theta^*\|^2$。再取全期望得到相应递推。
 
 这个递归不等式揭示了 SGD 的核心动力学：
 *   **第一项** $(1 - 2\eta_t \mu)$：类似于收缩因子，通过梯度下降拉近与 $\theta^*$ 的距离。
@@ -110,11 +119,9 @@ $$ \le (1 - 2\eta_t \mu) \mathbb{E}[\|\theta_t - \theta^*\|^2] + \eta_t^2 G^2 $$
 
 ---
 
-## A.1.5 学习率 (Learning Rate) 的物理直觉
+## A.1.5 学习率对有限步更新的影响
 
-参数 $\eta$ 被称为学习率。
-*   如果 $\eta$ 太小：就像蚂蚁下山，虽然稳，但要走很久才能到底。
-*   如果 $\eta$ 太大：就像巨人跨步，可能直接跨过了谷底到了对面的山上（震荡），甚至越跨越高（发散）。
+参数 $\eta$ 被称为学习率。过小的学习率会降低单位计算量的进展；过大的学习率可能越过局部低谷、造成震荡或发散。可接受范围取决于曲率、梯度噪声、参数化与预条件器，不能只由一张一维曲线决定。
 
 <img src="images/learning_rate_comparison.png" width="100%" />
 

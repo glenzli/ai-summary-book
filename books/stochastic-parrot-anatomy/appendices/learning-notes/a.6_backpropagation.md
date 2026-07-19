@@ -1,10 +1,10 @@
 # 附录 A.6 反向传播 (Backpropagation) 的数学推导
 
-反向传播（Backpropagation）是深度学习中计算梯度的核心算法。本附录将从“计算图”的局部视角出发，逐步深入到全连接层的完整矩阵推导，最后补充卷积层梯度的数学证明。
+反向传播（Backpropagation）是深度学习中计算梯度的核心算法。本附录从计算图的局部视角出发，推导全连接层及多层网络的梯度递推；卷积层的索引推导另见[附录 A.9](a.9_cnn_backpropagation.md)。
 
-## A.6.1 核心心法：链式法则的局部视角 (The Local View)
+## A.6.1 链式法则的局部视角 (The Local View)
 
-反向传播的本质不是死记硬背复杂的公式，而是 **链式法则 (Chain Rule)** 在计算图上的递归应用。
+反向传播是 **链式法则 (Chain Rule)** 在计算图上的递归应用。
 
 ### 1. 局部梯度与上游梯度
 想象计算图中的任何一个节点 $f$，它接收输入 $x, y$，输出 $z$。
@@ -19,7 +19,7 @@
 根据链式法则，**下游梯度 (Downstream Gradient)** 等于：
 $$ \frac{\partial L}{\partial x} = \underbrace{\frac{\partial L}{\partial z}}_{\text{Upstream}} \cdot \underbrace{\frac{\partial z}{\partial x}}_{\text{Local}} $$
 
-这意味着：**每个节点只负责计算自己的局部梯度，然后乘以上游传来的梯度，再甩给前面的节点。** 这种模块化的设计使得我们能够搭建任意复杂的网络。
+这意味着：**每个节点把上游梯度与自身的局部导数复合，再把结果传给它的输入节点。** 这种局部递推使复杂计算图能够复用同一套求导规则。
 
 ### 2. 常见门的梯度行为 (Gradient Flow in Gates)
 通过上述视角，我们可以总结出常用运算节点的梯度行为（如上图右侧所示）：
@@ -27,7 +27,7 @@ $$ \frac{\partial L}{\partial x} = \underbrace{\frac{\partial L}{\partial z}}_{\
 *   **加法门 (Add Gate)**：$z = x + y$。局部梯度 $\frac{\partial z}{\partial x} = 1$。
     *   **行为**：**梯度分发器 (Distributor)**。它将上游梯度原封不动地复制给所有输入分支。
 *   **乘法门 (Mul Gate)**：$z = x \cdot y$。局部梯度 $\frac{\partial z}{\partial x} = y$。
-    *   **行为**：**梯度交换器 (Switcher)**。$x$ 的梯度会被缩放 $y$ 倍；$y$ 的梯度会被缩放 $x$ 倍。这也解释了为什么输入数据过大或过小会导致梯度爆炸或消失。
+    *   **行为**：$x$ 的梯度被缩放 $y$ 倍，$y$ 的梯度被缩放 $x$ 倍。许多此类 Jacobian 连乘时，尺度才可能随深度放大或衰减。
 *   **ReLU 门 (ReLU Gate)**：$z = \max(0, x)$。
     *   **行为**：**梯度开关 (Filter)**。若 $x>0$，局部导数为 1；若 $x<0$，为 0；在 $x=0$ 处不可导，框架通常选取 0 等约定次梯度。
 
@@ -50,15 +50,19 @@ $$ \frac{\partial L}{\partial x} = \underbrace{\frac{\partial L}{\partial z}}_{\
 ### 2. 目标
 我们需要计算 $L$ 对 $\mathbf{W}, \mathbf{b}, \mathbf{x}$ 的梯度。
 假设我们已经知道了从后面层传回来的关于 $\mathbf{z}$ 的梯度，记为 **误差项 $\boldsymbol{\delta}$**：
-$$ \boldsymbol{\delta} = \frac{\partial L}{\partial \mathbf{z}} \quad (\text{Shape: } D_{out} \times 1) $$
-*(注：严格的矩阵微积分中，标量对向量求导应为行向量，但为了符合编程习惯，我们这里统一使用列向量表示梯度)*
+$$
+\boldsymbol{\delta}=\nabla_{\mathbf z}L
+=\begin{bmatrix}\partial L/\partial z_1&\cdots&\partial L/\partial z_{D_{out}}\end{bmatrix}^{\mathsf T}
+\quad (\text{Shape: }D_{out}\times1).
+$$
+本附录统一把标量函数对向量的梯度写成列向量。
 
 ### 3. 推导步骤
 
 **Step 1: 偏置梯度 $\frac{\partial L}{\partial \mathbf{b}}$**
-由于 $\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}$，显然 $\frac{\partial \mathbf{z}}{\partial \mathbf{b}}$ 是单位矩阵 $\mathbf{I}$。
+由于 $\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}$，逐分量有 $\partial z_i/\partial b_j=\delta_{ij}$，所以 $\frac{\partial \mathbf{z}}{\partial \mathbf{b}}$ 是单位矩阵 $\mathbf{I}$。
 根据链式法则：
-$$ \frac{\partial L}{\partial \mathbf{b}} = \frac{\partial L}{\partial \mathbf{z}} \cdot \frac{\partial \mathbf{z}}{\partial \mathbf{b}} = \boldsymbol{\delta} \cdot 1 = \boldsymbol{\delta} $$
+$$ \nabla_{\mathbf b}L=I^{\mathsf T}\boldsymbol\delta=\boldsymbol\delta. $$
 结论：**偏置的梯度直接等于该层的误差项。**
 
 **Step 2: 权重梯度 $\frac{\partial L}{\partial \mathbf{W}}$**
@@ -186,6 +190,6 @@ $$ \boldsymbol{\delta}^{(l)} = \frac{\partial L}{\partial \mathbf{z}^{(l)}} = \f
     合并 Step 3 的结果 $\mathbf{v} = (\mathbf{W}^{(l+1)})^T \boldsymbol{\delta}^{(l+1)}$，即得到**BP 核心递推公式**：
     $$ \boldsymbol{\delta}^{(l)} = \left[ (\mathbf{W}^{(l+1)})^T \boldsymbol{\delta}^{(l+1)} \right] \odot \sigma'(\mathbf{z}^{(l)}) $$
 
-这就是正文中四大公式的完整数学来源。
+这给出了逐元素激活网络中误差项的递推公式。
 
 *(关于 Softmax 与 Cross-Entropy 的详细梯度推导，由于篇幅较长，请移步 **[附录 A.7](a.7_softmax_crossentropy.md)**)*

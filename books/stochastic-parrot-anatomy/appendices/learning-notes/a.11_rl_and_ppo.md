@@ -17,7 +17,7 @@ $$ J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} [R(\tau)] $$
 $$ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t} \nabla_\theta \log \pi_\theta(a_t | s_t) A_t \right] $$
 其中 $A_t$ 是优势函数 (Advantage Function)，衡量当前动作比平均水平好多少。
 
-然而，直接使用 Policy Gradient 极不稳定：
+朴素 Monte Carlo policy-gradient 估计通常方差较高，更新也可能迅速偏离采样策略：
 1.  **步长难以确定**: 更新太小收敛慢，更新太大导致策略崩溃。
 2.  **数据效率受限**: 朴素 on-policy 更新只能在策略尚未偏离采样策略太远时复用轨迹。
 
@@ -50,26 +50,47 @@ $$ L^{CLIP}(\theta) = \mathbb{E}_t \left[ \min(r_t(\theta) A_t, \text{clip}(r_t(
 
 ## A.11.4 KL 散度与 RLHF (KL Divergence in RLHF)
 
-在 RLHF 中，完整的 Reward 不仅包含 RM 的打分，还包含 KL 惩罚。
+在一种常见的 KL 正则化表述中，优化目标是
 
-$$ R(x, y) = R_{RM}(x, y) - \beta D_{KL}(\pi_\theta(\cdot|x) || \pi_{ref}(\cdot|x)) $$
+$$
+J(\pi)
+=\mathbb E_{x\sim\mathcal D}\left[
+\mathbb E_{y\sim\pi(\cdot\mid x)}r(x,y)
+-\beta D_{KL}\!\left(
+\pi(\cdot\mid x)\,\|\,\pi_{ref}(\cdot\mid x)
+\right)
+\right].
+$$
+
+这里第一项是样本级奖励的期望，第二项是给定 prompt 后两个完整输出分布之间的 KL，二者不能在记号上混为同一个 $R(x,y)$。实现时也常对采样输出使用整形分数
+
+$$
+\widetilde r(x,y)
+=r(x,y)-\beta\log\frac{\pi(y\mid x)}{\pi_{ref}(y\mid x)},
+$$
+
+因为对 $y\sim\pi(\cdot\mid x)$ 取期望正好恢复上述 KL 项。
 
 ### A.11.4.1 为什么要减去 KL？
 
-从贝叶斯角度看，这相当于在最大化奖励的同时，添加了一个**先验约束 (Prior)**。这个先验就是初始的 SFT 模型 $\pi_{ref}$。
+从正则化角度看，这相当于在最大化奖励的同时，用参考策略 $\pi_{ref}$ 限制策略漂移。在控制即推断等特定表述中，参考策略也可承担先验的角色；一般情况下直接称其为参考分布更准确。
 
-展开 KL 项：
-$$ D_{KL} = \sum \pi_\theta(y|x) \log \frac{\pi_\theta(y|x)}{\pi_{ref}(y|x)} $$
+对离散输出空间，KL 项展开为
 
-如果完全忽略 $R_{RM}$ 并只最小化该 KL，最优点是 $\pi_\theta=\pi_{ref}$。
+$$
+D_{KL}\!\left(\pi\|\pi_{ref}\right)
+=\sum_y\pi(y\mid x)
+\log\frac{\pi(y\mid x)}{\pi_{ref}(y\mid x)}.
+$$
+
+如果完全忽略奖励并只最小化该 KL，最优点是 $\pi=\pi_{ref}$。
 如果完全忽略 KL，策略偏移缺少这一锚定，更可能利用奖励模型漏洞；是否发生以及表现为何种模式取决于奖励与优化过程。
 
 该项是在**优化外部奖励**与**保持接近参考策略**之间做正则化权衡；这不同于强化学习中通常所说的 exploration-exploitation 权衡。
 
 ## A.11.5 DPO：绕过显式 RL 的偏好优化 (Direct Preference Optimization)
 
-上一节我们把 RLHF 写成“奖励 - KL”的形式：
-$$ R(x, y) = R_{RM}(x, y) - \beta D_{KL}(\pi_\theta(\cdot|x) || \pi_{ref}(\cdot|x)) $$
+上一节把偏好优化写成期望奖励减去分布级 KL 正则项。
 
 DPO 的关键观察是：在很多工程实践里，我们并不一定要显式地训练 $R_{RM}$、也不一定要跑 PPO。只要我们有偏好数据 $(x, y_w, y_l)$，就可以把“胜者应该比败者更像人类喜欢”的约束，直接写成一个可优化的对数似然目标。
 
@@ -78,7 +99,13 @@ DPO 的关键观察是：在很多工程实践里，我们并不一定要显式�
 一个常见假设是：人类偏好服从 Bradley-Terry / Logit 模型，即“胜者胜出概率”由一个打分差决定：
 $$ P(y_w \succ y_l \mid x) = \sigma(\Delta(x, y_w, y_l)) $$
 
-如果我们希望这个打分差来自策略相对参考策略的对数比（把 KL 锚定显式写进去），可以令：
+对 KL 正则化奖励最优化问题，其最优策略满足
+
+$$
+r(x,y)=\beta\log\frac{\pi^*(y\mid x)}{\pi_{ref}(y\mid x)}+\beta\log Z(x),
+$$
+
+其中 $Z(x)$ 与候选输出 $y$ 无关。把这个关系代入 Bradley-Terry 模型时，两个候选共享的 $\beta\log Z(x)$ 抵消，得到打分差
 $$ \Delta(x, y_w, y_l) = \beta\Big[(\log \pi_\theta(y_w|x) - \log \pi_\theta(y_l|x)) - (\log \pi_{ref}(y_w|x) - \log \pi_{ref}(y_l|x))\Big] $$
 
 那么对偏好数据最大化对数似然，得到的就是 DPO 损失：
