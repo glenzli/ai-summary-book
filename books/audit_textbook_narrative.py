@@ -83,6 +83,8 @@ def section_titles(text: str) -> list[str]:
 
 
 def requires_exercises(book: str, path: Path) -> bool:
+    if book == "photographic-imaging-science" and path.name.startswith("00_preface_"):
+        return False
     if book != "stochastic-parrot-anatomy":
         return True
 

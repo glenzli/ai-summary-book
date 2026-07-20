@@ -14,6 +14,9 @@ FIGURE_ROOT = ROOT / "figures"
 CHAPTER_RE = re.compile(r"^\d{2}_.+\.md$")
 EXERCISE_RE = re.compile(r"\*\*练习\s+(\d+\.\d+)\.\*\*")
 ANSWER_RE = re.compile(r"\*\*答案\s+(\d+\.\d+)\.\*\*")
+NUMBERED_BLOCK_RE = re.compile(
+    r"\*\*(?:定义|命题|引理|定理|推论|例子|推导|约定|说明)\s+(\d+\.\d+)"
+)
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 FIGURE_CAPTION_RE = re.compile(
@@ -21,10 +24,13 @@ FIGURE_CAPTION_RE = re.compile(
 )
 FIGURE_NUMBER_RE = re.compile(r"^图\s+(\d+\.\d+)\b")
 TAG_RE = re.compile(r"\\tag\{([^}]+)\}")
+EQUATION_REFERENCE_RE = re.compile(
+    r"(?:式\s*|--)\((\d+\.\d+[a-z]?)\)"
+)
 DISPLAY_MATH_RE = re.compile(r"\$\$(.*?)\$\$", re.DOTALL)
 ENV_TOKEN_RE = re.compile(r"\\(begin|end)\{([^}]+)\}")
 EXPECTED_EXERCISES = {
-    0: 3,
+    0: 0,
     1: 3,
     2: 4,
     3: 4,
@@ -135,6 +141,7 @@ def main() -> None:
                 fail(f"broken local link in {path.name}: {target}")
 
     exercises: list[str] = []
+    chapter_tags: set[str] = set()
     referenced_figures: list[Path] = []
     referenced_figure_numbers: dict[Path, str] = {}
     referenced_figure_alts: dict[Path, str] = {}
@@ -144,7 +151,9 @@ def main() -> None:
         first_section = text.find("\n## ")
         if first_section < 0 or first_section < 120:
             fail(f"chapter lacks a substantive natural introduction: {path.name}")
-        if "## 练习" not in text:
+        if number == 0 and "## 练习" in text:
+            fail(f"preface should not contain exercises: {path.name}")
+        if number != 0 and "## 练习" not in text:
             fail(f"chapter lacks exercises: {path.name}")
         ids = EXERCISE_RE.findall(text)
         expected_exercises = EXPECTED_EXERCISES[number]
@@ -161,9 +170,22 @@ def main() -> None:
                 f"non-contiguous exercise numbering in {path.name}; "
                 f"expected={expected_exercise_ids}, found={ids}"
             )
+        block_ids = NUMBERED_BLOCK_RE.findall(text)
+        expected_block_ids = [
+            f"{number}.{index}" for index in range(1, len(block_ids) + 1)
+        ]
+        if block_ids != expected_block_ids:
+            fail(
+                f"non-contiguous numbered blocks in {path.name}; "
+                f"expected={expected_block_ids}, found={block_ids}"
+            )
         tags = TAG_RE.findall(text)
         if any(not tag.startswith(f"{number}.") for tag in tags):
             fail(f"equation tag has wrong chapter prefix in {path.name}")
+        duplicate_tags = chapter_tags.intersection(tags)
+        if duplicate_tags:
+            fail(f"duplicate equation tags across chapters: {sorted(duplicate_tags)}")
+        chapter_tags.update(tags)
         exercises.extend(ids)
 
         images = IMAGE_RE.findall(text)
@@ -219,6 +241,12 @@ def main() -> None:
         fail(f"exercise/answer mismatch; missing={missing}, extra={extra}")
     if answers != exercises:
         fail("answer order does not match chapter/exercise order")
+
+    for path in markdown:
+        text = path.read_text(encoding="utf-8")
+        for reference in EQUATION_REFERENCE_RE.findall(text):
+            if reference not in chapter_tags:
+                fail(f"unknown equation reference ({reference}) in {path.name}")
 
     figure_paths = sorted(path.resolve() for path in FIGURE_ROOT.glob("*.svg"))
     if len(figure_paths) != 48:

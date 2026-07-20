@@ -6,7 +6,7 @@
 
 作者：Dr. Stochastic Parrot
 
-状态：内容收口候选稿。18 个编号章节、48 幅可复现技术图、65 道练习及逐题答案
+状态：内容收口候选稿。18 个编号章节、48 幅可复现技术图、62 道练习及逐题答案
 已经闭环；仍可在获得真实器材实验数据后增加案例，但不再依赖这些数据才能完成主线。
 
 这本书不从品牌和器材型号出发，而从一次曝光怎样形成一幅图像出发。主线是
@@ -33,7 +33,7 @@ $$
 
 ## 第一部分：光、曝光与传感器
 
-0. [序章：测量对象、范围和读法](00_preface_scope_and_measurement.md)
+0. [序章：从一次曝光开始](00_preface_scope_and_measurement.md)
 1. [第一章：辐射度学、光圈与曝光量](01_radiometry_aperture_and_exposure.md)
 2. [第二章：从光子到电子：硅光电转换与像素](02_photons_silicon_and_pixels.md)
 3. [第三章：CMOS 像素、读出链与模数转换](03_cmos_pixels_readout_and_adc.md)
