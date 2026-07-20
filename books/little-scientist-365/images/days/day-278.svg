@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">什么样的天体叫行星？</title>
-  <rect width="960" height="540" fill="#e9e5f7"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="762" cy="53" r="9" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="631" cy="171" r="5" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="820" cy="294" r="12" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="202" cy="226" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="197" cy="395" r="7" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="536" cy="237" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="723" cy="369" r="15" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="502" cy="122" r="6" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="408" cy="281" r="12" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="279" cy="254" r="11" fill="#6fb7c7" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="480" cy="270" r="135" fill="#46468c" stroke="#25264c" stroke-width="8"/><ellipse cx="480" cy="270" rx="245" ry="80" fill="none" stroke="#f0b84b" stroke-width="18"/><circle cx="690" cy="218" r="28" fill="#6fb7c7" stroke="#25264c" stroke-width="5"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
-</svg>

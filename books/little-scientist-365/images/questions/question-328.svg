@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">铁为什么会生锈？</title>
+  <desc id="desc">围绕“铁为什么会生锈？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#42343A"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#FFF7F2"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#B8584A" opacity="0.07"/>
+
+  <g data-question="328" data-layout="concrete" data-presentation="concrete" data-source="manual" data-icons="iron,water,air"><rect x="18.0" y="18.0" width="924.0" height="315.0" rx="6.0" fill="#F4EFE8" stroke="none" stroke-width="0.0"/><rect x="18.0" y="333.0" width="924.0" height="105.0" rx="0.0" fill="#A9B6B0" stroke="none" stroke-width="0.0"/><line x1="18.0" y1="333.0" x2="942.0" y2="333.0" stroke="#42343A" stroke-width="5.0" stroke-linecap="round"/><path d="M75,80 H885 M75,145 H885" fill="none" stroke="#D8CFC4" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="430.0" cy="372.5" rx="148.5" ry="19.8" fill="#42343A" stroke="none" stroke-width="0.0" opacity="0.12"/><path d="M355.2,152.5 V251.5 C355.2,350.5 504.8,350.5 504.8,251.5 V152.5" fill="none" stroke="#B8584A" stroke-width="30.800000000000004" stroke-linecap="round" stroke-linejoin="round"/><path d="M735,106.64 C719.16,137.6 688.2,173.6 688.2,200.24 A46.8,46.8 0 0 0 781.8,200.24 C781.8,173.6 750.84,137.6 735,106.64 Z" fill="#B8584A" stroke="#42343A" stroke-width="3.5999999999999996" stroke-linecap="round" stroke-linejoin="round"/><path d="M710.52,182.96 Q724.2,202.4 738.6,184.4" fill="none" stroke="#FFFFFF" stroke-width="5.04" stroke-linecap="round" stroke-linejoin="round"/><circle cx="90.0" cy="375.0" r="11.0" fill="#397A91" stroke="none" stroke-width="0.0"/><circle cx="865.0" cy="380.0" r="9.0" fill="#B8584A" stroke="none" stroke-width="0.0"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#42343A" stroke-width="3" opacity="0.18"/>
+</svg>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">蜗牛为什么背着壳？</title>
-  <rect width="960" height="540" fill="#f4f5d7"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#6d913d" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="112" cy="112" r="14" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="339" cy="154" r="7" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="275" cy="463" r="14" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="168" cy="429" r="13" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="53" cy="431" r="11" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="65" cy="62" r="5" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="518" cy="145" r="8" fill="#f4c84a" stroke="none" stroke-width="0"/><circle cx="705" cy="477" r="14" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="607" cy="100" r="8" fill="#db704d" stroke="none" stroke-width="0"/><circle cx="881" cy="243" r="10" fill="#f4c84a" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="440" cy="260" r="95" fill="#db704d" stroke="#344525" stroke-width="8"/><path d="M440,260 Q440,205 495,215 Q555,235 535,300 Q510,350 440,330" fill="none" stroke="#f4c84a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M330,350 Q480,290 650,355" fill="none" stroke="#6d913d" stroke-width="55" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#344525" stroke-width="5" opacity="0.18"/>
-</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">地震时地面为什么会摇？</title>
+  <desc id="desc">围绕“地震时地面为什么会摇？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#263B35"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F3FAF5"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#2F7D5B" opacity="0.07"/>
+
+  <g data-question="218" data-layout="concrete" data-presentation="concrete" data-source="subject" data-icons="geo-earthquake"><rect x="18.0" y="18.0" width="924.0" height="305.0" rx="6.0" fill="#DDEEF1" stroke="none" stroke-width="0.0"/><path d="M18,330 Q160,190 320,330 Q470,150 650,330 Q790,235 942,330 V438 H18 Z" fill="#8AB584" stroke="none" stroke-width="0.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M18,410 Q200,365 390,410 T770,410 T1040,410" fill="none" stroke="#4E8D70" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="480.0" cy="392.5" rx="159.3" ry="21.2" fill="#263B35" stroke="none" stroke-width="0.0" opacity="0.12"/><path d="M320.70000000000005,329.96 L415.1,318.15999999999997 L446.96,254.44 L484.72,333.5 L533.1,301.64 L639.3,321.7" fill="none" stroke="#263B35" stroke-width="11.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="415.1" y="186.0" width="129.8" height="123.9" rx="7.1" fill="#FFFFFF" stroke="#263B35" stroke-width="5.9"/><polygon points="395.0,186.0 480.0,112.8 565.0,186.0" fill="#3D7DB2" stroke="#263B35" stroke-width="5.9" stroke-linejoin="round"/><path d="M350.20000000000005,203.7 q-21.24,23.599999999999998 0,40 q21.24,23.599999999999998 0,40" fill="none" stroke="#2F7D5B" stroke-width="5.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M609.8,203.7 q-21.24,23.599999999999998 0,40 q21.24,23.599999999999998 0,40" fill="none" stroke="#2F7D5B" stroke-width="5.9" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#263B35" stroke-width="3" opacity="0.18"/>
+</svg>

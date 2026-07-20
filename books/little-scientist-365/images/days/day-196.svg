@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">电能把铁变成磁铁吗？</title>
-  <rect width="960" height="540" fill="#fff1df"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f6f99" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="802" cy="234" r="10" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="392" cy="308" r="14" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="118" cy="317" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="220" cy="263" r="15" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="216" cy="127" r="11" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="644" cy="267" r="10" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="887" cy="440" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="781" cy="418" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="178" cy="418" r="12" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="279" cy="230" r="15" fill="#f2b544" stroke="none" stroke-width="0"/></g>
-  <g><path d="M315,145 V300 C315,430 645,430 645,300 V145 H555 V300 C555,330 405,330 405,300 V145 Z" fill="#3f6f99" stroke="#303d4c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="315" y="145" width="90" height="90" rx="0" fill="#dd7444" stroke="#303d4c" stroke-width="5"/><rect x="555" y="145" width="90" height="90" rx="0" fill="#f2b544" stroke="#303d4c" stroke-width="5"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#303d4c" stroke-width="5" opacity="0.18"/>
-</svg>

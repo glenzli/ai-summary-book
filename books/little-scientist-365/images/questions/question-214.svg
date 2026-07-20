@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">站在地面为什么看不出地球弯？</title>
+  <desc id="desc">围绕“站在地面为什么看不出地球弯？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#263B35"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F3FAF5"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#2F7D5B" opacity="0.07"/>
+
+  <g data-question="214" data-layout="concrete" data-presentation="concrete" data-source="manual" data-icons="globe,landscape"><rect x="18.0" y="18.0" width="924.0" height="305.0" rx="6.0" fill="#DDEEF1" stroke="none" stroke-width="0.0"/><path d="M18,330 Q160,190 320,330 Q470,150 650,330 Q790,235 942,330 V438 H18 Z" fill="#8AB584" stroke="none" stroke-width="0.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M18,410 Q200,365 390,410 T770,410 T1040,410" fill="none" stroke="#4E8D70" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="430.0" cy="392.5" rx="159.3" ry="21.2" fill="#263B35" stroke="none" stroke-width="0.0" opacity="0.12"/><circle cx="430" cy="245" r="84.96" fill="#2F7D5B" stroke="#263B35" stroke-width="5.8999999999999995"/><path d="M368.64,203.7 Q412.3,162.4 439.44,207.24 L424.1,249.72 L371.0,259.16 Z M451.24,259.16 Q506.7,235.56 494.9,298.1 L444.16,313.44 Z" fill="#3D7DB2" stroke="#263B35" stroke-width="2.9499999999999997" stroke-linecap="round" stroke-linejoin="round"/><polygon points="659.4,229.04 720.6,110.96000000000001 792.6,229.04" fill="#2F7D5B" stroke="#263B35" stroke-width="3.5999999999999996" stroke-linejoin="round"/><polygon points="742.2,229.04 785.4,144.8 821.4,229.04" fill="#3D7DB2" stroke="#263B35" stroke-width="2.88" stroke-linejoin="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#263B35" stroke-width="3" opacity="0.18"/>
+</svg>

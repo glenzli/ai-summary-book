@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">眼泪只有伤心时才有吗？</title>
-  <rect width="960" height="540" fill="#e8f5f0"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="575" cy="190" r="11" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="153" cy="430" r="14" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="625" cy="416" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="657" cy="194" r="9" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="850" cy="492" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="649" cy="80" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="423" cy="294" r="14" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="899" cy="228" r="10" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="709" cy="299" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="690" cy="358" r="9" fill="#f0b941" stroke="none" stroke-width="0"/></g>
-  <g><path d="M275,270 Q480,90 685,270 Q480,450 275,270 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="480" cy="270" r="92" fill="#147d88" stroke="#263e51" stroke-width="7"/><circle cx="480" cy="270" r="38" fill="#263e51" stroke="none" stroke-width="0"/><circle cx="450" cy="235" r="13" fill="#f0b941" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
-</svg>

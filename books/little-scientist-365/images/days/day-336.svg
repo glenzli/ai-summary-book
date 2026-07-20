@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">自行车只有两个轮子，为什么不倒？</title>
-  <rect width="960" height="540" fill="#e8f1e2"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2f7863" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="778" cy="150" r="14" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="874" cy="70" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="166" cy="323" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="521" cy="224" r="7" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="273" cy="464" r="9" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="655" cy="430" r="5" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="827" cy="198" r="13" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="808" cy="468" r="15" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="252" cy="167" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="221" cy="262" r="7" fill="#3276a2" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="345" cy="355" r="112" fill="none" stroke="#33413d" stroke-width="15"/><circle cx="615" cy="355" r="112" fill="none" stroke="#33413d" stroke-width="15"/><path d="M345,355 L455,180 L535,355 Z M455,180 L615,355 M420,355 H555" fill="none" stroke="#2f7863" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#33413d" stroke-width="5" opacity="0.18"/>
-</svg>

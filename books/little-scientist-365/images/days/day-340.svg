@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">红绿灯怎么知道该换颜色？</title>
-  <rect width="960" height="540" fill="#e8f1e2"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2f7863" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="878" cy="345" r="8" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="553" cy="125" r="14" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="415" cy="470" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="372" cy="293" r="14" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="455" cy="407" r="7" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="55" cy="89" r="10" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="286" cy="249" r="6" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="877" cy="384" r="14" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="311" cy="173" r="10" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="108" cy="441" r="12" fill="#e3b33e" stroke="none" stroke-width="0"/></g>
-  <g><rect x="410" y="80" width="140" height="330" rx="32" fill="#33413d" stroke="#33413d" stroke-width="8"/><circle cx="480" cy="165" r="45" fill="#df5b52" stroke="#e3b33e" stroke-width="5"/><circle cx="480" cy="245" r="45" fill="#edbd43" stroke="#e3b33e" stroke-width="5"/><circle cx="480" cy="325" r="45" fill="#4ca66a" stroke="#e3b33e" stroke-width="5"/><line x1="480" y1="410" x2="480" y2="490" stroke="#33413d" stroke-width="24" stroke-linecap="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#33413d" stroke-width="5" opacity="0.18"/>
-</svg>

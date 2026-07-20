@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">鱼怎样在水里呼吸？</title>
-  <rect width="960" height="540" fill="#fff0dc"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f7f76" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="225" cy="466" r="9" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="139" cy="305" r="10" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="404" cy="221" r="14" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="570" cy="276" r="5" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="280" cy="398" r="8" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="715" cy="406" r="11" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="225" cy="106" r="7" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="335" cy="409" r="12" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="823" cy="347" r="15" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="347" cy="294" r="6" fill="#f4b642" stroke="none" stroke-width="0"/></g>
-  <g><polygon points="373.5,280 264.25,188.0 275.75,374.3" fill="#dc6c55" stroke="#3f453f" stroke-width="7" stroke-linejoin="round"/><ellipse cx="500" cy="280" rx="143.75" ry="82.8" fill="#3f7f76" stroke="#3f453f" stroke-width="7"/><polygon points="500,297.25 471.25,381.2 551.75,334.05" fill="#dc6c55" stroke="#3f453f" stroke-width="5" stroke-linejoin="round"/><circle cx="571.3" cy="259.3" r="11.5" fill="#3f453f" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#3f453f" stroke-width="5" opacity="0.18"/>
-</svg>

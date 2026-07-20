@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">海星真的是鱼吗？</title>
-  <rect width="960" height="540" fill="#dff4f5"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#176f8c" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="898" cy="455" r="14" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="272" cy="242" r="10" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="57" cy="480" r="10" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="368" cy="138" r="9" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="800" cy="380" r="9" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="557" cy="350" r="14" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="478" cy="127" r="10" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="758" cy="334" r="11" fill="#ef745f" stroke="none" stroke-width="0"/><circle cx="205" cy="288" r="14" fill="#f4c74e" stroke="none" stroke-width="0"/><circle cx="317" cy="141" r="11" fill="#f4c74e" stroke="none" stroke-width="0"/></g>
-  <g><polygon points="480.0,130.0 521.1449676604731,228.36881039375368 627.4137600257488,237.10236587188314 546.5739561406607,306.6311896062463 571.1067141053334,410.39763412811686 480.0,355.0 388.8932858946667,410.39763412811686 413.42604385933925,306.6311896062463 332.58623997425116,237.10236587188317 438.8550323395269,228.36881039375368" fill="#ef745f" stroke="#163c59" stroke-width="8" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#163c59" stroke-width="5" opacity="0.18"/>
-</svg>

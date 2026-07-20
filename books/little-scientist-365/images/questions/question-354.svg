@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">LED 灯为什么省电？</title>
+  <desc id="desc">围绕“LED 灯为什么省电？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#263D38"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F2FAF5"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#2D8065" opacity="0.07"/>
+
+  <g data-question="354" data-layout="concrete" data-presentation="concrete" data-source="manual" data-icons="circuit,light,heat"><rect x="18.0" y="18.0" width="924.0" height="285.0" rx="6.0" fill="#DCEFF2" stroke="none" stroke-width="0.0"/><path d="M18,310 Q160,240 320,310 T620,310 T940,310 V438 H18 Z" fill="#9CC492" stroke="none" stroke-width="0.0" stroke-linecap="round" stroke-linejoin="round"/><rect x="18.0" y="365.0" width="924.0" height="73.0" rx="0.0" fill="#67747A" stroke="none" stroke-width="0.0"/><line x1="18.0" y1="400.0" x2="942.0" y2="400.0" stroke="#F3D15A" stroke-width="5.0" stroke-linecap="round" stroke-dasharray="18 18"/><ellipse cx="430.0" cy="365.0" rx="145.8" ry="19.4" fill="#263D38" stroke="none" stroke-width="0.0" opacity="0.12"/><path d="M341.44,192.2 Q408.4,165.2 518.56,192.2" fill="none" stroke="#3478AA" stroke-width="7.5600000000000005" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><path d="M341.44,230.0 Q408.4,203.0 518.56,230.0" fill="none" stroke="#2D8065" stroke-width="7.5600000000000005" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><path d="M341.44,267.8 Q408.4,240.8 518.56,267.8" fill="none" stroke="#3478AA" stroke-width="7.5600000000000005" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><path d="M684.6,130.4 H785.4 V209.6 H684.6 Z" fill="none" stroke="#263D38" stroke-width="5.04" stroke-linecap="round" stroke-linejoin="round"/><circle cx="785.4" cy="170" r="14.399999999999999" fill="#3478AA" stroke="#263D38" stroke-width="2.16"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#263D38" stroke-width="3" opacity="0.18"/>
+</svg>

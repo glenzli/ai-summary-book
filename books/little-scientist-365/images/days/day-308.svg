@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">水滴为什么喜欢变圆？</title>
-  <rect width="960" height="540" fill="#f8eadf"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#a84f45" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="347" cy="264" r="5" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="655" cy="274" r="14" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="387" cy="48" r="11" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="668" cy="197" r="9" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="675" cy="159" r="9" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="873" cy="467" r="9" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="566" cy="225" r="11" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="869" cy="376" r="5" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="367" cy="413" r="13" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="369" cy="360" r="6" fill="#3f7692" stroke="none" stroke-width="0"/></g>
-  <g><path d="M350,120 H610 L580,430 H380 Z" fill="#e0a63f" stroke="#4b3734" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M372,285 H588 L580,430 H380 Z" fill="#a84f45" stroke="#4b3734" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="335" r="18" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="520" cy="370" r="13" fill="#3f7692" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#4b3734" stroke-width="5" opacity="0.18"/>
-</svg>

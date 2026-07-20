@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">观察和猜想有什么不同？</title>
+  <desc id="desc">围绕“观察和猜想有什么不同？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#283B33"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F7F7F3"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#4F6B5C" opacity="0.07"/>
+
+  <g data-question="361" data-layout="concrete" data-presentation="concrete" data-source="manual" data-icons="eye,brain,question"><rect x="18.0" y="18.0" width="924.0" height="315.0" rx="6.0" fill="#F4F5EE" stroke="none" stroke-width="0.0"/><rect x="18.0" y="333.0" width="924.0" height="105.0" rx="0.0" fill="#B88B63" stroke="none" stroke-width="0.0"/><line x1="18.0" y1="333.0" x2="942.0" y2="333.0" stroke="#283B33" stroke-width="5.0" stroke-linecap="round"/><ellipse cx="430.0" cy="372.5" rx="148.5" ry="19.8" fill="#283B33" stroke="none" stroke-width="0.0" opacity="0.12"/><path d="M333.2,235 Q430,155.8 526.8,235 Q430,314.2 333.2,235 Z" fill="#FFFFFF" stroke="#283B33" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="235" r="41.800000000000004" fill="#4F6B5C" stroke="#283B33" stroke-width="4.4"/><circle cx="430" cy="235" r="17.6" fill="#283B33" stroke="none" stroke-width="0"/><path d="M695.4,138.32 C695.4,85.04 786.84,83.60000000000001 786.84,139.76 C786.84,180.8 740.76,182.96 740.76,216.8" fill="none" stroke="#4F6B5C" stroke-width="14.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="740.8" cy="245.6" r="9.4" fill="#D68A3A" stroke="#283B33" stroke-width="2.2"/><circle cx="90.0" cy="375.0" r="11.0" fill="#D68A3A" stroke="none" stroke-width="0.0"/><circle cx="865.0" cy="380.0" r="9.0" fill="#4F6B5C" stroke="none" stroke-width="0.0"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#283B33" stroke-width="3" opacity="0.18"/>
+</svg>

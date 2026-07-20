@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">夜晚为什么会变黑？</title>
-  <rect width="960" height="540" fill="#dff3ff"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2864b7" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="769" cy="368" r="6" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="277" cy="374" r="12" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="311" cy="93" r="14" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="291" cy="440" r="10" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="452" cy="251" r="11" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="600" cy="125" r="9" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="512" cy="50" r="6" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="683" cy="194" r="5" fill="#ffffff" stroke="none" stroke-width="0"/><circle cx="782" cy="152" r="8" fill="#f5c84c" stroke="none" stroke-width="0"/><circle cx="640" cy="444" r="9" fill="#ffffff" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="480" cy="270" r="135" fill="#2864b7" stroke="#172d4d" stroke-width="8"/><ellipse cx="480" cy="270" rx="245" ry="80" fill="none" stroke="#f5c84c" stroke-width="18"/><circle cx="690" cy="218" r="28" fill="#ffffff" stroke="#172d4d" stroke-width="5"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#172d4d" stroke-width="5" opacity="0.18"/>
-</svg>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">为什么要用肥皂洗手？</title>
-  <rect width="960" height="540" fill="#e8f5f0"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="669" cy="410" r="11" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="587" cy="461" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="229" cy="43" r="6" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="903" cy="235" r="6" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="401" cy="99" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="521" cy="175" r="14" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="574" cy="291" r="13" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="93" cy="302" r="15" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="784" cy="376" r="14" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="887" cy="425" r="7" fill="#e66f67" stroke="none" stroke-width="0"/></g>
-  <g><path d="M480,110 C390,110 350,175 350,255 C350,350 405,430 480,445 C555,430 610,350 610,255 C610,175 570,110 480,110 Z" fill="#147d88" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="220" r="18" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="530" cy="220" r="18" fill="#f0b941" stroke="none" stroke-width="0"/><path d="M415,325 Q480,380 545,325" fill="none" stroke="#f0b941" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
-</svg>

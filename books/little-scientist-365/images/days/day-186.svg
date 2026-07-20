@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">轮子为什么让东西更好推？</title>
-  <rect width="960" height="540" fill="#fff1df"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f6f99" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="577" cy="426" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="478" cy="372" r="14" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="657" cy="196" r="5" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="293" cy="377" r="11" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="711" cy="160" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="835" cy="414" r="8" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="895" cy="109" r="9" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="296" cy="471" r="13" fill="#f2b544" stroke="none" stroke-width="0"/><circle cx="114" cy="401" r="6" fill="#dd7444" stroke="none" stroke-width="0"/><circle cx="318" cy="348" r="12" fill="#f2b544" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="345" cy="355" r="112" fill="none" stroke="#303d4c" stroke-width="15"/><circle cx="615" cy="355" r="112" fill="none" stroke="#303d4c" stroke-width="15"/><path d="M345,355 L455,180 L535,355 Z M455,180 L615,355 M420,355 H555" fill="none" stroke="#3f6f99" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#303d4c" stroke-width="5" opacity="0.18"/>
-</svg>

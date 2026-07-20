@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">木头为什么常能浮在水上？</title>
-  <rect width="960" height="540" fill="#f8eadf"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#a84f45" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="595" cy="242" r="5" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="614" cy="207" r="15" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="371" cy="85" r="8" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="516" cy="285" r="6" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="385" cy="362" r="13" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="560" cy="485" r="8" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="464" cy="126" r="14" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="498" cy="194" r="8" fill="#e0a63f" stroke="none" stroke-width="0"/><circle cx="781" cy="226" r="5" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="632" cy="164" r="6" fill="#e0a63f" stroke="none" stroke-width="0"/></g>
-  <g><path d="M350,120 H610 L580,430 H380 Z" fill="#e0a63f" stroke="#4b3734" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M372,285 H588 L580,430 H380 Z" fill="#a84f45" stroke="#4b3734" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="335" r="18" fill="#3f7692" stroke="none" stroke-width="0"/><circle cx="520" cy="370" r="13" fill="#3f7692" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#4b3734" stroke-width="5" opacity="0.18"/>
-</svg>

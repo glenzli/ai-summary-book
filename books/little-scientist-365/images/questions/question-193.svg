@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">橡皮筋和弹簧哪里不一样？</title>
+  <desc id="desc">围绕“橡皮筋和弹簧哪里不一样？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#293747"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#FFF7ED"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#3B78A8" opacity="0.07"/>
+
+  <g data-question="193" data-layout="machine" data-presentation="machine" data-source="machine" data-icons="machine-plate-193"><text x="54" y="54" fill="#24384A" text-anchor="start" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="760">金属弹簧靠线材弯扭，橡皮筋靠长分子链重新蜷曲</text><rect x="34" y="82" width="892" height="382" rx="4" fill="#EFEAE1" stroke="none" stroke-width="0"/><rect x="34" y="360" width="892" height="104" rx="0" fill="#C99B70" stroke="none" stroke-width="0"/><path d="M34,360 L926,360" fill="none" stroke="#24384A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M110,280 C155,170 200,390 245,280 S335,170 380,280" fill="none" stroke="#C95757" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M540,380 L620,355 L540,330 L620,305 L540,280 L620,255 L540,230 L620,205 L540,180 L620,155 L540,130" fill="none" stroke="#4B82B3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="120" y="130" width="250" height="85" rx="12" fill="#F7E9CA" stroke="#24384A" stroke-width="3"/><path d="M145,175 q25,-35 50,0 q25,35 50,0 q25,-35 50,0 q25,35 50,0" fill="none" stroke="#7769A4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="650" y="130" width="210" height="85" rx="12" fill="#F7E9CA" stroke="#24384A" stroke-width="3"/><path d="M680,175 H825" fill="none" stroke="#2A5F89" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="245" y="440" fill="#24384A" text-anchor="middle" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="650">橡皮筋：聚合物网络</text><text x="700" y="440" fill="#24384A" text-anchor="middle" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="650">螺旋弹簧：金属线受扭</text></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#293747" stroke-width="3" opacity="0.18"/>
+</svg>

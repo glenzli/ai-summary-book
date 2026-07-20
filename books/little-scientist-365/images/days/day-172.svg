@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">舌头每一块只尝一种味吗？</title>
-  <rect width="960" height="540" fill="#e8f5f0"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="404" cy="341" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="525" cy="67" r="14" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="859" cy="429" r="5" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="823" cy="82" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="419" cy="161" r="15" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="766" cy="220" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="106" cy="298" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="441" cy="52" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="129" cy="148" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="657" cy="175" r="15" fill="#f0b941" stroke="none" stroke-width="0"/></g>
-  <g><path d="M370,150 Q480,95 590,150 L565,340 Q540,450 480,390 Q420,450 395,340 Z" fill="#f0b941" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M410,280 Q480,340 550,280 Q545,385 480,395 Q415,385 410,280 Z" fill="#e66f67" stroke="#263e51" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
-</svg>

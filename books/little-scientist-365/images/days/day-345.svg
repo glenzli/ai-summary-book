@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">飞机那么重，怎样离开地面？</title>
-  <rect width="960" height="540" fill="#e8f1e2"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#2f7863" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="526" cy="163" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="902" cy="499" r="15" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="228" cy="415" r="10" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="586" cy="369" r="12" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="567" cy="395" r="13" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="770" cy="43" r="10" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="828" cy="176" r="9" fill="#3276a2" stroke="none" stroke-width="0"/><circle cx="496" cy="104" r="9" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="400" cy="428" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/><circle cx="793" cy="396" r="5" fill="#e3b33e" stroke="none" stroke-width="0"/></g>
-  <g><path d="M195,285 L420,245 L510,115 L560,120 L525,240 L745,275 L760,320 L525,300 L570,410 L520,420 L430,305 L200,330 Z" fill="#e3b33e" stroke="#33413d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#33413d" stroke-width="5" opacity="0.18"/>
-</svg>

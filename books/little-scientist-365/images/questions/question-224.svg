@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">化石是恐龙的骨头吗？</title>
+  <desc id="desc">围绕“化石是恐龙的骨头吗？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#263B35"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F3FAF5"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#2F7D5B" opacity="0.07"/>
+
+  <g data-question="224" data-layout="concrete" data-presentation="concrete" data-source="subject" data-icons="geo-fossil"><rect x="18.0" y="18.0" width="924.0" height="305.0" rx="6.0" fill="#DDEEF1" stroke="none" stroke-width="0.0"/><path d="M18,330 Q160,190 320,330 Q470,150 650,330 Q790,235 942,330 V438 H18 Z" fill="#8AB584" stroke="none" stroke-width="0.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M18,410 Q200,365 390,410 T770,410 T1040,410" fill="none" stroke="#4E8D70" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="480.0" cy="392.5" rx="159.3" ry="21.2" fill="#263B35" stroke="none" stroke-width="0.0" opacity="0.12"/><ellipse cx="480.0" cy="245.0" rx="147.5" ry="103.8" fill="#2F7D5B" stroke="#263B35" stroke-width="7.1"/><circle cx="411.6" cy="233.2" r="23.6" fill="#FFFFFF" stroke="#263B35" stroke-width="4.7"/><circle cx="548.4" cy="271.0" r="23.6" fill="#FFFFFF" stroke="#263B35" stroke-width="4.7"/><line x1="429.3" y1="247.4" x2="530.7" y2="259.2" stroke="#FFFFFF" stroke-width="26.0" stroke-linecap="round"/><line x1="429.3" y1="247.4" x2="530.7" y2="259.2" stroke="#263B35" stroke-width="4.7" stroke-linecap="round"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#263B35" stroke-width="3" opacity="0.18"/>
+</svg>

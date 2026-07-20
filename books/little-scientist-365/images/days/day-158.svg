@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">心脏为什么一直怦怦跳？</title>
-  <rect width="960" height="540" fill="#e8f5f0"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="776" cy="291" r="5" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="636" cy="146" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="692" cy="460" r="13" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="399" cy="76" r="10" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="758" cy="137" r="11" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="862" cy="211" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="323" cy="369" r="14" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="786" cy="492" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="903" cy="186" r="12" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="542" cy="235" r="15" fill="#f0b941" stroke="none" stroke-width="0"/></g>
-  <g><path d="M480,420 C360,330 300,270 320,190 C340,105 445,110 480,185 C515,110 620,105 640,190 C660,270 600,330 480,420 Z" fill="#e66f67" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><line x1="480" y1="182" x2="480" y2="360" stroke="#f0b941" stroke-width="8" stroke-linecap="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
-</svg>

@@ -6,34 +6,36 @@ from __future__ import annotations
 import html
 import math
 import re
-from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
+
+from book_structure import CHAPTERS, CHAPTER_BY_QUESTION, REALISTIC_PRINCIPLE_IMAGES
+from textbook_illustrations import textbook_body
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "images" / "explainers"
-MONTHS = sorted(ROOT.glob("[01][0-9]_*.md"))
-EXPECTED_DIAGRAMS_PER_MONTH = 15
+CHAPTER_PATHS = [ROOT / chapter.filename for chapter in CHAPTERS]
+EXPECTED_DIAGRAMS = 154
 
 
 @dataclass(frozen=True)
 class Diagram:
-    day: int
+    question: int
     kind: str
     caption: str
     nodes: tuple[tuple[str, str], ...]
 
 
-def d(day: int, kind: str, caption: str, *nodes: tuple[str, str]) -> Diagram:
-    return Diagram(day, kind, caption, nodes)
+def d(question: int, kind: str, caption: str, *nodes: tuple[str, str]) -> Diagram:
+    return Diagram(question, kind, caption, nodes)
 
 
-# Fifteen diagrams per month. Topics are selected when a picture can explain a
-# mechanism, internal structure, force, cycle, or spatial relationship better
-# than the daily subject illustration alone.
+# Diagrams are selected when a picture can explain a mechanism, internal
+# structure, force, cycle, or spatial relationship better than the topic image
+# alone. Selection follows explanatory need rather than a chapter quota.
 DIAGRAMS = [
-    # January: sky, light, time, and heat.
+    # Topic 01: light, sky, time, and cold.
     d(1, "flow", "氢原子核在高温高压下结合，释放的能量逐步传到太阳表面。", ("atom", "氢原子核"), ("fusion", "高温高压下聚变"), ("sun", "能量向外传递")),
     d(2, "flow", "阳光进入大气后，短波长的蓝光更容易被空气分子散向四周。", ("sun", "多种颜色的阳光"), ("air", "空气分子散射"), ("eye", "四周蓝光进入眼睛")),
     d(5, "flow", "物体挡住直线传播的光，在背后形成暗影和较模糊的半影。", ("lamp", "光从光源出发"), ("block", "身体挡住一部分光"), ("shadow", "暗影与半影")),
@@ -50,7 +52,7 @@ DIAGRAMS = [
     d(26, "flow", "钟用稳定的周期运动作节拍，再把许多周期累计成时间读数。", ("oscillator", "规律重复的振动"), ("counter", "逐次计数"), ("clock", "换算成秒、分、时")),
     d(31, "flow", "太阳粒子受地球磁场引导到极区，撞击高层大气并使气体发出彩光。", ("sun", "太阳释放带电粒子"), ("earth-field", "地球磁场引向极区"), ("earth-air", "高层气体受撞击发光")),
 
-    # February: air, weather, and water.
+    # Topic 02: air, weather, and water.
     d(32, "flow", "气体分子持续运动并撞击容器内壁，大量撞击共同形成压力。", ("air", "不停运动的分子"), ("collision", "撞击容器内壁"), ("pressure", "许多撞击形成压力")),
     d(33, "cycle", "地面受热不均使空气密度和压力不同，空气的整体运动形成风。", ("sun-ground", "地面受热不均"), ("warm-air", "暖空气上升"), ("cool-air", "较冷空气补来"), ("wind", "形成循环与风")),
     d(35, "layers", "肥皂分子帮助水膜稳定；薄膜前后表面的反射光会发生干涉。", ("bubble", "肥皂泡薄膜"), ("soap", "两层表面活性分子"), ("light", "两面反射光相互叠加")),
@@ -67,7 +69,7 @@ DIAGRAMS = [
     d(52, "cycle", "水可在海洋、空气、陆地和生物之间循环，但每滴水的路径不同。", ("ocean", "海洋与湖泊"), ("cloud", "蒸发、蒸腾与云"), ("rain", "雨雪回到陆地"), ("river", "河流和地下水回海")),
     d(56, "flow", "表面活性剂一端靠近油、一端靠近水，许多分子包住油污后随水离开。", ("oil-molecules", "油污黏在表面"), ("micelle", "肥皂分子包围油污"), ("clean-water", "小油滴分散并被冲走")),
 
-    # March: plants and gardens.
+    # Topic 03: plants and gardens.
     d(60, "layers", "种皮保护内部；子叶或胚乳储存养料，胚会长成新的根和芽。", ("seed", "一粒种子"), ("seed-food", "储存养料的部分"), ("embryo", "会继续生长的胚")),
     d(61, "flow", "种子得到适量水、氧气和合适温度后，代谢启动并开始发芽。", ("water-air", "水、氧气与温度"), ("seed", "种子恢复代谢"), ("sprout", "胚根和幼芽生长")),
     d(62, "flow", "胚根先伸出，帮助固定幼苗并吸收水；随后幼芽向光处生长。", ("seed", "种皮吸水裂开"), ("root", "胚根先向下伸"), ("sprout", "幼芽随后向上长")),
@@ -84,24 +86,12 @@ DIAGRAMS = [
     d(83, "flow", "单侧光照使茎两边伸长程度不同，生长差异让茎弯向光源。", ("window-light", "光从一侧照来"), ("stem-growth", "背光侧伸长较多"), ("bent-plant", "茎逐渐弯向光")),
     d(84, "cycle", "孢子在合适基质中长成菌丝网络；条件合适时长出蘑菇，再释放新孢子。", ("spores", "孢子落到合适基质"), ("mycelium", "菌丝生长并吸收养分"), ("mushroom", "条件合适长出蘑菇"), ("spores", "蘑菇释放新孢子")),
 
-    # April: small animals and habitats.
-    d(91, "layers", "昆虫有头、胸、腹三部分，三对足都连接在胸部。", ("insect", "一只昆虫"), ("insect-body", "头、胸、腹"), ("six-legs", "胸部连接六条腿")),
-    d(92, "compare", "昆虫通常三段身体、六条腿；蜘蛛两大体区、八条腿。", ("insect", "昆虫：六条腿"), ("spider", "蜘蛛：八条腿")),
-    d(93, "cycle", "找到食物的蚂蚁留下信息素，更多蚂蚁沿路走又会加强气味。", ("ant-food", "蚂蚁找到食物"), ("pheromone", "回巢留下气味"), ("ant-line", "同伴沿气味前进"), ("strong-trail", "路线被反复加强")),
-    d(95, "flow", "蜜蜂翅膀和飞行肌肉振动，使周围空气形成传播的压力波。", ("bee", "翅与肌肉快速振动"), ("sound-wave", "空气压力波传播"), ("ear", "耳朵听见嗡声")),
-    d(97, "cycle", "完全变态把生命史分成卵、幼虫、蛹和成虫四个阶段。", ("egg", "卵"), ("caterpillar", "毛毛虫"), ("chrysalis", "蛹内重建身体"), ("butterfly", "成虫蝴蝶")),
-    d(100, "flow", "发光细胞里的物质在酶和氧气参与下反应，把化学能变成光。", ("molecule", "发光物质与氧气"), ("enzyme", "酶帮助反应"), ("firefly-light", "化学能变成冷光")),
-    d(102, "network", "四片翅膀分别调节角度和拍动，持续改变升力、推力和转向力矩。", ("dragonfly", "独立调节的四片翅"), ("wing", "升力托住身体"), ("motion-arrow", "推力改变速度"), ("vortex", "不对称拍翅帮助转向")),
-    d(103, "flow", "后腿肌肉先让弹性结构储能，突然释放时把身体推离地面。", ("grasshopper", "后腿弯曲蓄力"), ("spring", "外骨骼储存弹性能"), ("jump", "快速伸腿起跳")),
-    d(106, "cycle", "较像树枝的个体更容易避开捕食；许多代后相关特征可能更常见。", ("varied-insects", "个体外形有差异"), ("bird", "捕食造成筛选"), ("camouflage", "伪装者较易留下后代"), ("generations", "特征逐代变常见")),
-    d(108, "flow", "足底肌肉波推动身体，黏液受力时改变流动性质，既保护身体又帮助传力。", ("snail", "足底产生肌肉波"), ("wave", "收缩波沿足部移动"), ("motion-arrow", "黏液帮助身体向前")),
-    d(109, "cycle", "环形肌和纵向肌轮流收缩，再用刚毛固定一段身体，推动身体前进。", ("long-worm", "环形肌收缩：变细变长"), ("anchor", "刚毛固定身体一段"), ("short-worm", "纵向肌收缩：变粗变短"), ("forward", "收缩波向后、身体向前")),
-    d(113, "network", "蛛网的辐射丝和螺旋丝分担拉力；不同蛛丝兼顾强度与延展。", ("web", "整张蛛网"), ("radial", "辐射丝传递拉力"), ("spiral", "螺旋丝吸收运动"), ("anchor", "锚点把力传到周围")),
+    # Topic 04: small animals and habitats.
     d(118, "layers", "脚趾上的刚毛继续分叉成极细末端，增大与墙面的近距离接触。", ("gecko-foot", "壁虎脚趾"), ("setae", "大量细小刚毛"), ("molecular-contact", "微弱分子吸引相加")),
     d(119, "flow", "尾巴从预设薄弱处断开后，局部神经和肌肉仍能短时活动，吸引捕食者。", ("lizard-tail", "尾部在特定位置断开"), ("muscle", "局部神经肌肉继续活动"), ("motion-arrow", "蜥蜴趁机逃离")),
     d(120, "flow", "皮肤中色素与纳米晶体共同改变反射光；晶体间距不同会加强不同波长。", ("chameleon-skin", "变色龙皮肤受到信号"), ("crystal-spacing", "纳米晶体间距改变"), ("light", "反射光颜色随之改变")),
 
-    # May: animal structures and adaptations.
+    # Topic 05: animal structures and adaptations.
     d(121, "layers", "羽轴两侧长出羽枝，羽枝上的小钩互相扣住，组成轻而连续的羽片。", ("feather", "一根羽毛"), ("barbs", "羽轴与许多羽枝"), ("hooklets", "小钩把羽枝扣在一起")),
     d(122, "forces", "鸟翼改变周围空气的速度和方向，空气对翅膀产生向上的合力。", ("wing", "有弧度和角度的翅膀"), ("force-up", "空气给翅膀向上合力"), ("force-down", "翅膀把空气推向下方")),
     d(123, "compare", "普通鸟翼适合推动空气；企鹅较扁硬的鳍状翼适合推动密度更大的水。", ("bird-wing", "飞行翼推动空气"), ("penguin-flipper", "鳍状翼推动海水")),
@@ -118,24 +108,10 @@ DIAGRAMS = [
     d(146, "flow", "水流过鳃丝和鳃小片，水中的氧跨过薄膜进入血液。", ("fish", "水从口部进入"), ("gill", "流过许多薄鳃片"), ("blood-oxygen", "氧气扩散进血液")),
     d(147, "forces", "鱼改变鳔内气体体积来调节平均密度，使浮力接近自身重量。", ("fish-bladder", "鱼体内的鳔"), ("force-up", "排水产生浮力"), ("force-down", "鱼的重量向下")),
 
-    # June: body and senses.
-    d(152, "layers", "表皮负责外层屏障，真皮含血管、神经和腺体，更深组织连接并缓冲。", ("skin", "皮肤横切面"), ("epidermis", "表皮：外层屏障"), ("dermis", "真皮与更深组织")),
+    # Topic 06: body, senses, and health.
     d(153, "flow", "指纹脊线改变接触和摩擦，也会把滑动变成细小振动，帮助触觉感受器读出表面。", ("finger-ridges", "指腹脊线接触物体"), ("sound-wave", "滑动产生细小振动"), ("brain", "触觉信号送往大脑")),
-    d(154, "layers", "毛囊底部细胞分裂并角化，被逐渐推到皮肤外形成发丝。", ("hair", "露出皮肤的发丝"), ("follicle", "皮肤里的毛囊"), ("dividing-cells", "底部细胞不断分裂")),
-    d(155, "layers", "骨外层较致密，内部海绵骨沿受力方向排列，空隙中可有骨髓。", ("bone", "一段骨头"), ("compact-bone", "致密的外层"), ("spongy-marrow", "海绵骨与骨髓")),
-    d(156, "compare", "肩关节的球窝结构换来大活动范围；膝关节更像受引导的铰链。", ("shoulder", "肩：灵活的球窝关节"), ("knee", "膝：较稳定的铰链结构")),
-    d(157, "compare", "肌肉只能主动收缩拉动骨；弯肘和伸肘由不同肌群轮流主导。", ("muscle", "一组肌肉收缩弯肘"), ("muscle", "另一组肌肉收缩伸肘")),
-    d(158, "flow", "起搏细胞产生电信号，信号按顺序传过心脏，让各腔室协调收缩。", ("pacemaker", "起搏细胞发出信号"), ("heart-signal", "电信号依次传开"), ("heart", "心房与心室协调泵血")),
-    d(159, "cycle", "右心把血送到肺交换气体，左心再把富氧血送往全身。", ("heart", "心脏"), ("lung", "肺部交换氧和二氧化碳"), ("body", "全身细胞使用氧气"), ("vessel", "血液沿血管返回")),
-    d(160, "layers", "气道不断分叉到肺泡；肺泡壁很薄，并紧贴毛细血管，便于气体扩散。", ("lung", "不断分叉的气道"), ("alveoli", "许多微小肺泡"), ("gas-exchange", "氧和二氧化碳跨薄壁交换")),
-    d(161, "compare", "吸气时膈肌下降、胸腔变大、压力降低；呼气时过程大致相反。", ("inhale", "吸气：膈肌下降"), ("exhale", "呼气：膈肌上升")),
-    d(164, "flow", "危险热信号先经感觉神经到脊髓，再由运动神经命令肌肉迅速缩手。", ("hot-hand", "皮肤感受危险热度"), ("spinal", "脊髓快速连接信号"), ("muscle", "手臂肌肉收缩避开")),
-    d(165, "flow", "物体反射的光经角膜和晶状体聚焦到视网膜，再变成神经信号。", ("object-light", "物体反射光"), ("eye-lens", "角膜和晶状体聚焦"), ("brain", "视网膜与大脑解释信号")),
-    d(168, "flow", "声波振动鼓膜和听小骨，再在耳蜗中推动液体、弯曲感受细胞。", ("sound-wave", "空气中的声波"), ("ear", "鼓膜与听小骨振动"), ("cochlea", "耳蜗把振动变成神经信号")),
-    d(169, "network", "大脑比较视觉、内耳和肌肉关节信号，再不断调整姿势来保持平衡。", ("brain", "大脑比较多路信号"), ("balance-senses", "视觉、内耳和关节线索"), ("muscle", "肌肉不断修正姿势")),
-    d(175, "flow", "食物先被弄碎，再由胃肠和消化液继续分解；小肠把许多养分吸收入血。", ("teeth", "口腔咀嚼并混合唾液"), ("stomach", "胃和消化液继续处理"), ("intestine", "小肠吸收许多养分")),
 
-    # July: tools and machines.
+    # Topic 07: tools, machines, and building.
     d(183, "flow", "杠杆绕支点转动；离支点更远处用力，可以用较小的力产生足够力矩。", ("lever", "远处施加较小力"), ("seesaw", "支点传递转动作用"), ("weight", "近处承受较大负载")),
     d(184, "compare", "跷跷板是否平衡取决于两边的重量和它们到支点的距离。", ("seesaw", "一边：重量 × 距离"), ("seesaw", "另一边：重量 × 距离")),
     d(185, "flow", "定滑轮主要改变拉力方向；多股绳共同承重时，每股绳分担一部分负载。", ("pulley", "绳绕过滑轮"), ("rope-segments", "多股绳分担负载"), ("lift", "少些力、拉更长距离")),
@@ -152,7 +128,7 @@ DIAGRAMS = [
     d(200, "compare", "电动机把电能转成机械运动；发电机用机械运动改变磁通并产生电压。", ("motor", "电动机：电 → 运动"), ("generator", "发电机：运动 → 电")),
     d(203, "flow", "把手移动阀门里的密封件，改变水流通道大小；通道关紧后水便停止。", ("faucet-handle", "把手带动内部零件"), ("valve", "阀门改变通道大小"), ("water", "水流变大、变小或停止")),
 
-    # August: Earth and geography.
+    # Topic 08: Earth, maps, and climate.
     d(213, "flow", "大型天体的引力把物质拉向共同中心；足够大时，整体会接近球形。", ("matter", "许多物质聚在一起"), ("gravity-center", "引力朝共同中心"), ("earth", "形成接近球形的地球")),
     d(215, "forces", "无论站在地球哪一边，重力都大致指向地心，所以脚下都是当地的“下”。", ("earth-person", "站在球形地球各处"), ("force-up", "地面支持身体"), ("force-down", "重力指向地心")),
     d(216, "layers", "地球由薄地壳、厚地幔和金属核心等层次组成，越深条件越极端。", ("earth-cutaway", "地球内部剖面"), ("crust-mantle", "薄地壳与厚地幔"), ("core", "外核与内核")),
@@ -169,7 +145,7 @@ DIAGRAMS = [
     d(237, "flow", "河水进入较平静水域后流速降低，搬运能力下降，泥沙逐渐沉积成三角洲。", ("fast-river", "河流携带泥沙"), ("slow-water", "入海后流速减慢"), ("delta", "泥沙分流并沉积")),
     d(241, "flow", "多年积雪被压成冰；冰在重力作用下变形和滑动，缓慢流向低处。", ("snow", "多年积雪堆积"), ("glacier", "压实成为厚冰"), ("ice-flow", "重力使冰缓慢流动")),
 
-    # September: oceans and coasts.
+    # Topic 09: oceans and coasts.
     d(244, "cycle", "水和岩石作用带走溶解物，经河流进入海洋；水蒸发后盐分大多留下。", ("rain-rock", "雨水溶解少量矿物"), ("river", "河流把离子带入海洋"), ("ocean", "盐分在海水中积累"), ("vapor", "蒸发带走水、不带走盐")),
     d(245, "flow", "风把能量交给海面；水粒子多在原地附近绕动，而波形和能量向前传播。", ("wind-wave", "风给海面能量"), ("particle-circle", "水粒子附近绕动"), ("shore-wave", "波能传到岸边")),
     d(246, "orbit", "月球引力是潮汐主因，太阳也会参与；地球自转让海岸经过潮汐隆起。", ("earth", "地球与海洋"), ("moon", "月球引力"), ("sun", "太阳引力也参与"), ("tide", "海岸经历涨落")),
@@ -186,10 +162,10 @@ DIAGRAMS = [
     d(263, "flow", "雌海马把卵放入雄海马育儿袋，胚胎在袋内发育，最后由雄海马释放。", ("egg", "雌海马把卵放入"), ("seahorse-pouch", "雄海马育儿袋调节环境"), ("baby-seahorse", "小海马发育后离开")),
     d(265, "network", "海龟会综合地磁、阳光、海浪和气味等多种线索导航，不靠单一地图。", ("turtle", "迁徙中的海龟"), ("magnetic-field", "地球磁场"), ("sun-wave", "太阳与海浪方向"), ("smell", "近岸气味等线索")),
 
-    # October: space.
+    # Topic 10: space and exploration.
     d(275, "layers", "恒星中心通过核聚变供能，能量穿过内部后从表面以辐射形式离开。", ("star", "一颗恒星"), ("fusion", "中心核聚变区"), ("radiation", "能量逐层向外传递")),
     d(277, "orbit", "太阳的引力把行星的惯性运动弯成轨道，许多天体共同组成太阳系。", ("sun", "太阳"), ("planet", "内侧行星轨道"), ("planet", "外侧行星轨道"), ("comet", "小天体也绕太阳")),
-    d(280, "compare", "水星白天受强烈日照，夜面又因大气极稀薄而快速散热，温差很大。", ("mercury-day", "向阳面很热"), ("mercury-night", "背阳面很冷")),
+    d(280, "compare", "水星白天受强烈日照，夜面又因大气极稀薄而快速散热，温差很大。", ("mercury-question", "向阳面很热"), ("mercury-night", "背阳面很冷")),
     d(281, "layers", "金星厚大气让阳光进入，却强烈吸收地表发出的红外辐射，造成高温。", ("venus", "金星地表"), ("thick-air", "厚厚的二氧化碳大气"), ("trapped-heat", "红外能量较难逃出")),
     d(282, "network", "地表液态水能否长期存在，取决于恒星、轨道、行星质量、大气和气候反馈。", ("sun", "恒星提供能量"), ("orbit", "轨道决定受光变化"), ("earth-air", "大气调节压力与温度"), ("water", "条件合适时存在液态水")),
     d(285, "layers", "土星环由无数冰和岩石颗粒组成，各自沿轨道运行，并非一整张固体圆盘。", ("saturn", "土星与光环"), ("ring-pieces", "许多大小不同的颗粒"), ("small-orbits", "颗粒各自绕土星运行")),
@@ -203,7 +179,7 @@ DIAGRAMS = [
     d(299, "network", "空间站和宇航员一起绕地球自由落体；没有地板持续托住身体，便呈现失重。", ("earth", "地球引力仍然存在"), ("satellite", "空间站沿轨道下落"), ("body", "宇航员与空间站同落"), ("motion-arrow", "共同绕地球前进")),
     d(304, "network", "黑洞本身不发出可逃逸的光，但恒星轨道、热吸积气体和引力波能暴露它。", ("black-hole", "看不见的黑洞本身"), ("orbit", "附近恒星绕行"), ("hot-drop", "吸积气体发出辐射"), ("wave", "合并产生引力波")),
 
-    # November: materials, food, and the home.
+    # Topic 11: materials, food, and the home.
     d(305, "compare", "固体粒子多在固定位置附近振动；液体能换位流动；气体相距更远。", ("solid-particles", "固体：紧密而有序"), ("liquid-particles", "液体：靠近但能换位"), ("gas-particles", "气体：分散并自由运动")),
     d(307, "flow", "冰在熔点附近吸收能量，较整齐的晶体结构被破坏，分子仍是水分子。", ("ice-lattice", "冰的晶体排列"), ("heat", "吸收熔化潜热"), ("liquid-water", "变成流动的液态水")),
     d(308, "flow", "液面分子受力不对称，表面张力倾向缩小表面积，小水滴因此接近球形。", ("water-particles", "液面分子受力不对称"), ("molecule", "表面张力向内收拢"), ("drop", "水滴趋向较小表面积")),
@@ -220,7 +196,7 @@ DIAGRAMS = [
     d(327, "flow", "玻璃表面小缺口会集中应力；裂纹一旦开始扩展，脆硬材料便迅速断开。", ("glass", "玻璃表面有微小缺口"), ("crack", "缺口尖端集中应力"), ("fragments", "裂纹扩展使玻璃破碎")),
     d(330, "flow", "橡胶长分子链被拉直排列后，热运动和交联会促使它们回到卷曲状态。", ("coiled-chain", "原本卷曲的长分子链"), ("stretched-chain", "拉伸后链条较整齐"), ("spring", "交联帮助恢复形状")),
 
-    # December: transport, energy, and scientific practice.
+    # Topic 12: transport, energy, environment, and scientific practice.
     d(335, "flow", "身体重心越过支撑脚后，另一只脚向前接住；感官和肌肉持续修正。", ("step-one", "重心移向支撑脚前方"), ("step-two", "另一只脚向前迈出"), ("balance", "视觉、内耳和肌肉修正")),
     d(336, "network", "骑行者通过细小转向把轮胎接触点移到重心下方，持续恢复平衡。", ("bicycle", "前进中的自行车"), ("eye", "感官报告身体倾斜"), ("motion-arrow", "车把做细小转向"), ("train-wheel", "接触点回到重心下方")),
     d(337, "flow", "发动机或电动机产生转矩，传动系统把转矩送到驱动轮，轮胎再推动车辆。", ("energy", "燃料或电能进入"), ("motor", "发动机或电动机转动"), ("train-wheel", "驱动轮通过摩擦推地")),
@@ -252,6 +228,7 @@ PALETTES = [
     ("#f1f2fb", "#5268ad", "#d48b49", "#293451"),
     ("#fbf5ed", "#a86a3d", "#477c84", "#49372c"),
     ("#f1f7f3", "#3c7c63", "#dc7655", "#2b463b"),
+    ("#f7f7f3", "#4f6b5c", "#d68a3a", "#283b33"),
 ]
 
 FALLBACK_KEYS: set[str] = set()
@@ -1211,7 +1188,7 @@ def icon(key: str, cx: float, cy: float, scale: float, primary: str, accent: str
             parts.append(path(f"M{cx-115*s},{cy+100*s} Q{cx},{cy+135*s} {cx+115*s},{cy+100*s}", "none", primary, 5 * s))
         return "".join(parts)
 
-    if key in {"satellite", "receiver", "planet", "comet", "icy-comet", "comet-tail", "mercury-day", "mercury-night", "venus", "saturn", "ring-pieces", "small-orbits", "meteoroid", "meteor", "meteorite", "impactor", "impact", "crater", "rocket", "orbiting-moon"}:
+    if key in {"satellite", "receiver", "planet", "comet", "icy-comet", "comet-tail", "mercury-question", "mercury-night", "venus", "saturn", "ring-pieces", "small-orbits", "meteoroid", "meteor", "meteorite", "impactor", "impact", "crater", "rocket", "orbiting-moon"}:
         if key == "rocket":
             parts.append(path(f"M{cx},{cy-100*s} C{cx-62*s},{cy-38*s} {cx-55*s},{cy+45*s} {cx},{cy+85*s} C{cx+55*s},{cy+45*s} {cx+62*s},{cy-38*s} {cx},{cy-100*s} Z", bg, dark, 5 * s))
             parts.append(circle(cx, cy - 15 * s, 24 * s, primary, dark, 3 * s))
@@ -1230,7 +1207,7 @@ def icon(key: str, cx: float, cy: float, scale: float, primary: str, accent: str
             parts.append(ellipse(cx, cy + 20 * s, 90 * s, 42 * s, bg, dark, 6 * s))
             parts.append(circle(cx, cy + 15 * s, 36 * s, primary, dark, 4 * s))
         else:
-            color = accent if "day" in key or key == "venus" else primary
+            color = accent if "question" in key or key == "venus" else primary
             parts.append(circle(cx, cy, 67 * s, color, dark, 5 * s))
             parts.append(circle(cx - 25 * s, cy - 20 * s, 12 * s, bg))
             parts.append(circle(cx + 28 * s, cy + 25 * s, 16 * s, bg))
@@ -1501,9 +1478,17 @@ SPECIAL_RENDERERS = {
 }
 
 
+def render_fingerprint_touch(diagram: Diagram, palette: tuple[str, str, str, str]) -> str:
+    del diagram
+    return f'<g transform="translate(120 92)">{textbook_body(153, palette)}</g>'
+
+
+SPECIAL_RENDERERS[153] = render_fingerprint_touch
+
+
 def svg_for(diagram: Diagram, title: str) -> str:
-    month_index = next(i for i, upper in enumerate([31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365]) if diagram.day <= upper)
-    palette = PALETTES[month_index]
+    part_index = CHAPTER_BY_QUESTION[diagram.question].part - 1
+    palette = PALETTES[part_index]
     bg, primary, accent, dark = palette
     kind_label = {
         "flow": "过程图",
@@ -1514,7 +1499,9 @@ def svg_for(diagram: Diagram, title: str) -> str:
         "network": "协同关系图",
         "layers": "结构图",
     }[diagram.kind]
-    body = SPECIAL_RENDERERS.get(diagram.day, RENDERERS[diagram.kind])(diagram, palette)
+    if diagram.question == 153:
+        kind_label = "结构与触觉图"
+    body = SPECIAL_RENDERERS.get(diagram.question, RENDERERS[diagram.kind])(diagram, palette)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
   <title id="title">原理图：{esc(title)}</title>
   <desc id="desc">{esc(diagram.caption)}</desc>
@@ -1531,75 +1518,87 @@ def svg_for(diagram: Diagram, title: str) -> str:
 '''
 
 
-def titles_by_day() -> dict[int, str]:
+def titles_by_question() -> dict[int, str]:
     titles: dict[int, str] = {}
-    heading_re = re.compile(r"^## 第 (\d{3}) 天｜(.+)$", re.MULTILINE)
-    for path in MONTHS:
-        for day, title in heading_re.findall(path.read_text(encoding="utf-8")):
-            titles[int(day)] = title
+    heading_re = re.compile(r"^### 第 (\d{3}) 问｜(.+)$", re.MULTILINE)
+    for path in CHAPTER_PATHS:
+        for question, title in heading_re.findall(path.read_text(encoding="utf-8")):
+            titles[int(question)] = title
     return titles
 
 
 def embed_diagrams() -> None:
-    selected = {diagram.day: diagram for diagram in DIAGRAMS}
-    old_block_re = re.compile(
-        r"\n\n!\[原理图：[^\]]+\]\(images/explainers/day-\d{3}\.svg\)"
+    selected = {diagram.question: diagram for diagram in DIAGRAMS}
+    old_explainer_re = re.compile(
+        r"\n\n!\[原理图：[^\]]+\]\(images/explainers/question-\d{3}\.svg\)"
         r"\n\n\*图解：.*?\*",
     )
-    for path in MONTHS:
-        text = old_block_re.sub("", path.read_text(encoding="utf-8"))
-        days = [int(day) for day in re.findall(r"^## 第 (\d{3}) 天｜", text, re.MULTILINE)]
-        for day in days:
-            if day not in selected:
+    old_realistic_re = re.compile(
+        r"\n\n!\[(?:写实原理图|科学写实原理图)：[^\]]+\]"
+        r"\(images/principles-realistic/question-\d{3}[-a-z0-9]*\.png\)"
+        r"\n\n\*(?:写实原理图|科学写实原理图)：.*?\*",
+    )
+    for path in CHAPTER_PATHS:
+        text = path.read_text(encoding="utf-8")
+        text = old_explainer_re.sub("", text)
+        text = old_realistic_re.sub("", text)
+        questions = [int(question) for question in re.findall(r"^### 第 (\d{3}) 问｜", text, re.MULTILINE)]
+        for question in questions:
+            diagram = selected.get(question)
+            realistic = REALISTIC_PRINCIPLE_IMAGES.get(question)
+            if diagram is None and realistic is None:
                 continue
-            diagram = selected[day]
             pattern = re.compile(
-                rf"(^## 第 {day:03d} 天｜.+?$.*?^\*\*再想一步：\*\* .+?$)",
+                rf"(^### 第 {question:03d} 问｜.+?$.*?)(\n\n^\*\*一起[^*]*：\*\*)",
                 re.MULTILINE | re.DOTALL,
             )
-            replacement = (
-                r"\1"
-                f"\n\n![原理图：{diagram.caption}](images/explainers/day-{day:03d}.svg)"
-                f"\n\n*图解：{diagram.caption}*"
-            )
+            blocks: list[str] = []
+            if realistic is not None:
+                blocks.append(
+                    f"![写实原理图：{realistic.alt}](images/principles-realistic/{realistic.filename})"
+                    f"\n\n*{realistic.caption}*"
+                )
+            if diagram is not None:
+                blocks.append(
+                    f"![原理图：{diagram.caption}](images/explainers/question-{question:03d}.svg)"
+                    f"\n\n*图解：{diagram.caption}*"
+                )
+            replacement = r"\1" + "\n\n" + "\n\n".join(blocks) + r"\2"
             text, count = pattern.subn(replacement, text, count=1)
             if count != 1:
-                raise RuntimeError(f"could not embed explainer for day {day:03d} in {path.name}")
+                raise RuntimeError(f"could not embed visual explanation for question {question:03d} in {path.name}")
         path.write_text(text, encoding="utf-8")
 
 
 def validate_selection() -> None:
-    expected_total = 12 * EXPECTED_DIAGRAMS_PER_MONTH
-    if len(DIAGRAMS) != expected_total:
-        raise RuntimeError(f"expected {expected_total} selected diagrams, found {len(DIAGRAMS)}")
-    days = [diagram.day for diagram in DIAGRAMS]
-    if len(days) != len(set(days)):
-        raise RuntimeError("duplicate explainer day in selection")
-    month_index = lambda day: next(i for i, upper in enumerate([31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365]) if day <= upper)
-    counts = Counter(month_index(day) for day in days)
-    if counts != Counter({index: EXPECTED_DIAGRAMS_PER_MONTH for index in range(12)}):
-        raise RuntimeError(f"selection is not {EXPECTED_DIAGRAMS_PER_MONTH} diagrams per month: {counts}")
+    if len(DIAGRAMS) != EXPECTED_DIAGRAMS:
+        raise RuntimeError(f"expected {EXPECTED_DIAGRAMS} selected diagrams, found {len(DIAGRAMS)}")
+    questions = [diagram.question for diagram in DIAGRAMS]
+    if len(questions) != len(set(questions)):
+        raise RuntimeError("duplicate explainer question in selection")
+    if not set(questions).issubset(CHAPTER_BY_QUESTION):
+        raise RuntimeError("explainer selection contains an unknown question")
     for diagram in DIAGRAMS:
         if diagram.kind not in RENDERERS:
-            raise RuntimeError(f"unknown renderer {diagram.kind} on day {diagram.day}")
+            raise RuntimeError(f"unknown renderer {diagram.kind} on question {diagram.question}")
         expected = 2 if diagram.kind == "compare" else 3
         if len(diagram.nodes) < expected:
-            raise RuntimeError(f"too few nodes on day {diagram.day}")
+            raise RuntimeError(f"too few nodes on question {diagram.question}")
 
 
 def main() -> None:
     validate_selection()
-    titles = titles_by_day()
+    titles = titles_by_question()
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    selected_names = {f"day-{diagram.day:03d}.svg" for diagram in DIAGRAMS}
-    for stale in OUTPUT.glob("day-*.svg"):
+    selected_names = {f"question-{diagram.question:03d}.svg" for diagram in DIAGRAMS}
+    for stale in OUTPUT.glob("question-*.svg"):
         if stale.name not in selected_names:
             stale.unlink()
     for diagram in DIAGRAMS:
-        title = titles.get(diagram.day)
+        title = titles.get(diagram.question)
         if title is None:
-            raise RuntimeError(f"missing source title for day {diagram.day:03d}")
-        (OUTPUT / f"day-{diagram.day:03d}.svg").write_text(svg_for(diagram, title), encoding="utf-8")
+            raise RuntimeError(f"missing source title for question {diagram.question:03d}")
+        (OUTPUT / f"question-{diagram.question:03d}.svg").write_text(svg_for(diagram, title), encoding="utf-8")
     embed_diagrams()
     print(f"generated={len(DIAGRAMS)} embedded={len(DIAGRAMS)} output={OUTPUT.relative_to(ROOT)}")
     if FALLBACK_KEYS:

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">日食时是谁挡住了太阳？</title>
-  <rect width="960" height="540" fill="#e9e5f7"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="417" cy="49" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="577" cy="155" r="5" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="531" cy="272" r="7" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="722" cy="407" r="10" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="311" cy="134" r="13" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="420" cy="472" r="6" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="714" cy="344" r="14" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="803" cy="496" r="15" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="794" cy="326" r="10" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="392" cy="219" r="12" fill="#6fb7c7" stroke="none" stroke-width="0"/></g>
-  <g><circle cx="510" cy="270" r="145" fill="#6fb7c7" stroke="#25264c" stroke-width="8"/><circle cx="450" cy="230" r="28" fill="#46468c" stroke="none" stroke-width="0"/><circle cx="565" cy="330" r="38" fill="#46468c" stroke="none" stroke-width="0"/><circle cx="575" cy="195" r="17" fill="#46468c" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
-</svg>

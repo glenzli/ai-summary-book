@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">什么动物叫哺乳动物？</title>
-  <rect width="960" height="540" fill="#fff0dc"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3f7f76" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="542" cy="65" r="7" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="678" cy="483" r="15" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="461" cy="239" r="11" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="494" cy="112" r="10" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="900" cy="333" r="10" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="85" cy="397" r="5" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="337" cy="109" r="6" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="743" cy="491" r="14" fill="#f4b642" stroke="none" stroke-width="0"/><circle cx="161" cy="375" r="15" fill="#dc6c55" stroke="none" stroke-width="0"/><circle cx="798" cy="355" r="11" fill="#dc6c55" stroke="none" stroke-width="0"/></g>
-  <g><ellipse cx="440.0" cy="295.0" rx="130.0" ry="78.0" fill="#3f7f76" stroke="#3f453f" stroke-width="7"/><circle cx="570.0" cy="245.0" r="62.0" fill="#3f7f76" stroke="#3f453f" stroke-width="7"/><line x1="375.0" y1="340.0" x2="370.0" y2="415.0" stroke="#3f453f" stroke-width="13" stroke-linecap="round"/><line x1="500.0" y1="340.0" x2="505.0" y2="415.0" stroke="#3f453f" stroke-width="13" stroke-linecap="round"/><circle cx="587.0" cy="232.0" r="7.0" fill="#3f453f" stroke="none" stroke-width="0"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#3f453f" stroke-width="5" opacity="0.18"/>
-</svg>

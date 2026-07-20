@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">蘑菇是植物吗？</title>
-  <rect width="960" height="540" fill="#eef7df"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#3c8b4f" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="765" cy="480" r="10" fill="#f1b64a" stroke="none" stroke-width="0"/><circle cx="101" cy="296" r="8" fill="#f1b64a" stroke="none" stroke-width="0"/><circle cx="88" cy="70" r="10" fill="#f28ba8" stroke="none" stroke-width="0"/><circle cx="339" cy="177" r="13" fill="#f1b64a" stroke="none" stroke-width="0"/><circle cx="548" cy="349" r="10" fill="#f28ba8" stroke="none" stroke-width="0"/><circle cx="384" cy="80" r="6" fill="#f28ba8" stroke="none" stroke-width="0"/><circle cx="277" cy="472" r="13" fill="#f1b64a" stroke="none" stroke-width="0"/><circle cx="242" cy="220" r="6" fill="#f28ba8" stroke="none" stroke-width="0"/><circle cx="594" cy="275" r="10" fill="#f28ba8" stroke="none" stroke-width="0"/><circle cx="727" cy="291" r="14" fill="#f28ba8" stroke="none" stroke-width="0"/></g>
-  <g><path d="M340,280 Q480,95 620,280 Z" fill="#f1b64a" stroke="#264c36" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="440" y="275" width="80" height="160" rx="35" fill="#f28ba8" stroke="#264c36" stroke-width="7"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#264c36" stroke-width="5" opacity="0.18"/>
-</svg>

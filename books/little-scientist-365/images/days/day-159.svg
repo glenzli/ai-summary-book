@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">血液为什么要到处流？</title>
-  <rect width="960" height="540" fill="#e8f5f0"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#147d88" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="653" cy="489" r="5" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="299" cy="225" r="8" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="210" cy="354" r="8" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="630" cy="391" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="157" cy="398" r="6" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="505" cy="76" r="9" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="912" cy="184" r="5" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="332" cy="344" r="12" fill="#e66f67" stroke="none" stroke-width="0"/><circle cx="165" cy="133" r="10" fill="#f0b941" stroke="none" stroke-width="0"/><circle cx="530" cy="376" r="5" fill="#e66f67" stroke="none" stroke-width="0"/></g>
-  <g><path d="M480,420 C360,330 300,270 320,190 C340,105 445,110 480,185 C515,110 620,105 640,190 C660,270 600,330 480,420 Z" fill="#e66f67" stroke="#263e51" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><line x1="480" y1="182" x2="480" y2="360" stroke="#f0b941" stroke-width="8" stroke-linecap="round"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#263e51" stroke-width="5" opacity="0.18"/>
-</svg>

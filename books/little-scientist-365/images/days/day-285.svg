@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
-  <title id="title">土星环是一整张圆盘吗？</title>
-  <rect width="960" height="540" fill="#e9e5f7"/>
-  <path d="M0,430 Q180,370 340,430 T680,430 T1020,430 V540 H0 Z" fill="#46468c" opacity="0.13"/>
-  <g opacity="0.38"><circle cx="767" cy="338" r="6" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="769" cy="82" r="7" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="408" cy="343" r="9" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="247" cy="357" r="5" fill="#6fb7c7" stroke="none" stroke-width="0"/><circle cx="828" cy="49" r="7" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="588" cy="475" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="800" cy="500" r="5" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="724" cy="109" r="8" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="651" cy="215" r="5" fill="#f0b84b" stroke="none" stroke-width="0"/><circle cx="891" cy="303" r="9" fill="#f0b84b" stroke="none" stroke-width="0"/></g>
-  <g><ellipse cx="480" cy="280" rx="250" ry="65" fill="none" stroke="#6fb7c7" stroke-width="24"/><circle cx="480" cy="280" r="125" fill="#f0b84b" stroke="#25264c" stroke-width="8"/><ellipse cx="480" cy="280" rx="250" ry="65" fill="none" stroke="#25264c" stroke-width="7"/></g>
-  <rect x="12" y="12" width="936" height="516" rx="30" fill="none" stroke="#25264c" stroke-width="5" opacity="0.18"/>
-</svg>

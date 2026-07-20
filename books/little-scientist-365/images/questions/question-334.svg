@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">吸尘器怎样把灰尘收进去？</title>
+  <desc id="desc">围绕“吸尘器怎样把灰尘收进去？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#42343A"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#FFF7F2"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#B8584A" opacity="0.07"/>
+
+  <g data-question="334" data-layout="concrete" data-presentation="concrete" data-source="manual" data-icons="air,pressure,matter"><rect x="18.0" y="18.0" width="924.0" height="315.0" rx="6.0" fill="#F4EFE8" stroke="none" stroke-width="0.0"/><rect x="18.0" y="333.0" width="924.0" height="105.0" rx="0.0" fill="#A9B6B0" stroke="none" stroke-width="0.0"/><line x1="18.0" y1="333.0" x2="942.0" y2="333.0" stroke="#42343A" stroke-width="5.0" stroke-linecap="round"/><path d="M75,80 H885 M75,145 H885" fill="none" stroke="#D8CFC4" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="480.0" cy="372.5" rx="148.5" ry="19.8" fill="#42343A" stroke="none" stroke-width="0.0" opacity="0.12"/><circle cx="480" cy="210.8" r="57.2" fill="#397A91" stroke="#42343A" stroke-width="5.5"/><rect x="444.8" y="262.5" width="70.4" height="39.6" rx="8.8" fill="#B8584A" stroke="#42343A" stroke-width="4.4"/><line x1="431.8125169946207" y1="144.78980439112024" x2="412.6792516836613" y2="122.07399142877095" stroke="#397A91" stroke-width="6.6000000000000005" stroke-linecap="round"/><line x1="480.0" y1="127.19999999999999" x2="480.0" y2="97.49999999999999" stroke="#397A91" stroke-width="6.6000000000000005" stroke-linecap="round"/><line x1="528.1874830053792" y1="144.78980439112024" x2="547.3207483163387" y2="122.07399142877095" stroke="#397A91" stroke-width="6.6000000000000005" stroke-linecap="round"/><circle cx="90.0" cy="375.0" r="11.0" fill="#397A91" stroke="none" stroke-width="0.0"/><circle cx="865.0" cy="380.0" r="9.0" fill="#B8584A" stroke="none" stroke-width="0.0"/></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#42343A" stroke-width="3" opacity="0.18"/>
+</svg>

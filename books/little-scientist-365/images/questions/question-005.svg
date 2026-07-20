@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">影子从哪里来？</title>
+  <desc id="desc">围绕“影子从哪里来？”绘制的清晰主题图；具体对象优先，必要关系用箭头表示。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#17213A"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#F4F9FF"/>
+  <path d="M0,455 Q185,410 355,455 T700,455 T1040,455 V540 H0 Z" fill="#2563EB" opacity="0.07"/>
+
+  <g data-question="005" data-layout="earth-weather" data-presentation="earth-weather" data-source="earth-weather" data-icons="earth-weather-plate-005"><text x="54" y="54" fill="#24384A" text-anchor="start" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="760">不透明物体挡住沿直线传播的光，后方形成光较少的区域</text><rect x="34" y="82" width="892" height="382" rx="4" fill="#EFE9DE" stroke="none" stroke-width="0"/><circle cx="155" cy="235" r="48" fill="#E8B642" stroke="#24384A" stroke-width="4"/><path d="M205,190 L430,150 L430,345 L205,280 Z" fill="#E8B642" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" opacity="0.30"/><rect x="430" y="190" width="95" height="165" rx="5" fill="#C85555" stroke="#24384A" stroke-width="4"/><path d="M525,325 Q700,390 865,340 Q700,305 525,285 Z" fill="#273552" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/><path d="M430,250 L638,119" fill="none" stroke="#24384A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="250" r="4.5" fill="#24384A" stroke="none" stroke-width="0"/><text x="650" y="125" fill="#24384A" text-anchor="start" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="650">物体挡住直达光</text><path d="M650,330 L638,384" fill="none" stroke="#24384A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="650" cy="330" r="4.5" fill="#24384A" stroke="none" stroke-width="0"/><text x="650" y="390" fill="#24384A" text-anchor="start" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="650">边缘仍会收到周围反射</text><text x="650" y="412" fill="#24384A" text-anchor="start" font-family="system-ui, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="650">光，所以影子并非绝对黑</text></g>
+  <rect x="12" y="12" width="936" height="516" rx="8" fill="none" stroke="#17213A" stroke-width="3" opacity="0.18"/>
+</svg>
